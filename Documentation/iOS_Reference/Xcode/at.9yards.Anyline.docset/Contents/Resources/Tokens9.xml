@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALImage.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALImage</TokenIdentifier>
+			<Abstract type="html">The ALImage encapsulate the opencv image classes and methods.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/setUiImage:</TokenIdentifier>
+			<Abstract type="html">The ALImage UIImage object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			
+			
+			<Anchor>//api/name/uiImage</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImage</TokenIdentifier>
+			<Abstract type="html">The ALImage UIImage object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			
+			
+			<Anchor>//api/name/uiImage</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALImage/uiImage</TokenIdentifier>
+			<Abstract type="html">The ALImage UIImage object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			
+			
+			<Anchor>//api/name/uiImage</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/setImageBuffer:</TokenIdentifier>
+			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/imageBuffer</TokenIdentifier>
+			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALImage/imageBuffer</TokenIdentifier>
+			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			
+			
+			<Anchor>//api/name/imageBuffer</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithSpecOverlay:</TokenIdentifier>
+			<Abstract type="html">Method draws the DisplaySpecs onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digits.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithSpecOverlay:(ALROISpec *)displaySpec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>displaySpec</Name>
+					<Abstract type="html">The Display specifications where to find, and how to interpret the digits.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of all the digits and segments.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithSpecOverlay:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithDisplayResults:</TokenIdentifier>
+			<Abstract type="html">Method draws the DisplaySpecs and DisplayResult onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digits and what results we computed.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithDisplayResults:(ALDisplayResult *)displayResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>displayResult</Name>
+					<Abstract type="html">The Display result contains the computed result for every segment.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of all the digits and segments.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithDisplayResults:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithDigitOverlay:</TokenIdentifier>
+			<Abstract type="html">Method draws one DigitSpec onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithDigitOverlay:(ALDataPoint *)digitSpec</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>digitSpec</Name>
+					<Abstract type="html">A DigitSpec specification where the digit in the Image is found.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of this DigitSpec.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithDigitOverlay:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithRectOverlay:</TokenIdentifier>
+			<Abstract type="html">Method draws one CGRect onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithRectOverlay:(CGRect)rectToDraw</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rectToDraw</Name>
+					<Abstract type="html">A CGRect which will be drawn.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of this CGRect.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithRectOverlay:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithSquareOverlay:</TokenIdentifier>
+			<Abstract type="html">Method draws one ALSquare onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithSquareOverlay:(ALSquare *)square</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>square</Name>
+					<Abstract type="html">An ALSquare which will be drawn onto the Image.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of the ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithSquareOverlay:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithHorizontalLines:</TokenIdentifier>
+			<Abstract type="html">Method draws horizontal lines onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithHorizontalLines:(NSArray *)lines</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lines</Name>
+					<Abstract type="html">An array with positions where to draw lines onto the Image.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of the horizontal lines.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithHorizontalLines:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithVerticalLines:</TokenIdentifier>
+			<Abstract type="html">Method draws vertical lines onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithVerticalLines:(NSArray *)lines</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lines</Name>
+					<Abstract type="html">An array with positions where to draw lines onto the Image.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of the vertical lines.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithVerticalLines:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithContours:</TokenIdentifier>
+			<Abstract type="html">Method draws contours onto the ALImage and returns an UIImage.
+For debbugging purpose so you can see where we located the digit.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)uiImageWithContours:(ALContours *)contours</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lines</Name>
+					<Abstract type="html">An ALContours which will be drawn onto the Image.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An UIImage with an overlay of the contours.</Abstract></ReturnValue>
+			<Anchor>//api/name/uiImageWithContours:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/initWithUIImage:</TokenIdentifier>
+			<Abstract type="html">Initialise an ALImage with an UIImage.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithUIImage:(UIImage *)uiImage</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uiImage</Name>
+					<Abstract type="html">The UIImage to encapsulate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALImage.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUIImage:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/initWithImageBuffer:</TokenIdentifier>
+			<Abstract type="html">Initialise an ALImage with an CVimageBufferRef.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithImageBuffer:(CVImageBufferRef)imageBuffer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>imageBuffer</Name>
+					<Abstract type="html">The CVImageBufferRef to encapsulate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALImage.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithImageBuffer:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALImage/isEmpy</TokenIdentifier>
+			<Abstract type="html">Checks wether the ALImage is empty.</Abstract>
+			<DeclaredIn>ALImage.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isEmpy</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES/NO wether the ALImage is empty.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEmpy</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

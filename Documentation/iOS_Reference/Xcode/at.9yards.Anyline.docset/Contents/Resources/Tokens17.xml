@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALSegmentSpec.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSegmentSpec</TokenIdentifier>
+			<Abstract type="html">The ALSegmentSpec defines the position for one specific segment.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/setBounds:</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/bounds</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentSpec/bounds</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/initWithBounds:</TokenIdentifier>
+			<Abstract type="html">Initialise a new Segment Spec.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBounds:(CGRect)bounds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>bounds</Name>
+					<Abstract type="html">The bounds for the segments.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new Segment Spec.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBounds:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise a new Segment Spec.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">The dictionary representing an ALSegmentSpec</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new Segment Spec.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

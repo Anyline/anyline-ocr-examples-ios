@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALOCRScanMode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+			<Abstract type="html">The possible scanModes for the AnylineOCR module</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="50"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALLine</TokenIdentifier>
+            <Abstract type="html">The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).
+     </Abstract>
+            <Declaration>ALLine</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="50"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALGrid</TokenIdentifier>
+            <Abstract type="html">The GRID mode is optimal for characters with equal size laid out in a grid
+with a constant font, background and character count (like loyalty codes inside bottle caps).
+     </Abstract>
+            <Declaration>ALGrid</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="50"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

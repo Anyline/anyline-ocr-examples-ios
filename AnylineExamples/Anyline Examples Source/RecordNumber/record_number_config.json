@@ -1,0 +1,32 @@
+{
+    "captureResolution":"1080p",
+    "cutout": {
+        "style": "rect",
+        "maxWidthPercent": "80%",
+        "maxHeightPercent": "80%",
+        "alignment": "top_half",
+        "width": 510,
+        "ratioFromSize": {
+            "width": 4,
+            "height": 1
+        },
+        "strokeWidth": 2,
+        "cornerRadius": 10,
+        "strokeColor": "FFFFFF",
+        "outerColor": "000000",
+        "outerAlpha": 0.3
+    },
+    "flash": {
+        "mode": "manual",
+        "alignment": "top_left"
+    },
+    "beepOnResult": true,
+    "vibrateOnResult": true,
+    "blinkAnimationOnResult": true, 
+    "cancelOnResult": true,
+    "visualFeedback": {
+        "style": "contour_underline",
+        "strokeColor": "99AA0000",
+        "strokeWidth": 3
+    }
+}

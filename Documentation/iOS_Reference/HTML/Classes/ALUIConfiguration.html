@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALUIConfiguration Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">9yards GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/backgroundAlpha">backgroundAlpha</option>
+		
+		<option value="//api/name/backgroundColorWithoutAlpha">backgroundColorWithoutAlpha</option>
+		
+		<option value="//api/name/beepOnResult">beepOnResult</option>
+		
+		<option value="//api/name/blinkAnimationOnResult">blinkAnimationOnResult</option>
+		
+		<option value="//api/name/cancelOnResult">cancelOnResult</option>
+		
+		<option value="//api/name/captureMode">captureMode</option>
+		
+		<option value="//api/name/captureResolution">captureResolution</option>
+		
+		<option value="//api/name/cornerRadius">cornerRadius</option>
+		
+		<option value="//api/name/cutoutAlignment">cutoutAlignment</option>
+		
+		<option value="//api/name/cutoutBackgroundColor">cutoutBackgroundColor</option>
+		
+		<option value="//api/name/cutoutCropOffset">cutoutCropOffset</option>
+		
+		<option value="//api/name/cutoutCropPadding">cutoutCropPadding</option>
+		
+		<option value="//api/name/cutoutMaxPercentHeight">cutoutMaxPercentHeight</option>
+		
+		<option value="//api/name/cutoutMaxPercentWidth">cutoutMaxPercentWidth</option>
+		
+		<option value="//api/name/cutoutOffset">cutoutOffset</option>
+		
+		<option value="//api/name/cutoutPath">cutoutPath</option>
+		
+		<option value="//api/name/cutoutWidthPercent">cutoutWidthPercent</option>
+		
+		<option value="//api/name/feedbackStrokeColor">feedbackStrokeColor</option>
+		
+		<option value="//api/name/feedbackStyle">feedbackStyle</option>
+		
+		<option value="//api/name/flashAlignment">flashAlignment</option>
+		
+		<option value="//api/name/flashImage">flashImage</option>
+		
+		<option value="//api/name/flashMode">flashMode</option>
+		
+		<option value="//api/name/flashOffset">flashOffset</option>
+		
+		<option value="//api/name/overlayImage">overlayImage</option>
+		
+		<option value="//api/name/pictureResolution">pictureResolution</option>
+		
+		<option value="//api/name/reportingEnabled">reportingEnabled</option>
+		
+		<option value="//api/name/strokeColor">strokeColor</option>
+		
+		<option value="//api/name/strokeWidth">strokeWidth</option>
+		
+		<option value="//api/name/vibrateOnResult">vibrateOnResult</option>
+		
+		<option value="//api/name/visualFeedbackAnimationDuration">visualFeedbackAnimationDuration</option>
+		
+		<option value="//api/name/visualFeedbackCornerRadius">visualFeedbackCornerRadius</option>
+		
+		<option value="//api/name/visualFeedbackFillColor">visualFeedbackFillColor</option>
+		
+		<option value="//api/name/visualFeedbackRedrawTimeout">visualFeedbackRedrawTimeout</option>
+		
+		<option value="//api/name/visualFeedbackStrokeColor">visualFeedbackStrokeColor</option>
+		
+		<option value="//api/name/visualFeedbackStrokeWidth">visualFeedbackStrokeWidth</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/AL_lugPath">+ AL_lugPath</option>
+		
+		<option value="//api/name/cutoutConfigurationFromJsonFile:">+ cutoutConfigurationFromJsonFile:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithDictionary:bundlePath:">- initWithDictionary:bundlePath:</option>
+		
+		<option value="//api/name/setCutoutPathForWidth:height:">- setCutoutPathForWidth:height:</option>
+		
+		<option value="//api/name/updateCutoutWidth:">- updateCutoutWidth:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALUIConfiguration Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALUIConfiguration.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/cutoutWidthPercent" title="cutoutWidthPercent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutWidthPercent">&nbsp;&nbsp;cutoutWidthPercent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutWidthPercent</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutMaxPercentWidth" title="cutoutMaxPercentWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutMaxPercentWidth">&nbsp;&nbsp;cutoutMaxPercentWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutMaxPercentHeight" title="cutoutMaxPercentHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutMaxPercentHeight">&nbsp;&nbsp;cutoutMaxPercentHeight</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutAlignment" title="cutoutAlignment"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutAlignment">&nbsp;&nbsp;cutoutAlignment</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureResolution" title="captureResolution"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureResolution">&nbsp;&nbsp;captureResolution</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pictureResolution" title="pictureResolution"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pictureResolution">&nbsp;&nbsp;pictureResolution</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALPictureResolution pictureResolution</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureMode" title="captureMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureMode">&nbsp;&nbsp;captureMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCaptureViewMode captureMode</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutOffset" title="cutoutOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutOffset">&nbsp;&nbsp;cutoutOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint cutoutOffset</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutPath" title="cutoutPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutPath">&nbsp;&nbsp;cutoutPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) UIBezierPath *cutoutPath</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutCropPadding" title="cutoutCropPadding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutCropPadding">&nbsp;&nbsp;cutoutCropPadding</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize cutoutCropPadding</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutCropOffset" title="cutoutCropOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutCropOffset">&nbsp;&nbsp;cutoutCropOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint cutoutCropOffset</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutBackgroundColor" title="cutoutBackgroundColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutBackgroundColor">&nbsp;&nbsp;cutoutBackgroundColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *cutoutBackgroundColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overlayImage" title="overlayImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overlayImage">&nbsp;&nbsp;overlayImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIImage *overlayImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strokeColor" title="strokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *strokeColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strokeWidth" title="strokeWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strokeWidth">&nbsp;&nbsp;strokeWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger strokeWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cornerRadius" title="cornerRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cornerRadius">&nbsp;&nbsp;cornerRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger cornerRadius</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/feedbackStrokeColor" title="feedbackStrokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStrokeColor">&nbsp;&nbsp;feedbackStrokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *feedbackStrokeColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/feedbackStyle" title="feedbackStyle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStyle">&nbsp;&nbsp;feedbackStyle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackStrokeColor" title="visualFeedbackStrokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackStrokeColor">&nbsp;&nbsp;visualFeedbackStrokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *visualFeedbackStrokeColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackFillColor" title="visualFeedbackFillColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackFillColor">&nbsp;&nbsp;visualFeedbackFillColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *visualFeedbackFillColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackStrokeWidth" title="visualFeedbackStrokeWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackStrokeWidth">&nbsp;&nbsp;visualFeedbackStrokeWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackCornerRadius" title="visualFeedbackCornerRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackCornerRadius">&nbsp;&nbsp;visualFeedbackCornerRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackAnimationDuration" title="visualFeedbackAnimationDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackAnimationDuration">&nbsp;&nbsp;visualFeedbackAnimationDuration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visualFeedbackRedrawTimeout" title="visualFeedbackRedrawTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackRedrawTimeout">&nbsp;&nbsp;visualFeedbackRedrawTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backgroundColorWithoutAlpha" title="backgroundColorWithoutAlpha"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backgroundColorWithoutAlpha">&nbsp;&nbsp;backgroundColorWithoutAlpha</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *backgroundColorWithoutAlpha</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backgroundAlpha" title="backgroundAlpha"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backgroundAlpha">&nbsp;&nbsp;backgroundAlpha</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat backgroundAlpha</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashMode" title="flashMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashMode">&nbsp;&nbsp;flashMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALFlashMode flashMode</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashAlignment" title="flashAlignment"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashAlignment">&nbsp;&nbsp;flashAlignment</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALFlashAlignment flashAlignment</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashImage" title="flashImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashImage">&nbsp;&nbsp;flashImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIImage *flashImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashOffset" title="flashOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashOffset">&nbsp;&nbsp;flashOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint flashOffset</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beepOnResult" title="beepOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beepOnResult">&nbsp;&nbsp;beepOnResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL beepOnResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vibrateOnResult" title="vibrateOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vibrateOnResult">&nbsp;&nbsp;vibrateOnResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL vibrateOnResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blinkAnimationOnResult" title="blinkAnimationOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blinkAnimationOnResult">&nbsp;&nbsp;blinkAnimationOnResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL blinkAnimationOnResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelOnResult" title="cancelOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelOnResult">&nbsp;&nbsp;cancelOnResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL cancelOnResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportingEnabled" title="reportingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportingEnabled">&nbsp;&nbsp;reportingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL reportingEnabled</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutConfigurationFromJsonFile:" title="cutoutConfigurationFromJsonFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutConfigurationFromJsonFile:">+&nbsp;cutoutConfigurationFromJsonFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)cutoutConfigurationFromJsonFile:(NSString *)<em>jsonFile</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDictionary:bundlePath:" title="initWithDictionary:bundlePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:bundlePath:">&ndash;&nbsp;initWithDictionary:bundlePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em> bundlePath:(NSString *)<em>bundlePath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCutoutPathForWidth:height:" title="setCutoutPathForWidth:height:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCutoutPathForWidth:height:">&ndash;&nbsp;setCutoutPathForWidth:height:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setCutoutPathForWidth:(CGFloat)<em>width</em> height:(CGFloat)<em>height</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCutoutWidth:" title="updateCutoutWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCutoutWidth:">&ndash;&nbsp;updateCutoutWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCutoutWidth:(CGFloat)<em>width</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Paths Methods" name="task_Paths Methods"></a>
+						<h2 class="task-title">Paths Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/AL_lugPath" title="AL_lugPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_lugPath">+&nbsp;AL_lugPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (UIBezierPath *)AL_lugPath</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 9yards GmbH. All rights reserved. Updated: 2016-08-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

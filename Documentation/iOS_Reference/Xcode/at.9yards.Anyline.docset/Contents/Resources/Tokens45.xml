@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALDocumentError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="45"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorUnkown</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorGlareDetected</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorImageTooDark</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorNotSharp</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorShakeDetected</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="45"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALTorchManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
+			
+			
+			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)resetLightLevelCounter</Declaration>
+			
+			
+			<Anchor>//api/name/resetLightLevelCounter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
+			
+			
+			<Anchor>//api/name/setTorch:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)torchAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/torchAvailable</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

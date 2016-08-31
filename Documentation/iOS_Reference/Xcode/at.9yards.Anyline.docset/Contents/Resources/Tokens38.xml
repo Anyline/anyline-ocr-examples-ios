@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/AnylineEnergyModuleDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineEnergyModuleDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineEnergyModuleDelegate/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The cropped version of the image that contains the scanned number</Abstract>
+				</Parameter><Parameter>
+					<Name>fullImage</Name>
+					<Abstract type="html">The whole image used to scan the number</Abstract>
+				</Parameter><Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The mode the scanner was in at the time of scanning. Has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+				</Parameter><Parameter>
+					<Name>AnylineEnergyModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

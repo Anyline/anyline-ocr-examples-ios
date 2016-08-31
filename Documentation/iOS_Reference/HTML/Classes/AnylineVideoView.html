@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AnylineVideoView Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">9yards GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cropRect">cropRect</option>
+		
+		<option value="//api/name/cutoutView">cutoutView</option>
+		
+		<option value="//api/name/flashButton">flashButton</option>
+		
+		<option value="//api/name/torchManager">torchManager</option>
+		
+		<option value="//api/name/watermarkRect">watermarkRect</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/blink">- blink</option>
+		
+		<option value="//api/name/captureNextFrameAsHighResImage:">- captureNextFrameAsHighResImage:</option>
+		
+		<option value="//api/name/convertPoint:">- convertPoint:</option>
+		
+		<option value="//api/name/convertPoint:imageWidth:">- convertPoint:imageWidth:</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithCoder:configuration:">- initWithCoder:configuration:</option>
+		
+		<option value="//api/name/initWithFrame:">- initWithFrame:</option>
+		
+		<option value="//api/name/initWithFrame:configuration:">- initWithFrame:configuration:</option>
+		
+		<option value="//api/name/prepareForMovieCapture:">- prepareForMovieCapture:</option>
+		
+		<option value="//api/name/setFocusAndExposurePoint:">- setFocusAndExposurePoint:</option>
+		
+		<option value="//api/name/startRecording">- startRecording</option>
+		
+		<option value="//api/name/startVideoAndReturnError:">- startVideoAndReturnError:</option>
+		
+		<option value="//api/name/stopRecording:">- stopRecording:</option>
+		
+		<option value="//api/name/stopVideo">- stopVideo</option>
+		
+		<option value="//api/name/updateConfiguration:">- updateConfiguration:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AnylineVideoView Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UIView</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ALImageProvider.html">ALImageProvider</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AnylineVideoView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The AnylineVideoView renders the CapturePreview from the Camera on the screen. It also handles an efficient way to extract frames
+from the Video and provide them to Anyline with the <a href="../Protocols/ALImageProvider.html">ALImageProvider</a> protocol. It should be initialised via <a href="../Classes/ALUIConfiguration.html">ALUIConfiguration</a>.</p>
+
+<p>This View also provides appropriate <a href="#//api/name/cutoutView">cutoutView</a> and <a href="#//api/name/flashButton">flashButton</a> subViews as configured in the <a href="../Classes/ALUIConfiguration.html">ALUIConfiguration</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/flashButton" title="flashButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashButton">&nbsp;&nbsp;flashButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The FlashButton subview. Can be configured in the <a href="../Classes/ALUIConfiguration.html">ALUIConfiguration</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutView" title="cutoutView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutView">&nbsp;&nbsp;cutoutView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The CutoutView subview. Configurable with an <a href="../Classes/ALUIConfiguration.html">ALUIConfiguration</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/watermarkRect" title="watermarkRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/watermarkRect">&nbsp;&nbsp;watermarkRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGRect watermarkRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> May be nil before the layout process is completed or the license is not community.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/torchManager" title="torchManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/torchManager">&nbsp;&nbsp;torchManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALTorchManager *torchManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cropRect" title="cropRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cropRect">&nbsp;&nbsp;cropRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGRect cropRect</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrame:configuration:" title="initWithFrame:configuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:configuration:">&ndash;&nbsp;initWithFrame:configuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new AnylineVideoView with a frame and a configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em> configuration:(ALUIConfiguration *)<em>configuration</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame where the view should be positioned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configuration</code></th>
+						<td><p>The configuration used to load the video view and the subviews.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of AnylineVideoView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new AnylineVideoView with a frame. The CaptureView will be initialised with the default 720p
+video. No FlashButton or CutoutView will be initialised.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame where the view should be positioned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of AnylineVideoView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:configuration:" title="initWithCoder:configuration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:configuration:">&ndash;&nbsp;initWithCoder:configuration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new AnylineVideoView with a coder and a configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCoder:(NSCoder *)<em>aDecoder</em> configuration:(ALUIConfiguration *)<em>configuration</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configuration</code></th>
+						<td><p>The configuration used to load the video view and the subviews.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The coder to initialise the view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of AnylineVideoView</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new AnylineVideoView with a coder. The CaptureView will be initialised with the default 720p
+video. No FlashButton or CutoutView will be initialised.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCoder:(NSCoder *)<em>aDecoder</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The coder to initialise the view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of AnylineVideoView.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateConfiguration:" title="updateConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateConfiguration:">&ndash;&nbsp;updateConfiguration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateConfiguration:(ALUIConfiguration *)<em>configuration</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startVideoAndReturnError:" title="startVideoAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startVideoAndReturnError:">&ndash;&nbsp;startVideoAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startVideoAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopVideo" title="stopVideo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopVideo">&ndash;&nbsp;stopVideo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)stopVideo</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFocusAndExposurePoint:" title="setFocusAndExposurePoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFocusAndExposurePoint:">&ndash;&nbsp;setFocusAndExposurePoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setFocusAndExposurePoint:(CGPoint)<em>point</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blink" title="blink"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blink">&ndash;&nbsp;blink</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)blink</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertPoint:" title="convertPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertPoint:">&ndash;&nbsp;convertPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertPoint:imageWidth:" title="convertPoint:imageWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertPoint:imageWidth:">&ndash;&nbsp;convertPoint:imageWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em> imageWidth:(CGFloat)<em>inWidth</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareForMovieCapture:" title="prepareForMovieCapture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareForMovieCapture:">&ndash;&nbsp;prepareForMovieCapture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)prepareForMovieCapture:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startRecording" title="startRecording"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startRecording">&ndash;&nbsp;startRecording</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)startRecording</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopRecording:" title="stopRecording:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopRecording:">&ndash;&nbsp;stopRecording:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)stopRecording:(void ( ^ ) ( NSURL *fileURL ))<em>handler</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureNextFrameAsHighResImage:" title="captureNextFrameAsHighResImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureNextFrameAsHighResImage:">&ndash;&nbsp;captureNextFrameAsHighResImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)captureNextFrameAsHighResImage:(BOOL)<em>capt</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 9yards GmbH. All rights reserved. Updated: 2016-08-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

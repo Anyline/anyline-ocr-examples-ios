@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALCaptureViewResolution.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="43"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution1080</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCaptureViewResolution1080</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution720</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCaptureViewResolution720</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution480</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCaptureViewResolution480</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

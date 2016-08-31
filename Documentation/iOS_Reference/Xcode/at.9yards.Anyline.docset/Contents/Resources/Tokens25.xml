@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AnylineBarcodeModuleView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineBarcodeModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineBarcodeModuleView class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/set:</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *__deprecated_msg ( &quot;Deprecated since 3.4 Use setBarcodeFormats:error: instead.&quot; )</Declaration>
+			
+			
+			<Anchor>//api/name/)</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/)</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *__deprecated_msg ( &quot;Deprecated since 3.4 Use setBarcodeFormats:error: instead.&quot; )</Declaration>
+			
+			
+			<Anchor>//api/name/)</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/)</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *__deprecated_msg ( &quot;Deprecated since 3.4 Use setBarcodeFormats:error: instead.&quot; )</Declaration>
+			
+			
+			<Anchor>//api/name/)</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeFormatOptions:</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineBarcodeModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineBarcodeModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

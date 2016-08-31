@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ALImageProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ALImageProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">Method with which Anyline will request the next Image to analyse.</Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler which should be called when the next frame/image
+is available.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/provideNewImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewFullResolutionImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/provideNewFullResolutionImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideStillImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/provideStillImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

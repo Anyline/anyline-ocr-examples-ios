@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALScanMode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanMode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="52"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALElectricMeter</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter5_1</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALElectricMeter5_1</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter6_1</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALElectricMeter6_1</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeterWhite</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALAnalogMeterWhite</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter4</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALAnalogMeter4</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter7</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALAnalogMeter7</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALGasMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALGasMeter</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALGasMeter6</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALGasMeter6</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALBarcode</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALSerialNumber</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALSerialNumber</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALWaterMeterBlackBackground</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALWaterMeterBlackBackground</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALWaterMeterWhiteBackground</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALWaterMeterWhiteBackground</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDigitalMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDigitalMeter</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter4</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter4</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter5</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter5</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter6</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter6</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

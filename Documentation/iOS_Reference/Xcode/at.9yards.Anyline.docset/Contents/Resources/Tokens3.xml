@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALDataPoint.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDataPoint</TokenIdentifier>
+			<Abstract type="html">Specifies a DataPoint where in the ROI the interesting part is.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setArea:</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/area</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/area</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIndexPath:</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithArea:indexPath:identifier:</TokenIdentifier>
+			<Abstract type="html">Initialise a new DataPoint.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>area</Name>
+					<Abstract type="html">The area where the DataPoint in the ROI is found.</Abstract>
+				</Parameter><Parameter>
+					<Name>indexPath</Name>
+					<Abstract type="html">The indexPath for this DataPoint.</Abstract>
+				</Parameter><Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">An identifier for this DataPoint.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithArea:indexPath:identifier:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise a new DataPoint with a representing dictionary.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">A dictionary representing a DataPoint object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ALDataPoint/dataPointForDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise ether a new DigitDataPoint or TextDataPoint depending on the dictionary</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>+ (ALDataPoint *)dataPointForDictionary:(NSDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">The dictionary with the representing DataPoint.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New Text -or DigitDataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/dataPointForDictionary:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

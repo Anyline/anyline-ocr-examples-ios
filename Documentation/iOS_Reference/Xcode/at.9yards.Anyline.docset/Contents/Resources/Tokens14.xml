@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALReporting.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALReporting</TokenIdentifier>
+			<Abstract type="html">The Anyline Reporting takes care of building the current scan rounds ALReportingModel, which
+is then further processed / uploaded by the ALAzureService</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ALReporting/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Singleton accessor</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">instance of ALReporting</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ALReporting/enableReporting:</TokenIdentifier>
+			<Abstract type="html">Reporting ON / OFF Switch</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>+ (void)enableReporting:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">YES if reporting shall be enabled, NO otherwise</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableReporting:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/nextRound</TokenIdentifier>
+			<Abstract type="html">Call when the next Image is being processed by anyline</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>- (void)nextRound</Declaration>
+			
+			
+			<Anchor>//api/name/nextRound</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/userDidFocusOnTarget:</TokenIdentifier>
+			<Abstract type="html">Call when the User did focus on target event, with current image</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>- (void)userDidFocusOnTarget:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">the image the user did focus too</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userDidFocusOnTarget:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/resultDidValidate:withResult:</TokenIdentifier>
+			<Abstract type="html">* Call when the found result did or did not validate by the delegate
+*
+* @param didValidate Set YES if the result validates, NO otherwise
+# @param result the scan result object from anyline which did or did not validate</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>- (void)resultDidValidate:(BOOL)didValidate withResult:(id)result</Declaration>
+			
+			
+			<Anchor>//api/name/resultDidValidate:withResult:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/reportScanResultState:</TokenIdentifier>
+			<Abstract type="html">Call when the user did finish the scan either successfully or not.
+The result will be reported.</Abstract>
+			<DeclaredIn>ALReporting.h</DeclaredIn>
+			
+			<Declaration>- (void)reportScanResultState:(ALScanResultState)scanResultState</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>the</Name>
+					<Abstract type="html">@ALScanResultState of the scan result state</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/reportScanResultState:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

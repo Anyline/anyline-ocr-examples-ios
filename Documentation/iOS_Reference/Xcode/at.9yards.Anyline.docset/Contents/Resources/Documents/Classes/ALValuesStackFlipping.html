@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALValuesStackFlipping Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">9yards GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:">- initWithSize:minimalEqualResults:allowSameValueConsecutively:</option>
+		
+		<option value="//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:">- initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALValuesStackFlipping Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALValuesStack.html">ALValuesStack</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALValuesStackFlipping.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An implementation of the ValuesStack which support ROI which switch information.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:" title="initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:">&ndash;&nbsp;initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSize:(NSInteger)<em>size</em> minimalEqualResults:(NSInteger)<em>minEqualResults</em> allowSameValueConsecutively:(BOOL)<em>consecutivelyValue</em> acceptPartialResultSize:(NSInteger)<em>partialResultSize</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>The size of the ValuesStack.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minEqualResults</code></th>
+						<td><p>The minimum equal results needed for a new result.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>consecutivelyValue</code></th>
+						<td><p>indicator if consective same results are allowed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>partialResultSize</code></th>
+						<td><p>size for partialresult array to be accepted if other partial result = 0.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>new ValuesStack object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALValuesStackFlipping.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:" title="initWithSize:minimalEqualResults:allowSameValueConsecutively:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:">&ndash;&nbsp;initWithSize:minimalEqualResults:allowSameValueConsecutively:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithSize:(NSInteger)<em>size</em> minimalEqualResults:(NSInteger)<em>minEqualResults</em> allowSameValueConsecutively:(BOOL)<em>consecutivelyValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>The size of the ValuesStack.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minEqualResults</code></th>
+						<td><p>The minimum equal results needed for a new result.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>consecutivelyValue</code></th>
+						<td><p>indicator if consective same results are allowed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>new ValuesStack object.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALValuesStackFlipping.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 9yards GmbH. All rights reserved. Updated: 2016-08-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

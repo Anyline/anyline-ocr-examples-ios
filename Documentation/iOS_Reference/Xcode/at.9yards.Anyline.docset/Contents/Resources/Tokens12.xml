@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ALOCRResult.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setText:</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/text</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/text</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setImage:</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/image</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/image</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
+			
+			
+			<Anchor>//api/name/thresholdedImage</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
+			
+			
+			<Anchor>//api/name/thresholdedImage</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
+			
+			
+			<Anchor>//api/name/thresholdedImage</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithText:(NSString *)text image:(UIImage *)image thresholdedImage:(UIImage *)thresholdedImage</Declaration>
+			
+			
+			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
