@@ -39,7 +39,7 @@ After the framework and bundle got imported go to your project inspector. In the
 * AssetsLibrary.framework
 
 After adding the libraries, it should look like this (notice the AnylineResources bundle, if its not in Copy Bundle Resources add it): 
-![Link Frameworks](/images/LinkFrameworks.jpg)
+![Link Frameworks](/images/LinkFrameworks.png)
 
 ### 3. Linker Flags
 
@@ -77,4 +77,10 @@ Detailed information about how to configure and implement Anyline: [Documentatio
 To claim a free developer / trial license, go to: [Anyline SDK Register Form](http://anyline.io/sdk-register?utm_source=githubios&utm_medium=readme&utm_campaign=examplesapp
 )
 The software underlies the MIT License. As Anyline is a paid software for Commerical Projects, the License Agreement of Anyline GmbH apply, when used commercially. Please have a look at [Anyline License Agreement](https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/12/ULA-AnylineSDK-August2015.pdf)
+
+
+# KITT <3
+
+![KITT] (images/visualFeedback/kitt/contour_point.gif)
+
 
