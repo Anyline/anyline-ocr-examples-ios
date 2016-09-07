@@ -13,6 +13,8 @@
 		1C8A2ECF1D52A3E400B51B70 /* license_plate_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A2EC91D52A3E400B51B70 /* license_plate_view_config.json */; };
 		1C8A2ED01D52A3E400B51B70 /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A2ECC1D52A3E400B51B70 /* ALLicensePlateViewController.m */; };
 		1CAC154D1AB5B7BD00963174 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC154C1AB5B7BD00963174 /* Images.xcassets */; };
+		1CB90A0A1D8079A500723F1E /* ALVINScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB90A081D8079A500723F1E /* ALVINScanViewController.m */; };
+		1CB90A0B1D8079A500723F1E /* VIN_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CB90A091D8079A500723F1E /* VIN_config.json */; };
 		1CF4299C1AE7FA6900FBC519 /* ALMultiformatBarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4299B1AE7FA6900FBC519 /* ALMultiformatBarcodeScanViewController.m */; };
 		399512481B13F36100133823 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1C85B51A83E5E30077B84E /* LaunchScreen.xib */; };
 		399512491B13F36500133823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1C85B71A83E5E30077B84E /* Main.storyboard */; };
@@ -88,6 +90,9 @@
 		1C8A2ECB1D52A3E400B51B70 /* ALLicensePlateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateViewController.h; sourceTree = "<group>"; };
 		1C8A2ECC1D52A3E400B51B70 /* ALLicensePlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateViewController.m; sourceTree = "<group>"; };
 		1CAC154C1AB5B7BD00963174 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1CB90A071D8079A500723F1E /* ALVINScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALVINScanViewController.h; sourceTree = "<group>"; };
+		1CB90A081D8079A500723F1E /* ALVINScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALVINScanViewController.m; sourceTree = "<group>"; };
+		1CB90A091D8079A500723F1E /* VIN_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VIN_config.json; sourceTree = "<group>"; };
 		1CF4299A1AE7FA6900FBC519 /* ALMultiformatBarcodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALMultiformatBarcodeScanViewController.h; path = MultiformatBarcode/ViewController/ALMultiformatBarcodeScanViewController.h; sourceTree = "<group>"; };
 		1CF4299B1AE7FA6900FBC519 /* ALMultiformatBarcodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ALMultiformatBarcodeScanViewController.m; path = MultiformatBarcode/ViewController/ALMultiformatBarcodeScanViewController.m; sourceTree = "<group>"; };
 		63046BB41C720D0D0035F08B /* ALScrabbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrabbleViewController.h; sourceTree = "<group>"; };
@@ -246,6 +251,7 @@
 				65C29DC41C63304500B98F9D /* IBAN */,
 				65318D461B21EAF4002C9350 /* MRZ */,
 				1C1C85F21A83E6100077B84E /* MeterScan */,
+				1CB90A051D8079A500723F1E /* VIN */,
 				1CF429981AE7F9D900FBC519 /* MultiformatBarcode */,
 				6340E8951C4E498C00A42129 /* Document */,
 				630C81241C72255E008097EF /* Utility */,
@@ -286,6 +292,24 @@
 				6357C7721D5CDB05005247BC /* ALLicensePlateATViewController.m */,
 				6357C7731D5CDB05005247BC /* ALLicensePlateDEViewController.h */,
 				6357C7741D5CDB05005247BC /* ALLicensePlateDEViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1CB90A051D8079A500723F1E /* VIN */ = {
+			isa = PBXGroup;
+			children = (
+				1CB90A061D8079A500723F1E /* ViewController */,
+				1CB90A091D8079A500723F1E /* VIN_config.json */,
+			);
+			path = VIN;
+			sourceTree = "<group>";
+		};
+		1CB90A061D8079A500723F1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CB90A071D8079A500723F1E /* ALVINScanViewController.h */,
+				1CB90A081D8079A500723F1E /* ALVINScanViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -709,6 +733,7 @@
 				1C8A2ECF1D52A3E400B51B70 /* license_plate_view_config.json in Resources */,
 				65A3E97A1D75C5DE00CEFF15 /* license_plates_d.ale in Resources */,
 				65A3E9801D75C5E900CEFF15 /* Arial.traineddata in Resources */,
+				1CB90A0B1D8079A500723F1E /* VIN_config.json in Resources */,
 				399512491B13F36500133823 /* Main.storyboard in Resources */,
 				65C29DCE1C635DD400B98F9D /* iban_config.json in Resources */,
 				65C29DFE1C64970F00B98F9D /* bottlecap_config.json in Resources */,
@@ -763,6 +788,7 @@
 				63046BB81C720D0D0035F08B /* ALScrabbleViewController.m in Sources */,
 				65C29DF11C6496F900B98F9D /* ALRBScanViewController.m in Sources */,
 				63DC39F51C720857001B2F00 /* ALISBNAPI.m in Sources */,
+				1CB90A0A1D8079A500723F1E /* ALVINScanViewController.m in Sources */,
 				65318D511B21EAF4002C9350 /* ALMRZScanViewController.m in Sources */,
 				63046BC31C720D260035F08B /* ALScrabbleWord.m in Sources */,
 				65C29DC31C63300400B98F9D /* ALRoundedView.m in Sources */,
