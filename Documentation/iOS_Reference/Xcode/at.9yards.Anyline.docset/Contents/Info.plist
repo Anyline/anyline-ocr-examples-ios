@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>at.9yards.Anyline</string>
+	<string>io.anyline.Anyline</string>
 	<key>CFBundleName</key>
 	<string>Anyline Documentation</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,10 +26,10 @@
 	<key>DashDocSetFamily</key>
 	<string>appledoc</string>
 	<key>DocSetPublisherIdentifier</key>
-	<string>at.9yards.documentation</string>
+	<string>io.anyline.documentation</string>
 	<key>DocSetPublisherName</key>
-	<string>9yards GmbH</string>
+	<string>Anyline GmbH</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 9yards GmbH. All rights reserved.</string>
+	<string>Copyright © 2016 Anyline GmbH. All rights reserved.</string>
 </dict>
 </plist>

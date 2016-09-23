@@ -1241,7 +1241,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL reportingEnabled</Declaration>
+			<Declaration>@property (nonatomic, assign) ALReportingMode reportingEnabled</Declaration>
 			
 			
 			<Anchor>//api/name/reportingEnabled</Anchor>
@@ -1253,7 +1253,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL reportingEnabled</Declaration>
+			<Declaration>@property (nonatomic, assign) ALReportingMode reportingEnabled</Declaration>
 			
 			
 			<Anchor>//api/name/reportingEnabled</Anchor>
@@ -1265,7 +1265,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL reportingEnabled</Declaration>
+			<Declaration>@property (nonatomic, assign) ALReportingMode reportingEnabled</Declaration>
 			
 			
 			<Anchor>//api/name/reportingEnabled</Anchor>

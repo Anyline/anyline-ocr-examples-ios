@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALOCRScanMode Constants Reference</title>
+	<title>ALReportingMode Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALOCRScanMode Constants Reference</h1>
+					<h1 class="title">ALReportingMode Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>AnylineOCRModuleView.h</td>
+	<td>ALUIConfiguration.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,23 +75,19 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">ALOCRScanMode</h3>
+                    <h3 class="subsubtitle method-title">ALReportingMode</h3>
                     
-					
-					<div class="section section-overview">
-                        <p>The possible scanModes for the AnylineOCR module</p>
-					</div>
-					
-					
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, ALOCRScanMode ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, ALReportingMode ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">ALLine</a>,<br>
+                            &nbsp;&nbsp; <a href="">ALReportingEnabled</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">ALGrid</a>,<br>
+                            &nbsp;&nbsp; <a href="">ALReportingDisabled</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALReportingNotSet</a>,<br>
                             
                             };</code>
                     
@@ -101,37 +97,32 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="ALLine"></a><code>ALLine</code></dt>
+                            <dt><a name="" title="ALReportingEnabled"></a><code>ALReportingEnabled</code></dt>
 <dd>
-
-
-<p>The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).</p>
-
-
-
-
 
     
 	<p>
-		Declared In <code class="declared-in-ref">AnylineOCRModuleView.h</code>.
+		Declared In <code class="declared-in-ref">ALUIConfiguration.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="ALGrid"></a><code>ALGrid</code></dt>
+                            <dt><a name="" title="ALReportingDisabled"></a><code>ALReportingDisabled</code></dt>
 <dd>
-
-
-<p>The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).</p>
-
-
-
-
 
     
 	<p>
-		Declared In <code class="declared-in-ref">AnylineOCRModuleView.h</code>.
+		Declared In <code class="declared-in-ref">ALUIConfiguration.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALReportingNotSet"></a><code>ALReportingNotSet</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALUIConfiguration.h</code>.
 	</p>
 	
 </dd>
@@ -140,17 +131,6 @@ with a constant font, background and character count (like loyalty codes inside 
                     </div>
                     
 
-                    
-                    
-
-                    
-
-                    
-                    <div class="method-subsection declared-in-section">
-                        <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
-                    </div>
-                    
                     
                     
                     

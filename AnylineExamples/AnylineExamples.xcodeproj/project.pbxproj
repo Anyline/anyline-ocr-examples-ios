@@ -38,6 +38,8 @@
 		6511FCF21A84D1BA00126A36 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511FCF11A84D1BA00126A36 /* ALExample.m */; };
 		6511FCF51A84D21400126A36 /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511FCF41A84D21400126A36 /* ALExampleManager.m */; };
 		6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6520CB531AEF8AB500A01920 /* libiconv.dylib */; };
+		65281F341D9295FE00C292AA /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65281F321D9295FE00C292AA /* Anyline.framework */; };
+		65281F351D9295FE00C292AA /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65281F331D9295FE00C292AA /* AnylineResources.bundle */; };
 		65318D511B21EAF4002C9350 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65318D4C1B21EAF4002C9350 /* ALMRZScanViewController.m */; };
 		65318D521B21EAF4002C9350 /* ALIdentificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65318D4F1B21EAF4002C9350 /* ALIdentificationView.m */; };
 		654077DA1A836D76001652B1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 654077D71A836D76001652B1 /* libc++.dylib */; };
@@ -52,8 +54,6 @@
 		65A3E97F1D75C5E900CEFF15 /* Alte.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 65A3E97C1D75C5E900CEFF15 /* Alte.traineddata */; };
 		65A3E9801D75C5E900CEFF15 /* Arial.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 65A3E97D1D75C5E900CEFF15 /* Arial.traineddata */; };
 		65A3E9811D75C5E900CEFF15 /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 65A3E97E1D75C5E900CEFF15 /* GL-Nummernschild-Mtl7_uml.traineddata */; };
-		65A3E9861D75E1A600CEFF15 /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A3E9841D75E1A600CEFF15 /* Anyline.framework */; };
-		65A3E9871D75E1A600CEFF15 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65A3E9851D75E1A600CEFF15 /* AnylineResources.bundle */; };
 		65BC67ED1C6B9D4D00D5046C /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C29DBE1C63300400B98F9D /* ALDocumentScanViewController.m */; };
 		65BE61AA1A8911D2003E517E /* MeterImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BE61A91A8911D2003E517E /* MeterImagesAssets.xcassets */; };
 		65BE61B01A8911DD003E517E /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE61AD1A8911DD003E517E /* ALMeterScanResultViewController.m */; };
@@ -132,6 +132,8 @@
 		6511FCF31A84D21400126A36 /* ALExampleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALExampleManager.h; sourceTree = "<group>"; };
 		6511FCF41A84D21400126A36 /* ALExampleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALExampleManager.m; sourceTree = "<group>"; };
 		6520CB531AEF8AB500A01920 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		65281F321D9295FE00C292AA /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
+		65281F331D9295FE00C292AA /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		65318D4B1B21EAF4002C9350 /* ALMRZScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMRZScanViewController.h; sourceTree = "<group>"; };
 		65318D4C1B21EAF4002C9350 /* ALMRZScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMRZScanViewController.m; sourceTree = "<group>"; };
 		65318D4E1B21EAF4002C9350 /* ALIdentificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALIdentificationView.h; sourceTree = "<group>"; };
@@ -152,8 +154,6 @@
 		65A3E97C1D75C5E900CEFF15 /* Alte.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alte.traineddata; sourceTree = "<group>"; };
 		65A3E97D1D75C5E900CEFF15 /* Arial.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.traineddata; sourceTree = "<group>"; };
 		65A3E97E1D75C5E900CEFF15 /* GL-Nummernschild-Mtl7_uml.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GL-Nummernschild-Mtl7_uml.traineddata"; sourceTree = "<group>"; };
-		65A3E9841D75E1A600CEFF15 /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
-		65A3E9851D75E1A600CEFF15 /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		65A95F0B1AEFD6B900A5F196 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		65BE61A91A8911D2003E517E /* MeterImagesAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MeterImagesAssets.xcassets; sourceTree = "<group>"; };
 		65BE61AC1A8911DD003E517E /* ALMeterScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMeterScanResultViewController.h; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				63C7FF5A1BA2F6580035C435 /* libz.dylib in Frameworks */,
 				654079F31B4D4AC300145834 /* AssetsLibrary.framework in Frameworks */,
 				654077DB1A836D76001652B1 /* libstdc++.6.0.9.dylib in Frameworks */,
-				65A3E9861D75E1A600CEFF15 /* Anyline.framework in Frameworks */,
+				65281F341D9295FE00C292AA /* Anyline.framework in Frameworks */,
 				654077DA1A836D76001652B1 /* libc++.dylib in Frameworks */,
 				6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */,
 			);
@@ -400,6 +400,23 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		65281F301D9295E900C292AA /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				65281F311D9295F100C292AA /* Anyline */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		65281F311D9295F100C292AA /* Anyline */ = {
+			isa = PBXGroup;
+			children = (
+				65281F321D9295FE00C292AA /* Anyline.framework */,
+				65281F331D9295FE00C292AA /* AnylineResources.bundle */,
+			);
+			name = Anyline;
+			sourceTree = "<group>";
+		};
 		65318D461B21EAF4002C9350 /* MRZ */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,7 +447,7 @@
 		6540778B1A836787001652B1 = {
 			isa = PBXGroup;
 			children = (
-				65A3E9821D75E18C00CEFF15 /* Vendor */,
+				65281F301D9295E900C292AA /* Vendor */,
 				1C1C85F01A83E6100077B84E /* Anyline Examples Source */,
 				1C1C85AC1A83E5E30077B84E /* Anyline Demo App */,
 				654077D11A836C80001652B1 /* Frameworks */,
@@ -457,23 +474,6 @@
 				654077D81A836D76001652B1 /* libstdc++.6.0.9.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		65A3E9821D75E18C00CEFF15 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				65A3E9831D75E19300CEFF15 /* Anyline */,
-			);
-			name = Vendor;
-			sourceTree = "<group>";
-		};
-		65A3E9831D75E19300CEFF15 /* Anyline */ = {
-			isa = PBXGroup;
-			children = (
-				65A3E9841D75E1A600CEFF15 /* Anyline.framework */,
-				65A3E9851D75E1A600CEFF15 /* AnylineResources.bundle */,
-			);
-			name = Anyline;
 			sourceTree = "<group>";
 		};
 		65BE61AB1A8911DD003E517E /* ViewController */ = {
@@ -669,11 +669,12 @@
 		6540778C1A836787001652B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "9yards GmbH";
 				TargetAttributes = {
 					654077931A836787001652B1 = {
 						CreatedOnToolsVersion = 6.1.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -702,7 +703,7 @@
 			files = (
 				65A3E9791D75C5DE00CEFF15 /* license_plates_a.ale in Resources */,
 				65A3E9811D75C5E900CEFF15 /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */,
-				65A3E9871D75E1A600CEFF15 /* AnylineResources.bundle in Resources */,
+				65281F351D9295FE00C292AA /* AnylineResources.bundle in Resources */,
 				65C29DF81C64970200B98F9D /* scrabble_config.json in Resources */,
 				399512481B13F36100133823 /* LaunchScreen.xib in Resources */,
 				65C29DE91C648B8000B98F9D /* record_number_config.json in Resources */,
@@ -808,8 +809,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -818,6 +821,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -851,8 +855,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -860,6 +866,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -881,6 +888,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -890,14 +898,16 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"ANYLINE_DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -909,6 +919,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -916,12 +927,13 @@
 					"$(PROJECT_DIR)/../Framework",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -10,6 +10,13 @@
 #import "ALCutoutView.h"
 #import "ALViewConstants.h"
 
+typedef NS_ENUM(NSInteger, ALReportingMode) {
+    
+    ALReportingEnabled,
+    ALReportingDisabled,
+    ALReportingNotSet
+};
+
 @interface ALUIConfiguration : NSObject
 
 @property (nonatomic, assign) CGFloat cutoutWidthPercent;
@@ -51,7 +58,7 @@
 @property (nonatomic, assign) BOOL blinkAnimationOnResult;
 @property (nonatomic, assign) BOOL cancelOnResult;
 
-@property (nonatomic, assign) BOOL reportingEnabled;
+@property (nonatomic, assign) ALReportingMode reportingEnabled;
 
 
 + (instancetype)cutoutConfigurationFromJsonFile:(NSString *)jsonFile;

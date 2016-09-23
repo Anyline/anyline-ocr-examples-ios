@@ -84,6 +84,7 @@
 						<NodeRef refid="52"/>
 						<NodeRef refid="53"/>
 						<NodeRef refid="54"/>
+						<NodeRef refid="55"/>
 						
 					</Subnodes>
 				</Node>
@@ -93,7 +94,7 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="55"/>
+                        <NodeRef refid="56"/>
                         
                     </Subnodes>
                 </Node>
@@ -1388,22 +1389,27 @@
             
         </Node>
 		<Node id="52" type="file" documentType="reference">
+            <Name>ALReportingMode</Name>
+            <Path>Constants/ALReportingMode.html</Path>
+            
+        </Node>
+		<Node id="53" type="file" documentType="reference">
             <Name>ALScanMode</Name>
             <Path>Constants/ALScanMode.html</Path>
             
         </Node>
-		<Node id="53" type="file" documentType="reference">
+		<Node id="54" type="file" documentType="reference">
             <Name>ALScanResultState</Name>
             <Path>Constants/ALScanResultState.html</Path>
             
         </Node>
-		<Node id="54" type="file" documentType="reference">
+		<Node id="55" type="file" documentType="reference">
             <Name>ALUIFeedbackStyle</Name>
             <Path>Constants/ALUIFeedbackStyle.html</Path>
             
         </Node>
 		
-        <Node id="55" type="file" documentType="reference">
+        <Node id="56" type="file" documentType="reference">
             <Name>ALImageProviderBlock</Name>
             <Path>Blocks/ALImageProviderBlock.html</Path>
             

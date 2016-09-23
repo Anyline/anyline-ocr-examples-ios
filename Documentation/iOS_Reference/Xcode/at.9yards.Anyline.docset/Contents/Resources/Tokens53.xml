@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALScanResultState.html">
+	<File path="Constants/ALScanMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALScanResultState</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResultState.h</DeclaredIn>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="53"/>
@@ -14,131 +14,161 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidAbortState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultUserDidAbortState</Declaration>
+            <Declaration>ALElectricMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanSuccessfulState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter5_1</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanSuccessfulState</Declaration>
+            <Declaration>ALElectricMeter5_1</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorWrongResultState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALElectricMeter6_1</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorWrongResultState</Declaration>
+            <Declaration>ALElectricMeter6_1</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidEnterManuallyState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeterWhite</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultUserDidEnterManuallyState</Declaration>
+            <Declaration>ALAnalogMeterWhite</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyUsedState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter4</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorResultAlreadyUsedState</Declaration>
+            <Declaration>ALAnalogMeter4</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyExpiredState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter7</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorResultAlreadyExpiredState</Declaration>
+            <Declaration>ALAnalogMeter7</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountInactive</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALGasMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserAccountInactive</Declaration>
+            <Declaration>ALGasMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountLocked</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALGasMeter6</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserAccountLocked</Declaration>
+            <Declaration>ALGasMeter6</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserReachedScanLimit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserReachedScanLimit</Declaration>
+            <Declaration>ALBarcode</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateNetworkTimeout</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALSerialNumber</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateNetworkTimeout</Declaration>
+            <Declaration>ALSerialNumber</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleSuccess</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALWaterMeterBlackBackground</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateModuleSuccess</Declaration>
+            <Declaration>ALWaterMeterBlackBackground</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleAbort</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALWaterMeterWhiteBackground</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateModuleAbort</Declaration>
+            <Declaration>ALWaterMeterWhiteBackground</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUnknownError</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDigitalMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUnknownError</Declaration>
+            <Declaration>ALDigitalMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="53"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter4</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter4</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="53"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter5</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter5</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="53"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter6</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter6</Declaration>
+            
+            <DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
             <NodeRef refid="53"/>
         </Token>

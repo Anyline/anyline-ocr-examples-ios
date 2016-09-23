@@ -1,5 +1,15 @@
 # Anyline SDK iOS Release Notes #
 
+## Anyline SDK 3.7.0 ##
+Release Date 2016-09-23
+
+### Improved ###
+- Energy: speed improvements
+
+### Fixed ###
+- Energy: Serial number scanning
+- better find resources algorithm
+
 
 ## Anyline SDK 3.6.1 ##
 Release Date 2016-08-30
@@ -23,6 +33,7 @@ Release Date 2016-07-13
 - added Anyline namespace to dispatch timer
 - all config paramters are now ignored when using a custom script
 
+
 ## Anyline SDK 3.5.1 ##
 Release Date 2016-06-07
 
@@ -42,6 +53,7 @@ Release Date 2016-06-07
 ### Fixed ###
 - "Watermark not original" error message
 - Check if AppDelegate has window
+
 
 ## Anyline SDK 3.5 ##
 Release Date 2016-05-04
@@ -76,6 +88,7 @@ Release Date 2016-05-04
 - AnylineOCR:
 - fixed a bug where the reported text outline was positioned incorrectly if the cutout contained a crop
 - fixed a bug where GRID mode would crash if min and maxCharHeight where not set
+
 
 ## Anyline SDK 3.4.1 ##
 Release Date 2016-03-30

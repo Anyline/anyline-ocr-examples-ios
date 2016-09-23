@@ -430,29 +430,14 @@ and use the reportScanResultState: for reporting</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/reportScanResultState:</TokenIdentifier>
-			<Abstract type="html">Report scan result</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/notifyScanningHasBeenCanceled</TokenIdentifier>
+			<Abstract type="html">Reports a cancel of a scan</Abstract>
 			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)reportScanResultState:(ALScanResultState)scanResultState</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scanResultState</Name>
-					<Abstract type="html">There are 3 different possible states.
-
-ALScanResultUserDidAbortState - The App should report this state to Anyline when the user stopped scanning / switched
-to manual entry without scanning 1 successful entry. When there was a successful scan
-stopping should be ignored.
-
-ALScanResultScanSuccessfulState - The App should report this state to Anyline when Anyline returned a value and the value
-was validated by the backend or the user.
-
-ALScanResultScanErrorWrongResultState - The App should report this state to Anyline when the result from Anyline was wrong
-or the user edited the values.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)notifyScanningHasBeenCanceled</Declaration>
 			
-			<Anchor>//api/name/reportScanResultState:</Anchor>
+			
+			<Anchor>//api/name/notifyScanningHasBeenCanceled</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
