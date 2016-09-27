@@ -64,8 +64,8 @@ NSString * const kHashtagCodeLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0i
     }
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"hashtag_code_config" ofType:@"json"];
-    ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = ibanConf;
+    ALUIConfiguration *hastagConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
+    self.ocrModuleView.currentConfiguration = hastagConf;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.ocrModuleView];
