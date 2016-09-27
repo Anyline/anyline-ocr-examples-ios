@@ -38,6 +38,8 @@
 		6511FCF21A84D1BA00126A36 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511FCF11A84D1BA00126A36 /* ALExample.m */; };
 		6511FCF51A84D21400126A36 /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511FCF41A84D21400126A36 /* ALExampleManager.m */; };
 		6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6520CB531AEF8AB500A01920 /* libiconv.dylib */; };
+		6526ED121D9AB83800C63CD9 /* hashtag_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 6526ED0E1D9AB83800C63CD9 /* hashtag_code_config.json */; };
+		6526ED131D9AB83800C63CD9 /* ALHashtagCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526ED111D9AB83800C63CD9 /* ALHashtagCodeScanViewController.m */; };
 		65281F341D9295FE00C292AA /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65281F321D9295FE00C292AA /* Anyline.framework */; };
 		65281F351D9295FE00C292AA /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65281F331D9295FE00C292AA /* AnylineResources.bundle */; };
 		65318D511B21EAF4002C9350 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65318D4C1B21EAF4002C9350 /* ALMRZScanViewController.m */; };
@@ -132,6 +134,9 @@
 		6511FCF31A84D21400126A36 /* ALExampleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALExampleManager.h; sourceTree = "<group>"; };
 		6511FCF41A84D21400126A36 /* ALExampleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALExampleManager.m; sourceTree = "<group>"; };
 		6520CB531AEF8AB500A01920 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		6526ED0E1D9AB83800C63CD9 /* hashtag_code_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hashtag_code_config.json; sourceTree = "<group>"; };
+		6526ED101D9AB83800C63CD9 /* ALHashtagCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALHashtagCodeScanViewController.h; sourceTree = "<group>"; };
+		6526ED111D9AB83800C63CD9 /* ALHashtagCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALHashtagCodeScanViewController.m; sourceTree = "<group>"; };
 		65281F321D9295FE00C292AA /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
 		65281F331D9295FE00C292AA /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		65318D4B1B21EAF4002C9350 /* ALMRZScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMRZScanViewController.h; sourceTree = "<group>"; };
@@ -236,6 +241,7 @@
 		1C1C85F01A83E6100077B84E /* Anyline Examples Source */ = {
 			isa = PBXGroup;
 			children = (
+				6526ED0D1D9AB83800C63CD9 /* Hashtag */,
 				1C8A2EC81D52A3E400B51B70 /* LicensePlate */,
 				65C29DF91C64970F00B98F9D /* Bottlecap */,
 				65C29DF21C64970200B98F9D /* Scrabble */,
@@ -397,6 +403,24 @@
 				63DC39F41C720857001B2F00 /* ISBNInfo.m */,
 			);
 			name = ISBNAPI;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6526ED0D1D9AB83800C63CD9 /* Hashtag */ = {
+			isa = PBXGroup;
+			children = (
+				6526ED0E1D9AB83800C63CD9 /* hashtag_code_config.json */,
+				6526ED0F1D9AB83800C63CD9 /* ViewController */,
+			);
+			path = Hashtag;
+			sourceTree = "<group>";
+		};
+		6526ED0F1D9AB83800C63CD9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6526ED101D9AB83800C63CD9 /* ALHashtagCodeScanViewController.h */,
+				6526ED111D9AB83800C63CD9 /* ALHashtagCodeScanViewController.m */,
+			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -720,6 +744,7 @@
 				65BE61AA1A8911D2003E517E /* MeterImagesAssets.xcassets in Resources */,
 				65A3E97F1D75C5E900CEFF15 /* Alte.traineddata in Resources */,
 				65C29DE21C648B7500B98F9D /* isbn_config.json in Resources */,
+				6526ED121D9AB83800C63CD9 /* hashtag_code_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +763,7 @@
 				65421A1A1C0E308900643637 /* ALElectricMeterScanViewController.m in Sources */,
 				1C1C85EF1A83E5E30077B84E /* main.m in Sources */,
 				63046BB91C720D0D0035F08B /* ALScrabbleLabel.m in Sources */,
+				6526ED131D9AB83800C63CD9 /* ALHashtagCodeScanViewController.m in Sources */,
 				65BC67ED1C6B9D4D00D5046C /* ALDocumentScanViewController.m in Sources */,
 				630C81381C72311B008097EF /* ALResultOverlayView.m in Sources */,
 				637DE9931D36804A00E9B7D4 /* Reachability.m in Sources */,

@@ -27,6 +27,7 @@
 #import "ALLicensePlateViewController.h"
 #import "ALLicensePlateDEViewController.h"
 #import "ALLicensePlateATViewController.h"
+#import "ALHashtagCodeScanViewController.h"
 
 @interface ALExampleManager ()
 
@@ -106,6 +107,9 @@
     ALExample *licensePlateScanningDE = [[ALExample alloc] initWithName:NSLocalizedString(@"German License Plate Scanner", nil)
                                                          viewController:[ALLicensePlateDEViewController class]];
     
+    ALExample *hashtagScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Hashtag Scanner", nil)
+                                                         viewController:[ALHashtagCodeScanViewController class]];
+    
     
     self.sectionNames = @[@"Energy",@"Identification",@"Barcodes",@"Fintech",@"Document",@"Loyality",@"Cars",@"Other"];
     self.examples = @{self.sectionNames[0] : @[electricScanning,gasScanning,heatScanning,digitalScanning,waterScanning],
@@ -115,7 +119,7 @@
                       self.sectionNames[4] : @[documentScanning],
                       self.sectionNames[5] : @[voucherCodeScanning,rbScanning,stieglScanning],
                       self.sectionNames[6] : @[licensePlateScanning, licensePlateScanningAT, licensePlateScanningDE],
-                      self.sectionNames[7] : @[scrabbleScanning,isbnScanning,recordScanning],
+                      self.sectionNames[7] : @[scrabbleScanning,isbnScanning,recordScanning,hashtagScanning],
                       };
 }
 
