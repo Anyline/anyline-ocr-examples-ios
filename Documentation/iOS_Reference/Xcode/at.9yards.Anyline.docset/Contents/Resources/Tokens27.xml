@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineDocumentModuleView.html">
+	<File path="Classes/AnylineEnergyModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineDocumentModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineEnergyModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineEnergyModuleView class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,18 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)setScanMode:(ALScanMode)scanMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The scan mode to set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setScanMode:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The scan mode to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setScanMode:error:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
 					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The error that occured</Abstract>

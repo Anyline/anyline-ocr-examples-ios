@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALImageProvider.html">
+	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALImageProvider</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -13,44 +13,77 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html">Method with which Anyline will request the next Image to analyse.</Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindScanResult:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.2.1&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindScanResult:(NSString *)scanResult atImage:(UIImage *)image</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The completion handler which should be called when the next frame/image
-is available.</Abstract>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the barcode</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/provideNewImageWithCompletionBlock:</Anchor>
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindScanResult:atImage:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewFullResolutionImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindScanResult:barcodeFormat:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindScanResult:(NSString *)scanResult barcodeFormat:(NSString *)barcodeFormat atImage:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>barcodeFormat</Name>
+					<Abstract type="html">The barcode format of the scanned barcode</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the barcode</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/provideNewFullResolutionImageWithCompletionBlock:</Anchor>
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindScanResult:barcodeFormat:atImage:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideStillImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)provideStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindScanResult:(NSString *)scanResult withBarcodeFormat:(ALBarcodeFormat)barcodeFormat atImage:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>barcodeFormat</Name>
+					<Abstract type="html">The barcode format of the scanned barcode</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the barcode</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/provideStillImageWithCompletionBlock:</Anchor>
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

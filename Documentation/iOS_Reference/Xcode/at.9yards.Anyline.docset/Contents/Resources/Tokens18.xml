@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSquare.html">
+	<File path="Classes/ALTextDataPoint.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
-			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALTextDataPoint</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,309 +13,180 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setTesseractParameter:</TokenIdentifier>
+			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
+ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/tesseractParameter</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/tesseractParameter</TokenIdentifier>
+			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
+ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/tesseractParameter</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/tesseractParameter</TokenIdentifier>
+			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
+ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/tesseractParameter</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setLanguages:</TokenIdentifier>
+			<Abstract type="html">The languages which should be used. Should contain language strings like
+&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
+the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/languages</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/languages</TokenIdentifier>
+			<Abstract type="html">The languages which should be used. Should contain language strings like
+&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
+the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/languages</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/languages</TokenIdentifier>
+			<Abstract type="html">The languages which should be used. Should contain language strings like
+&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
+the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/languages</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setCharacterCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/characterCount</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/characterCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/characterCount</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/characterCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/characterCount</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/initWithArea:indexPath:identifier:languages:tesseractParameter:</TokenIdentifier>
+			<Abstract type="html">Init method for a new TextDataPoint</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
+			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>upLeft</Name>
-					<Abstract type="html">The up left point of the square.</Abstract>
+					<Name>area</Name>
+					<Abstract type="html">The area where in the ROI the TextDataPoint is.</Abstract>
 				</Parameter><Parameter>
-					<Name>upRight</Name>
-					<Abstract type="html">The up right point of the square.</Abstract>
+					<Name>indexPath</Name>
+					<Abstract type="html">The indexPath for the specified datapoint.</Abstract>
 				</Parameter><Parameter>
-					<Name>downLeft</Name>
-					<Abstract type="html">The down left point of the square.</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for the datapoint</Abstract>
 				</Parameter><Parameter>
-					<Name>downRight</Name>
-					<Abstract type="html">The down right point of the square.</Abstract>
+					<Name>languages</Name>
+					<Abstract type="html">The languages array used for the datapoint</Abstract>
+				</Parameter><Parameter>
+					<Name>tesseractParameter</Name>
+					<Abstract type="html">The dictionary containing the special tesseractParameter</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
+			<ReturnValue><Abstract type="html">New instance of TextDataPoint.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithArea:indexPath:identifier:languages:tesseractParameter:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/initWithArea:indexPath:identifier:languages:tesseractParameter:characterRange:</TokenIdentifier>
+			<Abstract type="html">Init method for a new TextDataPoint</Abstract>
+			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
+			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter characterRange:(ALCharacterRange)characterRange</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
+					<Name>area</Name>
+					<Abstract type="html">The area where in the ROI the TextDataPoint is.</Abstract>
+				</Parameter><Parameter>
+					<Name>indexPath</Name>
+					<Abstract type="html">The indexPath for the specified datapoint.</Abstract>
+				</Parameter><Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for the datapoint</Abstract>
+				</Parameter><Parameter>
+					<Name>languages</Name>
+					<Abstract type="html">The languages array used for the datapoint</Abstract>
+				</Parameter><Parameter>
+					<Name>tesseractParameter</Name>
+					<Abstract type="html">The dictionary containing the special tesseractParameter</Abstract>
+				</Parameter><Parameter>
+					<Name>characterRange</Name>
+					<Abstract type="html">The character count range we need for this datapoint</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCGRect:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingX</Declaration>
-			
-			
-			<Anchor>//api/name/boundingX</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingY</Declaration>
-			
-			
-			<Anchor>//api/name/boundingY</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingWidth</Declaration>
-			
-			
-			<Anchor>//api/name/boundingWidth</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingHeight</Declaration>
-			
-			
-			<Anchor>//api/name/boundingHeight</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setPointOffset:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (void)setPointOffset:(CGPoint)offset</Declaration>
-			
-			
-			<Anchor>//api/name/setPointOffset:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setScale:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (void)setScale:(CGFloat)scale</Declaration>
-			
-			
-			<Anchor>//api/name/setScale:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area</Declaration>
-			
-			
-			<Anchor>//api/name/area</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area2</Declaration>
-			
-			
-			<Anchor>//api/name/area2</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (float)ratio</Declaration>
-			
-			
-			<Anchor>//api/name/ratio</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGRect)boxRect</Declaration>
-			
-			
-			<Anchor>//api/name/boxRect</Anchor>
+			<ReturnValue><Abstract type="html">New instance of TextDataPoint.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithArea:indexPath:identifier:languages:tesseractParameter:characterRange:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

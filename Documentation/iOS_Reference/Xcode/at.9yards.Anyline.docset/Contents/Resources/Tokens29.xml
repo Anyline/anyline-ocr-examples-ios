@@ -1,39 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineMRZModuleView.html">
+	<File path="Classes/AnylineOCRModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
-All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
-It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-            
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineOCRModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineOcrScanView can be used to recognize text.
+It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
+and the {@link AnylineOcrConfig} (settings to adapt the recognition to your use case).</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            <Availability type="html"></Availability>
 			
 			<NodeRef refid="29"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setOcrConfig:</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			
+			
+			<Anchor>//api/name/ocrConfig</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/ocrConfig</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			
+			
+			<Anchor>//api/name/ocrConfig</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineOCRModuleView/ocrConfig</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			
+			
+			<Anchor>//api/name/ocrConfig</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setupWithLicenseKey:delegate:ocrConfig:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineOCRModuleDelegate&gt;)delegate ocrConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
 					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineOCRModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>ocrConfig</Name>
+					<Abstract type="html">The ocrConfig to use for the scanning</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:ocrConfig:error:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setOCRConfig:error:</TokenIdentifier>
+			<Abstract type="html">Sets a new ALOCRConfig and returns an Error if something failed.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setOCRConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ocrConfig</Name>
+					<Abstract type="html">The ALOCRConfig to set</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The Error object if something fails</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setOCRConfig:error:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/copyTrainedData:fileHash:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)copyTrainedData:(NSString *)trainedDataPath fileHash:(NSString *)hash error:(NSError **)error</Declaration>
+			
+			
+			<Anchor>//api/name/copyTrainedData:fileHash:error:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

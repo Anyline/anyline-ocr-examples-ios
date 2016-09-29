@@ -1,5 +1,13 @@
 # Anyline SDK iOS Release Notes #
 
+
+## Anyline SDK 3.7.1 ##
+Release Date 2016-09-29
+
+### Fixed ###
+- A bug where libcurl will crash on some older iOS versions
+
+
 ## Anyline SDK 3.7.0 ##
 Release Date 2016-09-23
 

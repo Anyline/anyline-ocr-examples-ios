@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashMode.html">
+	<File path="Constants/ALFlashStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashStatus</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOn</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeManual</Declaration>
+            <Declaration>ALFlashStatusOn</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALFlashButton.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOff</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeNone</Declaration>
+            <Declaration>ALFlashStatusOff</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALFlashButton.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusAuto</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeAuto</Declaration>
+            <Declaration>ALFlashStatusAuto</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALFlashButton.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>

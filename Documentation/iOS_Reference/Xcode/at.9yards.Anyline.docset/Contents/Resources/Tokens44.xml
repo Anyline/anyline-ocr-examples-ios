@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALCutoutAlignment.html">
+	<File path="Constants/ALDocumentError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALCutoutAlignment</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -14,51 +14,71 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTop</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCutoutAlignmentTop</Declaration>
+            <Declaration>ALDocumentErrorUnkown</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTopHalf</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCutoutAlignmentTopHalf</Declaration>
+            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentMiddle</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCutoutAlignmentMiddle</Declaration>
+            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottomHalf</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCutoutAlignmentBottomHalf</Declaration>
+            <Declaration>ALDocumentErrorGlareDetected</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottom</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCutoutAlignmentBottom</Declaration>
+            <Declaration>ALDocumentErrorImageTooDark</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorNotSharp</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorShakeDetected</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>

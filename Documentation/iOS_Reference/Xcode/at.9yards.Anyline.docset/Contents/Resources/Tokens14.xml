@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALReporting.html">
+	<File path="Classes/ALResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALReporting</TokenIdentifier>
-			<Abstract type="html">The Anyline Reporting takes care of building the current scan rounds ALReportingModel, which
-is then further processed / uploaded by the ALAzureService</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
+			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
+for the text recognition client.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -14,93 +14,123 @@ is then further processed / uploaded by the ALAzureService</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALReporting/sharedInstance</TokenIdentifier>
-			<Abstract type="html">Singleton accessor</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
-			<ReturnValue><Abstract type="html">instance of ALReporting</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedInstance</Anchor>
+			
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALReporting/enableReporting:</TokenIdentifier>
-			<Abstract type="html">Reporting ON / OFF Switch</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>+ (void)enableReporting:(BOOL)enable</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			
+			
+			<Anchor>//api/name/specs</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			
+			
+			<Anchor>//api/name/specs</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			
+			
+			<Anchor>//api/name/valid</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			
+			
+			<Anchor>//api/name/valid</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			
+			
+			<Anchor>//api/name/valid</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
+			<Abstract type="html">All the identifiers in which the digits are divided.
+Identifiers are all strings.
+There is no special sort order.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)identifiers</Declaration>
+			
+			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
+			<Anchor>//api/name/identifiers</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
+does not exist or no valid result was found for the identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>enable</Name>
-					<Abstract type="html">YES if reporting shall be enabled, NO otherwise</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for a result.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
+			<Anchor>//api/name/resultForIdentifier:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/enumerateResultsForValidation:</TokenIdentifier>
+			<Abstract type="html">Enumeration Block for ALResult validation.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
+			
+			<Declaration>- (void)enumerateResultsForValidation:(BOOL ( ^ ) ( NSString *identifier , id obj , NSObject **toObject ))validationBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>validationBlock</Name>
+					<Abstract type="html">The validation block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/enableReporting:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/nextRound</TokenIdentifier>
-			<Abstract type="html">Call when the next Image is being processed by anyline</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
-			
-			<Declaration>- (void)nextRound</Declaration>
-			
-			
-			<Anchor>//api/name/nextRound</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/userDidFocusOnTarget:</TokenIdentifier>
-			<Abstract type="html">Call when the User did focus on target event, with current image</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
-			
-			<Declaration>- (void)userDidFocusOnTarget:(UIImage *)image</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>image</Name>
-					<Abstract type="html">the image the user did focus too</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/userDidFocusOnTarget:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/resultDidValidate:withResult:</TokenIdentifier>
-			<Abstract type="html">* Call when the found result did or did not validate by the delegate
-*
-* @param didValidate Set YES if the result validates, NO otherwise
-# @param result the scan result object from anyline which did or did not validate</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
-			
-			<Declaration>- (void)resultDidValidate:(BOOL)didValidate withResult:(id)result</Declaration>
-			
-			
-			<Anchor>//api/name/resultDidValidate:withResult:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALReporting/reportScanResultState:</TokenIdentifier>
-			<Abstract type="html">Call when the user did finish the scan either successfully or not.
-The result will be reported.</Abstract>
-			<DeclaredIn>ALReporting.h</DeclaredIn>
-			
-			<Declaration>- (void)reportScanResultState:(ALScanResultState)scanResultState</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>the</Name>
-					<Abstract type="html">@ALScanResultState of the scan result state</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/reportScanResultState:</Anchor>
+			<Anchor>//api/name/enumerateResultsForValidation:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

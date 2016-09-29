@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALDocumentError.html">
+	<File path="Constants/ALFlashAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="45"/>
@@ -14,71 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorUnkown</Declaration>
+            <Declaration>ALFlashAlignmentTop</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
+            <Declaration>ALFlashAlignmentTopLeft</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
+            <Declaration>ALFlashAlignmentTopRight</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorGlareDetected</Declaration>
+            <Declaration>ALFlashAlignmentBottom</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorImageTooDark</Declaration>
+            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorNotSharp</Declaration>
+            <Declaration>ALFlashAlignmentBottomRight</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="45"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorShakeDetected</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="45"/>
         </Token>
