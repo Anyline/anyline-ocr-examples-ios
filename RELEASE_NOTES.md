@@ -1,6 +1,25 @@
 # Anyline SDK iOS Release Notes #
 
 
+## Anyline SDK 3.7.2.1 ##
+Release Date 2016-11-11
+
+### Fixed ###
+
+- LibCurl crash on iOS < 10 (Details: https://curl.haxx.se/mail/lib-2016-09/0049.html)
+
+
+## Anyline SDK 3.7.2 ##
+Release Date 2016-11-03
+
+### Fixed ###
+
+#### MRZ ####
+
+- Symbol recognition fix between primary and secondary identifier
+- Fixed issue when no or partial DoB available
+
+
 ## Anyline SDK 3.7.1 ##
 Release Date 2016-09-29
 

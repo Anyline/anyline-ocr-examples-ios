@@ -898,7 +898,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					"ANYLINE_DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
