@@ -60,9 +60,9 @@
 
 - (CGFloat)boundingHeight;
 
-- (void)setPointOffset:(CGPoint)offset;
+- (ALSquare *)squareWithPointOffset:(CGPoint)offset;
 
-- (void)setScale:(CGFloat)scale;
+- (ALSquare *)squareWithScale:(CGFloat)scale;
 
 - (CGFloat)area;
 

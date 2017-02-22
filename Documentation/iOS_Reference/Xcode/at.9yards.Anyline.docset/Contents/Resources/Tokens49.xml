@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALOCRScanMode.html">
+	<File path="Constants/ALFlashAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
-			<Abstract type="html">The possible scanModes for the AnylineOCR module</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -14,24 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLine</TokenIdentifier>
-            <Abstract type="html">The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).
-     </Abstract>
-            <Declaration>ALLine</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTop</Declaration>
             
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALGrid</TokenIdentifier>
-            <Abstract type="html">The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).
-     </Abstract>
-            <Declaration>ALGrid</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTopLeft</Declaration>
             
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTopRight</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottom</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomRight</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>

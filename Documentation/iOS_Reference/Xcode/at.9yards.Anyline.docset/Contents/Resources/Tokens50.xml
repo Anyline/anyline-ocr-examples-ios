@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALPictureResolution.html">
+	<File path="Constants/ALFlashMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALPictureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolutionNone</Declaration>
+            <Declaration>ALFlashModeManual</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionHighest</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolutionHighest</Declaration>
+            <Declaration>ALFlashModeNone</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -34,29 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution1080</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution1080</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution720</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution720</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution480</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution480</Declaration>
+            <Declaration>ALFlashModeAuto</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             

@@ -3,7 +3,7 @@
 //  AnylineExamples
 //
 //  Created by Matthias on 24/05/15.
-//  Copyright (c) 2015 9yards GmbH. All rights reserved.
+//  Copyright © 2016 Anyline GmbH. All rights reserved.
 //
 
 #import "ALIdentificationView.h"
@@ -154,7 +154,7 @@
                             stringByPaddingToLength:44 withString:@"<" startingAtIndex:0];
         self.line1.text = @"";
         self.line2.text = [[[NSString
-                            stringWithFormat:@"%@<%@%@%@%@%@%@%@",aIdentification.documentNumber,aIdentification.checkdigitNumber,aIdentification.nationalityCountryCode,aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate]
+                            stringWithFormat:@"%@<%@%@%@%@%@%@%@%@%@",aIdentification.documentNumber,aIdentification.checkdigitNumber,aIdentification.nationalityCountryCode,aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate,aIdentification.personalNumber,aIdentification.checkDigitPersonalNumber]
                            stringByPaddingToLength:43 withString:@"<" startingAtIndex:0]
                            stringByAppendingFormat:@"%@",aIdentification.checkdigitFinal];
     } else {
@@ -163,7 +163,7 @@
                            stringByPaddingToLength:30 withString:@"<" startingAtIndex:0];
 
         self.line1.text = [[[NSString
-                            stringWithFormat:@"%@%@%@%@%@%@",aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate,aIdentification.nationalityCountryCode]
+                            stringWithFormat:@"%@%@%@%@%@%@%@",aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate,aIdentification.nationalityCountryCode,aIdentification.personalNumber2]
                            stringByPaddingToLength:29 withString:@"<" startingAtIndex:0]
                            stringByAppendingFormat:@"%@",aIdentification.checkdigitFinal];
         

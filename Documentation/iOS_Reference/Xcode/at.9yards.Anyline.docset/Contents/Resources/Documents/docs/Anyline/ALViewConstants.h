@@ -60,4 +60,15 @@ typedef NS_ENUM(NSInteger, ALUIFeedbackStyle) {
     ALUIFeedbackStyleNone=4
 };
 
+typedef NS_ENUM(NSInteger, ALUIVisualFeedbackAnimation) {
+    ALUIVisualFeedbackAnimationTraverseSingle=0,
+    ALUIVisualFeedbackAnimationTraverseMulti=1,
+    ALUIVisualFeedbackAnimationKitt=2,
+    ALUIVisualFeedbackAnimationBlink=3,
+    ALUIVisualFeedbackAnimationResize=4,
+    ALUIVisualFeedbackAnimationPulse=5,
+    ALUIVisualFeedbackAnimationPulseRandom=6,
+    ALUIVisualFeedbackAnimationNone=7
+};
+
 #endif

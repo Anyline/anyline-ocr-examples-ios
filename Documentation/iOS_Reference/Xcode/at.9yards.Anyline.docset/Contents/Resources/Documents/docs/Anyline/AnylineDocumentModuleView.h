@@ -17,7 +17,24 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
     ALDocumentErrorImageTooDark     = -5,
     ALDocumentErrorNotSharp         = -6,
     ALDocumentErrorShakeDetected    = -7,
+    ALDocumentErrorRatioOutsideOfTolerance = -8,
+    ALDocumentErrorBoundsOutsideOfTolerance = -9,
 };
+
+/**
+ *
+ * Predefinded document ratios
+ *
+ */
+
+extern CGFloat const ALDocumentRatioDINAXLandscape;
+extern CGFloat const ALDocumentRatioDINAXPortrait;
+extern CGFloat const ALDocumentRatioCompimentsSlipLandscape;
+extern CGFloat const ALDocumentRatioCompimentsSlipPortrait;
+extern CGFloat const ALDocumentRatioBusinessCardLandscape;
+extern CGFloat const ALDocumentRatioBusinessCardPortrait;
+extern CGFloat const ALDocumentRatioLetterLandscape;
+extern CGFloat const ALDocumentRatioLetterPortrait;
 
 @protocol AnylineDocumentModuleDelegate;
 
@@ -43,6 +60,24 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
                    delegate:(id<AnylineDocumentModuleDelegate>)delegate
                       error:(NSError **)error;
 
+/**
+ * Maximum deviation for the ratio. 0.15 is the default
+ * @warning Parameter can only be changed when the scanning is not running.
+ *
+ * @since 3.8
+ */
+@property (nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
+
+/**
+ * Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).
+ * @warning Parameter can only be changed when the scanning is not running. 
+ *
+ * @param ratios all supported formats
+ * 
+ * @since 3.8
+ */
+- (void)setDocumentRatios:(NSArray<NSNumber*>*)ratios;
+
 @end
 
 @protocol AnylineDocumentModuleDelegate <NSObject>
@@ -56,13 +91,46 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
  *
  * @param transformedImage The transformed image (cropped, deskewed)
  * @param fullFrame        The full image (not cropped or deskewed)
- * @since 3.3.1
+ * @param corners          The corners of the document in the full frame
+ * @since 3.6.1
  */
 - (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
                         hasResult:(UIImage *)transformedImage
-                        fullImage:(UIImage *)fullFrame;
+                        fullImage:(UIImage *)fullFrame
+                  documentCorners:(ALSquare *)corners;
 
 @optional
+
+/**
+ *
+ * Called if a full result is found. A full result is considerd to be a successful preview, followed by a
+ * successful full scan.
+ *
+ * @param transformedImage The transformed image (cropped, deskewed)
+ * @param fullFrame        The full image (not cropped or deskewed)
+ * @since 3.3.1
+ *
+ * @deprecated since 3.6.1
+ */
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+                        hasResult:(UIImage *)transformedImage
+                        fullImage:(UIImage *)fullFrame __deprecated_msg("Deprecated since 3.6.1 Use method anylineDocumentModuleView:hasResult:fullImage:documentCorners: instead.");
+
+
+/**
+ *
+ * If triggerPictureCornerDetectionAndReturnError: is used this callback provides the image and the document corners
+ * successful full scan.
+ *
+ * @param corners      The corners of the document
+ * @param image        The full image (not cropped or deskewed)
+ * @since 3.3.1
+ *
+ * @since 3.6.1
+ */
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+           detectedPictureCorners:(ALSquare *)corners
+                          inImage:(UIImage *)image;
 
 /**
  * Called if the preview scan detected a sharp and correctly placed document.
@@ -99,7 +167,7 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
  * Return true if your implementation consumed the outline (e.g. drew the outline), or false / do not implement the delegate method, if the
  * DocumentScanView should draw the outline.
  *
- * @param outline     The ALSquare containing the four points of the document outline
+ * @param outline     An NSArray containing the points of the document outline wrapped in an NSValue
  * @param anglesValid A boolean indicating if interior angles of the rectangle are within a tolerance (so that it
  *                    is not skew)
  * @return True if the outline is drawn by the implementation itself or omitted, false if the outline should be
@@ -107,7 +175,7 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
  * @since 3.3.1
  */
 - (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-          documentOutlineDetected:(ALSquare *)outline
+          documentOutlineDetected:(NSArray *)outline
                       anglesValid:(BOOL)anglesValid;
 
 /**
@@ -127,6 +195,5 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
  * @since 3.3.1
  */
 - (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView takePictureError:(NSError *)error;
-
 
 @end

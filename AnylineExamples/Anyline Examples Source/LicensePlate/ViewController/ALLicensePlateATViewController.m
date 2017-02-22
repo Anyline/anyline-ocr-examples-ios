@@ -3,15 +3,17 @@
 //  AnylineExamples
 //
 //  Created by Matthias Gasser on 04/02/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
+//  Copyright © 2016 Anyline GmbH. All rights reserved.
 //
 
 #import "ALLicensePlateATViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
+#import "ALLicensePlateResultOverlayView.h"
+#import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
-NSString * const kLicensePlateLicenseKeyAT = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0iOlsiaU9TIiwiQW5kcm9pZCIsIldpbmRvd3MiXSwidmFsaWQiOiIyMDE3LTA4LTMwIiwibWFqb3JWZXJzaW9uIjoiMyIsImlzQ29tbWVyY2lhbCI6ZmFsc2UsInRvbGVyYW5jZURheXMiOjYwLCJpb3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sImFuZHJvaWRJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sIndpbmRvd3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl19CkIxbU5LZEEvb0JZMlBvRlpsVGV4d3QraHltZTh1S25ON1ZYUStXbE1DY2dYc3RjTnJTL2ZOWVduSHJaSUVORk0vbmNFYWdlVU9Vem9tbmhFNG1tTFY1c3Mxbi8zc2tBQjdjM3pmd25MNkV2Mmx4Y1k4L0htN3Bna2t0K01NanRYODdXMTdWNjBGZWdXTmpXbWF0dmNJSHRFMkhmTEdjUkprQ3BHNFpacm5KWEltVnlkSVJtQmNsamwvWktuZzY1Nm5Rb3ZhMUZzc1p5Q2Vsb3VXSVhpRi9Odk1EcmVraUlaR2JreWVTRk9TT0VxLzgra0xFdHlmZG1yUy8vRjNVZ055YWtXN3NRQXFlNjlUQmN6ak5kVXdQU1lnY3BnSXd0d2puVUJsV2FmdGJ3aW9EKzlNRkowc1JFR2p0OFd5REJ6RHRZSi9EL3NRUm5sSXA2akFjQTNBQT09";
+NSString * const kLicensePlateLicenseKeyAT = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALLicensePlateATViewController ()<AnylineOCRModuleDelegate>
 // The Anyline module used for OCR
@@ -128,16 +130,18 @@ NSString * const kLicensePlateLicenseKeyAT = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvc
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
-    // We are done. Cancel scanning
-    [self.ocrModuleView cancelScanningAndReturnError:nil];
-    
     // Display an overlay showing the result
     UIImage *image = [UIImage imageNamed:@"license_plate_background"];
-    ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
+    ALLicensePlateResultOverlayView *overlay = [[ALLicensePlateResultOverlayView alloc] initWithFrame:self.view.bounds];
     [overlay setImage:image];
     
-    NSString *licenseText = [[result.text componentsSeparatedByString:@"-"] lastObject];
-    [overlay setText:licenseText];
+    NSArray<NSString *> *licenseComponents = [result.text componentsSeparatedByString:@"-"];
+    
+    if (licenseComponents.count > 1) {
+        [overlay setCountryCode:[licenseComponents firstObject]];
+    }
+    
+    [overlay setText:[licenseComponents lastObject]];
     
     __weak typeof(self) welf = self;
     __weak ALResultOverlayView *woverlay = overlay;
@@ -147,7 +151,6 @@ NSString * const kLicensePlateLicenseKeyAT = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvc
         [woverlay removeFromSuperview];
     }];
     [self.view addSubview:overlay];
-
 }
 
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView

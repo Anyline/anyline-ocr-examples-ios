@@ -103,6 +103,12 @@ typedef ALBarcodeFormatOptions ALBarcodeFormat;
 @property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions;
 
 /**
+ *  When set to YES we only use the iOS native Barcode scanning. 
+ *  That one uses less computing power, but is worse under low light conditions.
+ */
+@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning;
+
+/**
  *  Sets the license key and delegate.
  *
  *  @param licenseKey The Anyline license key for this application bundle

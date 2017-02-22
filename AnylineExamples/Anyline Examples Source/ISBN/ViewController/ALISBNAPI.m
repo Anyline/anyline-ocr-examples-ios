@@ -3,7 +3,7 @@
 //  ExampleApi
 //
 //  Created by David Dengg on 14.02.16.
-//  Copyright © 2016 9yards. All rights reserved.
+//  Copyright © 2016 Anyline GmbH. All rights reserved.
 //
 
 #import "ALISBNAPI.h"

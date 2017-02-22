@@ -28,6 +28,8 @@
  */
 @property (nonatomic, assign) BOOL asyncSDK;
 
+@property (nonatomic, assign, getter=isRunning) BOOL running;
+
 /**
  *  The delegate property.
  *  You must set the delegate if you want to get any results out 
@@ -126,12 +128,6 @@
  */
 - (BOOL)stopAndReturnError:(NSError **)error;
 
-/**
- *  Returns YES if there is an active processing workflow running otherwise NO.
- *
- *  @return YES/NO indicating active process workflow.
- */
-- (BOOL)isRunning;
 
 /**
  *  Starts a single image run with an UIImage.
@@ -223,10 +219,7 @@
  */
 -(void) enableReporting:(BOOL) enable;
 
-/**
- * Reports a cancel of a scan
- */
-- (void)notifyScanningHasBeenCanceled;
+- (void)reportIncludeValues:(NSString *)values;
 
 - (NSArray*)runStatistics;
 

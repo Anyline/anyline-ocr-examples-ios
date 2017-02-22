@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineControllerDelegate.html">
+	<File path="Protocols/ALMotionDetectorDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
-All delegate callbacks are garanteed to be executed in the Main Thread.</Abstract>
-			<DeclaredIn>AnylineController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMotionDetectorDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -14,77 +13,14 @@ All delegate callbacks are garanteed to be executed in the Main Thread.</Abstrac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:didFinishWithOutput:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has successfully finished and gives the delegate the final
-output object.</Abstract>
-			<DeclaredIn>AnylineController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMotionDetectorDelegate/motionDetectorAboveThreshold</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineController:(AnylineController *)anylineController didFinishWithOutput:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The result object of the processing.
-The result is specified with the RETURN statement in the .alc file.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)motionDetectorAboveThreshold</Declaration>
 			
-			<Anchor>//api/name/anylineController:didFinishWithOutput:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:didAbortRun:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has not completed successfully. Possible reason would be
-for example that the display or paper frame could not be found.</Abstract>
-			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineController:(AnylineController *)anylineController didAbortRun:(NSError *)reason</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">A NSError object with ALErrorDomain and an appropriate status.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineController:didAbortRun:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:reportsVariable:value:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate a specified intermediate result. Which intermediate results are reported
-can be specified in the .alc command file with the REPORT function.</Abstract>
-			<DeclaredIn>AnylineController.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineController:(AnylineController *)anylineController reportsVariable:(NSString *)variableName value:(id)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name in the .alc file which should be reported.</Abstract>
-				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The value of the reported variable.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineController:reportsVariable:value:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:parserError:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that there was a parsing error.</Abstract>
-			<DeclaredIn>AnylineController.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineController:(AnylineController *)anylineController parserError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The parsing error which occured.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineController:parserError:</Anchor>
+			<Anchor>//api/name/motionDetectorAboveThreshold</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

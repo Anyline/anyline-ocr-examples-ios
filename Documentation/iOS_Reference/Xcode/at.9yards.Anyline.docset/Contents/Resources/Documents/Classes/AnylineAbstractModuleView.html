@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">Anyline GmbH</a>
+				<a href="../index.html">9yards GmbH</a>
 			</p>
 			
 		</div>
@@ -86,6 +86,8 @@
 		
 		<option value="//api/name/vibrateOnResult">vibrateOnResult</option>
 		
+		<option value="//api/name/videoView">videoView</option>
+		
 		<option value="//api/name/watermarkRect">watermarkRect</option>
 		
 	</optgroup>
@@ -102,7 +104,11 @@
 		
 		<option value="//api/name/isRunning">- isRunning</option>
 		
+		<option value="//api/name/startListeningForMotionWithThreshold:delegate:">- startListeningForMotionWithThreshold:delegate:</option>
+		
 		<option value="//api/name/startScanningAndReturnError:">- startScanningAndReturnError:</option>
+		
+		<option value="//api/name/stopListeningForMotion">- stopListeningForMotion</option>
 		
 	</optgroup>
 	
@@ -161,6 +167,47 @@ You should sublcass this class to build Anyline modules.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/videoView" title="videoView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoView">&nbsp;&nbsp;videoView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The video view which is responsible for video preview, frame extraction, &hellip;</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) AnylineVideoView *videoView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/currentConfiguration" title="currentConfiguration"></a>
 	<h3 class="method-title"><code><a href="#//api/name/currentConfiguration">&nbsp;&nbsp;currentConfiguration</a></code>
 </h3>
@@ -1045,6 +1092,111 @@ and use the reportScanResultState: for reporting</p></td>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/startListeningForMotionWithThreshold:delegate:" title="startListeningForMotionWithThreshold:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startListeningForMotionWithThreshold:delegate:">&ndash;&nbsp;startListeningForMotionWithThreshold:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Listen for device motion and notify an object if a threshold is reached</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startListeningForMotionWithThreshold:(CGFloat)<em>threshold</em> delegate:(id)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>threshold</code></th>
+						<td><ul>
+<li>Call the delegate if threshold is reached ( defaults to 0.05 )</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><ul>
+<li>The callback delegate</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopListeningForMotion" title="stopListeningForMotion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopListeningForMotion">&ndash;&nbsp;stopListeningForMotion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop listening for device motion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopListeningForMotion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1060,7 +1212,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Anyline GmbH. All rights reserved. Updated: 2016-09-29</p>
+						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

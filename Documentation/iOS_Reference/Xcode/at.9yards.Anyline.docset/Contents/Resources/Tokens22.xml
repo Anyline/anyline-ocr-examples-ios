@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALValuesStackFlipping.html">
+	<File path="Classes/ALValuesStack.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
-			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStack</TokenIdentifier>
+			<Abstract type="html">The ValuesStack allows you to save any result of the Anyline computation.
+The actual result will then be compared to previous results and if there are enough
+equal values a new result will be available.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,35 +15,264 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setSize:</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter><Parameter>
-					<Name>partialResultSize</Name>
-					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setMinEqualResults:</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setLastCommitedResult:</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setHasNewResult:</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setConsecutivelyValue:</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCount</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCount</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCount</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCount</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCountWithoutEmpty:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
 			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
 			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
 			<Parameters>
@@ -58,6 +289,36 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/addResult:</TokenIdentifier>
+			<Abstract type="html">Adds a new result to the value stack. If the size of the value stack is reached
+a new result will be searched and if found with the hasNewResult communicated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>- (void)addResult:(id)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">The result to add to the stack.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addResult:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/newResult</TokenIdentifier>
+			<Abstract type="html">Returns a new result if the hasNewResult is true and nil otherwise.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>- (id)newResult</Declaration>
+			
+			<ReturnValue><Abstract type="html">new found result.</Abstract></ReturnValue>
+			<Anchor>//api/name/newResult</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">Anyline GmbH</a>
+				<a href="../index.html">9yards GmbH</a>
 			</p>
 			
 		</div>
@@ -56,11 +56,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/cropRect">cropRect</option>
+		<option value="//api/name/barcodeDelegate">barcodeDelegate</option>
 		
 		<option value="//api/name/cutoutView">cutoutView</option>
 		
 		<option value="//api/name/flashButton">flashButton</option>
+		
+		<option value="//api/name/sampleBufferDelegate">sampleBufferDelegate</option>
 		
 		<option value="//api/name/torchManager">torchManager</option>
 		
@@ -74,13 +76,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/blink">- blink</option>
-		
-		<option value="//api/name/captureNextFrameAsHighResImage:">- captureNextFrameAsHighResImage:</option>
-		
-		<option value="//api/name/convertPoint:">- convertPoint:</option>
-		
-		<option value="//api/name/convertPoint:imageWidth:">- convertPoint:imageWidth:</option>
+		<option value="//api/name/captureStillImageAndStopWithCompletionBlock:">- captureStillImageAndStopWithCompletionBlock:</option>
 		
 		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
 		
@@ -90,19 +86,13 @@
 		
 		<option value="//api/name/initWithFrame:configuration:">- initWithFrame:configuration:</option>
 		
-		<option value="//api/name/prepareForMovieCapture:">- prepareForMovieCapture:</option>
+		<option value="//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:">- resizeSquareToFullImageSquare:withImageSize:resizeWidth:</option>
 		
 		<option value="//api/name/setFocusAndExposurePoint:">- setFocusAndExposurePoint:</option>
 		
-		<option value="//api/name/startRecording">- startRecording</option>
-		
 		<option value="//api/name/startVideoAndReturnError:">- startVideoAndReturnError:</option>
 		
-		<option value="//api/name/stopRecording:">- stopRecording:</option>
-		
 		<option value="//api/name/stopVideo">- stopVideo</option>
-		
-		<option value="//api/name/updateConfiguration:">- updateConfiguration:</option>
 		
 	</optgroup>
 	
@@ -304,8 +294,8 @@ from the Video and provide them to Anyline with the <a href="../Protocols/ALImag
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cropRect" title="cropRect"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cropRect">&nbsp;&nbsp;cropRect</a></code>
+	<a name="//api/name/barcodeDelegate" title="barcodeDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/barcodeDelegate">&nbsp;&nbsp;barcodeDelegate</a></code>
 </h3>
 
 	<div class="method-info">
@@ -313,10 +303,81 @@ from the Video and provide them to Anyline with the <a href="../Protocols/ALImag
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGRect cropRect</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Do not implement this delegate when you use the Barcode module.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferDelegate" title="sampleBufferDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferDelegate">&nbsp;&nbsp;sampleBufferDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -564,22 +625,6 @@ video. No FlashButton or CutoutView will be initialised.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updateConfiguration:" title="updateConfiguration:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateConfiguration:">&ndash;&nbsp;updateConfiguration:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updateConfiguration:(ALUIConfiguration *)<em>configuration</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/startVideoAndReturnError:" title="startVideoAndReturnError:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/startVideoAndReturnError:">&ndash;&nbsp;startVideoAndReturnError:</a></code>
 </h3>
@@ -589,10 +634,52 @@ video. No FlashButton or CutoutView will be initialised.</p>
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the video preview and frame extraction.</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (BOOL)startVideoAndReturnError:(NSError **)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if starting fails.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES/NO if starting succeed/failed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -605,10 +692,35 @@ video. No FlashButton or CutoutView will be initialised.</p>
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the video preview and frame extraction.</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)stopVideo</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -621,15 +733,52 @@ video. No FlashButton or CutoutView will be initialised.</p>
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>You can set a custom focus &amp; exposure point here. CGPoint value has to be between 0 and 1 like in the Apple interface.</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)setFocusAndExposurePoint:(CGPoint)<em>point</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>point</code></th>
+						<td><p>Point with values between 0 and 1.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineVideoView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/blink" title="blink"></a>
-	<h3 class="method-title"><code><a href="#//api/name/blink">&ndash;&nbsp;blink</a></code>
+	<a name="//api/name/captureStillImageAndStopWithCompletionBlock:" title="captureStillImageAndStopWithCompletionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureStillImageAndStopWithCompletionBlock:">&ndash;&nbsp;captureStillImageAndStopWithCompletionBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -638,14 +787,14 @@ video. No FlashButton or CutoutView will be initialised.</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)blink</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)captureStillImageAndStopWithCompletionBlock:(ALImageProviderBlock)<em>completionHandler</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/convertPoint:" title="convertPoint:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/convertPoint:">&ndash;&nbsp;convertPoint:</a></code>
+	<a name="//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:" title="resizeSquareToFullImageSquare:withImageSize:resizeWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:">&ndash;&nbsp;resizeSquareToFullImageSquare:withImageSize:resizeWidth:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -654,87 +803,7 @@ video. No FlashButton or CutoutView will be initialised.</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/convertPoint:imageWidth:" title="convertPoint:imageWidth:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/convertPoint:imageWidth:">&ndash;&nbsp;convertPoint:imageWidth:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em> imageWidth:(CGFloat)<em>inWidth</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/prepareForMovieCapture:" title="prepareForMovieCapture:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/prepareForMovieCapture:">&ndash;&nbsp;prepareForMovieCapture:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)prepareForMovieCapture:(NSString *)<em>filename</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startRecording" title="startRecording"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startRecording">&ndash;&nbsp;startRecording</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)startRecording</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stopRecording:" title="stopRecording:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopRecording:">&ndash;&nbsp;stopRecording:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)stopRecording:(void ( ^ ) ( NSURL *fileURL ))<em>handler</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/captureNextFrameAsHighResImage:" title="captureNextFrameAsHighResImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/captureNextFrameAsHighResImage:">&ndash;&nbsp;captureNextFrameAsHighResImage:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)captureNextFrameAsHighResImage:(BOOL)<em>capt</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (ALSquare *)resizeSquareToFullImageSquare:(ALSquare *)<em>square</em> withImageSize:(CGSize)<em>imageSize</em> resizeWidth:(CGFloat)<em>resizeWidth</em></code></div>
 
 		    
 		</div>
@@ -754,7 +823,7 @@ video. No FlashButton or CutoutView will be initialised.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Anyline GmbH. All rights reserved. Updated: 2016-09-29</p>
+						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -9,13 +9,14 @@
 #import "AnylineAbstractModuleView.h"
 
 typedef NS_ENUM(NSInteger, ALScanMode) {
-    ALElectricMeter, ALElectricMeter5_1, ALElectricMeter6_1, ALAnalogMeterWhite, ALAnalogMeter4, ALAnalogMeter7,
-    ALGasMeter, ALGasMeter6,
+    ALAnalogMeter,
+    ALElectricMeter __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead instead."), ALElectricMeter5_1 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALElectricMeter6_1 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeterWhite __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeter4 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeter7 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
+    ALGasMeter __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALGasMeter6 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
     ALBarcode,
-    ALSerialNumber, // beta
-    ALWaterMeterBlackBackground, ALWaterMeterWhiteBackground, // beta
-    ALDigitalMeter, // beta
-    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6 // beta
+    ALSerialNumber,
+    ALWaterMeterBlackBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALWaterMeterWhiteBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
+    ALDigitalMeter,
+    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6
 };
 
 @protocol AnylineEnergyModuleDelegate;

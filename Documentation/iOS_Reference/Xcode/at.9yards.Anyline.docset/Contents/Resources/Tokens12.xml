@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRResult.html">
+	<File path="Classes/ALOCRConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRConfig</TokenIdentifier>
+			<Abstract type="html">A class used to configure the Anyline OCR module.</Abstract>
 			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
 			
@@ -13,122 +13,650 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setText:</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
-			
-			
-			<Anchor>//api/name/text</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/text</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
-			
-			
-			<Anchor>//api/name/text</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/text</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
-			
-			
-			<Anchor>//api/name/text</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setImage:</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/initWithJsonDictionary:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithText:(NSString *)text image:(UIImage *)image thresholdedImage:(UIImage *)thresholdedImage</Declaration>
+			<Declaration>- (instancetype)initWithJsonDictionary:(NSDictionary *)configDict</Declaration>
 			
 			
-			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
+			<Anchor>//api/name/initWithJsonDictionary:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setScanMode:</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/scanMode</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/scanMode</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCustomCmdFilePath:</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/customCmdFilePath</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/customCmdFilePath</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCustomCmdFileString:</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/customCmdFileString</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/customCmdFileString</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharHeight:</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charHeight</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charHeight</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setTesseractLanguages:</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharWhiteList:</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charWhiteList</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charWhiteList</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setValidationRegex:</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/validationRegex</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/validationRegex</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setMinConfidence:</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/minConfidence</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/minConfidence</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setRemoveSmallContours:</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/removeSmallContours</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/removeSmallContours</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setRemoveWhitespaces:</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/removeWhitespaces</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/removeWhitespaces</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setMinSharpness:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/minSharpness</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/minSharpness</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharCountX:</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charCountX</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charCountX</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharCountY:</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charCountY</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charCountY</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharPaddingXFactor:</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charPaddingXFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charPaddingXFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharPaddingYFactor:</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charPaddingYFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charPaddingYFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setIsBrightTextOnDark:</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/isBrightTextOnDark</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/isBrightTextOnDark</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

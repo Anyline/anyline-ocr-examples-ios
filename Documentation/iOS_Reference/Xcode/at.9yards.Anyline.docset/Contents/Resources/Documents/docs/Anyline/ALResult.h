@@ -45,11 +45,4 @@
  */
 - (id)resultForIdentifier:(NSString *)identifier;
 
-/**
- *  Enumeration Block for ALResult validation.
- *
- *  @param validationBlock The validation block.
- */
-- (void)enumerateResultsForValidation:(BOOL (^) (NSString *identifier, id obj, NSObject** toObject))validationBlock;
-
 @end

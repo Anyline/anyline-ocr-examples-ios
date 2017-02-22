@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ALFlashButton.h"
 #import "ALUIConfiguration.h"
-
+#import "AnylineVideoView.h"
 #import "AnylineController.h"
+#import "ALMotionDetector.h"
+#import "AnylineVideoView.h"
 
 /**
  * The AnylineAbstractModuleView is a programmatic interface for an object that manages easy access to Anylines scanning modes.  It is a subclass of UIView.
@@ -26,9 +28,15 @@
 @interface AnylineAbstractModuleView : UIView
 
 /**
+ The video view which is responsible for video preview, frame extraction, ...
+ */
+@property (nonatomic, strong) AnylineVideoView *videoView;
+
+/**
  * The UI Configuration for the scanning UI
  */
 @property (nonatomic, strong) ALUIConfiguration *currentConfiguration;
+
 
 /**
  *  Sets the width of the views border
@@ -143,4 +151,16 @@
  */
 - (BOOL)isRunning;
 
+/**
+ * Listen for device motion and notify an object if a threshold is reached
+ *
+ * @param threshold    - Call the delegate if threshold is reached ( defaults to 0.05 )
+ * @param delegate     - The callback delegate
+ */
+- (void)startListeningForMotionWithThreshold:(CGFloat)threshold delegate:(id)delegate;
+
+/**
+ * Stop listening for device motion.
+ */
+- (void)stopListeningForMotion;
 @end

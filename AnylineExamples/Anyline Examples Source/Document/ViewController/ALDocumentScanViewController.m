@@ -3,8 +3,9 @@
 #import "Anyline/AnylineDocumentModuleView.h"
 
 #import "ALRoundedView.h"
+#import "ALAppDemoLicenses.h"
 
-NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0iOlsiaU9TIiwiQW5kcm9pZCIsIldpbmRvd3MiXSwidmFsaWQiOiIyMDE3LTA4LTMwIiwibWFqb3JWZXJzaW9uIjoiMyIsImlzQ29tbWVyY2lhbCI6ZmFsc2UsInRvbGVyYW5jZURheXMiOjYwLCJpb3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sImFuZHJvaWRJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sIndpbmRvd3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl19CkIxbU5LZEEvb0JZMlBvRlpsVGV4d3QraHltZTh1S25ON1ZYUStXbE1DY2dYc3RjTnJTL2ZOWVduSHJaSUVORk0vbmNFYWdlVU9Vem9tbmhFNG1tTFY1c3Mxbi8zc2tBQjdjM3pmd25MNkV2Mmx4Y1k4L0htN3Bna2t0K01NanRYODdXMTdWNjBGZWdXTmpXbWF0dmNJSHRFMkhmTEdjUkprQ3BHNFpacm5KWEltVnlkSVJtQmNsamwvWktuZzY1Nm5Rb3ZhMUZzc1p5Q2Vsb3VXSVhpRi9Odk1EcmVraUlaR2JreWVTRk9TT0VxLzgra0xFdHlmZG1yUy8vRjNVZ055YWtXN3NRQXFlNjlUQmN6ak5kVXdQU1lnY3BnSXd0d2puVUJsV2FmdGJ3aW9EKzlNRkowc1JFR2p0OFd5REJ6RHRZSi9EL3NRUm5sSXA2akFjQTNBQT09";
+NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 
 @class AnylineDocumentModuleView;
 
@@ -43,7 +44,7 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
     BOOL success = [self.documentModuleView setupWithLicenseKey:kDocumentScanLicenseKey delegate:self error:&error];
     
     // Stop scanning after a result has been found
-    self.documentModuleView.cancelOnResult = YES;
+
 
     // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
     // we have to check the error object for the error message.
@@ -57,7 +58,8 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
     }
     
     self.documentModuleView.translatesAutoresizingMaskIntoConstraints = NO;
-
+    self.documentModuleView.currentConfiguration = [ALUIConfiguration cutoutConfigurationFromJsonFile:[[NSBundle mainBundle] pathForResource:@"document_config" ofType:@"json"]];
+    self.documentModuleView.cancelOnResult = YES;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.documentModuleView];
@@ -87,6 +89,7 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
      */
     NSError *error;
     BOOL success = [self.documentModuleView startScanningAndReturnError:&error];
+    NSLog(@" appear");
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -112,7 +115,8 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
  */
 - (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
                         hasResult:(UIImage *)transformedImage
-                        fullImage:(UIImage *)fullFrame {
+                        fullImage:(UIImage *)fullFrame
+                  documentCorners:(ALSquare *)corners; {
     
     UIViewController *viewController = [[UIViewController alloc] init];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:viewController.view.bounds];
@@ -145,7 +149,7 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
  Shows a little round label at the bottom of the screen to inform the user what happended
  */
 - (void)showUserLabel:(ALDocumentError)error {
-    NSString *helpString = nil;
+    NSString * helpString = nil;
     switch (error) {
         case ALDocumentErrorNotSharp:
             helpString = @"Document not Sharp";
@@ -157,7 +161,10 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
             helpString = @"Too Dark";
             break;
         case ALDocumentErrorShakeDetected:
-            helpString = @"Stack";
+            helpString = @"Hold Still";
+            break;
+        case ALDocumentErrorBoundsOutsideOfTolerance:
+            helpString = @"Closer";
             break;
         default:
             break;
@@ -184,5 +191,6 @@ NSString * const kDocumentScanLicenseKey = @"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0
         }];
     }];
 }
+
 
 @end

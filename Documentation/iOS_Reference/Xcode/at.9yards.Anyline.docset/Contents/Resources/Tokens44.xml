@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALDocumentError.html">
+	<File path="Constants/ALBarcodeFormatOptions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALBarcodeFormatOptions</TokenIdentifier>
+			<Abstract type="html">Theses are the valid code types to supply to setBarcodeFormatOptions:
+Use | do allow multiple formats.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -14,71 +15,181 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeAztec</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorUnkown</Declaration>
+            <Declaration>ALCodeTypeAztec</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCodabar</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
+            <Declaration>ALCodeTypeCodabar</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode39</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
+            <Declaration>ALCodeTypeCode39</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode93</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorGlareDetected</Declaration>
+            <Declaration>ALCodeTypeCode93</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode128</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorImageTooDark</Declaration>
+            <Declaration>ALCodeTypeCode128</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeDataMatrix</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorNotSharp</Declaration>
+            <Declaration>ALCodeTypeDataMatrix</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeEAN8</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorShakeDetected</Declaration>
+            <Declaration>ALCodeTypeEAN8</Declaration>
             
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeEAN13</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeEAN13</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeITF</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeITF</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypePDF417</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypePDF417</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeQR</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeQR</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeRSS14</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeRSS14</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeRSSExpanded</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeRSSExpanded</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCA</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeUPCA</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCE</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeUPCE</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCEANExtension</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeUPCEANExtension</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUnknown</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeUnknown</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeAll</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCodeTypeAll</Declaration>
+            
+            <DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>

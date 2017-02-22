@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALResult.html">
+	<File path="Classes/ALROISpec.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
-			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
-for the text recognition client.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALROISpec</TokenIdentifier>
+			<Abstract type="html">The Spec file where the unique features of the ROI are specified.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -14,123 +13,195 @@ for the text recognition client.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setSize:</TokenIdentifier>
+			<Abstract type="html">The size to which the ROI should be normalized.
+The text/digit to read areas are specified relative to this size.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/size</TokenIdentifier>
+			<Abstract type="html">The size to which the ROI should be normalized.
+The text/digit to read areas are specified relative to this size.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/size</TokenIdentifier>
+			<Abstract type="html">The size to which the ROI should be normalized.
+The text/digit to read areas are specified relative to this size.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setDataPoints:</TokenIdentifier>
+			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
 			
 			
-			<Anchor>//api/name/valid</Anchor>
+			<Anchor>//api/name/dataPoints</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPoints</TokenIdentifier>
+			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
 			
 			
-			<Anchor>//api/name/valid</Anchor>
+			<Anchor>//api/name/dataPoints</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/dataPoints</TokenIdentifier>
+			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
 			
 			
-			<Anchor>//api/name/valid</Anchor>
+			<Anchor>//api/name/dataPoints</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
-			<Abstract type="html">All the identifiers in which the digits are divided.
-Identifiers are all strings.
-There is no special sort order.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDataPoints:size:</TokenIdentifier>
+			<Abstract type="html">Init method for the ALROISpec.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)identifiers</Declaration>
-			
-			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
-			<Anchor>//api/name/identifiers</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
-			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
-does not exist or no valid result was found for the identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
-			
-			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
+			<Declaration>- (instancetype)initWithDataPoints:(NSArray *)dataPoints size:(CGSize)size</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for a result.</Abstract>
+					<Name>dataPoints</Name>
+					<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ROI.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
-			<Anchor>//api/name/resultForIdentifier:</Anchor>
+			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDataPoints:size:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/enumerateResultsForValidation:</TokenIdentifier>
-			<Abstract type="html">Enumeration Block for ALResult validation.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Init method for the ALROISpec</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Declaration>- (void)enumerateResultsForValidation:(BOOL ( ^ ) ( NSString *identifier , id obj , NSObject **toObject ))validationBlock</Declaration>
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>validationBlock</Name>
-					<Abstract type="html">The validation block.</Abstract>
+					<Name>dictionary</Name>
+					<Abstract type="html">A dictionary representing an ALROISpec object.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonFileName:</TokenIdentifier>
+			<Abstract type="html">Init method for the ALROISpec.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
 			
-			<Anchor>//api/name/enumerateResultsForValidation:</Anchor>
+			<Declaration>- (instancetype)initWithJSonFileName:(NSString *)filename</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">A json file name which has to be in the NSBundle with the .json file ending</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithJSonFileName:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonString:</TokenIdentifier>
+			<Abstract type="html">Init method for the ALROISpec.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithJSonString:(NSString *)jsonString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>jsonString</Name>
+					<Abstract type="html">A json string representing an ALROISpec object</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithJSonString:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonData:</TokenIdentifier>
+			<Abstract type="html">Init method for the ALROISpec.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithJSonData:(NSData *)jsonData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>jsonData</Name>
+					<Abstract type="html">Json data representing an ALROISpec object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithJSonData:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPointsForLine:</TokenIdentifier>
+			<Abstract type="html">Returns all the datapoints for a defined line number.</Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)dataPointsForLine:(NSInteger)line</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>line</Name>
+					<Abstract type="html">The line number for the datapoints to return.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of all the datapoints in the line.
+Note that there is no sort order garanteed.</Abstract></ReturnValue>
+			<Anchor>//api/name/dataPointsForLine:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/lineNumbers</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)lineNumbers</Declaration>
+			
+			
+			<Anchor>//api/name/lineNumbers</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

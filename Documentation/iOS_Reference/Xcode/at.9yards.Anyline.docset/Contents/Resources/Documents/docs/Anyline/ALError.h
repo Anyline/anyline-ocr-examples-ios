@@ -72,6 +72,8 @@ enum ALErrorCodes {
   ALConfidenceNotReached = 5014,
   ALStringPatternNotMatching = 5015,
   ALIntAssertionFailed = 5016,
+  ALDocumentRatioOutsideOfTolerance = 5019,
+  ALDocumentBoundsOutsideOfTolerance = 5020,
 
   ALOtherConditionNotMet = 5555,
 
@@ -89,4 +91,5 @@ enum ALErrorCodes {
   ALModuleSimpleOCRConfigIsNil = 9001,
   ALModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
   ALModuleSimpleOCRConfigTextHeightNotSet = 9003,
+  ALBarcodeModuleNativeDelegateWrong = 9004,
 };

@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSString *checkdigitFinal;
 @property (nonatomic, strong) NSString *personalNumber;
 @property (nonatomic, strong) NSString *checkDigitPersonalNumber;
+@property (nonatomic, strong) NSString *personalNumber2;
 
 
 
@@ -54,7 +55,9 @@
  *                                  personal number checkdigit.
  *                                  On other travel documents over document number, document number checkdigit, personal number,
  *                                  date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
- 
+ *
+ *  @param personalNumber2          Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs. 
+ *                                  Might contain additional information.
  *
  *  @return A new ALIdentification object
  */
@@ -73,7 +76,8 @@
             checkDigitExpirationDate:(NSString*)checkdigitExpirationDate
                       personalNumber:(NSString*)personalNumber
             checkDigitPersonalNumber:(NSString*)checkDigitPersonalNumber
-                     checkDigitFinal:(NSString*)checkDigitFinal;
+                     checkDigitFinal:(NSString*)checkDigitFinal
+                     personalNumber2:(NSString*)personalNumber2;
 
 @end
 

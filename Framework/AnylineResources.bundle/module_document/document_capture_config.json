@@ -24,12 +24,13 @@
     },
     "visualFeedback" : {
         "style": "RECT",
-        "strokeColor": "007ACC",
+        "strokeColor": "FF0000",
         "animationDuration": 150,
-        "cornerRadius": 2
+        "cornerRadius": 2,
+        "strokeWidth": 4,
     },
-    "beepOnResult": true,
-    "vibrateOnResult": true,
+    "beepOnResult": false,
+    "vibrateOnResult": false,
     "blinkAnimationOnResult": true,
     "cancelOnResult": false
 }

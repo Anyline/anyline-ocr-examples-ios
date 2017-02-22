@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashStatus.html">
+	<File path="Constants/ALCutoutAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashStatus</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCutoutAlignment</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -14,31 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOn</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTop</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOn</Declaration>
+            <Declaration>ALCutoutAlignmentTop</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOff</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTopHalf</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOff</Declaration>
+            <Declaration>ALCutoutAlignmentTopHalf</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusAuto</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentMiddle</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusAuto</Declaration>
+            <Declaration>ALCutoutAlignmentMiddle</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottomHalf</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCutoutAlignmentBottomHalf</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCutoutAlignmentBottom</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>

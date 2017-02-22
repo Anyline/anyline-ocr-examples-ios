@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">Anyline GmbH</a>
+				<a href="../index.html">9yards GmbH</a>
 			</p>
 			
 		</div>
@@ -58,9 +58,13 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/anylineDocumentModuleView:detectedPictureCorners:inImage:">- anylineDocumentModuleView:detectedPictureCorners:inImage:</option>
+		
 		<option value="//api/name/anylineDocumentModuleView:documentOutlineDetected:anglesValid:">- anylineDocumentModuleView:documentOutlineDetected:anglesValid:</option>
 		
 		<option value="//api/name/anylineDocumentModuleView:hasResult:fullImage:">- anylineDocumentModuleView:hasResult:fullImage:</option>
+		
+		<option value="//api/name/anylineDocumentModuleView:hasResult:fullImage:documentCorners:">- anylineDocumentModuleView:hasResult:fullImage:documentCorners:</option>
 		
 		<option value="//api/name/anylineDocumentModuleView:reportsPictureProcessingFailure:">- anylineDocumentModuleView:reportsPictureProcessingFailure:</option>
 		
@@ -114,8 +118,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/anylineDocumentModuleView:hasResult:fullImage:" title="anylineDocumentModuleView:hasResult:fullImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentModuleView:hasResult:fullImage:">&ndash;&nbsp;anylineDocumentModuleView:hasResult:fullImage:</a></code>
+	<a name="//api/name/anylineDocumentModuleView:hasResult:fullImage:documentCorners:" title="anylineDocumentModuleView:hasResult:fullImage:documentCorners:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentModuleView:hasResult:fullImage:documentCorners:">&ndash;&nbsp;anylineDocumentModuleView:hasResult:fullImage:documentCorners:</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -127,6 +131,75 @@
 			<div class="method-subsection brief-description">
 				<p>Called if a full result is found. A full result is considerd to be a successful preview, followed by a
 successful full scan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)<em>anylineDocumentModuleView</em> hasResult:(UIImage *)<em>transformedImage</em> fullImage:(UIImage *)<em>fullFrame</em> documentCorners:(ALSquare *)<em>corners</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transformedImage</code></th>
+						<td><p>The transformed image (cropped, deskewed)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fullFrame</code></th>
+						<td><p>The full image (not cropped or deskewed)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>corners</code></th>
+						<td><p>The corners of the document in the full frame</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>3.6.1</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineDocumentModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentModuleView:hasResult:fullImage:" title="anylineDocumentModuleView:hasResult:fullImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentModuleView:hasResult:fullImage:">&ndash;&nbsp;anylineDocumentModuleView:hasResult:fullImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called if a full result is found. A full result is considerd to be a successful preview, followed by a
+successful full scan. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since 3.6.1</span>)</p>
 			</div>
 			
 		    
@@ -159,6 +232,70 @@ successful full scan.</p>
 			<div class="method-subsection availability">
 				<h4 class="method-subtitle parameter-title">Availability</h4>
 				<p>3.3.1</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineDocumentModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentModuleView:detectedPictureCorners:inImage:" title="anylineDocumentModuleView:detectedPictureCorners:inImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentModuleView:detectedPictureCorners:inImage:">&ndash;&nbsp;anylineDocumentModuleView:detectedPictureCorners:inImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If triggerPictureCornerDetectionAndReturnError: is used this callback provides the image and the document corners
+successful full scan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)<em>anylineDocumentModuleView</em> detectedPictureCorners:(ALSquare *)<em>corners</em> inImage:(UIImage *)<em>image</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>corners</code></th>
+						<td><p>The corners of the document</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The full image (not cropped or deskewed)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>3.3.1</p><p>3.6.1</p>
 			</div>
 			
 
@@ -371,7 +508,7 @@ DocumentScanView should draw the outline.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView *)<em>anylineDocumentModuleView</em> documentOutlineDetected:(ALSquare *)<em>outline</em> anglesValid:(BOOL)<em>anglesValid</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView *)<em>anylineDocumentModuleView</em> documentOutlineDetected:(NSArray *)<em>outline</em> anglesValid:(BOOL)<em>anglesValid</em></code></div>
 
 		    
 			
@@ -381,7 +518,7 @@ DocumentScanView should draw the outline.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>outline</code></th>
-						<td><p>The <a href="../Classes/ALSquare.html">ALSquare</a> containing the four points of the document outline</p></td>
+						<td><p>An NSArray containing the points of the document outline wrapped in an NSValue</p></td>
 					</tr>
 				
 					<tr>
@@ -548,7 +685,7 @@ drawn by the {@link DocumentScanView}</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Anyline GmbH. All rights reserved. Updated: 2016-11-10</p>
+						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

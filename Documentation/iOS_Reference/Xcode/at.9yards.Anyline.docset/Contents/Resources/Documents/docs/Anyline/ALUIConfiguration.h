@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, ALReportingMode) {
 @property (nonatomic, strong) UIColor *feedbackStrokeColor;
 
 @property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle;
+@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
 @property (nonatomic, strong) UIColor *visualFeedbackStrokeColor;
 @property (nonatomic, strong) UIColor *visualFeedbackFillColor;
 @property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth;

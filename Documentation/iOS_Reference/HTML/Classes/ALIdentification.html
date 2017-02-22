@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">Anyline GmbH</a>
+				<a href="../index.html">9yards GmbH</a>
 			</p>
 			
 		</div>
@@ -82,6 +82,8 @@
 		
 		<option value="//api/name/personalNumber">personalNumber</option>
 		
+		<option value="//api/name/personalNumber2">personalNumber2</option>
+		
 		<option value="//api/name/sex">sex</option>
 		
 		<option value="//api/name/surNames">surNames</option>
@@ -94,7 +96,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:">- initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:</option>
+		<option value="//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:">- initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</option>
 		
 	</optgroup>
 	
@@ -394,8 +396,24 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:" title="initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:">&ndash;&nbsp;initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:</a></code>
+	<a name="//api/name/personalNumber2" title="personalNumber2"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personalNumber2">&nbsp;&nbsp;personalNumber2</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *personalNumber2</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:" title="initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:">&ndash;&nbsp;initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -405,56 +423,123 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Initializes a ALIdentification object. This object is used to carry the scanned values.
-*</li>
-<li>@param <a href="#//api/name/documentType">documentType</a>             The type of the document that was read. (ID/P)</li>
-<li>@param countryCode              The country code of the document. @deprecated in 3.2.1</li>
-<li>@param <a href="#//api/name/issuingCountryCode">issuingCountryCode</a>       The issuing country code of the document.</li>
-<li>@param <a href="#//api/name/nationalityCountryCode">nationalityCountryCode</a>   The nationality country code of the document.</li>
-<li>@param <a href="#//api/name/surNames">surNames</a>                 All the <a href="#//api/name/surNames">surNames</a> of the person separated by whitespace.</li>
-<li>@param <a href="#//api/name/givenNames">givenNames</a>               All the given names of the person separated by whitespace.</li>
-<li>@param <a href="#//api/name/documentNumber">documentNumber</a>           Passport number or document number.</li>
-<li>@param checkDigitNumber         Check digit for the document number.</li>
-<li>@param <a href="#//api/name/dayOfBirth">dayOfBirth</a>               The day of birth.</li>
-<li>@param checkDigitDayOfBirth     Check digit for the day of birth.</li>
-<li>@param <a href="#//api/name/sex">sex</a>                      The gender of the person</li>
-<li>@param <a href="#//api/name/expirationDate">expirationDate</a>           The expiration date of the passport / document.</li>
-<li>@param checkDigitExpirationDate Check digit for the expiration date.</li>
-<li>@param <a href="#//api/name/personalNumber">personalNumber</a>           Personal Number on the document. Is nil on many passports / documents.</li>
-<li>@param <a href="#//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</a> CheckDigit for the personal number. Is nil or 0 when no personal number is used.</li>
-<li><pre><code>                           Is also nil on none passport documents.
-</code></pre></li>
-<li>@param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,</li>
-<li><pre><code>                           date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
-</code></pre></li>
-<li><pre><code>                           personal number checkdigit.
-</code></pre></li>
-<li><pre><code>                           On other travel documents over document number, document number checkdigit, personal number,
-</code></pre></li>
-<li><pre><code>                           date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
-</code></pre></li>
-</ul>
-
+				<p>Initializes a ALIdentification object. This object is used to carry the scanned values.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDocumentType:(NSString *)<em>documentType</em> countryCode:(NSString *)<em>countryCode</em> issuingCountryCode:(NSString *)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *)<em>nationalityCountryCode</em> surNames:(NSString *)<em>surNames</em> givenNames:(NSString *)<em>givenNames</em> documentNumber:(NSString *)<em>documentNumber</em> checkDigitNumber:(NSString *)<em>checkDigitNumber</em> dayOfBirth:(NSString *)<em>dayOfBirth</em> checkDigitDayOfBirth:(NSString *)<em>checkDigitDayOfBirth</em> sex:(NSString *)<em>sex</em> expirationDate:(NSString *)<em>expirationDate</em> checkDigitExpirationDate:(NSString *)<em>checkdigitExpirationDate</em> personalNumber:(NSString *)<em>personalNumber</em> checkDigitPersonalNumber:(NSString *)<em>checkDigitPersonalNumber</em> checkDigitFinal:(NSString *)<em>checkDigitFinal</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDocumentType:(NSString *)<em>documentType</em> countryCode:(NSString *)<em>countryCode</em> issuingCountryCode:(NSString *)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *)<em>nationalityCountryCode</em> surNames:(NSString *)<em>surNames</em> givenNames:(NSString *)<em>givenNames</em> documentNumber:(NSString *)<em>documentNumber</em> checkDigitNumber:(NSString *)<em>checkDigitNumber</em> dayOfBirth:(NSString *)<em>dayOfBirth</em> checkDigitDayOfBirth:(NSString *)<em>checkDigitDayOfBirth</em> sex:(NSString *)<em>sex</em> expirationDate:(NSString *)<em>expirationDate</em> checkDigitExpirationDate:(NSString *)<em>checkdigitExpirationDate</em> personalNumber:(NSString *)<em>personalNumber</em> checkDigitPersonalNumber:(NSString *)<em>checkDigitPersonalNumber</em> checkDigitFinal:(NSString *)<em>checkDigitFinal</em> personalNumber2:(NSString *)<em>personalNumber2</em></code></div>
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>*
-*  @return A new ALIdentification object</p>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>documentType</code></th>
+						<td><p>The type of the document that was read. (ID/P)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>countryCode</code></th>
+						<td><p>The country code of the document. @deprecated in 3.2.1</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>issuingCountryCode</code></th>
+						<td><p>The issuing country code of the document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>nationalityCountryCode</code></th>
+						<td><p>The nationality country code of the document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>surNames</code></th>
+						<td><p>All the <a href="#//api/name/surNames">surNames</a> of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>givenNames</code></th>
+						<td><p>All the given names of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>documentNumber</code></th>
+						<td><p>Passport number or document number.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitNumber</code></th>
+						<td><p>Check digit for the document number.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dayOfBirth</code></th>
+						<td><p>The day of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitDayOfBirth</code></th>
+						<td><p>Check digit for the day of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sex</code></th>
+						<td><p>The gender of the person</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expirationDate</code></th>
+						<td><p>The expiration date of the passport / document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>personalNumber</code></th>
+						<td><p>Personal Number on the document. Is nil on many passports / documents.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitPersonalNumber</code></th>
+						<td><p>CheckDigit for the personal number. Is nil or 0 when no personal number is used.
+Is also nil on none passport documents.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitFinal</code></th>
+						<td><p>On passports checkdigit over passport number, passport number checkdigit, date of birth,
+date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
+personal number checkdigit.
+On other travel documents over document number, document number checkdigit, personal number,
+date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>personalNumber2</code></th>
+						<td><p>Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
+Might contain additional information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitExpirationDate</code></th>
+						<td><p>Check digit for the expiration date.</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new ALIdentification object</p>
+			</div>
+			
+
+			
+
 			
 
 			
@@ -485,7 +570,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Anyline GmbH. All rights reserved. Updated: 2016-11-10</p>
+						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

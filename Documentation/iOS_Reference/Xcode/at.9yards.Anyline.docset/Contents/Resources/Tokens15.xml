@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSegmentResult.html">
+	<File path="Classes/ALResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSegmentResult</TokenIdentifier>
-			<Abstract type="html">The ALSegmentResult provides information of one single segment of a 7-Segment Digit.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
+			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
+for the text recognition client.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,136 +14,106 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setRatioBlackPixel:</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setFrame:</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/frame</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/frame</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setActive:</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
+			<Abstract type="html">All the identifiers in which the digits are divided.
+Identifiers are all strings.
+There is no special sort order.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
+			<Declaration>- (NSArray *)identifiers</Declaration>
 			
-			
-			<Anchor>//api/name/active</Anchor>
+			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
+			<Anchor>//api/name/identifiers</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/active</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
+does not exist or no valid result was found for the identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
-			
-			
-			<Anchor>//api/name/active</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/active</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
-			
-			
-			<Anchor>//api/name/active</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/initWithRatioBlackPixel:frame:</TokenIdentifier>
-			<Abstract type="html">Initialise a SegmentResult with a black pixel ration and the frame.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithRatioBlackPixel:(float)ratioBlackPixel frame:(CGRect)frame</Declaration>
+			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>ratioBlackPixel</Name>
-					<Abstract type="html">The ratio of black pixel in this segment.</Abstract>
-				</Parameter><Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the segment is located in the image.</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for a result.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new SegmentResult with black pixel ratio and frame.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRatioBlackPixel:frame:</Anchor>
+			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
+			<Anchor>//api/name/resultForIdentifier:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

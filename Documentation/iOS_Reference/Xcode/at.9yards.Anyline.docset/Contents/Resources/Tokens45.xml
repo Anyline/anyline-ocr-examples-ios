@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashAlignment.html">
+	<File path="Constants/ALCaptureViewMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeBGRA</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTop</Declaration>
+            <Declaration>ALCaptureViewModeBGRA</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,49 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeYUV</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="45"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopRight</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="45"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottom</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="45"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="45"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomRight</Declaration>
+            <Declaration>ALCaptureViewModeYUV</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
