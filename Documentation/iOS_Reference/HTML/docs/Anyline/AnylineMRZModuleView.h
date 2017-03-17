@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString *documentNumber;
 @property (nonatomic, strong) NSString *surNames;
 @property (nonatomic, strong) NSString *givenNames;
-@property (nonatomic, strong) NSString *countryCode __deprecated_msg("Deprecated since 3.2.1. Use issuingCountryCode and nationalityCountryCode instead.");
 @property (nonatomic, strong) NSString *issuingCountryCode;
 @property (nonatomic, strong) NSString *nationalityCountryCode;
 @property (nonatomic, strong) NSString *dayOfBirth;
@@ -35,7 +34,6 @@
  *  Initializes a ALIdentification object. This object is used to carry the scanned values.
  *
  *  @param documentType             The type of the document that was read. (ID/P)
- *  @param countryCode              The country code of the document. @deprecated in 3.2.1
  *  @param issuingCountryCode       The issuing country code of the document.
  *  @param nationalityCountryCode   The nationality country code of the document.
  *  @param surNames                 All the surNames of the person separated by whitespace.
@@ -62,7 +60,6 @@
  *  @return A new ALIdentification object
  */
 - (instancetype)initWithDocumentType:(NSString*)documentType
-                         countryCode:(NSString*)countryCode
                   issuingCountryCode:(NSString*)issuingCountryCode
               nationalityCountryCode:(NSString*)nationalityCountryCode
                             surNames:(NSString*)surNames
@@ -81,10 +78,29 @@
 
 @end
 
+/**
+ *  The result object for the AnylineMRZModule
+ */
+@interface ALMRZResult : ALScanResult<ALIdentification *>
+/**
+ * Boolean indicating if all the check digits where valid
+ */
+@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid;
+
+- (instancetype)initWithResult:(ALIdentification *)result
+                         image:(UIImage *)image
+                     fullImage:(UIImage *)fullImage
+                    confidence:(NSInteger)confidence
+                       outline:(ALSquare *)outline
+           allCheckDigitsValid:(BOOL)allCheckDigitsValid;
+
+@end
+
+
 @protocol AnylineMRZModuleDelegate;
 
 /**
- * The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode. 
+ * The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
  * All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
  * It is configurable via interface builder.
  *
@@ -117,13 +133,15 @@
  *
  *  @param anylineMRZModuleView The view that scanned the result
  *  @param scanResult The scanned value
+ *  @param allCheckDigitsValid Boolean indicating if all check digits in the MRZ Zone are valid.
  *  @param image The image that was used to scan the code
  *
- *  @deprecated since 3.2.1
+ *  @deprecated since 3.10
  */
 - (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
            didFindScanResult:(ALIdentification *)scanResult
-                     atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.2.1. Use method anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage: instead.");
+         allCheckDigitsValid:(BOOL)allCheckDigitsValid
+                     atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage: instead.");
 
 @required
 
@@ -132,13 +150,10 @@
  *
  *  @param anylineMRZModuleView The view that scanned the result
  *  @param scanResult The scanned value
- *  @param allCheckDigitsValid Boolean indicating if all check digits in the MRZ Zone are valid.
- *  @param image The image that was used to scan the code
  *
+ *  @since 3.10
  */
 - (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-           didFindScanResult:(ALIdentification *)scanResult
-          allCheckDigitsValid:(BOOL)allCheckDigitsValid
-                     atImage:(UIImage *)image;
+               didFindResult:(ALMRZResult *)scanResult;
 
 @end

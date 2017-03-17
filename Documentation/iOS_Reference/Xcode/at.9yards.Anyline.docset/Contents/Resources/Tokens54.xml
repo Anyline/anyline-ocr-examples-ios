@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALPictureResolution.html">
+	<File path="Constants/ALDocumentError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALPictureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
@@ -14,51 +14,91 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolutionNone</Declaration>
+            <Declaration>ALDocumentErrorUnkown</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionHighest</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolutionHighest</Declaration>
+            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution1080</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution1080</Declaration>
+            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution720</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution720</Declaration>
+            <Declaration>ALDocumentErrorGlareDetected</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution480</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALPictureResolution480</Declaration>
+            <Declaration>ALDocumentErrorImageTooDark</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorNotSharp</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorShakeDetected</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorRatioOutsideOfTolerance</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorRatioOutsideOfTolerance</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorBoundsOutsideOfTolerance</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDocumentErrorBoundsOutsideOfTolerance</Declaration>
+            
+            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>

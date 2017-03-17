@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineOCRModuleDelegate.html">
+	<File path="Protocols/AnylineControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineOCRModuleDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
+All delegate callbacks are garanteed to be executed in the Main Thread.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
             
 			
 			<NodeRef refid="42"/>
@@ -13,95 +14,77 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Called when a result is found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:didFinishWithOutput:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the processing has successfully finished and gives the delegate the final
+output object.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView didFindResult:(ALOCRResult *)result</Declaration>
+			<Declaration>- (void)anylineController:(AnylineController *)anylineController didFinishWithOutput:(id)object</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">The result object</Abstract>
+					<Name>object</Name>
+					<Abstract type="html">The result object of the processing.
+The result is specified with the RETURN statement in the .alc file.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineController:didFinishWithOutput:</Anchor>
             <NodeRef refid="42"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsVariable:value:</TokenIdentifier>
-			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
-&lt;p&gt;
-Some possibly reported values:
-&lt;ul&gt;
-&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
-&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
-&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:didAbortRun:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the processing has not completed successfully. Possible reason would be
+for example that the display or paper frame could not be found.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Declaration>- (void)anylineController:(AnylineController *)anylineController didAbortRun:(NSError *)reason</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A NSError object with ALErrorDomain and an appropriate status.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineController:didAbortRun:</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:reportsVariable:value:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate a specified intermediate result. Which intermediate results are reported
+can be specified in the .alc command file with the REPORT function.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineController:(AnylineController *)anylineController reportsVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Parameters>
+				<Parameter>
 					<Name>variableName</Name>
-					<Abstract type="html">The variable name of the reported value</Abstract>
+					<Abstract type="html">The variable name in the .alc file which should be reported.</Abstract>
 				</Parameter><Parameter>
 					<Name>value</Name>
-					<Abstract type="html">The reported value</Abstract>
+					<Abstract type="html">The value of the reported variable.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRModuleView:reportsVariable:value:</Anchor>
+			<Anchor>//api/name/anylineController:reportsVariable:value:</Anchor>
             <NodeRef refid="42"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsRunFailure:</TokenIdentifier>
-			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
-(If not text is found or confidence is to low, etc.)</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineControllerDelegate/anylineController:parserError:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that there was a parsing error.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsRunFailure:(ALOCRError)error</Declaration>
+			<Declaration>- (void)anylineController:(AnylineController *)anylineController parserError:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">The error enum</Abstract>
+					<Abstract type="html">The parsing error which occured.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRModuleView:reportsRunFailure:</Anchor>
-            <NodeRef refid="42"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:textOutlineDetected:</TokenIdentifier>
-			<Abstract type="html">Called when the outline of a possible text is detected. (currently always a rect with 4 points,
-but this may change in the future)</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView textOutlineDetected:(ALSquare *)outline</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>outline</Name>
-					<Abstract type="html">The ALSquare with the 4 points.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if you handle drawing by yourself, NO if Anyline should draw the outline.</Abstract></ReturnValue>
-			<Anchor>//api/name/anylineOCRModuleView:textOutlineDetected:</Anchor>
+			<Anchor>//api/name/anylineController:parserError:</Anchor>
             <NodeRef refid="42"/>
 		</Token>
 		

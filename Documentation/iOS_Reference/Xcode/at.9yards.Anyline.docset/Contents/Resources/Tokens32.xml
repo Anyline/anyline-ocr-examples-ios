@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALFlashButtonAnimationDelegate.html">
+	<File path="Classes/AnylineDocumentModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonAnimationDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineDocumentModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="32"/>
@@ -13,14 +13,78 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonAnimationDelegate/flashButton:expanded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)flashButton:(ALFlashButton *)flashButton expanded:(BOOL)expanded</Declaration>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxDocumentRatioDeviation:</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton:expanded:</Anchor>
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentRatios:</TokenIdentifier>
+			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)setDocumentRatios:(NSArray&lt;NSNumber*&gt; *)ratios</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ratios</Name>
+					<Abstract type="html">all supported formats</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDocumentRatios:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashStatus.html">
+	<File path="Constants/ALCaptureViewMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashStatus</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -14,31 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOn</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeBGRA</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOn</Declaration>
+            <Declaration>ALCaptureViewModeBGRA</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="51"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOff</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeYUV</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOff</Declaration>
+            <Declaration>ALCaptureViewModeYUV</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
-            
-            <NodeRef refid="51"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusAuto</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusAuto</Declaration>
-            
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="51"/>
         </Token>

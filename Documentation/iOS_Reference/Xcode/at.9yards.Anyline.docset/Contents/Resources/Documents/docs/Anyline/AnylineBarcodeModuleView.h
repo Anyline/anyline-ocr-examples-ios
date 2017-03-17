@@ -76,6 +76,24 @@ typedef NS_OPTIONS(NSInteger, ALBarcodeFormatOptions) {
 
 typedef ALBarcodeFormatOptions ALBarcodeFormat;
 
+/**
+ *  The result object for the AnylineBarcodeModule
+ */
+@interface ALBarcodeResult : ALScanResult<NSString *>
+/**
+ * The scanned barcode format
+ */
+@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat;
+
+- (instancetype)initWithResult:(NSString *)result
+                         image:(UIImage *)image
+                     fullImage:(UIImage *)fullImage
+                    confidence:(NSInteger)confidence
+                       outline:(ALSquare *)outline
+                 barcodeFormat:(ALBarcodeFormat)barcodeFormat;
+
+@end
+
 @protocol AnylineBarcodeModuleDelegate;
 
 /**
@@ -132,19 +150,6 @@ typedef ALBarcodeFormatOptions ALBarcodeFormat;
  *
  *  @param anylineBarcodeModuleView The view that scanned the result
  *  @param scanResult The scanned value
- *  @param image The image that was used to scan the barcode
- *
- *  @deprecated since 3.2.1
- */
-- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView
-               didFindScanResult:(NSString *)scanResult
-                         atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.2.1. Use method anylineBarcodeModuleView:didFindScanResult:barcodeFormat:atImage: instead.");
-
-/**
- *  Returns the scanned value
- *
- *  @param anylineBarcodeModuleView The view that scanned the result
- *  @param scanResult The scanned value
  *  @param barcodeFormat The barcode format of the scanned barcode
  *  @param image The image that was used to scan the barcode
  *
@@ -155,8 +160,6 @@ typedef ALBarcodeFormatOptions ALBarcodeFormat;
                    barcodeFormat:(NSString *)barcodeFormat
                          atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.4 Use method anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage: instead.");
 
-@required
-
 /**
  *  Returns the scanned value
  *
@@ -164,11 +167,25 @@ typedef ALBarcodeFormatOptions ALBarcodeFormat;
  *  @param scanResult The scanned value
  *  @param barcodeFormat The barcode format of the scanned barcode
  *  @param image The image that was used to scan the barcode
- *
+ * 
+ *  @deprecated since 3.10
  */
 - (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView
                didFindScanResult:(NSString *)scanResult
                withBarcodeFormat:(ALBarcodeFormat)barcodeFormat
-                         atImage:(UIImage *)image;
+                         atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.10 Use method anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage: instead.");
+
+
+@required
+/**
+ *  Returns the scanned value
+ *
+ *  @param anylineBarcodeModuleView The view that scanned the result
+ *  @param scanResult The scanned value
+ *
+ *  @since 3.10
+ */
+- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView
+                   didFindResult:(ALBarcodeResult *)scanResult;
 
 @end

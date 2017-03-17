@@ -169,28 +169,29 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
 /*
  The main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode {
-    ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
-    /*
-     To present the scanned result to the user we use a custom view controller.
-     */
-    vc.scanMode = scanMode;
-    vc.meterImage = image;
-    vc.result = scanResult;
-    vc.barcodeResults = self.barcodeResults;
-    
-    [self.navigationController pushViewController:vc animated:YES];
-    
-    //reset found barcodes
-    self.barcodeResults = [NSMutableDictionary new];
-    
+- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindResult:(ALEnergyResult *)scanResult {
+        ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
+        /*
+         To present the scanned result to the user we use a custom view controller.
+         */
+        vc.scanMode = scanResult.scanMode;
+        vc.meterImage = scanResult.image;
+        vc.result = scanResult.result;
+        vc.barcodeResults = self.barcodeResults;
+        
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        //reset found barcodes
+        self.barcodeResults = [NSMutableDictionary new];
 }
 
 #pragma mark - AnylineNativeBarcodeDelegate methods
 /*
  An additional delegate which will add all found, and unique, barcodes to a Dictionary simultaneously.
  */
--(void)anylineVideoView:(AnylineVideoView *)videoView didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType {
+-(void)anylineVideoView:(AnylineVideoView *)videoView
+   didFindBarcodeResult:(NSString *)scanResult
+                   type:(NSString *)barcodeType {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (![self.barcodeResults objectForKey:scanResult]) {
             [self.barcodeResults setObject:barcodeType forKey:scanResult];
@@ -198,4 +199,5 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
         
     });
 }
+
 @end

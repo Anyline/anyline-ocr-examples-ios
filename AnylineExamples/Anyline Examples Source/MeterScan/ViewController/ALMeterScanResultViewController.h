@@ -18,6 +18,10 @@
 
 @property (nonatomic, strong) UIImage *meterImage;
 
+@property (nonatomic, strong) NSString *secondResult;
+
+@property (nonatomic, strong) UIImage *secondMeterImage;
+
 @property (nonatomic, strong) NSDictionary *barcodeResults;
 
 @end

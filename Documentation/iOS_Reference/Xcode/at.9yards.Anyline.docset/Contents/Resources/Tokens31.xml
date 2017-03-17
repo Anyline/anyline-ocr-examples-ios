@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineVideoView.html">
+	<File path="Classes/AnylineController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineVideoView</TokenIdentifier>
-			<Abstract type="html">The AnylineVideoView renders the CapturePreview from the Camera on the screen. It also handles an efficient way to extract frames
-from the Video and provide them to Anyline with the ALImageProvider protocol. It should be initialised via ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineController</TokenIdentifier>
+			<Abstract type="html">The Anyline Controller is the small but powerful interface to our image
+processing / text recognition. Loaded with different Configurations files it
+can execute totally different tasks.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -14,364 +15,465 @@ from the Video and provide them to Anyline with the ALImageProvider protocol. It
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFlashButton:</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/setAsyncSDK:</TokenIdentifier>
+			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
+or if you want to run it on your current thread.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/asyncSDK</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/flashButton</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/asyncSDK</TokenIdentifier>
+			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
+or if you want to run it on your current thread.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/asyncSDK</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/flashButton</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineController/asyncSDK</TokenIdentifier>
+			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
+or if you want to run it on your current thread.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/asyncSDK</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setCutoutView:</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutView</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/cutoutView</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutView</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/cutoutView</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutView</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setWatermarkRect:</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setTorchManager:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/setRunning:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/running</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/torchManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/isRunning</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/running</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/torchManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineController/running</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/running</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setBarcodeDelegate:</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate property.
+You must set the delegate if you want to get any results out
+of the Anyline SDK.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/barcodeDelegate</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate property.
+You must set the delegate if you want to get any results out
+of the Anyline SDK.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/barcodeDelegate</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate property.
+You must set the delegate if you want to get any results out
+of the Anyline SDK.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setSampleBufferDelegate:</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/initWithLicenseKey:</TokenIdentifier>
+			<Abstract type="html">Initializes a new AnylineController with a license key. In order to
+correctly run Anyline you will have to set the AnylineController delegate
+and load an appropriate configuration.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:configuration:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a frame and a configuration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithFrame:(CGRect)frame configuration:(ALUIConfiguration *)configuration</Declaration>
+			<Declaration>- (instancetype)initWithLicenseKey:(NSString *)licenseKey</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the view should be positioned.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The license key you purchased for Anyline.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of AnylineController.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithLicenseKey:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/initWithLicenseKey:delegate:</TokenIdentifier>
+			<Abstract type="html">Initializes a new AnylineController with a license key and delegate. In order
+to correctly run Anyline you will have to load an appropriate configuration.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineControllerDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The license key you purchased for Anyline.</Abstract>
 				</Parameter><Parameter>
-					<Name>configuration</Name>
-					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate where for the Anyline callbacks.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFrame:configuration:</Anchor>
+			<ReturnValue><Abstract type="html">A new instance of AnylineController.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithLicenseKey:delegate:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a frame. The CaptureView will be initialised with the default 720p
-video. No FlashButton or CutoutView will be initialised.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/loadScript:bundlePath:error:</TokenIdentifier>
+			<Abstract type="html">This method loads the Anyline SDK with an configuration string.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithFrame:(CGRect)frame</Declaration>
+			<Declaration>- (BOOL)loadScript:(NSString *)script bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the view should be positioned.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFrame:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:configuration:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a coder and a configuration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder configuration:(ALUIConfiguration *)configuration</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>configuration</Name>
-					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
+					<Name>script</Name>
+					<Abstract type="html">The string which represents the configuration.</Abstract>
 				</Parameter><Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The coder to initialise the view.</Abstract>
+					<Name>bundlePath</Name>
+					<Abstract type="html">The bundlePath where the additional ressources are located.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if the script loading fails.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCoder:configuration:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadScript:bundlePath:error:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a coder. The CaptureView will be initialised with the default 720p
-video. No FlashButton or CutoutView will be initialised.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/loadCmdFile:bundlePath:error:</TokenIdentifier>
+			<Abstract type="html">This method loads the Anyline SDK with an configuration file which is located
+at the bundlePath. The configuration must ether be an .alc unencrypted file
+or an .ale encrypted file.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder</Declaration>
+			<Declaration>- (BOOL)loadCmdFile:(NSString *)cmdFileName bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The coder to initialise the view.</Abstract>
+					<Name>cmdFileName</Name>
+					<Abstract type="html">Configuration filename. Ether .alc or .ale. Located at
+the bundlePath</Abstract>
+				</Parameter><Parameter>
+					<Name>bundlePath</Name>
+					<Abstract type="html">The bundlePath where the configuration and the additional
+ressources are located.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if the script loading fails.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCoder:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadCmdFile:bundlePath:error:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/startVideoAndReturnError:</TokenIdentifier>
-			<Abstract type="html">Starts the video preview and frame extraction.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/startWithImageProvider:error:</TokenIdentifier>
+			<Abstract type="html">Starts a continious image processing workflow where the images are provided from the
+image provider interface. Should for example be called in the viewDidAppear:</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)startVideoAndReturnError:(NSError **)error</Declaration>
+			<Declaration>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)imageProvider error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>imageProvider</Name>
+					<Abstract type="html">The image provider which is responsible for providing the frames for the
+computation.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if the processing can not be started.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the start process.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithImageProvider:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/startWithImageProvider:startVariables:error:</TokenIdentifier>
+			<Abstract type="html">Starts a continious image processing workflow where the images are provided from the
+image provider interface. Should for example be called in the viewDidAppear:</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)imageProvider startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>imageProvider</Name>
+					<Abstract type="html">The image provider which is responsible for providing the frames for the
+computation.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if the processing can not be started.</Abstract>
+				</Parameter><Parameter>
+					<Name>startVariables</Name>
+					<Abstract type="html">Variables which will be added to the process and can be referenced in the
+Anyline Command File.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the start process.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithImageProvider:startVariables:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/stopAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Stops a previously started image processing workflow. Should be called ex. in viewDidDisappear:
+or viewWillDisappear:</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)stopAndReturnError:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>error</Name>
-					<Abstract type="html">The error if starting fails.</Abstract>
+					<Abstract type="html">The error if processing workflow could not be stopped</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES/NO if starting succeed/failed.</Abstract></ReturnValue>
-			<Anchor>//api/name/startVideoAndReturnError:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the stop.</Abstract></ReturnValue>
+			<Anchor>//api/name/stopAndReturnError:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/stopVideo</TokenIdentifier>
-			<Abstract type="html">Stops the video preview and frame extraction.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/processImage:error:</TokenIdentifier>
+			<Abstract type="html">Starts a single image run with an UIImage.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)stopVideo</Declaration>
-			
-			
-			<Anchor>//api/name/stopVideo</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFocusAndExposurePoint:</TokenIdentifier>
-			<Abstract type="html">You can set a custom focus &amp;amp; exposure point here. CGPoint value has to be between 0 and 1 like in the Apple interface.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (void)setFocusAndExposurePoint:(CGPoint)point</Declaration>
+			<Declaration>- (BOOL)processImage:(UIImage *)image error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">Point with values between 0 and 1.</Abstract>
+					<Name>image</Name>
+					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
+			<Anchor>//api/name/processImage:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/processImage:startVariables:error:</TokenIdentifier>
+			<Abstract type="html">Starts a single image run with an UIImage and a start variable dictionary.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)processImage:(UIImage *)image startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</Abstract>
+				</Parameter><Parameter>
+					<Name>variables</Name>
+					<Abstract type="html">Variables which will be added for this single process. They can be used and
+controlled in the .alc files. @see ALConfig for global config variables.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
+			<Anchor>//api/name/processImage:startVariables:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/processALImage:error:</TokenIdentifier>
+			<Abstract type="html">Starts a single image run with an ALImage.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)processALImage:(ALImage *)alImage error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>alImage</Name>
+					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
+			<Anchor>//api/name/processALImage:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/processALImage:startVariables:error:</TokenIdentifier>
+			<Abstract type="html">Starts a single image run with an ALImage and a start variable dictionary.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)processALImage:(ALImage *)alImage startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>alImage</Name>
+					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</Abstract>
+				</Parameter><Parameter>
+					<Name>variables</Name>
+					<Abstract type="html">Variables which will be added for this single process. They can be used and
+controlled in the .alc files. @see ALConfig for global config variables.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
+			<Anchor>//api/name/processALImage:startVariables:error:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/setParameter:forKey:</TokenIdentifier>
+			<Abstract type="html">Sets a parameter with a key in the Interpreter.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (void)setParameter:(id)parameter forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>parameter</Name>
+					<Abstract type="html">Parameter to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key for the parameter.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
+			<Anchor>//api/name/setParameter:forKey:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/captureStillImageAndStopWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/AnylineController/versionNumber</TokenIdentifier>
+			<Abstract type="html">The Version number of the current Anyline framework.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (void)captureStillImageAndStopWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>+ (NSString *)versionNumber</Declaration>
 			
-			
-			<Anchor>//api/name/captureStillImageAndStopWithCompletionBlock:</Anchor>
+			<ReturnValue><Abstract type="html">The Version number as String</Abstract></ReturnValue>
+			<Anchor>//api/name/versionNumber</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/AnylineController/buildNumber</TokenIdentifier>
+			<Abstract type="html">The Build number of the current Anyline framework.</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)buildNumber</Declaration>
+			
+			<ReturnValue><Abstract type="html">The Build number as String</Abstract></ReturnValue>
+			<Anchor>//api/name/buildNumber</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AnylineController/frameworkBundle</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
 			
-			<Declaration>- (ALSquare *)resizeSquareToFullImageSquare:(ALSquare *)square withImageSize:(CGSize)imageSize resizeWidth:(CGFloat)resizeWidth</Declaration>
+			<Declaration>+ (NSBundle *)frameworkBundle</Declaration>
 			
 			
-			<Anchor>//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</Anchor>
+			<Anchor>//api/name/frameworkBundle</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/enableReporting:</TokenIdentifier>
+			<Abstract type="html">Reporting ON Switch, off by default</Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (void)enableReporting:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file,
+and use the reportScanResultState: for reporting</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableReporting:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/reportIncludeValues:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (void)reportIncludeValues:(NSString *)values</Declaration>
+			
+			
+			<Anchor>//api/name/reportIncludeValues:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineController/runStatistics</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineController.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)runStatistics</Declaration>
+			
+			
+			<Anchor>//api/name/runStatistics</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

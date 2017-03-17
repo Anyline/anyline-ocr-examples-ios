@@ -113,7 +113,7 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
     ALISBNViewController *vc = [[ALISBNViewController alloc] init];
-    NSString *isbn = result.text;
+    NSString *isbn = result.result;
     isbn = [isbn stringByReplacingOccurrencesOfString:@"-" withString:@""];
     isbn = [isbn stringByReplacingOccurrencesOfString:@" " withString:@""];
     isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN10" withString:@""];
@@ -123,30 +123,6 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     
     [vc setIsbnString:isbn];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

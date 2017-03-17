@@ -116,7 +116,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     UIImage *image = [UIImage imageNamed:@"gift_card_background"];
     ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
     [overlay setImage:image];
-    [overlay setText:result.text];
+    [overlay setText:result.result];
     __weak typeof(self) welf = self;
     __weak ALResultOverlayView *woverlay = overlay;
     [overlay setTouchDownBlock:^{
@@ -125,30 +125,6 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
         [woverlay removeFromSuperview];
     }];
     [self.view addSubview:overlay];
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

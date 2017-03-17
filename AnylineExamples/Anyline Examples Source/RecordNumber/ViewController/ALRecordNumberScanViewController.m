@@ -107,33 +107,9 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
     ALBaseViewController *vc = [[ALBaseViewController alloc] init];
-    NSString *url = [NSString stringWithFormat:@"https://www.google.at/search?q=\"%@\" site:discogs.com OR site:musbrainz.org OR site:allmusic.com", result.text];
+    NSString *url = [NSString stringWithFormat:@"https://www.google.at/search?q=\"%@\" site:discogs.com OR site:musbrainz.org OR site:allmusic.com",result.result];
     [vc startWebSearchWithURL:url];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-
-- (void)anylineSimpleOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-                   reportsVariable:(NSString *)variableName
-                             value:(id)value {
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

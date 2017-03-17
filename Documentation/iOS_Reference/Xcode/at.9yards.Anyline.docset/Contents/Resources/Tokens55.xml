@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALReportingMode.html">
+	<File path="Constants/ALFlashAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALReportingMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="55"/>
@@ -14,31 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingEnabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingEnabled</Declaration>
+            <Declaration>ALFlashAlignmentTop</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="55"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingDisabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingDisabled</Declaration>
+            <Declaration>ALFlashAlignmentTopLeft</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="55"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingNotSet</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingNotSet</Declaration>
+            <Declaration>ALFlashAlignmentTopRight</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="55"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottom</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="55"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="55"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomRight</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="55"/>
         </Token>

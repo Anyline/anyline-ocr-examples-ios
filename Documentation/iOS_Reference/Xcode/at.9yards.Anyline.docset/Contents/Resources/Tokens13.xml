@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRResult.html">
+	<File path="Classes/ALMRZResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,122 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setText:</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/text</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/text</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/text</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/text</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *text</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/text</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setImage:</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:outline:allCheckDigitsValid:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithText:(NSString *)text image:(UIImage *)image thresholdedImage:(UIImage *)thresholdedImage</Declaration>
+			<Declaration>- (instancetype)initWithResult:(ALIdentification *)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:allCheckDigitsValid:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

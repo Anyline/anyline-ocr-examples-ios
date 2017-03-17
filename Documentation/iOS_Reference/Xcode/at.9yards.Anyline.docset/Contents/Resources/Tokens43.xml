@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
+	<File path="Protocols/AnylineDebugDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineDebugDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="43"/>
@@ -13,22 +13,54 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
-			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:reportDebugVariable:value:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView reportDebugVariable:(NSString *)variableName value:(id)value</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>videoView</Name>
-					<Abstract type="html">The AnylineVideoView object</Abstract>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
 				</Parameter><Parameter>
-					<Name>sampleBuffer</Name>
-					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+					<Name>variableName</Name>
+					<Abstract type="html">The variable name of the reported value</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The reported value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
+			<Anchor>//api/name/anylineModuleView:reportDebugVariable:value:</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:runSkipped:</TokenIdentifier>
+			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
+(If not text is found or confidence is to low, etc.)</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>runFailure</Name>
+					<Abstract type="html">The reason why the run failed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineModuleView:runSkipped:</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		

@@ -5,10 +5,10 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.9.0</string>
+	<string>3.10.0</string>
 	<key>CFBundleVersion</key>
-	<string>1260</string>
+	<string>1289</string>
 	<key>GITHash</key>
-	<string>ca7a8dabfb97e6e46fecbce39151b13126d47893</string>
+	<string>88a7e532488981bab14eb09f2561441fc6ba439f</string>
 </dict>
 </plist>

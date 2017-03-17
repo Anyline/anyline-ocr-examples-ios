@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIFeedbackStyle.html">
+	<File path="Constants/ALOCRError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIFeedbackStyle</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALOCRError</TokenIdentifier>
+			<Abstract type="html">The possible run error codes for this module.
+You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -14,51 +15,67 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleRect</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleRect</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorUnkown</TokenIdentifier>
+            <Abstract type="html">An unknown error occurred.
+     </Abstract>
+            <Declaration>ALOCRErrorUnkown</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourRect</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourRect</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="58"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourUnderline</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourUnderline</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoLinesFound</TokenIdentifier>
+            <Abstract type="html">No text lines found in imag
+     </Abstract>
+            <Declaration>ALOCRErrorNoLinesFound</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourPoint</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourPoint</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="58"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleNone</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleNone</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoTextFound</TokenIdentifier>
+            <Abstract type="html">No text found in lines
+     </Abstract>
+            <Declaration>ALOCRErrorNoTextFound</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorConfidenceNotReached</TokenIdentifier>
+            <Abstract type="html">The required min confidence is not reached for this run
+     </Abstract>
+            <Declaration>ALOCRErrorConfidenceNotReached</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorResultNotValid</TokenIdentifier>
+            <Abstract type="html">The result does not match the validation regular expression
+     </Abstract>
+            <Declaration>ALOCRErrorResultNotValid</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorSharpnessNotReached</TokenIdentifier>
+            <Abstract type="html">The min sharpness for this run is not reached
+     </Abstract>
+            <Declaration>ALOCRErrorSharpnessNotReached</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="58"/>
         </Token>

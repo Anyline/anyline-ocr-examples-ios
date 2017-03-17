@@ -132,7 +132,7 @@ import UIKit
         weak var welf = self;
         weak var woverlay: ALResultOverlayView? = overlay;
         overlay.setImage(image);
-        overlay.setText(result.text);
+        overlay.setText(result.result as String!);
         overlay.setTouchDownBlock( { () in
             // Remove the view when touched and restart scanning
             welf?.startAnyline();
@@ -142,26 +142,4 @@ import UIKit
         self.view.addSubview(overlay);
         
     }
-    
-    func anylineOCRModuleView(_ anylineOCRModuleView: AnylineOCRModuleView!, reportsVariable variableName: String!, value: Any!) {
-        
-    }
-    
-    func anylineOCRModuleView(_ anylineOCRModuleView: AnylineOCRModuleView!, reportsRunFailure error: ALOCRError) {
-        switch (error) {
-        case ALOCRError.resultNotValid:
-            break;
-        case ALOCRError.confidenceNotReached:
-            break;
-        case ALOCRError.noLinesFound:
-            break;
-        case ALOCRError.noTextFound:
-            break;
-        case ALOCRError.unkown:
-            break;
-        default:
-            break;
-        }
-    }
-    
 }

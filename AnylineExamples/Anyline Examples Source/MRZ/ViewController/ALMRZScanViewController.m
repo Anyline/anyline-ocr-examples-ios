@@ -166,13 +166,10 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-           didFindScanResult:(ALIdentification *)scanResult
-         allCheckDigitsValid:(BOOL)allCheckDigitsValid
-                     atImage:(UIImage *)image {
+- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult {
     // Because there is a lot of information to be passed along the module
     // uses ALIdentification.
-    [self.identificationView updateIdentification:scanResult];
+    [self.identificationView updateIdentification:scanResult.result];
     // Because cancelOnResult: is YES by default scanning has stopped.
     // Present the information to the user
     [self animateScanDidComplete];

@@ -95,14 +95,14 @@ import UIKit
     /*
      The main delegate method Anyline uses to report its scanned codes
      */
-    func anylineEnergyModuleView(_ anylineEnergyModuleView: AnylineEnergyModuleView!, didFindScanResult scanResult: String!, cropImage image: UIImage!, fullImage: UIImage!, in scanMode: ALScanMode) {
+    func anylineEnergyModuleView(_ anylineEnergyModuleView: AnylineEnergyModuleView!, didFind scanResult: ALEnergyResult!) {
         let resultVC : ALMeterScanResultViewController = ALMeterScanResultViewController();
         /*
          To present the scanned result to the user we use a custom view controller.
          */
-        resultVC.scanMode = scanMode;
-        resultVC.meterImage = image;
-        resultVC.result = scanResult;
+        resultVC.scanMode = scanResult.scanMode;
+        resultVC.meterImage = scanResult.image;
+        resultVC.result = scanResult.result as String!;
         
         self.navigationController?.pushViewController(resultVC, animated: true);
     }

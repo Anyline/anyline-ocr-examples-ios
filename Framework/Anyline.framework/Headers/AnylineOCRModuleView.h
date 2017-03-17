@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, ALOCRError) {
      *  The min sharpness for this run is not reached
      */
     ALOCRErrorSharpnessNotReached     = -6,
-};
+} __deprecated_msg("Deprecated since 3.10 Use enum ALRunFailure instead.");
 /**
  *  The possible scanModes for the AnylineOCR module
  */
@@ -195,23 +195,32 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 /**
  *  The result object for the AnylineOCRModule
  */
-@interface ALOCRResult : NSObject
+@interface ALOCRResult : ALScanResult<NSString *>
 /**
  *  The scanned text in the frame.
+ *
+ *  @deprecated since 3.10. Use result property instead
  */
-@property (nonatomic, strong, readonly) NSString *text;
-/**
- *  The image where the scanned text was found.
- */
-@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong, readonly) NSString *text __deprecated_msg("Deprecated since 3.10 Use result property instead.");
+
 /**
  *  The thresholded image where the scanned text was found
  */
 @property (nonatomic, strong, readonly) UIImage *thresholdedImage;
 
+/**
+ *  @deprecated since 3.10
+ */
 - (instancetype)initWithText:(NSString *)text
                        image:(UIImage *)image
-            thresholdedImage:(UIImage *)thresholdedImage;
+            thresholdedImage:(UIImage *)thresholdedImage __deprecated_msg("Deprecated since 3.10 Use initWithResult:image:fullImage:confidence instead.");
+
+- (instancetype)initWithResult:(NSString *)result
+                         image:(UIImage *)image
+                     fullImage:(UIImage *)fullImage
+                    confidence:(NSInteger)confidence
+                       outline:(ALSquare *)outline
+              thresholdedImage:(UIImage *)thresholdedImage;
 
 @end
 
@@ -254,7 +263,16 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *  @return Boolean indicating the success / failure of the call.
  */
 - (BOOL)setOCRConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error;
-
+/**
+ *  Use this method to copy a custom trained font data into the Anyline work environment.
+ *  This method is mandatory if you want to use custom fonts.
+ *
+ *  @param trainedDataPath  The full path to your trained data file
+ *  @param fileHash         The hash of the traineddata file so Anyline knows when it changed.
+ *  @param error            The Error object if something fails
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
 - (BOOL)copyTrainedData:(NSString *)trainedDataPath
                fileHash:(NSString *)hash
                   error:(NSError **)error;
@@ -291,19 +309,23 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *  @param anylineOCRModuleView The AnylineOCRModuleView
  *  @param variableName         The variable name of the reported value
  *  @param value                The reported value
+ *
+ *  @deprecated since 3.10
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
              reportsVariable:(NSString *)variableName
-                       value:(id)value;
+                       value:(id)value __deprecated_msg("Deprecated since 3.10 Use AnylineDebugDelegate instead.");
 /**
  *  Is called when the processing is aborted for the current image before reaching return.
  *  (If not text is found or confidence is to low, etc.)
  *
  *  @param anylineOCRModuleView The AnylineOCRModuleView
  *  @param error                The error enum
+ *
+ *  @deprecated since 3.10
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error;
+           reportsRunFailure:(ALOCRError)error __deprecated_msg("Deprecated since 3.10 Use AnylineDebugDelegate instead.");
 /**
  *  Called when the outline of a possible text is detected. (currently always a rect with 4 points,
  *  but this may change in the future)
@@ -315,8 +337,10 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *  @param outline              The ALSquare with the 4 points.
  *
  *  @return YES if you handle drawing by yourself, NO if Anyline should draw the outline.
+ *
+ *  @deprecated since 3.10
  */
 - (BOOL)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-         textOutlineDetected:(ALSquare *)outline;
+         textOutlineDetected:(ALSquare *)outline __deprecated_msg("Deprecated since 3.10 Use AnylineDebugDelegate instead.");
 
 @end

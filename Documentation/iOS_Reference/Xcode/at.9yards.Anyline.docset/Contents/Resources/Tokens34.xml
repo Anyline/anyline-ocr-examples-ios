@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALImageProvider.html">
+	<File path="Classes/AnylineMRZModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALImageProvider</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
+All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
+It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -13,44 +15,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html">Method with which Anyline will request the next Image to analyse.</Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The completion handler which should be called when the next frame/image
-is available.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/provideNewImageWithCompletionBlock:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewFullResolutionImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
-			
-			<Declaration>- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
-			
-			
-			<Anchor>//api/name/provideNewFullResolutionImageWithCompletionBlock:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideStillImageWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALImageProvider.h</DeclaredIn>
-			
-			<Declaration>- (void)provideStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
-			
-			
-			<Anchor>//api/name/provideStillImageWithCompletionBlock:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

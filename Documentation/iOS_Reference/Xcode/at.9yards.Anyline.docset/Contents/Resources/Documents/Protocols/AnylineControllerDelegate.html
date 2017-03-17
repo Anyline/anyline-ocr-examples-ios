@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AnylineControllerDelegate Protocol Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">9yards GmbH</a>
+				<a href="../index.html">Anylinr GmbH</a>
 			</p>
 			
 		</div>
@@ -43,33 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
-
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-
-	
-	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/anylineController:didAbortRun:">- anylineController:didAbortRun:</option>
-		
-		<option value="//api/name/anylineController:didFinishWithOutput:">- anylineController:didFinishWithOutput:</option>
-		
-		<option value="//api/name/anylineController:parserError:">- anylineController:parserError:</option>
-		
-		<option value="//api/name/anylineController:reportsVariable:value:">- anylineController:reportsVariable:value:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -83,297 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AnylineControllerDelegate Protocol Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Conforms to</th>
-	<td>NSObject</td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>AnylineController.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <a href="../Classes/AnylineController.html">AnylineController</a> Delegate methods must be implemented to get results of the Anyline processing.
-All delegate callbacks are garanteed to be executed in the Main Thread.</p>
-					</div>
-					
-					
 
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/anylineController:didFinishWithOutput:" title="anylineController:didFinishWithOutput:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:didFinishWithOutput:">&ndash;&nbsp;anylineController:didFinishWithOutput:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the processing has successfully finished and gives the delegate the final
-output object.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> didFinishWithOutput:(id)<em>object</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>object</code></th>
-						<td><p>The result object of the processing.
-The result is specified with the RETURN statement in the .alc file.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method must be inplemented to receive any results from the AnylineSDK</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineController:didAbortRun:" title="anylineController:didAbortRun:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:didAbortRun:">&ndash;&nbsp;anylineController:didAbortRun:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the processing has not completed successfully. Possible reason would be
-for example that the display or paper frame could not be found.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> didAbortRun:(NSError *)<em>reason</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A NSError object with ALErrorDomain and an appropriate status.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineController:reportsVariable:value:" title="anylineController:reportsVariable:value:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:reportsVariable:value:">&ndash;&nbsp;anylineController:reportsVariable:value:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate a specified intermediate result. Which intermediate results are reported
-can be specified in the .alc command file with the REPORT function.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>variableName</code></th>
-						<td><p>The variable name in the .alc file which should be reported.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>value</code></th>
-						<td><p>The value of the reported variable.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is optional. It provides intermediate results, therefore Anyline did not completed the
-task yet.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineController:parserError:" title="anylineController:parserError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:parserError:">&ndash;&nbsp;anylineController:parserError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate that there was a parsing error.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> parserError:(NSError *)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The parsing error which occured.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If this method is not implemented the SDK raises an exception with the parsing error.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
+						<p class="copyright">Copyright &copy; 2017 Anylinr GmbH. All rights reserved. Updated: 2017-03-16</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

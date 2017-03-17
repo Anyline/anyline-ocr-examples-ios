@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALValuesStackFlipping.html">
+	<File path="Classes/ALSquare.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
-			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
+			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,51 +13,309 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter><Parameter>
-					<Name>partialResultSize</Name>
-					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			
+			
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			
+			
+			<Anchor>//api/name/upLeft</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			
+			
+			<Anchor>//api/name/upLeft</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
+					<Name>upLeft</Name>
+					<Abstract type="html">The up left point of the square.</Abstract>
 				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+					<Name>upRight</Name>
+					<Abstract type="html">The up right point of the square.</Abstract>
 				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+					<Name>downLeft</Name>
+					<Abstract type="html">The down left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downRight</Name>
+					<Abstract type="html">The down right point of the square.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCGRect:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingX</Declaration>
+			
+			
+			<Anchor>//api/name/boundingX</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingY</Declaration>
+			
+			
+			<Anchor>//api/name/boundingY</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingWidth</Declaration>
+			
+			
+			<Anchor>//api/name/boundingWidth</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingHeight</Declaration>
+			
+			
+			<Anchor>//api/name/boundingHeight</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithPointOffset:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithScale:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area2</Declaration>
+			
+			
+			<Anchor>//api/name/area2</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (float)ratio</Declaration>
+			
+			
+			<Anchor>//api/name/ratio</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGRect)boxRect</Declaration>
+			
+			
+			<Anchor>//api/name/boxRect</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALTorchManager.html">
+	<File path="Classes/ALScanResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanResult</TokenIdentifier>
+			<Abstract type="html">The base result object for all the modules</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,146 +13,194 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setResult:</TokenIdentifier>
+			<Abstract type="html">The scanned result.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/result</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/result</TokenIdentifier>
+			<Abstract type="html">The scanned result.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/result</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/result</TokenIdentifier>
+			<Abstract type="html">The scanned result.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/result</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setImage:</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/image</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/image</TokenIdentifier>
+			<Abstract type="html">The image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setFullImage:</TokenIdentifier>
+			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
 			
 			
-			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
+			<Anchor>//api/name/fullImage</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/fullImage</TokenIdentifier>
+			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
 			
 			
-			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
+			<Anchor>//api/name/fullImage</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/fullImage</TokenIdentifier>
+			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)resetLightLevelCounter</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
 			
 			
-			<Anchor>//api/name/resetLightLevelCounter</Anchor>
+			<Anchor>//api/name/fullImage</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setConfidence:</TokenIdentifier>
+			<Abstract type="html">The confidence for the scanned value.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
 			
 			
-			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
+			<Anchor>//api/name/confidence</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/confidence</TokenIdentifier>
+			<Abstract type="html">The confidence for the scanned value.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
 			
 			
-			<Anchor>//api/name/setTorch:</Anchor>
+			<Anchor>//api/name/confidence</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/confidence</TokenIdentifier>
+			<Abstract type="html">The confidence for the scanned value.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
+			
+			
+			<Anchor>//api/name/confidence</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setOutline:</TokenIdentifier>
+			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/outline</TokenIdentifier>
+			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/outline</TokenIdentifier>
+			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/initWithResult:image:fullImage:confidence:outline:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)torchAvailable</Declaration>
+			<Declaration>- (instancetype)initWithResult:(ObjectType)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline</Declaration>
 			
 			
-			<Anchor>//api/name/torchAvailable</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

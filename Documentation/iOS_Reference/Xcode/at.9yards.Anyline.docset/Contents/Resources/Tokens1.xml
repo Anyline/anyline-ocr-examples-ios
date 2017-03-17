@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALContours.html">
+	<File path="Classes/ALBarcodeResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALContours</TokenIdentifier>
-			<Abstract type="html">ALContours hides an c++ vector with all contours found in an image.</Abstract>
-			<DeclaredIn>ALContours.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALBarcodeResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineBarcodeModule</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/setBarcodeFormat:</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormat</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/barcodeFormat</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormat</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeResult/barcodeFormat</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormat</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/initWithResult:image:fullImage:confidence:outline:barcodeFormat:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithResult:(NSString *)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline barcodeFormat:(ALBarcodeFormat)barcodeFormat</Declaration>
+			
+			
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:barcodeFormat:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
 		
         
         

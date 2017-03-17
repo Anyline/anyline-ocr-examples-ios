@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AnylineOCRModuleView Class Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">9yards GmbH</a>
+				<a href="../index.html">Anylinr GmbH</a>
 			</p>
 			
 		</div>
@@ -43,37 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
-
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-
-	
-	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/ocrConfig">ocrConfig</option>
-		
-	</optgroup>
-	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/copyTrainedData:fileHash:error:">- copyTrainedData:fileHash:error:</option>
-		
-		<option value="//api/name/setOCRConfig:error:">- setOCRConfig:error:</option>
-		
-		<option value="//api/name/setupWithLicenseKey:delegate:ocrConfig:error:">- setupWithLicenseKey:delegate:ocrConfig:error:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -87,259 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AnylineOCRModuleView Class Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Inherits from</th>
-	<td><a href="../Classes/AnylineAbstractModuleView.html">AnylineAbstractModuleView</a> : UIView</td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>AnylineOCRModuleView.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The AnylineOcrScanView can be used to recognize text.
-It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
-and the {@link AnylineOcrConfig} (settings to adapt the recognition to your use case).</p>
-					</div>
-					
-					
 
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/ocrConfig" title="ocrConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ocrConfig">&nbsp;&nbsp;ocrConfig</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Read-only property for the <a href="../Classes/ALOCRConfig.html">ALOCRConfig</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Use method <a href="#//api/name/setOCRConfig:error:">setOCRConfig:error:</a> for setting the config.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setupWithLicenseKey:delegate:ocrConfig:error:" title="setupWithLicenseKey:delegate:ocrConfig:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWithLicenseKey:delegate:ocrConfig:error:">&ndash;&nbsp;setupWithLicenseKey:delegate:ocrConfig:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the license key and delegate.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)setupWithLicenseKey:(NSString *)<em>licenseKey</em> delegate:(id&lt;AnylineOCRModuleDelegate&gt;)<em>delegate</em> ocrConfig:(ALOCRConfig *)<em>ocrConfig</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key for this application bundle</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate that will receive the Anyline results (hast to conform to <a href="../Protocols/AnylineOCRModuleDelegate.html">AnylineOCRModuleDelegate</a>)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>ocrConfig</code></th>
-						<td><p>The <a href="#//api/name/ocrConfig">ocrConfig</a> to use for the scanning</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error that occured</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setOCRConfig:error:" title="setOCRConfig:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setOCRConfig:error:">&ndash;&nbsp;setOCRConfig:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets a new <a href="../Classes/ALOCRConfig.html">ALOCRConfig</a> and returns an Error if something failed.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)setOCRConfig:(ALOCRConfig *)<em>ocrConfig</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>ocrConfig</code></th>
-						<td><p>The <a href="../Classes/ALOCRConfig.html">ALOCRConfig</a> to set</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The Error object if something fails</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/copyTrainedData:fileHash:error:" title="copyTrainedData:fileHash:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/copyTrainedData:fileHash:error:">&ndash;&nbsp;copyTrainedData:fileHash:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)copyTrainedData:(NSString *)<em>trainedDataPath</em> fileHash:(NSString *)<em>hash</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
+						<p class="copyright">Copyright &copy; 2017 Anylinr GmbH. All rights reserved. Updated: 2017-03-16</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

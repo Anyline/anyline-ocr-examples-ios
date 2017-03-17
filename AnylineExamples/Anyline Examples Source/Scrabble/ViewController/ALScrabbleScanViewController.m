@@ -120,32 +120,8 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
     ALScrabbleViewController *vc = [[ALScrabbleViewController alloc] init];
-    [vc setScrabbleWord:result.text];
+    [vc setScrabbleWord:result.result];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

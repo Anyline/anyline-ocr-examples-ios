@@ -119,37 +119,13 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     __weak typeof(self) welf = self;
     __weak ALResultOverlayView * woverlay = overlay;
     [overlay setImage:image];
-    [overlay setText:result.text];
+    [overlay setText:result.result];
     [overlay setTouchDownBlock:^{
         // Remove the view when touched and restart scanning
         [welf startAnyline];
         [woverlay removeFromSuperview];
     }];
     [self.view addSubview:overlay];
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

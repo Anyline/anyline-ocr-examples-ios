@@ -11,11 +11,16 @@
 
 @interface ALMeterScanResultViewController ()
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UILabel *unitLabel;
 @property (nonatomic, strong) IBOutlet UILabel *meterReadingLabel;
 @property (nonatomic, strong) IBOutlet UILabel *resultHeaderLabel;
 
+@property (nonatomic, strong) IBOutlet UILabel *secondMeterReadingLabel;
+@property (nonatomic, strong) IBOutlet UILabel *secondResultHeaderLabel;
+
 @property (nonatomic, strong) IBOutlet UIImageView *meterImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *secondMeterImageView;
 
 @property (nonatomic, strong) IBOutlet UILabel *barcodeHeaderLabel;
 @property (nonatomic, strong) IBOutlet UILabel *barcodeResultsLabel;
@@ -27,6 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.scrollView];
+    
+    double offset = 0;
     self.title = @"Result";
     UIColor *backgroundFontColor = [UIColor colorWithRed:85.0 / 255
                                               green:144.0 / 255
@@ -35,80 +44,84 @@
     
     self.view.backgroundColor = backgroundFontColor;
 
-    self.meterImageView = [[UIImageView alloc] initWithImage:self.meterImage];
-    self.meterImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.meterImageView.frame = CGRectMake((self.view.frame.size.width - 272)/2, 300, 272, 70);
-    [self.view addSubview:self.meterImageView];
     
-    self.meterReadingLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, 230, 272, 50)];
+    int startPos = 80;
+    
+    self.resultHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos, 272, 50)];
+    self.resultHeaderLabel.font = [UIFont fontWithName:@"Avenir Next" size:34];
+    self.resultHeaderLabel.adjustsFontSizeToFitWidth = YES;
+    self.resultHeaderLabel.textColor = [UIColor whiteColor];
+    self.resultHeaderLabel.textAlignment = NSTextAlignmentCenter;
+    self.resultHeaderLabel.text = @"Meter Reading";
+    [self.scrollView addSubview:self.resultHeaderLabel];
+    
+    self.meterReadingLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos+60, 272, 50)];
     self.meterReadingLabel.font = [UIFont fontWithName:@"Avenir Next" size:34];
     self.meterReadingLabel.adjustsFontSizeToFitWidth = YES;
     self.meterReadingLabel.textColor = backgroundFontColor;
     self.meterReadingLabel.backgroundColor = [UIColor whiteColor];
     self.meterReadingLabel.textAlignment = NSTextAlignmentCenter;
     self.meterReadingLabel.text = self.result;
-    [self.view addSubview:self.meterReadingLabel];
+    [self.scrollView addSubview:self.meterReadingLabel];
     
-    self.resultHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, 170, 272, 50)];
-    self.resultHeaderLabel.font = [UIFont fontWithName:@"Avenir Next" size:34];
-    self.resultHeaderLabel.adjustsFontSizeToFitWidth = YES;
-    self.resultHeaderLabel.textColor = [UIColor whiteColor];
-    self.resultHeaderLabel.textAlignment = NSTextAlignmentCenter;
-    self.resultHeaderLabel.text = @"Meter Reading";
-    [self.view addSubview:self.resultHeaderLabel];
+    self.meterImageView = [[UIImageView alloc] initWithImage:self.meterImage];
+    self.meterImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.meterImageView.frame = CGRectMake((self.view.frame.size.width - 272)/2, startPos+130, 272, 70);
+    [self.scrollView addSubview:self.meterImageView];
     
-//    self.unitLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, 170, 272, 50)];
-//    self.unitLabel.font = [UIFont fontWithName:@"Apple Color Emoji" size:34];
-//    self.unitLabel.adjustsFontSizeToFitWidth = YES;
-//    self.unitLabel.textColor = [UIColor whiteColor];
-//    self.unitLabel.textAlignment = NSTextAlignmentCenter;
-//    [self.view addSubview:self.unitLabel];
-//    
-//    NSString *unit = @"";
-//    
-//    switch (self.scanMode) {
-//        case ALElectricMeter:
-//        case ALElectricMeter5_1:
-//        case ALElectricMeter6_1:
-//        case ALDigitalMeter:
-//            unit = @"kWh";
-//            break;
-//        case ALGasMeter:
-//        case ALGasMeter6:
-//        case ALHeatMeter4:
-//        case ALHeatMeter5:
-//        case ALHeatMeter6:
-//        case ALWaterMeterBlackBackground:
-//        case ALWaterMeterWhiteBackground:
-//            unit = @"m\u00B3";
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    self.unitLabel.text = unit;
+    offset += 220;
     
+    if (self.secondResult.length > 0) {
+        
+        self.secondResultHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos+offset, 272, 50)];
+        self.secondResultHeaderLabel.font = [UIFont fontWithName:@"Avenir Next" size:34];
+        self.secondResultHeaderLabel.adjustsFontSizeToFitWidth = YES;
+        self.secondResultHeaderLabel.textColor = [UIColor whiteColor];
+        self.secondResultHeaderLabel.textAlignment = NSTextAlignmentCenter;
+        self.secondResultHeaderLabel.text = @"Meter Reading 2";
+        [self.scrollView addSubview:self.secondResultHeaderLabel];
+        
+        self.secondMeterReadingLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos+offset+60, 272, 50)];
+        self.secondMeterReadingLabel.font = [UIFont fontWithName:@"Avenir Next" size:34];
+        self.secondMeterReadingLabel.adjustsFontSizeToFitWidth = YES;
+        self.secondMeterReadingLabel.textColor = backgroundFontColor;
+        self.secondMeterReadingLabel.backgroundColor = [UIColor whiteColor];
+        self.secondMeterReadingLabel.textAlignment = NSTextAlignmentCenter;
+        self.secondMeterReadingLabel.text = self.secondResult;
+        [self.scrollView addSubview:self.secondMeterReadingLabel];
+        
+        self.secondMeterImageView = [[UIImageView alloc] initWithImage:self.secondMeterImage];
+        self.secondMeterImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.secondMeterImageView.frame = CGRectMake((self.view.frame.size.width - 272)/2, startPos+offset+130, 272, 70);
+        [self.scrollView addSubview:self.secondMeterImageView];
+
+        offset += 230;
+    }
+   
     
     if (self.barcodeResults.count > 0) {
-        self.barcodeHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, 400, 272, 50)];
+        self.barcodeHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos+offset, 272, 50)];
         self.barcodeHeaderLabel.font = [UIFont fontWithName:@"Avenir Next" size:22];
         self.barcodeHeaderLabel.adjustsFontSizeToFitWidth = YES;
         self.barcodeHeaderLabel.textColor = [UIColor whiteColor];
         self.barcodeHeaderLabel.textAlignment = NSTextAlignmentCenter;
         self.barcodeHeaderLabel.text = @"Barcode Result";
-        [self.view addSubview:self.barcodeHeaderLabel];
+        [self.scrollView addSubview:self.barcodeHeaderLabel];
         
-        self.barcodeResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, 450, 272, 50)];
+        self.barcodeResultsLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 272)/2, startPos+offset+60, 272, 50)];
         self.barcodeResultsLabel.font = [UIFont fontWithName:@"Avenir Next" size:16];
         self.barcodeResultsLabel.adjustsFontSizeToFitWidth = YES;
         self.barcodeResultsLabel.numberOfLines = 0;
         self.barcodeResultsLabel.textColor = backgroundFontColor;
         self.barcodeResultsLabel.backgroundColor = [UIColor whiteColor];
         self.barcodeResultsLabel.textAlignment = NSTextAlignmentCenter;
-        [self.view addSubview:self.barcodeResultsLabel];
-    
+        [self.scrollView addSubview:self.barcodeResultsLabel];
+        
         self.barcodeResultsLabel.text = [NSString stringWithFormat:@"%@", [[self.barcodeResults allKeys] lastObject]];
+        offset += 120;
     }
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startPos + offset + 10);
 }
 
 @end

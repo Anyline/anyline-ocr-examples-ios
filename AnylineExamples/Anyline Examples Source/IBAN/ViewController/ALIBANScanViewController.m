@@ -122,7 +122,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     UIImage *image = [UIImage imageNamed:@"iban_background"];
     ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
     [overlay setImage:image];
-    [overlay setText:[self formattedIbanText:result.text]];
+    [overlay setText:[self formattedIbanText:result.result]];
     [overlay addLabelOffset:CGSizeMake(0, 30)];
     [overlay setFontSize:17];
     [overlay setAlignment:NSTextAlignmentLeft];
@@ -134,30 +134,6 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
         [woverlay removeFromSuperview];
     }];
     [self.view addSubview:overlay];
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

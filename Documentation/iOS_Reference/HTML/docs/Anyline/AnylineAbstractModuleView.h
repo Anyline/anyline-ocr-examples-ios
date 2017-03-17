@@ -15,6 +15,135 @@
 #import "AnylineVideoView.h"
 
 /**
+ * The name for a reported brightness value
+ *
+ * @type NSNumber holding a double
+ */
+extern NSString * const kBrightnessVariableName;
+
+/**
+ * The name for a reported text outline value
+ *
+ * @type cv::Rect
+ */
+extern NSString * const kOutlineVariableName;
+
+/**
+ * The name for a reported device acceleration value
+ *
+ * @type NSNumber holding a double
+ */
+extern NSString * const kDeviceAccelerationVariableName;
+
+/**
+ * The name for a reported thresholded image value
+ *
+ * @type ALImage
+ */
+extern NSString * const kThresholdedImageVariableName;
+
+/**
+ * The name for a reported contour value
+ *
+ * @type std::vector<al::Contour>
+ */
+extern NSString * const kContoursVariableName;
+
+/**
+ * The name for a reported square value
+ *
+ * @type cv::Rect
+ */
+extern NSString * const kSquareVariableName;
+
+/**
+ * The name for a reported polygon value
+ *
+ * @type ALPolygon
+ */
+extern NSString * const kPolygonVariableName;
+
+/**
+ * The name for a reported sharpness value
+ *
+ * @type NSNumber holding a double
+ */
+extern NSString * const kSharpnessVariableName;
+
+/**
+ * The name for a reported shake detection warning value
+ *
+ * @type NSNumber holding a BOOL
+ */
+extern NSString * const kShakeDetectionWarningVariableName;
+
+/**
+ *  The possible run error codes for this module.
+ *  You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:
+ */
+typedef NS_ENUM(NSInteger, ALRunFailure) {
+    /**
+     *  An unknown error occurred.
+     */
+    ALRunFailureUnkown                  = -1,
+    /**
+     *  No text lines found in imag
+     */
+    ALRunFailureNoLinesFound            = -2,
+    /**
+     *  No text found in lines
+     */
+    ALRunFailureNoTextFound             = -3,
+    /**
+     *  The required min confidence is not reached for this run
+     */
+    ALRunFailureConfidenceNotReached    = -4,
+    /**
+     *  The result does not match the validation regular expression
+     */
+    ALRunFailureResultNotValid          = -5,
+    /**
+     *  The min sharpness for this run is not reached
+     */
+    ALRunFailureSharpnessNotReached     = -6,
+};
+
+/**
+ *  The base result object for all the modules
+ */
+@interface ALScanResult<__covariant ObjectType> : NSObject
+/**
+ *  The scanned result.
+ */
+@property (nonatomic, strong, readonly) ObjectType result;
+/**
+ *  The image where the scanned text was found.
+ */
+@property (nonatomic, strong, readonly) UIImage *image;
+/**
+ *  The full frme image where the scanned text was found.
+ */
+@property (nonatomic, strong, readonly) UIImage *fullImage;
+/**
+ *  The confidence for the scanned value.
+ */
+@property (nonatomic, assign, readonly) NSInteger confidence;
+/**
+ *  The outline of the found text in relation to the ModuleView.
+ */
+@property (nonatomic, strong, readonly) ALSquare *outline;
+
+- (instancetype)initWithResult:(ObjectType)result
+                         image:(UIImage *)image
+                     fullImage:(UIImage *)fullImage
+                    confidence:(NSInteger)confidence
+                       outline:(ALSquare *)outline;
+
+@end
+
+@protocol AnylineDebugDelegate;
+
+/**
  * The AnylineAbstractModuleView is a programmatic interface for an object that manages easy access to Anylines scanning modes.  It is a subclass of UIView.
  * You should sublcass this class to build Anyline modules.
  *
@@ -26,6 +155,8 @@
  *
  */
 @interface AnylineAbstractModuleView : UIView
+
+@property (nonatomic, weak) id<AnylineDebugDelegate> debugDelegate;
 
 /**
  The video view which is responsible for video preview, frame extraction, ...
@@ -152,15 +283,43 @@
 - (BOOL)isRunning;
 
 /**
- * Listen for device motion and notify an object if a threshold is reached
- *
- * @param threshold    - Call the delegate if threshold is reached ( defaults to 0.05 )
- * @param delegate     - The callback delegate
- */
-- (void)startListeningForMotionWithThreshold:(CGFloat)threshold delegate:(id)delegate;
-
-/**
  * Stop listening for device motion.
  */
 - (void)stopListeningForMotion;
+@end
+
+/**
+ *  The delegate for the AnylineOCRModuleView.
+ */
+@protocol AnylineDebugDelegate <NSObject>
+
+@optional
+/**
+ * <p>Called with interesting values, that arise during processing.</p>
+ * <p>
+ * Some possibly reported values:
+ * <ul>
+ * <li>$brightness - the brightness of the center region of the cutout as a float value </li>
+ * <li>$confidence - the confidence, an Integer value between 0 and 100 </li>
+ * <li>$thresholdedImage - the current image transformed into black and white (the base image used for OCR)</li>
+ * </ul>
+ * </p>
+ *
+ *  @param anylineModuleView The AnylineAbstractModuleView
+ *  @param variableName         The variable name of the reported value
+ *  @param value                The reported value
+ */
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+      reportDebugVariable:(NSString *)variableName
+                    value:(id)value;
+/**
+ *  Is called when the processing is aborted for the current image before reaching return.
+ *  (If not text is found or confidence is to low, etc.)
+ *
+ *  @param anylineModuleView The AnylineAbstractModuleView
+ *  @param runFailure        The reason why the run failed
+ */
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+               runSkipped:(ALRunFailure)runFailure;
+
 @end

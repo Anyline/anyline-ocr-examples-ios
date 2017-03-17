@@ -134,7 +134,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     ALLicensePlateResultOverlayView *overlay = [[ALLicensePlateResultOverlayView alloc] initWithFrame:self.view.bounds];
     [overlay setImage:image];
     
-    NSArray<NSString *> *licenseComponents = [result.text componentsSeparatedByString:@"-"];
+    NSArray<NSString *> *licenseComponents = [result.result componentsSeparatedByString:@"-"];
     
     if (licenseComponents.count > 1) {
         [overlay setCountryCode:[licenseComponents firstObject]];
@@ -151,32 +151,6 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     }];
     [self.view addSubview:overlay];
 
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    
-    
-    
-}
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-           reportsRunFailure:(ALOCRError)error {
-    switch (error) {
-        case ALOCRErrorResultNotValid:
-            break;
-        case ALOCRErrorConfidenceNotReached:
-            break;
-        case ALOCRErrorNoLinesFound:
-            break;
-        case ALOCRErrorNoTextFound:
-            break;
-        case ALOCRErrorUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AnylineBarcodeModuleView Class Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -18,7 +18,7 @@
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">9yards GmbH</a>
+				<a href="../index.html">Anylinr GmbH</a>
 			</p>
 			
 		</div>
@@ -43,37 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
-
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-
-	
-	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/)">)</option>
-		
-		<option value="//api/name/barcodeFormatOptions">barcodeFormatOptions</option>
-		
-		<option value="//api/name/useOnlyNativeBarcodeScanning">useOnlyNativeBarcodeScanning</option>
-		
-	</optgroup>
-	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/setupWithLicenseKey:delegate:error:">- setupWithLicenseKey:delegate:error:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -87,257 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AnylineBarcodeModuleView Class Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Inherits from</th>
-	<td><a href="../Classes/AnylineAbstractModuleView.html">AnylineAbstractModuleView</a> : UIView</td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>AnylineBarcodeModuleView.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The AnylineBarcodeModuleView class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode. All its capabilities are bundled into this <a href="../Classes/AnylineAbstractModuleView.html">AnylineAbstractModuleView</a> subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</p>
 
-<p>Communication with the host application is managed with a delegate that conforms to <a href="../Protocols/AnylineBarcodeModuleDelegate.html">AnylineBarcodeModuleDelegate</a>.</p>
-
-<p>AnylineBarcodeModuleView is able to scan the most common 1D and 2D codes. The accepted codes are set with setBarcodeFormatOptions.</p>
-					</div>
-					
-					
-
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/)" title=")"></a>
-	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since 3.4</span>)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *__deprecated_msg ( &quot;Deprecated since 3.4 Use setBarcodeFormats:error: instead.&quot; )</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineBarcodeModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/barcodeFormatOptions" title="barcodeFormatOptions"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeFormatOptions">&nbsp;&nbsp;barcodeFormatOptions</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineBarcodeModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/useOnlyNativeBarcodeScanning" title="useOnlyNativeBarcodeScanning"></a>
-	<h3 class="method-title"><code><a href="#//api/name/useOnlyNativeBarcodeScanning">&nbsp;&nbsp;useOnlyNativeBarcodeScanning</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>When set to YES we only use the iOS native Barcode scanning.
-That one uses less computing power, but is worse under low light conditions.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineBarcodeModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setupWithLicenseKey:delegate:error:" title="setupWithLicenseKey:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWithLicenseKey:delegate:error:">&ndash;&nbsp;setupWithLicenseKey:delegate:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the license key and delegate.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)setupWithLicenseKey:(NSString *)<em>licenseKey</em> delegate:(id&lt;AnylineBarcodeModuleDelegate&gt;)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key for this application bundle</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate that will receive the Anyline results (hast to conform to <a href="../Protocols/AnylineBarcodeModuleDelegate.html">AnylineBarcodeModuleDelegate</a>)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error that occured</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineBarcodeModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 9yards GmbH. All rights reserved. Updated: 2017-02-13</p>
+						<p class="copyright">Copyright &copy; 2017 Anylinr GmbH. All rights reserved. Updated: 2017-03-16</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

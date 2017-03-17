@@ -148,14 +148,16 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
 /*
  The main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode {
+
+- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
+                  didFindResult:(ALEnergyResult *)scanResult {
     ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
     /*
      To present the scanned result to the user we use a custom view controller.
      */
-    vc.scanMode = scanMode;
-    vc.meterImage = image;
-    vc.result = scanResult;
+    vc.scanMode = scanResult.scanMode;
+    vc.meterImage = scanResult.image;
+    vc.result = scanResult.result;
     
     [self.navigationController pushViewController:vc animated:YES];
 }

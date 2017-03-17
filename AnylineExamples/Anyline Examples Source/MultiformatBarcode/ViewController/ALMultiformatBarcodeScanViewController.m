@@ -108,11 +108,9 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
  This is the main delegate method Anyline uses to report its scanned codes
  */
 - (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView
-               didFindScanResult:(NSString *)scanResult
-               withBarcodeFormat:(ALBarcodeFormat)barcodeFormat
-                         atImage:(UIImage *)image  {
+                   didFindResult:(ALBarcodeResult *)scanResult {
     // Because in this case scanResult is a simple string, we are able to forward it to the debug label
-    self.resultLabel.text = scanResult;
+    self.resultLabel.text = scanResult.result;
 }
 
 @end

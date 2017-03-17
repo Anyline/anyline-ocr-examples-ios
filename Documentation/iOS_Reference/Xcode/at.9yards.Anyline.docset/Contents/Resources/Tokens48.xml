@@ -1,107 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALDocumentError.html">
+	<File path="Protocols/AnylineOCRModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineOCRModuleDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="48"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorUnkown</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Called when a result is found</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView didFindResult:(ALOCRResult *)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineOCRModuleView</Name>
+					<Abstract type="html">The AnylineOCRModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">The result object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineOCRModuleView:didFindResult:</Anchor>
             <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsVariable:value:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt; (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineOCRModuleView</Name>
+					<Abstract type="html">The AnylineOCRModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>variableName</Name>
+					<Abstract type="html">The variable name of the reported value</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The reported value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineOCRModuleView:reportsVariable:value:</Anchor>
             <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsRunFailure:</TokenIdentifier>
+			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
+(If not text is found or confidence is to low, etc.) (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsRunFailure:(ALOCRError)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineOCRModuleView</Name>
+					<Abstract type="html">The AnylineOCRModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error enum</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineOCRModuleView:reportsRunFailure:</Anchor>
             <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorGlareDetected</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:textOutlineDetected:</TokenIdentifier>
+			<Abstract type="html">Called when the outline of a possible text is detected. (currently always a rect with 4 points,
+but this may change in the future) (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView textOutlineDetected:(ALSquare *)outline</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineOCRModuleView</Name>
+					<Abstract type="html">The AnylineOCRModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>outline</Name>
+					<Abstract type="html">The ALSquare with the 4 points.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if you handle drawing by yourself, NO if Anyline should draw the outline.</Abstract></ReturnValue>
+			<Anchor>//api/name/anylineOCRModuleView:textOutlineDetected:</Anchor>
             <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorImageTooDark</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorNotSharp</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorShakeDetected</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorRatioOutsideOfTolerance</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorRatioOutsideOfTolerance</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorBoundsOutsideOfTolerance</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentErrorBoundsOutsideOfTolerance</Declaration>
-            
-            <DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

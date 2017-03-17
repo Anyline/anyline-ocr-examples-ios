@@ -19,6 +19,24 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
     ALHeatMeter4, ALHeatMeter5, ALHeatMeter6
 };
 
+/**
+ *  The result object for the AnylineEnergyModule
+ */
+@interface ALEnergyResult : ALScanResult<NSString *>
+/**
+ * The used scanMode
+ */
+@property (nonatomic, assign, readonly) ALScanMode scanMode;
+
+- (instancetype)initWithResult:(NSString *)result
+                         image:(UIImage *)image
+                     fullImage:(UIImage *)fullImage
+                    confidence:(NSInteger)confidence
+                       outline:(ALSquare *)outline
+                      scanMode:(ALScanMode)scanMode;
+
+@end
+
 @protocol AnylineEnergyModuleDelegate;
 
 /**
@@ -74,7 +92,17 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
 @protocol AnylineEnergyModuleDelegate <NSObject>
 
 @required
-
+/**
+ *  Returns the scanned value
+ *
+ *  @param AnylineEnergyModuleView The view that scanned the result
+ *  @param scanResult The scanned result object
+ *
+ *  @since 3.10
+ */
+- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
+                  didFindResult:(ALEnergyResult *)scanResult;
+@optional
 /**
  *  Returns the scanned value
  *
@@ -84,11 +112,12 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
  *  @param fullImage The whole image used to scan the number
  *  @param scanMode The mode the scanner was in at the time of scanning. Has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber
  *
+ *  @deprecated since 3.10
  */
 - (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
               didFindScanResult:(NSString *)scanResult
                       cropImage:(UIImage *)image
                       fullImage:(UIImage *)fullImage
-                         inMode:(ALScanMode)scanMode;
+                         inMode:(ALScanMode)scanMode __deprecated_msg("Deprecated since 3.10 Use AnylineDebugDelegate instead.");
 
 @end
