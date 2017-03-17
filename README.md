@@ -18,12 +18,10 @@ The Example App provides you with many working preconfigured modules, which show
 ### 0. Clone or Download
 
 * If you'd like to clone the repository you will have to use git-lfs. Use the following commands to install git-lfs.
-
-`
+```
 brew install git-lfs
-
 git lfs install
-`
+```
 
 * If you prefer downloading a package, use the provided `zip` package on the [releases page](https://github.com/Anyline/anyline-ocr-examples-ios/releases). Be aware that the github download zip button does not work for projects with git-lfs.
 
