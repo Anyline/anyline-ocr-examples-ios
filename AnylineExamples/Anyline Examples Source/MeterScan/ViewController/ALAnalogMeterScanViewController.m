@@ -1,5 +1,5 @@
 //
-//  ALElectric6MeterScanViewController.m
+//  ALAnalogMeterScanViewController.m
 //  AnylineExamples
 //
 //  Created by Philipp Mueller on 24/11/16.

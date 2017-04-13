@@ -36,6 +36,19 @@ with a constant font, background and character count (like loyalty codes inside 
             <NodeRef refid="59"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAuto</TokenIdentifier>
+            <Abstract type="html">The AUTO mode is optimal if you want to scan more than one usecase in one mode.
+You can also allow lower case letters.
+MULTILINE is not supported yet.
+     </Abstract>
+            <Declaration>ALAuto</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

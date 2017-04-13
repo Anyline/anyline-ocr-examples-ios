@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171100561E79B3BF005AD98A /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171100541E79B3BF005AD98A /* Anyline.framework */; };
-		171100571E79B3BF005AD98A /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 171100551E79B3BF005AD98A /* AnylineResources.bundle */; };
+		1717A6351E9AB3DC00107FFE /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1717A6341E9AB3DC00107FFE /* ALAutoAnalogDigitalMeterScanViewController.m */; };
 		1747570D1DD1D2F1008995FE /* AnylineElectricMeterScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747570C1DD1D2F1008995FE /* AnylineElectricMeterScanViewController.swift */; };
 		174C0AAC1DE704E0005B4F74 /* ALAnalogMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174C0AAB1DE704E0005B4F74 /* ALAnalogMeterScanViewController.m */; };
 		177DE4CE1E4E23BD00BCE1BF /* license_plates_a.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CB1E4E23BD00BCE1BF /* license_plates_a.ale */; };
 		177DE4CF1E4E23BD00BCE1BF /* license_plates_d.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CC1E4E23BD00BCE1BF /* license_plates_d.ale */; };
 		177DE4D01E4E23BD00BCE1BF /* license_plates.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CD1E4E23BD00BCE1BF /* license_plates.ale */; };
+		178A0AC01E9F6F1E006C96BC /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178A0ABE1E9F6F1E006C96BC /* Anyline.framework */; };
+		178A0AC11E9F6F1E006C96BC /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */; };
 		17995FB21E67089E00407775 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */; };
 		17BBFC961DD217400029AE7A /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */; };
 		1C1C85E11A83E5E30077B84E /* ALMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85BB1A83E5E30077B84E /* ALMainTableViewController.m */; };
@@ -80,8 +81,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		171100541E79B3BF005AD98A /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
-		171100551E79B3BF005AD98A /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
+		1717A6341E9AB3DC00107FFE /* ALAutoAnalogDigitalMeterScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAutoAnalogDigitalMeterScanViewController.m; sourceTree = "<group>"; };
+		1717A6361E9AB3EA00107FFE /* ALAutoAnalogDigitalMeterScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAutoAnalogDigitalMeterScanViewController.h; sourceTree = "<group>"; };
 		1747570C1DD1D2F1008995FE /* AnylineElectricMeterScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnylineElectricMeterScanViewController.swift; sourceTree = "<group>"; };
 		174C0AAB1DE704E0005B4F74 /* ALAnalogMeterScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAnalogMeterScanViewController.m; sourceTree = "<group>"; };
 		174C0AAD1DE704ED005B4F74 /* ALAnalogMeterScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAnalogMeterScanViewController.h; sourceTree = "<group>"; };
@@ -89,6 +90,8 @@
 		177DE4CB1E4E23BD00BCE1BF /* license_plates_a.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_a.ale; sourceTree = "<group>"; };
 		177DE4CC1E4E23BD00BCE1BF /* license_plates_d.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_d.ale; sourceTree = "<group>"; };
 		177DE4CD1E4E23BD00BCE1BF /* license_plates.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates.ale; sourceTree = "<group>"; };
+		178A0ABE1E9F6F1E006C96BC /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
+		178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDoubleTariffMeterScanViewController.m; sourceTree = "<group>"; };
 		17995FB31E6708AE00407775 /* ALDoubleTariffMeterScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDoubleTariffMeterScanViewController.h; sourceTree = "<group>"; };
 		17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnylineBottlecapScanViewController.swift; sourceTree = "<group>"; };
@@ -206,7 +209,7 @@
 				63C7FF5A1BA2F6580035C435 /* libz.dylib in Frameworks */,
 				654079F31B4D4AC300145834 /* AssetsLibrary.framework in Frameworks */,
 				654077DB1A836D76001652B1 /* libstdc++.6.0.9.dylib in Frameworks */,
-				171100561E79B3BF005AD98A /* Anyline.framework in Frameworks */,
+				178A0AC01E9F6F1E006C96BC /* Anyline.framework in Frameworks */,
 				654077DA1A836D76001652B1 /* libc++.dylib in Frameworks */,
 				6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */,
 			);
@@ -215,19 +218,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		171100521E79B3A6005AD98A /* Vendor */ = {
+		178A0ABC1E9F6F01006C96BC /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				171100531E79B3B6005AD98A /* Anyline */,
+				178A0ABD1E9F6F11006C96BC /* Anyline */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
 		};
-		171100531E79B3B6005AD98A /* Anyline */ = {
+		178A0ABD1E9F6F11006C96BC /* Anyline */ = {
 			isa = PBXGroup;
 			children = (
-				171100541E79B3BF005AD98A /* Anyline.framework */,
-				171100551E79B3BF005AD98A /* AnylineResources.bundle */,
+				178A0ABE1E9F6F1E006C96BC /* Anyline.framework */,
+				178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */,
 			);
 			name = Anyline;
 			sourceTree = "<group>";
@@ -464,8 +467,8 @@
 			children = (
 				1C1C85F01A83E6100077B84E /* Anyline Examples Source */,
 				1C1C85AC1A83E5E30077B84E /* Anyline Demo App */,
-				171100521E79B3A6005AD98A /* Vendor */,
 				654077D11A836C80001652B1 /* Frameworks */,
+				178A0ABC1E9F6F01006C96BC /* Vendor */,
 				654077951A836787001652B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -499,6 +502,8 @@
 				65BE61AD1A8911DD003E517E /* ALMeterScanResultViewController.m */,
 				174C0AAD1DE704ED005B4F74 /* ALAnalogMeterScanViewController.h */,
 				174C0AAB1DE704E0005B4F74 /* ALAnalogMeterScanViewController.m */,
+				1717A6361E9AB3EA00107FFE /* ALAutoAnalogDigitalMeterScanViewController.h */,
+				1717A6341E9AB3DC00107FFE /* ALAutoAnalogDigitalMeterScanViewController.m */,
 				17995FB31E6708AE00407775 /* ALDoubleTariffMeterScanViewController.h */,
 				17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */,
 				65421A1B1C0E30A400643637 /* ALHeatMeterScanViewController.h */,
@@ -745,7 +750,7 @@
 				1CAC154D1AB5B7BD00963174 /* Images.xcassets in Resources */,
 				65BE61AA1A8911D2003E517E /* MeterImagesAssets.xcassets in Resources */,
 				65A3E97F1D75C5E900CEFF15 /* Alte.traineddata in Resources */,
-				171100571E79B3BF005AD98A /* AnylineResources.bundle in Resources */,
+				178A0AC11E9F6F1E006C96BC /* AnylineResources.bundle in Resources */,
 				65C29DE21C648B7500B98F9D /* isbn_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,6 +796,7 @@
 				630C812F1C72255E008097EF /* NSString+Util.m in Sources */,
 				63046BB81C720D0D0035F08B /* ALScrabbleViewController.m in Sources */,
 				65C29DF11C6496F900B98F9D /* ALRBScanViewController.m in Sources */,
+				1717A6351E9AB3DC00107FFE /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */,
 				63DC39F51C720857001B2F00 /* ALISBNAPI.m in Sources */,
 				65318D511B21EAF4002C9350 /* ALMRZScanViewController.m in Sources */,
 				63046BC31C720D260035F08B /* ALScrabbleWord.m in Sources */,

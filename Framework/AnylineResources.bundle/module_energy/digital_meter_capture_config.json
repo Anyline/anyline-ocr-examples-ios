@@ -24,7 +24,7 @@
         "alignment" : "top_left"
     },
     "visualFeedback": {
-        "style": "rect",
+        "style": "RECT",
         "strokeColor": "0099FF",
         "fillColor": "220099FF"
     },

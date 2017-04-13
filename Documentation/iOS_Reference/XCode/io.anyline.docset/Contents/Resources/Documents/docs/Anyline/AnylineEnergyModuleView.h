@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
     ALSerialNumber,
     ALWaterMeterBlackBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALWaterMeterWhiteBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
     ALDigitalMeter,
-    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6
+    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6,
+    ALAutoAnalogDigitalMeter
 };
 
 /**

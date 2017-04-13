@@ -36,17 +36,10 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.charHeight = ALRangeMake(45, 85);
     config.tesseractLanguages = @[@"anyline_capitals"];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    config.minConfidence = 85;
     config.validationRegex = @"[A-Z0-9]{8}$";
-    config.scanMode = ALGrid;
-    
-    config.charCountX = 8;
-    config.charCountY = 1;
-    config.charPaddingXFactor = 0.5;
-    config.isBrightTextOnDark = YES;
+    config.scanMode = ALAuto;
     
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called

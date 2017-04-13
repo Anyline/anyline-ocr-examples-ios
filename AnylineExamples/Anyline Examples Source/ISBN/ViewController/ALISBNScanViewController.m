@@ -36,18 +36,10 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.charHeight = ALRangeMake(20, 70);
     config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
     config.charWhiteList = @"ISBN0123456789<>-X";
-    config.minConfidence = 65;
     config.validationRegex = @"^ISBN((-)?\\s*(13|10))?:?\\s*((978|979){1}-?\\s*)*[0-9]{1,5}-?\\s*[0-9]{2,7}-?\\s*[0-9]{2,7}-?\\s*[0-9X]$";
-    config.removeSmallContours = YES;
-    config.removeWhitespaces = YES;
-    config.scanMode = ALLine;
-    // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
-    // The goal of the minimum sharpness is to avoid a time consuming ocr step,
-    // if the image is blurry and good results are therefor not likely.
-    config.minSharpness = 62;
+    config.scanMode = ALAuto;
     
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called

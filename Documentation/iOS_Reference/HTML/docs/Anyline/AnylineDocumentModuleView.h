@@ -78,6 +78,8 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  */
 - (void)setDocumentRatios:(NSArray<NSNumber*>*)ratios;
 
+- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error;
+
 @end
 
 @protocol AnylineDocumentModuleDelegate <NSObject>

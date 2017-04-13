@@ -74,7 +74,13 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
      *  The GRID mode is optimal for characters with equal size laid out in a grid
      *  with a constant font, background and character count (like loyalty codes inside bottle caps).
      */
-    ALGrid
+    ALGrid,
+    /**
+     *  The AUTO mode is optimal if you want to scan more than one usecase in one mode.
+     *  You can also allow lower case letters.
+     *  MULTILINE is not supported yet.
+     */
+    ALAuto
 };
 
 /**
@@ -189,6 +195,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *  This property is for Grid mode only.
  */
 @property (nonatomic, assign) BOOL isBrightTextOnDark;
+
 
 @end
 

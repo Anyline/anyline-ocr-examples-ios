@@ -1,10 +1,8 @@
-  
-                        
- _____         _ _         
-|  _  |___ _ _| |_|___ ___ 
-|     |   | | | | |   | -_|
-|__|__|_|_|_  |_|_|_|_|___|
-          |___|            
+	 _____         _ _         
+	|  _  |___ _ _| |_|___ ___ 
+	|     |   | | | | |   | -_|
+	|__|__|_|_|_  |_|_|_|_|___|
+	          |___|            
 
 
 AnyOCR
@@ -17,7 +15,7 @@ Let’s dive into the organisational part, because if you plan on scanning the f
 
 AnyOCR can only be used for text recognition, OCR or Augmented Reality solutions, when scanned with the Anyline SDK. The SDK can be embedded into any kind of mobile application and supports all platforms (iOS, Android, Windows Phone, Epson Moverio, Xamarin, Cordova) and already comes with a training font file of AnyOCR 
 
-The exact information about this license agreements can be found in the file AnyOCR_License.pdf
+The exact information about this license agreements can be found in the file AnyOCR_License
 __________
 
 How do you get the SDK? 

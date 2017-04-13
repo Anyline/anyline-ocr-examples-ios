@@ -27,7 +27,7 @@ git lfs install
 
 ### 1. With Cocoapods
 
-Simply add pod ‘Anyline’, ’~> 3.10’ to your Podfile and run pod install or pod update. (Please make sure you are on the latest version of CocoaPods)
+Simply add pod ‘Anyline’, ’~> 3.11’ to your Podfile and run pod install or pod update. (Please make sure you are on the latest version of CocoaPods)
 
 You’re all done and can jump to point 3.1.
 

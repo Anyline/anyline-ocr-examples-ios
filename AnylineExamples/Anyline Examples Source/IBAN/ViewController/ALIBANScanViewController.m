@@ -36,19 +36,11 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.charHeight = ALRangeMake(20, 60);
     config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    config.minConfidence = 75;
-    config.scanMode = ALLine;
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-    config.removeSmallContours = YES;
-    config.removeWhitespaces = YES;
-    // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
-    // The goal of the minimum sharpness is to avoid a time consuming ocr step,
-    // if the image is blurry and good results are therefor not likely.
-    config.minSharpness = 66;
-
+    config.scanMode = ALAuto;
+    
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
     // by the module once we start receiving results.
