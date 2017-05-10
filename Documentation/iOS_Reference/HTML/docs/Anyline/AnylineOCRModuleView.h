@@ -83,6 +83,32 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
     ALAuto
 };
 
+
+
+/*
+ *  Predefined Regex examples as NSString
+ *  This examples can be used for several usecases
+ *  If you use a regex please also use the matching charWhiteList
+ */
+extern NSString * const regexForEmail;
+extern NSString * const regexForURL;
+extern NSString * const regexForPriceTag;
+extern NSString * const regexForISBN;
+extern NSString * const regexForVIN;
+extern NSString * const regexForIMEI;
+
+/*
+ *  Predefined charWhiteList examples as NSString
+ *  This examples can be used for several usecases
+ *  If you use a charWhiteList please also use the matching regex
+ */
+extern NSString * const charWhiteListForEmail;
+extern NSString * const charWhiteListForURL;
+extern NSString * const charWhiteListForPriceTag;
+extern NSString * const charWhiteListForISBN;
+extern NSString * const charWhiteListForVIN ;
+extern NSString * const charWhiteListForIMEI;
+
 /**
  *  A class used to configure the Anyline OCR module.
  */

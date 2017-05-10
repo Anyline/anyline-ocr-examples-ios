@@ -13,10 +13,10 @@
 		177DE4CE1E4E23BD00BCE1BF /* license_plates_a.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CB1E4E23BD00BCE1BF /* license_plates_a.ale */; };
 		177DE4CF1E4E23BD00BCE1BF /* license_plates_d.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CC1E4E23BD00BCE1BF /* license_plates_d.ale */; };
 		177DE4D01E4E23BD00BCE1BF /* license_plates.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CD1E4E23BD00BCE1BF /* license_plates.ale */; };
-		178A0AC01E9F6F1E006C96BC /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178A0ABE1E9F6F1E006C96BC /* Anyline.framework */; };
-		178A0AC11E9F6F1E006C96BC /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */; };
 		17995FB21E67089E00407775 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */; };
 		17BBFC961DD217400029AE7A /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */; };
+		17CB455D1EC3493100DE62EB /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CB455B1EC3493100DE62EB /* Anyline.framework */; };
+		17CB455E1EC3493100DE62EB /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CB455C1EC3493100DE62EB /* AnylineResources.bundle */; };
 		1C1C85E11A83E5E30077B84E /* ALMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85BB1A83E5E30077B84E /* ALMainTableViewController.m */; };
 		1C1C85E21A83E5E30077B84E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85BD1A83E5E30077B84E /* AppDelegate.m */; };
 		1C1C85EF1A83E5E30077B84E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85DB1A83E5E30077B84E /* main.m */; };
@@ -90,11 +90,11 @@
 		177DE4CB1E4E23BD00BCE1BF /* license_plates_a.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_a.ale; sourceTree = "<group>"; };
 		177DE4CC1E4E23BD00BCE1BF /* license_plates_d.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_d.ale; sourceTree = "<group>"; };
 		177DE4CD1E4E23BD00BCE1BF /* license_plates.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates.ale; sourceTree = "<group>"; };
-		178A0ABE1E9F6F1E006C96BC /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
-		178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDoubleTariffMeterScanViewController.m; sourceTree = "<group>"; };
 		17995FB31E6708AE00407775 /* ALDoubleTariffMeterScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDoubleTariffMeterScanViewController.h; sourceTree = "<group>"; };
 		17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnylineBottlecapScanViewController.swift; sourceTree = "<group>"; };
+		17CB455B1EC3493100DE62EB /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
+		17CB455C1EC3493100DE62EB /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		17E9077C1DF8444B00637A66 /* ALAppDemoLicenses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAppDemoLicenses.h; sourceTree = "<group>"; };
 		1C1C85B61A83E5E30077B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1C1C85B81A83E5E30077B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				63C7FF5A1BA2F6580035C435 /* libz.dylib in Frameworks */,
 				654079F31B4D4AC300145834 /* AssetsLibrary.framework in Frameworks */,
 				654077DB1A836D76001652B1 /* libstdc++.6.0.9.dylib in Frameworks */,
-				178A0AC01E9F6F1E006C96BC /* Anyline.framework in Frameworks */,
+				17CB455D1EC3493100DE62EB /* Anyline.framework in Frameworks */,
 				654077DA1A836D76001652B1 /* libc++.dylib in Frameworks */,
 				6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */,
 			);
@@ -218,19 +218,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		178A0ABC1E9F6F01006C96BC /* Vendor */ = {
+		17CB45591EC3489800DE62EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				178A0ABD1E9F6F11006C96BC /* Anyline */,
+				17CB455A1EC348A700DE62EB /* Anyline */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
 		};
-		178A0ABD1E9F6F11006C96BC /* Anyline */ = {
+		17CB455A1EC348A700DE62EB /* Anyline */ = {
 			isa = PBXGroup;
 			children = (
-				178A0ABE1E9F6F1E006C96BC /* Anyline.framework */,
-				178A0ABF1E9F6F1E006C96BC /* AnylineResources.bundle */,
+				17CB455B1EC3493100DE62EB /* Anyline.framework */,
+				17CB455C1EC3493100DE62EB /* AnylineResources.bundle */,
 			);
 			name = Anyline;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				1C1C85F01A83E6100077B84E /* Anyline Examples Source */,
 				1C1C85AC1A83E5E30077B84E /* Anyline Demo App */,
 				654077D11A836C80001652B1 /* Frameworks */,
-				178A0ABC1E9F6F01006C96BC /* Vendor */,
+				17CB45591EC3489800DE62EB /* Vendor */,
 				654077951A836787001652B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -750,7 +750,7 @@
 				1CAC154D1AB5B7BD00963174 /* Images.xcassets in Resources */,
 				65BE61AA1A8911D2003E517E /* MeterImagesAssets.xcassets in Resources */,
 				65A3E97F1D75C5E900CEFF15 /* Alte.traineddata in Resources */,
-				178A0AC11E9F6F1E006C96BC /* AnylineResources.bundle in Resources */,
+				17CB455E1EC3493100DE62EB /* AnylineResources.bundle in Resources */,
 				65C29DE21C648B7500B98F9D /* isbn_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -931,7 +931,7 @@
 					"ANYLINE_DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
@@ -961,7 +961,7 @@
 					"$(PROJECT_DIR)/../Framework/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;

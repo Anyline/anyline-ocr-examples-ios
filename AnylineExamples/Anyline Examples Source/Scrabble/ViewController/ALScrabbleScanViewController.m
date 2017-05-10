@@ -36,18 +36,11 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.scanMode = ALGrid;
-    config.charHeight = ALRangeMake(45, 90);
+    config.scanMode = ALAuto;
     config.tesseractLanguages = @[@"scrabble"];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
-    config.minConfidence = 80;
     config.validationRegex = @"^[A-ZÄÜÖ]{7,10}$";
-    
-    config.charCountX = 7;
-    config.charCountY = 1;
-    config.charPaddingXFactor = 1.7;
-    config.charPaddingYFactor = 0.5;
-    config.isBrightTextOnDark = NO;
+
     
     
     NSError *error = nil;

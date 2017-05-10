@@ -39,6 +39,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
+    config.minConfidence = 70;
     config.scanMode = ALAuto;
     
     NSError *error = nil;

@@ -26,6 +26,9 @@
 @property (nonatomic, strong) NSString *personalNumber;
 @property (nonatomic, strong) NSString *checkDigitPersonalNumber;
 @property (nonatomic, strong) NSString *personalNumber2;
+@property (nonatomic, readonly) NSDate *expirationDateObject;
+@property (nonatomic, readonly) NSDate *dayOfBirthDateObject;
+
 
 
 

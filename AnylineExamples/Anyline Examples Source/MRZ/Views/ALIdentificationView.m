@@ -144,8 +144,22 @@
     self.given_names.text = aIdentification.givenNames;
     self.code.text = aIdentification.nationalityCountryCode;
     self.type.text = aIdentification.documentType;
-    self.dob.text = aIdentification.dayOfBirth;
-    self.expiration_date.text = aIdentification.expirationDate;
+    
+    
+    if (aIdentification.dayOfBirthDateObject) {
+        self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dayOfBirthDateObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+        [self.dob sizeToFit];
+    } else {
+        self.dob.text = aIdentification.dayOfBirth;
+    }
+    
+    if (aIdentification.expirationDateObject) {
+        self.expiration_date.text = [NSDateFormatter localizedStringFromDate:aIdentification.expirationDateObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+        [self.expiration_date sizeToFit];
+    } else {
+        self.expiration_date.text = aIdentification.expirationDate;
+    }
+
     self.sex.text = aIdentification.sex;
     
     if([aIdentification.documentType hasPrefix:@"P"]) {
