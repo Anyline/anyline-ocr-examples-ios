@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineEnergyModuleView.html">
+	<File path="Classes/ALSquare.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineEnergyModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineEnergyModuleView class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
+			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -13,101 +13,309 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.4&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)setScanMode:(ALScanMode)scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			
+			
+			<Anchor>//api/name/upRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			
+			
+			<Anchor>//api/name/downLeft</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
+					<Name>upLeft</Name>
+					<Abstract type="html">The up left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>upRight</Name>
+					<Abstract type="html">The up right point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downLeft</Name>
+					<Abstract type="html">The down left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downRight</Name>
+					<Abstract type="html">The down right point of the square.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setScanMode:</Anchor>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError **)error</Declaration>
+			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+					<Name>rect</Name>
+					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setScanMode:error:</Anchor>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCGRect:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<Declaration>- (CGFloat)boundingX</Declaration>
+			
+			
+			<Anchor>//api/name/boundingX</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingY</Declaration>
+			
+			
+			<Anchor>//api/name/boundingY</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingWidth</Declaration>
+			
+			
+			<Anchor>//api/name/boundingWidth</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingHeight</Declaration>
+			
+			
+			<Anchor>//api/name/boundingHeight</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithPointOffset:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithScale:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area2</Declaration>
+			
+			
+			<Anchor>//api/name/area2</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (float)ratio</Declaration>
+			
+			
+			<Anchor>//api/name/ratio</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGRect)boxRect</Declaration>
+			
+			
+			<Anchor>//api/name/boxRect</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		

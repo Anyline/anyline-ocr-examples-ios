@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALImage.html">
+	<File path="Classes/ALDocumentScanPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALImage</TokenIdentifier>
-			<Abstract type="html">The ALImage encapsulate the opencv image classes and methods.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDocumentScanPlugin</TokenIdentifier>
+			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,264 +13,412 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/setUiImage:</TokenIdentifier>
-			<Abstract type="html">The ALImage UIImage object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setPluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/uiImage</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImage</TokenIdentifier>
-			<Abstract type="html">The ALImage UIImage object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/uiImage</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALImage/uiImage</TokenIdentifier>
-			<Abstract type="html">The ALImage UIImage object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *uiImage</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/uiImage</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/setImageBuffer:</TokenIdentifier>
-			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setScanImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALImage *scanImage</Declaration>
 			
 			
-			<Anchor>//api/name/imageBuffer</Anchor>
+			<Anchor>//api/name/scanImage</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/imageBuffer</TokenIdentifier>
-			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/scanImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALImage *scanImage</Declaration>
 			
 			
-			<Anchor>//api/name/imageBuffer</Anchor>
+			<Anchor>//api/name/scanImage</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALImage/imageBuffer</TokenIdentifier>
-			<Abstract type="html">The ALImage CVImageBufferRef object.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/scanImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CVImageBufferRef imageBuffer</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALImage *scanImage</Declaration>
 			
 			
-			<Anchor>//api/name/imageBuffer</Anchor>
+			<Anchor>//api/name/scanImage</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithSpecOverlay:</TokenIdentifier>
-			<Abstract type="html">Method draws the DisplaySpecs onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digits.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setCoreController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithSpecOverlay:(ALROISpec *)displaySpec</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALCoreController *coreController</Declaration>
+			
+			
+			<Anchor>//api/name/coreController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/coreController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCoreController *coreController</Declaration>
+			
+			
+			<Anchor>//api/name/coreController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/coreController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCoreController *coreController</Declaration>
+			
+			
+			<Anchor>//api/name/coreController</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setImageProvider:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, assign) id&lt;ALImageProvider&gt; imageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/imageProvider</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/imageProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, assign) id&lt;ALImageProvider&gt; imageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/imageProvider</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/imageProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, assign) id&lt;ALImageProvider&gt; imageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/imageProvider</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setJustDetectCornersIfPossible:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL justDetectCornersIfPossible</Declaration>
+			
+			
+			<Anchor>//api/name/justDetectCornersIfPossible</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/justDetectCornersIfPossible</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL justDetectCornersIfPossible</Declaration>
+			
+			
+			<Anchor>//api/name/justDetectCornersIfPossible</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/justDetectCornersIfPossible</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL justDetectCornersIfPossible</Declaration>
+			
+			
+			<Anchor>//api/name/justDetectCornersIfPossible</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/initWithPluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/initWithPluginID:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/start:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)start:(id&lt;ALImageProvider&gt; _Nonnull)imageProvider error:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/start:error:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/stopAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/stopAndReturnError:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/enableReporting:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)enableReporting:(BOOL)enable</Declaration>
+			
+			
+			<Anchor>//api/name/enableReporting:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/isRunning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isRunning</Declaration>
+			
+			
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/triggerPictureCornerDetectionAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/triggerPictureCornerDetectionAndReturnError:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>displaySpec</Name>
-					<Abstract type="html">The Display specifications where to find, and how to interpret the digits.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of all the digits and segments.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithSpecOverlay:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithDisplayResults:</TokenIdentifier>
-			<Abstract type="html">Method draws the DisplaySpecs and DisplayResult onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digits and what results we computed.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setMaxDocumentRatioDeviation:</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithDisplayResults:(ALDisplayResult *)displayResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setDocumentRatios:</TokenIdentifier>
+			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSNumber*&gt; *documentRatios</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>displayResult</Name>
-					<Abstract type="html">The Display result contains the computed result for every segment.</Abstract>
+					<Name>ratios</Name>
+					<Abstract type="html">all supported formats</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of all the digits and segments.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithDisplayResults:</Anchor>
+			
+			<Anchor>//api/name/documentRatios</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithDigitOverlay:</TokenIdentifier>
-			<Abstract type="html">Method draws one DigitSpec onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/documentRatios</TokenIdentifier>
+			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithDigitOverlay:(ALDataPoint *)digitSpec</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSNumber*&gt; *documentRatios</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>digitSpec</Name>
-					<Abstract type="html">A DigitSpec specification where the digit in the Image is found.</Abstract>
+					<Name>ratios</Name>
+					<Abstract type="html">all supported formats</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of this DigitSpec.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithDigitOverlay:</Anchor>
+			
+			<Anchor>//api/name/documentRatios</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithRectOverlay:</TokenIdentifier>
-			<Abstract type="html">Method draws one CGRect onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/documentRatios</TokenIdentifier>
+			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithRectOverlay:(CGRect)rectToDraw</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSNumber*&gt; *documentRatios</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>rectToDraw</Name>
-					<Abstract type="html">A CGRect which will be drawn.</Abstract>
+					<Name>ratios</Name>
+					<Abstract type="html">all supported formats</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of this CGRect.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithRectOverlay:</Anchor>
+			
+			<Anchor>//api/name/documentRatios</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithSquareOverlay:</TokenIdentifier>
-			<Abstract type="html">Method draws one ALSquare onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/addDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithSquareOverlay:(ALSquare *)square</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>square</Name>
-					<Abstract type="html">An ALSquare which will be drawn onto the Image.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of the ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithSquareOverlay:</Anchor>
+			<Declaration>- (void)addDelegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/addDelegate:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithHorizontalLines:</TokenIdentifier>
-			<Abstract type="html">Method draws horizontal lines onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/removeDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithHorizontalLines:(NSArray *)lines</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>lines</Name>
-					<Abstract type="html">An array with positions where to draw lines onto the Image.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of the horizontal lines.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithHorizontalLines:</Anchor>
+			<Declaration>- (void)removeDelegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithVerticalLines:</TokenIdentifier>
-			<Abstract type="html">Method draws vertical lines onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/addInfoDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithVerticalLines:(NSArray *)lines</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>lines</Name>
-					<Abstract type="html">An array with positions where to draw lines onto the Image.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of the vertical lines.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithVerticalLines:</Anchor>
+			<Declaration>- (void)addInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt; _Nonnull)infoDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/addInfoDelegate:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/uiImageWithContours:</TokenIdentifier>
-			<Abstract type="html">Method draws contours onto the ALImage and returns an UIImage.
-For debbugging purpose so you can see where we located the digit.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/removeInfoDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (UIImage *)uiImageWithContours:(ALContours *)contours</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>lines</Name>
-					<Abstract type="html">An ALContours which will be drawn onto the Image.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An UIImage with an overlay of the contours.</Abstract></ReturnValue>
-			<Anchor>//api/name/uiImageWithContours:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/initWithUIImage:</TokenIdentifier>
-			<Abstract type="html">Initialise an ALImage with an UIImage.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
+			<Declaration>- (void)removeInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt; _Nonnull)infoDelegate</Declaration>
 			
-			<Declaration>- (instancetype)initWithUIImage:(UIImage *)uiImage</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>uiImage</Name>
-					<Abstract type="html">The UIImage to encapsulate.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALImage.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUIImage:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/initWithImageBuffer:</TokenIdentifier>
-			<Abstract type="html">Initialise an ALImage with an CVimageBufferRef.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithImageBuffer:(CVImageBufferRef)imageBuffer</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>imageBuffer</Name>
-					<Abstract type="html">The CVImageBufferRef to encapsulate.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALImage.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithImageBuffer:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALImage/isEmpy</TokenIdentifier>
-			<Abstract type="html">Checks wether the ALImage is empty.</Abstract>
-			<DeclaredIn>ALImage.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isEmpy</Declaration>
-			
-			<ReturnValue><Abstract type="html">YES/NO wether the ALImage is empty.</Abstract></ReturnValue>
-			<Anchor>//api/name/isEmpy</Anchor>
+			<Anchor>//api/name/removeInfoDelegate:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

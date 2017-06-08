@@ -1,84 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALRunFailure.html">
+	<File path="Protocols/AnylineMRZModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALRunFailure</TokenIdentifier>
-			<Abstract type="html">The possible run error codes for this module.
-You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineMRZModuleDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="62"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureUnkown</TokenIdentifier>
-            <Abstract type="html">An unknown error occurred.
-     </Abstract>
-            <Declaration>ALRunFailureUnkown</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindScanResult:(ALIdentification *)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineMRZModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>allCheckDigitsValid</Name>
+					<Abstract type="html">Boolean indicating if all check digits in the MRZ Zone are valid.</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the code</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</Anchor>
             <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoLinesFound</TokenIdentifier>
-            <Abstract type="html">No text lines found in imag
-     </Abstract>
-            <Declaration>ALRunFailureNoLinesFound</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineMRZModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineMRZModuleView:didFindResult:</Anchor>
             <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoTextFound</TokenIdentifier>
-            <Abstract type="html">No text found in lines
-     </Abstract>
-            <Declaration>ALRunFailureNoTextFound</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureConfidenceNotReached</TokenIdentifier>
-            <Abstract type="html">The required min confidence is not reached for this run
-     </Abstract>
-            <Declaration>ALRunFailureConfidenceNotReached</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureResultNotValid</TokenIdentifier>
-            <Abstract type="html">The result does not match the validation regular expression
-     </Abstract>
-            <Declaration>ALRunFailureResultNotValid</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureSharpnessNotReached</TokenIdentifier>
-            <Abstract type="html">The min sharpness for this run is not reached
-     </Abstract>
-            <Declaration>ALRunFailureSharpnessNotReached</Declaration>
-            
-            <DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

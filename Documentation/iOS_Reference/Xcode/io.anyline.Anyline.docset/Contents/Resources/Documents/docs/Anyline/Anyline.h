@@ -41,7 +41,7 @@
 #import "ALValuesStackFlipping.h"
 
 // Generic Anyline Interface for all Use-cases
-#import "AnylineController.h"
+#import "ALCoreController.h"
 // Interface which should be implemented by the Image gathering source
 #import "ALImageProvider.h"
 

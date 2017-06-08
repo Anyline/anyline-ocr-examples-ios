@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSquare.html">
+	<File path="Classes/ALOCRResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
-			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,309 +13,98 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/set:</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/)</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/)</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
+			<Abstract type="html">since 3.10 (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)text image:(UIImage *_Nonnull)image thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
-			
-			
-			<Anchor>//api/name/downLeft</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
-			
-			
-			<Anchor>//api/name/downLeft</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>upLeft</Name>
-					<Abstract type="html">The up left point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>upRight</Name>
-					<Abstract type="html">The up right point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downLeft</Name>
-					<Abstract type="html">The down left point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downRight</Name>
-					<Abstract type="html">The down right point of the square.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCGRect:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)boundingX</Declaration>
-			
-			
-			<Anchor>//api/name/boundingX</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingY</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/boundingY</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingWidth</Declaration>
-			
-			
-			<Anchor>//api/name/boundingWidth</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingHeight</Declaration>
-			
-			
-			<Anchor>//api/name/boundingHeight</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
-			
-			
-			<Anchor>//api/name/squareWithPointOffset:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
-			
-			
-			<Anchor>//api/name/squareWithScale:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area</Declaration>
-			
-			
-			<Anchor>//api/name/area</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area2</Declaration>
-			
-			
-			<Anchor>//api/name/area2</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (float)ratio</Declaration>
-			
-			
-			<Anchor>//api/name/ratio</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGRect)boxRect</Declaration>
-			
-			
-			<Anchor>//api/name/boxRect</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

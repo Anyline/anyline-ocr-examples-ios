@@ -27,8 +27,6 @@ typedef void (^ALImageProviderBlock)(ALImage *image, NSError *error);
 
 - (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
 
-@optional
-
-- (void)provideStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
+- (void)provideNewStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
 
 @end

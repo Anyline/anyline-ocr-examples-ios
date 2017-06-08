@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALResult.html">
+	<File path="Classes/ALMeterResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
-			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
-for the text recognition client.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterResult</TokenIdentifier>
+			<Abstract type="html">The result object for the ALMeterScanPlugin</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -14,106 +13,50 @@ for the text recognition client.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/setScanMode:</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/scanMode</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
-			<Abstract type="html">The specs used to generate the result</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterResult/scanMode</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/specs</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
-			
-			
-			<Anchor>//api/name/valid</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nonnull)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID scanMode:(ALScanMode)scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/valid</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
-			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL valid</Declaration>
-			
-			
-			<Anchor>//api/name/valid</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
-			<Abstract type="html">All the identifiers in which the digits are divided.
-Identifiers are all strings.
-There is no special sort order.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)identifiers</Declaration>
-			
-			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
-			<Anchor>//api/name/identifiers</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
-			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
-does not exist or no valid result was found for the identifier.</Abstract>
-			<DeclaredIn>ALResult.h</DeclaredIn>
-			
-			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for a result.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
-			<Anchor>//api/name/resultForIdentifier:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

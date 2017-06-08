@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALIdentification.html">
+	<File path="Classes/ALDisplayResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALIdentification</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDisplayResult</TokenIdentifier>
+			<Abstract type="html">The ALDisplayResult encapsulates all the neccessary objects and data
+for the 7-Segment recognition client.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,718 +14,69 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setDocumentType:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/numberOfDigits</TokenIdentifier>
+			<Abstract type="html">This method returns the overall number of digits in the display.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *documentType</Declaration>
+			<Declaration>- (int)numberOfDigits</Declaration>
 			
-			
-			<Anchor>//api/name/documentType</Anchor>
+			<ReturnValue><Abstract type="html">Number of digits in display.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberOfDigits</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/documentType</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *documentType</Declaration>
-			
-			
-			<Anchor>//api/name/documentType</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/documentType</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *documentType</Declaration>
-			
-			
-			<Anchor>//api/name/documentType</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setDocumentNumber:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *documentNumber</Declaration>
-			
-			
-			<Anchor>//api/name/documentNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/documentNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *documentNumber</Declaration>
-			
-			
-			<Anchor>//api/name/documentNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/documentNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *documentNumber</Declaration>
-			
-			
-			<Anchor>//api/name/documentNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setSurNames:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *surNames</Declaration>
-			
-			
-			<Anchor>//api/name/surNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/surNames</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *surNames</Declaration>
-			
-			
-			<Anchor>//api/name/surNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/surNames</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *surNames</Declaration>
-			
-			
-			<Anchor>//api/name/surNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setGivenNames:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *givenNames</Declaration>
-			
-			
-			<Anchor>//api/name/givenNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/givenNames</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *givenNames</Declaration>
-			
-			
-			<Anchor>//api/name/givenNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/givenNames</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *givenNames</Declaration>
-			
-			
-			<Anchor>//api/name/givenNames</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setIssuingCountryCode:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *issuingCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/issuingCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/issuingCountryCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *issuingCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/issuingCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/issuingCountryCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *issuingCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/issuingCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setNationalityCountryCode:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *nationalityCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/nationalityCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/nationalityCountryCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *nationalityCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/nationalityCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/nationalityCountryCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *nationalityCountryCode</Declaration>
-			
-			
-			<Anchor>//api/name/nationalityCountryCode</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setDayOfBirth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *dayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/dayOfBirth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *dayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/dayOfBirth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *dayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setExpirationDate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *expirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/expirationDate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *expirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/expirationDate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *expirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setSex:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *sex</Declaration>
-			
-			
-			<Anchor>//api/name/sex</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/sex</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *sex</Declaration>
-			
-			
-			<Anchor>//api/name/sex</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/sex</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *sex</Declaration>
-			
-			
-			<Anchor>//api/name/sex</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setCheckdigitNumber:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/checkdigitNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/checkdigitNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setCheckdigitExpirationDate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitExpirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitExpirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/checkdigitExpirationDate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitExpirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitExpirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/checkdigitExpirationDate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitExpirationDate</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitExpirationDate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setCheckdigitDayOfBirth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitDayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitDayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/checkdigitDayOfBirth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitDayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitDayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/checkdigitDayOfBirth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitDayOfBirth</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitDayOfBirth</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setCheckdigitFinal:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitFinal</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitFinal</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/checkdigitFinal</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitFinal</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitFinal</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/checkdigitFinal</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkdigitFinal</Declaration>
-			
-			
-			<Anchor>//api/name/checkdigitFinal</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setPersonalNumber:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/personalNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/personalNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setCheckDigitPersonalNumber:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkDigitPersonalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkDigitPersonalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/checkDigitPersonalNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkDigitPersonalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkDigitPersonalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/checkDigitPersonalNumber</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *checkDigitPersonalNumber</Declaration>
-			
-			
-			<Anchor>//api/name/checkDigitPersonalNumber</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setPersonalNumber2:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber2</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber2</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/personalNumber2</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber2</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber2</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/personalNumber2</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *personalNumber2</Declaration>
-			
-			
-			<Anchor>//api/name/personalNumber2</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setExpirationDateObject:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *expirationDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/expirationDateObject</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *expirationDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/expirationDateObject</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *expirationDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/expirationDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/setDayOfBirthDateObject:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *dayOfBirthDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirthDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/dayOfBirthDateObject</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *dayOfBirthDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirthDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIdentification/dayOfBirthDateObject</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDate *dayOfBirthDateObject</Declaration>
-			
-			
-			<Anchor>//api/name/dayOfBirthDateObject</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIdentification/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</TokenIdentifier>
-			<Abstract type="html">Initializes a ALIdentification object. This object is used to carry the scanned values.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithDocumentType:(NSString *)documentType issuingCountryCode:(NSString *)issuingCountryCode nationalityCountryCode:(NSString *)nationalityCountryCode surNames:(NSString *)surNames givenNames:(NSString *)givenNames documentNumber:(NSString *)documentNumber checkDigitNumber:(NSString *)checkDigitNumber dayOfBirth:(NSString *)dayOfBirth checkDigitDayOfBirth:(NSString *)checkDigitDayOfBirth sex:(NSString *)sex expirationDate:(NSString *)expirationDate checkDigitExpirationDate:(NSString *)checkdigitExpirationDate personalNumber:(NSString *)personalNumber checkDigitPersonalNumber:(NSString *)checkDigitPersonalNumber checkDigitFinal:(NSString *)checkDigitFinal personalNumber2:(NSString *)personalNumber2</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitsForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the digits for a special identifier.
+Note that there is no sort order garanteed in the array.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)digitsForIdentifier:(NSString *)identifier</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>documentType</Name>
-					<Abstract type="html">The type of the document that was read. (ID/P)</Abstract>
-				</Parameter><Parameter>
-					<Name>issuingCountryCode</Name>
-					<Abstract type="html">The issuing country code of the document.</Abstract>
-				</Parameter><Parameter>
-					<Name>nationalityCountryCode</Name>
-					<Abstract type="html">The nationality country code of the document.</Abstract>
-				</Parameter><Parameter>
-					<Name>surNames</Name>
-					<Abstract type="html">All the surNames of the person separated by whitespace.</Abstract>
-				</Parameter><Parameter>
-					<Name>givenNames</Name>
-					<Abstract type="html">All the given names of the person separated by whitespace.</Abstract>
-				</Parameter><Parameter>
-					<Name>documentNumber</Name>
-					<Abstract type="html">Passport number or document number.</Abstract>
-				</Parameter><Parameter>
-					<Name>checkDigitNumber</Name>
-					<Abstract type="html">Check digit for the document number.</Abstract>
-				</Parameter><Parameter>
-					<Name>dayOfBirth</Name>
-					<Abstract type="html">The day of birth.</Abstract>
-				</Parameter><Parameter>
-					<Name>checkDigitDayOfBirth</Name>
-					<Abstract type="html">Check digit for the day of birth.</Abstract>
-				</Parameter><Parameter>
-					<Name>sex</Name>
-					<Abstract type="html">The gender of the person</Abstract>
-				</Parameter><Parameter>
-					<Name>expirationDate</Name>
-					<Abstract type="html">The expiration date of the passport / document.</Abstract>
-				</Parameter><Parameter>
-					<Name>personalNumber</Name>
-					<Abstract type="html">Personal Number on the document. Is nil on many passports / documents.</Abstract>
-				</Parameter><Parameter>
-					<Name>checkDigitPersonalNumber</Name>
-					<Abstract type="html">CheckDigit for the personal number. Is nil or 0 when no personal number is used.
-Is also nil on none passport documents.</Abstract>
-				</Parameter><Parameter>
-					<Name>checkDigitFinal</Name>
-					<Abstract type="html">On passports checkdigit over passport number, passport number checkdigit, date of birth,
-date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
-personal number checkdigit.
-On other travel documents over document number, document number checkdigit, personal number,
-date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.</Abstract>
-				</Parameter><Parameter>
-					<Name>personalNumber2</Name>
-					<Abstract type="html">Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
-Might contain additional information.</Abstract>
-				</Parameter><Parameter>
-					<Name>checkDigitExpirationDate</Name>
-					<Abstract type="html">Check digit for the expiration date.</Abstract>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for some digits.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new ALIdentification object</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</Anchor>
+			<ReturnValue><Abstract type="html">All digits with an identifier, no sort order garanteed.</Abstract></ReturnValue>
+			<Anchor>//api/name/digitsForIdentifier:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/stringRepresentationOfDigitsForIdentifier:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)stringRepresentationOfDigitsForIdentifier:(NSString *)identifier</Declaration>
+			
+			
+			<Anchor>//api/name/stringRepresentationOfDigitsForIdentifier:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/quality</TokenIdentifier>
+			<Abstract type="html">Returns the Quality or accuracy of a whole display scan. This is the average value of all
+the specified digits.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (float)quality</Declaration>
+			
+			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
+			<Anchor>//api/name/quality</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitIdentifiers</TokenIdentifier>
+			<Abstract type="html">Returns all the identifiers for the digit results stored.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)digitIdentifiers</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array with all the identifiers randomly sorted.</Abstract></ReturnValue>
+			<Anchor>//api/name/digitIdentifiers</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

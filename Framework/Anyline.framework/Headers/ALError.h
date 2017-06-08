@@ -92,4 +92,5 @@ enum ALErrorCodes {
   ALModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
   ALModuleSimpleOCRConfigTextHeightNotSet = 9003,
   ALBarcodeModuleNativeDelegateWrong = 9004,
+  ALEnergyScanPluginBarcodeNotSupported = 9005,
 };

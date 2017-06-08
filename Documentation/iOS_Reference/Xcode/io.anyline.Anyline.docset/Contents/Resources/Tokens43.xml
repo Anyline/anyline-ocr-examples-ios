@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineDebugDelegate.html">
+	<File path="Classes/AnylineMRZModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineDebugDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
+All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
+It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="43"/>
@@ -13,54 +15,61 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:reportDebugVariable:value:</TokenIdentifier>
-			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
-&lt;p&gt;
-Some possibly reported values:
-&lt;ul&gt;
-&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
-&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
-&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView reportDebugVariable:(NSString *)variableName value:(id)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineModuleView</Name>
-					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name of the reported value</Abstract>
-				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The reported value</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
-			<Anchor>//api/name/anylineModuleView:reportDebugVariable:value:</Anchor>
+			
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:runSkipped:</TokenIdentifier>
-			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
-(If not text is found or confidence is to low, etc.)</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure</Declaration>
+			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineModuleView</Name>
-					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
-					<Name>runFailure</Name>
-					<Abstract type="html">The reason why the run failed</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/anylineModuleView:runSkipped:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		

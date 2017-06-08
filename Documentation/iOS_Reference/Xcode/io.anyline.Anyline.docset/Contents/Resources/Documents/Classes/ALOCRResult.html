@@ -68,7 +68,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:outline:thresholdedImage:">- initWithResult:image:fullImage:confidence:outline:thresholdedImage:</option>
+		<option value="//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:">- initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</option>
 		
 		<option value="//api/name/initWithText:image:thresholdedImage:">- initWithText:image:thresholdedImage:</option>
 		
@@ -99,7 +99,7 @@
 	<td>*<br />NSString</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AnylineOCRModuleView.h</td>
+	<td>ALOCRResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -141,7 +141,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</code></div>
 
 		    
 			
@@ -159,7 +159,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
 			</div>
 			
 			
@@ -182,7 +182,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) UIImage *thresholdedImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</code></div>
 
 		    
 			
@@ -200,7 +200,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
 			</div>
 			
 			
@@ -223,7 +223,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithText:(NSString *)<em>text</em> image:(UIImage *)<em>image</em> thresholdedImage:(UIImage *)<em>thresholdedImage</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)<em>text</em> image:(UIImage *_Nonnull)<em>image</em> thresholdedImage:(UIImage *_Nullable)<em>thresholdedImage</em></code></div>
 
 		    
 			
@@ -241,15 +241,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineOCRModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:outline:thresholdedImage:" title="initWithResult:image:fullImage:confidence:outline:thresholdedImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:outline:thresholdedImage:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:outline:thresholdedImage:</a></code>
+	<a name="//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:" title="initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -258,7 +258,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithResult:(NSString *)<em>result</em> image:(UIImage *)<em>image</em> fullImage:(UIImage *)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> outline:(ALSquare *)<em>outline</em> thresholdedImage:(UIImage *)<em>thresholdedImage</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)<em>result</em> image:(UIImage *_Nonnull)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> outline:(ALSquare *_Nullable)<em>outline</em> pluginID:(NSString *_Nonnull)<em>pluginID</em> thresholdedImage:(UIImage *_Nullable)<em>thresholdedImage</em></code></div>
 
 		    
 		</div>
@@ -278,7 +278,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-06-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

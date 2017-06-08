@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALPolygon.html">
+	<File path="Classes/ALMRZResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALPolygon</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,62 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/setPoints:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/points</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALPolygon/points</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/initWithPoints:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithPoints:(NSArray *)points</Declaration>
-			
-			
-			<Anchor>//api/name/initWithPoints:</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/polygonWithScale:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
-			
-			<Declaration>- (ALPolygon *)polygonWithScale:(CGFloat)scale</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/polygonWithScale:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

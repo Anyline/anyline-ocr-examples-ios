@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALDisplayResult.html">
+	<File path="Classes/ALDataPoint.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALDisplayResult</TokenIdentifier>
-			<Abstract type="html">The ALDisplayResult encapsulates all the neccessary objects and data
-for the 7-Segment recognition client.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDataPoint</TokenIdentifier>
+			<Abstract type="html">Specifies a DataPoint where in the ROI the interesting part is.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -14,69 +13,173 @@ for the 7-Segment recognition client.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/numberOfDigits</TokenIdentifier>
-			<Abstract type="html">This method returns the overall number of digits in the display.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setArea:</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
 			
-			<Declaration>- (int)numberOfDigits</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
 			
-			<ReturnValue><Abstract type="html">Number of digits in display.</Abstract></ReturnValue>
-			<Anchor>//api/name/numberOfDigits</Anchor>
+			
+			<Anchor>//api/name/area</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitsForIdentifier:</TokenIdentifier>
-			<Abstract type="html">Returns the digits for a special identifier.
-Note that there is no sort order garanteed in the array.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/area</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)digitsForIdentifier:(NSString *)identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/area</TokenIdentifier>
+			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIndexPath:</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
+location of the DataPoint in the ROI.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
+will be interpretet together.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithArea:indexPath:identifier:</TokenIdentifier>
+			<Abstract type="html">Initialise a new DataPoint.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>area</Name>
+					<Abstract type="html">The area where the DataPoint in the ROI is found.</Abstract>
+				</Parameter><Parameter>
+					<Name>indexPath</Name>
+					<Abstract type="html">The indexPath for this DataPoint.</Abstract>
+				</Parameter><Parameter>
 					<Name>identifier</Name>
-					<Abstract type="html">The identifier for some digits.</Abstract>
+					<Abstract type="html">An identifier for this DataPoint.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">All digits with an identifier, no sort order garanteed.</Abstract></ReturnValue>
-			<Anchor>//api/name/digitsForIdentifier:</Anchor>
+			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithArea:indexPath:identifier:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/stringRepresentationOfDigitsForIdentifier:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise a new DataPoint with a representing dictionary.</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)stringRepresentationOfDigitsForIdentifier:(NSString *)identifier</Declaration>
-			
-			
-			<Anchor>//api/name/stringRepresentationOfDigitsForIdentifier:</Anchor>
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">A dictionary representing a DataPoint object.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/quality</TokenIdentifier>
-			<Abstract type="html">Returns the Quality or accuracy of a whole display scan. This is the average value of all
-the specified digits.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/ALDataPoint/dataPointForDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise ether a new DigitDataPoint or TextDataPoint depending on the dictionary</Abstract>
+			<DeclaredIn>ALDataPoint.h</DeclaredIn>
 			
-			<Declaration>- (float)quality</Declaration>
-			
-			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
-			<Anchor>//api/name/quality</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitIdentifiers</TokenIdentifier>
-			<Abstract type="html">Returns all the identifiers for the digit results stored.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)digitIdentifiers</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array with all the identifiers randomly sorted.</Abstract></ReturnValue>
-			<Anchor>//api/name/digitIdentifiers</Anchor>
+			<Declaration>+ (ALDataPoint *)dataPointForDictionary:(NSDictionary *)dictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dictionary</Name>
+					<Abstract type="html">The dictionary with the representing DataPoint.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">New Text -or DigitDataPoint object.</Abstract></ReturnValue>
+			<Anchor>//api/name/dataPointForDictionary:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

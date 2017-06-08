@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AnylineControllerDelegate Protocol Reference</title>
+	<title>ALCoreControllerDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -60,13 +60,13 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/anylineController:didAbortRun:">- anylineController:didAbortRun:</option>
+		<option value="//api/name/anylineCoreController:didAbortRun:">- anylineCoreController:didAbortRun:</option>
 		
-		<option value="//api/name/anylineController:didFinishWithOutput:">- anylineController:didFinishWithOutput:</option>
+		<option value="//api/name/anylineCoreController:didFinishWithOutput:">- anylineCoreController:didFinishWithOutput:</option>
 		
-		<option value="//api/name/anylineController:parserError:">- anylineController:parserError:</option>
+		<option value="//api/name/anylineCoreController:parserError:">- anylineCoreController:parserError:</option>
 		
-		<option value="//api/name/anylineController:reportsVariable:value:">- anylineController:reportsVariable:value:</option>
+		<option value="//api/name/anylineCoreController:reportsVariable:value:">- anylineCoreController:reportsVariable:value:</option>
 		
 	</optgroup>
 	
@@ -83,7 +83,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AnylineControllerDelegate Protocol Reference</h1>
+					<h1 class="title">ALCoreControllerDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -92,7 +92,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AnylineController.h</td>
+	<td>ALCoreController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -102,7 +102,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <a href="../Classes/AnylineController.html">AnylineController</a> Delegate methods must be implemented to get results of the Anyline processing.
+						<p>The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
 All delegate callbacks are garanteed to be executed in the Main Thread.</p>
 					</div>
 					
@@ -119,8 +119,8 @@ All delegate callbacks are garanteed to be executed in the Main Thread.</p>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/anylineController:didFinishWithOutput:" title="anylineController:didFinishWithOutput:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:didFinishWithOutput:">&ndash;&nbsp;anylineController:didFinishWithOutput:</a></code>
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
 <span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
@@ -136,7 +136,7 @@ output object.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
 
 		    
 			
@@ -172,15 +172,15 @@ The result is specified with the RETURN statement in the .alc file.</p></td>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/anylineController:didAbortRun:" title="anylineController:didAbortRun:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:didAbortRun:">&ndash;&nbsp;anylineController:didAbortRun:</a></code>
+	<a name="//api/name/anylineCoreController:didAbortRun:" title="anylineCoreController:didAbortRun:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didAbortRun:">&ndash;&nbsp;anylineCoreController:didAbortRun:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -196,7 +196,7 @@ for example that the display or paper frame could not be found.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> didAbortRun:(NSError *)<em>reason</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didAbortRun:(NSError *)<em>reason</em></code></div>
 
 		    
 			
@@ -226,15 +226,15 @@ for example that the display or paper frame could not be found.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/anylineController:reportsVariable:value:" title="anylineController:reportsVariable:value:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:reportsVariable:value:">&ndash;&nbsp;anylineController:reportsVariable:value:</a></code>
+	<a name="//api/name/anylineCoreController:reportsVariable:value:" title="anylineCoreController:reportsVariable:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:reportsVariable:value:">&ndash;&nbsp;anylineCoreController:reportsVariable:value:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -250,7 +250,7 @@ can be specified in the .alc command file with the REPORT function.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
 
 		    
 			
@@ -291,15 +291,15 @@ task yet.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/anylineController:parserError:" title="anylineController:parserError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineController:parserError:">&ndash;&nbsp;anylineController:parserError:</a></code>
+	<a name="//api/name/anylineCoreController:parserError:" title="anylineCoreController:parserError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:parserError:">&ndash;&nbsp;anylineCoreController:parserError:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -314,7 +314,7 @@ task yet.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineController:(AnylineController *)<em>anylineController</em> parserError:(NSError *)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> parserError:(NSError *)<em>error</em></code></div>
 
 		    
 			
@@ -349,7 +349,7 @@ task yet.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineController.h</code></p>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
 			</div>
 			
 			
@@ -370,7 +370,7 @@ task yet.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-06-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

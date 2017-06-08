@@ -54,6 +54,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/MRZString">MRZString</option>
+		
 		<option value="//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</option>
 		
 		<option value="//api/name/checkdigitDayOfBirth">checkdigitDayOfBirth</option>
@@ -98,7 +100,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:">- initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</option>
+		<option value="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:">- initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:</option>
 		
 	</optgroup>
 	
@@ -124,7 +126,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AnylineMRZModuleView.h</td>
+	<td>ALMRZResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -152,7 +154,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *documentType</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *documentType</code></div>
 
 		    
 		</div>
@@ -168,7 +170,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *documentNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *documentNumber</code></div>
 
 		    
 		</div>
@@ -184,7 +186,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *surNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *surNames</code></div>
 
 		    
 		</div>
@@ -200,7 +202,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *givenNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *givenNames</code></div>
 
 		    
 		</div>
@@ -216,7 +218,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *issuingCountryCode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *issuingCountryCode</code></div>
 
 		    
 		</div>
@@ -232,7 +234,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *nationalityCountryCode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *nationalityCountryCode</code></div>
 
 		    
 		</div>
@@ -248,7 +250,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *dayOfBirth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *dayOfBirth</code></div>
 
 		    
 		</div>
@@ -264,7 +266,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *expirationDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate</code></div>
 
 		    
 		</div>
@@ -280,7 +282,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *sex</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *sex</code></div>
 
 		    
 		</div>
@@ -296,7 +298,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *checkdigitNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitNumber</code></div>
 
 		    
 		</div>
@@ -312,7 +314,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *checkdigitExpirationDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitExpirationDate</code></div>
 
 		    
 		</div>
@@ -328,7 +330,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *checkdigitDayOfBirth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitDayOfBirth</code></div>
 
 		    
 		</div>
@@ -344,7 +346,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *checkdigitFinal</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitFinal</code></div>
 
 		    
 		</div>
@@ -360,7 +362,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *personalNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber</code></div>
 
 		    
 		</div>
@@ -376,7 +378,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *checkDigitPersonalNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber</code></div>
 
 		    
 		</div>
@@ -392,7 +394,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *personalNumber2</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber2</code></div>
 
 		    
 		</div>
@@ -408,7 +410,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *expirationDateObject</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject</code></div>
 
 		    
 		</div>
@@ -424,14 +426,30 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *dayOfBirthDateObject</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:" title="initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:">&ndash;&nbsp;initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:</a></code>
+	<a name="//api/name/MRZString" title="MRZString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MRZString">&nbsp;&nbsp;MRZString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *MRZString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:" title="initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:">&ndash;&nbsp;initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -446,7 +464,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDocumentType:(NSString *)<em>documentType</em> issuingCountryCode:(NSString *)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *)<em>nationalityCountryCode</em> surNames:(NSString *)<em>surNames</em> givenNames:(NSString *)<em>givenNames</em> documentNumber:(NSString *)<em>documentNumber</em> checkDigitNumber:(NSString *)<em>checkDigitNumber</em> dayOfBirth:(NSString *)<em>dayOfBirth</em> checkDigitDayOfBirth:(NSString *)<em>checkDigitDayOfBirth</em> sex:(NSString *)<em>sex</em> expirationDate:(NSString *)<em>expirationDate</em> checkDigitExpirationDate:(NSString *)<em>checkdigitExpirationDate</em> personalNumber:(NSString *)<em>personalNumber</em> checkDigitPersonalNumber:(NSString *)<em>checkDigitPersonalNumber</em> checkDigitFinal:(NSString *)<em>checkDigitFinal</em> personalNumber2:(NSString *)<em>personalNumber2</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDocumentType:(NSString *_Nonnull)<em>documentType</em> issuingCountryCode:(NSString *_Nonnull)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *_Nonnull)<em>nationalityCountryCode</em> surNames:(NSString *_Nonnull)<em>surNames</em> givenNames:(NSString *_Nonnull)<em>givenNames</em> documentNumber:(NSString *_Nonnull)<em>documentNumber</em> checkDigitNumber:(NSString *_Nonnull)<em>checkDigitNumber</em> dayOfBirth:(NSString *_Nonnull)<em>dayOfBirth</em> checkDigitDayOfBirth:(NSString *_Nonnull)<em>checkDigitDayOfBirth</em> sex:(NSString *_Nonnull)<em>sex</em> expirationDate:(NSString *_Nonnull)<em>expirationDate</em> checkDigitExpirationDate:(NSString *_Nonnull)<em>checkdigitExpirationDate</em> personalNumber:(NSString *_Nonnull)<em>personalNumber</em> checkDigitPersonalNumber:(NSString *_Nonnull)<em>checkDigitPersonalNumber</em> checkDigitFinal:(NSString *_Nonnull)<em>checkDigitFinal</em> personalNumber2:(NSString *_Nonnull)<em>personalNumber2</em> MRZString:(NSString *_Nonnull)<em>MRZString</em></code></div>
 
 		    
 			
@@ -536,6 +554,11 @@ Might contain additional information.</p></td>
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>MRZString</code></th>
+						<td><p>Contains all Information found in the MRZ as string.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>checkDigitExpirationDate</code></th>
 						<td><p>Check digit for the expiration date.</p></td>
 					</tr>
@@ -562,7 +585,7 @@ Might contain additional information.</p></td>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineMRZModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALMRZResult.h</code></p>
 			</div>
 			
 			
@@ -583,7 +606,7 @@ Might contain additional information.</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-06-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

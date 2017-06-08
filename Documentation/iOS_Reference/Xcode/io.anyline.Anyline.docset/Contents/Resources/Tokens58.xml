@@ -1,84 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALOCRError.html">
+	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALOCRError</TokenIdentifier>
-			<Abstract type="html">The possible run error codes for this module.
-You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorUnkown</TokenIdentifier>
-            <Abstract type="html">An unknown error occurred.
-     </Abstract>
-            <Declaration>ALOCRErrorUnkown</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindScanResult:(NSString *)scanResult withBarcodeFormat:(ALBarcodeFormat)barcodeFormat atImage:(UIImage *)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>barcodeFormat</Name>
+					<Abstract type="html">The barcode format of the scanned barcode</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the barcode</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</Anchor>
             <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoLinesFound</TokenIdentifier>
-            <Abstract type="html">No text lines found in imag
-     </Abstract>
-            <Declaration>ALOCRErrorNoLinesFound</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *)scanResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindResult:</Anchor>
             <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoTextFound</TokenIdentifier>
-            <Abstract type="html">No text found in lines
-     </Abstract>
-            <Declaration>ALOCRErrorNoTextFound</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorConfidenceNotReached</TokenIdentifier>
-            <Abstract type="html">The required min confidence is not reached for this run
-     </Abstract>
-            <Declaration>ALOCRErrorConfidenceNotReached</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorResultNotValid</TokenIdentifier>
-            <Abstract type="html">The result does not match the validation regular expression
-     </Abstract>
-            <Declaration>ALOCRErrorResultNotValid</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorSharpnessNotReached</TokenIdentifier>
-            <Abstract type="html">The min sharpness for this run is not reached
-     </Abstract>
-            <Declaration>ALOCRErrorSharpnessNotReached</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

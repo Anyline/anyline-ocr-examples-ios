@@ -15,8 +15,8 @@
 		177DE4D01E4E23BD00BCE1BF /* license_plates.ale in Resources */ = {isa = PBXBuildFile; fileRef = 177DE4CD1E4E23BD00BCE1BF /* license_plates.ale */; };
 		17995FB21E67089E00407775 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */; };
 		17BBFC961DD217400029AE7A /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */; };
-		17CB455D1EC3493100DE62EB /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CB455B1EC3493100DE62EB /* Anyline.framework */; };
-		17CB455E1EC3493100DE62EB /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CB455C1EC3493100DE62EB /* AnylineResources.bundle */; };
+		17BEFB3C1EE859A7009C2A4F /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BEFB3A1EE859A7009C2A4F /* Anyline.framework */; };
+		17BEFB3D1EE859A7009C2A4F /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17BEFB3B1EE859A7009C2A4F /* AnylineResources.bundle */; };
 		1C1C85E11A83E5E30077B84E /* ALMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85BB1A83E5E30077B84E /* ALMainTableViewController.m */; };
 		1C1C85E21A83E5E30077B84E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85BD1A83E5E30077B84E /* AppDelegate.m */; };
 		1C1C85EF1A83E5E30077B84E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C85DB1A83E5E30077B84E /* main.m */; };
@@ -93,8 +93,8 @@
 		17995FB11E67089E00407775 /* ALDoubleTariffMeterScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDoubleTariffMeterScanViewController.m; sourceTree = "<group>"; };
 		17995FB31E6708AE00407775 /* ALDoubleTariffMeterScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDoubleTariffMeterScanViewController.h; sourceTree = "<group>"; };
 		17BBFC951DD217400029AE7A /* AnylineBottlecapScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnylineBottlecapScanViewController.swift; sourceTree = "<group>"; };
-		17CB455B1EC3493100DE62EB /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
-		17CB455C1EC3493100DE62EB /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
+		17BEFB3A1EE859A7009C2A4F /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../../Framework/Anyline.framework; sourceTree = "<group>"; };
+		17BEFB3B1EE859A7009C2A4F /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnylineResources.bundle; path = ../../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		17E9077C1DF8444B00637A66 /* ALAppDemoLicenses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAppDemoLicenses.h; sourceTree = "<group>"; };
 		1C1C85B61A83E5E30077B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1C1C85B81A83E5E30077B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				63C7FF5A1BA2F6580035C435 /* libz.dylib in Frameworks */,
 				654079F31B4D4AC300145834 /* AssetsLibrary.framework in Frameworks */,
 				654077DB1A836D76001652B1 /* libstdc++.6.0.9.dylib in Frameworks */,
-				17CB455D1EC3493100DE62EB /* Anyline.framework in Frameworks */,
+				17BEFB3C1EE859A7009C2A4F /* Anyline.framework in Frameworks */,
 				654077DA1A836D76001652B1 /* libc++.dylib in Frameworks */,
 				6520CB541AEF8AB500A01920 /* libiconv.dylib in Frameworks */,
 			);
@@ -218,19 +218,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17CB45591EC3489800DE62EB /* Vendor */ = {
+		17BEFB381EE8597D009C2A4F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				17CB455A1EC348A700DE62EB /* Anyline */,
+				17BEFB391EE85996009C2A4F /* Anyline */,
 			);
 			name = Vendor;
+			path = "Anyline Demo App";
 			sourceTree = "<group>";
 		};
-		17CB455A1EC348A700DE62EB /* Anyline */ = {
+		17BEFB391EE85996009C2A4F /* Anyline */ = {
 			isa = PBXGroup;
 			children = (
-				17CB455B1EC3493100DE62EB /* Anyline.framework */,
-				17CB455C1EC3493100DE62EB /* AnylineResources.bundle */,
+				17BEFB3A1EE859A7009C2A4F /* Anyline.framework */,
+				17BEFB3B1EE859A7009C2A4F /* AnylineResources.bundle */,
 			);
 			name = Anyline;
 			sourceTree = "<group>";
@@ -467,8 +468,8 @@
 			children = (
 				1C1C85F01A83E6100077B84E /* Anyline Examples Source */,
 				1C1C85AC1A83E5E30077B84E /* Anyline Demo App */,
+				17BEFB381EE8597D009C2A4F /* Vendor */,
 				654077D11A836C80001652B1 /* Frameworks */,
-				17CB45591EC3489800DE62EB /* Vendor */,
 				654077951A836787001652B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -683,6 +684,7 @@
 				654077901A836787001652B1 /* Sources */,
 				654077911A836787001652B1 /* Frameworks */,
 				654077921A836787001652B1 /* Resources */,
+				6504EA871BA6EE6E00E30C64 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -705,7 +707,7 @@
 					654077931A836787001652B1 = {
 						CreatedOnToolsVersion = 6.1.1;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -750,12 +752,28 @@
 				1CAC154D1AB5B7BD00963174 /* Images.xcassets in Resources */,
 				65BE61AA1A8911D2003E517E /* MeterImagesAssets.xcassets in Resources */,
 				65A3E97F1D75C5E900CEFF15 /* Alte.traineddata in Resources */,
-				17CB455E1EC3493100DE62EB /* AnylineResources.bundle in Resources */,
+				17BEFB3D1EE859A7009C2A4F /* AnylineResources.bundle in Resources */,
 				65C29DE21C648B7500B98F9D /* isbn_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6504EA871BA6EE6E00E30C64 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		654077901A836787001652B1 /* Sources */ = {
@@ -916,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -951,7 +969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;

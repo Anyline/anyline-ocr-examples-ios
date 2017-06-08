@@ -1,77 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashAlignment.html">
+	<File path="Protocols/ALMeterScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMeterScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="55"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTop</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMeterScanPluginDelegate/anylineMeterScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *_Nonnull)anylineMeterScanPlugin didFindResult:(ALMeterResult *_Nonnull)scanResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineMeterScanPlugin</Name>
+					<Abstract type="html">The Plugin</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned result object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineMeterScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopRight</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottom</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomRight</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

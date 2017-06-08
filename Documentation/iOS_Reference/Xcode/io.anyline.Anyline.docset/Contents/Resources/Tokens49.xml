@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
+	<File path="Protocols/ALDocumentScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALDocumentScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -13,22 +13,26 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
-			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentScanPluginDelegate/anylineDocumentScanPlugin:hasResult:fullImage:documentCorners:</TokenIdentifier>
+			<Abstract type="html">Called if a full result is found. A full result is considerd to be a successful preview, followed by a
+successful full scan.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin hasResult:(UIImage *_Nonnull)transformedImage fullImage:(UIImage *_Nonnull)fullFrame documentCorners:(ALSquare *_Nonnull)corners</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>videoView</Name>
-					<Abstract type="html">The AnylineVideoView object</Abstract>
+					<Name>transformedImage</Name>
+					<Abstract type="html">The transformed image (cropped, deskewed)</Abstract>
 				</Parameter><Parameter>
-					<Name>sampleBuffer</Name>
-					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+					<Name>fullFrame</Name>
+					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
+				</Parameter><Parameter>
+					<Name>corners</Name>
+					<Abstract type="html">The corners of the document in the full frame</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
+			<Anchor>//api/name/anylineDocumentScanPlugin:hasResult:fullImage:documentCorners:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		

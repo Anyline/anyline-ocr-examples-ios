@@ -64,6 +64,8 @@
 		
 		<option value="//api/name/outline">outline</option>
 		
+		<option value="//api/name/pluginID">pluginID</option>
+		
 		<option value="//api/name/result">result</option>
 		
 	</optgroup>
@@ -74,7 +76,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:outline:">- initWithResult:image:fullImage:confidence:outline:</option>
+		<option value="//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:">- initWithResult:image:fullImage:confidence:outline:pluginID:</option>
 		
 	</optgroup>
 	
@@ -100,7 +102,7 @@
 	<td>ObjectType<br />__covariant</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AnylineAbstractModuleView.h</td>
+	<td>ALScanResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -126,6 +128,22 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/result" title="result"></a>
 	<h3 class="method-title"><code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
 </h3>
@@ -142,7 +160,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ObjectType result</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) ObjectType result</code></div>
 
 		    
 			
@@ -160,7 +178,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
 			</div>
 			
 			
@@ -183,7 +201,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) UIImage *image</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) UIImage *image</code></div>
 
 		    
 			
@@ -201,7 +219,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
 			</div>
 			
 			
@@ -224,7 +242,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) UIImage *fullImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *fullImage</code></div>
 
 		    
 			
@@ -242,7 +260,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
 			</div>
 			
 			
@@ -283,7 +301,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
 			</div>
 			
 			
@@ -306,7 +324,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ALSquare *outline</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSquare *outline</code></div>
 
 		    
 			
@@ -324,15 +342,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineAbstractModuleView.h</code></p>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:outline:" title="initWithResult:image:fullImage:confidence:outline:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:outline:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:outline:</a></code>
+	<a name="//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:" title="initWithResult:image:fullImage:confidence:outline:pluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:outline:pluginID:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -341,7 +359,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithResult:(ObjectType)<em>result</em> image:(UIImage *)<em>image</em> fullImage:(UIImage *)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> outline:(ALSquare *)<em>outline</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)<em>result</em> image:(UIImage *_Nonnull)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> outline:(ALSquare *_Nullable)<em>outline</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
 
 		    
 		</div>
@@ -361,7 +379,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-06-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

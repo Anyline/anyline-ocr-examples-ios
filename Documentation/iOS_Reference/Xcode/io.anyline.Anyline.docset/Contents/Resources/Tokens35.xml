@@ -1,122 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineOCRModuleView.html">
+	<File path="Classes/ALTorchManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineOCRModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineOcrScanView can be used to recognize text.
-It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
-and the {@link AnylineOcrConfig} (settings to adapt the recognition to your use case).</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            <Availability type="html"></Availability>
+			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+            
 			
 			<NodeRef refid="35"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setOcrConfig:</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/ocrConfig</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/ocrConfig</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineOCRModuleView/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
+			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/ocrConfig</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setupWithLicenseKey:delegate:ocrConfig:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineOCRModuleDelegate&gt;)delegate ocrConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineOCRModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ocrConfig to use for the scanning</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:ocrConfig:error:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/setOCRConfig:error:</TokenIdentifier>
-			<Abstract type="html">Sets a new ALOCRConfig and returns an Error if something failed.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setOCRConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ALOCRConfig to set</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setOCRConfig:error:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineOCRModuleView/copyTrainedData:fileHash:error:</TokenIdentifier>
-			<Abstract type="html">Use this method to copy a custom trained font data into the Anyline work environment.
-This method is mandatory if you want to use custom fonts.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)copyTrainedData:(NSString *)trainedDataPath fileHash:(NSString *)hash error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>trainedDataPath</Name>
-					<Abstract type="html">The full path to your trained data file</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter><Parameter>
-					<Name>fileHash</Name>
-					<Abstract type="html">The hash of the traineddata file so Anyline knows when it changed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/copyTrainedData:fileHash:error:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
+			
+			
+			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)resetLightLevelCounter</Declaration>
+			
+			
+			<Anchor>//api/name/resetLightLevelCounter</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
+			
+			
+			<Anchor>//api/name/setTorch:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)torchAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/torchAvailable</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

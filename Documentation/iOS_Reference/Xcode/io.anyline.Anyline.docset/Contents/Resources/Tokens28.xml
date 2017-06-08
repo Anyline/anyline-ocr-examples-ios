@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALValuesStackFlipping.html">
+	<File path="Classes/ALRunSkippedReason.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
-			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALRunSkippedReason</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,51 +13,86 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setPluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter><Parameter>
-					<Name>partialResultSize</Name>
-					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/pluginID</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/pluginID</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setReason:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			
+			
+			<Anchor>//api/name/reason</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/reason</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			
+			
+			<Anchor>//api/name/reason</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/reason</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			
+			
+			<Anchor>//api/name/reason</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/initWithRunFailure:pluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason pluginID:(NSString *_Nonnull)pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/initWithRunFailure:pluginID:</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

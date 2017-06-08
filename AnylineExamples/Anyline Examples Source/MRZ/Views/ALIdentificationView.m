@@ -21,8 +21,6 @@
 @property (nonatomic,strong) UILabel *expiration_date;
 @property (nonatomic,strong) UILabel *sex;
 @property (nonatomic,strong) UILabel *line0;
-@property (nonatomic,strong) UILabel *line1;
-@property (nonatomic,strong) UILabel *line2;
 @end
 
 
@@ -106,20 +104,9 @@
         [self addSubview:self.sex];
         
         self.line0 =  [ALIdentificationView AL_IdentificationLabel];
-        self.line0.frame = CGRectMake(6, 165, 300, 20);
+        self.line0.frame = CGRectMake(6, 160, 295, 60);
         self.line0.text = @"P<AUTGASSER<<MATTHIAS<<<<<<<<<<<<<<<<<<<<<<<";
         [self addSubview:self.line0];
-        
-        self.line1 =  [ALIdentificationView AL_IdentificationLabel];
-        self.line1.frame = CGRectMake(6, 178, 300, 20);
-        self.line1.text = @"P2004908<6AUT8S07125M1706103<<<<<<<<<<<<<<<4";
-        [self addSubview:self.line1];
-    
-        self.line2 =  [ALIdentificationView AL_IdentificationLabel];
-        self.line2.frame = CGRectMake(6, 191, 300, 20);
-        self.line2.text = @"P2004908<6AUT8S07125M1706103<<<<<<<<<<<<<<<4";
-        [self addSubview:self.line2];
-
     }
 }
 
@@ -162,32 +149,11 @@
 
     self.sex.text = aIdentification.sex;
     
-    if([aIdentification.documentType hasPrefix:@"P"]) {
-        self.line0.text = [[NSString
-                            stringWithFormat:@"P<%@%@<<%@",aIdentification.issuingCountryCode,aIdentification.surNames,[aIdentification.givenNames stringByReplacingOccurrencesOfString:@" " withString:@"<"]]
-                            stringByPaddingToLength:44 withString:@"<" startingAtIndex:0];
-        self.line1.text = @"";
-        self.line2.text = [[[NSString
-                            stringWithFormat:@"%@<%@%@%@%@%@%@%@%@%@",aIdentification.documentNumber,aIdentification.checkdigitNumber,aIdentification.nationalityCountryCode,aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate,aIdentification.personalNumber,aIdentification.checkDigitPersonalNumber]
-                           stringByPaddingToLength:43 withString:@"<" startingAtIndex:0]
-                           stringByAppendingFormat:@"%@",aIdentification.checkdigitFinal];
-    } else {
-        self.line0.text = [[NSString
-                            stringWithFormat:@"ID%@<<%@",aIdentification.issuingCountryCode,aIdentification.documentNumber]
-                           stringByPaddingToLength:30 withString:@"<" startingAtIndex:0];
-
-        self.line1.text = [[[NSString
-                            stringWithFormat:@"%@%@%@%@%@%@%@",aIdentification.dayOfBirth,aIdentification.checkdigitDayOfBirth,aIdentification.sex,aIdentification.expirationDate,aIdentification.checkdigitExpirationDate,aIdentification.nationalityCountryCode,aIdentification.personalNumber2]
-                           stringByPaddingToLength:29 withString:@"<" startingAtIndex:0]
-                           stringByAppendingFormat:@"%@",aIdentification.checkdigitFinal];
-        
-        self.line2.text = [[NSString
-                            stringWithFormat:@"%@<<%@",aIdentification.surNames,[aIdentification.givenNames stringByReplacingOccurrencesOfString:@" " withString:@"<"]]
-                           stringByPaddingToLength:30 withString:@"<" startingAtIndex:0];
-
-    }
-
-    
+    //In the original MRZ string from the SDK, the new lines are escaped for further use
+    //To display the string correctly, the escaped new lines will be replaced.
+    self.line0.text = [aIdentification.MRZString stringByReplacingOccurrencesOfString:@"\\n"
+                                                                           withString:@"\n"];
+    self.line0.numberOfLines = 0;
 }
 
 @end

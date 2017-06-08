@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALCutoutView.h"
 #import "ALViewConstants.h"
 
 typedef NS_ENUM(NSInteger, ALReportingMode) {

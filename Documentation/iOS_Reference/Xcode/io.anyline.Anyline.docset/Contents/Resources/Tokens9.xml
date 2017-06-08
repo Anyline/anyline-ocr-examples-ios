@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALFlashButton.html">
+	<File path="Classes/ALDigitResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALFlashButton</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDigitResult</TokenIdentifier>
+			<Abstract type="html">The ALDigitResult provides all the neccessary information of one computed digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -13,242 +13,240 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpanded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setValue:</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/expanded</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/expanded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/expanded</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/expanded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/expanded</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpandLeft:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setSegments:</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
 			
-			<Anchor>//api/name/expandLeft</Anchor>
+			<Anchor>//api/name/segments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/expandLeft</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
 			
-			<Anchor>//api/name/expandLeft</Anchor>
+			<Anchor>//api/name/segments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/expandLeft</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
 			
-			<Anchor>//api/name/expandLeft</Anchor>
+			<Anchor>//api/name/segments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setFlashImage:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setQualitySegments:</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/qualitySegments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/flashImage</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/qualitySegments</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/qualitySegments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/flashImage</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/qualitySegments</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/qualitySegments</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setFlashStatus:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIndexPath:</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/delegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/delegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setAnimationDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setPatternResultDictionary:</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
 			
 			
-			<Anchor>//api/name/animationDelegate</Anchor>
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/animationDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
 			
 			
-			<Anchor>//api/name/animationDelegate</Anchor>
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/animationDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
 			
 			
-			<Anchor>//api/name/animationDelegate</Anchor>
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpanded:animated:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/quality</TokenIdentifier>
+			<Abstract type="html">Returns the Quality or accuracy of a digit. This is the average value of all
+the specified qualitySegments.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (void)setExpanded:(BOOL)expanded animated:(BOOL)animated</Declaration>
+			<Declaration>- (float)quality</Declaration>
 			
-			
-			<Anchor>//api/name/setExpanded:animated:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/initWithFrame:flashImage:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithFrame:(CGRect)frame flashImage:(UIImage *)flashImage</Declaration>
-			
-			
-			<Anchor>//api/name/initWithFrame:flashImage:</Anchor>
+			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
+			<Anchor>//api/name/quality</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

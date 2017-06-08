@@ -1,47 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashStatus.html">
+	<File path="Protocols/ALOCRScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALOCRScanPluginDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOn</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOn</Declaration>
-            
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALOCRScanPluginDelegate/anylineOCRScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Called when a result is found</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *_Nonnull)anylineOCRScanPlugin didFindResult:(ALOCRResult *_Nonnull)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineOCRScanPlugin</Name>
+					<Abstract type="html">The ALOCRScanPlugin</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">The result object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineOCRScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="57"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOff</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOff</Declaration>
-            
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
-            
-            <NodeRef refid="57"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusAuto</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusAuto</Declaration>
-            
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
-            
-            <NodeRef refid="57"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

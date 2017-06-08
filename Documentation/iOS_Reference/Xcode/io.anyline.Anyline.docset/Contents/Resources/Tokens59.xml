@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALOCRScanMode.html">
+	<File path="Protocols/AnylineDebugDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
-			<Abstract type="html">The possible scanModes for the AnylineOCR module</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineDebugDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="59"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLine</TokenIdentifier>
-            <Abstract type="html">The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).
-     </Abstract>
-            <Declaration>ALLine</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:reportDebugVariable:value:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView reportDebugVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>variableName</Name>
+					<Abstract type="html">The variable name of the reported value</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The reported value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineModuleView:reportDebugVariable:value:</Anchor>
             <NodeRef refid="59"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALGrid</TokenIdentifier>
-            <Abstract type="html">The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).
-     </Abstract>
-            <Declaration>ALGrid</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:runSkipped:</TokenIdentifier>
+			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
+(If not text is found or confidence is to low, etc.)</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>runFailure</Name>
+					<Abstract type="html">The reason why the run failed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineModuleView:runSkipped:</Anchor>
             <NodeRef refid="59"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAuto</TokenIdentifier>
-            <Abstract type="html">The AUTO mode is optimal if you want to scan more than one usecase in one mode.
-You can also allow lower case letters.
-MULTILINE is not supported yet.
-     </Abstract>
-            <Declaration>ALAuto</Declaration>
-            
-            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-            
-            <NodeRef refid="59"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

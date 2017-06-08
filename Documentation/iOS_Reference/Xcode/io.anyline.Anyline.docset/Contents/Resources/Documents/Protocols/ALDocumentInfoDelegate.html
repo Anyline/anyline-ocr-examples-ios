@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALDocumentInfoDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/anylineDocumentScanPlugin:detectedPictureCorners:inImage:">- anylineDocumentScanPlugin:detectedPictureCorners:inImage:</option>
+		
+		<option value="//api/name/anylineDocumentScanPlugin:reportInfo:">- anylineDocumentScanPlugin:reportInfo:</option>
+		
+		<option value="//api/name/anylineDocumentScanPlugin:reportsPictureProcessingFailure:">- anylineDocumentScanPlugin:reportsPictureProcessingFailure:</option>
+		
+		<option value="//api/name/anylineDocumentScanPlugin:reportsPreviewProcessingFailure:">- anylineDocumentScanPlugin:reportsPreviewProcessingFailure:</option>
+		
+		<option value="//api/name/anylineDocumentScanPlugin:reportsPreviewResult:">- anylineDocumentScanPlugin:reportsPreviewResult:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALDocumentInfoDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALDocumentScanPlugin.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/anylineDocumentScanPlugin:detectedPictureCorners:inImage:" title="anylineDocumentScanPlugin:detectedPictureCorners:inImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentScanPlugin:detectedPictureCorners:inImage:">&ndash;&nbsp;anylineDocumentScanPlugin:detectedPictureCorners:inImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If triggerPictureCornerDetectionAndReturnError: is used this callback provides the image and the document corners
+successful full scan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)<em>anylineDocumentScanPlugin</em> detectedPictureCorners:(ALSquare *_Nonnull)<em>corners</em> inImage:(UIImage *_Nonnull)<em>image</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>corners</code></th>
+						<td><p>The corners of the document</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The full image (not cropped or deskewed)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentScanPlugin:reportsPreviewResult:" title="anylineDocumentScanPlugin:reportsPreviewResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentScanPlugin:reportsPreviewResult:">&ndash;&nbsp;anylineDocumentScanPlugin:reportsPreviewResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called if the preview scan detected a sharp and correctly placed document.
+After this callback, a full frame scan of the document starts automatically.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)<em>anylineDocumentScanPlugin</em> reportsPreviewResult:(UIImage *_Nonnull)<em>image</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anylineImage</code></th>
+						<td><p>The image of the successful preview. There is no transformation performed on this image.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentScanPlugin:reportsPreviewProcessingFailure:" title="anylineDocumentScanPlugin:reportsPreviewProcessingFailure:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentScanPlugin:reportsPreviewProcessingFailure:">&ndash;&nbsp;anylineDocumentScanPlugin:reportsPreviewProcessingFailure:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called if the preview run failed on an image. The error is provided, and the next run is started automatically.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)<em>anylineDocumentScanPlugin</em> reportsPreviewProcessingFailure:(ALDocumentError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error of the preview run.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentScanPlugin:reportsPictureProcessingFailure:" title="anylineDocumentScanPlugin:reportsPictureProcessingFailure:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentScanPlugin:reportsPictureProcessingFailure:">&ndash;&nbsp;anylineDocumentScanPlugin:reportsPictureProcessingFailure:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called if the run on the full frame was unsuccessful. The scanning process automatically starts again with a
+preview scan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)<em>anylineDocumentScanPlugin</em> reportsPictureProcessingFailure:(ALDocumentError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error of the full frame run</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineDocumentScanPlugin:reportInfo:" title="anylineDocumentScanPlugin:reportInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineDocumentScanPlugin:reportInfo:">&ndash;&nbsp;anylineDocumentScanPlugin:reportInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called with interesting values, that arise during processing.</p>
+
+
+<p>
+Some possibly reported values:
+<ul>
+<li>$brightness - the brightness of the center region of the cutout as a float value </li>
+<li>$confidence - the confidence, an Integer value between 0 and 100 </li>
+<li>$thresholdedImage - the current image transformed into black and white (the base image used for OCR)</li>
+</ul>
+</p>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)<em>anylineDocumentScanPlugin</em> reportInfo:(ALScanInfo *_Nonnull)<em>scanInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanInfo</code></th>
+						<td><p>The reported ScanInfo</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anylineScanPlugin</code></th>
+						<td><p>The <a href="../Classes/ALDocumentScanPlugin.html">ALDocumentScanPlugin</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-06-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

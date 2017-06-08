@@ -1,67 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIFeedbackStyle.html">
+	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIFeedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
             
 			
 			<NodeRef refid="65"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleRect</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleRect</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
+			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoView</Name>
+					<Abstract type="html">The AnylineVideoView object</Abstract>
+				</Parameter><Parameter>
+					<Name>sampleBuffer</Name>
+					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
             <NodeRef refid="65"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourRect</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourRect</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="65"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourUnderline</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourUnderline</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="65"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourPoint</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourPoint</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="65"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleNone</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleNone</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="65"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

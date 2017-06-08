@@ -8,33 +8,7 @@
 
 #import "AnylineAbstractModuleView.h"
 #import "ALSquare.h"
-
-typedef NS_ENUM(NSInteger, ALDocumentError) {
-    ALDocumentErrorUnkown           = -1,
-    ALDocumentErrorOutlineNotFound  = -2,
-    ALDocumentErrorSkewTooHigh      = -3,
-    ALDocumentErrorGlareDetected    = -4,
-    ALDocumentErrorImageTooDark     = -5,
-    ALDocumentErrorNotSharp         = -6,
-    ALDocumentErrorShakeDetected    = -7,
-    ALDocumentErrorRatioOutsideOfTolerance = -8,
-    ALDocumentErrorBoundsOutsideOfTolerance = -9,
-};
-
-/**
- *
- * Predefinded document ratios
- *
- */
-
-extern CGFloat const ALDocumentRatioDINAXLandscape;
-extern CGFloat const ALDocumentRatioDINAXPortrait;
-extern CGFloat const ALDocumentRatioCompimentsSlipLandscape;
-extern CGFloat const ALDocumentRatioCompimentsSlipPortrait;
-extern CGFloat const ALDocumentRatioBusinessCardLandscape;
-extern CGFloat const ALDocumentRatioBusinessCardPortrait;
-extern CGFloat const ALDocumentRatioLetterLandscape;
-extern CGFloat const ALDocumentRatioLetterPortrait;
+#import "ALDocumentScanPlugin.h"
 
 @protocol AnylineDocumentModuleDelegate;
 
@@ -46,7 +20,7 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  */
 @interface AnylineDocumentModuleView : AnylineAbstractModuleView
 
-
+@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
 /**
  *  Sets the license key and delegate.
  *

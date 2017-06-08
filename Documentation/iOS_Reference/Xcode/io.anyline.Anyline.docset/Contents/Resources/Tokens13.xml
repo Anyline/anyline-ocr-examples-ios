@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMRZResult.html">
+	<File path="Classes/ALFlashButton.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALFlashButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,50 +13,242 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:outline:allCheckDigitsValid:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpanded:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithResult:(ALIdentification *)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:allCheckDigitsValid:</Anchor>
+			<Anchor>//api/name/expanded</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/expanded</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
+			
+			
+			<Anchor>//api/name/expanded</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/expanded</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL expanded</Declaration>
+			
+			
+			<Anchor>//api/name/expanded</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpandLeft:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			
+			
+			<Anchor>//api/name/expandLeft</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/expandLeft</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			
+			
+			<Anchor>//api/name/expandLeft</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/expandLeft</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL expandLeft</Declaration>
+			
+			
+			<Anchor>//api/name/expandLeft</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setFlashImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/flashImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/flashImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIImageView *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setFlashStatus:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonStatusDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setAnimationDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/animationDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALFlashButton/animationDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;ALFlashButtonAnimationDelegate&gt; animationDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/animationDelegate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/setExpanded:animated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>- (void)setExpanded:(BOOL)expanded animated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/setExpanded:animated:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALFlashButton/initWithFrame:flashImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithFrame:(CGRect)frame flashImage:(UIImage *)flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/initWithFrame:flashImage:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineDocumentModuleView.html">
+	<File path="Classes/ALSegmentSpec.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineDocumentModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSegmentSpec</TokenIdentifier>
+			<Abstract type="html">The ALSegmentSpec defines the position for one specific segment.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
             
 			
 			<NodeRef refid="32"/>
@@ -13,90 +13,72 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/setBounds:</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/bounds</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentSpec/bounds</TokenIdentifier>
+			<Abstract type="html">The bounds for the segments.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect bounds</Declaration>
+			
+			
+			<Anchor>//api/name/bounds</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/initWithBounds:</TokenIdentifier>
+			<Abstract type="html">Initialise a new Segment Spec.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithBounds:(CGRect)bounds</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
+					<Name>bounds</Name>
+					<Abstract type="html">The bounds for the segments.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<ReturnValue><Abstract type="html">A new Segment Spec.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithBounds:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxDocumentRatioDeviation:</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentSpec/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html">Initialise a new Segment Spec.</Abstract>
+			<DeclaredIn>ALSegmentSpec.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="32"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="32"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="32"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentRatios:</TokenIdentifier>
-			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)setDocumentRatios:(NSArray&lt;NSNumber*&gt; *)ratios</Declaration>
+			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>ratios</Name>
-					<Abstract type="html">all supported formats</Abstract>
+					<Name>dictionary</Name>
+					<Abstract type="html">The dictionary representing an ALSegmentSpec</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setDocumentRatios:</Anchor>
-            <NodeRef refid="32"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/triggerPictureCornerDetectionAndReturnError:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error</Declaration>
-			
-			
-			<Anchor>//api/name/triggerPictureCornerDetectionAndReturnError:</Anchor>
+			<ReturnValue><Abstract type="html">A new Segment Spec.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

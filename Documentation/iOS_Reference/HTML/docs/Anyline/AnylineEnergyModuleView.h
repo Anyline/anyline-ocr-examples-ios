@@ -7,36 +7,9 @@
 //
 
 #import "AnylineAbstractModuleView.h"
-
-typedef NS_ENUM(NSInteger, ALScanMode) {
-    ALAnalogMeter,
-    ALElectricMeter __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead instead."), ALElectricMeter5_1 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALElectricMeter6_1 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeterWhite __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeter4 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALAnalogMeter7 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
-    ALGasMeter __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALGasMeter6 __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
-    ALBarcode,
-    ALSerialNumber,
-    ALWaterMeterBlackBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."), ALWaterMeterWhiteBackground __deprecated_msg("Deprecated since 3.8. ALAnalogMeter is used instead."),
-    ALDigitalMeter,
-    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6,
-    ALAutoAnalogDigitalMeter
-};
-
-/**
- *  The result object for the AnylineEnergyModule
- */
-@interface ALEnergyResult : ALScanResult<NSString *>
-/**
- * The used scanMode
- */
-@property (nonatomic, assign, readonly) ALScanMode scanMode;
-
-- (instancetype)initWithResult:(NSString *)result
-                         image:(UIImage *)image
-                     fullImage:(UIImage *)fullImage
-                    confidence:(NSInteger)confidence
-                       outline:(ALSquare *)outline
-                      scanMode:(ALScanMode)scanMode;
-
-@end
+#import "ALMeterResult.h"
+#import "ALMeterScanPlugin.h"
+#import "ALBarcodeScanPlugin.h"
 
 @protocol AnylineEnergyModuleDelegate;
 
@@ -48,6 +21,10 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
  * AnylineEnergyModuleView is able to scan the most common energy meters. The scan mode is set with setScanMode.
  */
 @interface AnylineEnergyModuleView : AnylineAbstractModuleView
+
+@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
+
+@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
 
 /**
  *  Sets the scan mode. 

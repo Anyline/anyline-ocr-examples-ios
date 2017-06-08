@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALScanResult.html">
+	<File path="Classes/ALMeterScanPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALScanResult</TokenIdentifier>
-			<Abstract type="html">The base result object for all the modules</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanPlugin</TokenIdentifier>
+			<Abstract type="html">The ALMeterScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode.</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,194 +13,108 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setResult:</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setScanMode:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/result</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/result</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanPlugin/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setImage:</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setScanMode:error:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
+			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The scan mode to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setScanMode:error:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALMeterScanPluginDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setFullImage:</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/fullImage</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/fullImage</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setConfidence:</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/confidence</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/confidence</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setOutline:</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
-			
-			
-			<Anchor>//api/name/outline</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/outline</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
-			
-			
-			<Anchor>//api/name/outline</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/outline</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) ALSquare *outline</Declaration>
-			
-			
-			<Anchor>//api/name/outline</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/initWithResult:image:fullImage:confidence:outline:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/addDelegate:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithResult:(ObjectType)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline</Declaration>
+			<Declaration>- (void)addDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:</Anchor>
+			<Anchor>//api/name/addDelegate:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/removeDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)removeDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

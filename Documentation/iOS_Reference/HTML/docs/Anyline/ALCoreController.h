@@ -1,5 +1,5 @@
 //
-//  AnylineController.h
+//  ALCoreController.h
 //  Anyline
 //
 //  Created by Daniel Albertini on 25.03.13.
@@ -13,14 +13,14 @@
 
 @class ALImage;
 
-@protocol AnylineControllerDelegate;
+@protocol ALCoreControllerDelegate;
 
 /**
  *  The Anyline Controller is the small but powerful interface to our image 
  *  processing / text recognition. Loaded with different Configurations files it
  *  can execute totally different tasks.
  */
-@interface AnylineController : NSObject
+@interface ALCoreController : NSObject
 
 /**
  *  With this boolean you can control if the SDK runs on an async queue
@@ -35,7 +35,7 @@
  *  You must set the delegate if you want to get any results out 
  *  of the Anyline SDK.
  */
-@property (nonatomic, weak) id<AnylineControllerDelegate> delegate;
+@property (nonatomic, weak) id<ALCoreControllerDelegate> delegate;
 
 /**
  *  Initializes a new AnylineController with a license key. In order to 
@@ -58,7 +58,7 @@
  *  @return A new instance of AnylineController.
  */
 - (instancetype)initWithLicenseKey:(NSString *)licenseKey
-                          delegate:(id<AnylineControllerDelegate>)delegate;
+                          delegate:(id<ALCoreControllerDelegate>)delegate;
 
 /**
  *  This method loads the Anyline SDK with an configuration string.
@@ -229,7 +229,7 @@
  *  The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
  *  All delegate callbacks are garanteed to be executed in the Main Thread.
  */
-@protocol AnylineControllerDelegate <NSObject>
+@protocol ALCoreControllerDelegate <NSObject>
 
 @required
 
@@ -242,7 +242,7 @@
  *  @param object The result object of the processing.
  *                The result is specified with the RETURN statement in the .alc file.
  */
-- (void)anylineController:(AnylineController *)anylineController didFinishWithOutput:(id)object;
+- (void)anylineCoreController:(ALCoreController *)coreController didFinishWithOutput:(id)object;
 
 @optional
 
@@ -252,7 +252,7 @@
  *
  *  @param error A NSError object with ALErrorDomain and an appropriate status.
  */
-- (void)anylineController:(AnylineController *)anylineController didAbortRun:(NSError *)reason;
+- (void)anylineCoreController:(ALCoreController *)coreController didAbortRun:(NSError *)reason;
 
 /**
  *  Tells the delegate a specified intermediate result. Which intermediate results are reported
@@ -264,9 +264,9 @@
  *  @param variableName The variable name in the .alc file which should be reported.
  *  @param value        The value of the reported variable.
  */
-- (void)anylineController:(AnylineController *)anylineController
-          reportsVariable:(NSString *)variableName
-                    value:(id)value;
+- (void)anylineCoreController:(ALCoreController *)coreController
+              reportsVariable:(NSString *)variableName
+                        value:(id)value;
 
 /**
  *  Tells the delegate that there was a parsing error.
@@ -275,6 +275,6 @@
  *
  *  @param error The parsing error which occured.
  */
-- (void)anylineController:(AnylineController *)anylineController parserError:(NSError *)error;
+- (void)anylineCoreController:(ALCoreController *)coreController parserError:(NSError *)error;
 
 @end
