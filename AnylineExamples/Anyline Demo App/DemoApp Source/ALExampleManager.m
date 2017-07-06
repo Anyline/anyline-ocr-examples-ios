@@ -26,6 +26,7 @@
 #import "ALLicensePlateDEViewController.h"
 #import "ALLicensePlateATViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
+#import "ALDialMeterScanViewController.h"
 
 #import "AnylineExamples-Swift.h"
 
@@ -49,7 +50,7 @@
 
 - (void)initExampleData {
 
-
+    //Energy
     ALExample *analogScanning = [[ALExample alloc] initWithName:@"Analog Meter Scanning"
                                                  viewController:[ALAnalogMeterScanViewController class]];
     
@@ -65,8 +66,12 @@
     
     ALExample *autoAnalogDigitalScanning = [[ALExample alloc] initWithName:@"Scan Analog/Digital Meter"
                                                              viewController:[ALAutoAnalogDigitalMeterScanViewController class]];
+
+    ALExample *dialScanning = [[ALExample alloc] initWithName:@"Scan Dial Meter (alpha)"
+                                                            viewController:[ALDialMeterScanViewController class]];
+
     
-    
+    //OCR / MRZ / Barcode
     ALExample *idScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PASS / ID MRZ Scan", nil)
                                              viewController:[ALMRZScanViewController class]];
     
@@ -115,7 +120,7 @@
     
     
     self.sectionNames = @[@"Energy",@"Identification",@"Barcodes",@"Fintech",@"Document",@"Loyality",@"Cars",@"Other"];
-    self.examples = @{self.sectionNames[0] : @[analogScanning,heatScanning,digitalScanning,analogDoubleTariffScanning, autoAnalogDigitalScanning],
+    self.examples = @{self.sectionNames[0] : @[analogScanning,heatScanning,digitalScanning,analogDoubleTariffScanning,autoAnalogDigitalScanning,dialScanning],
                       self.sectionNames[1] : @[idScanning],
                       self.sectionNames[2] : @[barcodeScanning],
                       self.sectionNames[3] : @[ibanScanning],

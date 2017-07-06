@@ -195,6 +195,32 @@ to correctly run Anyline you will have to load an appropriate configuration.</Ab
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/loadScript:scriptName:bundlePath:error:</TokenIdentifier>
+			<Abstract type="html">This method loads the Anyline SDK with an configuration string.</Abstract>
+			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)loadScript:(NSString *)script scriptName:(NSString *)scriptName bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>script</Name>
+					<Abstract type="html">The string which represents the configuration.</Abstract>
+				</Parameter><Parameter>
+					<Name>scriptName</Name>
+					<Abstract type="html">The filename of the script.</Abstract>
+				</Parameter><Parameter>
+					<Name>bundlePath</Name>
+					<Abstract type="html">The bundlePath where the additional ressources are located.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if the script loading fails.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadScript:scriptName:bundlePath:error:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/loadCmdFile:bundlePath:error:</TokenIdentifier>
 			<Abstract type="html">This method loads the Anyline SDK with an configuration file which is located
 at the bundlePath. The configuration must ether be an .alc unencrypted file

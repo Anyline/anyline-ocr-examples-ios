@@ -84,6 +84,16 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDialMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDialMeter</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
             <Abstract type="html"></Abstract>
             <Declaration>ALBarcode</Declaration>

@@ -2,13 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ALBuildIdentifier</key>
+	<string>122205072017_3.14.0</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.13.1</string>
+	<string>3.14.0</string>
 	<key>CFBundleVersion</key>
-	<string>1330</string>
+	<string>1341</string>
 	<key>GITHash</key>
-	<string>45cf90a5e7f003043dac05fe9e3c4155b8299d87</string>
+	<string>d2efeb7c64cc585fa4671f5c363383434022dfda</string>
 </dict>
 </plist>

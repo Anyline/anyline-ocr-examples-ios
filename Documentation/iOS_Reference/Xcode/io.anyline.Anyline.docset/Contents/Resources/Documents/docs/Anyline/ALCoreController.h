@@ -74,6 +74,21 @@
              error:(NSError **)error;
 
 /**
+ *  This method loads the Anyline SDK with an configuration string.
+ *
+ *  @param script     The string which represents the configuration.
+ *  @param scriptName The filename of the script.
+ *  @param bundlePath The bundlePath where the additional ressources are located.
+ *  @param error      The error if the script loading fails.
+ *
+ *  @return Boolean indicating the success / failure of the loading.
+ */
+- (BOOL)loadScript:(NSString *)script
+        scriptName:(NSString *)scriptName
+        bundlePath:(NSString *)bundlePath
+             error:(NSError **)error;
+
+/**
  *  This method loads the Anyline SDK with an configuration file which is located 
  *  at the bundlePath. The configuration must ether be an .alc unencrypted file 
  *  or an .ale encrypted file.
