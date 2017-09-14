@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, ALReportingMode) {
 
 @interface ALUIConfiguration : NSObject
 
+@property (nonatomic, assign) NSString *defaultCamera;
 @property (nonatomic, assign) CGFloat cutoutWidthPercent;
 @property (nonatomic, assign) CGFloat cutoutMaxPercentWidth;
 @property (nonatomic, assign) CGFloat cutoutMaxPercentHeight;

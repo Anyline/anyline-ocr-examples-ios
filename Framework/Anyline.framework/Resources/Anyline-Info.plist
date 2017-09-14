@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>ALBuildIdentifier</key>
-	<string>140217082017_3.15.0</string>
+	<string>125414092017_3.16.0</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.15.0</string>
+	<string>3.16.0</string>
 	<key>CFBundleVersion</key>
 	<string>1341</string>
 	<key>GITHash</key>
-	<string>c4adb28aebeab6e73c6c122acc5843f057e47753</string>
+	<string>0c5c7ec37c888819c2dbe5e8e9fbd6796290635c</string>
 </dict>
 </plist>

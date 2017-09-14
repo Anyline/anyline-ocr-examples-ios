@@ -13,6 +13,42 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALUIConfiguration/setDefaultCamera:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSString *defaultCamera</Declaration>
+			
+			
+			<Anchor>//api/name/defaultCamera</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALUIConfiguration/defaultCamera</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSString *defaultCamera</Declaration>
+			
+			
+			<Anchor>//api/name/defaultCamera</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALUIConfiguration/defaultCamera</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSString *defaultCamera</Declaration>
+			
+			
+			<Anchor>//api/name/defaultCamera</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALUIConfiguration/setCutoutWidthPercent:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>

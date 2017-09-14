@@ -9,60 +9,60 @@
 /* Begin PBXBuildFile section */
 		00920BA2DF08D1CBA26CF0B5 /* document_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 825EE8FA96523049C40C4C6A /* document_config.json */; };
 		046841DDCE2C238AADCBD2F6 /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C96CA2CE47B790BFBB605 /* ALVoucherCodeScanViewController.m */; };
-		0B91B59CF14C62F304D507CF /* Arial.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 298B367BFDAD502BB4731134 /* Arial.traineddata */; };
 		0FBD0D845AA9BE5AA6710468 /* iban_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D1EBF55629C059F2E94985 /* iban_config.json */; };
-		10020027812EACE4FED11B03 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */; };
 		103F14B072B262A9983662A4 /* rb_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 433A1C14AFD7CDE29C4DCBEF /* rb_config.json */; };
-		12BF7AF8E4F654D7138AC981 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */; };
 		13930A97CF102FDA8B346835 /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */; };
+		1396F93784518FA209262B90 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
 		15E84CC79292F92B64274899 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D86CA50184F1942E73BD9213 /* ALExample.m */; };
+		18D0A74A8DBB69933D600838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FDE1FFE361EDBDEE3C205F /* UIKit.framework */; };
 		19F27E6C5502A6BB8397AE2B /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E90B1DAC081403BD50C5F152 /* ALExampleManager.m */; };
 		1D04672C141DE1A8F0F98502 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F7F99A1A397410296C23 /* Reachability.m */; };
 		20990112310C60A49B204C65 /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6103E43D7371110BC6213F0C /* ALScrabbleWord.m */; };
 		23E226CD2F509027BD10BAB3 /* ALRecordNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914DEA16B4E690C5C1991EF /* ALRecordNumberScanViewController.m */; };
 		260DE60765600810FE8EFE8D /* ALISBNHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFF883735FF225B4D04FCE /* ALISBNHeaderCell.m */; };
 		2668406A0613F98DA813B44E /* ALScrabbleScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8562EE0FC190E09FE6E7FBA /* ALScrabbleScanViewController.m */; };
-		2688155D2168A17DA7BE4F06 /* ALLicensePlateDEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF006422A26F1E147E3207B /* ALLicensePlateDEViewController.m */; };
 		2790A3AEF72FE14E1B60B969 /* ALHeatMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */; };
 		2B96251A87719D7063700E61 /* MeterImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54AE98DB655EB1029628926A /* MeterImagesAssets.xcassets */; };
 		309A74EE9373A1A7C09057E0 /* ALScrabbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29092239DF6E401BDB033C26 /* ALScrabbleViewController.m */; };
-		3176DA4A70F03EC308FB293E /* license_plates.ale in Resources */ = {isa = PBXBuildFile; fileRef = A8D259DEAF8C65BBAD8D83D5 /* license_plates.ale */; };
+		374A119C383BCBA14022BDFF /* ALLicensePlateResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E7B9B492C35E8943608E37 /* ALLicensePlateResultOverlayView.m */; };
 		380B13CD7EADE1F5B9A5A65A /* ALISBNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6DAD8B7DE07CE7DEFC65BD /* ALISBNAPI.m */; };
-		3C3ACB1B3C83F2C0350EFE4F /* Alte.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = EDFAA6D9BF092EB51F77466D /* Alte.traineddata */; };
+		3C82B893D15E52F5E0E5C467 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */; };
 		40F1386AA8F6123164ACF7D6 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */; };
+		4235FF66515EF5EC60BA2AA6 /* ALLicensePlateATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1F4F7E3BD159420B0A5ADA /* ALLicensePlateATViewController.m */; };
 		428B37B9806DBDE310327772 /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */; };
 		452A4B7D3A1B18B8DA800EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8727A8BBF5682A6E725C090 /* Main.storyboard */; };
 		4C1C86AD462642E10A896215 /* ALDialMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */; };
 		4E0640B92D29DB5A7F1D6DF2 /* ALScrabblePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 938340AF6E801B1E47A49D1C /* ALScrabblePoints.m */; };
-		5DB047D7F8BD02764BAE8B99 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
-		5DD7DA757C7918B0EB52AD93 /* license_plates_a.ale in Resources */ = {isa = PBXBuildFile; fileRef = D42D85FE9E7C22D202FF2992 /* license_plates_a.ale */; };
 		5F3D816A5B835447AB9ECFB2 /* ALTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D7BECEE1CE8448B0D4DF /* ALTextViewCell.m */; };
 		60A8B7910CF0C6FCC09C08FB /* ALMultiformatBarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */; };
+		6587DEF51F6AD42B0035F13C /* Alte.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEEF1F6AD42B0035F13C /* Alte.traineddata */; };
+		6587DEF61F6AD42B0035F13C /* Arial.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEF01F6AD42B0035F13C /* Arial.traineddata */; };
+		6587DEF71F6AD42B0035F13C /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEF11F6AD42B0035F13C /* GL-Nummernschild-Mtl7_uml.traineddata */; };
+		6587DEF81F6AD42B0035F13C /* license_plates_a.ale in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEF21F6AD42B0035F13C /* license_plates_a.ale */; };
+		6587DEF91F6AD42B0035F13C /* license_plates_d.ale in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEF31F6AD42B0035F13C /* license_plates_d.ale */; };
+		6587DEFA1F6AD42B0035F13C /* license_plates.ale in Resources */ = {isa = PBXBuildFile; fileRef = 6587DEF41F6AD42B0035F13C /* license_plates.ale */; };
 		680639841D3120DC9781F069 /* bottlecap_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */; };
-		6C0E8C74B98AF436D6C94F9D /* license_plates_d.ale in Resources */ = {isa = PBXBuildFile; fileRef = DBCCAD0F9E4B9D891238531C /* license_plates_d.ale */; };
 		6D1EE9D1AE26966F2B301A5B /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095A105FBAD31DC01FDBB6D0 /* ALDocumentScanViewController.m */; };
 		6DBEF1FDC2699C27BB95D833 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
 		6FE987ACF9ED2250F1399603 /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD4DBC24230A545C6F50FE30 /* isbn_config.json */; };
-		78A44774C105F34F4CDE904A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
-		7B614A370832EE58AEC937D7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */; };
+		7362895653F8BD977CD972DB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */; };
+		76318D0B701473B489FEF77D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
+		7B1C7F0F1152BA16CCA942B8 /* ALLicensePlateDEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF006422A26F1E147E3207B /* ALLicensePlateDEViewController.m */; };
 		80AFD054B9A1D9416363FA93 /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */; };
 		86D2AD0A952CA97DE498326F /* record_number_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D2F22EF36CFA4562FBDE6 /* record_number_config.json */; };
+		883200DDE967334B1CDA2502 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */; };
 		8F9228D9A97ADE385D87D7DA /* ALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A22531B381EB3546D5EA58D /* ALBaseViewController.m */; };
-		927D7FC37B98A321EB8767BA /* license_plate_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B630E9B3528FF598DEAC935C /* license_plate_view_config.json */; };
 		9542A30EC07F5BF571749085 /* ALDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */; };
 		9590A1FA27D73869F991561B /* ALJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */; };
 		9C6A17DE83216862FE8A87A7 /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 26270D1AFDA57474D313BF38 /* voucher_code_config.json */; };
-		9CB816B6B0A60EC8B70FBD7D /* ALLicensePlateATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1F4F7E3BD159420B0A5ADA /* ALLicensePlateATViewController.m */; };
-		A5B11EF217E41D005186DE06 /* ALLicensePlateResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E7B9B492C35E8943608E37 /* ALLicensePlateResultOverlayView.m */; };
+		9E9671AFAFF0721206FFA431 /* license_plate_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B630E9B3528FF598DEAC935C /* license_plate_view_config.json */; };
 		A839D22BAFFFE08880C470A8 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
 		A883D793A3AEFB3F1C3DF312 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 06260FB10E29350A0470A4FC /* NSString+Util.m */; };
-		AC85173020C76729A2536EC1 /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */; };
 		B0EF7908699CF53D7EB4386E /* ALMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DD70C5232DA190EE35205F /* ALMainTableViewController.m */; };
 		B2DEEC518E85DE5A5AB5A4BF /* ALIdentificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7278AEA62AFAD3DD9A14EE /* ALIdentificationView.m */; };
 		B32210DB476597B748438EBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E88C76AF69080B9D5FC54B /* Images.xcassets */; };
 		B6E0C2F553D4795F24838903 /* scrabble_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7DDC3D38D9F06D0071357 /* scrabble_config.json */; };
-		BAE9F3DEED61C852999CD220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FDE1FFE361EDBDEE3C205F /* UIKit.framework */; };
-		C57A7D2C7067F20B0699566D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */; };
+		B9EDF22CF8D6C7219352D975 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */; };
 		C62E30DE46A94B7F8862E904 /* ALBottlecapScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */; };
 		C9C8DC7CA17114821505F61A /* ALResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B03757A5049B0789B0F06C7 /* ALResultOverlayView.m */; };
 		CA89B4630E87EBB71C473343 /* ALScrabbleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */; };
@@ -73,11 +73,12 @@
 		E7BA307D449B96D28E7CEDFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9625A90879E934BBFB50ACD /* LaunchScreen.xib */; };
 		EAAACEF1B3198FC6FA2233B9 /* ALAnalogMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */; };
 		EB43D30CC20EEF58B50A47F5 /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */; };
-		ED16E18BAD693CB26F998A32 /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = D2581B69C672ACBFD8F7DE97 /* GL-Nummernschild-Mtl7_uml.traineddata */; };
-		EF8A98B3317A16FBCA82698F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
+		EBA14B0EA022A9A1C0BF7D55 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
+		EBD3EDCF386B8D595B563C16 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */; };
+		ED540FC84042A7CEB7816790 /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */; };
+		F147E62106316460B99356B4 /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
 		F6970CB1032CB2A85EB93D67 /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F53817B45ED084BCC5F172BB /* ISBNInfo.m */; };
 		F7E73BF497E7779EAFCD8056 /* ALAnagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A6183F42E04E2C6FF8395 /* ALAnagramAPI.m */; };
-		FC5314F891BCFC1D7E87E16B /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
 		FD20FAE3AF44A02A3E52E47E /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB346B31D8C92567FEE0 /* ALIBANScanViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +89,6 @@
 		0ED7DDC3D38D9F06D0071357 /* scrabble_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = scrabble_config.json; sourceTree = "<group>"; };
 		11FDE1FFE361EDBDEE3C205F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		171912A30B05E673D21F2578 /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
-		17C70384B0C80615743A66F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1A22531B381EB3546D5EA58D /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMultiformatBarcodeScanViewController.h; sourceTree = "<group>"; };
 		1DF006422A26F1E147E3207B /* ALLicensePlateDEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateDEViewController.m; sourceTree = "<group>"; };
@@ -101,18 +101,15 @@
 		26FBC044CBAA939D45F1BF5C /* ALLicensePlateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateViewController.h; sourceTree = "<group>"; };
 		28E88C76AF69080B9D5FC54B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29092239DF6E401BDB033C26 /* ALScrabbleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleViewController.m; sourceTree = "<group>"; };
-		298B367BFDAD502BB4731134 /* Arial.traineddata */ = {isa = PBXFileReference; lastKnownFileType = text; path = Arial.traineddata; sourceTree = "<group>"; };
 		2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMRZScanViewController.m; sourceTree = "<group>"; };
 		2F26646927C2D11D4DCA09F7 /* ALMeterScanResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterScanResultViewController.h; sourceTree = "<group>"; };
 		31DF1FCED630116580BE0689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		329EBD2F4AD43F36710CB837 /* AnylineExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnylineExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A22EBE0DC5E892F98AEC19D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		3BA11DD4CE6387D71E8EF1BC /* ALScrabbleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleViewController.h; sourceTree = "<group>"; };
 		3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDialMeterScanViewController.m; sourceTree = "<group>"; };
 		4293E8D97347B073CE07DBD4 /* ALScrabbleScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleScanViewController.h; sourceTree = "<group>"; };
 		433A1C14AFD7CDE29C4DCBEF /* rb_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = rb_config.json; sourceTree = "<group>"; };
 		463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBottlecapScanViewController.m; sourceTree = "<group>"; };
-		46D9E28BB61652E24FF1B236 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		483BC48BD87FFA04B0C7F398 /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
 		4BF94003EAC9DBF73268C355 /* ALMRZScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMRZScanViewController.h; sourceTree = "<group>"; };
 		4C7278AEA62AFAD3DD9A14EE /* ALIdentificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIdentificationView.m; sourceTree = "<group>"; };
@@ -130,6 +127,12 @@
 		5E76EF22AF27821297EE60C4 /* ALMainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMainTableViewController.h; sourceTree = "<group>"; };
 		6103E43D7371110BC6213F0C /* ALScrabbleWord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleWord.m; sourceTree = "<group>"; };
 		635597E0966D01FD7533AF85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6587DEEF1F6AD42B0035F13C /* Alte.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alte.traineddata; sourceTree = "<group>"; };
+		6587DEF01F6AD42B0035F13C /* Arial.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.traineddata; sourceTree = "<group>"; };
+		6587DEF11F6AD42B0035F13C /* GL-Nummernschild-Mtl7_uml.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GL-Nummernschild-Mtl7_uml.traineddata"; sourceTree = "<group>"; };
+		6587DEF21F6AD42B0035F13C /* license_plates_a.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_a.ale; sourceTree = "<group>"; };
+		6587DEF31F6AD42B0035F13C /* license_plates_d.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates_d.ale; sourceTree = "<group>"; };
+		6587DEF41F6AD42B0035F13C /* license_plates.ale */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license_plates.ale; sourceTree = "<group>"; };
 		667E5777A3E03EDD682C3717 /* ALDialMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDialMeterScanViewController.h; sourceTree = "<group>"; };
 		6922C5F3D3E6600A66CF7AE7 /* ALJSONDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALJSONDownloader.h; sourceTree = "<group>"; };
 		6932576BBE91833BCDCBA999 /* ALRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALRoundedView.m; sourceTree = "<group>"; };
@@ -151,8 +154,6 @@
 		A2F3ED09A3FEFA92F4DF8590 /* ALAnagramAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAnagramAPI.h; sourceTree = "<group>"; };
 		A3325FBA2735973E9C441BFF /* ALISBNScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALISBNScanViewController.m; sourceTree = "<group>"; };
 		A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALJSONDownloader.m; sourceTree = "<group>"; };
-		A6CEB1BD4C6926FA7F79AC58 /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Anyline.framework; sourceTree = "<group>"; };
-		A8D259DEAF8C65BBAD8D83D5 /* license_plates.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = license_plates.ale; sourceTree = "<group>"; };
 		AB63709C54948136BE9BE400 /* ALAppDemoLicenses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAppDemoLicenses.h; sourceTree = "<group>"; };
 		AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		AD6DAD8B7DE07CE7DEFC65BD /* ALISBNAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALISBNAPI.m; sourceTree = "<group>"; };
@@ -169,19 +170,17 @@
 		C2DD70C5232DA190EE35205F /* ALMainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMainTableViewController.m; sourceTree = "<group>"; };
 		C537BA1D2368DD094600C1D1 /* ALBottlecapScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBottlecapScanViewController.h; sourceTree = "<group>"; };
 		C6E7B9B492C35E8943608E37 /* ALLicensePlateResultOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateResultOverlayView.m; sourceTree = "<group>"; };
+		C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C81999122CB88F7097AD96BA /* ALRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRoundedView.h; sourceTree = "<group>"; };
 		CD7D3A4A810DAA81EA0A93EA /* ISBNInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISBNInfo.h; sourceTree = "<group>"; };
 		CED25EF103444219BDEFFA68 /* ALRBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRBScanViewController.h; sourceTree = "<group>"; };
 		CF1F4F7E3BD159420B0A5ADA /* ALLicensePlateATViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateATViewController.m; sourceTree = "<group>"; };
 		D23AC23D267D89D73835F726 /* ALScrabbleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleLabel.h; sourceTree = "<group>"; };
-		D2581B69C672ACBFD8F7DE97 /* GL-Nummernschild-Mtl7_uml.traineddata */ = {isa = PBXFileReference; lastKnownFileType = text; path = "GL-Nummernschild-Mtl7_uml.traineddata"; sourceTree = "<group>"; };
-		D42D85FE9E7C22D202FF2992 /* license_plates_a.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = license_plates_a.ale; sourceTree = "<group>"; };
 		D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAutoAnalogDigitalMeterScanViewController.m; sourceTree = "<group>"; };
 		D8562EE0FC190E09FE6E7FBA /* ALScrabbleScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleScanViewController.m; sourceTree = "<group>"; };
 		D86CA50184F1942E73BD9213 /* ALExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExample.m; sourceTree = "<group>"; };
 		DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALISBNViewController.m; sourceTree = "<group>"; };
 		DBC80CF378F2C88698DCDEAC /* ALResultOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALResultOverlayView.h; sourceTree = "<group>"; };
-		DBCCAD0F9E4B9D891238531C /* license_plates_d.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = license_plates_d.ale; sourceTree = "<group>"; };
 		DCFF10303A25FA1A2A079A21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DD389A80DF4984F39067C287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDigitalMeterScanViewController.m; sourceTree = "<group>"; };
@@ -195,7 +194,6 @@
 		E9A4117064DEC62B2EA7ABA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateViewController.m; sourceTree = "<group>"; };
 		EBE8F7F99A1A397410296C23 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		EDFAA6D9BF092EB51F77466D /* Alte.traineddata */ = {isa = PBXFileReference; lastKnownFileType = text; path = Alte.traineddata; sourceTree = "<group>"; };
 		EFDFBCFF90A0ED10D6B009C3 /* ALIdentificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIdentificationView.h; sourceTree = "<group>"; };
 		F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDoubleTariffMeterScanViewController.m; sourceTree = "<group>"; };
 		F33423D8FCDDA8CD26BD55B5 /* AnylineExamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnylineExamples-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterScanResultViewController.m; sourceTree = "<group>"; };
 		F9D1EBF55629C059F2E94985 /* iban_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = iban_config.json; sourceTree = "<group>"; };
 		FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALRBScanViewController.m; sourceTree = "<group>"; };
-		FDF845EF62E171E9D18293E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,14 +209,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C57A7D2C7067F20B0699566D /* Accelerate.framework in Frameworks */,
-				12BF7AF8E4F654D7138AC981 /* libc++.dylib in Frameworks */,
-				5DB047D7F8BD02764BAE8B99 /* CoreMedia.framework in Frameworks */,
-				EF8A98B3317A16FBCA82698F /* AVFoundation.framework in Frameworks */,
-				BAE9F3DEED61C852999CD220 /* UIKit.framework in Frameworks */,
-				7B614A370832EE58AEC937D7 /* AssetsLibrary.framework in Frameworks */,
-				78A44774C105F34F4CDE904A /* AudioToolbox.framework in Frameworks */,
-				FC5314F891BCFC1D7E87E16B /* Anyline.framework in Frameworks */,
+				883200DDE967334B1CDA2502 /* Accelerate.framework in Frameworks */,
+				7362895653F8BD977CD972DB /* libc++.dylib in Frameworks */,
+				76318D0B701473B489FEF77D /* AVFoundation.framework in Frameworks */,
+				18D0A74A8DBB69933D600838 /* UIKit.framework in Frameworks */,
+				F147E62106316460B99356B4 /* Anyline.framework in Frameworks */,
+				B9EDF22CF8D6C7219352D975 /* AssetsLibrary.framework in Frameworks */,
+				1396F93784518FA209262B90 /* AudioToolbox.framework in Frameworks */,
+				EBA14B0EA022A9A1C0BF7D55 /* CoreMedia.framework in Frameworks */,
+				EBD3EDCF386B8D595B563C16 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,22 +263,6 @@
 			path = MRZ;
 			sourceTree = "<group>";
 		};
-		15EEA234028B3F80CAA99929 /* LicensePlate */ = {
-			isa = PBXGroup;
-			children = (
-				8CBAD3C577B713756E032208 /* ViewController */,
-				8AACE277FF2854C8FE4EAEE1 /* Views */,
-				EDFAA6D9BF092EB51F77466D /* Alte.traineddata */,
-				298B367BFDAD502BB4731134 /* Arial.traineddata */,
-				D2581B69C672ACBFD8F7DE97 /* GL-Nummernschild-Mtl7_uml.traineddata */,
-				B630E9B3528FF598DEAC935C /* license_plate_view_config.json */,
-				A8D259DEAF8C65BBAD8D83D5 /* license_plates.ale */,
-				D42D85FE9E7C22D202FF2992 /* license_plates_a.ale */,
-				DBCCAD0F9E4B9D891238531C /* license_plates_d.ale */,
-			);
-			path = LicensePlate;
-			sourceTree = "<group>";
-		};
 		1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +276,7 @@
 		2EDD43DC8833A207723A124E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B72D013F6E448FF190E6754D /* Anyline */,
+				CF03A9661C84782B0E65C46E /* Anyline */,
 				0E0BEA9C8B6EF83EBFEC9E8E /* Anyline Demo App */,
 				678C555D82AA23FE3EAF70C3 /* Anyline Examples Source */,
 			);
@@ -317,6 +299,22 @@
 				BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */,
 			);
 			path = Bottlecap;
+			sourceTree = "<group>";
+		};
+		42A136D1D67E42B1C4C2F2A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD389A80DF4984F39067C287 /* AVFoundation.framework */,
+				C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */,
+				483BC48BD87FFA04B0C7F398 /* Anyline.framework */,
+				95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */,
+				5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */,
+				AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */,
+				C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */,
+				11FDE1FFE361EDBDEE3C205F /* UIKit.framework */,
+				E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		468CAB1F2847D6E3B39B610E /* Scrabble */ = {
@@ -407,7 +405,7 @@
 				6AC3D386EFAADB2B7EFF9B3A /* Document */,
 				DFEE8B0372E58B7EADEE9DE9 /* IBAN */,
 				9EE0FB2C81106E82A457E81E /* ISBN */,
-				15EEA234028B3F80CAA99929 /* LicensePlate */,
+				DB10F0F693BA59CCDF465C3A /* LicensePlate */,
 				0F26CABFFCB11DE1C8517E6A /* MRZ */,
 				62CFF4839C58D7938C31CD88 /* MeterScan */,
 				1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */,
@@ -429,25 +427,6 @@
 				825EE8FA96523049C40C4C6A /* document_config.json */,
 			);
 			path = Document;
-			sourceTree = "<group>";
-		};
-		74A3070AB7D4EF560170633C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD389A80DF4984F39067C287 /* AVFoundation.framework */,
-				C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */,
-				483BC48BD87FFA04B0C7F398 /* Anyline.framework */,
-				95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */,
-				5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */,
-				17C70384B0C80615743A66F3 /* CoreGraphics.framework */,
-				AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */,
-				3A22EBE0DC5E892F98AEC19D /* CoreVideo.framework */,
-				FDF845EF62E171E9D18293E2 /* QuartzCore.framework */,
-				46D9E28BB61652E24FF1B236 /* SystemConfiguration.framework */,
-				11FDE1FFE361EDBDEE3C205F /* UIKit.framework */,
-				E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8AACE277FF2854C8FE4EAEE1 /* Views */ = {
@@ -515,7 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDD43DC8833A207723A124E /* Source */,
-				74A3070AB7D4EF560170633C /* Frameworks */,
+				42A136D1D67E42B1C4C2F2A8 /* Frameworks */,
 				523D37D99AE2821A5FFE17FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -542,16 +521,6 @@
 				EBE8F7F99A1A397410296C23 /* Reachability.m */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		B72D013F6E448FF190E6754D /* Anyline */ = {
-			isa = PBXGroup;
-			children = (
-				A6CEB1BD4C6926FA7F79AC58 /* Anyline.framework */,
-				DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */,
-			);
-			name = Anyline;
-			path = ../Framework/;
 			sourceTree = "<group>";
 		};
 		BB8B073899A792D0F0C1A7FD /* VoucherCode */ = {
@@ -589,6 +558,31 @@
 				E5E2D7BECEE1CE8448B0D4DF /* ALTextViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CF03A9661C84782B0E65C46E /* Anyline */ = {
+			isa = PBXGroup;
+			children = (
+				DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */,
+			);
+			name = Anyline;
+			path = ../Framework/;
+			sourceTree = "<group>";
+		};
+		DB10F0F693BA59CCDF465C3A /* LicensePlate */ = {
+			isa = PBXGroup;
+			children = (
+				8CBAD3C577B713756E032208 /* ViewController */,
+				8AACE277FF2854C8FE4EAEE1 /* Views */,
+				B630E9B3528FF598DEAC935C /* license_plate_view_config.json */,
+				6587DEEF1F6AD42B0035F13C /* Alte.traineddata */,
+				6587DEF01F6AD42B0035F13C /* Arial.traineddata */,
+				6587DEF11F6AD42B0035F13C /* GL-Nummernschild-Mtl7_uml.traineddata */,
+				6587DEF21F6AD42B0035F13C /* license_plates_a.ale */,
+				6587DEF31F6AD42B0035F13C /* license_plates_d.ale */,
+				6587DEF41F6AD42B0035F13C /* license_plates.ale */,
+			);
+			path = LicensePlate;
 			sourceTree = "<group>";
 		};
 		DFEE8B0372E58B7EADEE9DE9 /* IBAN */ = {
@@ -664,11 +658,6 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				TargetAttributes = {
-					549B361CA3000146B1567759 = {
-						ProvisioningStyle = Manual;
-					};
-				};
 			};
 			buildConfigurationList = F9D5AAAEF93187FA8CC87FF4 /* Build configuration list for PBXProject "AnylineExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -691,25 +680,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10020027812EACE4FED11B03 /* AnylineResources.bundle in Resources */,
+				3C82B893D15E52F5E0E5C467 /* AnylineResources.bundle in Resources */,
+				6587DEFA1F6AD42B0035F13C /* license_plates.ale in Resources */,
+				6587DEF71F6AD42B0035F13C /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */,
 				2B96251A87719D7063700E61 /* MeterImagesAssets.xcassets in Resources */,
+				6587DEF81F6AD42B0035F13C /* license_plates_a.ale in Resources */,
 				452A4B7D3A1B18B8DA800EF8 /* Main.storyboard in Resources */,
 				E7BA307D449B96D28E7CEDFB /* LaunchScreen.xib in Resources */,
 				B32210DB476597B748438EBC /* Images.xcassets in Resources */,
 				680639841D3120DC9781F069 /* bottlecap_config.json in Resources */,
 				0FBD0D845AA9BE5AA6710468 /* iban_config.json in Resources */,
 				6FE987ACF9ED2250F1399603 /* isbn_config.json in Resources */,
-				927D7FC37B98A321EB8767BA /* license_plate_view_config.json in Resources */,
+				9E9671AFAFF0721206FFA431 /* license_plate_view_config.json in Resources */,
+				6587DEF61F6AD42B0035F13C /* Arial.traineddata in Resources */,
 				103F14B072B262A9983662A4 /* rb_config.json in Resources */,
 				86D2AD0A952CA97DE498326F /* record_number_config.json in Resources */,
+				6587DEF91F6AD42B0035F13C /* license_plates_d.ale in Resources */,
+				6587DEF51F6AD42B0035F13C /* Alte.traineddata in Resources */,
 				B6E0C2F553D4795F24838903 /* scrabble_config.json in Resources */,
 				9C6A17DE83216862FE8A87A7 /* voucher_code_config.json in Resources */,
-				3C3ACB1B3C83F2C0350EFE4F /* Alte.traineddata in Resources */,
-				0B91B59CF14C62F304D507CF /* Arial.traineddata in Resources */,
-				ED16E18BAD693CB26F998A32 /* GL-Nummernschild-Mtl7_uml.traineddata in Resources */,
-				3176DA4A70F03EC308FB293E /* license_plates.ale in Resources */,
-				5DD7DA757C7918B0EB52AD93 /* license_plates_a.ale in Resources */,
-				6C0E8C74B98AF436D6C94F9D /* license_plates_d.ale in Resources */,
 				00920BA2DF08D1CBA26CF0B5 /* document_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,10 +720,10 @@
 				D4616EED5BB41053DE97D2C1 /* ALISBNScanViewController.m in Sources */,
 				13930A97CF102FDA8B346835 /* ALISBNViewController.m in Sources */,
 				F6970CB1032CB2A85EB93D67 /* ISBNInfo.m in Sources */,
-				9CB816B6B0A60EC8B70FBD7D /* ALLicensePlateATViewController.m in Sources */,
-				2688155D2168A17DA7BE4F06 /* ALLicensePlateDEViewController.m in Sources */,
-				AC85173020C76729A2536EC1 /* ALLicensePlateViewController.m in Sources */,
-				A5B11EF217E41D005186DE06 /* ALLicensePlateResultOverlayView.m in Sources */,
+				4235FF66515EF5EC60BA2AA6 /* ALLicensePlateATViewController.m in Sources */,
+				7B1C7F0F1152BA16CCA942B8 /* ALLicensePlateDEViewController.m in Sources */,
+				ED540FC84042A7CEB7816790 /* ALLicensePlateViewController.m in Sources */,
+				374A119C383BCBA14022BDFF /* ALLicensePlateResultOverlayView.m in Sources */,
 				9542A30EC07F5BF571749085 /* ALDigitalMeterScanViewController.m in Sources */,
 				2790A3AEF72FE14E1B60B969 /* ALHeatMeterScanViewController.m in Sources */,
 				40F1386AA8F6123164ACF7D6 /* ALDoubleTariffMeterScanViewController.m in Sources */,
@@ -809,13 +798,15 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/System/Library/Frameworks",
+					../Framework,
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -860,14 +851,16 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/System/Library/Frameworks",
+					../Framework,
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "-O3";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
