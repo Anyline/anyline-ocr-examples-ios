@@ -30,7 +30,7 @@
  *  Sets the license key and delegate.
  *
  *  @param licenseKey   The Anyline license key for this application bundle
- *  @param delegate     The delegate that will receive the Anyline results (hast to conform to <AnylineOCRModuleDelegate>)
+ *  @param delegate     The delegate that will receive the Anyline results (hast to conform to <ALOCRScanPluginDelegate>)
  *  @param ocrConfig    The ocrConfig to use for the scanning
  *  @param error        The error that occured
  *
@@ -70,7 +70,7 @@
 @end
 
 /**
- *  The delegate for the AnylineOCRModuleView.
+ *  The delegate for the ALOCRScanPluginDelegate.
  */
 @protocol ALOCRScanPluginDelegate <NSObject>
 

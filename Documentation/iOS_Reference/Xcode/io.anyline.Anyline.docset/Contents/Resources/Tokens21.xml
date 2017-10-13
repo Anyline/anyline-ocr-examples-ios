@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMotionDetector.html">
+	<File path="Classes/ALMeterResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMotionDetector</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterResult</TokenIdentifier>
+			<Abstract type="html">The result object for the ALMeterScanPlugin</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -13,74 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/setDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/setScanMode:</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/delegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/scanMode</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMotionDetector/delegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterResult/scanMode</TokenIdentifier>
+			<Abstract type="html">The used scanMode</Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/startListeningForMotion</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
 			
-			<Declaration>- (void)startListeningForMotion</Declaration>
-			
-			
-			<Anchor>//api/name/startListeningForMotion</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/stopListeningForMotion</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
-			
-			<Declaration>- (void)stopListeningForMotion</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nonnull)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID scanMode:(ALScanMode)scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/stopListeningForMotion</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/initWithThreshold:delegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithThreshold:(CGFloat)threshold delegate:(id)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/initWithThreshold:delegate:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

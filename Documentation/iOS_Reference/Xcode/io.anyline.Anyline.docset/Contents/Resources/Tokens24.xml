@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRScanPlugin.html">
+	<File path="Classes/ALOCRConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanPlugin</TokenIdentifier>
-			<Abstract type="html">The ALOCRScanPlugin can be used to recognize text.
-It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
-and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRConfig</TokenIdentifier>
+			<Abstract type="html">A class used to configure the Anyline OCR module.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -15,132 +13,674 @@ and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOcrConfig:</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setupWithLicenseKey:delegate:ocrConfig:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate ocrConfig:(ALOCRConfig *_Nonnull)ocrConfig error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineOCRModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ocrConfig to use for the scanning</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:ocrConfig:error:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOCRConfig:error:</TokenIdentifier>
-			<Abstract type="html">Sets a new ALOCRConfig and returns an Error if something failed.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setOCRConfig:(ALOCRConfig *_Nonnull)ocrConfig error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ALOCRConfig to set</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setOCRConfig:error:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/copyTrainedData:fileHash:error:</TokenIdentifier>
-			<Abstract type="html">Use this method to copy a custom trained font data into the Anyline work environment.
-This method is mandatory if you want to use custom fonts.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)copyTrainedData:(NSString *_Nonnull)trainedDataPath fileHash:(NSString *_Nullable)hash error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>trainedDataPath</Name>
-					<Abstract type="html">The full path to your trained data file</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter><Parameter>
-					<Name>fileHash</Name>
-					<Abstract type="html">The hash of the traineddata file so Anyline knows when it changed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/copyTrainedData:fileHash:error:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/addDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/initWithJsonDictionary:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)addDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithJsonDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
 			
 			
-			<Anchor>//api/name/addDelegate:</Anchor>
+			<Anchor>//api/name/initWithJsonDictionary:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/removeDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setScanMode:</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/scanMode</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/scanMode</TokenIdentifier>
+			<Abstract type="html">The scan mode.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) ALOCRScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCustomCmdFilePath:</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/customCmdFilePath</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/customCmdFilePath</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (path not string) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFilePath</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCustomCmdFileString:</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/customCmdFileString</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/customCmdFileString</TokenIdentifier>
+			<Abstract type="html">Property to set a custom command file (string not path) to improve scanning for your use-case.
+Get in touch with Anyline to receive your custum command file.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *customCmdFileString</Declaration>
+			
+			
+			<Anchor>//api/name/customCmdFileString</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharHeight:</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charHeight</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charHeight</TokenIdentifier>
+			<Abstract type="html">Property to set the character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALRange charHeight</Declaration>
+			
+			
+			<Anchor>//api/name/charHeight</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setTesseractLanguages:</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			
+			
+			<Anchor>//api/name/tesseractLanguages</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharWhiteList:</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charWhiteList</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charWhiteList</TokenIdentifier>
+			<Abstract type="html">Property for the character whitelist you would like to use.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *charWhiteList</Declaration>
+			
+			
+			<Anchor>//api/name/charWhiteList</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setValidationRegex:</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/validationRegex</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/validationRegex</TokenIdentifier>
+			<Abstract type="html">Property for the validation regex.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *validationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/validationRegex</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setMinConfidence:</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/minConfidence</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/minConfidence</TokenIdentifier>
+			<Abstract type="html">The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+The spped / accurracy of Anyline can be controlled with this property.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minConfidence</Declaration>
+			
+			
+			<Anchor>//api/name/minConfidence</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setRemoveSmallContours:</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/removeSmallContours</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/removeSmallContours</TokenIdentifier>
+			<Abstract type="html">Removes small contours as noise.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeSmallContours</Declaration>
+			
+			
+			<Anchor>//api/name/removeSmallContours</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setRemoveWhitespaces:</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/removeWhitespaces</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/removeWhitespaces</TokenIdentifier>
+			<Abstract type="html">Set this to true if whitespaces should be removed within a line.
+Also causes faster processing, because optimizations can be made if whitespaces are not relevant.
+(only used in {@link ScanMode#LINE} mode)</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL removeWhitespaces</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>removeWhitespaces</Name>
+					<Abstract type="html">true if whitespaces should be removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWhitespaces</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setMinSharpness:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/minSharpness</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/minSharpness</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;
+Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off;
+only used in {@link ScanMode#LINE}).</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger minSharpness</Declaration>
+			
+			
+			<Anchor>//api/name/minSharpness</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharCountX:</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charCountX</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charCountX</TokenIdentifier>
+			<Abstract type="html">The X character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountX</Declaration>
+			
+			
+			<Anchor>//api/name/charCountX</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharCountY:</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charCountY</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charCountY</TokenIdentifier>
+			<Abstract type="html">The Y character count</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger charCountY</Declaration>
+			
+			
+			<Anchor>//api/name/charCountY</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharPaddingXFactor:</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charPaddingXFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charPaddingXFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in X direction,
+measured in percentage of character width.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingXFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingXFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setCharPaddingYFactor:</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/charPaddingYFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/charPaddingYFactor</TokenIdentifier>
+			<Abstract type="html">The average distance between characters in Y direction,
+measured in percentage of character height.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double charPaddingYFactor</Declaration>
+			
+			
+			<Anchor>//api/name/charPaddingYFactor</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setIsBrightTextOnDark:</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/isBrightTextOnDark</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/isBrightTextOnDark</TokenIdentifier>
+			<Abstract type="html">YES to set to bright text on dark background,
+NO to set to dark text on bright background.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isBrightTextOnDark</Declaration>
+			
+			
+			<Anchor>//api/name/isBrightTextOnDark</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/startVariablesOrError:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)removeDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (NSDictionary *_Nullable)startVariablesOrError:(NSError *_Nullable *_Nullable)error</Declaration>
 			
 			
-			<Anchor>//api/name/removeDelegate:</Anchor>
+			<Anchor>//api/name/startVariablesOrError:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/toJsonString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)toJsonString</Declaration>
+			
+			
+			<Anchor>//api/name/toJsonString</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALScanMode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanMode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+			
+			<NodeRef refid="84"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALAnalogMeter</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALSerialNumber</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALSerialNumber</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDigitalMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDigitalMeter</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter4</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter4</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter5</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter5</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter6</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALHeatMeter6</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALAutoAnalogDigitalMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALAutoAnalogDigitalMeter</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALDialMeter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALDialMeter</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALBarcode</Declaration>
+            
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

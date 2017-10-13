@@ -27,6 +27,7 @@
 #import "ALLicensePlateATViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
+#import "ALSerialNumberScanViewController.h"
 
 #import "AnylineExamples-Swift.h"
 
@@ -70,6 +71,8 @@
     ALExample *dialScanning = [[ALExample alloc] initWithName:@"Scan Dial Meter (alpha)"
                                                             viewController:[ALDialMeterScanViewController class]];
 
+    ALExample *serialNumberScanning = [[ALExample alloc] initWithName:@"Serial Number"
+                                               viewController:[ALSerialNumberScanViewController class]];
     
     //OCR / MRZ / Barcode
     ALExample *idScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PASS / ID MRZ Scan", nil)
@@ -110,23 +113,15 @@
     
     ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"License Plate Scanner", nil)
                                                        viewController:[ALLicensePlateViewController class]];
-    
-    ALExample *licensePlateScanningAT = [[ALExample alloc] initWithName:NSLocalizedString(@"Austrian License Plate Scanner", nil)
-                                                       viewController:[ALLicensePlateATViewController class]];
-    
-    
-    ALExample *licensePlateScanningDE = [[ALExample alloc] initWithName:NSLocalizedString(@"German License Plate Scanner", nil)
-                                                         viewController:[ALLicensePlateDEViewController class]];
-    
-    
+ 
     self.sectionNames = @[@"Energy",@"Identification",@"Barcodes",@"Fintech",@"Document",@"Loyality",@"Cars",@"Other"];
-    self.examples = @{self.sectionNames[0] : @[analogScanning,heatScanning,digitalScanning,analogDoubleTariffScanning,autoAnalogDigitalScanning,dialScanning],
+    self.examples = @{self.sectionNames[0] : @[analogScanning,heatScanning,digitalScanning,analogDoubleTariffScanning,autoAnalogDigitalScanning,dialScanning,serialNumberScanning],
                       self.sectionNames[1] : @[idScanning],
                       self.sectionNames[2] : @[barcodeScanning],
                       self.sectionNames[3] : @[ibanScanning],
                       self.sectionNames[4] : @[documentScanning],
                       self.sectionNames[5] : @[voucherCodeScanning,rbScanning,bottlecapScanning],
-                      self.sectionNames[6] : @[licensePlateScanning, licensePlateScanningAT, licensePlateScanningDE],
+                      self.sectionNames[6] : @[licensePlateScanning],
                       self.sectionNames[7] : @[scrabbleScanning,isbnScanning,recordScanning],
                       };
 }

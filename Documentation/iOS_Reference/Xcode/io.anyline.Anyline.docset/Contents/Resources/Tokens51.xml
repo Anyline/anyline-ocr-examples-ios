@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALFlashButtonStatusDelegate.html">
+	<File path="Protocols/ALDocumentInfoDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonStatusDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALDocumentInfoDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -13,14 +13,104 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonStatusDelegate/flashButton:statusChanged:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentInfoDelegate/anylineDocumentScanPlugin:detectedPictureCorners:inImage:</TokenIdentifier>
+			<Abstract type="html">If triggerPictureCornerDetectionAndReturnError: is used this callback provides the image and the document corners
+successful full scan.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)flashButton:(ALFlashButton *)flashButton statusChanged:(ALFlashStatus)flashStatus</Declaration>
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin detectedPictureCorners:(ALSquare *_Nonnull)corners inImage:(UIImage *_Nonnull)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>corners</Name>
+					<Abstract type="html">The corners of the document</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
+				</Parameter>
+			</Parameters>
 			
+			<Anchor>//api/name/anylineDocumentScanPlugin:detectedPictureCorners:inImage:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentInfoDelegate/anylineDocumentScanPlugin:reportsPreviewResult:</TokenIdentifier>
+			<Abstract type="html">Called if the preview scan detected a sharp and correctly placed document.
+After this callback, a full frame scan of the document starts automatically.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
 			
-			<Anchor>//api/name/flashButton:statusChanged:</Anchor>
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin reportsPreviewResult:(UIImage *_Nonnull)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineImage</Name>
+					<Abstract type="html">The image of the successful preview. There is no transformation performed on this image.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentScanPlugin:reportsPreviewResult:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentInfoDelegate/anylineDocumentScanPlugin:reportsPreviewProcessingFailure:</TokenIdentifier>
+			<Abstract type="html">Called if the preview run failed on an image. The error is provided, and the next run is started automatically.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin reportsPreviewProcessingFailure:(ALDocumentError)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error of the preview run.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentScanPlugin:reportsPreviewProcessingFailure:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentInfoDelegate/anylineDocumentScanPlugin:reportsPictureProcessingFailure:</TokenIdentifier>
+			<Abstract type="html">Called if the run on the full frame was unsuccessful. The scanning process automatically starts again with a
+preview scan.</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin reportsPictureProcessingFailure:(ALDocumentError)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error of the full frame run</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentScanPlugin:reportsPictureProcessingFailure:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentInfoDelegate/anylineDocumentScanPlugin:reportInfo:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin reportInfo:(ALScanInfo *_Nonnull)scanInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanInfo</Name>
+					<Abstract type="html">The reported ScanInfo</Abstract>
+				</Parameter><Parameter>
+					<Name>anylineScanPlugin</Name>
+					<Abstract type="html">The ALDocumentScanPlugin</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentScanPlugin:reportInfo:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		

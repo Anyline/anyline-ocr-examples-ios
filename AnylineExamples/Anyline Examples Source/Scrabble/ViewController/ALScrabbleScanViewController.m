@@ -14,7 +14,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALScrabbleScanViewController ()<AnylineOCRModuleDelegate>
+@interface ALScrabbleScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
@@ -113,8 +113,32 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
     ALScrabbleViewController *vc = [[ALScrabbleViewController alloc] init];
-    [vc setScrabbleWord:result.result];
+    [vc setScrabbleWord:(NSString *)result.result];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
+             reportsVariable:(NSString *)variableName
+                       value:(id)value {
+    
+}
+
+-(void) anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure {
+    
+    switch (runFailure) {
+        case ALRunFailureResultNotValid:
+            break;
+        case ALRunFailureSharpnessNotReached:
+            break;
+        case ALRunFailureNoLinesFound:
+            break;
+        case ALRunFailureNoTextFound:
+            break;
+        case ALRunFailureUnkown:
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

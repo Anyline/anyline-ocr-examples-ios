@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALDocumentScanPluginDelegate.html">
+	<File path="Protocols/ALBarcodeScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALDocumentScanPluginDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALBarcodeScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -13,26 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALDocumentScanPluginDelegate/anylineDocumentScanPlugin:hasResult:fullImage:documentCorners:</TokenIdentifier>
-			<Abstract type="html">Called if a full result is found. A full result is considerd to be a successful preview, followed by a
-successful full scan.</Abstract>
-			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALBarcodeScanPluginDelegate/anylineBarcodeScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *_Nonnull)anylineDocumentScanPlugin hasResult:(UIImage *_Nonnull)transformedImage fullImage:(UIImage *_Nonnull)fullFrame documentCorners:(ALSquare *_Nonnull)corners</Declaration>
+			<Declaration>- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *_Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>transformedImage</Name>
-					<Abstract type="html">The transformed image (cropped, deskewed)</Abstract>
+					<Name>anylineBarcodeScanPlugin</Name>
+					<Abstract type="html">The plugin</Abstract>
 				</Parameter><Parameter>
-					<Name>fullFrame</Name>
-					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
-				</Parameter><Parameter>
-					<Name>corners</Name>
-					<Abstract type="html">The corners of the document in the full frame</Abstract>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineDocumentScanPlugin:hasResult:fullImage:documentCorners:</Anchor>
+			<Anchor>//api/name/anylineBarcodeScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		

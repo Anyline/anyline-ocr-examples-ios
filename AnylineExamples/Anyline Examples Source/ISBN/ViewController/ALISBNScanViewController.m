@@ -14,7 +14,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALISBNScanViewController ()<AnylineOCRModuleDelegate>
+@interface ALISBNScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
@@ -105,7 +105,7 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
     ALISBNViewController *vc = [[ALISBNViewController alloc] init];
-    NSString *isbn = result.result;
+    NSString *isbn = (NSString *)result.result;
     isbn = [isbn stringByReplacingOccurrencesOfString:@"-" withString:@""];
     isbn = [isbn stringByReplacingOccurrencesOfString:@" " withString:@""];
     isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN10" withString:@""];
@@ -115,6 +115,31 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     
     [vc setIsbnString:isbn];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+      reportDebugVariable:(NSString *)variableName
+                    value:(id)value {
+    
+}
+
+
+-(void) anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure {
+    switch (runFailure) {
+        case ALRunFailureResultNotValid:
+            break;
+        case ALRunFailureSharpnessNotReached:
+            break;
+        case ALRunFailureNoLinesFound:
+            break;
+        case ALRunFailureNoTextFound:
+            break;
+        case ALRunFailureUnkown:
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

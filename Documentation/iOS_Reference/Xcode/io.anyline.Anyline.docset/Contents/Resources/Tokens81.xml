@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIFeedbackStyle.html">
+	<File path="Constants/ALPictureResolution.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIFeedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALPictureResolution</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionNone</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleRect</Declaration>
+            <Declaration>ALPictureResolutionNone</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionHighest</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourRect</Declaration>
+            <Declaration>ALPictureResolutionHighest</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourUnderline</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution1080</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourUnderline</Declaration>
+            <Declaration>ALPictureResolution1080</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourPoint</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution720</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourPoint</Declaration>
+            <Declaration>ALPictureResolution720</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution480</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleNone</Declaration>
+            <Declaration>ALPictureResolution480</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMRZResult.html">
+	<File path="Classes/ALLicensePlateResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateResult</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,50 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/setCountry:</TokenIdentifier>
+			<Abstract type="html">The country found on the license plate</Abstract>
+			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/country</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/country</TokenIdentifier>
+			<Abstract type="html">The country found on the license plate</Abstract>
+			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/country</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALLicensePlateResult/country</TokenIdentifier>
+			<Abstract type="html">The country found on the license plate</Abstract>
+			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/country</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/initWithResult:image:fullImage:confidence:outline:pluginID:country:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID country:(NSString *_Nullable)country</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:country:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

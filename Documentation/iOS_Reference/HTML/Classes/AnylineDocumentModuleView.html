@@ -72,6 +72,10 @@
 		
 		<option value="//api/name/setupWithLicenseKey:delegate:error:">- setupWithLicenseKey:delegate:error:</option>
 		
+		<option value="//api/name/transformALImageWithSquare:image:error:">- transformALImageWithSquare:image:error:</option>
+		
+		<option value="//api/name/transformImageWithSquare:image:error:">- transformImageWithSquare:image:error:</option>
+		
 		<option value="//api/name/triggerPictureCornerDetectionAndReturnError:">- triggerPictureCornerDetectionAndReturnError:</option>
 		
 	</optgroup>
@@ -339,6 +343,146 @@
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/transformImageWithSquare:image:error:" title="transformImageWithSquare:image:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transformImageWithSquare:image:error:">&ndash;&nbsp;transformImageWithSquare:image:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)transformImageWithSquare:(ALSquare *_Nullable)<em>square</em> image:(UIImage *_Nullable)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>square</code></th>
+						<td><p>The input image will be transformed to this square</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The UIImage which will be processed and transformed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occured</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineDocumentModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transformALImageWithSquare:image:error:" title="transformALImageWithSquare:image:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transformALImageWithSquare:image:error:">&ndash;&nbsp;transformALImageWithSquare:image:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)transformALImageWithSquare:(ALSquare *_Nullable)<em>square</em> image:(ALImage *_Nullable)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>square</code></th>
+						<td><p>The input image will be transformed to this square</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The <a href="../Classes/ALImage.html">ALImage</a> which will be processed and transformed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occured</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AnylineDocumentModuleView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -354,7 +498,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-09-14</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

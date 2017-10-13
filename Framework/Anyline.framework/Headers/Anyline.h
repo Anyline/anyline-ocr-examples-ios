@@ -55,3 +55,4 @@
 //#import "AnylineDebitcardModuleView.h"
 #import "AnylineOCRModuleView.h"
 #import "AnylineDocumentModuleView.h"
+#import "AnylineLicensePlateModuleView.h"

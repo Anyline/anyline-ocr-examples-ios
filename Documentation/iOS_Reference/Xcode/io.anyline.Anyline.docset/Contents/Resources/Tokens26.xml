@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALROISpec.html">
+	<File path="Classes/ALOCRScanPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALROISpec</TokenIdentifier>
-			<Abstract type="html">The Spec file where the unique features of the ROI are specified.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanPlugin</TokenIdentifier>
+			<Abstract type="html">The ALOCRScanPlugin can be used to recognize text.
+It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
+and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,195 +15,132 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setSize:</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOcrConfig:</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/ocrConfig</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/size</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/ocrConfig</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/size</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
+			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/ocrConfig</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setDataPoints:</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setupWithLicenseKey:delegate:ocrConfig:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
-			
-			
-			<Anchor>//api/name/dataPoints</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPoints</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
-			
-			
-			<Anchor>//api/name/dataPoints</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/dataPoints</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
-			
-			
-			<Anchor>//api/name/dataPoints</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDataPoints:size:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithDataPoints:(NSArray *)dataPoints size:(CGSize)size</Declaration>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate ocrConfig:(ALOCRConfig *_Nonnull)ocrConfig error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>dataPoints</Name>
-					<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ROI.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALOCRScanPluginDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>ocrConfig</Name>
+					<Abstract type="html">The ocrConfig to use for the scanning</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDataPoints:size:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:ocrConfig:error:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDictionary:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOCRConfig:error:</TokenIdentifier>
+			<Abstract type="html">Sets a new ALOCRConfig and returns an Error if something failed.</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
+			<Declaration>- (BOOL)setOCRConfig:(ALOCRConfig *_Nonnull)ocrConfig error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>dictionary</Name>
-					<Abstract type="html">A dictionary representing an ALROISpec object.</Abstract>
+					<Name>ocrConfig</Name>
+					<Abstract type="html">The ALOCRConfig to set</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The Error object if something fails</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDictionary:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setOCRConfig:error:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonFileName:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/copyTrainedData:fileHash:error:</TokenIdentifier>
+			<Abstract type="html">Use this method to copy a custom trained font data into the Anyline work environment.
+This method is mandatory if you want to use custom fonts.</Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithJSonFileName:(NSString *)filename</Declaration>
+			<Declaration>- (BOOL)copyTrainedData:(NSString *_Nonnull)trainedDataPath fileHash:(NSString *_Nullable)hash error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>filename</Name>
-					<Abstract type="html">A json file name which has to be in the NSBundle with the .json file ending</Abstract>
+					<Name>trainedDataPath</Name>
+					<Abstract type="html">The full path to your trained data file</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The Error object if something fails</Abstract>
+				</Parameter><Parameter>
+					<Name>fileHash</Name>
+					<Abstract type="html">The hash of the traineddata file so Anyline knows when it changed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonFileName:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/copyTrainedData:fileHash:error:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonString:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithJSonString:(NSString *)jsonString</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>jsonString</Name>
-					<Abstract type="html">A json string representing an ALROISpec object</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonString:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonData:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithJSonData:(NSData *)jsonData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>jsonData</Name>
-					<Abstract type="html">Json data representing an ALROISpec object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonData:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPointsForLine:</TokenIdentifier>
-			<Abstract type="html">Returns all the datapoints for a defined line number.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)dataPointsForLine:(NSInteger)line</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>line</Name>
-					<Abstract type="html">The line number for the datapoints to return.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An array of all the datapoints in the line.
-Note that there is no sort order garanteed.</Abstract></ReturnValue>
-			<Anchor>//api/name/dataPointsForLine:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/lineNumbers</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/addDelegate:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)lineNumbers</Declaration>
+			<Declaration>- (void)addDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
 			
 			
-			<Anchor>//api/name/lineNumbers</Anchor>
+			<Anchor>//api/name/addDelegate:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/removeDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)removeDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

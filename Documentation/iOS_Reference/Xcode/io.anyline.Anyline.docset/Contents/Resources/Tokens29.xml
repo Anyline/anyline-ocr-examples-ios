@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALScanInfo.html">
+	<File path="Classes/ALResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALScanInfo</TokenIdentifier>
-			<Abstract type="html">The name for a reported shake detection warning value</Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
+			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
+for the text recognition client.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -13,122 +14,106 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setPluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/pluginID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/pluginID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setVariableName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/variableName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/variableName</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setValue:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
+			<Abstract type="html">All the identifiers in which the digits are divided.
+Identifiers are all strings.
+There is no special sort order.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
+			<Declaration>- (NSArray *)identifiers</Declaration>
 			
-			
-			<Anchor>//api/name/value</Anchor>
+			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
+			<Anchor>//api/name/identifiers</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/value</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
+does not exist or no valid result was found for the identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
-			
-			
-			<Anchor>//api/name/value</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/value</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
-			
-			
-			<Anchor>//api/name/value</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/initWithVariableName:value:pluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithVariableName:(NSString *_Nonnull)variableName value:(id _Nonnull)value pluginID:(NSString *_Nonnull)pluginID</Declaration>
-			
-			
-			<Anchor>//api/name/initWithVariableName:value:pluginID:</Anchor>
+			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for a result.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
+			<Anchor>//api/name/resultForIdentifier:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

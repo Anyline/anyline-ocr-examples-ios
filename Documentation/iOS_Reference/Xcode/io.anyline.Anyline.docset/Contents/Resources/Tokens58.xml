@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
+	<File path="Protocols/ALMRZScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMRZScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -13,48 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindScanResult:(NSString *)scanResult withBarcodeFormat:(ALBarcodeFormat)barcodeFormat atImage:(UIImage *)image</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineBarcodeModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
-				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
-				</Parameter><Parameter>
-					<Name>barcodeFormat</Name>
-					<Abstract type="html">The barcode format of the scanned barcode</Abstract>
-				</Parameter><Parameter>
-					<Name>image</Name>
-					<Abstract type="html">The image that was used to scan the barcode</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineBarcodeModuleView:didFindScanResult:withBarcodeFormat:atImage:</Anchor>
-            <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMRZScanPluginDelegate/anylineMRZScanPlugin:didFindResult:</TokenIdentifier>
 			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *)scanResult</Declaration>
+			<Declaration>- (void)anylineMRZScanPlugin:(ALMRZScanPlugin *_Nonnull)anylineMRZScanPlugin didFindResult:(ALMRZResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineBarcodeModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
+					<Name>anylineMRZScanPlugin</Name>
+					<Abstract type="html">The plugin that scanned the result</Abstract>
 				</Parameter><Parameter>
 					<Name>scanResult</Name>
 					<Abstract type="html">The scanned value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineBarcodeModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineMRZScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALScanResultState.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanResultState</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+			
+			<NodeRef refid="85"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidAbortState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultUserDidAbortState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanSuccessfulState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultScanSuccessfulState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorWrongResultState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultScanErrorWrongResultState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidEnterManuallyState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultUserDidEnterManuallyState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyUsedState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultScanErrorResultAlreadyUsedState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyExpiredState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultScanErrorResultAlreadyExpiredState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountInactive</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserAccountInactive</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountLocked</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserAccountLocked</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserReachedScanLimit</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserReachedScanLimit</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateNetworkTimeout</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateNetworkTimeout</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleSuccess</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateModuleSuccess</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleAbort</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateModuleAbort</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUnknownError</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUnknownError</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="85"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

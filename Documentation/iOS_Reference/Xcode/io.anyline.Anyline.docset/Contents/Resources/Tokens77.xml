@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALReportingMode.html">
+	<File path="Constants/ALFlashMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALReportingMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="77"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingEnabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingEnabled</Declaration>
+            <Declaration>ALFlashModeManual</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="77"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingDisabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingDisabled</Declaration>
+            <Declaration>ALFlashModeNone</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="77"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingNotSet</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingNotSet</Declaration>
+            <Declaration>ALFlashModeAuto</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="77"/>
         </Token>

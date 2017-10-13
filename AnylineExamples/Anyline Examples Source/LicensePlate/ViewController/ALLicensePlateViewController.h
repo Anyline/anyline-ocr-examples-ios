@@ -1,5 +1,5 @@
 //
-//  ALISBNScanViewController.h
+//  ALLicensePlateViewController.h
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 04/02/16.

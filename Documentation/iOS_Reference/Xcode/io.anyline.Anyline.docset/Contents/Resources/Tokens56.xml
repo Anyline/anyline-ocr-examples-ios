@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMotionDetectorDelegate.html">
+	<File path="Protocols/ALInfoDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMotionDetectorDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALInfoDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the ALAbstractScanPlugin.</Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="56"/>
@@ -13,14 +13,54 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMotionDetectorDelegate/motionDetectorAboveThreshold</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALInfoDelegate/anylineScanPlugin:reportInfo:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;</Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)motionDetectorAboveThreshold</Declaration>
+			<Declaration>- (void)anylineScanPlugin:(ALAbstractScanPlugin *_Nonnull)anylineScanPlugin reportInfo:(ALScanInfo *_Nonnull)info</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineScanPlugin</Name>
+					<Abstract type="html">The ALAbstractScanPlugin</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The reported value</Abstract>
+				</Parameter><Parameter>
+					<Name>variableName</Name>
+					<Abstract type="html">The variable name of the reported value</Abstract>
+				</Parameter>
+			</Parameters>
 			
+			<Anchor>//api/name/anylineScanPlugin:reportInfo:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALInfoDelegate/anylineScanPlugin:runSkipped:</TokenIdentifier>
+			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
+(If not text is found or confidence is to low, etc.)</Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
 			
-			<Anchor>//api/name/motionDetectorAboveThreshold</Anchor>
+			<Declaration>- (void)anylineScanPlugin:(ALAbstractScanPlugin *_Nonnull)anylineScanPlugin runSkipped:(ALRunSkippedReason *_Nonnull)runSkippedReason</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineScanPlugin</Name>
+					<Abstract type="html">The ALAbstractScanPlugin</Abstract>
+				</Parameter><Parameter>
+					<Name>runFailure</Name>
+					<Abstract type="html">The reason why the run failed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineScanPlugin:runSkipped:</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		

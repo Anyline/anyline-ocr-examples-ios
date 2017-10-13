@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMeterResult.html">
+	<File path="Classes/ALMRZResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMeterResult</TokenIdentifier>
-			<Abstract type="html">The result object for the ALMeterScanPlugin</Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,50 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/setScanMode:</TokenIdentifier>
-			<Abstract type="html">The used scanMode</Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/scanMode</TokenIdentifier>
-			<Abstract type="html">The used scanMode</Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterResult/scanMode</TokenIdentifier>
-			<Abstract type="html">The used scanMode</Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/scanMode</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterResult/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nonnull)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID scanMode:(ALScanMode)scanMode</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:scanMode:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:allCheckDigitsValid:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

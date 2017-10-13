@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALTorchManager.html">
+	<File path="Classes/ALSquare.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
+			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -13,146 +13,309 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/captureDevice</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)resetLightLevelCounter</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/resetLightLevelCounter</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
 			
 			
-			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
+			<Anchor>//api/name/downRight</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
 			
 			
-			<Anchor>//api/name/setTorch:</Anchor>
+			<Anchor>//api/name/downRight</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
+			
+			
+			<Anchor>//api/name/downRight</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>upLeft</Name>
+					<Abstract type="html">The up left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>upRight</Name>
+					<Abstract type="html">The up right point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downLeft</Name>
+					<Abstract type="html">The down left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downRight</Name>
+					<Abstract type="html">The down right point of the square.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCGRect:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)torchAvailable</Declaration>
+			<Declaration>- (CGFloat)boundingX</Declaration>
 			
 			
-			<Anchor>//api/name/torchAvailable</Anchor>
+			<Anchor>//api/name/boundingX</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingY</Declaration>
+			
+			
+			<Anchor>//api/name/boundingY</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingWidth</Declaration>
+			
+			
+			<Anchor>//api/name/boundingWidth</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)boundingHeight</Declaration>
+			
+			
+			<Anchor>//api/name/boundingHeight</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithPointOffset:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
+			
+			
+			<Anchor>//api/name/squareWithScale:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area</Declaration>
+			
+			
+			<Anchor>//api/name/area</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)area2</Declaration>
+			
+			
+			<Anchor>//api/name/area2</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (float)ratio</Declaration>
+			
+			
+			<Anchor>//api/name/ratio</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
+			
+			<Declaration>- (CGRect)boxRect</Declaration>
+			
+			
+			<Anchor>//api/name/boxRect</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

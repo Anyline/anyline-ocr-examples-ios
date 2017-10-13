@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSquare.html">
+	<File path="Classes/ALSegmentResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
-			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSegmentResult</TokenIdentifier>
+			<Abstract type="html">The ALSegmentResult provides information of one single segment of a 7-Segment Digit.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -13,309 +13,136 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setRatioBlackPixel:</TokenIdentifier>
+			<Abstract type="html">The ratio of black pixels found in the segment area.
+The segment area is searched within a surrounding so there
+is enough redundance for some deviations.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/ratioBlackPixel</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
+			<Abstract type="html">The ratio of black pixels found in the segment area.
+The segment area is searched within a surrounding so there
+is enough redundance for some deviations.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/ratioBlackPixel</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
+			<Abstract type="html">The ratio of black pixels found in the segment area.
+The segment area is searched within a surrounding so there
+is enough redundance for some deviations.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
+			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
 			
 			
-			<Anchor>//api/name/upLeft</Anchor>
+			<Anchor>//api/name/ratioBlackPixel</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setFrame:</TokenIdentifier>
+			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/frame</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/frame</TokenIdentifier>
+			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/frame</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/frame</TokenIdentifier>
+			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
 			
 			
-			<Anchor>//api/name/upRight</Anchor>
+			<Anchor>//api/name/frame</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setActive:</TokenIdentifier>
+			<Abstract type="html">The computed status of this segment.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/active</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/active</TokenIdentifier>
+			<Abstract type="html">The computed status of this segment.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/active</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/active</TokenIdentifier>
+			<Abstract type="html">The computed status of this segment.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
 			
 			
-			<Anchor>//api/name/downLeft</Anchor>
+			<Anchor>//api/name/active</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/initWithRatioBlackPixel:frame:</TokenIdentifier>
+			<Abstract type="html">Initialise a SegmentResult with a black pixel ration and the frame.</Abstract>
+			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
+			<Declaration>- (instancetype)initWithRatioBlackPixel:(float)ratioBlackPixel frame:(CGRect)frame</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>upLeft</Name>
-					<Abstract type="html">The up left point of the square.</Abstract>
+					<Name>ratioBlackPixel</Name>
+					<Abstract type="html">The ratio of black pixel in this segment.</Abstract>
 				</Parameter><Parameter>
-					<Name>upRight</Name>
-					<Abstract type="html">The up right point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downLeft</Name>
-					<Abstract type="html">The down left point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downRight</Name>
-					<Abstract type="html">The down right point of the square.</Abstract>
+					<Name>frame</Name>
+					<Abstract type="html">The frame where the segment is located in the image.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCGRect:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingX</Declaration>
-			
-			
-			<Anchor>//api/name/boundingX</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingY</Declaration>
-			
-			
-			<Anchor>//api/name/boundingY</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingWidth</Declaration>
-			
-			
-			<Anchor>//api/name/boundingWidth</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)boundingHeight</Declaration>
-			
-			
-			<Anchor>//api/name/boundingHeight</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
-			
-			
-			<Anchor>//api/name/squareWithPointOffset:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
-			
-			
-			<Anchor>//api/name/squareWithScale:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area</Declaration>
-			
-			
-			<Anchor>//api/name/area</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)area2</Declaration>
-			
-			
-			<Anchor>//api/name/area2</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (float)ratio</Declaration>
-			
-			
-			<Anchor>//api/name/ratio</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (CGRect)boxRect</Declaration>
-			
-			
-			<Anchor>//api/name/boxRect</Anchor>
+			<ReturnValue><Abstract type="html">A new SegmentResult with black pixel ratio and frame.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRatioBlackPixel:frame:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		

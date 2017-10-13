@@ -55,7 +55,7 @@
 - (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
            didFindScanResult:(ALIdentification *)scanResult
          allCheckDigitsValid:(BOOL)allCheckDigitsValid
-                     atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage: instead.");
+                     atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.");
 
 @required
 

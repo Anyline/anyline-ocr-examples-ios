@@ -41,9 +41,9 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 @protocol ALDocumentInfoDelegate;
 
 /**
- * The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.
+ * The ALDocumentScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.
  *
- * Communication with the host application is managed with a delegate that conforms to AnylineDocumentModuleDelegate.
+ * Communication with the host application is managed with a delegate that conforms to ALDocumentScanPluginDelegate.
  *
  */
 @interface ALDocumentScanPlugin : NSObject
@@ -71,10 +71,39 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 - (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError * _Nullable * _Nullable)error;
 
 /**
+ *  Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+ *  After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+ *  In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.
+ *
+ *  @param square The input image will be transformed to this square
+ *  @param image The UIImage which will be processed and transformed
+ *  @param error The error that occured
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
+- (BOOL)transformImageWithSquare:(ALSquare * _Nullable)square
+                           image:(UIImage * _Nullable)image
+                           error:(NSError * _Nullable * _Nullable)error;
+
+/**
+ *  Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+ *  After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+ *  In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.
+ *
+ *  @param square The input image will be transformed to this square
+ *  @param image The ALImage which will be processed and transformed
+ *  @param error The error that occured
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
+- (BOOL)transformALImageWithSquare:(ALSquare * _Nullable)square
+                             image:(ALImage * _Nullable)image
+                             error:(NSError * _Nullable * _Nullable)error;
+/**
  *  Sets the license key and delegate.
  *
  *  @param licenseKey The Anyline license key for this application bundle
- *  @param delegate The delegate that will receive the Anyline results (hast to conform to <AnylineDocumentModuleDelegate>)
+ *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALDocumentScanPluginDelegate>)
  *  @param error The error that occured
  *
  *  @return Boolean indicating the success / failure of the call.

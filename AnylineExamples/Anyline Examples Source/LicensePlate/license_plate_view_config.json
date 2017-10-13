@@ -4,10 +4,10 @@
         "style": "rect",
         "maxWidthPercent": "80%",
         "maxHeightPercent": "80%",
-        "alignment": "center",
+        "alignment": "TOP_HALF",
         "width": 720,
         "ratioFromSize": {
-            "width": 5,
+            "width": 2,
             "height": 1
         },
         "strokeWidth": 2,
@@ -28,9 +28,8 @@
     "blinkAnimationOnResult": true,
     "cancelOnResult": true,
     "visualFeedback": {
-        "animation": "traverse_multi",
-        "animationDuration" : 70,
-        "style": "contour_rect",
+        "animationDuration" : 0,
+        "style": "RECT",
         "strokeWidth": 2,
         "strokeColor": "0099FF"
     }

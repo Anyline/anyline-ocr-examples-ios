@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSegmentResult.html">
+	<File path="Classes/ALScanInfo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSegmentResult</TokenIdentifier>
-			<Abstract type="html">The ALSegmentResult provides information of one single segment of a 7-Segment Digit.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanInfo</TokenIdentifier>
+			<Abstract type="html">The name for a reported shake detection warning value</Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,136 +13,122 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setRatioBlackPixel:</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setPluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/ratioBlackPixel</TokenIdentifier>
-			<Abstract type="html">The ratio of black pixels found in the segment area.
-The segment area is searched within a surrounding so there
-is enough redundance for some deviations.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/pluginID</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float ratioBlackPixel</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/ratioBlackPixel</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setFrame:</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setVariableName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/frame</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/variableName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/frame</TokenIdentifier>
-			<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/variableName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect frame</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/frame</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/setActive:</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/active</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/active</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/active</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSegmentResult/active</TokenIdentifier>
-			<Abstract type="html">The computed status of this segment.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL active</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/active</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSegmentResult/initWithRatioBlackPixel:frame:</TokenIdentifier>
-			<Abstract type="html">Initialise a SegmentResult with a black pixel ration and the frame.</Abstract>
-			<DeclaredIn>ALSegmentResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/initWithVariableName:value:pluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithRatioBlackPixel:(float)ratioBlackPixel frame:(CGRect)frame</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratioBlackPixel</Name>
-					<Abstract type="html">The ratio of black pixel in this segment.</Abstract>
-				</Parameter><Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the segment is located in the image.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new SegmentResult with black pixel ratio and frame.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRatioBlackPixel:frame:</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithVariableName:(NSString *_Nonnull)variableName value:(id _Nonnull)value pluginID:(NSString *_Nonnull)pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/initWithVariableName:value:pluginID:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

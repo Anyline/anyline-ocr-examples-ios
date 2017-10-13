@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineDocumentModuleView.html">
+	<File path="Classes/AnylineAbstractModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineDocumentModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineAbstractModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineAbstractModuleView is a programmatic interface for an object that manages easy access to Anylines scanning modes.  It is a subclass of UIView.
+You should sublcass this class to build Anyline modules.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
@@ -13,126 +14,735 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setDebugDelegate:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/debugDelegate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/documentScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/debugDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/debugDelegate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/documentScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/debugDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/debugDelegate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setVideoView:</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
+			<Declaration>@property (nonatomic, strong) AnylineVideoView *videoView</Declaration>
+			
+			
+			<Anchor>//api/name/videoView</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/videoView</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AnylineVideoView *videoView</Declaration>
+			
+			
+			<Anchor>//api/name/videoView</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/videoView</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AnylineVideoView *videoView</Declaration>
+			
+			
+			<Anchor>//api/name/videoView</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCurrentConfiguration:</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/currentConfiguration</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/currentConfiguration</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setStrokeWidth:</TokenIdentifier>
+			<Abstract type="html">Sets the width of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/strokeWidth</TokenIdentifier>
+			<Abstract type="html">Sets the width of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/strokeWidth</TokenIdentifier>
+			<Abstract type="html">Sets the width of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setStrokeColor:</TokenIdentifier>
+			<Abstract type="html">Sets the color of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/strokeColor</TokenIdentifier>
+			<Abstract type="html">Sets the color of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/strokeColor</TokenIdentifier>
+			<Abstract type="html">Sets the color of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCornerRadius:</TokenIdentifier>
+			<Abstract type="html">Sets the corner radius of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Sets the corner radius of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Sets the corner radius of the views border</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setOuterColor:</TokenIdentifier>
+			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			
+			
+			<Anchor>//api/name/outerColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/outerColor</TokenIdentifier>
+			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			
+			
+			<Anchor>//api/name/outerColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/outerColor</TokenIdentifier>
+			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			
+			
+			<Anchor>//api/name/outerColor</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setOuterAlpha:</TokenIdentifier>
+			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			
+			
+			<Anchor>//api/name/outerAlpha</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/outerAlpha</TokenIdentifier>
+			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			
+			
+			<Anchor>//api/name/outerAlpha</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/outerAlpha</TokenIdentifier>
+			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			
+			
+			<Anchor>//api/name/outerAlpha</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashImage:</TokenIdentifier>
+			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashImage</TokenIdentifier>
+			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashImage</TokenIdentifier>
+			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			
+			
+			<Anchor>//api/name/flashImage</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashButtonAlignment:</TokenIdentifier>
+			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
+ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
+ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
+ALFlashAlignmentBottomRight</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonAlignment</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashButtonAlignment</TokenIdentifier>
+			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
+ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
+ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
+ALFlashAlignmentBottomRight</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonAlignment</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashButtonAlignment</TokenIdentifier>
+			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
+ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
+ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
+ALFlashAlignmentBottomRight</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonAlignment</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashButtonOffset:</TokenIdentifier>
+			<Abstract type="html">Property for the flash button offset.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonOffset</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashButtonOffset</TokenIdentifier>
+			<Abstract type="html">Property for the flash button offset.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonOffset</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashButtonOffset</TokenIdentifier>
+			<Abstract type="html">Property for the flash button offset.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonOffset</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashStatus:</TokenIdentifier>
+			<Abstract type="html">Reads the status of the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashStatus</TokenIdentifier>
+			<Abstract type="html">Reads the status of the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashStatus</TokenIdentifier>
+			<Abstract type="html">Reads the status of the flash</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCancelOnResult:</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cancelOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cancelOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setBeepOnResult:</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/beepOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/beepOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/beepOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/beepOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/beepOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setBlinkOnResult:</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/blinkOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/blinkOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/blinkOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/blinkOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/blinkOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setVibrateOnResult:</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/vibrateOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/vibrateOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/vibrateOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/vibrateOnResult</TokenIdentifier>
+			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/vibrateOnResult</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCutoutRect:</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cutoutRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cutoutRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setWatermarkRect:</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/startScanningAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Starts the scanning process or sets the error object</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)startScanningAndReturnError:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
-				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating if the scanning could be started</Abstract></ReturnValue>
+			<Anchor>//api/name/startScanningAndReturnError:</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxDocumentRatioDeviation:</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cancelScanningAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Stops the scanning process or sets the error object</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
-			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
-			
-			
-			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
-            <NodeRef refid="41"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentRatios:</TokenIdentifier>
-			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)setDocumentRatios:(NSArray&lt;NSNumber*&gt; *)ratios</Declaration>
+			<Declaration>- (BOOL)cancelScanningAndReturnError:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>ratios</Name>
-					<Abstract type="html">all supported formats</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating if the scanning could be stopped</Abstract></ReturnValue>
+			<Anchor>//api/name/cancelScanningAndReturnError:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/enableReporting:</TokenIdentifier>
+			<Abstract type="html">Reporting ON Switch, off by default</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)enableReporting:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file,
+and use the reportScanResultState: for reporting</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setDocumentRatios:</Anchor>
+			<Anchor>//api/name/enableReporting:</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/triggerPictureCornerDetectionAndReturnError:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/isRunning</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if a scanning is in progress.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error</Declaration>
+			<Declaration>- (BOOL)isRunning</Declaration>
+			
+			<ReturnValue><Abstract type="html">Boolean indicating if a scanning is in progress.</Abstract></ReturnValue>
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/stopListeningForMotion</TokenIdentifier>
+			<Abstract type="html">Stop listening for device motion.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)stopListeningForMotion</Declaration>
 			
 			
-			<Anchor>//api/name/triggerPictureCornerDetectionAndReturnError:</Anchor>
+			<Anchor>//api/name/stopListeningForMotion</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		

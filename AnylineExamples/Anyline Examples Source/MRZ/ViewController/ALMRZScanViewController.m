@@ -109,12 +109,12 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         self.identificationView.center = self.view.center;
         self.identificationView.alpha = 0;
         
-        [UIView animateWithDuration:0.4 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.identificationView.alpha = 1.0;
             self.identificationView.transform = CGAffineTransformMakeScale(1.1, 1.1);
         }];
         
-        [UIView animateWithDuration:1.7 delay:0.3 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:(UIViewAnimationOptionAllowAnimatedContent) animations:^{
+        [UIView animateWithDuration:0.4 delay:0.2 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:(UIViewAnimationOptionAllowAnimatedContent) animations:^{
             self.identificationView.transform = CGAffineTransformMakeScale(0.87, 0.87);
             self.identificationView.center = self.view.center;
         } completion:^(BOOL finished) {

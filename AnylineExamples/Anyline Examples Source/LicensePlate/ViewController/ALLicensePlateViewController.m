@@ -7,6 +7,8 @@
 //
 
 #import "ALLicensePlateViewController.h"
+#import "Anyline/AnylineLicensePlateModuleView.h"
+#import "Anyline/ALLicensePlateResult.h"
 #import <Anyline/Anyline.h>
 #import "ALLicensePlateResultOverlayView.h"
 #import "ALAppDemoLicenses.h"
@@ -14,9 +16,9 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALLicensePlateViewController ()<AnylineOCRModuleDelegate>
+@interface ALLicensePlateViewController ()<AnylineLicensePlateModuleDelegate>
 // The Anyline module used for OCR
-@property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
+@property (nonatomic, strong) AnylineLicensePlateModuleView *licensePlateModuleView;
 
 @end
 
@@ -33,19 +35,15 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
-    
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    
-    config.customCmdFilePath = [[NSBundle mainBundle] pathForResource:@"license_plates" ofType:@"ale"];
-    
+    self.licensePlateModuleView = [[AnylineLicensePlateModuleView alloc] initWithFrame:frame];
+
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
     // by the module once we start receiving results.
-    BOOL success = [self.ocrModuleView setupWithLicenseKey:kLicensePlateLicenseKey
-                                                  delegate:self
-                                                 ocrConfig:config
-                                                     error:&error];
+    BOOL success = [self.licensePlateModuleView setupWithLicenseKey:kLicensePlateLicenseKey
+                                                           delegate:self
+                                                              error:&error];
+    
     // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
     // we have to check the error object for the error message.
     if (!success) {
@@ -53,39 +51,13 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
         NSAssert(success, @"Setup Error: %@", error.debugDescription);
     }
     
-    error = nil;
-    success = [self.ocrModuleView copyTrainedData:[[NSBundle mainBundle] pathForResource:@"Alte" ofType:@"traineddata"]
-                                         fileHash:@"f52e3822cdd5423758ba19ed75b0cc32"
-                                            error:&error];
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Copy Traineddata Error: %@", error.debugDescription);
-    }
-    
-    error = nil;
-    success = [self.ocrModuleView copyTrainedData:[[NSBundle mainBundle] pathForResource:@"Arial" ofType:@"traineddata"]
-                                         fileHash:@"9a5555eb6ac51c83cbb76d238028c485"
-                                            error:&error];
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Copy Traineddata Error: %@", error.debugDescription);
-    }
-    
-    error = nil;
-    success = [self.ocrModuleView copyTrainedData:[[NSBundle mainBundle] pathForResource:@"GL-Nummernschild-Mtl7_uml" ofType:@"traineddata"]
-                                         fileHash:@"8ea050e8f22ba7471df7e18c310430d8"
-                                            error:&error];
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Copy Traineddata Error: %@", error.debugDescription);
-    }
-    
+    //Set UI Config via JSON file
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"license_plate_view_config" ofType:@"json"];
     ALUIConfiguration *conf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = conf;
+    [self.licensePlateModuleView setCurrentConfiguration:conf];
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.ocrModuleView];
+    [self.view addSubview:self.licensePlateModuleView];
 }
 
 /*
@@ -103,7 +75,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.ocrModuleView cancelScanningAndReturnError:nil];
+    [self.licensePlateModuleView cancelScanningAndReturnError:nil];
 }
 
 /*
@@ -115,7 +87,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline {
     NSError *error;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.licensePlateModuleView startScanningAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
@@ -127,20 +99,18 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-               didFindResult:(ALOCRResult *)result {
+
+- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *)anylineLicensePlateModuleView
+                        didFindResult:(ALLicensePlateResult *)scanResult {
     // Display an overlay showing the result
     UIImage *image = [UIImage imageNamed:@"license_plate_background"];
     ALLicensePlateResultOverlayView *overlay = [[ALLicensePlateResultOverlayView alloc] initWithFrame:self.view.bounds];
     [overlay setImage:image];
     
-    NSArray<NSString *> *licenseComponents = [result.result componentsSeparatedByString:@"-"];
     
-    if (licenseComponents.count > 1) {
-        [overlay setCountryCode:[licenseComponents firstObject]];
-    }
+    [overlay setCountryCode:scanResult.country];
     
-    [overlay setText:[licenseComponents lastObject]];
+    [overlay setText:scanResult.result];
     
     __weak typeof(self) welf = self;
     __weak ALResultOverlayView *woverlay = overlay;
@@ -150,12 +120,11 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
         [woverlay removeFromSuperview];
     }];
     [self.view addSubview:overlay];
-
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.licensePlateModuleView startScanningAndReturnError:&error];
     
     NSAssert(success, @"We failed starting: %@",error.debugDescription);
 }

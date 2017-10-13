@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALOCRScanPluginDelegate.html">
+	<File path="Protocols/ALLicensePlateScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALOCRScanPluginDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALLicensePlateScanPluginDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the ALLicensePlateScanPlugin.</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
@@ -13,22 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALOCRScanPluginDelegate/anylineOCRScanPlugin:didFindResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALLicensePlateScanPluginDelegate/anylineLicensePlateScanPlugin:didFindResult:</TokenIdentifier>
 			<Abstract type="html">Called when a result is found</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *_Nonnull)anylineOCRScanPlugin didFindResult:(ALOCRResult *_Nonnull)result</Declaration>
+			<Declaration>- (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *_Nonnull)anylineLicensePlateScanPlugin didFindResult:(ALLicensePlateResult *_Nonnull)result</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRScanPlugin</Name>
-					<Abstract type="html">The ALOCRScanPlugin</Abstract>
+					<Name>anylineLicensePlateScanPlugin</Name>
+					<Abstract type="html">The ALLicensePlateScanPlugin</Abstract>
 				</Parameter><Parameter>
 					<Name>result</Name>
 					<Abstract type="html">The result object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRScanPlugin:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineLicensePlateScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		

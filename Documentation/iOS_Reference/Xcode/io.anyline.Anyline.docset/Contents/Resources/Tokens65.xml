@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
+	<File path="Protocols/AnylineEnergyModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineEnergyModuleDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="65"/>
@@ -13,22 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
-			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineEnergyModuleDelegate/anylineEnergyModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
+			<Declaration>- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindResult:(ALEnergyResult *)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>videoView</Name>
-					<Abstract type="html">The AnylineVideoView object</Abstract>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned result object</Abstract>
 				</Parameter><Parameter>
-					<Name>sampleBuffer</Name>
-					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+					<Name>AnylineEnergyModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
+			<Anchor>//api/name/anylineEnergyModuleView:didFindResult:</Anchor>
+            <NodeRef refid="65"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineEnergyModuleDelegate/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The cropped version of the image that contains the scanned number</Abstract>
+				</Parameter><Parameter>
+					<Name>fullImage</Name>
+					<Abstract type="html">The whole image used to scan the number</Abstract>
+				</Parameter><Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The mode the scanner was in at the time of scanning. Has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+				</Parameter><Parameter>
+					<Name>AnylineEnergyModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</Anchor>
             <NodeRef refid="65"/>
 		</Token>
 		

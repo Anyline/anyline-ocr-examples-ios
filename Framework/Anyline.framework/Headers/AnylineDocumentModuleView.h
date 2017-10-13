@@ -54,6 +54,37 @@
 
 - (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error;
 
+/**
+ *  Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+ *  After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+ *  In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.
+ *
+ *  @param square The input image will be transformed to this square
+ *  @param image The UIImage which will be processed and transformed
+ *  @param error The error that occured
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
+- (BOOL)transformImageWithSquare:(ALSquare * _Nullable)square
+                           image:(UIImage * _Nullable)image
+                           error:(NSError * _Nullable * _Nullable)error;
+
+/**
+ *  Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+ *  After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+ *  In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.
+ *
+ *  @param square The input image will be transformed to this square
+ *  @param image The ALImage which will be processed and transformed
+ *  @param error The error that occured
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
+- (BOOL)transformALImageWithSquare:(ALSquare * _Nullable)square
+                             image:(ALImage * _Nullable)image
+                             error:(NSError * _Nullable * _Nullable)error;
+
+
 @end
 
 @protocol AnylineDocumentModuleDelegate <NSObject>
