@@ -61,7 +61,7 @@ import UIKit
         }
         //Setup Anyline View Configuration and add to ModuleView
         let bottlecapConfigPath : String = Bundle.main.path(forResource: "bottlecap_config", ofType: "json")!;
-        let bottlecapConfig : ALUIConfiguration = ALUIConfiguration.cutoutConfiguration(fromJsonFile: bottlecapConfigPath);
+        let bottlecapConfig : ALUIConfiguration = ALUIConfiguration.cutoutConfiguration(fromJsonFile: bottlecapConfigPath)!;
         self.anylineOCRView.currentConfiguration = bottlecapConfig;
         
         // After setup is complete we add the module to the view of this view controller

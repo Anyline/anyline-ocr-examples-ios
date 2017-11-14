@@ -98,7 +98,6 @@
                                    image:(UIImage * _Nonnull)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
-                                 outline:(ALSquare * _Nullable)outline
                                 pluginID:(NSString *_Nonnull)pluginID
                      allCheckDigitsValid:(BOOL)allCheckDigitsValid;
 

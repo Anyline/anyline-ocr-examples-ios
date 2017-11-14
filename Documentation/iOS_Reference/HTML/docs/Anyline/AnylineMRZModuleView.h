@@ -8,7 +8,7 @@
 
 #import "AnylineAbstractModuleView.h"
 #import "ALMRZResult.h"
-#import "ALMRZScanPlugin.h"
+#import "ALMRZScanViewPlugin.h"
 
 @protocol AnylineMRZModuleDelegate;
 
@@ -22,7 +22,9 @@
  */
 @interface AnylineMRZModuleView : AnylineAbstractModuleView
 
-@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin;
+@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin;
+
+@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin;
 
 /**
  *  Sets the license key and delegate.
@@ -33,9 +35,9 @@
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString *)licenseKey
-                   delegate:(id<AnylineMRZModuleDelegate>)delegate
-                      error:(NSError **)error;
+- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+                   delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate
+                      error:(NSError * _Nullable * _Nullable )error;
 
 @end
 
@@ -52,10 +54,10 @@
  *
  *  @deprecated since 3.10
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-           didFindScanResult:(ALIdentification *)scanResult
+- (void)anylineMRZModuleView:(AnylineMRZModuleView * _Nonnull)anylineMRZModuleView
+           didFindScanResult:(ALIdentification * _Nonnull)scanResult
          allCheckDigitsValid:(BOOL)allCheckDigitsValid
-                     atImage:(UIImage *)image __deprecated_msg("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.");
+                     atImage:(UIImage * _Nonnull)image __deprecated_msg("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.");
 
 @required
 
@@ -67,7 +69,7 @@
  *
  *  @since 3.10
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-               didFindResult:(ALMRZResult *)scanResult;
+- (void)anylineMRZModuleView:(AnylineMRZModuleView * _Nonnull)anylineMRZModuleView
+               didFindResult:(ALMRZResult * _Nonnull)scanResult;
 
 @end

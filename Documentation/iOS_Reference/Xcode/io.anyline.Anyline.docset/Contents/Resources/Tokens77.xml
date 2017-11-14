@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashMode.html">
+	<File path="Protocols/AnylineMRZModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineMRZModuleDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="77"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeManual</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *_Nonnull)anylineMRZModuleView didFindScanResult:(ALIdentification *_Nonnull)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage *_Nonnull)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineMRZModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter><Parameter>
+					<Name>allCheckDigitsValid</Name>
+					<Abstract type="html">Boolean indicating if all check digits in the MRZ Zone are valid.</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The image that was used to scan the code</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</Anchor>
             <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeNone</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *_Nonnull)anylineMRZModuleView didFindResult:(ALMRZResult *_Nonnull)scanResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineMRZModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineMRZModuleView:didFindResult:</Anchor>
             <NodeRef refid="77"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashModeAuto</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="77"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

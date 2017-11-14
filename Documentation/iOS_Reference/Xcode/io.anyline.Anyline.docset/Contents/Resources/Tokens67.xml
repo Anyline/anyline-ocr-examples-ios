@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineMRZModuleDelegate.html">
+	<File path="Protocols/ALLicensePlateScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineMRZModuleDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALLicensePlateScanPluginDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the ALLicensePlateScanPlugin.</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="67"/>
@@ -13,48 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALLicensePlateScanPluginDelegate/anylineLicensePlateScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Called when a result is found</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindScanResult:(ALIdentification *)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage *)image</Declaration>
+			<Declaration>- (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *_Nonnull)anylineLicensePlateScanPlugin didFindResult:(ALLicensePlateResult *_Nonnull)result</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineMRZModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
+					<Name>anylineLicensePlateScanPlugin</Name>
+					<Abstract type="html">The ALLicensePlateScanPlugin</Abstract>
 				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
-				</Parameter><Parameter>
-					<Name>allCheckDigitsValid</Name>
-					<Abstract type="html">Boolean indicating if all check digits in the MRZ Zone are valid.</Abstract>
-				</Parameter><Parameter>
-					<Name>image</Name>
-					<Abstract type="html">The image that was used to scan the code</Abstract>
+					<Name>result</Name>
+					<Abstract type="html">The result object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:</Anchor>
-            <NodeRef refid="67"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineMRZModuleDelegate/anylineMRZModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineMRZModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
-				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineMRZModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineLicensePlateScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="67"/>
 		</Token>
 		

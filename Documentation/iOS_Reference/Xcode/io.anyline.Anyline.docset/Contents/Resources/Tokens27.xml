@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALPolygon.html">
+	<File path="Classes/ALMRZScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALPolygon</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,62 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/setPoints:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/setMrzScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/points</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALPolygon/points</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZScanViewPlugin/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/points</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/initWithPoints:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithPoints:(NSArray *)points</Declaration>
-			
-			
-			<Anchor>//api/name/initWithPoints:</Anchor>
-            <NodeRef refid="27"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/polygonWithScale:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALPolygon.h</DeclaredIn>
-			
-			<Declaration>- (ALPolygon *)polygonWithScale:(CGFloat)scale</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMRZScanPlugin *_Nonnull)mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/polygonWithScale:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		

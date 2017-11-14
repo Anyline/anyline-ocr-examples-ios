@@ -8,7 +8,7 @@
 
 # Anyline Examples App 
 
-[Anyline](https://www.anyline.io) is mobile OCR SDK, which can be configured by yourself to scan all kinds of numbers, characters, text and codes. 
+[Anyline](https://www.anyline.com) is mobile OCR SDK, which can be configured by yourself to scan all kinds of numbers, characters, text and codes.
 
 The Example App provides you with many working preconfigured modules, which show the bandwith of what the SDK can scan. 
 
@@ -76,15 +76,14 @@ There are more modules specific options - take a look at the description of the 
 
 ## Sample Codes & Documentation 
 
-Have look at some of our code examples: [Sample Code](https://www.anyline.io/demos-sample-code)
+Have look at some of our code examples: [Sample Code](https://www.anyline.com/demos-sample-code)
 
-Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.io)
+Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com)
 
 
 ## License 
 
-To claim a free developer / trial license, go to: [Anyline SDK Register Form](http://anyline.io/sdk-register?utm_source=githubios&utm_medium=readme&utm_campaign=examplesapp
-)
+To claim a free developer / trial license, go to: [Anyline SDK Register Form](https://anyline.com/free-demos/)
 The software underlies the MIT License. As Anyline is a paid software for Commerical Projects, the License Agreement of Anyline GmbH apply, when used commercially. Please have a look at [Anyline License Agreement](https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/12/ULA-AnylineSDK-August2015.pdf)
 
 

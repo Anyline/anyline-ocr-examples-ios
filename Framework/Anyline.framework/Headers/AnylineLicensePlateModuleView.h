@@ -9,12 +9,15 @@
 #import "AnylineAbstractModuleView.h"
 #import "ALLicensePlateResult.h"
 #import "ALLicensePlateScanPlugin.h"
+#import "ALLicensePlateScanViewPlugin.h"
 
 @protocol AnylineLicensePlateModuleDelegate;
 
 @interface AnylineLicensePlateModuleView : AnylineAbstractModuleView
 
-@property (nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
+@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
+
+@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin;
 
 /**
  *  Sets the license key and delegate.
@@ -25,9 +28,9 @@
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString *)licenseKey
-                   delegate:(id<AnylineLicensePlateModuleDelegate>)delegate
-                      error:(NSError **)error;
+- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+                   delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate
+                      error:(NSError * _Nullable * _Nullable )error;
 
 @end
 
@@ -42,7 +45,7 @@
  *  @param scanResult The scanned value
  *
  */
-- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *)anylineLicensePlateModuleView
-                        didFindResult:(ALLicensePlateResult *)scanResult;
+- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView * _Nonnull)anylineLicensePlateModuleView
+                        didFindResult:(ALLicensePlateResult * _Nonnull)scanResult;
 
 @end

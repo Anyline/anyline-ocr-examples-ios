@@ -31,7 +31,6 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
                                    image:(UIImage * _Nonnull)image
                                fullImage:(UIImage * _Nonnull)fullImage
                               confidence:(NSInteger)confidence
-                                 outline:(ALSquare * _Nullable)outline
                                 pluginID:(NSString *_Nonnull)pluginID
                                 scanMode:(ALScanMode)scanMode;
 

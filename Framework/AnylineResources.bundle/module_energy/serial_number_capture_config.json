@@ -6,18 +6,18 @@
         "alignment": "top_half",
         "ratioFromSize" : {
             "width": 720,
-            "height": 160
-        },
-        "offset": {
-            "x": 0,
-            "y": -30
+            "height": 144
         },
         "strokeWidth": 2,
         "strokeColor": "FFFFFF",
         "cornerRadius": 4,
         "outerColor": "000000",
         "outerAlpha": 0.5,
-        "feedbackStrokeColor": "0099FF"
+        "feedbackStrokeColor": "0099FF",
+        "offset": {
+              "x": 0,
+              "y": -15
+          }
     },
     "flash" : {
         "mode" : "manual",

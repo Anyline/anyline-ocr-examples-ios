@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
     /**
      * The AUTO mode is optimal if you want to scan more than one use case in one mode. This mode automatically
      * tries to identify the to be scanned text within the cutout, and adjust the parameters accordingly.
-     * @see <a href="https://documentation.anyline.io/toc/modules/anyline_ocr/index.html#scanmode-auto">Anyline OCR Auto Mode - Anyline Documentation</a>
+     * @see <a href="https://documentation.anyline.com/toc/modules/anyline_ocr/index.html#scanmode-auto">Anyline OCR Auto Mode - Anyline Documentation</a>
      */
     ALAuto
 };

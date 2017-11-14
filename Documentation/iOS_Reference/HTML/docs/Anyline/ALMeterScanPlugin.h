@@ -19,6 +19,8 @@
  */
 @interface ALMeterScanPlugin : ALAbstractScanPlugin
 
+@property (nonatomic, strong, readonly) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
+
 /**
  *  Sets the scan mode.
  *  It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber

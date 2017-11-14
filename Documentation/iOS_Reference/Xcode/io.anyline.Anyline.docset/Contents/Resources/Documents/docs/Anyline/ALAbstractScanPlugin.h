@@ -16,6 +16,8 @@
 
 @interface ALAbstractScanPlugin : NSObject<ALCoreControllerDelegate>
 
+@property (nonatomic, strong, readonly) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
+
 @property (nullable, nonatomic, strong, readonly) NSString *pluginID;
 
 @property (nonatomic, assign, readonly) NSInteger confidence;

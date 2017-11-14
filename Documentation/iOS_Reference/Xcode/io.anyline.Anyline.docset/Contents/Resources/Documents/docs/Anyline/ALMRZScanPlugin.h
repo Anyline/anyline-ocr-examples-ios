@@ -20,6 +20,8 @@
  */
 @interface ALMRZScanPlugin : ALAbstractScanPlugin
 
+@property (nonatomic, strong, readonly) NSHashTable<ALMRZScanPluginDelegate> * _Nullable delegates;
+
 /**
  *  Sets the license key and delegate.
  *
@@ -32,6 +34,10 @@
 - (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
                    delegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate
                       error:(NSError * _Nullable * _Nullable)error;
+
+- (void)addDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
+
+- (void)removeDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
 
 @end
 

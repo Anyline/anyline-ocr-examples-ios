@@ -24,10 +24,6 @@
  */
 @property (nonatomic, strong) UIImage *uiImage;
 
-/**
- *  The ALImage CVImageBufferRef object.
- */
-@property (nonatomic, assign) CVImageBufferRef imageBuffer;
 
 /**
  *  Method draws the DisplaySpecs onto the ALImage and returns an UIImage. 
@@ -141,7 +137,19 @@
  *
  *  @return A new instance of ALImage.
  */
-- (instancetype)initWithImageBuffer:(CVImageBufferRef)imageBuffer;
+- (instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees;
+
+/**
+ *  Initialise an ALImage with an CVimageBufferRef.
+ *
+ *  @param imageBuffer  The CVImageBufferRef to encapsulate.
+ *  @param cutout       The cutout
+ *
+ *  @return A new instance of ALImage.
+ */
+- (instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer
+                                 rotate:(CGFloat)degrees
+                                 cutout:(CGRect)cutout;
 
 /**
  *  Checks wether the ALImage is empty.

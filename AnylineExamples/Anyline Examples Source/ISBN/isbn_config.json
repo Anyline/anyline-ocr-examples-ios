@@ -26,6 +26,7 @@
     "cancelOnResult": true,
     "visualFeedback": {
         "style": "contour_underline",
-        "strokeWidth": 1
+        "strokeWidth": 1,
+        "strokeColor": "0099FF"
     }
 }

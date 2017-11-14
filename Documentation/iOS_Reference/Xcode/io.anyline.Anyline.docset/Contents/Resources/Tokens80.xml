@@ -1,51 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALOCRScanMode.html">
+	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
-			<Abstract type="html">The possible scanModes for the AnylineOCR module</Abstract>
-			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="80"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLine</TokenIdentifier>
-            <Abstract type="html">The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).
-     </Abstract>
-            <Declaration>ALLine</Declaration>
-            
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineCaptureDeviceManager:didOutputSampleBuffer:</TokenIdentifier>
+			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *_Nonnull)captureDeviceManager didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>captureDeviceManager</Name>
+					<Abstract type="html">The ALCaptureDeviceManager object</Abstract>
+				</Parameter><Parameter>
+					<Name>sampleBuffer</Name>
+					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineCaptureDeviceManager:didOutputSampleBuffer:</Anchor>
             <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALGrid</TokenIdentifier>
-            <Abstract type="html">The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).
-     </Abstract>
-            <Declaration>ALGrid</Declaration>
-            
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
+			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoView</Name>
+					<Abstract type="html">The AnylineVideoView object</Abstract>
+				</Parameter><Parameter>
+					<Name>sampleBuffer</Name>
+					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
             <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAuto</TokenIdentifier>
-            <Abstract type="html">The AUTO mode is optimal if you want to scan more than one use case in one mode. This mode automatically
-tries to identify the to be scanned text within the cutout, and adjust the parameters accordingly.</Abstract>
-            <Declaration>ALAuto</Declaration>
-            
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

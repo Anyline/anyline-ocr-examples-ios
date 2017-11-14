@@ -12,7 +12,7 @@
 
 @interface ALTorchManager : NSObject <ALFlashButtonStatusDelegate>
 
-@property (nonatomic, weak) AVCaptureDevice * captureDevice;
+@property (nullable, nonatomic, weak) AVCaptureDevice * captureDevice;
 @property (nonatomic, assign) ALFlashStatus flashStatus;
 
 - (void)setLevelForAutoFlash:(int)brightness;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALDataPoint.html">
+	<File path="Classes/ALCaptureDeviceManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALDataPoint</TokenIdentifier>
-			<Abstract type="html">Specifies a DataPoint where in the ROI the interesting part is.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALCaptureDeviceManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,173 +13,518 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setArea:</TokenIdentifier>
-			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithCaptureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution cutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset defaultDevice:(NSString *_Nonnull)defaultDevice</Declaration>
 			
 			
-			<Anchor>//api/name/area</Anchor>
+			<Anchor>//api/name/initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/area</TokenIdentifier>
-			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setBarcodeDelegate:</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/area</Anchor>
+			<Anchor>//api/name/barcodeDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/area</TokenIdentifier>
-			<Abstract type="html">The area where in the ROI the text is found.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/barcodeDelegate</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect area</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/area</Anchor>
+			<Anchor>//api/name/barcodeDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIndexPath:</TokenIdentifier>
-			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
-location of the DataPoint in the ROI.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/barcodeDelegate</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/indexPath</Anchor>
+			<Anchor>//api/name/barcodeDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/indexPath</TokenIdentifier>
-			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
-location of the DataPoint in the ROI.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setSampleBufferDelegate:</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/indexPath</Anchor>
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/indexPath</TokenIdentifier>
-			<Abstract type="html">The IndexPath for this text. Will be used as a refernece for the physical
-location of the DataPoint in the ROI.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/sampleBufferDelegate</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/indexPath</Anchor>
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
-will be interpretet together.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/sampleBufferDelegate</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
-will be interpretet together.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCaptureResolution:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/captureResolution</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDataPoint/identifier</TokenIdentifier>
-			<Abstract type="html">The identifier for this DataPoint. Should be the same for connected texts which
-will be interpretet together.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/captureResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/captureResolution</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithArea:indexPath:identifier:</TokenIdentifier>
-			<Abstract type="html">Initialise a new DataPoint.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/captureResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where the DataPoint in the ROI is found.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for this DataPoint.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">An identifier for this DataPoint.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
+			
+			
+			<Anchor>//api/name/captureResolution</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDataPoint/initWithDictionary:</TokenIdentifier>
-			<Abstract type="html">Initialise a new DataPoint with a representing dictionary.</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setPictureResolution:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dictionary</Name>
-					<Abstract type="html">A dictionary representing a DataPoint object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDictionary:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
+			
+			
+			<Anchor>//api/name/pictureResolution</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALDataPoint/dataPointForDictionary:</TokenIdentifier>
-			<Abstract type="html">Initialise ether a new DigitDataPoint or TextDataPoint depending on the dictionary</Abstract>
-			<DeclaredIn>ALDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/pictureResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>+ (ALDataPoint *)dataPointForDictionary:(NSDictionary *)dictionary</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dictionary</Name>
-					<Abstract type="html">The dictionary with the representing DataPoint.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New Text -or DigitDataPoint object.</Abstract></ReturnValue>
-			<Anchor>//api/name/dataPointForDictionary:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
+			
+			
+			<Anchor>//api/name/pictureResolution</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/pictureResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
+			
+			
+			<Anchor>//api/name/pictureResolution</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setVideoResolution:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
+			
+			
+			<Anchor>//api/name/videoResolution</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/videoResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
+			
+			
+			<Anchor>//api/name/videoResolution</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/videoResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
+			
+			
+			<Anchor>//api/name/videoResolution</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCutoutFrame:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/cutoutFrame</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/cutoutFrame</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setBufferFrame:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize bufferFrame</Declaration>
+			
+			
+			<Anchor>//api/name/bufferFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/bufferFrame</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize bufferFrame</Declaration>
+			
+			
+			<Anchor>//api/name/bufferFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/bufferFrame</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize bufferFrame</Declaration>
+			
+			
+			<Anchor>//api/name/bufferFrame</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCutoutScreen:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/cutoutScreen</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/cutoutScreen</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCutoutPadding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/cutoutPadding</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/cutoutPadding</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCutoutOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setPreviewLayer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/previewLayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/previewLayer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/previewLayer</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/addVideoLayerOnView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)addVideoLayerOnView:(UIView *_Nonnull)view</Declaration>
+			
+			
+			<Anchor>//api/name/addVideoLayerOnView:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setFocusAndExposurePoint:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setFocusAndExposurePoint:(CGPoint)point</Declaration>
+			
+			
+			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/startSession</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)startSession</Declaration>
+			
+			
+			<Anchor>//api/name/startSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/stopSession</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)stopSession</Declaration>
+			
+			
+			<Anchor>//api/name/stopSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/isRunning</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isRunning</Declaration>
+			
+			
+			<Anchor>//api/name/isRunning</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/convertPoint:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint</Declaration>
+			
+			
+			<Anchor>//api/name/convertPoint:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/convertPoint:imageWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint imageWidth:(CGFloat)inWidth</Declaration>
+			
+			
+			<Anchor>//api/name/convertPoint:imageWidth:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/fullResolutionPointForPointInPreview:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint</Declaration>
+			
+			
+			<Anchor>//api/name/fullResolutionPointForPointInPreview:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/currentInterfaceOrientation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (UIInterfaceOrientation)currentInterfaceOrientation</Declaration>
+			
+			
+			<Anchor>//api/name/currentInterfaceOrientation</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

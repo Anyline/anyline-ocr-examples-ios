@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIVisualFeedbackAnimation.html">
+	<File path="Constants/ALFlashAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIVisualFeedbackAnimation</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationTraverseSingle</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationTraverseSingle</Declaration>
+            <Declaration>ALFlashAlignmentTop</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationTraverseMulti</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationTraverseMulti</Declaration>
+            <Declaration>ALFlashAlignmentTopLeft</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationKitt</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationKitt</Declaration>
+            <Declaration>ALFlashAlignmentTopRight</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationBlink</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationBlink</Declaration>
+            <Declaration>ALFlashAlignmentBottom</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationResize</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationResize</Declaration>
+            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -64,29 +64,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationPulse</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationPulse</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="87"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationPulseRandom</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationPulseRandom</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="87"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationNone</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALUIVisualFeedbackAnimationNone</Declaration>
+            <Declaration>ALFlashAlignmentBottomRight</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             

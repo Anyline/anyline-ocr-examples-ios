@@ -58,7 +58,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"iban_config" ofType:@"json"];
     ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = ibanConf;
+    [self.ocrModuleView setCurrentConfiguration:ibanConf];
     
     self.ocrModuleView.translatesAutoresizingMaskIntoConstraints = NO;
     

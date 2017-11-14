@@ -10,6 +10,6 @@
 
 @interface ALUIConfiguration (Paths)
 
-+ (UIBezierPath *)AL_lugPath;
++ (UIBezierPath * _Nullable )AL_lugPath;
 
 @end

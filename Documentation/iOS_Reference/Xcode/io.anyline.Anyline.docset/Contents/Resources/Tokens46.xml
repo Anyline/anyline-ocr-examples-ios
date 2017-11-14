@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineMRZModuleView.html">
+	<File path="Classes/ALTorchManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
-All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
-It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
@@ -15,61 +13,146 @@ It is configurable via interface builder.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt;)delegate error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
+			
+			
+			<Anchor>//api/name/flashStatus</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
+			
+			
+			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)resetLightLevelCounter</Declaration>
+			
+			
+			<Anchor>//api/name/resetLightLevelCounter</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
+			
+			
+			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
+			
+			
+			<Anchor>//api/name/setTorch:</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)torchAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/torchAvailable</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		

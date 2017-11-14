@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALBarcodeScanPluginDelegate.html">
+	<File path="Classes/ALValuesStackFlipping.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALBarcodeScanPluginDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
+			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -13,22 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALBarcodeScanPluginDelegate/anylineBarcodeScanPlugin:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *_Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineBarcodeScanPlugin</Name>
-					<Abstract type="html">The plugin</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
 				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+				</Parameter><Parameter>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>partialResultSize</Name>
+					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
 			
-			<Anchor>//api/name/anylineBarcodeScanPlugin:didFindResult:</Anchor>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
+				</Parameter><Parameter>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+				</Parameter><Parameter>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		

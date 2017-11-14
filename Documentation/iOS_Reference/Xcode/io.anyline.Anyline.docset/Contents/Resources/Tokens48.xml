@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineVideoView.html">
+	<File path="Classes/ALValuesStack.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineVideoView</TokenIdentifier>
-			<Abstract type="html">The AnylineVideoView renders the CapturePreview from the Camera on the screen. It also handles an efficient way to extract frames
-from the Video and provide them to Anyline with the ALImageProvider protocol. It should be initialised via ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStack</TokenIdentifier>
+			<Abstract type="html">The ValuesStack allows you to save any result of the Anyline computation.
+The actual result will then be compared to previous results and if there are enough
+equal values a new result will be available.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
             
 			
 			<NodeRef refid="48"/>
@@ -14,364 +15,310 @@ from the Video and provide them to Anyline with the ALImageProvider protocol. It
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFlashButton:</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setSize:</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/flashButton</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/flashButton</TokenIdentifier>
-			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/size</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setCutoutView:</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setMinEqualResults:</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/minEqualResults</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/cutoutView</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/minEqualResults</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/cutoutView</TokenIdentifier>
-			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/minEqualResults</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setWatermarkRect:</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setLastCommitedResult:</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
 			
 			
-			<Anchor>//api/name/watermarkRect</Anchor>
+			<Anchor>//api/name/lastCommitedResult</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
 			
 			
-			<Anchor>//api/name/watermarkRect</Anchor>
+			<Anchor>//api/name/lastCommitedResult</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
 			
 			
-			<Anchor>//api/name/watermarkRect</Anchor>
+			<Anchor>//api/name/lastCommitedResult</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setTorchManager:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setHasNewResult:</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setConsecutivelyValue:</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCount:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/torchManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCount</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/torchManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCount</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setBarcodeDelegate:</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCountWithoutEmpty:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/barcodeDelegate</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/barcodeDelegate</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeDelegate</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setSampleBufferDelegate:</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegate</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:configuration:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a frame and a configuration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithFrame:(CGRect)frame configuration:(ALUIConfiguration *)configuration</Declaration>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the view should be positioned.</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
 				</Parameter><Parameter>
-					<Name>configuration</Name>
-					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFrame:configuration:</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a frame. The CaptureView will be initialised with the default 720p
-video. No FlashButton or CutoutView will be initialised.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithFrame:(CGRect)frame</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame where the view should be positioned.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFrame:</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:configuration:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a coder and a configuration.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder configuration:(ALUIConfiguration *)configuration</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>configuration</Name>
-					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
 				</Parameter><Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The coder to initialise the view.</Abstract>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCoder:configuration:</Anchor>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:</TokenIdentifier>
-			<Abstract type="html">Initialises a new AnylineVideoView with a coder. The CaptureView will be initialised with the default 720p
-video. No FlashButton or CutoutView will be initialised.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/addResult:</TokenIdentifier>
+			<Abstract type="html">Adds a new result to the value stack. If the size of the value stack is reached
+a new result will be searched and if found with the hasNewResult communicated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder</Declaration>
+			<Declaration>- (void)addResult:(id)result</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The coder to initialise the view.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCoder:</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/startVideoAndReturnError:</TokenIdentifier>
-			<Abstract type="html">Starts the video preview and frame extraction.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)startVideoAndReturnError:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if starting fails.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES/NO if starting succeed/failed.</Abstract></ReturnValue>
-			<Anchor>//api/name/startVideoAndReturnError:</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/stopVideo</TokenIdentifier>
-			<Abstract type="html">Stops the video preview and frame extraction.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (void)stopVideo</Declaration>
-			
-			
-			<Anchor>//api/name/stopVideo</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFocusAndExposurePoint:</TokenIdentifier>
-			<Abstract type="html">You can set a custom focus &amp;amp; exposure point here. CGPoint value has to be between 0 and 1 like in the Apple interface.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (void)setFocusAndExposurePoint:(CGPoint)point</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">Point with values between 0 and 1.</Abstract>
+					<Name>result</Name>
+					<Abstract type="html">The result to add to the stack.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
+			<Anchor>//api/name/addResult:</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/captureStillImageAndStopWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/newResult</TokenIdentifier>
+			<Abstract type="html">Returns a new result if the hasNewResult is true and nil otherwise.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>- (void)captureStillImageAndStopWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			<Declaration>- (id)newResult</Declaration>
 			
-			
-			<Anchor>//api/name/captureStillImageAndStopWithCompletionBlock:</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
-			
-			<Declaration>- (ALSquare *)resizeSquareToFullImageSquare:(ALSquare *)square withImageSize:(CGSize)imageSize resizeWidth:(CGFloat)resizeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</Anchor>
+			<ReturnValue><Abstract type="html">new found result.</Abstract></ReturnValue>
+			<Anchor>//api/name/newResult</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		

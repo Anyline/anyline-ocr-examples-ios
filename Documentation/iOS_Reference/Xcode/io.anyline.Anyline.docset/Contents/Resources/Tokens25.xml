@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRResult.html">
+	<File path="Classes/ALMRZResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -13,98 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/set:</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/)</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/)</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/)</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/)</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/)</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
-			<Abstract type="html">since 3.10 (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)text image:(UIImage *_Nonnull)image thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:thresholdedImage:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		

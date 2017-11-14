@@ -21,7 +21,7 @@ static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
 static NSString *const ALParserErrorParameterName =
     @"ALParserErrorParameterName";
 
-enum ALErrorCodes {
+typedef NS_ENUM(NSInteger, ALErrorCode) {
   // Anyline Exception - this type must be catched within Anyline Core
   ALOperationNotFound = 1001,
 

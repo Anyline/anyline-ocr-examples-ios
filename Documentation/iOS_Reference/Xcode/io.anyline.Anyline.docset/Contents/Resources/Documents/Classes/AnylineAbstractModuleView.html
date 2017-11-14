@@ -60,7 +60,11 @@
 		
 		<option value="//api/name/blinkOnResult">blinkOnResult</option>
 		
+		<option value="//api/name/cameraView">cameraView</option>
+		
 		<option value="//api/name/cancelOnResult">cancelOnResult</option>
+		
+		<option value="//api/name/captureDeviceManager">captureDeviceManager</option>
 		
 		<option value="//api/name/cornerRadius">cornerRadius</option>
 		
@@ -68,7 +72,11 @@
 		
 		<option value="//api/name/cutoutRect">cutoutRect</option>
 		
+		<option value="//api/name/cutoutView">cutoutView</option>
+		
 		<option value="//api/name/debugDelegate">debugDelegate</option>
+		
+		<option value="//api/name/flashButton">flashButton</option>
 		
 		<option value="//api/name/flashButtonAlignment">flashButtonAlignment</option>
 		
@@ -86,9 +94,9 @@
 		
 		<option value="//api/name/strokeWidth">strokeWidth</option>
 		
-		<option value="//api/name/vibrateOnResult">vibrateOnResult</option>
+		<option value="//api/name/torchManager">torchManager</option>
 		
-		<option value="//api/name/videoView">videoView</option>
+		<option value="//api/name/vibrateOnResult">vibrateOnResult</option>
 		
 		<option value="//api/name/watermarkRect">watermarkRect</option>
 		
@@ -177,14 +185,14 @@ You should sublcass this class to build Anyline modules.</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/videoView" title="videoView"></a>
-	<h3 class="method-title"><code><a href="#//api/name/videoView">&nbsp;&nbsp;videoView</a></code>
+	<a name="//api/name/cameraView" title="cameraView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cameraView">&nbsp;&nbsp;cameraView</a></code>
 </h3>
 
 	<div class="method-info">
@@ -199,7 +207,7 @@ You should sublcass this class to build Anyline modules.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) AnylineVideoView *videoView</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCameraView *cameraView</code></div>
 
 		    
 			
@@ -224,6 +232,70 @@ You should sublcass this class to build Anyline modules.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/captureDeviceManager" title="captureDeviceManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureDeviceManager">&nbsp;&nbsp;captureDeviceManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutView" title="cutoutView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutView">&nbsp;&nbsp;cutoutView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashButton" title="flashButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashButton">&nbsp;&nbsp;flashButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/torchManager" title="torchManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/torchManager">&nbsp;&nbsp;torchManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/currentConfiguration" title="currentConfiguration"></a>
 	<h3 class="method-title"><code><a href="#//api/name/currentConfiguration">&nbsp;&nbsp;currentConfiguration</a></code>
 </h3>
@@ -240,7 +312,7 @@ You should sublcass this class to build Anyline modules.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALUIConfiguration *currentConfiguration</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</code></div>
 
 		    
 			
@@ -322,7 +394,7 @@ You should sublcass this class to build Anyline modules.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) IBInspectable UIColor *strokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) IBInspectable UIColor *strokeColor</code></div>
 
 		    
 			
@@ -404,7 +476,7 @@ You should sublcass this class to build Anyline modules.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) IBInspectable UIColor *outerColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) IBInspectable UIColor *outerColor</code></div>
 
 		    
 			
@@ -486,7 +558,7 @@ You should sublcass this class to build Anyline modules.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) IBInspectable UIImage *flashImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) IBInspectable UIImage *flashImage</code></div>
 
 		    
 			
@@ -909,7 +981,7 @@ ALFlashAlignmentBottomRight</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)startScanningAndReturnError:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)startScanningAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -967,7 +1039,7 @@ ALFlashAlignmentBottomRight</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)cancelScanningAndReturnError:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)cancelScanningAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -1164,7 +1236,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

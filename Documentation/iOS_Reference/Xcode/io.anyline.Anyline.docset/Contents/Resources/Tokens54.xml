@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALFlashButtonStatusDelegate.html">
+	<File path="Classes/AnylineEnergyModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonStatusDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineEnergyModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineEnergyModuleView class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
@@ -13,14 +13,192 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonStatusDelegate/flashButton:statusChanged:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanViewPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)flashButton:(ALFlashButton *)flashButton statusChanged:(ALFlashStatus)flashStatus</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton:statusChanged:</Anchor>
+			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setBarcodeScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
+			
+			
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The scan mode to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setScanMode:error:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		

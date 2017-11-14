@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALCoreController.html">
+	<File path="Classes/ALBarcodeScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALCoreController</TokenIdentifier>
-			<Abstract type="html">The Anyline Controller is the small but powerful interface to our image
-processing / text recognition. Loaded with different Configurations files it
-can execute totally different tasks.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALBarcodeScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -15,491 +13,89 @@ can execute totally different tasks.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/setAsyncSDK:</TokenIdentifier>
-			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
-or if you want to run it on your current thread.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
-			
-			
-			<Anchor>//api/name/asyncSDK</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/asyncSDK</TokenIdentifier>
-			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
-or if you want to run it on your current thread.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
-			
-			
-			<Anchor>//api/name/asyncSDK</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCoreController/asyncSDK</TokenIdentifier>
-			<Abstract type="html">With this boolean you can control if the SDK runs on an async queue
-or if you want to run it on your current thread.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL asyncSDK</Declaration>
-			
-			
-			<Anchor>//api/name/asyncSDK</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/setRunning:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanViewPlugin/setBarcodeScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/running</Anchor>
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/isRunning</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanViewPlugin/barcodeScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/running</Anchor>
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCoreController/running</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeScanViewPlugin/barcodeScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, getter=isRunning) BOOL running</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/running</Anchor>
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The delegate property.
-You must set the delegate if you want to get any results out
-of the Anyline SDK.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;ALCoreControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate property.
-You must set the delegate if you want to get any results out
-of the Anyline SDK.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;ALCoreControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCoreController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate property.
-You must set the delegate if you want to get any results out
-of the Anyline SDK.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;ALCoreControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/initWithLicenseKey:</TokenIdentifier>
-			<Abstract type="html">Initializes a new AnylineController with a license key. In order to
-correctly run Anyline you will have to set the AnylineController delegate
-and load an appropriate configuration.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithLicenseKey:(NSString *)licenseKey</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The license key you purchased for Anyline.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineController.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLicenseKey:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/initWithLicenseKey:delegate:</TokenIdentifier>
-			<Abstract type="html">Initializes a new AnylineController with a license key and delegate. In order
-to correctly run Anyline you will have to load an appropriate configuration.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithLicenseKey:(NSString *)licenseKey delegate:(id&lt;ALCoreControllerDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The license key you purchased for Anyline.</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate where for the Anyline callbacks.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of AnylineController.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithLicenseKey:delegate:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/loadScript:bundlePath:error:</TokenIdentifier>
-			<Abstract type="html">This method loads the Anyline SDK with an configuration string.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)loadScript:(NSString *)script bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>script</Name>
-					<Abstract type="html">The string which represents the configuration.</Abstract>
-				</Parameter><Parameter>
-					<Name>bundlePath</Name>
-					<Abstract type="html">The bundlePath where the additional ressources are located.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if the script loading fails.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
-			<Anchor>//api/name/loadScript:bundlePath:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/loadScript:scriptName:bundlePath:error:</TokenIdentifier>
-			<Abstract type="html">This method loads the Anyline SDK with an configuration string.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)loadScript:(NSString *)script scriptName:(NSString *)scriptName bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>script</Name>
-					<Abstract type="html">The string which represents the configuration.</Abstract>
-				</Parameter><Parameter>
-					<Name>scriptName</Name>
-					<Abstract type="html">The filename of the script.</Abstract>
-				</Parameter><Parameter>
-					<Name>bundlePath</Name>
-					<Abstract type="html">The bundlePath where the additional ressources are located.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if the script loading fails.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
-			<Anchor>//api/name/loadScript:scriptName:bundlePath:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/loadCmdFile:bundlePath:error:</TokenIdentifier>
-			<Abstract type="html">This method loads the Anyline SDK with an configuration file which is located
-at the bundlePath. The configuration must ether be an .alc unencrypted file
-or an .ale encrypted file.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)loadCmdFile:(NSString *)cmdFileName bundlePath:(NSString *)bundlePath error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cmdFileName</Name>
-					<Abstract type="html">Configuration filename. Ether .alc or .ale. Located at
-the bundlePath</Abstract>
-				</Parameter><Parameter>
-					<Name>bundlePath</Name>
-					<Abstract type="html">The bundlePath where the configuration and the additional
-ressources are located.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if the script loading fails.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the loading.</Abstract></ReturnValue>
-			<Anchor>//api/name/loadCmdFile:bundlePath:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/startWithImageProvider:error:</TokenIdentifier>
-			<Abstract type="html">Starts a continious image processing workflow where the images are provided from the
-image provider interface. Should for example be called in the viewDidAppear:</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)imageProvider error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>imageProvider</Name>
-					<Abstract type="html">The image provider which is responsible for providing the frames for the
-computation.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if the processing can not be started.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the start process.</Abstract></ReturnValue>
-			<Anchor>//api/name/startWithImageProvider:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/startWithImageProvider:startVariables:error:</TokenIdentifier>
-			<Abstract type="html">Starts a continious image processing workflow where the images are provided from the
-image provider interface. Should for example be called in the viewDidAppear:</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)imageProvider startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>imageProvider</Name>
-					<Abstract type="html">The image provider which is responsible for providing the frames for the
-computation.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if the processing can not be started.</Abstract>
-				</Parameter><Parameter>
-					<Name>startVariables</Name>
-					<Abstract type="html">Variables which will be added to the process and can be referenced in the
-Anyline Command File.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the start process.</Abstract></ReturnValue>
-			<Anchor>//api/name/startWithImageProvider:startVariables:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/stopAndReturnError:</TokenIdentifier>
-			<Abstract type="html">Stops a previously started image processing workflow. Should be called ex. in viewDidDisappear:
-or viewWillDisappear:</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)stopAndReturnError:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if processing workflow could not be stopped</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the stop.</Abstract></ReturnValue>
-			<Anchor>//api/name/stopAndReturnError:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/processImage:error:</TokenIdentifier>
-			<Abstract type="html">Starts a single image run with an UIImage.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)processImage:(UIImage *)image error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>image</Name>
-					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
-			<Anchor>//api/name/processImage:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/processImage:startVariables:error:</TokenIdentifier>
-			<Abstract type="html">Starts a single image run with an UIImage and a start variable dictionary.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)processImage:(UIImage *)image startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>image</Name>
-					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</Abstract>
-				</Parameter><Parameter>
-					<Name>variables</Name>
-					<Abstract type="html">Variables which will be added for this single process. They can be used and
-controlled in the .alc files. @see ALConfig for global config variables.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
-			<Anchor>//api/name/processImage:startVariables:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/processALImage:error:</TokenIdentifier>
-			<Abstract type="html">Starts a single image run with an ALImage.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)processALImage:(ALImage *)alImage error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>alImage</Name>
-					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
-			<Anchor>//api/name/processALImage:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/processALImage:startVariables:error:</TokenIdentifier>
-			<Abstract type="html">Starts a single image run with an ALImage and a start variable dictionary.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)processALImage:(ALImage *)alImage startVariables:(NSDictionary *)variables error:(NSError **)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>alImage</Name>
-					<Abstract type="html">The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</Abstract>
-				</Parameter><Parameter>
-					<Name>variables</Name>
-					<Abstract type="html">Variables which will be added for this single process. They can be used and
-controlled in the .alc files. @see ALConfig for global config variables.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">If an error occured while trying to start processing, it is passed here.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">BOOL indicating if the processing could be started.</Abstract></ReturnValue>
-			<Anchor>//api/name/processALImage:startVariables:error:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/setParameter:forKey:</TokenIdentifier>
-			<Abstract type="html">Sets a parameter with a key in the Interpreter.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (void)setParameter:(id)parameter forKey:(NSString *)key</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>parameter</Name>
-					<Abstract type="html">Parameter to set.</Abstract>
-				</Parameter><Parameter>
-					<Name>key</Name>
-					<Abstract type="html">The key for the parameter.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setParameter:forKey:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALCoreController/versionNumber</TokenIdentifier>
-			<Abstract type="html">The Version number of the current Anyline framework.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)versionNumber</Declaration>
-			
-			<ReturnValue><Abstract type="html">The Version number as String</Abstract></ReturnValue>
-			<Anchor>//api/name/versionNumber</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALCoreController/buildNumber</TokenIdentifier>
-			<Abstract type="html">The Build number of the current Anyline framework.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)buildNumber</Declaration>
-			
-			<ReturnValue><Abstract type="html">The Build number as String</Abstract></ReturnValue>
-			<Anchor>//api/name/buildNumber</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALCoreController/frameworkBundle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>+ (NSBundle *)frameworkBundle</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/frameworkBundle</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/enableReporting:</TokenIdentifier>
-			<Abstract type="html">Reporting ON Switch, off by default</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanViewPlugin/setUseOnlyNativeBarcodeScanning:</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)enableReporting:(BOOL)enable</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>enable</Name>
-					<Abstract type="html">if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file,
-and use the reportScanResultState: for reporting</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
 			
-			<Anchor>//api/name/enableReporting:</Anchor>
+			
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/reportIncludeValues:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanViewPlugin/useOnlyNativeBarcodeScanning</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)reportIncludeValues:(NSString *)values</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
 			
 			
-			<Anchor>//api/name/reportIncludeValues:</Anchor>
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCoreController/runStatistics</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeScanViewPlugin/useOnlyNativeBarcodeScanning</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>ALBarcodeScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)runStatistics</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
 			
 			
-			<Anchor>//api/name/runStatistics</Anchor>
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

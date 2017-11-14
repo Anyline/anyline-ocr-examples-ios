@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Constants/ALFlashMode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="88"/>
+		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashModeManual</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="88"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashModeNone</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="88"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashModeAuto</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="88"/>
+        </Token>
         
         
 	</File>

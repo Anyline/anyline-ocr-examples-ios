@@ -1,6 +1,6 @@
 ***
 This Font may only be used for scan operations using the Anyline SDK. By downloading the Font you explicitly accept the following licence terms. If you do not agree with these terms, we do not permit you to download or use the Font.
-If you are using the Font for commercial purposes, please contact hallo@anyline.io to receive further information and support.
+If you are using the Font for commercial purposes, please contact hallo@anyline.com to receive further information and support.
 ***
 
 FONT LICENCE

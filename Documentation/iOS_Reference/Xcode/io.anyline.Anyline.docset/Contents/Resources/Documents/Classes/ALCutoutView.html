@@ -54,17 +54,47 @@
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cornerRadius">cornerRadius</option>
+		
+		<option value="//api/name/cutoutAlignment">cutoutAlignment</option>
+		
+		<option value="//api/name/cutoutBackgroundColor">cutoutBackgroundColor</option>
+		
+		<option value="//api/name/cutoutMaxPercentHeight">cutoutMaxPercentHeight</option>
+		
+		<option value="//api/name/cutoutMaxPercentWidth">cutoutMaxPercentWidth</option>
+		
+		<option value="//api/name/cutoutOffset">cutoutOffset</option>
+		
+		<option value="//api/name/cutoutPath">cutoutPath</option>
+		
+		<option value="//api/name/cutoutWidthPercent">cutoutWidthPercent</option>
+		
+		<option value="//api/name/feedbackStrokeColor">feedbackStrokeColor</option>
+		
+		<option value="//api/name/overlayImage">overlayImage</option>
+		
+		<option value="//api/name/strokeColor">strokeColor</option>
+		
+		<option value="//api/name/strokeWidth">strokeWidth</option>
+		
+	</optgroup>
+	
 
 	
 
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/calculateAndDrawCutout">- calculateAndDrawCutout</option>
+		
 		<option value="//api/name/cutoutRectScreen">- cutoutRectScreen</option>
 		
 		<option value="//api/name/drawCutout:">- drawCutout:</option>
 		
-		<option value="//api/name/initWithFrame:configuration:">- initWithFrame:configuration:</option>
+		<option value="//api/name/initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:">- initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:</option>
 		
 	</optgroup>
 	
@@ -116,8 +146,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithFrame:configuration:" title="initWithFrame:configuration:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:configuration:">&ndash;&nbsp;initWithFrame:configuration:</a></code>
+	<a name="//api/name/cutoutWidthPercent" title="cutoutWidthPercent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutWidthPercent">&nbsp;&nbsp;cutoutWidthPercent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -125,57 +155,202 @@
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Initialises a new CutoutView with an appropriate frame and configuration</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em> configuration:(ALUIConfiguration *)<em>config</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutWidthPercent</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>frame</code></th>
-						<td><p>The frame for the View.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>config</code></th>
-						<td><p>The configuation to initialise the cutout.</p></td>
-					</tr>
-				
-				</table>
-			</div>
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutMaxPercentWidth" title="cutoutMaxPercentWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutMaxPercentWidth">&nbsp;&nbsp;cutoutMaxPercentWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>New ALCoutout instance.</p>
-			</div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutMaxPercentHeight" title="cutoutMaxPercentHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutMaxPercentHeight">&nbsp;&nbsp;cutoutMaxPercentHeight</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutOffset" title="cutoutOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutOffset">&nbsp;&nbsp;cutoutOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint cutoutOffset</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cornerRadius" title="cornerRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cornerRadius">&nbsp;&nbsp;cornerRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger cornerRadius</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strokeWidth" title="strokeWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strokeWidth">&nbsp;&nbsp;strokeWidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger strokeWidth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutAlignment" title="cutoutAlignment"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutAlignment">&nbsp;&nbsp;cutoutAlignment</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutPath" title="cutoutPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutPath">&nbsp;&nbsp;cutoutPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCutoutView.h</code></p>
-			</div>
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutBackgroundColor" title="cutoutBackgroundColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutBackgroundColor">&nbsp;&nbsp;cutoutBackgroundColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strokeColor" title="strokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *strokeColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/feedbackStrokeColor" title="feedbackStrokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStrokeColor">&nbsp;&nbsp;feedbackStrokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overlayImage" title="overlayImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overlayImage">&nbsp;&nbsp;overlayImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *overlayImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:" title="initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:">&ndash;&nbsp;initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> cutoutWidthPercent:(CGFloat)<em>cutoutWidthPercent</em> cutoutMaxPercentWidth:(CGFloat)<em>cutoutMaxPercentWidth</em> cutoutMaxPercentHeight:(CGFloat)<em>cutoutMaxPercentHeight</em> cutoutOffset:(CGPoint)<em>cutoutOffset</em> cornerRadius:(NSInteger)<em>cornerRadius</em> strokeWidth:(NSInteger)<em>strokeWidth</em> cutoutAlignment:(ALCutoutAlignment)<em>cutoutAlignment</em> cutoutPath:(UIBezierPath *_Nonnull)<em>cutoutPath</em> cutoutBackgroundColor:(UIColor *_Nonnull)<em>cutoutBackgroundColor</em> strokeColor:(UIColor *_Nonnull)<em>strokeColor</em> feedbackStrokeColor:(UIColor *_Nonnull)<em>feedbackStrokeColor</em> overlayImage:(UIImage *_Nonnull)<em>overlayImage</em></code></div>
+
+		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -240,6 +415,22 @@
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/calculateAndDrawCutout" title="calculateAndDrawCutout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calculateAndDrawCutout">&ndash;&nbsp;calculateAndDrawCutout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)calculateAndDrawCutout</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -255,7 +446,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

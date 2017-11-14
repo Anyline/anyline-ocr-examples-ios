@@ -34,13 +34,12 @@
 /**
  *  The outline of the found text in relation to the ModuleView.
  */
-@property (nullable, nonatomic, strong) ALSquare *outline;
+@property (nullable, nonatomic, strong) ALSquare *outline __deprecated_msg("Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.");
 
 - (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
                                    image:(UIImage * _Nonnull)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
-                                 outline:(ALSquare * _Nullable)outline
                                 pluginID:(NSString *_Nonnull)pluginID;
 
 @end

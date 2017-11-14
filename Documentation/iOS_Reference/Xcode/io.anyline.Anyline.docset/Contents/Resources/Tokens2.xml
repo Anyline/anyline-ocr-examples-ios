@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALBarcodeResult.html">
+	<File path="Classes/ALAbstractScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALBarcodeResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineBarcodePlugin</Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALAbstractScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="2"/>
@@ -13,50 +13,530 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/setBarcodeFormat:</TokenIdentifier>
-			<Abstract type="html">The scanned barcode format</Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCameraView:</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormat</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/barcodeFormat</TokenIdentifier>
-			<Abstract type="html">The scanned barcode format</Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormat</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeResult/barcodeFormat</TokenIdentifier>
-			<Abstract type="html">The scanned barcode format</Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
+			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormat</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/initWithResult:image:fullImage:confidence:outline:pluginID:barcodeFormat:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCaptureDeviceManager:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare *_Nullable)outline pluginID:(NSString *_Nonnull)pluginID barcodeFormat:(ALBarcodeFormat)barcodeFormat</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:outline:pluginID:barcodeFormat:</Anchor>
+			<Anchor>//api/name/captureDeviceManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/captureDeviceManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/captureDeviceManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/captureDeviceManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
+			
+			
+			<Anchor>//api/name/captureDeviceManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCutoutView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/cutoutView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/cutoutView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setFlashButton:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/flashButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/flashButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setTorchManager:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/torchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/torchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setVisualFeedbackOverlay:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackOverlay</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/visualFeedbackOverlay</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackOverlay</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/visualFeedbackOverlay</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackOverlay</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setOutline:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/outline</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/outline</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSquare *outline</Declaration>
+			
+			
+			<Anchor>//api/name/outline</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setScanImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALImage *scanImage</Declaration>
+			
+			
+			<Anchor>//api/name/scanImage</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/scanImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALImage *scanImage</Declaration>
+			
+			
+			<Anchor>//api/name/scanImage</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/scanImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALImage *scanImage</Declaration>
+			
+			
+			<Anchor>//api/name/scanImage</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCurrentConfiguration:</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/currentConfiguration</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/currentConfiguration</TokenIdentifier>
+			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/currentConfiguration</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setWatermarkRect:</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat scale</Declaration>
+			
+			
+			<Anchor>//api/name/scale</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/scale</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat scale</Declaration>
+			
+			
+			<Anchor>//api/name/scale</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/scale</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat scale</Declaration>
+			
+			
+			<Anchor>//api/name/scale</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setUiConfigs:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			
+			
+			<Anchor>//api/name/uiConfigs</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/uiConfigs</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			
+			
+			<Anchor>//api/name/uiConfigs</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/uiConfigs</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			
+			
+			<Anchor>//api/name/uiConfigs</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/customInit</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)customInit</Declaration>
+			
+			
+			<Anchor>//api/name/customInit</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/startAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)startAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/startAndReturnError:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/stopAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/stopAndReturnError:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/stopListeningForMotion</TokenIdentifier>
+			<Abstract type="html">Stop listening for device motion.</Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)stopListeningForMotion</Declaration>
+			
+			
+			<Anchor>//api/name/stopListeningForMotion</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/triggerScannedFeedback</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)triggerScannedFeedback</Declaration>
+			
+			
+			<Anchor>//api/name/triggerScannedFeedback</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/convertContours:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *_Nonnull)convertContours:(NSValue *_Nonnull)contoursValue</Declaration>
+			
+			
+			<Anchor>//api/name/convertContours:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/convertCGRect:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *_Nonnull)convertCGRect:(NSValue *_Nonnull)concreteValue</Declaration>
+			
+			
+			<Anchor>//api/name/convertCGRect:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/updateDispatchTimer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)updateDispatchTimer</Declaration>
+			
+			
+			<Anchor>//api/name/updateDispatchTimer</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

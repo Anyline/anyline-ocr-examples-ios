@@ -32,7 +32,7 @@ What is AnyOCR often used for?
 
 Are you lost and want to find out more? 
 
-—> support@anyline.io 
+—> support@anyline.com
 
 What do I have to remember? 
 
@@ -42,8 +42,8 @@ What do I have to remember?
 
 Questions about the design?
 
-Email: hello@anyline.io
-Website: www.anyline.io
-Twitter: @anyline_io
+Email: hello@anyline.com
+Website: www.anyline.com
+Twitter: @anyline_com
 
 We scan for your smile.

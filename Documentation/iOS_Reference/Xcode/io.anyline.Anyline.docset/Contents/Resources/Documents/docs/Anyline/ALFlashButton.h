@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ALViewConstants.h"
 
 typedef NS_ENUM(NSInteger, ALFlashStatus) {
     ALFlashStatusOn,
@@ -18,12 +19,12 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 @class ALFlashButton;
 
 @protocol ALFlashButtonStatusDelegate <NSObject>
-- (void)flashButton:(ALFlashButton *)flashButton statusChanged:(ALFlashStatus)flashStatus;
+- (void)flashButton:(ALFlashButton * _Nonnull)flashButton statusChanged:(ALFlashStatus)flashStatus;
 @end
 
 @protocol ALFlashButtonAnimationDelegate <NSObject>
 @optional
-- (void)flashButton:(ALFlashButton *)flashButton expanded:(BOOL)expanded;
+- (void)flashButton:(ALFlashButton * _Nonnull)flashButton expanded:(BOOL)expanded;
 @end
 
 @interface ALFlashButton : UIControl
@@ -32,16 +33,24 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 
 @property (nonatomic, assign) BOOL expandLeft;
 
-@property (nonatomic, strong) UIImageView *flashImage;
+@property (nullable, nonatomic, strong) UIImageView *flashImage;
+@property (nonatomic, assign) ALFlashAlignment flashAlignment;
+@property (nonatomic, assign) ALFlashMode flashMode;
+@property (nonatomic, assign) CGPoint flashOffset;
 
 @property (nonatomic, assign) ALFlashStatus flashStatus;
 
-@property (nonatomic, weak) id<ALFlashButtonStatusDelegate> delegate;
-@property (nonatomic, weak) id<ALFlashButtonAnimationDelegate> animationDelegate;
+@property (nullable, nonatomic, weak) id<ALFlashButtonStatusDelegate> delegate;
+@property (nullable, nonatomic, weak) id<ALFlashButtonAnimationDelegate> animationDelegate;
 
 - (void)setExpanded:(BOOL)expanded animated:(BOOL)animated;
 
-- (id)initWithFrame:(CGRect)frame flashImage:(UIImage *)flashImage;
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             flashImage:(UIImage * _Nullable)flashImage
+                              alignment:(ALFlashAlignment)flashAlignment
+                              flashMode:(ALFlashMode)flashMode
+                            flashOffset:(CGPoint)flashOffset;
+
 
 @end
 

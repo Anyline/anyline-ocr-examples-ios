@@ -32,5 +32,5 @@
     "beepOnResult": false,
     "vibrateOnResult": false,
     "blinkAnimationOnResult": true,
-    "cancelOnResult": false
+    "cancelOnResult": true
 }

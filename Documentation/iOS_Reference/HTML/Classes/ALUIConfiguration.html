@@ -106,8 +106,6 @@
 		
 		<option value="//api/name/pictureResolution">pictureResolution</option>
 		
-		<option value="//api/name/reportingEnabled">reportingEnabled</option>
-		
 		<option value="//api/name/strokeColor">strokeColor</option>
 		
 		<option value="//api/name/strokeWidth">strokeWidth</option>
@@ -202,7 +200,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSString *defaultCamera</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *defaultCamera</code></div>
 
 		    
 		</div>
@@ -346,7 +344,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) UIBezierPath *cutoutPath</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</code></div>
 
 		    
 		</div>
@@ -394,7 +392,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *cutoutBackgroundColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor</code></div>
 
 		    
 		</div>
@@ -410,7 +408,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIImage *overlayImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *overlayImage</code></div>
 
 		    
 		</div>
@@ -426,7 +424,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *strokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *strokeColor</code></div>
 
 		    
 		</div>
@@ -474,7 +472,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *feedbackStrokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</code></div>
 
 		    
 		</div>
@@ -522,7 +520,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *visualFeedbackStrokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</code></div>
 
 		    
 		</div>
@@ -538,7 +536,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *visualFeedbackFillColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</code></div>
 
 		    
 		</div>
@@ -618,7 +616,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIColor *backgroundColorWithoutAlpha</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *backgroundColorWithoutAlpha</code></div>
 
 		    
 		</div>
@@ -682,7 +680,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIImage *flashImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *flashImage</code></div>
 
 		    
 		</div>
@@ -768,22 +766,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/reportingEnabled" title="reportingEnabled"></a>
-	<h3 class="method-title"><code><a href="#//api/name/reportingEnabled">&nbsp;&nbsp;reportingEnabled</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALReportingMode reportingEnabled</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/cutoutConfigurationFromJsonFile:" title="cutoutConfigurationFromJsonFile:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/cutoutConfigurationFromJsonFile:">+&nbsp;cutoutConfigurationFromJsonFile:</a></code>
 </h3>
@@ -794,7 +776,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)cutoutConfigurationFromJsonFile:(NSString *)<em>jsonFile</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)cutoutConfigurationFromJsonFile:(NSString *_Nonnull)<em>jsonFile</em></code></div>
 
 		    
 		</div>
@@ -810,7 +792,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em> bundlePath:(NSString *)<em>bundlePath</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithDictionary:(NSDictionary *_Nonnull)<em>dictionary</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em></code></div>
 
 		    
 		</div>
@@ -866,7 +848,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (UIBezierPath *)AL_lugPath</code></div>
+			<div class="method-subsection method-declaration"><code>+ (UIBezierPath *_Nullable)AL_lugPath</code></div>
 
 		    
 		</div>
@@ -886,7 +868,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

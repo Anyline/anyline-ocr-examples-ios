@@ -19,6 +19,8 @@
  */
 @interface ALOCRScanPlugin : ALAbstractScanPlugin
 
+@property (nonatomic, strong, readonly) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
+
 /**
  *  Read-only property for the ALOCRConfig
  *

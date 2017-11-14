@@ -92,10 +92,6 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView, @"topGuide" : topGuide}]];
     
-    //Use this line if you want to use/actvitave the simultaneous barcode
-    //set delegate for nativeBarcodeScanning => simultaneous barcode scanning
-    //    [self.anylineEnergyView.videoView setBarcodeDelegate:self];
-    
     self.barcodeResults = [NSMutableDictionary new];
     //Add UISwitch for toggling barcode scanning
     self.enableBarcodeView = [[UIView alloc] init];
@@ -131,6 +127,8 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
     //Save the default cutout offset.
     //This will be used to change the position back if necessary.
     self.defaultCutoutOffset = self.anylineEnergyView.currentConfiguration.cutoutOffset;
+    
+    [self.anylineEnergyView setCancelOnResult:false];
 }
 
 /*
@@ -183,14 +181,16 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
 
 - (IBAction)toggleBarcodeScanning:(id)sender {
     
-    if (self.anylineEnergyView.videoView.barcodeDelegate) {
+    if (self.anylineEnergyView.captureDeviceManager.barcodeDelegate) {
         self.enableBarcodeSwitch.on = false;
-        [self.anylineEnergyView.videoView setBarcodeDelegate:nil];
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:nil];
         //reset found barcodes
         self.barcodeResults = [NSMutableDictionary new];
     } else {
         self.enableBarcodeSwitch.on = true;
-        [self.anylineEnergyView.videoView setBarcodeDelegate:self];
+        //Use this line if you want to use/actvitave the simultaneous barcode
+        //set delegate for nativeBarcodeScanning => simultaneous barcode scanning
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:self];
     }
 }
 
@@ -216,10 +216,13 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
  */
 - (void)swapDoubleTariffPosition {
     int factor = (self.doubleTariffViewOffsetY >= 0) ? -1 : 1;
-    double offset = (fabs(self.doubleTariffViewOffsetY) + self.anylineEnergyView.cutoutRect.size.height/2) * factor;
-    self.doubleTariffShapeLayer.frame = CGRectOffset(self.doubleTariffShapeLayer.frame, 0, offset);
+    double offset = (fabs(self.doubleTariffViewOffsetY) + self.anylineEnergyView.cutoutRect.size.height/2);
     
-    self.anylineEnergyView.currentConfiguration.cutoutOffset = (self.doubleTariffViewOffsetY>0) ? CGPointMake(0, self.doubleTariffViewOffsetY) : self.defaultCutoutOffset;
+    self.doubleTariffShapeLayer.frame = CGRectOffset(self.doubleTariffShapeLayer.frame, 0, factor * offset);
+    
+    ALUIConfiguration *config = [self.anylineEnergyView currentConfiguration];
+    config.cutoutOffset = (self.doubleTariffViewOffsetY>0) ? CGPointMake(0, offset) : self.defaultCutoutOffset;
+    [self.anylineEnergyView setCurrentConfiguration:config];
     
     self.doubleTariffViewOffsetY = -self.doubleTariffViewOffsetY;
 }
@@ -238,12 +241,10 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
             - Start scanning again
         */
         self.isFirstResult = !self.isFirstResult;
-            
+        
         self.firstResult = scanResult.result;
         self.firstCropImage = scanResult.image;
         [self swapDoubleTariffPosition];
-            
-        [self startScanning];
     } else {
         ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
         /*
@@ -258,7 +259,7 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
         vc.barcodeResults = self.barcodeResults;
             
         [self.navigationController pushViewController:vc animated:YES];
-            
+        
         //reset found barcodes
         self.barcodeResults = [NSMutableDictionary new];
             
@@ -273,9 +274,9 @@ NSString * const kDoubleTariffMeterScanLicenseKey = kDemoAppLicenseKey;
 /*
  An additional delegate which will add all found, and unique, barcodes to a Dictionary simultaneously.
  */
--(void)anylineVideoView:(AnylineVideoView *)videoView
-   didFindBarcodeResult:(NSString *)scanResult
-                   type:(NSString *)barcodeType {
+- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager
+               didFindBarcodeResult:(NSString *)scanResult
+                               type:(NSString *)barcodeType {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (![self.barcodeResults objectForKey:scanResult]) {
             [self.barcodeResults setObject:barcodeType forKey:scanResult];

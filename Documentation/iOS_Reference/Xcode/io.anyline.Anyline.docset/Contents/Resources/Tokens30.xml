@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALRunSkippedReason.html">
+	<File path="Classes/ALMeterScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALRunSkippedReason</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
@@ -13,86 +13,109 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setPluginID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setMeterScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setReason:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/reason</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setScanMode:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/reason</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/initWithRunFailure:pluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/scanMode</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode.
+It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason pluginID:(NSString *_Nonnull)pluginID</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
 			
 			
-			<Anchor>//api/name/initWithRunFailure:pluginID:</Anchor>
+			<Anchor>//api/name/scanMode</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setScanMode:error:</TokenIdentifier>
+			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scanMode</Name>
+					<Abstract type="html">The scan mode to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setScanMode:error:</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		

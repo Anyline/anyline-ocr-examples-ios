@@ -2,22 +2,20 @@
 //  ALLicensePlateViewController.m
 //  AnylineExamples
 //
-//  Created by Matthias Gasser on 04/02/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Created by Philipp Müller on 09/10/17.
+//  Copyright © 2017 Anyline GmbH. All rights reserved.
 //
 
 #import "ALLicensePlateViewController.h"
-#import "Anyline/AnylineLicensePlateModuleView.h"
-#import "Anyline/ALLicensePlateResult.h"
 #import <Anyline/Anyline.h>
 #import "ALLicensePlateResultOverlayView.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
-// The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
+// The controller has to conform to <AnylineLicensePlateModuleDelegate> to be able to receive results
 @interface ALLicensePlateViewController ()<AnylineLicensePlateModuleDelegate>
-// The Anyline module used for OCR
+// The Anyline module used for LicensePlate
 @property (nonatomic, strong) AnylineLicensePlateModuleView *licensePlateModuleView;
 
 @end
@@ -55,6 +53,9 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"license_plate_view_config" ofType:@"json"];
     ALUIConfiguration *conf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
     [self.licensePlateModuleView setCurrentConfiguration:conf];
+    
+    //With this method you can enable/disable the reporting - depending on your license type
+    [self.licensePlateModuleView enableReporting:YES];
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.licensePlateModuleView];
@@ -94,7 +95,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     }
 }
 
-#pragma mark -- AnylineOCRModuleDelegate
+#pragma mark -- AnylineLicensePlateModuleDelegate
 
 /*
  This is the main delegate method Anyline uses to report its results

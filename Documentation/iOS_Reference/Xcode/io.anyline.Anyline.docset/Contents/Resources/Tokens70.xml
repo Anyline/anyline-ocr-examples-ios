@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
+	<File path="Protocols/ALMotionDetectorDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMotionDetectorDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
             
 			
 			<NodeRef refid="70"/>
@@ -13,22 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineVideoView:didOutputSampleBuffer:</TokenIdentifier>
-			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
-			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMotionDetectorDelegate/motionDetectorAboveThreshold</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoView</Name>
-					<Abstract type="html">The AnylineVideoView object</Abstract>
-				</Parameter><Parameter>
-					<Name>sampleBuffer</Name>
-					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)motionDetectorAboveThreshold</Declaration>
 			
-			<Anchor>//api/name/anylineVideoView:didOutputSampleBuffer:</Anchor>
+			
+			<Anchor>//api/name/motionDetectorAboveThreshold</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		

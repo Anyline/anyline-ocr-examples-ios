@@ -10,23 +10,16 @@
             "width": 125,
             "height": 85
         },
-        "offset": {
-            "x": 0,
-            "y": 0
-        },
-        "cropPadding": {
-            "x": 0,
-            "y": 0
-        },
-        "cropOffset": {
-            "x": 0,
-            "y": 0
-        },
         "strokeWidth": 2,
         "cornerRadius": 4,
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
-        "outerAlpha": 0.3
+        "outerAlpha": 0.3,
+        "offset": {
+              "x": 0,
+              "y": 70
+          },
+
     },
     "flash": {
         "mode": "manual",

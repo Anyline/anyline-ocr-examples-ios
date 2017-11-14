@@ -82,10 +82,6 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView, @"topGuide" : topGuide}]];
     
-    //Use this line if you want to use/actvitave the simultaneous barcode
-    //set delegate for nativeBarcodeScanning => simultaneous barcode scanning
-    //    [self.anylineEnergyView.videoView setBarcodeDelegate:self];
-    
     self.barcodeResults = [NSMutableDictionary new];
     //Add UISwitch for toggling barcode scanning
     self.enableBarcodeView = [[UIView alloc] init];
@@ -130,7 +126,6 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
-    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -153,14 +148,16 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
 
 - (IBAction)toggleBarcodeScanning:(id)sender {
     
-    if (self.anylineEnergyView.videoView.barcodeDelegate) {
+    if (self.anylineEnergyView.captureDeviceManager.barcodeDelegate) {
         self.enableBarcodeSwitch.on = false;
-        [self.anylineEnergyView.videoView setBarcodeDelegate:nil];
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:nil];
         //reset found barcodes
         self.barcodeResults = [NSMutableDictionary new];
     } else {
         self.enableBarcodeSwitch.on = true;
-        [self.anylineEnergyView.videoView setBarcodeDelegate:self];
+        //Use this line if you want to use/actvitave the simultaneous barcode
+        //set delegate for nativeBarcodeScanning => simultaneous barcode scanning
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:self];
     }
 }
 
@@ -189,9 +186,9 @@ NSString * const kAnalogMeterScanLicenseKey = kDemoAppLicenseKey;
 /*
  An additional delegate which will add all found, and unique, barcodes to a Dictionary simultaneously.
  */
--(void)anylineVideoView:(AnylineVideoView *)videoView
-   didFindBarcodeResult:(NSString *)scanResult
-                   type:(NSString *)barcodeType {
+- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager
+               didFindBarcodeResult:(NSString *)scanResult
+                               type:(NSString *)barcodeType {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (![self.barcodeResults objectForKey:scanResult]) {
             [self.barcodeResults setObject:barcodeType forKey:scanResult];

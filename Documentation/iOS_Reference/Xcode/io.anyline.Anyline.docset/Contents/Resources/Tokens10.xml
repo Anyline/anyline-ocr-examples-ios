@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALDisplayResult.html">
+	<File path="Classes/ALCutoutView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALDisplayResult</TokenIdentifier>
-			<Abstract type="html">The ALDisplayResult encapsulates all the neccessary objects and data
-for the 7-Segment recognition client.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALCutoutView</TokenIdentifier>
+			<Abstract type="html">The ALCutoutView is used to draw the cutout on the phone screen specified in the ALUIConfiguration</Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -14,69 +13,482 @@ for the 7-Segment recognition client.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/numberOfDigits</TokenIdentifier>
-			<Abstract type="html">This method returns the overall number of digits in the display.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
-			
-			<Declaration>- (int)numberOfDigits</Declaration>
-			
-			<ReturnValue><Abstract type="html">Number of digits in display.</Abstract></ReturnValue>
-			<Anchor>//api/name/numberOfDigits</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitsForIdentifier:</TokenIdentifier>
-			<Abstract type="html">Returns the digits for a special identifier.
-Note that there is no sort order garanteed in the array.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)digitsForIdentifier:(NSString *)identifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for some digits.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">All digits with an identifier, no sort order garanteed.</Abstract></ReturnValue>
-			<Anchor>//api/name/digitsForIdentifier:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/stringRepresentationOfDigitsForIdentifier:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutWidthPercent:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)stringRepresentationOfDigitsForIdentifier:(NSString *)identifier</Declaration>
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutWidthPercent</Declaration>
 			
 			
-			<Anchor>//api/name/stringRepresentationOfDigitsForIdentifier:</Anchor>
+			<Anchor>//api/name/cutoutWidthPercent</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/quality</TokenIdentifier>
-			<Abstract type="html">Returns the Quality or accuracy of a whole display scan. This is the average value of all
-the specified digits.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutWidthPercent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
 			
-			<Declaration>- (float)quality</Declaration>
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutWidthPercent</Declaration>
 			
-			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
-			<Anchor>//api/name/quality</Anchor>
+			
+			<Anchor>//api/name/cutoutWidthPercent</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitIdentifiers</TokenIdentifier>
-			<Abstract type="html">Returns all the identifiers for the digit results stored.</Abstract>
-			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutWidthPercent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)digitIdentifiers</Declaration>
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutWidthPercent</Declaration>
 			
-			<ReturnValue><Abstract type="html">Array with all the identifiers randomly sorted.</Abstract></ReturnValue>
-			<Anchor>//api/name/digitIdentifiers</Anchor>
+			
+			<Anchor>//api/name/cutoutWidthPercent</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutMaxPercentWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutMaxPercentWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutMaxPercentWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutMaxPercentHeight:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentHeight</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutMaxPercentHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentHeight</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutMaxPercentHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutMaxPercentHeight</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCornerRadius:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setStrokeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/strokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/strokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger strokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/strokeWidth</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutAlignment:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutAlignment</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutAlignment</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutAlignment</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutAlignment</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutAlignment</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPath</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutPath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPath</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutPath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPath</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setCutoutBackgroundColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutBackgroundColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutBackgroundColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/cutoutBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutBackgroundColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setStrokeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/strokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/strokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *strokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/strokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setFeedbackStrokeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStrokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/feedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStrokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/feedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStrokeColor</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/setOverlayImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *overlayImage</Declaration>
+			
+			
+			<Anchor>//api/name/overlayImage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/overlayImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *overlayImage</Declaration>
+			
+			
+			<Anchor>//api/name/overlayImage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCutoutView/overlayImage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *overlayImage</Declaration>
+			
+			
+			<Anchor>//api/name/overlayImage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame cutoutWidthPercent:(CGFloat)cutoutWidthPercent cutoutMaxPercentWidth:(CGFloat)cutoutMaxPercentWidth cutoutMaxPercentHeight:(CGFloat)cutoutMaxPercentHeight cutoutOffset:(CGPoint)cutoutOffset cornerRadius:(NSInteger)cornerRadius strokeWidth:(NSInteger)strokeWidth cutoutAlignment:(ALCutoutAlignment)cutoutAlignment cutoutPath:(UIBezierPath *_Nonnull)cutoutPath cutoutBackgroundColor:(UIColor *_Nonnull)cutoutBackgroundColor strokeColor:(UIColor *_Nonnull)strokeColor feedbackStrokeColor:(UIColor *_Nonnull)feedbackStrokeColor overlayImage:(UIImage *_Nonnull)overlayImage</Declaration>
+			
+			
+			<Anchor>//api/name/initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutRectScreen</TokenIdentifier>
+			<Abstract type="html">Returns the cutout location inside the view.</Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>- (CGRect)cutoutRectScreen</Declaration>
+			
+			<ReturnValue><Abstract type="html">CGRect representing the cutout inside the CutoutView.</Abstract></ReturnValue>
+			<Anchor>//api/name/cutoutRectScreen</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/drawCutout:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>- (void)drawCutout:(BOOL)feedbackMode</Declaration>
+			
+			
+			<Anchor>//api/name/drawCutout:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/calculateAndDrawCutout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			
+			<Declaration>- (void)calculateAndDrawCutout</Declaration>
+			
+			
+			<Anchor>//api/name/calculateAndDrawCutout</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

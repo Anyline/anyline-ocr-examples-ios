@@ -23,8 +23,6 @@
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
 #import "ALLicensePlateViewController.h"
-#import "ALLicensePlateDEViewController.h"
-#import "ALLicensePlateATViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
 #import "ALSerialNumberScanViewController.h"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALCutoutView.html">
+	<File path="Classes/ALCameraView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALCutoutView</TokenIdentifier>
-			<Abstract type="html">The ALCutoutView is used to draw the cutout on the phone screen specified in the ALUIConfiguration</Abstract>
-			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALCameraView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCameraView.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,46 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/initWithFrame:configuration:</TokenIdentifier>
-			<Abstract type="html">Initialises a new CutoutView with an appropriate frame and configuration</Abstract>
-			<DeclaredIn>ALCutoutView.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithFrame:(CGRect)frame configuration:(ALUIConfiguration *)config</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">The frame for the View.</Abstract>
-				</Parameter><Parameter>
-					<Name>config</Name>
-					<Abstract type="html">The configuation to initialise the cutout.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New ALCoutout instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithFrame:configuration:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/cutoutRectScreen</TokenIdentifier>
-			<Abstract type="html">Returns the cutout location inside the view.</Abstract>
-			<DeclaredIn>ALCutoutView.h</DeclaredIn>
-			
-			<Declaration>- (CGRect)cutoutRectScreen</Declaration>
-			
-			<ReturnValue><Abstract type="html">CGRect representing the cutout inside the CutoutView.</Abstract></ReturnValue>
-			<Anchor>//api/name/cutoutRectScreen</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCutoutView/drawCutout:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraView/initWithFrame:captureDeviceManager:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCutoutView.h</DeclaredIn>
+			<DeclaredIn>ALCameraView.h</DeclaredIn>
 			
-			<Declaration>- (void)drawCutout:(BOOL)feedbackMode</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame captureDeviceManager:(ALCaptureDeviceManager *_Nonnull)captureDeviceManger</Declaration>
 			
 			
-			<Anchor>//api/name/drawCutout:</Anchor>
+			<Anchor>//api/name/initWithFrame:captureDeviceManager:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

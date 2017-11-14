@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineEnergyModuleDelegate.html">
+	<File path="Protocols/ALImageProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineEnergyModuleDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALImageProvider</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="65"/>
@@ -13,51 +13,44 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineEnergyModuleDelegate/anylineEnergyModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">Method with which Anyline will request the next Image to analyse.</Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindResult:(ALEnergyResult *)scanResult</Declaration>
+			<Declaration>- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned result object</Abstract>
-				</Parameter><Parameter>
-					<Name>AnylineEnergyModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler which should be called when the next frame/image
+is available.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineEnergyModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/provideNewImageWithCompletionBlock:</Anchor>
             <NodeRef refid="65"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineEnergyModuleDelegate/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewFullResolutionImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
-				</Parameter><Parameter>
-					<Name>image</Name>
-					<Abstract type="html">The cropped version of the image that contains the scanned number</Abstract>
-				</Parameter><Parameter>
-					<Name>fullImage</Name>
-					<Abstract type="html">The whole image used to scan the number</Abstract>
-				</Parameter><Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The mode the scanner was in at the time of scanning. Has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-				</Parameter><Parameter>
-					<Name>AnylineEnergyModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
 			
-			<Anchor>//api/name/anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:</Anchor>
+			
+			<Anchor>//api/name/provideNewFullResolutionImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="65"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewStillImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideNewStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/provideNewStillImageWithCompletionBlock:</Anchor>
             <NodeRef refid="65"/>
 		</Token>
 		

@@ -59,16 +59,6 @@
 						<NodeRef refid="46"/>
 						<NodeRef refid="47"/>
 						<NodeRef refid="48"/>
-						
-					</Subnodes>
-				</Node>
-				
-				
-                
-				<Node>
-					<Name>Protocols</Name>
-					<Path>index.html</Path>
-					<Subnodes>
 						<NodeRef refid="49"/>
 						<NodeRef refid="50"/>
 						<NodeRef refid="51"/>
@@ -79,6 +69,16 @@
 						<NodeRef refid="56"/>
 						<NodeRef refid="57"/>
 						<NodeRef refid="58"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+                
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
 						<NodeRef refid="59"/>
 						<NodeRef refid="60"/>
 						<NodeRef refid="61"/>
@@ -91,15 +91,6 @@
 						<NodeRef refid="68"/>
 						<NodeRef refid="69"/>
 						<NodeRef refid="70"/>
-						
-					</Subnodes>
-				</Node>
-				
-                
-				<Node>
-					<Name>Constants</Name>
-					<Path>index.html</Path>
-					<Subnodes>
 						<NodeRef refid="71"/>
 						<NodeRef refid="72"/>
 						<NodeRef refid="73"/>
@@ -110,6 +101,15 @@
 						<NodeRef refid="78"/>
 						<NodeRef refid="79"/>
 						<NodeRef refid="80"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
 						<NodeRef refid="81"/>
 						<NodeRef refid="82"/>
 						<NodeRef refid="83"/>
@@ -117,6 +117,17 @@
 						<NodeRef refid="85"/>
 						<NodeRef refid="86"/>
 						<NodeRef refid="87"/>
+						<NodeRef refid="88"/>
+						<NodeRef refid="89"/>
+						<NodeRef refid="90"/>
+						<NodeRef refid="91"/>
+						<NodeRef refid="92"/>
+						<NodeRef refid="93"/>
+						<NodeRef refid="94"/>
+						<NodeRef refid="95"/>
+						<NodeRef refid="96"/>
+						<NodeRef refid="97"/>
+						<NodeRef refid="98"/>
 						
 					</Subnodes>
 				</Node>
@@ -126,7 +137,7 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="88"/>
+                        <NodeRef refid="99"/>
                         
                     </Subnodes>
                 </Node>
@@ -170,6 +181,39 @@
             
         </Node>
 		<Node id="2" type="file" documentType="reference">
+            <Name>ALAbstractScanViewPlugin</Name>
+            <Path>Classes/ALAbstractScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALAbstractScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALAbstractScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALAbstractScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALAbstractScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
             <Name>ALBarcodeResult</Name>
             <Path>Classes/ALBarcodeResult.html</Path>
             
@@ -202,7 +246,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="3" type="file" documentType="reference">
+		<Node id="4" type="file" documentType="reference">
             <Name>ALBarcodeScanPlugin</Name>
             <Path>Classes/ALBarcodeScanPlugin.html</Path>
             
@@ -235,12 +279,105 @@
             </Subnodes>
             
         </Node>
-		<Node id="4" type="file" documentType="reference">
+		<Node id="5" type="file" documentType="reference">
+            <Name>ALBarcodeScanViewPlugin</Name>
+            <Path>Classes/ALBarcodeScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALBarcodeScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALBarcodeScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALBarcodeScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALBarcodeScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>ALCameraView</Name>
+            <Path>Classes/ALCameraView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALCameraView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALCameraView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALCameraView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>ALCaptureDeviceManager</Name>
+            <Path>Classes/ALCaptureDeviceManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALCaptureDeviceManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALCaptureDeviceManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALCaptureDeviceManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALCaptureDeviceManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
             <Name>ALContours</Name>
             <Path>Classes/ALContours.html</Path>
             
         </Node>
-		<Node id="5" type="file" documentType="reference">
+		<Node id="9" type="file" documentType="reference">
             <Name>ALCoreController</Name>
             <Path>Classes/ALCoreController.html</Path>
             
@@ -279,7 +416,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
             <Name>ALCutoutView</Name>
             <Path>Classes/ALCutoutView.html</Path>
             
@@ -295,6 +432,12 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
+                <Node type="section">
+                    <Path>Classes/ALCutoutView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
                 
                 
                 <Node type="section">
@@ -306,7 +449,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>ALDataPoint</Name>
             <Path>Classes/ALDataPoint.html</Path>
             
@@ -345,7 +488,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="8" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>ALDigitDataPoint</Name>
             <Path>Classes/ALDigitDataPoint.html</Path>
             
@@ -378,7 +521,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>ALDigitResult</Name>
             <Path>Classes/ALDigitResult.html</Path>
             
@@ -411,7 +554,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>ALDisplayResult</Name>
             <Path>Classes/ALDisplayResult.html</Path>
             
@@ -438,7 +581,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>ALDocumentScanPlugin</Name>
             <Path>Classes/ALDocumentScanPlugin.html</Path>
             
@@ -471,12 +614,45 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
+            <Name>ALDocumentScanViewPlugin</Name>
+            <Path>Classes/ALDocumentScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALDocumentScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALDocumentScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALDocumentScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALDocumentScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="17" type="file" documentType="reference">
             <Name>ALEnergyResult</Name>
             <Path>Classes/ALEnergyResult.html</Path>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>ALFlashButton</Name>
             <Path>Classes/ALFlashButton.html</Path>
             
@@ -509,7 +685,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>ALIdentification</Name>
             <Path>Classes/ALIdentification.html</Path>
             
@@ -542,7 +718,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>ALImage</Name>
             <Path>Classes/ALImage.html</Path>
             
@@ -575,7 +751,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>ALIndexPath</Name>
             <Path>Classes/ALIndexPath.html</Path>
             
@@ -608,7 +784,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>ALLicensePlateResult</Name>
             <Path>Classes/ALLicensePlateResult.html</Path>
             
@@ -641,7 +817,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>ALLicensePlateScanPlugin</Name>
             <Path>Classes/ALLicensePlateScanPlugin.html</Path>
             
@@ -668,7 +844,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
+            <Name>ALLicensePlateScanViewPlugin</Name>
+            <Path>Classes/ALLicensePlateScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALLicensePlateScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALLicensePlateScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALLicensePlateScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALLicensePlateScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="25" type="file" documentType="reference">
             <Name>ALMRZResult</Name>
             <Path>Classes/ALMRZResult.html</Path>
             
@@ -701,7 +910,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>ALMRZScanPlugin</Name>
             <Path>Classes/ALMRZScanPlugin.html</Path>
             
@@ -717,6 +926,12 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
+                <Node type="section">
+                    <Path>Classes/ALMRZScanPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
                 
                 
                 <Node type="section">
@@ -728,7 +943,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
+            <Name>ALMRZScanViewPlugin</Name>
+            <Path>Classes/ALMRZScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALMRZScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALMRZScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALMRZScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALMRZScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
             <Name>ALMeterResult</Name>
             <Path>Classes/ALMeterResult.html</Path>
             
@@ -761,7 +1009,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>ALMeterScanPlugin</Name>
             <Path>Classes/ALMeterScanPlugin.html</Path>
             
@@ -794,7 +1042,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
+            <Name>ALMeterScanViewPlugin</Name>
+            <Path>Classes/ALMeterScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALMeterScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALMeterScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALMeterScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALMeterScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="31" type="file" documentType="reference">
             <Name>ALMotionDetector</Name>
             <Path>Classes/ALMotionDetector.html</Path>
             
@@ -827,7 +1108,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>ALOCRConfig</Name>
             <Path>Classes/ALOCRConfig.html</Path>
             
@@ -860,7 +1141,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>ALOCRResult</Name>
             <Path>Classes/ALOCRResult.html</Path>
             
@@ -893,7 +1174,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>ALOCRScanPlugin</Name>
             <Path>Classes/ALOCRScanPlugin.html</Path>
             
@@ -926,7 +1207,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
+            <Name>ALOCRScanViewPlugin</Name>
+            <Path>Classes/ALOCRScanViewPlugin.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALOCRScanViewPlugin.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALOCRScanViewPlugin.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALOCRScanViewPlugin.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALOCRScanViewPlugin.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="36" type="file" documentType="reference">
             <Name>ALPolygon</Name>
             <Path>Classes/ALPolygon.html</Path>
             
@@ -959,7 +1273,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>ALROISpec</Name>
             <Path>Classes/ALROISpec.html</Path>
             
@@ -992,7 +1306,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>ALResult</Name>
             <Path>Classes/ALResult.html</Path>
             
@@ -1025,7 +1339,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>ALRunSkippedReason</Name>
             <Path>Classes/ALRunSkippedReason.html</Path>
             
@@ -1058,7 +1372,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>ALScanInfo</Name>
             <Path>Classes/ALScanInfo.html</Path>
             
@@ -1091,7 +1405,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>ALScanResult</Name>
             <Path>Classes/ALScanResult.html</Path>
             
@@ -1124,7 +1438,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>ALSegmentResult</Name>
             <Path>Classes/ALSegmentResult.html</Path>
             
@@ -1157,7 +1471,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>ALSegmentSpec</Name>
             <Path>Classes/ALSegmentSpec.html</Path>
             
@@ -1190,7 +1504,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>ALSquare</Name>
             <Path>Classes/ALSquare.html</Path>
             
@@ -1223,7 +1537,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>ALTextDataPoint</Name>
             <Path>Classes/ALTextDataPoint.html</Path>
             
@@ -1256,7 +1570,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>ALTorchManager</Name>
             <Path>Classes/ALTorchManager.html</Path>
             
@@ -1289,7 +1603,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>ALUIConfiguration</Name>
             <Path>Classes/ALUIConfiguration.html</Path>
             
@@ -1328,7 +1642,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="48" type="file" documentType="reference">
             <Name>ALValuesStack</Name>
             <Path>Classes/ALValuesStack.html</Path>
             
@@ -1361,7 +1675,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="49" type="file" documentType="reference">
             <Name>ALValuesStackFlipping</Name>
             <Path>Classes/ALValuesStackFlipping.html</Path>
             
@@ -1388,7 +1702,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="50" type="file" documentType="reference">
+            <Name>ALVisualFeedbackOverlay</Name>
+            <Path>Classes/ALVisualFeedbackOverlay.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/ALVisualFeedbackOverlay.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/ALVisualFeedbackOverlay.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/ALVisualFeedbackOverlay.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/ALVisualFeedbackOverlay.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="51" type="file" documentType="reference">
             <Name>AnylineAbstractModuleView</Name>
             <Path>Classes/AnylineAbstractModuleView.html</Path>
             
@@ -1421,7 +1768,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="52" type="file" documentType="reference">
             <Name>AnylineBarcodeModuleView</Name>
             <Path>Classes/AnylineBarcodeModuleView.html</Path>
             
@@ -1454,7 +1801,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="53" type="file" documentType="reference">
             <Name>AnylineDocumentModuleView</Name>
             <Path>Classes/AnylineDocumentModuleView.html</Path>
             
@@ -1487,7 +1834,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="54" type="file" documentType="reference">
             <Name>AnylineEnergyModuleView</Name>
             <Path>Classes/AnylineEnergyModuleView.html</Path>
             
@@ -1520,7 +1867,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="55" type="file" documentType="reference">
             <Name>AnylineLicensePlateModuleView</Name>
             <Path>Classes/AnylineLicensePlateModuleView.html</Path>
             
@@ -1553,7 +1900,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="56" type="file" documentType="reference">
             <Name>AnylineMRZModuleView</Name>
             <Path>Classes/AnylineMRZModuleView.html</Path>
             
@@ -1586,7 +1933,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="47" type="file" documentType="reference">
+		<Node id="57" type="file" documentType="reference">
             <Name>AnylineOCRModuleView</Name>
             <Path>Classes/AnylineOCRModuleView.html</Path>
             
@@ -1619,7 +1966,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="48" type="file" documentType="reference">
+		<Node id="58" type="file" documentType="reference">
             <Name>AnylineVideoView</Name>
             <Path>Classes/AnylineVideoView.html</Path>
             
@@ -1654,7 +2001,7 @@
         </Node>
 		
 		
-        <Node id="49" type="file" documentType="reference">
+        <Node id="59" type="file" documentType="reference">
             <Name>ALBarcodeScanPluginDelegate</Name>
             <Path>Protocols/ALBarcodeScanPluginDelegate.html</Path>
             
@@ -1681,7 +2028,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="50" type="file" documentType="reference">
+		<Node id="60" type="file" documentType="reference">
             <Name>ALCoreControllerDelegate</Name>
             <Path>Protocols/ALCoreControllerDelegate.html</Path>
             
@@ -1708,7 +2055,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="51" type="file" documentType="reference">
+		<Node id="61" type="file" documentType="reference">
             <Name>ALDocumentInfoDelegate</Name>
             <Path>Protocols/ALDocumentInfoDelegate.html</Path>
             
@@ -1735,7 +2082,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="52" type="file" documentType="reference">
+		<Node id="62" type="file" documentType="reference">
             <Name>ALDocumentScanPluginDelegate</Name>
             <Path>Protocols/ALDocumentScanPluginDelegate.html</Path>
             
@@ -1762,7 +2109,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="53" type="file" documentType="reference">
+		<Node id="63" type="file" documentType="reference">
             <Name>ALFlashButtonAnimationDelegate</Name>
             <Path>Protocols/ALFlashButtonAnimationDelegate.html</Path>
             
@@ -1789,7 +2136,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="54" type="file" documentType="reference">
+		<Node id="64" type="file" documentType="reference">
             <Name>ALFlashButtonStatusDelegate</Name>
             <Path>Protocols/ALFlashButtonStatusDelegate.html</Path>
             
@@ -1816,7 +2163,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="55" type="file" documentType="reference">
+		<Node id="65" type="file" documentType="reference">
             <Name>ALImageProvider</Name>
             <Path>Protocols/ALImageProvider.html</Path>
             
@@ -1843,7 +2190,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="56" type="file" documentType="reference">
+		<Node id="66" type="file" documentType="reference">
             <Name>ALInfoDelegate</Name>
             <Path>Protocols/ALInfoDelegate.html</Path>
             
@@ -1870,7 +2217,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="57" type="file" documentType="reference">
+		<Node id="67" type="file" documentType="reference">
             <Name>ALLicensePlateScanPluginDelegate</Name>
             <Path>Protocols/ALLicensePlateScanPluginDelegate.html</Path>
             
@@ -1897,7 +2244,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="58" type="file" documentType="reference">
+		<Node id="68" type="file" documentType="reference">
             <Name>ALMRZScanPluginDelegate</Name>
             <Path>Protocols/ALMRZScanPluginDelegate.html</Path>
             
@@ -1924,7 +2271,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="59" type="file" documentType="reference">
+		<Node id="69" type="file" documentType="reference">
             <Name>ALMeterScanPluginDelegate</Name>
             <Path>Protocols/ALMeterScanPluginDelegate.html</Path>
             
@@ -1951,7 +2298,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="60" type="file" documentType="reference">
+		<Node id="70" type="file" documentType="reference">
             <Name>ALMotionDetectorDelegate</Name>
             <Path>Protocols/ALMotionDetectorDelegate.html</Path>
             
@@ -1978,7 +2325,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="61" type="file" documentType="reference">
+		<Node id="71" type="file" documentType="reference">
             <Name>ALOCRScanPluginDelegate</Name>
             <Path>Protocols/ALOCRScanPluginDelegate.html</Path>
             
@@ -2005,7 +2352,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="62" type="file" documentType="reference">
+		<Node id="72" type="file" documentType="reference">
             <Name>AnylineBarcodeModuleDelegate</Name>
             <Path>Protocols/AnylineBarcodeModuleDelegate.html</Path>
             
@@ -2032,7 +2379,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="63" type="file" documentType="reference">
+		<Node id="73" type="file" documentType="reference">
             <Name>AnylineDebugDelegate</Name>
             <Path>Protocols/AnylineDebugDelegate.html</Path>
             
@@ -2059,7 +2406,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="64" type="file" documentType="reference">
+		<Node id="74" type="file" documentType="reference">
             <Name>AnylineDocumentModuleDelegate</Name>
             <Path>Protocols/AnylineDocumentModuleDelegate.html</Path>
             
@@ -2086,7 +2433,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="65" type="file" documentType="reference">
+		<Node id="75" type="file" documentType="reference">
             <Name>AnylineEnergyModuleDelegate</Name>
             <Path>Protocols/AnylineEnergyModuleDelegate.html</Path>
             
@@ -2113,7 +2460,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="66" type="file" documentType="reference">
+		<Node id="76" type="file" documentType="reference">
             <Name>AnylineLicensePlateModuleDelegate</Name>
             <Path>Protocols/AnylineLicensePlateModuleDelegate.html</Path>
             
@@ -2140,7 +2487,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="67" type="file" documentType="reference">
+		<Node id="77" type="file" documentType="reference">
             <Name>AnylineMRZModuleDelegate</Name>
             <Path>Protocols/AnylineMRZModuleDelegate.html</Path>
             
@@ -2167,7 +2514,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="68" type="file" documentType="reference">
+		<Node id="78" type="file" documentType="reference">
             <Name>AnylineNativeBarcodeDelegate</Name>
             <Path>Protocols/AnylineNativeBarcodeDelegate.html</Path>
             
@@ -2194,7 +2541,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="69" type="file" documentType="reference">
+		<Node id="79" type="file" documentType="reference">
             <Name>AnylineOCRModuleDelegate</Name>
             <Path>Protocols/AnylineOCRModuleDelegate.html</Path>
             
@@ -2221,7 +2568,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="70" type="file" documentType="reference">
+		<Node id="80" type="file" documentType="reference">
             <Name>AnylineVideoDataSampleBufferDelegate</Name>
             <Path>Protocols/AnylineVideoDataSampleBufferDelegate.html</Path>
             
@@ -2249,93 +2596,98 @@
             
         </Node>
 		
-        <Node id="71" type="file" documentType="reference">
+        <Node id="81" type="file" documentType="reference">
             <Name>ALBarcodeFormatOptions</Name>
             <Path>Constants/ALBarcodeFormatOptions.html</Path>
             
         </Node>
-		<Node id="72" type="file" documentType="reference">
+		<Node id="82" type="file" documentType="reference">
             <Name>ALCaptureViewMode</Name>
             <Path>Constants/ALCaptureViewMode.html</Path>
             
         </Node>
-		<Node id="73" type="file" documentType="reference">
+		<Node id="83" type="file" documentType="reference">
             <Name>ALCaptureViewResolution</Name>
             <Path>Constants/ALCaptureViewResolution.html</Path>
             
         </Node>
-		<Node id="74" type="file" documentType="reference">
+		<Node id="84" type="file" documentType="reference">
             <Name>ALCutoutAlignment</Name>
             <Path>Constants/ALCutoutAlignment.html</Path>
             
         </Node>
-		<Node id="75" type="file" documentType="reference">
+		<Node id="85" type="file" documentType="reference">
             <Name>ALDocumentError</Name>
             <Path>Constants/ALDocumentError.html</Path>
             
         </Node>
-		<Node id="76" type="file" documentType="reference">
+		<Node id="86" type="file" documentType="reference">
+            <Name>ALErrorCode</Name>
+            <Path>Constants/ALErrorCode.html</Path>
+            
+        </Node>
+		<Node id="87" type="file" documentType="reference">
             <Name>ALFlashAlignment</Name>
             <Path>Constants/ALFlashAlignment.html</Path>
             
         </Node>
-		<Node id="77" type="file" documentType="reference">
+		<Node id="88" type="file" documentType="reference">
             <Name>ALFlashMode</Name>
             <Path>Constants/ALFlashMode.html</Path>
             
         </Node>
-		<Node id="78" type="file" documentType="reference">
+		<Node id="89" type="file" documentType="reference">
             <Name>ALFlashStatus</Name>
             <Path>Constants/ALFlashStatus.html</Path>
             
         </Node>
-		<Node id="79" type="file" documentType="reference">
+		<Node id="90" type="file" documentType="reference">
             <Name>ALOCRError</Name>
             <Path>Constants/ALOCRError.html</Path>
             
         </Node>
-		<Node id="80" type="file" documentType="reference">
+		<Node id="91" type="file" documentType="reference">
             <Name>ALOCRScanMode</Name>
             <Path>Constants/ALOCRScanMode.html</Path>
             
         </Node>
-		<Node id="81" type="file" documentType="reference">
+		<Node id="92" type="file" documentType="reference">
             <Name>ALPictureResolution</Name>
             <Path>Constants/ALPictureResolution.html</Path>
             
         </Node>
-		<Node id="82" type="file" documentType="reference">
+		<Node id="93" type="file" documentType="reference">
             <Name>ALReportingMode</Name>
             <Path>Constants/ALReportingMode.html</Path>
             
         </Node>
-		<Node id="83" type="file" documentType="reference">
+		<Node id="94" type="file" documentType="reference">
             <Name>ALRunFailure</Name>
             <Path>Constants/ALRunFailure.html</Path>
             
         </Node>
-		<Node id="84" type="file" documentType="reference">
+		<Node id="95" type="file" documentType="reference">
             <Name>ALScanMode</Name>
             <Path>Constants/ALScanMode.html</Path>
             
         </Node>
-		<Node id="85" type="file" documentType="reference">
+		<Node id="96" type="file" documentType="reference">
             <Name>ALScanResultState</Name>
             <Path>Constants/ALScanResultState.html</Path>
             
         </Node>
-		<Node id="86" type="file" documentType="reference">
+		<Node id="97" type="file" documentType="reference">
             <Name>ALUIFeedbackStyle</Name>
             <Path>Constants/ALUIFeedbackStyle.html</Path>
             
         </Node>
-		<Node id="87" type="file" documentType="reference">
+		<Node id="98" type="file" documentType="reference">
             <Name>ALUIVisualFeedbackAnimation</Name>
             <Path>Constants/ALUIVisualFeedbackAnimation.html</Path>
             
         </Node>
 		
-        <Node id="88" type="file" documentType="reference">
+        <Node id="99" type="file" documentType="reference">
             <Name>ALImageProviderBlock</Name>
             <Path>Blocks/ALImageProviderBlock.html</Path>
             

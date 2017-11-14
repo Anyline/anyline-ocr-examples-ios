@@ -23,8 +23,8 @@
     "visualFeedback": {
         "style": "rect",
         "strokeWidth": 3,
-        "strokeColor": "8800FF00",
-        "fillColor": "3300FF00",
+        "strokeColor": "880099FF",
+        "fillColor": "330099FF",
         "cornerRadius": 10
         
     },

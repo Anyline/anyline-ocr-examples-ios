@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALReportingMode.html">
+	<File path="Constants/ALCaptureViewMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALReportingMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="82"/>
@@ -14,31 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingEnabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeBGRA</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingEnabled</Declaration>
+            <Declaration>ALCaptureViewModeBGRA</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="82"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingDisabled</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeYUV</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALReportingDisabled</Declaration>
+            <Declaration>ALCaptureViewModeYUV</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
-            
-            <NodeRef refid="82"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingNotSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALReportingNotSet</Declaration>
-            
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="82"/>
         </Token>

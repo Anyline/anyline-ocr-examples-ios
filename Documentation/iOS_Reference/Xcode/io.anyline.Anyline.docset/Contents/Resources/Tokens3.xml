@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALBarcodeScanPlugin.html">
+	<File path="Classes/ALBarcodeResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALBarcodeScanPlugin</TokenIdentifier>
-			<Abstract type="html">The ALBarcodeScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode.</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALBarcodeResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineBarcodePlugin</Abstract>
+			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -13,100 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/setBarcodeFormatOptions:</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/setBarcodeFormat:</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/barcodeFormat</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/barcodeFormatOptions</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/barcodeFormat</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/barcodeFormat</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeScanPlugin/barcodeFormatOptions</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBarcodeResult/barcodeFormat</TokenIdentifier>
+			<Abstract type="html">The scanned barcode format</Abstract>
+			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/barcodeFormat</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALBarcodeScanPluginDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALBarcodeScanPluginDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/barcodeFormatForString:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeResult/initWithResult:image:fullImage:confidence:pluginID:barcodeFormat:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
 			
-			<Declaration>- (ALBarcodeFormat)barcodeFormatForString:(NSString *_Nullable)barcodeFormatString</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeFormatForString:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/addDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)addDelegate:(id&lt;ALBarcodeScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID barcodeFormat:(ALBarcodeFormat)barcodeFormat</Declaration>
 			
 			
-			<Anchor>//api/name/addDelegate:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/removeDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)removeDelegate:(id&lt;ALBarcodeScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/removeDelegate:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:barcodeFormat:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

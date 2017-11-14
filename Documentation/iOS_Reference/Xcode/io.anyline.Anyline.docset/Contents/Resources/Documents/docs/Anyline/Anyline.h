@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 // Anyline UIViews
-#import "AnylineVideoView.h"
 #import "ALCutoutView.h"
 #import "ALFlashButton.h"
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMRZScanPluginDelegate.html">
+	<File path="Classes/AnylineVideoView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMRZScanPluginDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineVideoView</TokenIdentifier>
+			<Abstract type="html">The AnylineVideoView renders the CapturePreview from the Camera on the screen. It also handles an efficient way to extract frames
+from the Video and provide them to Anyline with the ALImageProvider protocol. It should be initialised via ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -13,22 +14,364 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMRZScanPluginDelegate/anylineMRZScanPlugin:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFlashButton:</TokenIdentifier>
+			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineMRZScanPlugin:(ALMRZScanPlugin *_Nonnull)anylineMRZScanPlugin didFindResult:(ALMRZResult *_Nonnull)scanResult</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/flashButton</TokenIdentifier>
+			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/flashButton</TokenIdentifier>
+			<Abstract type="html">The FlashButton subview. Can be configured in the ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALFlashButton *flashButton</Declaration>
+			
+			
+			<Anchor>//api/name/flashButton</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setCutoutView:</TokenIdentifier>
+			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/cutoutView</TokenIdentifier>
+			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/cutoutView</TokenIdentifier>
+			<Abstract type="html">The CutoutView subview. Configurable with an ALUIConfiguration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALCutoutView *cutoutView</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutView</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setWatermarkRect:</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/watermarkRect</TokenIdentifier>
+			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
+			
+			
+			<Anchor>//api/name/watermarkRect</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setTorchManager:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/torchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/torchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALTorchManager *torchManager</Declaration>
+			
+			
+			<Anchor>//api/name/torchManager</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setBarcodeDelegate:</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/barcodeDelegate</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/barcodeDelegate</TokenIdentifier>
+			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setSampleBufferDelegate:</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineVideoView/sampleBufferDelegate</TokenIdentifier>
+			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferDelegate</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:configuration:</TokenIdentifier>
+			<Abstract type="html">Initialises a new AnylineVideoView with a frame and a configuration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFrame:(CGRect)frame configuration:(ALUIConfiguration *)configuration</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineMRZScanPlugin</Name>
-					<Abstract type="html">The plugin that scanned the result</Abstract>
+					<Name>frame</Name>
+					<Abstract type="html">The frame where the view should be positioned.</Abstract>
 				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Name>configuration</Name>
+					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFrame:configuration:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithFrame:</TokenIdentifier>
+			<Abstract type="html">Initialises a new AnylineVideoView with a frame. The CaptureView will be initialised with the default 720p
+video. No FlashButton or CutoutView will be initialised.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFrame:(CGRect)frame</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">The frame where the view should be positioned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFrame:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:configuration:</TokenIdentifier>
+			<Abstract type="html">Initialises a new AnylineVideoView with a coder and a configuration.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder configuration:(ALUIConfiguration *)configuration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>configuration</Name>
+					<Abstract type="html">The configuration used to load the video view and the subviews.</Abstract>
+				</Parameter><Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">The coder to initialise the view.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoder:configuration:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/initWithCoder:</TokenIdentifier>
+			<Abstract type="html">Initialises a new AnylineVideoView with a coder. The CaptureView will be initialised with the default 720p
+video. No FlashButton or CutoutView will be initialised.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithCoder:(NSCoder *)aDecoder</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">The coder to initialise the view.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of AnylineVideoView.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCoder:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/startVideoAndReturnError:</TokenIdentifier>
+			<Abstract type="html">Starts the video preview and frame extraction.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)startVideoAndReturnError:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error if starting fails.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES/NO if starting succeed/failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/startVideoAndReturnError:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/stopVideo</TokenIdentifier>
+			<Abstract type="html">Stops the video preview and frame extraction.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (void)stopVideo</Declaration>
+			
+			
+			<Anchor>//api/name/stopVideo</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/setFocusAndExposurePoint:</TokenIdentifier>
+			<Abstract type="html">You can set a custom focus &amp;amp; exposure point here. CGPoint value has to be between 0 and 1 like in the Apple interface.</Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (void)setFocusAndExposurePoint:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">Point with values between 0 and 1.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineMRZScanPlugin:didFindResult:</Anchor>
+			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/captureStillImageAndStopWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (void)captureStillImageAndStopWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/captureStillImageAndStopWithCompletionBlock:</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineVideoView/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineVideoView.h</DeclaredIn>
+			
+			<Declaration>- (ALSquare *)resizeSquareToFullImageSquare:(ALSquare *)square withImageSize:(CGSize)imageSize resizeWidth:(CGFloat)resizeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/resizeSquareToFullImageSquare:withImageSize:resizeWidth:</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		

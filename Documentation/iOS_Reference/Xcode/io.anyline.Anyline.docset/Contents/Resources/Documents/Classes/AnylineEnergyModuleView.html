@@ -60,6 +60,8 @@
 		
 		<option value="//api/name/meterScanPlugin">meterScanPlugin</option>
 		
+		<option value="//api/name/meterScanViewPlugin">meterScanViewPlugin</option>
+		
 		<option value="//api/name/scanMode">scanMode</option>
 		
 	</optgroup>
@@ -69,8 +71,6 @@
 
 	
 	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/setScanMode:">- setScanMode:</option>
 		
 		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
 		
@@ -130,6 +130,22 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/meterScanViewPlugin" title="meterScanViewPlugin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/meterScanViewPlugin">&nbsp;&nbsp;meterScanViewPlugin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/meterScanPlugin" title="meterScanPlugin"></a>
 	<h3 class="method-title"><code><a href="#//api/name/meterScanPlugin">&nbsp;&nbsp;meterScanPlugin</a></code>
 </h3>
@@ -140,7 +156,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</code></div>
 
 		    
 		</div>
@@ -156,7 +172,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</code></div>
 
 		    
 		</div>
@@ -204,59 +220,6 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setScanMode:" title="setScanMode:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setScanMode:">&ndash;&nbsp;setScanMode:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the scan mode. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since 3.4</span>)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setScanMode:(ALScanMode)<em>scanMode</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>scanMode</code></th>
-						<td><p>The scan mode to set.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AnylineEnergyModuleView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/setScanMode:error:" title="setScanMode:error:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setScanMode:error:">&ndash;&nbsp;setScanMode:error:</a></code>
 </h3>
@@ -273,7 +236,7 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)setScanMode:(ALScanMode)<em>scanMode</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)setScanMode:(ALScanMode)<em>scanMode</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -336,7 +299,7 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)setupWithLicenseKey:(NSString *)<em>licenseKey</em> delegate:(id&lt;AnylineEnergyModuleDelegate&gt;)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;AnylineEnergyModuleDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -402,7 +365,7 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -10,6 +10,7 @@
 #import "ALMeterResult.h"
 #import "ALMeterScanPlugin.h"
 #import "ALBarcodeScanPlugin.h"
+#import "ALMeterScanViewPlugin.h"
 
 @protocol AnylineEnergyModuleDelegate;
 
@@ -22,9 +23,11 @@
  */
 @interface AnylineEnergyModuleView : AnylineAbstractModuleView
 
-@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
+@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
 
-@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
+@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
+
+@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
 
 /**
  *  Sets the scan mode. 
@@ -34,15 +37,6 @@
 @property (nonatomic, assign, readonly) ALScanMode scanMode;
 
 /**
- *  Sets the scan mode.
- *
- *  @param scanMode The scan mode to set.
- *
- *  @deprecated since 3.4
- */
-- (void)setScanMode:(ALScanMode)scanMode __deprecated_msg("Deprecated since 3.4. Use method setScanMode:error: instead.");
-
-/**
  *  Sets the scan mode and returns an NSError if something failed.
  *
  *  @param scanMode The scan mode to set.
@@ -50,7 +44,7 @@
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError **)error;
+- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
 
 /**
  *  Sets the license key and delegate.
@@ -61,9 +55,9 @@
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString *)licenseKey
-                   delegate:(id<AnylineEnergyModuleDelegate>)delegate
-                      error:(NSError **)error;
+- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+                   delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate
+                      error:(NSError * _Nullable * _Nullable )error;
 
 @end
 
@@ -78,8 +72,8 @@
  *
  *  @since 3.10
  */
-- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
-                  didFindResult:(ALEnergyResult *)scanResult;
+- (void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView
+                  didFindResult:(ALEnergyResult * _Nonnull)scanResult;
 @optional
 /**
  *  Returns the scanned value
@@ -92,10 +86,10 @@
  *
  *  @deprecated since 3.10
  */
-- (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
-              didFindScanResult:(NSString *)scanResult
-                      cropImage:(UIImage *)image
-                      fullImage:(UIImage *)fullImage
+- (void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView
+              didFindScanResult:(NSString * _Nonnull)scanResult
+                      cropImage:(UIImage * _Nonnull)image
+                      fullImage:(UIImage * _Nonnull)fullImage
                          inMode:(ALScanMode)scanMode __deprecated_msg("Deprecated since 3.10 Use AnylineDebugDelegate instead.");
 
 @end

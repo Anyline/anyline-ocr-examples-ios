@@ -13,6 +13,42 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanPlugin/setInfoDelegates:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALInfoDelegate&gt; *infoDelegates</Declaration>
+			
+			
+			<Anchor>//api/name/infoDelegates</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanPlugin/infoDelegates</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALInfoDelegate&gt; *infoDelegates</Declaration>
+			
+			
+			<Anchor>//api/name/infoDelegates</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanPlugin/infoDelegates</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALInfoDelegate&gt; *infoDelegates</Declaration>
+			
+			
+			<Anchor>//api/name/infoDelegates</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanPlugin/setPluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanPlugin.h</DeclaredIn>

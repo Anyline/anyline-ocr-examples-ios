@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/ALPictureResolution.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/ALPictureResolution</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="92"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionNone</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPictureResolutionNone</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="92"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolutionHighest</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPictureResolutionHighest</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="92"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution1080</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPictureResolution1080</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="92"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution720</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPictureResolution720</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="92"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPictureResolution480</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPictureResolution480</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="92"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

@@ -4,7 +4,7 @@
         "style": "rect",
         "maxWidthPercent": "80%",
         "maxHeightPercent": "80%",
-        "alignment": "top_half",
+        "alignment": "TOP_HALF",
         "width": 900,
         "ratioFromSize": {
             "width": 10,
@@ -14,21 +14,22 @@
         "cornerRadius": 10,
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
-        "outerAlpha": 0.3,
-        "feedbackStrokeColor": "AA007ACC"
+        "outerAlpha": 0.3
     },
     "flash": {
         "mode": "manual",
         "alignment": "top_left"
     },
+    "visualFeedback": {
+        "style": "CONTOUR_RECT",
+        "strokeWidth": 1,
+        "strokeColor": "0099FF",
+        "fillColor": "110099FF",
+        "cornerRadius": 10
+        
+    },
     "beepOnResult": true,
     "vibrateOnResult": true,
     "blinkAnimationOnResult": true,
-    "cancelOnResult": true,
-    "visualFeedback": {
-        "style": "contour_rect",
-        "strokeColor": "0AFC94",
-        "strokeWidth": 1,
-        "fillColor": "110AFC94"
-    }
+    "cancelOnResult": true
 }

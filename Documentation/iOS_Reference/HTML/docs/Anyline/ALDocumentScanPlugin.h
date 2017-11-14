@@ -48,6 +48,9 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  */
 @interface ALDocumentScanPlugin : NSObject
 
+@property (nonatomic, strong, readonly) NSHashTable<ALDocumentScanPluginDelegate> * _Nullable delegates;
+@property (nonatomic, strong, readonly) NSHashTable<ALDocumentInfoDelegate> * _Nullable infoDelegates;
+
 @property (nullable, nonatomic, strong, readonly) NSString *pluginID;
 
 @property (nullable, nonatomic, strong, readonly) ALImage *scanImage;
@@ -224,7 +227,6 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  */
 - (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin * _Nonnull)anylineDocumentScanPlugin
                        reportInfo:(ALScanInfo * _Nonnull)scanInfo;
-
 
 @end
 

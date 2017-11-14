@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALIndexPath.html">
+	<File path="Classes/ALDocumentScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALIndexPath</TokenIdentifier>
-			<Abstract type="html">With the ALIndexPath the position of the Digit can be specified.
-Digits are sectioned in line and the position in the line.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDocumentScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -14,111 +13,50 @@ Digits are sectioned in line and the position in the line.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/setLine:</TokenIdentifier>
-			<Abstract type="html">The line of the digit.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/setDocumentScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) NSInteger line</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/line</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/line</TokenIdentifier>
-			<Abstract type="html">The line of the digit.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/documentScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) NSInteger line</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/line</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIndexPath/line</TokenIdentifier>
-			<Abstract type="html">The line of the digit.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanViewPlugin/documentScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) NSInteger line</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/line</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/setPositionInLine:</TokenIdentifier>
-			<Abstract type="html">The position of the digit in the line.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
-			
-			
-			<Anchor>//api/name/positionInLine</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/positionInLine</TokenIdentifier>
-			<Abstract type="html">The position of the digit in the line.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/positionInLine</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALIndexPath/positionInLine</TokenIdentifier>
-			<Abstract type="html">The position of the digit in the line.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
-			
-			
-			<Anchor>//api/name/positionInLine</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/initWithPosition:inLine:</TokenIdentifier>
-			<Abstract type="html">Initialise an IndexPath with a position and line.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithPosition:(NSInteger)position inLine:(NSInteger)line</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">The position of the digit in the line.</Abstract>
-				</Parameter><Parameter>
-					<Name>line</Name>
-					<Abstract type="html">The line of the digit.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new IndexPath for a digit.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithPosition:inLine:</Anchor>
-            <NodeRef refid="16"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/compare:</TokenIdentifier>
-			<Abstract type="html">Compares two IndexPaths and returns the comparison result.</Abstract>
-			<DeclaredIn>ALIndexPath.h</DeclaredIn>
-			
-			<Declaration>- (NSComparisonResult)compare:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">An other IndexPath object to compare to.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The NSComparisonResult for the the 2 IndexPaths.</Abstract></ReturnValue>
-			<Anchor>//api/name/compare:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

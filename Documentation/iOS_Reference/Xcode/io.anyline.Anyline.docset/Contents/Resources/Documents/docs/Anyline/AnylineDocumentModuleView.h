@@ -9,6 +9,7 @@
 #import "AnylineAbstractModuleView.h"
 #import "ALSquare.h"
 #import "ALDocumentScanPlugin.h"
+#import "ALDocumentScanViewPlugin.h"
 
 @protocol AnylineDocumentModuleDelegate;
 
@@ -20,7 +21,9 @@
  */
 @interface AnylineDocumentModuleView : AnylineAbstractModuleView
 
-@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
+@property (nullable, nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
+
+@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
 /**
  *  Sets the license key and delegate.
  *
@@ -30,9 +33,9 @@
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString *)licenseKey
-                   delegate:(id<AnylineDocumentModuleDelegate>)delegate
-                      error:(NSError **)error;
+- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+                   delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate
+                      error:(NSError * _Nullable  * _Nullable )error;
 
 /**
  * Maximum deviation for the ratio. 0.15 is the default
@@ -40,7 +43,7 @@
  *
  * @since 3.8
  */
-@property (nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
+@property (nullable, nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
 
 /**
  * Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).
@@ -50,9 +53,9 @@
  * 
  * @since 3.8
  */
-- (void)setDocumentRatios:(NSArray<NSNumber*>*)ratios;
+- (void)setDocumentRatios:(NSArray<NSNumber*>* _Nonnull)ratios;
 
-- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error;
+- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError * _Nullable * _Nullable )error;
 
 /**
  *  Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
@@ -84,7 +87,6 @@
                              image:(ALImage * _Nullable)image
                              error:(NSError * _Nullable * _Nullable)error;
 
-
 @end
 
 @protocol AnylineDocumentModuleDelegate <NSObject>
@@ -101,10 +103,10 @@
  * @param corners          The corners of the document in the full frame
  * @since 3.6.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-                        hasResult:(UIImage *)transformedImage
-                        fullImage:(UIImage *)fullFrame
-                  documentCorners:(ALSquare *)corners;
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
+                        hasResult:(UIImage * _Nonnull)transformedImage
+                        fullImage:(UIImage * _Nonnull)fullFrame
+                  documentCorners:(ALSquare * _Nonnull)corners;
 
 @optional
 
@@ -119,9 +121,9 @@
  *
  * @deprecated since 3.6.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-                        hasResult:(UIImage *)transformedImage
-                        fullImage:(UIImage *)fullFrame __deprecated_msg("Deprecated since 3.6.1 Use method anylineDocumentModuleView:hasResult:fullImage:documentCorners: instead.");
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
+                        hasResult:(UIImage * _Nonnull)transformedImage
+                        fullImage:(UIImage * _Nonnull)fullFrame __deprecated_msg("Deprecated since 3.6.1 Use method anylineDocumentModuleView:hasResult:fullImage:documentCorners: instead.");
 
 
 /**
@@ -135,9 +137,9 @@
  *
  * @since 3.6.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-           detectedPictureCorners:(ALSquare *)corners
-                          inImage:(UIImage *)image;
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
+           detectedPictureCorners:(ALSquare * _Nonnull)corners
+                          inImage:(UIImage * _Nonnull)image;
 
 /**
  * Called if the preview scan detected a sharp and correctly placed document.
@@ -146,8 +148,8 @@
  * @param anylineImage The image of the successful preview. There is no transformation performed on this image.
  * @since 3.3.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-             reportsPreviewResult:(UIImage *)image;
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
+             reportsPreviewResult:(UIImage * _Nonnull)image;
 
 /** 
  * Called if the preview run failed on an image. The error is provided, and the next run is started automatically.
@@ -155,7 +157,7 @@
  * @param error The error of the preview run.
  * @since 3.3.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
   reportsPreviewProcessingFailure:(ALDocumentError)error;
 
 
@@ -166,7 +168,7 @@
  * @param error The error of the full frame run
  * @since 3.3.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
   reportsPictureProcessingFailure:(ALDocumentError)error;
 
 
@@ -181,8 +183,8 @@
  * drawn by the {@link DocumentScanView}
  * @since 3.3.1
  */
-- (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
-          documentOutlineDetected:(NSArray *)outline
+- (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView
+          documentOutlineDetected:(NSArray * _Nonnull)outline
                       anglesValid:(BOOL)anglesValid;
 
 /**
@@ -192,7 +194,7 @@
  *
  * @since 3.3.1
  */
-- (void)anylineDocumentModuleViewTakePictureSuccess:(AnylineDocumentModuleView *)anylineDocumentModuleView;
+- (void)anylineDocumentModuleViewTakePictureSuccess:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView;
 
 
 /**
@@ -201,6 +203,6 @@
  * @param error The error that was thrown during taking the picture
  * @since 3.3.1
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView takePictureError:(NSError *)error;
+- (void)anylineDocumentModuleView:(AnylineDocumentModuleView * _Nonnull)anylineDocumentModuleView takePictureError:(NSError * _Nonnull)error;
 
 @end

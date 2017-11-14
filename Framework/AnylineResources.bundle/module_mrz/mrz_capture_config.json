@@ -5,11 +5,11 @@
         "style": "rect",
         "maxWidthPercent": "90%",
         "maxHeightPercent": "90%",
+        "alignment": "center",
         "ratioFromSize" : {
             "width": 125,
             "height": 85
         },
-        "alignment": "top_half",
         "strokeWidth": 2,
         "cornerRadius": 4,
         "strokeColor": "FFFFFF",
@@ -24,10 +24,16 @@
             "x": 0,
             "y": 90
         },
+        "feedbackStrokeColor": "0099FF"
+        ,
+        "offset": {
+              "x": 0,
+              "y": 30
+          }
     },
     "flash": {
         "mode": "manual",
-        "alignment": "top_left"
+        "alignment": "top_left",
     },
     "beepOnResult": true,
     "vibrateOnResult": true,

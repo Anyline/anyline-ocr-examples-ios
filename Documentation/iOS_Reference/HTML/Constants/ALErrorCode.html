@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALErrorCode Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALErrorCode Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>ALError.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">ALErrorCode</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>The Error Domain used by the Anyline SDK</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, ALErrorCode ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALOperationNotFound</a> = 1001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALSyntaxError</a> = 2001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALTypeError</a> = 2002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALParameterInvalid</a> = 2003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALLicenseKeyInvalid</a> = 3001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALLicenseNotValidForFunction</a> = 3002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkImageNotFound</a> = 3003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkNotOnWindow</a> = 3004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkNotCorrectInViewHierarchy</a> = 3005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkHidden</a> = 3006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkOutsideApplicationFrame</a> = 3007,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkNotNearCutout</a> = 3008,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewBoundsOutOfSnyc</a> = 3009,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewTooSmall</a> = 3010,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewNoSubviewsAllowed</a> = 3011,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewAlphaViolation</a> = 3012,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewCountViolation</a> = 3013,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkViewSubviewOnTopViolation</a> = 3014,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkImageModified</a> = 3015,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALWatermarkUnknownError</a> = 3016,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALArgumentIsNull</a> = 4001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALArgumentIsEmpty</a> = 4002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALArgumentNotValid</a> = 4003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALInterpreterNotLoaded</a> = 4004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALNotEnoughContoursFound</a> = 5001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALStackDidNotFoundResult</a> = 5002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALDigitFirstDistanceExceeded</a> = 5003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALDistanceBetweenDigitsExceeded</a> = 5004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALDistanceViolationsNotResolved</a> = 5005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALResultNotValid</a> = 5006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALInvalidDataPointIdentifier</a> = 5007,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALRegionOfInterestOutsideImageBounds</a> = 5008,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALNotEnoughPointsFound</a> = 5009,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALAnglesOutsideOfTolerance</a> = 5010,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALImageNotSharp</a> = 5011,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALTooDark</a> = 5012,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALTooMuchReflections</a> = 5013,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALConfidenceNotReached</a> = 5014,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALStringPatternNotMatching</a> = 5015,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALIntAssertionFailed</a> = 5016,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALDocumentRatioOutsideOfTolerance</a> = 5019,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALDocumentBoundsOutsideOfTolerance</a> = 5020,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALOtherConditionNotMet</a> = 5555,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALNoInformationFound</a> = 6001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALImageColorConvertionProblem</a> = 6002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALImageProviderIsNil</a> = 7001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALRunStopError</a> = 7002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALSingleImageRunError</a> = 7003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALCameraResolutionNotSupportedByDevice</a> = 8001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALCameraAccessDenied</a> = 8002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALModuleSimpleOCRConfigIsNil</a> = 9001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALModuleSimpleOCRConfigTesseractConfigIsNil</a> = 9002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALModuleSimpleOCRConfigTextHeightNotSet</a> = 9003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALBarcodeModuleNativeDelegateWrong</a> = 9004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">ALEnergyScanPluginBarcodeNotSupported</a> = 9005,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="ALOperationNotFound"></a><code>ALOperationNotFound</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALSyntaxError"></a><code>ALSyntaxError</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALTypeError"></a><code>ALTypeError</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALParameterInvalid"></a><code>ALParameterInvalid</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALLicenseKeyInvalid"></a><code>ALLicenseKeyInvalid</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALLicenseNotValidForFunction"></a><code>ALLicenseNotValidForFunction</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkImageNotFound"></a><code>ALWatermarkImageNotFound</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkNotOnWindow"></a><code>ALWatermarkNotOnWindow</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkNotCorrectInViewHierarchy"></a><code>ALWatermarkNotCorrectInViewHierarchy</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkHidden"></a><code>ALWatermarkHidden</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkOutsideApplicationFrame"></a><code>ALWatermarkOutsideApplicationFrame</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkNotNearCutout"></a><code>ALWatermarkNotNearCutout</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewBoundsOutOfSnyc"></a><code>ALWatermarkViewBoundsOutOfSnyc</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewTooSmall"></a><code>ALWatermarkViewTooSmall</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewNoSubviewsAllowed"></a><code>ALWatermarkViewNoSubviewsAllowed</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewAlphaViolation"></a><code>ALWatermarkViewAlphaViolation</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewCountViolation"></a><code>ALWatermarkViewCountViolation</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkViewSubviewOnTopViolation"></a><code>ALWatermarkViewSubviewOnTopViolation</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkImageModified"></a><code>ALWatermarkImageModified</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALWatermarkUnknownError"></a><code>ALWatermarkUnknownError</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALArgumentIsNull"></a><code>ALArgumentIsNull</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALArgumentIsEmpty"></a><code>ALArgumentIsEmpty</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALArgumentNotValid"></a><code>ALArgumentNotValid</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALInterpreterNotLoaded"></a><code>ALInterpreterNotLoaded</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALNotEnoughContoursFound"></a><code>ALNotEnoughContoursFound</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALStackDidNotFoundResult"></a><code>ALStackDidNotFoundResult</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALDigitFirstDistanceExceeded"></a><code>ALDigitFirstDistanceExceeded</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALDistanceBetweenDigitsExceeded"></a><code>ALDistanceBetweenDigitsExceeded</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALDistanceViolationsNotResolved"></a><code>ALDistanceViolationsNotResolved</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALResultNotValid"></a><code>ALResultNotValid</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALInvalidDataPointIdentifier"></a><code>ALInvalidDataPointIdentifier</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALRegionOfInterestOutsideImageBounds"></a><code>ALRegionOfInterestOutsideImageBounds</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALNotEnoughPointsFound"></a><code>ALNotEnoughPointsFound</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALAnglesOutsideOfTolerance"></a><code>ALAnglesOutsideOfTolerance</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALImageNotSharp"></a><code>ALImageNotSharp</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALTooDark"></a><code>ALTooDark</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALTooMuchReflections"></a><code>ALTooMuchReflections</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALConfidenceNotReached"></a><code>ALConfidenceNotReached</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALStringPatternNotMatching"></a><code>ALStringPatternNotMatching</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALIntAssertionFailed"></a><code>ALIntAssertionFailed</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALDocumentRatioOutsideOfTolerance"></a><code>ALDocumentRatioOutsideOfTolerance</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALDocumentBoundsOutsideOfTolerance"></a><code>ALDocumentBoundsOutsideOfTolerance</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALOtherConditionNotMet"></a><code>ALOtherConditionNotMet</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALNoInformationFound"></a><code>ALNoInformationFound</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALImageColorConvertionProblem"></a><code>ALImageColorConvertionProblem</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALImageProviderIsNil"></a><code>ALImageProviderIsNil</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALRunStopError"></a><code>ALRunStopError</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALSingleImageRunError"></a><code>ALSingleImageRunError</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALCameraResolutionNotSupportedByDevice"></a><code>ALCameraResolutionNotSupportedByDevice</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALCameraAccessDenied"></a><code>ALCameraAccessDenied</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALModuleSimpleOCRConfigIsNil"></a><code>ALModuleSimpleOCRConfigIsNil</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALModuleSimpleOCRConfigTesseractConfigIsNil"></a><code>ALModuleSimpleOCRConfigTesseractConfigIsNil</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALModuleSimpleOCRConfigTextHeightNotSet"></a><code>ALModuleSimpleOCRConfigTextHeightNotSet</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALBarcodeModuleNativeDelegateWrong"></a><code>ALBarcodeModuleNativeDelegateWrong</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="ALEnergyScanPluginBarcodeNotSupported"></a><code>ALEnergyScanPluginBarcodeNotSupported</code></dt>
+<dd>
+
+
+<p>The Error Domain used by the Anyline SDK</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">ALError.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">ALError.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

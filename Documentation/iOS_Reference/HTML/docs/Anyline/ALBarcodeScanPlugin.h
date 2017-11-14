@@ -21,6 +21,8 @@
  */
 @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
 
+@property (nonatomic, strong, readonly) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
+
 /**
  *  Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
  *  Default are all of the above.

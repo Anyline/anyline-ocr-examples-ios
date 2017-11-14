@@ -56,8 +56,6 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/imageBuffer">imageBuffer</option>
-		
 		<option value="//api/name/uiImage">uiImage</option>
 		
 	</optgroup>
@@ -68,7 +66,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithImageBuffer:">- initWithImageBuffer:</option>
+		<option value="//api/name/initWithBGRAImageBuffer:rotate:">- initWithBGRAImageBuffer:rotate:</option>
+		
+		<option value="//api/name/initWithBGRAImageBuffer:rotate:cutout:">- initWithBGRAImageBuffer:rotate:cutout:</option>
 		
 		<option value="//api/name/initWithUIImage:">- initWithUIImage:</option>
 		
@@ -157,47 +157,6 @@
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIImage *uiImage</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALImage.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/imageBuffer" title="imageBuffer"></a>
-	<h3 class="method-title"><code><a href="#//api/name/imageBuffer">&nbsp;&nbsp;imageBuffer</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The ALImage CVImageBufferRef object.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CVImageBufferRef imageBuffer</code></div>
 
 		    
 			
@@ -792,8 +751,8 @@ For debbugging purpose so you can see where we located the digit.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithImageBuffer:" title="initWithImageBuffer:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithImageBuffer:">&ndash;&nbsp;initWithImageBuffer:</a></code>
+	<a name="//api/name/initWithBGRAImageBuffer:rotate:" title="initWithBGRAImageBuffer:rotate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBGRAImageBuffer:rotate:">&ndash;&nbsp;initWithBGRAImageBuffer:rotate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -808,7 +767,7 @@ For debbugging purpose so you can see where we located the digit.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithImageBuffer:(CVImageBufferRef)<em>imageBuffer</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)<em>imageBuffer</em> rotate:(CGFloat)<em>degrees</em></code></div>
 
 		    
 			
@@ -819,6 +778,69 @@ For debbugging purpose so you can see where we located the digit.</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>imageBuffer</code></th>
 						<td><p>The CVImageBufferRef to encapsulate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of ALImage.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALImage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithBGRAImageBuffer:rotate:cutout:" title="initWithBGRAImageBuffer:rotate:cutout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithBGRAImageBuffer:rotate:cutout:">&ndash;&nbsp;initWithBGRAImageBuffer:rotate:cutout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise an ALImage with an CVimageBufferRef.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)<em>imageBuffer</em> rotate:(CGFloat)<em>degrees</em> cutout:(CGRect)<em>cutout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageBuffer</code></th>
+						<td><p>The CVImageBufferRef to encapsulate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cutout</code></th>
+						<td><p>The cutout</p></td>
 					</tr>
 				
 				</table>
@@ -910,7 +932,7 @@ For debbugging purpose so you can see where we located the digit.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-10-11</p>
+						<p class="copyright">Copyright &copy; 2017 Anyline GmbH. All rights reserved. Updated: 2017-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
