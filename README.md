@@ -89,6 +89,6 @@ The software underlies the MIT License. As Anyline is a paid software for Commer
 
 # KITT <3
 
-![KITT] (images/visualFeedback/kitt/contour_point.gif)
+![KITT](images/visualFeedback/kitt/contour_point.gif)
 
 
