@@ -53,7 +53,7 @@
 /**
  * The UI Configuration for the scanning UI
  */
-@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration;
+@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration;
 
 
 /**

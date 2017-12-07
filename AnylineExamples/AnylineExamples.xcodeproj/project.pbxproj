@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		00920BA2DF08D1CBA26CF0B5 /* document_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 825EE8FA96523049C40C4C6A /* document_config.json */; };
 		046841DDCE2C238AADCBD2F6 /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C96CA2CE47B790BFBB605 /* ALVoucherCodeScanViewController.m */; };
-		078113F46E74228F0E6273FF /* ALHeatMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */; };
 		0FBD0D845AA9BE5AA6710468 /* iban_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D1EBF55629C059F2E94985 /* iban_config.json */; };
 		103F14B072B262A9983662A4 /* rb_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 433A1C14AFD7CDE29C4DCBEF /* rb_config.json */; };
-		10D77FACC05FEE75F51A5AAC /* ALDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */; };
+		1239010911951C829BE6F48D /* ALSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */; };
 		13930A97CF102FDA8B346835 /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */; };
 		1396F93784518FA209262B90 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
 		15E84CC79292F92B64274899 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D86CA50184F1942E73BD9213 /* ALExample.m */; };
@@ -24,31 +23,30 @@
 		260DE60765600810FE8EFE8D /* ALISBNHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFF883735FF225B4D04FCE /* ALISBNHeaderCell.m */; };
 		2668406A0613F98DA813B44E /* ALScrabbleScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8562EE0FC190E09FE6E7FBA /* ALScrabbleScanViewController.m */; };
 		2B96251A87719D7063700E61 /* MeterImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54AE98DB655EB1029628926A /* MeterImagesAssets.xcassets */; };
-		2F1D38343CC1E5C833816881 /* ALSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */; };
 		309A74EE9373A1A7C09057E0 /* ALScrabbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29092239DF6E401BDB033C26 /* ALScrabbleViewController.m */; };
 		374A119C383BCBA14022BDFF /* ALLicensePlateResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E7B9B492C35E8943608E37 /* ALLicensePlateResultOverlayView.m */; };
 		380B13CD7EADE1F5B9A5A65A /* ALISBNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6DAD8B7DE07CE7DEFC65BD /* ALISBNAPI.m */; };
 		3C82B893D15E52F5E0E5C467 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */; };
+		3F5330F7109DB3135D64DB58 /* ALDotMatrixMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441615A4F364F661B32AF9D6 /* ALDotMatrixMeterScanViewController.m */; };
 		428B37B9806DBDE310327772 /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */; };
 		452A4B7D3A1B18B8DA800EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8727A8BBF5682A6E725C090 /* Main.storyboard */; };
 		4E0640B92D29DB5A7F1D6DF2 /* ALScrabblePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 938340AF6E801B1E47A49D1C /* ALScrabblePoints.m */; };
-		5A58CC059AA95FBCA3F13A13 /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */; };
+		5D6EACAD99D7A77668B11D98 /* ALHeatMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */; };
 		5F3D816A5B835447AB9ECFB2 /* ALTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D7BECEE1CE8448B0D4DF /* ALTextViewCell.m */; };
 		60A8B7910CF0C6FCC09C08FB /* ALMultiformatBarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */; };
 		680639841D3120DC9781F069 /* bottlecap_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */; };
 		6D1EE9D1AE26966F2B301A5B /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095A105FBAD31DC01FDBB6D0 /* ALDocumentScanViewController.m */; };
-		6D2ED84C77E0C43782010B22 /* ALAnalogMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */; };
 		6DBEF1FDC2699C27BB95D833 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
 		6FE987ACF9ED2250F1399603 /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD4DBC24230A545C6F50FE30 /* isbn_config.json */; };
 		7096E361CF02CC495B57C335 /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */; };
 		7362895653F8BD977CD972DB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */; };
-		74585105B62613A0F6C5F53B /* ALDialMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */; };
 		76318D0B701473B489FEF77D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
 		80AFD054B9A1D9416363FA93 /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */; };
 		86D2AD0A952CA97DE498326F /* record_number_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D2F22EF36CFA4562FBDE6 /* record_number_config.json */; };
+		8720C0C30D3B51DD11EAAF99 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
 		883200DDE967334B1CDA2502 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */; };
-		899693036A89D5558F985D76 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */; };
 		8F9228D9A97ADE385D87D7DA /* ALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A22531B381EB3546D5EA58D /* ALBaseViewController.m */; };
+		90240B992A567EDD2E27617E /* ALAnalogMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */; };
 		9590A1FA27D73869F991561B /* ALJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */; };
 		9C6A17DE83216862FE8A87A7 /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 26270D1AFDA57474D313BF38 /* voucher_code_config.json */; };
 		9E9671AFAFF0721206FFA431 /* license_plate_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B630E9B3528FF598DEAC935C /* license_plate_view_config.json */; };
@@ -63,14 +61,17 @@
 		CA89B4630E87EBB71C473343 /* ALScrabbleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */; };
 		CD2BA37F6EF3A4575DBD80FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DF1FCED630116580BE0689 /* main.m */; };
 		CE635D3CA76076E769ED2C6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635597E0966D01FD7533AF85 /* AppDelegate.m */; };
+		D19AEE8482547BCD2842B3E7 /* ALDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */; };
 		D4616EED5BB41053DE97D2C1 /* ALISBNScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3325FBA2735973E9C441BFF /* ALISBNScanViewController.m */; };
+		D94225ECFB58F613EAD39A56 /* ALDoubleTariffMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */; };
 		E49CFED211C551E94B55118D /* ALRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6932576BBE91833BCDCBA999 /* ALRoundedView.m */; };
 		E7BA307D449B96D28E7CEDFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9625A90879E934BBFB50ACD /* LaunchScreen.xib */; };
 		EBA14B0EA022A9A1C0BF7D55 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
 		EBD3EDCF386B8D595B563C16 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */; };
 		F147E62106316460B99356B4 /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
-		F3492FC1B8398757EE584BF3 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
+		F34AD531F37A3E72DAB0999C /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */; };
 		F6970CB1032CB2A85EB93D67 /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F53817B45ED084BCC5F172BB /* ISBNInfo.m */; };
+		F77A0A754ABCDE9BDC7FD64C /* ALDialMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */; };
 		F7E73BF497E7779EAFCD8056 /* ALAnagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A6183F42E04E2C6FF8395 /* ALAnagramAPI.m */; };
 		FD20FAE3AF44A02A3E52E47E /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB346B31D8C92567FEE0 /* ALIBANScanViewController.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDialMeterScanViewController.m; sourceTree = "<group>"; };
 		4293E8D97347B073CE07DBD4 /* ALScrabbleScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleScanViewController.h; sourceTree = "<group>"; };
 		433A1C14AFD7CDE29C4DCBEF /* rb_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = rb_config.json; sourceTree = "<group>"; };
+		441615A4F364F661B32AF9D6 /* ALDotMatrixMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDotMatrixMeterScanViewController.m; sourceTree = "<group>"; };
 		463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBottlecapScanViewController.m; sourceTree = "<group>"; };
 		483BC48BD87FFA04B0C7F398 /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = ../Framework/Anyline.framework; sourceTree = "<group>"; };
 		4BF94003EAC9DBF73268C355 /* ALMRZScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMRZScanViewController.h; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterScanResultViewController.m; sourceTree = "<group>"; };
 		F9D1EBF55629C059F2E94985 /* iban_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = iban_config.json; sourceTree = "<group>"; };
 		FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALRBScanViewController.m; sourceTree = "<group>"; };
+		FC68A51F6F225F4077700D96 /* ALDotMatrixMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDotMatrixMeterScanViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,29 +225,6 @@
 				DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */,
 				CD7D3A4A810DAA81EA0A93EA /* ISBNInfo.h */,
 				F53817B45ED084BCC5F172BB /* ISBNInfo.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		0491D6B447A5FC1426DBC5B9 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				23364FFEAEBD59242759D32D /* ALAnalogMeterScanViewController.h */,
-				C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */,
-				AED5CFD48CF060CE713C14D9 /* ALAutoAnalogDigitalMeterScanViewController.h */,
-				D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */,
-				667E5777A3E03EDD682C3717 /* ALDialMeterScanViewController.h */,
-				3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */,
-				76CBC2C7387AE271C2BB94AE /* ALDigitalMeterScanViewController.h */,
-				DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */,
-				98C162A996FF6809E4FE2BF4 /* ALDoubleTariffMeterScanViewController.h */,
-				F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */,
-				5C8024E3A23A15183E818A0E /* ALHeatMeterScanViewController.h */,
-				DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */,
-				2F26646927C2D11D4DCA09F7 /* ALMeterScanResultViewController.h */,
-				F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */,
-				7DC7FCACAA8E101556218BE8 /* ALSerialNumberScanViewController.h */,
-				68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -409,7 +389,7 @@
 		62CFF4839C58D7938C31CD88 /* MeterScan */ = {
 			isa = PBXGroup;
 			children = (
-				0491D6B447A5FC1426DBC5B9 /* ViewController */,
+				F8BF7431011A3445411DBC7C /* ViewController */,
 				54AE98DB655EB1029628926A /* MeterImagesAssets.xcassets */,
 			);
 			path = MeterScan;
@@ -598,6 +578,31 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F8BF7431011A3445411DBC7C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23364FFEAEBD59242759D32D /* ALAnalogMeterScanViewController.h */,
+				C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */,
+				AED5CFD48CF060CE713C14D9 /* ALAutoAnalogDigitalMeterScanViewController.h */,
+				D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */,
+				667E5777A3E03EDD682C3717 /* ALDialMeterScanViewController.h */,
+				3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */,
+				76CBC2C7387AE271C2BB94AE /* ALDigitalMeterScanViewController.h */,
+				DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */,
+				FC68A51F6F225F4077700D96 /* ALDotMatrixMeterScanViewController.h */,
+				441615A4F364F661B32AF9D6 /* ALDotMatrixMeterScanViewController.m */,
+				98C162A996FF6809E4FE2BF4 /* ALDoubleTariffMeterScanViewController.h */,
+				F071D9F18113EEDEC2C75071 /* ALDoubleTariffMeterScanViewController.m */,
+				5C8024E3A23A15183E818A0E /* ALHeatMeterScanViewController.h */,
+				DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */,
+				2F26646927C2D11D4DCA09F7 /* ALMeterScanResultViewController.h */,
+				F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */,
+				7DC7FCACAA8E101556218BE8 /* ALSerialNumberScanViewController.h */,
+				68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FB23DD4142F9D605A167D074 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,7 +642,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				TargetAttributes = {
 					549B361CA3000146B1567759 = {
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 35RHL53WRE;
 					};
 				};
 			};
@@ -698,14 +703,15 @@
 				F6970CB1032CB2A85EB93D67 /* ISBNInfo.m in Sources */,
 				7096E361CF02CC495B57C335 /* ALLicensePlateViewController.m in Sources */,
 				374A119C383BCBA14022BDFF /* ALLicensePlateResultOverlayView.m in Sources */,
-				10D77FACC05FEE75F51A5AAC /* ALDigitalMeterScanViewController.m in Sources */,
-				078113F46E74228F0E6273FF /* ALHeatMeterScanViewController.m in Sources */,
-				899693036A89D5558F985D76 /* ALDoubleTariffMeterScanViewController.m in Sources */,
-				F3492FC1B8398757EE584BF3 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */,
-				6D2ED84C77E0C43782010B22 /* ALAnalogMeterScanViewController.m in Sources */,
-				5A58CC059AA95FBCA3F13A13 /* ALMeterScanResultViewController.m in Sources */,
-				74585105B62613A0F6C5F53B /* ALDialMeterScanViewController.m in Sources */,
-				2F1D38343CC1E5C833816881 /* ALSerialNumberScanViewController.m in Sources */,
+				D19AEE8482547BCD2842B3E7 /* ALDigitalMeterScanViewController.m in Sources */,
+				5D6EACAD99D7A77668B11D98 /* ALHeatMeterScanViewController.m in Sources */,
+				D94225ECFB58F613EAD39A56 /* ALDoubleTariffMeterScanViewController.m in Sources */,
+				8720C0C30D3B51DD11EAAF99 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */,
+				90240B992A567EDD2E27617E /* ALAnalogMeterScanViewController.m in Sources */,
+				F34AD531F37A3E72DAB0999C /* ALMeterScanResultViewController.m in Sources */,
+				F77A0A754ABCDE9BDC7FD64C /* ALDialMeterScanViewController.m in Sources */,
+				1239010911951C829BE6F48D /* ALSerialNumberScanViewController.m in Sources */,
+				3F5330F7109DB3135D64DB58 /* ALDotMatrixMeterScanViewController.m in Sources */,
 				6DBEF1FDC2699C27BB95D833 /* ALMRZScanViewController.m in Sources */,
 				B2DEEC518E85DE5A5AB5A4BF /* ALIdentificationView.m in Sources */,
 				60A8B7910CF0C6FCC09C08FB /* ALMultiformatBarcodeScanViewController.m in Sources */,
@@ -762,8 +768,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -783,7 +788,6 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -816,8 +820,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -839,7 +842,6 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

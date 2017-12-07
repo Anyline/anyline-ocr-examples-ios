@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALCaptureViewResolution.html">
+	<File path="Constants/ALCutoutAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCutoutAlignment</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution1080</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTop</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution1080</Declaration>
+            <Declaration>ALCutoutAlignmentTop</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution720</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentTopHalf</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution720</Declaration>
+            <Declaration>ALCutoutAlignmentTopHalf</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -34,9 +34,29 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution480</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentMiddle</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution480</Declaration>
+            <Declaration>ALCutoutAlignmentMiddle</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottomHalf</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCutoutAlignmentBottomHalf</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALCutoutAlignmentBottom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALCutoutAlignmentBottom</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             

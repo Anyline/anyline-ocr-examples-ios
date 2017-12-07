@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
+	<File path="Protocols/AnylineDebugDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineDebugDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="72"/>
@@ -13,22 +13,54 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:reportDebugVariable:value:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
+&lt;p&gt;
+Some possibly reported values:
+&lt;ul&gt;
+&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
+&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
+&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *_Nonnull)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *_Nonnull)anylineModuleView reportDebugVariable:(NSString *_Nonnull)variableName value:(id _Nonnull)value</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineBarcodeModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
 				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Name>variableName</Name>
+					<Abstract type="html">The variable name of the reported value</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The reported value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineBarcodeModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineModuleView:reportDebugVariable:value:</Anchor>
+            <NodeRef refid="72"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:runSkipped:</TokenIdentifier>
+			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
+(If not text is found or confidence is to low, etc.)</Abstract>
+			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *_Nonnull)anylineModuleView runSkipped:(ALRunFailure)runFailure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineModuleView</Name>
+					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+				</Parameter><Parameter>
+					<Name>runFailure</Name>
+					<Abstract type="html">The reason why the run failed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineModuleView:runSkipped:</Anchor>
             <NodeRef refid="72"/>
 		</Token>
 		

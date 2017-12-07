@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMeterScanPluginDelegate.html">
+	<File path="Protocols/ALMotionDetectorDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMeterScanPluginDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMotionDetectorDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
             
 			
 			<NodeRef refid="69"/>
@@ -13,22 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMeterScanPluginDelegate/anylineMeterScanPlugin:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMotionDetectorDelegate/motionDetectorAboveThreshold</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *_Nonnull)anylineMeterScanPlugin didFindResult:(ALMeterResult *_Nonnull)scanResult</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineMeterScanPlugin</Name>
-					<Abstract type="html">The Plugin</Abstract>
-				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned result object</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)motionDetectorAboveThreshold</Declaration>
 			
-			<Anchor>//api/name/anylineMeterScanPlugin:didFindResult:</Anchor>
+			
+			<Anchor>//api/name/motionDetectorAboveThreshold</Anchor>
             <NodeRef refid="69"/>
 		</Token>
 		

@@ -234,7 +234,7 @@ You should sublcass this class to build Anyline modules.</Abstract>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
 			
 			
 			<Anchor>//api/name/currentConfiguration</Anchor>
@@ -246,7 +246,7 @@ You should sublcass this class to build Anyline modules.</Abstract>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
 			
 			
 			<Anchor>//api/name/currentConfiguration</Anchor>
@@ -258,7 +258,7 @@ You should sublcass this class to build Anyline modules.</Abstract>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
 			
 			
 			<Anchor>//api/name/currentConfiguration</Anchor>

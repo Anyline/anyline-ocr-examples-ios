@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineDebugDelegate.html">
+	<File path="Protocols/AnylineDocumentModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineDebugDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineDocumentModuleDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="73"/>
@@ -13,54 +13,173 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:reportDebugVariable:value:</TokenIdentifier>
-			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
-&lt;p&gt;
-Some possibly reported values:
-&lt;ul&gt;
-&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
-&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
-&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:hasResult:fullImage:documentCorners:</TokenIdentifier>
+			<Abstract type="html">Called if a full result is found. A full result is considerd to be a successful preview, followed by a
+successful full scan.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *_Nonnull)anylineModuleView reportDebugVariable:(NSString *_Nonnull)variableName value:(id _Nonnull)value</Declaration>
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView hasResult:(UIImage *_Nonnull)transformedImage fullImage:(UIImage *_Nonnull)fullFrame documentCorners:(ALSquare *_Nonnull)corners</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineModuleView</Name>
-					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+					<Name>transformedImage</Name>
+					<Abstract type="html">The transformed image (cropped, deskewed)</Abstract>
 				</Parameter><Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name of the reported value</Abstract>
+					<Name>fullFrame</Name>
+					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
 				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The reported value</Abstract>
+					<Name>corners</Name>
+					<Abstract type="html">The corners of the document in the full frame</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineModuleView:reportDebugVariable:value:</Anchor>
+			<Anchor>//api/name/anylineDocumentModuleView:hasResult:fullImage:documentCorners:</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDebugDelegate/anylineModuleView:runSkipped:</TokenIdentifier>
-			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
-(If not text is found or confidence is to low, etc.)</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:hasResult:fullImage:</TokenIdentifier>
+			<Abstract type="html">Called if a full result is found. A full result is considerd to be a successful preview, followed by a
+successful full scan. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.6.1&lt;/span&gt;)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineModuleView:(AnylineAbstractModuleView *_Nonnull)anylineModuleView runSkipped:(ALRunFailure)runFailure</Declaration>
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView hasResult:(UIImage *_Nonnull)transformedImage fullImage:(UIImage *_Nonnull)fullFrame</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineModuleView</Name>
-					<Abstract type="html">The AnylineAbstractModuleView</Abstract>
+					<Name>transformedImage</Name>
+					<Abstract type="html">The transformed image (cropped, deskewed)</Abstract>
 				</Parameter><Parameter>
-					<Name>runFailure</Name>
-					<Abstract type="html">The reason why the run failed</Abstract>
+					<Name>fullFrame</Name>
+					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineModuleView:runSkipped:</Anchor>
+			<Anchor>//api/name/anylineDocumentModuleView:hasResult:fullImage:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:detectedPictureCorners:inImage:</TokenIdentifier>
+			<Abstract type="html">If triggerPictureCornerDetectionAndReturnError: is used this callback provides the image and the document corners
+successful full scan.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView detectedPictureCorners:(ALSquare *_Nonnull)corners inImage:(UIImage *_Nonnull)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>corners</Name>
+					<Abstract type="html">The corners of the document</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The full image (not cropped or deskewed)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentModuleView:detectedPictureCorners:inImage:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:reportsPreviewResult:</TokenIdentifier>
+			<Abstract type="html">Called if the preview scan detected a sharp and correctly placed document.
+After this callback, a full frame scan of the document starts automatically.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView reportsPreviewResult:(UIImage *_Nonnull)image</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineImage</Name>
+					<Abstract type="html">The image of the successful preview. There is no transformation performed on this image.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentModuleView:reportsPreviewResult:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:reportsPreviewProcessingFailure:</TokenIdentifier>
+			<Abstract type="html">Called if the preview run failed on an image. The error is provided, and the next run is started automatically.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView reportsPreviewProcessingFailure:(ALDocumentError)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error of the preview run.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentModuleView:reportsPreviewProcessingFailure:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:reportsPictureProcessingFailure:</TokenIdentifier>
+			<Abstract type="html">Called if the run on the full frame was unsuccessful. The scanning process automatically starts again with a
+preview scan.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView reportsPictureProcessingFailure:(ALDocumentError)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error of the full frame run</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentModuleView:reportsPictureProcessingFailure:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:documentOutlineDetected:anglesValid:</TokenIdentifier>
+			<Abstract type="html">Return true if your implementation consumed the outline (e.g. drew the outline), or false / do not implement the delegate method, if the
+DocumentScanView should draw the outline.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView documentOutlineDetected:(NSArray *_Nonnull)outline anglesValid:(BOOL)anglesValid</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outline</Name>
+					<Abstract type="html">An NSArray containing the points of the document outline wrapped in an NSValue</Abstract>
+				</Parameter><Parameter>
+					<Name>anglesValid</Name>
+					<Abstract type="html">A boolean indicating if interior angles of the rectangle are within a tolerance (so that it
+is not skew)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if the outline is drawn by the implementation itself or omitted, false if the outline should be
+drawn by the {@link DocumentScanView}</Abstract></ReturnValue>
+			<Anchor>//api/name/anylineDocumentModuleView:documentOutlineDetected:anglesValid:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleViewTakePictureSuccess:</TokenIdentifier>
+			<Abstract type="html">Called after a picture was successfully taken from the camera.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleViewTakePictureSuccess:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView</Declaration>
+			
+			
+			<Anchor>//api/name/anylineDocumentModuleViewTakePictureSuccess:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineDocumentModuleDelegate/anylineDocumentModuleView:takePictureError:</TokenIdentifier>
+			<Abstract type="html">Called if there was an error capturing the picture from the camera.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *_Nonnull)anylineDocumentModuleView takePictureError:(NSError *_Nonnull)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that was thrown during taking the picture</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineDocumentModuleView:takePictureError:</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		

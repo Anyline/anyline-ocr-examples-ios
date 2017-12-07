@@ -18,7 +18,7 @@ extern NSString * _Nonnull const kBrightnessVariableName;
 /**
  * The name for a reported text outline value
  *
- * @type cv::Rect
+ * @type alcv::Rect
  */
 extern NSString * _Nonnull const kOutlineVariableName;
 
@@ -46,7 +46,7 @@ extern NSString * _Nonnull const kContoursVariableName;
 /**
  * The name for a reported square value
  *
- * @type cv::Rect
+ * @type alcv::Rect
  */
 extern NSString * _Nonnull const kSquareVariableName;
 

@@ -97,6 +97,12 @@
       "idiom" : "ipad",
       "filename" : "BankCardIcon_180-167.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "icon_examples.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

@@ -433,6 +433,18 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/updateVideoLayer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)updateVideoLayer:(UIView *_Nonnull)view</Declaration>
+			
+			
+			<Anchor>//api/name/updateVideoLayer:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setFocusAndExposurePoint:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>

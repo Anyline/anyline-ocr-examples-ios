@@ -46,6 +46,14 @@
 @property (nullable, nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
 
 /**
+ * Maximum resolution of the output image (transformedImage)
+ * @warning Parameter can only be changed when the scanning is not running.
+ *
+ * @since 3.19
+ */
+@property (nonatomic, assign) CGSize maxOutputResolution;
+
+/**
  * Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).
  * @warning Parameter can only be changed when the scanning is not running. 
  *

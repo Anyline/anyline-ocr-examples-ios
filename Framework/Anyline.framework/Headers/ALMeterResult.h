@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
     ALHeatMeter4, ALHeatMeter5, ALHeatMeter6,
     ALAutoAnalogDigitalMeter,
     ALDialMeter,
+    ALDotMatrixMeter,
     ALBarcode // This scanMode is ignored in the plugin and only used in the AnylineEnergyModuleView
 };
 

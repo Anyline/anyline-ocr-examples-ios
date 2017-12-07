@@ -50,6 +50,7 @@
 @property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 - (void)addVideoLayerOnView:(UIView * _Nonnull)view;
+- (void)updateVideoLayer:(UIView * _Nonnull)view;
 
 - (void)setFocusAndExposurePoint:(CGPoint)point;
 

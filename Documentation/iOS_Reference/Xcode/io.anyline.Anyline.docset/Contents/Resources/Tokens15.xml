@@ -446,6 +446,42 @@ In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before usi
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setMaxOutputResolution:</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanPlugin/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image</Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanPlugin/setDocumentRatios:</TokenIdentifier>
 			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
 			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>

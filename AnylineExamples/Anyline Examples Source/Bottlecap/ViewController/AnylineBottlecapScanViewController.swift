@@ -117,7 +117,7 @@ import UIKit
     /*
      This is the main delegate method Anyline uses to report its results
      */
-    func anylineOCRModuleView(_ anylineOCRModuleView: AnylineOCRModuleView!, didFind result: ALOCRResult!) {
+    func anylineOCRModuleView(_ anylineOCRModuleView: AnylineOCRModuleView, didFind result: ALOCRResult) {
         // We are done. Cancel scanning
         do {
             try self.anylineOCRView.cancelScanning();

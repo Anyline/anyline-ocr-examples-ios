@@ -35,6 +35,7 @@
 #import "ALSegmentResult.h"
 #import "ALDigitResult.h"
 #import "ALDisplayResult.h"
+#import "ALScanResultState.h"
 
 #import "ALValuesStack.h"
 #import "ALValuesStackFlipping.h"

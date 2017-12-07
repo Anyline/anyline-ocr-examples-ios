@@ -144,6 +144,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxOutputResolution:</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="53"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentRatios:</TokenIdentifier>
 			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
 			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
