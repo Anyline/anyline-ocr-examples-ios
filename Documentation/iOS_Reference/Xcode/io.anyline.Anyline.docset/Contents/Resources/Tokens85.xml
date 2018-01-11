@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALErrorCode.html">
+	<File path="Constants/ALDocumentError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALErrorCode</TokenIdentifier>
-			<Abstract type="html">The Error Domain used by the Anyline SDK</Abstract>
-			<DeclaredIn>ALError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALDocumentError</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="85"/>
@@ -14,551 +14,91 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOperationNotFound</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorUnkown</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALOperationNotFound</Declaration>
+            <Declaration>ALDocumentErrorUnkown</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALSyntaxError</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorOutlineNotFound</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALSyntaxError</Declaration>
+            <Declaration>ALDocumentErrorOutlineNotFound</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALTypeError</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorSkewTooHigh</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALTypeError</Declaration>
+            <Declaration>ALDocumentErrorSkewTooHigh</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALParameterInvalid</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorGlareDetected</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALParameterInvalid</Declaration>
+            <Declaration>ALDocumentErrorGlareDetected</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLicenseKeyInvalid</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorImageTooDark</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALLicenseKeyInvalid</Declaration>
+            <Declaration>ALDocumentErrorImageTooDark</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLicenseNotValidForFunction</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorNotSharp</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALLicenseNotValidForFunction</Declaration>
+            <Declaration>ALDocumentErrorNotSharp</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkImageNotFound</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorShakeDetected</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkImageNotFound</Declaration>
+            <Declaration>ALDocumentErrorShakeDetected</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkNotOnWindow</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorRatioOutsideOfTolerance</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkNotOnWindow</Declaration>
+            <Declaration>ALDocumentErrorRatioOutsideOfTolerance</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkNotCorrectInViewHierarchy</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDocumentErrorBoundsOutsideOfTolerance</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkNotCorrectInViewHierarchy</Declaration>
+            <Declaration>ALDocumentErrorBoundsOutsideOfTolerance</Declaration>
             
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkHidden</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkHidden</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkOutsideApplicationFrame</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkOutsideApplicationFrame</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkNotNearCutout</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkNotNearCutout</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewBoundsOutOfSnyc</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewBoundsOutOfSnyc</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewTooSmall</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewTooSmall</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewNoSubviewsAllowed</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewNoSubviewsAllowed</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewAlphaViolation</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewAlphaViolation</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewCountViolation</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewCountViolation</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkViewSubviewOnTopViolation</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkViewSubviewOnTopViolation</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkImageModified</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkImageModified</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALWatermarkUnknownError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALWatermarkUnknownError</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALArgumentIsNull</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALArgumentIsNull</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALArgumentIsEmpty</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALArgumentIsEmpty</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALArgumentNotValid</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALArgumentNotValid</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALInterpreterNotLoaded</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALInterpreterNotLoaded</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALNotEnoughContoursFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALNotEnoughContoursFound</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALStackDidNotFoundResult</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALStackDidNotFoundResult</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDigitFirstDistanceExceeded</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDigitFirstDistanceExceeded</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDistanceBetweenDigitsExceeded</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDistanceBetweenDigitsExceeded</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDistanceViolationsNotResolved</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDistanceViolationsNotResolved</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALResultNotValid</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALResultNotValid</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALInvalidDataPointIdentifier</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALInvalidDataPointIdentifier</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRegionOfInterestOutsideImageBounds</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALRegionOfInterestOutsideImageBounds</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALNotEnoughPointsFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALNotEnoughPointsFound</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAnglesOutsideOfTolerance</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALAnglesOutsideOfTolerance</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALImageNotSharp</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALImageNotSharp</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALTooDark</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALTooDark</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALTooMuchReflections</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALTooMuchReflections</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALConfidenceNotReached</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALConfidenceNotReached</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALStringPatternNotMatching</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALStringPatternNotMatching</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALIntAssertionFailed</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALIntAssertionFailed</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentRatioOutsideOfTolerance</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentRatioOutsideOfTolerance</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDocumentBoundsOutsideOfTolerance</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDocumentBoundsOutsideOfTolerance</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALOtherConditionNotMet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALOtherConditionNotMet</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALNoInformationFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALNoInformationFound</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALImageColorConvertionProblem</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALImageColorConvertionProblem</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALImageProviderIsNil</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALImageProviderIsNil</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunStopError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALRunStopError</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALSingleImageRunError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALSingleImageRunError</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCameraResolutionNotSupportedByDevice</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCameraResolutionNotSupportedByDevice</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCameraAccessDenied</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCameraAccessDenied</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALModuleSimpleOCRConfigIsNil</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALModuleSimpleOCRConfigIsNil</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALModuleSimpleOCRConfigTesseractConfigIsNil</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALModuleSimpleOCRConfigTesseractConfigIsNil</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALModuleSimpleOCRConfigTextHeightNotSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALModuleSimpleOCRConfigTextHeightNotSet</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALBarcodeModuleNativeDelegateWrong</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALBarcodeModuleNativeDelegateWrong</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
-            
-            <NodeRef refid="85"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALEnergyScanPluginBarcodeNotSupported</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALEnergyScanPluginBarcodeNotSupported</Declaration>
-            
-            <DeclaredIn>ALError.h</DeclaredIn>
+            <DeclaredIn>ALDocumentScanPlugin.h</DeclaredIn>
             
             <NodeRef refid="85"/>
         </Token>

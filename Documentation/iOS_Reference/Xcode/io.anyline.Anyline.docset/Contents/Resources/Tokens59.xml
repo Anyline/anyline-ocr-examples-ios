@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALCoreControllerDelegate.html">
+	<File path="Protocols/ALBarcodeScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALCoreControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
-All delegate callbacks are garanteed to be executed in the Main Thread.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALBarcodeScanPluginDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="59"/>
@@ -14,77 +13,22 @@ All delegate callbacks are garanteed to be executed in the Main Thread.</Abstrac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:didFinishWithOutput:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has successfully finished and gives the delegate the final
-output object.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALBarcodeScanPluginDelegate/anylineBarcodeScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController didFinishWithOutput:(id)object</Declaration>
+			<Declaration>- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *_Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The result object of the processing.
-The result is specified with the RETURN statement in the .alc file.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineCoreController:didFinishWithOutput:</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:didAbortRun:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has not completed successfully. Possible reason would be
-for example that the display or paper frame could not be found.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController didAbortRun:(NSError *)reason</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">A NSError object with ALErrorDomain and an appropriate status.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineCoreController:didAbortRun:</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:reportsVariable:value:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate a specified intermediate result. Which intermediate results are reported
-can be specified in the .alc command file with the REPORT function.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController reportsVariable:(NSString *)variableName value:(id)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name in the .alc file which should be reported.</Abstract>
+					<Name>anylineBarcodeScanPlugin</Name>
+					<Abstract type="html">The plugin</Abstract>
 				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The value of the reported variable.</Abstract>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineCoreController:reportsVariable:value:</Anchor>
-            <NodeRef refid="59"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:parserError:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that there was a parsing error.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController parserError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The parsing error which occured.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineCoreController:parserError:</Anchor>
+			<Anchor>//api/name/anylineBarcodeScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="59"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashStatus.html">
+	<File path="Constants/ALFlashMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashStatus</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALFlashButton.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="88"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOn</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOn</Declaration>
+            <Declaration>ALFlashModeManual</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="88"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusOff</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusOff</Declaration>
+            <Declaration>ALFlashModeNone</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="88"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashStatusAuto</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALFlashStatusAuto</Declaration>
+            <Declaration>ALFlashModeAuto</Declaration>
             
-            <DeclaredIn>ALFlashButton.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="88"/>
         </Token>

@@ -36,7 +36,8 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.tesseractLanguages = @[@"anyline_capitals"];
+    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"anyline_capitals" ofType:@"traineddata"];
+    config.languages = @[anylineTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     config.validationRegex = @"[A-Z0-9]{8}$";
     config.scanMode = ALAuto;

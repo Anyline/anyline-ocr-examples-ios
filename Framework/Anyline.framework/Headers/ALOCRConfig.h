@@ -77,6 +77,23 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
     ALAuto
 };
 
+@interface ALOCRLanguage : NSObject
+
+@property (nullable, nonatomic, strong) NSString *path;
+@property (nullable, nonatomic, strong) NSString *md5;
+
+@property (nullable, nonatomic, strong) NSString *filename;
+@property (nullable, nonatomic, strong) NSString *fileExtension;
+
+- (instancetype _Nullable)initWithPath:(NSString * _Nonnull)path;
+
++ (BOOL)copyLanguage:(NSString * _Nonnull)path
+              toPath:(NSString * _Nonnull)toPath
+            fileHash:(NSString * _Nullable)hash
+               error:(NSError * _Nullable * _Nullable)error;
+
+@end
+
 /**
  *  A class used to configure the Anyline OCR module.
  */
@@ -106,7 +123,14 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 /**
  *  Property to set the tesseract tessdata files as Array of Strings. ex. @[@"eng",@"deu"]
  */
-@property (nullable, nonatomic, strong) NSArray<NSString *> *tesseractLanguages;
+@property (nullable, nonatomic, strong) NSArray<NSString *> *tesseractLanguages __deprecated_msg("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.");
+
+/**
+ *  Property to set the any files as Array of String paths to the files.
+ *
+ *  Note this method requires the full path with fileending and not only the file name like the old deprecated method.
+ */
+@property (nullable, nonatomic, copy) NSArray<NSString *> *languages;
 /**
  *  Property for the character whitelist you would like to use.
  */
@@ -193,5 +217,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 - (NSDictionary * _Nullable)startVariablesOrError:(NSError * _Nullable * _Nullable)error;
 
 - (NSString * _Nullable)toJsonString;
+
+- (BOOL)allLanguagesAnyFiles;
 
 @end

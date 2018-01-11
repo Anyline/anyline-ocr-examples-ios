@@ -190,38 +190,74 @@ Get in touch with Anyline to receive your custum command file.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setTesseractLanguages:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/set:</TokenIdentifier>
 			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
 			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *__deprecated_msg ( &quot;Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/tesseractLanguages</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/)</TokenIdentifier>
 			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
 			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *__deprecated_msg ( &quot;Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/tesseractLanguages</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/tesseractLanguages</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/)</TokenIdentifier>
 			<Abstract type="html">Property to set the tesseract tessdata files as Array of Strings. ex. @[@&quot;eng&quot;,@&quot;deu&quot;]</Abstract>
 			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *tesseractLanguages</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *__deprecated_msg ( &quot;Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/tesseractLanguages</Anchor>
+			<Anchor>//api/name/)</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/setLanguages:</TokenIdentifier>
+			<Abstract type="html">Property to set the any files as Array of String paths to the files.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSArray&lt;NSString*&gt; *languages</Declaration>
+			
+			
+			<Anchor>//api/name/languages</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/languages</TokenIdentifier>
+			<Abstract type="html">Property to set the any files as Array of String paths to the files.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSArray&lt;NSString*&gt; *languages</Declaration>
+			
+			
+			<Anchor>//api/name/languages</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRConfig/languages</TokenIdentifier>
+			<Abstract type="html">Property to set the any files as Array of String paths to the files.</Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSArray&lt;NSString*&gt; *languages</Declaration>
+			
+			
+			<Anchor>//api/name/languages</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
@@ -681,6 +717,18 @@ NO to set to dark text on bright background.</Abstract>
 			
 			
 			<Anchor>//api/name/toJsonString</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRConfig/allLanguagesAnyFiles</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)allLanguagesAnyFiles</Declaration>
+			
+			
+			<Anchor>//api/name/allLanguagesAnyFiles</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALFlashButtonStatusDelegate.html">
+	<File path="Protocols/ALFlashButtonAnimationDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonStatusDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonAnimationDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALFlashButton.h</DeclaredIn>
             
@@ -13,14 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonStatusDelegate/flashButton:statusChanged:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonAnimationDelegate/flashButton:expanded:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALFlashButton.h</DeclaredIn>
 			
-			<Declaration>- (void)flashButton:(ALFlashButton *_Nonnull)flashButton statusChanged:(ALFlashStatus)flashStatus</Declaration>
+			<Declaration>- (void)flashButton:(ALFlashButton *_Nonnull)flashButton expanded:(BOOL)expanded</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton:statusChanged:</Anchor>
+			<Anchor>//api/name/flashButton:expanded:</Anchor>
             <NodeRef refid="63"/>
 		</Token>
 		

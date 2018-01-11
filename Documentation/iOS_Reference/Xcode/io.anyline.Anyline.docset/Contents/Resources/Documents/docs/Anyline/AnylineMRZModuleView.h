@@ -39,6 +39,18 @@
                    delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate
                       error:(NSError * _Nullable * _Nullable )error;
 
+/**
+ *  Sets the license key and delegate. Async method with return block when done.
+ *
+ *  @param licenseKey The Anyline license key for this application bundle
+ *  @param delegate The delegate that will receive the Anyline results (hast to conform to <AnylineMRZModuleDelegate>)
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
+ *
+ */
+- (void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey
+                        delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate
+                        finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+
 @end
 
 @protocol AnylineMRZModuleDelegate <NSObject>

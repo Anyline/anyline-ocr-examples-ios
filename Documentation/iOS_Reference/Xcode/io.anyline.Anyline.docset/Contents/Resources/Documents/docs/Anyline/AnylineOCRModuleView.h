@@ -79,6 +79,21 @@ typedef NS_ENUM(NSInteger, ALOCRError) {
                    delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate
                   ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
                       error:(NSError * _Nullable * _Nullable )error;
+
+/**
+ *  Sets the license key and delegate. Async method with return block when done.
+ *
+ *  @param licenseKey The Anyline license key for this application bundle
+ *  @param delegate The delegate that will receive the Anyline results (hast to conform to <AnylineOCRModuleDelegate>)
+ *  @param ocrConfig    The ocrConfig to use for the scanning
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
+ *
+ */
+- (void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey
+                        delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate
+                       ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
+                        finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+
 /**
  *  Sets a new ALOCRConfig and returns an Error if something failed.
  *

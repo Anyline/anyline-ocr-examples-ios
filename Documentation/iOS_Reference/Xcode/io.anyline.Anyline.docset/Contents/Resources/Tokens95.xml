@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALScanResultState.html">
+	<File path="Constants/ALScanMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALScanResultState</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResultState.h</DeclaredIn>
+			<DeclaredIn>ALMeterResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="95"/>
@@ -14,131 +14,101 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidAbortState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultUserDidAbortState</Declaration>
+            <Declaration>ALAnalogMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanSuccessfulState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALSerialNumber</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanSuccessfulState</Declaration>
+            <Declaration>ALSerialNumber</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorWrongResultState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDigitalMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorWrongResultState</Declaration>
+            <Declaration>ALDigitalMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidEnterManuallyState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter4</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultUserDidEnterManuallyState</Declaration>
+            <Declaration>ALHeatMeter4</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyUsedState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter5</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorResultAlreadyUsedState</Declaration>
+            <Declaration>ALHeatMeter5</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyExpiredState</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter6</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultScanErrorResultAlreadyExpiredState</Declaration>
+            <Declaration>ALHeatMeter6</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountInactive</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALAutoAnalogDigitalMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserAccountInactive</Declaration>
+            <Declaration>ALAutoAnalogDigitalMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountLocked</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDialMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserAccountLocked</Declaration>
+            <Declaration>ALDialMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserReachedScanLimit</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALDotMatrixMeter</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUserReachedScanLimit</Declaration>
+            <Declaration>ALDotMatrixMeter</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateNetworkTimeout</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateNetworkTimeout</Declaration>
+            <Declaration>ALBarcode</Declaration>
             
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleSuccess</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateModuleSuccess</Declaration>
-            
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleAbort</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateModuleAbort</Declaration>
-            
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUnknownError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALScanResultStateUnknownError</Declaration>
-            
-            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            <DeclaredIn>ALMeterResult.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>

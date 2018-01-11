@@ -37,7 +37,8 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALAuto;
-    config.tesseractLanguages = @[@"scrabble"];
+    NSString *scrabbleTraineddata = [[NSBundle mainBundle] pathForResource:@"scrabble" ofType:@"traineddata"];
+    config.languages = @[scrabbleTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
     config.validationRegex = @"^[A-ZÄÜÖ]{7,10}$";
 

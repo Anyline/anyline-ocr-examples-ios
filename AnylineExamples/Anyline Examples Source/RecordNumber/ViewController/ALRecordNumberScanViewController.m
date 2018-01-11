@@ -36,7 +36,9 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.charHeight = ALRangeMake(22, 105);
-    config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
+    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
+    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
+    config.languages = @[engTraineddata, deuTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.";
     config.minConfidence = 75;
     config.validationRegex = @"^([A-Z]+\\s*-*\\s*)?[0-9A-Z-\\s\\.]{3,}$";

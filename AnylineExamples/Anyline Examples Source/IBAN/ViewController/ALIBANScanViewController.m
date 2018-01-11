@@ -36,7 +36,9 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
+    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
+    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
+    config.languages = @[engTraineddata, deuTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
     config.minConfidence = 70;

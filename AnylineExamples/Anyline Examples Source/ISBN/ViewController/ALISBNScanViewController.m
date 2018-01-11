@@ -36,7 +36,9 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.tesseractLanguages = @[@"eng_no_dict", @"deu"];
+    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
+    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
+    config.languages = @[engTraineddata, deuTraineddata];
     config.charWhiteList = charWhiteListForISBN;
     config.validationRegex = regexForISBN;
     config.scanMode = ALAuto;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineEnergyModuleView.html">
+	<File path="Classes/AnylineDocumentModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineEnergyModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineEnergyModuleView class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineDocumentModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineDocumentModuleView class declares the programmatic interface for an object that manages easy access to Anylines document detection. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
@@ -13,185 +13,90 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanViewPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentScanViewPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/documentScanViewPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/documentScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/documentScanViewPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/documentScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/documentScanViewPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/documentScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/documentScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/documentScanPlugin</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setBarcodeScanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setScanMode:error:</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
 			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
 					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The error that occured</Abstract>
@@ -199,6 +104,180 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
 			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineDocumentModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineDocumentModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>finished</Name>
+					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxDocumentRatioDeviation:</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxDocumentRatioDeviation</TokenIdentifier>
+			<Abstract type="html">Maximum deviation for the ratio. 0.15 is the default</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *maxDocumentRatioDeviation</Declaration>
+			
+			
+			<Anchor>//api/name/maxDocumentRatioDeviation</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setMaxOutputResolution:</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineDocumentModuleView/maxOutputResolution</TokenIdentifier>
+			<Abstract type="html">Maximum resolution of the output image (transformedImage)</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize maxOutputResolution</Declaration>
+			
+			
+			<Anchor>//api/name/maxOutputResolution</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/setDocumentRatios:</TokenIdentifier>
+			<Abstract type="html">Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)setDocumentRatios:(NSArray&lt;NSNumber*&gt; *_Nonnull)ratios</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ratios</Name>
+					<Abstract type="html">all supported formats</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDocumentRatios:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/triggerPictureCornerDetectionAndReturnError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
+			
+			
+			<Anchor>//api/name/triggerPictureCornerDetectionAndReturnError:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/transformImageWithSquare:image:error:</TokenIdentifier>
+			<Abstract type="html">Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)transformImageWithSquare:(ALSquare *_Nullable)square image:(UIImage *_Nullable)image error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>square</Name>
+					<Abstract type="html">The input image will be transformed to this square</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The UIImage which will be processed and transformed</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/transformImageWithSquare:image:error:</Anchor>
+            <NodeRef refid="54"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineDocumentModuleView/transformALImageWithSquare:image:error:</TokenIdentifier>
+			<Abstract type="html">Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [AnylineDocumentModuleView cancelScanningAndReturnError:] before using this method.</Abstract>
+			<DeclaredIn>AnylineDocumentModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)transformALImageWithSquare:(ALSquare *_Nullable)square image:(ALImage *_Nullable)image error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>square</Name>
+					<Abstract type="html">The input image will be transformed to this square</Abstract>
+				</Parameter><Parameter>
+					<Name>image</Name>
+					<Abstract type="html">The ALImage which will be processed and transformed</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/transformALImageWithSquare:image:error:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		

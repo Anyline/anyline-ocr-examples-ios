@@ -93,4 +93,5 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALModuleSimpleOCRConfigTextHeightNotSet = 9003,
   ALBarcodeModuleNativeDelegateWrong = 9004,
   ALEnergyScanPluginBarcodeNotSupported = 9005,
+  ALModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
 };

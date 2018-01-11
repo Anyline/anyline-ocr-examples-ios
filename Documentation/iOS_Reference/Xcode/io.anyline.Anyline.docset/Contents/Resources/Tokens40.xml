@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALScanInfo.html">
+	<File path="Classes/ALRunSkippedReason.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALScanInfo</TokenIdentifier>
-			<Abstract type="html">The name for a reported shake detection warning value</Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALRunSkippedReason</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
             
 			
 			<NodeRef refid="40"/>
@@ -13,9 +13,9 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setPluginID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setPluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
 			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
@@ -25,9 +25,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
 			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
@@ -37,9 +37,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
 			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
@@ -49,86 +49,50 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setVariableName:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setReason:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/reason</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/variableName</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/reason</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/reason</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/variableName</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/reason</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
 			
 			
-			<Anchor>//api/name/variableName</Anchor>
+			<Anchor>//api/name/reason</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setValue:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/initWithRunFailure:pluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
-			
-			
-			<Anchor>//api/name/value</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/value</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason pluginID:(NSString *_Nonnull)pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/value</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/value</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
-			
-			
-			<Anchor>//api/name/value</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/initWithVariableName:value:pluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanInfo.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithVariableName:(NSString *_Nonnull)variableName value:(id _Nonnull)value pluginID:(NSString *_Nonnull)pluginID</Declaration>
-			
-			
-			<Anchor>//api/name/initWithVariableName:value:pluginID:</Anchor>
+			<Anchor>//api/name/initWithRunFailure:pluginID:</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		

@@ -35,7 +35,8 @@ import UIKit
         let config: ALOCRConfig = ALOCRConfig();
         config.scanMode = ALOCRScanMode.ALGrid;
         config.charHeight = ALRangeMake(21, 97);
-        config.tesseractLanguages = ["bottlecap"];
+        let bottlecapTraineddata : String = Bundle.main.path(forResource: "bottlecap", ofType: "traineddata")!;
+        config.languages = [bottlecapTraineddata];
         config.charWhiteList = "123456789ABCDEFGHJKLMNPRSTUVWXYZ";
         config.minConfidence = 75;
         config.validationRegex = "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}";
