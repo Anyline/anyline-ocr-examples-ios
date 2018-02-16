@@ -156,6 +156,18 @@
             <NodeRef refid="47"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/initWithCaptureDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithCaptureDevice:(AVCaptureDevice *_Nullable)captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/initWithCaptureDevice:</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
         
         
 	</File>

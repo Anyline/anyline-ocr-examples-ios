@@ -3,12 +3,12 @@
 //  AnylineExamples
 //
 //  Created by Matthias Gasser on 22/04/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 9yards GmbH. All rights reserved.
 //
 
 #import "ALMultiformatBarcodeScanViewController.h"
-
 #import <Anyline/Anyline.h>
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
@@ -31,7 +31,8 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Barcode";
+    
+    self.title = @"Barcode / QR-Code";
     
     // Initializing the barcode module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
@@ -58,11 +59,14 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.barcodeModuleView];
+    [self.view sendSubviewToBack:self.barcodeModuleView];
     
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.barcodeModuleView}]];
     
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.barcodeModuleView, @"topGuide" : topGuide}]];
+    
+    self.controllerType = ALScanHistoryBarcode;
     
     // The resultLabel is used as a debug view to see the scanned results. We set its text
     // in anylineBarcodeModuleView:didFindScanResult:atImage below
@@ -73,6 +77,10 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     self.resultLabel.adjustsFontSizeToFitWidth = YES;
 
     [self.view addSubview:self.resultLabel];
+    
+    ALUIConfiguration *config = self.barcodeModuleView.currentConfiguration;
+    config.cutoutOffset = CGPointMake(0, -50);
+    [self.barcodeModuleView setCurrentConfiguration:config];
 }
 
 /*
@@ -103,13 +111,22 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     [self.barcodeModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.barcodeModuleView.cutoutRect.origin.y +
+     self.barcodeModuleView.cutoutRect.size.height +
+     self.barcodeModuleView.frame.origin.y +
+     90];
+}
+
 #pragma mark -- AnylineBarcodeModuleDelegate
 /*
  This is the main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView
-                   didFindResult:(ALBarcodeResult *)scanResult {
-    // Because in this case scanResult is a simple string, we are able to forward it to the debug label
+- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *)scanResult {
+    
+    [self anylineDidFindResult:scanResult.result barcodeResult:@"" image:scanResult.image module:anylineBarcodeModuleView completion:NULL];
+    
     self.resultLabel.text = scanResult.result;
 }
 

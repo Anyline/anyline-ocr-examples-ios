@@ -3,12 +3,15 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 04/02/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards GmbH. All rights reserved.
 //
 
 #import "ALScrabbleScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALScrabbleViewController.h"
+#import "ALCustomBarButton.h"
+#import "ScanHistory.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
@@ -26,10 +29,12 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Scrabble";
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     
-    self.title = @"Scrabble";
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
@@ -37,12 +42,10 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALAuto;
-    NSString *scrabbleTraineddata = [[NSBundle mainBundle] pathForResource:@"scrabble" ofType:@"traineddata"];
-    config.languages = @[scrabbleTraineddata];
+    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"scrabble" ofType:@"traineddata"];
+    config.languages = @[anylineTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
     config.validationRegex = @"^[A-ZÄÜÖ]{7,10}$";
-
-    
     
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
@@ -58,12 +61,19 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
         NSAssert(success, @"Setup Error: %@", error.debugDescription);
     }
     
+    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"scrabble_config" ofType:@"json"];
     ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
     self.ocrModuleView.currentConfiguration = ibanConf;
     
+    self.controllerType = ALScanHistoryScrabble;
+    
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.ocrModuleView];
+    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self startListeningForMotion];
+
 }
 
 /*
@@ -74,20 +84,24 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
-    // We use a postdelay for 'start scanning' to improve the user experience:
-    // otherwise the scrabble result would be shown faster as the user realizes the scanning
-    // process has already started
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self startAnyline];
-    });
-
+    [self startAnyline];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
     [self.ocrModuleView cancelScanningAndReturnError:nil];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.ocrModuleView.cutoutRect.origin.y +
+     self.ocrModuleView.cutoutRect.size.height +
+     self.ocrModuleView.frame.origin.y +
+     90];
 }
 
 /*
@@ -104,6 +118,14 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
     }
+    
+    self.startTime = CACurrentMediaTime();
+}
+
+- (void)stopAnyline {
+    if (self.ocrModuleView.isRunning) {
+        [self.ocrModuleView cancelScanningAndReturnError:nil];
+    }
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
@@ -113,23 +135,30 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
-    ALScrabbleViewController *vc = [[ALScrabbleViewController alloc] init];
-    [vc setScrabbleWord:(NSString *)result.result];
-    [self.navigationController pushViewController:vc animated:YES];
+    // We are done. Cancel scanning
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        [self stopAnyline];
+        ALScrabbleViewController *vc = [[ALScrabbleViewController alloc] init];
+        [vc setResult:result.result];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
              reportsVariable:(NSString *)variableName
                        value:(id)value {
+    if ([variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView];
+    }
     
 }
 
--(void) anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure {
-    
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+               runSkipped:(ALRunFailure)runFailure {
     switch (runFailure) {
         case ALRunFailureResultNotValid:
             break;
-        case ALRunFailureSharpnessNotReached:
+        case ALRunFailureConfidenceNotReached:
             break;
         case ALRunFailureNoLinesFound:
             break;
@@ -140,13 +169,6 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
         default:
             break;
     }
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
-    
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
 }
 
 @end

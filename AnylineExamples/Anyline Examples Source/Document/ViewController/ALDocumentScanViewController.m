@@ -1,7 +1,7 @@
 
 #import "ALDocumentScanViewController.h"
 #import "Anyline/AnylineDocumentModuleView.h"
-
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
 #import "ALAppDemoLicenses.h"
 
@@ -26,7 +26,8 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Document";
+    
+    self.title = NSLocalizedString(@"Scan Document", @"Scan Document");
     
     // Initializing the the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
@@ -44,7 +45,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     BOOL success = [self.documentModuleView setupWithLicenseKey:kDocumentScanLicenseKey delegate:self error:&error];
     
     // Stop scanning after a result has been found
-
+    self.documentModuleView.cancelOnResult = YES;
 
     // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
     // we have to check the error object for the error message.
@@ -58,8 +59,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     }
     
     self.documentModuleView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.documentModuleView.currentConfiguration = [ALUIConfiguration cutoutConfigurationFromJsonFile:[[NSBundle mainBundle] pathForResource:@"document_config" ofType:@"json"]];
-    self.documentModuleView.cancelOnResult = YES;
+
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.documentModuleView];
@@ -68,6 +68,10 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.documentModuleView, @"topGuide" : topGuide}]];
+    
+    [self.documentModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
+    self.controllerType = ALScanHistoryDocument;
     
 
     // This view notifies the user of any problems that occur while he is scanning
@@ -89,7 +93,6 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
      */
     NSError *error;
     BOOL success = [self.documentModuleView startScanningAndReturnError:&error];
-    NSLog(@" appear");
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -108,6 +111,14 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     [self.documentModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.documentModuleView.cutoutRect.origin.y +
+     self.documentModuleView.cutoutRect.size.height +
+     self.documentModuleView.frame.origin.y +
+     90];
+}
+
 #pragma mark -- AnylineDocumentModuleDelegate
 
 /*
@@ -116,8 +127,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 - (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
                         hasResult:(UIImage *)transformedImage
                         fullImage:(UIImage *)fullFrame
-                  documentCorners:(ALSquare *)corners; {
-    
+                  documentCorners:(ALSquare *)corners {
     UIViewController *viewController = [[UIViewController alloc] init];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:viewController.view.bounds];
     imageView.center = CGPointMake(imageView.center.x, imageView.center.y + 30);
@@ -125,6 +135,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     imageView.image = transformedImage;
     [viewController.view addSubview:imageView];
     [self.navigationController pushViewController:viewController animated:YES];
+    
 }
 
 /*
@@ -149,7 +160,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
  Shows a little round label at the bottom of the screen to inform the user what happended
  */
 - (void)showUserLabel:(ALDocumentError)error {
-    NSString * helpString = nil;
+    NSString *helpString = nil;
     switch (error) {
         case ALDocumentErrorNotSharp:
             helpString = @"Document not Sharp";
@@ -161,10 +172,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
             helpString = @"Too Dark";
             break;
         case ALDocumentErrorShakeDetected:
-            helpString = @"Hold Still";
-            break;
-        case ALDocumentErrorBoundsOutsideOfTolerance:
-            helpString = @"Closer";
+            helpString = @"Stack";
             break;
         default:
             break;
@@ -191,6 +199,5 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
         }];
     }];
 }
-
 
 @end

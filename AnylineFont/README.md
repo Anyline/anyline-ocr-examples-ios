@@ -44,6 +44,6 @@ Questions about the design?
 
 Email: hello@anyline.com
 Website: www.anyline.com
-Twitter: @anyline_com
+Twitter: @anyline_io
 
 We scan for your smile.

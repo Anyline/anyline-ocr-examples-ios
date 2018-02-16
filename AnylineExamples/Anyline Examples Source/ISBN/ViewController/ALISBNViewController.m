@@ -3,7 +3,7 @@
 //  ExampleApi
 //
 //  Created by David Dengg on 15.02.16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards. All rights reserved.
 //
 
 #import "ALISBNViewController.h"
@@ -24,14 +24,14 @@ NSInteger iLeftDistance = 10;
 
 @implementation ALISBNViewController
 
-- (void)setIsbnString:(NSString *)isbnString {
-    _isbnString = isbnString;
+- (void)setResult:(NSString *)result {
+    [super setResult:result];
     
     [self startLoading];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         ALISBNAPI *isbnApi = [[ALISBNAPI alloc] init];
-        ISBNInfo *info = [isbnApi infoForISBN:isbnString];
+        ISBNInfo *info = [isbnApi infoForISBN:result];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setIsbnInfo:info];
         });
@@ -57,7 +57,7 @@ NSInteger iLeftDistance = 10;
         [self _setupTableView];
         [self.tableView reloadData];
     } else {
-        NSString *isbn = self.isbnString;
+        NSString *isbn = self.result;
         isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN" withString:@""];
         isbn = [isbn stringByReplacingOccurrencesOfString:@" " withString:@""];
         

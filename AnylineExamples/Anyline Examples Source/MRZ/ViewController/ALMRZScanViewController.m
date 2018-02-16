@@ -3,13 +3,13 @@
 //  AnylineExamples
 //
 //  Created by Matthias on 24/05/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 9yards GmbH. All rights reserved.
 //
 
 #import "ALMRZScanViewController.h"
 #import "ALIdentificationView.h"
-
 #import <Anyline/Anyline.h>
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
@@ -29,9 +29,11 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"MRZ";
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"MRZ";
 
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
@@ -53,10 +55,13 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
                           otherButtonTitles:nil] show];
     }
     
+    self.mrzModuleView.flashButtonAlignment = ALFlashAlignmentTopLeft;
+    
     self.mrzModuleView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.mrzModuleView];
+    [self.view sendSubviewToBack:self.mrzModuleView];
     
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.mrzModuleView}]];
     
@@ -74,6 +79,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     [self.identificationView addGestureRecognizer:gr];
     self.identificationView.center = self.view.center;
     [self.view insertSubview:self.identificationView belowSubview:self.mrzModuleView];
+    
+    self.controllerType = ALScanHistoryMrz;
     
     self.identificationView.alpha = 0;
 }
@@ -98,10 +105,19 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     [self.mrzModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.mrzModuleView.cutoutRect.origin.y +
+     self.mrzModuleView.cutoutRect.size.height +
+     self.mrzModuleView.frame.origin.y +
+     90];
+}
+
 /*
  A little animation for the user to see the scanned document.
  */
 -(void)animateScanDidComplete {
+    [self.mrzModuleView cancelScanningAndReturnError:nil];
     [self.view bringSubviewToFront:self.identificationView];
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -159,6 +175,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
+    
+    self.startTime = CACurrentMediaTime();
 }
 
 #pragma mark -- AnylineMRZModuleDelegate
@@ -166,13 +184,38 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult {
-    // Because there is a lot of information to be passed along the module
-    // uses ALIdentification.
-    [self.identificationView updateIdentification:scanResult.result];
-    // Because cancelOnResult: is YES by default scanning has stopped.
-    // Present the information to the user
-    [self animateScanDidComplete];
+//- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
+//           didFindScanResult:(ALIdentification *)scanResult
+//         allCheckDigitsValid:(BOOL)allCheckDigitsValid
+//                     atImage:(UIImage *)image {
+- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
+               didFindResult:(ALMRZResult *)scanResult {
+
+    NSMutableString * result = [NSMutableString string];
+    [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [scanResult.result documentType]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Surnames: %@\n", [scanResult.result surNames]]];
+    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [scanResult.result givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Issuing Country Code: %@\n", [scanResult.result issuingCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Nationality Country Code: %@\n", [scanResult.result nationalityCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Day Of Birth: %@\n", [scanResult.result dayOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Expiration Date: %@\n", [scanResult.result expirationDate]]];
+    [result appendString:[NSString stringWithFormat:@"Sex: %@\n", [scanResult.result sex]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Number: %@\n", [scanResult.result checkdigitNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Expiration Date: %@\n", [scanResult.result checkdigitExpirationDate]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Day Of Birth: %@\n", [scanResult.result checkdigitDayOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Final: %@\n", [scanResult.result checkdigitFinal]]];
+    [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [scanResult.result personalNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [scanResult.result checkDigitPersonalNumber]]];
+    
+    [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image module:anylineMRZModuleView completion:^{
+        // Because there is a lot of information to be passed along the module
+        // uses ALIdentification.
+        [self.identificationView updateIdentification:scanResult.result];
+        // Because cancelOnResult: is YES by default scanning has stopped.
+        // Present the information to the user
+        [self animateScanDidComplete];
+    }];
 }
 
 @end

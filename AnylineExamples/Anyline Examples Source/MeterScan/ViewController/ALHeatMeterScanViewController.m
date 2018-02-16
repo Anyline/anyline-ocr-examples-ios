@@ -3,24 +3,37 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 01/12/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2015 9yards GmbH. All rights reserved.
 //
 
 #import "ALHeatMeterScanViewController.h"
 #import "ALMeterScanResultViewController.h"
 #import <Anyline/Anyline.h>
+#import "ALMeterSelectView.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
 
+static const NSInteger padding = 7;
+
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
-@interface ALHeatMeterScanViewController ()<AnylineEnergyModuleDelegate>
+@interface ALHeatMeterScanViewController ()<AnylineEnergyModuleDelegate,ALMeterSelectViewDelegate, AnylineNativeBarcodeDelegate>
 
 // The Anyline module used to scan
 @property (nonatomic, strong) AnylineEnergyModuleView *anylineEnergyView;
 // A widget used to choose between meter types
-@property (nonatomic, strong) UISegmentedControl *meterTypeSegment;
+@property (nonatomic, strong) ALMeterSelectView *meterTypeSegment;
+
+
+
+//Native barcode scanning properties
+@property (nonatomic, strong) NSString *barcodeResult;
+
+@property (nonatomic, strong) UIView *enableBarcodeView;
+@property (nonatomic, strong) UISwitch *enableBarcodeSwitch;
+@property (nonatomic, strong) UILabel *enableBarcodeLabel;
 
 @end
 
@@ -56,7 +69,7 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
                           otherButtonTitles:nil] show];
     }
     
-    success = [self.anylineEnergyView setScanMode:ALHeatMeter4 error:&error];
+    success = [self.anylineEnergyView setScanMode:ALHeatMeter5 error:&error];
     
     if( !success ) {
         // Something went wrong. The error object contains the error description
@@ -71,18 +84,43 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.anylineEnergyView];
+    [self.view sendSubviewToBack:self.anylineEnergyView];
     
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView}]];
     
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView, @"topGuide" : topGuide}]];
-        
+    
+    
+    
+    [self.anylineEnergyView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
+    self.controllerType = ALScanHistoryHeatMeter;
+    
+    
     // This widget is used to choose between meter types
-    self.meterTypeSegment = [[UISegmentedControl alloc] initWithItems:@[@"4 Digits",@"5 Digits",@"6 Digits"]];
-    self.meterTypeSegment.center = CGPointMake(self.view.center.x, self.view.frame.size.height - 40);
-    self.meterTypeSegment.selectedSegmentIndex = 0;
-    [self.meterTypeSegment addTarget:self action:@selector(segmentChange:) forControlEvents:UIControlEventValueChanged];
+    self.meterTypeSegment = [[ALMeterSelectView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50) maxDigits:6 minDigits:4 startDigits:5];
+    self.meterTypeSegment.center = CGPointMake(self.view.center.x, self.view.frame.size.height - 50 - 44 - 45);
+    
+    self.meterTypeSegment.delegate = self;
+    
     [self.view addSubview:self.meterTypeSegment];
+    
+    //set delegate for nativeBarcodeScanning => simultaneus barcode scanning
+//    [self.anylineEnergyView.videoView setBarcodeDelegate:self];
+    self.barcodeResult = @"";
+    [self.anylineEnergyView addSubview:[self createBarcoeSwitchView]];
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    [self updateWarningPosition:
+     self.anylineEnergyView.cutoutRect.origin.y +
+     self.anylineEnergyView.cutoutRect.size.height +
+     self.anylineEnergyView.frame.origin.y +
+     90];
+    
+    [self updateLayoutBarcodeSwitchView];
 }
 
 /*
@@ -117,18 +155,18 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
  If the user changes the meter type with the segment control we will tell Anyline it should
  change its scanMode.
  */
-- (IBAction)segmentChange:(id)sender {
+- (IBAction)meterCountChanged:(NSInteger)newCount {
     BOOL success = YES;
     NSError *error = nil;
     
-    switch (self.meterTypeSegment.selectedSegmentIndex) {
-        case 0:
+    switch (newCount) {
+        case 4:
             success = [self.anylineEnergyView setScanMode:ALHeatMeter4 error:&error];
             break;
-        case 1:
+        case 5:
             success = [self.anylineEnergyView setScanMode:ALHeatMeter5 error:&error];
             break;
-        case 2:
+        case 6:
         default:
             success = [self.anylineEnergyView setScanMode:ALHeatMeter6 error:&error];
             break;
@@ -143,6 +181,73 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
                           otherButtonTitles:nil] show];
     }
 }
+- (IBAction)toggleBarcodeScanning:(id)sender {
+    
+    if (self.anylineEnergyView.captureDeviceManager.barcodeDelegate) {
+        self.enableBarcodeSwitch.on = false;
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:nil];
+        //reset found barcode
+        self.barcodeResult = @"";
+    } else {
+        self.enableBarcodeSwitch.on = true;
+        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:self];
+    }
+}
+
+#pragma mark - Barcode View layouting
+- (UIView *)createBarcoeSwitchView {
+    //Add UISwitch for toggling barcode scanning
+    self.enableBarcodeView = [[UIView alloc] init];
+    self.enableBarcodeView.frame = CGRectMake(0, 0, 150, 50);
+    
+    self.enableBarcodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    self.enableBarcodeLabel.text = @"Barcode Detection";
+    UIFont *font = [UIFont systemFontOfSize:14 weight:UIFontWeightThin];
+    self.enableBarcodeLabel.font = font;
+    self.enableBarcodeLabel.numberOfLines = 0;
+    
+    self.enableBarcodeLabel.textColor = [UIColor whiteColor];
+    [self.enableBarcodeLabel sizeToFit];
+    
+    self.enableBarcodeSwitch = [[UISwitch alloc] init];
+    [self.enableBarcodeSwitch setOn:false];
+    self.enableBarcodeSwitch.onTintColor = [UIColor whiteColor];
+    [self.enableBarcodeSwitch setOnTintColor:[UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:255.0/255.0 alpha:1.0]];
+    [self.enableBarcodeSwitch addTarget:self action:@selector(toggleBarcodeScanning:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.enableBarcodeView addSubview:self.enableBarcodeLabel];
+    [self.enableBarcodeView addSubview:self.enableBarcodeSwitch];
+    
+    return self.enableBarcodeView;
+}
+
+- (void)updateLayoutBarcodeSwitchView {
+    self.enableBarcodeLabel.center = CGPointMake(self.enableBarcodeLabel.frame.size.width/2,
+                                                 self.enableBarcodeView.frame.size.height/2);
+    
+    self.enableBarcodeSwitch.center = CGPointMake(self.enableBarcodeLabel.frame.size.width + self.enableBarcodeSwitch.frame.size.width/2 + padding,
+                                                  self.enableBarcodeView.frame.size.height/2);
+    
+//    CGFloat posY = self.meterTypeSegment.frame.origin.y-self.enableBarcodeView.frame.size.height-55;
+    CGFloat posY = self.anylineEnergyView.frame.size.height-self.enableBarcodeView.frame.size.height-55;
+    CGFloat width = self.enableBarcodeSwitch.frame.size.width + padding + self.enableBarcodeLabel.frame.size.width;
+    self.enableBarcodeView.frame = CGRectMake(self.anylineEnergyView.frame.size.width-width-15,
+                                              posY,
+                                              width,
+                                              50);
+}
+
+#pragma mark - AnylineNativeBarcodeDelegate methods
+/*
+ An additional delegate which will add all found, and unique, barcodes to a Dictionary simultaneously.
+ */
+- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([scanResult length] > 0 && ![self.barcodeResult isEqualToString:scanResult]) {
+            self.barcodeResult = scanResult;
+        }
+    });
+}
 
 #pragma mark - AnylineControllerDelegate methods
 /*
@@ -151,15 +256,31 @@ NSString * const kHeatMeterScanLicenseKey = kDemoAppLicenseKey;
 
 - (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
                   didFindResult:(ALEnergyResult *)scanResult {
-    ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
-    /*
-     To present the scanned result to the user we use a custom view controller.
-     */
-    vc.scanMode = scanResult.scanMode;
-    vc.meterImage = scanResult.image;
-    vc.result = scanResult.result;
     
-    [self.navigationController pushViewController:vc animated:YES];
+    [self anylineDidFindResult:scanResult.result barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image module:anylineEnergyModuleView completion:^{
+        ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
+        /*
+         To present the scanned result to the user we use a custom view controller.
+         */
+        vc.scanMode = scanResult.scanMode;
+        vc.meterImage = scanResult.image;
+        vc.result = scanResult.result;
+        vc.barcodeResult = self.barcodeResult;
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+    self.barcodeResult = @"";
+}
+
+- (NSString *)addon {
+//    return [NSString stringWithFormat:@"(%li pre-decimal)",(long)self.meterTypeSegment.digitCount];
+    return [NSString stringWithFormat:@"%li",(long)self.meterTypeSegment.digitCount];
+}
+
+#pragma mark - ALMeterSelectViewDelegate
+
+- (void)meterSelectView:(ALMeterSelectView *)meterSelectView didChangeDigitCount:(NSInteger)digitCount {
+    [self meterCountChanged:digitCount];
 }
 
 @end

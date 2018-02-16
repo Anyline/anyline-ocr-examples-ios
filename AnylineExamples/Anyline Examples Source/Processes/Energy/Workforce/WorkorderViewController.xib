@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Reg.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="ProximaNova-Sbold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkorderViewController">
+            <connections>
+                <outlet property="customerTableView" destination="1iZ-7M-qk7" id="eTP-0o-y4k"/>
+                <outlet property="titleLabel" destination="Uym-y5-ZHI" id="TKg-8k-HIp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order #103" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-y5-ZHI">
+                    <rect key="frame" x="16" y="19" width="84" height="21"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1iZ-7M-qk7">
+                    <rect key="frame" x="0.0" y="48" width="375" height="619"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Yfb-Tg-7jy"/>
+                        <outlet property="delegate" destination="-1" id="fii-tj-ha3"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAV-Gb-DXS">
+                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="pI8-27-Wju"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
+                    <state key="normal" title="START" backgroundImage="button action blue"/>
+                    <connections>
+                        <action selector="startAction:" destination="-1" eventType="touchUpInside" id="mCi-Tg-Bvb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.85415387153625488" green="0.85412830114364624" blue="0.85414278507232666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1iZ-7M-qk7" secondAttribute="bottom" id="2Qc-CB-WOH"/>
+                <constraint firstAttribute="bottom" secondItem="lAV-Gb-DXS" secondAttribute="bottom" id="4Gh-ME-AmS"/>
+                <constraint firstItem="Uym-y5-ZHI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="5vB-A3-9Sf"/>
+                <constraint firstItem="lAV-Gb-DXS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AiO-tA-vUY"/>
+                <constraint firstItem="1iZ-7M-qk7" firstAttribute="top" secondItem="Uym-y5-ZHI" secondAttribute="bottom" constant="8" id="Jaz-Zt-0IW"/>
+                <constraint firstAttribute="trailing" secondItem="1iZ-7M-qk7" secondAttribute="trailing" id="VGf-N6-MbB"/>
+                <constraint firstAttribute="trailing" secondItem="lAV-Gb-DXS" secondAttribute="trailing" id="ZMj-IP-n7g"/>
+                <constraint firstItem="lAV-Gb-DXS" firstAttribute="top" secondItem="1iZ-7M-qk7" secondAttribute="bottom" id="eDK-xy-cbj"/>
+                <constraint firstItem="Uym-y5-ZHI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="pKb-M4-dCW"/>
+                <constraint firstItem="1iZ-7M-qk7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tar-ga-AVj"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="eDK-xy-cbj"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="276.5" y="271.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button action blue" width="159" height="70"/>
+    </resources>
+</document>

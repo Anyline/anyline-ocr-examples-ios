@@ -3,7 +3,7 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 05/02/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 9yards GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (NSManagedObjectContext *)managedObjectContext;
 
 @end
 

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALSerialNumberScanViewController : UIViewController
+#import "ALBaseScanViewController.h"
+
+@interface ALSerialNumberScanViewController : ALBaseScanViewController
 
 @end

@@ -3,11 +3,13 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 02/12/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2015 9yards GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ALDigitalMeterScanViewController : UIViewController
+#import "ALBaseScanViewController.h"
+
+@interface ALDigitalMeterScanViewController : ALBaseScanViewController
 
 @end

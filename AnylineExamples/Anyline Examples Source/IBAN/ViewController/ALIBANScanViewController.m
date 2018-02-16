@@ -3,18 +3,20 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 04/02/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards GmbH. All rights reserved.
 //
 
 #import "ALIBANScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
+
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALIBANScanViewController ()<AnylineOCRModuleDelegate>
+@interface ALIBANScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
@@ -28,6 +30,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
+
     self.title = @"IBAN";
     
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
@@ -41,9 +44,14 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     config.languages = @[engTraineddata, deuTraineddata];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-    config.minConfidence = 70;
     config.scanMode = ALAuto;
     
+
+    // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
+    // The goal of the minimum sharpness is to avoid a time consuming ocr step,
+    // if the image is blurry and good results are therefor not likely.
+    config.minSharpness = 66;
+
     NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
     // by the module once we start receiving results.
@@ -58,19 +66,21 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
         NSAssert(success, @"Setup Error: %@", error.debugDescription);
     }
     
+    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"iban_config" ofType:@"json"];
     ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    [self.ocrModuleView setCurrentConfiguration:ibanConf];
+    self.ocrModuleView.currentConfiguration = ibanConf;
     
-    self.ocrModuleView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.controllerType = ALScanHistoryIban;
+    
+    //self.ocrModuleView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.ocrModuleView];
-    
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.ocrModuleView}]];
-    
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.ocrModuleView, @"topGuide" : topGuide}]];
+    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self startListeningForMotion];
+
 }
 
 /*
@@ -91,6 +101,14 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     [self.ocrModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.ocrModuleView.cutoutRect.origin.y +
+     self.ocrModuleView.cutoutRect.size.height +
+     self.ocrModuleView.frame.origin.y +
+     90];
+}
+
 /*
  This method is used to tell Anyline to start scanning. It gets called in
  viewDidAppear to start scanning the moment the view appears. Once a result
@@ -105,6 +123,14 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
     }
+    
+    self.startTime = CACurrentMediaTime();
+}
+
+- (void)stopAnyline {
+    if (self.ocrModuleView.isRunning) {
+        [self.ocrModuleView cancelScanningAndReturnError:nil];
+    }
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
@@ -114,28 +140,52 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
-    UIImage *image = [UIImage imageNamed:@"iban_background"];
-    ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-    [overlay setImage:image];
-    [overlay setText:[self formattedIbanText:result.result]];
-    [overlay addLabelOffset:CGSizeMake(0, 30)];
-    [overlay setFontSize:17];
-    [overlay setAlignment:NSTextAlignmentLeft];
-    __weak typeof(self) welf = self;
-    __weak ALResultOverlayView *woverlay = overlay;
-    [overlay setTouchDownBlock:^{
-        // Remove the view when touched and restart scanning
-        [welf startAnyline];
-        [woverlay removeFromSuperview];
+    // We are done. Cancel scanning
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        [self stopAnyline];
+        UIImage *image = [UIImage imageNamed:@"iban_background"];
+        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
+        [overlay setImage:image];
+        [overlay setText:[self formattedIbanText:result.result]];
+        [overlay addLabelOffset:CGSizeMake(0, 30)];
+        [overlay setFontSize:17];
+        [overlay setAlignment:NSTextAlignmentLeft];
+        __weak typeof(self) welf = self;
+        __weak ALResultOverlayView *woverlay = overlay;
+        [overlay setTouchDownBlock:^{
+            // Remove the view when touched and restart scanning
+            [welf startAnyline];
+            [woverlay removeFromSuperview];
+        }];
+        [self.view addSubview:overlay];
     }];
-    [self.view addSubview:overlay];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
+             reportsVariable:(NSString *)variableName
+                       value:(id)value {
+    if ([variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView];
+    }
     
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
+}
+
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+               runSkipped:(ALRunFailure)runFailure {
+    switch (runFailure) {
+        case ALRunFailureResultNotValid:
+            break;
+        case ALRunFailureConfidenceNotReached:
+            break;
+        case ALRunFailureNoLinesFound:
+            break;
+        case ALRunFailureNoTextFound:
+            break;
+        case ALRunFailureUnkown:
+            break;
+        default:
+            break;
+    }
 }
 
 - (NSString *)formattedIbanText:(NSString*)originalString {

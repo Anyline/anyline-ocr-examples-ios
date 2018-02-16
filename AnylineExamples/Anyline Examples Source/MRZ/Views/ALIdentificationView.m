@@ -3,7 +3,7 @@
 //  AnylineExamples
 //
 //  Created by Matthias on 24/05/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 9yards GmbH. All rights reserved.
 //
 
 #import "ALIdentificationView.h"
@@ -107,6 +107,7 @@
         self.line0.frame = CGRectMake(6, 160, 295, 60);
         self.line0.text = @"P<AUTGASSER<<MATTHIAS<<<<<<<<<<<<<<<<<<<<<<<";
         [self addSubview:self.line0];
+
     }
 }
 
@@ -132,7 +133,6 @@
     self.code.text = aIdentification.nationalityCountryCode;
     self.type.text = aIdentification.documentType;
     
-    
     if (aIdentification.dayOfBirthDateObject) {
         self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dayOfBirthDateObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
         [self.dob sizeToFit];
@@ -149,10 +149,8 @@
 
     self.sex.text = aIdentification.sex;
     
-    //In the original MRZ string from the SDK, the new lines are escaped for further use
-    //To display the string correctly, the escaped new lines will be replaced.
     self.line0.text = [aIdentification.MRZString stringByReplacingOccurrencesOfString:@"\\n"
-                                                                           withString:@"\n"];
+                                         withString:@"\n"];
     self.line0.numberOfLines = 0;
 }
 

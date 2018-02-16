@@ -3,11 +3,11 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 05/02/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 9yards GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "ALUmbrella.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

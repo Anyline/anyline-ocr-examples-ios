@@ -3,18 +3,19 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 04/02/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards GmbH. All rights reserved.
 //
 
 #import "ALVoucherCodeScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALVoucherCodeScanViewController ()<AnylineOCRModuleDelegate>
+@interface ALVoucherCodeScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
@@ -26,9 +27,11 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Voucher Code";
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Voucher";
     
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
@@ -56,12 +59,18 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
         NSAssert(success, @"Setup Error: %@", error.debugDescription);
     }
     
+    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"voucher_code_config" ofType:@"json"];
     ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
     self.ocrModuleView.currentConfiguration = ibanConf;
     
+    self.controllerType = ALScanHistoryVoucherCode;
+    
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.ocrModuleView];
+    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self startListeningForMotion];
 
 }
 
@@ -83,6 +92,14 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     [self.ocrModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.ocrModuleView.cutoutRect.origin.y +
+     self.ocrModuleView.cutoutRect.size.height +
+     self.ocrModuleView.frame.origin.y +
+     90];
+}
+
 /*
  This method is used to tell Anyline to start scanning. It gets called in
  viewDidAppear to start scanning the moment the view appears. Once a result
@@ -97,6 +114,14 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
     }
+    
+    self.startTime = CACurrentMediaTime();
+}
+
+- (void)stopAnyline {
+    if (self.ocrModuleView.isRunning) {
+        [self.ocrModuleView cancelScanningAndReturnError:nil];
+    }
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
@@ -106,26 +131,49 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
-    // Display an overlay showing the result
-    UIImage *image = [UIImage imageNamed:@"gift_card_background"];
-    ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-    [overlay setImage:image];
-    [overlay setText:result.result];
-    __weak typeof(self) welf = self;
-    __weak ALResultOverlayView *woverlay = overlay;
-    [overlay setTouchDownBlock:^{
-        // Remove the view when touched and restart scanning
-        [welf startAnyline];
-        [woverlay removeFromSuperview];
+    // We are done. Cancel scanning
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        [self stopAnyline];
+        // Display an overlay showing the result
+        UIImage *image = [UIImage imageNamed:@"gift_card_background"];
+        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
+        [overlay setImage:image];
+        [overlay setText:result.result];
+        __weak typeof(self) welf = self;
+        __weak ALResultOverlayView *woverlay = overlay;
+        [overlay setTouchDownBlock:^{
+            // Remove the view when touched and restart scanning
+            [welf startAnyline];
+            [woverlay removeFromSuperview];
+        }];
+        [self.view addSubview:overlay];
     }];
-    [self.view addSubview:overlay];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
-    
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
+- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
+             reportsVariable:(NSString *)variableName
+                       value:(id)value {
+    if ([variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView ignoreTooDark:YES];
+    }
+}
+
+- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
+               runSkipped:(ALRunFailure)runFailure {
+    switch (runFailure) {
+        case ALRunFailureResultNotValid:
+            break;
+        case ALRunFailureConfidenceNotReached:
+            break;
+        case ALRunFailureNoLinesFound:
+            break;
+        case ALRunFailureNoTextFound:
+            break;
+        case ALRunFailureUnkown:
+            break;
+        default:
+            break;
+    }
 }
 
 @end

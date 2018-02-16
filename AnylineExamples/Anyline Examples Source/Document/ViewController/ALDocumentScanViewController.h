@@ -1,6 +1,7 @@
 
 #import <UIKit/UIKit.h>
+#import "ALBaseScanViewController.h"
 
-@interface ALDocumentScanViewController : UIViewController
+@interface ALDocumentScanViewController : ALBaseScanViewController
 
 @end

@@ -3,7 +3,7 @@
 //  AnylineExamples
 //
 //  Created by David Dengg on 15.02.16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards GmbH. All rights reserved.
 //
 
 #import "ALBaseViewController.h"
@@ -53,7 +53,7 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        [self displayLabelWithString:@"The device seems to be offline. Please check your internet connection"];
+        [self displayLabelWithString:[NSString stringWithFormat:@"The device seems to be offline. Please check your internet connection. \n \n Scan Result: %@",self.result]];
         return NO;
     }
     return YES;

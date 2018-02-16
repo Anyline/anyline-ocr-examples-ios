@@ -1,5 +1,5 @@
 //
-//  ALAutoAnalogDigitalMeterScanViewController
+//  ALAutoAnalogDigitalMeterScanViewController.h
 //  AnylineExamples
 //
 //  Created by Philipp Müller on 01/12/15.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALAutoAnalogDigitalMeterScanViewController : UIViewController
+#import "ALBaseScanViewController.h"
+
+@interface ALAutoAnalogDigitalMeterScanViewController : ALBaseScanViewController
 
 @end

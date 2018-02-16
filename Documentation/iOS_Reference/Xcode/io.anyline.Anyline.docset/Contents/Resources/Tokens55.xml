@@ -160,6 +160,93 @@ It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setSerialNumberValidationRegex:</TokenIdentifier>
+			<Abstract type="html">A validation regex string for the Serial scanMode.
+Regex has to follow the ECMAScript standard.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/serialNumberValidationRegex</TokenIdentifier>
+			<Abstract type="html">A validation regex string for the Serial scanMode.
+Regex has to follow the ECMAScript standard.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/serialNumberValidationRegex</TokenIdentifier>
+			<Abstract type="html">A validation regex string for the Serial scanMode.
+Regex has to follow the ECMAScript standard.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setSerialNumberCharWhitelist:</TokenIdentifier>
+			<Abstract type="html">A character whitelist for the Serial scanMode.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/serialNumberCharWhitelist</TokenIdentifier>
+			<Abstract type="html">A character whitelist for the Serial scanMode.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/serialNumberCharWhitelist</TokenIdentifier>
+			<Abstract type="html">A character whitelist for the Serial scanMode.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</Abstract>
+			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
+			
+			
+			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
+            <NodeRef refid="55"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
 			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
 			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>

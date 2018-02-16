@@ -3,7 +3,7 @@
 //  ExampleApi
 //
 //  Created by David Dengg on 14.02.16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards. All rights reserved.
 //
 
 #import "ALScrabbleViewController.h"
@@ -22,15 +22,16 @@
 /*
  The word setter triggers the search for an anagram
  */
-- (void)setScrabbleWord:(NSString *)word {
+- (void)setResult:(NSString *)result {
+    [super setResult:result];
+    
     if(![self checkConnectionAndWarnUser]) {
         return;
     }
-    _scrabbleWord = word;
     [self startLoading];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         ALAnagramAPI *anagramApi = [[ALAnagramAPI alloc] init];
-        NSArray *words = [anagramApi wordsForString:word];
+        NSArray *words = [anagramApi wordsForString:result];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setWordAndLoadWordArray:words];
         });
@@ -50,7 +51,7 @@
     [self.tableView setDataSource:self];
     
     ALScrabbleLabel *lbl = [[ALScrabbleLabel alloc] initWithFrame:CGRectMake(0, 60, self.tableView.bounds.size.width, 60)];
-    lbl.text = self.scrabbleWord;
+    lbl.text = self.result;
     lbl.backgroundColor = [UIColor colorWithRed:(float)46 / 255.0 green:(float)91 / 255.0 blue:(float)72 / 255.0 alpha:1.0];
     self.tableView.tableHeaderView = lbl;
     

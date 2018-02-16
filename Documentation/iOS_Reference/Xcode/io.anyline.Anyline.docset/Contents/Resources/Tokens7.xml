@@ -421,6 +421,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCaptureDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/captureDevice</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
+			
+			
+			<Anchor>//api/name/captureDevice</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/addVideoLayerOnView:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
@@ -453,6 +489,18 @@
 			
 			
 			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setZoomLevel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setZoomLevel:(CGFloat)zoomFactor</Declaration>
+			
+			
+			<Anchor>//api/name/setZoomLevel:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

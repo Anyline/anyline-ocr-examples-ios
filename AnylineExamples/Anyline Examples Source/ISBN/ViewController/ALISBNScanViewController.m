@@ -3,12 +3,13 @@
 //  AnylineExamples
 //
 //  Created by Daniel Albertini on 04/02/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright © 2016 9yards GmbH. All rights reserved.
 //
 
 #import "ALISBNScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALISBNViewController.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
 // This is the license key for the examples project used to set up Aynline below
@@ -26,9 +27,11 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"ISBN";
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"ISBN";
     
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
@@ -38,9 +41,9 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
     NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
-    config.languages = @[engTraineddata, deuTraineddata];
-    config.charWhiteList = charWhiteListForISBN;
-    config.validationRegex = regexForISBN;
+    config.languages = @[engTraineddata,deuTraineddata];
+    config.charWhiteList = @"ISBN0123456789<>-X";
+    config.validationRegex = @"^ISBN((-)?\\s*(13|10))?:?\\s*((978|979){1}-?\\s*)*[0-9]{1,5}-?\\s*[0-9]{2,7}-?\\s*[0-9]{2,7}-?\\s*[0-9X]$";
     config.scanMode = ALAuto;
     
     NSError *error = nil;
@@ -57,12 +60,19 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
         NSAssert(success, @"Setup Error: %@", error.debugDescription);
     }
     
+    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"isbn_config" ofType:@"json"];
     ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
     self.ocrModuleView.currentConfiguration = ibanConf;
     
+    self.controllerType = ALScanHistoryIsbn;
+    
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.ocrModuleView];
+    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self startListeningForMotion];
+
 }
 
 /*
@@ -83,6 +93,15 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     [self.ocrModuleView cancelScanningAndReturnError:nil];
 }
 
+- (void)viewDidLayoutSubviews {
+    [self updateWarningPosition:
+     self.ocrModuleView.cutoutRect.origin.y +
+     self.ocrModuleView.cutoutRect.size.height +
+     self.ocrModuleView.frame.origin.y +
+     90];
+}
+
+
 /*
  This method is used to tell Anyline to start scanning. It gets called in
  viewDidAppear to start scanning the moment the view appears. Once a result
@@ -97,6 +116,14 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
     }
+    
+    self.startTime = CACurrentMediaTime();
+}
+
+- (void)stopAnyline {
+    if (self.ocrModuleView.isRunning) {
+        [self.ocrModuleView cancelScanningAndReturnError:nil];
+    }
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
@@ -106,32 +133,37 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
  */
 - (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
                didFindResult:(ALOCRResult *)result {
-    ALISBNViewController *vc = [[ALISBNViewController alloc] init];
-    NSString *isbn = (NSString *)result.result;
-    isbn = [isbn stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    isbn = [isbn stringByReplacingOccurrencesOfString:@" " withString:@""];
-    isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN10" withString:@""];
-    isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN13" withString:@""];
-    isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN" withString:@""];
-    isbn = [isbn stringByReplacingOccurrencesOfString:@":" withString:@""];
-    
-    [vc setIsbnString:isbn];
-    [self.navigationController pushViewController:vc animated:YES];
+    // We are done. Cancel scanning
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        [self stopAnyline];
+        ALISBNViewController *vc = [[ALISBNViewController alloc] init];
+        NSString *isbn = result.result;
+        isbn = [isbn stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        isbn = [isbn stringByReplacingOccurrencesOfString:@" " withString:@""];
+        isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN10" withString:@""];
+        isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN13" withString:@""];
+        isbn = [isbn stringByReplacingOccurrencesOfString:@"ISBN" withString:@""];
+        isbn = [isbn stringByReplacingOccurrencesOfString:@":" withString:@""];
+        
+        [vc setResult:isbn];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
+- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
+             reportsVariable:(NSString *)variableName
+                       value:(id)value {
+    if ([variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView];
+    }
+}
 
 - (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
-      reportDebugVariable:(NSString *)variableName
-                    value:(id)value {
-    
-}
-
-
--(void) anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure {
+               runSkipped:(ALRunFailure)runFailure {
     switch (runFailure) {
         case ALRunFailureResultNotValid:
             break;
-        case ALRunFailureSharpnessNotReached:
+        case ALRunFailureConfidenceNotReached:
             break;
         case ALRunFailureNoLinesFound:
             break;
@@ -142,13 +174,6 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
         default:
             break;
     }
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
-    
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
 }
 
 @end

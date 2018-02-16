@@ -48,11 +48,14 @@
 @property (nonatomic, assign) CGPoint cutoutOffset;
 
 @property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice;
 
 - (void)addVideoLayerOnView:(UIView * _Nonnull)view;
 - (void)updateVideoLayer:(UIView * _Nonnull)view;
 
 - (void)setFocusAndExposurePoint:(CGPoint)point;
+
+- (void)setZoomLevel:(CGFloat)zoomFactor;
 
 - (void)startSession;
 

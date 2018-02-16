@@ -22,7 +22,7 @@
     },
     "beepOnResult": true,
     "vibrateOnResult": true,
-    "blinkAnimationOnResult": true, 
+    "blinkAnimationOnResult": true,
     "cancelOnResult": true,
     "visualFeedback": {
         "style": "contour_rect",

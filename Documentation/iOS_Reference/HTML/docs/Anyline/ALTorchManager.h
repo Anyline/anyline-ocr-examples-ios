@@ -22,4 +22,6 @@
 - (void)setTorch:(BOOL)onOff;
 - (BOOL)torchAvailable;
 
+- (_Nullable instancetype)initWithCaptureDevice:(AVCaptureDevice * _Nullable)captureDevice;
+
 @end

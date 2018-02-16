@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALAnalogMeterScanViewController : UIViewController
+#import "ALBaseScanViewController.h"
+
+@interface ALAnalogMeterScanViewController : ALBaseScanViewController
 
 @end

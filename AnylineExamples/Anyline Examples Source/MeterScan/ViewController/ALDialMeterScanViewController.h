@@ -1,13 +1,15 @@
 //
-//  ALDialMeterScanViewController.h
+//  ALAnalogMeterScanViewController.h
 //  AnylineExamples
 //
-//  Created by Philipp Müller on 03/07/17.
+//  Created by Philipp Müller on 01/12/15.
 //  Copyright © 2016 Anyline GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ALDialMeterScanViewController : UIViewController
+#import "ALBaseScanViewController.h"
+
+@interface ALDialMeterScanViewController : ALBaseScanViewController
 
 @end

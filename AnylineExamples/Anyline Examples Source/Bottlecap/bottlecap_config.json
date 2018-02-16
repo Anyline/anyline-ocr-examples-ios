@@ -30,6 +30,6 @@
     },
     "beepOnResult": true,
     "vibrateOnResult": true,
-    "blinkAnimationOnResult": true, 
-    "cancelOnResult": true 
+    "blinkAnimationOnResult": true,
+    "cancelOnResult": true
 }

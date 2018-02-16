@@ -3,7 +3,7 @@
 //  eScan
 //
 //  Created by Daniel Albertini on 01/02/15.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
+//  Copyright (c) 2015 Daniel Albertini. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -18,10 +18,8 @@
 
 @property (nonatomic, strong) UIImage *meterImage;
 
-@property (nonatomic, strong) NSString *secondResult;
+@property (nonatomic, strong) NSString *barcodeResult;
 
-@property (nonatomic, strong) UIImage *secondMeterImage;
-
-@property (nonatomic, strong) NSDictionary *barcodeResults;
+@property (nonatomic, strong) NSString *resultTitle;
 
 @end

@@ -35,6 +35,21 @@
  *
  */
 @property (nonatomic, assign, readonly) ALScanMode scanMode;
+/**
+ *  A validation regex string for the Serial scanMode.
+ *  Regex has to follow the ECMAScript standard.
+ *  This parameter will be ignored in the other scanModes.
+ *  If you want to have no regex this property has to be set to nil.
+ */
+@property (nonatomic, strong) NSString * _Nullable serialNumberValidationRegex;
+/**
+ *  A character whitelist for the Serial scanMode.
+ *  This parameter will be ignored in the other scanModes.
+ *  If you want to have no regex this property has to be set to nil.
+ *
+ *  @warning There are only numbers and uppercase characters allowed.
+ */
+@property (nonatomic, strong) NSString * _Nullable serialNumberCharWhitelist;
 
 /**
  *  Sets the scan mode and returns an NSError if something failed.
