@@ -9,46 +9,51 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "ALImageProvider.h"
 #import "ALViewConstants.h"
 #import "ALSquare.h"
 
 @protocol AnylineVideoDataSampleBufferDelegate;
 @protocol AnylineNativeBarcodeDelegate;
 
-@interface ALCaptureDeviceManager : NSObject<ALImageProvider>
+@interface ALCaptureDeviceManager : NSObject
 
-- (_Nullable instancetype)initWithCaptureResolution:(ALCaptureViewResolution)captureResolution
-                                  pictureResolution:(ALPictureResolution)pictureResolution
-                                       cutoutScreen:(CGRect)cutoutScreen
-                                      cutoutPadding:(CGSize)cutoutPadding
-                                       cutoutOffset:(CGPoint)cutoutOffset
-                                      defaultDevice:(NSString * _Nonnull)defaultDevice;
++ (instancetype _Nonnull)sharedCaptureDeviceManager;
+
+- (void)setupWithCaptureResolution:(ALCaptureViewResolution)captureResolution
+                 pictureResolution:(ALPictureResolution)pictureResolution
+                     defaultDevice:(NSString * _Nullable)defaultDevice;
+
+- (void)tearDown;
 
 /**
  The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.
  
  @warning Do not implement this delegate when you use the Barcode module.
  */
-@property (nullable, nonatomic, weak) id<AnylineNativeBarcodeDelegate> barcodeDelegate;
+@property (nonatomic, strong, readonly) NSHashTable<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
 /**
  The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.
  */
-@property (nullable, nonatomic, weak) id<AnylineVideoDataSampleBufferDelegate> sampleBufferDelegate;
+@property (nonatomic, strong, readonly) NSHashTable<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
 
 @property (nonatomic, assign) ALCaptureViewResolution captureResolution;
 @property (nonatomic, assign) ALPictureResolution pictureResolution;
 
-@property (nonatomic, assign) CGSize videoResolution;
-
-@property (atomic, assign) CGRect cutoutFrame;
-@property (nonatomic, assign) CGSize bufferFrame;
-@property (nonatomic, assign) CGRect cutoutScreen;
-@property (nonatomic, assign) CGSize cutoutPadding;
-@property (nonatomic, assign) CGPoint cutoutOffset;
-
 @property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice;
+
+@property (nullable, nonatomic, strong) AVCaptureSession *session;
+@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
+
+@property (nonatomic, assign) CGSize videoResolution;
+
+- (void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+
+- (void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+
+- (void)addSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
+
+- (void)removeSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
 
 - (void)addVideoLayerOnView:(UIView * _Nonnull)view;
 - (void)updateVideoLayer:(UIView * _Nonnull)view;
@@ -63,14 +68,11 @@
 
 - (BOOL)isRunning;
 
-- (CGPoint)convertPoint:(CGPoint)inPoint;
-
-- (CGPoint)convertPoint:(CGPoint)inPoint
-             imageWidth:(CGFloat)inWidth;
-
 - (CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint;
 
 - (UIInterfaceOrientation)currentInterfaceOrientation;
+
+- (AVCaptureConnection *_Nonnull)getOrientationAdaptedCaptureConnection;
 
 @end
 
@@ -103,3 +105,4 @@
                                type:(NSString * _Nonnull)barcodeType;
 
 @end
+

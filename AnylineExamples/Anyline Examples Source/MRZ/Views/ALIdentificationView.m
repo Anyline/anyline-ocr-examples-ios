@@ -107,7 +107,6 @@
         self.line0.frame = CGRectMake(6, 160, 295, 60);
         self.line0.text = @"P<AUTGASSER<<MATTHIAS<<<<<<<<<<<<<<<<<<<<<<<";
         [self addSubview:self.line0];
-
     }
 }
 
@@ -150,7 +149,7 @@
     self.sex.text = aIdentification.sex;
     
     self.line0.text = [aIdentification.MRZString stringByReplacingOccurrencesOfString:@"\\n"
-                                         withString:@"\n"];
+                                                                           withString:@"\n"];
     self.line0.numberOfLines = 0;
 }
 

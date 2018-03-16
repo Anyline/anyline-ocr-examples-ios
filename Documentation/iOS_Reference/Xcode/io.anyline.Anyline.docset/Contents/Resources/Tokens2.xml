@@ -85,6 +85,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setSampleBufferImageProvider:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferImageProvider</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/sampleBufferImageProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferImageProvider</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/sampleBufferImageProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider</Declaration>
+			
+			
+			<Anchor>//api/name/sampleBufferImageProvider</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCutoutView:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>

@@ -54,27 +54,21 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/barcodeDelegate">barcodeDelegate</option>
-		
-		<option value="//api/name/bufferFrame">bufferFrame</option>
+		<option value="//api/name/barcodeDelegates">barcodeDelegates</option>
 		
 		<option value="//api/name/captureDevice">captureDevice</option>
 		
 		<option value="//api/name/captureResolution">captureResolution</option>
 		
-		<option value="//api/name/cutoutFrame">cutoutFrame</option>
-		
-		<option value="//api/name/cutoutOffset">cutoutOffset</option>
-		
-		<option value="//api/name/cutoutPadding">cutoutPadding</option>
-		
-		<option value="//api/name/cutoutScreen">cutoutScreen</option>
-		
 		<option value="//api/name/pictureResolution">pictureResolution</option>
 		
 		<option value="//api/name/previewLayer">previewLayer</option>
 		
-		<option value="//api/name/sampleBufferDelegate">sampleBufferDelegate</option>
+		<option value="//api/name/sampleBufferDelegates">sampleBufferDelegates</option>
+		
+		<option value="//api/name/session">session</option>
+		
+		<option value="//api/name/stillImageOutput">stillImageOutput</option>
 		
 		<option value="//api/name/videoResolution">videoResolution</option>
 		
@@ -82,31 +76,45 @@
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedCaptureDeviceManager">+ sharedCaptureDeviceManager</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addBarcodeDelegate:">- addBarcodeDelegate:</option>
+		
+		<option value="//api/name/addSampleBufferDelegate:">- addSampleBufferDelegate:</option>
+		
 		<option value="//api/name/addVideoLayerOnView:">- addVideoLayerOnView:</option>
-		
-		<option value="//api/name/convertPoint:">- convertPoint:</option>
-		
-		<option value="//api/name/convertPoint:imageWidth:">- convertPoint:imageWidth:</option>
 		
 		<option value="//api/name/currentInterfaceOrientation">- currentInterfaceOrientation</option>
 		
 		<option value="//api/name/fullResolutionPointForPointInPreview:">- fullResolutionPointForPointInPreview:</option>
 		
-		<option value="//api/name/initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:">- initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:</option>
+		<option value="//api/name/getOrientationAdaptedCaptureConnection">- getOrientationAdaptedCaptureConnection</option>
 		
 		<option value="//api/name/isRunning">- isRunning</option>
+		
+		<option value="//api/name/removeBarcodeDelegate:">- removeBarcodeDelegate:</option>
+		
+		<option value="//api/name/removeSampleBufferDelegate:">- removeSampleBufferDelegate:</option>
 		
 		<option value="//api/name/setFocusAndExposurePoint:">- setFocusAndExposurePoint:</option>
 		
 		<option value="//api/name/setZoomLevel:">- setZoomLevel:</option>
 		
+		<option value="//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:">- setupWithCaptureResolution:pictureResolution:defaultDevice:</option>
+		
 		<option value="//api/name/startSession">- startSession</option>
 		
 		<option value="//api/name/stopSession">- stopSession</option>
+		
+		<option value="//api/name/tearDown">- tearDown</option>
 		
 		<option value="//api/name/updateVideoLayer:">- updateVideoLayer:</option>
 		
@@ -133,9 +141,6 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/ALImageProvider.html">ALImageProvider</a></td>
-</tr><tr>
 	<th>Declared in</th>
 	<td>ALCaptureDeviceManager.h</td>
 </tr>
@@ -155,8 +160,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:" title="initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:">&ndash;&nbsp;initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:</a></code>
+	<a name="//api/name/sharedCaptureDeviceManager" title="sharedCaptureDeviceManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedCaptureDeviceManager">+&nbsp;sharedCaptureDeviceManager</a></code>
 </h3>
 
 	<div class="method-info">
@@ -165,14 +170,46 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithCaptureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> cutoutScreen:(CGRect)<em>cutoutScreen</em> cutoutPadding:(CGSize)<em>cutoutPadding</em> cutoutOffset:(CGPoint)<em>cutoutOffset</em> defaultDevice:(NSString *_Nonnull)<em>defaultDevice</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nonnull)sharedCaptureDeviceManager</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/barcodeDelegate" title="barcodeDelegate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeDelegate">&nbsp;&nbsp;barcodeDelegate</a></code>
+	<a name="//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:" title="setupWithCaptureResolution:pictureResolution:defaultDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:">&ndash;&nbsp;setupWithCaptureResolution:pictureResolution:defaultDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setupWithCaptureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> defaultDevice:(NSString *_Nullable)<em>defaultDevice</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tearDown" title="tearDown"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tearDown">&ndash;&nbsp;tearDown</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)tearDown</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/barcodeDelegates" title="barcodeDelegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/barcodeDelegates">&nbsp;&nbsp;barcodeDelegates</a></code>
 </h3>
 
 	<div class="method-info">
@@ -187,7 +224,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;AnylineNativeBarcodeDelegate&gt; barcodeDelegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineNativeBarcodeDelegate&gt; *barcodeDelegates</code></div>
 
 		    
 			
@@ -217,8 +254,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/sampleBufferDelegate" title="sampleBufferDelegate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sampleBufferDelegate">&nbsp;&nbsp;sampleBufferDelegate</a></code>
+	<a name="//api/name/sampleBufferDelegates" title="sampleBufferDelegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferDelegates">&nbsp;&nbsp;sampleBufferDelegates</a></code>
 </h3>
 
 	<div class="method-info">
@@ -233,7 +270,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;AnylineVideoDataSampleBufferDelegate&gt; sampleBufferDelegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineVideoDataSampleBufferDelegate&gt; *sampleBufferDelegates</code></div>
 
 		    
 			
@@ -290,102 +327,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/videoResolution" title="videoResolution"></a>
-	<h3 class="method-title"><code><a href="#//api/name/videoResolution">&nbsp;&nbsp;videoResolution</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize videoResolution</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cutoutFrame" title="cutoutFrame"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cutoutFrame">&nbsp;&nbsp;cutoutFrame</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (atomic, assign) CGRect cutoutFrame</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/bufferFrame" title="bufferFrame"></a>
-	<h3 class="method-title"><code><a href="#//api/name/bufferFrame">&nbsp;&nbsp;bufferFrame</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize bufferFrame</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cutoutScreen" title="cutoutScreen"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cutoutScreen">&nbsp;&nbsp;cutoutScreen</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGRect cutoutScreen</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cutoutPadding" title="cutoutPadding"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cutoutPadding">&nbsp;&nbsp;cutoutPadding</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize cutoutPadding</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cutoutOffset" title="cutoutOffset"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cutoutOffset">&nbsp;&nbsp;cutoutOffset</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint cutoutOffset</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/previewLayer" title="previewLayer"></a>
 	<h3 class="method-title"><code><a href="#//api/name/previewLayer">&nbsp;&nbsp;previewLayer</a></code>
 </h3>
@@ -413,6 +354,118 @@
 			
 
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/session" title="session"></a>
+	<h3 class="method-title"><code><a href="#//api/name/session">&nbsp;&nbsp;session</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) AVCaptureSession *session</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stillImageOutput" title="stillImageOutput"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stillImageOutput">&nbsp;&nbsp;stillImageOutput</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoResolution" title="videoResolution"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoResolution">&nbsp;&nbsp;videoResolution</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize videoResolution</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addBarcodeDelegate:" title="addBarcodeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addBarcodeDelegate:">&ndash;&nbsp;addBarcodeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addBarcodeDelegate:(id&lt;AnylineNativeBarcodeDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeBarcodeDelegate:" title="removeBarcodeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeBarcodeDelegate:">&ndash;&nbsp;removeBarcodeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeBarcodeDelegate:(id&lt;AnylineNativeBarcodeDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addSampleBufferDelegate:" title="addSampleBufferDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSampleBufferDelegate:">&ndash;&nbsp;addSampleBufferDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addSampleBufferDelegate:(id&lt;AnylineVideoDataSampleBufferDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeSampleBufferDelegate:" title="removeSampleBufferDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeSampleBufferDelegate:">&ndash;&nbsp;removeSampleBufferDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeSampleBufferDelegate:(id&lt;AnylineVideoDataSampleBufferDelegate&gt; _Nonnull)<em>delegate</em></code></div>
 
 		    
 		</div>
@@ -530,38 +583,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/convertPoint:" title="convertPoint:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/convertPoint:">&ndash;&nbsp;convertPoint:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/convertPoint:imageWidth:" title="convertPoint:imageWidth:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/convertPoint:imageWidth:">&ndash;&nbsp;convertPoint:imageWidth:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>inPoint</em> imageWidth:(CGFloat)<em>inWidth</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/fullResolutionPointForPointInPreview:" title="fullResolutionPointForPointInPreview:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/fullResolutionPointForPointInPreview:">&ndash;&nbsp;fullResolutionPointForPointInPreview:</a></code>
 </h3>
@@ -593,6 +614,22 @@
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/getOrientationAdaptedCaptureConnection" title="getOrientationAdaptedCaptureConnection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getOrientationAdaptedCaptureConnection">&ndash;&nbsp;getOrientationAdaptedCaptureConnection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (AVCaptureConnection *_Nonnull)getOrientationAdaptedCaptureConnection</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -608,7 +645,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-02-14</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-03-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

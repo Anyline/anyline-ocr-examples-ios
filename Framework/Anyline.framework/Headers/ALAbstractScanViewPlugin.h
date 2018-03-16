@@ -17,6 +17,7 @@
 #import "ALScanInfo.h"
 #import "ALUIConfiguration.h"
 #import "ALAbstractScanPlugin.h"
+#import "ALSampleBufferImageProvider.h"
 
 @interface ALAbstractScanViewPlugin : UIView<ALInfoDelegate>
 
@@ -26,6 +27,8 @@
 @property (nullable, nonatomic, strong) ALCameraView *cameraView;
 
 @property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager;
+
+@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider;
 
 @property (nullable, nonatomic, strong) ALCutoutView *cutoutView;
 

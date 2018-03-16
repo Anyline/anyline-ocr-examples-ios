@@ -2,10 +2,10 @@
     {
         "lastReading": {
             "date": "2014-08-28T16:50:50+01:00",
-            "value": 22345
+            "value": 115414.0
         },
         "meter": {
-            "id": "4398549",
+            "id": "1462911",
             "type": "electric_7"
         },
         "customer": {
@@ -16,11 +16,11 @@
     {
         "lastReading": {
             "date": "2014-08-28T16:50:50+01:00",
-            "value": 56345
+            "value": 70.813
         },
         "meter": {
-            "id": "7758477",
-            "type": "electric_7"
+            "id": "06201925",
+            "type": "gas"
         },
         "customer": {
             "name": "Robert Albrecht",
@@ -30,11 +30,11 @@
     {
         "lastReading": {
             "date": "2014-08-28T16:50:50+01:00",
-            "value": 56345
+            "value": 129
         },
         "meter": {
-            "id": "01241385",
-            "type": "electric_7"
+            "id": "02248260",
+            "type": "electric_digital"
         },
         "customer": {
             "name": "Julia Kinigadner",
@@ -44,11 +44,11 @@
     {
         "lastReading": {
             "date": "2014-08-28T16:50:50+01:00",
-            "value": 12105
+            "value": 34389.2
         },
         "meter": {
-            "id": "569536",
-            "type": "electric_7"
+            "id": "01241385",
+            "type": "analog"
         },
         "customer": {
             "name": "Laura Neureiter",
@@ -58,141 +58,15 @@
     {
         "lastReading": {
             "date": "2014-08-28T16:50:50+01:00",
-            "value": 1343245
+            "value": 613.8
         },
         "meter": {
-            "id": "7758474",
-            "type": "electric_7"
+            "id": "4306627",
+            "type": "gas"
         },
         "customer": {
             "name": "Thomas Maier",
             "address": ["Lange Strasse 116/2", "1030 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 334445
-        },
-        "meter": {
-            "id": "66335905",
-            "type": "electric_7"
-        },
-        "customer": {
-            "name": "Daniela Hauser",
-            "address": ["Auf der Schmelz 13/2", "1150 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 22345
-        },
-        "meter": {
-            "id": "7758475",
-            "type": "electric_7"
-        },
-        "customer": {
-            "name": "Dr. Andreas Rinner",
-            "address": ["Koppstrasse 13/10", "1160 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 52345
-        },
-        "meter": {
-            "id": "7758475",
-            "type": "electric_7"
-        },
-        "customer": {
-            "name": "Mag. Sonja Fischer",
-            "address": ["Graben 6/3", "1010 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 77345
-        },
-        "meter": {
-            "id": "7758480",
-            "type": "electric_7"
-        },
-        "customer": {
-            "name": "DI Alexander Weismann",
-            "address": ["Schoenstrasse 23/4", "1020 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 982345
-        },
-        "meter": {
-            "id": "2309809",
-            "type": "gas"
-        },
-        "customer": {
-            "name": "Jakob Deng",
-            "address": ["Goldschlagstraße 30/9", "1150 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 2345
-        },
-        "meter": {
-            "id": "01541996",
-            "type": "gas"
-        },
-        "customer": {
-            "name": "DI David Kinigadner",
-            "address": ["Hofmühlgasse 73/40", "1060 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 3345
-        },
-        "meter": {
-            "id": "08018067",
-            "type": "gas"
-        },
-        "customer": {
-            "name": "Mag. Johann Neureiter",
-            "address": ["Praterstraße 17/12", "1020 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 9345
-        },
-        "meter": {
-            "id": "08006039",
-            "type": "gas"
-        },
-        "customer": {
-            "name": "Melanie Plieschnegger",
-            "address": ["Heinestraße 120/2", "1020 Wien"]
-        }
-    },
-    {
-        "lastReading": {
-            "date": "2014-08-28T16:50:50+01:00",
-            "value": 1235
-        },
-        "meter": {
-            "id": "08006381",
-            "type": "gas"
-        },
-        "customer": {
-            "name": "Petra Pan",
-            "address": ["Vereinsgasse 37/12", "1020 Wien"]
         }
     }
 ]

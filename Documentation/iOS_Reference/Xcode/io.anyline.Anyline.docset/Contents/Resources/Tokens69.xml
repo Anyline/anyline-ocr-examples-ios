@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMeterScanPluginDelegate.html">
+	<File path="Protocols/ALMRZScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMeterScanPluginDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMRZScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="69"/>
@@ -13,22 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMeterScanPluginDelegate/anylineMeterScanPlugin:didFindResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMRZScanPluginDelegate/anylineMRZScanPlugin:didFindResult:</TokenIdentifier>
 			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *_Nonnull)anylineMeterScanPlugin didFindResult:(ALMeterResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (void)anylineMRZScanPlugin:(ALMRZScanPlugin *_Nonnull)anylineMRZScanPlugin didFindResult:(ALMRZResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineMeterScanPlugin</Name>
-					<Abstract type="html">The Plugin</Abstract>
+					<Name>anylineMRZScanPlugin</Name>
+					<Abstract type="html">The plugin that scanned the result</Abstract>
 				</Parameter><Parameter>
 					<Name>scanResult</Name>
-					<Abstract type="html">The scanned result object</Abstract>
+					<Abstract type="html">The scanned value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineMeterScanPlugin:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineMRZScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="69"/>
 		</Token>
 		

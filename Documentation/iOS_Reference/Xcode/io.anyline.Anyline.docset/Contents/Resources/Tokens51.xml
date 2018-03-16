@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALVisualFeedbackOverlay.html">
+	<File path="Classes/ALValuesStackFlipping.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALVisualFeedbackOverlay</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
+			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -13,494 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setPolygon:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
-			
-			
-			<Anchor>//api/name/polygon</Anchor>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
+				</Parameter><Parameter>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+				</Parameter><Parameter>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>partialResultSize</Name>
+					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
-			
-			
-			<Anchor>//api/name/polygon</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
-			
-			
-			<Anchor>//api/name/polygon</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setSquare:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
-			
-			
-			<Anchor>//api/name/square</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/square</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
-			
-			
-			<Anchor>//api/name/square</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/square</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
-			
-			
-			<Anchor>//api/name/square</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setContours:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
-			
-			
-			<Anchor>//api/name/contours</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/contours</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
-			
-			
-			<Anchor>//api/name/contours</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/contours</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
-			
-			
-			<Anchor>//api/name/contours</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackCornerRadius:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCornerRadius:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackRedrawTimeout:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setFeedbackStyle:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
-			
-			
-			<Anchor>//api/name/feedbackStyle</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
-			
-			
-			<Anchor>//api/name/feedbackStyle</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
-			
-			
-			<Anchor>//api/name/feedbackStyle</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimation:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeColor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackFillColor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimationDuration:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCutoutPath:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius cornerRadius:(NSInteger)cornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor *_Nonnull)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor *_Nonnull)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath *_Nonnull)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cancelFeedback</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>- (void)cancelFeedback</Declaration>
-			
-			
-			<Anchor>//api/name/cancelFeedback</Anchor>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
+				</Parameter><Parameter>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+				</Parameter><Parameter>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		

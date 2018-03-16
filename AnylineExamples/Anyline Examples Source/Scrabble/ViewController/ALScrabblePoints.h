@@ -12,7 +12,7 @@
 /**
  *  Pass the letters as a string
  *
- *  @param letters   The letters as string
+ *  @param word   The letters as string
  *
  *  @return  An NSArray containing sub-arrays with ALScrabbleWord objects
  */

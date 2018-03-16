@@ -36,6 +36,7 @@
 
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
+#import "ALMROExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
 
@@ -73,6 +74,11 @@
                                                                 image:[UIImage imageNamed:@"license plate"]
                                                        viewController:[ALLicensePlateViewController class]];
     
+    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"MRO", nil)
+                                                  image:[UIImage imageNamed:@"MRO"]
+                                         viewController:[ALGridCollectionViewController class]
+                                         exampleManager:[ALMROExampleManager class]];
+    
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Others", nil)
                                                   image:[UIImage imageNamed:@"others"]
                                          viewController:[ALGridCollectionViewController class]
@@ -83,6 +89,7 @@
                       self.sectionNames[0] : @[meterReading,
                                                mrzScanning,
                                                licensePlateScanning,
+                                               mro,
                                                others,],
                       };
 }

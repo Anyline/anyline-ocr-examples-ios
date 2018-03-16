@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMRZScanPluginDelegate.html">
+	<File path="Protocols/ALLicensePlateScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMRZScanPluginDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ALLicensePlateScanPluginDelegate</TokenIdentifier>
+			<Abstract type="html">The delegate for the ALLicensePlateScanPlugin.</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="68"/>
@@ -13,22 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMRZScanPluginDelegate/anylineMRZScanPlugin:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALLicensePlateScanPluginDelegate/anylineLicensePlateScanPlugin:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Called when a result is found</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineMRZScanPlugin:(ALMRZScanPlugin *_Nonnull)anylineMRZScanPlugin didFindResult:(ALMRZResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *_Nonnull)anylineLicensePlateScanPlugin didFindResult:(ALLicensePlateResult *_Nonnull)result</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineMRZScanPlugin</Name>
-					<Abstract type="html">The plugin that scanned the result</Abstract>
+					<Name>anylineLicensePlateScanPlugin</Name>
+					<Abstract type="html">The ALLicensePlateScanPlugin</Abstract>
 				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Name>result</Name>
+					<Abstract type="html">The result object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineMRZScanPlugin:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineLicensePlateScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="68"/>
 		</Token>
 		

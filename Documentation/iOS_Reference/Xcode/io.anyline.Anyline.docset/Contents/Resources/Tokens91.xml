@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALOCRScanMode.html">
+	<File path="Constants/ALOCRError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALOCRScanMode</TokenIdentifier>
-			<Abstract type="html">The possible scanModes for the AnylineOCR module</Abstract>
-			<DeclaredIn>ALOCRConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALOCRError</TokenIdentifier>
+			<Abstract type="html">The possible run error codes for this module.
+You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
+			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="91"/>
@@ -14,35 +15,67 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALLine</TokenIdentifier>
-            <Abstract type="html">The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorUnkown</TokenIdentifier>
+            <Abstract type="html">An unknown error occurred.
      </Abstract>
-            <Declaration>ALLine</Declaration>
+            <Declaration>ALOCRErrorUnkown</Declaration>
             
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="91"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALGrid</TokenIdentifier>
-            <Abstract type="html">The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoLinesFound</TokenIdentifier>
+            <Abstract type="html">No text lines found in imag
      </Abstract>
-            <Declaration>ALGrid</Declaration>
+            <Declaration>ALOCRErrorNoLinesFound</Declaration>
             
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="91"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAuto</TokenIdentifier>
-            <Abstract type="html">The AUTO mode is optimal if you want to scan more than one use case in one mode. This mode automatically
-tries to identify the to be scanned text within the cutout, and adjust the parameters accordingly.</Abstract>
-            <Declaration>ALAuto</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorNoTextFound</TokenIdentifier>
+            <Abstract type="html">No text found in lines
+     </Abstract>
+            <Declaration>ALOCRErrorNoTextFound</Declaration>
             
-            <DeclaredIn>ALOCRConfig.h</DeclaredIn>
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="91"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorConfidenceNotReached</TokenIdentifier>
+            <Abstract type="html">The required min confidence is not reached for this run
+     </Abstract>
+            <Declaration>ALOCRErrorConfidenceNotReached</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="91"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorResultNotValid</TokenIdentifier>
+            <Abstract type="html">The result does not match the validation regular expression
+     </Abstract>
+            <Declaration>ALOCRErrorResultNotValid</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+            
+            <NodeRef refid="91"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALOCRErrorSharpnessNotReached</TokenIdentifier>
+            <Abstract type="html">The min sharpness for this run is not reached
+     </Abstract>
+            <Declaration>ALOCRErrorSharpnessNotReached</Declaration>
+            
+            <DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
             
             <NodeRef refid="91"/>
         </Token>

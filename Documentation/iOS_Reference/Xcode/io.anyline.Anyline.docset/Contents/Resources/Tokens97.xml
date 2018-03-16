@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIFeedbackStyle.html">
+	<File path="Constants/ALScanResultState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIFeedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALScanResultState</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>ALScanResultState.h</DeclaredIn>
             
 			
 			<NodeRef refid="97"/>
@@ -14,51 +14,131 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidAbortState</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleRect</Declaration>
+            <Declaration>ALScanResultUserDidAbortState</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
             
             <NodeRef refid="97"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanSuccessfulState</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourRect</Declaration>
+            <Declaration>ALScanResultScanSuccessfulState</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
             
             <NodeRef refid="97"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourUnderline</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorWrongResultState</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourUnderline</Declaration>
+            <Declaration>ALScanResultScanErrorWrongResultState</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
             
             <NodeRef refid="97"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourPoint</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultUserDidEnterManuallyState</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourPoint</Declaration>
+            <Declaration>ALScanResultUserDidEnterManuallyState</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
             
             <NodeRef refid="97"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyUsedState</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleNone</Declaration>
+            <Declaration>ALScanResultScanErrorResultAlreadyUsedState</Declaration>
             
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultScanErrorResultAlreadyExpiredState</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultScanErrorResultAlreadyExpiredState</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountInactive</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserAccountInactive</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserAccountLocked</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserAccountLocked</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUserReachedScanLimit</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUserReachedScanLimit</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateNetworkTimeout</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateNetworkTimeout</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleSuccess</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateModuleSuccess</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateModuleAbort</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateModuleAbort</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
+            
+            <NodeRef refid="97"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALScanResultStateUnknownError</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALScanResultStateUnknownError</Declaration>
+            
+            <DeclaredIn>ALScanResultState.h</DeclaredIn>
             
             <NodeRef refid="97"/>
         </Token>

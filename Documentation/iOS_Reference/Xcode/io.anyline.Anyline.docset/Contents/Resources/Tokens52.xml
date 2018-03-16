@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineAbstractModuleView.html">
+	<File path="Classes/ALVisualFeedbackOverlay.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineAbstractModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineAbstractModuleView is a programmatic interface for an object that manages easy access to Anylines scanning modes.  It is a subclass of UIView.
-You should sublcass this class to build Anyline modules.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALVisualFeedbackOverlay</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
             
 			
 			<NodeRef refid="52"/>
@@ -14,335 +13,155 @@ You should sublcass this class to build Anyline modules.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setDebugDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setPolygon:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
 			
 			
-			<Anchor>//api/name/debugDelegate</Anchor>
+			<Anchor>//api/name/polygon</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/debugDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
 			
 			
-			<Anchor>//api/name/debugDelegate</Anchor>
+			<Anchor>//api/name/polygon</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/debugDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, weak) id&lt;AnylineDebugDelegate&gt; debugDelegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
 			
 			
-			<Anchor>//api/name/debugDelegate</Anchor>
+			<Anchor>//api/name/polygon</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCameraView:</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cameraView</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cameraView</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCaptureDeviceManager:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setSquare:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
 			
 			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
+			<Anchor>//api/name/square</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/captureDeviceManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/square</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
 			
 			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
+			<Anchor>//api/name/square</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/captureDeviceManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/square</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
 			
 			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
+			<Anchor>//api/name/square</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCutoutView:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setContours:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/contours</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cutoutView</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/contours</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/contours</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cutoutView</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/contours</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutView</Anchor>
+			<Anchor>//api/name/contours</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashButton:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackCornerRadius:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashButton</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashButton</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setTorchManager:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCornerRadius:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/torchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/torchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCurrentConfiguration:</TokenIdentifier>
-			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
-			
-			
-			<Anchor>//api/name/currentConfiguration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/currentConfiguration</TokenIdentifier>
-			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
-			
-			
-			<Anchor>//api/name/currentConfiguration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/currentConfiguration</TokenIdentifier>
-			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) ALUIConfiguration *currentConfiguration</Declaration>
-			
-			
-			<Anchor>//api/name/currentConfiguration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setStrokeWidth:</TokenIdentifier>
-			<Abstract type="html">Sets the width of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/strokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/strokeWidth</TokenIdentifier>
-			<Abstract type="html">Sets the width of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/strokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/strokeWidth</TokenIdentifier>
-			<Abstract type="html">Sets the width of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger strokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/strokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setStrokeColor:</TokenIdentifier>
-			<Abstract type="html">Sets the color of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/strokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/strokeColor</TokenIdentifier>
-			<Abstract type="html">Sets the color of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/strokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/strokeColor</TokenIdentifier>
-			<Abstract type="html">Sets the color of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *strokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/strokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCornerRadius:</TokenIdentifier>
-			<Abstract type="html">Sets the corner radius of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
 			
 			
 			<Anchor>//api/name/cornerRadius</Anchor>
@@ -350,23 +169,11 @@ You should sublcass this class to build Anyline modules.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cornerRadius</TokenIdentifier>
-			<Abstract type="html">Sets the corner radius of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cornerRadius</TokenIdentifier>
-			<Abstract type="html">Sets the corner radius of the views border</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable NSInteger cornerRadius</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
 			
 			
 			<Anchor>//api/name/cornerRadius</Anchor>
@@ -374,519 +181,326 @@ You should sublcass this class to build Anyline modules.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setOuterColor:</TokenIdentifier>
-			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
 			
 			
-			<Anchor>//api/name/outerColor</Anchor>
+			<Anchor>//api/name/cornerRadius</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/outerColor</TokenIdentifier>
-			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackRedrawTimeout:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
 			
 			
-			<Anchor>//api/name/outerColor</Anchor>
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/outerColor</TokenIdentifier>
-			<Abstract type="html">Sets the color of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIColor *outerColor</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
 			
 			
-			<Anchor>//api/name/outerColor</Anchor>
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setOuterAlpha:</TokenIdentifier>
-			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
 			
 			
-			<Anchor>//api/name/outerAlpha</Anchor>
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/outerAlpha</TokenIdentifier>
-			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setFeedbackStyle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/outerAlpha</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/outerAlpha</TokenIdentifier>
-			<Abstract type="html">Sets the alpha of the space surrounding the view</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable CGFloat outerAlpha</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/outerAlpha</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashImage:</TokenIdentifier>
-			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashImage</TokenIdentifier>
-			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashImage</TokenIdentifier>
-			<Abstract type="html">Sets image the user uses to toggle the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) IBInspectable UIImage *flashImage</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/flashImage</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashButtonAlignment:</TokenIdentifier>
-			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
-ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
-ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
-ALFlashAlignmentBottomRight</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonAlignment</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashButtonAlignment</TokenIdentifier>
-			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
-ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
-ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
-ALFlashAlignmentBottomRight</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonAlignment</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashButtonAlignment</TokenIdentifier>
-			<Abstract type="html">Sets the alignment of the flash button. Possible values are:
-ALFlashAlignmentTop, ALFlashAlignmentTopLeft, ALFlashAlignmentTopRight,
-ALFlashAlignmentBottomLeft, ALFlashAlignmentBottom and
-ALFlashAlignmentBottomRight</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashAlignment flashButtonAlignment</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonAlignment</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashButtonOffset:</TokenIdentifier>
-			<Abstract type="html">Property for the flash button offset.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonOffset</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashButtonOffset</TokenIdentifier>
-			<Abstract type="html">Property for the flash button offset.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackFillColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonOffset</Anchor>
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashButtonOffset</TokenIdentifier>
-			<Abstract type="html">Property for the flash button offset.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CGPoint flashButtonOffset</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashButtonOffset</Anchor>
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setFlashStatus:</TokenIdentifier>
-			<Abstract type="html">Reads the status of the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/flashStatus</TokenIdentifier>
-			<Abstract type="html">Reads the status of the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimationDuration:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/flashStatus</TokenIdentifier>
-			<Abstract type="html">Reads the status of the flash</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALFlashStatus flashStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
 			
 			
-			<Anchor>//api/name/flashStatus</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCancelOnResult:</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
 			
 			
-			<Anchor>//api/name/cancelOnResult</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cancelOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCutoutPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
 			
 			
-			<Anchor>//api/name/cancelOnResult</Anchor>
+			<Anchor>//api/name/cutoutPath</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cancelOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should stop reading once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL cancelOnResult</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
 			
 			
-			<Anchor>//api/name/cancelOnResult</Anchor>
+			<Anchor>//api/name/cutoutPath</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setBeepOnResult:</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/cutoutPath</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/beepOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/beepOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should beep once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL beepOnResult</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setBlinkOnResult:</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
 			
 			
-			<Anchor>//api/name/blinkOnResult</Anchor>
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/blinkOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius cornerRadius:(NSInteger)cornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor *_Nonnull)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor *_Nonnull)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath *_Nonnull)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth</Declaration>
 			
 			
-			<Anchor>//api/name/blinkOnResult</Anchor>
+			<Anchor>//api/name/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/blinkOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should blink once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cancelFeedback</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) IBInspectable BOOL blinkOnResult</Declaration>
-			
-			
-			<Anchor>//api/name/blinkOnResult</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setVibrateOnResult:</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
+			<Declaration>- (void)cancelFeedback</Declaration>
 			
 			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/vibrateOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
-			
-			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/vibrateOnResult</TokenIdentifier>
-			<Abstract type="html">This property tells Anyline if it should vibrate once a result was found</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) IBInspectable BOOL vibrateOnResult</Declaration>
-			
-			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setCutoutRect:</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cutoutRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/cutoutRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible Cutout with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect cutoutRect</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/setWatermarkRect:</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineAbstractModuleView/watermarkRect</TokenIdentifier>
-			<Abstract type="html">Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CGRect watermarkRect</Declaration>
-			
-			
-			<Anchor>//api/name/watermarkRect</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/startScanningAndReturnError:</TokenIdentifier>
-			<Abstract type="html">Starts the scanning process or sets the error object</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)startScanningAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating if the scanning could be started</Abstract></ReturnValue>
-			<Anchor>//api/name/startScanningAndReturnError:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/cancelScanningAndReturnError:</TokenIdentifier>
-			<Abstract type="html">Stops the scanning process or sets the error object</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)cancelScanningAndReturnError:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating if the scanning could be stopped</Abstract></ReturnValue>
-			<Anchor>//api/name/cancelScanningAndReturnError:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/enableReporting:</TokenIdentifier>
-			<Abstract type="html">Reporting ON Switch, off by default</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)enableReporting:(BOOL)enable</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>enable</Name>
-					<Abstract type="html">if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file,
-and use the reportScanResultState: for reporting</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/enableReporting:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/isRunning</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if a scanning is in progress.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isRunning</Declaration>
-			
-			<ReturnValue><Abstract type="html">Boolean indicating if a scanning is in progress.</Abstract></ReturnValue>
-			<Anchor>//api/name/isRunning</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineAbstractModuleView/stopListeningForMotion</TokenIdentifier>
-			<Abstract type="html">Stop listening for device motion.</Abstract>
-			<DeclaredIn>AnylineAbstractModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)stopListeningForMotion</Declaration>
-			
-			
-			<Anchor>//api/name/stopListeningForMotion</Anchor>
+			<Anchor>//api/name/cancelFeedback</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		

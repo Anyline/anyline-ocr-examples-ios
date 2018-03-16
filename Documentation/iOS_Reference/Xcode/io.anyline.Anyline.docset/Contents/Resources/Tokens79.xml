@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineOCRModuleDelegate.html">
+	<File path="Protocols/AnylineNativeBarcodeDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineOCRModuleDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the AnylineOCRModuleView.</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineNativeBarcodeDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="79"/>
@@ -13,95 +13,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Called when a result is found</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineNativeBarcodeDelegate/anylineCaptureDeviceManager:didFindBarcodeResult:type:</TokenIdentifier>
+			<Abstract type="html">Called whenever Apple finds a new Barcode in the frame. The same barcode can also be found in multiple frames, then the delegate will be called multiple times.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *_Nonnull)anylineOCRModuleView didFindResult:(ALOCRResult *_Nonnull)result</Declaration>
+			<Declaration>- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *_Nonnull)captureDeviceManager didFindBarcodeResult:(NSString *_Nonnull)scanResult type:(NSString *_Nonnull)barcodeType</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
+					<Name>captureDeviceManager</Name>
+					<Abstract type="html">The ALCaptureDeviceManager object</Abstract>
 				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">The result object</Abstract>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned barcode value as NSString</Abstract>
+				</Parameter><Parameter>
+					<Name>barcodeType</Name>
+					<Abstract type="html">The iOS Barcode type. see AVMetaDataObject documentation for all the types.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRModuleView:didFindResult:</Anchor>
-            <NodeRef refid="79"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsVariable:value:</TokenIdentifier>
-			<Abstract type="html">&lt;p&gt;Called with interesting values, that arise during processing.&lt;/p&gt;
-&lt;p&gt;
-Some possibly reported values:
-&lt;ul&gt;
-&lt;li&gt;$brightness - the brightness of the center region of the cutout as a float value &lt;/li&gt;
-&lt;li&gt;$confidence - the confidence, an Integer value between 0 and 100 &lt;/li&gt;
-&lt;li&gt;$thresholdedImage - the current image transformed into black and white (the base image used for OCR)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt; (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *_Nonnull)anylineOCRModuleView reportsVariable:(NSString *_Nonnull)variableName value:(id _Nonnull)value</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name of the reported value</Abstract>
-				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The reported value</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineOCRModuleView:reportsVariable:value:</Anchor>
-            <NodeRef refid="79"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:reportsRunFailure:</TokenIdentifier>
-			<Abstract type="html">Is called when the processing is aborted for the current image before reaching return.
-(If not text is found or confidence is to low, etc.) (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)anylineOCRModuleView:(AnylineOCRModuleView *_Nonnull)anylineOCRModuleView reportsRunFailure:(ALOCRError)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error enum</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/anylineOCRModuleView:reportsRunFailure:</Anchor>
-            <NodeRef refid="79"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineOCRModuleDelegate/anylineOCRModuleView:textOutlineDetected:</TokenIdentifier>
-			<Abstract type="html">Called when the outline of a possible text is detected. (currently always a rect with 4 points,
-but this may change in the future) (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>AnylineOCRModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)anylineOCRModuleView:(AnylineOCRModuleView *_Nonnull)anylineOCRModuleView textOutlineDetected:(ALSquare *_Nonnull)outline</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>anylineOCRModuleView</Name>
-					<Abstract type="html">The AnylineOCRModuleView</Abstract>
-				</Parameter><Parameter>
-					<Name>outline</Name>
-					<Abstract type="html">The ALSquare with the 4 points.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if you handle drawing by yourself, NO if Anyline should draw the outline.</Abstract></ReturnValue>
-			<Anchor>//api/name/anylineOCRModuleView:textOutlineDetected:</Anchor>
+			<Anchor>//api/name/anylineCaptureDeviceManager:didFindBarcodeResult:type:</Anchor>
             <NodeRef refid="79"/>
 		</Token>
 		

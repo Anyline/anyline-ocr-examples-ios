@@ -105,9 +105,7 @@ static const NSInteger padding = 7;
     self.meterTypeSegment.delegate = self;
     
     [self.view addSubview:self.meterTypeSegment];
-    
-    //set delegate for nativeBarcodeScanning => simultaneus barcode scanning
-//    [self.anylineEnergyView.videoView setBarcodeDelegate:self];
+
     self.barcodeResult = @"";
     [self.anylineEnergyView addSubview:[self createBarcoeSwitchView]];
 }
@@ -183,14 +181,14 @@ static const NSInteger padding = 7;
 }
 - (IBAction)toggleBarcodeScanning:(id)sender {
     
-    if (self.anylineEnergyView.captureDeviceManager.barcodeDelegate) {
+    if (self.anylineEnergyView.captureDeviceManager.barcodeDelegates.count > 0) {
         self.enableBarcodeSwitch.on = false;
-        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:nil];
+        [self.anylineEnergyView.captureDeviceManager removeBarcodeDelegate:self];
         //reset found barcode
         self.barcodeResult = @"";
     } else {
         self.enableBarcodeSwitch.on = true;
-        [self.anylineEnergyView.captureDeviceManager setBarcodeDelegate:self];
+        [self.anylineEnergyView.captureDeviceManager addBarcodeDelegate:self];
     }
 }
 

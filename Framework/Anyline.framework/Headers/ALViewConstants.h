@@ -28,8 +28,8 @@ typedef NS_ENUM(NSUInteger, ALPictureResolution) {
 
 typedef NS_ENUM(NSUInteger, ALCaptureViewResolution) {
     ALCaptureViewResolution1080=0,
-    ALCaptureViewResolution720=1,
-    ALCaptureViewResolution480=2,
+    ALCaptureViewResolution720=1, // deprecated since 3.22
+    ALCaptureViewResolution480=2, // deprecated since 3.22
 };
 
 typedef NS_ENUM(NSUInteger, ALCaptureViewMode) {

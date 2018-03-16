@@ -39,6 +39,7 @@ typedef enum : NSUInteger {
     ALScanHistoryDialMeter = 21,
     ALScanHistoryBadge = 22,
     ALScanHistorySerial = 23,
+    ALScanHistoryVIN = 24,
 } ALScanHistoryType;
 
 extern NSString * _Nonnull const ALScanHistoryType_toString[];

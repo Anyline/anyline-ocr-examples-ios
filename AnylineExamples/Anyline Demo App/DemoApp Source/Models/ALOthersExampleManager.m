@@ -20,7 +20,7 @@
 #import "ALDocumentScanViewController.h"
 #import "ALHashtagScanViewController.h"
 #import "ALBadgeScanViewController.h"
-#import "ALUniversalSerialNumberScanViewController.h"
+#import "ALVINScanViewController.h"
 #import "ALDrivingLicenseScanViewController.h"
 
 @interface ALOthersExampleManager ()
@@ -59,11 +59,6 @@
     ALExample *voucherCodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Voucher Code", nil)
                                                                image:[UIImage imageNamed:@"voucher"]
                                                       viewController:[ALVoucherCodeScanViewController class]];
-    
-
-    ALExample *serialNumberScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal Serial Number", nil)
-                                                               image:[UIImage imageNamed:@"serial number"]
-                                                      viewController:[ALUniversalSerialNumberScanViewController class]];
 
     ALExample *documentScanner = [[ALExample alloc] initWithName:NSLocalizedString(@"Document Scanner", nil)
                                                                 image:[UIImage imageNamed:@"document"]
@@ -84,14 +79,14 @@
     ALExample *driverATScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AT Driving License", nil)
                                                             image:[UIImage imageNamed:@"driving license"]
                                                    viewController:[ALDrivingLicenseScanViewController class]];
-    
+
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcode / QR-Code", nil)
                                                            image:[UIImage imageNamed:@"barcode"]
                                                   viewController:[ALMultiformatBarcodeScanViewController class]];
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, serialNumberScanning, scrabbleScanning, recordScanning, isbnScanning, driverATScanning, barcodeScanning, documentScanner],
+                      self.sectionNames[0] : @[ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, driverATScanning, barcodeScanning, documentScanner],
                       };
 }
 

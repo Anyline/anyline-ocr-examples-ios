@@ -1,0 +1,32 @@
+{
+    "captureResolution": "1080p",
+    "cutout": {
+        "style": "rect",
+        "width": 750,
+        "alignment": "top",
+        "ratioFromSize": {
+            "width": 62,
+            "height": 9
+        },
+        "offset" : {
+            "x": 0,
+            "y": 395
+        },
+        "outerColor": "000000",
+        "outerAlpha": 0.3,
+        "cornerRadius": 3
+    },
+    "flash": {
+        "mode": "manual",
+        "alignment": "TOP_LEFT",
+    },
+    "visualFeedback": {
+        "animation": "traverse_multi",
+        "animationDuration" : 250,
+        "style": "contour_rect",
+        "strokeWidth": 2,
+        "strokeColor": "0099FF"
+    }
+
+}
+

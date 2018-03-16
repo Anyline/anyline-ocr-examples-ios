@@ -60,65 +60,6 @@
             <NodeRef refid="30"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="30"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="30"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="30"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setScanMode:error:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setScanMode:error:</Anchor>
-            <NodeRef refid="30"/>
-		</Token>
-		
         
         
 	</File>
