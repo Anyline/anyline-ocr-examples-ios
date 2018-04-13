@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineMRZModuleView.html">
+	<File path="Classes/ALVisualFeedbackConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
-All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
-It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALVisualFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -15,120 +13,302 @@ It is configurable via interface builder.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanViewPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setFeedbackStyle:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/feedbackStyle</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/feedbackStyle</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackAnimation:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackAnimation</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackAnimation</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
 			
 			
-			<Anchor>//api/name/mrzScanPlugin</Anchor>
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackStrokeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
-			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
 			
-			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackFillColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackStrokeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackCornerRadius:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackCornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackCornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackAnimationDuration:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackRedrawTimeout:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		

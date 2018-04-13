@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRResult.html">
+	<File path="Classes/ALMeterScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -13,98 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/set:</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/)</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/)</TokenIdentifier>
-			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
-			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/thresholdedImage</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
-			<Abstract type="html">since 3.10 (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)text image:(UIImage *_Nonnull)image thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
-			
-			
-			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
-            <NodeRef refid="34"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setMeterScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRResult.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/meterScanPlugin</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

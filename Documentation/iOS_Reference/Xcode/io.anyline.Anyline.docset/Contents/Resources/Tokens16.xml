@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALDocumentScanViewPlugin.html">
+	<File path="Classes/ALDigitResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALDocumentScanViewPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDigitResult</TokenIdentifier>
+			<Abstract type="html">The ALDigitResult provides all the neccessary information of one computed digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,50 +13,240 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/setDocumentScanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setValue:</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/documentScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDocumentScanViewPlugin/documentScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/documentScanPlugin</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDocumentScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALDocumentScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setSegments:</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
 			
-			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setQualitySegments:</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
+			
+			
+			<Anchor>//api/name/qualitySegments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/qualitySegments</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
+			
+			
+			<Anchor>//api/name/qualitySegments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/qualitySegments</TokenIdentifier>
+			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
+			
+			
+			<Anchor>//api/name/qualitySegments</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIndexPath:</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
+			
+			
+			<Anchor>//api/name/indexPath</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setPatternResultDictionary:</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/quality</TokenIdentifier>
+			<Abstract type="html">Returns the Quality or accuracy of a digit. This is the average value of all
+the specified qualitySegments.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>- (float)quality</Declaration>
+			
+			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
+			<Anchor>//api/name/quality</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

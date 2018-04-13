@@ -34,14 +34,12 @@
  *  @param licenseKey   The Anyline license key for this application bundle
  *  @param delegate     The delegate that will receive the Anyline results (hast to conform to <ALOCRScanPluginDelegate>)
  *  @param ocrConfig    The ocrConfig to use for the scanning
- *  @param error        The error that occured
- *
- *  @return Boolean indicating the success / failure of the call.
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
  */
-- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
                    delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate
                   ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
-                      error:(NSError * _Nullable * _Nullable)error;
+                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 /**
  *  Sets a new ALOCRConfig and returns an Error if something failed.
  *

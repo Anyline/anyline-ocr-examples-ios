@@ -40,20 +40,20 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     self.mrzModuleView = [[AnylineMRZModuleView alloc] initWithFrame:frame];
     
-    NSError *error = nil;
     // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
     // by the module once we start receiving results.
-    BOOL success = [self.mrzModuleView setupWithLicenseKey:kMRZLicenseKey delegate:self error:&error];
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Setup Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    [self.mrzModuleView setupAsyncWithLicenseKey:kMRZLicenseKey delegate:self finished:^(BOOL success, NSError * _Nullable error) {
+        // the finish block of setupWithLicenseKey:delegate:finished:error will returns true if everything went fine. In the case something wrong
+        // we have to check the error object for the error message.
+        if( !success ) {
+            // Something went wrong. The error object contains the error description
+            [[[UIAlertView alloc] initWithTitle:@"Setup Error"
+                                        message:error.debugDescription
+                                       delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        }
+    }];
     
     self.mrzModuleView.flashButtonAlignment = ALFlashAlignmentTopLeft;
     

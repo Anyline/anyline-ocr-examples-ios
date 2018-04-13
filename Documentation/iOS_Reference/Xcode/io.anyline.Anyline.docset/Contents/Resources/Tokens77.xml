@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineLicensePlateModuleDelegate.html">
+	<File path="Protocols/ALMeterScanPluginDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineLicensePlateModuleDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALMeterScanPluginDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="77"/>
@@ -13,22 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineLicensePlateModuleDelegate/anylineLicensePlateModuleView:didFindResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALMeterScanPluginDelegate/anylineMeterScanPlugin:didFindResult:</TokenIdentifier>
 			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *_Nonnull)anylineLicensePlateModuleView didFindResult:(ALLicensePlateResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *_Nonnull)anylineMeterScanPlugin didFindResult:(ALMeterResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineLicensePlateModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
+					<Name>anylineMeterScanPlugin</Name>
+					<Abstract type="html">The Plugin</Abstract>
 				</Parameter><Parameter>
 					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Abstract type="html">The scanned result object</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineLicensePlateModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineMeterScanPlugin:didFindResult:</Anchor>
             <NodeRef refid="77"/>
 		</Token>
 		

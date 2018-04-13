@@ -337,38 +337,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCurrentConfiguration:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setBasicConfig:</TokenIdentifier>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig</Declaration>
 			
 			
-			<Anchor>//api/name/currentConfiguration</Anchor>
+			<Anchor>//api/name/basicConfig</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/currentConfiguration</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/basicConfig</TokenIdentifier>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig</Declaration>
 			
 			
-			<Anchor>//api/name/currentConfiguration</Anchor>
+			<Anchor>//api/name/basicConfig</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/currentConfiguration</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/basicConfig</TokenIdentifier>
 			<Abstract type="html">The UI Configuration for the scanning UI</Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig</Declaration>
 			
 			
-			<Anchor>//api/name/currentConfiguration</Anchor>
+			<Anchor>//api/name/basicConfig</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
@@ -449,7 +449,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;ALBasicConfig*&gt; *uiConfigs</Declaration>
 			
 			
 			<Anchor>//api/name/uiConfigs</Anchor>
@@ -461,7 +461,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;ALBasicConfig*&gt; *uiConfigs</Declaration>
 			
 			
 			<Anchor>//api/name/uiConfigs</Anchor>
@@ -473,7 +473,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) NSArray *uiConfigs</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSArray&lt;ALBasicConfig*&gt; *uiConfigs</Declaration>
 			
 			
 			<Anchor>//api/name/uiConfigs</Anchor>
@@ -545,7 +545,7 @@
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *_Nonnull)convertContours:(NSValue *_Nonnull)contoursValue</Declaration>
+			<Declaration>- (NSArray *_Nonnull)convertContours:(ALContours *_Nonnull)contoursValue</Declaration>
 			
 			
 			<Anchor>//api/name/convertContours:</Anchor>

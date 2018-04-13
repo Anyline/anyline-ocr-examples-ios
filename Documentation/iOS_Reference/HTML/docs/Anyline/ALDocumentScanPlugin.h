@@ -107,13 +107,12 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  *
  *  @param licenseKey The Anyline license key for this application bundle
  *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALDocumentScanPluginDelegate>)
- *  @param error The error that occured
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
  *
- *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
                    delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate
-                      error:(NSError * _Nullable * _Nullable)error;
+                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 
 /**
  * Maximum deviation for the ratio. 0.15 is the default

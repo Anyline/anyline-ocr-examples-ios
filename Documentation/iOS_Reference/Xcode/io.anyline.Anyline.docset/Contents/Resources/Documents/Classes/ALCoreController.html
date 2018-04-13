@@ -86,11 +86,11 @@
 		
 		<option value="//api/name/initWithLicenseKey:delegate:">- initWithLicenseKey:delegate:</option>
 		
-		<option value="//api/name/loadCmdFile:bundlePath:error:">- loadCmdFile:bundlePath:error:</option>
+		<option value="//api/name/loadCmdFile:bundlePath:finished:">- loadCmdFile:bundlePath:finished:</option>
 		
-		<option value="//api/name/loadScript:bundlePath:error:">- loadScript:bundlePath:error:</option>
+		<option value="//api/name/loadScript:bundlePath:finished:">- loadScript:bundlePath:finished:</option>
 		
-		<option value="//api/name/loadScript:scriptName:bundlePath:error:">- loadScript:scriptName:bundlePath:error:</option>
+		<option value="//api/name/loadScript:scriptName:bundlePath:finished:">- loadScript:scriptName:bundlePath:finished:</option>
 		
 		<option value="//api/name/processALImage:error:">- processALImage:error:</option>
 		
@@ -240,7 +240,7 @@ of the Anyline SDK.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;ALCoreControllerDelegate&gt; delegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;ALCoreControllerDelegate&gt; _Nullable delegate</code></div>
 
 		    
 			
@@ -283,7 +283,7 @@ and load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithLicenseKey:(NSString *)<em>licenseKey</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em></code></div>
 
 		    
 			
@@ -342,7 +342,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithLicenseKey:(NSString *)<em>licenseKey</em> delegate:(id&lt;ALCoreControllerDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALCoreControllerDelegate&gt; _Nullable)<em>delegate</em></code></div>
 
 		    
 			
@@ -389,8 +389,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:bundlePath:error:" title="loadScript:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:error:">&ndash;&nbsp;loadScript:bundlePath:error:</a></code>
+	<a name="//api/name/loadScript:bundlePath:finished:" title="loadScript:bundlePath:finished:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:finished:">&ndash;&nbsp;loadScript:bundlePath:finished:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -405,7 +405,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *)<em>script</em> bundlePath:(NSString *)<em>bundlePath</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
 
 		    
 			
@@ -424,19 +424,14 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if the script loading fails.</p></td>
+						<th scope="row" class="argument-name"><code>finished</code></th>
+						<td><p>Inidicating if setup is finished with an error object when setup failed.</p></td>
 					</tr>
 				
 				</table>
 			</div>
 			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the loading.</p>
-			</div>
 			
 
 			
@@ -457,8 +452,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:scriptName:bundlePath:error:" title="loadScript:scriptName:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:error:</a></code>
+	<a name="//api/name/loadScript:scriptName:bundlePath:finished:" title="loadScript:scriptName:bundlePath:finished:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:finished:">&ndash;&nbsp;loadScript:scriptName:bundlePath:finished:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -473,7 +468,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *)<em>script</em> scriptName:(NSString *)<em>scriptName</em> bundlePath:(NSString *)<em>bundlePath</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
 
 		    
 			
@@ -497,19 +492,14 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if the script loading fails.</p></td>
+						<th scope="row" class="argument-name"><code>finished</code></th>
+						<td><p>Inidicating if setup is finished with an error object when setup failed.</p></td>
 					</tr>
 				
 				</table>
 			</div>
 			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the loading.</p>
-			</div>
 			
 
 			
@@ -530,8 +520,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadCmdFile:bundlePath:error:" title="loadCmdFile:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:error:">&ndash;&nbsp;loadCmdFile:bundlePath:error:</a></code>
+	<a name="//api/name/loadCmdFile:bundlePath:finished:" title="loadCmdFile:bundlePath:finished:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:finished:">&ndash;&nbsp;loadCmdFile:bundlePath:finished:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -548,7 +538,7 @@ or an .ale encrypted file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *)<em>cmdFileName</em> bundlePath:(NSString *)<em>bundlePath</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
 
 		    
 			
@@ -569,19 +559,14 @@ ressources are located.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if the script loading fails.</p></td>
+						<th scope="row" class="argument-name"><code>finished</code></th>
+						<td><p>Inidicating if setup is finished with an error object when setup failed.</p></td>
 					</tr>
 				
 				</table>
 			</div>
 			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the loading.</p>
-			</div>
 			
 
 			
@@ -619,7 +604,7 @@ image provider interface. Should for example be called in the viewDidAppear:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -684,7 +669,7 @@ image provider interface. Should for example be called in the viewDidAppear:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> startVariables:(NSDictionary *_Nullable)<em>variables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -755,7 +740,7 @@ or viewWillDisappear:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -813,7 +798,7 @@ or viewWillDisappear:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *)<em>image</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *_Nonnull)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -877,7 +862,7 @@ in the .alc configuation file.</p></td>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *)<em>image</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *_Nonnull)<em>image</em> startVariables:(NSDictionary *_Nullable)<em>variables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -947,7 +932,7 @@ controlled in the .alc files. @see ALConfig for global config variables.</p></td
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *)<em>alImage</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *_Nonnull)<em>alImage</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -1011,7 +996,7 @@ in the .alc configuation file.</p></td>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *)<em>alImage</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *_Nonnull)<em>alImage</em> startVariables:(NSDictionary *_Nullable)<em>variables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -1081,7 +1066,7 @@ controlled in the .alc files. @see ALConfig for global config variables.</p></td
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setParameter:(id)<em>parameter</em> forKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setParameter:(id _Nonnull)<em>parameter</em> forKey:(NSString *_Nonnull)<em>key</em></code></div>
 
 		    
 			
@@ -1139,7 +1124,7 @@ controlled in the .alc files. @see ALConfig for global config variables.</p></td
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)versionNumber</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)versionNumber</code></div>
 
 		    
 			
@@ -1191,7 +1176,7 @@ to make this method work correctly.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)buildNumber</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)buildNumber</code></div>
 
 		    
 			
@@ -1237,7 +1222,7 @@ to make this method work correctly.</p></div>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSBundle *)frameworkBundle</code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSBundle *_Nonnull)frameworkBundle</code></div>
 
 		    
 		</div>
@@ -1307,7 +1292,7 @@ and use the reportScanResultState: for reporting</p></td>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)reportIncludeValues:(NSString *)<em>values</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)reportIncludeValues:(NSString *_Nonnull)<em>values</em></code></div>
 
 		    
 		</div>
@@ -1323,7 +1308,7 @@ and use the reportScanResultState: for reporting</p></td>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)runStatistics</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray *_Nonnull)runStatistics</code></div>
 
 		    
 		</div>
@@ -1343,7 +1328,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-03-14</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

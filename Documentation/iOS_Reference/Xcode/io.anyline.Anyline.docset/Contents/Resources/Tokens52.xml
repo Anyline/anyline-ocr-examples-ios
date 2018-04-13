@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALVisualFeedbackOverlay.html">
+	<File path="Classes/ALSquare.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALVisualFeedbackOverlay</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
+			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
             
 			
 			<NodeRef refid="52"/>
@@ -13,494 +13,309 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setPolygon:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/polygon</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/polygon</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/polygon</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
+			<Abstract type="html">The up left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALPolygon *polygon</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
 			
 			
-			<Anchor>//api/name/polygon</Anchor>
+			<Anchor>//api/name/upLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setSquare:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/square</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/square</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/square</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/square</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
+			<Abstract type="html">The up right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) ALSquare *square</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
 			
 			
-			<Anchor>//api/name/square</Anchor>
+			<Anchor>//api/name/upRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setContours:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/contours</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/contours</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/contours</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/contours</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
+			<Abstract type="html">The down left point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, copy) NSArray *contours</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
 			
 			
-			<Anchor>//api/name/contours</Anchor>
+			<Anchor>//api/name/downLeft</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackCornerRadius:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+			<Anchor>//api/name/downRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+			<Anchor>//api/name/downRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackCornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
+			<Abstract type="html">The down right point of the square.</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+			<Anchor>//api/name/downRight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCornerRadius:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
+			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>upLeft</Name>
+					<Abstract type="html">The up left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>upRight</Name>
+					<Abstract type="html">The up right point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downLeft</Name>
+					<Abstract type="html">The down left point of the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>downRight</Name>
+					<Abstract type="html">The down right point of the square.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
-			
-			
-			<Anchor>//api/name/cornerRadius</Anchor>
+			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCGRect:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cornerRadius</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger cornerRadius</Declaration>
+			<Declaration>- (CGFloat)boundingX</Declaration>
 			
 			
-			<Anchor>//api/name/cornerRadius</Anchor>
+			<Anchor>//api/name/boundingX</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackRedrawTimeout:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			<Declaration>- (CGFloat)boundingY</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+			<Anchor>//api/name/boundingY</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			<Declaration>- (CGFloat)boundingWidth</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+			<Anchor>//api/name/boundingWidth</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			<Declaration>- (CGFloat)boundingHeight</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+			<Anchor>//api/name/boundingHeight</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setFeedbackStyle:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
 			
 			
-			<Anchor>//api/name/feedbackStyle</Anchor>
+			<Anchor>//api/name/squareWithPointOffset:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
 			
 			
-			<Anchor>//api/name/feedbackStyle</Anchor>
+			<Anchor>//api/name/squareWithScale:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/feedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			<Declaration>- (CGFloat)area</Declaration>
 			
 			
-			<Anchor>//api/name/feedbackStyle</Anchor>
+			<Anchor>//api/name/area</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimation:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
+			<Declaration>- (CGFloat)area2</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
+			<Anchor>//api/name/area2</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
+			<Declaration>- (float)ratio</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
+			<Anchor>//api/name/ratio</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimation</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
+			<DeclaredIn>ALSquare.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeColor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			<Declaration>- (CGRect)boxRect</Declaration>
 			
 			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackFillColor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackFillColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackAnimationDuration:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackAnimationDuration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setCutoutPath:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/cutoutPath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutPath</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/setVisualFeedbackStrokeWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackOverlay/visualFeedbackStrokeWidth</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius cornerRadius:(NSInteger)cornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor *_Nonnull)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor *_Nonnull)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath *_Nonnull)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth</Declaration>
-			
-			
-			<Anchor>//api/name/initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackOverlay/cancelFeedback</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALVisualFeedbackOverlay.h</DeclaredIn>
-			
-			<Declaration>- (void)cancelFeedback</Declaration>
-			
-			
-			<Anchor>//api/name/cancelFeedback</Anchor>
+			<Anchor>//api/name/boxRect</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		

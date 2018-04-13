@@ -27,6 +27,12 @@
 @property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin;
 
 /**
+ *  If strictMode is enabled, results will only be returned when all checkDigits are valid.
+ *  Default strictMode = false
+ */
+@property (nonatomic) BOOL strictMode;
+
+/**
  *  Sets the license key and delegate.
  *
  *  @param licenseKey The Anyline license key for this application bundle

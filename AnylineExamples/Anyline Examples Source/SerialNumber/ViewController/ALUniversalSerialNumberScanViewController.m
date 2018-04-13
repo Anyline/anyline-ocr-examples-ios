@@ -46,7 +46,7 @@ static const NSInteger padding = 7;
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALAuto;
     
-    NSString *serialNumberAny = [[NSBundle mainBundle] pathForResource:@"USN_A-Z0-9" ofType:@"any"];
+    NSString *serialNumberAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
     config.languages = @[serialNumberAny];
     config.validationRegex = @"[A-Z0-9]{4,}";
     

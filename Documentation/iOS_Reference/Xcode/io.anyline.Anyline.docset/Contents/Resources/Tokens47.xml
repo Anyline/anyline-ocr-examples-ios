@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALTextDataPoint.html">
+	<File path="Classes/ALScanInfo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALTextDataPoint</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanInfo</TokenIdentifier>
+			<Abstract type="html">The name for a reported shake detection warning value</Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -13,180 +13,122 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setTesseractParameter:</TokenIdentifier>
-			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
-ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
-			
-			
-			<Anchor>//api/name/tesseractParameter</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/tesseractParameter</TokenIdentifier>
-			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
-ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
-			
-			
-			<Anchor>//api/name/tesseractParameter</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/tesseractParameter</TokenIdentifier>
-			<Abstract type="html">The tesseract parameters which should be used for this TextDataPoint.
-ex. &quot;tesseditcharwhitelist&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *tesseractParameter</Declaration>
-			
-			
-			<Anchor>//api/name/tesseractParameter</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setLanguages:</TokenIdentifier>
-			<Abstract type="html">The languages which should be used. Should contain language strings like
-&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
-the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
-			
-			
-			<Anchor>//api/name/languages</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/languages</TokenIdentifier>
-			<Abstract type="html">The languages which should be used. Should contain language strings like
-&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
-the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
-			
-			
-			<Anchor>//api/name/languages</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/languages</TokenIdentifier>
-			<Abstract type="html">The languages which should be used. Should contain language strings like
-&quot;eng&quot; or &quot;ger&quot;. The representing tessdata trainingfile has to be found in
-the Main Bundle in a tessdata folder and be named ex. &quot;eng.traineddata&quot;.</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSArray *languages</Declaration>
-			
-			
-			<Anchor>//api/name/languages</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/setCharacterCount:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setPluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/characterCount</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/characterCount</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/characterCount</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALTextDataPoint/characterCount</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) ALCharacterRange characterCount</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/characterCount</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/initWithArea:indexPath:identifier:languages:tesseractParameter:</TokenIdentifier>
-			<Abstract type="html">Init method for a new TextDataPoint</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setVariableName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the ROI the TextDataPoint is.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified datapoint.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the datapoint</Abstract>
-				</Parameter><Parameter>
-					<Name>languages</Name>
-					<Abstract type="html">The languages array used for the datapoint</Abstract>
-				</Parameter><Parameter>
-					<Name>tesseractParameter</Name>
-					<Abstract type="html">The dictionary containing the special tesseractParameter</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New instance of TextDataPoint.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:languages:tesseractParameter:</Anchor>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			
+			
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALTextDataPoint/initWithArea:indexPath:identifier:languages:tesseractParameter:characterRange:</TokenIdentifier>
-			<Abstract type="html">Init method for a new TextDataPoint</Abstract>
-			<DeclaredIn>ALTextDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/variableName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter characterRange:(ALCharacterRange)characterRange</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the ROI the TextDataPoint is.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified datapoint.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the datapoint</Abstract>
-				</Parameter><Parameter>
-					<Name>languages</Name>
-					<Abstract type="html">The languages array used for the datapoint</Abstract>
-				</Parameter><Parameter>
-					<Name>tesseractParameter</Name>
-					<Abstract type="html">The dictionary containing the special tesseractParameter</Abstract>
-				</Parameter><Parameter>
-					<Name>characterRange</Name>
-					<Abstract type="html">The character count range we need for this datapoint</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New instance of TextDataPoint.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:languages:tesseractParameter:characterRange:</Anchor>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			
+			
+			<Anchor>//api/name/variableName</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/variableName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
+			
+			
+			<Anchor>//api/name/variableName</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/initWithVariableName:value:pluginID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithVariableName:(NSString *_Nonnull)variableName value:(id _Nonnull)value pluginID:(NSString *_Nonnull)pluginID</Declaration>
+			
+			
+			<Anchor>//api/name/initWithVariableName:value:pluginID:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		

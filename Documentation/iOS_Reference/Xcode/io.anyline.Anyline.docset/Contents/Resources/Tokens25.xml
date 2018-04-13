@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMRZResult.html">
+	<File path="Classes/ALIndexPath.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALIndexPath</TokenIdentifier>
+			<Abstract type="html">With the ALIndexPath the position of the Digit can be specified.
+Digits are sectioned in line and the position in the line.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -13,50 +14,111 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/setLine:</TokenIdentifier>
+			<Abstract type="html">The line of the digit.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic) NSInteger line</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/line</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/line</TokenIdentifier>
+			<Abstract type="html">The line of the digit.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic) NSInteger line</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/line</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALIndexPath/line</TokenIdentifier>
+			<Abstract type="html">The line of the digit.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic) NSInteger line</Declaration>
 			
 			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
+			<Anchor>//api/name/line</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/setPositionInLine:</TokenIdentifier>
+			<Abstract type="html">The position of the digit in the line.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</Anchor>
+			<Anchor>//api/name/positionInLine</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/positionInLine</TokenIdentifier>
+			<Abstract type="html">The position of the digit in the line.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
+			
+			
+			<Anchor>//api/name/positionInLine</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALIndexPath/positionInLine</TokenIdentifier>
+			<Abstract type="html">The position of the digit in the line.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger positionInLine</Declaration>
+			
+			
+			<Anchor>//api/name/positionInLine</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/initWithPosition:inLine:</TokenIdentifier>
+			<Abstract type="html">Initialise an IndexPath with a position and line.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithPosition:(NSInteger)position inLine:(NSInteger)line</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position of the digit in the line.</Abstract>
+				</Parameter><Parameter>
+					<Name>line</Name>
+					<Abstract type="html">The line of the digit.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new IndexPath for a digit.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPosition:inLine:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALIndexPath/compare:</TokenIdentifier>
+			<Abstract type="html">Compares two IndexPaths and returns the comparison result.</Abstract>
+			<DeclaredIn>ALIndexPath.h</DeclaredIn>
+			
+			<Declaration>- (NSComparisonResult)compare:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">An other IndexPath object to compare to.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSComparisonResult for the the 2 IndexPaths.</Abstract></ReturnValue>
+			<Anchor>//api/name/compare:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		

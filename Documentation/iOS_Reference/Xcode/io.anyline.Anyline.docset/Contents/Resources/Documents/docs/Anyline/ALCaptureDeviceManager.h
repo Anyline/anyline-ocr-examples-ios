@@ -11,6 +11,7 @@
 
 #import "ALViewConstants.h"
 #import "ALSquare.h"
+#import "ALCameraConfig.h"
 
 @protocol AnylineVideoDataSampleBufferDelegate;
 @protocol AnylineNativeBarcodeDelegate;
@@ -19,9 +20,7 @@
 
 + (instancetype _Nonnull)sharedCaptureDeviceManager;
 
-- (void)setupWithCaptureResolution:(ALCaptureViewResolution)captureResolution
-                 pictureResolution:(ALPictureResolution)pictureResolution
-                     defaultDevice:(NSString * _Nullable)defaultDevice;
+- (void)setupWithCameraConfig:(ALCameraConfig *_Nonnull)cameraConfig;
 
 - (void)tearDown;
 
@@ -36,8 +35,7 @@
  */
 @property (nonatomic, strong, readonly) NSHashTable<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
 
-@property (nonatomic, assign) ALCaptureViewResolution captureResolution;
-@property (nonatomic, assign) ALPictureResolution pictureResolution;
+@property (nullable, nonatomic, strong) ALCameraConfig *cameraConfig;
 
 @property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice;
@@ -72,7 +70,11 @@
 
 - (UIInterfaceOrientation)currentInterfaceOrientation;
 
-- (AVCaptureConnection *_Nonnull)getOrientationAdaptedCaptureConnection;
+- (AVCaptureConnection *_Nullable)getOrientationAdaptedCaptureConnection;
+
++ (AVAuthorizationStatus)cameraPermissionStatus;
+
++ (void)requestCameraPermission:(void (^_Nonnull)(BOOL granted))handler;
 
 @end
 

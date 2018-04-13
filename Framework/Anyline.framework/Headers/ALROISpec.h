@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 9Yards GmbH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 /**

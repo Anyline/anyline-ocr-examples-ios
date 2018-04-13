@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSquare.html">
+	<File path="Classes/ALScanFeedbackConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSquare</TokenIdentifier>
-			<Abstract type="html">An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
@@ -13,309 +13,158 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpLeft:</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
-			
-			
-			<Anchor>//api/name/upLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
-			
-			
-			<Anchor>//api/name/upLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upLeft</TokenIdentifier>
-			<Abstract type="html">The up left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upLeft</Declaration>
-			
-			
-			<Anchor>//api/name/upLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setUpRight:</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
-			
-			
-			<Anchor>//api/name/upRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
-			
-			
-			<Anchor>//api/name/upRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/upRight</TokenIdentifier>
-			<Abstract type="html">The up right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint upRight</Declaration>
-			
-			
-			<Anchor>//api/name/upRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownLeft:</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
-			
-			
-			<Anchor>//api/name/downLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
-			
-			
-			<Anchor>//api/name/downLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downLeft</TokenIdentifier>
-			<Abstract type="html">The down left point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downLeft</Declaration>
-			
-			
-			<Anchor>//api/name/downLeft</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/setDownRight:</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSquare/downRight</TokenIdentifier>
-			<Abstract type="html">The down right point of the square.</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint downRight</Declaration>
-			
-			
-			<Anchor>//api/name/downRight</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithUpLeft:upRight:downLeft:downRight:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with 4 points</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithUpLeft:(CGPoint)upLeft upRight:(CGPoint)upRight downLeft:(CGPoint)downLeft downRight:(CGPoint)downRight</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>upLeft</Name>
-					<Abstract type="html">The up left point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>upRight</Name>
-					<Abstract type="html">The up right point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downLeft</Name>
-					<Abstract type="html">The down left point of the square.</Abstract>
-				</Parameter><Parameter>
-					<Name>downRight</Name>
-					<Abstract type="html">The down right point of the square.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUpLeft:upRight:downLeft:downRight:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/initWithCGRect:</TokenIdentifier>
-			<Abstract type="html">Initialises an ALSquare with an CGRect</Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithCGRect:(CGRect)rect</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rect</Name>
-					<Abstract type="html">The rectangle to create an ALSquare</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALSquare.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCGRect:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingX</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBeepOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)boundingX</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/boundingX</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingY</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)boundingY</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/boundingY</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingWidth</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)boundingWidth</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/boundingWidth</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boundingHeight</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setVibrateOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)boundingHeight</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/boundingHeight</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithPointOffset:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (ALSquare *)squareWithPointOffset:(CGPoint)offset</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/squareWithPointOffset:</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/squareWithScale:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (ALSquare *)squareWithScale:(CGFloat)scale</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/squareWithScale:</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBlinkAnimationOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)area</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/area</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/area2</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)area2</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/area2</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/ratio</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (float)ratio</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/ratio</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSquare/boxRect</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setCancelOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSquare.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (CGRect)boxRect</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/boxRect</Anchor>
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOnResult</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		

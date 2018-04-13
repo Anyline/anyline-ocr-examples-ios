@@ -1,16 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALEnergyResult.html">
+	<File path="Classes/ALDisplayResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALEnergyResult</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDisplayResult</TokenIdentifier>
+			<Abstract type="html">The ALDisplayResult encapsulates all the neccessary objects and data
+for the 7-Segment recognition client.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/numberOfDigits</TokenIdentifier>
+			<Abstract type="html">This method returns the overall number of digits in the display.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (int)numberOfDigits</Declaration>
+			
+			<ReturnValue><Abstract type="html">Number of digits in display.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberOfDigits</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitsForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the digits for a special identifier.
+Note that there is no sort order garanteed in the array.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)digitsForIdentifier:(NSString *)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for some digits.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All digits with an identifier, no sort order garanteed.</Abstract></ReturnValue>
+			<Anchor>//api/name/digitsForIdentifier:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/stringRepresentationOfDigitsForIdentifier:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)stringRepresentationOfDigitsForIdentifier:(NSString *)identifier</Declaration>
+			
+			
+			<Anchor>//api/name/stringRepresentationOfDigitsForIdentifier:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/quality</TokenIdentifier>
+			<Abstract type="html">Returns the Quality or accuracy of a whole display scan. This is the average value of all
+the specified digits.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (float)quality</Declaration>
+			
+			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
+			<Anchor>//api/name/quality</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDisplayResult/digitIdentifiers</TokenIdentifier>
+			<Abstract type="html">Returns all the identifiers for the digit results stored.</Abstract>
+			<DeclaredIn>ALDisplayResult.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)digitIdentifiers</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array with all the identifiers randomly sorted.</Abstract></ReturnValue>
+			<Anchor>//api/name/digitIdentifiers</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
 		
         
         

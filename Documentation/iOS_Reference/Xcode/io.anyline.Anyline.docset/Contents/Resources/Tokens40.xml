@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALRunSkippedReason.html">
+	<File path="Classes/ALOCRScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALRunSkippedReason</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="40"/>
@@ -13,86 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setPluginID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/setOcrScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setReason:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
-			
-			
-			<Anchor>//api/name/reason</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/reason</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/reason</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
-			
-			
-			<Anchor>//api/name/reason</Anchor>
-            <NodeRef refid="40"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/initWithRunFailure:pluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason pluginID:(NSString *_Nonnull)pluginID</Declaration>
-			
-			
-			<Anchor>//api/name/initWithRunFailure:pluginID:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		

@@ -40,21 +40,14 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     self.licensePlateModuleView = [[AnylineLicensePlateModuleView alloc] initWithFrame:frame];
     
-    NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.licensePlateModuleView setupWithLicenseKey:kDemoAppLicenseKey
-                                                           delegate:self
-                                                              error:&error];
-    
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Setup Error: %@", error.debugDescription);
-    }
-    
-    [self.licensePlateModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    [self.licensePlateModuleView setupAsyncWithLicenseKey:kDemoAppLicenseKey delegate:self finished:^(BOOL success, NSError * _Nullable error) {
+        // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
+        // we have to check the error object for the error message.
+        if (!success) {
+            // Something went wrong. The error object contains the error description
+            NSAssert(success, @"Setup Error: %@", error.debugDescription);
+        }
+    }];
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"license_plate_view_config" ofType:@"json"];
     ALUIConfiguration *lptConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];

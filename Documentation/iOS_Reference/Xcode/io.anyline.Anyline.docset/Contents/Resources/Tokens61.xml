@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALCoreControllerDelegate.html">
+	<File path="Classes/AnylineBarcodeModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALCoreControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
-All delegate callbacks are garanteed to be executed in the Main Thread.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineBarcodeModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineBarcodeModuleView class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="61"/>
@@ -14,77 +13,198 @@ All delegate callbacks are garanteed to be executed in the Main Thread.</Abstrac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:didFinishWithOutput:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has successfully finished and gives the delegate the final
-output object.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController didFinishWithOutput:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The result object of the processing.
-The result is specified with the RETURN statement in the .alc file.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
 			
-			<Anchor>//api/name/anylineCoreController:didFinishWithOutput:</Anchor>
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:didAbortRun:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the processing has not completed successfully. Possible reason would be
-for example that the display or paper frame could not be found.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController didAbortRun:(NSError *)reason</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">A NSError object with ALErrorDomain and an appropriate status.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
 			
-			<Anchor>//api/name/anylineCoreController:didAbortRun:</Anchor>
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:reportsVariable:value:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate a specified intermediate result. Which intermediate results are reported
-can be specified in the .alc command file with the REPORT function.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeScanPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController reportsVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeScanViewPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeFormatOptions:</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
+			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+Default are all of the above.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			
+			
+			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setUseOnlyNativeBarcodeScanning:</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			
+			
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/useOnlyNativeBarcodeScanning</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			
+			
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/useOnlyNativeBarcodeScanning</TokenIdentifier>
+			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			
+			
+			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineBarcodeModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The variable name in the .alc file which should be reported.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The value of the reported variable.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineBarcodeModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that occured</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/anylineCoreController:reportsVariable:value:</Anchor>
+			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALCoreControllerDelegate/anylineCoreController:parserError:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that there was a parsing error.</Abstract>
-			<DeclaredIn>ALCoreController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineCoreController:(ALCoreController *)coreController parserError:(NSError *)error</Declaration>
+			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineBarcodeModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The parsing error which occured.</Abstract>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineBarcodeModuleDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>finished</Name>
+					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineCoreController:parserError:</Anchor>
+			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		

@@ -43,9 +43,6 @@
                                                                 image:[UIImage imageNamed:@"dial meter"]
                                                        viewController:[ALDialMeterScanViewController class]];
     
-    ALExample *serialScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Serial Number", nil)
-                                                             image:[UIImage imageNamed:@"serial number"]
-                                                    viewController:[ALSerialNumberScanViewController class]];
     
     ALExample *selfScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Self Reading", nil)
                                                                           image:[UIImage imageNamed:@"Self Reading"]
@@ -54,6 +51,10 @@
     ALExample *workforce = [[ALExample alloc] initWithName:NSLocalizedString(@"Workforce", nil)
                                                              image:[UIImage imageNamed:@"Workforce"]
                                                     viewController:[WorkForceViewController class]];
+    
+    ALExample *serialScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Serial Number", nil)
+                                                          image:[UIImage imageNamed:@"serial number"]
+                                                 viewController:[ALSerialNumberScanViewController class]];
     
     self.sectionNames = @[@"Meter Types", @"Processes", @"Others"];
     self.examples = @{

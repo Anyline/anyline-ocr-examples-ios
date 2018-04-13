@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
+	<File path="Protocols/ALImageProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALImageProvider</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="73"/>
@@ -13,22 +13,44 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Returns the scanned value</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html">Method with which Anyline will request the next Image to analyse.</Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *_Nonnull)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
+			<Declaration>- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineBarcodeModuleView</Name>
-					<Abstract type="html">The view that scanned the result</Abstract>
-				</Parameter><Parameter>
-					<Name>scanResult</Name>
-					<Abstract type="html">The scanned value</Abstract>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler which should be called when the next frame/image
+is available.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineBarcodeModuleView:didFindResult:</Anchor>
+			<Anchor>//api/name/provideNewImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewFullResolutionImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/provideNewFullResolutionImageWithCompletionBlock:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALImageProvider/provideNewStillImageWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (void)provideNewStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler</Declaration>
+			
+			
+			<Anchor>//api/name/provideNewStillImageWithCompletionBlock:</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		

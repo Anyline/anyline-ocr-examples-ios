@@ -21,11 +21,11 @@
 @implementation ALBasePageViewController
 
 - (void)setupHeader {
-    CGRect pageViewFrame = [[UIScreen mainScreen] applicationFrame];
+    CGRect pageViewFrame = [[UIScreen mainScreen] bounds];
     pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + self.navigationController.navigationBar.frame.size.height, pageViewFrame.size.width, pageViewFrame.size.height - self.navigationController.navigationBar.frame.size.height);
     self.view.frame = pageViewFrame;
     
-    CGRect headerFrame = [[UIScreen mainScreen] applicationFrame];
+    CGRect headerFrame = [[UIScreen mainScreen] bounds];
     headerFrame = CGRectMake(headerFrame.origin.x, headerFrame.origin.y + self.navigationController.navigationBar.frame.size.height, headerFrame.size.width, headerFrame.size.width*0.25);
     
     self.header = [[UIView alloc] initWithFrame:headerFrame];

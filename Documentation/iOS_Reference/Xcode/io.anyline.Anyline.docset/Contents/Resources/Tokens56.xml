@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineEnergyModuleView.html">
+	<File path="Classes/ALValuesStack.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineEnergyModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineEnergyModuleView class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStack</TokenIdentifier>
+			<Abstract type="html">The ValuesStack allows you to save any result of the Anyline computation.
+The actual result will then be compared to previous results and if there are enough
+equal values a new result will be available.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
             
 			
 			<NodeRef refid="56"/>
@@ -13,302 +15,310 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanViewPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setSize:</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/size</TokenIdentifier>
+			<Abstract type="html">The size of the value stack. Determines how many results should be saved and then compared.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setMinEqualResults:</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/minEqualResults</TokenIdentifier>
+			<Abstract type="html">The minimum number of equal results needed in the stack to get a new result.
+Must be smaller or equal the size property.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSInteger minEqualResults</Declaration>
+			
+			
+			<Anchor>//api/name/minEqualResults</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setLastCommitedResult:</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/lastCommitedResult</TokenIdentifier>
+			<Abstract type="html">The last computed result of the values stack.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id lastCommitedResult</Declaration>
+			
+			
+			<Anchor>//api/name/lastCommitedResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setHasNewResult:</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/hasNewResult</TokenIdentifier>
+			<Abstract type="html">The boolean which inticate that a new result was generated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hasNewResult</Declaration>
+			
+			
+			<Anchor>//api/name/hasNewResult</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setConsecutivelyValue:</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/consecutivelyValue</TokenIdentifier>
+			<Abstract type="html">Property if values stack allows the same result consecutively.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL consecutivelyValue</Declaration>
+			
+			
+			<Anchor>//api/name/consecutivelyValue</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCount:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCount</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCount</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCount</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanViewPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCount</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setMeterScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/setCurrentEqualCountWithoutEmpty:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALValuesStack/currentEqualCountWithoutEmpty</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic) NSInteger currentEqualCountWithoutEmpty</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/currentEqualCountWithoutEmpty</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setBarcodeScanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/barcodeScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setSerialNumberValidationRegex:</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/serialNumberValidationRegex</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/serialNumberValidationRegex</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setSerialNumberCharWhitelist:</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/serialNumberCharWhitelist</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineEnergyModuleView/serialNumberCharWhitelist</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setScanMode:error:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
+				</Parameter><Parameter>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setScanMode:error:</Anchor>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/addResult:</TokenIdentifier>
+			<Abstract type="html">Adds a new result to the value stack. If the size of the value stack is reached
+a new result will be searched and if found with the hasNewResult communicated.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (void)addResult:(id)result</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
-            <NodeRef refid="56"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineEnergyModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
-			<DeclaredIn>AnylineEnergyModuleView.h</DeclaredIn>
-			
-			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineEnergyModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineEnergyModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
+					<Name>result</Name>
+					<Abstract type="html">The result to add to the stack.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
+			<Anchor>//api/name/addResult:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStack/newResult</TokenIdentifier>
+			<Abstract type="html">Returns a new result if the hasNewResult is true and nil otherwise.</Abstract>
+			<DeclaredIn>ALValuesStack.h</DeclaredIn>
+			
+			<Declaration>- (id)newResult</Declaration>
+			
+			<ReturnValue><Abstract type="html">new found result.</Abstract></ReturnValue>
+			<Anchor>//api/name/newResult</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		

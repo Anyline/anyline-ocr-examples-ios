@@ -5,10 +5,6 @@
         "style": "rect",
         "maxWidthPercent": "100%",
         "maxHeightPercent": "100%",
-        "ratioFromSize": {
-            "width": 10,
-            "height": 15
-        },
         "alignment": "center",
         "strokeWidth": 2,
         "cornerRadius": 0,

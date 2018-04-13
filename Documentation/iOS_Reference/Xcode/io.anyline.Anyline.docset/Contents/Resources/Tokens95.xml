@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALRunFailure.html">
+	<File path="Constants/ALFlashAlignment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALRunFailure</TokenIdentifier>
-			<Abstract type="html">The possible run error codes for this module.
-You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="95"/>
@@ -15,67 +14,61 @@ You can listen to the error codes for each run via the delegate method anylineOC
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureUnkown</TokenIdentifier>
-            <Abstract type="html">An unknown error occurred.
-     </Abstract>
-            <Declaration>ALRunFailureUnkown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTop</Declaration>
             
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoLinesFound</TokenIdentifier>
-            <Abstract type="html">No text lines found in imag
-     </Abstract>
-            <Declaration>ALRunFailureNoLinesFound</Declaration>
-            
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoTextFound</TokenIdentifier>
-            <Abstract type="html">No text found in lines
-     </Abstract>
-            <Declaration>ALRunFailureNoTextFound</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTopLeft</Declaration>
             
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureConfidenceNotReached</TokenIdentifier>
-            <Abstract type="html">The required min confidence is not reached for this run
-     </Abstract>
-            <Declaration>ALRunFailureConfidenceNotReached</Declaration>
-            
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureResultNotValid</TokenIdentifier>
-            <Abstract type="html">The result does not match the validation regular expression
-     </Abstract>
-            <Declaration>ALRunFailureResultNotValid</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentTopRight</Declaration>
             
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureSharpnessNotReached</TokenIdentifier>
-            <Abstract type="html">The min sharpness for this run is not reached
-     </Abstract>
-            <Declaration>ALRunFailureSharpnessNotReached</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottom</Declaration>
             
-            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="95"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="95"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALFlashAlignmentBottomRight</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>

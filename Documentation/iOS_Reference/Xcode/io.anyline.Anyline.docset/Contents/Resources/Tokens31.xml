@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMotionDetector.html">
+	<File path="Classes/ALMRZScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMotionDetector</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,74 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/setDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/setMrzScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMotionDetector/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZScanViewPlugin/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/startListeningForMotion</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)startListeningForMotion</Declaration>
-			
-			
-			<Anchor>//api/name/startListeningForMotion</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/stopListeningForMotion</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
-			
-			<Declaration>- (void)stopListeningForMotion</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMRZScanPlugin *_Nonnull)mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/stopListeningForMotion</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/initWithThreshold:delegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithThreshold:(CGFloat)threshold delegate:(id)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/initWithThreshold:delegate:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

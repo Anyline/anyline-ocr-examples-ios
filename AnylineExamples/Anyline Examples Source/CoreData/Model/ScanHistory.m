@@ -34,6 +34,7 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryBadge] = @"Badge Scanner",
     [ALScanHistorySerial] = @"Serial Scanner",
     [ALScanHistoryVIN] = @"Vin Scanner",
+    [ALScanHistoryContainer] = @"Container Scanner",
 };
 
 @implementation ScanHistory

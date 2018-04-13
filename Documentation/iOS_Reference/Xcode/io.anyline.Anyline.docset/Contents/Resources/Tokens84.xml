@@ -1,47 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALCaptureViewResolution.html">
+	<File path="Protocols/AnylineLicensePlateModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineLicensePlateModuleDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="84"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution1080</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution1080</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineLicensePlateModuleDelegate/anylineLicensePlateModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *_Nonnull)anylineLicensePlateModuleView didFindResult:(ALLicensePlateResult *_Nonnull)scanResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>anylineLicensePlateModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
+				</Parameter><Parameter>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineLicensePlateModuleView:didFindResult:</Anchor>
             <NodeRef refid="84"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution720</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution720</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="84"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewResolution480</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCaptureViewResolution480</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="84"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

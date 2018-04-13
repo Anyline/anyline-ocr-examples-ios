@@ -79,7 +79,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     [self.view addSubview:self.resultLabel];
     
     ALUIConfiguration *config = self.barcodeModuleView.currentConfiguration;
-    config.cutoutOffset = CGPointMake(0, -50);
+    config.cutoutConfig.cutoutOffset = CGPointMake(0, -50);
     [self.barcodeModuleView setCurrentConfiguration:config];
 }
 

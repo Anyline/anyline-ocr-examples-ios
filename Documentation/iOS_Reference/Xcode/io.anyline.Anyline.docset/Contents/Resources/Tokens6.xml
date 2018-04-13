@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALCameraView.html">
+	<File path="Classes/ALBasicConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALCameraView</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALBasicConfig</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCameraView.h</DeclaredIn>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,14 +13,206 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCameraView/initWithFrame:captureDeviceManager:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/setCameraConfig:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCameraView.h</DeclaredIn>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
 			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame captureDeviceManager:(ALCaptureDeviceManager *_Nonnull)captureDeviceManger</Declaration>
+			<Declaration>@property (nonatomic, strong) ALCameraConfig *cameraConfig</Declaration>
 			
 			
-			<Anchor>//api/name/initWithFrame:captureDeviceManager:</Anchor>
+			<Anchor>//api/name/cameraConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/cameraConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALCameraConfig *cameraConfig</Declaration>
+			
+			
+			<Anchor>//api/name/cameraConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBasicConfig/cameraConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALCameraConfig *cameraConfig</Declaration>
+			
+			
+			<Anchor>//api/name/cameraConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/setCutoutConfig:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALCutoutConfig *cutoutConfig</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/cutoutConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALCutoutConfig *cutoutConfig</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBasicConfig/cutoutConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALCutoutConfig *cutoutConfig</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/setFlashButtonConfig:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALFlashButtonConfig *flashButtonConfig</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/flashButtonConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALFlashButtonConfig *flashButtonConfig</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBasicConfig/flashButtonConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALFlashButtonConfig *flashButtonConfig</Declaration>
+			
+			
+			<Anchor>//api/name/flashButtonConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/setVisualFeedbackConfig:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALVisualFeedbackConfig *visualFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/visualFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALVisualFeedbackConfig *visualFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBasicConfig/visualFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALVisualFeedbackConfig *visualFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/setScanFeedbackConfig:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALScanFeedbackConfig *scanFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/scanFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/scanFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALScanFeedbackConfig *scanFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/scanFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALBasicConfig/scanFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) ALScanFeedbackConfig *scanFeedbackConfig</Declaration>
+			
+			
+			<Anchor>//api/name/scanFeedbackConfig</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ALBasicConfig/cutoutConfigurationFromJsonFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>+ (_Nullable instancetype)cutoutConfigurationFromJsonFile:(NSString *_Nonnull)jsonFile</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutConfigurationFromJsonFile:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithDictionary:(NSDictionary *_Nonnull)dictionary</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

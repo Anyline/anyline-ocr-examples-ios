@@ -33,6 +33,8 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject;
 @property (nonnull, nonatomic, strong, readonly) NSString *MRZString;
 
+@property (nullable, nonatomic, strong) UIImage *faceImage;
+
 
 /**
  *  Initializes a ALIdentification object. This object is used to carry the scanned values.

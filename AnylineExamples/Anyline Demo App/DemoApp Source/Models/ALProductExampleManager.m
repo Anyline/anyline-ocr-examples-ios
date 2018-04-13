@@ -37,6 +37,7 @@
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
 #import "ALMROExampleManager.h"
+#import "ALIdentityDocumentsExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
 
@@ -66,18 +67,21 @@
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
     
-    ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
-                                                       image:[UIImage imageNamed:@"mrz-version 3"]
-                                              viewController:[ALMRZScanViewController class]];
+    ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
+                                               image:[UIImage imageNamed:@"identity_documents"]
+                                      viewController:[ALGridCollectionViewController class]
+                                      exampleManager:[ALIdentityDocumentsExampleManager class]];
     
     ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
                                                                 image:[UIImage imageNamed:@"license plate"]
                                                        viewController:[ALLicensePlateViewController class]];
     
     ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"MRO", nil)
-                                                  image:[UIImage imageNamed:@"MRO"]
+                                                  image:[UIImage imageNamed:@"mro"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
+    
+    
     
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Others", nil)
                                                   image:[UIImage imageNamed:@"others"]
@@ -87,7 +91,7 @@
     self.sectionNames = @[@"Products",];
     self.examples = @{
                       self.sectionNames[0] : @[meterReading,
-                                               mrzScanning,
+                                               identityDocuments,
                                                licensePlateScanning,
                                                mro,
                                                others,],

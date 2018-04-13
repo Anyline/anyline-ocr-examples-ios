@@ -1,77 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALFlashAlignment.html">
+	<File path="Protocols/AnylineVideoDataSampleBufferDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALFlashAlignment</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineVideoDataSampleBufferDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALViewConstants.h</DeclaredIn>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="88"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTop</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTop</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineVideoDataSampleBufferDelegate/anylineCaptureDeviceManager:didOutputSampleBuffer:</TokenIdentifier>
+			<Abstract type="html">Called whenever an AVCaptureVideoDataOutput instance outputs a new video frame. For more information look at the Apple AVCaptureSession documentation.</Abstract>
+			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			
+			<Declaration>- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *_Nonnull)captureDeviceManager didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>captureDeviceManager</Name>
+					<Abstract type="html">The ALCaptureDeviceManager object</Abstract>
+				</Parameter><Parameter>
+					<Name>sampleBuffer</Name>
+					<Abstract type="html">A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/anylineCaptureDeviceManager:didOutputSampleBuffer:</Anchor>
             <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentTopRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentTopRight</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottom</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottom</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomLeft</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALFlashAlignmentBottomRight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALFlashAlignmentBottomRight</Declaration>
-            
-            <DeclaredIn>ALViewConstants.h</DeclaredIn>
-            
-            <NodeRef refid="88"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

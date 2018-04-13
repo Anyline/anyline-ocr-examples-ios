@@ -88,11 +88,11 @@ Default are all of the above.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBarcodeScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
 			<Abstract type="html">Sets the license key and delegate.</Abstract>
 			<DeclaredIn>ALBarcodeScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALBarcodeScanPluginDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALBarcodeScanPluginDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
@@ -101,12 +101,12 @@ Default are all of the above.</Abstract>
 					<Name>delegate</Name>
 					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALBarcodeScanPluginDelegate</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
+					<Name>finished</Name>
+					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			
+			<Anchor>//api/name/setupWithLicenseKey:delegate:finished:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ALViewConstants.h"
+#import "ALFlashButtonConfig.h"
 
 typedef NS_ENUM(NSInteger, ALFlashStatus) {
     ALFlashStatusOn,
@@ -34,9 +35,8 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 @property (nonatomic, assign) BOOL expandLeft;
 
 @property (nullable, nonatomic, strong) UIImageView *flashImage;
-@property (nonatomic, assign) ALFlashAlignment flashAlignment;
-@property (nonatomic, assign) ALFlashMode flashMode;
-@property (nonatomic, assign) CGPoint flashOffset;
+
+@property (nullable, nonatomic, strong) ALFlashButtonConfig *flashButtonConfig;
 
 @property (nonatomic, assign) ALFlashStatus flashStatus;
 
@@ -46,10 +46,7 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 - (void)setExpanded:(BOOL)expanded animated:(BOOL)animated;
 
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                             flashImage:(UIImage * _Nullable)flashImage
-                              alignment:(ALFlashAlignment)flashAlignment
-                              flashMode:(ALFlashMode)flashMode
-                            flashOffset:(CGPoint)flashOffset;
+                      flashButtonConfig:(ALFlashButtonConfig *_Nonnull)flashButtonConfig;
 
 
 @end

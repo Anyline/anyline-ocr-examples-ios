@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineBarcodeModuleView.html">
+	<File path="Classes/ALTorchManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineBarcodeModuleView</TokenIdentifier>
-			<Abstract type="html">The AnylineBarcodeModuleView class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode. All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object. It is configurable via interface builder.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALTorchManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
@@ -13,198 +13,158 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCaptureDevice:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/captureDevice</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/captureDevice</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) AVCaptureDevice *captureDevice</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanPlugin</Anchor>
+			<Anchor>//api/name/captureDevice</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeScanViewPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setFlashStatus:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+			<Anchor>//api/name/flashStatus</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/flashStatus</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+			<Anchor>//api/name/flashStatus</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALTorchManager/flashStatus</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) ALFlashStatus flashStatus</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeScanViewPlugin</Anchor>
+			<Anchor>//api/name/flashStatus</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setBarcodeFormatOptions:</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setLevelForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>- (void)setLevelForAutoFlash:(int)brightness</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/setLevelForAutoFlash:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setCountForAutoFlash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>- (void)setCountForAutoFlash:(int)brightnessCount</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/setCountForAutoFlash:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/barcodeFormatOptions</TokenIdentifier>
-			<Abstract type="html">Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
-Default are all of the above.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/resetLightLevelCounter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions</Declaration>
+			<Declaration>- (void)resetLightLevelCounter</Declaration>
 			
 			
-			<Anchor>//api/name/barcodeFormatOptions</Anchor>
+			<Anchor>//api/name/resetLightLevelCounter</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setUseOnlyNativeBarcodeScanning:</TokenIdentifier>
-			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
-That one uses less computing power, but is worse under low light conditions.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/calculateBrightnessCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			<Declaration>- (void)calculateBrightnessCount:(float)brightness</Declaration>
 			
 			
-			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+			<Anchor>//api/name/calculateBrightnessCount:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/useOnlyNativeBarcodeScanning</TokenIdentifier>
-			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
-That one uses less computing power, but is worse under low light conditions.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/setTorch:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			<Declaration>- (void)setTorch:(BOOL)onOff</Declaration>
 			
 			
-			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+			<Anchor>//api/name/setTorch:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineBarcodeModuleView/useOnlyNativeBarcodeScanning</TokenIdentifier>
-			<Abstract type="html">When set to YES we only use the iOS native Barcode scanning.
-That one uses less computing power, but is worse under low light conditions.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/torchAvailable</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</Declaration>
+			<Declaration>- (BOOL)torchAvailable</Declaration>
 			
 			
-			<Anchor>//api/name/useOnlyNativeBarcodeScanning</Anchor>
+			<Anchor>//api/name/torchAvailable</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALTorchManager/initWithCaptureDevice:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALTorchManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineBarcodeModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineBarcodeModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineBarcodeModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
-			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
+			<Declaration>- (_Nullable instancetype)initWithCaptureDevice:(AVCaptureDevice *_Nullable)captureDevice</Declaration>
 			
-			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineBarcodeModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineBarcodeModuleDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
+			<Anchor>//api/name/initWithCaptureDevice:</Anchor>
             <NodeRef refid="54"/>
 		</Token>
 		

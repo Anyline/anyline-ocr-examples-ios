@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALScanResult.html">
+	<File path="Classes/ALResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALScanResult</TokenIdentifier>
-			<Abstract type="html">The base result object for all the modules</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALResult</TokenIdentifier>
+			<Abstract type="html">The ALResult encapsulates all the neccessary objects and data
+for the text recognition client.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="43"/>
@@ -13,230 +14,106 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setPluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setSpecs:</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/pluginID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/pluginID</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/specs</TokenIdentifier>
+			<Abstract type="html">The specs used to generate the result</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (nonatomic, strong) ALROISpec *specs</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/specs</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setResult:</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/setValid:</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/result</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/result</TokenIdentifier>
-			<Abstract type="html">The scanned result.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALResult/valid</TokenIdentifier>
+			<Abstract type="html">Valid returns YES if we got a valid result for every identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) ObjectType result</Declaration>
+			<Declaration>@property (nonatomic) BOOL valid</Declaration>
 			
 			
-			<Anchor>//api/name/result</Anchor>
+			<Anchor>//api/name/valid</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setImage:</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/identifiers</TokenIdentifier>
+			<Abstract type="html">All the identifiers in which the digits are divided.
+Identifiers are all strings.
+There is no special sort order.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) UIImage *image</Declaration>
+			<Declaration>- (NSArray *)identifiers</Declaration>
 			
-			
-			<Anchor>//api/name/image</Anchor>
+			<ReturnValue><Abstract type="html">All the identifiers in the display.</Abstract></ReturnValue>
+			<Anchor>//api/name/identifiers</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALResult/resultForIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the validated result object for an identifier or nil if identifier
+does not exist or no valid result was found for the identifier.</Abstract>
+			<DeclaredIn>ALResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/image</TokenIdentifier>
-			<Abstract type="html">The image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) UIImage *image</Declaration>
-			
-			
-			<Anchor>//api/name/image</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setFullImage:</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/fullImage</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/fullImage</TokenIdentifier>
-			<Abstract type="html">The full frme image where the scanned text was found.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) UIImage *fullImage</Declaration>
-			
-			
-			<Anchor>//api/name/fullImage</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/setConfidence:</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/confidence</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/confidence</TokenIdentifier>
-			<Abstract type="html">The confidence for the scanned value.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger confidence</Declaration>
-			
-			
-			<Anchor>//api/name/confidence</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/set:</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALSquare *__deprecated_msg ( &quot;Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/)</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALSquare *__deprecated_msg ( &quot;Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanResult/)</TokenIdentifier>
-			<Abstract type="html">The outline of the found text in relation to the ModuleView.</Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALSquare *__deprecated_msg ( &quot;Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.&quot; )</Declaration>
-			
-			
-			<Anchor>//api/name/)</Anchor>
-            <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanResult/initWithResult:image:fullImage:confidence:pluginID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanResult.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID</Declaration>
-			
-			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:</Anchor>
+			<Declaration>- (id)resultForIdentifier:(NSString *)identifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier for a result.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result for the identifier. Return the object set by the validator</Abstract></ReturnValue>
+			<Anchor>//api/name/resultForIdentifier:</Anchor>
             <NodeRef refid="43"/>
 		</Token>
 		

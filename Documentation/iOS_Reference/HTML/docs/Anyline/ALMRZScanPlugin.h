@@ -23,17 +23,20 @@
 @property (nonatomic, strong, readonly) NSHashTable<ALMRZScanPluginDelegate> * _Nullable delegates;
 
 /**
+ *  If strictMode is enabled, results will only be returned when all checkDigits are valid.
+ *  Default strictMode = false
+ */
+@property (nonatomic) BOOL strictMode;
+/**
  *  Sets the license key and delegate.
  *
  *  @param licenseKey The Anyline license key for this application bundle
  *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALMRZScanPluginDelegate>)
- *  @param error The error that occured
- *
- *  @return Boolean indicating the success / failure of the call.
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
  */
-- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
                    delegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate
-                      error:(NSError * _Nullable * _Nullable)error;
+                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 
 - (void)addDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
 

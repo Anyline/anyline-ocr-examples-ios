@@ -15,7 +15,7 @@
 #import "ALVisualFeedbackOverlay.h"
 
 #import "ALScanInfo.h"
-#import "ALUIConfiguration.h"
+#import "ALBasicConfig.h"
 #import "ALAbstractScanPlugin.h"
 #import "ALSampleBufferImageProvider.h"
 
@@ -45,7 +45,7 @@
 /**
  * The UI Configuration for the scanning UI
  */
-@property (nullable, nonatomic, strong) ALUIConfiguration *currentConfiguration;
+@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig;
 
 /**
  * Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.
@@ -58,7 +58,7 @@
 
 @property (nonatomic, assign) CGFloat scale;
 
-@property (nullable, nonatomic, strong) NSArray *uiConfigs;
+@property (nullable, nonatomic, strong) NSArray<ALBasicConfig *> *uiConfigs;
 
 - (void)customInit;
 
@@ -73,7 +73,7 @@
 
 - (void)triggerScannedFeedback;
 
-- (NSArray * _Nonnull)convertContours:(NSValue * _Nonnull)contoursValue;
+- (NSArray * _Nonnull)convertContours:(ALContours * _Nonnull)contoursValue;
 
 - (ALSquare * _Nonnull)convertCGRect:(NSValue * _Nonnull)concreteValue;
 

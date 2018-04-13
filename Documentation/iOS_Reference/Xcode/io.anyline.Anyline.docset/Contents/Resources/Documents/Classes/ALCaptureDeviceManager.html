@@ -56,11 +56,9 @@
 		
 		<option value="//api/name/barcodeDelegates">barcodeDelegates</option>
 		
+		<option value="//api/name/cameraConfig">cameraConfig</option>
+		
 		<option value="//api/name/captureDevice">captureDevice</option>
-		
-		<option value="//api/name/captureResolution">captureResolution</option>
-		
-		<option value="//api/name/pictureResolution">pictureResolution</option>
 		
 		<option value="//api/name/previewLayer">previewLayer</option>
 		
@@ -77,6 +75,10 @@
 
 	
 	<optgroup label="Class Methods">
+		
+		<option value="//api/name/cameraPermissionStatus">+ cameraPermissionStatus</option>
+		
+		<option value="//api/name/requestCameraPermission:">+ requestCameraPermission:</option>
 		
 		<option value="//api/name/sharedCaptureDeviceManager">+ sharedCaptureDeviceManager</option>
 		
@@ -108,7 +110,7 @@
 		
 		<option value="//api/name/setZoomLevel:">- setZoomLevel:</option>
 		
-		<option value="//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:">- setupWithCaptureResolution:pictureResolution:defaultDevice:</option>
+		<option value="//api/name/setupWithCameraConfig:">- setupWithCameraConfig:</option>
 		
 		<option value="//api/name/startSession">- startSession</option>
 		
@@ -176,8 +178,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:" title="setupWithCaptureResolution:pictureResolution:defaultDevice:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:">&ndash;&nbsp;setupWithCaptureResolution:pictureResolution:defaultDevice:</a></code>
+	<a name="//api/name/setupWithCameraConfig:" title="setupWithCameraConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupWithCameraConfig:">&ndash;&nbsp;setupWithCameraConfig:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -186,7 +188,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setupWithCaptureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> defaultDevice:(NSString *_Nullable)<em>defaultDevice</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setupWithCameraConfig:(ALCameraConfig *_Nonnull)<em>cameraConfig</em></code></div>
 
 		    
 		</div>
@@ -295,8 +297,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/captureResolution" title="captureResolution"></a>
-	<h3 class="method-title"><code><a href="#//api/name/captureResolution">&nbsp;&nbsp;captureResolution</a></code>
+	<a name="//api/name/cameraConfig" title="cameraConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cameraConfig">&nbsp;&nbsp;cameraConfig</a></code>
 </h3>
 
 	<div class="method-info">
@@ -305,23 +307,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/pictureResolution" title="pictureResolution"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pictureResolution">&nbsp;&nbsp;pictureResolution</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALPictureResolution pictureResolution</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCameraConfig *cameraConfig</code></div>
 
 		    
 		</div>
@@ -625,7 +611,39 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (AVCaptureConnection *_Nonnull)getOrientationAdaptedCaptureConnection</code></div>
+			<div class="method-subsection method-declaration"><code>- (AVCaptureConnection *_Nullable)getOrientationAdaptedCaptureConnection</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cameraPermissionStatus" title="cameraPermissionStatus"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cameraPermissionStatus">+&nbsp;cameraPermissionStatus</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (AVAuthorizationStatus)cameraPermissionStatus</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestCameraPermission:" title="requestCameraPermission:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestCameraPermission:">+&nbsp;requestCameraPermission:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)requestCameraPermission:(void ( ^ _Nonnull ) ( BOOL granted ))<em>handler</em></code></div>
 
 		    
 		</div>
@@ -645,7 +663,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-03-14</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

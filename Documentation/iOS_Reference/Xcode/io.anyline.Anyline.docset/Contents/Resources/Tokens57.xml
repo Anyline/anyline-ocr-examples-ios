@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineLicensePlateModuleView.html">
+	<File path="Classes/ALValuesStackFlipping.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineLicensePlateModuleView</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
+			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
@@ -13,120 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setLicensePlateScanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/licensePlateScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineLicensePlateModuleView/licensePlateScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setLicensePlateScanViewPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/licensePlateScanViewPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineLicensePlateModuleView/licensePlateScanViewPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
-			
-			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
-            <NodeRef refid="57"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineLicensePlateModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
 				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineLicensePlateModuleDelegate</Abstract>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that occured</Abstract>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>partialResultSize</Name>
+					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setupWithLicenseKey:delegate:error:</Anchor>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
+			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
+			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
 			
-			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineLicensePlateModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
+			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The size of the ValuesStack.</Abstract>
 				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineLicensePlateModuleDelegate</Abstract>
+					<Name>minEqualResults</Name>
+					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
 				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
+					<Name>consecutivelyValue</Name>
+					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setupAsyncWithLicenseKey:delegate:finished:</Anchor>
+			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		

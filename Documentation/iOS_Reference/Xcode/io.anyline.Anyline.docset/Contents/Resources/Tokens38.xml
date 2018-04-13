@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALROISpec.html">
+	<File path="Classes/ALOCRResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALROISpec</TokenIdentifier>
-			<Abstract type="html">The Spec file where the unique features of the ROI are specified.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineOCRModule</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="38"/>
@@ -13,195 +13,98 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setSize:</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/set:</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/size</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/)</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/size</TokenIdentifier>
-			<Abstract type="html">The size to which the ROI should be normalized.
-The text/digit to read areas are specified relative to this size.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/)</TokenIdentifier>
+			<Abstract type="html">The scanned text in the frame. (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10. Use result property instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize size</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</Declaration>
 			
 			
-			<Anchor>//api/name/size</Anchor>
+			<Anchor>//api/name/)</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/setDataPoints:</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/setThresholdedImage:</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/dataPoints</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPoints</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/dataPoints</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALROISpec/dataPoints</TokenIdentifier>
-			<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRResult/thresholdedImage</TokenIdentifier>
+			<Abstract type="html">The thresholded image where the scanned text was found</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSArray *dataPoints</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/dataPoints</Anchor>
+			<Anchor>//api/name/thresholdedImage</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDataPoints:size:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithText:image:thresholdedImage:</TokenIdentifier>
+			<Abstract type="html">since 3.10 (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; since 3.10&lt;/span&gt;)</Abstract>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithDataPoints:(NSArray *)dataPoints size:(CGSize)size</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dataPoints</Name>
-					<Abstract type="html">All the defined regions in the ROI where the information to read is.</Abstract>
-				</Parameter><Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ROI.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDataPoints:size:</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)text image:(UIImage *_Nonnull)image thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
+			
+			
+			<Anchor>//api/name/initWithText:image:thresholdedImage:</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithDictionary:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dictionary</Name>
-					<Abstract type="html">A dictionary representing an ALROISpec object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDictionary:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonFileName:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithJSonFileName:(NSString *)filename</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>filename</Name>
-					<Abstract type="html">A json file name which has to be in the NSBundle with the .json file ending</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonFileName:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonString:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithJSonString:(NSString *)jsonString</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>jsonString</Name>
-					<Abstract type="html">A json string representing an ALROISpec object</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonString:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/initWithJSonData:</TokenIdentifier>
-			<Abstract type="html">Init method for the ALROISpec.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (instancetype)initWithJSonData:(NSData *)jsonData</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>jsonData</Name>
-					<Abstract type="html">Json data representing an ALROISpec object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of the ROI Specs.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithJSonData:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/dataPointsForLine:</TokenIdentifier>
-			<Abstract type="html">Returns all the datapoints for a defined line number.</Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)dataPointsForLine:(NSInteger)line</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>line</Name>
-					<Abstract type="html">The line number for the datapoints to return.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An array of all the datapoints in the line.
-Note that there is no sort order garanteed.</Abstract></ReturnValue>
-			<Anchor>//api/name/dataPointsForLine:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALROISpec/lineNumbers</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRResult/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALROISpec.h</DeclaredIn>
+			<DeclaredIn>ALOCRResult.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)lineNumbers</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID thresholdedImage:(UIImage *_Nullable)thresholdedImage</Declaration>
 			
 			
-			<Anchor>//api/name/lineNumbers</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		

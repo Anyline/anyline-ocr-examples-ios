@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALScanMode.html">
+	<File path="Constants/ALFlashMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALScanMode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALFlashMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterResult.h</DeclaredIn>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="96"/>
@@ -14,101 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAnalogMeter</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeManual</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALAnalogMeter</Declaration>
+            <Declaration>ALFlashModeManual</Declaration>
             
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="96"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALSerialNumber</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeNone</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALSerialNumber</Declaration>
+            <Declaration>ALFlashModeNone</Declaration>
             
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="96"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDigitalMeter</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALFlashModeAuto</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALDigitalMeter</Declaration>
+            <Declaration>ALFlashModeAuto</Declaration>
             
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter4</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALHeatMeter4</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter5</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALHeatMeter5</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALHeatMeter6</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALHeatMeter6</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALAutoAnalogDigitalMeter</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALAutoAnalogDigitalMeter</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDialMeter</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDialMeter</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALDotMatrixMeter</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALDotMatrixMeter</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
-            
-            <NodeRef refid="96"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALBarcode</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALBarcode</Declaration>
-            
-            <DeclaredIn>ALMeterResult.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="96"/>
         </Token>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALCaptureDeviceManager.html">
+	<File path="Classes/ALCameraConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALCaptureDeviceManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALCameraConfig</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,117 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ALCaptureDeviceManager/sharedCaptureDeviceManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/setDefaultCamera:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype _Nonnull)sharedCaptureDeviceManager</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *defaultCamera</Declaration>
 			
 			
-			<Anchor>//api/name/sharedCaptureDeviceManager</Anchor>
+			<Anchor>//api/name/defaultCamera</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setupWithCaptureResolution:pictureResolution:defaultDevice:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/defaultCamera</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)setupWithCaptureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution defaultDevice:(NSString *_Nullable)defaultDevice</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *defaultCamera</Declaration>
 			
 			
-			<Anchor>//api/name/setupWithCaptureResolution:pictureResolution:defaultDevice:</Anchor>
+			<Anchor>//api/name/defaultCamera</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/tearDown</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCameraConfig/defaultCamera</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)tearDown</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *defaultCamera</Declaration>
 			
 			
-			<Anchor>//api/name/tearDown</Anchor>
+			<Anchor>//api/name/defaultCamera</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setBarcodeDelegates:</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineNativeBarcodeDelegate&gt; *barcodeDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/barcodeDelegates</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineNativeBarcodeDelegate&gt; *barcodeDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/barcodeDelegates</TokenIdentifier>
-			<Abstract type="html">The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineNativeBarcodeDelegate&gt; *barcodeDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/barcodeDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setSampleBufferDelegates:</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineVideoDataSampleBufferDelegate&gt; *sampleBufferDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/sampleBufferDelegates</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineVideoDataSampleBufferDelegate&gt; *sampleBufferDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/sampleBufferDelegates</TokenIdentifier>
-			<Abstract type="html">The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.</Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;AnylineVideoDataSampleBufferDelegate&gt; *sampleBufferDelegates</Declaration>
-			
-			
-			<Anchor>//api/name/sampleBufferDelegates</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCaptureResolution:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/setCaptureResolution:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
 			
@@ -133,9 +61,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/captureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/captureResolution</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
 			
@@ -145,9 +73,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/captureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCameraConfig/captureResolution</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</Declaration>
 			
@@ -157,9 +85,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setPictureResolution:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/setPictureResolution:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
 			
@@ -169,9 +97,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/pictureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/pictureResolution</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
 			
@@ -181,9 +109,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/pictureResolution</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALCameraConfig/pictureResolution</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign) ALPictureResolution pictureResolution</Declaration>
 			
@@ -193,350 +121,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setPreviewLayer:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/initWithDictionary:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
 			
 			
-			<Anchor>//api/name/previewLayer</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/previewLayer</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
-			
-			
-			<Anchor>//api/name/previewLayer</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/previewLayer</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer</Declaration>
-			
-			
-			<Anchor>//api/name/previewLayer</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setCaptureDevice:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
-			
-			
-			<Anchor>//api/name/captureDevice</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
-			
-			
-			<Anchor>//api/name/captureDevice</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/captureDevice</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice</Declaration>
-			
-			
-			<Anchor>//api/name/captureDevice</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setSession:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureSession *session</Declaration>
-			
-			
-			<Anchor>//api/name/session</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/session</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureSession *session</Declaration>
-			
-			
-			<Anchor>//api/name/session</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/session</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureSession *session</Declaration>
-			
-			
-			<Anchor>//api/name/session</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setStillImageOutput:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput</Declaration>
-			
-			
-			<Anchor>//api/name/stillImageOutput</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/stillImageOutput</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput</Declaration>
-			
-			
-			<Anchor>//api/name/stillImageOutput</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/stillImageOutput</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput</Declaration>
-			
-			
-			<Anchor>//api/name/stillImageOutput</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setVideoResolution:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
-			
-			
-			<Anchor>//api/name/videoResolution</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/videoResolution</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
-			
-			
-			<Anchor>//api/name/videoResolution</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALCaptureDeviceManager/videoResolution</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGSize videoResolution</Declaration>
-			
-			
-			<Anchor>//api/name/videoResolution</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/addBarcodeDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)addBarcodeDelegate:(id&lt;AnylineNativeBarcodeDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/addBarcodeDelegate:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/removeBarcodeDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)removeBarcodeDelegate:(id&lt;AnylineNativeBarcodeDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/removeBarcodeDelegate:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/addSampleBufferDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)addSampleBufferDelegate:(id&lt;AnylineVideoDataSampleBufferDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/addSampleBufferDelegate:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/removeSampleBufferDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)removeSampleBufferDelegate:(id&lt;AnylineVideoDataSampleBufferDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/removeSampleBufferDelegate:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/addVideoLayerOnView:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)addVideoLayerOnView:(UIView *_Nonnull)view</Declaration>
-			
-			
-			<Anchor>//api/name/addVideoLayerOnView:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/updateVideoLayer:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)updateVideoLayer:(UIView *_Nonnull)view</Declaration>
-			
-			
-			<Anchor>//api/name/updateVideoLayer:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setFocusAndExposurePoint:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)setFocusAndExposurePoint:(CGPoint)point</Declaration>
-			
-			
-			<Anchor>//api/name/setFocusAndExposurePoint:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/setZoomLevel:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)setZoomLevel:(CGFloat)zoomFactor</Declaration>
-			
-			
-			<Anchor>//api/name/setZoomLevel:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/startSession</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)startSession</Declaration>
-			
-			
-			<Anchor>//api/name/startSession</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/stopSession</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (void)stopSession</Declaration>
-			
-			
-			<Anchor>//api/name/stopSession</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/isRunning</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isRunning</Declaration>
-			
-			
-			<Anchor>//api/name/isRunning</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/fullResolutionPointForPointInPreview:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint</Declaration>
-			
-			
-			<Anchor>//api/name/fullResolutionPointForPointInPreview:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/currentInterfaceOrientation</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (UIInterfaceOrientation)currentInterfaceOrientation</Declaration>
-			
-			
-			<Anchor>//api/name/currentInterfaceOrientation</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALCaptureDeviceManager/getOrientationAdaptedCaptureConnection</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALCaptureDeviceManager.h</DeclaredIn>
-			
-			<Declaration>- (AVCaptureConnection *_Nonnull)getOrientationAdaptedCaptureConnection</Declaration>
-			
-			
-			<Anchor>//api/name/getOrientationAdaptedCaptureConnection</Anchor>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

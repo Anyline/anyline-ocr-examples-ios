@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALMotionDetectorDelegate.html">
+	<File path="Protocols/ALFlashButtonAnimationDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALMotionDetectorDelegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/ALFlashButtonAnimationDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
             
 			
 			<NodeRef refid="71"/>
@@ -13,14 +13,14 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALMotionDetectorDelegate/motionDetectorAboveThreshold</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/ALFlashButtonAnimationDelegate/flashButton:expanded:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			<DeclaredIn>ALFlashButton.h</DeclaredIn>
 			
-			<Declaration>- (void)motionDetectorAboveThreshold</Declaration>
+			<Declaration>- (void)flashButton:(ALFlashButton *_Nonnull)flashButton expanded:(BOOL)expanded</Declaration>
 			
 			
-			<Anchor>//api/name/motionDetectorAboveThreshold</Anchor>
+			<Anchor>//api/name/flashButton:expanded:</Anchor>
             <NodeRef refid="71"/>
 		</Token>
 		

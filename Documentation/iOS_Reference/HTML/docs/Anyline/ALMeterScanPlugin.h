@@ -58,13 +58,12 @@
  *
  *  @param licenseKey The Anyline license key for this application bundle
  *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALMeterScanPluginDelegate>)
- *  @param error The error that occured
+ *  @param finished Inidicating if setup is finished with an error object when setup failed.
  *
- *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
+- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
                    delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate
-                      error:(NSError * _Nullable * _Nullable)error;
+                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 
 - (void)addDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
 

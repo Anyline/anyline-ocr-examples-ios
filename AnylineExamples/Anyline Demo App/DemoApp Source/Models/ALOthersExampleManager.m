@@ -20,6 +20,7 @@
 #import "ALDocumentScanViewController.h"
 #import "ALHashtagScanViewController.h"
 #import "ALBadgeScanViewController.h"
+#import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALDrivingLicenseScanViewController.h"
 
@@ -76,17 +77,13 @@
                                                         image:[UIImage imageNamed:@"isbn"]
                                                viewController:[ALISBNScanViewController class]];
     
-    ALExample *driverATScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AT Driving License", nil)
-                                                            image:[UIImage imageNamed:@"driving license"]
-                                                   viewController:[ALDrivingLicenseScanViewController class]];
-
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcode / QR-Code", nil)
                                                            image:[UIImage imageNamed:@"barcode"]
                                                   viewController:[ALMultiformatBarcodeScanViewController class]];
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, driverATScanning, barcodeScanning, documentScanner],
+                      self.sectionNames[0] : @[ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, barcodeScanning, documentScanner],
                       };
 }
 

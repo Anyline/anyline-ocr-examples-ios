@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALViewConstants.h"
+#import "ALBasicConfig.h"
 
 typedef NS_ENUM(NSInteger, ALReportingMode) {
     
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ALReportingMode) {
     ALReportingNotSet
 };
 
-@interface ALUIConfiguration : NSObject
+@interface ALUIConfiguration : ALBasicConfig
 
 @property (nullable, nonatomic, strong) NSString *defaultCamera;
 @property (nonatomic, assign) CGFloat cutoutWidthPercent;
@@ -58,10 +58,6 @@ typedef NS_ENUM(NSInteger, ALReportingMode) {
 @property (nonatomic, assign) BOOL vibrateOnResult;
 @property (nonatomic, assign) BOOL blinkAnimationOnResult;
 @property (nonatomic, assign) BOOL cancelOnResult;
-
-+ (_Nullable instancetype)cutoutConfigurationFromJsonFile:(NSString * _Nonnull)jsonFile;
-
-- (_Nullable instancetype)initWithDictionary:(NSDictionary * _Nonnull)dictionary bundlePath:(NSString * _Nonnull)bundlePath;
 
 - (void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
 
