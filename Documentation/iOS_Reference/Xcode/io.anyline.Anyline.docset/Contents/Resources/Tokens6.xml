@@ -216,6 +216,18 @@
             <NodeRef refid="6"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALBasicConfig/initWithJsonFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALBasicConfig.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithJsonFile:(NSString *_Nonnull)jsonFile</Declaration>
+			
+			
+			<Anchor>//api/name/initWithJsonFile:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
         
         
 	</File>

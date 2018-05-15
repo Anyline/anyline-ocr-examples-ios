@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALLicensePlateScanPlugin.html">
+	<File path="Classes/ALLicensePlateScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,49 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/setLicensePlateScanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALLicensePlateScanPluginDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
 			
-			<Anchor>//api/name/setupWithLicenseKey:delegate:finished:</Anchor>
+			
+			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/addDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/licensePlateScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)addDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/addDelegate:</Anchor>
+			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/removeDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALLicensePlateScanViewPlugin/licensePlateScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)removeDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/removeDelegate:</Anchor>
+			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALLicensePlateScanPlugin *_Nonnull)licensePlateScanPlugin</Declaration>
+			
+			
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALLicensePlateResult.html">
+	<File path="Classes/ALLicensePlateScanPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,50 +13,49 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/setCountry:</TokenIdentifier>
-			<Abstract type="html">The country found on the license plate</Abstract>
-			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
+			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALLicensePlateScanPluginDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>finished</Name>
+					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/country</Anchor>
+			<Anchor>//api/name/setupWithLicenseKey:delegate:finished:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/country</TokenIdentifier>
-			<Abstract type="html">The country found on the license plate</Abstract>
-			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
-			
-			
-			<Anchor>//api/name/country</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALLicensePlateResult/country</TokenIdentifier>
-			<Abstract type="html">The country found on the license plate</Abstract>
-			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *country</Declaration>
-			
-			
-			<Anchor>//api/name/country</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateResult/initWithResult:image:fullImage:confidence:pluginID:country:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/addDelegate:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateResult.h</DeclaredIn>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID country:(NSString *_Nullable)country</Declaration>
+			<Declaration>- (void)addDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:country:</Anchor>
+			<Anchor>//api/name/addDelegate:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanPlugin/removeDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALLicensePlateScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)removeDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

@@ -27,4 +27,6 @@
 
 - (_Nullable instancetype)initWithDictionary:(NSDictionary * _Nonnull)dictionary;
 
+- (_Nullable instancetype)initWithJsonFile:(NSString * _Nonnull)jsonFile;
+
 @end

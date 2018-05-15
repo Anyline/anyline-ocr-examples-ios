@@ -59,7 +59,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     }
     
     self.documentModuleView.translatesAutoresizingMaskIntoConstraints = NO;
-
+    self.documentModuleView.postProcessingEnabled = true;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.documentModuleView];
@@ -172,7 +172,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
             helpString = @"Too Dark";
             break;
         case ALDocumentErrorShakeDetected:
-            helpString = @"Stack";
+            helpString = @"Shake";
             break;
         default:
             break;

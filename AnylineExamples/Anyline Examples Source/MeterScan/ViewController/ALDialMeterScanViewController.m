@@ -9,9 +9,9 @@
 
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALDialMeterScanViewController.h"
-#import "ALMeterScanResultViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kDialMeterScanLicenseKey = kDemoAppLicenseKey;
@@ -194,14 +194,12 @@ static const NSInteger padding = 7;
 - (void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView
                   didFindResult:(ALEnergyResult *)scanResult {
     [self anylineDidFindResult:scanResult.result barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image module:anylineEnergyModuleView completion:^{
-        ALMeterScanResultViewController *vc = [[ALMeterScanResultViewController alloc] init];
-        /*
-         To present the scanned result to the user we use a custom view controller.
-         */
-        vc.scanMode = scanResult.scanMode;
-        vc.meterImage = scanResult.image;
-        vc.result = scanResult.result;
-        vc.barcodeResult = self.barcodeResult;
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:scanResult.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult]];
+        
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
     

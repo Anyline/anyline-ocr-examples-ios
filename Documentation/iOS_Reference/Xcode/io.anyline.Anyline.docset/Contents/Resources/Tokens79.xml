@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ALOCRScanPluginDelegate.html">
+	<File path="Protocols/AnylineBarcodeModuleDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ALOCRScanPluginDelegate</TokenIdentifier>
-			<Abstract type="html">The delegate for the ALOCRScanPluginDelegate.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/AnylineBarcodeModuleDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="79"/>
@@ -13,22 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ALOCRScanPluginDelegate/anylineOCRScanPlugin:didFindResult:</TokenIdentifier>
-			<Abstract type="html">Called when a result is found</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/AnylineBarcodeModuleDelegate/anylineBarcodeModuleView:didFindResult:</TokenIdentifier>
+			<Abstract type="html">Returns the scanned value</Abstract>
+			<DeclaredIn>AnylineBarcodeModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *_Nonnull)anylineOCRScanPlugin didFindResult:(ALOCRResult *_Nonnull)result</Declaration>
+			<Declaration>- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *_Nonnull)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *_Nonnull)scanResult</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>anylineOCRScanPlugin</Name>
-					<Abstract type="html">The ALOCRScanPlugin</Abstract>
+					<Name>anylineBarcodeModuleView</Name>
+					<Abstract type="html">The view that scanned the result</Abstract>
 				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">The result object</Abstract>
+					<Name>scanResult</Name>
+					<Abstract type="html">The scanned value</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anylineOCRScanPlugin:didFindResult:</Anchor>
+			<Anchor>//api/name/anylineBarcodeModuleView:didFindResult:</Anchor>
             <NodeRef refid="79"/>
 		</Token>
 		

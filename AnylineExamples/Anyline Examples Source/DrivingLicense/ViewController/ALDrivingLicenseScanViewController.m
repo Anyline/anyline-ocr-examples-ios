@@ -8,7 +8,7 @@
 #import "ALDrivingLicenseScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
-#import "ALEUDrivingLicenseView.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
@@ -16,7 +16,6 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
-@property (nonatomic, strong) ALEUDrivingLicenseView *drivingLicenseView;
 
 @end
 
@@ -64,14 +63,6 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     
     UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapDriverLicenseView:)];
     
-    self.drivingLicenseView = [[ALEUDrivingLicenseView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/1.4)];
-    
-    [self.drivingLicenseView addGestureRecognizer:gr];
-    self.drivingLicenseView.center = self.view.center;
-    [self.view insertSubview:self.drivingLicenseView belowSubview:self.ocrModuleView];
-    
-    self.drivingLicenseView.alpha = 0;
-    
     self.controllerType = ALScanHistoryScrabble;
     
     [self startListeningForMotion];
@@ -111,48 +102,6 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     }
 }
 
-/*
- Dismiss the view if the user taps the screen
- */
--(void)didTapDriverLicenseView:(id) sender {
-    if(self.drivingLicenseView.alpha == 1.0) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [UIView animateWithDuration:0.4 animations:^{
-                self.drivingLicenseView.transform = CGAffineTransformMakeScale(0.3, 0.3);
-                self.drivingLicenseView.alpha = 0;
-            } completion:^(BOOL finished) {
-                // We start scanning again once the animation completed
-                [self startAnyline];
-            }];
-        });
-    }
-}
-
-/*
- A little animation for the user to see the scanned document.
- */
--(void)animateScanDidComplete {
-    [self.view bringSubviewToFront:self.drivingLicenseView];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        self.drivingLicenseView.center = self.view.center;
-        self.drivingLicenseView.alpha = 0;
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            self.drivingLicenseView.alpha = 1.0;
-            self.drivingLicenseView.transform = CGAffineTransformMakeScale(1.1, 1.1);
-        }];
-        
-        [UIView animateWithDuration:0.4 delay:0.2 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:(UIViewAnimationOptionAllowAnimatedContent) animations:^{
-            self.drivingLicenseView.transform = CGAffineTransformMakeScale(0.87, 0.87);
-            self.drivingLicenseView.center = self.view.center;
-        } completion:^(BOOL finished) {
-        }];
-    });
-}
-
 
 #pragma mark -- AnylineOCRModuleDelegate
 
@@ -164,23 +113,14 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         
         NSArray<NSString *> *comps = [result.result componentsSeparatedByString:@"|"];
         
-        NSString *name = comps[0];
-        NSString *birthdateID = comps[1];
-        
-        NSArray<NSString *> *nameComps = [name componentsSeparatedByString:@" "];
-        
-        if (nameComps.count == 3) {
-            self.drivingLicenseView.surname.text = nameComps[0];
-            self.drivingLicenseView.surname2.text = nameComps[1];
-            self.drivingLicenseView.givenNames.text = nameComps[2];
-        } else {
-            self.drivingLicenseView.surname.text = nameComps[0];
-            self.drivingLicenseView.givenNames.text = nameComps[1];
-            self.drivingLicenseView.surname2.text = @"";
-        }
+        NSString *surNames = comps[0];
+        NSString *givenNames = comps[1];
+        NSString *birthdateID = comps[2];
+        NSString *idNumber = comps[3];
         
         NSArray<NSString *> *birthdateIDComps = [birthdateID componentsSeparatedByString:@" "];
         
@@ -195,13 +135,16 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
             formatter.dateFormat = @"yyyyMMdd";
             date = [formatter dateFromString:birthday];
         }
-        
         formatter.dateFormat = @"yyyy-MM-dd";
         
-        self.drivingLicenseView.birthdate.text = [formatter stringFromDate:date];
-        self.drivingLicenseView.idNumber.text = birthdateIDComps[1];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:surNames]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:givenNames]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[formatter stringFromDate:date]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:idNumber]];
         
-        [self animateScanDidComplete];
+        //Display the result
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

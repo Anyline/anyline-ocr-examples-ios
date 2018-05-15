@@ -18,11 +18,7 @@
 
 @interface ALCaptureDeviceManager : NSObject
 
-+ (instancetype _Nonnull)sharedCaptureDeviceManager;
-
-- (void)setupWithCameraConfig:(ALCameraConfig *_Nonnull)cameraConfig;
-
-- (void)tearDown;
+- (instancetype _Nullable )initWithCameraConfig:(ALCameraConfig *_Nonnull)cameraConfig;
 
 /**
  The native Barcode Recognition Delegate. Implement this delegate to receive barcodes results during scanning.

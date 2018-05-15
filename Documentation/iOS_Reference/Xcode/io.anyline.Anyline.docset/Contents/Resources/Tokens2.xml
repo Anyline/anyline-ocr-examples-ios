@@ -13,78 +13,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCameraView:</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
-			<Abstract type="html">The video view which is responsible for video preview, frame extraction, ...</Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCameraView *cameraView</Declaration>
-			
-			
-			<Anchor>//api/name/cameraView</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCaptureDeviceManager:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
-			
-			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/captureDeviceManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
-			
-			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/captureDeviceManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</Declaration>
-			
-			
-			<Anchor>//api/name/captureDeviceManager</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setSampleBufferImageProvider:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
@@ -157,74 +85,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setFlashButton:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setCameraView:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, weak) ALScanView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/flashButton</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, weak) ALScanView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/flashButton</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/cameraView</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</Declaration>
+			<Declaration>@property (nonatomic, weak) ALScanView *cameraView</Declaration>
 			
 			
-			<Anchor>//api/name/flashButton</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/setTorchManager:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALAbstractScanViewPlugin/torchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALAbstractScanViewPlugin/torchManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALAbstractScanViewPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</Declaration>
-			
-			
-			<Anchor>//api/name/torchManager</Anchor>
+			<Anchor>//api/name/cameraView</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

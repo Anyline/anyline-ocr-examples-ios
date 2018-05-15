@@ -5,20 +5,21 @@
 //  Created by Daniel Albertini on 09.04.18.
 //
 
-#import "ALContainerScanScanViewController.h"
+#import "ALContainerScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
-#import "ALResultOverlayView.h"
+#import "ALResultEntry.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
-@interface ALContainerScanScanViewController ()<AnylineOCRModuleDelegate>
+@interface ALContainerScanViewController ()<AnylineOCRModuleDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
 
 @end
 
-@implementation ALContainerScanScanViewController
+@implementation ALContainerScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +27,7 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"Shipping Container";
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] bounds];
+    CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
@@ -110,20 +111,12 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Reading Result" value:result.result]];
         
-        // Display an overlay showing the result
-        UIImage *image = [UIImage imageNamed:@"serial"];
-        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-        [overlay setImage:image];
-        [overlay setText:result.result];
-        __weak typeof(self) welf = self;
-        __weak ALResultOverlayView *woverlay = overlay;
-        [overlay setTouchDownBlock:^{
-            // Remove the view when touched and restart scanning
-            [welf startAnyline];
-            [woverlay removeFromSuperview];
-        }];
-        [self.view addSubview:overlay];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

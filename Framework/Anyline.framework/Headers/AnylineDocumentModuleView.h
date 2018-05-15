@@ -64,6 +64,13 @@
  * @since 3.19
  */
 @property (nonatomic, assign) CGSize maxOutputResolution;
+/**
+ * If enabled, starts post processing after a full document snap. (Default: false)
+ * At the moment improves white balance and contrast
+ *
+ * @since 3.24
+ */
+@property (nonatomic, assign) BOOL postProcessingEnabled;
 
 /**
  * Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).

@@ -8,10 +8,10 @@
 
 #import "ALLicensePlateViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALLicensePlateResultOverlayView.h"
 #import "ALAppDemoLicenses.h"
+#import "ALResultEntry.h"
+#import "ALResultViewController.h"
 
 #import "Anyline/AnylineLicensePlateModuleView.h"
 
@@ -117,22 +117,13 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     //build a string with country+result for the ScanHistory model -- if country==nil only take result
     NSString *formattedScanResult = (scanResult.country.length) ? [NSString stringWithFormat:@"%@-%@", scanResult.country, scanResult.result] : scanResult.result;
     [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:scanResult.image module:anylineLicensePlateModuleView completion:^{
-        // Display an overlay showing the result
-    	UIImage *image = [UIImage imageNamed:@"license_plate_background"];
-    	
-        ALLicensePlateResultOverlayView *overlay = [[ALLicensePlateResultOverlayView alloc] initWithFrame:self.view.bounds];
-    	[overlay setImage:image];
-        [overlay setCountryCode:scanResult.country];
-        [overlay setText:scanResult.result];
-    
-    	__weak typeof(self) welf = self;
-    	__weak ALResultOverlayView *woverlay = overlay;
-        [overlay setTouchDownBlock:^{
-            // Remove the view when touched and restart scanning
-            [welf startAnyline];
-            [woverlay removeFromSuperview];
-        }];
-        [self.view addSubview:overlay];
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:scanResult.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:scanResult.country]];
+        
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
+        [self.navigationController pushViewController:vc animated:YES];
      }];
 }
 

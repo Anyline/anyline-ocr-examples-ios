@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALReportingMode.html">
+	<File path="Constants/ALRunFailure.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALReportingMode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALRunFailure</TokenIdentifier>
+			<Abstract type="html">The possible run error codes for this module.
+You can listen to the error codes for each run via the delegate method anylineOCRModuleView:reportsRunFailure:</Abstract>
+			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
             
 			
 			<NodeRef refid="101"/>
@@ -14,31 +15,67 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingEnabled</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALReportingEnabled</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureUnkown</TokenIdentifier>
+            <Abstract type="html">An unknown error occurred.
+     </Abstract>
+            <Declaration>ALRunFailureUnkown</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
-            
-            <NodeRef refid="101"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingDisabled</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALReportingDisabled</Declaration>
-            
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
             
             <NodeRef refid="101"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALReportingNotSet</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALReportingNotSet</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoLinesFound</TokenIdentifier>
+            <Abstract type="html">No text lines found in imag
+     </Abstract>
+            <Declaration>ALRunFailureNoLinesFound</Declaration>
             
-            <DeclaredIn>ALUIConfiguration.h</DeclaredIn>
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            
+            <NodeRef refid="101"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureNoTextFound</TokenIdentifier>
+            <Abstract type="html">No text found in lines
+     </Abstract>
+            <Declaration>ALRunFailureNoTextFound</Declaration>
+            
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            
+            <NodeRef refid="101"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureConfidenceNotReached</TokenIdentifier>
+            <Abstract type="html">The required min confidence is not reached for this run
+     </Abstract>
+            <Declaration>ALRunFailureConfidenceNotReached</Declaration>
+            
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            
+            <NodeRef refid="101"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureResultNotValid</TokenIdentifier>
+            <Abstract type="html">The result does not match the validation regular expression
+     </Abstract>
+            <Declaration>ALRunFailureResultNotValid</Declaration>
+            
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            
+            <NodeRef refid="101"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailureSharpnessNotReached</TokenIdentifier>
+            <Abstract type="html">The min sharpness for this run is not reached
+     </Abstract>
+            <Declaration>ALRunFailureSharpnessNotReached</Declaration>
+            
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
             
             <NodeRef refid="101"/>
         </Token>

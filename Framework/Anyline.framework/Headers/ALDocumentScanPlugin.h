@@ -61,6 +61,8 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 
 @property (nonatomic, assign) BOOL justDetectCornersIfPossible;
 
+@property (nonatomic, assign) BOOL postProcessingEnabled;
+
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID NS_DESIGNATED_INITIALIZER;
 
 - (BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;

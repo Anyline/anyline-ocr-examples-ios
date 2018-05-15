@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMeterScanPlugin.html">
+	<File path="Classes/ALMeterScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanPlugin</TokenIdentifier>
-			<Abstract type="html">The ALMeterScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -13,231 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setDelegates:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setMeterScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMeterScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/delegates</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMeterScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanPlugin/delegates</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMeterScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/meterScanPlugin</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setScanMode:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanPlugin/scanMode</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) ALScanMode scanMode</Declaration>
-			
-			
-			<Anchor>//api/name/scanMode</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setSerialNumberValidationRegex:</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/serialNumberValidationRegex</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanPlugin/serialNumberValidationRegex</TokenIdentifier>
-			<Abstract type="html">A validation regex string for the Serial scanMode.
-Regex has to follow the ECMAScript standard.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberValidationRegex</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberValidationRegex</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setSerialNumberCharWhitelist:</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/serialNumberCharWhitelist</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanPlugin/serialNumberCharWhitelist</TokenIdentifier>
-			<Abstract type="html">A character whitelist for the Serial scanMode.
-This parameter will be ignored in the other scanModes.
-If you want to have no regex this property has to be set to nil.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</Declaration>
-			
-			
-			<Anchor>//api/name/serialNumberCharWhitelist</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setScanMode:error:</TokenIdentifier>
-			<Abstract type="html">Sets the scan mode and returns an NSError if something failed.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scanMode</Name>
-					<Abstract type="html">The scan mode to set.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error if something goes wrong. Can be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setScanMode:error:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALMeterScanPluginDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setupWithLicenseKey:delegate:finished:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/addDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)addDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/addDelegate:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanPlugin/removeDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)removeDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/removeDelegate:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		

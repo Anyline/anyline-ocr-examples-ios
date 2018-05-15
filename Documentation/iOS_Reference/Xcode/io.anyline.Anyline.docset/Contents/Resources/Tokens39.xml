@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRScanPlugin.html">
+	<File path="Classes/ALOCRScanViewPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanPlugin</TokenIdentifier>
-			<Abstract type="html">The ALOCRScanPlugin can be used to recognize text.
-It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
-and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanViewPlugin</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="39"/>
@@ -15,168 +13,50 @@ and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setDelegates:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/setOcrScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALOCRScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/delegates</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALOCRScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanPlugin/delegates</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALOCRScanPluginDelegate&gt; *delegates</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/delegates</Anchor>
+			<Anchor>//api/name/ocrScanPlugin</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOcrConfig:</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanPlugin/ocrConfig</TokenIdentifier>
-			<Abstract type="html">Read-only property for the ALOCRConfig</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig</Declaration>
-			
-			
-			<Anchor>//api/name/ocrConfig</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setupWithLicenseKey:delegate:ocrConfig:finished:</TokenIdentifier>
-			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate ocrConfig:(ALOCRConfig *_Nonnull)ocrConfig finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>licenseKey</Name>
-					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALOCRScanPluginDelegate</Abstract>
-				</Parameter><Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ocrConfig to use for the scanning</Abstract>
-				</Parameter><Parameter>
-					<Name>finished</Name>
-					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setupWithLicenseKey:delegate:ocrConfig:finished:</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/setOCRConfig:error:</TokenIdentifier>
-			<Abstract type="html">Sets a new ALOCRConfig and returns an Error if something failed.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)setOCRConfig:(ALOCRConfig *_Nonnull)ocrConfig error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ocrConfig</Name>
-					<Abstract type="html">The ALOCRConfig to set</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/setOCRConfig:error:</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/copyTrainedData:fileHash:error:</TokenIdentifier>
-			<Abstract type="html">Use this method to copy a custom trained font data into the Anyline work environment.
-This method is mandatory if you want to use custom fonts.</Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)copyTrainedData:(NSString *_Nonnull)trainedDataPath fileHash:(NSString *_Nullable)hash error:(NSError *_Nullable *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>trainedDataPath</Name>
-					<Abstract type="html">The full path to your trained data file</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The Error object if something fails</Abstract>
-				</Parameter><Parameter>
-					<Name>fileHash</Name>
-					<Abstract type="html">The hash of the traineddata file so Anyline knows when it changed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Boolean indicating the success / failure of the call.</Abstract></ReturnValue>
-			<Anchor>//api/name/copyTrainedData:fileHash:error:</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/addDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
+			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
 			
-			<Declaration>- (void)addDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/addDelegate:</Anchor>
-            <NodeRef refid="39"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanPlugin/removeDelegate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanPlugin.h</DeclaredIn>
-			
-			<Declaration>- (void)removeDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/removeDelegate:</Anchor>
+			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		

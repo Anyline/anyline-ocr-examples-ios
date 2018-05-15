@@ -30,6 +30,8 @@
 
 @property (nonatomic, assign, getter=isRunning) BOOL running;
 
+@property (nonatomic, assign, getter=isSingleRun) BOOL singleRun;
+
 /**
  *  The delegate property.
  *  You must set the delegate if you want to get any results out 
@@ -218,6 +220,17 @@
  */
 + (NSString *_Nonnull)buildNumber;
 
+
+/**
+ *  Expiration Date of a License Key.
+ *
+ *  @param licenseKey A NSString containing the licenseKey
+ *  @param error will contain an exception if the validation of the licenseKey fails
+ *
+ *  @return license expiration Date as NSString
+ */
++ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nullable)licenseKey error:(NSError *_Nullable *_Nullable)error;
+
 + (NSBundle *_Nonnull)frameworkBundle;
 
 /**
@@ -226,7 +239,7 @@
  * @param enable if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file, 
  *               and use the reportScanResultState: for reporting
  */
--(void) enableReporting:(BOOL) enable;
+- (void) enableReporting:(BOOL) enable;
 
 - (void)reportIncludeValues:(NSString *_Nonnull)values;
 

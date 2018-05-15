@@ -31,7 +31,7 @@
         "cornerRadius": 2,
         "strokeWidth": 4,
     },
-    "beepOnResult": false,
+    "beepOnResult": true,
     "vibrateOnResult": false,
     "blinkAnimationOnResult": true,
     "cancelOnResult": true

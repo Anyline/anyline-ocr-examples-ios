@@ -10,7 +10,7 @@
 
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
-#import "ALContainerScanScanViewController.h"
+#import "ALContainerScanViewController.h"
 
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
@@ -48,7 +48,7 @@
     
     ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Shipping Container", nil)
                                                        image:[UIImage imageNamed:@"container serial numbers"]
-                                              viewController:[ALContainerScanScanViewController class]];
+                                              viewController:[ALContainerScanViewController class]];
     
     self.sectionNames = @[@"MRO",];
     self.examples = @{

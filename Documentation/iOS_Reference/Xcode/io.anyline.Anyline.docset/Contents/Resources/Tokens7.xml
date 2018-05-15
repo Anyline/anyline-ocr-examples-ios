@@ -132,6 +132,30 @@
             <NodeRef refid="7"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALCameraConfig/initWithDefaultCamera:captureResolution:pictureResolution:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)defaultCamera captureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDefaultCamera:captureResolution:pictureResolution:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ALCameraConfig/defaultCameraConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALCameraConfig.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype _Nullable)defaultCameraConfig</Declaration>
+			
+			
+			<Anchor>//api/name/defaultCameraConfig</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
         
         
 	</File>

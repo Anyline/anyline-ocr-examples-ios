@@ -21,7 +21,7 @@
         "alignment": "top_left"
     },
     "visualFeedback": {
-        "style": "CONTOUR_RECT",
+        "style": "CONTOUR_UNDERLINE",
         "strokeWidth": 1,
         "strokeColor": "0099FF",
         "fillColor": "110099FF",

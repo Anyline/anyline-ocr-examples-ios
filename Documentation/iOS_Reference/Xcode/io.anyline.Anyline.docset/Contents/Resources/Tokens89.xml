@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALBarcodeFormatOptions.html">
+	<File path="Constants/ALCaptureViewMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALBarcodeFormatOptions</TokenIdentifier>
-			<Abstract type="html">Theses are the valid code types to supply to setBarcodeFormatOptions:
-Use | do allow multiple formats.</Abstract>
-			<DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ALCaptureViewMode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="89"/>
@@ -15,181 +14,21 @@ Use | do allow multiple formats.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeAztec</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeBGRA</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeAztec</Declaration>
+            <Declaration>ALCaptureViewModeBGRA</Declaration>
             
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCodabar</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALCaptureViewModeYUV</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeCodabar</Declaration>
+            <Declaration>ALCaptureViewModeYUV</Declaration>
             
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode39</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeCode39</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode93</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeCode93</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeCode128</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeCode128</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeDataMatrix</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeDataMatrix</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeEAN8</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeEAN8</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeEAN13</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeEAN13</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeITF</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeITF</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypePDF417</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypePDF417</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeQR</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeQR</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeRSS14</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeRSS14</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeRSSExpanded</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeRSSExpanded</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCA</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeUPCA</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCE</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeUPCE</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUPCEANExtension</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeUPCEANExtension</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeUnknown</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeUnknown</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
-            
-            <NodeRef refid="89"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALCodeTypeAll</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>ALCodeTypeAll</Declaration>
-            
-            <DeclaredIn>ALBarcodeResult.h</DeclaredIn>
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
             <NodeRef refid="89"/>
         </Token>

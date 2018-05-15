@@ -17,4 +17,10 @@
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
 
+- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)defaultCamera
+                              captureResolution:(ALCaptureViewResolution)captureResolution
+                              pictureResolution:(ALPictureResolution)pictureResolution;
+
++ (instancetype _Nullable)defaultCameraConfig;
+
 @end

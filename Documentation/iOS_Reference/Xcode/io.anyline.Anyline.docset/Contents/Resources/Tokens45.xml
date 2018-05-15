@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALSampleBufferImageProvider.html">
+	<File path="Classes/ALScanFeedbackConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALSampleBufferImageProvider</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanFeedbackConfig</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="45"/>
@@ -13,218 +13,158 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutFrame:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBeepOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutFrame</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutFrame</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutFrame</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutFrame</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutFrame</Anchor>
+			<Anchor>//api/name/beepOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCameraFrame:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setVibrateOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cameraFrame</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cameraFrame</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cameraFrame</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cameraFrame</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cameraFrame</Anchor>
+			<Anchor>//api/name/vibrateOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutScreen:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBlinkAnimationOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutScreen</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutScreen</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutScreen</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutScreen</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutScreen</Anchor>
+			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutPadding:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setCancelOnResult:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutPadding</Anchor>
+			<Anchor>//api/name/cancelOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutPadding</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutPadding</Anchor>
+			<Anchor>//api/name/cancelOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutPadding</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutPadding</Anchor>
+			<Anchor>//api/name/cancelOnResult</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutOffset:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/initWithDictionary:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutOffset</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutOffset</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
 			
 			
-			<Anchor>//api/name/cutoutOffset</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutOffset</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
-			
-			
-			<Anchor>//api/name/cutoutOffset</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/initWithCutoutScreen:cutoutPadding:cutoutOffset:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
-			
-			<Declaration>- (_Nullable instancetype)initWithCutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset</Declaration>
-			
-			
-			<Anchor>//api/name/initWithCutoutScreen:cutoutPadding:cutoutOffset:</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/convertPoint:previewLayer:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
-			
-			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer *_Nonnull)previewLayer</Declaration>
-			
-			
-			<Anchor>//api/name/convertPoint:previewLayer:</Anchor>
-            <NodeRef refid="45"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/convertPoint:previewLayer:imageWidth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
-			
-			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer *_Nonnull)previewLayer imageWidth:(CGFloat)inWidth</Declaration>
-			
-			
-			<Anchor>//api/name/convertPoint:previewLayer:imageWidth:</Anchor>
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		

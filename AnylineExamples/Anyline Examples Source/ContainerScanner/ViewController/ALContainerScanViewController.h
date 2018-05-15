@@ -9,6 +9,6 @@
 
 #import "ALBaseScanViewController.h"
 
-@interface ALContainerScanScanViewController : ALBaseScanViewController
+@interface ALContainerScanViewController : ALBaseScanViewController
 
 @end

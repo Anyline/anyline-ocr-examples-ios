@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALScanFeedbackConfig.html">
+	<File path="Classes/ALScanInfo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALScanFeedbackConfig</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALScanInfo</TokenIdentifier>
+			<Abstract type="html">The name for a reported shake detection warning value</Abstract>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
@@ -13,158 +13,122 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBeepOnResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setPluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/beepOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/pluginID</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL beepOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/beepOnResult</Anchor>
+			<Anchor>//api/name/pluginID</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setVibrateOnResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setVariableName:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/variableName</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/vibrateOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/variableName</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL vibrateOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *variableName</Declaration>
 			
 			
-			<Anchor>//api/name/vibrateOnResult</Anchor>
+			<Anchor>//api/name/variableName</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setBlinkAnimationOnResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/setValue:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/value</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/blinkAnimationOnResult</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALScanInfo/value</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL blinkAnimationOnResult</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) id value</Declaration>
 			
 			
-			<Anchor>//api/name/blinkAnimationOnResult</Anchor>
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/setCancelOnResult:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALScanInfo/initWithVariableName:value:pluginID:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
+			<DeclaredIn>ALScanInfo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
-			
-			
-			<Anchor>//api/name/cancelOnResult</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithVariableName:(NSString *_Nonnull)variableName value:(id _Nonnull)value pluginID:(NSString *_Nonnull)pluginID</Declaration>
 			
 			
-			<Anchor>//api/name/cancelOnResult</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALScanFeedbackConfig/cancelOnResult</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL cancelOnResult</Declaration>
-			
-			
-			<Anchor>//api/name/cancelOnResult</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALScanFeedbackConfig/initWithDictionary:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALScanFeedbackConfig.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
-			
-			
-			<Anchor>//api/name/initWithDictionary:</Anchor>
+			<Anchor>//api/name/initWithVariableName:value:pluginID:</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		

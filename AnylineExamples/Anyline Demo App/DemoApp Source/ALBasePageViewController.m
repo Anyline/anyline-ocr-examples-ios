@@ -26,7 +26,7 @@
     self.view.frame = pageViewFrame;
     
     CGRect headerFrame = [[UIScreen mainScreen] bounds];
-    headerFrame = CGRectMake(headerFrame.origin.x, headerFrame.origin.y + self.navigationController.navigationBar.frame.size.height, headerFrame.size.width, headerFrame.size.width*0.25);
+    headerFrame = CGRectMake(headerFrame.origin.x, headerFrame.origin.y + self.navigationController.navigationBar.frame.size.height, headerFrame.size.width, headerFrame.size.width*0.35);
     
     self.header = [[UIView alloc] initWithFrame:headerFrame];
     self.header.backgroundColor = [UIColor whiteColor];

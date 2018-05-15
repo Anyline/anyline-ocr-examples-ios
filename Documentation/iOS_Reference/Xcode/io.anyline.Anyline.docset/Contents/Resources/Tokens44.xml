@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALRunSkippedReason.html">
+	<File path="Classes/ALSampleBufferImageProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALRunSkippedReason</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALSampleBufferImageProvider</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -13,86 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setPluginID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutFrame:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/cutoutFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutFrame</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/cutoutFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/pluginID</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutFrame</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</Declaration>
+			<Declaration>@property (atomic, assign) CGRect cutoutFrame</Declaration>
 			
 			
-			<Anchor>//api/name/pluginID</Anchor>
+			<Anchor>//api/name/cutoutFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/setReason:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCameraFrame:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/cameraFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/reason</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cameraFrame</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/cameraFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALRunSkippedReason/reason</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cameraFrame</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) ALRunFailure reason</Declaration>
+			<Declaration>@property (nonatomic, assign) CGSize cameraFrame</Declaration>
 			
 			
-			<Anchor>//api/name/reason</Anchor>
+			<Anchor>//api/name/cameraFrame</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALRunSkippedReason/initWithRunFailure:pluginID:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutScreen:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason pluginID:(NSString *_Nonnull)pluginID</Declaration>
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
 			
 			
-			<Anchor>//api/name/initWithRunFailure:pluginID:</Anchor>
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutScreen</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutScreen</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGRect cutoutScreen</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutScreen</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutPadding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutPadding</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutPadding</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGSize cutoutPadding</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutPadding</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/setCutoutOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALSampleBufferImageProvider/cutoutOffset</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CGPoint cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/cutoutOffset</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/initWithCutoutScreen:cutoutPadding:cutoutOffset:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithCutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset</Declaration>
+			
+			
+			<Anchor>//api/name/initWithCutoutScreen:cutoutPadding:cutoutOffset:</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/convertPoint:previewLayer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer *_Nonnull)previewLayer</Declaration>
+			
+			
+			<Anchor>//api/name/convertPoint:previewLayer:</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALSampleBufferImageProvider/convertPoint:previewLayer:imageWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALSampleBufferImageProvider.h</DeclaredIn>
+			
+			<Declaration>- (CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer *_Nonnull)previewLayer imageWidth:(CGFloat)inWidth</Declaration>
+			
+			
+			<Anchor>//api/name/convertPoint:previewLayer:imageWidth:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		

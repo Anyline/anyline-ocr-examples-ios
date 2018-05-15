@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALDigitDataPoint.html">
+	<File path="Classes/ALDigitResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALDigitDataPoint</TokenIdentifier>
-			<Abstract type="html">The ALDigitDataPoint describes the position, segments, the result combinations and
-the relationship to other digits for a single digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALDigitResult</TokenIdentifier>
+			<Abstract type="html">The ALDigitResult provides all the neccessary information of one computed digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -14,9 +13,45 @@ the relationship to other digits for a single digit.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/setSegments:</TokenIdentifier>
-			<Abstract type="html">Array with all the segments for this digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setValue:</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/value</TokenIdentifier>
+			<Abstract type="html">The computed value of the digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setSegments:</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
@@ -26,9 +61,9 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/segments</TokenIdentifier>
-			<Abstract type="html">Array with all the segments for this digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
@@ -38,9 +73,9 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDigitDataPoint/segments</TokenIdentifier>
-			<Abstract type="html">Array with all the segments for this digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/segments</TokenIdentifier>
+			<Abstract type="html">The segments for this 7-Segment digit.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *segments</Declaration>
 			
@@ -50,9 +85,9 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/setQualitySegments:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setQualitySegments:</TokenIdentifier>
 			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
@@ -62,9 +97,9 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/qualitySegments</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/qualitySegments</TokenIdentifier>
 			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
@@ -74,9 +109,9 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDigitDataPoint/qualitySegments</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/qualitySegments</TokenIdentifier>
 			<Abstract type="html">Array with all the segments which are used for the quality or accurracy of the digit.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSArray *qualitySegments</Declaration>
 			
@@ -86,204 +121,132 @@ the relationship to other digits for a single digit.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/setSegmentResultPattern:</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIndexPath:</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *segmentResultPattern</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/segmentResultPattern</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/segmentResultPattern</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *segmentResultPattern</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/segmentResultPattern</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDigitDataPoint/segmentResultPattern</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/indexPath</TokenIdentifier>
+			<Abstract type="html">The IndexPath of this digit. It is a representation for the digits how
+they are located on the display and related to each other.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *segmentResultPattern</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) ALIndexPath *indexPath</Declaration>
 			
 			
-			<Anchor>//api/name/segmentResultPattern</Anchor>
+			<Anchor>//api/name/indexPath</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/setItalicOffset:</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger italicOffset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/italicOffset</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/italicOffset</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger italicOffset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/italicOffset</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALDigitDataPoint/italicOffset</TokenIdentifier>
-			<Abstract type="html">Dictionary with all the valid segment patterns and the result object for the
-patterns.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/identifier</TokenIdentifier>
+			<Abstract type="html">The identifier for this digit. With the identifier digits can be logically
+bind together and will be validated together.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSInteger italicOffset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/italicOffset</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/initWithArea:indexPath:identifier:italicOffset:segments:qualitySegments:segmentResultPattern:</TokenIdentifier>
-			<Abstract type="html">Designated initializer for an digit spec.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/setPatternResultDictionary:</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier italicOffset:(NSInteger)italicOffset segments:(NSArray *)segments qualitySegments:(NSArray *)qualitySegments segmentResultPattern:(NSDictionary *)segmentResultPattern</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the display the digit is found.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>segments</Name>
-					<Abstract type="html">Array with all the segments for this digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>qualitySegments</Name>
-					<Abstract type="html">Array with all the segments which should be used for
-the calculation of the quality of the digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>segmentResultPattern</Name>
-					<Abstract type="html">Dictionary with all the valid segment patterns and
-the result object for the patterns.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALDigitDataPoint</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:italicOffset:segments:qualitySegments:segmentResultPattern:</Anchor>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/initWithArea:indexPath:identifier:italicOffset:segmentResultPattern:</TokenIdentifier>
-			<Abstract type="html">Designated initializer for an digit spec.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier italicOffset:(NSInteger)italicOffset segmentResultPattern:(NSDictionary *)segmentResultPattern</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the display the digit is found.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>segmentResultPattern</Name>
-					<Abstract type="html">Dictionary with all the valid segment patterns and
-the result object for the patterns.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALDigitDataPoint</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:italicOffset:segmentResultPattern:</Anchor>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/initWithArea:indexPath:identifier:italicOffset:</TokenIdentifier>
-			<Abstract type="html">Designated initializer for an digit spec.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALDigitResult/patternResultDictionary</TokenIdentifier>
+			<Abstract type="html">The patternResultDictionary is used to interpret the segment results of a digit
+to an outcome value.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier italicOffset:(NSInteger)italicOffset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the display the digit is found.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the digit.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALDigitDataPoint</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:italicOffset:</Anchor>
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *patternResultDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/patternResultDictionary</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/initWithArea:indexPath:identifier:</TokenIdentifier>
-			<Abstract type="html">Designated initializer for an digit spec.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALDigitResult/quality</TokenIdentifier>
+			<Abstract type="html">Returns the Quality or accuracy of a digit. This is the average value of all
+the specified qualitySegments.</Abstract>
+			<DeclaredIn>ALDigitResult.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>area</Name>
-					<Abstract type="html">The area where in the display the digit is found.</Abstract>
-				</Parameter><Parameter>
-					<Name>indexPath</Name>
-					<Abstract type="html">The indexPath for the specified digit.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier for the digit.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new instance of ALDigitDataPoint</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithArea:indexPath:identifier:</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALDigitDataPoint/initWithDictionary:</TokenIdentifier>
-			<Abstract type="html">Initialise a new DataPoint with a representing dictionary.</Abstract>
-			<DeclaredIn>ALDigitDataPoint.h</DeclaredIn>
+			<Declaration>- (float)quality</Declaration>
 			
-			<Declaration>- (instancetype)initWithDictionary:(NSDictionary *)dictionary</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dictionary</Name>
-					<Abstract type="html">A dictionary representing a DataPoint object.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">New DataPoint object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDictionary:</Anchor>
+			<ReturnValue><Abstract type="html">float value for quality. 1 ... best quality, 0 ... worst quality.</Abstract></ReturnValue>
+			<Anchor>//api/name/quality</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

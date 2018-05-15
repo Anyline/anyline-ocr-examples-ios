@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMRZResult.html">
+	<File path="Classes/ALMRZScanPlugin.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
-			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZScanPlugin</TokenIdentifier>
+			<Abstract type="html">The ALMRZScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode..</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -13,50 +13,124 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
-			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
-			
-			
-			<Anchor>//api/name/allCheckDigitsValid</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/setDelegates:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMRZResult.h</DeclaredIn>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMRZScanPluginDelegate&gt; *delegates</Declaration>
 			
 			
-			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</Anchor>
+			<Anchor>//api/name/delegates</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/delegates</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMRZScanPluginDelegate&gt; *delegates</Declaration>
+			
+			
+			<Anchor>//api/name/delegates</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZScanPlugin/delegates</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMRZScanPluginDelegate&gt; *delegates</Declaration>
+			
+			
+			<Anchor>//api/name/delegates</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/setStrictMode:</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/strictMode</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZScanPlugin/strictMode</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
+			<Abstract type="html">Sets the license key and delegate.</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;ALMRZScanPluginDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>licenseKey</Name>
+					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to ALMRZScanPluginDelegate</Abstract>
+				</Parameter><Parameter>
+					<Name>finished</Name>
+					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setupWithLicenseKey:delegate:finished:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/addDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)addDelegate:(id&lt;ALMRZScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/addDelegate:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/removeDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>- (void)removeDelegate:(id&lt;ALMRZScanPluginDelegate&gt; _Nonnull)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

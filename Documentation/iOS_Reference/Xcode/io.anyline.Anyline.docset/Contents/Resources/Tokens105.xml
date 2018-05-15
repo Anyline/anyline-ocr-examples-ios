@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ALUIFeedbackStyle.html">
+	<File path="Constants/ALUIVisualFeedbackAnimation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ALUIFeedbackStyle</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/ALUIVisualFeedbackAnimation</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationTraverseSingle</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleRect</Declaration>
+            <Declaration>ALUIVisualFeedbackAnimationTraverseSingle</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourRect</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationTraverseMulti</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourRect</Declaration>
+            <Declaration>ALUIVisualFeedbackAnimationTraverseMulti</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourUnderline</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationKitt</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourUnderline</Declaration>
+            <Declaration>ALUIVisualFeedbackAnimationKitt</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleContourPoint</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationBlink</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleContourPoint</Declaration>
+            <Declaration>ALUIVisualFeedbackAnimationBlink</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             
@@ -54,9 +54,39 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ALUIFeedbackStyleNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationResize</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>ALUIFeedbackStyleNone</Declaration>
+            <Declaration>ALUIVisualFeedbackAnimationResize</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="105"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationPulse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALUIVisualFeedbackAnimationPulse</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="105"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationPulseRandom</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALUIVisualFeedbackAnimationPulseRandom</Declaration>
+            
+            <DeclaredIn>ALViewConstants.h</DeclaredIn>
+            
+            <NodeRef refid="105"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALUIVisualFeedbackAnimationNone</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALUIVisualFeedbackAnimationNone</Declaration>
             
             <DeclaredIn>ALViewConstants.h</DeclaredIn>
             

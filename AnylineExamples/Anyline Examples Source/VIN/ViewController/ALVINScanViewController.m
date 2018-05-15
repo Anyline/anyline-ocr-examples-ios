@@ -8,7 +8,9 @@
 #import "ALVINScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
-#import "ALResultOverlayView.h"
+
+#import "ALResultEntry.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kVINLicenseKey = kDemoAppLicenseKey;
@@ -111,20 +113,12 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
     
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
-        
-        // Display an overlay showing the result
-        UIImage *image = [UIImage imageNamed:@"serial"];
-        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-        [overlay setImage:image];
-        [overlay setText:result.result];
-        __weak typeof(self) welf = self;
-        __weak ALResultOverlayView *woverlay = overlay;
-        [overlay setTouchDownBlock:^{
-            // Remove the view when touched and restart scanning
-            [welf startAnyline];
-            [woverlay removeFromSuperview];
-        }];
-        [self.view addSubview:overlay];
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Reading Result" value:result.result]];
+    
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

@@ -30,13 +30,11 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 
 @interface ALFlashButton : UIControl
 
-@property (nonatomic, assign) BOOL expanded;
+@property (nonatomic, assign, readonly) BOOL expanded;
 
-@property (nonatomic, assign) BOOL expandLeft;
+@property (nonatomic, assign, readonly) BOOL expandLeft;
 
-@property (nullable, nonatomic, strong) UIImageView *flashImage;
-
-@property (nullable, nonatomic, strong) ALFlashButtonConfig *flashButtonConfig;
+@property (nullable, nonatomic, strong, readonly) UIImageView *flashImage;
 
 @property (nonatomic, assign) ALFlashStatus flashStatus;
 

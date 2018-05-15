@@ -17,7 +17,7 @@
 #import "ALScanInfo.h"
 #import "ALRunSkippedReason.h"
 
-#import "ALCameraView.h"
+#import "ALScanView.h"
 #import "ALCutoutView.h"
 
 @protocol AnylineDebugDelegate;
@@ -40,9 +40,9 @@
 /**
  The video view which is responsible for video preview, frame extraction, ...
  */
-@property (nullable, nonatomic, strong) ALCameraView *cameraView;
+@property (nullable, nonatomic, strong) ALScanView *cameraView;
 
-@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager;
+@property (nullable, nonatomic, strong, readonly) ALCaptureDeviceManager *captureDeviceManager;
 
 @property (nullable, nonatomic, strong) ALCutoutView *cutoutView;
 

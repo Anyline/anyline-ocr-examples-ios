@@ -25,7 +25,7 @@
     "blinkAnimationOnResult": true,
     "cancelOnResult": true,
     "visualFeedback": {
-        "style": "contour_rect",
+        "style": "CONTOUR_POINT",
         "strokeColor": "660099FF",
         "strokeWidth": 4
     }

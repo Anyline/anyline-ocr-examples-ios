@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALLicensePlateScanViewPlugin.html">
+	<File path="Classes/ALMRZResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALLicensePlateScanViewPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMRZResult</TokenIdentifier>
+			<Abstract type="html">The result object for the AnylineMRZModule</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,50 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/setLicensePlateScanPlugin:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/setAllCheckDigitsValid:</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/licensePlateScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALLicensePlateScanViewPlugin/licensePlateScanPlugin</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZResult/allCheckDigitsValid</TokenIdentifier>
+			<Abstract type="html">Boolean indicating if all the check digits where valid</Abstract>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/allCheckDigitsValid</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALLicensePlateScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZResult/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALLicensePlateScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMRZResult.h</DeclaredIn>
 			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALLicensePlateScanPlugin *_Nonnull)licensePlateScanPlugin</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithResult:(ALIdentification *_Nonnull)result image:(UIImage *_Nonnull)image fullImage:(UIImage *_Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString *_Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid</Declaration>
 			
 			
-			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
+			<Anchor>//api/name/initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

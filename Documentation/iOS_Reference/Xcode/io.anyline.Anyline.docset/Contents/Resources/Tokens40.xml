@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALOCRScanViewPlugin.html">
+	<File path="Classes/ALPolygon.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALOCRScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALPolygon</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
             
 			
 			<NodeRef refid="40"/>
@@ -13,50 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/setOcrScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/setPoints:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/ocrScanPlugin</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/points</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/ocrScanPlugin</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALOCRScanViewPlugin/ocrScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALPolygon/points</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *points</Declaration>
 			
 			
-			<Anchor>//api/name/ocrScanPlugin</Anchor>
+			<Anchor>//api/name/points</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALOCRScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/initWithPoints:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALOCRScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
 			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin</Declaration>
+			<Declaration>- (instancetype)initWithPoints:(NSArray *)points</Declaration>
 			
 			
-			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
+			<Anchor>//api/name/initWithPoints:</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALPolygon/polygonWithScale:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALPolygon.h</DeclaredIn>
+			
+			<Declaration>- (ALPolygon *)polygonWithScale:(CGFloat)scale</Declaration>
+			
+			
+			<Anchor>//api/name/polygonWithScale:</Anchor>
             <NodeRef refid="40"/>
 		</Token>
 		

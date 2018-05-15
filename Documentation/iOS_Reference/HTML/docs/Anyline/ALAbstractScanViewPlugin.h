@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ALCameraView.h"
 #import "ALCutoutView.h"
 #import "ALFlashButton.h"
 #import "ALTorchManager.h"
@@ -19,22 +18,14 @@
 #import "ALAbstractScanPlugin.h"
 #import "ALSampleBufferImageProvider.h"
 
+@class ALScanView;
 @interface ALAbstractScanViewPlugin : UIView<ALInfoDelegate>
-
-/**
- The video view which is responsible for video preview, frame extraction, ...
- */
-@property (nullable, nonatomic, strong) ALCameraView *cameraView;
-
-@property (nullable, nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager;
 
 @property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider;
 
 @property (nullable, nonatomic, strong) ALCutoutView *cutoutView;
 
-@property (nullable, nonatomic, strong) ALFlashButton *flashButton;
-
-@property (nullable, nonatomic, strong) ALTorchManager *torchManager;
+@property (nonatomic, weak) ALScanView * _Nullable cameraView;
 
 @property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay;
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALValuesStackFlipping.html">
+	<File path="Classes/ALVisualFeedbackConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALValuesStackFlipping</TokenIdentifier>
-			<Abstract type="html">An implementation of the ValuesStack which support ROI which switch information.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ALVisualFeedbackConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
@@ -13,51 +13,302 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setFeedbackStyle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue acceptPartialResultSize:(NSInteger)partialResultSize</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter><Parameter>
-					<Name>partialResultSize</Name>
-					<Abstract type="html">size for partialresult array to be accepted if other partial result = 0.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:acceptPartialResultSize:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStyle</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALValuesStackFlipping/initWithSize:minimalEqualResults:allowSameValueConsecutively:</TokenIdentifier>
-			<Abstract type="html">Initialises a new values stack with a certain size, minEqualResult and if the same value consecutively is allowed.</Abstract>
-			<DeclaredIn>ALValuesStackFlipping.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/feedbackStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithSize:(NSInteger)size minimalEqualResults:(NSInteger)minEqualResults allowSameValueConsecutively:(BOOL)consecutivelyValue</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>size</Name>
-					<Abstract type="html">The size of the ValuesStack.</Abstract>
-				</Parameter><Parameter>
-					<Name>minEqualResults</Name>
-					<Abstract type="html">The minimum equal results needed for a new result.</Abstract>
-				</Parameter><Parameter>
-					<Name>consecutivelyValue</Name>
-					<Abstract type="html">indicator if consective same results are allowed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">new ValuesStack object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSize:minimalEqualResults:allowSameValueConsecutively:</Anchor>
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStyle</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/feedbackStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackStyle</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackAnimation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackAnimation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackAnimation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimation</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackStrokeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackStrokeColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackStrokeColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackFillColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackFillColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIColor *visualFeedbackFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackFillColor</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackStrokeWidth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackStrokeWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackStrokeWidth</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackStrokeWidth</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackCornerRadius:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackCornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackCornerRadius</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackCornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackCornerRadius</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackAnimationDuration:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackAnimationDuration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackAnimationDuration</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackAnimationDuration</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/setVisualFeedbackRedrawTimeout:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALVisualFeedbackConfig/visualFeedbackRedrawTimeout</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/visualFeedbackRedrawTimeout</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALVisualFeedbackConfig/initWithDictionary:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALVisualFeedbackConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)configDict</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDictionary:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		

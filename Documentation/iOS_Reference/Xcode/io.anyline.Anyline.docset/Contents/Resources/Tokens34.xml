@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ALMeterScanViewPlugin.html">
+	<File path="Classes/ALMotionDetector.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ALMeterScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ALMotionDetector</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -13,50 +13,74 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/setMeterScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/setDelegate:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/delegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ALMeterScanViewPlugin/meterScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMotionDetector/delegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin</Declaration>
+			<Declaration>@property (nonatomic, assign) id&lt;ALMotionDetectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/meterScanPlugin</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ALMeterScanViewPlugin/initWithFrame:scanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/startListeningForMotion</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>ALMeterScanViewPlugin.h</DeclaredIn>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
 			
-			<Declaration>- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin</Declaration>
+			<Declaration>- (void)startListeningForMotion</Declaration>
 			
 			
-			<Anchor>//api/name/initWithFrame:scanPlugin:</Anchor>
+			<Anchor>//api/name/startListeningForMotion</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/stopListeningForMotion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			
+			<Declaration>- (void)stopListeningForMotion</Declaration>
+			
+			
+			<Anchor>//api/name/stopListeningForMotion</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMotionDetector/initWithThreshold:delegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>ALMotionDetector.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithThreshold:(CGFloat)threshold delegate:(id)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/initWithThreshold:delegate:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

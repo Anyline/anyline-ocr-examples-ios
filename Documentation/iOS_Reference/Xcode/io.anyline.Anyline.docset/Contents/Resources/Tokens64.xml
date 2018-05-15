@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AnylineLicensePlateModuleView.html">
+	<File path="Classes/AnylineMRZModuleView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AnylineLicensePlateModuleView</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AnylineMRZModuleView</TokenIdentifier>
+			<Abstract type="html">The AnylineMRZModuleView class declares the programmatic interface for an object that manages easy access to Anylines MRZ scanning mode.
+All its capabilities are bundled into this AnylineAbstractModuleView subclass. Management of the scanning process happens within the view object.
+It is configurable via interface builder.</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
             
 			
 			<NodeRef refid="64"/>
@@ -13,90 +15,129 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setLicensePlateScanPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanViewPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/licensePlateScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineLicensePlateModuleView/licensePlateScanPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanViewPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanPlugin</Anchor>
+			<Anchor>//api/name/mrzScanViewPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setLicensePlateScanViewPlugin:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setMrzScanPlugin:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/licensePlateScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AnylineLicensePlateModuleView/licensePlateScanViewPlugin</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/mrzScanPlugin</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin</Declaration>
 			
 			
-			<Anchor>//api/name/licensePlateScanViewPlugin</Anchor>
+			<Anchor>//api/name/mrzScanPlugin</Anchor>
             <NodeRef refid="64"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setStrictMode:</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/strictMode</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AnylineMRZModuleView/strictMode</TokenIdentifier>
+			<Abstract type="html">If strictMode is enabled, results will only be returned when all checkDigits are valid.
+Default strictMode = false</Abstract>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL strictMode</Declaration>
+			
+			
+			<Anchor>//api/name/strictMode</Anchor>
+            <NodeRef refid="64"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupWithLicenseKey:delegate:error:</TokenIdentifier>
 			<Abstract type="html">Sets the license key and delegate.</Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineLicensePlateModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Declaration>- (BOOL)setupWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt; _Nonnull)delegate error:(NSError *_Nullable *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
 					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineLicensePlateModuleDelegate</Abstract>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
 					<Abstract type="html">The error that occured</Abstract>
@@ -108,18 +149,18 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AnylineLicensePlateModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/AnylineMRZModuleView/setupAsyncWithLicenseKey:delegate:finished:</TokenIdentifier>
 			<Abstract type="html">Sets the license key and delegate. Async method with return block when done.</Abstract>
-			<DeclaredIn>AnylineLicensePlateModuleView.h</DeclaredIn>
+			<DeclaredIn>AnylineMRZModuleView.h</DeclaredIn>
 			
-			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineLicensePlateModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
+			<Declaration>- (void)setupAsyncWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id&lt;AnylineMRZModuleDelegate&gt; _Nonnull)delegate finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))finished</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>licenseKey</Name>
 					<Abstract type="html">The Anyline license key for this application bundle</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineLicensePlateModuleDelegate</Abstract>
+					<Abstract type="html">The delegate that will receive the Anyline results (hast to conform to AnylineMRZModuleDelegate</Abstract>
 				</Parameter><Parameter>
 					<Name>finished</Name>
 					<Abstract type="html">Inidicating if setup is finished with an error object when setup failed.</Abstract>

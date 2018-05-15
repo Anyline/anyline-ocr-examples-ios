@@ -39,7 +39,7 @@
         self.surname =  [[UILabel alloc] initWithFrame:CGRectMake(130, 70, 200, 20)];
         [self addSubview:self.surname];
         
-        self.surname2 =  [[UILabel alloc] initWithFrame:CGRectMake(130, 900, 200, 20)];
+        self.surname2 =  [[UILabel alloc] initWithFrame:CGRectMake(130, 90, 200, 20)];
         [self addSubview:self.surname2];
         
         self.givenNames =  [[UILabel alloc] initWithFrame:CGRectMake(130, 110, 200, 20)];
