@@ -113,7 +113,7 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Reading Result" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

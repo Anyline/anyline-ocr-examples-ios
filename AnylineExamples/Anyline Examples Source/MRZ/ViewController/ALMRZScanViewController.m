@@ -103,7 +103,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
    with cancelOnResult:). When the user dismisses self.identificationView this
    method will get called again.
  */
-- (void)startAnyline {
+- (void)startAnyline { 
     NSError *error;
     BOOL success = [self.mrzModuleView startScanningAndReturnError:&error];
     if( !success ) {
@@ -123,13 +123,10 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-//- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-//           didFindScanResult:(ALIdentification *)scanResult
-//         allCheckDigitsValid:(BOOL)allCheckDigitsValid
-//                     atImage:(UIImage *)image {
 - (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
                didFindResult:(ALMRZResult *)scanResult {
 
+    [self.mrzModuleView cancelScanningAndReturnError:nil];
     NSMutableString * result = [NSMutableString string];
     [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [scanResult.result documentType]]];
     [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];

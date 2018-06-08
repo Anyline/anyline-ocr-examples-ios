@@ -46,6 +46,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     
     // Stop scanning after a result has been found
     self.documentModuleView.cancelOnResult = YES;
+    [self.documentModuleView setPostProcessingEnabled:YES];
 
     // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
     // we have to check the error object for the error message.
@@ -59,7 +60,6 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     }
     
     self.documentModuleView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.documentModuleView.postProcessingEnabled = true;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.documentModuleView];

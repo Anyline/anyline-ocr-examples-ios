@@ -11,6 +11,7 @@
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kRBLicenseKey = kDemoAppLicenseKey;
@@ -135,22 +136,12 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
                didFindResult:(ALOCRResult *)result {
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
-        UIImage *image = [UIImage imageNamed:@"redbull_background"];
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"RedBull Mobile Collect Code" value:result.result]];
         
-        // Display an overlay showing the result
-        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-        [overlay setImage:image];
-        [overlay setText:result.result];
-        [overlay setFontSize:19];
-        [overlay addLabelOffset:CGSizeMake(0, -40)];
-        __weak typeof(self) welf = self;
-        __weak ALResultOverlayView *woverlay = overlay;
-        [overlay setTouchDownBlock:^{
-            // Remove the view when touched and restart scanning
-            [welf startAnyline];
-            [woverlay removeFromSuperview];
-        }];
-        [self.view addSubview:overlay];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

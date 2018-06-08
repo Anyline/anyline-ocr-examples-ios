@@ -126,20 +126,9 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
         
         NSString *birthday = birthdateIDComps[0];
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        
-        formatter.dateFormat = @"ddMMyyyy";
-        NSDate *date = [formatter dateFromString:birthday];
-        
-        if (!date) {
-            formatter.dateFormat = @"yyyyMMdd";
-            date = [formatter dateFromString:birthday];
-        }
-        formatter.dateFormat = @"yyyy-MM-dd";
-        
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:surNames]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:givenNames]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[formatter stringFromDate:date]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:birthday]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:idNumber]];
         
         //Display the result

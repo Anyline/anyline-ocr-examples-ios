@@ -11,6 +11,7 @@
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
+#import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
@@ -39,12 +40,14 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
-    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
-    config.languages = @[engTraineddata, deuTraineddata];
+    NSString *ibanScannerAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
+    config.languages = @[ibanScannerAny];
+    config.scanMode = ALLine;
+    config.charHeight = ALRangeMake(25, 65);
+    config.minConfidence = 70;
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-    config.scanMode = ALAuto;
+    config.scanMode = ALLine;
     
 
     // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
@@ -143,21 +146,12 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
         [self stopAnyline];
-        UIImage *image = [UIImage imageNamed:@"iban_background"];
-        ALResultOverlayView *overlay = [[ALResultOverlayView alloc] initWithFrame:self.view.bounds];
-        [overlay setImage:image];
-        [overlay setText:[self formattedIbanText:result.result]];
-        [overlay addLabelOffset:CGSizeMake(0, 30)];
-        [overlay setFontSize:17];
-        [overlay setAlignment:NSTextAlignmentLeft];
-        __weak typeof(self) welf = self;
-        __weak ALResultOverlayView *woverlay = overlay;
-        [overlay setTouchDownBlock:^{
-            // Remove the view when touched and restart scanning
-            [welf startAnyline];
-            [woverlay removeFromSuperview];
-        }];
-        [self.view addSubview:overlay];
+        //Display the result
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result]];
+        
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 
