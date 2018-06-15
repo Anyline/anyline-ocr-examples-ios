@@ -37,6 +37,10 @@ typedef NS_ENUM(NSInteger, ALRunFailure) {
      *  The min sharpness for this run is not reached
      */
     ALRunFailureSharpnessNotReached     = -6,
+    /**
+     *  Backprojected points are outside of cutout
+     */
+    ALRunFailurePointsOutOfCutout       = -7
 };
 
 @interface ALRunSkippedReason : NSObject

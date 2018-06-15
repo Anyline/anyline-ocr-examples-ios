@@ -434,6 +434,16 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALPointsOutOfCutout</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>ALPointsOutOfCutout</Declaration>
+            
+            <DeclaredIn>ALError.h</DeclaredIn>
+            
+            <NodeRef refid="93"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/ALOtherConditionNotMet</TokenIdentifier>
             <Abstract type="html"></Abstract>
             <Declaration>ALOtherConditionNotMet</Declaration>

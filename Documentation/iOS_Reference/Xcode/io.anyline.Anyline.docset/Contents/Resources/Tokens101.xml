@@ -80,6 +80,17 @@ You can listen to the error codes for each run via the delegate method anylineOC
             <NodeRef refid="101"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ALRunFailurePointsOutOfCutout</TokenIdentifier>
+            <Abstract type="html">Backprojected points are outside of cutout
+     </Abstract>
+            <Declaration>ALRunFailurePointsOutOfCutout</Declaration>
+            
+            <DeclaredIn>ALRunSkippedReason.h</DeclaredIn>
+            
+            <NodeRef refid="101"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

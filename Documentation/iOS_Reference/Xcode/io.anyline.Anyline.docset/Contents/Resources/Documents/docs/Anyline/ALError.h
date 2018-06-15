@@ -74,6 +74,7 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALIntAssertionFailed = 5016,
   ALDocumentRatioOutsideOfTolerance = 5019,
   ALDocumentBoundsOutsideOfTolerance = 5020,
+  ALPointsOutOfCutout = 5021,
 
   ALOtherConditionNotMet = 5555,
 

@@ -57,6 +57,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     self.mrzModuleView.flashButtonAlignment = ALFlashAlignmentTopLeft;
     
     self.mrzModuleView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.mrzModuleView.cropAndTransformID = YES;
     
     // After setup is complete we add the module to the view of this view controller
     [self.view addSubview:self.mrzModuleView];

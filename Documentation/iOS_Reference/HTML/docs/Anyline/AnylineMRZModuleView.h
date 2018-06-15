@@ -33,6 +33,13 @@
 @property (nonatomic) BOOL strictMode;
 
 /**
+ *  If cropAndTransformID is enabled, the detected identification document will be cropped and the image will be returned.
+ *  Default strictMode = false
+ */
+@property (nonatomic) BOOL cropAndTransformID;
+
+
+/**
  *  Sets the license key and delegate.
  *
  *  @param licenseKey The Anyline license key for this application bundle

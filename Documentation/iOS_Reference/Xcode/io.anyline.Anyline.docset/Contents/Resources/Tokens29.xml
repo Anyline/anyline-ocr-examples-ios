@@ -88,6 +88,45 @@ Default strictMode = false</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/setCropAndTransformID:</TokenIdentifier>
+			<Abstract type="html">If cropAndTransformID is enabled, the detected identification document will be cropped and the image will be returned.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cropAndTransformID</Declaration>
+			
+			
+			<Anchor>//api/name/cropAndTransformID</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/cropAndTransformID</TokenIdentifier>
+			<Abstract type="html">If cropAndTransformID is enabled, the detected identification document will be cropped and the image will be returned.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cropAndTransformID</Declaration>
+			
+			
+			<Anchor>//api/name/cropAndTransformID</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ALMRZScanPlugin/cropAndTransformID</TokenIdentifier>
+			<Abstract type="html">If cropAndTransformID is enabled, the detected identification document will be cropped and the image will be returned.
+Default strictMode = false</Abstract>
+			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL cropAndTransformID</Declaration>
+			
+			
+			<Anchor>//api/name/cropAndTransformID</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ALMRZScanPlugin/setupWithLicenseKey:delegate:finished:</TokenIdentifier>
 			<Abstract type="html">Sets the license key and delegate.</Abstract>
 			<DeclaredIn>ALMRZScanPlugin.h</DeclaredIn>
