@@ -571,14 +571,13 @@
 			path = MRZ;
 			sourceTree = "<group>";
 		};
-		1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */ = {
+		1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode/ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */,
 				529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */,
 			);
-			name = MultiformatBarcode;
-			path = MultiformatBarcode/ViewController;
+			path = MultiformatBarcode/ViewController;name = MultiformatBarcode;
 			sourceTree = "<group>";
 		};
 		1CEAFC9B9DC0F1F9D945BA0F /* ViewController */ = {
@@ -640,7 +639,7 @@
 		2EDD43DC8833A207723A124E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CF03A9661C84782B0E65C46E /* Anyline */,
+				CF03A9661C84782B0E65C46E /* ../Framework */,
 				0E0BEA9C8B6EF83EBFEC9E8E /* Anyline Demo App */,
 				93ABF6DD61E0BCD48D234D01 /* Anyline Examples Source */,
 			);
@@ -940,7 +939,7 @@
 				DB10F0F693BA59CCDF465C3A /* LicensePlate */,
 				0F26CABFFCB11DE1C8517E6A /* MRZ */,
 				77C65108BB40F51644D4EC33 /* MeterScan/ViewController */,
-				1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */,
+				1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode/ViewController */,
 				D5F340C0F587E5E7CA40B3C5 /* Processes/Energy */,
 				0A6604FB22868372E09DCE0F /* RB */,
 				E15AF6C802B1C59B5320E989 /* RecordNumber */,
@@ -1069,13 +1068,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CF03A9661C84782B0E65C46E /* Anyline */ = {
+		CF03A9661C84782B0E65C46E /* ../Framework */ = {
 			isa = PBXGroup;
 			children = (
 				DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */,
 			);
-			name = Anyline;
-			path = ../Framework/;
+			path = ../Framework/;name = Anyline;
 			sourceTree = "<group>";
 		};
 		D0C8CAD8DF88E441A0844ACB /* DemoApp Source */ = {
@@ -1278,19 +1276,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				TargetAttributes = {
-					549B361CA3000146B1567759 = {
-						DevelopmentTeam = 35RHL53WRE;
-					};
-				};
 			};
 			buildConfigurationList = F9D5AAAEF93187FA8CC87FF4 /* Build configuration list for PBXProject "AnylineExamples" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
 			hasScannedForEncodings = 1;
-			knownRegions = (
-				en,
-			);
 			mainGroup = A0C97B3D25E26984321D2BA9;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1510,7 +1499,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -1564,7 +1552,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
