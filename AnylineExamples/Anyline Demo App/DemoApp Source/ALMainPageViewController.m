@@ -10,12 +10,10 @@
 
 #import "ALGridCollectionViewController.h"
 #import "ALProductExampleManager.h"
-
-//TODO: add this only in store
-//#import "ALIndustriesExampleManager.h"
-
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
+
+#import "ALBundleInfoViewController.h"
 
 @interface ALMainPageViewController ()
 
@@ -48,6 +46,19 @@
     // set the initially visible page's view controller... if you don't do this
     // you won't see anything.
     [self setViewControllers:@[self.pages[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    
+    //Add action to Header view, to open BundleInfoViewController
+    [self.header setUserInteractionEnabled:YES];
+    [self.header addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showInfo:)]];
+
 }
+
+#pragma mark - Action methods
+- (void)showInfo:(id)sender {
+    ALBundleInfoViewController *infoVC = [[ALBundleInfoViewController alloc] init];
+    infoVC.managedObjectContext = self.managedObjectContext;
+    [self.navigationController pushViewController:infoVC animated:YES];
+}
+
 
 @end

@@ -31,8 +31,6 @@
 #import "ALHashtagScanViewController.h"
 
 #import "ALLicensePlateViewController.h"
-#import "ALLicensePlateATViewController.h"
-#import "ALLicensePlateDEViewController.h"
 
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"

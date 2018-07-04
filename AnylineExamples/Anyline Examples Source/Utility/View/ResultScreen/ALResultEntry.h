@@ -12,5 +12,6 @@
 @property (atomic) BOOL isAvailable;
 
 - (instancetype)initWithTitle:(NSString *)title value:(NSString *)value;
+- (instancetype)initWithTitle:(NSString *)title value:(NSString *)value isAvailable:(BOOL)available;
 
 @end

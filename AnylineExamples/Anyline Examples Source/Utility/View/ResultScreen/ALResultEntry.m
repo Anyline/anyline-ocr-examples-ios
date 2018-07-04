@@ -24,6 +24,16 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title value:(NSString *)value isAvailable:(BOOL)available {
+    self = [super init];
+    if (self) {
+        _title = title;
+        _value = (![self stringIsNilOrEmpty:value]) ? value : @"Not available";
+        _isAvailable = available;
+    }
+    return self;
+}
+
 - (BOOL)stringIsNilOrEmpty:(NSString*)aString {
     return !(aString && aString.length);
 }

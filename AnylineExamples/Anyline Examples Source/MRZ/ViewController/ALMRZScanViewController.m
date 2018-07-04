@@ -55,7 +55,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     }];
     
     self.mrzModuleView.flashButtonAlignment = ALFlashAlignmentTopLeft;
-    
+
     self.mrzModuleView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
@@ -150,10 +150,11 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:scanResult.result.givenNames]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:scanResult.result.surNames]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:scanResult.result.sex]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[self formatDate:scanResult.result.dayOfBirthDateObject]]];
+        [resultData addObject:[self resultEntryWithDate:scanResult.result.dayOfBirthDateObject dateString:scanResult.result.dayOfBirth title:@"Date of Birth"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:scanResult.result.documentType]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:scanResult.result.documentNumber]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Expiration Date" value:[self formatDate:scanResult.result.expirationDateObject]]];
+        [resultData addObject:[self resultEntryWithDate:scanResult.result.expirationDateObject dateString:scanResult.result.expirationDate title:@"Expiration Date"]];
+        
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:scanResult.result.nationalityCountryCode]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:scanResult.result.faceImage];
@@ -161,9 +162,25 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     }];
 }
 
+- (ALResultEntry *)resultEntryWithDate:(NSDate *)date dateString:(NSString *)dateString title:(NSString *)title {
+    if (![self checkDateIfAvailable:date dateString:dateString]) {
+        return [[ALResultEntry alloc] initWithTitle:title value:nil];
+    }
+    
+    NSString *value = [self formatDate:date];
+    return [[ALResultEntry alloc] initWithTitle:title value:value isAvailable:(date)];
+}
+
+- (BOOL)checkDateIfAvailable:(NSDate *)date dateString:(NSString *)dateString {
+    if (!date && dateString.length == 0) {
+        return NO;
+    }
+    return YES;
+}
+
 - (NSString *)formatDate:(NSDate *)date {
     if (!date) {
-        return @"";
+        return @"Date not valid";
     }
     return [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
 }
