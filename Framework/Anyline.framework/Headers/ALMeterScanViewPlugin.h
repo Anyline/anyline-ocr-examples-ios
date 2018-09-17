@@ -15,6 +15,11 @@
 
 @property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin;
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin;
+
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin
+                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 @end

@@ -11,18 +11,18 @@
 
 @interface ALCutoutConfig : NSObject
 
-@property (nonatomic, assign) CGFloat cutoutWidthPercent;
-@property (nonatomic, assign) CGFloat cutoutMaxPercentWidth;
-@property (nonatomic, assign) CGFloat cutoutMaxPercentHeight;
-@property (nonatomic, assign) ALCutoutAlignment cutoutAlignment;
+@property (nonatomic, assign) CGFloat widthPercent;
+@property (nonatomic, assign) CGFloat maxPercentWidth;
+@property (nonatomic, assign) CGFloat maxPercentHeight;
+@property (nonatomic, assign) ALCutoutAlignment alignment;
 
-@property (nonatomic, assign) CGPoint cutoutOffset;
-@property (nullable, nonatomic, copy) UIBezierPath *cutoutPath;
+@property (nonatomic, assign) CGPoint offset;
+@property (nullable, nonatomic, copy) UIBezierPath *path;
 
-@property (nonatomic, assign) CGSize cutoutCropPadding;
-@property (nonatomic, assign) CGPoint cutoutCropOffset;
+@property (nonatomic, assign) CGSize cropPadding;
+@property (nonatomic, assign) CGPoint cropOffset;
 
-@property (nullable, nonatomic, strong) UIColor *cutoutBackgroundColor;
+@property (nullable, nonatomic, strong) UIColor *backgroundColor;
 @property (nullable, nonatomic, strong) UIColor *strokeColor;
 @property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor;
 
@@ -31,13 +31,28 @@
 @property (nonatomic, assign) NSInteger strokeWidth;
 @property (nonatomic, assign) NSInteger cornerRadius;
 
-@property (nullable, nonatomic, strong) UIColor *backgroundColorWithoutAlpha;
-@property (nonatomic, assign) CGFloat backgroundAlpha;
 
 - (void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
 
 - (void)updateCutoutWidth:(CGFloat)width;
 
++ (_Nonnull instancetype)defaultCutoutConfig;
+
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+
+- (instancetype _Nullable)initWithWidthPercent:(CGFloat)widthPercent
+                               maxPercentWidth:(CGFloat)maxPercentWidth
+                              maxPercentHeight:(CGFloat)maxPercentHeight
+                                     alignment:(ALCutoutAlignment)alignment
+                                        offset:(CGPoint)offset
+                                          path:(UIBezierPath * _Nonnull)path
+                                   cropPadding:(CGSize)cropPadding
+                                    cropOffset:(CGPoint)cropOffset
+                               backgroundColor:(UIColor * _Nonnull)backgroundColor
+                                   strokeColor:(UIColor * _Nonnull)strokeColor
+                           feedbackStrokeColor:(UIColor * _Nonnull)feedbackStrokeColor
+                                  overlayImage:(UIImage * _Nullable)overlayImage
+                                   strokeWidth:(NSInteger)strokeWidth
+                                  cornerRadius:(NSInteger)cornerRadius;
 
 @end

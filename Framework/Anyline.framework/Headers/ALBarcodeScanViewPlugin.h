@@ -13,7 +13,12 @@
 
 @property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin;
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin;
+
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin
+                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 /**
  *  When set to YES we only use the iOS native Barcode scanning.

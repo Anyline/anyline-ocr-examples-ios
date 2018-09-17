@@ -74,11 +74,15 @@
 		
 		<option value="//api/name/addDelegate:">- addDelegate:</option>
 		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:licenseKey:delegate:error:">- initWithPluginID:licenseKey:delegate:error:</option>
+		
+		<option value="//api/name/parseScanModeString:">- parseScanModeString:</option>
+		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
 		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
-		
-		<option value="//api/name/setupWithLicenseKey:delegate:finished:">- setupWithLicenseKey:delegate:finished:</option>
 		
 	</optgroup>
 	
@@ -134,6 +138,38 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/initWithPluginID:licenseKey:delegate:error:" title="initWithPluginID:licenseKey:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:licenseKey:delegate:error:">&ndash;&nbsp;initWithPluginID:licenseKey:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/delegates" title="delegates"></a>
 	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
 </h3>
@@ -162,7 +198,7 @@
 			
 			<div class="method-subsection brief-description">
 				<p>Sets the scan mode.
-It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
+It has to be ALAnalogMeter, ALGasMeter, ALBarcode or ALSerialNumber</p>
 			</div>
 			
 		    
@@ -347,69 +383,6 @@ If you want to have no regex this property has to be set to nil.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setupWithLicenseKey:delegate:finished:" title="setupWithLicenseKey:delegate:finished:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWithLicenseKey:delegate:finished:">&ndash;&nbsp;setupWithLicenseKey:delegate:finished:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the license key and delegate.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setupWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)<em>delegate</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key for this application bundle</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate that will receive the Anyline results (hast to conform to <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>finished</code></th>
-						<td><p>Inidicating if setup is finished with an error object when setup failed.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
 </h3>
@@ -441,6 +414,22 @@ If you want to have no regex this property has to be set to nil.</p>
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseScanModeString:" title="parseScanModeString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseScanModeString:">&ndash;&nbsp;parseScanModeString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALScanMode)parseScanModeString:(NSString *_Nonnull)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -456,7 +445,7 @@ If you want to have no regex this property has to be set to nil.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-07-04</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

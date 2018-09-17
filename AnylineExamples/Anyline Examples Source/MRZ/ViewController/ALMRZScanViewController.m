@@ -123,8 +123,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView
-               didFindResult:(ALMRZResult *)scanResult {
+- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult {
 
     [self.mrzModuleView cancelScanningAndReturnError:nil];
     NSMutableString * result = [NSMutableString string];
@@ -147,17 +146,16 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image module:anylineMRZModuleView completion:^{
        
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:scanResult.result.givenNames]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:scanResult.result.surNames]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:scanResult.result.sex]];
-        [resultData addObject:[self resultEntryWithDate:scanResult.result.dayOfBirthDateObject dateString:scanResult.result.dayOfBirth title:@"Date of Birth"]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:scanResult.result.documentType]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:scanResult.result.documentNumber]];
-        [resultData addObject:[self resultEntryWithDate:scanResult.result.expirationDateObject dateString:scanResult.result.expirationDate title:@"Expiration Date"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:[scanResult.result givenNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[scanResult.result surNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:[scanResult.result sex]]];
+        [resultData addObject:[self resultEntryWithDate:[scanResult.result dayOfBirthDateObject] dateString:[scanResult.result dayOfBirth] title:@"Date of Birth"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[scanResult.result documentType]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
+        [resultData addObject:[self resultEntryWithDate:[scanResult.result expirationDateObject] dateString:[scanResult.result expirationDate] title:@"Expiration Date"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[scanResult.result nationalityCountryCode]]];
         
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:scanResult.result.nationalityCountryCode]];
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:scanResult.result.faceImage];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }

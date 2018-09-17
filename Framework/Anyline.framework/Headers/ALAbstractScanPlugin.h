@@ -18,17 +18,15 @@
 
 @property (nonatomic, strong, readonly) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
 
-@property (nullable, nonatomic, strong, readonly) NSString *pluginID;
+@property (nullable, nonatomic, strong) NSString *pluginID;
 
-@property (nonatomic, assign, readonly) NSInteger confidence;
+@property (nonatomic, assign) NSInteger confidence;
 
 @property (nullable, nonatomic, strong, readonly) ALImage *scanImage;
 
 @property (nullable, nonatomic, strong) ALCoreController *coreController;
 
 @property (nullable, nonatomic, assign) id<ALImageProvider> imageProvider;
-
-- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID NS_DESIGNATED_INITIALIZER;
     
 - (BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
     

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALIDScanPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegates">delegates</option>
+		
+		<option value="//api/name/idConfig">idConfig</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:licenseKey:delegate:idConfig:error:">- initWithPluginID:licenseKey:delegate:idConfig:error:</option>
+		
+		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
+		
+		<option value="//api/name/setIDConfig:error:">- setIDConfig:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALIDScanPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanPlugin.html">ALAbstractScanPlugin</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALIDScanPlugin.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The ALIDScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines ID scanning mode..</p>
+
+<p>Communication with the host application is managed with a delegate that conforms to ALIDScanPluginDelegate &amp; <a href="../Protocols/ALInfoDelegate.html">ALInfoDelegate</a>. The information that gets read is passed to the delegate with the help of of an ALIdentification object.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPluginID:licenseKey:delegate:idConfig:error:" title="initWithPluginID:licenseKey:delegate:idConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:licenseKey:delegate:idConfig:error:">&ndash;&nbsp;initWithPluginID:licenseKey:delegate:idConfig:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALIDPluginDelegate&gt; _Nonnull)<em>delegate</em> idConfig:(ALIDConfig *_Nonnull)<em>config</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;ALIDPluginDelegate&gt; *delegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALIDPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALIDPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/idConfig" title="idConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/idConfig">&nbsp;&nbsp;idConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) ALIDConfig *idConfig</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setIDConfig:error:" title="setIDConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setIDConfig:error:">&ndash;&nbsp;setIDConfig:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new ALIdentityDocumentConfig and returns an Error if something failed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setIDConfig:(ALIDConfig *_Nonnull)<em>idConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>idConfig</code></th>
+						<td><p>The <a href="../Classes/ALIDConfig.html">ALIDConfig</a> to set</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALIDScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

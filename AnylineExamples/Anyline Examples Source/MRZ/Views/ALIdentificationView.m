@@ -124,7 +124,7 @@
 }
 
 
-- (void)updateIdentification:(ALIdentification *)aIdentification {
+- (void)updateIdentification:(ALMRZIdentification *)aIdentification {
     
     self.nr.text = aIdentification.documentNumber;
     self.surname.text = aIdentification.surNames;

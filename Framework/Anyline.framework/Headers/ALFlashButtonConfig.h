@@ -18,4 +18,10 @@
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
 
+- (instancetype _Nullable)initWithFlashMode:(ALFlashMode)flashMode
+                             flashAlignment:(ALFlashAlignment)flashAlignment
+                                flashOffset:(CGPoint)flashOffset;
+
++ (instancetype _Nonnull)defaultFlashConfig;
+
 @end

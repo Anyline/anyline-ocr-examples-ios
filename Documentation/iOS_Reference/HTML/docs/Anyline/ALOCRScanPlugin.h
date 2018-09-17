@@ -19,6 +19,14 @@
  */
 @interface ALOCRScanPlugin : ALAbstractScanPlugin
 
+- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
+                                licenseKey:(NSString * _Nonnull)licenseKey
+                                  delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate
+                                 ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
+                                     error:(NSError *_Nullable *_Nullable)error;
+
+- (instancetype _Nullable)init NS_UNAVAILABLE;
+
 @property (nonatomic, strong, readonly) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
 
 /**
@@ -28,18 +36,6 @@
  */
 @property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig;
 
-/**
- *  Sets the license key and delegate.
- *
- *  @param licenseKey   The Anyline license key for this application bundle
- *  @param delegate     The delegate that will receive the Anyline results (hast to conform to <ALOCRScanPluginDelegate>)
- *  @param ocrConfig    The ocrConfig to use for the scanning
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
- */
-- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
-                   delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate
-                  ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
-                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 /**
  *  Sets a new ALOCRConfig and returns an Error if something failed.
  *

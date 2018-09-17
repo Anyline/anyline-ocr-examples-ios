@@ -13,6 +13,11 @@
 
 @property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin;
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin;
+
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin
+                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 @end

@@ -27,6 +27,7 @@
 		142FB0D2A8952DDD08FA376F /* ReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8885AFE124BF9C2CA84E426 /* ReadingTableViewCell.xib */; };
 		14CB8A1846AED19D6DC61E7B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
 		159449ABF401A4A12BA9B49C /* WorkforceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89F15F985380D18B55B6A5 /* WorkforceTool.m */; };
+		1767B886215006F4005A2DD3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767B885215006F4005A2DD3 /* WebKit.framework */; };
 		1BCED532C5C276C2597BF03E /* ALMeterSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2430E12BBD103E266B10D984 /* ALMeterSelectView.m */; };
 		1EA0744151A9BEA7C5894575 /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */; };
 		1EE111BDD6D5F4369263A3ED /* bottlecap_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */; };
@@ -205,6 +206,7 @@
 		14AAF261201B57749AD0EC10 /* ALIdentityDocumentsExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIdentityDocumentsExampleManager.m; sourceTree = "<group>"; };
 		14EB0C78427F9F77DCE02A9C /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		171912A30B05E673D21F2578 /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
+		1767B885215006F4005A2DD3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A22531B381EB3546D5EA58D /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		1BF801C030C6004663B0CE83 /* ALProductExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALProductExampleManager.h; sourceTree = "<group>"; };
 		1C2F2F1A910AA5FF322FD68B /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = /Anyline.framework; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1767B886215006F4005A2DD3 /* WebKit.framework in Frameworks */,
 				FC2299630F7A8D7CFBE5ACC8 /* Anyline.framework in Frameworks */,
 				C7C7BCE929158035071D4DAA /* Accelerate.framework in Frameworks */,
 				0F5A25BDD23FB337E31CE98F /* libc++.dylib in Frameworks */,
@@ -506,6 +509,7 @@
 		02F1F74BF7AE47D601FD325B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1767B885215006F4005A2DD3 /* WebKit.framework */,
 				DD389A80DF4984F39067C287 /* AVFoundation.framework */,
 				C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */,
 				1C2F2F1A910AA5FF322FD68B /* Anyline.framework */,
@@ -577,13 +581,14 @@
 			path = MRZ;
 			sourceTree = "<group>";
 		};
-		1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode/ViewController */ = {
+		1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */ = {
 			isa = PBXGroup;
 			children = (
 				1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */,
 				529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */,
 			);
-			path = MultiformatBarcode/ViewController;name = MultiformatBarcode;
+			name = MultiformatBarcode;
+			path = MultiformatBarcode/ViewController;
 			sourceTree = "<group>";
 		};
 		1CEAFC9B9DC0F1F9D945BA0F /* ViewController */ = {
@@ -651,7 +656,7 @@
 		2EDD43DC8833A207723A124E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CF03A9661C84782B0E65C46E /* ../Framework */,
+				CF03A9661C84782B0E65C46E /* Anyline */,
 				0E0BEA9C8B6EF83EBFEC9E8E /* Anyline Demo App */,
 				46DFDBDFEF90E6FCA8ADF91D /* Anyline Examples Source */,
 			);
@@ -718,7 +723,7 @@
 				DB10F0F693BA59CCDF465C3A /* LicensePlate */,
 				0F26CABFFCB11DE1C8517E6A /* MRZ */,
 				77C65108BB40F51644D4EC33 /* MeterScan/ViewController */,
-				1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode/ViewController */,
+				1B8CE5A2D0780DF5BEFC7BF2 /* MultiformatBarcode */,
 				4CD6F0A875D961A6273C7F26 /* Processes/Energy */,
 				EB956281C364122BC6AAAA5A /* RB */,
 				E15AF6C802B1C59B5320E989 /* RecordNumber */,
@@ -1176,12 +1181,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CF03A9661C84782B0E65C46E /* ../Framework */ = {
+		CF03A9661C84782B0E65C46E /* Anyline */ = {
 			isa = PBXGroup;
 			children = (
 				DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */,
 			);
-			path = ../Framework/;name = Anyline;
+			name = Anyline;
+			path = ../Framework/;
 			sourceTree = "<group>";
 		};
 		DB10F0F693BA59CCDF465C3A /* LicensePlate */ = {
@@ -1296,10 +1302,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				TargetAttributes = {
+					549B361CA3000146B1567759 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = F9D5AAAEF93187FA8CC87FF4 /* Build configuration list for PBXProject "AnylineExamples" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = A0C97B3D25E26984321D2BA9;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1520,7 +1535,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -1542,6 +1560,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1573,7 +1592,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -1596,6 +1618,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

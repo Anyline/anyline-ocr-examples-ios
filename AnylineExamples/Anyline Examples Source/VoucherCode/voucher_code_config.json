@@ -14,7 +14,8 @@
         "cornerRadius": 10,
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
-        "outerAlpha": 0.3
+        "outerAlpha": 0.3,
+        "feedbackStrokeColor": "32ADFF",
     },
     "flash": {
         "mode": "manual",

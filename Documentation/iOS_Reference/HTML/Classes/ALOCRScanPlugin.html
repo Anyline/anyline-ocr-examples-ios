@@ -72,11 +72,13 @@
 		
 		<option value="//api/name/copyTrainedData:fileHash:error:">- copyTrainedData:fileHash:error:</option>
 		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:">- initWithPluginID:licenseKey:delegate:ocrConfig:error:</option>
+		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
 		<option value="//api/name/setOCRConfig:error:">- setOCRConfig:error:</option>
-		
-		<option value="//api/name/setupWithLicenseKey:delegate:ocrConfig:finished:">- setupWithLicenseKey:delegate:ocrConfig:finished:</option>
 		
 	</optgroup>
 	
@@ -130,6 +132,38 @@ and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:" title="initWithPluginID:licenseKey:delegate:ocrConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:">&ndash;&nbsp;initWithPluginID:licenseKey:delegate:ocrConfig:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em> ocrConfig:(ALOCRConfig *_Nonnull)<em>ocrConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/delegates" title="delegates"></a>
 	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
 </h3>
@@ -176,74 +210,6 @@ and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Use method <a href="#//api/name/setOCRConfig:error:">setOCRConfig:error:</a> for setting the config.</p>
 			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setupWithLicenseKey:delegate:ocrConfig:finished:" title="setupWithLicenseKey:delegate:ocrConfig:finished:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWithLicenseKey:delegate:ocrConfig:finished:">&ndash;&nbsp;setupWithLicenseKey:delegate:ocrConfig:finished:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the license key and delegate.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setupWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em> ocrConfig:(ALOCRConfig *_Nonnull)<em>ocrConfig</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key for this application bundle</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate that will receive the Anyline results (hast to conform to <a href="../Protocols/ALOCRScanPluginDelegate.html">ALOCRScanPluginDelegate</a>)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>ocrConfig</code></th>
-						<td><p>The <a href="#//api/name/ocrConfig">ocrConfig</a> to use for the scanning</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>finished</code></th>
-						<td><p>Inidicating if setup is finished with an error object when setup failed.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
 			
 
 			
@@ -438,7 +404,7 @@ This method is mandatory if you want to use custom fonts.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-07-04</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

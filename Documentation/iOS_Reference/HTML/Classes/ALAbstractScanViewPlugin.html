@@ -54,12 +54,6 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/basicConfig">basicConfig</option>
-		
-		<option value="//api/name/cameraView">cameraView</option>
-		
-		<option value="//api/name/cutoutView">cutoutView</option>
-		
 		<option value="//api/name/outline">outline</option>
 		
 		<option value="//api/name/sampleBufferImageProvider">sampleBufferImageProvider</option>
@@ -68,15 +62,19 @@
 		
 		<option value="//api/name/scanImage">scanImage</option>
 		
-		<option value="//api/name/uiConfigs">uiConfigs</option>
+		<option value="//api/name/scanView">scanView</option>
 		
-		<option value="//api/name/visualFeedbackOverlay">visualFeedbackOverlay</option>
-		
-		<option value="//api/name/watermarkRect">watermarkRect</option>
+		<option value="//api/name/scanViewPluginConfig">scanViewPluginConfig</option>
 		
 	</optgroup>
 	
 
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:">+ scanViewPluginForFrame:configDict:licenseKey:delegate:error:</option>
+		
+	</optgroup>
 	
 
 	
@@ -96,7 +94,7 @@
 		
 		<option value="//api/name/triggerScannedFeedback">- triggerScannedFeedback</option>
 		
-		<option value="//api/name/updateDispatchTimer">- updateDispatchTimer</option>
+		<option value="//api/name/updateCutoutRect:">- updateCutoutRect:</option>
 		
 	</optgroup>
 	
@@ -159,8 +157,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cutoutView" title="cutoutView"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cutoutView">&nbsp;&nbsp;cutoutView</a></code>
+	<a name="//api/name/scanView" title="scanView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanView">&nbsp;&nbsp;scanView</a></code>
 </h3>
 
 	<div class="method-info">
@@ -169,39 +167,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCutoutView *cutoutView</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cameraView" title="cameraView"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cameraView">&nbsp;&nbsp;cameraView</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) ALScanView *cameraView</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/visualFeedbackOverlay" title="visualFeedbackOverlay"></a>
-	<h3 class="method-title"><code><a href="#//api/name/visualFeedbackOverlay">&nbsp;&nbsp;visualFeedbackOverlay</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) ALScanView *scanView</code></div>
 
 		    
 		</div>
@@ -239,8 +205,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/basicConfig" title="basicConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/basicConfig">&nbsp;&nbsp;basicConfig</a></code>
+	<a name="//api/name/scanViewPluginConfig" title="scanViewPluginConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginConfig">&nbsp;&nbsp;scanViewPluginConfig</a></code>
 </h3>
 
 	<div class="method-info">
@@ -255,7 +221,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) ALScanViewPluginConfig *scanViewPluginConfig</code></div>
 
 		    
 			
@@ -264,52 +230,6 @@
 
 			
 
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/watermarkRect" title="watermarkRect"></a>
-	<h3 class="method-title"><code><a href="#//api/name/watermarkRect">&nbsp;&nbsp;watermarkRect</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGRect watermarkRect</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> May be nil before the layout process is completed or the license is not community.</p></div>
-			</div>
 			
 
 			
@@ -342,8 +262,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/uiConfigs" title="uiConfigs"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uiConfigs">&nbsp;&nbsp;uiConfigs</a></code>
+	<a name="//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:" title="scanViewPluginForFrame:configDict:licenseKey:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:">+&nbsp;scanViewPluginForFrame:configDict:licenseKey:delegate:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -352,7 +272,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSArray&lt;ALBasicConfig*&gt; *uiConfigs</code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewPluginForFrame:(CGRect)<em>frame</em> configDict:(NSDictionary *_Nonnull)<em>configDict</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 		</div>
@@ -495,8 +415,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updateDispatchTimer" title="updateDispatchTimer"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateDispatchTimer">&ndash;&nbsp;updateDispatchTimer</a></code>
+	<a name="//api/name/updateCutoutRect:" title="updateCutoutRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCutoutRect:">&ndash;&nbsp;updateCutoutRect:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -505,7 +425,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)updateDispatchTimer</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateCutoutRect:(CGRect)<em>rect</em></code></div>
 
 		    
 		</div>
@@ -525,7 +445,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-07-04</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

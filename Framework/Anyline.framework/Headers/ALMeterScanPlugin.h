@@ -19,11 +19,18 @@
  */
 @interface ALMeterScanPlugin : ALAbstractScanPlugin
 
+- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
+                                licenseKey:(NSString * _Nonnull)licenseKey
+                                  delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate
+                                     error:(NSError *_Nullable *_Nullable)error;
+
+- (instancetype _Nullable)init NS_UNAVAILABLE;
+
 @property (nonatomic, strong, readonly) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
 
 /**
  *  Sets the scan mode.
- *  It has to be ALElectricMeter, ALGasMeter, ALBarcode or ALSerialNumber
+ *  It has to be ALAnalogMeter, ALGasMeter, ALBarcode or ALSerialNumber
  *
  */
 @property (nonatomic, assign, readonly) ALScanMode scanMode;
@@ -53,21 +60,11 @@
  */
 - (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
 
-/**
- *  Sets the license key and delegate.
- *
- *  @param licenseKey The Anyline license key for this application bundle
- *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALMeterScanPluginDelegate>)
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
- *
- */
-- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
-                   delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate
-                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
-
 - (void)addDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
 
 - (void)removeDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
+
+- (ALScanMode)parseScanModeString:(NSString * _Nonnull)scanMode;
 
 @end
 

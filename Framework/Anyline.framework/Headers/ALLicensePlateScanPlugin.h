@@ -13,17 +13,12 @@
 
 @interface ALLicensePlateScanPlugin : ALAbstractScanPlugin
 
-/**
- *  Sets the license key and delegate.
- *
- *  @param licenseKey   The Anyline license key for this application bundle
- *  @param delegate     The delegate that will receive the Anyline results (hast to conform to <ALLicensePlateScanPluginDelegate>)
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
- *
- */
-- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
-                   delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate
-                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
+                                licenseKey:(NSString * _Nonnull)licenseKey
+                                  delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate
+                                     error:(NSError *_Nullable *_Nullable)error NS_DESIGNATED_INITIALIZER;
+
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 
 - (void)addDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
 

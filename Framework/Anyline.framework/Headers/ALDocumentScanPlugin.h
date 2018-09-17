@@ -61,9 +61,12 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 
 @property (nonatomic, assign) BOOL justDetectCornersIfPossible;
 
-@property (nonatomic, assign) BOOL postProcessingEnabled;
+- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
+                                licenseKey:(NSString * _Nonnull)licenseKey
+                                  delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate
+                                     error:(NSError *_Nullable *_Nullable)error NS_DESIGNATED_INITIALIZER;
 
-- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID NS_DESIGNATED_INITIALIZER;
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 
 - (BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
 
@@ -104,17 +107,6 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 - (BOOL)transformALImageWithSquare:(ALSquare * _Nullable)square
                              image:(ALImage * _Nullable)image
                              error:(NSError * _Nullable * _Nullable)error;
-/**
- *  Sets the license key and delegate.
- *
- *  @param licenseKey The Anyline license key for this application bundle
- *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALDocumentScanPluginDelegate>)
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
- *
- */
-- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
-                   delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate
-                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 
 /**
  * Maximum deviation for the ratio. 0.15 is the default
@@ -142,6 +134,8 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  * @since 3.8
  */
 @property (nullable, nonatomic, strong) NSArray<NSNumber*> * documentRatios;
+
+@property (nonatomic, assign) BOOL postProcessingEnabled;
 
 - (void)addDelegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate;
 

@@ -18,7 +18,6 @@
 @property (nullable, nonatomic, copy) NSArray *contours;
 
 @property (nonatomic, assign) NSInteger visualFeedbackCornerRadius;
-@property (nonatomic, assign) NSInteger cornerRadius;
 @property (nonatomic, assign) NSInteger visualFeedbackRedrawTimeout;
 @property (nonatomic, assign) ALUIFeedbackStyle feedbackStyle;
 @property (nonatomic, assign) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
@@ -30,7 +29,6 @@
 
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
              visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius
-                           cornerRadius:(NSInteger)cornerRadius
             visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout
                           feedbackStyle:(ALUIFeedbackStyle)feedbackStyle
                 visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation

@@ -21,6 +21,13 @@
  */
 @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
 
+- (instancetype _Nullable)init NS_UNAVAILABLE;
+
+- (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
+                                licenseKey:(NSString * _Nonnull)licenseKey
+                                  delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate
+                                     error:(NSError *_Nullable *_Nullable)error;
+
 @property (nonatomic, strong, readonly) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
 
 /**
@@ -29,18 +36,6 @@
  *
  */
 @property (nonatomic, assign) ALBarcodeFormatOptions barcodeFormatOptions;
-
-/**
- *  Sets the license key and delegate.
- *
- *  @param licenseKey The Anyline license key for this application bundle
- *  @param delegate The delegate that will receive the Anyline results (hast to conform to <ALBarcodeScanPluginDelegate>)
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
- *
- */
-- (void)setupWithLicenseKey:(NSString * _Nonnull)licenseKey
-                   delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate
-                   finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
 
 - (ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
 

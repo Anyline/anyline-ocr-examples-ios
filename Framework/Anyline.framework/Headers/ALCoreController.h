@@ -69,9 +69,9 @@
  *  @param bundlePath The bundlePath where the additional ressources are located.
  *  @param finished Inidicating if setup is finished with an error object when setup failed.
  */
-- (void)loadScript:(NSString *_Nonnull)script
+- (BOOL)loadScript:(NSString *_Nonnull)script
         bundlePath:(NSString *_Nonnull)bundlePath
-          finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+             error:(NSError *_Nullable *_Nullable)error;
 
 /**
  *  This method loads the Anyline SDK with an configuration string.
@@ -81,10 +81,10 @@
  *  @param bundlePath The bundlePath where the additional ressources are located.
  *  @param finished Inidicating if setup is finished with an error object when setup failed.
  */
-- (void)loadScript:(NSString *_Nonnull)script
+- (BOOL)loadScript:(NSString *_Nonnull)script
         scriptName:(NSString *_Nonnull)scriptName
         bundlePath:(NSString *_Nonnull)bundlePath
-          finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+             error:(NSError *_Nullable *_Nullable)error;
 
 /**
  *  This method loads the Anyline SDK with an configuration file which is located 
@@ -97,9 +97,9 @@
  *                     ressources are located.
  *  @param finished Inidicating if setup is finished with an error object when setup failed.
  */
-- (void)loadCmdFile:(NSString *_Nonnull)cmdFileName
+- (BOOL)loadCmdFile:(NSString *_Nonnull)cmdFileName
          bundlePath:(NSString *_Nonnull)bundlePath
-           finished:(void (^_Nonnull)(BOOL success, NSError * _Nullable error))finished;
+              error:(NSError *_Nullable *_Nullable)error;
 
 /**
  *  Starts a continious image processing workflow where the images are provided from the 

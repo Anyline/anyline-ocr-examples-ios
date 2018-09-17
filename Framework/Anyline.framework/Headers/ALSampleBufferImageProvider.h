@@ -33,6 +33,8 @@
            previewLayer:(AVCaptureVideoPreviewLayer * _Nonnull)previewLayer
              imageWidth:(CGFloat)inWidth;
 
+- (void)updateCutoutScreen:(CGRect)rect;
+
 @end
 
 

@@ -3,6 +3,7 @@
     "cutout": {
         "style": "rect",
         "maxWidthPercent": "70%",
+        "maxHeightPercent": "70%",
         "alignment": "top_half",
         "ratioFromSize": {
             "width": 62,

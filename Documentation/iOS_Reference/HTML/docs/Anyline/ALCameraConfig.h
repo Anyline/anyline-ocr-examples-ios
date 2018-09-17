@@ -23,4 +23,6 @@
 
 + (instancetype _Nullable)defaultCameraConfig;
 
++ (instancetype _Nullable)defaultDocumentCameraConfig;
+
 @end

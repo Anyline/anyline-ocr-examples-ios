@@ -209,7 +209,7 @@ NSString * const kLicensePlateLicenseKeyAT = kDemoAppLicenseKey;
     
     ALIntroHelpView *helpView = [[ALIntroHelpView alloc] initWithFrame:self.ocrModuleView.frame];
     
-    helpView.cutoutPath = self.ocrModuleView.currentConfiguration.cutoutConfig.cutoutPath;
+    helpView.cutoutPath = self.ocrModuleView.currentConfiguration.cutoutPath;
     helpView.delegate = self;
     helpView.sampleImageView.image = [UIImage imageNamed:@"intro_license_plate"];
     

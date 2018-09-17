@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ALCutoutView.h"
-#import "ALFlashButton.h"
-#import "ALTorchManager.h"
-#import "ALVisualFeedbackOverlay.h"
-
 #import "ALScanInfo.h"
 #import "ALBasicConfig.h"
 #import "ALAbstractScanPlugin.h"
@@ -23,11 +18,7 @@
 
 @property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider;
 
-@property (nullable, nonatomic, strong) ALCutoutView *cutoutView;
-
-@property (nonatomic, weak) ALScanView * _Nullable cameraView;
-
-@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay;
+@property (nonatomic, weak) ALScanView * _Nullable scanView;
 
 @property (nullable, nonatomic, strong) ALSquare *outline;
 
@@ -36,20 +27,17 @@
 /**
  * The UI Configuration for the scanning UI
  */
-@property (nullable, nonatomic, copy) ALBasicConfig *basicConfig;
-
-/**
- * Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.
- *
- * @warning May be nil before the layout process is completed or the license is not community.
- */
-@property (nonatomic, readonly) CGRect watermarkRect;
+@property (nullable, nonatomic, copy) ALScanViewPluginConfig *scanViewPluginConfig;
 
 // Private Stuff
 
 @property (nonatomic, assign) CGFloat scale;
 
-@property (nullable, nonatomic, strong) NSArray<ALBasicConfig *> *uiConfigs;
++ (_Nullable instancetype)scanViewPluginForFrame:(CGRect)frame
+                                      configDict:(NSDictionary *_Nonnull)configDict
+                                      licenseKey:(NSString *_Nonnull)licenseKey
+                                        delegate:(id _Nonnull)delegate
+                                           error:(NSError *_Nullable *_Nullable)error;
 
 - (void)customInit;
 
@@ -68,6 +56,6 @@
 
 - (ALSquare * _Nonnull)convertCGRect:(NSValue * _Nonnull)concreteValue;
 
-- (void)updateDispatchTimer;
+- (void)updateCutoutRect:(CGRect)rect;
 
 @end

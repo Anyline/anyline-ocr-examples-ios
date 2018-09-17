@@ -13,6 +13,11 @@
 
 @property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame scanPlugin:(ALLicensePlateScanPlugin *_Nonnull)licensePlateScanPlugin;
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALLicensePlateScanPlugin *_Nonnull)licensePlateScanPlugin;
+
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                             scanPlugin:(ALLicensePlateScanPlugin *_Nonnull)licensePlateScanPlugin
+                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 @end

@@ -90,11 +90,11 @@
 		
 		<option value="//api/name/initWithLicenseKey:delegate:">- initWithLicenseKey:delegate:</option>
 		
-		<option value="//api/name/loadCmdFile:bundlePath:finished:">- loadCmdFile:bundlePath:finished:</option>
+		<option value="//api/name/loadCmdFile:bundlePath:error:">- loadCmdFile:bundlePath:error:</option>
 		
-		<option value="//api/name/loadScript:bundlePath:finished:">- loadScript:bundlePath:finished:</option>
+		<option value="//api/name/loadScript:bundlePath:error:">- loadScript:bundlePath:error:</option>
 		
-		<option value="//api/name/loadScript:scriptName:bundlePath:finished:">- loadScript:scriptName:bundlePath:finished:</option>
+		<option value="//api/name/loadScript:scriptName:bundlePath:error:">- loadScript:scriptName:bundlePath:error:</option>
 		
 		<option value="//api/name/processALImage:error:">- processALImage:error:</option>
 		
@@ -409,8 +409,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:bundlePath:finished:" title="loadScript:bundlePath:finished:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:finished:">&ndash;&nbsp;loadScript:bundlePath:finished:</a></code>
+	<a name="//api/name/loadScript:bundlePath:error:" title="loadScript:bundlePath:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:error:">&ndash;&nbsp;loadScript:bundlePath:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -425,7 +425,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -472,8 +472,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:scriptName:bundlePath:finished:" title="loadScript:scriptName:bundlePath:finished:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:finished:">&ndash;&nbsp;loadScript:scriptName:bundlePath:finished:</a></code>
+	<a name="//api/name/loadScript:scriptName:bundlePath:error:" title="loadScript:scriptName:bundlePath:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -488,7 +488,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -540,8 +540,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadCmdFile:bundlePath:finished:" title="loadCmdFile:bundlePath:finished:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:finished:">&ndash;&nbsp;loadCmdFile:bundlePath:finished:</a></code>
+	<a name="//api/name/loadCmdFile:bundlePath:error:" title="loadCmdFile:bundlePath:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:error:">&ndash;&nbsp;loadCmdFile:bundlePath:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -558,7 +558,7 @@ or an .ale encrypted file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> finished:(void ( ^ _Nonnull ) ( BOOL success , NSError *_Nullable error ))<em>finished</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -1411,7 +1411,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-07-04</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

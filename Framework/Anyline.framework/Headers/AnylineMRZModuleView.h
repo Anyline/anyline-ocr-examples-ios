@@ -7,8 +7,8 @@
 //
 
 #import "AnylineAbstractModuleView.h"
-#import "ALMRZResult.h"
-#import "ALMRZScanViewPlugin.h"
+#import "ALIDResult.h"
+#import "ALIDScanViewPlugin.h"
 
 @protocol AnylineMRZModuleDelegate;
 
@@ -22,9 +22,9 @@
  */
 @interface AnylineMRZModuleView : AnylineAbstractModuleView
 
-@property (nullable, nonatomic, strong) ALMRZScanViewPlugin *mrzScanViewPlugin;
+@property (nullable, nonatomic, strong) ALIDScanViewPlugin *mrzScanViewPlugin;
 
-@property (nullable, nonatomic, strong) ALMRZScanPlugin *mrzScanPlugin;
+@property (nullable, nonatomic, strong) ALIDScanPlugin *mrzScanPlugin;
 
 /**
  *  If strictMode is enabled, results will only be returned when all checkDigits are valid.

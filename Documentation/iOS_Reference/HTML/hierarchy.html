@@ -46,14 +46,14 @@
 						
 <ul>
 
+	<li><a href="Classes/ALIDResult.html">ALIDResult</a></li>
+
 	<li><a href="Classes/ALScanResult.html">ALScanResult</a>
 <ul>
 
 	<li><a href="Classes/ALBarcodeResult.html">ALBarcodeResult</a></li>
 
 	<li><a href="Classes/ALLicensePlateResult.html">ALLicensePlateResult</a></li>
-
-	<li><a href="Classes/ALMRZResult.html">ALMRZResult</a></li>
 
 	<li><a href="Classes/ALMeterResult.html">ALMeterResult</a>
 <ul>
@@ -76,9 +76,9 @@
 
 	<li><a href="Classes/ALBarcodeScanPlugin.html">ALBarcodeScanPlugin</a></li>
 
-	<li><a href="Classes/ALLicensePlateScanPlugin.html">ALLicensePlateScanPlugin</a></li>
+	<li><a href="Classes/ALIDScanPlugin.html">ALIDScanPlugin</a></li>
 
-	<li><a href="Classes/ALMRZScanPlugin.html">ALMRZScanPlugin</a></li>
+	<li><a href="Classes/ALLicensePlateScanPlugin.html">ALLicensePlateScanPlugin</a></li>
 
 	<li><a href="Classes/ALMeterScanPlugin.html">ALMeterScanPlugin</a></li>
 
@@ -119,13 +119,25 @@
 
 	<li><a href="Classes/ALDocumentScanPlugin.html">ALDocumentScanPlugin</a></li>
 
+	<li><a href="Classes/ALDrivingLicenseIdentification.html">ALDrivingLicenseIdentification</a></li>
+
 	<li><a href="Classes/ALFlashButtonConfig.html">ALFlashButtonConfig</a></li>
 
-	<li><a href="Classes/ALIdentification.html">ALIdentification</a></li>
+	<li><a href="Classes/ALIDConfig.html">ALIDConfig</a>
+<ul>
+
+	<li><a href="Classes/ALDrivingLicenseConfig.html">ALDrivingLicenseConfig</a></li>
+
+	<li><a href="Classes/ALMRZConfig.html">ALMRZConfig</a></li>
+
+</ul>
+</li>
 
 	<li><a href="Classes/ALImage.html">ALImage</a></li>
 
 	<li><a href="Classes/ALIndexPath.html">ALIndexPath</a></li>
+
+	<li><a href="Classes/ALMRZIdentification.html">ALMRZIdentification</a></li>
 
 	<li><a href="Classes/ALMotionDetector.html">ALMotionDetector</a></li>
 
@@ -153,6 +165,8 @@
 
 	<li><a href="Classes/ALScanInfo.html">ALScanInfo</a></li>
 
+	<li><a href="Classes/ALScanViewPluginConfig.html">ALScanViewPluginConfig</a></li>
+
 	<li><a href="Classes/ALSegmentResult.html">ALSegmentResult</a></li>
 
 	<li><a href="Classes/ALSegmentSpec.html">ALSegmentSpec</a></li>
@@ -168,8 +182,6 @@
 
 </ul>
 </li>
-
-	<li><a href="Classes/ALVisualFeedbackConfig.html">ALVisualFeedbackConfig</a></li>
 
 </ul>
 </li>
@@ -192,9 +204,9 @@
 
 	<li><a href="Classes/ALDocumentScanViewPlugin.html">ALDocumentScanViewPlugin</a></li>
 
-	<li><a href="Classes/ALLicensePlateScanViewPlugin.html">ALLicensePlateScanViewPlugin</a></li>
+	<li><a href="Classes/ALIDScanViewPlugin.html">ALIDScanViewPlugin</a></li>
 
-	<li><a href="Classes/ALMRZScanViewPlugin.html">ALMRZScanViewPlugin</a></li>
+	<li><a href="Classes/ALLicensePlateScanViewPlugin.html">ALLicensePlateScanViewPlugin</a></li>
 
 	<li><a href="Classes/ALMeterScanViewPlugin.html">ALMeterScanViewPlugin</a></li>
 
@@ -206,6 +218,8 @@
 	<li><a href="Classes/ALCutoutView.html">ALCutoutView</a></li>
 
 	<li><a href="Classes/ALScanView.html">ALScanView</a></li>
+
+	<li><a href="Classes/ALUIFeedback.html">ALUIFeedback</a></li>
 
 	<li><a href="Classes/ALVisualFeedbackOverlay.html">ALVisualFeedbackOverlay</a></li>
 
@@ -245,6 +259,8 @@
 							
 							<li><a href="Protocols/ALCoreControllerDelegate.html">ALCoreControllerDelegate</a></li>
 							
+							<li><a href="Protocols/ALCutoutDelegate.html">ALCutoutDelegate</a></li>
+							
 							<li><a href="Protocols/ALDocumentInfoDelegate.html">ALDocumentInfoDelegate</a></li>
 							
 							<li><a href="Protocols/ALDocumentScanPluginDelegate.html">ALDocumentScanPluginDelegate</a></li>
@@ -253,13 +269,13 @@
 							
 							<li><a href="Protocols/ALFlashButtonStatusDelegate.html">ALFlashButtonStatusDelegate</a></li>
 							
+							<li><a href="Protocols/ALIDPluginDelegate.html">ALIDPluginDelegate</a></li>
+							
 							<li><a href="Protocols/ALImageProvider.html">ALImageProvider</a></li>
 							
 							<li><a href="Protocols/ALInfoDelegate.html">ALInfoDelegate</a></li>
 							
 							<li><a href="Protocols/ALLicensePlateScanPluginDelegate.html">ALLicensePlateScanPluginDelegate</a></li>
-							
-							<li><a href="Protocols/ALMRZScanPluginDelegate.html">ALMRZScanPluginDelegate</a></li>
 							
 							<li><a href="Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a></li>
 							
@@ -309,6 +325,8 @@
 	                        
 	                        <li><a href="Constants/ALFlashStatus.html">ALFlashStatus</a></li>
 	                        
+	                        <li><a href="Constants/ALIdentityDocumentScanMode.html">ALIdentityDocumentScanMode</a></li>
+	                        
 	                        <li><a href="Constants/ALOCRError.html">ALOCRError</a></li>
 	                        
 	                        <li><a href="Constants/ALOCRScanMode.html">ALOCRScanMode</a></li>
@@ -336,7 +354,7 @@
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-07-04</p>
+							<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-17</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

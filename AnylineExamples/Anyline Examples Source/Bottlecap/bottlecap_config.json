@@ -11,10 +11,15 @@
             "height": 1
         },
         "strokeWidth": 2,
-        "cornerRadius": 320,
+        "cornerRadius": 300,
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
-        "outerAlpha": 0.3
+        "outerAlpha": 0.3,
+        "cropPadding": {
+            "x": 10,
+            "y": 10
+        },
+        "feedbackStrokeColor": "0099FF"
     },
     "flash": {
         "mode": "manual",
@@ -22,9 +27,9 @@
     },
     "visualFeedback": {
         "style": "rect",
-        "strokeWidth": 3,
-        "strokeColor": "880099FF",
-        "fillColor": "330099FF",
+        "strokeWidth": 1,
+        "strokeColor": "0099FF",
+        "fillColor": "220099FF",
         "cornerRadius": 10
         
     },
