@@ -20,23 +20,21 @@
 		0C46FA84CB08F94313C887C7 /* ALBlackWhiteSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F45F3B5FEB9A387E33842A /* ALBlackWhiteSelectView.m */; };
 		0E8913F3E06AF29B84CEB1A0 /* NSArray+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36113C0011C7E040D73E50B2 /* NSArray+ALExamplesAdditions.m */; };
 		0F223E6165934DF3EE05A921 /* eng_no_dict.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */; };
-		0F5A25BDD23FB337E31CE98F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */; };
 		107A6F8A42E466935E161185 /* ALSpaceViews.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A399CEE270C5FB178E602A /* ALSpaceViews.m */; };
 		10ADDCDA6E066CF07D8864E9 /* CustomerSelfReadingResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86279357BF50228C50A7C89 /* CustomerSelfReadingResultViewController.xib */; };
 		1197D3FF859D0479FF090A7A /* ALScrabbleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */; };
 		142FB0D2A8952DDD08FA376F /* ReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8885AFE124BF9C2CA84E426 /* ReadingTableViewCell.xib */; };
-		14CB8A1846AED19D6DC61E7B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
 		159449ABF401A4A12BA9B49C /* WorkforceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89F15F985380D18B55B6A5 /* WorkforceTool.m */; };
-		1767B886215006F4005A2DD3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767B885215006F4005A2DD3 /* WebKit.framework */; };
 		1BCED532C5C276C2597BF03E /* ALMeterSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2430E12BBD103E266B10D984 /* ALMeterSelectView.m */; };
+		1D4F73B949EC962B2D5D473E /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2F2F1A910AA5FF322FD68B /* Anyline.framework */; };
 		1EA0744151A9BEA7C5894575 /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */; };
 		1EE111BDD6D5F4369263A3ED /* bottlecap_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */; };
+		1F94E5AC925546484EEBEFD2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41363EE34FC32B1D64CB7DE /* WebKit.framework */; };
 		232B87B8ADD8B4DD668CFCDB /* ALCustomToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D4A5ED5043213916574812 /* ALCustomToolbar.m */; };
 		23AA90C96FD3A383D0D1ADA2 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E07BBFB5481EC2D89D2841 /* Customer.m */; };
 		26D6A111C37D1ACC54E04BCA /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C96CA2CE47B790BFBB605 /* ALVoucherCodeScanViewController.m */; };
 		29AFB24BBC990DF7E7DFDDE2 /* CustomerSelfReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F721982BB02F4A2575757 /* CustomerSelfReadingViewController.m */; };
 		29B7360101134242863CDFF7 /* CustomerDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C6129A23B1750CB4946F /* CustomerDataView.m */; };
-		2A0EDB4007EB79BC087555AD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */; };
 		2AA44D15A2AAA03C09BCCC28 /* ALISBNScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3325FBA2735973E9C441BFF /* ALISBNScanViewController.m */; };
 		2B50A4885727252861086A56 /* record_number_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D2F22EF36CFA4562FBDE6 /* record_number_config.json */; };
 		2D142B2400B988F2BE1269C4 /* ALResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B03757A5049B0789B0F06C7 /* ALResultOverlayView.m */; };
@@ -83,6 +81,7 @@
 		64F4E4D8E55580900F6285C1 /* hashtag_config.json in Resources */ = {isa = PBXBuildFile; fileRef = C90802DD48FFDDE022271DB0 /* hashtag_config.json */; };
 		6A15AA195C2DBB2D3197BA17 /* ALScrabblePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 938340AF6E801B1E47A49D1C /* ALScrabblePoints.m */; };
 		6A164C0A0FF6B41801594310 /* MeterImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF323EFF3CC4FBEB464290A /* MeterImagesAssets.xcassets */; };
+		6A662A38FB11EDF5AC046664 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
 		6C6F67BAF9F043498C8C3BD3 /* ALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A22531B381EB3546D5EA58D /* ALBaseViewController.m */; };
 		6CE604A93BE9387023CD699D /* CustomerSelfReadingResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050E04B4864E56D39A825320 /* CustomerSelfReadingResultViewController.m */; };
 		6E8273BBBC8FAC67CAE58E46 /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAF261201B57749AD0EC10 /* ALIdentityDocumentsExampleManager.m */; };
@@ -90,7 +89,6 @@
 		70E055A0B7996B290C4DF32A /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D7806A57949D0C1128E30C37 /* NSString+Util.m */; };
 		713636E9534617E55B7DA1B8 /* ReadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D5A1D27EE4F69994E48028 /* ReadingTableViewCell.m */; };
 		71F76A2A8A4A3ABCB90C3F51 /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443FEC0920C5946EE7CEF8BB /* ALEnergyBaseViewController.m */; };
-		73AA640ACB74252CFEFA9E61 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */; };
 		7478EFDBE90DD8014C421DA3 /* anyline_austrian_driving_license.ale in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D535336B3CB971DBDCF21 /* anyline_austrian_driving_license.ale */; };
 		753D30E51510E57A7820A4E3 /* ALHeatMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEDFCC4CF893896C72836F5 /* ALHeatMeterScanViewController.m */; };
 		75F9666F7ECF3C6C999CB7C9 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AACE1FE20D8FE287813308 /* CoreDataManager.m */; };
@@ -105,13 +103,15 @@
 		86322DD9FB9B9AB2971C8A34 /* scrabble.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF63762DADF35221787B91 /* scrabble.traineddata */; };
 		871094151720B6A8EB22F7D4 /* ALGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82707AF32B470193A116F787 /* ALGridCollectionViewController.m */; };
 		88D6F1F3D6087136487E1F8D /* ALBaseGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C7A0F4351C2E0583068BC /* ALBaseGridCollectionViewController.m */; };
-		8A14ECD02331BE9ACDEA2876 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FDE1FFE361EDBDEE3C205F /* UIKit.framework */; };
 		8BC2C83E592A26E15E078C1C /* ALTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D7BECEE1CE8448B0D4DF /* ALTextViewCell.m */; };
 		8BDEEBFDE8C96B841D54C58C /* ALJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */; };
+		8D42C5BB95ADF53EE2AB291D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */; };
+		8DE43137F4334288194E2D64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FDE1FFE361EDBDEE3C205F /* UIKit.framework */; };
 		8DFB84CCCFDCC2777A2CEF7F /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */; };
 		8E25DA394359F42FAFC3E17E /* badge_scanner_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 58218941F045FB91A5A60B0F /* badge_scanner_config.json */; };
 		8FA293A0599752936D815650 /* ALDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */; };
 		9019D39FF92100F87BC95AC2 /* ScanHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89234FC5BEC4ED40B37E3 /* ScanHistory+CoreDataProperties.m */; };
+		91443F23A05F64274C4A7ECD /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
 		9BECFA506DD6068C7F769B2D /* ALMROExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE96D8CF4CAD02C52E744BAB /* ALMROExampleManager.m */; };
 		9D27ABC5D3B176E6A41FEC8B /* WorkorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 809888700414BE08EF7179E9 /* WorkorderViewController.m */; };
 		A3FBA2A220B4B3AC75A37F83 /* ALUniversalSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826B52CCA8BEFA4ED0826324 /* ALUniversalSerialNumberScanViewController.m */; };
@@ -127,9 +127,9 @@
 		ADB043ACA04B251332C6C039 /* ALBasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116A0D6944AF2AC5017F4931 /* ALBasePageViewController.m */; };
 		ADC0CB21A8E328FD309E85A3 /* ALScrabbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29092239DF6E401BDB033C26 /* ALScrabbleViewController.m */; };
 		AEDF9673DC4233EF48FDCB7A /* Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BA03ED60F803AEB71A71B /* Reading.m */; };
+		B28F8A8ACFDC85C2D1BC9E62 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */; };
 		B2E679B813D53972C37BBC57 /* ALGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F7FDBC88D521FBA687D3BF /* ALGridCollectionViewCell.m */; };
 		B32210DB476597B748438EBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E88C76AF69080B9D5FC54B /* Images.xcassets */; };
-		B5A336D78652AF0B6DB7F69E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
 		B792B93F566711124D404BF1 /* ALEnergyMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAEACD4453D58BDB86DD118 /* ALEnergyMeterScanViewController.m */; };
 		B906E0138253E849ECFF4775 /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD4DBC24230A545C6F50FE30 /* isbn_config.json */; };
 		B999AF6BF0031A22673F9DDF /* ALWaterMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4434FE1025346810D6174 /* ALWaterMeterScanViewController.m */; };
@@ -139,12 +139,12 @@
 		BD9F7FD3A79D8410FE5EE3CA /* ScanHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = C89FCA451DDD8B2305225350 /* ScanHistory.m */; };
 		BFA56BC24DF436BD12FBE14E /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */; };
 		C017F7E52F7FCDBF2137E4AB /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
+		C023BC6F9AA8624605D370D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
 		C092A8F989BCB8F781E3CFE8 /* ALBottlecapScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */; };
 		C097E31201337560958F88A3 /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6103E43D7371110BC6213F0C /* ALScrabbleWord.m */; };
 		C359ADB31FB8376779CF71FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635597E0966D01FD7533AF85 /* AppDelegate.m */; };
 		C430EDFCB1F105FE6DD453E5 /* ALResultEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 335E83D186D541A92BD5FB6C /* ALResultEntry.m */; };
 		C5516C68A9A254E15095DF35 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E5F98B1E0F1B8DF9D47C88 /* ALMeterExampleManager.m */; };
-		C7C7BCE929158035071D4DAA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */; };
 		CA3440CA04E5113A6173C7B0 /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F53817B45ED084BCC5F172BB /* ISBNInfo.m */; };
 		CC316CE24765708331E6E3B4 /* Customer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A865CD650D1036DF2B258A4 /* Customer+CoreDataProperties.m */; };
 		CCCDE3B694545DFF6880C9DF /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095A105FBAD31DC01FDBB6D0 /* ALDocumentScanViewController.m */; };
@@ -157,12 +157,13 @@
 		CEF48F9738B4FE1BA94DE83A /* WorkForceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66F4E40B95EB1836748935 /* WorkForceViewController.m */; };
 		CF367673C2A79FAA974F29E7 /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB346B31D8C92567FEE0 /* ALIBANScanViewController.m */; };
 		D052129E3F4E46F5DE9C76F7 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
+		D4954FD12865EA9DFEEBB8BF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */; };
 		D5DE4D60B0C7284361CC53BA /* ALHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B12DF3E5609DB6FAF00652 /* ALHistoryTableViewController.m */; };
 		D6FB52345252069C8363464C /* ALResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A945D3BD16BCC4F656419786 /* ALResultViewController.m */; };
 		D863B6200A5B2F53EB2E6436 /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B209468D17400B4C971BF7F /* energyMockData2.json */; };
 		DC55D03302388A044EB70CE1 /* CustomerSelfReadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91B611603735F990210480E3 /* CustomerSelfReadingViewController.xib */; };
 		DC91B71BCBADA2D0A2063D69 /* ALResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F5B40F3AC4D6632667710 /* ALResultCell.m */; };
-		DCF7BC7E4CD6C8FA64F3FBC5 /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
+		DD729180E903F65C666CCA5D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */; };
 		DE43621A1F3DBA9757B0AB8F /* CustomerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2730301D1046BBEF8E9D3FC /* CustomerDataViewController.m */; };
 		DFAED65142837D960C2A27AE /* ALDrivingLicenseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141D57F2B89AAC052915511 /* ALDrivingLicenseScanViewController.m */; };
 		E18C39998AF1F11E6251D0DF /* vin_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B20416F4B07083768BF0DFBD /* vin_capture_config.json */; };
@@ -176,12 +177,11 @@
 		EB5351925412DEF4DEFF430C /* deu.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = DA7638EA3646145215A9FCF1 /* deu.traineddata */; };
 		EDE0C6A081A1F7B5EC60295A /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5240A50ACE02B6CF8F50A78 /* ALExampleManager.m */; };
 		F2A2268276C606C97959FAB8 /* ALScrabbleScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8562EE0FC190E09FE6E7FBA /* ALScrabbleScanViewController.m */; };
-		F831169FCAEF794371573D10 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
+		F6E02AA55CD0633D279A06D2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */; };
 		F9389625F8E96FCB7A33B66D /* anyline_capitals.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */; };
 		F974313C219B05AB4405DFED /* ALWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE16227B328C75A6EA33E7 /* ALWarningView.m */; };
 		FAB039023892ED5100BD1385 /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 26270D1AFDA57474D313BF38 /* voucher_code_config.json */; };
 		FAC9C087E4047A0489D652A3 /* WorkforceToolResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB84FFE6DDEDB80D1124E2E /* WorkforceToolResultViewController.m */; };
-		FC2299630F7A8D7CFBE5ACC8 /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2F2F1A910AA5FF322FD68B /* Anyline.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,7 +206,6 @@
 		14AAF261201B57749AD0EC10 /* ALIdentityDocumentsExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIdentityDocumentsExampleManager.m; sourceTree = "<group>"; };
 		14EB0C78427F9F77DCE02A9C /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		171912A30B05E673D21F2578 /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
-		1767B885215006F4005A2DD3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A22531B381EB3546D5EA58D /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		1BF801C030C6004663B0CE83 /* ALProductExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALProductExampleManager.h; sourceTree = "<group>"; };
 		1C2F2F1A910AA5FF322FD68B /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = /Anyline.framework; sourceTree = "<group>"; };
@@ -466,6 +465,7 @@
 		EE11437A5B967BF4319E480C /* CustomerDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerDataViewController.h; sourceTree = "<group>"; };
 		EFDFBCFF90A0ED10D6B009C3 /* ALIdentificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIdentificationView.h; sourceTree = "<group>"; };
 		F33423D8FCDDA8CD26BD55B5 /* AnylineExamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnylineExamples-Bridging-Header.h"; sourceTree = "<group>"; };
+		F41363EE34FC32B1D64CB7DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F498FEA53B7651B6E3F24492 /* UIFont+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		F53817B45ED084BCC5F172BB /* ISBNInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISBNInfo.m; sourceTree = "<group>"; };
 		F53E3C8D236C395EDC0C9ECD /* Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
@@ -489,41 +489,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1767B886215006F4005A2DD3 /* WebKit.framework in Frameworks */,
-				FC2299630F7A8D7CFBE5ACC8 /* Anyline.framework in Frameworks */,
-				C7C7BCE929158035071D4DAA /* Accelerate.framework in Frameworks */,
-				0F5A25BDD23FB337E31CE98F /* libc++.dylib in Frameworks */,
-				F831169FCAEF794371573D10 /* AVFoundation.framework in Frameworks */,
-				8A14ECD02331BE9ACDEA2876 /* UIKit.framework in Frameworks */,
-				DCF7BC7E4CD6C8FA64F3FBC5 /* Anyline.framework in Frameworks */,
-				2A0EDB4007EB79BC087555AD /* AssetsLibrary.framework in Frameworks */,
-				B5A336D78652AF0B6DB7F69E /* AudioToolbox.framework in Frameworks */,
-				14CB8A1846AED19D6DC61E7B /* CoreMedia.framework in Frameworks */,
-				73AA640ACB74252CFEFA9E61 /* CoreMotion.framework in Frameworks */,
+				1D4F73B949EC962B2D5D473E /* Anyline.framework in Frameworks */,
+				DD729180E903F65C666CCA5D /* Accelerate.framework in Frameworks */,
+				B28F8A8ACFDC85C2D1BC9E62 /* libc++.dylib in Frameworks */,
+				C023BC6F9AA8624605D370D1 /* AVFoundation.framework in Frameworks */,
+				8DE43137F4334288194E2D64 /* UIKit.framework in Frameworks */,
+				91443F23A05F64274C4A7ECD /* Anyline.framework in Frameworks */,
+				8D42C5BB95ADF53EE2AB291D /* AssetsLibrary.framework in Frameworks */,
+				6A662A38FB11EDF5AC046664 /* AudioToolbox.framework in Frameworks */,
+				F6E02AA55CD0633D279A06D2 /* CoreMedia.framework in Frameworks */,
+				D4954FD12865EA9DFEEBB8BF /* CoreMotion.framework in Frameworks */,
+				1F94E5AC925546484EEBEFD2 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02F1F74BF7AE47D601FD325B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1767B885215006F4005A2DD3 /* WebKit.framework */,
-				DD389A80DF4984F39067C287 /* AVFoundation.framework */,
-				C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */,
-				1C2F2F1A910AA5FF322FD68B /* Anyline.framework */,
-				483BC48BD87FFA04B0C7F398 /* Anyline.framework */,
-				95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */,
-				5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */,
-				AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */,
-				C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */,
-				11FDE1FFE361EDBDEE3C205F /* UIKit.framework */,
-				E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		03DF87B6F4FD311F49342EC1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,7 +1043,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDD43DC8833A207723A124E /* Source */,
-				02F1F74BF7AE47D601FD325B /* Frameworks */,
+				E24C22CC6F0CC54896133792 /* Frameworks */,
 				523D37D99AE2821A5FFE17FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1244,6 +1226,24 @@
 				5C7D2F22EF36CFA4562FBDE6 /* record_number_config.json */,
 			);
 			path = RecordNumber;
+			sourceTree = "<group>";
+		};
+		E24C22CC6F0CC54896133792 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD389A80DF4984F39067C287 /* AVFoundation.framework */,
+				C1716C8BDC46EEA0FABA1299 /* Accelerate.framework */,
+				1C2F2F1A910AA5FF322FD68B /* Anyline.framework */,
+				483BC48BD87FFA04B0C7F398 /* Anyline.framework */,
+				95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */,
+				5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */,
+				AC3E9A312B6C287BFCD131CB /* CoreMedia.framework */,
+				C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */,
+				11FDE1FFE361EDBDEE3C205F /* UIKit.framework */,
+				F41363EE34FC32B1D64CB7DE /* WebKit.framework */,
+				E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E985BB5E2910EE10D6D4A555 /* CoreData/Model */ = {
