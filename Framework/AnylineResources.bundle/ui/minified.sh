@@ -1,1 +1,0 @@
-babel -o ../anyline-shared-resources/ui/frontend.min.js --minified --presets="/usr/local/lib/node_modules/babel-preset-es2015/lib/index.js"  ../anyline-shared-resources/ui/cutout.js ../anyline-shared-resources/ui/util.js ../anyline-shared-resources/ui/visualFeedback.js

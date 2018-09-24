@@ -37,7 +37,6 @@
 @property (nullable, nonatomic, strong) AVCaptureDevice *captureDevice;
 
 @property (nullable, nonatomic, strong) AVCaptureSession *session;
-@property (nullable, nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
 
 @property (nonatomic, assign) CGSize videoResolution;
 
@@ -71,6 +70,8 @@
 + (AVAuthorizationStatus)cameraPermissionStatus;
 
 + (void)requestCameraPermission:(void (^_Nonnull)(BOOL granted))handler;
+
+- (void)captureStillImageAsynchronouslyWithCompletionHandler:(void (^ _Nonnull)(CMSampleBufferRef _Nullable imageDataSampleBuffer, NSError * _Nullable error))handler;
 
 @end
 
