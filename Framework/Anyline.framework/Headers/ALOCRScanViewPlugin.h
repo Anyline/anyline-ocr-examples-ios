@@ -13,11 +13,9 @@
 
 @property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame
-                             scanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin;
+- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame
-                             scanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin
-                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
+- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin
+                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 @end

@@ -16,34 +16,54 @@
 @class ALScanView;
 @interface ALAbstractScanViewPlugin : UIView<ALInfoDelegate>
 
+/**
+ The SampleBufferImageProvider implements ALImageProvider and AnylineVideoDataSampleBufferDelegate
+ and prepares the frame for Anyline processing
+ */
 @property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider;
 
 @property (nonatomic, weak) ALScanView * _Nullable scanView;
 
-@property (nullable, nonatomic, strong) ALSquare *outline;
-
-@property (nullable, nonatomic, strong) ALImage *scanImage;
+/**
+ The position of the Cutout in the View
+ */
+@property (assign, nonatomic) CGRect cutoutRect;
 
 /**
  * The UI Configuration for the scanning UI
  */
 @property (nullable, nonatomic, copy) ALScanViewPluginConfig *scanViewPluginConfig;
 
-// Private Stuff
++ (_Nullable instancetype)scanViewPluginForConfigDict:(NSDictionary *_Nonnull)configDict
+                                           licenseKey:(NSString *_Nonnull)licenseKey
+                                             delegate:(id _Nonnull)delegate
+                                                error:(NSError *_Nullable *_Nullable)error;
+
+/**
+ Starts the Anyline processing.
+
+ @param error An error if something goes wrong during the startup
+ @return Boolean indicating the success of the start
+ */
+- (BOOL)startAndReturnError:(NSError * _Nullable * _Nullable)error;
+
+/**
+ Stops the Anyline processing
+
+ @param error An error if something goes wrong during the startup
+ @return Boolean indicating the success of the start
+ */
+- (BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
+
+// Internal Stuff
+
+@property (nullable, nonatomic, strong) ALSquare *outline;
+
+@property (nullable, nonatomic, strong) ALImage *scanImage;
 
 @property (nonatomic, assign) CGFloat scale;
 
-+ (_Nullable instancetype)scanViewPluginForFrame:(CGRect)frame
-                                      configDict:(NSDictionary *_Nonnull)configDict
-                                      licenseKey:(NSString *_Nonnull)licenseKey
-                                        delegate:(id _Nonnull)delegate
-                                           error:(NSError *_Nullable *_Nullable)error;
-
 - (void)customInit;
-
-- (BOOL)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-
-- (BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
 
 /**
  * Stop listening for device motion.

@@ -73,10 +73,18 @@ extern NSString * _Nonnull const kShakeDetectionWarningVariableName;
 
 @interface ALScanInfo : NSObject
 
+/**
+ The pluginID which created this ScanInfo
+ */
 @property (nonnull, nonatomic, strong, readonly) NSString *pluginID;
 
+/**
+ The variableName of the info reported
+ */
 @property (nonnull, nonatomic, strong, readonly) NSString *variableName;
-
+/**
+ The value of the info
+ */
 @property (nonnull, nonatomic, strong, readonly) id value;
 
 - (instancetype _Nullable)initWithVariableName:(NSString * _Nonnull)variableName

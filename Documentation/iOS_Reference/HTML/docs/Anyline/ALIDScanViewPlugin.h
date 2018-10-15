@@ -14,11 +14,9 @@
 
 @property (nullable, nonatomic, strong) ALIDScanPlugin *idScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame
-                             scanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin;
+- (_Nullable instancetype)initWithScanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin;
 
-- (_Nullable instancetype)initWithFrame:(CGRect)frame
-                             scanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin
-                   scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
+- (_Nullable instancetype)initWithScanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin
+                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
 
 @end

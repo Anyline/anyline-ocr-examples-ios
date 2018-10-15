@@ -15,6 +15,7 @@ static NSString * const ALErrorDomain = @"ALErrorDomain";
 static NSString * const ALCameraSetupDomain = @"ALCameraSetupDomain";
 static NSString * const ALWatermarkViolationDomain = @"ALWatermarkViolationDomain";
 static NSString * const ALModuleSetupDomain = @"ALModuleSetupDomain";
+static NSString * const ALLicenseViolationDomain = @"ALLicenseViolationDomain";
 
 static NSString *const ALParserErrorLineNumber = @"ALParserErrorLineNumber";
 static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
@@ -33,6 +34,7 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   // License Exception
   ALLicenseKeyInvalid = 3001,
   ALLicenseNotValidForFunction = 3002,
+  ALLicenseNotValidForFeature = 3003,
 
   ALWatermarkImageNotFound = 3003,
   ALWatermarkNotOnWindow = 3004,
@@ -98,3 +100,6 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALEnergyScanPluginBarcodeNotSupported = 9005,
   ALModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
 };
+
+
+#define NSLicenseViolationError(func) [NSError errorWithDomain:ALLicenseViolationDomain code:ALLicenseNotValidForFeature userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The following feature is not avalable with your license: %@",(func)]}];

@@ -14,6 +14,9 @@
  */
 @interface ALScanResult<__covariant ObjectType> : NSObject
 
+/**
+ The pluginID which created this ScanPlugin
+ */
 @property (nonnull, nonatomic, strong, readonly) NSString *pluginID;
 /**
  *  The scanned result.

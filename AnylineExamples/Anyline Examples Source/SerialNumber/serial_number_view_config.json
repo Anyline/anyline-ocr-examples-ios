@@ -1,36 +1,32 @@
 {
-    "captureResolution":"1080p",
-    "cutout" : {
-        "style": "rect",
-        "width": 720,
-        "alignment": "top_half",
-        "ratioFromSize" : {
+    "viewPlugin" : {
+        "cutoutConfig" : {
+            "style": "rect",
             "width": 720,
-            "height": 144
+            "alignment": "top_half",
+            "ratioFromSize" : {
+                "width": 720,
+                "height": 144
+            },
+            "strokeWidth": 2,
+            "strokeColor": "FFFFFF",
+            "cornerRadius": 4,
+            "outerColor": "000000",
+            "outerAlpha": 0.5,
+            "feedbackStrokeColor": "0099FF",
+            "offset": {
+                "x": 0,
+                "y": -15
+            }
         },
-        "strokeWidth": 2,
-        "strokeColor": "FFFFFF",
-        "cornerRadius": 4,
-        "outerColor": "000000",
-        "outerAlpha": 0.5,
-        "feedbackStrokeColor": "0099FF",
-        "offset": {
-            "x": 0,
-            "y": -15
-        }
-    },
-    "flash" : {
-        "mode" : "manual",
-        "alignment" : "top_left"
-    },
-    "visualFeedback": {
-        "style": "CONTOUR_RECT",
-        "strokeColor": "0099FF",
-        "cornerRadius": 2
-    },
-    "beepOnResult": true,
-    "vibrateOnResult": true,
-    "blinkAnimationOnResult": true,
-    "cancelOnResult": true,
-    "reportingEnabled": true
+        "scanFeedback" : {
+            "style": "CONTOUR_RECT",
+            "strokeColor": "0099FF",
+            "cornerRadius": 2,
+            "beepOnResult": true,
+            "vibrateOnResult": true,
+            "blinkAnimationOnResult": true
+        },
+        "cancelOnResult" : true
+    }
 }

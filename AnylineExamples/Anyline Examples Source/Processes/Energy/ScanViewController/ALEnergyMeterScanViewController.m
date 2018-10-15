@@ -27,15 +27,19 @@
 NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
 
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
-@interface ALEnergyMeterScanViewController ()<AnylineEnergyModuleDelegate, CustomerSelfReadingResultDelegate, WorkforceToolResultDelegate>
+@interface ALEnergyMeterScanViewController ()<ALMeterScanPluginDelegate, ALBarcodeScanPluginDelegate, CustomerSelfReadingResultDelegate, WorkforceToolResultDelegate>
 
-// The Anyline module used to scan
-@property (nonatomic, strong) AnylineEnergyModuleView *anylineEnergyView;
+// The Anyline plugin used to scan
+@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
+@property (nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
+@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @property (nonatomic, strong) NSString *barcodeResult;
 @property (nonatomic, strong) UIView *customerDataContainer;
 @property (strong, nonatomic) NSLayoutConstraint *customerDataContainerViewHeightConstraint;
 
+@property (nonatomic, assign, readonly) ALScanMode scanMode;
 
 @end
 
@@ -45,59 +49,52 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
  We will do our main setup in viewDidLoad. Its called once the view controller is getting ready to be displayed.
  */
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode";
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.anylineEnergyView = [[AnylineEnergyModuleView alloc] initWithFrame:frame];
     
+    //Add Meter Scan Plugin (Scan Process)
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // once we start receiving results.
-    BOOL success = [self.anylineEnergyView setupWithLicenseKey:kALEnergyMeterScanLicenseKey delegate:self error:&error];
+    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY"
+                                                            licenseKey:kDemoAppLicenseKey
+                                                              delegate:self
+                                                                 error:&error];
+    NSAssert(self.meterScanPlugin, @"Setup Error: %@", error.debugDescription);
     
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Setup Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE"
+                                                                licenseKey:kDemoAppLicenseKey
+                                                                  delegate:self error:&error];
+    self.barcodeScanPlugin.barcodeFormatOptions = ALCodeTypeAll;
     
-    self.anylineEnergyView.translatesAutoresizingMaskIntoConstraints = NO;
+    NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
-    //Set ScanMode to ALBarcode
-    success = [self.anylineEnergyView setScanMode:ALBarcode error:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    //Add Meter Scan View Plugin (Scan UI)
+    self.meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:self.meterScanPlugin];
+    
+    //Add ScanView (Camera and Flashbutton)
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.meterScanViewPlugin];
+    
+    [self.view addSubview:self.scanView];
+    [self.scanView startCamera];
+    
+    //Set ScanMode to ALBardode - use custom method to change between barcode and meter reading
+    BOOL success = [self setScanMode:ALBarcode];
+    NSAssert(success, @"Could not set ScanMode for Plugin");
     
     BOOL enableReporting = [NSUserDefaults AL_reportingEnabled];
-    [self.anylineEnergyView enableReporting:enableReporting];
-    self.anylineEnergyView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.meterScanPlugin enableReporting:enableReporting];
+    self.scanView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.anylineEnergyView];
-    [self.view sendSubviewToBack:self.anylineEnergyView];
     
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView}]];
-    
-    self.controllerType = ALScanHistoryElectricMeter;
-    
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
     id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.anylineEnergyView, @"topGuide" : topGuide}]];
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
+
+    self.controllerType = ALScanHistoryElectricMeter;
     
     //Init customer data container view
     [self setupCustomerDataContainer];
@@ -126,7 +123,10 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.anylineEnergyView cancelScanningAndReturnError:nil];
+    [self.meterScanViewPlugin stopAndReturnError:nil];
+    if (self.barcodeScanPlugin.isRunning) {
+        [self.barcodeScanPlugin stopAndReturnError:nil];
+    }
 }
 
 #pragma mark - Customer Methods
@@ -215,6 +215,7 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
     
     [self.customerDataContainer addConstraint:height];
 }
+
 #pragma mark - AnylineControllerDelegate methods
 /*
  The main delegate method Anyline uses to report its scanned codes
@@ -239,16 +240,53 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
    
 }
 
-#pragma mark - Anyline utility methods
+- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *)anylineMeterScanPlugin didFindResult:(ALMeterResult *)scanResult {
+    [self anylineDidFindResult:scanResult.result barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin completion:^{
+        [self displayReading:scanResult];
+    }];
+}
+
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
+    [self.meterScanViewPlugin triggerScannedFeedback];
+   
+    [self evaluateMeterId:scanResult];
+    if (self.customer) {
+        self.barcodeResult = scanResult.result;
+        [self restartAnylineWithScanMode:ALAutoAnalogDigitalMeter];
+        self.title = @"Analog/Digital Meter";
+    } else {
+        [self startAnyline];
+    }
+    
+}
+
+#pragma mark - Anyline Utility Methods
+
+- (BOOL)setScanMode:(ALScanMode)scanMode {
+    _scanMode = scanMode;
+    if (scanMode == ALBarcode) {
+        [self.meterScanPlugin setScanMode:scanMode error:nil];
+        if (self.meterScanPlugin.isRunning) {
+            BOOL success = [self.meterScanPlugin stopAndReturnError:nil];
+            if (!success) {
+                return success;
+            }
+            return [self.barcodeScanPlugin start:self.meterScanViewPlugin.sampleBufferImageProvider error:nil];
+        }
+        return YES;
+    }
+    
+    return [self.meterScanPlugin setScanMode:scanMode error:nil];
+}
 
 - (void)startAnyline {
     /*
      This is the place where we tell Anyline to start receiving and displaying images from the camera.
      Success/error tells us if everything went fine.
      */
-    if (!self.anylineEnergyView.isRunning) {
+    if (![self isRunning]) {
         NSError *error = nil;
-        BOOL success = [self.anylineEnergyView startScanningAndReturnError:&error];
+        BOOL success = [self startScanningAndReturnError:&error];
         if( !success ) {
             // Something went wrong. The error object contains the error description
             [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -260,12 +298,39 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
     }
 }
 
+- (BOOL)startScanningAndReturnError:(NSError **)error {
+    BOOL success = [self.meterScanViewPlugin startAndReturnError:error];
+    
+    if (self.scanMode == ALBarcode) {
+        if (error) {
+            *error = nil;
+        }
+        return [self.barcodeScanPlugin start:self.meterScanViewPlugin.sampleBufferImageProvider error:error];
+    }
+    if (!success) {
+        return success;
+    }
+    
+    return YES;
+}
+
+- (BOOL)isRunning {
+    if (self.scanMode == ALBarcode) {
+        return self.barcodeScanPlugin.isRunning;
+    }
+    return self.meterScanPlugin.isRunning;
+}
+
 - (void)restartAnylineWithScanMode:(ALScanMode)scanMode {
-    NSError *error;
-    BOOL success;
+    NSError *error = nil;
+    BOOL success = false;
     
     //Stop running anyline module
-    success = [self.anylineEnergyView cancelScanningAndReturnError:&error];
+    success = [self.meterScanViewPlugin stopAndReturnError:&error];
+    if (self.scanMode == ALBarcode) {
+        [self.barcodeScanPlugin stopAndReturnError:&error];
+    }
+    
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Cancel Anyline Error"
@@ -276,15 +341,7 @@ NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
     }
 
     //Set ScanMode of Anyline
-    success = [self.anylineEnergyView setScanMode:scanMode error:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    [self setScanMode:scanMode];
     
     //Start the anyline module again
     [self startAnyline];

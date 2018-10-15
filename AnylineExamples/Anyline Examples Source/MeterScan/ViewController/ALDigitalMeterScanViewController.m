@@ -165,7 +165,8 @@ static const NSInteger padding = 7;
         self.barcodeResult = @"";
     } else {
         self.enableBarcodeSwitch.on = true;
-        [self.anylineEnergyView.captureDeviceManager addBarcodeDelegate:self];
+        [self.anylineEnergyView.captureDeviceManager addBarcodeDelegate:self
+                                                                  error:nil];
     }
 }
 

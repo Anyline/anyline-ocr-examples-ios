@@ -18,6 +18,11 @@
 @property (nonatomic, assign) BOOL cancelOnResult;
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+
++ (_Nullable instancetype)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+
+- (_Nullable instancetype)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+
 - (instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig
                                         cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig
                                       cancelOnResult:(BOOL)cancelOnResult;

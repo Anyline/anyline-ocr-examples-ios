@@ -12,16 +12,20 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
+#import "Anyline/ALMeterScanPlugin.h"
+#import "Anyline/ALMeterScanViewPlugin.h"
 
-#import "Anyline/AnylineLicensePlateModuleView.h"
+//#import "Anyline/AnylineLicensePlateModuleView.h"
 
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALLicensePlateViewController ()<AnylineLicensePlateModuleDelegate, AnylineDebugDelegate>
+@interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate>
 // The Anyline module used for OCR
-@property (nonatomic, strong) AnylineLicensePlateModuleView *licensePlateModuleView;
+@property (nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin;
+@property (nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -38,26 +42,26 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.licensePlateModuleView = [[AnylineLicensePlateModuleView alloc] initWithFrame:frame];
+
+    NSError *error = nil;
     
-    [self.licensePlateModuleView setupAsyncWithLicenseKey:kDemoAppLicenseKey delegate:self finished:^(BOOL success, NSError * _Nullable error) {
-        // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-        // we have to check the error object for the error message.
-        if (!success) {
-            // Something went wrong. The error object contains the error description
-            NSAssert(success, @"Setup Error: %@", error.debugDescription);
-        }
-    }];
+    self.licensePlateScanPlugin = [[ALLicensePlateScanPlugin alloc] initWithPluginID:@"LICENSE_PLATE" licenseKey:kDemoAppLicenseKey delegate:self error:&error];
+    NSAssert(self.licensePlateScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.licensePlateScanPlugin addInfoDelegate:self];
     
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"license_plate_view_config" ofType:@"json"];
-    ALUIConfiguration *lptConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.licensePlateModuleView.currentConfiguration = lptConf;
+    self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin];
+    NSAssert(self.licensePlateScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.licensePlateScanViewPlugin];
     
     self.controllerType = ALScanHistoryLicensePlates;
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.licensePlateModuleView];
-    [self.view sendSubviewToBack:self.licensePlateModuleView];
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    
+    //Start Camera:
+    [self.scanView startCamera];
     [self startListeningForMotion];
 }
 
@@ -70,21 +74,20 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-}
-
-- (void)viewDidLayoutSubviews {
+    
+    //Update Position of Warning Indicator
     [self updateWarningPosition:
-     self.licensePlateModuleView.cutoutRect.origin.y +
-     self.licensePlateModuleView.cutoutRect.size.height +
-     self.licensePlateModuleView.frame.origin.y +
-     90];
+     self.licensePlateScanViewPlugin.cutoutRect.origin.y +
+     self.licensePlateScanViewPlugin.cutoutRect.size.height +
+     self.licensePlateScanViewPlugin.frame.origin.y +
+     120];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.licensePlateModuleView cancelScanningAndReturnError:nil];
+    [self.licensePlateScanViewPlugin stopAndReturnError:nil];
 }
 
 /*
@@ -96,7 +99,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline {
     NSError *error;
-    BOOL success = [self.licensePlateModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.licensePlateScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
@@ -111,20 +114,19 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
  This is the main delegate method Anyline uses to report its results
  */
 
-- (void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *)anylineLicensePlateModuleView
-                        didFindResult:(ALLicensePlateResult *)scanResult {
-    
+- (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *)anylineLicensePlateScanPlugin
+                        didFindResult:(ALLicensePlateResult *)result {
     //build a string with country+result for the ScanHistory model -- if country==nil only take result
-    NSString *formattedScanResult = (scanResult.country.length) ? [NSString stringWithFormat:@"%@-%@", scanResult.country, scanResult.result] : scanResult.result;
-    [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:scanResult.image module:anylineLicensePlateModuleView completion:^{
+    NSString *formattedScanResult = (result.country.length) ? [NSString stringWithFormat:@"%@-%@", result.country, result.result] : result.result;
+    [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:scanResult.result]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:scanResult.country]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
         
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
-     }];
+    }];
 }
 
 @end

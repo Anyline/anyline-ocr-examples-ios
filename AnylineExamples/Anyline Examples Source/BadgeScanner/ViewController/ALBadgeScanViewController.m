@@ -40,7 +40,7 @@ NSString * const kBadgeScannerLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"anyline_capitals" ofType:@"traineddata"];
-    config.languages = @[anylineTraineddata];
+    [config setLanguages:@[anylineTraineddata] error:nil];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     config.validationRegex = @"[A-Z]{1}[0-9]{4}$";
     config.minConfidence = 80;

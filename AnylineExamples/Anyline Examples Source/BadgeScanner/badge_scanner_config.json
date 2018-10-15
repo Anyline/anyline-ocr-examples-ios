@@ -1,40 +1,37 @@
 {
-    "captureResolution":"1080p",
-    "cutout": {
-        "style": "rect",
-        "maxWidthPercent": "80%",
-        "maxHeightPercent": "80%",
-        "alignment": "top_half",
-        "width": 576,
-        "ratioFromSize": {
-            "width": 1.66666666666666666666,
-            "height": 1
+    "viewPlugin" : {
+        "cutoutConfig" : {
+            "style": "rect",
+            "maxWidthPercent": "80%",
+            "maxHeightPercent": "80%",
+            "alignment": "top_half",
+            "width": 576,
+            "ratioFromSize": {
+                "width": 1.66666666666666666666,
+                "height": 1
+            },
+            "strokeWidth": 2,
+            "cornerRadius": 10,
+            "strokeColor": "FFFFFF",
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "cropPadding": {
+                "x": 160,
+                "y": 107
+            },
+            "cropOffset": {
+                "x": 180,
+                "y": 100
+            }
         },
-        "strokeWidth": 2,
-        "cornerRadius": 10,
-        "strokeColor": "FFFFFF",
-        "outerColor": "000000",
-        "outerAlpha": 0.3,
-        "cropPadding": {
-            "x": 160,
-            "y": 107
+        "scanFeedback" : {
+            "style": "contour_point",
+            "strokeColor": "32ADFF",
+            "strokeWidth": 3,
+            "beepOnResult": true,
+            "vibrateOnResult": true,
+            "blinkAnimationOnResult": true
         },
-        "cropOffset": {
-            "x": 180,
-            "y": 100
-        }
-    },
-    "flash": {
-        "mode": "manual",
-        "alignment": "top_left"
-    },
-    "beepOnResult": true,
-    "vibrateOnResult": true,
-    "blinkAnimationOnResult": true,
-    "cancelOnResult": true,
-    "visualFeedback": {
-        "style": "contour_point",
-        "strokeColor": "32ADFF",
-        "strokeWidth": 3
+        "cancelOnResult" : true
     }
 }

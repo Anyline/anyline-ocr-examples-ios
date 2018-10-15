@@ -54,6 +54,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/cutoutRect">cutoutRect</option>
+		
 		<option value="//api/name/outline">outline</option>
 		
 		<option value="//api/name/sampleBufferImageProvider">sampleBufferImageProvider</option>
@@ -72,7 +74,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:">+ scanViewPluginForFrame:configDict:licenseKey:delegate:error:</option>
+		<option value="//api/name/scanViewPluginForConfigDict:licenseKey:delegate:error:">+ scanViewPluginForConfigDict:licenseKey:delegate:error:</option>
 		
 	</optgroup>
 	
@@ -150,10 +152,36 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The SampleBufferImageProvider implements <a href="../Protocols/ALImageProvider.html">ALImageProvider</a> and <a href="../Protocols/AnylineVideoDataSampleBufferDelegate.html">AnylineVideoDataSampleBufferDelegate</a>
+and prepares the frame for Anyline processing</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -173,8 +201,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/outline" title="outline"></a>
-	<h3 class="method-title"><code><a href="#//api/name/outline">&nbsp;&nbsp;outline</a></code>
+	<a name="//api/name/cutoutRect" title="cutoutRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutRect">&nbsp;&nbsp;cutoutRect</a></code>
 </h3>
 
 	<div class="method-info">
@@ -182,26 +210,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The position of the Cutout in the View</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSquare *outline</code></div>
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) CGRect cutoutRect</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/scanImage" title="scanImage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanImage">&nbsp;&nbsp;scanImage</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALImage *scanImage</code></div>
+			
 
-		    
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -246,6 +283,170 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/scanViewPluginForConfigDict:licenseKey:delegate:error:" title="scanViewPluginForConfigDict:licenseKey:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginForConfigDict:licenseKey:delegate:error:">+&nbsp;scanViewPluginForConfigDict:licenseKey:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewPluginForConfigDict:(NSDictionary *_Nonnull)<em>configDict</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the Anyline processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong during the startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the Anyline processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong during the startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outline" title="outline"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outline">&nbsp;&nbsp;outline</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSquare *outline</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanImage" title="scanImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanImage">&nbsp;&nbsp;scanImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALImage *scanImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/scale" title="scale"></a>
 	<h3 class="method-title"><code><a href="#//api/name/scale">&nbsp;&nbsp;scale</a></code>
 </h3>
@@ -262,22 +463,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:" title="scanViewPluginForFrame:configDict:licenseKey:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginForFrame:configDict:licenseKey:delegate:error:">+&nbsp;scanViewPluginForFrame:configDict:licenseKey:delegate:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewPluginForFrame:(CGRect)<em>frame</em> configDict:(NSDictionary *_Nonnull)<em>configDict</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/customInit" title="customInit"></a>
 	<h3 class="method-title"><code><a href="#//api/name/customInit">&ndash;&nbsp;customInit</a></code>
 </h3>
@@ -289,38 +474,6 @@
 			
 
 			<div class="method-subsection method-declaration"><code>- (void)customInit</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 		</div>
@@ -445,7 +598,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-18</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-10-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -8,11 +8,6 @@
 
 #import "ALExampleManager.h"
 
-#import "ALGasMeterScanViewController.h"
-#import "ALHeatMeterScanViewController.h"
-#import "ALElectricMeterScanViewController.h"
-#import "ALDigitalMeterScanViewController.h"
-#import "ALWaterMeterScanViewController.h"
 #import "ALAnalogMeterScanViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"

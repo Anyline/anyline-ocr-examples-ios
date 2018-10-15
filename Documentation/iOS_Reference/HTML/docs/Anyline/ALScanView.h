@@ -20,8 +20,6 @@
 
 @interface ALScanView : UIView
 
-//@property (nullable, nonatomic, strong) ALCutoutView *cutoutView;
-//@property (nullable, nonatomic, strong) ALVisualFeedbackOverlay *visualFeedbackOverlay;
 @property (nullable, nonatomic, strong) ALUIFeedback *uiOverlayView;
 
 @property (nonatomic, strong) ALCameraConfig * _Nullable cameraConfig;
@@ -40,22 +38,79 @@
  */
 @property (nonatomic, readonly) CGRect watermarkRect;
 
-- (_Nullable instancetype)initWithCameraConfig:(ALCameraConfig *_Nonnull)cameraConfig
-                             flashButtonConfig:(ALFlashButtonConfig *_Nonnull)flashButtonConfig
-                                scanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin;
+/**
+ Constructor for ScanView
 
-- (_Nullable instancetype)initWithScanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin;
+ @param frame The frame for the ScanView
+ @param scanViewPlugin The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)
+ @return An instance of a ScanView
+ */
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin;
 
+
+/**
+  Constructor for ScanView
+
+ @param frame The frame for the ScanView
+ @param scanViewPlugin The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)
+ @param cameraConfig The CameraConfig for the ScanView
+ @param flashButtonConfig The flashButtonCOnfig for the ScanView
+ @return An instance of a ScanView
+ */
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin
+                           cameraConfig:(ALCameraConfig *_Nonnull)cameraConfig
+                      flashButtonConfig:(ALFlashButtonConfig *_Nonnull)flashButtonConfig;
+
+/**
+ Constructor to setup Anyline with a JSon Config.
+
+ @param frame The frame for the ScanView
+ @param configPath An absolute path to the Anyline json config file
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which will be called when scanning (ALIDPluginDelegate, ALOCRScanPluginDelegate,
+                 ALMeterScanPluginDelegate, ALBarcodeScanPluginDelegate, ALDocumentScanPluginDelegate or ALLicensePlateScanPluginDelegate)
+ @param error The error if something goes wrong during setup
+ @return Boolean indicating the success of the setup
+ */
 + (_Nullable instancetype)scanViewForFrame:(CGRect)frame
                                 configPath:(NSString *_Nonnull)configPath
                                 licenseKey:(NSString *_Nonnull)licenseKey
                                   delegate:(id _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error;
 
-- (void)startCamera;
+/**
+ Constructor to setup Anyline with a JSon Config.
 
+ @param frame The frame for the ScanView
+ @param configDict A dictionary representing an Anyline json config
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which will be called when scanning (ALIDPluginDelegate, ALOCRScanPluginDelegate,
+                 ALMeterScanPluginDelegate, ALBarcodeScanPluginDelegate, ALDocumentScanPluginDelegate or ALLicensePlateScanPluginDelegate)
+ @param error The error if something goes wrong during setup
+ @return Boolean indicating the success of the setup
+ */
++ (_Nullable instancetype)scanViewForFrame:(CGRect)frame
+                                configDict:(NSDictionary *_Nonnull)configDict
+                                licenseKey:(NSString *_Nonnull)licenseKey
+                                  delegate:(id _Nonnull)delegate
+                                     error:(NSError *_Nullable *_Nullable)error;
+
+/**
+ Starts the camera on an async thread
+ */
+- (void)startCamera;
+/**
+ Stops the camera
+ */
 - (void)stopCamera;
 
+
+
+/**
+ Methods for updating the UI
+ */
 - (void)updateDispatchTimer;
 
 - (void)updateTextRect:(ALSquare *_Nonnull)square;

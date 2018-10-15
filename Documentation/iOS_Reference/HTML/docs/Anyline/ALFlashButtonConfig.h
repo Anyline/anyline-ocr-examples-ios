@@ -16,6 +16,10 @@
 @property (nullable, nonatomic, strong) UIImage *flashImage;
 @property (nonatomic, assign) CGPoint flashOffset;
 
++ (_Nullable instancetype)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+
+- (_Nullable instancetype)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
 
 - (instancetype _Nullable)initWithFlashMode:(ALFlashMode)flashMode

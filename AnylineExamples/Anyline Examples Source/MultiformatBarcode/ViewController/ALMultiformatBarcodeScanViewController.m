@@ -14,9 +14,12 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
-@interface ALMultiformatBarcodeScanViewController() <AnylineBarcodeModuleDelegate>
-// The Anyline module used to scan barcodes
-@property (nonatomic, strong) AnylineBarcodeModuleView *barcodeModuleView;
+@interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate>
+// The Anyline plugin used to scan barcodes
+@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
+@property (nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
+
 // A debug label to show scanned results
 @property (nonatomic, strong) UILabel *resultLabel;
 
@@ -29,44 +32,37 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode / QR-Code";
-    
-    // Initializing the barcode module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.barcodeModuleView = [[AnylineBarcodeModuleView alloc] initWithFrame:frame];
     
+    //Add Barcode Scan Plugin (Scan Process)
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.barcodeModuleView setupWithLicenseKey:kBarcodeScanLicenseKey delegate:self error:&error];
 
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Setup Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" licenseKey:kBarcodeScanLicenseKey delegate:self error:&error];
+    NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
+    self.barcodeScanPlugin.barcodeFormatOptions = ALCodeTypeAll;
     
-    self.barcodeModuleView.translatesAutoresizingMaskIntoConstraints = NO;
+    //Add Meter Scan View Plugin (Scan UI)
+    self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin];
+    NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    //Add ScanView (Camera and Flashbutton)
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.barcodeScanViewPlugin];
+    
+    [self.view addSubview:self.scanView];
+    [self.scanView startCamera];
+    
+    self.barcodeScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.barcodeModuleView];
-    [self.view sendSubviewToBack:self.barcodeModuleView];
-    
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.barcodeModuleView}]];
-    
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
     id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.barcodeModuleView, @"topGuide" : topGuide}]];
-    
-    self.controllerType = ALScanHistoryBarcode;
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
     
     // The resultLabel is used as a debug view to see the scanned results. We set its text
     // in anylineBarcodeModuleView:didFindScanResult:atImage below
@@ -75,12 +71,9 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     self.resultLabel.textColor = [UIColor whiteColor];
     self.resultLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:35.0];
     self.resultLabel.adjustsFontSizeToFitWidth = YES;
-
-    [self.view addSubview:self.resultLabel];
     
-    ALUIConfiguration *config = self.barcodeModuleView.currentConfiguration;
-    config.cutoutOffset = CGPointMake(0, -50);
-    [self.barcodeModuleView setCurrentConfiguration:config];
+    [self.view addSubview:self.resultLabel];
+
 }
 
 /*
@@ -93,7 +86,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
      Success/error tells us if everything went fine.
      */
     NSError *error;
-    BOOL success = [self.barcodeModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.barcodeScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -102,30 +95,29 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
+    
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     self.barcodeScanViewPlugin.cutoutRect.origin.y +
+     self.barcodeScanViewPlugin.cutoutRect.size.height +
+     self.barcodeScanViewPlugin.frame.origin.y +
+     120];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.barcodeModuleView cancelScanningAndReturnError:nil];
+    [self.barcodeScanViewPlugin stopAndReturnError:nil];
 }
 
-- (void)viewDidLayoutSubviews {
-    [self updateWarningPosition:
-     self.barcodeModuleView.cutoutRect.origin.y +
-     self.barcodeModuleView.cutoutRect.size.height +
-     self.barcodeModuleView.frame.origin.y +
-     90];
-}
 
 #pragma mark -- AnylineBarcodeModuleDelegate
 /*
- This is the main delegate method Anyline uses to report its scanned codes
+ The main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *)scanResult {
-    
-    [self anylineDidFindResult:scanResult.result barcodeResult:@"" image:scanResult.image module:anylineBarcodeModuleView completion:NULL];
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
+    [self anylineDidFindResult:scanResult.result barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:NULL];
     
     self.resultLabel.text = scanResult.result;
 }

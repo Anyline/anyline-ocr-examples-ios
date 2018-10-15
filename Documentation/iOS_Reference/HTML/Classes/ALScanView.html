@@ -76,6 +76,8 @@
 	
 	<optgroup label="Class Methods">
 		
+		<option value="//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:">+ scanViewForFrame:configDict:licenseKey:delegate:error:</option>
+		
 		<option value="//api/name/scanViewForFrame:configPath:licenseKey:delegate:error:">+ scanViewForFrame:configPath:licenseKey:delegate:error:</option>
 		
 	</optgroup>
@@ -84,9 +86,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithCameraConfig:flashButtonConfig:scanViewPlugin:">- initWithCameraConfig:flashButtonConfig:scanViewPlugin:</option>
+		<option value="//api/name/initWithFrame:scanViewPlugin:">- initWithFrame:scanViewPlugin:</option>
 		
-		<option value="//api/name/initWithScanViewPlugin:">- initWithScanViewPlugin:</option>
+		<option value="//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:">- initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:</option>
 		
 		<option value="//api/name/startCamera">- startCamera</option>
 		
@@ -302,8 +304,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithCameraConfig:flashButtonConfig:scanViewPlugin:" title="initWithCameraConfig:flashButtonConfig:scanViewPlugin:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithCameraConfig:flashButtonConfig:scanViewPlugin:">&ndash;&nbsp;initWithCameraConfig:flashButtonConfig:scanViewPlugin:</a></code>
+	<a name="//api/name/initWithFrame:scanViewPlugin:" title="initWithFrame:scanViewPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:scanViewPlugin:">&ndash;&nbsp;initWithFrame:scanViewPlugin:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -311,15 +313,62 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor for ScanView</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithCameraConfig:(ALCameraConfig *_Nonnull)<em>cameraConfig</em> flashButtonConfig:(ALFlashButtonConfig *_Nonnull)<em>flashButtonConfig</em> scanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of a ScanView</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithScanViewPlugin:" title="initWithScanViewPlugin:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithScanViewPlugin:">&ndash;&nbsp;initWithScanViewPlugin:</a></code>
+	<a name="//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:" title="initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:">&ndash;&nbsp;initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -327,10 +376,67 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>  Constructor for ScanView</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithScanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em> cameraConfig:(ALCameraConfig *_Nonnull)<em>cameraConfig</em> flashButtonConfig:(ALFlashButtonConfig *_Nonnull)<em>flashButtonConfig</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cameraConfig</code></th>
+						<td><p>The CameraConfig for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashButtonConfig</code></th>
+						<td><p>The flashButtonCOnfig for the ScanView</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of a ScanView</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -343,10 +449,152 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor to setup Anyline with a JSon Config.</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configPath:(NSString *_Nonnull)<em>configPath</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configPath</code></th>
+						<td><p>An absolute path to the Anyline json config file</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which will be called when scanning (<a href="../Protocols/ALIDPluginDelegate.html">ALIDPluginDelegate</a>, <a href="../Protocols/ALOCRScanPluginDelegate.html">ALOCRScanPluginDelegate</a>,
+                 <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>, <a href="../Protocols/ALBarcodeScanPluginDelegate.html">ALBarcodeScanPluginDelegate</a>, <a href="../Protocols/ALDocumentScanPluginDelegate.html">ALDocumentScanPluginDelegate</a> or <a href="../Protocols/ALLicensePlateScanPluginDelegate.html">ALLicensePlateScanPluginDelegate</a>)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if something goes wrong during setup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the setup</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:" title="scanViewForFrame:configDict:licenseKey:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:">+&nbsp;scanViewForFrame:configDict:licenseKey:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor to setup Anyline with a JSon Config.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configDict:(NSDictionary *_Nonnull)<em>configDict</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configDict</code></th>
+						<td><p>A dictionary representing an Anyline json config</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which will be called when scanning (<a href="../Protocols/ALIDPluginDelegate.html">ALIDPluginDelegate</a>, <a href="../Protocols/ALOCRScanPluginDelegate.html">ALOCRScanPluginDelegate</a>,
+                 <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>, <a href="../Protocols/ALBarcodeScanPluginDelegate.html">ALBarcodeScanPluginDelegate</a>, <a href="../Protocols/ALDocumentScanPluginDelegate.html">ALDocumentScanPluginDelegate</a> or <a href="../Protocols/ALLicensePlateScanPluginDelegate.html">ALLicensePlateScanPluginDelegate</a>)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if something goes wrong during setup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the setup</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -359,10 +607,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the camera on an async thread</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)startCamera</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -375,10 +648,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the camera</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)stopCamera</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -391,10 +689,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Methods for updating the UI</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)updateDispatchTimer</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -476,7 +799,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-09-18</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-10-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

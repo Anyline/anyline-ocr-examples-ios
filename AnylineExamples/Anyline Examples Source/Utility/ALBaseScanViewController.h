@@ -33,6 +33,13 @@
                       module:(AnylineAbstractModuleView *)moduleView
                   completion:(void (^)(void))completion;
 
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                       image:(UIImage*)image
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion;
+
 - (void)startListeningForMotion;
 
 @end

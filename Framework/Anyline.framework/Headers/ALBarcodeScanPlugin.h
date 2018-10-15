@@ -22,7 +22,16 @@
 @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
 
 - (instancetype _Nullable)init NS_UNAVAILABLE;
-
+/**
+ Constructor for the BarcodeScanPlugin
+ 
+ @param pluginID An unique pluginID
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which receives the results
+ @param error The Error object if something fails
+ 
+ @return Boolean indicating the success / failure of the call.
+ */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
                                 licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate
@@ -31,7 +40,11 @@
 @property (nonatomic, strong, readonly) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
 
 /**
- *  Sets the type of code to recognize. Valid values are: kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93, kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13, kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded, kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
+ *  Sets the type of code to recognize. Valid values are:
+    kCodeTypeAztec, kCodeTypeCodabar, kCodeTypeCode39, kCodeTypeCode93,
+    kCodeTypeCode128, kCodeTypeDataMatrix, kCodeTypeEAN8, kCodeTypeEAN13,
+    kCodeTypeITF, kCodeTypePDF417, kCodeTypeQR, kCodeTypeRSS14, kCodeTypeRSSExpanded,
+    kCodeTypeUPCA, kCodeTypeUPCE, kCodeTypeUPCEANExtension.
  *  Default are all of the above.
  *
  */

@@ -23,14 +23,13 @@ import UIKit
         
         self.title = "Electric Meter";
         // Initializing the energy module. Its a UIView subclass. We set its frame to fill the whole screen
-        let frame = UIScreen.main.applicationFrame
-        let moduleFrame = CGRect(x: frame.origin.x, y: frame.origin.y + self.navigationController!.navigationBar.frame.size.height, width: frame.size.width, height: frame.size.height - self.navigationController!.navigationBar.frame.size.height);
-        self.anylineEnergyView = AnylineEnergyModuleView.init(frame: moduleFrame);
+        
+        self.anylineEnergyView = AnylineEnergyModuleView.init(frame: self.view.bounds);
 
         do {
             try self.anylineEnergyView.setup(withLicenseKey: kELMeterScanLicenseKey, delegate: self);
-        } catch let error as NSError {
-            UIAlertView.init(title: "Setup Error", message: error.debugDescription, delegate: self, cancelButtonTitle: "OK").show();
+        } catch _ as NSError {
+            
         }
     
         self.anylineEnergyView.translatesAutoresizingMaskIntoConstraints = false;

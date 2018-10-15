@@ -16,9 +16,12 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kRBLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALRBScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
-// The Anyline module used for OCR
-@property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
+@interface ALRBScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+
+// The Anyline plugin used for OCR
+@property (nonatomic, strong) ALOCRScanViewPlugin *rbScanViewPlugin;
+@property (nonatomic, strong) ALOCRScanPlugin *rbScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -28,22 +31,18 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"RedBull";
-    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    
+    self.title = @"RedBull";
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALGrid;
     config.charHeight = ALRangeMake(22, 45);
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"rbf_jan2015_v2" ofType:@"traineddata"];
-    config.languages = @[anylineTraineddata];
+    [config setLanguages:@[anylineTraineddata] error:nil];
     config.charWhiteList = @"2346789ABCDEFGHKLMNPQRTUVWXYZ";
     config.minConfidence = 75;
     config.validationRegex = @"^[0-9A-Z]{4}\n[0-9A-Z]{4}";
@@ -55,32 +54,33 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     config.isBrightTextOnDark = YES;
     
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.ocrModuleView setupWithLicenseKey:kRBLicenseKey
-                                                  delegate:self
-                                                 ocrConfig:config
-                                                     error:&error];
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Setup Error: %@", error.debugDescription);
-    }
     
-    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    self.rbScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
+                                                       licenseKey:kRBLicenseKey
+                                                         delegate:self
+                                                        ocrConfig:config
+                                                            error:&error];
+    NSAssert(self.rbScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.rbScanPlugin addInfoDelegate:self];
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"rb_config" ofType:@"json"];
-    ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = ibanConf;
+    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
     
-    self.controllerType = ALScanHistoryRedBull;
+    self.rbScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.rbScanPlugin
+                                                       scanViewPluginConfig:scanViewPluginConfig];
+    NSAssert(self.rbScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.rbScanViewPlugin];
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.ocrModuleView];
-    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    
+    //Start Camera:
+    [self.scanView startCamera];
     [self startListeningForMotion];
-
+    
+    self.controllerType = ALScanHistoryRedBull;
 }
 
 /*
@@ -92,21 +92,20 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
+    
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     self.rbScanViewPlugin.cutoutRect.origin.y +
+     self.rbScanViewPlugin.cutoutRect.size.height +
+     self.rbScanViewPlugin.frame.origin.y +
+     120];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.ocrModuleView cancelScanningAndReturnError:nil];
-}
-
-- (void)viewDidLayoutSubviews {
-    [self updateWarningPosition:
-     self.ocrModuleView.cutoutRect.origin.y +
-     self.ocrModuleView.cutoutRect.size.height +
-     self.ocrModuleView.frame.origin.y +
-     90];
+    [self.rbScanViewPlugin stopAndReturnError:nil];
 }
 
 /*
@@ -118,7 +117,7 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline {
     NSError *error;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.rbScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
@@ -132,10 +131,9 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-               didFindResult:(ALOCRResult *)result {
+- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.rbScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"RedBull Mobile Collect Code" value:result.result]];
@@ -145,11 +143,9 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     }];
 }
 
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    if ([variableName isEqualToString:@"$brightness"]) {
-        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView];
+- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
+    if ([info.variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[info.value floatValue] forModule:self.rbScanViewPlugin];
     }
     
 }

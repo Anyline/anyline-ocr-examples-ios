@@ -39,7 +39,7 @@ NSString * const kHashtagLicenseKey = kDemoAppLicenseKey;
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.charHeight = ALRangeMake(30, 60);
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
-    config.languages = @[anylineTraineddata];
+    [config setLanguages:@[anylineTraineddata] error:nil];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#";
     config.minConfidence = 75;
     config.validationRegex = @"#[A-Za-z0-9]*$";

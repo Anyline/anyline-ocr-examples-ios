@@ -40,7 +40,9 @@
 
 @property (nonatomic, assign) CGSize videoResolution;
 
-- (void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+- (void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate __deprecated_msg("Deprecated since 4. Use method addBarcodeDelegate:error: instead.");
+
+- (BOOL)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate error:(NSError *_Nullable*_Nullable)error;
 
 - (void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
 

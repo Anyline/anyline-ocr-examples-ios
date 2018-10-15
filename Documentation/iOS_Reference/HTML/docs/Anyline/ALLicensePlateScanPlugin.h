@@ -12,7 +12,16 @@
 @protocol ALLicensePlateScanPluginDelegate;
 
 @interface ALLicensePlateScanPlugin : ALAbstractScanPlugin
-
+/**
+ Constructor for the LicensePlateScanPlugin
+ 
+ @param pluginID An unique pluginID
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which receives the results
+ @param error The Error object if something fails
+ 
+ @return Boolean indicating the success / failure of the call.
+ */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
                                 licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate
@@ -40,6 +49,6 @@
  *  @param result                           The result object
  */
 - (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)anylineLicensePlateScanPlugin
-                        didFindResult:(ALLicensePlateResult * _Nonnull)result;
+                        didFindResult:(ALLicensePlateResult * _Nonnull)scanResult;
 
 @end

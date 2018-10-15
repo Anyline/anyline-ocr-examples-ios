@@ -1,6 +1,6 @@
 
 #import "ALDocumentScanViewController.h"
-#import "Anyline/AnylineDocumentModuleView.h"
+#import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
 #import "ALAppDemoLicenses.h"
@@ -9,9 +9,13 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 
 @class AnylineDocumentModuleView;
 
-@interface ALDocumentScanViewController () <AnylineDocumentModuleDelegate>
+@interface ALDocumentScanViewController () <ALDocumentScanPluginDelegate, ALInfoDelegate, ALDocumentInfoDelegate>
 
-@property (nonatomic, strong) AnylineDocumentModuleView *documentModuleView;
+// The Anyline plugin used for Document
+@property (nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
+@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
+
 @property (nonatomic, strong) ALRoundedView *roundedView;
 @property (nonatomic, assign) NSInteger showingLabel;
 
@@ -26,53 +30,46 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    
+   
+    [super viewDidLoad];
+    // Set the background color to black to have a nicer transition
+    self.view.backgroundColor = [UIColor blackColor];
     self.title = NSLocalizedString(@"Scan Document", @"Scan Document");
-    
-    // Initializing the the module. Its a UIView subclass. We set the frame to fill the whole screen
+    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    frame = CGRectMake(
-                       frame.origin.x,
-                       frame.origin.y + self.navigationController.navigationBar.frame.size.height,
-                       frame.size.width,
-                       frame.size.height - self.navigationController.navigationBar.frame.size.height
-                       );
-    self.documentModuleView = [[AnylineDocumentModuleView alloc] initWithFrame:frame];
-    
+    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.documentModuleView setupWithLicenseKey:kDocumentScanLicenseKey delegate:self error:&error];
+    
+    self.documentScanPlugin = [[ALDocumentScanPlugin alloc] initWithPluginID:@"DOCUMENT" licenseKey:kDocumentScanLicenseKey delegate:self error:&error];;
+    NSAssert(self.documentScanPlugin, @"Setup Error: %@", error.debugDescription);
+    self.documentScanPlugin.justDetectCornersIfPossible = NO;
+    [self.documentScanPlugin addInfoDelegate:self];
+    
+    self.documentScanViewPlugin = [[ALDocumentScanViewPlugin alloc] initWithScanPlugin:self.documentScanPlugin];
+    NSAssert(self.documentScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    [self.documentScanViewPlugin setValue:self forKey:@"tmpOutlineDelegate"];
+    self.scanView = [[ALScanView alloc] initWithFrame:frame
+                                       scanViewPlugin:self.documentScanViewPlugin
+                                         cameraConfig:[ALCameraConfig defaultDocumentCameraConfig]
+                                    flashButtonConfig:[ALFlashButtonConfig defaultFlashConfig]];
     
     // Stop scanning after a result has been found
-    self.documentModuleView.cancelOnResult = YES;
-    [self.documentModuleView setPostProcessingEnabled:YES];
-
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Setup Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    //    self.documentScanViewPlugin
+    [self.documentScanPlugin setPostProcessingEnabled:YES];
     
-    self.documentModuleView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.documentScanPlugin enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    self.controllerType = ALScanHistoryDocument;
+    self.documentScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.documentModuleView];
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
     
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.documentModuleView}]];
-    
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.documentModuleView, @"topGuide" : topGuide}]];
-    
-    [self.documentModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
-    
-    self.controllerType = ALScanHistoryDocument;
-    
+    //Start Camera:
+    [self.scanView startCamera];
+    [self startListeningForMotion];
 
     // This view notifies the user of any problems that occur while he is scanning
     self.roundedView = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, 115, self.view.bounds.size.width - 40, 30)];
@@ -92,7 +89,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
      Success/error tells us if everything went fine.
      */
     NSError *error;
-    BOOL success = [self.documentModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.documentScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -102,21 +99,18 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
                           otherButtonTitles:nil] show];
     }
     
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     self.documentScanViewPlugin.cutoutRect.origin.y +
+     self.documentScanViewPlugin.cutoutRect.size.height +
+     self.documentScanViewPlugin.frame.origin.y - 100];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.documentModuleView cancelScanningAndReturnError:nil];
-}
-
-- (void)viewDidLayoutSubviews {
-    [self updateWarningPosition:
-     self.documentModuleView.cutoutRect.origin.y +
-     self.documentModuleView.cutoutRect.size.height +
-     self.documentModuleView.frame.origin.y +
-     90];
+    [self.documentScanViewPlugin stopAndReturnError:nil];
 }
 
 #pragma mark -- AnylineDocumentModuleDelegate
@@ -124,7 +118,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
                         hasResult:(UIImage *)transformedImage
                         fullImage:(UIImage *)fullFrame
                   documentCorners:(ALSquare *)corners {
@@ -135,13 +129,12 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     imageView.image = transformedImage;
     [viewController.view addSubview:imageView];
     [self.navigationController pushViewController:viewController animated:YES];
-    
 }
 
 /*
  This method receives errors that occured during the scan.
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
   reportsPictureProcessingFailure:(ALDocumentError)error {
     [self showUserLabel:error];
 }
@@ -149,7 +142,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 /*
  This method receives errors that occured during the scan.
  */
-- (void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView
+- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
   reportsPreviewProcessingFailure:(ALDocumentError)error {
     [self showUserLabel:error];
 }

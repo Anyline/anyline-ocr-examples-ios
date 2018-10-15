@@ -16,9 +16,12 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
-@interface ALMRZScanViewController ()<AnylineMRZModuleDelegate>
+@interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate>
+
 // The Anyline module used to scan machine readable zones
-@property (nonatomic, strong) AnylineMRZModuleView *mrzModuleView;
+@property (nonatomic, strong) ALIDScanViewPlugin *mrzScanViewPlugin;
+@property (nonatomic, strong) ALIDScanPlugin *mrzScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -28,46 +31,44 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"MRZ";
-    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-
+    self.title = @"MRZ";
+    
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.mrzModuleView = [[AnylineMRZModuleView alloc] initWithFrame:frame];
     
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    [self.mrzModuleView setupAsyncWithLicenseKey:kMRZLicenseKey delegate:self finished:^(BOOL success, NSError * _Nullable error) {
-        // the finish block of setupWithLicenseKey:delegate:finished:error will returns true if everything went fine. In the case something wrong
-        // we have to check the error object for the error message.
-        if( !success ) {
-            // Something went wrong. The error object contains the error description
-            [[[UIAlertView alloc] initWithTitle:@"Setup Error"
-                                        message:error.debugDescription
-                                       delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
-        }
-    }];
+    ALMRZConfig *mrzConfig = [[ALMRZConfig alloc] init];
     
-    self.mrzModuleView.flashButtonAlignment = ALFlashAlignmentTopLeft;
+    NSError *error = nil;
 
-    self.mrzModuleView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kMRZLicenseKey delegate:self idConfig:mrzConfig error:&error];
+    NSAssert(self.mrzScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.mrzScanPlugin addInfoDelegate:self];
     
-    // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.mrzModuleView];
-    [self.view sendSubviewToBack:self.mrzModuleView];
+    self.mrzScanViewPlugin = [[ALIDScanViewPlugin alloc] initWithScanPlugin:self.mrzScanPlugin];
+    NSAssert(self.mrzScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.mrzModuleView}]];
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.mrzScanViewPlugin];
     
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[moduleView]|" options:0 metrics:nil views:@{@"moduleView" : self.mrzModuleView, @"topGuide" : topGuide}]];
+    self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
+    self.mrzScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.controllerType = ALScanHistoryMrz;
+    
+    // After setup is complete we add the module to the view of this view controller
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
+    
+    id topGuide = self.topLayoutGuide;
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
+    
+    //Start Camera:
+    [self.scanView startCamera];
+    [self startListeningForMotion];
 }
 
 /*
@@ -79,22 +80,22 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
+    
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     self.mrzScanViewPlugin.cutoutRect.origin.y +
+     self.mrzScanViewPlugin.cutoutRect.size.height +
+     self.mrzScanViewPlugin.frame.origin.y +
+     120];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.mrzModuleView cancelScanningAndReturnError:nil];
+    [self.mrzScanViewPlugin stopAndReturnError:nil];
 }
 
-- (void)viewDidLayoutSubviews {
-    [self updateWarningPosition:
-     self.mrzModuleView.cutoutRect.origin.y +
-     self.mrzModuleView.cutoutRect.size.height +
-     self.mrzModuleView.frame.origin.y +
-     90];
-}
 
 /*
    This method is used to tell Anyline to start scanning. It gets called in 
@@ -105,7 +106,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline { 
     NSError *error;
-    BOOL success = [self.mrzModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.mrzScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
@@ -123,9 +124,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult {
-
-    [self.mrzModuleView cancelScanningAndReturnError:nil];
+- (void)anylineIDScanPlugin:(ALIDScanPlugin *)anylineIDScanPlugin didFindResult:(ALIDResult *)scanResult {
+    [self.mrzScanViewPlugin stopAndReturnError:nil];
     NSMutableString * result = [NSMutableString string];
     [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [scanResult.result documentType]]];
     [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];
@@ -143,8 +143,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [scanResult.result personalNumber]]];
     [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [scanResult.result checkDigitPersonalNumber]]];
     
-    [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image module:anylineMRZModuleView completion:^{
-       
+    [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
+        
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:[scanResult.result givenNames]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[scanResult.result surNames]]];
@@ -152,7 +152,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         [resultData addObject:[self resultEntryWithDate:[scanResult.result dayOfBirthDateObject] dateString:[scanResult.result dayOfBirth] title:@"Date of Birth"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[scanResult.result documentType]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
-        [resultData addObject:[self resultEntryWithDate:[scanResult.result expirationDateObject] dateString:[scanResult.result expirationDate] title:@"Expiration Date"]];
+        [resultData addObject:[self resultEntryWithDate:[scanResult.result expirationDateObject] dateString:[((ALMRZIdentification *)scanResult.result) expirationDate] title:@"Expiration Date"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[scanResult.result nationalityCountryCode]]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];

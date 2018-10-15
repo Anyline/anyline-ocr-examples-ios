@@ -45,8 +45,14 @@ typedef NS_ENUM(NSInteger, ALRunFailure) {
 
 @interface ALRunSkippedReason : NSObject
 
+/**
+ The pluginID which created this RunSkippedReason
+ */
 @property (nonnull, nonatomic, strong, readonly) NSString *pluginID;
 
+/**
+ The reason of this RunFailure
+ */
 @property (nonatomic, assign) ALRunFailure reason;
 
 - (instancetype _Nullable)initWithRunFailure:(ALRunFailure)reason

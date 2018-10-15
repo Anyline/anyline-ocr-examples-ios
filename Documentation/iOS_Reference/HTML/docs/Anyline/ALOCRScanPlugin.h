@@ -13,12 +13,23 @@
 @protocol ALOCRScanPluginDelegate;
 /**
  *  The ALOCRScanPlugin can be used to recognize text.
- *  It can be adapted to different kinds of use cases with the {@link AnylineViewConfig} (settings for the camera and UI)
- *  and the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).
+ *  It can be adapted to different kinds of use cases
+ *  with the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).
  *
  */
 @interface ALOCRScanPlugin : ALAbstractScanPlugin
 
+/**
+ Constructor for the ALOCRScanPlugin
+
+ @param pluginID An unique pluginID
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which receives the results
+ @param ocrConfig The OCRConfig to configure your use-case
+ @param error The Error object if something fails
+
+ @return Boolean indicating the success / failure of the call.
+ */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
                                 licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate

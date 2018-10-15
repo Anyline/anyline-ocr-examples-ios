@@ -11,9 +11,14 @@
 
 @interface ALCameraConfig : NSObject
 
+// Default Camera: Can be FRONT or BACK
 @property (nullable, nonatomic, strong) NSString *defaultCamera;
 @property (nonatomic, assign) ALCaptureViewResolution captureResolution;
 @property (nonatomic, assign) ALPictureResolution pictureResolution;
+
++ (_Nullable instancetype)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+
+- (_Nullable instancetype)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
 

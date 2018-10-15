@@ -144,11 +144,12 @@
     BOOL isValid = [self validateEmailWithString:address];
     
     if (!isValid) {
-        [[[UIAlertView alloc] initWithTitle:@"Address Error"
-                                    message:@"Something seems wrong with the address you entered."
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Address Error" message:@"Something seems wrong with the address you entered." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:NULL];
+        [alert addAction:okAction];
+        
+        [self presentViewController:alert animated:YES completion:NULL];
+        
         return NO;
     }
     

@@ -14,9 +14,12 @@
 
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kVINLicenseKey = kDemoAppLicenseKey;
-@interface ALVINScanViewController ()<AnylineOCRModuleDelegate>
-// The Anyline module used for OCR
-@property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
+@interface ALVINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+
+// The Anyline plugin used for OCR
+@property (nonatomic, strong) ALOCRScanViewPlugin *vinScanViewPlugin;
+@property (nonatomic, strong) ALOCRScanPlugin *vinScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -30,42 +33,45 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     
     config.scanMode = ALAuto;
     
     NSString *vinAny = [[NSBundle mainBundle] pathForResource:@"vin" ofType:@"any"];
-    config.languages = @[vinAny];
+    [config setLanguages:@[vinAny] error:nil];
     
     NSString *cmdFile = [[NSBundle mainBundle] pathForResource:@"vin" ofType:@"ale"];
     config.customCmdFilePath = cmdFile;
     
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.ocrModuleView setupWithLicenseKey:kVINLicenseKey
-                                                  delegate:self
-                                                 ocrConfig:config
-                                                     error:&error];
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Setup Error: %@", error.debugDescription);
-    }
+    
+    self.vinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
+                                                        licenseKey:kVINLicenseKey
+                                                          delegate:self
+                                                         ocrConfig:config
+                                                             error:&error];
+    NSAssert(self.vinScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.vinScanPlugin addInfoDelegate:self];
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"vin_capture_config" ofType:@"json"];
-    ALUIConfiguration *vinConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = vinConf;
+    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
     
+    self.vinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.vinScanPlugin
+                                                        scanViewPluginConfig:scanViewPluginConfig];
+    NSAssert(self.vinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.vinScanViewPlugin];
+
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.ocrModuleView];
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    
+    //Start Camera:
+    [self.scanView startCamera];
+    [self startListeningForMotion];
     
     self.controllerType = ALScanHistoryVIN;
-    
-    [self startListeningForMotion];
 }
 
 /*
@@ -83,7 +89,7 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.ocrModuleView cancelScanningAndReturnError:nil];
+    [self.vinScanViewPlugin stopAndReturnError:nil];
 }
 
 /*
@@ -95,28 +101,26 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline {
     NSError *error;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.vinScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
     }
 }
 
-
 #pragma mark -- AnylineOCRModuleDelegate
 
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
+- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
                didFindResult:(ALOCRResult *)result {
-    
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.vinScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Vehicle Identification Number" value:result.result]];
-    
+        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
@@ -124,7 +128,7 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     NSError *error = nil;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.vinScanViewPlugin startAndReturnError:&error];
     
     NSAssert(success, @"We failed starting: %@",error.debugDescription);
 }

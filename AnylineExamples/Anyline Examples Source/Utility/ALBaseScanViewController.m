@@ -63,6 +63,8 @@
     }
 }
 
+
+
 - (void)startListeningForMotion {
     __weak __block typeof(self) welf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -97,6 +99,19 @@
     if (completion){
         completion();
     }
+}
+
+- (void)anylineDidFindResult:(NSString *)result
+               barcodeResult:(NSString *)barcodeResult
+                       image:(UIImage *)image
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion {
+    self.successfulScan = YES;
+    if (completion){
+        completion();
+    }
+    
 }
 
 - (void)dealloc {

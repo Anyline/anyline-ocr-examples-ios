@@ -59,8 +59,17 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 
 @property (nullable, nonatomic, assign) id<ALImageProvider> imageProvider;
 
-@property (nonatomic, assign) BOOL justDetectCornersIfPossible;
-
+@property (atomic, assign) BOOL justDetectCornersIfPossible;
+/**
+ Constructor for the DocumentScanPlugin
+ 
+ @param pluginID An unique pluginID
+ @param licenseKey The Anyline license key
+ @param delegate The delegate which receives the results
+ @param error The Error object if something fails
+ 
+ @return Boolean indicating the success / failure of the call.
+ */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
                                 licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate

@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 @property (nullable, nonatomic, strong) NSString *filename;
 @property (nullable, nonatomic, strong) NSString *fileExtension;
 
-- (instancetype _Nullable)initWithPath:(NSString * _Nonnull)path;
+- (instancetype _Nullable)initWithPath:(NSString * _Nonnull)path error:(NSError * _Nullable * _Nullable)error;
 
 + (BOOL)copyLanguage:(NSString * _Nonnull)path
               toPath:(NSString * _Nonnull)toPath
@@ -100,6 +100,9 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 @interface ALOCRConfig : NSObject
 
 - (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+
+- (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict
+                                           error:(NSError * _Nullable * _Nullable)error;
 
 /**
  *  The scan mode.
@@ -130,7 +133,12 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *
  *  Note this method requires the full path with fileending and not only the file name like the old deprecated method.
  */
-@property (nullable, nonatomic, copy) NSArray<NSString *> *languages;
+@property (nullable, nonatomic, copy, readonly) NSArray<NSString *> *languages;
+
+- (void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __deprecated_msg("Deprecated since 4. Use languages - (BOOL)setLanguages:(NSArray<NSString *> *)languages error:(NSError *)error");
+
+- (BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error;
+
 /**
  *  Property for the character whitelist you would like to use.
  */

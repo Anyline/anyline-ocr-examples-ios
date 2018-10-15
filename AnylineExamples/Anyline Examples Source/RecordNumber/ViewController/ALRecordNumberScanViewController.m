@@ -15,9 +15,12 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALRecordNumberScanViewController ()<AnylineOCRModuleDelegate, AnylineDebugDelegate>
-// The Anyline module used for OCR
-@property (nonatomic, strong) AnylineOCRModuleView *ocrModuleView;
+@interface ALRecordNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+
+// The Anyline plugin used for OCR
+@property (nonatomic, strong) ALOCRScanViewPlugin *recordScanViewPlugin;
+@property (nonatomic, strong) ALOCRScanPlugin *recordScanPlugin;
+@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -27,22 +30,19 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"Record Number";
-    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
+    self.title = @"Record Number";
     
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.charHeight = ALRangeMake(22, 105);
     NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
     NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
-    config.languages = @[engTraineddata,deuTraineddata];
+    [config setLanguages:@[engTraineddata,deuTraineddata] error:nil];
     config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.";
     config.minConfidence = 75;
     config.validationRegex = @"^([A-Z]+\\s*-*\\s*)?[0-9A-Z-\\s\\.]{3,}$";
@@ -50,32 +50,33 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     config.removeSmallContours = NO;
     
     NSError *error = nil;
-    // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-    // by the module once we start receiving results.
-    BOOL success = [self.ocrModuleView setupWithLicenseKey:kRecordNumberLicenseKey
-                                                  delegate:self
-                                                 ocrConfig:config
-                                                     error:&error];
-    // setupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-    // we have to check the error object for the error message.
-    if (!success) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Setup Error: %@", error.debugDescription);
-    }
-        
-    [self.ocrModuleView enableReporting:[NSUserDefaults AL_reportingEnabled]];
+    
+    self.recordScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
+                                                           licenseKey:kRecordNumberLicenseKey
+                                                             delegate:self
+                                                            ocrConfig:config
+                                                                error:&error];
+    NSAssert(self.recordScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.recordScanPlugin addInfoDelegate:self];
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"record_number_config" ofType:@"json"];
-    ALUIConfiguration *ibanConf = [ALUIConfiguration cutoutConfigurationFromJsonFile:confPath];
-    self.ocrModuleView.currentConfiguration = ibanConf;
+    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
     
-    self.controllerType = ALScanHistoryRecordNumber;
+    self.recordScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.recordScanPlugin
+                                                           scanViewPluginConfig:scanViewPluginConfig];
+    NSAssert(self.recordScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.recordScanViewPlugin];
     
     // After setup is complete we add the module to the view of this view controller
-    [self.view addSubview:self.ocrModuleView];
-    [self.view sendSubviewToBack:self.ocrModuleView];
+    [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    
+    //Start Camera:
+    [self.scanView startCamera];
     [self startListeningForMotion];
-
+    
+    self.controllerType = ALScanHistoryRecordNumber;
 }
 
 /*
@@ -87,21 +88,20 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
+    
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     self.recordScanViewPlugin.cutoutRect.origin.y +
+     self.recordScanViewPlugin.cutoutRect.size.height +
+     self.recordScanViewPlugin.frame.origin.y +
+     120];
 }
 
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.ocrModuleView cancelScanningAndReturnError:nil];
-}
-
-- (void)viewDidLayoutSubviews {
-    [self updateWarningPosition:
-     self.ocrModuleView.cutoutRect.origin.y +
-     self.ocrModuleView.cutoutRect.size.height +
-     self.ocrModuleView.frame.origin.y +
-     90];
+    [self.recordScanViewPlugin stopAndReturnError:nil];
 }
 
 /*
@@ -113,7 +113,7 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
  */
 - (void)startAnyline {
     NSError *error;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
+    BOOL success = [self.recordScanViewPlugin startAndReturnError:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
         NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
@@ -123,14 +123,11 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
-
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-               didFindResult:(ALOCRResult *)result {
-    // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image module:anylineOCRModuleView completion:^{
+- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
+    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.recordScanViewPlugin completion:^{
         ALBaseViewController *vc = [[ALBaseViewController alloc] init];
         vc.result = result.result;
         NSString *url = [NSString stringWithFormat:@"https://www.google.at/search?q=\"%@\" site:discogs.com OR site:musbrainz.org OR site:allmusic.com", result.result];
@@ -139,30 +136,9 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     }];
 }
 
-
-- (void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView
-             reportsVariable:(NSString *)variableName
-                       value:(id)value {
-    if ([variableName isEqualToString:@"$brightness"]) {
-        [self updateBrightness:[value floatValue] forModule:self.ocrModuleView];
-    }
-}
-
-- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
-               runSkipped:(ALRunFailure)runFailure {
-    switch (runFailure) {
-        case ALRunFailureResultNotValid:
-            break;
-        case ALRunFailureConfidenceNotReached:
-            break;
-        case ALRunFailureNoLinesFound:
-            break;
-        case ALRunFailureNoTextFound:
-            break;
-        case ALRunFailureUnkown:
-            break;
-        default:
-            break;
+- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
+    if ([info.variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[info.value floatValue] forModule:self.recordScanViewPlugin];
     }
 }
 
