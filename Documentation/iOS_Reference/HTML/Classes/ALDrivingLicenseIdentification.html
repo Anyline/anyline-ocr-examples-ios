@@ -54,6 +54,10 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/authority">authority</option>
+		
+		<option value="//api/name/categories">categories</option>
+		
 		<option value="//api/name/dayOfBirth">dayOfBirth</option>
 		
 		<option value="//api/name/dayOfBirthDateObject">dayOfBirthDateObject</option>
@@ -62,9 +66,19 @@
 		
 		<option value="//api/name/drivingLicenseString">drivingLicenseString</option>
 		
+		<option value="//api/name/expirationDate">expirationDate</option>
+		
+		<option value="//api/name/expirationDateObject">expirationDateObject</option>
+		
 		<option value="//api/name/faceImage">faceImage</option>
 		
 		<option value="//api/name/givenNames">givenNames</option>
+		
+		<option value="//api/name/issuingDate">issuingDate</option>
+		
+		<option value="//api/name/issuingDateObject">issuingDateObject</option>
+		
+		<option value="//api/name/placeOfBirth">placeOfBirth</option>
 		
 		<option value="//api/name/surNames">surNames</option>
 		
@@ -76,9 +90,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:">- initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:</option>
-		
-		<option value="//api/name/initWithDrivingLicenseString:">- initWithDrivingLicenseString:</option>
+		<option value="//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:">- initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:</option>
 		
 	</optgroup>
 	
@@ -186,6 +198,86 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/placeOfBirth" title="placeOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/placeOfBirth">&nbsp;&nbsp;placeOfBirth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *placeOfBirth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/issuingDate" title="issuingDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/issuingDate">&nbsp;&nbsp;issuingDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *issuingDate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expirationDate" title="expirationDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expirationDate">&nbsp;&nbsp;expirationDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/authority" title="authority"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authority">&nbsp;&nbsp;authority</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *authority</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/categories" title="categories"></a>
+	<h3 class="method-title"><code><a href="#//api/name/categories">&nbsp;&nbsp;categories</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *categories</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/dayOfBirthDateObject" title="dayOfBirthDateObject"></a>
 	<h3 class="method-title"><code><a href="#//api/name/dayOfBirthDateObject">&nbsp;&nbsp;dayOfBirthDateObject</a></code>
 </h3>
@@ -197,6 +289,38 @@
 			
 
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/issuingDateObject" title="issuingDateObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/issuingDateObject">&nbsp;&nbsp;issuingDateObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/expirationDateObject" title="expirationDateObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/expirationDateObject">&nbsp;&nbsp;expirationDateObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject</code></div>
 
 		    
 		</div>
@@ -234,8 +358,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:" title="initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:">&ndash;&nbsp;initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:</a></code>
+	<a name="//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:" title="initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:">&ndash;&nbsp;initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -250,7 +374,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDocumentNumber:(NSString *_Nonnull)<em>documentNumber</em> surNames:(NSString *_Nonnull)<em>surNames</em> givenNames:(NSString *_Nonnull)<em>givenNames</em> dayOfBirth:(NSString *_Nonnull)<em>dayOfBirth</em> drivingLicenseString:(NSString *_Nonnull)<em>drivingLicenseString</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDocumentNumber:(NSString *_Nonnull)<em>documentNumber</em> surNames:(NSString *_Nonnull)<em>surNames</em> givenNames:(NSString *_Nonnull)<em>givenNames</em> dayOfBirth:(NSString *_Nonnull)<em>dayOfBirth</em> placeOfBirth:(NSString *_Nonnull)<em>placeOfBirth</em> issuingDate:(NSString *_Nonnull)<em>issuingDate</em> expirationDate:(NSString *_Nonnull)<em>expirationDate</em> authority:(NSString *_Nonnull)<em>authority</em> categories:(NSString *_Nonnull)<em>categories</em> drivingLicenseString:(NSString *_Nonnull)<em>drivingLicenseString</em></code></div>
 
 		    
 			
@@ -276,6 +400,31 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>dayOfBirth</code></th>
 						<td><p>The day of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeOfBirth</code></th>
+						<td><p>The place of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>issuingDate</code></th>
+						<td><p>The issuing date of the driving license.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expirationDate</code></th>
+						<td><p>The expiration date of the driving license.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>authority</code></th>
+						<td><p>The driving license <a href="#//api/name/authority">authority</a>(s)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categories</code></th>
+						<td><p>The detected vehicle <a href="#//api/name/categories">categories</a>.</p></td>
 					</tr>
 				
 					<tr>
@@ -311,22 +460,6 @@
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDrivingLicenseString:" title="initWithDrivingLicenseString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDrivingLicenseString:">&ndash;&nbsp;initWithDrivingLicenseString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDrivingLicenseString:(NSString *_Nonnull)<em>drivingLicenseString</em></code></div>
-
-		    
-		</div>
-	</div>
 </div>
 						</div>
 						
@@ -342,7 +475,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-10-11</p>
+						<p class="copyright">Copyright &copy; 2018 Anyline GmbH. All rights reserved. Updated: 2018-11-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

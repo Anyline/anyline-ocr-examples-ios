@@ -16,8 +16,15 @@
 @property (nonnull, nonatomic, strong, readonly) NSString *surNames;
 @property (nonnull, nonatomic, strong, readonly) NSString *givenNames;
 @property (nonnull, nonatomic, strong, readonly) NSString *dayOfBirth;
+@property (nonnull, nonatomic, strong, readonly) NSString *placeOfBirth;
+@property (nonnull, nonatomic, strong, readonly) NSString *issuingDate;
+@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate;
+@property (nonnull, nonatomic, strong, readonly) NSString *authority;
+@property (nonnull, nonatomic, strong, readonly) NSString *categories;
 
 @property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject;
+@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject;
+@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject;
 
 @property (nonnull, nonatomic, strong, readonly) NSString *drivingLicenseString;
 
@@ -31,6 +38,11 @@
  *  @param surNames                 All the surNames of the person separated by whitespace.
  *  @param givenNames               All the given names of the person separated by whitespace.
  *  @param dayOfBirth               The day of birth.
+ *  @param placeOfBirth             The place of birth.
+ *  @param issuingDate              The issuing date of the driving license.
+ *  @param expirationDate           The expiration date of the driving license.
+ *  @param authority                The driving license authority(s)
+ *  @param categories               The detected vehicle categories.
  *
  *  @param drivingLicenseString     Contains all Information found on the drivingLicense as string. Fields will be seperated with the delimiter '|'.
  *
@@ -40,8 +52,11 @@
                                         surNames:(NSString * _Nonnull)surNames
                                       givenNames:(NSString * _Nonnull)givenNames
                                       dayOfBirth:(NSString * _Nonnull)dayOfBirth
+                                    placeOfBirth:(NSString * _Nonnull)placeOfBirth
+                                     issuingDate:(NSString * _Nonnull)issuingDate
+                                  expirationDate:(NSString * _Nonnull)expirationDate
+                                       authority:(NSString * _Nonnull)authority
+                                      categories:(NSString * _Nonnull)categories
                             drivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
-
-- (instancetype _Nullable)initWithDrivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
 
 @end

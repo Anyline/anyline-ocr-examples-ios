@@ -91,6 +91,7 @@
 		70E055A0B7996B290C4DF32A /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D7806A57949D0C1128E30C37 /* NSString+Util.m */; };
 		713636E9534617E55B7DA1B8 /* ReadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D5A1D27EE4F69994E48028 /* ReadingTableViewCell.m */; };
 		71F76A2A8A4A3ABCB90C3F51 /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443FEC0920C5946EE7CEF8BB /* ALEnergyBaseViewController.m */; };
+		7244CCDAF90B6054F2772E44 /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */; };
 		7478EFDBE90DD8014C421DA3 /* anyline_austrian_driving_license.ale in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D535336B3CB971DBDCF21 /* anyline_austrian_driving_license.ale */; };
 		75F9666F7ECF3C6C999CB7C9 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AACE1FE20D8FE287813308 /* CoreDataManager.m */; };
 		76781EA66E91C603876F0442 /* CustomerSelfReading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0838B4A2704887C8DE44A31 /* CustomerSelfReading+CoreDataProperties.m */; };
@@ -111,6 +112,7 @@
 		8E25DA394359F42FAFC3E17E /* badge_scanner_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 58218941F045FB91A5A60B0F /* badge_scanner_config.json */; };
 		9019D39FF92100F87BC95AC2 /* ScanHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89234FC5BEC4ED40B37E3 /* ScanHistory+CoreDataProperties.m */; };
 		91443F23A05F64274C4A7ECD /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
+		9366DB67247E26B1C5DDB593 /* ALBottlecapScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */; };
 		9B798261D2EC2BD524B1EC70 /* ALRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6932576BBE91833BCDCBA999 /* ALRoundedView.m */; };
 		9BECFA506DD6068C7F769B2D /* ALMROExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE96D8CF4CAD02C52E744BAB /* ALMROExampleManager.m */; };
 		9D27ABC5D3B176E6A41FEC8B /* WorkorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 809888700414BE08EF7179E9 /* WorkorderViewController.m */; };
@@ -137,7 +139,6 @@
 		BFA56BC24DF436BD12FBE14E /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC464871CA9572B3EFCA5F35 /* ALRBScanViewController.m */; };
 		C017F7E52F7FCDBF2137E4AB /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
 		C023BC6F9AA8624605D370D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
-		C092A8F989BCB8F781E3CFE8 /* ALBottlecapScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */; };
 		C097E31201337560958F88A3 /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6103E43D7371110BC6213F0C /* ALScrabbleWord.m */; };
 		C359ADB31FB8376779CF71FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635597E0966D01FD7533AF85 /* AppDelegate.m */; };
 		C3F4175D4F59DBFC038DC1F6 /* ALHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82737006C0A544C17080B312 /* ALHistoryCell.m */; };
@@ -259,6 +260,7 @@
 		57A8AC5F40FE519FF0E51928 /* ALScrabbleWord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleWord.h; sourceTree = "<group>"; };
 		58218941F045FB91A5A60B0F /* badge_scanner_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = badge_scanner_config.json; sourceTree = "<group>"; };
 		58A56763F81ED159313C307D /* ALLicensePlateResultOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateResultOverlayView.h; sourceTree = "<group>"; };
+		594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnylineBottlecapScanViewController.swift; sourceTree = "<group>"; };
 		5A3424C55AF9A1FA23B731D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5B34DB20FC57897807D3E239 /* ALISBNScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALISBNScanViewController.h; sourceTree = "<group>"; };
 		5B9FC7B0725CF011A03E157B /* ALToggleControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALToggleControl.m; sourceTree = "<group>"; };
@@ -638,15 +640,6 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
-		31A7937356AF7FBB8232075B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C537BA1D2368DD094600C1D1 /* ALBottlecapScanViewController.h */,
-				463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		3E06D0FF893C05645DEC8875 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,7 +661,7 @@
 		423E84A315C9F2AB7FCBCC6F /* Bottlecap */ = {
 			isa = PBXGroup;
 			children = (
-				31A7937356AF7FBB8232075B /* ViewController */,
+				FB23DD4142F9D605A167D074 /* ViewController */,
 				BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */,
 			);
 			path = Bottlecap;
@@ -1249,6 +1242,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		FB23DD4142F9D605A167D074 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C537BA1D2368DD094600C1D1 /* ALBottlecapScanViewController.h */,
+				463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */,
+				594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1276,6 +1279,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				TargetAttributes = {
+					549B361CA3000146B1567759 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = F9D5AAAEF93187FA8CC87FF4 /* Build configuration list for PBXProject "AnylineExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1352,7 +1360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3084BC94F5EBCFBA07204F4E /* ALBadgeScanViewController.m in Sources */,
-				C092A8F989BCB8F781E3CFE8 /* ALBottlecapScanViewController.m in Sources */,
+				9366DB67247E26B1C5DDB593 /* ALBottlecapScanViewController.m in Sources */,
+				7244CCDAF90B6054F2772E44 /* AnylineBottlecapScanViewController.swift in Sources */,
 				BD9F7FD3A79D8410FE5EE3CA /* ScanHistory.m in Sources */,
 				9019D39FF92100F87BC95AC2 /* ScanHistory+CoreDataProperties.m in Sources */,
 				3F07541637FCDC5027BB2C7A /* ALDocumentScanViewController.m in Sources */,
@@ -1498,7 +1507,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1521,6 +1532,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1552,7 +1564,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1576,6 +1590,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

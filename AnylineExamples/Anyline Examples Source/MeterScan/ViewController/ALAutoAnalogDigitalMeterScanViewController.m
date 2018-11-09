@@ -24,9 +24,7 @@ static const NSInteger padding = 7;
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
 @interface ALAutoAnalogDigitalMeterScanViewController ()<ALMeterScanPluginDelegate, AnylineNativeBarcodeDelegate>
 
-// The Anyline module used to scan
-//@property (nonatomic, strong) AnylineEnergyModuleView *anylineEnergyView;
-
+// The Anyline plugins used to scan
 @property (nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
 @property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
 @property (nullable, nonatomic, strong) ALScanView *scanView;

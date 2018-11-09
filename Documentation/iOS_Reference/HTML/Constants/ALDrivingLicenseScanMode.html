@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALOCRScanMode Constants Reference</title>
+	<title>ALDrivingLicenseScanMode Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALOCRScanMode Constants Reference</h1>
+					<h1 class="title">ALDrivingLicenseScanMode Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>ALOCRConfig.h</td>
+	<td>ALDrivingLicenseConfig.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">ALOCRScanMode</h3>
+                    <h3 class="subsubtitle method-title">ALDrivingLicenseScanMode</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>The possible scanModes for the AnylineOCR module</p>
+                        <p>The possible scanModes for the ALDrivingLicenseScanMode module</p>
 					</div>
 					
 					
@@ -87,13 +87,13 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, ALOCRScanMode ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">ALLine</a>,<br>
+                            &nbsp;&nbsp; <a href="">ALDrivingLicenseAT</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">ALGrid</a>,<br>
+                            &nbsp;&nbsp; <a href="">ALDrivingLicenseDE</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">ALAuto</a>,<br>
+                            &nbsp;&nbsp; <a href="">ALDrivingLicenseAuto</a>,<br>
                             
                             };</code>
                     
@@ -103,11 +103,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="ALLine"></a><code>ALLine</code></dt>
+                            <dt><a name="" title="ALDrivingLicenseAT"></a><code>ALDrivingLicenseAT</code></dt>
 <dd>
 
 
-<p>The LINE mode is optimal for scanning one or more lines of variable length or font (like IBANs or addresses).</p>
+
 
 
 
@@ -115,17 +115,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">ALOCRConfig.h</code>.
+		Declared In <code class="declared-in-ref">ALDrivingLicenseConfig.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="ALGrid"></a><code>ALGrid</code></dt>
+                            <dt><a name="" title="ALDrivingLicenseDE"></a><code>ALDrivingLicenseDE</code></dt>
 <dd>
 
 
-<p>The GRID mode is optimal for characters with equal size laid out in a grid
-with a constant font, background and character count (like loyalty codes inside bottle caps).</p>
+
 
 
 
@@ -133,17 +132,16 @@ with a constant font, background and character count (like loyalty codes inside 
 
     
 	<p>
-		Declared In <code class="declared-in-ref">ALOCRConfig.h</code>.
+		Declared In <code class="declared-in-ref">ALDrivingLicenseConfig.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="ALAuto"></a><code>ALAuto</code></dt>
+                            <dt><a name="" title="ALDrivingLicenseAuto"></a><code>ALDrivingLicenseAuto</code></dt>
 <dd>
 
 
-<p>The AUTO mode is optimal if you want to scan more than one use case in one mode. This mode automatically
-tries to identify the to be scanned text within the cutout, and adjust the parameters accordingly.</p>
+
 
 
 
@@ -151,7 +149,7 @@ tries to identify the to be scanned text within the cutout, and adjust the param
 
     
 	<p>
-		Declared In <code class="declared-in-ref">ALOCRConfig.h</code>.
+		Declared In <code class="declared-in-ref">ALDrivingLicenseConfig.h</code>.
 	</p>
 	
 </dd>
@@ -168,7 +166,7 @@ tries to identify the to be scanned text within the cutout, and adjust the param
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">ALOCRConfig.h</code></p>
+                        <p><code class="declared-in-ref">ALDrivingLicenseConfig.h</code></p>
                     </div>
                     
                     

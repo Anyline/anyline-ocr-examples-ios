@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-@objc class ElectricMeterBlackWhiteScanViewController: ALBaseScanViewController, AnylineEnergyModuleDelegate {
+@objc class ElectricMeterBlackWhiteScanViewController: ALBaseScanViewController, ALMeterScanPluginDelegate {
     
-    var anylineEnergyView : AnylineEnergyModuleView!;
+    // The Anyline plugins used to scan
+    var meterScanViewPlugin : ALMeterScanViewPlugin!;
+    var meterScanPlugin : ALMeterScanPlugin!;
+    var scanView : ALScanView!;
     
     let kELMeterScanLicenseKey = kDemoAppLicenseKey;
     
@@ -22,60 +25,60 @@ import UIKit
         self.view.backgroundColor = UIColor.black
         
         self.title = "Electric Meter";
+    
+    
         // Initializing the energy module. Its a UIView subclass. We set its frame to fill the whole screen
-        
-        self.anylineEnergyView = AnylineEnergyModuleView.init(frame: self.view.bounds);
-
         do {
-            try self.anylineEnergyView.setup(withLicenseKey: kELMeterScanLicenseKey, delegate: self);
-        } catch _ as NSError {
+            self.meterScanPlugin = try ALMeterScanPlugin.init(pluginID:"ENERGY", licenseKey: kELMeterScanLicenseKey, delegate: self);
+            try self.meterScanPlugin.setScanMode(ALScanMode.analogMeter);
             
+            self.meterScanViewPlugin = ALMeterScanViewPlugin.init(scanPlugin: self.meterScanPlugin);
+            self.scanView = ALScanView.init(frame: self.view.bounds, scanViewPlugin: self.meterScanViewPlugin);
+        } catch _ as NSError {
+            //Handle error here
         }
     
-        self.anylineEnergyView.translatesAutoresizingMaskIntoConstraints = false;
-        do {
-            try self.anylineEnergyView.setScanMode(ALScanMode.analogMeter);
-        } catch {}
-        
+        self.scanView.translatesAutoresizingMaskIntoConstraints = false;
       
-        self.view.addSubview(self.anylineEnergyView);
-        self.view.sendSubview(toBack: self.anylineEnergyView);
+        //Add Anyline to view hierachy
+        self.view.addSubview(self.scanView);
+        //Start Camera with Anyline
+        self.scanView.startCamera();
         
-        self.anylineEnergyView.enableReporting(UserDefaults.al_reportingEnabled());
+        self.view.sendSubview(toBack: self.scanView);
+        
+        self.meterScanPlugin.enableReporting(UserDefaults.al_reportingEnabled());
         
         self.controllerType = ALScanHistoryElectricMeter;
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
         
+        //Stop Anyline
         do {
-            try self.anylineEnergyView.cancelScanning()
+            try self.meterScanViewPlugin.stop();
         } catch {}
     }
     
-    func anylineEnergyModuleView(_ anylineEnergyModuleView: AnylineEnergyModuleView, didFindScanResult scanResult: String, cropImage image: UIImage, fullImage: UIImage, in scanMode: ALScanMode) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
         
-        self.anylineDidFindResult(scanResult, barcodeResult:"", image: image, module: anylineEnergyModuleView) {() in
-            let vc = ALMeterScanResultViewController.init();
-            
-            vc.scanMode = scanMode;
-            vc.meterImage = image;
-            vc.result = scanResult;
-            
-            self.navigationController?.pushViewController(vc, animated: true);
-        }
+        //Start Anyline
+        do {
+            try self.meterScanViewPlugin.start();
+        } catch {}
     }
-    func anylineEnergyModuleView(_ anylineEnergyModuleView: AnylineEnergyModuleView, didFind scanResult: ALEnergyResult) {
-        self.anylineDidFindResult(String(scanResult.result), barcodeResult:"", image: scanResult.image, module: anylineEnergyModuleView) {() in
+    
+    func anylineMeterScanPlugin(_ anylineMeterScanPlugin: ALMeterScanPlugin, didFind scanResult: ALMeterResult) {
+        self.anylineDidFindResult(scanResult.result as String, barcodeResult:"", image: scanResult.image, scanPlugin: anylineMeterScanPlugin, viewPlugin: self.meterScanViewPlugin, completion: {() in
             let vc = ALMeterScanResultViewController.init();
             
             vc.scanMode = scanResult.scanMode;
             vc.meterImage = scanResult.image;
-            vc.result = String(scanResult.result);
+            vc.result = scanResult.result as String;
             
             self.navigationController?.pushViewController(vc, animated: true);
-        }
+        });
     }
 }

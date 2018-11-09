@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonnull, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber;
 @property (nonnull, nonatomic, strong, readonly) NSString *personalNumber2;
 
+@property (nullable, nonatomic, strong, readonly) NSString *address;
+
 @property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject;
 @property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject;
 @property (nonnull, nonatomic, strong, readonly) NSString *MRZString;
@@ -64,6 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param personalNumber2          Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
  *                                  Might contain additional information.
+ *  @param address                  Optional data which contains the data of the address field on a german ID.
  *
  *  @param MRZString                Contains all Information found in the MRZ as string.
  *
@@ -85,6 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
                       checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber
                                checkDigitFinal:(NSString * _Nonnull)checkDigitFinal
                                personalNumber2:(NSString * _Nonnull)personalNumber2
+                                       address:(NSString * _Nullable)address
                                      MRZString:(NSString * _Nonnull)MRZString;
 
 @end

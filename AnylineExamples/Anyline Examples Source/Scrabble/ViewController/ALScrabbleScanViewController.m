@@ -75,7 +75,6 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     [self startListeningForMotion];
     
     self.controllerType = ALScanHistoryScrabble;
-
 }
 
 /*
@@ -149,10 +148,8 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     
 }
 
-
-- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
-               runSkipped:(ALRunFailure)runFailure {
-    switch (runFailure) {
+- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin runSkipped:(ALRunSkippedReason *)runSkippedReason {
+    switch (runSkippedReason.reason) {
         case ALRunFailureResultNotValid:
             break;
         case ALRunFailureConfidenceNotReached:

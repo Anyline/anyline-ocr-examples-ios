@@ -53,7 +53,6 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.mrzScanViewPlugin];
     
     self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
-    self.mrzScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.controllerType = ALScanHistoryMrz;
     
@@ -142,8 +141,11 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     [result appendString:[NSString stringWithFormat:@"Check Digit Final: %@\n", [scanResult.result checkdigitFinal]]];
     [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [scanResult.result personalNumber]]];
     [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [scanResult.result checkDigitPersonalNumber]]];
+
     
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
+        
+        ALMRZIdentification *mrzIdentification = (ALMRZIdentification *)scanResult.result;
         
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:[scanResult.result givenNames]]];
@@ -154,6 +156,11 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
         [resultData addObject:[self resultEntryWithDate:[scanResult.result expirationDateObject] dateString:[((ALMRZIdentification *)scanResult.result) expirationDate] title:@"Expiration Date"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[scanResult.result nationalityCountryCode]]];
+        
+        if ([[scanResult.result documentType] isEqualToString:@"ID"] && [[scanResult.result issuingCountryCode] isEqualToString:@"D"]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:mrzIdentification.address]];
+        }
+ 
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
         [self.navigationController pushViewController:vc animated:YES];

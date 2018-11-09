@@ -34,6 +34,7 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALDrivingLicenseConfig *drivingLicenseConfig = [[ALDrivingLicenseConfig alloc] init];
+    drivingLicenseConfig.scanMode = ALDrivingLicenseAuto;
     
     NSError *error = nil;
     self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kDrivingLicenseLicenseKey delegate:self idConfig:drivingLicenseConfig error:&error];
@@ -46,7 +47,6 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.drivingLicenseScanViewPlugin];
     
     self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
-//    self.scanView.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.controllerType = ALScanHistoryDrivingLicense;
     
@@ -109,16 +109,34 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [scanResult.result givenNames]]];
     [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [scanResult.result dayOfBirth]]];
     ;
-   [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+    [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+        
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
 
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:[scanResult.result surNames]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:[scanResult.result givenNames]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[scanResult.result dayOfBirth]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
-        
+       
+        if ([scanResult.result placeOfBirth]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[scanResult.result placeOfBirth]]];
+        }
+        if ([scanResult.result issuingDate]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing Date" value:[scanResult.result issuingDate]]];
+        }
+        if ([(ALDrivingLicenseIdentification *)scanResult.result expirationDate]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Expiration Date" value:[(ALDrivingLicenseIdentification *)scanResult.result expirationDate]]];
+        }
+        if ([scanResult.result authority]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[scanResult.result authority]]];
+        }
+        if ([(ALDrivingLicenseIdentification *)scanResult.result categories]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[(ALDrivingLicenseIdentification *)scanResult.result categories]]];
+        }
+
         //Display the result
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+        
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }

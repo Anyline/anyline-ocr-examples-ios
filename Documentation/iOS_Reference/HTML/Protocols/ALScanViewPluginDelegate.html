@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALIDPluginDelegate Protocol Reference</title>
+	<title>ALScanViewPluginDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -58,7 +58,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/anylineIDScanPlugin:didFindResult:">- anylineIDScanPlugin:didFindResult:</option>
+		<option value="//api/name/anylineScanViewPlugin:updatedCutout:">- anylineScanViewPlugin:updatedCutout:</option>
 		
 	</optgroup>
 	
@@ -75,7 +75,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALIDPluginDelegate Protocol Reference</h1>
+					<h1 class="title">ALScanViewPluginDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -84,7 +84,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALIDScanPlugin.h</td>
+	<td>ALAbstractScanViewPlugin.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -102,9 +102,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/anylineIDScanPlugin:didFindResult:" title="anylineIDScanPlugin:didFindResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineIDScanPlugin:didFindResult:">&ndash;&nbsp;anylineIDScanPlugin:didFindResult:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/anylineScanViewPlugin:updatedCutout:" title="anylineScanViewPlugin:updatedCutout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineScanViewPlugin:updatedCutout:">&ndash;&nbsp;anylineScanViewPlugin:updatedCutout:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -113,12 +113,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the scanned value</p>
+				<p>Called if the cutout was updated within the ScanViewPlugin class.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineIDScanPlugin:(ALIDScanPlugin *_Nonnull)<em>anylineIDScanPlugin</em> didFindResult:(ALIDResult *_Nonnull)<em>scanResult</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *_Nonnull)<em>anylineScanViewPlugin</em> updatedCutout:(CGRect)<em>cutoutRect</em></code></div>
 
 		    
 			
@@ -127,13 +127,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>anylineIDScanPlugin</code></th>
-						<td><p>The plugin that scanned the result</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>scanResult</code></th>
-						<td><p>The scanned value</p></td>
+						<th scope="row" class="argument-name"><code>updatedCutout</code></th>
+						<td><p>The updated cutout rect(x, y, width, height)</p></td>
 					</tr>
 				
 				</table>
@@ -153,7 +148,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALIDScanPlugin.h</code></p>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
 			</div>
 			
 			

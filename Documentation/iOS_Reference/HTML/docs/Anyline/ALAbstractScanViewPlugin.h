@@ -13,9 +13,12 @@
 #import "ALAbstractScanPlugin.h"
 #import "ALSampleBufferImageProvider.h"
 
+@protocol ALScanViewPluginDelegate;
+
 @class ALScanView;
 @interface ALAbstractScanViewPlugin : UIView<ALInfoDelegate>
 
+@property (nonatomic, strong, readonly) NSHashTable<ALScanViewPluginDelegate> * _Nullable scanViewPluginDelegates;
 /**
  The SampleBufferImageProvider implements ALImageProvider and AnylineVideoDataSampleBufferDelegate
  and prepares the frame for Anyline processing
@@ -77,5 +80,24 @@
 - (ALSquare * _Nonnull)convertCGRect:(NSValue * _Nonnull)concreteValue;
 
 - (void)updateCutoutRect:(CGRect)rect;
+
+- (void)addScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
+
+- (void)removeScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
+
+@end
+
+@protocol ALScanViewPluginDelegate <NSObject>
+
+@optional
+/**
+ *
+ * Called if the cutout was updated within the ScanViewPlugin class.
+ *
+ * @param updatedCutout The updated cutout rect(x, y, width, height)
+ *
+ */
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin * _Nonnull)anylineScanViewPlugin
+            updatedCutout:(CGRect)cutoutRect;
 
 @end

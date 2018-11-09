@@ -145,6 +145,8 @@
         self.optionalImageView.frame = optionalImageViewRect;
         //Add view to scrollView
         [self.contentScrollView addSubview:self.optionalImageView];
+        
+//        [self.tableView layoutSubviews];
     }
 }
 
@@ -196,6 +198,16 @@
 
 #pragma mark - UITableView methods
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return UITableViewAutomaticDimension;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return UITableViewAutomaticDimension;
+}
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"alResultCell";
     ALResultCell *cell;
@@ -235,9 +247,9 @@
 }
 
 #pragma mark - Utility methods
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.cellHeight;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return self.cellHeight;
+//}
 
 - (CGFloat)headerSize {
     return 40.0;

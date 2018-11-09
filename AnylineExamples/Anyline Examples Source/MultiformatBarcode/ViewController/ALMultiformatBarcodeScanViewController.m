@@ -45,9 +45,11 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 
     self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" licenseKey:kBarcodeScanLicenseKey delegate:self error:&error];
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
-    self.barcodeScanPlugin.barcodeFormatOptions = ALCodeTypeAll;
     
-    //Add Meter Scan View Plugin (Scan UI)
+    //Set Barcode Formats
+    [self.barcodeScanPlugin setBarcodeFormatOptions:ALCodeTypeAll];
+    
+    //Add Barcode Scan View Plugin (Scan UI)
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin];
     NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     

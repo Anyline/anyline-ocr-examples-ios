@@ -106,11 +106,12 @@
         self.valueLabel.numberOfLines = 1;
     }
     
+    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height+5;
+    self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, height);
+    self.cellHeight = self.contentView.frame.size.height;
     
-
     //Checkmark setup
     self.checkmarkView.center = CGPointMake(self.contentView.frame.size.width - checkmarkHeight/2 - padding, self.valueLabel.center.y);
-    
     
 }
 
