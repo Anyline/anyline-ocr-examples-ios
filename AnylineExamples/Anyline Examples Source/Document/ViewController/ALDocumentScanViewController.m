@@ -4,12 +4,13 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
 #import "ALAppDemoLicenses.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 
 @class AnylineDocumentModuleView;
 
-@interface ALDocumentScanViewController () <ALDocumentScanPluginDelegate, ALInfoDelegate, ALDocumentInfoDelegate>
+@interface ALDocumentScanViewController () <ALDocumentScanPluginDelegate, ALInfoDelegate, ALDocumentInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for Document
 @property (nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
@@ -48,6 +49,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     
     self.documentScanViewPlugin = [[ALDocumentScanViewPlugin alloc] initWithScanPlugin:self.documentScanPlugin];
     NSAssert(self.documentScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.documentScanViewPlugin addScanViewPluginDelegate:self];
     
     [self.documentScanViewPlugin setValue:self forKey:@"tmpOutlineDelegate"];
     self.scanView = [[ALScanView alloc] initWithFrame:frame
@@ -69,11 +71,11 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     
     //Start Camera:
     [self.scanView startCamera];
-    [self startListeningForMotion];
 
     // This view notifies the user of any problems that occur while he is scanning
-    self.roundedView = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, 115, self.view.bounds.size.width - 40, 30)];
-    self.roundedView.fillColor = [UIColor colorWithRed:98.0/255.0 green:39.0/255.0 blue:232.0/255.0 alpha:0.6];
+    self.roundedView = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, 155, self.view.bounds.size.width - 40, 30)];
+
+    self.roundedView.fillColor = [UIColor AL_examplesBlueWithAlpha:0.6];
     self.roundedView.textLabel.text = @"";
     self.roundedView.alpha = 0;
     [self.view addSubview:self.roundedView];
@@ -98,12 +100,6 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.documentScanViewPlugin.cutoutRect.origin.y +
-     self.documentScanViewPlugin.cutoutRect.size.height +
-     self.documentScanViewPlugin.frame.origin.y - 100];
 }
 
 /*
@@ -165,7 +161,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
             helpString = @"Too Dark";
             break;
         case ALDocumentErrorShakeDetected:
-            helpString = @"Shake";
+            helpString = @"Shake detected";
             break;
         default:
             break;

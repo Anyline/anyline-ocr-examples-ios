@@ -16,7 +16,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
-@interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate>
+@interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline module used to scan machine readable zones
 @property (nonatomic, strong) ALIDScanViewPlugin *mrzScanViewPlugin;
@@ -49,6 +49,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     self.mrzScanViewPlugin = [[ALIDScanViewPlugin alloc] initWithScanPlugin:self.mrzScanPlugin];
     NSAssert(self.mrzScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.mrzScanViewPlugin addScanViewPluginDelegate:self];
+    
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.mrzScanViewPlugin];
     
@@ -79,13 +81,15 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
     //Update Position of Warning Indicator
     [self updateWarningPosition:
-     self.mrzScanViewPlugin.cutoutRect.origin.y +
-     self.mrzScanViewPlugin.cutoutRect.size.height +
-     self.mrzScanViewPlugin.frame.origin.y +
-     120];
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 /*
@@ -160,7 +164,14 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         if ([[scanResult.result documentType] isEqualToString:@"ID"] && [[scanResult.result issuingCountryCode] isEqualToString:@"D"]) {
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:mrzIdentification.address]];
         }
- 
+        
+        if ([scanResult.result issuingDate] && [scanResult.result issuingDate].length > 0) {
+            [resultData addObject:[self resultEntryWithDate:[scanResult.result issuingDateObject] dateString:[((ALMRZIdentification *)scanResult.result) issuingDate] title:@"Issuing Date"]];
+        }
+        
+        if ([scanResult.result personalNumber] && [scanResult.result personalNumber].length > 0) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[scanResult.result personalNumber]]];
+        }
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
         [self.navigationController pushViewController:vc animated:YES];

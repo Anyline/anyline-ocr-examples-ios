@@ -21,7 +21,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
 static const NSInteger padding = 7;
 
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
-@interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *serialNumberScanViewPlugin;
@@ -68,6 +68,7 @@ static const NSInteger padding = 7;
     self.serialNumberScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.serialNumberScanPlugin
                                                                  scanViewPluginConfig:scanViewPluginConfig];
     NSAssert(self.serialNumberScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.serialNumberScanViewPlugin addScanViewPluginDelegate:self];
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.serialNumberScanViewPlugin];
     
@@ -91,13 +92,6 @@ static const NSInteger padding = 7;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.serialNumberScanViewPlugin.cutoutRect.origin.y +
-     self.serialNumberScanViewPlugin.cutoutRect.size.height +
-     self.serialNumberScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -123,6 +117,15 @@ static const NSInteger padding = 7;
     }
     
     self.startTime = CACurrentMediaTime();
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate

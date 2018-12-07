@@ -25,8 +25,19 @@
     pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + self.navigationController.navigationBar.frame.size.height, pageViewFrame.size.width, pageViewFrame.size.height - self.navigationController.navigationBar.frame.size.height);
     self.view.frame = pageViewFrame;
     
-    CGRect headerFrame = [[UIScreen mainScreen] bounds];
-    headerFrame = CGRectMake(headerFrame.origin.x, headerFrame.origin.y + self.navigationController.navigationBar.frame.size.height, headerFrame.size.width, headerFrame.size.width*0.35);
+    CGFloat topPadding = 0;
+    CGFloat leftPadding = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        topPadding = window.safeAreaInsets.top;
+        leftPadding = window.safeAreaInsets.left;
+    }
+    
+//    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*0.35);
+    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.35);
+
+    [self.view layoutIfNeeded];
+    self.header.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.header = [[UIView alloc] initWithFrame:headerFrame];
     self.header.backgroundColor = [UIColor whiteColor];

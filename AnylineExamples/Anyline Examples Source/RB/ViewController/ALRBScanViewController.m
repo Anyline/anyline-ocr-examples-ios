@@ -16,7 +16,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kRBLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALRBScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALRBScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *rbScanViewPlugin;
@@ -69,6 +69,7 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     self.rbScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.rbScanPlugin
                                                        scanViewPluginConfig:scanViewPluginConfig];
     NSAssert(self.rbScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.rbScanViewPlugin addScanViewPluginDelegate:self];
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.rbScanViewPlugin];
     
@@ -92,13 +93,6 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.rbScanViewPlugin.cutoutRect.origin.y +
-     self.rbScanViewPlugin.cutoutRect.size.height +
-     self.rbScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -124,6 +118,15 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     }
     
     self.startTime = CACurrentMediaTime();
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate

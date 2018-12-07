@@ -14,7 +14,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
-@interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate>
+@interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate>
 // The Anyline plugin used to scan barcodes
 @property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
 @property (nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin;
@@ -52,6 +52,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     //Add Barcode Scan View Plugin (Scan UI)
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin];
     NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.barcodeScanViewPlugin addScanViewPluginDelegate:self];
     
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.barcodeScanViewPlugin];
@@ -97,13 +98,6 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.barcodeScanViewPlugin.cutoutRect.origin.y +
-     self.barcodeScanViewPlugin.cutoutRect.size.height +
-     self.barcodeScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -112,7 +106,14 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 - (void)viewWillDisappear:(BOOL)animated {
     [self.barcodeScanViewPlugin stopAndReturnError:nil];
 }
-
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
+}
 
 #pragma mark -- AnylineBarcodeModuleDelegate
 /*

@@ -21,7 +21,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate>
+@interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 // The Anyline module used for OCR
 @property (nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin;
 @property (nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
@@ -51,6 +51,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     
     self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin];
     NSAssert(self.licensePlateScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.licensePlateScanViewPlugin addScanViewPluginDelegate:self];
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.licensePlateScanViewPlugin];
     
@@ -74,13 +75,6 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.licensePlateScanViewPlugin.cutoutRect.origin.y +
-     self.licensePlateScanViewPlugin.cutoutRect.size.height +
-     self.licensePlateScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -106,6 +100,15 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     }
     
     self.startTime = CACurrentMediaTime();
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate

@@ -17,7 +17,7 @@
 NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALIBANScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALIBANScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *ibanScanViewPlugin;
@@ -65,6 +65,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     self.ibanScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.ibanScanPlugin
                                                          scanViewPluginConfig:scanViewPluginConfig];
     NSAssert(self.ibanScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.ibanScanViewPlugin addScanViewPluginDelegate:self];
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.ibanScanViewPlugin];
     
@@ -88,13 +89,6 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.ibanScanViewPlugin.cutoutRect.origin.y +
-     self.ibanScanViewPlugin.cutoutRect.size.height +
-     self.ibanScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -126,6 +120,15 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     if (self.ibanScanPlugin.isRunning) {
         [self.ibanScanViewPlugin stopAndReturnError:nil];
     }
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate

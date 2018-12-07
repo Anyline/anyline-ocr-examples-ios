@@ -15,7 +15,7 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
-@interface ALISBNScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALISBNScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *isbnScanViewPlugin;
@@ -63,6 +63,7 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     self.isbnScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.isbnScanPlugin
                                                          scanViewPluginConfig:scanViewPluginConfig];
     NSAssert(self.isbnScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.isbnScanViewPlugin addScanViewPluginDelegate:self];
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.isbnScanViewPlugin];
     
@@ -86,13 +87,6 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
-    
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     self.isbnScanViewPlugin.cutoutRect.origin.y +
-     self.isbnScanViewPlugin.cutoutRect.size.height +
-     self.isbnScanViewPlugin.frame.origin.y +
-     120];
 }
 
 /*
@@ -124,6 +118,15 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     if (self.isbnScanPlugin.isRunning) {
         [self.isbnScanViewPlugin stopAndReturnError:nil];
     }
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate
