@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>6.1</string>
+	<string>7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -49,9 +49,9 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>How else are we supposed to do OPTICAL Character Recognition?!</string>
+	<string>Please allow camera access to scan text</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>How else do you wanna share us an image?!</string>
+	<string>Please allow photo library access to share images</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

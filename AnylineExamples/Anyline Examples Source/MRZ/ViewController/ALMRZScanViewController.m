@@ -183,7 +183,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         return [[ALResultEntry alloc] initWithTitle:title value:nil];
     }
     
-    NSString *value = [self formatDate:date];
+    NSString *value = [self stringForDate:date];
     return [[ALResultEntry alloc] initWithTitle:title value:value isAvailable:(date)];
 }
 
@@ -194,11 +194,16 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     return YES;
 }
 
-- (NSString *)formatDate:(NSDate *)date {
+- (NSString *)stringForDate:(NSDate *)date {
     if (!date) {
         return @"Date not valid";
     }
-    return [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0:00"]];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    
+    return [dateFormatter stringFromDate:date];
 }
-
 @end

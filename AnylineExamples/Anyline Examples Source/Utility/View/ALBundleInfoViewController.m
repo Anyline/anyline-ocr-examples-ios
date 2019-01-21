@@ -44,6 +44,14 @@
     
     [self.view addSubview:scrollView];
     
+    CGFloat topPadding = 0;
+    CGFloat bottomPadding = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        topPadding = window.safeAreaInsets.top;
+        bottomPadding = window.safeAreaInsets.bottom;
+    }
+    
     {
         UIButton * logo = [UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -96,7 +104,7 @@
         button.layer.cornerRadius = 22;
         button.layer.borderColor = [[UIColor whiteColor] CGColor];
         button.layer.borderWidth = 1.0;
-        button.center = CGPointMake(self.view.center.x, (currContentHeight - button.frame.size.height*2)-25);
+        button.center = CGPointMake(self.view.center.x, (currContentHeight - button.frame.size.height*2)-25 - bottomPadding);
         [scrollView addSubview:button];
     }
     
