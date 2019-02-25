@@ -17,6 +17,13 @@ typedef NS_ENUM(NSUInteger, ALCutoutAlignment) {
     ALCutoutAlignmentBottom=4       // Align BOTTOM
 };
 
+typedef NS_ENUM(NSUInteger, ALCutoutAnimation) {
+    ALCutoutAnimationNone=0,        // No Animation
+    ALCutoutAnimationZoom=1,        // Cutout will zoom in/out when starting/stopping a scanViewPlugin
+    ALCutoutAnimationFade=2,        // Cutout will fade in/out when starting/stopping a scanViewPlugin
+};
+
+
 typedef NS_ENUM(NSUInteger, ALPictureResolution) {
     ALPictureResolutionNone=0,
     ALPictureResolutionHighest=1,

@@ -21,20 +21,19 @@
 @property (nonatomic, strong, readonly) NSHashTable<ALCutoutDelegate> * _Nullable cutoutDelegates;
 
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                           pluginConfig:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
+                           pluginConfig:(ALScanViewPluginConfig * _Nonnull)pluginConfig
+                               pluginID:(NSString * _Nonnull)pluginID;
 
 - (void)cancelFeedback;
-- (void)changeVisualFeedbackStrokeColor:(UIColor* _Nonnull)color;
-
 - (void)updateConfiguration:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
 
-- (void)setVisualFeedbackStrokeColor:(UIColor* _Nonnull)color;
+- (void)setVisualFeedbackStrokeColor:(UIColor * _Nonnull)color pluginID:(NSString * _Nonnull)pluginID;
+- (void)setCutoutVisible:(BOOL)isVisible pluginID:(NSString * _Nonnull)pluginID;
 
 - (void)setSquare:(ALSquare * _Nullable)square;
 - (void)setPolygon:(ALPolygon * _Nullable)polygon;
 
 - (CGRect)cutout;
-
 
 - (void)addCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
 

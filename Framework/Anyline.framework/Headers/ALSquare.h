@@ -72,4 +72,6 @@
 
 - (CGRect)boxRect;
 
+- (BOOL)similiarTo:(ALSquare *)square;
+
 @end

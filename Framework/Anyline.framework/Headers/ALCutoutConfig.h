@@ -31,6 +31,7 @@
 @property (nonatomic, assign) NSInteger strokeWidth;
 @property (nonatomic, assign) NSInteger cornerRadius;
 
+@property (nonatomic, assign) ALCutoutAnimation animation;
 
 - (void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
 
@@ -53,6 +54,7 @@
                            feedbackStrokeColor:(UIColor * _Nonnull)feedbackStrokeColor
                                   overlayImage:(UIImage * _Nullable)overlayImage
                                    strokeWidth:(NSInteger)strokeWidth
-                                  cornerRadius:(NSInteger)cornerRadius;
+                                  cornerRadius:(NSInteger)cornerRadius
+                                     animation:(ALCutoutAnimation)animation;
 
 @end

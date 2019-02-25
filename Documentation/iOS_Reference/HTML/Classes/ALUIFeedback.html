@@ -74,19 +74,19 @@
 		
 		<option value="//api/name/cancelFeedback">- cancelFeedback</option>
 		
-		<option value="//api/name/changeVisualFeedbackStrokeColor:">- changeVisualFeedbackStrokeColor:</option>
-		
 		<option value="//api/name/cutout">- cutout</option>
 		
-		<option value="//api/name/initWithFrame:pluginConfig:">- initWithFrame:pluginConfig:</option>
+		<option value="//api/name/initWithFrame:pluginConfig:pluginID:">- initWithFrame:pluginConfig:pluginID:</option>
 		
 		<option value="//api/name/removeCutoutDelegate:">- removeCutoutDelegate:</option>
+		
+		<option value="//api/name/setCutoutVisible:pluginID:">- setCutoutVisible:pluginID:</option>
 		
 		<option value="//api/name/setPolygon:">- setPolygon:</option>
 		
 		<option value="//api/name/setSquare:">- setSquare:</option>
 		
-		<option value="//api/name/setVisualFeedbackStrokeColor:">- setVisualFeedbackStrokeColor:</option>
+		<option value="//api/name/setVisualFeedbackStrokeColor:pluginID:">- setVisualFeedbackStrokeColor:pluginID:</option>
 		
 		<option value="//api/name/updateConfiguration:">- updateConfiguration:</option>
 		
@@ -196,8 +196,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithFrame:pluginConfig:" title="initWithFrame:pluginConfig:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:pluginConfig:">&ndash;&nbsp;initWithFrame:pluginConfig:</a></code>
+	<a name="//api/name/initWithFrame:pluginConfig:pluginID:" title="initWithFrame:pluginConfig:pluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:pluginConfig:pluginID:">&ndash;&nbsp;initWithFrame:pluginConfig:pluginID:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -206,7 +206,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> pluginConfig:(ALScanViewPluginConfig *_Nonnull)<em>pluginConfig</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> pluginConfig:(ALScanViewPluginConfig *_Nonnull)<em>pluginConfig</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
 
 		    
 		</div>
@@ -228,22 +228,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/changeVisualFeedbackStrokeColor:" title="changeVisualFeedbackStrokeColor:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/changeVisualFeedbackStrokeColor:">&ndash;&nbsp;changeVisualFeedbackStrokeColor:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)changeVisualFeedbackStrokeColor:(UIColor *_Nonnull)<em>color</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/updateConfiguration:" title="updateConfiguration:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/updateConfiguration:">&ndash;&nbsp;updateConfiguration:</a></code>
 </h3>
@@ -260,8 +244,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setVisualFeedbackStrokeColor:" title="setVisualFeedbackStrokeColor:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setVisualFeedbackStrokeColor:">&ndash;&nbsp;setVisualFeedbackStrokeColor:</a></code>
+	<a name="//api/name/setVisualFeedbackStrokeColor:pluginID:" title="setVisualFeedbackStrokeColor:pluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVisualFeedbackStrokeColor:pluginID:">&ndash;&nbsp;setVisualFeedbackStrokeColor:pluginID:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -270,7 +254,23 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setVisualFeedbackStrokeColor:(UIColor *_Nonnull)<em>color</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setVisualFeedbackStrokeColor:(UIColor *_Nonnull)<em>color</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCutoutVisible:pluginID:" title="setCutoutVisible:pluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCutoutVisible:pluginID:">&ndash;&nbsp;setCutoutVisible:pluginID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setCutoutVisible:(BOOL)<em>isVisible</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
 
 		    
 		</div>
@@ -370,7 +370,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-01-21</p>
+						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-02-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
