@@ -10,7 +10,7 @@
 
 [Anyline](https://www.anyline.com) is a mobile OCR SDK, which can be customized to scan all kinds of numbers, characters, text and codes.
 
-The Example App provides many preconfigured modules, to show case of what the SDK is capabale of. 
+The Example App provides many preconfigured modules, to show case of what the SDK is capable of. 
 
 
 ## Quick Start Guide
