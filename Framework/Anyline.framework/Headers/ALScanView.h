@@ -121,4 +121,9 @@
 
 - (void)updateWebView:(ALScanViewPluginConfig *_Nonnull)config;
 
+/**
+ Zoom Features
+ */
+- (void)enableZoomPinchGesture:(BOOL)enabled;
+
 @end

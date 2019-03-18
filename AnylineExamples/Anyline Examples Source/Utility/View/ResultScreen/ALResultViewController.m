@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *optionalImageView;
 
 @property (nonatomic) NSInteger cellHeight;
+@property (nonatomic) NSInteger tableHeight;
 
 @end
 
@@ -147,12 +148,30 @@
         [self.contentScrollView addSubview:self.optionalImageView];
         
 //        [self.tableView layoutSubviews];
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 120.0;
     }
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.tableHeight > self.tableView.contentSize.height) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width, self.tableHeight);
+            [self updateViewItemLayout];
+        } completion:^(BOOL finished) { }];
+        
+    }
+}
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
+    [self updateViewItemLayout];
+}
+
+- (void)updateViewItemLayout {
     //Update Positions of subviews
     self.resultTitle.center = CGPointMake(self.view.center.x, self.resultTitle.center.y);
     self.imageTitle.center = CGPointMake(self.view.center.x, self.imageTitle.center.y);
@@ -170,41 +189,40 @@
                                        self.imageTitle.frame.size.height);
     
     self.imageView.frame = CGRectMake(self.imageView.frame.origin.x,
-                                       self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
-                                       self.imageView.frame.size.width,
-                                       self.imageView.frame.size.height);
+                                      self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
+                                      self.imageView.frame.size.width,
+                                      self.imageView.frame.size.height);
     
     CGFloat contentSizeHeight = self.imageView.frame.origin.y + self.imageView.frame.size.height;
     
     if (_optionalTitle && _optionalImage) {
         self.optionalTitleLabel.frame = CGRectMake(self.optionalTitleLabel.frame.origin.x,
-                                           self.imageView.frame.origin.y+self.imageView.frame.size.height,
-                                           self.optionalTitleLabel.frame.size.width,
-                                           self.optionalTitleLabel.frame.size.height);
+                                                   self.imageView.frame.origin.y+self.imageView.frame.size.height,
+                                                   self.optionalTitleLabel.frame.size.width,
+                                                   self.optionalTitleLabel.frame.size.height);
         
         self.optionalImageView.frame = CGRectMake(self.optionalImageView.frame.origin.x,
-                                          self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
-                                          self.optionalImageView.frame.size.width,
-                                          self.optionalImageView.frame.size.height);
+                                                  self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
+                                                  self.optionalImageView.frame.size.width,
+                                                  self.optionalImageView.frame.size.height);
         
         self.optionalImageView.center = CGPointMake(self.contentScrollView.center.x, self.optionalImageView.center.y);
         
         //Update content size with optional imageView
         contentSizeHeight = self.optionalImageView.frame.origin.y + self.optionalImageView.frame.size.height;
     }
-
+    
     self.contentScrollView.contentSize = CGSizeMake(self.view.frame.size.width, contentSizeHeight);
+    
 }
 
 #pragma mark - UITableView methods
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
@@ -219,6 +237,9 @@
     [cell setResultEntry:entry];
     [cell layoutSubviews];
     self.cellHeight = cell.cellHeight;
+    self.tableHeight = self.tableHeight + self.cellHeight;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 300;
     return cell;
 }
 

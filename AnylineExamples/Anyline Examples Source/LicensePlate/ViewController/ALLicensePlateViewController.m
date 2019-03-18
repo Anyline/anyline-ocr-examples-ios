@@ -61,6 +61,9 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     
+    // Enable zoom gesture for scanView
+    [self.scanView enableZoomPinchGesture:true];
+    
     //Start Camera:
     [self.scanView startCamera];
     [self startListeningForMotion];

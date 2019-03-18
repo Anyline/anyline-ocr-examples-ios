@@ -56,6 +56,14 @@
 - (void)setFocusAndExposurePoint:(CGPoint)point;
 
 - (void)setZoomLevel:(CGFloat)zoomFactor;
+- (void)setZoomGestureLevel:(CGFloat)velocity;
+- (CGFloat)minAvailableVideoZoomFactor;
+- (CGFloat)maxAvailableVideoZoomFactor;
+- (void)setMaxVideoZoomFactor:(CGFloat)factor;
+
+- (CGFloat)currentFocalLength;
+- (CGFloat)currentZoomRatio;
+- (CGFloat)currentVideoZoomFactor;
 
 - (void)startSession;
 
@@ -68,6 +76,8 @@
 - (UIInterfaceOrientation)currentInterfaceOrientation;
 
 - (AVCaptureConnection *_Nullable)getOrientationAdaptedCaptureConnection;
+
+- (void)setNativeBarcodeFormats:(NSArray * _Nullable)formats;
 
 + (AVAuthorizationStatus)cameraPermissionStatus;
 

@@ -23,6 +23,7 @@
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALDrivingLicenseScanViewController.h"
+#import "ALCattleTagScanViewController.h"
 
 @interface ALOthersExampleManager ()
 
@@ -77,13 +78,17 @@
                                                         image:[UIImage imageNamed:@"isbn"]
                                                viewController:[ALISBNScanViewController class]];
     
+    ALExample *cattleTagScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Cattle Tag", nil)
+                                                             image:[UIImage imageNamed:@"cow-tag"]
+                                                    viewController:[ALCattleTagScanViewController class]];
+    
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcode / QR-Code", nil)
                                                            image:[UIImage imageNamed:@"barcode"]
                                                   viewController:[ALMultiformatBarcodeScanViewController class]];
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, barcodeScanning, documentScanner],
+                      self.sectionNames[0] : @[cattleTagScanning, ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, barcodeScanning, documentScanner],
                       };
 }
 

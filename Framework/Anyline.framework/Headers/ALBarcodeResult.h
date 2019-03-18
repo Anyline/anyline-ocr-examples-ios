@@ -24,6 +24,7 @@ extern NSString * _Nonnull const kCodeTypeRSSExpanded;
 extern NSString * _Nonnull const kCodeTypeUPCA;
 extern NSString * _Nonnull const kCodeTypeUPCE;
 extern NSString * _Nonnull const kCodeTypeUPCEANExtension;
+extern NSString * _Nonnull const kCodeTypeAll;
 
 /**
  *  Theses are the valid code types to supply to setBarcodeFormatOptions:

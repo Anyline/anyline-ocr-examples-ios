@@ -36,6 +36,8 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryVIN] = @"Vin Scanner",
     [ALScanHistoryContainer] = @"Container Scanner",
     [ALScanHistoryDrivingLicense] = @"Driving License",
+    [ALScanHistoryGermanIDFront] = @"German ID Front",
+    [ALScanHistoryCattleTag] = @"Cattle Tag",
 };
 
 @implementation ScanHistory

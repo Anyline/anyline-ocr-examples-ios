@@ -60,6 +60,8 @@
 		
 		<option value="//api/name/pictureResolution">pictureResolution</option>
 		
+		<option value="//api/name/zoomGesture">zoomGesture</option>
+		
 	</optgroup>
 	
 
@@ -80,9 +82,25 @@
 		
 		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:">- initWithDefaultCamera:captureResolution:pictureResolution:</option>
 		
+		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:">- initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:</option>
+		
+		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:">- initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:</option>
+		
 		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
 		
 		<option value="//api/name/initWithJsonFilePath:">- initWithJsonFilePath:</option>
+		
+		<option value="//api/name/maxZoomFactor">- maxZoomFactor</option>
+		
+		<option value="//api/name/setFocalLength:">- setFocalLength:</option>
+		
+		<option value="//api/name/setMaxFocalLength:">- setMaxFocalLength:</option>
+		
+		<option value="//api/name/setMaxZoomRatio:">- setMaxZoomRatio:</option>
+		
+		<option value="//api/name/setZoomRatio:">- setZoomRatio:</option>
+		
+		<option value="//api/name/zoomFactor">- zoomFactor</option>
 		
 	</optgroup>
 	
@@ -174,6 +192,22 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/zoomGesture" title="zoomGesture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zoomGesture">&nbsp;&nbsp;zoomGesture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL zoomGesture</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/configurationFromJsonFilePath:" title="configurationFromJsonFilePath:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/configurationFromJsonFilePath:">+&nbsp;configurationFromJsonFilePath:</a></code>
 </h3>
@@ -238,6 +272,38 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:" title="initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:">&ndash;&nbsp;initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)<em>defaultCamera</em> captureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomGesture:(BOOL)<em>zoomGesture</em> zoomRatio:(CGFloat)<em>zoomRatio</em> maxZoomRatio:(CGFloat)<em>maxZoomRatio</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:" title="initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:">&ndash;&nbsp;initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)<em>defaultCamera</em> captureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomGesture:(BOOL)<em>zoomGesture</em> focalLength:(CGFloat)<em>focalLength</em> maxFocalLength:(CGFloat)<em>maxFocalLength</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/defaultCameraConfig" title="defaultCameraConfig"></a>
 	<h3 class="method-title"><code><a href="#//api/name/defaultCameraConfig">+&nbsp;defaultCameraConfig</a></code>
 </h3>
@@ -269,6 +335,102 @@
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFocalLength:" title="setFocalLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFocalLength:">&ndash;&nbsp;setFocalLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setFocalLength:(CGFloat)<em>focalLength</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setZoomRatio:" title="setZoomRatio:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setZoomRatio:">&ndash;&nbsp;setZoomRatio:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setZoomRatio:(CGFloat)<em>ratio</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMaxZoomRatio:" title="setMaxZoomRatio:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMaxZoomRatio:">&ndash;&nbsp;setMaxZoomRatio:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setMaxZoomRatio:(CGFloat)<em>maxZoomRatio</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMaxFocalLength:" title="setMaxFocalLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMaxFocalLength:">&ndash;&nbsp;setMaxFocalLength:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setMaxFocalLength:(CGFloat)<em>maxFocalLength</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxZoomFactor" title="maxZoomFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxZoomFactor">&ndash;&nbsp;maxZoomFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGFloat)maxZoomFactor</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/zoomFactor" title="zoomFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zoomFactor">&ndash;&nbsp;zoomFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGFloat)zoomFactor</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -284,7 +446,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-02-26</p>
+						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-03-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

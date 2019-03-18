@@ -10,6 +10,7 @@
 
 #import "ALDrivingLicenseIdentification.h"
 #import "ALMRZIdentification.h"
+#import "ALGermanIDFrontIdentification.h"
 
 typedef NS_ENUM(NSInteger, ALIdentityDocumentScanMode) {
     ALMRZ,

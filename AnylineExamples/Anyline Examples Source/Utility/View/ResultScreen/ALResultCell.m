@@ -92,9 +92,12 @@
                                        self.titleLabel.frame.origin.y+self.titleLabel.frame.size.height,
                                        self.contentView.frame.size.width - padding*2 - checkmarkHeight-5,
                                        self.valueLabel.frame.size.height);
-    
     //Check if single or multiple lines
-    if ([self numberOfLinesForString:self.valueLabel.text] > 1){
+    NSUInteger numberOfRows = [self numberOfLinesForString:self.valueLabel.text];
+    if (numberOfRows > 1){
+        if (numberOfRows >= 5) {
+            self.valueLabel.font = [UIFont AL_proximaRegularWithSize:12];
+        }
         CGSize size = [self.valueLabel.text sizeWithFont:self.valueLabel.font
                                        constrainedToSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
                                            lineBreakMode:NSLineBreakByWordWrapping];
@@ -112,6 +115,8 @@
     
     //Checkmark setup
     self.checkmarkView.center = CGPointMake(self.contentView.frame.size.width - checkmarkHeight/2 - padding, self.valueLabel.center.y);
+    
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.titleLabel.frame.size.height + self.valueLabel.frame.size.height);
     
 }
 

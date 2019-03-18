@@ -35,6 +35,7 @@
 + (_Nonnull instancetype)defaultOCRConfig;
 + (_Nonnull instancetype)defaultMRZConfig;
 + (_Nonnull instancetype)defaultDrivingLicenseConfig;
++ (_Nonnull instancetype)defaultGermanIDFrontConfig;
 + (_Nonnull instancetype)defaultMeterConfig;
 
 @end

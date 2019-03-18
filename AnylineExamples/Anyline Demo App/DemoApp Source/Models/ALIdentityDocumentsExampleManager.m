@@ -15,6 +15,8 @@
 #import "ALMeterExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
+#import "ALGermanIDFrontScanViewController.h"
+#import "ALPDF417ScanViewController.h"
 
 @interface ALIdentityDocumentsExampleManager ()
 
@@ -41,13 +43,24 @@
                                                        image:[UIImage imageNamed:@"mrz-version 3"]
                                               viewController:[ALMRZScanViewController class]];
     
-    ALExample *driverATScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AUT/GER Driving License", nil)
+    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AUT/GER Driving License", nil)
                                                             image:[UIImage imageNamed:@"driving license"]
                                                    viewController:[ALDrivingLicenseScanViewController class]];
     
+    ALExample *germanIDScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"German ID Front", nil)
+                                                            image:[UIImage imageNamed:@"german-id-front"]
+                                                   viewController:[ALGermanIDFrontScanViewController class]];
+    
+    ALExample *pdf417Scanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PDF417", nil)
+                                                            image:[UIImage imageNamed:@"PDF417"]
+                                                   viewController:[ALPDF417ScanViewController class]];
+    
+    
+    
+    
     self.sectionNames = @[@"Identity Documents",];
     self.examples = @{
-                      self.sectionNames[0] : @[mrzScanning,driverATScanning,],
+                      self.sectionNames[0] : @[mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning,],
                       };
 }
 

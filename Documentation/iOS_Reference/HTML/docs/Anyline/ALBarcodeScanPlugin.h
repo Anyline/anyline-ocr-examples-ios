@@ -71,4 +71,16 @@
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin
                    didFindResult:(ALBarcodeResult * _Nonnull)scanResult;
 
-@end
+
+@optional
+/**
+ *  Will be called as soon as the ALBarcodeFormatOptions of the scanPlugin have been modified.
+ *
+ *  @param anylineBarcodeScanPlugin The plugin
+ *  @param updatedBarcodeFormats the updated barcode formats
+ *
+ */
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin
+           updatedBarcodeFormats:(ALBarcodeFormatOptions)formats;
+
+@end    
