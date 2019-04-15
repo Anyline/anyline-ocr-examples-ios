@@ -49,7 +49,13 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     NSAssert(self.licensePlateScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.licensePlateScanPlugin addInfoDelegate:self];
     
-    self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin];
+    
+    //Set a delayed scan start time in the scanViewPluginConfig
+    ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultLicensePlateConfig];
+    viewPluginConfig.delayStartScanTime = 2000;
+    
+    
+    self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin scanViewPluginConfig:viewPluginConfig];
     NSAssert(self.licensePlateScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     [self.licensePlateScanViewPlugin addScanViewPluginDelegate:self];
     

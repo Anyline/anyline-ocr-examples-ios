@@ -49,6 +49,19 @@ NSString * const viewControllerIdentifier = @"gridViewController";
                                  atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
     CGSize headerSize = [self headerSize];
+    
+    // Make sure collection view isn't overlapped by toolbar at bottom of page
+    CGFloat bottomPadding;
+    if (@available(iOS 11, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        bottomPadding = window.safeAreaInsets.bottom;
+    } else {
+        bottomPadding = 0;
+    }
+
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height - 44 - bottomPadding);
+    collectionView.frame = frame;
 
     if ([self.exampleManager numberOfSections] > 1) {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];

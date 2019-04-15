@@ -67,13 +67,29 @@
 - (void)removeInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
 
 
-// Internal Stuff
+//Scan Delay Properties and Methods
+@property (nonatomic) int delayStartScanTime; //in milliseconds
+
+/**
+ *  The delayedScanTimeFulfilled indicates if the configured delayStartScanTime has been fulfilled.
+ *  No result will be returned unless this method returns true.
+ *
+ *  @return Boolean indicating if the delayStartScanTime has been fulfilled.
+ */
+- (BOOL)delayedScanTimeFulfilled;
+/**
+ *  Will set the current timestamp for the delayedScantimeFulfilled check
+ */
+- (void)setCurrentScanStartTime;
+
+
+// Internal Properties
 @property (nonatomic, assign) NSInteger confidence;
 
 @property (nullable, nonatomic, strong, readonly) ALImage *scanImage;
 
 @property (nullable, nonatomic, strong) ALCoreController *coreController;
-    
+
 @end
 
 /**

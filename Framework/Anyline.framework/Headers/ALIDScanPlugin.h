@@ -76,4 +76,5 @@
               didFindResult:(ALIDResult * _Nonnull)scanResult;
 
 
+
 @end

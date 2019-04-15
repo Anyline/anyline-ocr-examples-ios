@@ -41,11 +41,22 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     ALMRZConfig *mrzConfig = [[ALMRZConfig alloc] init];
     
+    //Create fieldScanOptions to configure individual scannable fields
+    ALMRZFieldScanOptions *scanOptions = [[ALMRZFieldScanOptions alloc] init];
+    scanOptions.address = ALOptional;
+    scanOptions.dateOfIssue = ALOptional;
+    
+    //Set scanOptions for MRZConfig
+    mrzConfig.idFieldScanOptions = scanOptions;
+    
     NSError *error = nil;
 
+    //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
+    //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
     self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kMRZLicenseKey delegate:self idConfig:mrzConfig error:&error];
     NSAssert(self.mrzScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.mrzScanPlugin addInfoDelegate:self];
+    
     
     self.mrzScanViewPlugin = [[ALIDScanViewPlugin alloc] initWithScanPlugin:self.mrzScanPlugin];
     NSAssert(self.mrzScanViewPlugin, @"Setup Error: %@", error.debugDescription);
@@ -128,49 +139,48 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
  This is the main delegate method Anyline uses to report its results
  */
 - (void)anylineIDScanPlugin:(ALIDScanPlugin *)anylineIDScanPlugin didFindResult:(ALIDResult *)scanResult {
+    ALMRZIdentification *identification = (ALMRZIdentification*)scanResult.result;
+    
     [self.mrzScanViewPlugin stopAndReturnError:nil];
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [scanResult.result documentType]]];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Surnames: %@\n", [scanResult.result surNames]]];
-    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [scanResult.result givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Issuing Country Code: %@\n", [scanResult.result issuingCountryCode]]];
-    [result appendString:[NSString stringWithFormat:@"Nationality Country Code: %@\n", [scanResult.result nationalityCountryCode]]];
-    [result appendString:[NSString stringWithFormat:@"Day Of Birth: %@\n", [scanResult.result dayOfBirth]]];
-    [result appendString:[NSString stringWithFormat:@"Expiration Date: %@\n", [scanResult.result expirationDate]]];
-    [result appendString:[NSString stringWithFormat:@"Sex: %@\n", [scanResult.result sex]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Number: %@\n", [scanResult.result checkdigitNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Expiration Date: %@\n", [scanResult.result checkdigitExpirationDate]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Day Of Birth: %@\n", [scanResult.result checkdigitDayOfBirth]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Final: %@\n", [scanResult.result checkdigitFinal]]];
-    [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [scanResult.result personalNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [scanResult.result checkDigitPersonalNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [identification documentType]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Surname: %@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Issuing Country Code: %@\n", [identification issuingCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Nationality Country Code: %@\n", [identification nationalityCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Day Of Birth: %@\n", [identification dateOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Date of Expiry: %@\n", [identification dateOfExpiry]]];
+    [result appendString:[NSString stringWithFormat:@"Sex: %@\n", [identification sex]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Number: %@\n", [identification checkDigitDocumentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Expiration Date: %@\n", [identification checkDigitDateOfExpiry]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Day Of Birth: %@\n", [identification checkDigitDateOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Final: %@\n", [identification checkDigitFinal]]];
+    [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [identification personalNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [identification checkDigitPersonalNumber]]];
 
     
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
-        
-        ALMRZIdentification *mrzIdentification = (ALMRZIdentification *)scanResult.result;
-        
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Name" value:[scanResult.result givenNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[scanResult.result surNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:[scanResult.result sex]]];
-        [resultData addObject:[self resultEntryWithDate:[scanResult.result dayOfBirthDateObject] dateString:[scanResult.result dayOfBirth] title:@"Date of Birth"]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[scanResult.result documentType]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
-        [resultData addObject:[self resultEntryWithDate:[scanResult.result expirationDateObject] dateString:[((ALMRZIdentification *)scanResult.result) expirationDate] title:@"Expiration Date"]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[scanResult.result nationalityCountryCode]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:[identification sex]]];
+        [resultData addObject:[self resultEntryWithDate:[identification dateOfBirthObject] dateString:[identification dateOfBirth] title:@"Date of Birth"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[identification documentType]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber]]];
+        [resultData addObject:[self resultEntryWithDate:[identification dateOfExpiryObject] dateString:[identification dateOfExpiry] title:@"Date of Expiry"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationalityCountryCode]]];
         
-        if ([[scanResult.result documentType] isEqualToString:@"ID"] && [[scanResult.result issuingCountryCode] isEqualToString:@"D"]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:mrzIdentification.address]];
+        if ([[identification documentType] isEqualToString:@"ID"] && [[identification issuingCountryCode] isEqualToString:@"D"]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:identification.address]];
         }
         
-        if ([scanResult.result issuingDate] && [scanResult.result issuingDate].length > 0) {
-            [resultData addObject:[self resultEntryWithDate:[scanResult.result issuingDateObject] dateString:[((ALMRZIdentification *)scanResult.result) issuingDate] title:@"Issuing Date"]];
+        if ([identification dateOfIssue] && [identification dateOfIssue].length > 0) {
+            [resultData addObject:[self resultEntryWithDate:[identification dateOfIssueObject] dateString:[identification dateOfIssue] title:@"Date of Issue"]];
         }
         
-        if ([scanResult.result personalNumber] && [scanResult.result personalNumber].length > 0) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[scanResult.result personalNumber]]];
+        if ([identification personalNumber] && [identification personalNumber].length > 0) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[identification personalNumber]]];
         }
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];

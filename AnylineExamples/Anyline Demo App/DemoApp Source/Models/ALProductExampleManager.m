@@ -74,8 +74,6 @@
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
     
-    
-    
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Others", nil)
                                                   image:[UIImage imageNamed:@"others"]
                                          viewController:[ALGridCollectionViewController class]

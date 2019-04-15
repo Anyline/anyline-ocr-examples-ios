@@ -12,11 +12,6 @@
 #import "ALMRZIdentification.h"
 #import "ALGermanIDFrontIdentification.h"
 
-typedef NS_ENUM(NSInteger, ALIdentityDocumentScanMode) {
-    ALMRZ,
-    ALDrivingLicense
-};
-
 /**
  *  The result object for the ALIDResult
  */
@@ -25,14 +20,21 @@ typedef NS_ENUM(NSInteger, ALIdentityDocumentScanMode) {
 /**
  * Boolean indicating if all the check digits where valid
  */
-@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid;
+@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid __deprecated_msg("Deprecated since Version 10. Please use the property \"allCheckDigitsValid\" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.");
+
+- (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
+                                   image:(UIImage * _Nonnull)image
+                               fullImage:(UIImage * _Nullable)fullImage
+                              confidence:(NSInteger)confidence
+                                pluginID:(NSString *_Nonnull)pluginID;
+
 
 - (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
                                    image:(UIImage * _Nonnull)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
                                 pluginID:(NSString *_Nonnull)pluginID
-                     allCheckDigitsValid:(BOOL)allCheckDigitsValid;
+                     allCheckDigitsValid:(BOOL)allCheckDigitsValid __deprecated_msg("Deprecated since Version 10. Please use \"initWithResult:image:fullImage:confidence:pluginID\" instead");
 
 @end
 

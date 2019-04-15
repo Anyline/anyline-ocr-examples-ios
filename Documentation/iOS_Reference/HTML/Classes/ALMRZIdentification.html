@@ -54,31 +54,37 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/MRZString">MRZString</option>
+		<option value="//api/name/)">)</option>
 		
 		<option value="//api/name/address">address</option>
 		
+		<option value="//api/name/allCheckDigitsValid">allCheckDigitsValid</option>
+		
+		<option value="//api/name/checkDigitDateOfBirth">checkDigitDateOfBirth</option>
+		
+		<option value="//api/name/checkDigitDateOfExpiry">checkDigitDateOfExpiry</option>
+		
+		<option value="//api/name/checkDigitDocumentNumber">checkDigitDocumentNumber</option>
+		
+		<option value="//api/name/checkDigitFinal">checkDigitFinal</option>
+		
 		<option value="//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</option>
 		
-		<option value="//api/name/checkdigitDayOfBirth">checkdigitDayOfBirth</option>
+		<option value="//api/name/dateOfBirth">dateOfBirth</option>
 		
-		<option value="//api/name/checkdigitExpirationDate">checkdigitExpirationDate</option>
+		<option value="//api/name/dateOfBirthObject">dateOfBirthObject</option>
 		
-		<option value="//api/name/checkdigitFinal">checkdigitFinal</option>
+		<option value="//api/name/dateOfExpiry">dateOfExpiry</option>
 		
-		<option value="//api/name/checkdigitNumber">checkdigitNumber</option>
+		<option value="//api/name/dateOfExpiryObject">dateOfExpiryObject</option>
 		
-		<option value="//api/name/dayOfBirth">dayOfBirth</option>
+		<option value="//api/name/dateOfIssue">dateOfIssue</option>
 		
-		<option value="//api/name/dayOfBirthDateObject">dayOfBirthDateObject</option>
+		<option value="//api/name/dateOfIssueObject">dateOfIssueObject</option>
 		
 		<option value="//api/name/documentNumber">documentNumber</option>
 		
 		<option value="//api/name/documentType">documentType</option>
-		
-		<option value="//api/name/expirationDate">expirationDate</option>
-		
-		<option value="//api/name/expirationDateObject">expirationDateObject</option>
 		
 		<option value="//api/name/faceImage">faceImage</option>
 		
@@ -86,19 +92,17 @@
 		
 		<option value="//api/name/issuingCountryCode">issuingCountryCode</option>
 		
-		<option value="//api/name/issuingDate">issuingDate</option>
-		
-		<option value="//api/name/issuingDateObject">issuingDateObject</option>
+		<option value="//api/name/mrzString">mrzString</option>
 		
 		<option value="//api/name/nationalityCountryCode">nationalityCountryCode</option>
 		
-		<option value="//api/name/personalNumber">personalNumber</option>
+		<option value="//api/name/optionalData">optionalData</option>
 		
-		<option value="//api/name/personalNumber2">personalNumber2</option>
+		<option value="//api/name/personalNumber">personalNumber</option>
 		
 		<option value="//api/name/sex">sex</option>
 		
-		<option value="//api/name/surNames">surNames</option>
+		<option value="//api/name/surname">surname</option>
 		
 	</optgroup>
 	
@@ -109,6 +113,8 @@
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:">- initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:</option>
+		
+		<option value="//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">- initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</option>
 		
 	</optgroup>
 	
@@ -152,8 +158,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/documentType" title="documentType"></a>
-	<h3 class="method-title"><code><a href="#//api/name/documentType">&nbsp;&nbsp;documentType</a></code>
+	<a name="//api/name/surname" title="surname"></a>
+	<h3 class="method-title"><code><a href="#//api/name/surname">&nbsp;&nbsp;surname</a></code>
 </h3>
 
 	<div class="method-info">
@@ -162,39 +168,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *documentType</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/documentNumber" title="documentNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/documentNumber">&nbsp;&nbsp;documentNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *documentNumber</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/surNames" title="surNames"></a>
-	<h3 class="method-title"><code><a href="#//api/name/surNames">&nbsp;&nbsp;surNames</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *surNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *surname</code></div>
 
 		    
 		</div>
@@ -210,7 +184,71 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *givenNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *givenNames</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfBirth" title="dateOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfBirth">&nbsp;&nbsp;dateOfBirth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfBirth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfExpiry" title="dateOfExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfExpiry">&nbsp;&nbsp;dateOfExpiry</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfExpiry</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/documentNumber" title="documentNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentNumber">&nbsp;&nbsp;documentNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *documentNumber</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/documentType" title="documentType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentType">&nbsp;&nbsp;documentType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *documentType</code></div>
 
 		    
 		</div>
@@ -226,7 +264,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *issuingCountryCode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *issuingCountryCode</code></div>
 
 		    
 		</div>
@@ -242,39 +280,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *nationalityCountryCode</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dayOfBirth" title="dayOfBirth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dayOfBirth">&nbsp;&nbsp;dayOfBirth</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *dayOfBirth</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/expirationDate" title="expirationDate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/expirationDate">&nbsp;&nbsp;expirationDate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *nationalityCountryCode</code></div>
 
 		    
 		</div>
@@ -290,71 +296,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *sex</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkdigitNumber" title="checkdigitNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkdigitNumber">&nbsp;&nbsp;checkdigitNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitNumber</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkdigitExpirationDate" title="checkdigitExpirationDate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkdigitExpirationDate">&nbsp;&nbsp;checkdigitExpirationDate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitExpirationDate</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkdigitDayOfBirth" title="checkdigitDayOfBirth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkdigitDayOfBirth">&nbsp;&nbsp;checkdigitDayOfBirth</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitDayOfBirth</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkdigitFinal" title="checkdigitFinal"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkdigitFinal">&nbsp;&nbsp;checkdigitFinal</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitFinal</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *sex</code></div>
 
 		    
 		</div>
@@ -370,14 +312,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *personalNumber</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/checkDigitPersonalNumber" title="checkDigitPersonalNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkDigitPersonalNumber">&nbsp;&nbsp;checkDigitPersonalNumber</a></code>
+	<a name="//api/name/optionalData" title="optionalData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optionalData">&nbsp;&nbsp;optionalData</a></code>
 </h3>
 
 	<div class="method-info">
@@ -386,14 +328,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *optionalData</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/personalNumber2" title="personalNumber2"></a>
-	<h3 class="method-title"><code><a href="#//api/name/personalNumber2">&nbsp;&nbsp;personalNumber2</a></code>
+	<a name="//api/name/mrzString" title="mrzString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrzString">&nbsp;&nbsp;mrzString</a></code>
 </h3>
 
 	<div class="method-info">
@@ -402,7 +344,23 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber2</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *mrzString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfIssue" title="dateOfIssue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfIssue">&nbsp;&nbsp;dateOfIssue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfIssue</code></div>
 
 		    
 		</div>
@@ -424,86 +382,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/issuingDate" title="issuingDate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/issuingDate">&nbsp;&nbsp;issuingDate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *issuingDate</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/issuingDateObject" title="issuingDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/issuingDateObject">&nbsp;&nbsp;issuingDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/expirationDateObject" title="expirationDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/expirationDateObject">&nbsp;&nbsp;expirationDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dayOfBirthDateObject" title="dayOfBirthDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dayOfBirthDateObject">&nbsp;&nbsp;dayOfBirthDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/MRZString" title="MRZString"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MRZString">&nbsp;&nbsp;MRZString</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *MRZString</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/faceImage" title="faceImage"></a>
 	<h3 class="method-title"><code><a href="#//api/name/faceImage">&nbsp;&nbsp;faceImage</a></code>
 </h3>
@@ -517,6 +395,265 @@
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *faceImage</code></div>
 
 		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkDigitDateOfExpiry" title="checkDigitDateOfExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDateOfExpiry">&nbsp;&nbsp;checkDigitDateOfExpiry</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDateOfExpiry</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkDigitDocumentNumber" title="checkDigitDocumentNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDocumentNumber">&nbsp;&nbsp;checkDigitDocumentNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDocumentNumber</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkDigitDateOfBirth" title="checkDigitDateOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDateOfBirth">&nbsp;&nbsp;checkDigitDateOfBirth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDateOfBirth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkDigitFinal" title="checkDigitFinal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitFinal">&nbsp;&nbsp;checkDigitFinal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *checkDigitFinal</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkDigitPersonalNumber" title="checkDigitPersonalNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitPersonalNumber">&nbsp;&nbsp;checkDigitPersonalNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allCheckDigitsValid" title="allCheckDigitsValid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allCheckDigitsValid">&nbsp;&nbsp;allCheckDigitsValid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL allCheckDigitsValid</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfBirthObject" title="dateOfBirthObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfBirthObject">&nbsp;&nbsp;dateOfBirthObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfBirthObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfExpiryObject" title="dateOfExpiryObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfExpiryObject">&nbsp;&nbsp;dateOfExpiryObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfIssueObject" title="dateOfIssueObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfIssueObject">&nbsp;&nbsp;dateOfIssueObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfIssueObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since Version 10. Please use the property \&quot;surname\&quot; instead.&quot; )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:" title="initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">&ndash;&nbsp;initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Initializes a ALIdentification object. This object is used to carry the scanned values.
+*</li>
+<li>@param <a href="#//api/name/surname">surname</a>                  All the surNames of the person separated by whitespace.</li>
+<li>@param <a href="#//api/name/givenNames">givenNames</a>               All the given names of the person separated by whitespace.</li>
+<li>@param <a href="#//api/name/dateOfBirth">dateOfBirth</a>              The date of birth.</li>
+<li>@param <a href="#//api/name/dateOfExpiry">dateOfExpiry</a>             The expiration date of the passport / document.</li>
+<li>@param <a href="#//api/name/documentNumber">documentNumber</a>           Passport number or document number.</li>
+<li>@param <a href="#//api/name/documentType">documentType</a>             The type of the document that was read. (ID/P)</li>
+<li>@param <a href="#//api/name/issuingCountryCode">issuingCountryCode</a>       The issuing country code of the document.</li>
+<li>@param <a href="#//api/name/nationalityCountryCode">nationalityCountryCode</a>   The nationality country code of the document.</li>
+<li>@param <a href="#//api/name/sex">sex</a>                      The gender of the person</li>
+<li>@param <a href="#//api/name/personalNumber">personalNumber</a>           Personal Number on the document. Is nil on many passports / documents.</li>
+<li>@param <a href="#//api/name/optionalData">optionalData</a>             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.</li>
+<li><pre><code>                           Might contain additional information.
+</code></pre>
+
+<p>*</p></li>
+<li>@param <a href="#//api/name/checkDigitDateOfExpiry">checkDigitDateOfExpiry</a>   Check digit for the expiration date.</li>
+<li>@param <a href="#//api/name/checkDigitDocumentNumber">checkDigitDocumentNumber</a> Check digit for the document number.</li>
+<li>@param <a href="#//api/name/checkDigitDateOfBirth">checkDigitDateOfBirth</a>    Check digit for the day of birth.</li>
+<li>@param <a href="#//api/name/checkDigitFinal">checkDigitFinal</a>          On passports checkdigit over passport number, passport number checkdigit, date of birth,</li>
+<li><pre><code>                           date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
+</code></pre></li>
+<li><pre><code>                           personal number checkdigit.
+</code></pre></li>
+<li><pre><code>                           On other travel documents over document number, document number checkdigit, personal number,
+</code></pre></li>
+<li><pre><code>                           date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
+</code></pre>
+
+<p>*</p></li>
+<li>@param <a href="#//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</a> CheckDigit for the personal number. Is nil or 0 when no personal number is used.</li>
+<li><pre><code>                           Is also nil on none passport documents.
+</code></pre></li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithSurname:(NSString *_Nullable)<em>surname</em> givenNames:(NSString *_Nullable)<em>givenNames</em> dateOfBirth:(NSString *_Nullable)<em>dateOfBirth</em> dateOfExpiry:(NSString *_Nullable)<em>dateOfExpiry</em> documentNumber:(NSString *_Nullable)<em>documentNumber</em> documentType:(NSString *_Nullable)<em>documentType</em> issuingCountryCode:(NSString *_Nullable)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *_Nullable)<em>nationalityCountryCode</em> sex:(NSString *_Nullable)<em>sex</em> personalNumber:(NSString *_Nullable)<em>personalNumber</em> optionalData:(NSString *_Nullable)<em>optionalData</em> checkDigitDateOfExpiry:(NSString *_Nullable)<em>checkDigitDateOfExpiry</em> checkDigitDocumentNumber:(NSString *_Nullable)<em>checkDigitDocumentNumber</em> checkDigitDateOfBirth:(NSString *_Nullable)<em>checkDigitDateOfBirth</em> checkDigitFinal:(NSString *_Nullable)<em>checkDigitFinal</em> checkDigitPersonalNumber:(NSString *_Nullable)<em>checkDigitPersonalNumber</em> allCheckDigitsValid:(BOOL)<em>allCheckDigitsValid</em> address:(NSString *_Nullable)<em>address</em> dateOfIssue:(NSString *_Nullable)<em>dateOfIssue</em> mrzString:(NSString *_Nullable)<em>mrzString</em> formattedDateOfExpiry:(NSString *_Nullable)<em>formattedDateOfExpiry</em> formattedDateOfBirth:(NSString *_Nullable)<em>formattedDateOfBirth</em> formattedDateOfIssue:(NSString *_Nullable)<em>formattedDateOfIssue</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@param <a href="#//api/name/allCheckDigitsValid">allCheckDigitsValid</a>      will return true if all checkdigits are correct</li>
+<li>@param <a href="#//api/name/address">address</a>                  Optional data which contains the data of the <a href="#//api/name/address">address</a> field on a german ID.</li>
+<li>@param <a href="#//api/name/dateOfIssue">dateOfIssue</a>              Optional data which contains the data of the issuing date field,</li>
+<li><pre><code>                           which is outside the MRZ field
+</code></pre>
+
+<p>*</p></li>
+<li>@param <a href="#//api/name/mrzString">mrzString</a>                Contains all Information found in the MRZ as string.
+*</li>
+<li>@param formattedDateOfExpiry    The <a href="#//api/name/dateOfExpiry">dateOfExpiry</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfExpiryObject">dateOfExpiryObject</a> will be created using this value.</li>
+<li>@param formattedDateOfBirth     The <a href="#//api/name/dateOfBirth">dateOfBirth</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfBirthObject">dateOfBirthObject</a> will be created using this value.</li>
+<li>@param formattedDateOfIssue     The <a href="#//api/name/dateOfIssue">dateOfIssue</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfIssueObject">dateOfIssueObject</a> will be created using this value.
+*
+*</li>
+<li>@return A new ALIdentification object</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMRZIdentification.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -561,7 +698,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>surNames</code></th>
-						<td><p>All the <a href="#//api/name/surNames">surNames</a> of the person separated by whitespace.</p></td>
+						<td><p>All the surNames of the person separated by whitespace.</p></td>
 					</tr>
 				
 					<tr>
@@ -689,7 +826,7 @@ which is outside the MRZ field</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-03-18</p>
+						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-04-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		009807A94EC0CF09BBD6E628 /* WorkforceToolResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB84FFE6DDEDB80D1124E2E /* WorkforceToolResultViewController.m */; };
+		0233FD677BA416DAFDD8F105 /* anyline_capitals.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */; };
 		03B78518A3C5F50D78A6B112 /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B209468D17400B4C971BF7F /* energyMockData2.json */; };
 		04034040FDAB575B73BA1625 /* ALUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B2468C17273E6793CDE105 /* ALUtils.m */; };
 		041C77E66AF1DF2DA5F7E163 /* ALProductExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64132E9185664AA9EEFC091B /* ALProductExampleManager.m */; };
+		058070CF4BDCDBF470ECCBA0 /* container_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */; };
 		067C86E5EA5963DCF6516AB2 /* ALMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A40FD1F80E9F436D789CDA /* ALMainPageViewController.m */; };
 		0A87C894E408C968D4BD4BB9 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDF14B27376A85BBAE09C6 /* ALExample.m */; };
 		0E161BF1B8444DE550436A77 /* WorkForceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A3433DB4A895122146D5D9 /* WorkForceViewController.xib */; };
@@ -19,22 +21,23 @@
 		0E93EA90D5F63ABC1E8CDD7E /* ElectricMeterBlackWhiteScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4587202B0B33FD1ADAC5A9C /* ElectricMeterBlackWhiteScanViewController.swift */; };
 		10BB618EA5F9171996D235D5 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D2B49ED155F2CAEA9FB1B /* ALBaseScanViewController.m */; };
 		1275E05A7A8BE43FAA2FBBC8 /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6103E43D7371110BC6213F0C /* ALScrabbleWord.m */; };
+		146645DDD582ED12EFFBE28A /* deu.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = DA7638EA3646145215A9FCF1 /* deu.traineddata */; };
 		15E1D4E7BEE190E138514DE7 /* drivinglicense_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC4BDCCF37726A7DA63A6BC /* drivinglicense_capture_config.json */; };
 		1D4F73B949EC962B2D5D473E /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2F2F1A910AA5FF322FD68B /* Anyline.framework */; };
 		1F6F8A6815D5E9E920A0EA26 /* UIToolbar+ExamplesExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697EADEF84AFA60F34FD10A /* UIToolbar+ExamplesExtensions.m */; };
 		1F94E5AC925546484EEBEFD2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41363EE34FC32B1D64CB7DE /* WebKit.framework */; };
 		20474C6E781F062D2F7FE99F /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 26270D1AFDA57474D313BF38 /* voucher_code_config.json */; };
+		21B65DC030E9A2F971811BF4 /* cow_tag_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */; };
+		21C9D4916E83D66625FB26DF /* vin.ale in Resources */ = {isa = PBXBuildFile; fileRef = D46FAF5DE2DADF3845D134F7 /* vin.ale */; };
 		2203E8799E399C35A34C63EB /* anyline_austrian_driving_license.ale in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D535336B3CB971DBDCF21 /* anyline_austrian_driving_license.ale */; };
 		22446895E7379CE7642F36D9 /* WorkForceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66F4E40B95EB1836748935 /* WorkForceViewController.m */; };
 		23E9CAB9A229ADC69A7A0724 /* ReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8885AFE124BF9C2CA84E426 /* ReadingTableViewCell.xib */; };
-		246372A10267058BE4A6CD76 /* anyline_capitals.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */; };
 		247B7B97DDD28C9DC72965FD /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEBDAB687F4B5F98090DA0B /* ALLicensePlateViewController.m */; };
 		27BD495C970C21C19E665402 /* ALResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F5B40F3AC4D6632667710 /* ALResultCell.m */; };
 		2829C6545F159D1A35AC39FB /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */; };
 		28E1258150A35430FA0ECF32 /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443FEC0920C5946EE7CEF8BB /* ALEnergyBaseViewController.m */; };
 		2BA47D60686C7432C64F3A8C /* ALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A22531B381EB3546D5EA58D /* ALBaseViewController.m */; };
 		2C69D2EDA1CB86B43E6E2D0A /* ReadingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB6BB1D310C8E714869F3 /* ReadingDetailsViewController.m */; };
-		2DBC9E7060A38A08393AB09C /* rbf_jan2015_v2.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */; };
 		2E411EE7B5A1E2AC6E2C1965 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
 		2ED519156814C353BADA4460 /* ALISBNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6DAD8B7DE07CE7DEFC65BD /* ALISBNAPI.m */; };
 		2FA845303F20A2968AF78090 /* ScanHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = C89FCA451DDD8B2305225350 /* ScanHistory.m */; };
@@ -52,9 +55,7 @@
 		40296D9A8AEBE92F96388478 /* WorkforceTool+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 88055D30CB47773CFEAA5DD3 /* WorkforceTool+CoreDataProperties.m */; };
 		40664CF0951280BF14702510 /* ALVINScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B514483B9D1E4A4316B2AF7E /* ALVINScanViewController.m */; };
 		452A4B7D3A1B18B8DA800EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8727A8BBF5682A6E725C090 /* Main.storyboard */; };
-		477D2F12A56404F69D63751E /* scrabble.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF63762DADF35221787B91 /* scrabble.traineddata */; };
 		4CC574073156F511C255D525 /* WorkorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A905D4F9E8AB4011E34E84 /* WorkorderViewController.xib */; };
-		4DAAC80B55652958C23D7DE4 /* bottlecap.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */; };
 		4E8D83D63B4FA14BF24C6BA0 /* ALMultiformatBarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */; };
 		505A6F74ACD75A4E13F9F5A8 /* ScanHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D89234FC5BEC4ED40B37E3 /* ScanHistory+CoreDataProperties.m */; };
 		5260364EA4D5B5C01F9292D3 /* ALCattleTagScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CD7F8985E5A20AC71F2E6 /* ALCattleTagScanViewController.m */; };
@@ -67,8 +68,6 @@
 		57E6C5D4FD1BEEFF1F4401E0 /* WorkforceToolResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50347300D8EBE8BB2D6CCEE /* WorkforceToolResultViewController.xib */; };
 		59CC978171A562FB327E82E7 /* cow_tag_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F249838E9230BBD52674B999 /* cow_tag_capture_config.json */; };
 		5BFFE1CD207F54AE034DA7F9 /* ALDialMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */; };
-		5C4B1E83542E0A67CF950550 /* cow_tag_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */; };
-		608487C46660B632359ACF42 /* deu.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = DA7638EA3646145215A9FCF1 /* deu.traineddata */; };
 		613D5C551A2B5488B85C507E /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F53817B45ED084BCC5F172BB /* ISBNInfo.m */; };
 		618F14F9045657F81723FE9D /* ALMeterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD435770F85A368321C662A0 /* ALMeterCollectionViewController.m */; };
 		636B7827303257B204D3268E /* ALBottlecapScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463FC98F76F9898D33790D54 /* ALBottlecapScanViewController.m */; };
@@ -104,7 +103,6 @@
 		871F510C63E5C872D0392AC4 /* ALContainerScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A37324D5B497F955C7207827 /* ALContainerScanViewController.m */; };
 		879C04A4F4E170001BE5BF51 /* ALISBNScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3325FBA2735973E9C441BFF /* ALISBNScanViewController.m */; };
 		88D6F1F3D6087136487E1F8D /* ALBaseGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C7A0F4351C2E0583068BC /* ALBaseGridCollectionViewController.m */; };
-		898E09F136A80B98D24962E7 /* vin.any in Resources */ = {isa = PBXBuildFile; fileRef = 3B20B96D9F3A3276B2889F1A /* vin.any */; };
 		8A264955167979BA2FC8B97D /* Customer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A865CD650D1036DF2B258A4 /* Customer+CoreDataProperties.m */; };
 		8A6B0D84423583073E9AA4A4 /* Reading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB786D27B7B3DAE020C5B57 /* Reading+CoreDataProperties.m */; };
 		8D42C5BB95ADF53EE2AB291D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A5FDF415AE3826014059D5 /* AssetsLibrary.framework */; };
@@ -117,10 +115,13 @@
 		91443F23A05F64274C4A7ECD /* Anyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483BC48BD87FFA04B0C7F398 /* Anyline.framework */; };
 		93054B444BFAB40A9568AD3A /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C96CA2CE47B790BFBB605 /* ALVoucherCodeScanViewController.m */; };
 		9370C1AEB2A2B4BD2390AD95 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AACE1FE20D8FE287813308 /* CoreDataManager.m */; };
+		95F8A3799DFBE8AF0477118A /* eng_no_dict.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */; };
 		9BD004F0B38FA3A447BDCC63 /* ALCustomBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EA706DD645124A63F112 /* ALCustomBarButton.m */; };
 		9BECFA506DD6068C7F769B2D /* ALMROExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE96D8CF4CAD02C52E744BAB /* ALMROExampleManager.m */; };
 		9E844A0A0E4C85FBE35316DD /* ReadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D5A1D27EE4F69994E48028 /* ReadingTableViewCell.m */; };
 		9ECF87ADC072ABDBD2499174 /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
+		9EF40FBE6AEDE24072730E7F /* rbf_jan2015_v2.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */; };
+		9F8905A67CADCD0EF4D0E439 /* USNr.any in Resources */ = {isa = PBXBuildFile; fileRef = A531D6C1B48631A833CE1833 /* USNr.any */; };
 		9F9415BB3AB9C48928EFB7F2 /* UIView+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 722BA184B2BF6DF2B05C4BB5 /* UIView+ALExamplesAdditions.m */; };
 		A0F34BFAA279EE27E542D474 /* ALHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82737006C0A544C17080B312 /* ALHistoryCell.m */; };
 		A610A1382B5971FAEBE9A223 /* ALScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D77205332F40AB7E0E2 /* ALScanResultViewController.m */; };
@@ -134,15 +135,16 @@
 		B2E679B813D53972C37BBC57 /* ALGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F7FDBC88D521FBA687D3BF /* ALGridCollectionViewCell.m */; };
 		B32210DB476597B748438EBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E88C76AF69080B9D5FC54B /* Images.xcassets */; };
 		B3ED4BF0BB2696282DF70736 /* ALRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6932576BBE91833BCDCBA999 /* ALRoundedView.m */; };
+		B80F43265156F7BD1DF3345C /* scrabble.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF63762DADF35221787B91 /* scrabble.traineddata */; };
 		B895428DA5DA75DF4A722CBC /* CustomerSelfReadingResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86279357BF50228C50A7C89 /* CustomerSelfReadingResultViewController.xib */; };
 		B899D152CF75C53C6A617791 /* ALHashtagScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D133DFE4AA1D49F5CF122DCC /* ALHashtagScanViewController.m */; };
 		B9EE1C36F7B8E23622DC75CB /* NSArray+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36113C0011C7E040D73E50B2 /* NSArray+ALExamplesAdditions.m */; };
 		C023BC6F9AA8624605D370D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD389A80DF4984F39067C287 /* AVFoundation.framework */; };
 		C1FC144A0D23504839C99942 /* CustomerSelfReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F721982BB02F4A2575757 /* CustomerSelfReadingViewController.m */; };
+		C2E5A5807DBB0F2F3125BAFF /* bottlecap.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */; };
 		C359ADB31FB8376779CF71FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635597E0966D01FD7533AF85 /* AppDelegate.m */; };
 		C5516C68A9A254E15095DF35 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E5F98B1E0F1B8DF9D47C88 /* ALMeterExampleManager.m */; };
 		C6F027EDC4271E1A6A424935 /* ALDrivingLicenseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141D57F2B89AAC052915511 /* ALDrivingLicenseScanViewController.m */; };
-		C9C1344FD1E1CC0181AD7C62 /* USNr.any in Resources */ = {isa = PBXBuildFile; fileRef = A531D6C1B48631A833CE1833 /* USNr.any */; };
 		CD2BA37F6EF3A4575DBD80FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DF1FCED630116580BE0689 /* main.m */; };
 		D051EA6375E5CB32803C117B /* ALMeterReadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEF78C5E0F2CF9B724ABDA0 /* ALMeterReadingView.m */; };
 		D30448A109398154C127E35D /* ALSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */; };
@@ -152,7 +154,6 @@
 		D4725DF57C028DFE940484BB /* NSUserDefaults+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C99364E505D91D15A5CD4E /* NSUserDefaults+ALExamplesAdditions.m */; };
 		D4954FD12865EA9DFEEBB8BF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B65FEE9AF934E5E0E4D066 /* CoreMotion.framework */; };
 		D4B0C660EC11A2F7EEC9DF43 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F9624EE45B76BF7F2076E9 /* Order.m */; };
-		D6FDD26A6BEE4D93368433C4 /* eng_no_dict.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */; };
 		D74DCDDE38D7589F3EF28BF2 /* ALToggleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FC7B0725CF011A03E157B /* ALToggleControl.m */; };
 		D87C2D2BECA5B3583D468732 /* container_scanner_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = CB181DB0273F184C97AC3B23 /* container_scanner_capture_config.json */; };
 		DD15FC2CB3F8CFADD529AD22 /* ALMeterReading.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B9FCB5924778E2334CB14 /* ALMeterReading.m */; };
@@ -168,6 +169,7 @@
 		E7BA307D449B96D28E7CEDFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9625A90879E934BBFB50ACD /* LaunchScreen.xib */; };
 		E950BF6686D86AD504D2A7CA /* ALRecordNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914DEA16B4E690C5C1991EF /* ALRecordNumberScanViewController.m */; };
 		E95FBC46C2D8D32972A67813 /* ALBundleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A865AB36C2C9F5BB187804 /* ALBundleInfoViewController.m */; };
+		EB91F726C4D027632B313C27 /* vin.any in Resources */ = {isa = PBXBuildFile; fileRef = 3B20B96D9F3A3276B2889F1A /* vin.any */; };
 		ED005B19EA21BA2B97A68CEA /* ALScrabbleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */; };
 		EDE0C6A081A1F7B5EC60295A /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5240A50ACE02B6CF8F50A78 /* ALExampleManager.m */; };
 		EEDB905833AF882602DDF7FA /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */; };
@@ -209,6 +211,7 @@
 		1C2F2F1A910AA5FF322FD68B /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = /Anyline.framework; sourceTree = "<group>"; };
 		1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMultiformatBarcodeScanViewController.h; sourceTree = "<group>"; };
 		1DCDEFED81D80952A846E9BB /* ALBadgeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBadgeScanViewController.m; sourceTree = "<group>"; };
+		1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = container_scanner.ale; sourceTree = "<group>"; };
 		1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleLabel.m; sourceTree = "<group>"; };
 		1FF0002345B8C3E1511C643B /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		23364FFEAEBD59242759D32D /* ALAnalogMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAnalogMeterScanViewController.h; sourceTree = "<group>"; };
@@ -425,6 +428,7 @@
 		D2730301D1046BBEF8E9D3FC /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		D2C220F71B1F35977709B85D /* NSManagedObject+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		D4252D9E041B4F35182E3752 /* CustomerDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerDataView.h; sourceTree = "<group>"; };
+		D46FAF5DE2DADF3845D134F7 /* vin.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = vin.ale; sourceTree = "<group>"; };
 		D50347300D8EBE8BB2D6CCEE /* WorkforceToolResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkforceToolResultViewController.xib; sourceTree = "<group>"; };
 		D5BEC1253300787A14C9F604 /* UIToolbar+ExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+ExamplesExtensions.h"; sourceTree = "<group>"; };
 		D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAutoAnalogDigitalMeterScanViewController.m; sourceTree = "<group>"; };
@@ -896,6 +900,24 @@
 			path = MeterScan/ViewController;
 			sourceTree = "<group>";
 		};
+		6D817785CB027EDE67085EB9 /* TrainedModels */ = {
+			isa = PBXGroup;
+			children = (
+				A531D6C1B48631A833CE1833 /* USNr.any */,
+				AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */,
+				AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */,
+				1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */,
+				85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */,
+				DA7638EA3646145215A9FCF1 /* deu.traineddata */,
+				3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */,
+				07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */,
+				7BFF63762DADF35221787B91 /* scrabble.traineddata */,
+				D46FAF5DE2DADF3845D134F7 /* vin.ale */,
+				3B20B96D9F3A3276B2889F1A /* vin.any */,
+			);
+			path = TrainedModels;
+			sourceTree = "<group>";
+		};
 		77254A119F8E871793629C59 /* GermanIDFront/ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,22 +1022,6 @@
 				E24C22CC6F0CC54896133792 /* Frameworks */,
 				523D37D99AE2821A5FFE17FD /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		A37E165B084DEC91A03E4E85 /* TrainedModels */ = {
-			isa = PBXGroup;
-			children = (
-				A531D6C1B48631A833CE1833 /* USNr.any */,
-				AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */,
-				AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */,
-				85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */,
-				DA7638EA3646145215A9FCF1 /* deu.traineddata */,
-				3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */,
-				07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */,
-				7BFF63762DADF35221787B91 /* scrabble.traineddata */,
-				3B20B96D9F3A3276B2889F1A /* vin.any */,
-			);
-			path = TrainedModels;
 			sourceTree = "<group>";
 		};
 		A3D98831F4283D2A6EF8CE9F /* CattleTag */ = {
@@ -1279,7 +1285,7 @@
 				E15AF6C802B1C59B5320E989 /* RecordNumber */,
 				468CAB1F2847D6E3B39B610E /* Scrabble */,
 				0684816C88069DEDAAF528F1 /* SerialNumber */,
-				A37E165B084DEC91A03E4E85 /* TrainedModels */,
+				6D817785CB027EDE67085EB9 /* TrainedModels */,
 				793740CA38B9AE5D9AC506FF /* Utility */,
 				AB045F5B0373F47537D6F6C7 /* VIN */,
 				BB8B073899A792D0F0C1A7FD /* VoucherCode */,
@@ -1368,15 +1374,17 @@
 				B895428DA5DA75DF4A722CBC /* CustomerSelfReadingResultViewController.xib in Resources */,
 				E0CBFFA5111D0050DE111A1C /* CustomerSelfReadingViewController.xib in Resources */,
 				DD56180F7E9391D98EF07EA5 /* ReadingDetailsViewController.xib in Resources */,
-				608487C46660B632359ACF42 /* deu.traineddata in Resources */,
-				D6FDD26A6BEE4D93368433C4 /* eng_no_dict.traineddata in Resources */,
-				4DAAC80B55652958C23D7DE4 /* bottlecap.traineddata in Resources */,
-				2DBC9E7060A38A08393AB09C /* rbf_jan2015_v2.traineddata in Resources */,
-				477D2F12A56404F69D63751E /* scrabble.traineddata in Resources */,
-				246372A10267058BE4A6CD76 /* anyline_capitals.traineddata in Resources */,
-				898E09F136A80B98D24962E7 /* vin.any in Resources */,
-				C9C1344FD1E1CC0181AD7C62 /* USNr.any in Resources */,
-				5C4B1E83542E0A67CF950550 /* cow_tag_scanner.ale in Resources */,
+				146645DDD582ED12EFFBE28A /* deu.traineddata in Resources */,
+				95F8A3799DFBE8AF0477118A /* eng_no_dict.traineddata in Resources */,
+				C2E5A5807DBB0F2F3125BAFF /* bottlecap.traineddata in Resources */,
+				9EF40FBE6AEDE24072730E7F /* rbf_jan2015_v2.traineddata in Resources */,
+				B80F43265156F7BD1DF3345C /* scrabble.traineddata in Resources */,
+				0233FD677BA416DAFDD8F105 /* anyline_capitals.traineddata in Resources */,
+				EB91F726C4D027632B313C27 /* vin.any in Resources */,
+				21C9D4916E83D66625FB26DF /* vin.ale in Resources */,
+				9F8905A67CADCD0EF4D0E439 /* USNr.any in Resources */,
+				21B65DC030E9A2F971811BF4 /* cow_tag_scanner.ale in Resources */,
+				058070CF4BDCDBF470ECCBA0 /* container_scanner.ale in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1562,7 +1570,7 @@
 				PRODUCT_NAME = AnylineExamples;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_PREFIX = "";
 			};
@@ -1616,7 +1624,7 @@
 				PRODUCT_NAME = AnylineExamples;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_PREFIX = "";
 			};

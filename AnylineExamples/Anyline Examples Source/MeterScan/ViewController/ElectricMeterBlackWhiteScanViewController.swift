@@ -37,15 +37,13 @@ import UIKit
         } catch _ as NSError {
             //Handle error here
         }
-    
-        self.scanView.translatesAutoresizingMaskIntoConstraints = false;
       
         //Add Anyline to view hierachy
         self.view.addSubview(self.scanView);
         //Start Camera with Anyline
         self.scanView.startCamera();
         
-        self.view.sendSubview(toBack: self.scanView);
+        self.view.sendSubviewToBack(self.scanView);
         
         self.meterScanPlugin.enableReporting(UserDefaults.al_reportingEnabled());
         

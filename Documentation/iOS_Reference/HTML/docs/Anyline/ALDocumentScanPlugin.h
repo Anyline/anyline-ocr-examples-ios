@@ -154,6 +154,17 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 
 - (void)removeInfoDelegate:(id<ALDocumentInfoDelegate> _Nonnull)infoDelegate;
 
+//Scan Delay Properties and Methods
+@property (nonatomic) CGFloat delayStartScanTime; //in milliseconds
+
+/**
+ *  The delayedScanTimeFulfilled indicates if the configured delayStartScanTime has been fulfilled.
+ *  No result will be returned unless this method returns true.
+ *
+ *  @return Boolean indicating if the delayStartScanTime has been fulfilled.
+ */
+- (BOOL)delayedScanTimeFulfilled;
+
 @end
 
 @protocol ALDocumentScanPluginDelegate <NSObject>
@@ -223,6 +234,15 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  */
 - (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin * _Nonnull)anylineDocumentScanPlugin
   reportsPictureProcessingFailure:(ALDocumentError)error;
+
+/**
+ * Called after a picture was successfully taken from the camera.
+ *
+ * The taken picture will be processed after this method call.
+ *
+ * @since 10
+ */
+- (void)anylineDocumentScanPluginTakePictureSuccess:(ALDocumentScanPlugin * _Nonnull)anylineDocumentScanPlugin;
 
 /**
  * <p>Called with interesting values, that arise during processing.</p>

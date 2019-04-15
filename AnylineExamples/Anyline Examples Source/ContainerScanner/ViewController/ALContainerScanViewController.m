@@ -70,6 +70,9 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     [self.scanView startCamera];
     [self startListeningForMotion];
     
+    //Enable Zoom Gesture for the scanView
+    [self.scanView enableZoomPinchGesture:YES];
+    
     self.controllerType = ALScanHistoryContainer;
 }
 

@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class ALIdentification;
-
+#import <Anyline/Anyline.h>
 @interface ALIdentificationView : UIView
 
 - (void)updateIdentification:(ALIdentification *)aIdentification;

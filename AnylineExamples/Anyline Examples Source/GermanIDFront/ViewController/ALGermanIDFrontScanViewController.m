@@ -35,6 +35,8 @@ NSString * const kGermanIDFrontLicenseKey = kDemoAppLicenseKey;
     
     ALGermanIDFrontConfig *germanIDFrontConfig = [[ALGermanIDFrontConfig alloc] init];
     
+    ALGermanIDFrontFieldScanOptions *options = [[ALGermanIDFrontFieldScanOptions alloc] init];
+    
     NSError *error = nil;
     self.germanIDFrontScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kGermanIDFrontLicenseKey delegate:self idConfig:germanIDFrontConfig error:&error];
     NSAssert(self.germanIDFrontScanPlugin, @"Setup Error: %@", error.debugDescription);
@@ -102,34 +104,36 @@ NSString * const kGermanIDFrontLicenseKey = kDemoAppLicenseKey;
               didFindResult:(ALIDResult *)scanResult {
     [self.germanIDFrontScanViewPlugin stopAndReturnError:nil];
     
+    ALGermanIDFrontIdentification *identification = (ALGermanIDFrontIdentification *)scanResult.result;
+    
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [scanResult.result surNames]]];
-    [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [scanResult.result givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [scanResult.result dayOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Surname: %@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
     ;
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.germanIDFrontScanViewPlugin completion:^{
         
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
 
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:[scanResult.result surNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:[scanResult.result givenNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[scanResult.result dayOfBirth]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber]]];
        
-        if ([scanResult.result placeOfBirth]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[scanResult.result placeOfBirth]]];
+        if ([identification placeOfBirth]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
         }
         
-        if ([(ALGermanIDFrontIdentification *)scanResult.result expirationDate]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Expiration Date" value:[(ALGermanIDFrontIdentification *)scanResult.result expirationDate]]];
+        if ([(ALGermanIDFrontIdentification *)scanResult.result dateOfExpiry]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
         }
-        if ([scanResult.result nationality]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[scanResult.result nationality]]];
+        if ([identification nationality]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationality]]];
         }
         
-        if ([(ALGermanIDFrontIdentification *)scanResult.result cardAccessNumber]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Card Access Number" value:[(ALGermanIDFrontIdentification *)scanResult.result cardAccessNumber]]];
+        if ([identification cardAccessNumber]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Card Access Number" value:[identification cardAccessNumber]]];
         }
 
         //Display the result

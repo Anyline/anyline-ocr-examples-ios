@@ -54,33 +54,35 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/)">)</option>
+		
 		<option value="//api/name/authority">authority</option>
 		
 		<option value="//api/name/categories">categories</option>
 		
-		<option value="//api/name/dayOfBirth">dayOfBirth</option>
+		<option value="//api/name/dateOfBirth">dateOfBirth</option>
 		
-		<option value="//api/name/dayOfBirthDateObject">dayOfBirthDateObject</option>
+		<option value="//api/name/dateOfBirthObject">dateOfBirthObject</option>
+		
+		<option value="//api/name/dateOfExpiry">dateOfExpiry</option>
+		
+		<option value="//api/name/dateOfExpiryObject">dateOfExpiryObject</option>
+		
+		<option value="//api/name/dateOfIssue">dateOfIssue</option>
+		
+		<option value="//api/name/dateOfIssueObject">dateOfIssueObject</option>
 		
 		<option value="//api/name/documentNumber">documentNumber</option>
 		
 		<option value="//api/name/drivingLicenseString">drivingLicenseString</option>
 		
-		<option value="//api/name/expirationDate">expirationDate</option>
-		
-		<option value="//api/name/expirationDateObject">expirationDateObject</option>
-		
 		<option value="//api/name/faceImage">faceImage</option>
 		
 		<option value="//api/name/givenNames">givenNames</option>
 		
-		<option value="//api/name/issuingDate">issuingDate</option>
-		
-		<option value="//api/name/issuingDateObject">issuingDateObject</option>
-		
 		<option value="//api/name/placeOfBirth">placeOfBirth</option>
 		
-		<option value="//api/name/surNames">surNames</option>
+		<option value="//api/name/surname">surname</option>
 		
 	</optgroup>
 	
@@ -91,6 +93,8 @@
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:">- initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:</option>
+		
+		<option value="//api/name/initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">- initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</option>
 		
 	</optgroup>
 	
@@ -134,8 +138,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/documentNumber" title="documentNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/documentNumber">&nbsp;&nbsp;documentNumber</a></code>
+	<a name="//api/name/surname" title="surname"></a>
+	<h3 class="method-title"><code><a href="#//api/name/surname">&nbsp;&nbsp;surname</a></code>
 </h3>
 
 	<div class="method-info">
@@ -144,23 +148,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *documentNumber</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/surNames" title="surNames"></a>
-	<h3 class="method-title"><code><a href="#//api/name/surNames">&nbsp;&nbsp;surNames</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *surNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *surname</code></div>
 
 		    
 		</div>
@@ -176,14 +164,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *givenNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *givenNames</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/dayOfBirth" title="dayOfBirth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dayOfBirth">&nbsp;&nbsp;dayOfBirth</a></code>
+	<a name="//api/name/dateOfBirth" title="dateOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfBirth">&nbsp;&nbsp;dateOfBirth</a></code>
 </h3>
 
 	<div class="method-info">
@@ -192,7 +180,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *dayOfBirth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfBirth</code></div>
 
 		    
 		</div>
@@ -208,14 +196,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *placeOfBirth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *placeOfBirth</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/issuingDate" title="issuingDate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/issuingDate">&nbsp;&nbsp;issuingDate</a></code>
+	<a name="//api/name/dateOfIssue" title="dateOfIssue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfIssue">&nbsp;&nbsp;dateOfIssue</a></code>
 </h3>
 
 	<div class="method-info">
@@ -224,14 +212,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *issuingDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfIssue</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/expirationDate" title="expirationDate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/expirationDate">&nbsp;&nbsp;expirationDate</a></code>
+	<a name="//api/name/dateOfExpiry" title="dateOfExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfExpiry">&nbsp;&nbsp;dateOfExpiry</a></code>
 </h3>
 
 	<div class="method-info">
@@ -240,7 +228,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *dateOfExpiry</code></div>
 
 		    
 		</div>
@@ -256,7 +244,23 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *authority</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *authority</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/documentNumber" title="documentNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentNumber">&nbsp;&nbsp;documentNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *documentNumber</code></div>
 
 		    
 		</div>
@@ -272,55 +276,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *categories</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dayOfBirthDateObject" title="dayOfBirthDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dayOfBirthDateObject">&nbsp;&nbsp;dayOfBirthDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/issuingDateObject" title="issuingDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/issuingDateObject">&nbsp;&nbsp;issuingDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/expirationDateObject" title="expirationDateObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/expirationDateObject">&nbsp;&nbsp;expirationDateObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *categories</code></div>
 
 		    
 		</div>
@@ -342,6 +298,54 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/dateOfBirthObject" title="dateOfBirthObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfBirthObject">&nbsp;&nbsp;dateOfBirthObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfBirthObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfIssueObject" title="dateOfIssueObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfIssueObject">&nbsp;&nbsp;dateOfIssueObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfIssueObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dateOfExpiryObject" title="dateOfExpiryObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dateOfExpiryObject">&nbsp;&nbsp;dateOfExpiryObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/faceImage" title="faceImage"></a>
 	<h3 class="method-title"><code><a href="#//api/name/faceImage">&nbsp;&nbsp;faceImage</a></code>
 </h3>
@@ -355,6 +359,140 @@
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *faceImage</code></div>
 
 		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since Version 10. Please use the property \&quot;surname\&quot; instead.&quot; )</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:" title="initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">&ndash;&nbsp;initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a ALIdentification object. This object is used to carry the scanned values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithSurname:(NSString *_Nullable)<em>surname</em> givenNames:(NSString *_Nullable)<em>givenNames</em> dateOfBirth:(NSString *_Nullable)<em>dateOfBirth</em> placeOfBirth:(NSString *_Nullable)<em>placeOfBirth</em> dateOfIssue:(NSString *_Nullable)<em>dateOfIssue</em> dateOfExpiry:(NSString *_Nullable)<em>dateOfExpiry</em> authority:(NSString *_Nullable)<em>authority</em> documentNumber:(NSString *_Nullable)<em>documentNumber</em> categories:(NSString *_Nullable)<em>categories</em> drivingLicenseString:(NSString *_Nullable)<em>drivingLicenseString</em> formattedDateOfExpiry:(NSString *_Nullable)<em>formattedDateOfExpiry</em> formattedDateOfBirth:(NSString *_Nullable)<em>formattedDateOfBirth</em> formattedDateOfIssue:(NSString *_Nullable)<em>formattedDateOfIssue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>surname</code></th>
+						<td><p>All the surNames of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>givenNames</code></th>
+						<td><p>All the given names of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dateOfBirth</code></th>
+						<td><p>The date of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>placeOfBirth</code></th>
+						<td><p>The place of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dateOfIssue</code></th>
+						<td><p>The issuing date of the driving license.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dateOfExpiry</code></th>
+						<td><p>The expiration date of the driving license.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>authority</code></th>
+						<td><p>The driving license <a href="#//api/name/authority">authority</a>(s)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>documentNumber</code></th>
+						<td><p>The number of the document that was read.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categories</code></th>
+						<td><p>The detected vehicle <a href="#//api/name/categories">categories</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>drivingLicenseString</code></th>
+						<td><p>Contains all Information found on the drivingLicense as string. Fields will be seperated with the delimiter &lsquo;|&rsquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedDateOfExpiry</code></th>
+						<td><p>The <a href="#//api/name/dateOfExpiry">dateOfExpiry</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfExpiryObject">dateOfExpiryObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedDateOfBirth</code></th>
+						<td><p>The <a href="#//api/name/dateOfBirth">dateOfBirth</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfBirthObject">dateOfBirthObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedDateOfIssue</code></th>
+						<td><p>The <a href="#//api/name/dateOfIssue">dateOfIssue</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfIssueObject">dateOfIssueObject</a> will be created using this value.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new ALDrivingLicenseIdentification object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDrivingLicenseIdentification.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -389,7 +527,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>surNames</code></th>
-						<td><p>All the <a href="#//api/name/surNames">surNames</a> of the person separated by whitespace.</p></td>
+						<td><p>All the surNames of the person separated by whitespace.</p></td>
 					</tr>
 				
 					<tr>
@@ -475,7 +613,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-03-18</p>
+						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-04-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

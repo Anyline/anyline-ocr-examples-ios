@@ -36,6 +36,8 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     ALDrivingLicenseConfig *drivingLicenseConfig = [[ALDrivingLicenseConfig alloc] init];
     drivingLicenseConfig.scanMode = ALDrivingLicenseAuto;
     
+    ALDrivingLicenseFieldScanOptions *options = [[ALDrivingLicenseFieldScanOptions alloc] init];    
+    
     NSError *error = nil;
     self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kDrivingLicenseLicenseKey delegate:self idConfig:drivingLicenseConfig error:&error];
     NSAssert(self.drivingLicenseScanPlugin, @"Setup Error: %@", error.debugDescription);
@@ -103,35 +105,37 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
               didFindResult:(ALIDResult *)scanResult {
     [self.drivingLicenseScanViewPlugin stopAndReturnError:nil];
     
+    ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
+    
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [scanResult.result documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [scanResult.result surNames]]];
-    [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [scanResult.result givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [scanResult.result dayOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
     ;
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
         
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
 
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:[scanResult.result surNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:[scanResult.result givenNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[scanResult.result dayOfBirth]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[scanResult.result documentNumber]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber]]];
        
-        if ([scanResult.result placeOfBirth]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[scanResult.result placeOfBirth]]];
+        if ([identification placeOfBirth]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
         }
-        if ([scanResult.result issuingDate]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing Date" value:[scanResult.result issuingDate]]];
+        if ([identification dateOfIssue]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Issue" value:[identification dateOfIssue]]];
         }
-        if ([(ALDrivingLicenseIdentification *)scanResult.result expirationDate]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Expiration Date" value:[(ALDrivingLicenseIdentification *)scanResult.result expirationDate]]];
+        if ([identification dateOfExpiry]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
         }
-        if ([scanResult.result authority]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[scanResult.result authority]]];
+        if ([identification authority]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[identification authority]]];
         }
-        if ([(ALDrivingLicenseIdentification *)scanResult.result categories]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[(ALDrivingLicenseIdentification *)scanResult.result categories]]];
+        if ([identification categories]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories]]];
         }
 
         //Display the result

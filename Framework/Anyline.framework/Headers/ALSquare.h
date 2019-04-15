@@ -72,6 +72,6 @@
 
 - (CGRect)boxRect;
 
-- (BOOL)similiarTo:(ALSquare *)square;
+- (BOOL)similiarTo:(ALSquare *)square pixels:(int)pixels;
 
 @end

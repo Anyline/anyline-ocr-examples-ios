@@ -14,33 +14,122 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALMRZIdentification : NSObject
 
-@property (nonnull, nonatomic, strong, readonly) NSString *documentType;
-@property (nonnull, nonatomic, strong, readonly) NSString *documentNumber;
-@property (nonnull, nonatomic, strong, readonly) NSString *surNames;
-@property (nonnull, nonatomic, strong, readonly) NSString *givenNames;
-@property (nonnull, nonatomic, strong, readonly) NSString *issuingCountryCode;
-@property (nonnull, nonatomic, strong, readonly) NSString *nationalityCountryCode;
-@property (nonnull, nonatomic, strong, readonly) NSString *dayOfBirth;
-@property (nonnull, nonatomic, strong, readonly) NSString *expirationDate;
-@property (nonnull, nonatomic, strong, readonly) NSString *sex;
-@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitNumber;
-@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitExpirationDate;
-@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitDayOfBirth;
-@property (nonnull, nonatomic, strong, readonly) NSString *checkdigitFinal;
-@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber;
-@property (nonnull, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber;
-@property (nonnull, nonatomic, strong, readonly) NSString *personalNumber2;
+@property (nullable, nonatomic, strong, readonly) NSString *surname;
+@property (nullable, nonatomic, strong, readonly) NSString *givenNames;
+@property (nullable, nonatomic, strong, readonly) NSString *dateOfBirth;
+@property (nullable, nonatomic, strong, readonly) NSString *dateOfExpiry;
+@property (nullable, nonatomic, strong, readonly) NSString *documentNumber;
+@property (nullable, nonatomic, strong, readonly) NSString *documentType;
+@property (nullable, nonatomic, strong, readonly) NSString *issuingCountryCode;
+@property (nullable, nonatomic, strong, readonly) NSString *nationalityCountryCode;
+@property (nullable, nonatomic, strong, readonly) NSString *sex;
+@property (nullable, nonatomic, strong, readonly) NSString *personalNumber;
+@property (nullable, nonatomic, strong, readonly) NSString *optionalData;
 
+@property (nullable, nonatomic, strong, readonly) NSString *mrzString;
+
+@property (nullable, nonatomic, strong, readonly) NSString *dateOfIssue;
 @property (nullable, nonatomic, strong, readonly) NSString *address;
-@property (nullable, nonatomic, strong, readonly) NSString *issuingDate;
-@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject;
-
-@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject;
-@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject;
-@property (nonnull, nonatomic, strong, readonly) NSString *MRZString;
-
 @property (nullable, nonatomic, strong) UIImage *faceImage;
 
+//Check Digits
+@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDateOfExpiry;
+@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDocumentNumber;
+@property (nullable, nonatomic, strong, readonly) NSString *checkDigitDateOfBirth;
+@property (nullable, nonatomic, strong, readonly) NSString *checkDigitFinal;
+@property (nullable, nonatomic, strong, readonly) NSString *checkDigitPersonalNumber;
+@property (nonatomic, readonly) BOOL allCheckDigitsValid;
+
+//Date Objects
+@property (nullable, nonatomic, strong, readonly) NSDate *dateOfBirthObject;
+@property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
+@property (nullable, nonatomic, strong, readonly) NSDate *dateOfIssueObject;
+
+
+/*
+ *  Deprecated Properties
+ */
+@property (nullable, nonatomic, strong, readonly) NSString *surNames __deprecated_msg("Deprecated since Version 10. Please use the property \"surname\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *dayOfBirth __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfBirth\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *expirationDate __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfExpiry\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *checkdigitNumber __deprecated_msg("Deprecated since Version 10. Please use the property \"checkDigitDocumentNumber\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *checkdigitExpirationDate __deprecated_msg("Deprecated since Version 10. Please use the property \"checkDigitDateOfExpiry\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *checkdigitDayOfBirth __deprecated_msg("Deprecated since Version 10. Please use the property \"checkDigitDateOfBirth\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *checkdigitFinal __deprecated_msg("Deprecated since Version 10. Please use the property \"checkDigitFinal\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *issuingDate __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfIssue\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *personalNumber2 __deprecated_msg("Deprecated since Version 10. Please use the property \"optionalData\" instead.");
+
+@property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfExpiryObject\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfBirthObject\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfIssueObject\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *MRZString __deprecated_msg("Deprecated since Version 10. Please use the property \"mrzString\" instead.");
+
+
+/**
+ *  Initializes a ALIdentification object. This object is used to carry the scanned values.
+ *
+ *  @param surname                  All the surNames of the person separated by whitespace.
+ *  @param givenNames               All the given names of the person separated by whitespace.
+ *  @param dateOfBirth              The date of birth.
+ *  @param dateOfExpiry             The expiration date of the passport / document.
+ *  @param documentNumber           Passport number or document number.
+ *  @param documentType             The type of the document that was read. (ID/P)
+ *  @param issuingCountryCode       The issuing country code of the document.
+ *  @param nationalityCountryCode   The nationality country code of the document.
+ *  @param sex                      The gender of the person
+ *  @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
+ *  @param optionalData             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
+ *                                  Might contain additional information.
+ *
+ *  @param checkDigitDateOfExpiry   Check digit for the expiration date.
+ *  @param checkDigitDocumentNumber Check digit for the document number.
+ *  @param checkDigitDateOfBirth    Check digit for the day of birth.
+ *  @param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,
+ *                                  date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
+ *                                  personal number checkdigit.
+ *                                  On other travel documents over document number, document number checkdigit, personal number,
+ *                                  date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
+ *
+ *  @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
+ *                                  Is also nil on none passport documents.
+ 
+ *  @param allCheckDigitsValid      will return true if all checkdigits are correct
+ *  @param address                  Optional data which contains the data of the address field on a german ID.
+ *  @param dateOfIssue              Optional data which contains the data of the issuing date field,
+ *                                  which is outside the MRZ field
+ *
+ *  @param mrzString                Contains all Information found in the MRZ as string.
+ *
+ *  @param formattedDateOfExpiry    The dateOfExpiry in a given Format (dd.MM.yyyy). The dateOfExpiryObject will be created using this value.
+ *  @param formattedDateOfBirth     The dateOfBirth in a given Format (dd.MM.yyyy). The dateOfBirthObject will be created using this value.
+ *  @param formattedDateOfIssue     The dateOfIssue in a given Format (dd.MM.yyyy). The dateOfIssueObject will be created using this value.
+ *
+ *
+ *  @return A new ALIdentification object
+ */
+- (instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname
+                               givenNames:(NSString * _Nullable)givenNames
+                              dateOfBirth:(NSString * _Nullable)dateOfBirth
+                             dateOfExpiry:(NSString * _Nullable)dateOfExpiry
+                           documentNumber:(NSString * _Nullable)documentNumber
+                             documentType:(NSString * _Nullable)documentType
+                       issuingCountryCode:(NSString * _Nullable)issuingCountryCode
+                   nationalityCountryCode:(NSString * _Nullable)nationalityCountryCode
+                                      sex:(NSString * _Nullable)sex
+                           personalNumber:(NSString * _Nullable)personalNumber
+                             optionalData:(NSString * _Nullable)optionalData
+                   checkDigitDateOfExpiry:(NSString * _Nullable)checkDigitDateOfExpiry
+                 checkDigitDocumentNumber:(NSString * _Nullable)checkDigitDocumentNumber
+                    checkDigitDateOfBirth:(NSString * _Nullable)checkDigitDateOfBirth
+                          checkDigitFinal:(NSString * _Nullable)checkDigitFinal
+                 checkDigitPersonalNumber:(NSString * _Nullable)checkDigitPersonalNumber
+                      allCheckDigitsValid:(BOOL)allCheckDigitsValid
+                                  address:(NSString * _Nullable)address
+                              dateOfIssue:(NSString * _Nullable)dateOfIssue
+                                mrzString:(NSString * _Nullable)mrzString
+                    formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry
+                     formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth
+                     formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
 
 /**
  *  Initializes a ALIdentification object. This object is used to carry the scanned values.
@@ -94,7 +183,7 @@ NS_ASSUME_NONNULL_BEGIN
                                personalNumber2:(NSString * _Nonnull)personalNumber2
                                        address:(NSString * _Nullable)address
                                    issuingDate:(NSString * _Nullable)issuingDate
-                                     MRZString:(NSString * _Nonnull)MRZString;
+                                     MRZString:(NSString * _Nonnull)MRZString __deprecated_msg("Deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead");
 
 @end
 
