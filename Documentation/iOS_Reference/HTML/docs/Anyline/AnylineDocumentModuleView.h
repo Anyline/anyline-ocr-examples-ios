@@ -19,6 +19,9 @@
  * Communication with the host application is managed with a delegate that conforms to AnylineDocumentModuleDelegate.
  *
  */
+
+
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALDocumentScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineDocumentModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
@@ -116,6 +119,7 @@
 
 @end
 
+__attribute__((deprecated("As of release 10.1, use an ALDocumentScanPluginDelegate, combined with an ALDocumentScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineDocumentModuleDelegate <NSObject>
 
 @required

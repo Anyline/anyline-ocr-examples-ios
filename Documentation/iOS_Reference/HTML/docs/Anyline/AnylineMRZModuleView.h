@@ -20,6 +20,7 @@
  * Communication with the host application is managed with a delegate that conforms to AnylineMRZModuleDelegate. The information that gets read is passed to the delegate with the help of of an ALIdentification object.
  *
  */
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALIDScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineMRZModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALIDScanViewPlugin *mrzScanViewPlugin;
@@ -66,6 +67,7 @@
 
 @end
 
+__attribute__((deprecated("As of release 10.1, use an ALIDPluginDelegate, combined with an ALIDScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineMRZModuleDelegate <NSObject>
 
 @optional

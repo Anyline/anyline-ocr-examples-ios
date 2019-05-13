@@ -52,6 +52,7 @@ typedef NS_ENUM(NSInteger, ALOCRError) {
  *
  *  @since 3.4
  */
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALOCRScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineOCRModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALOCRScanViewPlugin *ocrScanViewPlugin;
@@ -121,6 +122,7 @@ typedef NS_ENUM(NSInteger, ALOCRError) {
 /**
  *  The delegate for the AnylineOCRModuleView.
  */
+__attribute__((deprecated("As of release 10.1, use an ALOCRScanDelegate, combined with an ALOCRScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineOCRModuleDelegate <NSObject>
 
 @required

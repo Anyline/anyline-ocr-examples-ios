@@ -13,12 +13,13 @@
 
 @protocol AnylineLicensePlateModuleDelegate;
 
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALLicensePlateScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineLicensePlateModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALLicensePlateScanPlugin *licensePlateScanPlugin;
 
 @property (nullable, nonatomic, strong) ALLicensePlateScanViewPlugin *licensePlateScanViewPlugin;
-
+ 
 /**
  *  Sets the license key and delegate.
  *
@@ -46,6 +47,7 @@
 
 @end
 
+__attribute__((deprecated("As of release 10.1, use an ALLicensePlateScanDelegate, combined with an ALLicensePlateScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineLicensePlateModuleDelegate <NSObject>
 
 @required

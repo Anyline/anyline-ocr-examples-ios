@@ -33,19 +33,28 @@
 @implementation ALResultViewController
 
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image {
-    self = [super init];
-    if (self) {
-        _image = image;
-        _resultData = resultData;
-    }
-    return self;
+    return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
+                                        image:image
+                           optionalImageTitle:nil
+                                optionalImage:nil];
 }
 
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImageTitle:(NSString *)optTitle optionalImage:(UIImage *)optImage {
+    return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
+                              image:image
+                 optionalImageTitle:optTitle
+                      optionalImage:optImage];
+}
+
+
+- (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
+                                       image:(UIImage *)image
+                          optionalImageTitle:(NSString *)optTitle
+                               optionalImage:(UIImage *)optImage {
     self = [super init];
     if (self) {
         _image = image;
-        _resultData = resultData;
+        _resultData = resultDataDictionary;
         _optionalTitle = optTitle;
         _optionalImage = optImage;
     }
@@ -233,7 +242,9 @@
     if (cell == nil) {
         cell = [[ALResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    ALResultEntry *entry = [self.resultData objectAtIndex:indexPath.row];
+    
+    ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    
     [cell setResultEntry:entry];
     [cell layoutSubviews];
     self.cellHeight = cell.cellHeight;
@@ -244,12 +255,13 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.resultData count];
+//    return [self.resultData  count];
+    return [self.resultData[[[self.resultData allKeys] objectAtIndex:section]] count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     self.resultTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, [self headerSize])];
-    self.resultTitle.text = @"Result Data";
+    self.resultTitle.text = [[self.resultData allKeys] objectAtIndex:section];
     self.resultTitle.textAlignment = NSTextAlignmentLeft;
     self.resultTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
     self.resultTitle.backgroundColor = [UIColor whiteColor];
@@ -264,7 +276,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.resultData allKeys].count;
 }
 
 #pragma mark - Utility methods

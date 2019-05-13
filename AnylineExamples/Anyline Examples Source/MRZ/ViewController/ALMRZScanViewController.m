@@ -43,8 +43,14 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     //Create fieldScanOptions to configure individual scannable fields
     ALMRZFieldScanOptions *scanOptions = [[ALMRZFieldScanOptions alloc] init];
-    scanOptions.address = ALOptional;
-    scanOptions.dateOfIssue = ALOptional;
+    scanOptions.vizAddress = ALDefault;
+    scanOptions.vizDateOfIssue = ALDefault;
+    scanOptions.vizSurname = ALDefault;
+    scanOptions.vizGivenNames = ALDefault;
+    scanOptions.vizDateOfBirth = ALDefault;
+    scanOptions.vizDateOfExpiry = ALDefault;
+    
+    
     
     //Set scanOptions for MRZConfig
     mrzConfig.idFieldScanOptions = scanOptions;
@@ -69,7 +75,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     self.controllerType = ALScanHistoryMrz;
     
-    // After setup is complete we add the module to the view of this view controller
+    // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     
@@ -161,6 +167,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 
     
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
+        
+        //MRZ Fields
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
@@ -170,31 +178,51 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber]]];
         [resultData addObject:[self resultEntryWithDate:[identification dateOfExpiryObject] dateString:[identification dateOfExpiry] title:@"Date of Expiry"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationalityCountryCode]]];
-        
-        if ([[identification documentType] isEqualToString:@"ID"] && [[identification issuingCountryCode] isEqualToString:@"D"]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:identification.address]];
-        }
-        
-        if ([identification dateOfIssue] && [identification dateOfIssue].length > 0) {
-            [resultData addObject:[self resultEntryWithDate:[identification dateOfIssueObject] dateString:[identification dateOfIssue] title:@"Date of Issue"]];
-        }
-        
         if ([identification personalNumber] && [identification personalNumber].length > 0) {
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[identification personalNumber]]];
         }
         
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+        
+        //VIZ Fields
+        NSMutableArray <ALResultEntry*> *vizResultData = [[NSMutableArray alloc] init];
+        if ([identification vizGivenNames] && [identification vizGivenNames].length > 0) {
+          [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification vizGivenNames]]];
+        }
+        if ([identification vizSurname] && [identification vizSurname].length > 0) {
+            [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification vizSurname]]];
+        }
+        if ([identification vizAddress] && [identification vizAddress].length > 0) {
+            [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:[identification vizAddress]]];
+        }
+        if ([identification vizDateOfBirth] && [identification vizDateOfBirth].length > 0) {
+            [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfBirthObject] dateString:[identification vizDateOfBirth] title:@"Date of Birth"]];
+        }
+        if ([identification vizDateOfExpiry] && [identification vizDateOfExpiry].length > 0) {
+            [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfExpiryObject] dateString:[identification vizDateOfExpiry] title:@"Date of Expiry"]];
+        }
+        if ([identification vizDateOfIssue] && [identification vizDateOfIssue].length > 0) {
+            [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfIssueObject] dateString:[identification vizDateOfIssue] title:@"Date of Issue"]];
+        }
+        
+        NSMutableDictionary *resultDataDict = [[NSMutableDictionary alloc] init];
+        [resultDataDict setObject:resultData forKey:@"Machine Readable Zone"];
+        if (vizResultData.count > 0) {
+            [resultDataDict setObject:vizResultData forKey:@"Visual Inspection Zone"];
+        }
+        
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultDataDictionary:resultDataDict image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 
 - (ALResultEntry *)resultEntryWithDate:(NSDate *)date dateString:(NSString *)dateString title:(NSString *)title {
-    if (![self checkDateIfAvailable:date dateString:dateString]) {
+    BOOL isAvailable = [self checkDateIfAvailable:date dateString:dateString];
+    if (!isAvailable) {
         return [[ALResultEntry alloc] initWithTitle:title value:nil];
     }
     
     NSString *value = [self stringForDate:date];
-    return [[ALResultEntry alloc] initWithTitle:title value:value isAvailable:(date)];
+    return [[ALResultEntry alloc] initWithTitle:title value:value isAvailable:isAvailable];
 }
 
 - (BOOL)checkDateIfAvailable:(NSDate *)date dateString:(NSString *)dateString {

@@ -10,7 +10,7 @@
 
 @interface ALResultViewController : UIViewController
 
-@property (strong, nonatomic) NSMutableArray<ALResultEntry *> *resultData;
+@property (strong, nonatomic) NSDictionary<NSString *, NSMutableArray<ALResultEntry *>*> *resultData;
 @property (strong, nonatomic) UIImage *image;
 
 //optional:
@@ -20,5 +20,17 @@
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image;
 
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImageTitle:(NSString *)optTitle optionalImage:(UIImage *)optImage;
+
+
+/*
+ *  TODO:
+ *  Accept NSDictionary with NSString (key) and ALResultEntry (value)
+ *  Use Key as Section Heaeder, Use Value for rows
+ *  Adapt old constructors to wrap this constructor and only use the DICT internally
+ */
+- (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
+                                       image:(UIImage *)image
+                          optionalImageTitle:(NSString *)optTitle
+                               optionalImage:(UIImage *)optImage;
 
 @end

@@ -40,8 +40,16 @@
 
 @interface ALMRZFieldScanOptions : ALIDFieldScanOptions
 
-@property (nonatomic) ALFieldScanOption dateOfIssue;
-@property (nonatomic) ALFieldScanOption address;
+@property (nonatomic) ALFieldScanOption vizDateOfIssue;
+@property (nonatomic) ALFieldScanOption vizAddress;
+@property (nonatomic) ALFieldScanOption vizSurname;
+@property (nonatomic) ALFieldScanOption vizGivenNames;
+@property (nonatomic) ALFieldScanOption vizDateOfBirth;
+@property (nonatomic) ALFieldScanOption vizDateOfExpiry;
+
+//Deprecated FieldScanOptions
+@property (nonatomic) ALFieldScanOption dateOfIssue __deprecated_msg("Deprecated since Version 10.1. Please use vizDateOfIssue instead");
+@property (nonatomic) ALFieldScanOption address __deprecated_msg("Deprecated since Version 10.1. Please use vizAddress instead");
 
 /*
  *  unsupported MRZ fieldScanOptions:

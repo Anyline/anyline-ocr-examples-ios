@@ -21,6 +21,8 @@
  * AnylineBarcodeModuleView is able to scan the most common 1D and 2D codes. The accepted codes are set with setBarcodeFormatOptions.
  *
  */
+
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALBarcodeScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineBarcodeModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
@@ -67,6 +69,7 @@
 
 @end
 
+__attribute__((deprecated("As of release 10.1, use an ALBarcodeScanPluginDelegate, combined with an ALBarcodeScanPluing instead. This class will be removed by November 2019.")))
 @protocol AnylineBarcodeModuleDelegate <NSObject>
 
 @required

@@ -62,8 +62,11 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
     NSAssert(self.vinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.vinScanViewPlugin];
-
-    // After setup is complete we add the module to the view of this view controller
+    
+    //Enable Zoom Gesture
+    [self.scanView enableZoomPinchGesture:YES];
+    
+    // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     

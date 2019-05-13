@@ -18,8 +18,6 @@
 // This is the license key for the examples project used to set up Aynline below
 NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
 
-static const NSInteger padding = 7;
-
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
 @interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -72,7 +70,10 @@ static const NSInteger padding = 7;
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.serialNumberScanViewPlugin];
     
-    // After setup is complete we add the module to the view of this view controller
+    //Enable Zoom Gesture
+    [self.scanView enableZoomPinchGesture:YES];
+    
+    // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     

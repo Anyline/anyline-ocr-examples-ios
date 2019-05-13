@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, ALReportingMode) {
     ALReportingNotSet
 };
 
+__attribute__((deprecated("As of release 10.1, use an ALScanViewPluginConfig, combined with an ALScanViewPlugin instead. This class will be removed by November 2019.")))
 @interface ALUIConfiguration : ALBasicConfig
 
 @property (nullable, nonatomic, strong) NSString *defaultCamera;

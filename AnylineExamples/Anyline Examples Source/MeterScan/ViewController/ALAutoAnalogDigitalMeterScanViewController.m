@@ -78,6 +78,10 @@ static const NSInteger padding = 7;
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.meterScanViewPlugin];
     
+    //Enable Zoom Gesture
+    [self.scanView enableZoomPinchGesture:YES];
+    
+    //Adding the scanView
     [self.view addSubview:self.scanView];
     [self.scanView startCamera];
     

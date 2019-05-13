@@ -33,6 +33,7 @@
  * Overwrite reportScanResultState: to check the various scanning states
  *
  */
+__attribute__((deprecated("As of release 10.1, use an ALAbstractViewPlugin instead. This class will be removed by November 2019.")))
 @interface AnylineAbstractModuleView : UIView
 
 @property (nullable, nonatomic, weak) id<AnylineDebugDelegate> debugDelegate;
@@ -179,6 +180,7 @@
 /**
  *  The delegate for the AnylineOCRModuleView.
  */
+__attribute__((deprecated("As of release 10.1, use an ALInfoDelegate with an ALAbstractScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineDebugDelegate <NSObject>
 
 @optional

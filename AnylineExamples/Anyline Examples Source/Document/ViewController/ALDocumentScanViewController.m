@@ -65,7 +65,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     self.controllerType = ALScanHistoryDocument;
     self.documentScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
-    // After setup is complete we add the module to the view of this view controller
+    // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     

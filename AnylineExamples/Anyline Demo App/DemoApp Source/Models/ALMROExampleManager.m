@@ -11,6 +11,7 @@
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALContainerScanViewController.h"
+#import "ALVerticalContainerScanViewController.h"
 
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
@@ -46,13 +47,17 @@
                                                        image:[UIImage imageNamed:@"vin"]
                                               viewController:[ALVINScanViewController class]];
     
-    ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Shipping Container", nil)
+    ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
                                                        image:[UIImage imageNamed:@"container serial numbers"]
                                               viewController:[ALContainerScanViewController class]];
     
+    ALExample *verticalContainerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Vertical Shipping Container", nil)
+                                                             image:[UIImage imageNamed:@"vertical container scanner"]
+                                                    viewController:[ALVerticalContainerScanViewController class]];
+    
     self.sectionNames = @[@"MRO",];
     self.examples = @{
-                      self.sectionNames[0] : @[serialNumberScanning,vinScanning,containerScanning,],
+                      self.sectionNames[0] : @[serialNumberScanning,vinScanning,containerScanning,verticalContainerScanning,],
                       };
 }
 

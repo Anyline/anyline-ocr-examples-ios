@@ -5,15 +5,15 @@
 //  Created by Daniel Albertini on 09.04.18.
 //
 
-#import "ALContainerScanViewController.h"
+#import "ALVerticalContainerScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
 // This is the license key for the examples project used to set up Aynline below
-NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
-@interface ALContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+NSString * const kVerticalContainerScannerLicenseKey = kDemoAppLicenseKey;
+@interface ALVerticalContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *containerScanViewPlugin;
@@ -22,13 +22,13 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
 
 @end
 
-@implementation ALContainerScanViewController
+@implementation ALVerticalContainerScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Shipping Container";
+    self.title = @"Vertical Shipping Container";
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
@@ -40,20 +40,20 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     NSString *containerAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
     [config setLanguages:@[containerAny] error:nil];
     
-    NSString *cmdFile = [[NSBundle mainBundle] pathForResource:@"container_scanner" ofType:@"ale"];
+    NSString *cmdFile = [[NSBundle mainBundle] pathForResource:@"container_scanner_vertical" ofType:@"ale"];
     config.customCmdFilePath = cmdFile;
     
     NSError *error = nil;
     
     self.containerScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                              licenseKey:kContainerScannerLicenseKey
+                                                              licenseKey:kVerticalContainerScannerLicenseKey
                                                                 delegate:self
                                                                ocrConfig:config
                                                                    error:&error];
     NSAssert(self.containerScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.containerScanPlugin addInfoDelegate:self];
     
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"container_scanner_capture_config" ofType:@"json"];
+    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"vertical_container_scanner_capture_config" ofType:@"json"];
     ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
     
     self.containerScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.containerScanPlugin
@@ -62,7 +62,10 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.containerScanViewPlugin];
     
-    // After setup is complete we add the module to the view of this view controller
+    //Enable Zoom Gesture
+    [self.scanView enableZoomPinchGesture:YES];
+    
+    // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     

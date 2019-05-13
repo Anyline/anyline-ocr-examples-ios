@@ -21,6 +21,7 @@
  *
  * AnylineEnergyModuleView is able to scan the most common energy meters. The scan mode is set with setScanMode.
  */
+__attribute__((deprecated("As of release 10.1, use an ALScanView, combined with an ALMeterScanViewPluing instead. This class will be removed by November 2019.")))
 @interface AnylineEnergyModuleView : AnylineAbstractModuleView
 
 @property (nullable, nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
@@ -88,6 +89,7 @@
 
 @end
 
+__attribute__((deprecated("As of release 10.1, use an ALMeterScanPluginDelegate, combined with an ALMeterScanPlugin instead. This class will be removed by November 2019.")))
 @protocol AnylineEnergyModuleDelegate <NSObject>
 
 @required

@@ -62,7 +62,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     
     self.barcodeScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
-    // After setup is complete we add the module to the view of this view controller
+    // After setup is complete we add the scanView to the view of this view controller
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
     id topGuide = self.topLayoutGuide;
     [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
