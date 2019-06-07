@@ -43,11 +43,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.scanMode = ALAuto;
-    
-    NSString *serialNumberAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
-    [config setLanguages:@[serialNumberAny] error:nil];
-    
+    config.scanMode = ALAuto;    
     config.validationRegex = @"[A-Z0-9]{4,}";
     
     NSError *error = nil;
