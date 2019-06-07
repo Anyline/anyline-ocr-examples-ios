@@ -8,6 +8,8 @@
 
 #import "NSUserDefaults+ALExamplesAdditions.h"
 
+NSString * const DATA_POLICY_ACCEPTED = @"dataPrivacyPolicyAccepted";
+
 @implementation NSUserDefaults (ALExamplesAdditions)
 
 + (BOOL)AL_reportingEnabled {
@@ -54,6 +56,18 @@
 + (void)resetScanCount {
     [[NSUserDefaults standardUserDefaults] setInteger:0
                                                forKey:@"anylineScanCount"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)AL_dataPolicyAccepted {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:DATA_POLICY_ACCEPTED]) {
+        return NO;
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:DATA_POLICY_ACCEPTED];
+}
+
++ (void)AL_setDataPolicyAccepted:(BOOL)wasAccepted {
+    [[NSUserDefaults standardUserDefaults] setBool:wasAccepted forKey:DATA_POLICY_ACCEPTED];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

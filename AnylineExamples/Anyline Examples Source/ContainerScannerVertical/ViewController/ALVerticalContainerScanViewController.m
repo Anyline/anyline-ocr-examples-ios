@@ -33,15 +33,8 @@ NSString * const kVerticalContainerScannerLicenseKey = kDemoAppLicenseKey;
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    
-    config.scanMode = ALAuto;
-    
-    NSString *containerAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
-    [config setLanguages:@[containerAny] error:nil];
-    
-    NSString *cmdFile = [[NSBundle mainBundle] pathForResource:@"container_scanner_vertical" ofType:@"ale"];
-    config.customCmdFilePath = cmdFile;
+    ALContainerConfig *config = [[ALContainerConfig alloc] init];
+    config.scanMode = ALVertical;
     
     NSError *error = nil;
     

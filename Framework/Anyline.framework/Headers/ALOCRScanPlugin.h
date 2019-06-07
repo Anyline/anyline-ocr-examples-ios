@@ -7,8 +7,13 @@
 //
 
 #import "ALAbstractScanPlugin.h"
-#import "ALOCRConfig.h"
+#import "ALBaseOCRConfig.h"
 #import "ALOCRResult.h"
+
+#import "ALOCRConfig.h"
+#import "ALVINConfig.h"
+#import "ALContainerConfig.h"
+#import "ALCattleTagConfig.h"
 
 @protocol ALOCRScanPluginDelegate;
 /**
@@ -33,7 +38,7 @@
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
                                 licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate
-                                 ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig
+                                 ocrConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig
                                      error:(NSError *_Nullable *_Nullable)error;
 
 - (instancetype _Nullable)init NS_UNAVAILABLE;
@@ -45,17 +50,17 @@
  *
  *  Use method setOCRConfig:error: for setting the config.
  */
-@property (nullable, nonatomic, strong, readonly) ALOCRConfig *ocrConfig;
+@property (nullable, nonatomic, strong, readonly) ALBaseOCRConfig *ocrConfig;
 
 /**
- *  Sets a new ALOCRConfig and returns an Error if something failed.
+ *  Sets a new ALBaseOCRConfig and returns an Error if something failed.
  *
  *  @param ocrConfig The ALOCRConfig to set
  *  @param error     The Error object if something fails
  *
  *  @return Boolean indicating the success / failure of the call.
  */
-- (BOOL)setOCRConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setOCRConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
 /**
  *  Use this method to copy a custom trained font data into the Anyline work environment.
  *  This method is mandatory if you want to use custom fonts.
@@ -92,5 +97,14 @@
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin * _Nonnull)anylineOCRScanPlugin
                didFindResult:(ALOCRResult * _Nonnull)result;
 
-@end
+@optional
 
+/**
+ *  Called when the ocrConfig has been updated/set
+ *
+ *  @param anylineOCRScanPlugin The ALOCRScanPlugin
+ *  @param ocrConfig            A subclass of ALBaseOCRConfig
+ */
+- (void)anylineOCRScanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin ocrConfigUpdated:(ALBaseOCRConfig * _Nullable)ocrConfig;
+
+@end

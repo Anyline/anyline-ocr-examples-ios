@@ -117,7 +117,7 @@
         reportingTitleView.backgroundColor = titleLabelBackgroundColor;
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, reportingTitleView.frame.size.height)];
-        label.text = @"Reporting";
+        label.text = @"Data Privacy Consent";
         label.numberOfLines = 0;
         label.font = [UIFont AL_proximaRegularWithSize:17];
         label.textColor = [UIColor whiteColor];

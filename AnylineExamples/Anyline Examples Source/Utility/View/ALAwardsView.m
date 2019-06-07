@@ -53,7 +53,7 @@
     
     
     UILabel *congrats = [[UILabel alloc] initWithFrame:CGRectMake(white.frame.origin.x, white.frame.origin.y + 10, white.frame.size.width, 30)];
-    congrats.text = @"Congratulation!";
+    congrats.text = @"Congratulations!";
     congrats.textAlignment = NSTextAlignmentCenter;
     congrats.font = [UIFont AL_proximaBoldWithSize:21];
     congrats.textColor = [UIColor AL_examplesBlue];

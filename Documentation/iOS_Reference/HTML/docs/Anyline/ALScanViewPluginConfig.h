@@ -39,6 +39,9 @@
 + (_Nonnull instancetype)defaultBarcodeConfig;
 + (_Nonnull instancetype)defaultLicensePlateConfig;
 + (_Nonnull instancetype)defaultOCRConfig;
++ (_Nonnull instancetype)defaultVINConfig;
++ (_Nonnull instancetype)defaultContainerConfig;
++ (_Nonnull instancetype)defaultCattleTagConfig;
 + (_Nonnull instancetype)defaultMRZConfig;
 + (_Nonnull instancetype)defaultDrivingLicenseConfig;
 + (_Nonnull instancetype)defaultGermanIDFrontConfig;

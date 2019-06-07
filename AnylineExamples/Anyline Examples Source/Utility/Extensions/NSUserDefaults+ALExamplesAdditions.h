@@ -16,6 +16,9 @@
 
 + (BOOL)AL_createEntryOnce:(NSString *)entry;
 
++ (BOOL)AL_dataPolicyAccepted;
++ (void)AL_setDataPolicyAccepted:(BOOL)wasAccepted;
+
 + (void)AL_setMail:(NSString *)mail;
 
 + (NSString *)AL_getMail;

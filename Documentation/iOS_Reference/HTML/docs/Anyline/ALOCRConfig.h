@@ -3,10 +3,11 @@
 //  Anyline
 //
 //  Created by Daniel Albertini on 21/03/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
+//  Copyright © 2019 Anyline GmbH. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "ALBaseOCRConfig.h"
 
 /*
  *  Predefined Regex examples as NSString
@@ -57,7 +58,7 @@ CG_INLINE ALRange ALRangeMake(NSUInteger min, NSUInteger max) {
 }
 
 /**
- *  The possible scanModes for the AnylineOCR module
+ *  The possible scanModes for the AnylineOCR plugin
  */
 typedef NS_ENUM(NSInteger, ALOCRScanMode) {
     /**
@@ -95,15 +96,12 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 @end
 
 /**
- *  A class used to configure the Anyline OCR module.
+ *  A class used to configure the Anyline OCR scan plugin.
  */
-@interface ALOCRConfig : NSObject
-
-- (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+@interface ALOCRConfig : ALBaseOCRConfig
 
 - (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict
                                            error:(NSError * _Nullable * _Nullable)error;
-
 /**
  *  The scan mode.
  *  @see ALOCRScanMode

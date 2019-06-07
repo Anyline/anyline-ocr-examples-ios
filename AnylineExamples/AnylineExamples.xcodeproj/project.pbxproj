@@ -10,15 +10,16 @@
 		006BCD4D9E321D734FB0A039 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E07BBFB5481EC2D89D2841 /* Customer.m */; };
 		041C77E66AF1DF2DA5F7E163 /* ALProductExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64132E9185664AA9EEFC091B /* ALProductExampleManager.m */; };
 		04CD0718896F66F1E44A57A1 /* drivinglicense_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC4BDCCF37726A7DA63A6BC /* drivinglicense_capture_config.json */; };
-		055B4E321AF6DF0DFADFBDE4 /* cow_tag_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */; };
 		067C86E5EA5963DCF6516AB2 /* ALMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A40FD1F80E9F436D789CDA /* ALMainPageViewController.m */; };
 		0717D1D7B39BBDD45D75007B /* iban_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D1EBF55629C059F2E94985 /* iban_config.json */; };
 		073BE43BE79E648C89F2584D /* ALUniversalSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826B52CCA8BEFA4ED0826324 /* ALUniversalSerialNumberScanViewController.m */; };
 		0A87C894E408C968D4BD4BB9 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDF14B27376A85BBAE09C6 /* ALExample.m */; };
+		0B894F4DAF5D2E311241B8C3 /* eng_no_dict.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */; };
 		0C2D08C7412715E7D44210D1 /* ALSerialNumberScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B738DD67F42716D40949 /* ALSerialNumberScanViewController.m */; };
 		0D9427DEA5A1C1B47F39AE92 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D2B49ED155F2CAEA9FB1B /* ALBaseScanViewController.m */; };
 		0E2002523BB5F7B47E3AF241 /* ALJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */; };
 		0E7977BCE6B0A911690DAC96 /* WorkorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 809888700414BE08EF7179E9 /* WorkorderViewController.m */; };
+		1222103D7ACE9B91D9D1E542 /* rbf_jan2015_v2.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */; };
 		14619F6296CFF772166FE265 /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B19F18002E78C2F6588E316 /* ALMRZScanViewController.m */; };
 		14F600115F066E37725A46F5 /* ALScrabbleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */; };
 		18072B5C8FFCA0EB24894B2B /* ALHashtagScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D133DFE4AA1D49F5CF122DCC /* ALHashtagScanViewController.m */; };
@@ -44,6 +45,7 @@
 		3691E066E57790C789822EDA /* ReadingTransformationPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D056C86D8FAB0241DEBEB30F /* ReadingTransformationPolicy.m */; };
 		3773381DDF797000C88889E2 /* ALAnalogMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E80BFE9D2C36308B237762 /* ALAnalogMeterScanViewController.m */; };
 		38D53DDEE8B64D907623EE2E /* scrabble_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7DDC3D38D9F06D0071357 /* scrabble_config.json */; };
+		38FDF30A1FC9EEB5B8819939 /* anyline_capitals.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */; };
 		3C82B893D15E52F5E0E5C467 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */; };
 		3C9DE26421159B3FCF139F80 /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878230A82B7FBE258957C53 /* ALMeterScanResultViewController.m */; };
 		407A4A65D56940634EFE3160 /* CustomerDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EBD8DD8F27AF6AE4FC51EC /* CustomerDataViewController.xib */; };
@@ -63,18 +65,14 @@
 		605E6CDB61B63B6AC1CE350F /* ALAnagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A6183F42E04E2C6FF8395 /* ALAnagramAPI.m */; };
 		618F14F9045657F81723FE9D /* ALMeterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD435770F85A368321C662A0 /* ALMeterCollectionViewController.m */; };
 		61FED3A9FB17FF15081C47E2 /* ALMeterReadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEF78C5E0F2CF9B724ABDA0 /* ALMeterReadingView.m */; };
-		66669F8A94F6EF704085B302 /* rbf_jan2015_v2.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */; };
 		6A662A38FB11EDF5AC046664 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC3D2A9C72D8397681C79C2 /* AudioToolbox.framework */; };
 		6D9DB65650C1337364ED2667 /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAAECEAC5316E2D8E83F753 /* ALISBNViewController.m */; };
 		6DF6B4C6FA1AE07730E50F91 /* CustomerSelfReadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91B611603735F990210480E3 /* CustomerSelfReadingViewController.xib */; };
 		6E8273BBBC8FAC67CAE58E46 /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAF261201B57749AD0EC10 /* ALIdentityDocumentsExampleManager.m */; };
 		70B08E4A8E2B7BFDBDA820C7 /* CustomerSelfReadingConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 893F4418753A94279A9F250B /* CustomerSelfReadingConfirmationViewController.m */; };
-		73FACF345D3B7587A9F7B054 /* container_scanner_vertical.ale in Resources */ = {isa = PBXBuildFile; fileRef = E4D18866146E13A16361E91A /* container_scanner_vertical.ale */; };
 		768F062F912507886BF27753 /* ALDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE651E7B004721B4FBFED5D4 /* ALDigitalMeterScanViewController.m */; };
 		77B291841DE266CD31FF4FED /* ALScrabblePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 938340AF6E801B1E47A49D1C /* ALScrabblePoints.m */; };
 		787B562AE4BE0AA7343C1FB8 /* ALResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F5B40F3AC4D6632667710 /* ALResultCell.m */; };
-		78993C99554B42B9E91B7B08 /* deu.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = DA7638EA3646145215A9FCF1 /* deu.traineddata */; };
-		78A4ED46F9F0D0DEE115F7BD /* anyline_capitals.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */; };
 		792987BDCA7E000CEA2D81DE /* ALISBNHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFF883735FF225B4D04FCE /* ALISBNHeaderCell.m */; };
 		79393347E57695851DBE5A32 /* ALToggleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9FC7B0725CF011A03E157B /* ALToggleControl.m */; };
 		7AFAA46BE280FC3593CD7C73 /* CustomerSelfReadingConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977E56BAE9C4E6B75D40D08B /* CustomerSelfReadingConfirmationViewController.xib */; };
@@ -102,7 +100,6 @@
 		A0BAE0FD2D5987E557AA39D6 /* CustomerDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 256D1F6AD318E0127E488834 /* CustomerDataView.xib */; };
 		A210740E3AE3793B930A87C4 /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827C96CA2CE47B790BFBB605 /* ALVoucherCodeScanViewController.m */; };
 		A2D3604AD658853B67650287 /* ALScrabbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29092239DF6E401BDB033C26 /* ALScrabbleViewController.m */; };
-		A3B0133B0404ACB4E80432BA /* vin.any in Resources */ = {isa = PBXBuildFile; fileRef = 3B20B96D9F3A3276B2889F1A /* vin.any */; };
 		A54AA0FB4A5F4B0777312AF9 /* CustomerSelfReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F721982BB02F4A2575757 /* CustomerSelfReadingViewController.m */; };
 		A67CAC0BFB144389010E39EF /* cow_tag_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F249838E9230BBD52674B999 /* cow_tag_capture_config.json */; };
 		A70E2F431AE330AB87C07603 /* bottlecap_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BA35C916B8FA84CDB963BDBA /* bottlecap_config.json */; };
@@ -111,7 +108,6 @@
 		AB205D78EEDD0303A1E854F3 /* vin_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B20416F4B07083768BF0DFBD /* vin_capture_config.json */; };
 		AB795CDBC9D9336CF10C96D4 /* Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BA03ED60F803AEB71A71B /* Reading.m */; };
 		ACFD931E44F5DF1B9F06E01E /* ElectricMeterBlackWhiteScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4587202B0B33FD1ADAC5A9C /* ElectricMeterBlackWhiteScanViewController.swift */; };
-		AD4B98AAFA169CFD8FDAB2A1 /* USNr.any in Resources */ = {isa = PBXBuildFile; fileRef = A531D6C1B48631A833CE1833 /* USNr.any */; };
 		ADB043ACA04B251332C6C039 /* ALBasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116A0D6944AF2AC5017F4931 /* ALBasePageViewController.m */; };
 		ADE2DF4C1D5FBFF5FEC9254C /* ALMeterSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2430E12BBD103E266B10D984 /* ALMeterSelectView.m */; };
 		B0124F9B134E3E3C247AFC1B /* ALBlackWhiteSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F45F3B5FEB9A387E33842A /* ALBlackWhiteSelectView.m */; };
@@ -121,7 +117,6 @@
 		B32210DB476597B748438EBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E88C76AF69080B9D5FC54B /* Images.xcassets */; };
 		B37E5572AB0F105B8418B565 /* AnylineBottlecapScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D30950807E12F97DA9FD0 /* AnylineBottlecapScanViewController.swift */; };
 		B3DD97BCAB79A79D9C75B218 /* NSManagedObjectContext+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC69A86E3E539EAA7803532 /* NSManagedObjectContext+ALExamplesAdditions.m */; };
-		B4BF31851424F383392DB48F /* vin.ale in Resources */ = {isa = PBXBuildFile; fileRef = D46FAF5DE2DADF3845D134F7 /* vin.ale */; };
 		B6F0928583C26960C875FE17 /* ScanHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = C89FCA451DDD8B2305225350 /* ScanHistory.m */; };
 		B6F1FFA211EB59C19D2F3A6F /* ALMeterReading.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B9FCB5924778E2334CB14 /* ALMeterReading.m */; };
 		B872E685AE16733F0F10B3EB /* UIFont+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6028D8C5A57E910D1097C /* UIFont+ALExamplesAdditions.m */; };
@@ -138,10 +133,10 @@
 		C097E794DEC0047147DFAAD8 /* ALBadgeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCDEFED81D80952A846E9BB /* ALBadgeScanViewController.m */; };
 		C287113829BEA0BCBE982303 /* ALDrivingLicenseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141D57F2B89AAC052915511 /* ALDrivingLicenseScanViewController.m */; };
 		C359ADB31FB8376779CF71FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635597E0966D01FD7533AF85 /* AppDelegate.m */; };
-		C44CBEA7B01C94AA9B176B51 /* eng_no_dict.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */; };
 		C4736EF4E63BCD5F06685325 /* NSManagedObject+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C155D5C18ABE3A76E0F17D /* NSManagedObject+ALExamplesAdditions.m */; };
-		C4B5DC8F4D1ABD333EDA1257 /* scrabble.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF63762DADF35221787B91 /* scrabble.traineddata */; };
 		C5516C68A9A254E15095DF35 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E5F98B1E0F1B8DF9D47C88 /* ALMeterExampleManager.m */; };
+		C788B637C4464CC508E0E862 /* deu.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = DA7638EA3646145215A9FCF1 /* deu.traineddata */; };
+		C79532AD6A271F678998FC1C /* scrabble.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF63762DADF35221787B91 /* scrabble.traineddata */; };
 		CB9379B0BCBF8C5CFAE2F482 /* ReadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D5A1D27EE4F69994E48028 /* ReadingTableViewCell.m */; };
 		CD2BA37F6EF3A4575DBD80FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DF1FCED630116580BE0689 /* main.m */; };
 		CF3B3B12D7CD71220EBDA83C /* ALScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D77205332F40AB7E0E2 /* ALScanResultViewController.m */; };
@@ -159,15 +154,14 @@
 		DE27C76CA65FE6F5198C01A6 /* ALLicensePlateResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E7B9B492C35E8943608E37 /* ALLicensePlateResultOverlayView.m */; };
 		DF28EAFD76BDC3BFEDF0B8DE /* rb_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 433A1C14AFD7CDE29C4DCBEF /* rb_config.json */; };
 		E0C8594C00B3D9ED450CC9E0 /* ALMultiformatBarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F67DE4FC3D7C25AF066EE /* ALMultiformatBarcodeScanViewController.m */; };
-		E299DB6F135A60425C6A8737 /* container_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */; };
 		E2F07492A0A5F058E943328D /* ALCattleTagScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CD7F8985E5A20AC71F2E6 /* ALCattleTagScanViewController.m */; };
 		E63BA4EE0CA670DDDEBE2857 /* ALGermanIDFrontScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B12BB758644B00703BD6B /* ALGermanIDFrontScanViewController.m */; };
 		E67E090E5201B47A1F03A2A8 /* NSUserDefaults+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C99364E505D91D15A5CD4E /* NSUserDefaults+ALExamplesAdditions.m */; };
 		E7BA307D449B96D28E7CEDFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9625A90879E934BBFB50ACD /* LaunchScreen.xib */; };
 		E9192EDC5477A576A19C1CB2 /* record_number_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D2F22EF36CFA4562FBDE6 /* record_number_config.json */; };
 		E9E8E5350443658AB1BEBF82 /* ALEnergyMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAEACD4453D58BDB86DD118 /* ALEnergyMeterScanViewController.m */; };
+		EA5E9A5AF1D68A9CE4D818C6 /* bottlecap.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */; };
 		EAE006E8F10E493E651EA506 /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB346B31D8C92567FEE0 /* ALIBANScanViewController.m */; };
-		EB19C0151CFF4A919817B93B /* bottlecap.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */; };
 		EC6D05C7CA8404C7A5352446 /* CustomerSelfReadingResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050E04B4864E56D39A825320 /* CustomerSelfReadingResultViewController.m */; };
 		ED4223C29914119E09D151C7 /* CustomerDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9C6129A23B1750CB4946F /* CustomerDataView.m */; };
 		EDE0C6A081A1F7B5EC60295A /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5240A50ACE02B6CF8F50A78 /* ALExampleManager.m */; };
@@ -214,7 +208,6 @@
 		1C2F2F1A910AA5FF322FD68B /* Anyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Anyline.framework; path = /Anyline.framework; sourceTree = "<group>"; };
 		1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMultiformatBarcodeScanViewController.h; sourceTree = "<group>"; };
 		1DCDEFED81D80952A846E9BB /* ALBadgeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBadgeScanViewController.m; sourceTree = "<group>"; };
-		1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = container_scanner.ale; sourceTree = "<group>"; };
 		1EA6EE27BB67CC0635C2B7F5 /* ALScrabbleLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleLabel.m; sourceTree = "<group>"; };
 		1FF0002345B8C3E1511C643B /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		23364FFEAEBD59242759D32D /* ALAnalogMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAnalogMeterScanViewController.h; sourceTree = "<group>"; };
@@ -246,7 +239,6 @@
 		36113C0011C7E040D73E50B2 /* NSArray+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		3697EADEF84AFA60F34FD10A /* UIToolbar+ExamplesExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+ExamplesExtensions.m"; sourceTree = "<group>"; };
 		3AA4C84C67022E60A83CF96B /* ALBadgeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBadgeScanViewController.h; sourceTree = "<group>"; };
-		3B20B96D9F3A3276B2889F1A /* vin.any */ = {isa = PBXFileReference; lastKnownFileType = text; path = vin.any; sourceTree = "<group>"; };
 		3B4D7C259FF1B4D49711D523 /* ALBasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBasePageViewController.h; sourceTree = "<group>"; };
 		3BA11DD4CE6387D71E8EF1BC /* ALScrabbleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleViewController.h; sourceTree = "<group>"; };
 		3BA77BD40223869ACAA5C62C /* ALDialMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDialMeterScanViewController.m; sourceTree = "<group>"; };
@@ -330,7 +322,6 @@
 		833111EF675AF352E303D622 /* CustomerSelfReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerSelfReading.m; sourceTree = "<group>"; };
 		83C57AFB2A3C8A51A5D0CB41 /* CustomerSelfReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSelfReading.h; sourceTree = "<group>"; };
 		842AE19E8DF18DBFD5595208 /* container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text; path = container_scanner_capture_config.json; sourceTree = "<group>"; };
-		85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = cow_tag_scanner.ale; sourceTree = "<group>"; };
 		87E1AA9FE58774E8D00DF582 /* ALOthersExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALOthersExampleManager.m; sourceTree = "<group>"; };
 		88055D30CB47773CFEAA5DD3 /* WorkforceTool+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WorkforceTool+CoreDataProperties.m"; sourceTree = "<group>"; };
 		881B570046397EBD0E211514 /* ALGridCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALGridCollectionViewController.h; sourceTree = "<group>"; };
@@ -368,7 +359,6 @@
 		A3A905D4F9E8AB4011E34E84 /* WorkorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkorderViewController.xib; sourceTree = "<group>"; };
 		A3B84E891036FDAF854B3F63 /* ALJSONDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALJSONDownloader.m; sourceTree = "<group>"; };
 		A3D4A5ED5043213916574812 /* ALCustomToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCustomToolbar.m; sourceTree = "<group>"; };
-		A531D6C1B48631A833CE1833 /* USNr.any */ = {isa = PBXFileReference; lastKnownFileType = text; path = USNr.any; sourceTree = "<group>"; };
 		A5BE16227B328C75A6EA33E7 /* ALWarningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWarningView.m; sourceTree = "<group>"; };
 		A7467168D7A8B3A20786E326 /* ALHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALHistoryCell.h; sourceTree = "<group>"; };
 		A7D442878E2C936B67B116E0 /* ALIntroHelpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIntroHelpView.m; sourceTree = "<group>"; };
@@ -432,7 +422,6 @@
 		D2730301D1046BBEF8E9D3FC /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		D2C220F71B1F35977709B85D /* NSManagedObject+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		D4252D9E041B4F35182E3752 /* CustomerDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerDataView.h; sourceTree = "<group>"; };
-		D46FAF5DE2DADF3845D134F7 /* vin.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = vin.ale; sourceTree = "<group>"; };
 		D50347300D8EBE8BB2D6CCEE /* WorkforceToolResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkforceToolResultViewController.xib; sourceTree = "<group>"; };
 		D5BEC1253300787A14C9F604 /* UIToolbar+ExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+ExamplesExtensions.h"; sourceTree = "<group>"; };
 		D5F2B7FC1DB8E949C9AF1825 /* ALAutoAnalogDigitalMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAutoAnalogDigitalMeterScanViewController.m; sourceTree = "<group>"; };
@@ -456,7 +445,6 @@
 		DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = AnylineResources.bundle; sourceTree = "<group>"; };
 		E1D0F44A6F2025E1B8D97E95 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		E2309F02964871944419DC32 /* ALSpaceViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALSpaceViews.h; sourceTree = "<group>"; };
-		E4D18866146E13A16361E91A /* container_scanner_vertical.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = container_scanner_vertical.ale; sourceTree = "<group>"; };
 		E5E2D7BECEE1CE8448B0D4DF /* ALTextViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTextViewCell.m; sourceTree = "<group>"; };
 		E5E875AC6B199F59F47F7F82 /* ALContainerScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALContainerScanViewController.h; sourceTree = "<group>"; };
 		E8B12DF3E5609DB6FAF00652 /* ALHistoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHistoryTableViewController.m; sourceTree = "<group>"; };
@@ -613,25 +601,6 @@
 				899DB491FF0B19B87F1006F2 /* ReadingDetailsViewController.xib */,
 			);
 			path = CustomerSelfReading;
-			sourceTree = "<group>";
-		};
-		2622A91EEE045D79B3DD6C0B /* TrainedModels */ = {
-			isa = PBXGroup;
-			children = (
-				A531D6C1B48631A833CE1833 /* USNr.any */,
-				AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */,
-				AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */,
-				1DCE9D7F58CE5A505DE597F1 /* container_scanner.ale */,
-				E4D18866146E13A16361E91A /* container_scanner_vertical.ale */,
-				85CF8E96AA2F96F7CD306B3D /* cow_tag_scanner.ale */,
-				DA7638EA3646145215A9FCF1 /* deu.traineddata */,
-				3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */,
-				07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */,
-				7BFF63762DADF35221787B91 /* scrabble.traineddata */,
-				D46FAF5DE2DADF3845D134F7 /* vin.ale */,
-				3B20B96D9F3A3276B2889F1A /* vin.any */,
-			);
-			path = TrainedModels;
 			sourceTree = "<group>";
 		};
 		28D79D32640D381014400C2E /* DemoApp Source */ = {
@@ -917,6 +886,19 @@
 			path = MeterScan/ViewController;
 			sourceTree = "<group>";
 		};
+		642E977CB0D35320FB30C2E2 /* TrainedModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF5754D5926C4A95EE5FF24A /* anyline_capitals.traineddata */,
+				AD9153DF52EE7FC79E6A097C /* bottlecap.traineddata */,
+				DA7638EA3646145215A9FCF1 /* deu.traineddata */,
+				3F649521CBA19AFF4DC8A0F7 /* eng_no_dict.traineddata */,
+				07CC4BB2852E3C8EE1869414 /* rbf_jan2015_v2.traineddata */,
+				7BFF63762DADF35221787B91 /* scrabble.traineddata */,
+			);
+			path = TrainedModels;
+			sourceTree = "<group>";
+		};
 		67C9C87136AC6A4C53202AEC /* ContainerScannerVertical */ = {
 			isa = PBXGroup;
 			children = (
@@ -1065,7 +1047,7 @@
 				E15AF6C802B1C59B5320E989 /* RecordNumber */,
 				468CAB1F2847D6E3B39B610E /* Scrabble */,
 				0684816C88069DEDAAF528F1 /* SerialNumber */,
-				2622A91EEE045D79B3DD6C0B /* TrainedModels */,
+				642E977CB0D35320FB30C2E2 /* TrainedModels */,
 				793740CA38B9AE5D9AC506FF /* Utility */,
 				AB045F5B0373F47537D6F6C7 /* VIN */,
 				BB8B073899A792D0F0C1A7FD /* VoucherCode */,
@@ -1402,18 +1384,12 @@
 				33A819D1E9A1ED01787193A5 /* CustomerSelfReadingResultViewController.xib in Resources */,
 				6DF6B4C6FA1AE07730E50F91 /* CustomerSelfReadingViewController.xib in Resources */,
 				5A14B5269C87FF7AE418DF95 /* ReadingDetailsViewController.xib in Resources */,
-				78993C99554B42B9E91B7B08 /* deu.traineddata in Resources */,
-				C44CBEA7B01C94AA9B176B51 /* eng_no_dict.traineddata in Resources */,
-				EB19C0151CFF4A919817B93B /* bottlecap.traineddata in Resources */,
-				66669F8A94F6EF704085B302 /* rbf_jan2015_v2.traineddata in Resources */,
-				C4B5DC8F4D1ABD333EDA1257 /* scrabble.traineddata in Resources */,
-				78A4ED46F9F0D0DEE115F7BD /* anyline_capitals.traineddata in Resources */,
-				A3B0133B0404ACB4E80432BA /* vin.any in Resources */,
-				B4BF31851424F383392DB48F /* vin.ale in Resources */,
-				AD4B98AAFA169CFD8FDAB2A1 /* USNr.any in Resources */,
-				055B4E321AF6DF0DFADFBDE4 /* cow_tag_scanner.ale in Resources */,
-				E299DB6F135A60425C6A8737 /* container_scanner.ale in Resources */,
-				73FACF345D3B7587A9F7B054 /* container_scanner_vertical.ale in Resources */,
+				C788B637C4464CC508E0E862 /* deu.traineddata in Resources */,
+				0B894F4DAF5D2E311241B8C3 /* eng_no_dict.traineddata in Resources */,
+				EA5E9A5AF1D68A9CE4D818C6 /* bottlecap.traineddata in Resources */,
+				1222103D7ACE9B91D9D1E542 /* rbf_jan2015_v2.traineddata in Resources */,
+				C79532AD6A271F678998FC1C /* scrabble.traineddata in Resources */,
+				38FDF30A1FC9EEB5B8819939 /* anyline_capitals.traineddata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

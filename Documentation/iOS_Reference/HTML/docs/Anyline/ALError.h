@@ -99,6 +99,7 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALBarcodeModuleNativeDelegateWrong = 9004,
   ALEnergyScanPluginBarcodeNotSupported = 9005,
   ALModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
+  ALInvalidConfigSet = 9007,
 };
 
 

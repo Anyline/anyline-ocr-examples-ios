@@ -3,7 +3,7 @@
 //  AnylineExamples
 //
 //  Created by Matthias Gasser on 01/04/15.
-//  Copyright (c) 2015 9yards GmbH. All rights reserved.
+//  Copyright (c) 2019 Anyline GmbH. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

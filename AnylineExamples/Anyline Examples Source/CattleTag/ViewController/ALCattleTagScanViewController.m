@@ -34,15 +34,8 @@ NSString * const kCattleTagLicenseKey = kDemoAppLicenseKey;
     CGRect frame = [[UIScreen mainScreen] applicationFrame];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    
-    config.scanMode = ALAuto;
-    NSString *cattleTagAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
-    [config setLanguages:@[cattleTagAny] error:nil];
-    
-    NSString *cmdFile = [[NSBundle mainBundle] pathForResource:@"cow_tag_scanner" ofType:@"ale"];
-    config.customCmdFilePath = cmdFile;
-    
+    ALCattleTagConfig *config = [[ALCattleTagConfig alloc] init];
+ 
     NSError *error = nil;
     
     self.cattleTagScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"

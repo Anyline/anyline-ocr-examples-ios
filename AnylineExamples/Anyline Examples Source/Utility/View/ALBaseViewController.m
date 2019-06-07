@@ -8,11 +8,12 @@
 
 #import "ALBaseViewController.h"
 #import "Reachability.h"
+#import <WebKit/WebKit.h>
 
-@interface ALBaseViewController ()  <UIWebViewDelegate>
+@interface ALBaseViewController ()  <WKNavigationDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *progessView;
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 
 @end
 
@@ -66,7 +67,7 @@
     }    
 
     [self startLoading];
-    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.webView];
     
     NSString *url = [NSString stringWithString:inUrl];
@@ -77,11 +78,11 @@
                                          timeoutInterval:30];
     
     self.webView.alpha = 0;
-    self.webView.delegate = self;
+    self.webView.navigationDelegate=self;
     [self.webView loadRequest:request];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self stopLoading];
     [UIView animateWithDuration:0.5 animations:^{
         self.webView.alpha = 1;
