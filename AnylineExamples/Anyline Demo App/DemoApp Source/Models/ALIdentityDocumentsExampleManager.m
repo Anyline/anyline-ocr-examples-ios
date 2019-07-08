@@ -43,7 +43,7 @@
                                                        image:[UIImage imageNamed:@"mrz-version 3"]
                                               viewController:[ALMRZScanViewController class]];
     
-    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AUT/GER Driving License", nil)
+    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driving License", nil)
                                                             image:[UIImage imageNamed:@"driving license"]
                                                    viewController:[ALDrivingLicenseScanViewController class]];
     

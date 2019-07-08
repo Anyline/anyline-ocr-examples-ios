@@ -40,8 +40,6 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    NSString *ibanScannerAny = [[NSBundle mainBundle] pathForResource:@"USNr" ofType:@"any"];
-    [config setLanguages:@[ibanScannerAny] error:nil];
     config.scanMode = ALLine;
     config.charHeight = ALRangeMake(25, 65);
     config.minConfidence = 70;

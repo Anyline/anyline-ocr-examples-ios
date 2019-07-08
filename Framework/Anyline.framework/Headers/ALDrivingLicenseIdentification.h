@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ALSquare.h"
 #import "ALScanResult.h"
+#import "ALDrivingLicenseConfig.h"
 
 @interface ALDrivingLicenseIdentification : NSObject
 
@@ -30,6 +31,8 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+
+@property (nullable, nonatomic, strong) ALDrivingLicenseFieldConfidences *fieldConfidences;
 
 /*
  *  Deprecated Properties

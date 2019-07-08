@@ -9,6 +9,23 @@
 #import "ALLicensePlateResult.h"
 #import "ALAbstractScanPlugin.h"
 
+typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
+    ALLicensePlateAuto = 0,
+    ALLicensePlateNorway = 1,
+    ALLicensePlateNorwaySpecial = 2,
+    ALLicensePlateAustria = 3,
+    ALLicensePlateGermany = 4,
+    ALLicensePlateCzech = 5,
+    ALLicensePlateFinland = 6,
+    ALLicensePlateIreland = 7,
+    ALLicensePlateHungary = 8,
+    ALLicensePlatePoland = 9,
+    ALLicensePlateSlovakia = 10,
+    ALLicensePlateSlovenia = 11,
+    ALLicensePlateGreatBritain = 12,
+    ALLicensePlateFrance = 13,
+};
+
 @protocol ALLicensePlateScanPluginDelegate;
 
 @interface ALLicensePlateScanPlugin : ALAbstractScanPlugin
@@ -29,9 +46,28 @@
 
 - (instancetype _Nullable)init NS_UNAVAILABLE;
 
+/**
+ *  Sets the license plate scan mode.
+ *  It has to be of type ALLicensePlateScanMode (e.g. ALLicensePlateAuto, ALLicensePlateNorway, etc.)
+ *
+ */
+@property (nonatomic, assign, readonly) ALLicensePlateScanMode scanMode;
+
+/**
+ *  Sets the scan mode and returns an NSError if something failed.
+ *
+ *  @param license plate scanMode The scan mode to set.
+ *  @param error The error if something goes wrong. Can be nil.
+ *
+ *  @return Boolean indicating the success / failure of the call.
+ */
+- (BOOL)setScanMode:(ALLicensePlateScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
+
 - (void)addDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
 
 - (void)removeDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
+
+- (ALLicensePlateScanMode)parseScanModeString:(NSString * _Nonnull)scanModeString;
 
 @end
 

@@ -11,6 +11,7 @@
 #import "ALDrivingLicenseIdentification.h"
 #import "ALMRZIdentification.h"
 #import "ALGermanIDFrontIdentification.h"
+#import "ALIDConfig.h"
 
 /**
  *  The result object for the ALIDResult

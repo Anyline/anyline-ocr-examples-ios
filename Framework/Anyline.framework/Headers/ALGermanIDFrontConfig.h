@@ -38,3 +38,25 @@
 @property (nonatomic) ALFieldScanOption cardAccessNumber;
 
 @end
+
+@interface ALGermanIDFrontFieldConfidences : ALIDFieldConfidences
+
+@property (nonatomic) ALFieldConfidence surname;
+@property (nonatomic) ALFieldConfidence givenNames;
+@property (nonatomic) ALFieldConfidence dateOfBirth;
+@property (nonatomic) ALFieldConfidence nationality;
+@property (nonatomic) ALFieldConfidence placeOfBirth;
+@property (nonatomic) ALFieldConfidence dateOfExpiry;
+@property (nonatomic) ALFieldConfidence documentNumber;
+@property (nonatomic) ALFieldConfidence cardAccessNumber;
+
+- (instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname
+                               givenNames:(ALFieldConfidence)givenNames
+                              dateOfBirth:(ALFieldConfidence)dateOfBirth
+                              nationality:(ALFieldConfidence)nationality
+                             placeOfBirth:(ALFieldConfidence)placeOfBirth
+                             dateOfExpiry:(ALFieldConfidence)dateOfExpiry
+                           documentNumber:(ALFieldConfidence)documentNumber
+                         cardAccessNumber:(ALFieldConfidence)cardAccessNumber;
+
+@end

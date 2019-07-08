@@ -69,3 +69,58 @@
  */
 @end
 
+@interface ALMRZFieldConfidences : ALIDFieldConfidences
+
+//Be aware: MrzFieldConfidences have every field implemented, except for the AllCheckDigitsValid field. !Not only the fields from the FieldScanOptions!)
+@property (nonatomic) ALFieldConfidence vizDateOfIssue;
+@property (nonatomic) ALFieldConfidence vizAddress;
+@property (nonatomic) ALFieldConfidence vizSurname;
+@property (nonatomic) ALFieldConfidence vizGivenNames;
+@property (nonatomic) ALFieldConfidence vizDateOfBirth;
+@property (nonatomic) ALFieldConfidence vizDateOfExpiry;
+@property (nonatomic) ALFieldConfidence surname;
+@property (nonatomic) ALFieldConfidence givenNames;
+@property (nonatomic) ALFieldConfidence dateOfBirth;
+@property (nonatomic) ALFieldConfidence dateOfExpiry;
+@property (nonatomic) ALFieldConfidence documentNumber;
+@property (nonatomic) ALFieldConfidence documentType;
+@property (nonatomic) ALFieldConfidence issuingCountryCode;
+@property (nonatomic) ALFieldConfidence nationalityCountryCode;
+@property (nonatomic) ALFieldConfidence sex;
+@property (nonatomic) ALFieldConfidence personalNumber;
+@property (nonatomic) ALFieldConfidence optionalData;
+
+@property (nonatomic) ALFieldConfidence mrzString;
+
+//Check Digits
+@property (nonatomic) ALFieldConfidence checkDigitDateOfExpiry;
+@property (nonatomic) ALFieldConfidence checkDigitDocumentNumber;
+@property (nonatomic) ALFieldConfidence checkDigitDateOfBirth;
+@property (nonatomic) ALFieldConfidence checkDigitFinal;
+@property (nonatomic) ALFieldConfidence checkDigitPersonalNumber;
+
+- (instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname
+                               givenNames:(ALFieldConfidence)givenNames
+                              dateOfBirth:(ALFieldConfidence)dateOfBirth
+                             dateOfExpiry:(ALFieldConfidence)dateOfExpiry
+                           documentNumber:(ALFieldConfidence)documentNumber
+                             documentType:(ALFieldConfidence)documentType
+                       issuingCountryCode:(ALFieldConfidence)issuingCountryCode
+                   nationalityCountryCode:(ALFieldConfidence)nationalityCountryCode
+                                      sex:(ALFieldConfidence)sex
+                           personalNumber:(ALFieldConfidence)personalNumber
+                             optionalData:(ALFieldConfidence)optionalData
+                   checkDigitDateOfExpiry:(ALFieldConfidence)checkDigitDateOfExpiry
+                 checkDigitDocumentNumber:(ALFieldConfidence)checkDigitDocumentNumber
+                    checkDigitDateOfBirth:(ALFieldConfidence)checkDigitDateOfBirth
+                          checkDigitFinal:(ALFieldConfidence)checkDigitFinal
+                 checkDigitPersonalNumber:(ALFieldConfidence)checkDigitPersonalNumber
+                               vizAddress:(ALFieldConfidence)vizAddress
+                           vizDateOfIssue:(ALFieldConfidence)vizDateOfIssue
+                               vizSurname:(ALFieldConfidence)vizSurname
+                            vizGivenNames:(ALFieldConfidence)vizGivenNames
+                           vizDateOfBirth:(ALFieldConfidence)vizDateOfBirth
+                          vizDateOfExpiry:(ALFieldConfidence)vizDateOfExpiry
+                                mrzString:(ALFieldConfidence)mrzString;
+
+@end

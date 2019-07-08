@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ALROISpec.h"
 
+
+typedef int ALFieldConfidence;
+static const ALFieldConfidence ALFieldConfidenceDefault=-1;
+
 /**
  *  The ALResult encapsulates all the neccessary objects and data
  *  for the text recognition client.
@@ -44,5 +48,8 @@
  *          @see ALValidator.
  */
 - (id)resultForIdentifier:(NSString *)identifier;
+
+
+- (ALFieldConfidence)confidenceForIdentifier:(NSString *)identifier;
 
 @end

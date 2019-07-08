@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ALMRZConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -52,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readonly) NSDate *vizDateOfBirthObject;
 @property (nullable, nonatomic, strong, readonly) NSDate *vizDateOfExpiryObject;
 
+@property (nullable, nonatomic, strong) ALMRZFieldConfidences *fieldConfidences;
+
 /*
  *  Deprecated Properties
  */
@@ -68,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readonly) NSDate *expirationDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfExpiryObject\" instead.");
 @property (nullable, nonatomic, strong, readonly) NSDate *dayOfBirthDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfBirthObject\" instead.");
 @property (nullable, nonatomic, strong, readonly) NSDate *issuingDateObject __deprecated_msg("Deprecated since Version 10. Please use the property \"dateOfIssueObject\" instead.");
-@property (nullable, nonatomic, strong, readonly) NSString *MRZString __deprecated_msg("Deprecated since Version 10. Please use the property \"mrzString\" instead.");
+@property (nullable, nonatomic, strong, readonly) NSString *MRZString __deprecated_msg("Deprecated since Version 10. Please use the property \"mrzString\" instead.") NS_SWIFT_UNAVAILABLE("Please use the property \"mrzString\" instead. ");
 
 @property (nullable, nonatomic, strong, readonly) NSString *dateOfIssue __deprecated_msg("Deprecated since Version 10.1. Please use the property \"vizDateOfIssue\" instead.");
 @property (nullable, nonatomic, strong, readonly) NSString *address __deprecated_msg("Deprecated since Version 10.1. Please use the property \"vizAddress\" instead.");

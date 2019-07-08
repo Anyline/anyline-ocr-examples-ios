@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ALSquare.h"
 #import "ALScanResult.h"
+#import "ALGermanIDFrontConfig.h"
 
 @interface ALGermanIDFrontIdentification : NSObject
 
@@ -28,6 +29,8 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+
+@property (nullable, nonatomic, strong) ALGermanIDFrontFieldConfidences *fieldConfidences;
 
 /*
  *  Deprecated Properties

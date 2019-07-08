@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
     /**
      *
      */
+    ALDrivingLicenseUK,
+    /**
+     *
+     */
     ALDrivingLicenseAuto
 };
 
@@ -63,3 +67,28 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
 
 @end
 
+@interface ALDrivingLicenseFieldConfidences : ALIDFieldConfidences
+
+@property (nonatomic) ALFieldConfidence surname;
+@property (nonatomic) ALFieldConfidence givenNames;
+@property (nonatomic) ALFieldConfidence dateOfBirth;
+@property (nonatomic) ALFieldConfidence placeOfBirth;
+@property (nonatomic) ALFieldConfidence dateOfIssue;
+@property (nonatomic) ALFieldConfidence dateOfExpiry;
+@property (nonatomic) ALFieldConfidence authority;
+@property (nonatomic) ALFieldConfidence documentNumber;
+@property (nonatomic) ALFieldConfidence categories;
+
+@property (nonatomic) ALDrivingLicenseFieldConfidences * _Nonnull fieldConfidences;
+
+- (instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname
+                               givenNames:(ALFieldConfidence)givenNames
+                              dateOfBirth:(ALFieldConfidence)dateOfBirth
+                             placeOfBirth:(ALFieldConfidence)placeOfBirth
+                              dateOfIssue:(ALFieldConfidence)dateOfIssue
+                             dateOfExpiry:(ALFieldConfidence)dateOfExpiry
+                                authority:(ALFieldConfidence)authority
+                           documentNumber:(ALFieldConfidence)documentNumber
+                               categories:(ALFieldConfidence)categories;
+
+@end
