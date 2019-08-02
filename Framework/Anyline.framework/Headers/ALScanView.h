@@ -11,7 +11,6 @@
 #import "ALCaptureDeviceManager.h"
 #import "ALAbstractScanViewPlugin.h"
 
-#import "ALVisualFeedbackOverlay.h"
 #import "ALCutoutView.h"
 #import "ALUIFeedback.h"
 
@@ -113,13 +112,14 @@
  */
 - (void)updateDispatchTimer;
 
-- (void)updateTextRect:(ALSquare *_Nonnull)square;
+- (void)updateTextRect:(ALSquare *_Nonnull)square forPluginID:(NSString *_Nonnull)pluginID;
 
 - (void)updateCutoutView:(ALCutoutConfig *_Nonnull)cutoutConfig;
 
 - (void)updateVisualFeedbackView:(ALScanFeedbackConfig *_Nonnull)scanFeedbackConfig;
 
 - (void)updateWebView:(ALScanViewPluginConfig *_Nonnull)config;
+- (void)updateWebViewWithMultipleConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;
 
 /**
  Zoom Features

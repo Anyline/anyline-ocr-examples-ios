@@ -72,3 +72,6 @@
 #import "ALIDScanViewPlugin.h"
 #import "ALBarcodeScanViewPlugin.h"
 
+
+//ScanViewPluginComposites
+#import "ALAbstractScanViewPluginComposite.h"

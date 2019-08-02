@@ -28,6 +28,14 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
     /**
      *
      */
+    ALDrivingLicenseNL,
+    /**
+     *
+     */
+    ALDrivingLicenseBE,
+    /**
+     *
+     */
     ALDrivingLicenseAuto
 };
 

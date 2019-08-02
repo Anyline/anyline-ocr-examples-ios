@@ -18,6 +18,9 @@
 #import "ALGermanIDFrontScanViewController.h"
 #import "ALPDF417ScanViewController.h"
 
+#import "ALNLDrivingLicenseScanViewController.h"
+#import "ALBEDrivingLicenseScanViewController.h"
+
 @interface ALIdentityDocumentsExampleManager ()
 
 @property (nonatomic, strong) NSDictionary *examples;
@@ -43,7 +46,7 @@
                                                        image:[UIImage imageNamed:@"mrz-version 3"]
                                               viewController:[ALMRZScanViewController class]];
     
-    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driving License", nil)
+    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AT/DE/UK Driving License", nil)
                                                             image:[UIImage imageNamed:@"driving license"]
                                                    viewController:[ALDrivingLicenseScanViewController class]];
     
@@ -55,7 +58,13 @@
                                                             image:[UIImage imageNamed:@"PDF417"]
                                                    viewController:[ALPDF417ScanViewController class]];
     
+    ALExample *beDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"BE Driving License", nil)
+                                                                 image:[UIImage imageNamed:@"be_driving_license"]
+                                                        viewController:[ALBEDrivingLicenseScanViewController class]];
     
+    ALExample *nlDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NL Driving License", nil)
+                                                                 image:[UIImage imageNamed:@"nl_driving_license"]
+                                                        viewController:[ALNLDrivingLicenseScanViewController class]];
     
     
     self.sectionNames = @[@"Identity Documents",];

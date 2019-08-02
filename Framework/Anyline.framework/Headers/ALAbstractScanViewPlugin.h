@@ -58,8 +58,8 @@
 /**
  Stops the Anyline processing
 
- @param error An error if something goes wrong during the startup
- @return Boolean indicating the success of the start
+ @param error An error if something goes wrong while stopping
+ @return Boolean indicating whether it stopped successfully
  */
 - (BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
 
@@ -86,7 +86,7 @@
 
 - (ALSquare * _Nonnull)convertSquare:(ALSquare * _Nonnull)unconvertedSquare;
 
-- (void)updateCutoutRect:(CGRect)rect;
+- (void)updateCutoutRect:(CGRect)rect forPluginID:(NSString *_Nonnull)pluginID;
 
 - (void)addScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
 

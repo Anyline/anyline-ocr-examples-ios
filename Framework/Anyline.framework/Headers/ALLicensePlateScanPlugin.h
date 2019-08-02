@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
     ALLicensePlateCzech = 5,
     ALLicensePlateFinland = 6,
     ALLicensePlateIreland = 7,
-    ALLicensePlateHungary = 8,
+    ALLicensePlateCroatia = 8,
     ALLicensePlatePoland = 9,
     ALLicensePlateSlovakia = 10,
     ALLicensePlateSlovenia = 11,

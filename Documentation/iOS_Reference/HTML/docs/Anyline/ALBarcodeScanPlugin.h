@@ -12,7 +12,7 @@
 @protocol ALBarcodeScanPluginDelegate;
 
 /**
- * The ALBarcodeScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines barcode scanning mode. 
+ * The ALBarcodeScanPlugin class declares the programmatic interface for an object that manages easy access to Anyline's barcode scanning mode.
  *
  * Communication with the host application is managed with a delegate that conforms to ALBarcodeScanPluginDelegate & ALInfoDelegate.
  *

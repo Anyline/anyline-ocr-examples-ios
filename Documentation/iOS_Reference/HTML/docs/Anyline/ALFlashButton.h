@@ -32,8 +32,6 @@ typedef NS_ENUM(NSInteger, ALFlashStatus) {
 
 @property (nonatomic, assign, readonly) BOOL expanded;
 
-@property (nonatomic, assign, readonly) BOOL expandLeft;
-
 @property (nullable, nonatomic, strong, readonly) UIImageView *flashImage;
 
 @property (nonatomic, assign) ALFlashStatus flashStatus;

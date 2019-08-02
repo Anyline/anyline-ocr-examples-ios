@@ -24,8 +24,9 @@
 @property (nonnull, nonatomic, strong, readonly) ObjectType result;
 /**
  *  The image where the scanned text was found.
+ *  This is nil if the result is from a composite scan view plugin (images from the individual plugins can be found in the scanned result), or in emptyScanResult
  */
-@property (nonnull, nonatomic, strong, readonly) UIImage *image;
+@property (nullable, nonatomic, strong, readonly) UIImage *image;
 /**
  *  The full frme image where the scanned text was found.
  */
@@ -39,10 +40,16 @@
  */
 @property (nullable, nonatomic, strong) ALSquare *outline __deprecated_msg("Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.");
 
+@property (readonly) BOOL isEmpty;
+
 - (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
-                                   image:(UIImage * _Nonnull)image
+                                   image:(UIImage * _Nullable)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
                                 pluginID:(NSString *_Nonnull)pluginID;
+/*
+ An empty scan result with the given ID. This is used as the result for plugins within a composite scan view plugin which were skipped. Check whether a scan result is empty using isEmpty
+ */
++ (instancetype _Nonnull)emptyScanResultWithID:(NSString *_Nonnull)pluginID ;
 
 @end

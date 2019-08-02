@@ -24,7 +24,7 @@
 @property (nonatomic, assign, readonly) BOOL allCheckDigitsValid __deprecated_msg("Deprecated since Version 10. Please use the property \"allCheckDigitsValid\" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.");
 
 - (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
-                                   image:(UIImage * _Nonnull)image
+                                   image:(UIImage * _Nullable)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
                                 pluginID:(NSString *_Nonnull)pluginID;
