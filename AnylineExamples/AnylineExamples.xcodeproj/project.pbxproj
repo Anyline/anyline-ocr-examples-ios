@@ -1581,6 +1581,7 @@
 					"$(SDKROOT)/System/Library/Frameworks",
 					./../Framework,
 				);
+				MARKETING_VERSION = 12.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1634,6 +1635,7 @@
 					"$(SDKROOT)/System/Library/Frameworks",
 					./../Framework,
 				);
+				MARKETING_VERSION = 12.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "-O3";
