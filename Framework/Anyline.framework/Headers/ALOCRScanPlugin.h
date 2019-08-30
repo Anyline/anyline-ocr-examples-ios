@@ -14,6 +14,7 @@
 #import "ALVINConfig.h"
 #import "ALContainerConfig.h"
 #import "ALCattleTagConfig.h"
+#import "ALTINConfig.h"
 
 @protocol ALOCRScanPluginDelegate;
 /**

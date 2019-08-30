@@ -109,13 +109,7 @@ NSString * const kHashtagLicenseKey = kDemoAppLicenseKey;
  method will get called again.
  */
 - (void)startAnyline {
-    NSError *error;
-    BOOL success = [self.ocrModuleView startScanningAndReturnError:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
-    }
-    
+    [self startModule:self.ocrModuleView];
     self.startTime = CACurrentMediaTime();
 }
 

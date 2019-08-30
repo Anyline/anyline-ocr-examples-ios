@@ -1,5 +1,5 @@
 //
-//  ALBaseOCRConfig.h
+//  ALContainerConfig.h
 //  Anyline
 //
 //  Created by Philipp Müller on 03/05/2019.

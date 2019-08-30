@@ -124,18 +124,8 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
    with cancelOnResult:). When the user dismisses self.identificationView this
    method will get called again.
  */
-- (void)startAnyline { 
-    NSError *error;
-    BOOL success = [self.mrzScanViewPlugin startAndReturnError:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
-    
+- (void)startAnyline {
+    [self startPlugin:self.mrzScanViewPlugin];
     self.startTime = CACurrentMediaTime();
 }
 

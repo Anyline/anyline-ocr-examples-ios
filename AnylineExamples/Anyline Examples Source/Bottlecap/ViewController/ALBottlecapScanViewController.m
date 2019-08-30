@@ -108,12 +108,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
  method will get called again.
  */
 - (void)startAnyline {
-    NSError *error;
-    BOOL success = [self.bottlecapScanViewPlugin startAndReturnError:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        NSAssert(success, @"Start Scanning Error: %@", error.debugDescription);
-    }
+    [self startPlugin:self.bottlecapScanViewPlugin];
 }
 
 #pragma mark -- AnylineOCRModuleDelegate

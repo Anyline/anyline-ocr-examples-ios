@@ -36,10 +36,10 @@
 
 @required
 /**
- *  Returns the scanned value
+ *  Returns the scanned values
  *
- *  @param anylineBarcodeScanPlugin The plugin
- *  @param scanResult The scanned value
+ *  @param anylineCompositeScanPlugin The plugin
+ *  @param scanResult The scanned values, as a dictionary mapping each plugin ID to the result for that plugin. Scan results for plugins which have been skipped will return true from isEmpty.
  *
  */
 - (void)anylineCompositeScanPlugin:(ALAbstractScanViewPluginComposite * _Nonnull)anylineCompositeScanPlugin

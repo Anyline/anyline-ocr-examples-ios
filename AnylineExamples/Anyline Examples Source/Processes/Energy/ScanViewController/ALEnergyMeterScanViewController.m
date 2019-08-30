@@ -53,7 +53,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode";
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     
@@ -69,7 +69,11 @@ NSString * const kMeterScanPluginID = @"METER_READING";
                                                               delegate:self
                                                                  error:&error];
     NSAssert(meterScanPlugin, @"Setup Error: %@", error.debugDescription);
-    
+    BOOL success = [meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
+    if( !success ) {
+        // Something went wrong. The error object contains the error description
+        [self showAlertWithTitle:@"Set ScanMode Error" message:error.debugDescription];
+    }
     //Add Meter Scan View Plugin (Scan UI)
     ALMeterScanViewPlugin *meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:meterScanPlugin];
     //We use this as a property, to use it for the example scan history
@@ -238,15 +242,20 @@ NSString * const kMeterScanPluginID = @"METER_READING";
 }
 
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
-    [self.serialComposite stopAndReturnError:nil];
+    BOOL stopped = [self.serialComposite stopAndReturnError:nil];
     
     [self evaluateMeterId:scanResult];
     if (self.customer) {
         self.barcodeResult = scanResult.result;
+        //if we have a 'Customer Not Found' message showing because we read a bad barcode previously and they haven't dismissed the message yet, dismiss it, since we have now found a customer.
+        if ([self.presentedViewController isKindOfClass:UIAlertController.class]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
         [self.serialComposite startFromID:kMeterScanPluginID andReturnError:nil];
         self.title = @"Analog/Digital Meter";
     } else {
-        [self.serialComposite startAndReturnError:nil];
+        //we don't want the composite to be running when we return from this method, or it may do something with the barcode result when it gets this delegate message
+        [self.serialComposite performSelector:@selector(startAndReturnError:) withObject:nil afterDelay:0.0];
         self.barcodeResult = @"";
         self.customer = nil;
     }
@@ -267,16 +276,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
      Success/error tells us if everything went fine.
      */
     if (![self.serialComposite isRunning]) {
-        NSError *error = nil;
-        BOOL success = [self.serialComposite startAndReturnError:&error];
-        if( !success ) {
-            // Something went wrong. The error object contains the error description
-            [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
-                                        message:error.debugDescription
-                                       delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
-        }
+        [self startPlugin:self.serialComposite];
     }
 }
 
@@ -290,11 +290,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     }
     
     if (!self.customer) {
-        [[[UIAlertView alloc] initWithTitle:@"Customer not found"
-                                    message:nil
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [self showAlertWithTitle:@"Customer not found" message:nil];
     }
 }
 

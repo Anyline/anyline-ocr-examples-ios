@@ -95,11 +95,12 @@ static void * kIsOnContext = &kIsOnContext;
             [self.reading.managedObjectContext saveToPersistentStoreAndWait];
             
         } else {
-            [[[UIAlertView alloc] initWithTitle:@"Reading sync."
-                                        message:@"Could not send reading.\nPlease try again."
-                                       delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Reading sync."
+                                                                                     message:@"Could not send reading.\nPlease try again."
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:dismissAction];
+            [self.navigationController presentViewController:alertController animated:YES completion:nil];
         }
     }];
 }
@@ -159,7 +160,7 @@ static void * kIsOnContext = &kIsOnContext;
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"The meter reading you have entered is outside of the expected range of values.", @"warning")
-                                                                                 message:[NSString stringWithFormat:NSLocalizedString(@"Please confirm that yout meter shows the following value:\n\n%@", @"warning"), self.reading.readingValue]
+                                                                                 message:[NSString stringWithFormat:NSLocalizedString(@"Please confirm that your meter shows the following value:\n\n%@", @"warning"), self.reading.readingValue]
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:cancelAction];
         [alertController addAction:confirmAction];

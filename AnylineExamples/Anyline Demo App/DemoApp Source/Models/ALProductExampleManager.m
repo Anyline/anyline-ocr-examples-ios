@@ -23,7 +23,7 @@
 #import "ALBottlecapScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
-#import "ALHashtagScanViewController.h"
+//#import "ALHashtagScanViewController.h"
 
 #import "ALLicensePlateViewController.h"
 

@@ -114,6 +114,34 @@
     
 }
 
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:dismissAction];
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)startPlugin:(ALAbstractScanViewPlugin *)plugin {
+    NSError *error;
+    BOOL success = [plugin startAndReturnError:&error];
+    if( !success ) {
+        //this alert does not actually show, because the SDK shows its own alert, but eventually we should be able to silence those.
+        [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];
+    }
+}
+
+//todo: replace the use of modules, since they're deprecated
+- (void)startModule:(AnylineAbstractModuleView *)module {
+    NSError *error;
+    BOOL success = [module startScanningAndReturnError:&error];
+    if( !success ) {
+        //this alert does not actually show, because the SDK shows its own alert, but eventually we should be able to silence those.
+        [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];
+    }
+}
+
 - (void)dealloc {
     [self.motionManager stopDeviceMotionUpdates];
 }

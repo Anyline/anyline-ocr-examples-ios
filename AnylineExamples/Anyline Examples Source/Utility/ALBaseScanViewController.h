@@ -41,5 +41,8 @@
                   completion:(void (^)(void))completion;
 
 - (void)startListeningForMotion;
+- (void)startPlugin:(ALAbstractScanViewPlugin *)plugin;
+- (void)startModule:(AnylineAbstractModuleView *)module;
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

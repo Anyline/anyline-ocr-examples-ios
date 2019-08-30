@@ -40,6 +40,7 @@
 + (_Nonnull instancetype)defaultLicensePlateConfig;
 + (_Nonnull instancetype)defaultOCRConfig;
 + (_Nonnull instancetype)defaultVINConfig;
++ (_Nonnull instancetype)defaultTINConfig;
 + (_Nonnull instancetype)defaultContainerConfig;
 + (_Nonnull instancetype)defaultCattleTagConfig;
 + (_Nonnull instancetype)defaultMRZConfig;

@@ -10,6 +10,7 @@
 
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
+#import "ALTINScanViewController.h"
 #import "ALContainerScanViewController.h"
 #import "ALVerticalContainerScanViewController.h"
 
@@ -55,9 +56,13 @@
                                                              image:[UIImage imageNamed:@"vertical container scanner"]
                                                     viewController:[ALVerticalContainerScanViewController class]];
     
+    ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Identification Number", nil)
+                                                       image:[UIImage imageNamed:@"tin"]
+                                              viewController:[ALTINScanViewController class]];
+    
     self.sectionNames = @[@"MRO",];
     self.examples = @{
-                      self.sectionNames[0] : @[serialNumberScanning,vinScanning,containerScanning,verticalContainerScanning,],
+                      self.sectionNames[0] : @[serialNumberScanning,vinScanning,tinScanning,containerScanning,verticalContainerScanning,],
                       };
 }
 

@@ -108,20 +108,7 @@ static const NSInteger padding = 7;
  */
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    /*
-     This is the place where we tell Anyline to start receiving and displaying images from the camera.
-     Success/error tells us if everything went fine.
-     */
-    NSError *error = nil;
-    BOOL success = [self.meterScanViewPlugin startAndReturnError:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Start Scanning Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+    [self startPlugin:self.meterScanViewPlugin];
 }
 
 - (void)viewDidLayoutSubviews {
