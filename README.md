@@ -13,6 +13,16 @@
 The Example App provides many preconfigured modules, to show case of what the SDK is capable of. 
 
 
+## Release notes
+
+### Current release notes
+
+You can find the latest release notes in our online documentation: https://documentation.anyline.com/toc/platforms/ios/release_guide/index.html
+
+### Current known-limitations
+
+A list of the currently known-limitations can be found [here](https://documentation.anyline.com/toc/platforms/ios/known_limitations.html#ios-known-limitations-current-known-limitations).
+
 ## Quick Start Guide
 
 ### 0. Clone or Download
