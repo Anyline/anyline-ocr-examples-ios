@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, ALTINScanMode) {
  *  @see ALContainerScanMode
  */
 @property (nonatomic, assign) ALTINScanMode scanMode;
+@property (nonatomic, assign) BOOL enableUpsideDownScan;
 
 - (instancetype)init;
 @end

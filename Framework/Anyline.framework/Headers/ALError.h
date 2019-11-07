@@ -16,6 +16,7 @@ static NSString * const ALCameraSetupDomain = @"ALCameraSetupDomain";
 static NSString * const ALWatermarkViolationDomain = @"ALWatermarkViolationDomain";
 static NSString * const ALModuleSetupDomain = @"ALModuleSetupDomain";
 static NSString * const ALLicenseViolationDomain = @"ALLicenseViolationDomain";
+static NSString * const ALNFCDomain = @"ALNFCDomain";
 
 static NSString *const ALParserErrorLineNumber = @"ALParserErrorLineNumber";
 static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
@@ -23,7 +24,7 @@ static NSString *const ALParserErrorParameterName =
     @"ALParserErrorParameterName";
 
 typedef NS_ENUM(NSInteger, ALErrorCode) {
-  // Anyline Exception - this type must be catched within Anyline Core
+  // Anyline Exception - this type must be caught within Anyline Core
   ALOperationNotFound = 1001,
 
   // Syntax Exception
@@ -100,6 +101,25 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALEnergyScanPluginBarcodeNotSupported = 9005,
   ALModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
   ALInvalidConfigSet = 9007,
+    
+
+  ALNFCTagErrorResponseError = 10001,
+  ALNFCTagErrorInvalidResponse = 10002,
+  ALNFCTagErrorUnexpectedError = 10003,
+  ALNFCTagErrorNFCNotSupported = 10004,
+  ALNFCTagErrorNoConnectedTag = 10005,
+  ALNFCTagErrorD087Malformed = 10006,
+  ALNFCTagErrorInvalidResponseChecksum = 10007,
+  ALNFCTagErrorMissingMandatoryFields = 10008,
+  ALNFCTagErrorCannotDecodeASN1Length = 10009,
+  ALNFCTagErrorInvalidASN1Value = 10010,
+  ALNFCTagErrorUnableToProtectAPDU = 10011,
+  ALNFCTagErrorUnableToUnprotectAPDU = 10012,
+  ALNFCTagErrorUnsupportedDataGroup = 10013,
+  ALNFCTagErrorDataGroupNotRead = 10014,
+  ALNFCTagErrorUnknownTag = 10015,
+  ALNFCTagErrorUnknownImageFormat = 10016,
+  ALNFCTagErrorNotImplemented = 10017
 };
 
 

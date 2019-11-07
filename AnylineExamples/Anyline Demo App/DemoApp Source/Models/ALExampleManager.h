@@ -23,3 +23,5 @@
 - (ALExample *)exampleForIndexPath:(NSIndexPath *)indexPath;
 
 @end
+
+extern NSString * const processTitle;

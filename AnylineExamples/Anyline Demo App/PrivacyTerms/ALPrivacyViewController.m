@@ -16,7 +16,7 @@
 
 typedef void (^CompletionBlock)(void);
 
-NSString * const ALDataPrivacyFileLink = @"https://anylinesdk.blob.core.windows.net/downloads/Anyline_Privacy_Policy_Store_App_English.html";
+NSString * const ALDataPrivacyFileLink = @"https://anyline.com/wp-content/uploads/2019/04/PrivacyPolicy_April19.pdf";
 
 @interface ALPrivacyViewController () <MFMailComposeViewControllerDelegate>
 
@@ -46,6 +46,12 @@ NSString * const ALDataPrivacyFileLink = @"https://anylinesdk.blob.core.windows.
     
     self.title = @"Data Privacy Consent";
     self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        //in light mode this is a slightly lighter colour than lightGrayColor, but it still looks okay
+        self.view.backgroundColor = [UIColor secondarySystemBackgroundColor];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
     self.navigationItem.hidesBackButton = NO;
     
     CGFloat top = 0;
@@ -94,6 +100,12 @@ NSString * const ALDataPrivacyFileLink = @"https://anylinesdk.blob.core.windows.
         self.cbox.center = CGPointMake(self.view.center.x, self.cbox.center.y);
         self.cbox.isChecked = wasAccepted;
         
+        if (@available(iOS 13.0, *)) {
+            self.cbox.labelTextColor = [UIColor labelColor];
+        } else {
+            self.cbox.labelTextColor = [UIColor blackColor];
+        }
+        
         [self.cbox addTarget:self action:@selector(checkAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:self.cbox];
@@ -117,6 +129,7 @@ NSString * const ALDataPrivacyFileLink = @"https://anylinesdk.blob.core.windows.
         [webView loadRequest:urlRequest];
         
         [self.view addSubview:webView];
+        [self.view bringSubviewToFront:self.cbox];
         
         //TODO: add hard copy fallback; (no internet/file not found)
     }

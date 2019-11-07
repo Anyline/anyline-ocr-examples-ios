@@ -36,7 +36,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     self.title = @"MRZ";
     
     // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALMRZConfig *mrzConfig = [[ALMRZConfig alloc] init];

@@ -75,3 +75,5 @@
 
 //ScanViewPluginComposites
 #import "ALAbstractScanViewPluginComposite.h"
+
+#import "ALNFCDetector.h"

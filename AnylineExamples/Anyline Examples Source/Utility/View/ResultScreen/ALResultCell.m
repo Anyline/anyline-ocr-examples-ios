@@ -57,11 +57,16 @@
 - (void)customInit {
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
     self.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
-    self.titleLabel.textColor = [UIColor lightGrayColor];
     
     self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 25)];
     self.valueLabel.font = [UIFont AL_proximaRegularWithSize:16];
-    self.valueLabel.textColor = [UIColor blackColor];
+    if (@available(iOS 13.0, *)) {
+        self.valueLabel.textColor = [UIColor labelColor];
+        self.titleLabel.textColor = [UIColor secondaryLabelColor];
+    } else {
+        self.valueLabel.textColor = [UIColor blackColor];
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+    }
     self.valueLabel.numberOfLines = 0;
     self.valueLabel.translatesAutoresizingMaskIntoConstraints = NO;
 

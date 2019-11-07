@@ -3,7 +3,7 @@
 //  Anyline
 //
 //  Created by Angela Brett on 09.07.19.
-//  Copyright © 2019 9Yards GmbH. All rights reserved.
+//  Copyright © 2019 Anyline GmbH. All rights reserved.
 //
 
 #ifndef ALAbstractScanViewPluginComposite_h

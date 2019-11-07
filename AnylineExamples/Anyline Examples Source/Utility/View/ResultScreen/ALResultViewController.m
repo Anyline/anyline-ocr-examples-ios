@@ -88,7 +88,12 @@
     self.contentScrollView.showsVerticalScrollIndicator = YES;
     self.contentScrollView.scrollEnabled = YES;
     self.contentScrollView.userInteractionEnabled = YES;
-    self.contentScrollView.backgroundColor = [UIColor lightGrayColor];
+    if (@available(iOS 13.0, *)) {
+        //in light mode this is a slightly lighter colour than lightGrayColor, but it still looks okay
+        self.contentScrollView.backgroundColor = [UIColor secondarySystemBackgroundColor];
+    } else {
+        self.contentScrollView.backgroundColor = [UIColor lightGrayColor];
+    }
     //Add scrollView to viewController.view
     [self.view addSubview:self.contentScrollView];
     
@@ -96,8 +101,12 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.resultTitle.frame.origin.y+self.resultTitle.frame.size.height, self.view.frame.size.width, 300) style:UITableViewStyleGrouped];
     [self.tableView registerClass:[ALResultCell class] forCellReuseIdentifier:@"alResultCell"];
     [self.tableView setSectionHeaderHeight:0];
-    self.tableView.userInteractionEnabled = false;
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.userInteractionEnabled = true;
+    if (@available(iOS 13.0, *)) {
+        self.tableView.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        self.tableView.backgroundColor = [UIColor whiteColor];
+    }
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -264,9 +273,14 @@
     self.resultTitle.text = [[self.resultData allKeys] objectAtIndex:section];
     self.resultTitle.textAlignment = NSTextAlignmentLeft;
     self.resultTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
-    self.resultTitle.backgroundColor = [UIColor whiteColor];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self headerSize])];
-    view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        view.backgroundColor = [UIColor systemBackgroundColor];
+        self.resultTitle.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        view.backgroundColor = [UIColor whiteColor];
+        self.resultTitle.backgroundColor = [UIColor whiteColor];
+    }
     [view addSubview:self.resultTitle];
     return view;
 }
@@ -311,5 +325,27 @@
     return CGSizeMake(imageView.image.size.width / scale, imageView.image.size.height / scale);
 }
 
+- (BOOL)tableView:(UITableView*)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath*)indexPath withSender:(id)sender {
+
+    if (action == @selector(copy:)) {
+        return YES;
+    }
+
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView*)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView*)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath*)indexPath withSender:(id)sender {
+
+    UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
+
+    ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    
+    pasteboard.string = entry.value;
+}
 
 @end
+            

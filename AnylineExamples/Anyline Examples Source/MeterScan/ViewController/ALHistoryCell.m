@@ -45,7 +45,11 @@
         
         {
             UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
-            label.textColor = [UIColor blackColor];
+            if (@available(iOS 13.0, *)) {
+                label.textColor = [UIColor labelColor];
+            } else {
+                label.textColor = [UIColor blackColor];
+            }
             label.textAlignment = NSTextAlignmentCenter;
             label.font = [UIFont AL_proximaBoldWithSize:16];
             label.backgroundColor = [UIColor clearColor];
@@ -62,7 +66,11 @@
         
         {
             UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 220, 20)];
-            label.textColor = [UIColor blackColor];
+            if (@available(iOS 13.0, *)) {
+                label.textColor = [UIColor labelColor];
+            } else {
+                label.textColor = [UIColor blackColor];
+            }
             label.textAlignment = NSTextAlignmentRight;
             label.font = [UIFont AL_proximaRegularWithSize:13];
             [label setText:@"Barcode:"];

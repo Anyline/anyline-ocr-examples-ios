@@ -20,6 +20,11 @@ API_AVAILABLE(ios(13.0))
 @property (nonatomic, strong) ALNFCDetector *nfcDetector;
 @property (nullable, nonatomic, strong) UIView *hintView;
 
+//keep the last values we read from the MRZ so we can retry reading NFC if NFC failed for reasons other than getting these details wrong
+@property NSString *passportNumberForNFC;
+@property NSDate *dateOfBirth;
+@property NSDate *dateOfExpiry;
+
 @end
 
 @implementation ALNFCScanViewController
@@ -119,7 +124,7 @@ API_AVAILABLE(ios(13.0))
 
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
-    [self startAnyline];
+    [self startMRZScanning];
 }
 
 - (void)updateHintPosition:(CGFloat)newPosition {
@@ -138,11 +143,8 @@ API_AVAILABLE(ios(13.0))
     50];
 }
 
-/*
- Cancel scanning to allow the module to clean up
- */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.mrzScanViewPlugin stopAndReturnError:nil];
+    [self stopMRZScanning];
 }
 
 
@@ -153,9 +155,25 @@ API_AVAILABLE(ios(13.0))
    with cancelOnResult:). When the user dismisses self.identificationView this
    method will get called again.
  */
-- (void)startAnyline {
+- (void)startMRZScanning {
     [self startPlugin:self.mrzScanViewPlugin];
     self.startTime = CACurrentMediaTime();
+    self.hintView.hidden = NO;
+}
+
+/*
+ Cancel scanning to allow the module to clean up
+ */
+- (void)stopMRZScanning {
+    [self.mrzScanViewPlugin stopAndReturnError:nil];
+    self.hintView.hidden = YES;
+}
+
+- (void)readNFCChip {
+    /*
+     This is where we start reading the NFC chip of the passport. We use data from the MRZ to authenticate with the chip.
+     */
+    [self.nfcDetector startNfcDetectionWithPassportNumber:self.passportNumberForNFC dateOfBirth:self.dateOfBirth expirationDate:self.dateOfExpiry];
 }
 
 #pragma mark -- ALIDPluginDelegate
@@ -177,12 +195,12 @@ API_AVAILABLE(ios(13.0))
             [passportNumberForNFC appendString:@"<"];
         }
     }
-    [self.mrzScanViewPlugin stopAndReturnError:nil];
+    [self stopMRZScanning];
+    self.passportNumberForNFC = passportNumberForNFC;
+    self.dateOfBirth = dateOfBirth;
+    self.dateOfExpiry = dateOfExpiry;
     dispatch_async(dispatch_get_main_queue(), ^{
-        /*
-         This is where we start reading the NFC chip of the passport. We use data from the MRZ to authenticate with the chip.
-         */
-        [self.nfcDetector startNfcDetectionWithPassportNumber:passportNumberForNFC dateOfBirth:dateOfBirth expirationDate:dateOfExpiry];
+        [self readNFCChip];
     });
 }
 
@@ -193,7 +211,17 @@ API_AVAILABLE(ios(13.0))
 - (void)nfcSucceededWithResult:(ALNFCResult * _Nonnull)nfcResult  API_AVAILABLE(ios(13.0)){
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        [super anylineDidFindResult:@"" barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
+        NSMutableString *nfcResultString = [NSMutableString string];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Issuing State Code: %@\n", nfcResult.dataGroup1.issuingStateCode]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Document Number: %@\n", nfcResult.dataGroup1.documentNumber]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Expiry: %@\n", [self stringForDate:nfcResult.dataGroup1.dateOfExpiry]]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Gender: %@\n", nfcResult.dataGroup1.gender]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Nationality: %@\n", nfcResult.dataGroup1.nationality]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Last Name: %@\n", nfcResult.dataGroup1.lastName]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"First Name: %@\n", nfcResult.dataGroup1.firstName]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Birth: %@",  [self stringForDate:nfcResult.dataGroup1.dateOfBirth]]];
+        
+        [super anylineDidFindResult:nfcResultString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
             NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing State Code" value:nfcResult.dataGroup1.issuingStateCode]];
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:nfcResult.dataGroup1.documentNumber]];
@@ -217,7 +245,14 @@ API_AVAILABLE(ios(13.0))
         if (error.code == ALNFCTagErrorNFCNotSupported) {
             [self showAlertWithTitle:@"NFC Not Supported" message:@"NFC passport reading is not supported on this device."];
         }
-        [self startAnyline]; //run the MRZ scanner so we can try again.
+        //error ALNFCTagErrorResponseError can mean the MRZ key was wrong
+        if (error.code == ALNFCTagErrorResponseError) {
+            [self startMRZScanning]; //run the MRZ scanner so we can try again.
+        } else {
+            //the MRZ details are correct; they might have just moved the phone away from the passport
+            [self readNFCChip];
+            
+        }
     });
 }
 

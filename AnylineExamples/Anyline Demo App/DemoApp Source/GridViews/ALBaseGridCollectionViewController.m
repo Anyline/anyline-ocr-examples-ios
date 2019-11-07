@@ -19,6 +19,8 @@
 
 #import "ALEnergyBaseViewController.h"
 
+#import "ALNFCScanViewController.h"
+
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
 
@@ -71,6 +73,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
         label.text = [self.exampleManager titleForSectionIndex:indexPath.section];
         label.textColor = [UIColor blackColor];
         label.textAlignment = NSTextAlignmentLeft;
+        //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
         label.font = [UIFont AL_proximaSemiboldWithSize:22];
         label.center = CGPointMake(label.center.x, header.center.y);
         [header addSubview:label];
@@ -117,13 +120,39 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     return cell;
 }
 
+- (void)showViewController:(ALExample *)example {
+    ALBaseScanViewController *vc = [[example.viewController alloc] init];
+    vc.managedObjectContext = self.managedObjectContext;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+//todo: share this code with the method in ALBaseScanViewController (in a category on UIViewController?)
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:dismissAction];
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
     
     if ([example.viewController isSubclassOfClass:[ALBaseScanViewController class]] || [example.viewController isSubclassOfClass:[ALEnergyBaseViewController class]]) {
-        ALBaseScanViewController *vc = [[example.viewController alloc] init];
-        vc.managedObjectContext = self.managedObjectContext;
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([[example viewController] isSubclassOfClass:[ALNFCScanViewController class]]) {
+            if (@available(iOS 13.0, *)) {
+                if ([ALNFCDetector readingAvailable]) {
+                    [self showViewController:example];
+                } else {
+                    [self showAlertWithTitle:@"NFC Not Supported" message:@"NFC passport reading is not supported on this device."];
+                }
+            } else {
+                [self showAlertWithTitle:@"NFC Not Supported" message:@"NFC passport reading is only supported on iOS 13 and later."];
+            }
+        } else {
+            [self showViewController:example];
+        }
     } else if (example.viewController) {
         if ([example.viewController isSubclassOfClass:[ALMeterCollectionViewController class]]) {
             ALMeterCollectionViewController *vc = (ALMeterCollectionViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"meterGridViewController"];
@@ -142,7 +171,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
             if (vc) {
                 [self.navigationController pushViewController:vc animated:YES];
             }
-         }
+        }
     }
 
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
@@ -153,10 +182,6 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     return [self headerSize];
-}
-
-- (UIColor *)generateRandomColor {
-    return [UIColor colorWithRed:(float)rand() / RAND_MAX green:(float)rand() / RAND_MAX blue:(float)rand() / RAND_MAX alpha:1.0f];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
@@ -170,6 +195,10 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 }
 
 - (CGSize)headerSize {
+    //we never actually show the logo if there is more than one section, so we don't need the headers to be as tall as the logo either. Ideally the height should be based on the title height; the 0.16 multiplier is for consistency with the lock icon on the meter reading screen.
+    if ([self.exampleManager numberOfSections] > 1) {
+        return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.16);
+    }
     return (self.showLogo) ? CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.25) : CGSizeZero;
 }
 

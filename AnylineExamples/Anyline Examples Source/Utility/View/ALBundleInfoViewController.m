@@ -207,7 +207,12 @@
 }
 
 
+
 - (IBAction)contactUsPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://anyline.com/request/contact-demo/"]  options:@{} completionHandler:nil];
+}
+
+- (IBAction)contactUsPressedMail:(id)sender {
     if (![MFMailComposeViewController canSendMail]) {
         [[[UIAlertView alloc] initWithTitle:@"Mail Settings"
                                     message:@"Please set up an email account in the Settings App"

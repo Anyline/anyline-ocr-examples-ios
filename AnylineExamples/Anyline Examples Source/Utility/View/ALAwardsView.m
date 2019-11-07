@@ -45,7 +45,11 @@
     UIView *white = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
     
     white.center = self.center;
-    white.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        white.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        white.backgroundColor = [UIColor whiteColor];
+    }
     white.alpha = 0.9;
     white.layer.cornerRadius = 20;
     
@@ -67,7 +71,11 @@
     self.scannedTimes.text = @"You already scanned 10 times!";
     self.scannedTimes.textAlignment = NSTextAlignmentCenter;
     self.scannedTimes.font = [UIFont AL_proximaRegularWithSize:16];
-    self.scannedTimes.textColor = [UIColor blackColor];
+    if (@available(iOS 13.0, *)) {
+        self.scannedTimes.textColor = [UIColor labelColor];
+    } else {
+        self.scannedTimes.textColor = [UIColor blackColor];
+    }
     self.scannedTimes.numberOfLines = 2;
     [self addSubview:self.scannedTimes];
 }

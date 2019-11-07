@@ -17,13 +17,14 @@
 #import "ALMeterCollectionViewController.h"
 #import "ALGermanIDFrontScanViewController.h"
 #import "ALPDF417ScanViewController.h"
+#import "ALNFCScanViewController.h"
 
 #import "ALNLDrivingLicenseScanViewController.h"
 #import "ALBEDrivingLicenseScanViewController.h"
 
 @interface ALIdentityDocumentsExampleManager ()
 
-@property (nonatomic, strong) NSDictionary *examples;
+@property (nonatomic, strong) NSMutableDictionary *examples;
 
 @property (nonatomic, strong) NSArray *sectionNames;
 
@@ -58,6 +59,10 @@
                                                             image:[UIImage imageNamed:@"PDF417"]
                                                    viewController:[ALPDF417ScanViewController class]];
     
+    ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport NFC", nil)
+                                                            image:[UIImage imageNamed:@"icon_nfc"]
+                                                   viewController:[ALNFCScanViewController class]];
+    
     ALExample *beDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"BE Driving License", nil)
                                                                  image:[UIImage imageNamed:@"be_driving_license"]
                                                         viewController:[ALBEDrivingLicenseScanViewController class]];
@@ -65,12 +70,15 @@
     ALExample *nlDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NL Driving License", nil)
                                                                  image:[UIImage imageNamed:@"nl_driving_license"]
                                                         viewController:[ALNLDrivingLicenseScanViewController class]];
+
+    self.sectionNames = @[@"Identity Documents"];
+    self.examples = [@{
+                      self.sectionNames[0] : @[mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
+    } mutableCopy];
     
-    
-    self.sectionNames = @[@"Identity Documents",];
-    self.examples = @{
-                      self.sectionNames[0] : @[mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning,],
-                      };
+   //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
+    self.sectionNames = [self.sectionNames arrayByAddingObject:processTitle];
+    self.examples[self.sectionNames[1]] = @[nfcScanning];
 }
 
 @end

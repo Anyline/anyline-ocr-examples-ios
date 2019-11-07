@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *historyFetchedResultController;
 @property (nonatomic, strong) ALHistoryCell *historyCell;
+@property (nonatomic, strong) NSMutableArray<ScanHistory *> *historyArray;
 
 
 @end
@@ -25,22 +26,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
     self.title = @"History";
     
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.allowsSelection = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[ALHistoryCell class] forCellReuseIdentifier:@"historyTableCell"];
     
     self.historyFetchedResultController = [self createFetchedResultController];
     
-    UIBarButtonItem * deleteBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"toolbar_trash"] style:UIBarButtonItemStylePlain target:self action:@selector(askToDeleteItems:)];
-    self.navigationItem.rightBarButtonItem = deleteBarItem;
+    UIBarButtonItem *deleteBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"toolbar_trash"] style:UIBarButtonItemStylePlain target:self action:@selector(askToDeleteItems:)];
+    
+    UIBarButtonItem *shareBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(askToShareItems:)];
+    
+    UIBarButtonItem *fixedSpaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+    
+    self.navigationItem.rightBarButtonItems = @[shareBarItem, fixedSpaceItem, deleteBarItem];
 
 }
 
--(void)askToDeleteItems:(id)sender {
+
+- (void)askToDeleteItems:(id)sender {
     [[[UIAlertView alloc] initWithTitle:@"Delete this history?"
                                 message:@"All entries in this list will be deleted."
                                delegate:self
@@ -77,6 +88,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ALHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"historyTableCell" forIndexPath:indexPath];
     ScanHistory *item = [self.historyFetchedResultController objectAtIndexPath:indexPath];
+    
     cell = [self setupCell:cell withItem:item indexPath:indexPath];
     return cell;
 }
@@ -196,6 +208,77 @@
     [cell updateConstraintsIfNeeded];
 
     return cell.cellHeight;
+}
+
+
+- (void)askToShareItems:(id)sender {
+    self.historyArray = [[NSMutableArray alloc] initWithCapacity:0];
+    for (ScanHistory *item  in [self.historyFetchedResultController fetchedObjects]) {
+        [self.historyArray addObject:item];
+    }
+    
+    [self createHistoryFile:self.historyArray];
+    
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"AnylineScanHistory.csv"];
+    
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    UIActivityViewController *activityController =  [[UIActivityViewController alloc] initWithActivityItems:@[@"Share your Anyline Scan History via .CSV", url]
+                                                                                      applicationActivities:nil];
+    //if iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityController animated:YES completion:nil];
+    }
+    //if iPad
+    else {
+        // Change Rect to position Popover
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityController];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+}
+
+
+- (void)createHistoryFile:(NSArray <ScanHistory *>*)inputData {
+    NSMutableArray *scanHistoryArray  = [[NSMutableArray alloc] initWithCapacity:0];
+
+    for (ScanHistory *item in inputData)
+    {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:0];
+        
+        ALScanHistoryType type = [item.type intValue];
+        NSString *typeString = ALScanHistoryType_toString[type];
+        [dict setValue:[NSString stringWithFormat:@"%@",typeString] forKey:@"UseCase"];
+        
+        item.result = [item.result stringByReplacingOccurrencesOfString:@"\n" withString:@"|"];
+        [dict setValue:[NSString stringWithFormat:@"%@",item.result] forKey:@"ScanResult"];
+        [dict setValue:[NSString stringWithFormat:@"%@",item.barcodeResult] forKey:@"Barcode"];
+        
+        [scanHistoryArray addObject:dict];
+        
+    }
+         
+    [self createCSV:scanHistoryArray];
+}
+- (void)createCSV:(NSArray *)dataArray {
+
+    NSMutableString *csvString = [[NSMutableString alloc] initWithCapacity:0];
+    [csvString appendString:@"UseCase, ScanResult, Barcode\n"];
+    
+    for (NSDictionary *dct in dataArray)
+    {
+        [csvString appendString:[NSString stringWithFormat:@"%@, %@, %@\n",
+                                 [dct valueForKey:@"UseCase"],
+                                 [dct valueForKey:@"ScanResult"],
+                                 [dct valueForKey:@"Barcode"]]];
+    }
+
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, @"AnylineScanHistory.csv"];
+    
+    NSError *error;
+    [csvString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
 }
 
 @end

@@ -232,6 +232,7 @@
 + (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nullable)licenseKey error:(NSError *_Nullable *_Nullable)error;
 
 + (NSBundle *_Nonnull)frameworkBundle;
++ (NSBundle *_Nonnull)originalFrameworkBundle;
 
 /**
  * Reporting ON Switch, off by default
