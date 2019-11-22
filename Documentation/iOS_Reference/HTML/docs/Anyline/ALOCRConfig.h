@@ -140,7 +140,12 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 /**
  *  Property for the character whitelist you would like to use.
  */
-@property (nullable, nonatomic, strong) NSString *charWhiteList;
+@property (nullable, nonatomic, strong) NSString *characterWhitelist;
+/**
+ *  Property for the character whitelist you would like to use.
+ */
+@property (nullable, nonatomic, strong) NSString *charWhiteList __deprecated_msg("Deprecated since Version 16. Please use the property \"characterWhitelist\" instead.");
+
 /**
  *  Property for the validation regex.
  */

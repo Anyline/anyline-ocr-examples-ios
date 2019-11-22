@@ -10,6 +10,7 @@
 #import "ALHistoryCell.h"
 
 #import "ScanHistory.h"
+#import "UIViewController+ALExamplesAdditions.h"
 
 #import <CoreData/CoreData.h>
 
@@ -132,11 +133,8 @@
     NSError *error;
     BOOL success = [controller performFetch:&error];
     if (!success && error) {
-        [[[UIAlertView alloc] initWithTitle:@"Error"
-                                   message:@"The data store is corrupt. Please reinstall this application"
-                                  delegate:nil
-                         cancelButtonTitle:nil
-                         otherButtonTitles:@"OK", nil] show];
+        [self showAlertWithTitle:@"Error"
+                                   message:@"The data store is corrupt. Please reinstall this application"];
     }
     return controller;
 }

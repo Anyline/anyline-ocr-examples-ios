@@ -13,9 +13,9 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kRBLicenseKey = kDemoAppLicenseKey;
-// The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
+// The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALRBScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
@@ -34,8 +34,8 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"RedBull";
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
@@ -145,24 +145,6 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
         [self updateBrightness:[info.value floatValue] forModule:self.rbScanViewPlugin];
     }
     
-}
-
-- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
-               runSkipped:(ALRunFailure)runFailure {
-    switch (runFailure) {
-        case ALRunFailureResultNotValid:
-            break;
-        case ALRunFailureConfidenceNotReached:
-            break;
-        case ALRunFailureNoLinesFound:
-            break;
-        case ALRunFailureNoTextFound:
-            break;
-        case ALRunFailureUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 @end

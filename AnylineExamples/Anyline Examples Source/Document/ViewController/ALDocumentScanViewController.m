@@ -36,8 +36,8 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = NSLocalizedString(@"Scan Document", @"Scan Document");
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
 
     NSError *error = nil;

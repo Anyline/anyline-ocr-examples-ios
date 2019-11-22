@@ -13,7 +13,7 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
 @interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -35,7 +35,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"MRZ";
     
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     

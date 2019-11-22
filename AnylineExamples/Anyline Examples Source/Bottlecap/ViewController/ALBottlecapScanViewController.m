@@ -12,7 +12,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALBottlecapScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
@@ -51,7 +51,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     
     NSError *error = nil;
     
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     self.bottlecapvinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
@@ -111,7 +111,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     [self startPlugin:self.bottlecapScanViewPlugin];
 }
 
-#pragma mark -- AnylineOCRModuleDelegate
+#pragma mark -- ALOCRScanPluginDelegate
 
 /*
  This is the main delegate method Anyline uses to report its results

@@ -11,7 +11,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAppDemoLicenses.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
 @interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate>
@@ -37,7 +37,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode / QR-Code";
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     //Add Barcode Scan Plugin (Scan Process)

@@ -118,7 +118,7 @@
 
 - (void)updateVisualFeedbackView:(ALScanFeedbackConfig *_Nonnull)scanFeedbackConfig;
 
-- (void)updateWebView:(ALScanViewPluginConfig *_Nonnull)config;
+- (void)updateWebView:(ALScanViewPluginConfig *_Nonnull)config   forPluginID:(NSString *_Nonnull)pluginID;
 - (void)updateWebViewWithMultipleConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;
 
 /**

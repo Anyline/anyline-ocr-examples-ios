@@ -8,10 +8,8 @@
 
 #import "ALExampleManager.h"
 
-#import "ALAnalogMeterScanViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
-#import "ALSerialNumberScanViewController.h"
 
 #import "ALMultiformatBarcodeScanViewController.h"
 #import "ALMRZScanViewController.h"
@@ -23,7 +21,6 @@
 #import "ALBottlecapScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
-#import "ALHashtagScanViewController.h"
 
 #import "ALLicensePlateViewController.h"
 

@@ -8,11 +8,12 @@
 
 #import "ALMeterExampleManager.h"
 
-#import "ALAutoAnalogDigitalMeterScanViewController.h"
+//#import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
-#import "ALSerialNumberScanViewController.h"
+#import "ALMeterSerialNumberScanViewController.h"
 #import "CustomerSelfReadingViewController.h"
 #import "WorkForceViewController.h"
+#import "ALParallelMeterScanViewController.h"
 
 
 @interface ALMeterExampleManager ()
@@ -37,7 +38,7 @@
     self.title = @"Meter Reading";
     ALExample *autoAnalogDigitalMeterScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Analog / Digital", nil)
                                                        image:[UIImage imageNamed:@"analog digital"]
-                                              viewController:[ALAutoAnalogDigitalMeterScanViewController class]];
+                                              viewController:[ALParallelMeterScanViewController class]];
     
     ALExample *dialMeterScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Dial", nil)
                                                                 image:[UIImage imageNamed:@"dial meter"]
@@ -54,7 +55,7 @@
     
     ALExample *serialScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Serial Number", nil)
                                                           image:[UIImage imageNamed:@"serial number"]
-                                                 viewController:[ALSerialNumberScanViewController class]];
+                                                 viewController:[ALMeterSerialNumberScanViewController class]];
     
     self.sectionNames = @[@"Meter Types", @"Processes", @"Others"];
     self.examples = @{

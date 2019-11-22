@@ -12,7 +12,7 @@
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kVINLicenseKey = kDemoAppLicenseKey;
 @interface ALVINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
@@ -30,8 +30,8 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"VIN";
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALVINConfig *config = [[ALVINConfig alloc] init];

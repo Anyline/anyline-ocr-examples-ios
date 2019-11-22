@@ -27,12 +27,12 @@ import UIKit
         self.title = "Electric Meter";
     
     
-        // Initializing the energy module. Its a UIView subclass. We set its frame to fill the whole screen
         do {
             self.meterScanPlugin = try ALMeterScanPlugin.init(pluginID:"ENERGY", licenseKey: kELMeterScanLicenseKey, delegate: self);
             try self.meterScanPlugin.setScanMode(ALScanMode.analogMeter);
             
             self.meterScanViewPlugin = ALMeterScanViewPlugin.init(scanPlugin: self.meterScanPlugin);
+            // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
             self.scanView = ALScanView.init(frame: self.view.bounds, scanViewPlugin: self.meterScanViewPlugin);
         } catch _ as NSError {
             //Handle error here

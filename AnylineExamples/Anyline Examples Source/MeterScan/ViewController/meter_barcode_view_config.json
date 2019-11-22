@@ -1,0 +1,26 @@
+      {
+        "viewPlugin": {
+            "cutoutConfig": {
+                "style": "rect",
+                "maxWidthPercent": "100%",
+                "maxHeightPercent": "100%",
+                "alignment": "center",
+                "strokeWidth": 0,
+                "cornerRadius": 3,
+                "strokeColor": "FFFFFF",
+                "outerColor": "000000",
+                "outerAlpha": 0.3
+            },
+          "scanFeedback": {
+            "style": "rect",
+            "strokeWidth": 4,
+            "strokeColor": "FF9900",
+            "fillColor": "11FF9900",
+            "animationDuration": 150,
+            "blinkOnResult": true,
+            "beepOnResult": true,
+            "vibrateOnResult": true
+          },
+          "cancelOnResult": true
+        }
+      }

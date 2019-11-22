@@ -10,12 +10,10 @@ import Foundation
 import UIKit
 
 
-// The controller has to conform to AnylineOCRModuleDelegate to be able to receive results
+// The controller has to conform to ALOCRScanPluginDelegate to be able to receive results
 @objc class AnylineBottlecapScanViewController: UIViewController, ALOCRScanPluginDelegate  {
     let kBottlecapLicenseKey = "eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0iOlsiaU9TIiwiQW5kcm9pZCIsIldpbmRvd3MiXSwidmFsaWQiOiIyMDE3LTA4LTMwIiwibWFqb3JWZXJzaW9uIjoiMyIsImlzQ29tbWVyY2lhbCI6ZmFsc2UsInRvbGVyYW5jZURheXMiOjYwLCJpb3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sImFuZHJvaWRJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl0sIndpbmRvd3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuZXhhbXBsZXMuYnVuZGxlIl19CkIxbU5LZEEvb0JZMlBvRlpsVGV4d3QraHltZTh1S25ON1ZYUStXbE1DY2dYc3RjTnJTL2ZOWVduSHJaSUVORk0vbmNFYWdlVU9Vem9tbmhFNG1tTFY1c3Mxbi8zc2tBQjdjM3pmd25MNkV2Mmx4Y1k4L0htN3Bna2t0K01NanRYODdXMTdWNjBGZWdXTmpXbWF0dmNJSHRFMkhmTEdjUkprQ3BHNFpacm5KWEltVnlkSVJtQmNsamwvWktuZzY1Nm5Rb3ZhMUZzc1p5Q2Vsb3VXSVhpRi9Odk1EcmVraUlaR2JreWVTRk9TT0VxLzgra0xFdHlmZG1yUy8vRjNVZ055YWtXN3NRQXFlNjlUQmN6ak5kVXdQU1lnY3BnSXd0d2puVUJsV2FmdGJ3aW9EKzlNRkowc1JFR2p0OFd5REJ6RHRZSi9EL3NRUm5sSXA2akFjQTNBQT09";
     
-    
-    var anylineOCRView: AnylineOCRModuleView!;
     
     // The Anyline plugins used to scan
     var ocrScanPlugin : ALOCRScanPlugin!;
@@ -32,8 +30,8 @@ import UIKit
         self.view.backgroundColor = UIColor.black;
         self.title = "Bottlecap";
         
-        // Initializing the OCR module. Its a UIView subclass. We set its frame to fill the whole screen
-        let frame : CGRect = CGRect(x: UIScreen.main.applicationFrame.origin.x, y: UIScreen.main.applicationFrame.origin.y + (self.navigationController?.navigationBar.frame.size.height)!, width: UIScreen.main.applicationFrame.size.width, height: UIScreen.main.applicationFrame.size.height);
+        // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+        let frame : CGRect = CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y + (self.navigationController?.navigationBar.frame.size.height)!, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
         
         //Setup OCR Scan Config - See Anyline Documentation for more information.
         let config: ALOCRConfig = ALOCRConfig();
@@ -62,7 +60,7 @@ import UIKit
         let bottlecapUIConfig : ALScanViewPluginConfig = ALScanViewPluginConfig.init(jsonFilePath: bottlecapConfigPath)!;
 
         
-        // Initializing the energy module. Its a UIView subclass. We set its frame to fill the whole screen
+        // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
         do {
             // Init. ScanPlugin with ID, licenseKey, OCRConfig and delegate
             self.ocrScanPlugin = try ALOCRScanPlugin.init(pluginID: "OCR", licenseKey: kBottlecapLicenseKey, delegate: self, ocrConfig: config);

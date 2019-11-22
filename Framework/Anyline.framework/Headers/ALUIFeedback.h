@@ -26,7 +26,8 @@
 
 - (void)cancelFeedback;
 - (void)updateConfigurations:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;
-- (void)updateConfiguration:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
+- (void)refreshWithCurrentConfigs;
+- (void)updateConfiguration:(ALScanViewPluginConfig * _Nonnull)pluginConfig   forPluginID:(NSString *_Nonnull)pluginID;
 
 - (void)setVisualFeedbackStrokeColor:(UIColor * _Nonnull)color pluginID:(NSString * _Nonnull)pluginID;
 - (void)setCutoutVisible:(BOOL)isVisible pluginID:(NSString * _Nonnull)pluginID;
@@ -35,7 +36,7 @@
 - (void)setPolygon:(ALPolygon * _Nullable)polygon forPluginID:(NSString * _Nonnull)pluginID;
 - (void)setContours:(NSArray * _Nullable)contours forPluginID:(NSString * _Nonnull)pluginID;
 
-- (CGRect)cutout;
+- (CGRect)cutoutForPluginID:(NSString *_Nonnull)pluginID;
 
 - (void)addCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
 

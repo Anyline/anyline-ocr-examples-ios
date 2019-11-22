@@ -13,7 +13,7 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kDialMeterScanLicenseKey = kDemoAppLicenseKey;
 
 static const NSInteger padding = 7;
@@ -47,7 +47,7 @@ static const NSInteger padding = 7;
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Dial Meter";
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     //Add Meter Scan Plugin (Scan Process)
@@ -63,11 +63,8 @@ static const NSInteger padding = 7;
     BOOL success = [self.meterScanPlugin setScanMode:ALDialMeter error:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [self showAlertWithTitle:@"Set ScanMode Error"
+                                    message:error.debugDescription];
         
     }
     
@@ -91,7 +88,7 @@ static const NSInteger padding = 7;
     self.controllerType = ALScanHistoryElectricMeter;
     
     [self.view sendSubviewToBack:self.scanView];
-    [self.scanView addSubview:[self createBarcoeSwitchView]];
+    [self.scanView addSubview:[self createBarcodeSwitchView]];
     [self.scanView bringSubviewToFront:self.enableBarcodeView];
 }
 
@@ -132,7 +129,7 @@ static const NSInteger padding = 7;
 }
 
 #pragma mark - Barcode View layouting
-- (UIView *)createBarcoeSwitchView {
+- (UIView *)createBarcodeSwitchView {
     //Add UISwitch for toggling barcode scanning
     self.enableBarcodeView = [[UIView alloc] init];
     self.enableBarcodeView.frame = CGRectMake(0, 0, 150, 50);

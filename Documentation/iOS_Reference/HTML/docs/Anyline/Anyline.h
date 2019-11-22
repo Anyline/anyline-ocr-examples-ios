@@ -45,17 +45,6 @@
 // Interface which should be implemented by the Image gathering source
 #import "ALImageProvider.h"
 
-// Abstract Module View
-#import "AnylineAbstractModuleView.h"
-
-// Simple Interfaces for the preconfigured Anyline Modules
-#import "AnylineEnergyModuleView.h"
-#import "AnylineBarcodeModuleView.h"
-#import "AnylineMRZModuleView.h"
-#import "AnylineOCRModuleView.h"
-#import "AnylineDocumentModuleView.h"
-#import "AnylineLicensePlateModuleView.h"
-
 //Scan Plugins
 #import "ALMeterScanPlugin.h"
 #import "ALLicensePlateScanPlugin.h"
@@ -75,5 +64,9 @@
 
 //ScanViewPluginComposites
 #import "ALAbstractScanViewPluginComposite.h"
+#import "ALSerialScanViewPluginComposite.h"
+#import "ALParallelScanViewPluginComposite.h"
+
+#import "ALScanView.h"
 
 #import "ALNFCDetector.h"

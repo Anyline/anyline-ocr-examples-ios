@@ -53,7 +53,7 @@ API_AVAILABLE(ios(13.0))
     self.hintView = hintView;
     [self.view addSubview:hintView];
     
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
@@ -245,11 +245,11 @@ API_AVAILABLE(ios(13.0))
         if (error.code == ALNFCTagErrorNFCNotSupported) {
             [self showAlertWithTitle:@"NFC Not Supported" message:@"NFC passport reading is not supported on this device."];
         }
-        //error ALNFCTagErrorResponseError can mean the MRZ key was wrong
-        if (error.code == ALNFCTagErrorResponseError) {
+        if (error.code == ALNFCTagErrorResponseError || //error ALNFCTagErrorResponseError can mean the MRZ key was wrong
+            error.code == ALNFCTagErrorUnexpectedError) { //error ALNFCTagErrorUnexpectedError can mean the user pressed the 'Cancel' button while scanning. It could also mean the phone lost the connection with the NFC chip because it was moved.
             [self startMRZScanning]; //run the MRZ scanner so we can try again.
         } else {
-            //the MRZ details are correct; they might have just moved the phone away from the passport
+            //the MRZ details are correct, but something else went wrong. We can try reading the NFC chip again without rescanning the MRZ.
             [self readNFCChip];
             
         }

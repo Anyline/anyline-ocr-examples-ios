@@ -54,7 +54,7 @@
 }
 
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule ignoreTooDark:(BOOL)ignoreTooDark {
-    if( [anylineModule isKindOfClass:[AnylineOCRModuleView class]] ) {
+    if([anylineModule isKindOfClass:[ALOCRScanViewPlugin class]]) {
         if( brightness < 40 && !ignoreTooDark) {
             [self updateScanWarnings:ALWarningStateTooDark];
         } else if (brightness > 200) {
@@ -90,17 +90,6 @@
     self.warningView.center = CGPointMake(self.warningView.center.x, newPosition);
 }
 
-- (void)anylineDidFindResult:(NSString*)result
-               barcodeResult:(NSString *)barcodeResult
-                       image:(UIImage*)image
-                      module:(AnylineAbstractModuleView *)moduleView
-                  completion:(void (^)(void))completion {
-    self.successfulScan = YES;
-    if (completion){
-        completion();
-    }
-}
-
 - (void)anylineDidFindResult:(NSString *)result
                barcodeResult:(NSString *)barcodeResult
                        image:(UIImage *)image
@@ -126,16 +115,6 @@
 - (void)startPlugin:(ALAbstractScanViewPlugin *)plugin {
     NSError *error;
     BOOL success = [plugin startAndReturnError:&error];
-    if( !success ) {
-        //this alert does not actually show, because the SDK shows its own alert, but eventually we should be able to silence those.
-        [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];
-    }
-}
-
-//todo: replace the use of modules, since they're deprecated
-- (void)startModule:(AnylineAbstractModuleView *)module {
-    NSError *error;
-    BOOL success = [module startScanningAndReturnError:&error];
     if( !success ) {
         //this alert does not actually show, because the SDK shows its own alert, but eventually we should be able to silence those.
         [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];

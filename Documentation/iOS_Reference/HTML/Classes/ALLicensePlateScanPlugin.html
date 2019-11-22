@@ -64,7 +64,13 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addCharacterWhiteListEntry:forCountry:">- addCharacterWhiteListEntry:forCountry:</option>
+		
 		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/addValidationRegexEntry:forCountry:">- addValidationRegexEntry:forCountry:</option>
+		
+		<option value="//api/name/characterWhitelist">- characterWhitelist</option>
 		
 		<option value="//api/name/init">- init</option>
 		
@@ -72,9 +78,15 @@
 		
 		<option value="//api/name/parseScanModeString:">- parseScanModeString:</option>
 		
+		<option value="//api/name/removeCharacterWhiteListEntryForCountry:">- removeCharacterWhiteListEntryForCountry:</option>
+		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
+		<option value="//api/name/removeValidationRegexEntryForCountry:">- removeValidationRegexEntryForCountry:</option>
+		
 		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
+		
+		<option value="//api/name/validationRegex">- validationRegex</option>
 		
 	</optgroup>
 	
@@ -359,6 +371,318 @@ It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicens
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/addValidationRegexEntry:forCountry:" title="addValidationRegexEntry:forCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addValidationRegexEntry:forCountry:">&ndash;&nbsp;addValidationRegexEntry:forCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/validationRegex">validationRegex</a> map can be used to set specific a <a href="#//api/name/validationRegex">validationRegex</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addValidationRegexEntry:(NSString *_Nullable)<em>validationRegex</em> forCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>validationRegex</code></th>
+						<td><p>a string value that will be used as valdiationRegex</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/validationRegex">validationRegex</a> will be applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeValidationRegexEntryForCountry:" title="removeValidationRegexEntryForCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeValidationRegexEntryForCountry:">&ndash;&nbsp;removeValidationRegexEntryForCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the <a href="#//api/name/validationRegex">validationRegex</a> for a specific country (<a href="#//api/name/scanMode">scanMode</a>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeValidationRegexEntryForCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/validationRegex">validationRegex</a> will be applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validationRegex" title="validationRegex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validationRegex">&ndash;&nbsp;validationRegex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The validationRegex map can be used to set specific a validationRegex for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary&lt;NSString*,NSString*&gt; *_Nullable)validationRegex</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dicionary of the current validationRegex map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addCharacterWhiteListEntry:forCountry:" title="addCharacterWhiteListEntry:forCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCharacterWhiteListEntry:forCountry:">&ndash;&nbsp;addCharacterWhiteListEntry:forCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/characterWhitelist">characterWhitelist</a> map can be used to set specific a <a href="#//api/name/characterWhitelist">characterWhitelist</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific <a href="#//api/name/characterWhitelist">characterWhitelist</a> for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addCharacterWhiteListEntry:(NSString *_Nullable)<em>characterWhiteList</em> forCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/characterWhitelist">characterWhitelist</a> will be applied.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characterWhitelist</code></th>
+						<td><p>a string value that will be used as <a href="#//api/name/characterWhitelist">characterWhitelist</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCharacterWhiteListEntryForCountry:" title="removeCharacterWhiteListEntryForCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCharacterWhiteListEntryForCountry:">&ndash;&nbsp;removeCharacterWhiteListEntryForCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/characterWhitelist">characterWhitelist</a> map can be used to set specific a <a href="#//api/name/characterWhitelist">characterWhitelist</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific <a href="#//api/name/characterWhitelist">characterWhitelist</a> for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dicionary of the current <a href="#//api/name/characterWhitelist">characterWhitelist</a> map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/characterWhitelist" title="characterWhitelist"></a>
+	<h3 class="method-title"><code><a href="#//api/name/characterWhitelist">&ndash;&nbsp;characterWhitelist</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The characterWhitelist map can be used to set specific a characterWhitelist for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary&lt;NSString*,NSString*&gt; *_Nullable)characterWhitelist</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dicionary of the current characterWhitelist map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -374,7 +698,7 @@ It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicens
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-11-07</p>
+						<p class="copyright">Copyright &copy; 2019 Anyline GmbH. All rights reserved. Updated: 2019-11-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

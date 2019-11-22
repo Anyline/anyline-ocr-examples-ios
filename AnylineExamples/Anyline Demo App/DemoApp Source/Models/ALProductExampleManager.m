@@ -8,10 +8,8 @@
 
 #import "ALProductExampleManager.h"
 
-#import "ALAnalogMeterScanViewController.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
-#import "ALSerialNumberScanViewController.h"
 
 #import "ALMultiformatBarcodeScanViewController.h"
 #import "ALMRZScanViewController.h"

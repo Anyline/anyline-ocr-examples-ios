@@ -8,8 +8,6 @@
 
 #import "ALIdentificationView.h"
 
-#import <Anyline/AnylineMRZModuleView.h>
-
 @interface ALIdentificationView()
 
 @property (nonatomic,strong) UILabel *nr;
@@ -127,28 +125,28 @@
 - (void)updateIdentification:(ALMRZIdentification *)aIdentification {
     
     self.nr.text = aIdentification.documentNumber;
-    self.surname.text = aIdentification.surNames;
+    self.surname.text = aIdentification.surname;
     self.given_names.text = aIdentification.givenNames;
     self.code.text = aIdentification.nationalityCountryCode;
     self.type.text = aIdentification.documentType;
     
-    if (aIdentification.dayOfBirthDateObject) {
-        self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dayOfBirthDateObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+    if (aIdentification.dateOfBirthObject) {
+        self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfBirthObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
         [self.dob sizeToFit];
     } else {
-        self.dob.text = aIdentification.dayOfBirth;
+        self.dob.text = aIdentification.dateOfBirth;
     }
     
-    if (aIdentification.expirationDateObject) {
-        self.expiration_date.text = [NSDateFormatter localizedStringFromDate:aIdentification.expirationDateObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+    if (aIdentification.dateOfExpiryObject) {
+        self.expiration_date.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfExpiryObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
         [self.expiration_date sizeToFit];
     } else {
-        self.expiration_date.text = aIdentification.expirationDate;
+        self.expiration_date.text = aIdentification.dateOfExpiry;
     }
 
     self.sex.text = aIdentification.sex;
     
-    self.line0.text = [aIdentification.MRZString stringByReplacingOccurrencesOfString:@"\\n"
+    self.line0.text = [aIdentification.mrzString stringByReplacingOccurrencesOfString:@"\\n"
                                                                            withString:@"\n"];
     self.line0.numberOfLines = 0;
 }

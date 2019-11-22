@@ -61,6 +61,7 @@
         tab.font = [UIFont AL_proximaSemiboldWithSize:18];
         tab.textAlignment = NSTextAlignmentCenter;
         tab.text = [self titleOfExampleManagerOnIndex:i];
+        tab.textColor = [UIColor blackColor]; //this is white by default in dark mode, but since we explicitly set the backgroundColor to white instead of the default colour, we need to make sure this is black (we should remove this line if we change this screen to use the default dark colours in dark mode)
         [tab setUserInteractionEnabled:YES];
         [tab addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToPage:)]];
         tab.tag = i;

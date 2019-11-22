@@ -23,7 +23,7 @@
 #import "WorkforceToolResultViewController.h"
 
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
 NSString * const kMeterScanPluginID = @"METER_READING";
 
@@ -290,7 +290,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     }
     
     if (!self.customer) {
-        [self showAlertWithTitle:@"Customer not found" message:nil];
+        [self showAlertWithTitle:@"Customer not found" message:@"Make sure you are scanning a meter reading customer from the Anyline Examples sheet."];
     }
 }
 

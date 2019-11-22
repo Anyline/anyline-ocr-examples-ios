@@ -133,6 +133,10 @@
     //Resize imageView to fit image size
     CGSize imageSize = [self onScreenPointSizeOfImageInImageView:self.imageView];
     CGRect imageViewRect = self.imageView.frame;
+    //_image should not be nil, but if it is, we don't want to crash by setting the size to NaN
+    if (isnan(imageSize.height) || isnan(imageSize.width)) {
+        imageSize = CGSizeZero;
+    }
     imageViewRect.size = imageSize;
     self.imageView.frame = imageViewRect;
     //Add view to scrollView

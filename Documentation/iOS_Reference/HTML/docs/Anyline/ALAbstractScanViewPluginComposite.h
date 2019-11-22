@@ -24,11 +24,6 @@
 - (void)removeDelegate:(id<ALCompositeScanPluginDelegate>_Nonnull)delegate;
 @end
 
-@interface ALSerialScanViewPluginComposite : ALAbstractScanViewPluginComposite
-- (BOOL)startFromID:(NSString * _Nonnull)pluginID andReturnError:(NSError * _Nullable * _Nullable)error;
-
-@end
-
 @interface ALCompositeResult : ALScanResult< NSDictionary<NSString *,ALScanResult *> *>
 @end
 

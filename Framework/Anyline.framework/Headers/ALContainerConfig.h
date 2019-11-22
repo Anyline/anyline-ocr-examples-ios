@@ -31,6 +31,9 @@ typedef NS_ENUM(NSInteger, ALContainerScanMode) {
  *  @see ALContainerScanMode
  */
 @property (nonatomic, assign) ALContainerScanMode scanMode;
+@property (nullable, nonatomic, assign) NSString *validationRegex;
+@property (nullable, nonatomic, assign) NSString *characterWhitelist;
 
-- (instancetype)init;
+
+- (nullable instancetype)init;
 @end

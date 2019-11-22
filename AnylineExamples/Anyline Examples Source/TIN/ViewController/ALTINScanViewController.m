@@ -12,7 +12,7 @@
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kTINLicenseKey = kDemoAppLicenseKey;
 @interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
@@ -30,10 +30,6 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"TIN";
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    
     ALTINConfig *config = [[ALTINConfig alloc] init];
     
     NSError *error = nil;
@@ -51,6 +47,11 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
     
     self.tinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin];
     NSAssert(self.tinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.tinScanViewPlugin];
     

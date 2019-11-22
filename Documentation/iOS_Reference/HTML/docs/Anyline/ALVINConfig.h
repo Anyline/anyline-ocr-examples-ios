@@ -13,4 +13,7 @@
  */
 @interface ALVINConfig : ALBaseOCRConfig
 
+@property (nullable, nonatomic, assign) NSString *validationRegex;
+@property (nullable, nonatomic, assign) NSString *characterWhitelist;
+
 @end

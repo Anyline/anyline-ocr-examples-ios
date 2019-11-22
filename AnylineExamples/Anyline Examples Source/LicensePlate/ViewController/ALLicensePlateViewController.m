@@ -18,7 +18,7 @@
 //#import "Anyline/AnylineLicensePlateModuleView.h"
 
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -39,8 +39,8 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"License Plate";
     
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
 
     NSError *error = nil;

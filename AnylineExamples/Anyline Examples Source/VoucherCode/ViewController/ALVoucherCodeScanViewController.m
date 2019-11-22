@@ -13,9 +13,9 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
-// The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
+// The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALVoucherCodeScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
@@ -35,8 +35,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"Voucher Code";
     
-    // Initializing the module. Its a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
@@ -64,6 +63,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     NSAssert(self.voucherScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     [self.voucherScanViewPlugin addScanViewPluginDelegate:self];
     
+    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.voucherScanViewPlugin];
     
     // After setup is complete we add the scanView to the view of this view controller
@@ -90,7 +90,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
 }
 
 /*
- Cancel scanning to allow the module to clean up
+ Cancel scanning to allow the scan view plugin to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
     [self.voucherScanViewPlugin stopAndReturnError:nil];
@@ -123,7 +123,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
      80];
 }
 
-#pragma mark -- AnylineOCRModuleDelegate
+#pragma mark -- ALOCRScanPluginDelegate
 
 /*
  This is the main delegate method Anyline uses to report its results
@@ -145,24 +145,6 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
         [self updateBrightness:[info.value floatValue] forModule:self.voucherScanViewPlugin];
     }
     
-}
-
-- (void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView
-               runSkipped:(ALRunFailure)runFailure {
-    switch (runFailure) {
-        case ALRunFailureResultNotValid:
-            break;
-        case ALRunFailureConfidenceNotReached:
-            break;
-        case ALRunFailureNoLinesFound:
-            break;
-        case ALRunFailureNoTextFound:
-            break;
-        case ALRunFailureUnkown:
-            break;
-        default:
-            break;
-    }
 }
 
 @end

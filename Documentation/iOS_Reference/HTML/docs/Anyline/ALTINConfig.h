@@ -22,6 +22,21 @@ typedef NS_ENUM(NSInteger, ALTINScanMode) {
     ALTINFlexible,
 };
 
+typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
+    /**
+     *  The ALTINUpsideDownModeDisabled mode will ONLY read TINs that are NOT upsideDown
+     */
+    ALTINUpsideDownModeDisabled = 0,
+    /**
+     * The ALTINUpsideDownModeEnabled mode will ONLY read TINs that are upsideDown
+     */
+    ALTINUpsideDownModeEnabled = 1,
+    /**
+     *  The ALTINUpsideDownModeAuto mode will automatically detect if the TIN is upside down or not.
+     */
+    ALTINUpsideDownModeAuto = 2
+};
+
 /**
  *  A class used to configure the Anyline OCR plugin for Container.
  */
@@ -31,7 +46,7 @@ typedef NS_ENUM(NSInteger, ALTINScanMode) {
  *  @see ALContainerScanMode
  */
 @property (nonatomic, assign) ALTINScanMode scanMode;
-@property (nonatomic, assign) BOOL enableUpsideDownScan;
+@property (nonatomic, assign) ALTINUpsideDownMode upsideDownMode;
 
 - (instancetype)init;
 @end

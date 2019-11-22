@@ -14,9 +14,9 @@
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
+//This example shows how the native barcode scanning can be used in conjunction with any other plugin. It has been replaced in the example app with a parallel composite plugin which runs an Anyline barcode scanner at the same time as a meter scanner and serial number scanner. However, this single plugin + native barcode strategy can still be used in simpler cases.
 
-
-// This is the license key for the examples project used to set up Aynline below
+// This is the license key for the examples project used to set up Anyline below
 NSString * const kAutoAnalogDigitalMeterScanLicenseKey = kDemoAppLicenseKey;
 
 static const NSInteger padding = 7;
@@ -51,7 +51,7 @@ static const NSInteger padding = 7;
     
     self.title = @"Analog/Digital Meter";
     
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
     
     //Add Meter Scan Plugin (Scan Process)
@@ -67,11 +67,8 @@ static const NSInteger padding = 7;
     BOOL success = [self.meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
-        [[[UIAlertView alloc] initWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [self showAlertWithTitle:@"Set ScanMode Error"
+                                    message:error.debugDescription];
         
     }
     
@@ -99,7 +96,7 @@ static const NSInteger padding = 7;
 
     self.barcodeResult = @"";
     [self.view sendSubviewToBack:self.scanView];
-    [self.scanView addSubview:[self createBarcoeSwitchView]];
+    [self.scanView addSubview:[self createBarcodeSwitchView]];
     [self.scanView bringSubviewToFront:self.enableBarcodeView];
 }
 
@@ -115,6 +112,20 @@ static const NSInteger padding = 7;
     [super viewDidLayoutSubviews];
         
     [self updateLayoutBarcodeSwitchView];
+}
+
+- (void)updateLayoutBarcodeSwitchView {
+    self.enableBarcodeLabel.center = CGPointMake(self.enableBarcodeLabel.frame.size.width/2,
+                                                 self.enableBarcodeView.frame.size.height/2);
+
+    self.enableBarcodeSwitch.center = CGPointMake(self.enableBarcodeLabel.frame.size.width + self.enableBarcodeSwitch.frame.size.width/2 + padding,
+                                                  self.enableBarcodeView.frame.size.height/2);
+
+    CGFloat width = self.enableBarcodeSwitch.frame.size.width + padding + self.enableBarcodeLabel.frame.size.width;
+    self.enableBarcodeView.frame = CGRectMake(self.scanView.frame.size.width-width-15,
+                                              self.scanView.frame.size.height-self.enableBarcodeView.frame.size.height-55,
+                                              width,
+                                              50);
 }
 
 /*
@@ -140,8 +151,8 @@ static const NSInteger padding = 7;
     }
 }
 
-#pragma mark - Barcode View layouting
-- (UIView *)createBarcoeSwitchView {
+#pragma mark - Barcode View layout
+- (UIView *)createBarcodeSwitchView {
     //Add UISwitch for toggling barcode scanning
     self.enableBarcodeView = [[UIView alloc] init];
     self.enableBarcodeView.frame = CGRectMake(100, 100, 150, 50);
@@ -165,20 +176,6 @@ static const NSInteger padding = 7;
     [self.enableBarcodeView addSubview:self.enableBarcodeSwitch];
     
     return self.enableBarcodeView;
-}
-
-- (void)updateLayoutBarcodeSwitchView {
-    self.enableBarcodeLabel.center = CGPointMake(self.enableBarcodeLabel.frame.size.width/2,
-                                                 self.enableBarcodeView.frame.size.height/2);
-
-    self.enableBarcodeSwitch.center = CGPointMake(self.enableBarcodeLabel.frame.size.width + self.enableBarcodeSwitch.frame.size.width/2 + padding,
-                                                  self.enableBarcodeView.frame.size.height/2);
-
-    CGFloat width = self.enableBarcodeSwitch.frame.size.width + padding + self.enableBarcodeLabel.frame.size.width;
-    self.enableBarcodeView.frame = CGRectMake(self.scanView.frame.size.width-width-15,
-                                              self.scanView.frame.size.height-self.enableBarcodeView.frame.size.height-55,
-                                              width,
-                                              50);
 }
 
 #pragma mark - ALMeterScanPluginDelegate methods

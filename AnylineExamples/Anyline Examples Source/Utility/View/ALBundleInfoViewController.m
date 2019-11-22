@@ -14,6 +14,7 @@
 #import "UIFont+ALExamplesAdditions.h"
 
 #import "NSUserDefaults+ALExamplesAdditions.h"
+#import "UIViewController+ALExamplesAdditions.h"
 
 #import <Anyline/Anyline.h>
 
@@ -199,11 +200,8 @@
     
     [context save:nil];
     
-    [[[UIAlertView alloc] initWithTitle:@"Items Deleted"
-                                message:@"All saved items were deleted."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    [self showAlertWithTitle:@"Items Deleted"
+                                message:@"All saved items were deleted."];
 }
 
 
@@ -214,11 +212,8 @@
 
 - (IBAction)contactUsPressedMail:(id)sender {
     if (![MFMailComposeViewController canSendMail]) {
-        [[[UIAlertView alloc] initWithTitle:@"Mail Settings"
-                                    message:@"Please set up an email account in the Settings App"
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [self showAlertWithTitle:@"Mail Settings"
+                                    message:@"Please set up an email account in the Settings App"];
         return;
     }
     MFMailComposeViewController* composeVC = [[MFMailComposeViewController alloc] init];
