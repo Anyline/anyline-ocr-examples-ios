@@ -11,15 +11,15 @@
 	<key>CFBundleName</key>
 	<string>Anyline</string>
 	<key>CFBundleShortVersionString</key>
-	<string>16</string>
+	<string>17</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1428</string>
+	<string>1431</string>
 	<key>GITHash</key>
-	<string>484440df96718096e5c99fb739c4f7dd06f4cb0b</string>
+	<string>3d37025b6d477274cdbb6d3e479f22e6845cb4fb</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>UIDeviceFamily</key>

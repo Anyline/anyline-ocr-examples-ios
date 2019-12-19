@@ -12,6 +12,7 @@
 #import <Anyline/Anyline.h>
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
+#import "UISwitch+ALExamplesAdditions.h"
 
 // This is the license key for the examples project used to set up Anyline below
 NSString * const kDialMeterScanLicenseKey = kDemoAppLicenseKey;
@@ -145,8 +146,8 @@ static const NSInteger padding = 7;
     
     self.enableBarcodeSwitch = [[UISwitch alloc] init];
     [self.enableBarcodeSwitch setOn:false];
-    self.enableBarcodeSwitch.onTintColor = [UIColor whiteColor];
     [self.enableBarcodeSwitch setOnTintColor:[UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:255.0/255.0 alpha:1.0]];
+    [self.enableBarcodeSwitch useHighContrast];
     [self.enableBarcodeSwitch addTarget:self action:@selector(toggleBarcodeScanning:) forControlEvents:UIControlEventValueChanged];
     
     [self.enableBarcodeView addSubview:self.enableBarcodeLabel];

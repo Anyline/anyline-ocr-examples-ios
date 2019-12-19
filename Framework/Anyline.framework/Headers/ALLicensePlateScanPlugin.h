@@ -105,49 +105,20 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
 - (ALLicensePlateScanMode)parseScanModeString:(NSString * _Nonnull)scanModeString;
 
 /**
- *  The validationRegex map can be used to set specific a validationRegex for a country (scanMode).
- *  E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)
  *
- *  @param validationRegex a string value that will be used as valdiationRegex
- *  @param scanMode the scanMode in which the validationRegex will be applied.
  */
+@property (nullable, atomic, readonly) NSMutableDictionary <NSString *, NSString *> *validationRegex;
+
 - (void)addValidationRegexEntry:(NSString * _Nullable)validationRegex forCountry:(ALLicensePlateScanMode)scanMode;
-/**
- * Remove the validationRegex for a specific country (scanMode).
- *
- * @param scanMode the scanMode in which the validationRegex will be applied.
- */
 - (void)removeValidationRegexEntryForCountry:(ALLicensePlateScanMode)scanMode;
-/**
- *  The validationRegex map can be used to set specific a validationRegex for a country (scanMode).
- *  E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)
- *
- *  @return dicionary of the current validationRegex map.
-*/
-- (NSMutableDictionary <NSString *, NSString *> * _Nullable)validationRegex;
 
 /**
- *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
- *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
- *
- *  @param characterWhitelist a string value that will be used as characterWhitelist
- *  @param scanMode the scanMode in which the characterWhitelist will be applied.
-*/
+ * 
+ */
+@property (nullable, atomic, readonly) NSMutableDictionary <NSString *, NSString *> *characterWhitelist;
+
 - (void)addCharacterWhiteListEntry:(NSString * _Nullable)characterWhiteList forCountry:(ALLicensePlateScanMode)scanMode;
-/**
- *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
- *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
- *
- *  @return dicionary of the current characterWhitelist map.
-*/
 - (void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)scanMode;
-/**
- *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
- *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
- *
- *  @return dicionary of the current characterWhitelist map.
-*/
-- (NSMutableDictionary <NSString *, NSString *> * _Nullable)characterWhitelist;
 
 @end
 
