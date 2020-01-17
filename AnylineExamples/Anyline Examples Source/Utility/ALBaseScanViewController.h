@@ -37,5 +37,6 @@
 - (void)startListeningForMotion;
 - (void)startPlugin:(ALAbstractScanViewPlugin *)plugin;
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+- (CGRect)scanViewFrame;
 
 @end

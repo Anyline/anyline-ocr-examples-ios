@@ -54,8 +54,7 @@ API_AVAILABLE(ios(13.0))
     [self.view addSubview:hintView];
     
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     ALMRZConfig *mrzConfig = [[ALMRZConfig alloc] init];
     //we want to be quite confident of these fields to ensure we can read the NFC with them

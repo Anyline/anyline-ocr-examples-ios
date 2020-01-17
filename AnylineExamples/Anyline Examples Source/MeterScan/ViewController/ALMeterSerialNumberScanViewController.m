@@ -52,8 +52,7 @@ static const NSInteger padding = 7;
     
     self.title = @"Serial Number";
     
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     //Add Meter Scan Plugin (Scan Process)
     NSError *error = nil;

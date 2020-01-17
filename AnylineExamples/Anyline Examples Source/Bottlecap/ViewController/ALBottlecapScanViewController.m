@@ -51,8 +51,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     
     NSError *error = nil;
     
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     self.bottlecapvinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
                                                                  licenseKey:kBottlecapLicenseKey

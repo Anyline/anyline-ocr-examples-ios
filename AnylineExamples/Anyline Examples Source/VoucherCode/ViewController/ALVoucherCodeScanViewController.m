@@ -35,8 +35,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"Voucher Code";
     
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"anyline_capitals" ofType:@"traineddata"];

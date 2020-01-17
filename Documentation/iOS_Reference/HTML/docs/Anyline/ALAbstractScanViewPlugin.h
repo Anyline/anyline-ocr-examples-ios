@@ -42,6 +42,11 @@
  */
 @property (nullable, nonatomic, copy) ALScanViewPluginConfig *scanViewPluginConfig;
 
+/**
+A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this will just be this plugin's pluginID and scanViewPluginConfig. For composite scan view plugins, this will be the plugin IDs and configs for all the child plugins, and not the composite itself.
+ */
+@property (nullable, nonatomic, copy) NSDictionary<NSString *,ALScanViewPluginConfig *> *scanViewPluginConfigs;
+
 + (_Nullable instancetype)scanViewPluginForConfigDict:(NSDictionary *_Nonnull)configDict
                                            licenseKey:(NSString *_Nonnull)licenseKey
                                              delegate:(id _Nonnull)delegate

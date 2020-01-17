@@ -53,8 +53,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode";
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     
     /*

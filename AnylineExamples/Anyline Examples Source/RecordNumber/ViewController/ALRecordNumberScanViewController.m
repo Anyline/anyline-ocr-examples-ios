@@ -35,8 +35,7 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     self.title = @"Record Number";
     
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.charHeight = ALRangeMake(22, 105);

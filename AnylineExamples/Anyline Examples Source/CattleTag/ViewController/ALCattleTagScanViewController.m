@@ -31,8 +31,7 @@ NSString * const kCattleTagLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"Cattle Tag";
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     ALCattleTagConfig *config = [[ALCattleTagConfig alloc] init];
  

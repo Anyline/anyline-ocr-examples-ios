@@ -21,8 +21,7 @@
 @property (nonatomic, strong, readonly) NSHashTable<ALCutoutDelegate> * _Nullable cutoutDelegates;
 
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                           pluginConfig:(ALScanViewPluginConfig * _Nonnull)pluginConfig
-                               pluginID:(NSString * _Nonnull)pluginID;
+                          pluginConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs;
 
 - (void)cancelFeedback;
 - (void)updateConfigurations:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;

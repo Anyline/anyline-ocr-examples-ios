@@ -37,8 +37,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode / QR-Code";
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    CGRect frame = [self scanViewFrame];
     
     //Add Barcode Scan Plugin (Scan Process)
     NSError *error = nil;
