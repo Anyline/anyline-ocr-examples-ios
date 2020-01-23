@@ -42,10 +42,9 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
     NSAssert(self.tinScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.tinScanPlugin addInfoDelegate:self];
     
-//    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"tin_capture_config" ofType:@"json"];
-//    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
-    
-    self.tinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin];
+    ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultTINConfig];
+    viewPluginConfig.delayStartScanTime = 2000;
+    self.tinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin scanViewPluginConfig:viewPluginConfig];
     NSAssert(self.tinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
     
