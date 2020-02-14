@@ -51,7 +51,7 @@
  *
  * Called if the cutout was updated within the ALUIFeedback class.
  *
- * @param updatedCutout The updated cutout rect
+ * @param cutoutRect The updated cutout rect
  *
  */
 - (void)alUIFeedback:(ALUIFeedback * _Nonnull)alUIFeedback updatedCutout:(CGRect)cutoutRect forPluginID:(NSString *_Nonnull)pluginID;

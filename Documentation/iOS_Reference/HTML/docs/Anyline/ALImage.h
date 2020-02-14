@@ -113,7 +113,7 @@
  *  Method draws contours onto the ALImage and returns an UIImage.
  *  For debbugging purpose so you can see where we located the digit.
  *
- *  @param lines An ALContours which will be drawn onto the Image.
+ *  @param contours An ALContours which will be drawn onto the Image.
  *
  *  @warning Possible long task. Be aware when executed in Main Thread.
  *

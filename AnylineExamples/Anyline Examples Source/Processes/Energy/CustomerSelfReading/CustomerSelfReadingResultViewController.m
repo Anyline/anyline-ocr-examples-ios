@@ -79,7 +79,7 @@
     
     if (self.isMovingFromParentViewController || self.isBeingDismissed) {
         if (self.delegate) {
-            [self.delegate backFromResultView:self isReset:NO];
+            [self.delegate backFromResultView:self isReset:YES];
         }
         [self discardMeterReading];
     }

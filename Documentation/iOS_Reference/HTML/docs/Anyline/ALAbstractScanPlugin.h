@@ -11,6 +11,8 @@
 #import "ALScanResult.h"
 #import "ALScanInfo.h"
 #import "ALRunSkippedReason.h"
+#import "ALAssetContext.h"
+#import "ALAssetDelegate.h"
 
 @protocol ALInfoDelegate;
 
@@ -82,6 +84,33 @@
  */
 - (void)setCurrentScanStartTime;
 
+/**
+* Sets up the asset service to fetch assets OTA. This needs to be called before trying
+* to check for updates with {@link #checkForUpdates()} or updating the assets with
+* {@link #updateAssets()}
+*
+* @param context The context
+* @param callback The callback
+*/
+- (void)setupAssetUpdateWithContext:(ALAssetContext *_Nonnull)context delegate:(NSObject<ALAssetDelegate> *_Nonnull)delegate;
+
+/**
+* Checks whether asset updates are available
+*/
+- (void)checkForUpdates;
+
+/**
+* Updates the assets, only after {@link #checkForUpdates()} was successfully called
+*/
+- (void)updateAssets;
+
+- (void)loadAssetsFromContext:(ALAssetContext *_Nullable)assetContext;
+
+/**
+* Resets the asset update functionality. After this is called,
+* {@link #setupAssetUpdate(AssetContext, AssetDelegate)} must be called again
+*/
+- (void)resetAssetUpdate;
 
 // Internal Properties
 @property (nonatomic, assign) NSInteger confidence;
@@ -99,7 +128,7 @@
 
 @optional
 /**
- * <p>Called with interesting values, that arise during processing.</p>
+ * <p>Called with interesting values that arise during processing.</p>
  * <p>
  * Some possibly reported values:
  * <ul>
@@ -110,9 +139,8 @@
  * </p>
  *
  *  @param anylineScanPlugin    The ALAbstractScanPlugin
- *  @param variableName         The variable name of the reported value
- *  @param value                The reported value
- */
+ *  @param info         An object containing the variable name and value
+ *   */
 - (void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin
                reportInfo:(ALScanInfo * _Nonnull)info;
 /**
@@ -120,9 +148,11 @@
  *  (If not text is found or confidence is to low, etc.)
  *
  *  @param anylineScanPlugin The ALAbstractScanPlugin
- *  @param runFailure        The reason why the run failed
+ *  @param runSkippedReason        The reason why the run failed
  */
 - (void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin
                runSkipped:(ALRunSkippedReason * _Nonnull)runSkippedReason;
+
+
     
 @end

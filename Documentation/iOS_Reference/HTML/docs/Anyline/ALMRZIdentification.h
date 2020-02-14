@@ -287,7 +287,7 @@ NS_ASSUME_NONNULL_BEGIN
                           checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth
                                            sex:(NSString * _Nonnull)sex
                                 expirationDate:(NSString * _Nonnull)expirationDate
-                      checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate
+                      checkDigitExpirationDate:(NSString * _Nonnull)checkDigitExpirationDate
                                 personalNumber:(NSString * _Nonnull)personalNumber
                       checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber
                                checkDigitFinal:(NSString * _Nonnull)checkDigitFinal

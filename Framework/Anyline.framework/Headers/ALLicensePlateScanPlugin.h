@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
 /**
  *  Sets the scan mode and returns an NSError if something failed.
  *
- *  @param license plate scanMode The scan mode to set.
+ *  @param scanMode The scan mode to set.
  *  @param error The error if something goes wrong. Can be nil.
  *
  *  @return Boolean indicating the success / failure of the call.
@@ -127,10 +127,10 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
 - (NSMutableDictionary <NSString *, NSString *> * _Nullable)validationRegex;
 
 /**
- *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
+ *  The characterWhiteList map can be used to set specific a characterWhitelist for a country (scanMode).
  *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
  *
- *  @param characterWhitelist a string value that will be used as characterWhitelist
+ *  @param characterWhiteList a string value that will be used as characterWhitelist
  *  @param scanMode the scanMode in which the characterWhitelist will be applied.
 */
 - (void)addCharacterWhiteListEntry:(NSString * _Nullable)characterWhiteList forCountry:(ALLicensePlateScanMode)scanMode;
@@ -138,7 +138,7 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
  *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
  *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
  *
- *  @return dicionary of the current characterWhitelist map.
+ *  @return dicionary of the current characterWhiteList map.
 */
 - (void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)scanMode;
 /**
@@ -162,7 +162,7 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
  *  Called when a result is found
  *
  *  @param anylineLicensePlateScanPlugin    The ALLicensePlateScanPlugin
- *  @param result                           The result object
+ *  @param scanResult                           The result object
  */
 - (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)anylineLicensePlateScanPlugin
                         didFindResult:(ALLicensePlateResult * _Nonnull)scanResult;

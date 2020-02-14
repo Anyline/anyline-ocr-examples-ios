@@ -77,7 +77,7 @@
     
     if (self.isMovingFromParentViewController || self.isBeingDismissed) {
         if (self.delegate) {
-            [self.delegate backFromWorkforceResultView:self isReset:NO];
+            [self.delegate backFromWorkforceResultView:self isReset:YES];
         }
         [self discardMeterReading];
     }

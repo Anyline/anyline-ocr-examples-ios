@@ -138,8 +138,6 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  * Sets custom document ratios (NSNumbers) that should be supported (or null to set back to all supported types).
  * @warning Parameter can only be changed when the scanning is not running.
  *
- * @param ratios all supported formats
- *
  * @since 3.8
  */
 @property (nullable, nonatomic, strong) NSArray<NSNumber*> * documentRatios;
@@ -209,7 +207,7 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  * Called if the preview scan detected a sharp and correctly placed document.
  * After this callback, a full frame scan of the document starts automatically.
  *
- * @param anylineImage The image of the successful preview. There is no transformation performed on this image.
+ * @param image The image of the successful preview. There is no transformation performed on this image.
  *
  */
 - (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin * _Nonnull)anylineDocumentScanPlugin
@@ -255,7 +253,7 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  * </ul>
  * </p>
  *
- *  @param anylineScanPlugin    The ALDocumentScanPlugin
+ *  @param anylineDocumentScanPlugin    The ALDocumentScanPlugin
  *  @param scanInfo             The reported ScanInfo
  */
 - (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin * _Nonnull)anylineDocumentScanPlugin

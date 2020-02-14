@@ -35,5 +35,5 @@ typedef NS_ENUM(NSInteger, ALContainerScanMode) {
 @property (nullable, nonatomic, assign) NSString *characterWhitelist;
 
 
-- (nullable instancetype)init;
+- (instancetype _Nonnull)init;
 @end

@@ -70,3 +70,6 @@
 #import "ALScanView.h"
 
 #import "ALNFCDetector.h"
+
+#import "ALAssetContext.h"
+#import "ALAssetDelegate.h"

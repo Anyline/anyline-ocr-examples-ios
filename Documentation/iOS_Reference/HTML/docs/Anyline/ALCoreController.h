@@ -67,7 +67,7 @@
  *
  *  @param script     The string which represents the configuration.
  *  @param bundlePath The bundlePath where the additional ressources are located.
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
+ *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadScript:(NSString *_Nonnull)script
         bundlePath:(NSString *_Nonnull)bundlePath
@@ -79,7 +79,7 @@
  *  @param script     The string which represents the configuration.
  *  @param scriptName The filename of the script.
  *  @param bundlePath The bundlePath where the additional ressources are located.
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
+ *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadScript:(NSString *_Nonnull)script
         scriptName:(NSString *_Nonnull)scriptName
@@ -95,7 +95,7 @@
  *                     the bundlePath
  *  @param bundlePath  The bundlePath where the configuration and the additional 
  *                     ressources are located.
- *  @param finished Inidicating if setup is finished with an error object when setup failed.
+ *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadCmdFile:(NSString *_Nonnull)cmdFileName
          bundlePath:(NSString *_Nonnull)bundlePath
@@ -126,7 +126,7 @@
  *  @return Boolean indicating the success / failure of the start process.
  */
 - (BOOL)startWithImageProvider:(id<ALImageProvider> _Nonnull)imageProvider
-                startVariables:(NSDictionary *_Nullable)variables
+                startVariables:(NSDictionary *_Nullable)startVariables
                          error:(NSError *_Nullable *_Nullable)error;
 
 /**

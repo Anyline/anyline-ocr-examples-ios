@@ -73,7 +73,7 @@
  *  @return Boolean indicating the success / failure of the call.
  */
 - (BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath
-               fileHash:(NSString * _Nullable)hash
+               fileHash:(NSString * _Nullable)fileHash
                   error:(NSError * _Nullable * _Nullable)error __deprecated_msg("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.");;
 
 - (void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
@@ -106,6 +106,6 @@
  *  @param anylineOCRScanPlugin The ALOCRScanPlugin
  *  @param ocrConfig            A subclass of ALBaseOCRConfig
  */
-- (void)anylineOCRScanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin ocrConfigUpdated:(ALBaseOCRConfig * _Nullable)ocrConfig;
+- (void)anylineOCRScanPlugin:(ALOCRScanPlugin * _Nonnull)anylineOCRScanPlugin ocrConfigUpdated:(ALBaseOCRConfig * _Nullable)ocrConfig;
 
 @end

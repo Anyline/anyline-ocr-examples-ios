@@ -106,7 +106,7 @@ A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this 
  *
  * Called if the cutout was updated within the ScanViewPlugin class.
  *
- * @param updatedCutout The updated cutout rect(x, y, width, height)
+ * @param cutoutRect The updated cutout rect(x, y, width, height)
  *
  */
 - (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin * _Nonnull)anylineScanViewPlugin
