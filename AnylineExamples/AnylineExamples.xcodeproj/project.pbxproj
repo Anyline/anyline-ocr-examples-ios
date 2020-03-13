@@ -620,14 +620,14 @@
 		2EDD43DC8833A207723A124E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CF03A9661C84782B0E65C46E /* ../Framework */,
+				CF03A9661C84782B0E65C46E /* Anyline */,
 				0E0BEA9C8B6EF83EBFEC9E8E /* Anyline Demo App */,
 				C9EBB191A1ABBABF869DEF63 /* Anyline Examples Source */,
 			);
 			name = Source;
 			sourceTree = "<group>";
 		};
-		306B640472261A1CFDFFF61D /* MultiformatBarcode/ViewController */ = {
+		306B640472261A1CFDFFF61D /* MultiformatBarcode */ = {
 			isa = PBXGroup;
 			children = (
 				1C6F822EF04FD0BA4DB4A822 /* ALMultiformatBarcodeScanViewController.h */,
@@ -635,7 +635,8 @@
 				6FEE7A0E3F80735D0A587A83 /* ALPDF417ScanViewController.h */,
 				2996BA285F2357F5F4DAAF9E /* ALPDF417ScanViewController.m */,
 			);
-			path = MultiformatBarcode/ViewController;name = MultiformatBarcode;
+			name = MultiformatBarcode;
+			path = MultiformatBarcode/ViewController;
 			sourceTree = "<group>";
 		};
 		36C98C428F83C9DA0635A080 /* TIN/ViewController */ = {
@@ -1156,7 +1157,7 @@
 				839603EB02B71123BA4E8E54 /* LicensePlate */,
 				0F26CABFFCB11DE1C8517E6A /* MRZ */,
 				42A4413D94D81E3CE7263121 /* MeterScan/ViewController */,
-				306B640472261A1CFDFFF61D /* MultiformatBarcode/ViewController */,
+				306B640472261A1CFDFFF61D /* MultiformatBarcode */,
 				A3A32484D1F0E5FB679BB3C8 /* NFC/ViewController */,
 				4CD6F0A875D961A6273C7F26 /* Processes/Energy */,
 				EB956281C364122BC6AAAA5A /* RB */,
@@ -1195,12 +1196,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CF03A9661C84782B0E65C46E /* ../Framework */ = {
+		CF03A9661C84782B0E65C46E /* Anyline */ = {
 			isa = PBXGroup;
 			children = (
 				DEDA3CAA0D02926CA11708F5 /* AnylineResources.bundle */,
 			);
-			path = ../Framework/;name = Anyline;
+			name = Anyline;
+			path = ../Framework/;
 			sourceTree = "<group>";
 		};
 		D5EF820F4D0B08AAA54A0850 /* ContainerScannerHorizontal */ = {
@@ -1327,10 +1329,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				TargetAttributes = {
+					549B361CA3000146B1567759 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = F9D5AAAEF93187FA8CC87FF4 /* Build configuration list for PBXProject "AnylineExamples" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = A0C97B3D25E26984321D2BA9;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1550,7 +1562,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -1572,6 +1587,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -1603,7 +1619,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/",
@@ -1626,6 +1645,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PRODUCT_NAME = AnylineExamples;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
