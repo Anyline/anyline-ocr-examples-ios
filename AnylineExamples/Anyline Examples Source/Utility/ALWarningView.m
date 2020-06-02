@@ -55,6 +55,10 @@
 
 - (void)setInfoString:(NSString*)text; {
     self.infoLabel.text = text;
+    //if they need to adjust something, announce the instruction with VoiceOver
+    if (![text isEqualToString:@"perfect"] && self.window) {
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, text);
+    }
 }
 
 

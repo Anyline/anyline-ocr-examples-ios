@@ -54,6 +54,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/assetController">assetController</option>
+		
 		<option value="//api/name/confidence">confidence</option>
 		
 		<option value="//api/name/coreController">coreController</option>
@@ -78,7 +80,7 @@
 		
 		<option value="//api/name/addInfoDelegate:">- addInfoDelegate:</option>
 		
-		<option value="//api/name/checkForUpdates">- checkForUpdates</option>
+		<option value="//api/name/assetPath">- assetPath</option>
 		
 		<option value="//api/name/delayedScanTimeFulfilled">- delayedScanTimeFulfilled</option>
 		
@@ -86,11 +88,7 @@
 		
 		<option value="//api/name/isRunning">- isRunning</option>
 		
-		<option value="//api/name/loadAssetsFromContext:">- loadAssetsFromContext:</option>
-		
 		<option value="//api/name/removeInfoDelegate:">- removeInfoDelegate:</option>
-		
-		<option value="//api/name/resetAssetUpdate">- resetAssetUpdate</option>
 		
 		<option value="//api/name/setCurrentScanStartTime">- setCurrentScanStartTime</option>
 		
@@ -99,8 +97,6 @@
 		<option value="//api/name/start:error:">- start:error:</option>
 		
 		<option value="//api/name/stopAndReturnError:">- stopAndReturnError:</option>
-		
-		<option value="//api/name/updateAssets">- updateAssets</option>
 		
 	</optgroup>
 	
@@ -616,8 +612,8 @@ No result will be returned unless this method returns true.</p>
 			
 			<div class="method-subsection brief-description">
 				<p>Sets up the asset service to fetch assets OTA. This needs to be called before trying
-to check for updates with {@link #<a href="#//api/name/checkForUpdates">checkForUpdates</a>()} or updating the assets with
-{@link #<a href="#//api/name/updateAssets">updateAssets</a>()}</p>
+to check for updates with {@link #checkForUpdates()} or updating the assets with
+{@link #updateAssets()}</p>
 			</div>
 			
 		    
@@ -636,152 +632,12 @@ to check for updates with {@link #<a href="#//api/name/checkForUpdates">checkFor
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>callback</code></th>
-						<td><p>The callback</p></td>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate</p></td>
 					</tr>
 				
 				</table>
 			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkForUpdates" title="checkForUpdates"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkForUpdates">&ndash;&nbsp;checkForUpdates</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Checks whether asset updates are available</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)checkForUpdates</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateAssets" title="updateAssets"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateAssets">&ndash;&nbsp;updateAssets</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Updates the assets, only after {@link #<a href="#//api/name/checkForUpdates">checkForUpdates</a>()} was successfully called</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)updateAssets</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/loadAssetsFromContext:" title="loadAssetsFromContext:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadAssetsFromContext:">&ndash;&nbsp;loadAssetsFromContext:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)loadAssetsFromContext:(ALAssetContext *_Nullable)<em>assetContext</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/resetAssetUpdate" title="resetAssetUpdate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resetAssetUpdate">&ndash;&nbsp;resetAssetUpdate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Resets the asset update functionality. After this is called,
-{@link #setupAssetUpdate(AssetContext, AssetDelegate)} must be called again</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)resetAssetUpdate</code></div>
-
-		    
 			
 
 			
@@ -851,6 +707,38 @@ to check for updates with {@link #<a href="#//api/name/checkForUpdates">checkFor
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetController" title="assetController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetController">&nbsp;&nbsp;assetController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALAssetController *assetController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetPath" title="assetPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetPath">&ndash;&nbsp;assetPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)assetPath</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -866,7 +754,7 @@ to check for updates with {@link #<a href="#//api/name/checkForUpdates">checkFor
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-03-12</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-05-29</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

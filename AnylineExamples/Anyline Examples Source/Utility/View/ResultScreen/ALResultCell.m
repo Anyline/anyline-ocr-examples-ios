@@ -129,6 +129,15 @@
     _resultEntry = entry;
     self.titleLabel.text = self.resultEntry.title;
     self.valueLabel.text = self.resultEntry.value;
+    if (self.resultEntry.shouldSpellOutValue && self.resultEntry.isAvailable) {
+        if (@available(iOS 13.0, *)) {
+        //make sure VoiceOver reads the result letter-by-letter for codes/license plates/etc. The user can use the rotor to do this manually (and the character setting in the rotor even uses the phonetic alphabet to make things clearer), but if we can save them from switching between rotor settings when we know something won't make sense read as a word, it's a bit smoother.
+            //unfortunately, VoiceOver reads "comma space" before the value, for unknown reasons
+            self.valueLabel.accessibilityAttributedLabel = [[NSAttributedString alloc] initWithString:self.resultEntry.value attributes:@{UIAccessibilitySpeechAttributeSpellOut:@YES}];
+        } else {
+            //in earlier versions of iOS, we could try adding spaces between characters, but this is not ideal as some characters will be pronounced as single-letter words or Roman numerals.
+        }
+    }
     self.checkmarkView.image = (self.resultEntry.isAvailable) ? [UIImage imageNamed:@"blue round checkmark"] : nil;
 }
 

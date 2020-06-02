@@ -133,10 +133,17 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  */
 @property (nullable, nonatomic, copy, readonly) NSArray<NSString *> *languages;
 
-- (void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __deprecated_msg("Deprecated since 4. Use languages - (BOOL)setLanguages:(NSArray<NSString *> *)languages error:(NSError *)error");
+/**
+ Set languages without loading them yet (useful if the language files are to be downloaded from Anyline Trainer)
+ */
+- (void)setLanguages:(NSArray<NSString *> * _Nonnull)languages;
 
+- (BOOL)hasLanguages;
+
+/**
+ Set languages and immediately attempt to load them
+ */
 - (BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error;
-
 /**
  *  Property for the character whitelist you would like to use.
  */
@@ -225,7 +232,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  */
 @property (nonatomic, assign) BOOL isBrightTextOnDark;
 
-- (NSDictionary * _Nullable)startVariablesOrError:(NSError * _Nullable * _Nullable)error;
+- (NSDictionary * _Nullable)startVariablesOrError:(NSError * _Nullable * _Nullable)error assetPath:(NSString *_Nullable)assetPath;
 
 - (NSString * _Nullable)toJsonString;
 

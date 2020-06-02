@@ -13,6 +13,7 @@
 #import "ALRunSkippedReason.h"
 #import "ALAssetContext.h"
 #import "ALAssetDelegate.h"
+#import "ALAssetController.h"
 
 @protocol ALInfoDelegate;
 
@@ -90,27 +91,10 @@
 * {@link #updateAssets()}
 *
 * @param context The context
-* @param callback The callback
+* @param delegate The delegate
 */
 - (void)setupAssetUpdateWithContext:(ALAssetContext *_Nonnull)context delegate:(NSObject<ALAssetDelegate> *_Nonnull)delegate;
 
-/**
-* Checks whether asset updates are available
-*/
-- (void)checkForUpdates;
-
-/**
-* Updates the assets, only after {@link #checkForUpdates()} was successfully called
-*/
-- (void)updateAssets;
-
-- (void)loadAssetsFromContext:(ALAssetContext *_Nullable)assetContext;
-
-/**
-* Resets the asset update functionality. After this is called,
-* {@link #setupAssetUpdate(AssetContext, AssetDelegate)} must be called again
-*/
-- (void)resetAssetUpdate;
 
 // Internal Properties
 @property (nonatomic, assign) NSInteger confidence;
@@ -119,6 +103,9 @@
 
 @property (nullable, nonatomic, strong) ALCoreController *coreController;
 
+@property (nullable, nonatomic, strong) ALAssetController *assetController;
+
+- (NSString * _Nonnull)assetPath;
 @end
 
 /**

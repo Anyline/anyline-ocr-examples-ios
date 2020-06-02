@@ -126,12 +126,23 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
+}
+
+
+- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
+    if ([info.variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[info.value floatValue] forModule:self.licensePlateScanViewPlugin];
+    } else if ([info.variableName isEqualToString:@"$square"] && info.value) {
+        //the visual feedback shows we have found a potential license plate, so let's give some feedback on VoiceOver too.
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"License Plate");
+    }
+    
 }
 
 @end

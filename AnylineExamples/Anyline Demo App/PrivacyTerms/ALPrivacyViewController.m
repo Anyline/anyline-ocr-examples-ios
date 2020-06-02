@@ -16,7 +16,7 @@
 
 typedef void (^CompletionBlock)(void);
 
-NSString * const ALDataPrivacyFileLink = @"https://anyline.com/wp-content/uploads/2019/04/PrivacyPolicy_April19.pdf";
+NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en/";
 
 @interface ALPrivacyViewController () <MFMailComposeViewControllerDelegate>
 

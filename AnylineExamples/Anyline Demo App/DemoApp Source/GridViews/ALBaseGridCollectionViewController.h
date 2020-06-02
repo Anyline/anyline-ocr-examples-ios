@@ -16,5 +16,6 @@
 @property (nonatomic) BOOL showLogo;
 
 - (CGSize)headerSize;
+- (void)openExample:(ALExample *)example;
 
 @end

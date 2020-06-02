@@ -83,7 +83,7 @@
                                                identityDocuments,
                                                licensePlateScanning,
                                                mro,
-                                               others,],
+                                               others],
                       };
 }
 

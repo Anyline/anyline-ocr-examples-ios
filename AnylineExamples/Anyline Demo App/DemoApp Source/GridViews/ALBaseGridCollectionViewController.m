@@ -136,9 +136,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     [self.navigationController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
-    
+- (void)openExample:(ALExample *)example {
     if ([example.viewController isSubclassOfClass:[ALBaseScanViewController class]] || [example.viewController isSubclassOfClass:[ALEnergyBaseViewController class]]) {
         if ([[example viewController] isSubclassOfClass:[ALNFCScanViewController class]]) {
             if (@available(iOS 13.0, *)) {
@@ -173,7 +171,11 @@ NSString * const viewControllerIdentifier = @"gridViewController";
             }
         }
     }
+}
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
+    [self openExample:example];
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

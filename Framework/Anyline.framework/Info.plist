@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ALBuildIdentifier</key>
-	<string>214912032020_20</string>
+	<string>203629052020_21</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleIdentifier</key>
@@ -13,15 +13,15 @@
 	<key>CFBundleName</key>
 	<string>Anyline</string>
 	<key>CFBundleShortVersionString</key>
-	<string>20</string>
+	<string>21</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1449</string>
+	<string>1451</string>
 	<key>GITHash</key>
-	<string>2c6fa2662086981a2a0680f970a93c17c7a64b66</string>
+	<string>7997815ca7b50c3d921d301d49fe6e0f7ba22fec</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>UIDeviceFamily</key>

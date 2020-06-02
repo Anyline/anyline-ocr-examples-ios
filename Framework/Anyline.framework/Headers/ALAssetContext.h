@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *apiKey;
 @property NSString *projectID;
 @property NSString *stage;
-@property NSString *modelName;
-@property NSString *scriptName;
 @property NSString *anylineVersion;
 
 - (NSString *)toJSON;

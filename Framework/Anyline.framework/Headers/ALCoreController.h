@@ -63,6 +63,13 @@
                                     delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
 
 /**
+ This method initialises the core without loading any scripts
+ *  @param error will be set to nil if setup is finished, or an error object when setup failed.
+ * @return whether setup succeeded
+ */
+- (BOOL)initCoreWithError: (NSError *_Nullable *_Nullable)error;
+
+/**
  *  This method loads the Anyline SDK with an configuration string.
  *
  *  @param script     The string which represents the configuration.
