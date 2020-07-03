@@ -11,6 +11,7 @@
 #import "ALDrivingLicenseIdentification.h"
 #import "ALMRZIdentification.h"
 #import "ALGermanIDFrontIdentification.h"
+#import "ALTemplateIdentification.h"
 #import "ALIDConfig.h"
 
 /**

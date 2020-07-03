@@ -22,22 +22,25 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        CGFloat labelheigth = 20;
+        CGFloat labelheight = 30;
         
         {
             CGFloat roundedOffset = 22;
-            UIImageView * view = [[UIImageView alloc] initWithFrame:CGRectMake(lround(roundedOffset/2), 0, frame.size.height - roundedOffset, frame.size.height - roundedOffset)];
+            //fill the whole width and centre in it, so there is room for longer text
+            UIImageView * view = [[UIImageView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height - roundedOffset)];
             self.imageView = view;
+            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [self addSubview:self.imageView];
         }
         
         {
-            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height - labelheigth, frame.size.width, labelheigth)];
+            UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height - labelheight, frame.size.width, labelheight)];
             label.backgroundColor = [UIColor clearColor];
             label.text = @"Placeholder";
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentCenter;
             label.font = [UIFont systemFontOfSize:11];
+            label.numberOfLines = 0; //allow multiple lines for the longer version of the 'ID not recognized' string
             self.infoLabel = label;
             
             [self addSubview:self.infoLabel];
@@ -97,6 +100,11 @@
             case ALWarningStatePerfect: {
                 [self setInfoString:@"perfect"];
                 [self setInfoImage:[UIImage imageNamed:@"icn_perfect"]];
+                break;
+            }
+            case ALWarningStateIDNotSupported: {
+                [self setInfoString:@"This version doesn't support all document types yet. Stay tuned for more."];
+                [self setInfoImage:nil];
                 break;
             }
             default:

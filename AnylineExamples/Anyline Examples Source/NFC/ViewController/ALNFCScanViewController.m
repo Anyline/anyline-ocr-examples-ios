@@ -239,6 +239,7 @@ API_AVAILABLE(ios(13.0))
 }
 
 - (void)nfcFailedWithError:(NSError * _Nonnull)error {
+    NSLog(@"NFC failed with error: %@, mrz: %@",error.localizedDescription,self.passportNumberForNFC);
     //In most cases we don't really need to do anything special here since the NFC UI already shows that it failed. We shouldn't get ALNFCTagErrorNFCNotSupported either because we check +readingAvailable before even showing NFC, so this is just an example of how else that situation could be handled.
     dispatch_async(dispatch_get_main_queue(), ^{
         if (error.code == ALNFCTagErrorNFCNotSupported) {

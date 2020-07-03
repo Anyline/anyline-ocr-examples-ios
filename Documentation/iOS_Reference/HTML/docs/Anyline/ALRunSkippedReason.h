@@ -16,7 +16,11 @@ typedef NS_ENUM(NSInteger, ALRunFailure) {
     /**
      *  An unknown error occurred.
      */
-    ALRunFailureUnkown                  = -1,
+    ALRunFailureUnknown                  = -1,
+    /**
+     *  @deprecated use ALRunFailureUnknown instead
+     */
+    ALRunFailureUnkown DEPRECATED_ATTRIBUTE = ALRunFailureUnknown, 
     /**
      *  No text lines found in imag
      */
@@ -40,7 +44,11 @@ typedef NS_ENUM(NSInteger, ALRunFailure) {
     /**
      *  Backprojected points are outside of cutout
      */
-    ALRunFailurePointsOutOfCutout       = -7
+    ALRunFailurePointsOutOfCutout       = -7,
+    /**
+     *  ID not recognised in universal ID
+     */
+    ALRunFailureIDTypeNotSupported       = -8
 };
 
 @interface ALRunSkippedReason : NSObject

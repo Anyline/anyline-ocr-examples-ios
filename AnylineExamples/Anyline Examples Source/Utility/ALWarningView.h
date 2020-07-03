@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, ALWarningState) {
     ALWarningStateTooDark,
     ALWarningStateTooBright,
     ALWarningStatePerfect,
+    ALWarningStateIDNotSupported,
 };
 
 typedef NS_ENUM(NSUInteger, ALAnimationState) {

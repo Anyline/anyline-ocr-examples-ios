@@ -12,6 +12,7 @@
 #import "ALMRZConfig.h"
 #import "ALDrivingLicenseConfig.h"
 #import "ALGermanIDFrontConfig.h"
+#import "ALTemplateConfig.h"
 #import "ALIDResult.h"
 
 @protocol ALIDPluginDelegate;

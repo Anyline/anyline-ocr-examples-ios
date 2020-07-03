@@ -21,6 +21,7 @@
 
 #import "ALNLDrivingLicenseScanViewController.h"
 #import "ALBEDrivingLicenseScanViewController.h"
+#import "ALUniversalIDScanViewController.h"
 
 @interface ALIdentityDocumentsExampleManager ()
 
@@ -42,6 +43,10 @@
 
 - (void)initExampleData {
     self.title = @"Identity Documents";
+    
+    ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
+                                                       image:[UIImage imageNamed:@"universal_id"]
+                                              viewController:[ALUniversalIDScanViewController class]];
     
     ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
                                                        image:[UIImage imageNamed:@"mrz-version 3"]
@@ -73,7 +78,7 @@
 
     self.sectionNames = @[@"Identity Documents"];
     self.examples = [@{
-                      self.sectionNames[0] : @[mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
+                      self.sectionNames[0] : @[universalID,mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
     } mutableCopy];
     
    //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.

@@ -35,7 +35,7 @@
     
     self.successfulScan = NO;
     
-    ALWarningView * warningView = [[ALWarningView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+    ALWarningView * warningView = [[ALWarningView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
     warningView.center = CGPointMake(self.view.center.x, 0);
     self.warningView = warningView;
     [self.view addSubview:warningView];

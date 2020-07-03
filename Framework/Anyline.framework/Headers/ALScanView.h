@@ -110,7 +110,6 @@
 /**
  Methods for updating the UI
  */
-- (void)updateDispatchTimer;
 
 - (void)updateTextRect:(ALSquare *_Nonnull)square forPluginID:(NSString *_Nonnull)pluginID;
 

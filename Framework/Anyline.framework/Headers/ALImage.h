@@ -149,6 +149,7 @@
  */
 - (instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer
                                  rotate:(CGFloat)degrees
+                                   flip:(BOOL)flip
                                  cutout:(CGRect)cutout;
 
 /**

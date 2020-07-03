@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, ALFieldScanOption) {
 - (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
 
 /**
- *  ID Fields can be configured with enum ALFieldScanOption. Which can set a particular field to mandatory, optional or disabled.
+ *  ID Fields can be configured with enum ALFieldScanOption, which can set a particular field to mandatory, optional or disabled.
  */
 @property (nonatomic, strong, nullable) ALIDFieldScanOptions *idFieldScanOptions;
 

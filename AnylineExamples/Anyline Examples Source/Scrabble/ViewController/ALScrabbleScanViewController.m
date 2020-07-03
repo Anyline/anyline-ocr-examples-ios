@@ -154,7 +154,7 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
             break;
         case ALRunFailureNoTextFound:
             break;
-        case ALRunFailureUnkown:
+        case ALRunFailureUnknown:
             break;
         default:
             break;

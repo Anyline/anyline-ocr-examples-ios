@@ -23,7 +23,6 @@
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
                           pluginConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs;
 
-- (void)cancelFeedback;
 - (void)updateConfigurations:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;
 - (void)refreshWithCurrentConfigs;
 - (void)updateConfiguration:(ALScanViewPluginConfig * _Nonnull)pluginConfig   forPluginID:(NSString *_Nonnull)pluginID;
