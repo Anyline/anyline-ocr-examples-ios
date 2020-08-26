@@ -138,7 +138,6 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
  *  The characterWhitelist map can be used to set specific a characterWhitelist for a country (scanMode).
  *  E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)
  *
- *  @return dicionary of the current characterWhiteList map.
 */
 - (void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)scanMode;
 /**

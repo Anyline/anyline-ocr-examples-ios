@@ -74,7 +74,7 @@
  */
 - (BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath
                fileHash:(NSString * _Nullable)fileHash
-                  error:(NSError * _Nullable * _Nullable)error __deprecated_msg("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.");;
+                  error:(NSError * _Nullable * _Nullable)error __deprecated_msg("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.");
 
 - (void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
 

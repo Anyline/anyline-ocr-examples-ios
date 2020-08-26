@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
     ALAutoAnalogDigitalMeter,
     ALDialMeter,
     ALDotMatrixMeter,
-    ALBarcode // This scanMode is ignored in the plugin and only used in the AnylineEnergyModuleView
+    ALBarcode // This scanMode is ignored in the plugin and only used in the AnylineEnergyModuleView.
 };
 
 /**

@@ -75,15 +75,13 @@
 
 - (UIInterfaceOrientation)currentInterfaceOrientation;
 
-- (AVCaptureConnection *_Nullable)getOrientationAdaptedCaptureConnection;
-
 - (void)setNativeBarcodeFormats:(NSArray * _Nullable)formats;
 
 + (AVAuthorizationStatus)cameraPermissionStatus;
 
 + (void)requestCameraPermission:(void (^_Nonnull)(BOOL granted))handler;
 
-- (void)captureStillImageAsynchronouslyWithCompletionHandler:(void (^ _Nonnull)(CMSampleBufferRef _Nullable imageDataSampleBuffer, NSError * _Nullable error))handler;
+- (void)captureStillImageAsynchronously;
 
 @end
 
@@ -98,6 +96,9 @@
  */
 - (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager * _Nonnull)captureDeviceManager
               didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer;
+
+- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager * _Nonnull)captureDeviceManager
+         didOutputPhotoSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer;
 
 @end
 

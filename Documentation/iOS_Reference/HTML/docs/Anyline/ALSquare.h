@@ -9,7 +9,7 @@
 /**
  *  An ALSquare is an object with 4 points. They are an 2D representation of a rectangle in the image.
  */
-@interface ALSquare : NSObject
+@interface ALSquare : NSObject<NSCopying>
 
 /**
  *  The up left point of the square.

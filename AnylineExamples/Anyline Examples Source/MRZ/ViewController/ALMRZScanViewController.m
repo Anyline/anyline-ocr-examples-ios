@@ -164,7 +164,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:[identification sex]]];
         [resultData addObject:[self resultEntryWithDate:[identification dateOfBirthObject] dateString:[identification dateOfBirth] title:@"Date of Birth"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[identification documentType]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
         [resultData addObject:[self resultEntryWithDate:[identification dateOfExpiryObject] dateString:[identification dateOfExpiry] title:@"Date of Expiry"]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationalityCountryCode]]];
         if ([identification personalNumber] && [identification personalNumber].length > 0) {

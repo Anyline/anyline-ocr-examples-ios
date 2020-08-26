@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -162,6 +164,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The result passed to anylineIDScanPlugin:didFindResult:) from an MRZ <a href="../Classes/ALIDScanPlugin.html">ALIDScanPlugin</a></p>
+					</div>
+					
+					
 
 					
 					
@@ -762,6 +772,203 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>optionalData</code></th>
+						<td><p>Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitDateOfExpiry</code></th>
+						<td><p>Check digit for the expiration date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitDocumentNumber</code></th>
+						<td><p>Check digit for the document number.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitDateOfBirth</code></th>
+						<td><p>Check digit for the day of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitFinal</code></th>
+						<td><p>On passports checkdigit over passport number, passport number checkdigit, date of birth, date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
+personal number checkdigit.
+On other travel documents over document number, document number checkdigit, personal number,
+date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkDigitPersonalNumber</code></th>
+						<td><p>CheckDigit for the personal number. Is nil or 0 when no personal number is used.
+Is also nil on none passport documents.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>allCheckDigitsValid</code></th>
+						<td><p>will return true if all checkdigits are correct</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizAddress</code></th>
+						<td><p>Optional data which contains the data of the address field on a german ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizDateOfIssue</code></th>
+						<td><p>Optional data which contains the data of the issuing date field, which is outside the MRZ field (VIZ = Visual Inspection Zone)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizSurname</code></th>
+						<td><p>Optional data which contains the data of the <a href="#//api/name/surname">surname</a> field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizGivenNames</code></th>
+						<td><p>Optional data which contains the data of the given names field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizDateOfBirth</code></th>
+						<td><p>Optional data which contains the data of the date of birth field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vizDateOfExpiry</code></th>
+						<td><p>Optional data which contains the data of the date of expiry field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mrzString</code></th>
+						<td><p>Contains all Information found in the MRZ as string.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedDateOfExpiry</code></th>
+						<td><p>The <a href="#//api/name/dateOfExpiry">dateOfExpiry</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfExpiryObject">dateOfExpiryObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedDateOfBirth</code></th>
+						<td><p>The <a href="#//api/name/dateOfBirth">dateOfBirth</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfBirthObject">dateOfBirthObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedVizDateOfIssue</code></th>
+						<td><p>The dateOfIssue in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfIssueObject">vizDateOfIssueObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedVizDateOfBirth</code></th>
+						<td><p>The <a href="#//api/name/dateOfBirth">dateOfBirth</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfBirthObject">vizDateOfBirthObject</a> will be created using this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>formattedVizDateOfExpiry</code></th>
+						<td><p>The dateOExpiry in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfExpiryObject">vizDateOfExpiryObject</a> will be created using this value.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMRZIdentification.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:" title="initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">&ndash;&nbsp;initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a ALIdentification object. This object is used to carry the scanned values. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since Version 10.1. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:&hellip;:formattedVizDateOfIssue:formattedVizDateOfBirth:formattedVizDateOfExpiry: instead</span>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithSurname:(NSString *_Nullable)<em>surname</em> givenNames:(NSString *_Nullable)<em>givenNames</em> dateOfBirth:(NSString *_Nullable)<em>dateOfBirth</em> dateOfExpiry:(NSString *_Nullable)<em>dateOfExpiry</em> documentNumber:(NSString *_Nullable)<em>documentNumber</em> documentType:(NSString *_Nullable)<em>documentType</em> issuingCountryCode:(NSString *_Nullable)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *_Nullable)<em>nationalityCountryCode</em> sex:(NSString *_Nullable)<em>sex</em> personalNumber:(NSString *_Nullable)<em>personalNumber</em> optionalData:(NSString *_Nullable)<em>optionalData</em> checkDigitDateOfExpiry:(NSString *_Nullable)<em>checkDigitDateOfExpiry</em> checkDigitDocumentNumber:(NSString *_Nullable)<em>checkDigitDocumentNumber</em> checkDigitDateOfBirth:(NSString *_Nullable)<em>checkDigitDateOfBirth</em> checkDigitFinal:(NSString *_Nullable)<em>checkDigitFinal</em> checkDigitPersonalNumber:(NSString *_Nullable)<em>checkDigitPersonalNumber</em> allCheckDigitsValid:(BOOL)<em>allCheckDigitsValid</em> address:(NSString *_Nullable)<em>address</em> dateOfIssue:(NSString *_Nullable)<em>dateOfIssue</em> mrzString:(NSString *_Nullable)<em>mrzString</em> formattedDateOfExpiry:(NSString *_Nullable)<em>formattedDateOfExpiry</em> formattedDateOfBirth:(NSString *_Nullable)<em>formattedDateOfBirth</em> formattedDateOfIssue:(NSString *_Nullable)<em>formattedDateOfIssue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>surname</code></th>
+						<td><p>All the surNames of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>givenNames</code></th>
+						<td><p>All the given names of the person separated by whitespace.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dateOfBirth</code></th>
+						<td><p>The date of birth.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dateOfExpiry</code></th>
+						<td><p>The expiration date of the passport / document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>documentNumber</code></th>
+						<td><p>Passport number or document number.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>documentType</code></th>
+						<td><p>The type of the document that was read. (ID/P)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>issuingCountryCode</code></th>
+						<td><p>The issuing country code of the document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>nationalityCountryCode</code></th>
+						<td><p>The nationality country code of the document.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sex</code></th>
+						<td><p>The gender of the person</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>personalNumber</code></th>
+						<td><p>Personal Number on the document. Is nil on many passports / documents.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>optionalData</code></th>
 						<td><p>Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
 Might contain additional information.</p></td>
 					</tr>
@@ -802,39 +1009,13 @@ Is also nil on none passport documents.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>vizAddress</code></th>
-						<td><p>Optional data which contains the data of the address field on a german ID,
-which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+						<th scope="row" class="argument-name"><code>address</code></th>
+						<td><p>Optional data which contains the data of the address field on a german ID.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>vizDateOfIssue</code></th>
-						<td><p>Optional data which contains the data of the issuing date field,
-which is outside the MRZ field (VIZ = Visual Inspection Zone)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>vizSurname</code></th>
-						<td><p>Optional data which contains the data of the <a href="#//api/name/surname">surname</a> field on an ID,
-which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>vizGivenNames</code></th>
-						<td><p>Optional data which contains the data of the given names field on an ID,
-which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>vizDateOfBirth</code></th>
-						<td><p>Optional data which contains the data of the date of birth field on an ID,
-which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>vizDateOfExpiry</code></th>
-						<td><p>Optional data which contains the data of the date of expiry field on an ID,
-which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
+						<th scope="row" class="argument-name"><code>dateOfIssue</code></th>
+						<td><p>Optional data which contains the data of the issuing date field, which is outside the MRZ field</p></td>
 					</tr>
 				
 					<tr>
@@ -853,18 +1034,8 @@ which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>formattedVizDateOfIssue</code></th>
-						<td><p>The dateOfIssue in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfIssueObject">vizDateOfIssueObject</a> will be created using this value.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>formattedVizDateOfBirth</code></th>
-						<td><p>The dateOfIssue in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfBirthObject">vizDateOfBirthObject</a> will be created using this value.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>formattedVizDateOfExpiry</code></th>
-						<td><p>The dateOfIssue in a given Format (dd.MM.yyyy). The <a href="#//api/name/vizDateOfExpiryObject">vizDateOfExpiryObject</a> will be created using this value.</p></td>
+						<th scope="row" class="argument-name"><code>formattedDateOfIssue</code></th>
+						<td><p>The dateOfIssue in a given Format (dd.MM.yyyy). The dateOfIssueObject will be created using this value.</p></td>
 					</tr>
 				
 				</table>
@@ -896,105 +1067,6 @@ which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:" title="initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:">&ndash;&nbsp;initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<ul>
-<li>Initializes a ALIdentification object. This object is used to carry the scanned values.
-*</li>
-<li>@param <a href="#//api/name/surname">surname</a>                  All the surNames of the person separated by whitespace.</li>
-<li>@param <a href="#//api/name/givenNames">givenNames</a>               All the given names of the person separated by whitespace.</li>
-<li>@param <a href="#//api/name/dateOfBirth">dateOfBirth</a>              The date of birth.</li>
-<li>@param <a href="#//api/name/dateOfExpiry">dateOfExpiry</a>             The expiration date of the passport / document.</li>
-<li>@param <a href="#//api/name/documentNumber">documentNumber</a>           Passport number or document number.</li>
-<li>@param <a href="#//api/name/documentType">documentType</a>             The type of the document that was read. (ID/P)</li>
-<li>@param <a href="#//api/name/issuingCountryCode">issuingCountryCode</a>       The issuing country code of the document.</li>
-<li>@param <a href="#//api/name/nationalityCountryCode">nationalityCountryCode</a>   The nationality country code of the document.</li>
-<li>@param <a href="#//api/name/sex">sex</a>                      The gender of the person</li>
-<li>@param <a href="#//api/name/personalNumber">personalNumber</a>           Personal Number on the document. Is nil on many passports / documents.</li>
-<li>@param <a href="#//api/name/optionalData">optionalData</a>             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.</li>
-<li><pre><code>                           Might contain additional information.
-</code></pre>
-
-<p>*</p></li>
-<li>@param <a href="#//api/name/checkDigitDateOfExpiry">checkDigitDateOfExpiry</a>   Check digit for the expiration date.</li>
-<li>@param <a href="#//api/name/checkDigitDocumentNumber">checkDigitDocumentNumber</a> Check digit for the document number.</li>
-<li>@param <a href="#//api/name/checkDigitDateOfBirth">checkDigitDateOfBirth</a>    Check digit for the day of birth.</li>
-<li>@param <a href="#//api/name/checkDigitFinal">checkDigitFinal</a>          On passports checkdigit over passport number, passport number checkdigit, date of birth,</li>
-<li><pre><code>                           date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
-</code></pre></li>
-<li><pre><code>                           personal number checkdigit.
-</code></pre></li>
-<li><pre><code>                           On other travel documents over document number, document number checkdigit, personal number,
-</code></pre></li>
-<li><pre><code>                           date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
-</code></pre>
-
-<p>*</p></li>
-<li>@param <a href="#//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</a> CheckDigit for the personal number. Is nil or 0 when no personal number is used.</li>
-<li><pre><code>                           Is also nil on none passport documents.
-</code></pre></li>
-</ul>
-
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithSurname:(NSString *_Nullable)<em>surname</em> givenNames:(NSString *_Nullable)<em>givenNames</em> dateOfBirth:(NSString *_Nullable)<em>dateOfBirth</em> dateOfExpiry:(NSString *_Nullable)<em>dateOfExpiry</em> documentNumber:(NSString *_Nullable)<em>documentNumber</em> documentType:(NSString *_Nullable)<em>documentType</em> issuingCountryCode:(NSString *_Nullable)<em>issuingCountryCode</em> nationalityCountryCode:(NSString *_Nullable)<em>nationalityCountryCode</em> sex:(NSString *_Nullable)<em>sex</em> personalNumber:(NSString *_Nullable)<em>personalNumber</em> optionalData:(NSString *_Nullable)<em>optionalData</em> checkDigitDateOfExpiry:(NSString *_Nullable)<em>checkDigitDateOfExpiry</em> checkDigitDocumentNumber:(NSString *_Nullable)<em>checkDigitDocumentNumber</em> checkDigitDateOfBirth:(NSString *_Nullable)<em>checkDigitDateOfBirth</em> checkDigitFinal:(NSString *_Nullable)<em>checkDigitFinal</em> checkDigitPersonalNumber:(NSString *_Nullable)<em>checkDigitPersonalNumber</em> allCheckDigitsValid:(BOOL)<em>allCheckDigitsValid</em> address:(NSString *_Nullable)<em>address</em> dateOfIssue:(NSString *_Nullable)<em>dateOfIssue</em> mrzString:(NSString *_Nullable)<em>mrzString</em> formattedDateOfExpiry:(NSString *_Nullable)<em>formattedDateOfExpiry</em> formattedDateOfBirth:(NSString *_Nullable)<em>formattedDateOfBirth</em> formattedDateOfIssue:(NSString *_Nullable)<em>formattedDateOfIssue</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>@param <a href="#//api/name/allCheckDigitsValid">allCheckDigitsValid</a>      will return true if all checkdigits are correct</li>
-<li>@param address                  Optional data which contains the data of the address field on a german ID.</li>
-<li>@param dateOfIssue              Optional data which contains the data of the issuing date field,</li>
-<li><pre><code>                           which is outside the MRZ field
-</code></pre>
-
-<p>*</p></li>
-<li>@param <a href="#//api/name/mrzString">mrzString</a>                Contains all Information found in the MRZ as string.
-*</li>
-<li>@param formattedDateOfExpiry    The <a href="#//api/name/dateOfExpiry">dateOfExpiry</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfExpiryObject">dateOfExpiryObject</a> will be created using this value.</li>
-<li>@param formattedDateOfBirth     The <a href="#//api/name/dateOfBirth">dateOfBirth</a> in a given Format (dd.MM.yyyy). The <a href="#//api/name/dateOfBirthObject">dateOfBirthObject</a> will be created using this value.</li>
-<li>@param formattedDateOfIssue     The dateOfIssue in a given Format (dd.MM.yyyy). The dateOfIssueObject will be created using this value.
-*
-*</li>
-<li>@return A new ALIdentification object</li>
-</ul>
-
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALMRZIdentification.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:" title="initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:">&ndash;&nbsp;initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:</a></code>
 </h3>
@@ -1006,7 +1078,7 @@ which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a ALIdentification object. This object is used to carry the scanned values.</p>
+				<p>Initializes a ALIdentification object. This object is used to carry the scanned values. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:&hellip; instead</span>)</p>
 			</div>
 			
 		    
@@ -1086,8 +1158,7 @@ which is outside the MRZ field (VIZ = Visual Inspection Zone).</p></td>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>checkDigitPersonalNumber</code></th>
-						<td><p>CheckDigit for the personal number. Is nil or 0 when no personal number is used.
-Is also nil on none passport documents.</p></td>
+						<td><p>CheckDigit for the personal number. Is nil or 0 when no personal number is used. Is also nil on none passport documents.</p></td>
 					</tr>
 				
 					<tr>
@@ -1101,8 +1172,7 @@ date of birth, date of birth checkdigit, expiration date and expiration date che
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>personalNumber2</code></th>
-						<td><p>Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
-Might contain additional information.</p></td>
+						<td><p>Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs. Might contain additional information.</p></td>
 					</tr>
 				
 					<tr>
@@ -1112,8 +1182,7 @@ Might contain additional information.</p></td>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>issuingDate</code></th>
-						<td><p>Optional data which contains the data of the issuing date field,
-which is outside the MRZ field</p></td>
+						<td><p>Optional data which contains the data of the issuing date field, which is outside the MRZ field</p></td>
 					</tr>
 				
 					<tr>
@@ -1164,7 +1233,7 @@ which is outside the MRZ field</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-07-03</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-08-26</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

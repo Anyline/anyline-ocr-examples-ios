@@ -73,11 +73,8 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     if (!wasAccepted) {
         self.navigationItem.hidesBackButton = YES;
         self.navigationController.navigationBar.userInteractionEnabled = NO;
-        
-        if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-            // disable the interactivePopGestureRecognizer
-            self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-        }
+        // disable the interactivePopGestureRecognizer
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
         
         self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(30, self.view.frame.size.height-bottomPadding-50, ((self.view.bounds.size.width)-60), 40)];
         self.confirmButton.center = CGPointMake(self.view.center.x, self.confirmButton.center.y);
@@ -168,6 +165,8 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     
     
     if (self.navigationController) {
+        //Reenable swiping from the left to go back. After we call popViewControllerAnimated:, self.navigationController will be nil, so we have to do this beforehand
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         [self.navigationController popViewControllerAnimated:wasAccepted];
     } else {
         [self dismissViewControllerAnimated:wasAccepted completion:nil];

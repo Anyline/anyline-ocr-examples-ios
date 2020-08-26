@@ -43,7 +43,7 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     config.scanMode = ALAuto;
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"scrabble" ofType:@"traineddata"];
     [config setLanguages:@[anylineTraineddata] error:nil];
-    config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
+    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
     config.validationRegex = @"^[A-ZÄÜÖ]{7,10}$";
     
     NSError *error = nil;

@@ -22,6 +22,8 @@
 @property (nonatomic, assign) CGSize cutoutPadding;
 @property (nonatomic, assign) CGPoint cutoutOffset;
 
+@property (nonatomic, weak) ALCaptureDeviceManager * _Nullable captureDeviceManager;
+
 - (_Nullable instancetype)initWithCutoutScreen:(CGRect)cutoutScreen
                                  cutoutPadding:(CGSize)cutoutPadding
                                   cutoutOffset:(CGPoint)cutoutOffset;

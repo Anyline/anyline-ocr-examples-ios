@@ -119,8 +119,10 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALNFCTagErrorDataGroupNotRead = 10014,
   ALNFCTagErrorUnknownTag = 10015,
   ALNFCTagErrorUnknownImageFormat = 10016,
-  ALNFCTagErrorNotImplemented = 10017
+  ALNFCTagErrorNotImplemented = 10017,
+    
+  ALTimeoutError = 11001
 };
 
 
-#define NSLicenseViolationError(func) [NSError errorWithDomain:ALLicenseViolationDomain code:ALLicenseNotValidForFeature userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The following feature is not avalable with your license: %@",(func)]}];
+#define NSLicenseViolationError(func) [NSError errorWithDomain:ALLicenseViolationDomain code:ALLicenseNotValidForFeature userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The following feature is not available with your license: %@",(func)]}];

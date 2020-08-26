@@ -2,7 +2,8 @@
     "viewPlugin" : {
         "cutoutConfig" : {
             "style": "rect",
-            "width": 720,
+            "maxWidthPercent": "67%",
+            "width": 1080,
             "alignment": "top_half",
             "ratioFromSize" : {
                 "width": 720,

@@ -46,6 +46,8 @@
 @property (nonatomic) ALFieldScanOption vizGivenNames;
 @property (nonatomic) ALFieldScanOption vizDateOfBirth;
 @property (nonatomic) ALFieldScanOption vizDateOfExpiry;
+@property (nonatomic) ALFieldScanOption dateOfBirth;
+@property (nonatomic) ALFieldScanOption dateOfExpiry;
 
 //Deprecated FieldScanOptions
 @property (nonatomic) ALFieldScanOption dateOfIssue __deprecated_msg("Deprecated since Version 10.1. Please use vizDateOfIssue instead");
@@ -57,8 +59,6 @@
 /*
  @property (nonatomic) ALFieldScanOption surname;
  @property (nonatomic) ALFieldScanOption givenNames;
- @property (nonatomic) ALFieldScanOption dateOfBirth;
- @property (nonatomic) ALFieldScanOption dateOfExpiry;
  @property (nonatomic) ALFieldScanOption documentNumber;
  @property (nonatomic) ALFieldScanOption documentType;
  @property (nonatomic) ALFieldScanOption issuingCountryCode;

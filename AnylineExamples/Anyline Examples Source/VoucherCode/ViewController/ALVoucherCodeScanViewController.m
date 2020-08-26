@@ -40,7 +40,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"anyline_capitals" ofType:@"traineddata"];
     [config setLanguages:@[anylineTraineddata] error:nil];
-    config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     config.validationRegex = @"[A-Z0-9]{8}$";
     config.scanMode = ALAuto;
     
@@ -132,7 +132,7 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
         [self stopAnyline];
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Voucher Code" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Voucher Code" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

@@ -40,6 +40,7 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryCattleTag] = @"Cattle Tag",
     [ALScanHistoryTIN] = @"TIN Scanner",
     [ALScanHistoryNFC] = @"NFC Reader",
+    [ALScanHistoryUniversalID] = @"Universal ID"
 };
 
 @implementation ScanHistory

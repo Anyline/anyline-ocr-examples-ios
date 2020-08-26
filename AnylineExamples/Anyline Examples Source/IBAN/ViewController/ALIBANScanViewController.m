@@ -42,7 +42,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     config.scanMode = ALLine;
     config.charHeight = ALRangeMake(25, 65);
     config.minConfidence = 70;
-    config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
     config.scanMode = ALLine;
     
@@ -133,7 +133,7 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
         [self stopAnyline];
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

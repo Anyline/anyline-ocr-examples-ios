@@ -212,9 +212,9 @@
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:self.meterResult]];
         if (self.barcodeResult) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
         } else if (self.serialNumberResult) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Serial Number" value:self.barcodeResult]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Serial Number" value:self.barcodeResult shouldSpellOutValue:YES]];
         }
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:self.meterImage];
         NSError *error;

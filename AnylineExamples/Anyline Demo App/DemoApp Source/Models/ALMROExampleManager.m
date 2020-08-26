@@ -14,10 +14,6 @@
 #import "ALContainerScanViewController.h"
 #import "ALVerticalContainerScanViewController.h"
 
-#import "ALOthersExampleManager.h"
-#import "ALMeterExampleManager.h"
-#import "ALGridCollectionViewController.h"
-#import "ALMeterCollectionViewController.h"
 
 @interface ALMROExampleManager ()
 

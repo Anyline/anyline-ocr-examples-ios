@@ -108,7 +108,7 @@ NSString * const kCattleTagLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.cattleTagScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Cattle Tag Number" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Cattle Tag Number" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

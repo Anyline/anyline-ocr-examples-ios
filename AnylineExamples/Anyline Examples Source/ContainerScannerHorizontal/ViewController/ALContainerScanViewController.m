@@ -112,18 +112,11 @@ NSString * const kContainerScannerLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.containerScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.containerScanViewPlugin startAndReturnError:&error];
-    
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
 }
 
 @end

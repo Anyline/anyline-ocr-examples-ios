@@ -280,7 +280,7 @@
  *  Tells the delegate that the processing has not completed successfully. Possible reason would be 
  *  for example that the display or paper frame could not be found.
  *
- *  @param error A NSError object with ALErrorDomain and an appropriate status.
+ *  @param reason A NSError object with ALErrorDomain and an appropriate status.
  */
 - (void)anylineCoreController:(ALCoreController *_Nonnull)coreController didAbortRun:(NSError * _Nonnull)reason;
 

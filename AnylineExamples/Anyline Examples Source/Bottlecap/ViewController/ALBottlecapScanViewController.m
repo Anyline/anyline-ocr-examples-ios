@@ -39,7 +39,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     config.charHeight = ALRangeMake(21, 97);
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"bottlecap" ofType:@"traineddata"];
     [config setLanguages:@[anylineTraineddata] error:nil];
-    config.charWhiteList = @"123456789ABCDEFGHJKLMNPRSTUVWXYZ";
+    config.characterWhitelist = @"123456789ABCDEFGHJKLMNPRSTUVWXYZ";
     config.minConfidence = 75;
     config.validationRegex = @"^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}";
     
@@ -121,7 +121,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.bottlecapScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Bottlecap code" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Bottlecap code" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
@@ -134,13 +134,5 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     }
     
 }
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSError *error = nil;
-    BOOL success = [self.bottlecapScanViewPlugin startAndReturnError:&error];
-    
-    NSAssert(success, @"We failed starting: %@",error.debugDescription);
-}
-
 
 @end

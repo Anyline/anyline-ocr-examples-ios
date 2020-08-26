@@ -41,10 +41,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
     
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.scanMode = ALAuto;
-    
-    config.validationRegex = @"[A-Z0-9]{4,}";
+    ALOCRConfig *config = [self ocrConfig];
     
     NSError *error = nil;
     
@@ -56,8 +53,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     NSAssert(self.serialNumberScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.serialNumberScanPlugin addInfoDelegate:self];
     
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"serial_number_view_config" ofType:@"json"];
-    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
+    ALScanViewPluginConfig *scanViewPluginConfig = [self scanViewPluginConfig];
     
     self.serialNumberScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.serialNumberScanPlugin
                                                                  scanViewPluginConfig:scanViewPluginConfig];
@@ -78,6 +74,20 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     [self startListeningForMotion];
     
     self.controllerType = ALScanHistorySerial;
+}
+
+- (ALOCRConfig *)ocrConfig {
+    ALOCRConfig *config = [[ALOCRConfig alloc] init];
+    
+    config.scanMode = ALAuto;
+    
+    config.validationRegex = @"[A-Z0-9]{4,}";
+    return config;
+}
+
+- (ALScanViewPluginConfig *)scanViewPluginConfig {
+    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"serial_number_view_config" ofType:@"json"];
+     return [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
 }
 
 /*
@@ -130,7 +140,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.serialNumberScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

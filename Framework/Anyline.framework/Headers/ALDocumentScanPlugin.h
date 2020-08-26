@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, ALDocumentError) {
     ALDocumentErrorShakeDetected    = -7,
     ALDocumentErrorRatioOutsideOfTolerance = -8,
     ALDocumentErrorBoundsOutsideOfTolerance = -9,
+    ALDocumentErrorDontMove = -10
 };
 
 /**

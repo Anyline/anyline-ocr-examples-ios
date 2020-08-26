@@ -45,7 +45,7 @@ import UIKit
         } catch _ as NSError {
           //Handle errors here.
         }
-        config.charWhiteList = "123456789ABCDEFGHJKLMNPRSTUVWXYZ";
+        config.characterWhitelist = "123456789ABCDEFGHJKLMNPRSTUVWXYZ";
         config.minConfidence = 75;
         config.validationRegex = "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}";
         

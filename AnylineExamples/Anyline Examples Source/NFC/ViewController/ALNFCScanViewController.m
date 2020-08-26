@@ -223,7 +223,7 @@ API_AVAILABLE(ios(13.0))
         [super anylineDidFindResult:nfcResultString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
             NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing State Code" value:nfcResult.dataGroup1.issuingStateCode]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:nfcResult.dataGroup1.documentNumber]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:nfcResult.dataGroup1.documentNumber shouldSpellOutValue:YES]];
             [resultData addObject:[self resultEntryWithDate:nfcResult.dataGroup1.dateOfExpiry dateString:nil title:@"Date of Expiry"]];
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Gender" value:nfcResult.dataGroup1.gender]];
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:nfcResult.dataGroup1.nationality]];

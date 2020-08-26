@@ -42,7 +42,7 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
     [config setLanguages:@[engTraineddata,deuTraineddata] error:nil];
     
-    config.charWhiteList = @"ISBN0123456789<>-X";
+    config.characterWhitelist = @"ISBN0123456789<>-X";
     config.validationRegex = @"^ISBN((-)?\\s*(13|10))?:?\\s*((978|979){1}-?\\s*)*[0-9]{1,5}-?\\s*[0-9]{2,7}-?\\s*[0-9]{2,7}-?\\s*[0-9X]$";
     config.scanMode = ALAuto;
     

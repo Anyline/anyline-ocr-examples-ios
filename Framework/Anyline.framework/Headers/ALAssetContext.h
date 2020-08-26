@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALAssetContext : NSObject
 
-@property NSString *assetVersion;
 @property NSString *apiKey;
 @property NSString *projectID;
 @property NSString *stage;
 @property NSString *anylineVersion;
+@property NSString *training;
 
 - (NSString *)toJSON;
 

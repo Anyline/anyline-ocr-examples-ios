@@ -13,8 +13,12 @@
             "height": 31
         },
         "cropPadding": {
-         "x": 5,
-         "y": 5
+          "x": -50,
+          "y": -50
+        },
+        "cropOffset": {
+          "x": 0,
+          "y": 0
         },
         "strokeWidth": 2,
         "cornerRadius": 4,

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+/// The result passed to anylineIDScanPlugin:didFindResult:) from an MRZ ALIDScanPlugin
 @interface ALMRZIdentification : NSObject
 
 @property (nullable, nonatomic, strong, readonly) NSString *surname;
@@ -77,66 +78,40 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readonly) NSString *address __deprecated_msg("Deprecated since Version 10.1. Please use the property \"vizAddress\" instead.");
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfIssueObject __deprecated_msg("Deprecated since Version 10.1. Please use the property \"vizDateOfIssueObject\" instead.");
 
-
-/**
- *  Initializes a ALIdentification object. This object is used to carry the scanned values.
- *
- *  @param surname                  All the surNames of the person separated by whitespace.
- *  @param givenNames               All the given names of the person separated by whitespace.
- *  @param dateOfBirth              The date of birth.
- *  @param dateOfExpiry             The expiration date of the passport / document.
- *  @param documentNumber           Passport number or document number.
- *  @param documentType             The type of the document that was read. (ID/P)
- *  @param issuingCountryCode       The issuing country code of the document.
- *  @param nationalityCountryCode   The nationality country code of the document.
- *  @param sex                      The gender of the person
- *  @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
- *  @param optionalData             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
- *                                  Might contain additional information.
- *
- *  @param checkDigitDateOfExpiry   Check digit for the expiration date.
- *  @param checkDigitDocumentNumber Check digit for the document number.
- *  @param checkDigitDateOfBirth    Check digit for the day of birth.
- *  @param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,
- *                                  date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
- *                                  personal number checkdigit.
- *                                  On other travel documents over document number, document number checkdigit, personal number,
- *                                  date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
- *
- *  @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
- *                                  Is also nil on none passport documents.
- *
- *  @param allCheckDigitsValid      will return true if all checkdigits are correct
- *  @param vizAddress               Optional data which contains the data of the address field on a german ID,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone).
- *
- *  @param vizDateOfIssue           Optional data which contains the data of the issuing date field,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone)
- *
- *  @param vizSurname               Optional data which contains the data of the surname field on an ID,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone).
- *
- *  @param vizGivenNames            Optional data which contains the data of the given names field on an ID,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone).
- *
- *  @param vizDateOfBirth           Optional data which contains the data of the date of birth field on an ID,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone).
- *
- *  @param vizDateOfExpiry          Optional data which contains the data of the date of expiry field on an ID,
- *                                  which is outside the MRZ field (VIZ = Visual Inspection Zone).
- *
- *
- *  @param mrzString                Contains all Information found in the MRZ as string.
- *
- *  @param formattedDateOfExpiry    The dateOfExpiry in a given Format (dd.MM.yyyy). The dateOfExpiryObject will be created using this value.
- *  @param formattedDateOfBirth     The dateOfBirth in a given Format (dd.MM.yyyy). The dateOfBirthObject will be created using this value.
- *  @param formattedVizDateOfIssue  The dateOfIssue in a given Format (dd.MM.yyyy). The vizDateOfIssueObject will be created using this value.
- *  @param formattedVizDateOfBirth  The dateOfIssue in a given Format (dd.MM.yyyy). The vizDateOfBirthObject will be created using this value.
- *  @param formattedVizDateOfExpiry The dateOfIssue in a given Format (dd.MM.yyyy). The vizDateOfExpiryObject will be created using this value.
- *
- *
- *  @return A new ALIdentification object
- */
+/// Initializes a ALIdentification object. This object is used to carry the scanned values.
+/// @param surname All the surNames of the person separated by whitespace.
+/// @param givenNames All the given names of the person separated by whitespace.
+/// @param dateOfBirth The date of birth.
+/// @param dateOfExpiry The expiration date of the passport / document.
+/// @param documentNumber Passport number or document number.
+/// @param documentType The type of the document that was read. (ID/P)
+/// @param issuingCountryCode The issuing country code of the document.
+/// @param nationalityCountryCode The nationality country code of the document.
+/// @param sex The gender of the person
+/// @param personalNumber Personal Number on the document. Is nil on many passports / documents.
+/// @param optionalData Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
+/// @param checkDigitDateOfExpiry Check digit for the expiration date.
+/// @param checkDigitDocumentNumber Check digit for the document number.
+/// @param checkDigitDateOfBirth Check digit for the day of birth.
+/// @param checkDigitFinal On passports checkdigit over passport number, passport number checkdigit, date of birth, date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
+/// personal number checkdigit.
+/// On other travel documents over document number, document number checkdigit, personal number,
+/// date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
+/// @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
+/// Is also nil on none passport documents.
+/// @param allCheckDigitsValid will return true if all checkdigits are correct
+/// @param vizAddress Optional data which contains the data of the address field on a german ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).
+/// @param vizDateOfIssue Optional data which contains the data of the issuing date field, which is outside the MRZ field (VIZ = Visual Inspection Zone)
+/// @param vizSurname Optional data which contains the data of the surname field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).
+/// @param vizGivenNames Optional data which contains the data of the given names field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).
+/// @param vizDateOfBirth Optional data which contains the data of the date of birth field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).
+/// @param vizDateOfExpiry Optional data which contains the data of the date of expiry field on an ID, which is outside the MRZ field (VIZ = Visual Inspection Zone).
+/// @param mrzString Contains all Information found in the MRZ as string.
+/// @param formattedDateOfExpiry The dateOfExpiry in a given Format (dd.MM.yyyy). The dateOfExpiryObject will be created using this value.
+/// @param formattedDateOfBirth The dateOfBirth in a given Format (dd.MM.yyyy). The dateOfBirthObject will be created using this value.
+/// @param formattedVizDateOfIssue The dateOfIssue in a given Format (dd.MM.yyyy). The vizDateOfIssueObject will be created using this value.
+/// @param formattedVizDateOfBirth The dateOfBirth in a given Format (dd.MM.yyyy). The vizDateOfBirthObject will be created using this value.
+/// @param formattedVizDateOfExpiry The dateOExpiry in a given Format (dd.MM.yyyy). The vizDateOfExpiryObject will be created using this value.
 - (instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname
                                givenNames:(NSString * _Nullable)givenNames
                               dateOfBirth:(NSString * _Nullable)dateOfBirth
@@ -167,52 +142,47 @@ NS_ASSUME_NONNULL_BEGIN
                   formattedVizDateOfBirth:(NSString * _Nullable)formattedVizDateOfBirth
                  formattedVizDateOfExpiry:(NSString * _Nullable)formattedVizDateOfExpiry;
 
-
-/*
- *  Deprecated Constructors
- */
-
 /**
- *  Initializes a ALIdentification object. This object is used to carry the scanned values.
  *
- *  @param surname                  All the surNames of the person separated by whitespace.
- *  @param givenNames               All the given names of the person separated by whitespace.
- *  @param dateOfBirth              The date of birth.
- *  @param dateOfExpiry             The expiration date of the passport / document.
- *  @param documentNumber           Passport number or document number.
- *  @param documentType             The type of the document that was read. (ID/P)
- *  @param issuingCountryCode       The issuing country code of the document.
- *  @param nationalityCountryCode   The nationality country code of the document.
- *  @param sex                      The gender of the person
- *  @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
- *  @param optionalData             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
+ *   Initializes a ALIdentification object. This object is used to carry the scanned values.
+ *
+ *   @deprecated since Version 10.1. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:...:formattedVizDateOfIssue:formattedVizDateOfBirth:formattedVizDateOfExpiry: instead
+ *
+ *   @param surname All the surNames of the person separated by whitespace.
+ *   @param givenNames All the given names of the person separated by whitespace.
+ *   @param dateOfBirth              The date of birth.
+ *   @param dateOfExpiry             The expiration date of the passport / document.
+ *   @param documentNumber           Passport number or document number.
+ *   @param documentType             The type of the document that was read. (ID/P)
+ *   @param issuingCountryCode       The issuing country code of the document.
+ *   @param nationalityCountryCode   The nationality country code of the document.
+ *   @param sex                      The gender of the person
+ *   @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
+ *   @param optionalData             Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
  *                                  Might contain additional information.
  *
- *  @param checkDigitDateOfExpiry   Check digit for the expiration date.
- *  @param checkDigitDocumentNumber Check digit for the document number.
- *  @param checkDigitDateOfBirth    Check digit for the day of birth.
- *  @param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,
+ *   @param checkDigitDateOfExpiry   Check digit for the expiration date.
+ *   @param checkDigitDocumentNumber Check digit for the document number.
+ *   @param checkDigitDateOfBirth    Check digit for the day of birth.
+ *   @param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,
  *                                  date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
  *                                  personal number checkdigit.
  *                                  On other travel documents over document number, document number checkdigit, personal number,
  *                                  date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
  *
- *  @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
+ *   @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
  *                                  Is also nil on none passport documents.
- 
- *  @param allCheckDigitsValid      will return true if all checkdigits are correct
- *  @param address                  Optional data which contains the data of the address field on a german ID.
- *  @param dateOfIssue              Optional data which contains the data of the issuing date field,
- *                                  which is outside the MRZ field
+ *   @param allCheckDigitsValid      will return true if all checkdigits are correct
+ *   @param address                  Optional data which contains the data of the address field on a german ID.
+ *   @param dateOfIssue              Optional data which contains the data of the issuing date field, which is outside the MRZ field
  *
- *  @param mrzString                Contains all Information found in the MRZ as string.
+ *   @param mrzString                Contains all Information found in the MRZ as string.
  *
- *  @param formattedDateOfExpiry    The dateOfExpiry in a given Format (dd.MM.yyyy). The dateOfExpiryObject will be created using this value.
- *  @param formattedDateOfBirth     The dateOfBirth in a given Format (dd.MM.yyyy). The dateOfBirthObject will be created using this value.
- *  @param formattedDateOfIssue     The dateOfIssue in a given Format (dd.MM.yyyy). The dateOfIssueObject will be created using this value.
+ *   @param formattedDateOfExpiry    The dateOfExpiry in a given Format (dd.MM.yyyy). The dateOfExpiryObject will be created using this value.
+ *   @param formattedDateOfBirth     The dateOfBirth in a given Format (dd.MM.yyyy). The dateOfBirthObject will be created using this value.
+ *   @param formattedDateOfIssue     The dateOfIssue in a given Format (dd.MM.yyyy). The dateOfIssueObject will be created using this value.
  *
- *
- *  @return A new ALIdentification object
+ *   @return A new ALIdentification object
  */
 - (instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname
                                givenNames:(NSString * _Nullable)givenNames
@@ -243,38 +213,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- *  Initializes a ALIdentification object. This object is used to carry the scanned values.
  *
- *  @param documentType             The type of the document that was read. (ID/P)
- *  @param issuingCountryCode       The issuing country code of the document.
- *  @param nationalityCountryCode   The nationality country code of the document.
- *  @param surNames                 All the surNames of the person separated by whitespace.
- *  @param givenNames               All the given names of the person separated by whitespace.
- *  @param documentNumber           Passport number or document number.
- *  @param checkDigitNumber         Check digit for the document number.
- *  @param dayOfBirth               The day of birth.
- *  @param checkDigitDayOfBirth     Check digit for the day of birth.
- *  @param sex                      The gender of the person
- *  @param expirationDate           The expiration date of the passport / document.
- *  @param checkDigitExpirationDate Check digit for the expiration date.
- *  @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
- *  @param checkDigitPersonalNumber CheckDigit for the personal number. Is nil or 0 when no personal number is used.
- *                                  Is also nil on none passport documents.
- *  @param checkDigitFinal          On passports checkdigit over passport number, passport number checkdigit, date of birth,
+ *   Initializes a ALIdentification object. This object is used to carry the scanned values.
+ *
+ *   @deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead
+ *
+ *   @param documentType             The type of the document that was read. (ID/P)
+ *   @param issuingCountryCode       The issuing country code of the document.
+ *   @param nationalityCountryCode   The nationality country code of the document.
+ *   @param surNames                 All the surNames of the person separated by whitespace.
+ *   @param givenNames               All the given names of the person separated by whitespace.
+ *   @param documentNumber           Passport number or document number.
+ *   @param checkDigitNumber         Check digit for the document number.
+ *   @param dayOfBirth               The day of birth.
+ *   @param checkDigitDayOfBirth     Check digit for the day of birth.
+ *   @param sex                      The gender of the person
+ *   @param expirationDate           The expiration date of the passport / document.
+ *   @param checkDigitExpirationDate Check digit for the expiration date.
+ *   @param personalNumber           Personal Number on the document. Is nil on many passports / documents.
+ *   @param checkDigitPersonalNumber    CheckDigit for the personal number. Is nil or 0 when no personal number is used. Is also nil on none passport documents.
+ *   @param checkDigitFinal    On passports checkdigit over passport number, passport number checkdigit, date of birth,
  *                                  date of birth checkdigit, expiration date, expiration date checkdigit, personal number and
  *                                  personal number checkdigit.
  *                                  On other travel documents over document number, document number checkdigit, personal number,
  *                                  date of birth, date of birth checkdigit, expiration date and expiration date checkdigit.
  *
- *  @param personalNumber2          Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs.
- *                                  Might contain additional information.
- *  @param address                  Optional data which contains the data of the address field on a german ID.
- *  @param issuingDate              Optional data which contains the data of the issuing date field,
- *                                  which is outside the MRZ field
+ *   @param personalNumber2          Optional data at the discretion of the issuing state. Only available in TD1 sized MROTDs. Might contain additional information.
+ *   @param address                  Optional data which contains the data of the address field on a german ID.
+ *   @param issuingDate              Optional data which contains the data of the issuing date field, which is outside the MRZ field
  *
- *  @param MRZString                Contains all Information found in the MRZ as string.
+ *   @param MRZString                Contains all Information found in the MRZ as string.
  *
- *  @return A new ALIdentification object
+ *   @return A new ALIdentification object
  */
 - (instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType
                             issuingCountryCode:(NSString * _Nonnull)issuingCountryCode
