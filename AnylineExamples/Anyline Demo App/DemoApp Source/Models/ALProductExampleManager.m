@@ -53,15 +53,17 @@
 - (void)initExampleData {
     self.title = @"Products";
     
-    ALExample *meterReading = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Reading", nil)
-                                                        image:[UIImage imageNamed:@"meter reading"]
-                                               viewController:[ALMeterCollectionViewController class]
-                                               exampleManager:[ALMeterExampleManager class]];
+    
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
                                                image:[UIImage imageNamed:@"identity_documents"]
                                       viewController:[ALGridCollectionViewController class]
                                       exampleManager:[ALIdentityDocumentsExampleManager class]];
+    
+    ALExample *meterReading = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Reading", nil)
+                                                        image:[UIImage imageNamed:@"meter reading"]
+                                               viewController:[ALMeterCollectionViewController class]
+                                               exampleManager:[ALMeterExampleManager class]];
     
     ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
                                                                 image:[UIImage imageNamed:@"license plate"]
@@ -72,15 +74,15 @@
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
     
-    ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Others", nil)
+    ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Other", nil)
                                                   image:[UIImage imageNamed:@"others"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALOthersExampleManager class]];
     
     self.sectionNames = @[@"Products",];
     self.examples = @{
-                      self.sectionNames[0] : @[meterReading,
-                                               identityDocuments,
+                      self.sectionNames[0] : @[identityDocuments,
+                                               meterReading,
                                                licensePlateScanning,
                                                mro,
                                                others],

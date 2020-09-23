@@ -102,6 +102,8 @@
 @property (nullable, nonatomic, strong, readonly) ALImage *scanImage;
 
 @property (nullable, nonatomic, strong) ALCoreController *coreController;
+/// The name of the product.
+@property (nullable, nonatomic) NSString *productName;
 
 @property (nullable, nonatomic, strong) ALAssetController *assetController;
 

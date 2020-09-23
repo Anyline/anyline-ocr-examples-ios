@@ -15,6 +15,7 @@
 @property (nonatomic, assign) CGFloat maxPercentWidth;
 @property (nonatomic, assign) CGFloat maxPercentHeight;
 @property (nonatomic, assign) ALCutoutAlignment alignment;
+@property (nonatomic, assign) BOOL usesAnimatedRect;
 
 @property (nonatomic, assign) CGPoint offset;
 @property (nullable, nonatomic, copy) UIBezierPath *path;

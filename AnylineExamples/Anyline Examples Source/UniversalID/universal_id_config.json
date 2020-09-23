@@ -1,9 +1,9 @@
 {
   "viewPlugin": {
-    "cancelOnResult": true, 
-    "delayStartScanTime": 5, 
+    "cancelOnResult": true,
+    "delayStartScanTime": 5,
     "cutout": {
-        "style": "rect",
+        "style": "animated_rect",
         "maxWidthPercent": "90%",
         "maxHeightPercent": "90%",
         "alignment": "center",
@@ -20,7 +20,7 @@
           "x": 0,
           "y": 0
         },
-        "strokeWidth": 2,
+        "strokeWidth": 3,
         "cornerRadius": 4,
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
@@ -29,48 +29,53 @@
     },
     "scanFeedback": {
       "beepOnResult": true,
-      "style": "contour_point", 
-      "strokeWidth": 2, 
-      "visualFeedbackRedrawTimeout": 100, 
-      "blinkAnimationOnResult": true, 
-      "fillColor": "220099FF", 
-      "strokeColor": "0099FF", 
+      "style": "contour_rect",
+      "strokeWidth": 2,
+      "visualFeedbackRedrawTimeout": 100,
+      "blinkAnimationOnResult": true,
+      "fillColor": "220099FF",
+      "strokeColor": "0099FF",
       "vibrateOnResult": true
-    }, 
+    },
     "plugin": {
-      "id": "ID_PLUGIN", 
-      "idPlugin": {
-        "templateConfig": {
-            "drivingLicense": {
-              "surname": {"scanOption": 0, "minConfidence": 40},
-              "givenNames": {"scanOption": 0, "minConfidence": 40},
-              "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
-              "placeOfBirth": {"scanOption": 0, "minConfidence": 50},
-              "dateOfIssue": {"scanOption": 0, "minConfidence": 50},
-              "dateOfExpiry": {"scanOption": 1, "minConfidence": 50},
-              "authority": {"scanOption": 1, "minConfidence": 30},
-              "documentNumber": {"scanOption": 0, "minConfidence": 40},
-              "categories": {"scanOption": 1, "minConfidence": 30},
-              "address": {"scanOption": 1}
-            },
-            "idFront": {
-              "surname": {"scanOption": 0, "minConfidence": 60},
-              "givenNames": {"scanOption": 0, "minConfidence": 60},
-              "dateOfBirth": {"scanOption": 0, "minConfidence": 60},
-              "placeOfBirth": {"scanOption": 0, "minConfidence": 60},
-              "dateOfExpiry": {"scanOption": 0, "minConfidence": 60},
-              "cardAccessNumber": {"scanOption": 0, "minConfidence": 60},
-              "documentNumber": {"scanOption": 0, "minConfidence": 60},
-              "nationality": {"scanOption": 0, "minConfidence": 60}
-            }
+    "id": "ID_PLUGIN",
+    "idPlugin": {
+          "universalIdConfig": {
+              "allowedLayouts": {
+                "mrz": [],
+                "drivingLicense": [],
+                "idFront": []
+              },
+              "drivingLicense": {
+                  "surname": {"scanOption": 0, "minConfidence": 40},
+                  "givenNames": {"scanOption": 0, "minConfidence": 40},
+                  "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
+                  "placeOfBirth": {"scanOption": 1, "minConfidence": 50},
+                  "dateOfIssue": {"scanOption": 0, "minConfidence": 50},
+                  "dateOfExpiry": {"scanOption": 1, "minConfidence": 50},
+                  "authority": {"scanOption": 1, "minConfidence": 30},
+                  "documentNumber": {"scanOption": 0, "minConfidence": 40},
+                  "categories": {"scanOption": 1, "minConfidence": 30},
+                  "address": {"scanOption": 1}
+              },
+              "idFront": {
+                  "surname": {"scanOption": 0, "minConfidence": 60},
+                  "givenNames": {"scanOption": 0, "minConfidence": 60},
+                  "dateOfBirth": {"scanOption": 0, "minConfidence": 60},
+                  "placeOfBirth": {"scanOption": 1, "minConfidence": 60},
+                  "dateOfExpiry": {"scanOption": 1, "minConfidence": 60},
+                  "cardAccessNumber": {"scanOption": 1, "minConfidence": 60},
+                  "documentNumber": {"scanOption": 0, "minConfidence": 60},
+                  "nationality": {"scanOption": 1, "minConfidence": 60}
+              }
           }
         }
       }
-  }, 
+  },
   "flash": {
-    "mode": "manual", 
+    "mode": "manual",
     "alignment": "bottom_right"
-  }, 
+  },
   "camera": {
     "captureResolution": "1080p"
   }

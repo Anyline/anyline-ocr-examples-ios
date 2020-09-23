@@ -12,17 +12,21 @@
 #import "ALResultEntry.h"
 #import "UIColor+ALExamplesAdditions.h"
 
+NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
+
 @interface ALResultViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *resultTitle;
 @property (strong, nonatomic) IBOutlet UILabel *imageTitle;
+@property (strong, nonatomic) IBOutlet UILabel *alternativeImageText;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
 
 //optional:
 @property (strong, nonatomic) IBOutlet UILabel *optionalTitleLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *optionalImageView;
+@property (strong, nonatomic) IBOutlet UILabel *alternativeOptionalImageText;
 
 @property (nonatomic) NSInteger cellHeight;
 @property (nonatomic) NSInteger tableHeight;
@@ -68,8 +72,17 @@
     self.navigationItem.leftItemsSupplementBackButton = YES;
     self.navigationItem.title = @"Scan Result";
    
+    CGFloat bottomPadding = 10;
+    CGFloat leftPadding = 0;
+    CGFloat rightPadding = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        bottomPadding = window.safeAreaInsets.bottom;
+        leftPadding = window.safeAreaInsets.left;
+        rightPadding = window.safeAreaInsets.right;
+    }
     //Setup Confirm Button
-    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-60, self.view.bounds.size.width, 60)];
+    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-50-bottomPadding, self.view.bounds.size.width, 50+bottomPadding)];
     [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.confirmButton setTitle:@"CONFIRM" forState:UIControlStateNormal];
     [self.confirmButton.titleLabel setFont:[UIFont AL_proximaRegularWithSize:18]];
@@ -126,26 +139,45 @@
     
     //Setup Image View
     CGFloat imageViewWidth = self.view.frame.size.width-4*padding;
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(padding*2, self.imageTitle.frame.origin.y + self.imageTitle.frame.size.height, imageViewWidth, imageViewWidth)];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageView.clipsToBounds = true;
-    self.imageView.image = _image;
-    //Resize imageView to fit image size
-    CGSize imageSize = [self onScreenPointSizeOfImageInImageView:self.imageView];
-    CGRect imageViewRect = self.imageView.frame;
-    //_image should not be nil, but if it is, we don't want to crash by setting the size to NaN
-    if (isnan(imageSize.height) || isnan(imageSize.width)) {
-        imageSize = CGSizeZero;
-    }
-    imageViewRect.size = imageSize;
-    self.imageView.frame = imageViewRect;
-    //Add view to scrollView
-    [self.contentScrollView addSubview:self.imageView];
+    CGRect imageViewRect;
     
-    if (_optionalTitle && _optionalImage) {
+    if (self.image) {
+        imageViewRect = CGRectMake(padding*2, self.imageTitle.frame.origin.y + self.imageTitle.frame.size.height, imageViewWidth, imageViewWidth);
+        self.imageView = [[UIImageView alloc] initWithFrame:imageViewRect];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView.clipsToBounds = true;
+        self.imageView.image = _image;
+
+        //Resize imageView to fit image size
+        CGSize imageSize = [self onScreenPointSizeOfImageInImageView:self.imageView];
+        CGRect imageViewRect = self.imageView.frame;
+        //_image should not be nil, but if it is, we don't want to crash by setting the size to NaN
+        if (isnan(imageSize.height) || isnan(imageSize.width)) {
+            imageSize = CGSizeZero;
+        }
+        imageViewRect.size = imageSize;
+        self.imageView.frame = imageViewRect;
+        //Add view to scrollView
+        [self.contentScrollView addSubview:self.imageView];
+    } else {
+        //Setup alternative text label for Image
+        imageViewRect = CGRectMake(padding*2,
+                                   self.imageTitle.frame.origin.y + self.imageTitle.frame.size.height,
+                                   imageViewWidth,
+                                   50);
+        self.alternativeImageText = [[UILabel alloc] initWithFrame:imageViewRect];
+        self.alternativeImageText.text = kResultViewControlerFieldNotAvailable;
+        self.alternativeImageText.textAlignment = NSTextAlignmentLeft;
+        self.alternativeImageText.font = [UIFont AL_proximaRegularWithSize:16];
+        //Add view to scrollView
+        [self.contentScrollView addSubview:self.alternativeImageText];
+    }
+    
+    
+    if (_optionalTitle) {
         //Setup Title Label for Image
         self.optionalTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding,
-                                                                    self.imageView.frame.origin.y + self.imageView.frame.size.height + padding,
+                                                                    imageViewRect.origin.y + imageViewRect.size.height + padding,
                                                                     self.view.frame.size.width - padding*2,
                                                                     [self headerSize])];
 
@@ -155,19 +187,32 @@
         //Add view to scrollView
         [self.contentScrollView addSubview:self.optionalTitleLabel];
     
-        //Setup Image View
-        self.optionalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(padding*2,
-                                                                               self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
-                                                                               self.view.frame.size.width/2, self.view.frame.size.width/2)];
-        self.optionalImageView.contentMode = UIViewContentModeScaleAspectFit;
-        self.optionalImageView.image = _optionalImage;
-        //Resize imageView to fit image size
-        CGSize optionalImageSize = [self onScreenPointSizeOfImageInImageView:self.optionalImageView];
-        CGRect optionalImageViewRect = self.optionalImageView.frame;
-        optionalImageViewRect.size = optionalImageSize;
-        self.optionalImageView.frame = optionalImageViewRect;
-        //Add view to scrollView
-        [self.contentScrollView addSubview:self.optionalImageView];
+        if (_optionalImage) {
+            //Setup Image View
+            self.optionalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(padding*2,
+                                                                                    self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
+                                                                                   self.view.frame.size.width/2, self.view.frame.size.width/2)];
+            self.optionalImageView.contentMode = UIViewContentModeScaleAspectFit;
+            self.optionalImageView.image = _optionalImage;
+            //Resize imageView to fit image size
+            CGSize optionalImageSize = [self onScreenPointSizeOfImageInImageView:self.optionalImageView];
+            CGRect optionalImageViewRect = self.optionalImageView.frame;
+            optionalImageViewRect.size = optionalImageSize;
+            self.optionalImageView.frame = optionalImageViewRect;
+            //Add view to scrollView
+            [self.contentScrollView addSubview:self.optionalImageView];
+        } else {
+            //Setup alternative text label for Image
+            self.alternativeOptionalImageText = [[UILabel alloc] initWithFrame:CGRectMake(padding*2,
+                                                                                          self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
+                                                                                          imageViewWidth,
+                                                                                          50)];
+            self.alternativeOptionalImageText.text = kResultViewControlerFieldNotAvailable;
+            self.alternativeOptionalImageText.textAlignment = NSTextAlignmentLeft;
+            self.alternativeOptionalImageText.font = [UIFont AL_proximaRegularWithSize:16];
+            //Add view to scrollView
+            [self.contentScrollView addSubview:self.alternativeOptionalImageText];
+        }
         
 //        [self.tableView layoutSubviews];
         self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -210,28 +255,51 @@
                                        self.imageTitle.frame.size.width,
                                        self.imageTitle.frame.size.height);
     
-    self.imageView.frame = CGRectMake(self.imageView.frame.origin.x,
-                                      self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
-                                      self.imageView.frame.size.width,
-                                      self.imageView.frame.size.height);
+    CGRect imageViewRect;
+    
+    if (self.imageView) {
+        imageViewRect = CGRectMake(self.imageView.frame.origin.x,
+                                   self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
+                                   self.imageView.frame.size.width,
+                                   self.imageView.frame.size.height);
+        self.imageView.frame = imageViewRect;
+    } else if (self.alternativeImageText) {
+        imageViewRect = CGRectMake(self.alternativeImageText.frame.origin.x,
+                                   self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
+                                   self.alternativeImageText.frame.size.width,
+                                   self.alternativeImageText.frame.size.height);
+        self.alternativeImageText.frame = imageViewRect;
+    }
     
     CGFloat contentSizeHeight = self.imageView.frame.origin.y + self.imageView.frame.size.height;
     
-    if (_optionalTitle && _optionalImage) {
+    if (_optionalTitle) {
         self.optionalTitleLabel.frame = CGRectMake(self.optionalTitleLabel.frame.origin.x,
-                                                   self.imageView.frame.origin.y+self.imageView.frame.size.height,
+                                                   imageViewRect.origin.y+imageViewRect.size.height,
                                                    self.optionalTitleLabel.frame.size.width,
                                                    self.optionalTitleLabel.frame.size.height);
         
-        self.optionalImageView.frame = CGRectMake(self.optionalImageView.frame.origin.x,
-                                                  self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
-                                                  self.optionalImageView.frame.size.width,
-                                                  self.optionalImageView.frame.size.height);
-        
-        self.optionalImageView.center = CGPointMake(self.contentScrollView.center.x, self.optionalImageView.center.y);
+        CGRect optionalImageViewRect;
+        if (_optionalImage) {
+            self.optionalImageView.frame = CGRectMake(self.optionalImageView.frame.origin.x,
+                                                      self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
+                                                      self.optionalImageView.frame.size.width,
+                                                      self.optionalImageView.frame.size.height);
+            
+            self.optionalImageView.center = CGPointMake(self.contentScrollView.center.x, self.optionalImageView.center.y);
+            optionalImageViewRect = self.optionalImageView.frame;
+        } else {
+            self.alternativeOptionalImageText.frame = CGRectMake(self.alternativeOptionalImageText.frame.origin.x,
+                                                                 self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
+                                                                 self.alternativeOptionalImageText.frame.size.width,
+                                                                 self.alternativeOptionalImageText.frame.size.height);
+            
+            self.alternativeOptionalImageText.center = CGPointMake(self.contentScrollView.center.x, self.alternativeOptionalImageText.center.y);
+            optionalImageViewRect = self.alternativeOptionalImageText.frame;
+        }
         
         //Update content size with optional imageView
-        contentSizeHeight = self.optionalImageView.frame.origin.y + self.optionalImageView.frame.size.height;
+        contentSizeHeight = optionalImageViewRect.origin.y + (optionalImageViewRect.size.height *2);
     }
     
     self.contentScrollView.contentSize = CGSizeMake(self.view.frame.size.width, contentSizeHeight);

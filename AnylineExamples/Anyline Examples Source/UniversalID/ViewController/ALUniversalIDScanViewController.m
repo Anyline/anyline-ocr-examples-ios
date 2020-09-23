@@ -98,7 +98,7 @@ NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
               didFindResult:(ALIDResult *)scanResult {
     [self.scanViewPlugin stopAndReturnError:nil];
     
-    ALTemplateIdentification *identification = (ALTemplateIdentification *)scanResult.result;
+    ALUniversalIDIdentification *identification = (ALUniversalIDIdentification *)scanResult.result;
     
     NSMutableArray<ALResultEntry *> *resultData = [[NSMutableArray alloc] init];
     

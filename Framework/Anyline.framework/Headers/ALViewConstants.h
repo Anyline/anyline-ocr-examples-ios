@@ -9,18 +9,38 @@
 #ifndef Anyline_ALViewConstants_h
 #define Anyline_ALViewConstants_h
 
+/** Where the cutout should appear vertically on the screen
+*/
 typedef NS_ENUM(NSUInteger, ALCutoutAlignment) {
-    ALCutoutAlignmentTop=0,         // Align to the TOP
-    ALCutoutAlignmentTopHalf=1,     // Align in the middle between TOP and MIDDLE
-    ALCutoutAlignmentMiddle=2,      // Align MIDDLE
-    ALCutoutAlignmentBottomHalf=3,  // Align in the middle between MIDDLE and BOTTOM
-    ALCutoutAlignmentBottom=4       // Align BOTTOM
+    /** Align to the TOP
+    */
+    ALCutoutAlignmentTop=0,
+    /** Align in the middle between TOP and MIDDLE
+    */
+    ALCutoutAlignmentTopHalf=1,
+    /** Align MIDDLE
+    */
+    ALCutoutAlignmentMiddle=2,
+    /** Align in the middle between MIDDLE and BOTTOM
+    */
+    ALCutoutAlignmentBottomHalf=3,
+    /** Align BOTTOM
+    */
+    ALCutoutAlignmentBottom=4
 };
 
+/** How the cutout should animate when starting or stopping the plugin
+*/
 typedef NS_ENUM(NSUInteger, ALCutoutAnimation) {
-    ALCutoutAnimationNone=0,        // No Animation
-    ALCutoutAnimationZoom=1,        // Cutout will zoom in/out when starting/stopping a scanViewPlugin
-    ALCutoutAnimationFade=2,        // Cutout will fade in/out when starting/stopping a scanViewPlugin
+    /** No Animation
+    */
+    ALCutoutAnimationNone=0,
+    /** Cutout will zoom in/out when starting/stopping a scanViewPlugin
+    */
+    ALCutoutAnimationZoom=1,
+    /** Cutout will fade in/out when starting/stopping a scanViewPlugin
+    */
+    ALCutoutAnimationFade=2,
 };
 
 
@@ -32,11 +52,22 @@ typedef NS_ENUM(NSUInteger, ALPictureResolution) {
     ALPictureResolution480=4,
 };
 
-
+/**
+ *  Capture resolution for ALCameraConfig. Only ALCaptureViewResolution1080 is supported.
+ */
 typedef NS_ENUM(NSUInteger, ALCaptureViewResolution) {
+    /**
+     *  1080p resolution
+     */
     ALCaptureViewResolution1080=0,
-    ALCaptureViewResolution720=1, // deprecated since 3.22
-    ALCaptureViewResolution480=2, // deprecated since 3.22
+    /**
+     *  @deprecated since Anyline 3.22. Use ALCaptureViewResolution1080 instead
+     */
+    ALCaptureViewResolution720 DEPRECATED_ATTRIBUTE = 1,
+    /**
+     *  @deprecated since Anyline 3.22. Use ALCaptureViewResolution1080 instead
+     */
+    ALCaptureViewResolution480 DEPRECATED_ATTRIBUTE = 2
 };
 
 typedef NS_ENUM(NSUInteger, ALCaptureViewMode) {
@@ -50,12 +81,33 @@ typedef NS_ENUM(NSUInteger, ALFlashMode) {
     ALFlashModeAuto=2
 };
 
+/**
+ *  Alignment of the flash button within the scan view.
+*/
 typedef NS_ENUM(NSUInteger, ALFlashAlignment) {
+    /**
+     *  Top center. Equivalent to TOP in JSON config.
+    */
     ALFlashAlignmentTop=0,
+    /**
+     *  Top left. Equivalent to TOP_LEFT in JSON config.
+    */
     ALFlashAlignmentTopLeft=1,
+    /**
+     *  Top right. Equivalent to TOP_RIGHT in JSON config.
+    */
     ALFlashAlignmentTopRight=2,
+    /**
+     *  Bottom center. Equivalent to BOTTOM in JSON config.
+    */
     ALFlashAlignmentBottom=3,
+    /**
+     *  Bottom left. Equivalent to BOTTOM_LEFT in JSON config.
+    */
     ALFlashAlignmentBottomLeft=4,
+    /**
+     *  Bottom right. Equivalent to BOTTOM_RIGHT in JSON config.
+    */
     ALFlashAlignmentBottomRight=5
 };
 

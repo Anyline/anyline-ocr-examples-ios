@@ -12,13 +12,37 @@
     "address": {"scanOption": 1}
   },
   "idFront": {
-    "surname": {"scanOption": 0, "minConfidence": 60},
-    "givenNames": {"scanOption": 0, "minConfidence": 60},
-    "dateOfBirth": {"scanOption": 0, "minConfidence": 60},
-    "placeOfBirth": {"scanOption": 1, "minConfidence": 60},
-    "dateOfExpiry": {"scanOption": 1, "minConfidence": 60},
-    "cardAccessNumber": {"scanOption": 1, "minConfidence": 60},
-    "documentNumber": {"scanOption": 0, "minConfidence": 60},
-    "nationality": {"scanOption": 1, "minConfidence": 60}
+    "surname": {
+      "scanOption": 0,
+      "minConfidence": 60
+    },
+    "givenNames": {
+      "scanOption": 0,
+      "minConfidence": 60
+    },
+    "dateOfBirth": {
+      "scanOption": 0,
+      "minConfidence": 60
+    },
+    "placeOfBirth": {
+      "scanOption": 1,
+      "minConfidence": 60
+    },
+    "dateOfExpiry": {
+      "scanOption": 1,
+      "minConfidence": 60
+    },
+    "cardAccessNumber": {
+      "scanOption": 1,
+      "minConfidence": 60
+    },
+    "documentNumber": {
+      "scanOption": 0,
+      "minConfidence": 60
+    },
+    "nationality": {
+      "scanOption": 1,
+      "minConfidence": 60
+    }
   }
 }

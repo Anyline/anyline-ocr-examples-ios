@@ -22,6 +22,7 @@
 #import "ALNLDrivingLicenseScanViewController.h"
 #import "ALBEDrivingLicenseScanViewController.h"
 #import "ALUniversalIDScanViewController.h"
+#import "ALUniversalIDScanViewControllerFrontAndBack.h"
 
 @interface ALIdentityDocumentsExampleManager ()
 
@@ -46,7 +47,11 @@
     
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
                                                        image:[UIImage imageNamed:@"universal_id"]
-                                              viewController:[ALUniversalIDScanViewController class]];
+                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
+    
+    ALExample *universalIDUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US Driving Licenses", nil)
+                                                       image:[UIImage imageNamed:@"driving_license_US"]
+                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
     
     ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
                                                        image:[UIImage imageNamed:@"mrz-version 3"]
@@ -67,18 +72,10 @@
     ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport NFC", nil)
                                                             image:[UIImage imageNamed:@"icon_nfc"]
                                                    viewController:[ALNFCScanViewController class]];
-    
-    ALExample *beDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"BE Driving License", nil)
-                                                                 image:[UIImage imageNamed:@"be_driving_license"]
-                                                        viewController:[ALBEDrivingLicenseScanViewController class]];
-    
-    ALExample *nlDriverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NL Driving License", nil)
-                                                                 image:[UIImage imageNamed:@"nl_driving_license"]
-                                                        viewController:[ALNLDrivingLicenseScanViewController class]];
 
     self.sectionNames = @[@"Identity Documents"];
     self.examples = [@{
-                      self.sectionNames[0] : @[universalID,mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
+                      self.sectionNames[0] : @[universalID,universalIDUS,mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
     } mutableCopy];
     
    //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.

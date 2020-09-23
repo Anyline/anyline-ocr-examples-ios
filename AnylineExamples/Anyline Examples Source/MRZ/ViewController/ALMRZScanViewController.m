@@ -65,6 +65,16 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     self.mrzScanViewPlugin = [[ALIDScanViewPlugin alloc] initWithScanPlugin:self.mrzScanPlugin];
     NSAssert(self.mrzScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    //turn on the new 'usesAnimatedRect' visual feedback, which uses animations around the cutout itself rather than the parts inside it where characters are detected.
+    //mrzScanViewPlugin and cutoutConfig return copies of the configs so they can not be changed in-place
+    ALScanViewPluginConfig *pluginConfig = self.mrzScanViewPlugin.scanViewPluginConfig;
+    ALCutoutConfig * cutoutConfig = pluginConfig.cutoutConfig;
+    cutoutConfig.usesAnimatedRect = YES;
+    cutoutConfig.strokeWidth = 3.0;
+    pluginConfig.cutoutConfig = cutoutConfig;
+    self.mrzScanViewPlugin.scanViewPluginConfig = pluginConfig;
+    
     [self.mrzScanViewPlugin addScanViewPluginDelegate:self];
     
     

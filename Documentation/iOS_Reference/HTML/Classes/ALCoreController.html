@@ -94,11 +94,11 @@
 		
 		<option value="//api/name/initWithLicenseKey:delegate:">- initWithLicenseKey:delegate:</option>
 		
-		<option value="//api/name/loadCmdFile:bundlePath:error:">- loadCmdFile:bundlePath:error:</option>
+		<option value="//api/name/loadCmdFile:bundlePath:product:assetController:error:">- loadCmdFile:bundlePath:product:assetController:error:</option>
 		
-		<option value="//api/name/loadScript:bundlePath:error:">- loadScript:bundlePath:error:</option>
+		<option value="//api/name/loadScript:bundlePath:product:assetController:error:">- loadScript:bundlePath:product:assetController:error:</option>
 		
-		<option value="//api/name/loadScript:scriptName:bundlePath:error:">- loadScript:scriptName:bundlePath:error:</option>
+		<option value="//api/name/loadScript:scriptName:bundlePath:product:assetController:error:">- loadScript:scriptName:bundlePath:product:assetController:error:</option>
 		
 		<option value="//api/name/processALImage:error:">- processALImage:error:</option>
 		
@@ -456,8 +456,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:bundlePath:error:" title="loadScript:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:error:">&ndash;&nbsp;loadScript:bundlePath:error:</a></code>
+	<a name="//api/name/loadScript:bundlePath:product:assetController:error:" title="loadScript:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:bundlePath:product:assetController:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -472,7 +472,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -488,6 +488,16 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>bundlePath</code></th>
 						<td><p>The bundlePath where the additional ressources are located.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
 					</tr>
 				
 					<tr>
@@ -519,8 +529,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadScript:scriptName:bundlePath:error:" title="loadScript:scriptName:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:error:</a></code>
+	<a name="//api/name/loadScript:scriptName:bundlePath:product:assetController:error:" title="loadScript:scriptName:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:product:assetController:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -535,7 +545,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -559,6 +569,16 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
 					</tr>
@@ -587,8 +607,8 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/loadCmdFile:bundlePath:error:" title="loadCmdFile:bundlePath:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:error:">&ndash;&nbsp;loadCmdFile:bundlePath:error:</a></code>
+	<a name="//api/name/loadCmdFile:bundlePath:product:assetController:error:" title="loadCmdFile:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:product:assetController:error:">&ndash;&nbsp;loadCmdFile:bundlePath:product:assetController:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -605,7 +625,7 @@ or an .ale encrypted file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -623,6 +643,16 @@ the bundlePath</p></td>
 						<th scope="row" class="argument-name"><code>bundlePath</code></th>
 						<td><p>The bundlePath where the configuration and the additional
 ressources are located.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
 					</tr>
 				
 					<tr>
@@ -1474,7 +1504,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-08-26</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-09-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

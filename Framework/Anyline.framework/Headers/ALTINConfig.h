@@ -22,6 +22,9 @@ typedef NS_ENUM(NSInteger, ALTINScanMode) {
     ALTINFlexible,
 };
 
+/**
+Possible values for the upsideDownMode of an ALTinConfig
+ */
 typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
     /**
      *  The ALTINUpsideDownModeDisabled mode will ONLY read TINs that are NOT upsideDown

@@ -129,7 +129,7 @@
         [scrollView addSubview:reportingTitleView];
         
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0+labelWidthPadding, offset+reportingTitleView.frame.size.height+5, scrollView.frame.size.width - labelWidthPadding, 30)];
-        descriptionLabel.text = @"The reporting of results in the Community Edition, including the photo of a scanned item, helps us improve our product and the customer experience. Results and images of the MRZ, Barcode, and Document modules are NOT reported in any case.";
+        descriptionLabel.text = @"The reporting of results in the Community Edition, including the photo of a scanned item, helps us improve our product and the customer experience.";
         descriptionLabel.numberOfLines = 0;
         descriptionLabel.font = [UIFont AL_proximaRegularWithSize:14];
         descriptionLabel.textColor = [UIColor whiteColor];

@@ -11,7 +11,11 @@
 #import "ALScanInfo.h"
 
 typedef NS_ENUM(NSInteger, ALDocumentError) {
-    ALDocumentErrorUnkown           = -1,
+    ALDocumentErrorUnknown          = -1,
+    /**
+     *  @deprecated use ALDocumentErrorUnknown instead
+     */
+    ALDocumentErrorUnkown API_DEPRECATED_WITH_REPLACEMENT("ALDocumentErrorUnknown",ios(9.0, 10.0)) = ALDocumentErrorUnknown,
     ALDocumentErrorOutlineNotFound  = -2,
     ALDocumentErrorSkewTooHigh      = -3,
     ALDocumentErrorGlareDetected    = -4,

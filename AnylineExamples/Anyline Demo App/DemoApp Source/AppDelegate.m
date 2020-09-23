@@ -65,5 +65,13 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
 }
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if(self.enableLandscapeRight) {
+        return UIInterfaceOrientationMaskLandscapeRight;
+    } else {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+}
 @end
 

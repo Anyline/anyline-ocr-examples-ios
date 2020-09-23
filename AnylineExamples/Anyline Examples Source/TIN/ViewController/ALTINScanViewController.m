@@ -12,6 +12,10 @@
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
+#import "ALUmbrella.h"
+#import "UIColor+ALExamplesAdditions.h"
+#import "UIFont+ALExamplesAdditions.h"
+
 // This is the license key for the examples project used to set up Anyline below
 NSString * const kTINLicenseKey = kDemoAppLicenseKey;
 @interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
@@ -20,6 +24,10 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
 @property (nonatomic, strong) ALOCRScanViewPlugin *tinScanViewPlugin;
 @property (nonatomic, strong) ALOCRScanPlugin *tinScanPlugin;
 @property (nullable, nonatomic, strong) ALScanView *scanView;
+
+@property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
+@property () BOOL isOrientationFlipped;
+
 
 @end
 
@@ -64,7 +72,76 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
     [self.scanView startCamera];
     [self startListeningForMotion];
     
+    self.scanView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
+       id topGuide = self.topLayoutGuide;
+       [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
+    
     self.controllerType = ALScanHistoryTIN;
+    
+    self.flipOrientationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.flipOrientationButton addTarget:self
+                                   action:@selector(flipOrientationPressed:)
+                         forControlEvents:UIControlEventTouchUpInside];
+    
+    self.flipOrientationButton.frame = CGRectMake(0, 0, 220, 50);
+    UIImage *buttonImage = [UIImage imageNamed:@"baseline_screen_rotation_white_24pt"];
+    [self.flipOrientationButton setImage:buttonImage forState:UIControlStateNormal];
+    self.flipOrientationButton.imageView.tintColor = UIColor.whiteColor;
+    [self.flipOrientationButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 10.0)];
+    self.flipOrientationButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.flipOrientationButton.adjustsImageWhenDisabled = NO;
+    
+    [self.flipOrientationButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 5.0, 0.0, 5.0)];
+    [self.flipOrientationButton setTitle:@"Change Screen Orientation" forState:UIControlStateNormal];
+    self.flipOrientationButton.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
+    
+    
+    [self.view addSubview:self.flipOrientationButton];
+    self.flipOrientationButton.layer.cornerRadius = 3;
+    self.flipOrientationButton.backgroundColor = [UIColor AL_examplesBlueWithAlpha:0.85];
+    self.isOrientationFlipped = false;
+}
+
+- (void)viewDidLayoutSubviews {
+    CGFloat bottomPadding;
+    if (@available(iOS 11, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        bottomPadding = window.safeAreaInsets.bottom;
+    } else {
+        bottomPadding = 0;
+    }
+
+    self.flipOrientationButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height-self.flipOrientationButton.frame.size.height/2-bottomPadding-10);
+}
+
+- (void)flipOrientationPressed:(id)sender {
+    self.isOrientationFlipped = !self.isOrientationFlipped;
+    [self enableLandscapeOrientation:self.isOrientationFlipped];
+}
+
+- (void)enableLandscapeOrientation:(BOOL)isLandscape {
+    [self enableLandscapeRight:isLandscape];
+    
+    NSNumber *value;
+    if (isLandscape) {
+        value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+    } else {
+        value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    }
+    
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    [UIViewController attemptRotationToDeviceOrientation];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+-(void) enableLandscapeRight:(BOOL)enable {
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    appDelegate.enableLandscapeRight = enable;
 }
 
 /*
@@ -72,7 +149,7 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
  */
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [self enableLandscapeOrientation:self.isOrientationFlipped];
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
@@ -83,7 +160,9 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
  */
 - (void)viewWillDisappear:(BOOL)animated {
     [self.tinScanViewPlugin stopAndReturnError:nil];
+    [self enableLandscapeOrientation:NO];
 }
+
 
 /*
  This method is used to tell Anyline to start scanning. It gets called in
@@ -103,6 +182,8 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
                didFindResult:(ALOCRResult *)result {
+    
+    [self enableLandscapeOrientation:NO];
     // We are done. Cancel scanning
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
         //Display the result

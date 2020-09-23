@@ -170,7 +170,7 @@
     self.enableBarcodeView.frame = CGRectMake(100, 100, 250, 50);
     
     self.enableBarcodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    self.enableBarcodeLabel.text = @"Multi-field Detection\nBarcode";
+    self.enableBarcodeLabel.text = @"Barcode Detection";
     UIFont *font = [UIFont systemFontOfSize:14 weight:UIFontWeightThin];
     self.enableBarcodeLabel.font = font;
     self.enableBarcodeLabel.numberOfLines = 0;

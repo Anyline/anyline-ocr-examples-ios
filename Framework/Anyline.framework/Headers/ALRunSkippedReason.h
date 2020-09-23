@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, ALRunFailure) {
     /**
      *  @deprecated use ALRunFailureUnknown instead
      */
-    ALRunFailureUnkown DEPRECATED_ATTRIBUTE = ALRunFailureUnknown, 
+    ALRunFailureUnkown API_DEPRECATED_WITH_REPLACEMENT("ALRunFailureUnknown",ios(9.0, 10.0)) = ALRunFailureUnknown, 
     /**
      *  No text lines found in imag
      */

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ALSquare.h"
 #import "ALPolygon.h"
-#import "ALUIConfiguration.h"
+#import "ALScanViewPluginConfig.h"
 
 @protocol ALCutoutDelegate;
 

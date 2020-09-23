@@ -28,7 +28,7 @@ extern NSString * _Nonnull const kCodeTypeAll;
 
 /**
  *  Theses are the valid code types to supply to setBarcodeFormatOptions:
- *  Use | do allow multiple formats.
+ *  Use | to allow multiple formats.
  *
  */
 typedef NS_OPTIONS(NSInteger, ALBarcodeFormatOptions) {

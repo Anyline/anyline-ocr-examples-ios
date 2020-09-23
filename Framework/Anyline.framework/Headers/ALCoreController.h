@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ALImageProvider.h"
+#import "ALAssetController.h"
 
 @class ALImage;
 
@@ -74,10 +75,14 @@
  *
  *  @param script     The string which represents the configuration.
  *  @param bundlePath The bundlePath where the additional ressources are located.
+ *  @param product The product identifier
+ *  @param assetController The asset controller, if there is one
  *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadScript:(NSString *_Nonnull)script
         bundlePath:(NSString *_Nonnull)bundlePath
+           product:(NSString *_Nonnull)product
+   assetController:(ALAssetController *_Nullable)assetController
              error:(NSError *_Nullable *_Nullable)error;
 
 /**
@@ -86,11 +91,15 @@
  *  @param script     The string which represents the configuration.
  *  @param scriptName The filename of the script.
  *  @param bundlePath The bundlePath where the additional ressources are located.
+ *  @param product The product identifier
+ *  @param assetController The asset controller, if there is one
  *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadScript:(NSString *_Nonnull)script
         scriptName:(NSString *_Nonnull)scriptName
         bundlePath:(NSString *_Nonnull)bundlePath
+           product:(NSString *_Nonnull)product
+   assetController:(ALAssetController *_Nullable)assetController
              error:(NSError *_Nullable *_Nullable)error;
 
 /**
@@ -102,10 +111,14 @@
  *                     the bundlePath
  *  @param bundlePath  The bundlePath where the configuration and the additional 
  *                     ressources are located.
+ *  @param product The product identifier
+ *  @param assetController The asset controller, if there is one  
  *  @param error will be set to nil if setup is finished, or an error object when setup failed.
  */
 - (BOOL)loadCmdFile:(NSString *_Nonnull)cmdFileName
          bundlePath:(NSString *_Nonnull)bundlePath
+            product:(NSString *_Nonnull)product
+    assetController:(ALAssetController *_Nullable)assetController
               error:(NSError *_Nullable *_Nullable)error;
 
 /**
@@ -306,5 +319,7 @@
  *  @param error The parsing error which occured.
  */
 - (void)anylineCoreController:(ALCoreController *_Nonnull)coreController parserError:(NSError *_Nonnull)error;
+
+- (void)reportIncludeFullFrame:(ALImage *_Nonnull)image cropRect:(CGRect)rect;
 
 @end

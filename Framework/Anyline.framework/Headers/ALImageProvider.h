@@ -15,7 +15,7 @@
  *
  *  @param image The next image to analyse.
  */
-typedef void (^ALImageProviderBlock)(ALImage *image, NSError *error);
+typedef void (^ALImageProviderBlock)(ALImage *image, ALImage *fullImage, CGRect cropRect, NSError *error);
 
 /**
  *  Method with which Anyline will request the next Image to analyse.

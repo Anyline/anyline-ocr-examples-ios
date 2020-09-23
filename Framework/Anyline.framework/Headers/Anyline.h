@@ -13,8 +13,6 @@
 #import "ALFlashButton.h"
 
 // UIView Addons
-#import "ALUIConfiguration.h"
-#import "ALUIConfiguration+Paths.h"
 #import "ALViewConstants.h"
 
 // Custom Objects

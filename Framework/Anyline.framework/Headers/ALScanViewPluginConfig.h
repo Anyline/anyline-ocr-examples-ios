@@ -17,6 +17,7 @@
 
 @property (nonatomic, assign) BOOL cancelOnResult;
 @property (nonatomic, assign) int delayStartScanTime;
+- (BOOL)shouldUseNewVisualFeedback;
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
 
