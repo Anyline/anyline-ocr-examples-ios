@@ -158,7 +158,7 @@
     } else {
         self.syncButton.hidden = NO;
         self.syncStatusImageView.image = [UIImage imageNamed:@"warning icon"];
-        self.syncingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d unsynced readings", @"orders synced string"), self.unsyncedCustomers.count];
+        self.syncingLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%lu unsynced readings", @"orders synced string"), (unsigned long)self.unsyncedCustomers.count];
     }
 }
 
