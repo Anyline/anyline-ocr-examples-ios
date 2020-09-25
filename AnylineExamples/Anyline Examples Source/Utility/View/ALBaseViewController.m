@@ -71,7 +71,8 @@
     [self.view addSubview:self.webView];
     
     NSString *url = [NSString stringWithString:inUrl];
-    NSString *urlEscaped = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlEscaped = [url stringByAddingPercentEncodingWithAllowedCharacters:
+                            [NSCharacterSet URLPathAllowedCharacterSet]];
     NSURL *nsUrl  = [NSURL URLWithString:urlEscaped];
     NSURLRequest *request = [NSURLRequest requestWithURL:nsUrl
                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData

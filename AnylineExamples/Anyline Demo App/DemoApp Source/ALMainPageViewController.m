@@ -27,7 +27,7 @@
 }
 
 - (void)setupPages {
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    CGRect frame = [[UIScreen mainScreen] bounds];
     frame = CGRectMake(frame.origin.x, self.header.frame.origin.y + self.header.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height - self.header.frame.size.height);
     /*
      * set up three pages, each with a different background color

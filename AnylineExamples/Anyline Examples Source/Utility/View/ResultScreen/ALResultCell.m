@@ -103,11 +103,13 @@
         if (numberOfRows >= 5) {
             self.valueLabel.font = [UIFont AL_proximaRegularWithSize:12];
         }
-        CGSize size = [self.valueLabel.text sizeWithFont:self.valueLabel.font
-                                       constrainedToSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
-                                           lineBreakMode:NSLineBreakByWordWrapping];
+        CGRect rect = [self.valueLabel.text
+                           boundingRectWithSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                           attributes:@{NSFontAttributeName:self.valueLabel.font}
+                           context:nil];
         CGRect labelFrame = self.valueLabel.frame;
-        labelFrame.size.height = size.height;
+        labelFrame.size.height = rect.size.height;
         self.valueLabel.frame = labelFrame;
     } else {
         self.valueLabel.adjustsFontSizeToFitWidth = YES;
