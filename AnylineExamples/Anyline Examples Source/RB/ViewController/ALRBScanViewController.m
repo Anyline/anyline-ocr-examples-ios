@@ -42,7 +42,7 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     config.charHeight = ALRangeMake(22, 45);
     NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"rbf_jan2015_v2" ofType:@"traineddata"];
     [config setLanguages:@[anylineTraineddata] error:nil];
-    config.charWhiteList = @"2346789ABCDEFGHKLMNPQRTUVWXYZ";
+    config.characterWhitelist = @"2346789ABCDEFGHKLMNPQRTUVWXYZ";
     config.minConfidence = 75;
     config.validationRegex = @"^[0-9A-Z]{4}\n[0-9A-Z]{4}";
     
