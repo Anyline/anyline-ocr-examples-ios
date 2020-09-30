@@ -121,7 +121,8 @@
 - (void)updateWebViewWithMultipleConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs visiblePlugins:(NSSet<NSString *> *_Nonnull)visible;
 
 /**
- Zoom Features
+ * Zoom Features
+ * @param enabled Whether to enable the pinch gesture to zoom in and out
  */
 - (void)enableZoomPinchGesture:(BOOL)enabled;
 

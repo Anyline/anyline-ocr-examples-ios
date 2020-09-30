@@ -14,27 +14,27 @@
  */
 typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
     /**
-     *
+     * Read Austrian driving licenses
      */
     ALDrivingLicenseAT,
     /**
-     *
+     * Read German driving licenses
      */
     ALDrivingLicenseDE,
     /**
-     *
+     * Read UK driving licenses
      */
     ALDrivingLicenseUK,
     /**
-     *
+     * Read Dutch driving licenses
      */
     ALDrivingLicenseNL,
     /**
-     *
+     * Read Belgian driving licenses
      */
     ALDrivingLicenseBE,
     /**
-     *
+     * Automatically detect the type of driving license
      */
     ALDrivingLicenseAuto
 };
@@ -51,8 +51,8 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
 
 @end
 
-/*
- *  Will set the ALIDFieldScanOption for the respective Fields
+/**
+ *  Will set the ALIDFieldScanOption for the respective fields
  *
  *  By default this object will be nil.
  *
@@ -60,7 +60,6 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
  *
  *  Note: The default behavior might be affected if you use this object.
  */
-
 @interface ALDrivingLicenseFieldScanOptions : ALIDFieldScanOptions
 
 @property (nonatomic) ALFieldScanOption surname;

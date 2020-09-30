@@ -31,9 +31,17 @@ typedef NS_ENUM(NSInteger, ALContainerScanMode) {
  *  @see ALContainerScanMode
  */
 @property (nonatomic, assign) ALContainerScanMode scanMode;
+/**
+ *  The regex which any scanned text should match. If this is nil, only the characterWhitelist is used to validate scans. This can be used alone or in combination with characterWhitelist; if both are set, then only codes which match the validationRegex and only contain characters from characterWhitelist will be scanned.
+ */
 @property (nullable, nonatomic, assign) NSString *validationRegex;
+/**
+ *  Characters which are allowed in the scanned text. If this is nil or empty, all digits and uppercase characters will be accepted. This can be used alone or in combination with validationRegex; if both are non-nil, then only codes which match the validationRegex and only contain characters from characterWhitelist will be scanned.
+ */
 @property (nullable, nonatomic, assign) NSString *characterWhitelist;
 
-
+/**
+ *  Initialises a horizontal container config which accepts any pattern of digits and uppercase letters.
+ */
 - (instancetype _Nonnull)init;
 @end

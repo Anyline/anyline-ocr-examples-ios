@@ -25,6 +25,20 @@
 - (instancetype)initWithName:(NSString *)name
                        image:(UIImage *)image
               viewController:(Class)viewController
+                       title:(NSString *)title {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _image = image;
+        _viewController = viewController;
+        _navTitle = title;
+    }
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name
+                       image:(UIImage *)image
+              viewController:(Class)viewController
               exampleManager:(Class)exampleManager {
     self = [super init];
     if (self) {

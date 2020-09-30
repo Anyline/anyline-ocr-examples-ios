@@ -52,11 +52,13 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 
 @implementation ALUniversalIDScanViewControllerFrontAndBack
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Universal ID";
+    self.title = (self.title && self.title.length > 0) ? self.title : @"Universal ID";
 
     CGFloat hintMargin = 7;
     
@@ -272,7 +274,7 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     ALLayoutDefinition *layoutDefinition = identification.layoutDefinition;
     
     if ([anylineIDScanPlugin.pluginID isEqualToString:kScanViewPluginFrontID]) {
-        [self.resultData addObjectsFromArray:[self addIDSubResult:identification titleSuffix:@""]];
+        [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:self.resultHistoryString]];
         [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country] forFieldName:@"layoutDefinition.country" withOffset:0];
         [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type] forFieldName:@"layoutDefinition.type" withOffset:0];
         
@@ -287,7 +289,7 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
         
         //TODO: fix this quick fix...
         NSUInteger resultDataLength = [self.resultData count];
-        [self.resultData addObjectsFromArray:[self addIDSubResult:identification titleSuffix:@" Back"]];
+        [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@" Back" resultHistoryString:self.resultHistoryString]];
         NSUInteger resultDataLength2 = [self.resultData count];
         NSUInteger resultDataDelta = (resultDataLength > 0) ? resultDataLength2 - resultDataLength : 0;
         
@@ -310,10 +312,6 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
         ALResultEntry *barcodeResult = [[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:self.detectedBarcode];
         [self.resultData addObject:barcodeResult];
     }
-
-    
-    
-    
 
     ALResultViewController *vc;
 
@@ -378,81 +376,6 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     [self hideGIFView:true];
     [self.gifImageView stopGIF];
 }
-
-
-- (NSMutableArray<ALResultEntry *> *)addIDSubResult:(ALUniversalIDIdentification*)identification titleSuffix:(NSString *)titleSuffix {
-    
-    
-    NSMutableArray<ALResultEntry *> *resultData = [[NSMutableArray alloc] init];
-    
-    // Put all fieldNames containing "name" first for result screen
-    NSArray *fieldNameArray = [[identification fieldNames] sortedArrayUsingComparator:^NSComparisonResult (id obj1, id obj2) {
-            if ([obj1 isKindOfClass:[NSString class]] && [obj2 isKindOfClass:[NSString class]]) {
-                NSUInteger index1 = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:obj1];
-                NSUInteger index2 = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:obj2];
-                
-                if (index2 == index1) {
-                    return (NSComparisonResult)NSOrderedSame;
-                } else if (index1 == NSNotFound && index2 != NSNotFound) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (index2 == NSNotFound && index1 != NSNotFound) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                } else if (index2 > index1) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                } else if (index1 > index2) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                }
-            }
-         return (NSComparisonResult)NSOrderedSame;
-                
-    }];
-    NSMutableArray *fieldNames = [fieldNameArray mutableCopy];
-    
-    
-    [fieldNames enumerateObjectsUsingBlock:^(NSString *fieldName, NSUInteger idx, BOOL *stop) {
-        NSString *fieldNameTitle = [NSString stringWithFormat:@"%@%@", [self camelCaseToTitleCaseModified:fieldName], titleSuffix];
-        if (![fieldName containsString:@"String"]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]]];
-        }
-        [self.resultHistoryString appendString:[NSString stringWithFormat:@"%@:%@\n", fieldNameTitle, [identification valueForField:fieldName]]];
-    }];
-
-    return resultData;
-}
-
-
-
-- (NSString *)camelCaseToTitleCaseModified:(NSString *)inputString {
-    NSString *strModified = [inputString stringByReplacingOccurrencesOfString:@"([a-z])([A-Z])"
-                                                                        withString:@"$1 $2"
-                                                                            options:NSRegularExpressionSearch
-                                                                              range:NSMakeRange(0, inputString.length)];
-    
-    strModified = strModified.capitalizedString;
-    
-    strModified = [strModified stringByReplacingOccurrencesOfString:@"Of"
-                                                         withString:@"of"
-                                                            options:NSLiteralSearch
-                                                              range:NSMakeRange(0, inputString.length)];
-    
-    return strModified;
-}
-
-- (NSString *)camelCaseToTitleCase:(NSString *)inputString {
-    NSString *str = [inputString copy];
-    NSMutableString *str2 = [NSMutableString string];
-
-    for (NSInteger i=0; i<str.length; i++){
-        NSString *ch = [str substringWithRange:NSMakeRange(i, 1)];
-        if ([ch rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound) {
-            ch = ch.lowercaseString;
-            [str2 appendString:@" "];
-        }
-        [str2 appendString:ch];
-    }
-    return [str2.capitalizedString copy];
-}
-
 
 - (NSUInteger)getOrderedIndexForFieldName:(NSString *)fieldName withOffset:(NSUInteger)offset {
     NSUInteger idx = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:fieldName];

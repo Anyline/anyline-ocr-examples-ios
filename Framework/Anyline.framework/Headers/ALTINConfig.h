@@ -45,10 +45,15 @@ typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
  */
 @interface ALTINConfig : ALBaseOCRConfig
 /**
- *  The container scan mode.
- *  @see ALContainerScanMode
+ *  The TIN scan mode.
+ *  @see ALTINScanMode
  */
 @property (nonatomic, assign) ALTINScanMode scanMode;
+
+/**
+ *  Whether TINs will be read upside down, right-side-up, or both.
+ *  @see ALTINUpsideDownMode
+ */
 @property (nonatomic, assign) ALTINUpsideDownMode upsideDownMode;
 
 - (instancetype)init;

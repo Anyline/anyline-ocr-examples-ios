@@ -10,9 +10,21 @@
 #import "ALViewConstants.h"
 #import "ALFlashButtonConfig.h"
 
+/**
+ * Flash status
+*/
 typedef NS_ENUM(NSInteger, ALFlashStatus) {
+    /**
+     * Flash always on
+    */
     ALFlashStatusOn,
+    /**
+     * Flash always off
+    */
     ALFlashStatusOff,
+    /**
+     * Flash automatically turning on or off depending on the amount of light in the environment
+     */
     ALFlashStatusAuto
 };
 

@@ -46,12 +46,13 @@
     self.title = @"Identity Documents";
     
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
-                                                       image:[UIImage imageNamed:@"universal_id"]
+                                                       image:[UIImage imageNamed:@"universal_id_800x800px"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
     
     ALExample *universalIDUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US Driving Licenses", nil)
-                                                       image:[UIImage imageNamed:@"driving_license_US"]
-                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
+                                                       image:[UIImage imageNamed:@"driving_license_us_800x800px_K3"]
+                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
+                                                       title:@"US Driving Licenses"];
     
     ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
                                                        image:[UIImage imageNamed:@"mrz-version 3"]

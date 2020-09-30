@@ -134,6 +134,7 @@
  *  Initialise an ALImage with an CVimageBufferRef.
  *
  *  @param imageBuffer The CVImageBufferRef to encapsulate.
+ *  @param degrees  How much to rotate the image, in degrees  
  *
  *  @return A new instance of ALImage.
  */
@@ -144,6 +145,8 @@
  *
  *  @param imageBuffer  The CVImageBufferRef to encapsulate.
  *  @param cutout       The cutout
+ *  @param degrees  How much to rotate the image, in degrees
+ *  @param flip  Whether to mirror the image diagonally (flip horizontally and vertically) Pass YES for this when scanning with the front camera in landscape mode.
  *
  *  @return A new instance of ALImage.
  */

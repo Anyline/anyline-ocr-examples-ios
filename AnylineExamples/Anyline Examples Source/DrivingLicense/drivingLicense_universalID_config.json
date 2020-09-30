@@ -1,0 +1,54 @@
+{
+    "allowedLayouts": {
+      "drivingLicense": [
+        "AUT-FO-04001",
+        "AUT-FO-05002",
+        "DEU-FO-02006",
+        "DEU-FO-02007",
+        "GBR-FO-07001",
+        "GBR-FO-09002"
+      ]
+    },
+    "drivingLicense": {
+      "surname": {
+        "scanOption": 0,
+        "minConfidence": 40
+      },
+      "givenNames": {
+        "scanOption": 0,
+        "minConfidence": 40
+      },
+      "dateOfBirth": {
+        "scanOption": 0,
+        "minConfidence": 50
+      },
+      "placeOfBirth": {
+        "scanOption": 1,
+        "minConfidence": 50
+      },
+      "dateOfIssue": {
+        "scanOption": 0,
+        "minConfidence": 50
+      },
+      "dateOfExpiry": {
+        "scanOption": 1,
+        "minConfidence": 50
+      },
+      "authority": {
+        "scanOption": 1,
+        "minConfidence": 30
+      },
+      "documentNumber": {
+        "scanOption": 0,
+        "minConfidence": 40
+      },
+      "categories": {
+        "scanOption": 1,
+        "minConfidence": 30
+      },
+      "address": {
+        "scanOption": 1
+      }
+    }
+  
+}

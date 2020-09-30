@@ -12,6 +12,7 @@
 @interface ALExample : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *navTitle;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic) Class viewController;
 @property (nonatomic) Class exampleManager;
@@ -20,6 +21,11 @@
 - (instancetype)initWithName:(NSString *)name
                        image:(UIImage *)image
               viewController:(Class)viewController;
+
+- (instancetype)initWithName:(NSString *)name
+                       image:(UIImage *)image
+              viewController:(Class)viewController
+                       title:(NSString *)title;
 
 - (instancetype)initWithName:(NSString *)name
                        image:(UIImage *)image

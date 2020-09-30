@@ -104,10 +104,10 @@
             self.valueLabel.font = [UIFont AL_proximaRegularWithSize:12];
         }
         CGRect rect = [self.valueLabel.text
-                           boundingRectWithSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
-                           options:NSStringDrawingUsesLineFragmentOrigin
-                           attributes:@{NSFontAttributeName:self.valueLabel.font}
-                           context:nil];
+                                    boundingRectWithSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
+                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                    attributes:@{NSFontAttributeName:self.valueLabel.font}
+                                    context:nil];
         CGRect labelFrame = self.valueLabel.frame;
         labelFrame.size.height = rect.size.height;
         self.valueLabel.frame = labelFrame;

@@ -9,6 +9,7 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 #import <Anyline/Anyline.h>
+#import "ALUniversalIDFieldnameUtil.h"
 
 
 // This is the license key for the examples project used to set up Anyline below
@@ -32,18 +33,22 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
     
-    ALDrivingLicenseConfig *drivingLicenseConfig = [[ALDrivingLicenseConfig alloc] init];
-    drivingLicenseConfig.scanMode = ALDrivingLicenseAuto;
-    
-    ALDrivingLicenseFieldScanOptions *options = [[ALDrivingLicenseFieldScanOptions alloc] init];    
-    
     NSError *error = nil;
-    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kDrivingLicenseLicenseKey delegate:self idConfig:drivingLicenseConfig error:&error];
+    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kDrivingLicenseLicenseKey delegate:self idConfig:[self IDConfigWithUniversalID:YES] error:&error];
     NSAssert(self.drivingLicenseScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.drivingLicenseScanPlugin addInfoDelegate:self];
     
     self.drivingLicenseScanViewPlugin = [[ALIDScanViewPlugin alloc] initWithScanPlugin:self.drivingLicenseScanPlugin];
     NSAssert(self.drivingLicenseScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    
+    ALScanViewPluginConfig *viewPluginConfig = self.drivingLicenseScanViewPlugin.scanViewPluginConfig;
+    ALCutoutConfig * cutoutConfig = viewPluginConfig.cutoutConfig;
+    cutoutConfig.usesAnimatedRect = YES;
+    cutoutConfig.strokeWidth = 3.0;
+    viewPluginConfig.cutoutConfig = cutoutConfig;
+    self.drivingLicenseScanViewPlugin.scanViewPluginConfig = viewPluginConfig;
+    
+    
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.drivingLicenseScanViewPlugin];
     
@@ -59,6 +64,33 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     [self.scanView startCamera];
     [self startListeningForMotion];
 }
+
+
+/*
+ This method will either return:
+    - An ID config that uses our UniversalID scanMode and only select a few drivingLicense Layouts
+    - Or our default DrivingLicense scanMode
+*/
+
+-(ALIDConfig *)IDConfigWithUniversalID:(BOOL)isUniversalID {
+    if (isUniversalID) {
+        NSError *error = nil;
+           NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"drivingLicense_universalID_config" ofType:@"json"];
+           NSData *jsonFile = [NSData dataWithContentsOfFile:jsonFilePath];
+           NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
+                                                                     options:NSJSONReadingMutableContainers
+                                                                       error:&error];
+           return [[ALUniversalIDConfig alloc] initWithJsonDictionary:configDict];
+    } else {
+        ALDrivingLicenseConfig *drivingLicenseConfig = [[ALDrivingLicenseConfig alloc] init];
+        drivingLicenseConfig.scanMode = ALDrivingLicenseAuto;
+        
+        return drivingLicenseConfig;
+    }
+   
+
+}
+
 
 /*
  This method will be called once the view controller and its subviews have appeared on screen
@@ -99,44 +131,61 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
               didFindResult:(ALIDResult *)scanResult {
     [self.drivingLicenseScanViewPlugin stopAndReturnError:nil];
     
-    ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
-    
-    NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [identification surname]]];
-    [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [identification givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
-    ;
-    [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
-        
+    if ([scanResult.result isKindOfClass:[ALUniversalIDIdentification class]]) {
+        // Handle a UniversalID result
+        ALUniversalIDIdentification *identification = (ALUniversalIDIdentification *)scanResult.result;
+        NSMutableString *resultHistoryString = [NSMutableString string];
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
-       
-        if ([identification placeOfBirth]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
-        }
-        if ([identification dateOfIssue]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Issue" value:[identification dateOfIssue]]];
-        }
-        if ([identification dateOfExpiry]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
-        }
-        if ([identification authority]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[identification authority]]];
-        }
-        if ([identification categories]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories]]];
-        }
-
-        //Display the result
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
         
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
+        [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
+        [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country: %@", identification.layoutDefinition.country]];
+        
+        [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+            
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image  optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+    } else {
+        ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
+
+        NSMutableString * result = [NSMutableString string];
+        [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
+        [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [identification surname]]];
+        [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [identification givenNames]]];
+        [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
+        
+        [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+
+            NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
+
+            if ([identification placeOfBirth]) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
+            }
+            if ([identification dateOfIssue]) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Issue" value:[identification dateOfIssue]]];
+            }
+            if ([identification dateOfExpiry]) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
+            }
+            if ([identification authority]) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[identification authority]]];
+            }
+            if ([identification categories]) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories]]];
+            }
+
+            //Display the result
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

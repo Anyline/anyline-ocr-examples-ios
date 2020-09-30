@@ -16,8 +16,8 @@
 @end
 
 
-/*
- *  Will set the ALIDFieldScanOption for the respective Fields
+/**
+ *  Will set the ALIDFieldScanOption for the respective fields
  *
  *  By default this object will be nil.
  *
@@ -25,7 +25,6 @@
  *
  *  Note: The default behavior might be affected if you use this object.
  */
-
 @interface ALGermanIDFrontFieldScanOptions : ALIDFieldScanOptions
 
 @property (nonatomic) ALFieldScanOption surname;

@@ -121,7 +121,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 }
 
 - (void)showViewController:(ALExample *)example {
-    ALBaseScanViewController *vc = [[example.viewController alloc] init];
+    ALBaseScanViewController *vc = [[example.viewController alloc] initWithTitle:example.navTitle];
     vc.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:vc animated:YES];
 }
