@@ -32,7 +32,7 @@
     } else {
         self.view.backgroundColor = [UIColor whiteColor];
     }
-    self.title = @"History";
+    self.title = @"My Scans";
     
     self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.allowsSelection = NO;
@@ -53,7 +53,7 @@
 
 
 - (void)askToDeleteItems:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"Delete this history?"
+    [[[UIAlertView alloc] initWithTitle:@"Delete all Scans?"
                                 message:@"All entries in this list will be deleted."
                                delegate:self
                       cancelButtonTitle:@"Cancel"
@@ -220,7 +220,7 @@
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"AnylineScanHistory.csv"];
     
     NSURL *url = [NSURL fileURLWithPath:filePath];
-    UIActivityViewController *activityController =  [[UIActivityViewController alloc] initWithActivityItems:@[@"Share your Anyline Scan History via .CSV", url]
+    UIActivityViewController *activityController =  [[UIActivityViewController alloc] initWithActivityItems:@[@"Share your Anyline Scans via .CSV", url]
                                                                                       applicationActivities:nil];
     //if iPhone
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {

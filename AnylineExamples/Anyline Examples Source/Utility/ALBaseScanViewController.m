@@ -30,6 +30,14 @@
 
 @implementation ALBaseScanViewController
 
+- (instancetype)initWithTitle:(NSString *)title {
+    self = [super init];
+       if (self) {
+           self.title = (title && title.length > 0) ? title : @"";
+       }
+       return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

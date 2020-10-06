@@ -39,4 +39,6 @@
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 - (CGRect)scanViewFrame;
 
+- (instancetype)initWithTitle:(NSString *)title;
+
 @end
