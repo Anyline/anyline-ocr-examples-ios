@@ -47,12 +47,17 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"Scan Result", @"title");
     self.navigationItem.leftItemsSupplementBackButton = YES;
-    
     self.resultTitle.textColor = [UIColor blackColor];
     self.resultTitle.adjustsFontSizeToFitWidth = YES;
     
@@ -68,10 +73,6 @@
     
     [self.customerDataContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[customerView]|" options:0 metrics:nil views:@{@"customerView": self.customerDataView}]];// full width
     [self.customerDataContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[customerView]|" options:0 metrics:nil views:@{@"customerView": self.customerDataView}]];// full height
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

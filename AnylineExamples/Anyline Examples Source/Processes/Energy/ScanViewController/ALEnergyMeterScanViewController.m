@@ -243,9 +243,9 @@ NSString * const kMeterScanPluginID = @"METER_READING";
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
     BOOL stopped = [self.serialComposite stopAndReturnError:nil];
     
-    [self evaluateMeterId:scanResult];
+    [self evaluateMeterId:[scanResult.result firstObject]];
     if (self.customer) {
-        self.barcodeResult = scanResult.result;
+        self.barcodeResult = [scanResult.result firstObject].value;
         //if we have a 'Customer Not Found' message showing because we read a bad barcode previously and they haven't dismissed the message yet, dismiss it, since we have now found a customer.
         if ([self.presentedViewController isKindOfClass:UIAlertController.class]) {
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -281,11 +281,11 @@ NSString * const kMeterScanPluginID = @"METER_READING";
 
 #pragma mark - Customer<->reading Utility Methods
 
-- (void)evaluateMeterId:(ALScanResult *)scanResult {
+- (void)evaluateMeterId:(ALBarcode *)barcode {
     if (self.order) {
-        self.customer = [self.order customerWithMeterID:[scanResult.result stringByCleaningWhitespace]];
+        self.customer = [self.order customerWithMeterID:[barcode.value stringByCleaningWhitespace]];
     } else if (self.csr) {
-        self.customer = [self.csr customerWithMeterID:[scanResult.result stringByCleaningWhitespace]];
+        self.customer = [self.csr customerWithMeterID:[barcode.value stringByCleaningWhitespace]];
     }
     
     if (!self.customer) {

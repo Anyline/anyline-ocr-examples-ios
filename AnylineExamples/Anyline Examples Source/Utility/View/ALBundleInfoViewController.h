@@ -12,6 +12,4 @@
 
 @property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
 
-- (UIColor *)rgbaToUIColorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
-
 @end

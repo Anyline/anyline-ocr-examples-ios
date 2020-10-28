@@ -9,6 +9,11 @@
 #import "ALGridCollectionViewCell.h"
 #import "UIFont+ALExamplesAdditions.h"
 
+@interface ALGridCollectionViewCell ()
+@property CAGradientLayer *gradientLayer;
+
+@end
+
 @implementation ALGridCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame {
@@ -33,6 +38,14 @@
     
     self.name.frame = CGRectMake(20, self.contentView.bounds.size.height - 30, self.contentView.bounds.size.width - 40, 20);
     self.backgroundImageView.frame = self.contentView.bounds;
+    if (self.gradientColor) {
+        if (self.gradientLayer == nil) {
+            self.gradientLayer = [[CAGradientLayer alloc] init];
+            [_backgroundImageView.layer addSublayer:self.gradientLayer];
+        }
+        self.gradientLayer.colors = @[(id)self.gradientColor.CGColor,(id)[self.gradientColor colorWithAlphaComponent:0].CGColor];
+        self.gradientLayer.frame = self.contentView.bounds;
+    }
 }
 
 

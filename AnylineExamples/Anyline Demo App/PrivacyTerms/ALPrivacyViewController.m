@@ -132,6 +132,12 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     

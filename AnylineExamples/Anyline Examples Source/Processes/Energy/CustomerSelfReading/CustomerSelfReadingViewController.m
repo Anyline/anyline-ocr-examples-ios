@@ -48,6 +48,8 @@
     
     self.readings = [self.csr customerCreatedReadings];
     [self.readingTableView reloadData];
+    self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 

@@ -10,12 +10,9 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface UIViewController (ALExamplesAdditions)
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+- (void)showAlertWithTitle:(NSString *_Nonnull)title message:(NSString *_Nonnull)message;
+- (void)showAlertWithTitle:(NSString *_Nonnull)title message:(NSString *_Nonnull)message dismissHandler:(nullable void (^)(UIAlertAction * _Nonnull action)) handler;
 
 @end
-
-NS_ASSUME_NONNULL_END

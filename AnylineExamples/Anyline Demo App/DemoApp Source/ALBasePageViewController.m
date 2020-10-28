@@ -21,8 +21,9 @@
 @implementation ALBasePageViewController
 
 - (void)setupHeader {
+    CGFloat navigationBarHeight = self.hideNavigationBar ? 0 : self.navigationController.navigationBar.frame.size.height;
     CGRect pageViewFrame = [[UIScreen mainScreen] bounds];
-    pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + self.navigationController.navigationBar.frame.size.height, pageViewFrame.size.width, pageViewFrame.size.height - self.navigationController.navigationBar.frame.size.height);
+    pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + navigationBarHeight, pageViewFrame.size.width, pageViewFrame.size.height - navigationBarHeight);
     self.view.frame = pageViewFrame;
     
     CGFloat topPadding = 0;
@@ -34,7 +35,7 @@
     }
     
 //    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*0.35);
-    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.35);
+    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.25);
 
     [self.view layoutIfNeeded];
     self.header.translatesAutoresizingMaskIntoConstraints = NO;
@@ -43,32 +44,29 @@
     self.header.backgroundColor = [UIColor whiteColor];
     
     self.anylineWhite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
+    [self.anylineWhite setContentMode:UIViewContentModeScaleAspectFit];
     [self.header addSubview:self.anylineWhite];
-    self.anylineWhite.center = CGPointMake(self.header.center.x, headerFrame.size.height/2 - 10);
+    self.anylineWhite.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.anylineWhite.widthAnchor constraintEqualToAnchor:self.header.widthAnchor multiplier:99.0/375.0].active = YES;
+    [self.anylineWhite.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
+    [self.anylineWhite.centerYAnchor constraintEqualToAnchor:self.header.centerYAnchor constant:-10].active = YES;
     
-    CGRect frame = CGRectMake(0, headerFrame.size.height - 22, headerFrame.size.width, 18);
-    self.tabView = [[UIView alloc] initWithFrame:frame];
-    
+    self.tabView = [[UISegmentedControl alloc] initWithItems:@[]];
+
     [self.header addSubview:self.tabView];
+    self.tabView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.tabView.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
+    [self.tabView.leftAnchor constraintEqualToAnchor:self.header.leftAnchor].active = YES;
+    [self.tabView.rightAnchor constraintEqualToAnchor:self.header.rightAnchor].active = YES;
+    
+    [self.tabView addTarget:self action:@selector(jumpToPage:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.header];
 }
 
 - (void)setupTabbar {
-    //Create Tabbar for each page
-    for (int i = 0; i < [self.pages count]; i++) {
-        CGFloat tabWidth = self.tabView.frame.size.width/[self.pages count];
-        UILabel *tab = [[UILabel alloc] initWithFrame:CGRectMake(tabWidth*i, 0, tabWidth, self.tabView.frame.size.height)];
-        tab.font = [UIFont AL_proximaSemiboldWithSize:18];
-        tab.textAlignment = NSTextAlignmentCenter;
-        tab.text = [self titleOfExampleManagerOnIndex:i];
-        tab.textColor = [UIColor blackColor]; //this is white by default in dark mode, but since we explicitly set the backgroundColor to white instead of the default colour, we need to make sure this is black (we should remove this line if we change this screen to use the default dark colours in dark mode)
-        [tab setUserInteractionEnabled:YES];
-        [tab addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToPage:)]];
-        tab.tag = i;
-        
-        tab.adjustsFontSizeToFitWidth = YES;
-        
-        [self.tabView addSubview:tab];
+    [self.tabView removeAllSegments];
+    for (UIViewController *page in self.pages.reverseObjectEnumerator) {
+        [self.tabView insertSegmentWithTitle:[self titleOfExampleManager:page] atIndex:0 animated:NO];
     }
     [self highlightTabAtIndex:0];
 }
@@ -101,7 +99,7 @@
 }
 #pragma mark - UIViewController methods
 - (BOOL)hidesBottomBarWhenPushed {
-    return YES;
+    return NO;
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -132,9 +130,14 @@
     return _pages[idx - 1];
 }
 
-- (NSString *)titleOfExampleManagerOnIndex:(NSInteger)idx {
-    ALGridCollectionViewController *vc = (ALGridCollectionViewController *)[_pages objectAtIndex:idx];
+- (NSString *)titleOfExampleManager:(UIViewController *)viewController {
+    id<ALExampleManagerController> vc = (id<ALExampleManagerController>)viewController;
     return vc.exampleManager.title;
+}
+
+
+- (NSString *)titleOfExampleManagerOnIndex:(NSInteger)idx {
+    return [self titleOfExampleManager:[_pages objectAtIndex:idx]];
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
@@ -155,20 +158,7 @@
 #pragma mark - Utility Methods
 
 - (void)highlightTabAtIndex:(NSInteger)index {
-    for (int i = 0; i < [self.pages count]; i++) {
-        UILabel *tab = [self.tabView.subviews objectAtIndex:i];
-        if (i == index) {
-            tab.textColor = [UIColor AL_examplesBlue];
-            [tab.layer addSublayer:[self addBorder:UIRectEdgeBottom color:[UIColor AL_examplesBlueWithAlpha:0.9] thickness:2.5f frame:tab.frame padding:10.0f]];
-            
-        } else if ([[tab.layer sublayers] count] > 0){
-            tab.textColor = [UIColor blackColor];
-            //remove all sublayers
-            for (CALayer *subLayer in [tab.layer sublayers]) {
-                [subLayer removeFromSuperlayer];
-            }
-        }
-    }
+    self.tabView.selectedSegmentIndex = index;
 }
 
 - (CALayer *)addBorder:(UIRectEdge)edge color:(UIColor *)color thickness:(CGFloat)thickness frame:(CGRect)frame padding:(CGFloat)padding {
@@ -197,11 +187,10 @@
 
 
 
-- (void)jumpToPage:(UITapGestureRecognizer *) sender {
-    NSInteger tag = ((UILabel *) sender.view).tag;
+- (void)jumpToPage:(UISegmentedControl *)sender {
+    NSInteger tag = sender.selectedSegmentIndex;
     if (tag >= 0 && tag < [_pages count] && tag != self.currIndex) {
         [self gotoPage:tag];
-        [self highlightTabAtIndex:tag];
         self.title = [self titleOfExampleManagerOnIndex:tag];
     }
 }

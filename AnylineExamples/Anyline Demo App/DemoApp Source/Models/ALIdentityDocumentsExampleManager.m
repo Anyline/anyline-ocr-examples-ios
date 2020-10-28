@@ -46,32 +46,32 @@
     self.title = @"Identity Documents";
     
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
-                                                       image:[UIImage imageNamed:@"universal_id_800x800px"]
+                                                       image:[UIImage imageNamed:@"universal_id_350x256px_300dpi"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
     
     ALExample *universalIDUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US Driving Licenses", nil)
-                                                       image:[UIImage imageNamed:@"driving_license_us_800x800px_K3"]
+                                                       image:[UIImage imageNamed:@"us_id_350x256px_300dpi"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
                                                        title:@"US Driving Licenses"];
     
     ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
-                                                       image:[UIImage imageNamed:@"mrz-version 3"]
+                                                       image:[UIImage imageNamed:@"passport_austria_350x265px"]
                                               viewController:[ALMRZScanViewController class]];
     
     ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AT/DE/UK Driving License", nil)
-                                                            image:[UIImage imageNamed:@"driving license"]
+                                                            image:[UIImage imageNamed:@"driving_license_350x265px"]
                                                    viewController:[ALDrivingLicenseScanViewController class]];
     
     ALExample *germanIDScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"German ID Front", nil)
-                                                            image:[UIImage imageNamed:@"german-id-front"]
+                                                            image:[UIImage imageNamed:@"id_germany_350x265px"]
                                                    viewController:[ALGermanIDFrontScanViewController class]];
     
     ALExample *pdf417Scanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PDF417", nil)
-                                                            image:[UIImage imageNamed:@"PDF417"]
+                                                            image:[UIImage imageNamed:@"pdf417_350x265px"]
                                                    viewController:[ALPDF417ScanViewController class]];
     
     ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport NFC", nil)
-                                                            image:[UIImage imageNamed:@"icon_nfc"]
+                                                            image:[UIImage imageNamed:@"passport_350x265px"]
                                                    viewController:[ALNFCScanViewController class]];
 
     self.sectionNames = @[@"Identity Documents"];

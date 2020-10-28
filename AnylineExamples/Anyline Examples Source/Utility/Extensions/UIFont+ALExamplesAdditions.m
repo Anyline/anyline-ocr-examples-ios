@@ -10,6 +10,8 @@
 
 @implementation UIFont (ALExamplesAdditions)
 
+
+//todo: change this to accept a UIFontTextStyle as the parameter instead of an absolute size, and use UIFontMetrics -scaledFontForFont: so we can support Dynamic Type
 + (UIFont *)AL_proximaBoldWithSize:(CGFloat)size {
     NSString *fontName = @"ProximaNova-Bold";
     return ([UIFont isFontAvailable:fontName size:size]) ? [UIFont fontWithName:fontName size:size] : [UIFont systemFontOfSize:size weight:UIFontWeightBold];

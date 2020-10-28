@@ -35,8 +35,8 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor whiteColor];
+    //self.collectionView.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(self.exampleManager.title, nil);
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -62,7 +62,6 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     }
 
     CGRect frame = [[UIScreen mainScreen] bounds];
-    frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height - 44 - bottomPadding);
     collectionView.frame = frame;
 
     if ([self.exampleManager numberOfSections] > 1) {
@@ -102,6 +101,10 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     return [self.exampleManager numberOfSections];
 }
 
+- (UIColor *)gradientColorForIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ALGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
@@ -109,20 +112,28 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     cell.name.text = [[self.exampleManager exampleForIndexPath:indexPath] name];
     cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
     cell.backgroundImageView.image = [[self.exampleManager exampleForIndexPath:indexPath] image];
-    
+    cell.backgroundView.contentMode = UIViewContentModeTop;
+    cell.gradientColor = [self gradientColorForIndexPath:indexPath];
     cell.name.font = [UIFont AL_proximaSemiboldWithSize:16];
     cell.name.textColor = [UIColor whiteColor];
     cell.name.numberOfLines = 0;
     
     cell.layer.masksToBounds = YES;
-    cell.layer.cornerRadius = 10;
+    cell.layer.cornerRadius = 2;
     
     return cell;
 }
 
 - (void)showViewController:(ALExample *)example {
-    ALBaseScanViewController *vc = [[example.viewController alloc] initWithTitle:example.navTitle];
-    vc.managedObjectContext = self.managedObjectContext;
+    UIViewController *vc = nil;
+    if ([example.viewController instancesRespondToSelector:@selector(initWithTitle:)]) {
+       vc = [[example.viewController alloc] initWithTitle:example.navTitle];
+    } else {
+        vc = [[example.viewController alloc] init];
+    }
+    if ([vc respondsToSelector:@selector(setManagedObjectContext:)]) {
+        [vc performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -164,7 +175,8 @@ NSString * const viewControllerIdentifier = @"gridViewController";
             ALGridCollectionViewController *vc = (ALGridCollectionViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"gridViewController"];
             vc.exampleManager = [[example.exampleManager alloc] init];
             vc.managedObjectContext = self.managedObjectContext;
-            vc.showLogo = YES;
+            //as per the redesign we don't want to show the logo on any of these screens
+            //vc.showLogo = YES;
             
             if (vc) {
                 [self.navigationController pushViewController:vc animated:YES];
@@ -191,7 +203,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     float cellWidth = self.view.bounds.size.width / 2.0 - 20;
-    CGSize size = CGSizeMake(cellWidth, cellWidth);
+    CGSize size = CGSizeMake(cellWidth, cellWidth*(128.0/175.0));
     
     return size;
 }

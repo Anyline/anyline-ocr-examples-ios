@@ -110,7 +110,7 @@
 
         case ALScannerTypeQRCode:
         case ALScannerTypeBarcode: {
-            return ALBarcode;
+            return ALMeterBarcode;
         } break;
             
         case ALScannerTypeDigital: {
@@ -148,7 +148,7 @@
             return ALScannerTypeAutoAnalogDigital;
         } break;
             
-        case ALBarcode: {
+        case ALMeterBarcode: {
             return ALScannerTypeBarcode;
         } break;
             
@@ -191,7 +191,7 @@
         case ALDotMatrixMeter: {
             return @"Dot Matrix Meter Meter";
         } break;
-        case ALBarcode: {
+        case ALMeterBarcode: {
             return @"Barcode";
         } break;
             

@@ -36,7 +36,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     
-    self.title = @"Barcode / QR-Code";
+    self.title = @"Barcodes";
     CGRect frame = [self scanViewFrame];
     
     //Add Barcode Scan Plugin (Scan Process)
@@ -102,13 +102,11 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 }
 
 #pragma mark -- AnylineBarcodeModuleDelegate
-/*
- The main delegate method Anyline uses to report its scanned codes
- */
+
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
-    [self anylineDidFindResult:scanResult.result barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:NULL];
+    [self anylineDidFindResult:[scanResult.result firstObject].value barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:NULL];
     
-    self.resultLabel.text = scanResult.result;
+    self.resultLabel.text = [scanResult.result firstObject].value;
 }
 
 @end

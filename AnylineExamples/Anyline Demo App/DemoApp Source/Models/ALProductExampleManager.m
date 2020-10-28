@@ -52,36 +52,38 @@
 
 - (void)initExampleData {
     self.title = @"Products";
-    
-    
+
+ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
+             image:[UIImage imageNamed:@"barcode_bottle_350x265px_coming soon"] //to replace with barcode_bottle_350x265px once we get Barbarian
+    viewController:[ALMultiformatBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
-                                               image:[UIImage imageNamed:@"identity_documents"]
+                                               image:[UIImage imageNamed:@"id_volker_350x265px"]
                                       viewController:[ALGridCollectionViewController class]
                                       exampleManager:[ALIdentityDocumentsExampleManager class]];
     
     ALExample *meterReading = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Reading", nil)
-                                                        image:[UIImage imageNamed:@"meter reading"]
+                                                        image:[UIImage imageNamed:@"meter_analog_350x265px"]
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
     
     ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
-                                                                image:[UIImage imageNamed:@"license plate"]
+                                                                image:[UIImage imageNamed:@"license_plate_02_350x265px"]
                                                        viewController:[ALLicensePlateViewController class]];
     
-    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"MRO", nil)
-                                                  image:[UIImage imageNamed:@"mro"]
+    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Maintenance, Repair & Operations", nil)
+                                                  image:[UIImage imageNamed:@"machine_350x265px"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
     
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Other", nil)
-                                                  image:[UIImage imageNamed:@"others"]
+                                                  image:[UIImage imageNamed:@"others_350x265px"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALOthersExampleManager class]];
     
     self.sectionNames = @[@"Products",];
     self.examples = @{
-                      self.sectionNames[0] : @[identityDocuments,
+                      self.sectionNames[0] : @[barcodeScanning,identityDocuments,
                                                meterReading,
                                                licensePlateScanning,
                                                mro,

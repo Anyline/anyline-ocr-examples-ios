@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "ALExampleManager.h"
 
-@interface ALBaseGridCollectionViewController : UICollectionViewController
+@protocol ALExampleManagerController <NSObject>
+
+@required
+@property (nonatomic, strong) ALExampleManager *exampleManager;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@end
+
+@interface ALBaseGridCollectionViewController : UICollectionViewController <ALExampleManagerController> 
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) ALExampleManager *exampleManager;

@@ -220,6 +220,11 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

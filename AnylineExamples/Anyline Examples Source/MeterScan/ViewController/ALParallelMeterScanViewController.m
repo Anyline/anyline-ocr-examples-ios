@@ -269,7 +269,7 @@
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult * _Nonnull)scanResult {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (scanResult.result) {
-            self.barcodeResult = scanResult.result;
+            self.barcodeResult = scanResult.result.firstObject.value;
         } else {
             //if we get a nil barcode result for some reason, we don't want to just be stuck on the screen with no scanners running.
             self.barcodeResult = @"";
@@ -294,6 +294,7 @@
         [self displayResultsIfPresent];
     });
 }
+
 
 
 @end

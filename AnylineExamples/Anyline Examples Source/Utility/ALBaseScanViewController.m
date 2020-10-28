@@ -8,7 +8,6 @@
 
 #import "ALBaseScanViewController.h"
 
-#import "ALHistoryTableViewController.h"
 #import "ALWarningView.h"
 #import "ScanHistory.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"

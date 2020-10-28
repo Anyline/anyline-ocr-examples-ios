@@ -62,14 +62,13 @@
 
 @required
 /**
- *  Returns the scanned value
+ *  Returns the scanned values
  *
  *  @param anylineBarcodeScanPlugin The plugin
- *  @param scanResult The scanned value
+ *  @param scanResults The scanned values
  *
  */
-- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin
-                   didFindResult:(ALBarcodeResult * _Nonnull)scanResult;
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult * _Nonnull)scanResult;
 
 
 @optional

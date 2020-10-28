@@ -12,5 +12,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
+//the color to add at the top of the tile, which will fade to clear at the bottom
+//set to nil for no gradient
+@property (strong, nonatomic) UIColor *gradientColor;
 
 @end

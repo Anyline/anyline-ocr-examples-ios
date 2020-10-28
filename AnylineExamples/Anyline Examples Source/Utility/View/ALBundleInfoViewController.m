@@ -38,7 +38,7 @@
     
     CGFloat labelWidth = self.view.frame.size.width - padding;
     
-    UIColor *titleLabelBackgroundColor = [self rgbaToUIColorWithRed:23.0f green:31.0f blue:42.0f alpha:1.0f];
+    UIColor *titleLabelBackgroundColor = RGBA(23.0f,31.0f,42.0f,1.0f);
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.backgroundColor = [UIColor blackColor];
@@ -186,45 +186,8 @@
 
 #pragma mark - IBActions
 
-- (IBAction)deleteCoreData:(id)sender {
-    NSManagedObjectContext * context = [self managedObjectContext];
-    NSFetchRequest * fetch = [[NSFetchRequest alloc] init];
-    [fetch setEntity:[NSEntityDescription entityForName:@"ScanHistory" inManagedObjectContext:context]];
-    [fetch setIncludesPropertyValues:NO];
-    
-    NSArray * result = [context executeFetchRequest:fetch error:nil];
-    
-    for (id basket in result) {
-        [context deleteObject:basket];
-    }
-    
-    [context save:nil];
-    
-    [self showAlertWithTitle:@"Items Deleted"
-                                message:@"All saved items were deleted."];
-}
-
-
-
 - (IBAction)contactUsPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://anyline.com/request/contact-demo/"]  options:@{} completionHandler:nil];
-}
-
-- (IBAction)contactUsPressedMail:(id)sender {
-    if (![MFMailComposeViewController canSendMail]) {
-        [self showAlertWithTitle:@"Mail Settings"
-                                    message:@"Please set up an email account in the Settings App"];
-        return;
-    }
-    MFMailComposeViewController* composeVC = [[MFMailComposeViewController alloc] init];
-    composeVC.mailComposeDelegate = self;
-    
-    // Configure the fields of the interface.
-    [composeVC setToRecipients:@[@"hello@anyline.com"]];
-    [composeVC setSubject:@"Anyline Examples App"];
-    
-    // Present the view controller modally.
-    [self presentViewController:composeVC animated:YES completion:nil];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate
@@ -233,16 +196,6 @@
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - Utility Methods
-
-- (UIColor *)rgbaToUIColorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha {
-    alpha = (alpha < 0.0f && alpha > 1.0f) ? 1.0 : alpha;
-    return [UIColor colorWithRed:red/255.0f
-                           green:green/255.0f
-                            blue:blue/255.0f
-                           alpha:alpha];
 }
 
 @end

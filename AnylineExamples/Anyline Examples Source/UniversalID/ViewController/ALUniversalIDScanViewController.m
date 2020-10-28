@@ -9,6 +9,7 @@
 #import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
+#import "ALUniversalIDFieldnameUtil.h"
 
 // This is the license key for the examples project used to set up Anyline below
 NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
@@ -97,18 +98,21 @@ NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
 - (void)anylineIDScanPlugin:(ALIDScanPlugin *)anylineIDScanPlugin
               didFindResult:(ALIDResult *)scanResult {
     [self.scanViewPlugin stopAndReturnError:nil];
-    
+
+    // Handle a UniversalID result
     ALUniversalIDIdentification *identification = (ALUniversalIDIdentification *)scanResult.result;
+    NSMutableString *resultHistoryString = [NSMutableString string];
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     
-    NSMutableArray<ALResultEntry *> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
+    [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country: %@", identification.layoutDefinition.country]];
     
-    [[identification fieldNames] enumerateObjectsUsingBlock:^(NSString *fieldName, NSUInteger idx, BOOL *stop) {
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldName value:[identification valueForField:fieldName]]];
-    }];
-        //Display the result
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
+    [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.scanViewPlugin completion:^{
         
-    [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image  optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{

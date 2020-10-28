@@ -71,20 +71,34 @@ typedef NS_OPTIONS(NSInteger, ALBarcodeFormatOptions) {
 
 typedef ALBarcodeFormatOptions ALBarcodeFormat;
 
+@class ALBarcode;
+
 /**
  *  The result object for the AnylineBarcodePlugin
  */
-@interface ALBarcodeResult : ALScanResult<NSString *>
+@interface ALBarcodeResult : ALScanResult<NSArray <ALBarcode *>*>
 /**
  * The scanned barcode format
  */
-@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat;
++ (ALBarcodeFormat)barcodeFormatForString:(NSString * _Nonnull)barcodeFormatString;
++ (NSString * _Nonnull)barcodeStringForFormat:(ALBarcodeFormat)barcodeFormat;
 
-- (instancetype _Nullable)initWithResult:(NSString * _Nonnull)result
-                                   image:(UIImage * _Nonnull)image
+- (instancetype _Nullable)initWithResult:(NSArray <ALBarcode * > *_Nonnull)result
+                                   image:(UIImage * _Nullable)image
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
-                                pluginID:(NSString *_Nonnull)pluginID
-                           barcodeFormat:(ALBarcodeFormat)barcodeFormat;
+                                pluginID:(NSString * _Nonnull)pluginID;
+@end
+
+@interface ALBarcode: NSObject
+
+@property (nonatomic, assign, readonly) ALBarcodeFormat barcodeFormat;
+@property (nonatomic, assign, readonly) NSString * _Nonnull value;
+
+- (instancetype _Nonnull )initWithValue:(NSString * _Nonnull)value
+                                 format:(ALBarcodeFormat)barcodeFormat;
+
+- (NSString * _Nonnull)toJSONString;
+
 
 @end

@@ -10,12 +10,16 @@
 @implementation UIViewController (ALExamplesAdditions)
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+    [self showAlertWithTitle:title message:message dismissHandler:nil];
+}
+
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message dismissHandler:(void (^)(UIAlertAction *action))handler {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
+                                                                message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:handler];
     [alertController addAction:dismissAction];
-    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+    [self.navigationController ? self.navigationController : self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
