@@ -64,11 +64,19 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/areLocalAssetsAvailable">- areLocalAssetsAvailable</option>
+		
+		<option value="//api/name/cancelUpdate">- cancelUpdate</option>
+		
 		<option value="//api/name/checkForUpdates">- checkForUpdates</option>
+		
+		<option value="//api/name/deleteLocalAssets">- deleteLocalAssets</option>
 		
 		<option value="//api/name/initWithContext:delegate:">- initWithContext:delegate:</option>
 		
 		<option value="//api/name/isActive">- isActive</option>
+		
+		<option value="//api/name/isAssetUpdateCanceled">- isAssetUpdateCanceled</option>
 		
 		<option value="//api/name/path">- path</option>
 		
@@ -77,6 +85,8 @@
 		<option value="//api/name/resetAssetUpdate">- resetAssetUpdate</option>
 		
 		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
+		
+		<option value="//api/name/trainingID">- trainingID</option>
 		
 		<option value="//api/name/updateAssets">- updateAssets</option>
 		
@@ -336,6 +346,170 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/cancelUpdate" title="cancelUpdate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelUpdate">&ndash;&nbsp;cancelUpdate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancels the asset update</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelUpdate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAssetUpdateCanceled" title="isAssetUpdateCanceled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAssetUpdateCanceled">&ndash;&nbsp;isAssetUpdateCanceled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns true if &lsquo;cancelUpdate&rsquo; was called.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAssetUpdateCanceled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/areLocalAssetsAvailable" title="areLocalAssetsAvailable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/areLocalAssetsAvailable">&ndash;&nbsp;areLocalAssetsAvailable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether any assets have been downloaded. If this returns NO, you should either check for updates and download the updates, or not use an asset context.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)areLocalAssetsAvailable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteLocalAssets" title="deleteLocalAssets"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteLocalAssets">&ndash;&nbsp;deleteLocalAssets</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deletes any assets that have been downloaded. After doing this, you should either check for updates and download the updates, or not use an asset context.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteLocalAssets</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/assetContext" title="assetContext"></a>
 	<h3 class="method-title"><code><a href="#//api/name/assetContext">&nbsp;&nbsp;assetContext</a></code>
 </h3>
@@ -367,6 +541,22 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/trainingID" title="trainingID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trainingID">&ndash;&nbsp;trainingID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)trainingID</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -382,7 +572,7 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-10-28</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

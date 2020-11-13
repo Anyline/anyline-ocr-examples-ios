@@ -6,7 +6,6 @@
 //
 
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
@@ -14,10 +13,6 @@
 
 #import "ALUniversalIDFieldnameUtil.h"
 
-
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kUniversalIDLicenseFrontAndBackKey = kDemoAppLicenseKey;
 
 NSString * const kScanIDFrontLabelText = @"Scan your ID";
 NSString * const kScanIDBackLabelText = @"Turn ID over";
@@ -74,7 +69,6 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     
     // Then Initializing our first scan mode (ScanPlugin + ScanViewPlugin).
     self.scanViewPluginFront = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict
-                                                                                           licenseKey:kUniversalIDLicenseFrontAndBackKey
                                                                                              delegate:self error:&error];
 
     [self.scanViewPluginFront addScanViewPluginDelegate:self];
@@ -91,7 +85,6 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     
     // Now we need our second scan mode
     self.scanViewPluginBack = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict
-                                                                                           licenseKey:kUniversalIDLicenseFrontAndBackKey
                                                                                              delegate:self error:&error];
 
     [self.scanViewPluginBack addScanViewPluginDelegate:self];

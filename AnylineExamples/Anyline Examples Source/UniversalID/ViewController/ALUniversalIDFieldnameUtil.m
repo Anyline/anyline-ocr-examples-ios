@@ -61,7 +61,9 @@
         if (![fieldName containsString:@"String"]) {
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]]];
         }
-        [resultHistoryString appendString:[NSString stringWithFormat:@"%@:%@\n", fieldNameTitle, [identification valueForField:fieldName]]];
+        if ([identification valueForField:fieldName] && [identification valueForField:fieldName].length > 0) {
+            [resultHistoryString appendString:[NSString stringWithFormat:@"%@:%@\n", fieldNameTitle, [identification valueForField:fieldName]]];
+        }
     }];
 
     return resultData;

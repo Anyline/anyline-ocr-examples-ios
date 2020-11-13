@@ -75,7 +75,6 @@
  */
 + (_Nullable instancetype)scanViewForFrame:(CGRect)frame
                                 configPath:(NSString *_Nonnull)configPath
-                                licenseKey:(NSString *_Nonnull)licenseKey
                                   delegate:(id _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error;
 
@@ -92,7 +91,6 @@
  */
 + (_Nullable instancetype)scanViewForFrame:(CGRect)frame
                                 configDict:(NSDictionary *_Nonnull)configDict
-                                licenseKey:(NSString *_Nonnull)licenseKey
                                   delegate:(id _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error;
 

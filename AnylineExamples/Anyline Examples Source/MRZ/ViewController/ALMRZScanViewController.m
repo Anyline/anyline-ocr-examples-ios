@@ -10,11 +10,8 @@
 #import "ALIdentificationView.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
 @interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -58,7 +55,7 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
 
     //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
     //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
-    self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kMRZLicenseKey delegate:self idConfig:mrzConfig error:&error];
+    self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" delegate:self idConfig:mrzConfig error:&error];
     NSAssert(self.mrzScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.mrzScanPlugin addInfoDelegate:self];
     
@@ -148,21 +145,21 @@ NSString * const kMRZLicenseKey = kDemoAppLicenseKey;
     
     [self.mrzScanViewPlugin stopAndReturnError:nil];
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Type: %@\n", [identification documentType]]];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Surname: %@\n", [identification surname]]];
-    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [identification givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Issuing Country Code: %@\n", [identification issuingCountryCode]]];
-    [result appendString:[NSString stringWithFormat:@"Nationality Country Code: %@\n", [identification nationalityCountryCode]]];
-    [result appendString:[NSString stringWithFormat:@"Day Of Birth: %@\n", [identification dateOfBirth]]];
-    [result appendString:[NSString stringWithFormat:@"Date of Expiry: %@\n", [identification dateOfExpiry]]];
-    [result appendString:[NSString stringWithFormat:@"Sex: %@\n", [identification sex]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Number: %@\n", [identification checkDigitDocumentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Expiration Date: %@\n", [identification checkDigitDateOfExpiry]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Day Of Birth: %@\n", [identification checkDigitDateOfBirth]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Final: %@\n", [identification checkDigitFinal]]];
-    [result appendString:[NSString stringWithFormat:@"Personal Number: %@\n", [identification personalNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number: %@\n", [identification checkDigitPersonalNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Document Type:%@\n", [identification documentType]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number:%@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Surname:%@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"Given Names:%@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Issuing Country Code:%@\n", [identification issuingCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Nationality Country Code:%@\n", [identification nationalityCountryCode]]];
+    [result appendString:[NSString stringWithFormat:@"Day Of Birth:%@\n", [identification dateOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Date of Expiry:%@\n", [identification dateOfExpiry]]];
+    [result appendString:[NSString stringWithFormat:@"Sex:%@\n", [identification sex]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Number:%@\n", [identification checkDigitDocumentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Expiration Date:%@\n", [identification checkDigitDateOfExpiry]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Day Of Birth:%@\n", [identification checkDigitDateOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Final:%@\n", [identification checkDigitFinal]]];
+    [result appendString:[NSString stringWithFormat:@"Personal Number:%@\n", [identification personalNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Check Digit Personal Number:%@\n", [identification checkDigitPersonalNumber]]];
 
     
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{

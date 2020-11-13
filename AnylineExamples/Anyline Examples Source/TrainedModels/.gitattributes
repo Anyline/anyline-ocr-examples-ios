@@ -1,8 +1,0 @@
-USNr.any filter=lfs diff=lfs merge=lfs -text
-anyline_capitals.traineddata filter=lfs diff=lfs merge=lfs -text
-bottlecap.traineddata filter=lfs diff=lfs merge=lfs -text
-deu.traineddata filter=lfs diff=lfs merge=lfs -text
-eng_no_dict.traineddata filter=lfs diff=lfs merge=lfs -text
-rbf_jan2015_v2.traineddata filter=lfs diff=lfs merge=lfs -text
-scrabble.traineddata filter=lfs diff=lfs merge=lfs -text
-vin.any filter=lfs diff=lfs merge=lfs -text

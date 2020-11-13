@@ -5,19 +5,19 @@
             "maxWidthPercent": "80%",
             "maxHeightPercent": "80%",
             "alignment": "center",
-            "width": 450,
+            "width": 300,
             "ratioFromSize": {
-                "width": 1,
+                "width": 2,
                 "height": 1
             },
-            "strokeWidth": 3,
-            "cornerRadius": 300,
+            "strokeWidth": 2,
+            "cornerRadius": 5,
             "strokeColor": "FFFFFF",
             "outerColor": "000000",
-            "outerAlpha": 0.3,
+            "outerAlpha": 0.7,
             "cropPadding": {
-                "x": 10,
-                "y": 10
+                "x": 0,
+                "y": 0
             },
             "feedbackStrokeColor": "0099FF"
         },

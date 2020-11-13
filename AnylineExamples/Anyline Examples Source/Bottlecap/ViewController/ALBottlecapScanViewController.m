@@ -10,10 +10,8 @@
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
+
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALBottlecapScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
@@ -32,29 +30,25 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"Bottlecap";
+    self.title = @"Pepsi Code";
 
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALGrid;
-    config.charHeight = ALRangeMake(21, 97);
-    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"bottlecap" ofType:@"traineddata"];
-    [config setLanguages:@[anylineTraineddata] error:nil];
-    config.characterWhitelist = @"123456789ABCDEFGHJKLMNPRSTUVWXYZ";
-    config.minConfidence = 75;
-    config.validationRegex = @"^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}";
+
+    NSString *alePath = [[NSBundle mainBundle] pathForResource:@"pepsi_code_scanner" ofType:@"ale"];
+    [config setCustomCmdFilePath:alePath];
     
-    config.charCountX = 3;
-    config.charCountY = 3;
-    config.charPaddingXFactor = 0.3;
-    config.charPaddingYFactor = 0.5;
-    config.isBrightTextOnDark = YES;
+    NSError *languagesError = nil;
+    NSString *anyPath = [[NSBundle mainBundle] pathForResource:@"PepsiCo" ofType:@"any"];
+    [config setLanguages:@[anyPath,] error:&languagesError];
+    NSAssert(!languagesError, @"SetLanguages Error: %@", languagesError.debugDescription);
+    
     
     NSError *error = nil;
     
     CGRect frame = [self scanViewFrame];
     
     self.bottlecapvinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                                 licenseKey:kBottlecapLicenseKey
                                                                    delegate:self
                                                                   ocrConfig:config
                                                                       error:&error];
@@ -78,7 +72,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     [self.scanView startCamera];
     [self startListeningForMotion];
     
-    self.controllerType = ALScanHistoryVIN;
+    self.controllerType = ALScanHistoryBottleCapPepsi;
 }
 
 /*
@@ -121,7 +115,7 @@ NSString * const kBottlecapLicenseKey = kDemoAppLicenseKey;
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.bottlecapScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Bottlecap code" value:result.result shouldSpellOutValue:YES]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Pepsi Code" value:result.result shouldSpellOutValue:YES]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

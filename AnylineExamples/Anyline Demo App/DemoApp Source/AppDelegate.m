@@ -10,6 +10,8 @@
 #import "ALMainPageViewController.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
+#import "ALAppDemoLicenses.h"
+#import <Anyline/Anyline.h>
 
 #import "CoreDataManager.h"
 
@@ -36,7 +38,12 @@
     
     [self.window setTintColor:[UIColor AL_examplesBlue]];
 
-    return YES; 
+    NSError *error;
+    [AnylineSDK setupWithLicenseKey:kDemoAppLicenseKey error:&error];
+    if (error) {
+        NSLog(@"Error with Anyline license: %@",error.localizedDescription);
+        return NO;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

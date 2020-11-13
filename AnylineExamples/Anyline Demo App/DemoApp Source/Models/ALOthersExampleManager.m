@@ -14,7 +14,6 @@
 #import "ALISBNScanViewController.h"
 #import "ALRecordNumberScanViewController.h"
 #import "ALRBScanViewController.h"
-#import "ALBottlecapScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
 #import "ALUniversalSerialNumberScanViewController.h"
@@ -47,10 +46,6 @@
                                                         image:[UIImage imageNamed:@"iban"]
                                                viewController:[ALIBANScanViewController class]];
     
-    ALExample *bottleCapScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Bottlecap", nil)
-                                                             image:[UIImage imageNamed:@"bottle caps"]
-                                                    viewController:[ALBottlecapScanViewController class]];
-    
     ALExample *rbScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"RedBull Mobile Collect", nil)
                                                       image:[UIImage imageNamed:@"red bull mobile collect"]
                                              viewController:[ALRBScanViewController class]];
@@ -82,7 +77,7 @@
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[cattleTagScanning, ibanScanning, bottleCapScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner],
+                      self.sectionNames[0] : @[cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner],
                       };
 }
 

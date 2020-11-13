@@ -16,8 +16,6 @@ import UIKit
     var meterScanPlugin : ALMeterScanPlugin!;
     var scanView : ALScanView!;
     
-    let kELMeterScanLicenseKey = kDemoAppLicenseKey;
-    
     override func viewDidLoad() {
         super.viewDidLoad();
         
@@ -28,7 +26,7 @@ import UIKit
     
     
         do {
-            self.meterScanPlugin = try ALMeterScanPlugin.init(pluginID:"ENERGY", licenseKey: kELMeterScanLicenseKey, delegate: self);
+            self.meterScanPlugin = try ALMeterScanPlugin.init(pluginID:"ENERGY", delegate: self);
             try self.meterScanPlugin.setScanMode(ALScanMode.analogMeter);
             
             self.meterScanViewPlugin = ALMeterScanViewPlugin.init(scanPlugin: self.meterScanPlugin);

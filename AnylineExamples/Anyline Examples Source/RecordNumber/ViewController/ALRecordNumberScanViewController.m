@@ -10,10 +10,7 @@
 #import <Anyline/Anyline.h>
 #import "ALBaseViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALRecordNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -39,10 +36,7 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.charHeight = ALRangeMake(22, 105);
-    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
-    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
-    [config setLanguages:@[engTraineddata,deuTraineddata] error:nil];
-    config.charWhiteList = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.";
+    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.";
     config.minConfidence = 75;
     config.validationRegex = @"^([A-Z]+\\s*-*\\s*)?[0-9A-Z-\\s\\.]{3,}$";
     config.scanMode = ALLine;
@@ -51,7 +45,6 @@ NSString * const kRecordNumberLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.recordScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                           licenseKey:kRecordNumberLicenseKey
                                                              delegate:self
                                                             ocrConfig:config
                                                                 error:&error];

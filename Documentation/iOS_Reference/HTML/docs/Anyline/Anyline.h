@@ -72,3 +72,5 @@
 #import "ALAssetContext.h"
 #import "ALAssetDelegate.h"
 #import "ALTrainerUtils.h"
+
+#import "AnylineSDK.h"

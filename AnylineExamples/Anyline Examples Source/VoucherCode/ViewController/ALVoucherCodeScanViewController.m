@@ -10,11 +10,8 @@
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALVoucherCodeScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -38,16 +35,13 @@ NSString * const kVoucherCodeLicenseKey = kDemoAppLicenseKey;
     CGRect frame = [self scanViewFrame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"anyline_capitals" ofType:@"traineddata"];
-    [config setLanguages:@[anylineTraineddata] error:nil];
     config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     config.validationRegex = @"[A-Z0-9]{8}$";
-    config.scanMode = ALAuto;
+    config.scanMode = ALLine;
     
     NSError *error = nil;
     
     self.voucherScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                            licenseKey:kVoucherCodeLicenseKey
                                                               delegate:self
                                                              ocrConfig:config
                                                                  error:&error];

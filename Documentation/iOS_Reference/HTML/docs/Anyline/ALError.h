@@ -35,8 +35,6 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   // License Exception
   ALLicenseKeyInvalid = 3001,
   ALLicenseNotValidForFunction = 3002,
-  ALLicenseNotValidForFeature = 3003,
-
   ALWatermarkImageNotFound = 3003,
   ALWatermarkNotOnWindow = 3004,
   ALWatermarkNotCorrectInViewHierarchy = 3005,
@@ -51,7 +49,9 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALWatermarkViewSubviewOnTopViolation = 3014,
   ALWatermarkImageModified = 3015,
   ALWatermarkUnknownError = 3016,
-
+  ALLicenseSetupNotDone = 3017,
+  ALLicenseNotValidForFeature = 3018,
+    
   // Argument Exceptions
   ALArgumentIsNull = 4001,
   ALArgumentIsEmpty = 4002,

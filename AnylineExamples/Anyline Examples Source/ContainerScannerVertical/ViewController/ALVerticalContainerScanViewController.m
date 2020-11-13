@@ -7,12 +7,9 @@
 
 #import "ALVerticalContainerScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kVerticalContainerScannerLicenseKey = kDemoAppLicenseKey;
 @interface ALVerticalContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
 // The Anyline plugin used for OCR
@@ -38,7 +35,6 @@ NSString * const kVerticalContainerScannerLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.containerScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                              licenseKey:kVerticalContainerScannerLicenseKey
                                                                 delegate:self
                                                                ocrConfig:config
                                                                    error:&error];

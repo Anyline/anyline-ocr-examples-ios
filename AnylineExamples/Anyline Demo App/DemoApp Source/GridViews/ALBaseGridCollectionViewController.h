@@ -21,9 +21,11 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) ALExampleManager *exampleManager;
+@property (nonatomic, strong) UIView *header;
 @property (nonatomic) BOOL showLogo;
 
 - (CGSize)headerSize;
 - (void)openExample:(ALExample *)example;
+- (UIViewController *)createViewControllerFrom:(ALExample *)example;
 
 @end

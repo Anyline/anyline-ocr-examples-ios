@@ -76,11 +76,11 @@
 		
 		<option value="//api/name/isBrightTextOnDark">isBrightTextOnDark</option>
 		
-		<option value="//api/name/languages">languages</option>
-		
 		<option value="//api/name/minConfidence">minConfidence</option>
 		
 		<option value="//api/name/minSharpness">minSharpness</option>
+		
+		<option value="//api/name/model">model</option>
 		
 		<option value="//api/name/removeSmallContours">removeSmallContours</option>
 		
@@ -97,8 +97,6 @@
 
 	
 	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/allLanguagesAnyFiles">- allLanguagesAnyFiles</option>
 		
 		<option value="//api/name/hasLanguages">- hasLanguages</option>
 		
@@ -353,8 +351,8 @@ Get in touch with Anyline to receive your custum command file.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/)" title=")"></a>
-	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+	<a name="//api/name/model" title="model"></a>
+	<h3 class="method-title"><code><a href="#//api/name/model">&nbsp;&nbsp;model</a></code>
 </h3>
 
 	<div class="method-info">
@@ -364,53 +362,12 @@ Get in touch with Anyline to receive your custum command file.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Property to set the tesseract tessdata files as Array of Strings. ex. @[@&ldquo;eng&rdquo;,@&ldquo;deu&rdquo;]</p>
+				<p>Property to set the any file as an absolute String paths to the file.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSArray&lt;NSString*&gt; *__deprecated_msg ( &quot;Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.&quot; )</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRConfig.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/languages" title="languages"></a>
-	<h3 class="method-title"><code><a href="#//api/name/languages">&nbsp;&nbsp;languages</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Property to set the any files as Array of String paths to the files.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *languages</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *model</code></div>
 
 		    
 			
@@ -440,6 +397,54 @@ Get in touch with Anyline to receive your custum command file.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/)" title=")"></a>
+	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Property to set the any files as Array of String paths to the files.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy, readonly) NSArray&lt;NSString*&gt; *__deprecated_msg ( &quot;Deprecated since Anyline 26. Use property model instead.&quot; )</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Note this method requires the full path with fileending and not only the file name like the old deprecated method.</p>
+
+<p>Warning Only the first <a href="#//api/name/model">model</a> will be used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALOCRConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setLanguages:" title="setLanguages:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setLanguages:">&ndash;&nbsp;setLanguages:</a></code>
 </h3>
@@ -451,7 +456,7 @@ Get in touch with Anyline to receive your custum command file.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set <a href="#//api/name/languages">languages</a> without loading them yet (useful if the language files are to be downloaded from Anyline Trainer)</p>
+				<p>Set languages without loading them yet (useful if the language files are to be downloaded from Anyline Trainer)</p>
 			</div>
 			
 		    
@@ -508,7 +513,7 @@ Get in touch with Anyline to receive your custum command file.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set <a href="#//api/name/languages">languages</a> and immediately attempt to load them</p>
+				<p>Set languages and immediately attempt to load them.</p>
 			</div>
 			
 		    
@@ -522,6 +527,11 @@ Get in touch with Anyline to receive your custum command file.</p>
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Warning Only the first <a href="#//api/name/model">model</a> will be used.</p>
+			</div>
 			
 
 			
@@ -1092,22 +1102,6 @@ NO to set to dark text on bright background.</p>
 		    
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/allLanguagesAnyFiles" title="allLanguagesAnyFiles"></a>
-	<h3 class="method-title"><code><a href="#//api/name/allLanguagesAnyFiles">&ndash;&nbsp;allLanguagesAnyFiles</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)allLanguagesAnyFiles</code></div>
-
-		    
-		</div>
-	</div>
 </div>
 						</div>
 						
@@ -1123,7 +1117,7 @@ NO to set to dark text on bright background.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-10-28</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

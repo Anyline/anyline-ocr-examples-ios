@@ -41,27 +41,14 @@
 @property (nonatomic, weak) id<ALCoreControllerDelegate> _Nullable delegate;
 
 /**
- *  Initializes a new AnylineController with a license key. In order to 
- *  correctly run Anyline you will have to set the AnylineController delegate 
- *  and load an appropriate configuration.
- *
- *  @param licenseKey       The license key you purchased for Anyline.
- *
- *  @return A new instance of AnylineController.
- */
-- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)licenseKey;
-
-/**
- *  Initializes a new AnylineController with a license key and delegate. In order 
+ *  Initializes a new ALCoreController with a delegate. In order
  *  to correctly run Anyline you will have to load an appropriate configuration.
  *
- *  @param licenseKey       The license key you purchased for Anyline.
  *  @param delegate         The delegate where for the Anyline callbacks.
  *
- *  @return A new instance of AnylineController.
+ *  @return A new instance of ALCoreController.
  */
-- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)licenseKey
-                                    delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
+- (instancetype _Nullable)initWithDelegate:(id<ALCoreControllerDelegate> _Nullable)delegate error:(NSError *_Nullable*_Nullable)error;
 
 /**
  This method initialises the core without loading any scripts
@@ -245,14 +232,12 @@
  *  Expiration Date of a License Key.
  *
  *  @param licenseKey A NSString containing the licenseKey
- *  @param error will contain an exception if the validation of the licenseKey fails
  *
  *  @return license expiration Date as NSString
  */
-+ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nullable)licenseKey error:(NSError *_Nullable *_Nullable)error;
++ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nonnull)licenseKey;
 
 + (NSBundle *_Nonnull)frameworkBundle;
-+ (NSBundle *_Nonnull)originalFrameworkBundle;
 
 /**
  * Reporting ON Switch, off by default
@@ -269,7 +254,7 @@
 @end
 
 /**
- *  The AnylineController Delegate methods must be implemented to get results of the Anyline processing.
+ *  The ALCoreController Delegate methods must be implemented to get results of the Anyline processing.
  *  All delegate callbacks are garanteed to be executed in the Main Thread.
  */
 @protocol ALCoreControllerDelegate <NSObject>

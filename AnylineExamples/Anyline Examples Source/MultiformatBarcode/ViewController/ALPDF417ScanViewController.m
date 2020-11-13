@@ -9,11 +9,8 @@
 #import "ALPDF417ScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kPDF417ScanLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
 @interface ALPDF417ScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate>
 // The Anyline plugin used to scan barcodes
@@ -40,7 +37,7 @@ NSString * const kPDF417ScanLicenseKey = kDemoAppLicenseKey;
     //Add Barcode Scan Plugin (Scan Process)
     NSError *error = nil;
 
-    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" licenseKey:kPDF417ScanLicenseKey delegate:self error:&error];
+    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
 
@@ -62,6 +59,7 @@ NSString * const kPDF417ScanLicenseKey = kDemoAppLicenseKey;
     [self.barcodeScanViewPlugin addScanViewPluginDelegate:self];
     
     
+    self.controllerType = ALScanHistoryBarcodePDF417;
     
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.barcodeScanViewPlugin];

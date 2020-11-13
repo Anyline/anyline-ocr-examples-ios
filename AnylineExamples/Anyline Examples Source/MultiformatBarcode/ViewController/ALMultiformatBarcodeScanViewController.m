@@ -9,10 +9,7 @@
 #import "ALMultiformatBarcodeScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
 @interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate>
 // The Anyline plugin used to scan barcodes
@@ -42,7 +39,7 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     //Add Barcode Scan Plugin (Scan Process)
     NSError *error = nil;
 
-    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" licenseKey:kBarcodeScanLicenseKey delegate:self error:&error];
+    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     //Set Barcode Formats
@@ -75,6 +72,8 @@ NSString * const kBarcodeScanLicenseKey = kDemoAppLicenseKey;
     self.resultLabel.adjustsFontSizeToFitWidth = YES;
     
     [self.view addSubview:self.resultLabel];
+    
+    self.controllerType = ALScanHistoryBarcode;
 
 }
 

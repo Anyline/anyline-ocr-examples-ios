@@ -33,7 +33,6 @@
  @return Boolean indicating the success / failure of the call.
  */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
-                                licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error;
 

@@ -6,14 +6,11 @@
 //
 
 #import "ALDrivingLicenseScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALUniversalIDFieldnameUtil.h"
+#import <MessageUI/MessageUI.h>
 
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
 @interface ALDrivingLicenseScanViewController ()<ALIDPluginDelegate, ALInfoDelegate>
 // The Anyline module used to scan machine readable zones
 @property (nonatomic, strong) ALIDScanViewPlugin *drivingLicenseScanViewPlugin;
@@ -34,7 +31,7 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     CGRect frame = [self scanViewFrame];
     
     NSError *error = nil;
-    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kDrivingLicenseLicenseKey delegate:self idConfig:[self IDConfigWithUniversalID:YES] error:&error];
+    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" delegate:self idConfig:[self IDConfigWithUniversalID:YES] error:&error];
     NSAssert(self.drivingLicenseScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.drivingLicenseScanPlugin addInfoDelegate:self];
     
@@ -117,12 +114,12 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
  with cancelOnResult:). When the user dismisses self.identificationView this
  method will get called again.
  */
+
 - (void)startAnyline {
     [self startPlugin:self.drivingLicenseScanViewPlugin];
 }
 
-
-#pragma mark -- AnylineOCRModuleDelegate
+#pragma mark -- ID delegate
 
 /*
  This is the main delegate method Anyline uses to report its results
@@ -139,7 +136,7 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
         
         [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
-        [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country: %@", identification.layoutDefinition.country]];
+        [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country:%@", identification.layoutDefinition.country]];
         
         [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
             
@@ -150,10 +147,10 @@ NSString * const kDrivingLicenseLicenseKey = kDemoAppLicenseKey;
         ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
 
         NSMutableString * result = [NSMutableString string];
-        [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
-        [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [identification surname]]];
-        [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [identification givenNames]]];
-        [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
+        [result appendString:[NSString stringWithFormat:@"Document Number:%@\n", [identification documentNumber]]];
+        [result appendString:[NSString stringWithFormat:@"Last Name:%@\n", [identification surname]]];
+        [result appendString:[NSString stringWithFormat:@"First Name:%@\n", [identification givenNames]]];
+        [result appendString:[NSString stringWithFormat:@"Date of Birth:%@", [identification dateOfBirth]]];
         
         [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
 

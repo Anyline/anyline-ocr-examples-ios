@@ -12,5 +12,6 @@
 @interface UIView (ALExamplesAdditions)
 
 - (void)removeAllSubviews;
+- (void)addConstraintsToSuperviewWithMargin:(CGFloat)margin;
     
 @end

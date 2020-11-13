@@ -6,13 +6,9 @@
 //
 
 #import "ALGermanIDFrontScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 #import <Anyline/Anyline.h>
 
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kGermanIDFrontLicenseKey = kDemoAppLicenseKey;
 @interface ALGermanIDFrontScanViewController ()<ALIDPluginDelegate, ALInfoDelegate>
 // The Anyline module used to scan machine readable zones
 @property (nonatomic, strong) ALIDScanViewPlugin *germanIDFrontScanViewPlugin;
@@ -37,7 +33,7 @@ NSString * const kGermanIDFrontLicenseKey = kDemoAppLicenseKey;
     ALGermanIDFrontFieldScanOptions *options = [[ALGermanIDFrontFieldScanOptions alloc] init];
     
     NSError *error = nil;
-    self.germanIDFrontScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kGermanIDFrontLicenseKey delegate:self idConfig:germanIDFrontConfig error:&error];
+    self.germanIDFrontScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" delegate:self idConfig:germanIDFrontConfig error:&error];
     NSAssert(self.germanIDFrontScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.germanIDFrontScanPlugin addInfoDelegate:self];
     
@@ -101,10 +97,10 @@ NSString * const kGermanIDFrontLicenseKey = kDemoAppLicenseKey;
     ALGermanIDFrontIdentification *identification = (ALGermanIDFrontIdentification *)scanResult.result;
     
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Surname: %@\n", [identification surname]]];
-    [result appendString:[NSString stringWithFormat:@"Given Names: %@\n", [identification givenNames]]];
-    [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number:%@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Surname:%@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"Given Names:%@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Date of Birth:%@", [identification dateOfBirth]]];
     ;
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.germanIDFrontScanViewPlugin completion:^{
         

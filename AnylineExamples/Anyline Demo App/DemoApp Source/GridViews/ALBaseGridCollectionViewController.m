@@ -49,47 +49,45 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
+    //todo: make this a custom class so we don't have to worry about adding subviews too many times
+    int headerTag = 1337;
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
     CGSize headerSize = [self headerSize];
-    
-    // Make sure collection view isn't overlapped by toolbar at bottom of page
-    CGFloat bottomPadding;
-    if (@available(iOS 11, *)) {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
-        bottomPadding = window.safeAreaInsets.bottom;
-    } else {
-        bottomPadding = 0;
-    }
 
     CGRect frame = [[UIScreen mainScreen] bounds];
     collectionView.frame = frame;
+    if (self.header.superview != reusableView && [reusableView viewWithTag:headerTag] == nil) {
+        if ([self.exampleManager numberOfSections] > 1) {
+            UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
+            header.tag = headerTag;
+            self.header.backgroundColor = [UIColor whiteColor];
 
-    if ([self.exampleManager numberOfSections] > 1) {
-        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
-        header.backgroundColor = [UIColor whiteColor];
-
-        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(20,0, headerSize.width, headerSize.height)];
-        label.text = [self.exampleManager titleForSectionIndex:indexPath.section];
-        label.textColor = [UIColor blackColor];
-        label.textAlignment = NSTextAlignmentLeft;
-        //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
-        label.font = [UIFont AL_proximaSemiboldWithSize:22];
-        label.center = CGPointMake(label.center.x, header.center.y);
-        [header addSubview:label];
+            UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(20,0, headerSize.width, headerSize.height)];
+            label.text = [self.exampleManager titleForSectionIndex:indexPath.section];
+            label.textColor = [UIColor blackColor];
+            label.textAlignment = NSTextAlignmentLeft;
+            //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
+            label.font = [UIFont AL_proximaSemiboldWithSize:22];
+            label.center = CGPointMake(label.center.x, header.center.y);
+            [header addSubview:label];
+            
+            [reusableView addSubview:header];
+            if (indexPath.section == 0) {
+                self.header = header;
+            }
+        } else if (_showLogo) {
         
-        [reusableView addSubview:header];
-    } else if (_showLogo) {
-    
-        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
-        header.backgroundColor = [UIColor whiteColor];
-        
-        UIImageView *anylineWhite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
-        [header addSubview:anylineWhite];
-        anylineWhite.center = header.center;
-        
-        [reusableView addSubview:header];
+            self.header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
+            self.header.tag = headerTag;
+            self.header.backgroundColor = [UIColor whiteColor];
+            
+            UIImageView *anylineWhite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
+            [self.header addSubview:anylineWhite];
+            anylineWhite.center = self.header.center;
+            
+            [reusableView addSubview:self.header];
+        }
     }
-
     return reusableView;
 }
 
@@ -124,16 +122,21 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     return cell;
 }
 
-- (void)showViewController:(ALExample *)example {
+- (UIViewController *)createViewControllerFrom:(ALExample *)example {
     UIViewController *vc = nil;
     if ([example.viewController instancesRespondToSelector:@selector(initWithTitle:)]) {
-       vc = [[example.viewController alloc] initWithTitle:example.navTitle];
+        vc = [[example.viewController alloc] initWithTitle:example.navTitle];
     } else {
         vc = [[example.viewController alloc] init];
     }
     if ([vc respondsToSelector:@selector(setManagedObjectContext:)]) {
         [vc performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
     }
+    return vc;
+}
+
+- (void)showViewController:(ALExample *)example {
+    UIViewController * vc = [self createViewControllerFrom:example];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

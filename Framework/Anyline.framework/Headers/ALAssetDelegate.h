@@ -36,6 +36,7 @@
  */
 - (void)assetUpdateFinished:(BOOL)assetsUpdated;
 
+
 @end
 
 #endif /* ALAssetDelegate_h */

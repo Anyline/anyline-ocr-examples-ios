@@ -7,7 +7,6 @@
 
 #import "ALTINScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
@@ -16,8 +15,6 @@
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kTINLicenseKey = kDemoAppLicenseKey;
 @interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
 // The Anyline plugin used for OCR
@@ -43,7 +40,6 @@ NSString * const kTINLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.tinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                        licenseKey:kTINLicenseKey
                                                           delegate:self
                                                          ocrConfig:config
                                                              error:&error];

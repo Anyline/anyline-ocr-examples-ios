@@ -76,9 +76,9 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:">+ scanViewForFrame:configDict:licenseKey:delegate:error:</option>
+		<option value="//api/name/scanViewForFrame:configDict:delegate:error:">+ scanViewForFrame:configDict:delegate:error:</option>
 		
-		<option value="//api/name/scanViewForFrame:configPath:licenseKey:delegate:error:">+ scanViewForFrame:configPath:licenseKey:delegate:error:</option>
+		<option value="//api/name/scanViewForFrame:configPath:delegate:error:">+ scanViewForFrame:configPath:delegate:error:</option>
 		
 	</optgroup>
 	
@@ -442,8 +442,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/scanViewForFrame:configPath:licenseKey:delegate:error:" title="scanViewForFrame:configPath:licenseKey:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanViewForFrame:configPath:licenseKey:delegate:error:">+&nbsp;scanViewForFrame:configPath:licenseKey:delegate:error:</a></code>
+	<a name="//api/name/scanViewForFrame:configPath:delegate:error:" title="scanViewForFrame:configPath:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewForFrame:configPath:delegate:error:">+&nbsp;scanViewForFrame:configPath:delegate:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -458,7 +458,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configPath:(NSString *_Nonnull)<em>configPath</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configPath:(NSString *_Nonnull)<em>configPath</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -477,11 +477,6 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
 						<td><p>The delegate which will be called when scanning (<a href="../Protocols/ALIDPluginDelegate.html">ALIDPluginDelegate</a>, <a href="../Protocols/ALOCRScanPluginDelegate.html">ALOCRScanPluginDelegate</a>,
                  <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>, <a href="../Protocols/ALBarcodeScanPluginDelegate.html">ALBarcodeScanPluginDelegate</a>, <a href="../Protocols/ALDocumentScanPluginDelegate.html">ALDocumentScanPluginDelegate</a> or <a href="../Protocols/ALLicensePlateScanPluginDelegate.html">ALLicensePlateScanPluginDelegate</a>)</p></td>
@@ -490,6 +485,11 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>The error if something goes wrong during setup</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
 					</tr>
 				
 				</table>
@@ -521,8 +521,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:" title="scanViewForFrame:configDict:licenseKey:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanViewForFrame:configDict:licenseKey:delegate:error:">+&nbsp;scanViewForFrame:configDict:licenseKey:delegate:error:</a></code>
+	<a name="//api/name/scanViewForFrame:configDict:delegate:error:" title="scanViewForFrame:configDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewForFrame:configDict:delegate:error:">+&nbsp;scanViewForFrame:configDict:delegate:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -537,7 +537,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configDict:(NSDictionary *_Nonnull)<em>configDict</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configDict:(NSDictionary *_Nonnull)<em>configDict</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -556,11 +556,6 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
 						<td><p>The delegate which will be called when scanning (<a href="../Protocols/ALIDPluginDelegate.html">ALIDPluginDelegate</a>, <a href="../Protocols/ALOCRScanPluginDelegate.html">ALOCRScanPluginDelegate</a>,
                  <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>, <a href="../Protocols/ALBarcodeScanPluginDelegate.html">ALBarcodeScanPluginDelegate</a>, <a href="../Protocols/ALDocumentScanPluginDelegate.html">ALDocumentScanPluginDelegate</a> or <a href="../Protocols/ALLicensePlateScanPluginDelegate.html">ALLicensePlateScanPluginDelegate</a>)</p></td>
@@ -569,6 +564,11 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>The error if something goes wrong during setup</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
 					</tr>
 				
 				</table>
@@ -854,7 +854,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-10-28</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

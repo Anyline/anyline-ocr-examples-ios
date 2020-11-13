@@ -7,13 +7,10 @@
 
 #import "ALVINScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kVINLicenseKey = kDemoAppLicenseKey;
 @interface ALVINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
 // The Anyline plugin used for OCR
@@ -38,7 +35,6 @@ NSString * const kVINLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.vinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                        licenseKey:kVINLicenseKey
                                                           delegate:self
                                                          ocrConfig:config
                                                              error:&error];

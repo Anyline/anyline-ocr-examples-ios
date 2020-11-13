@@ -41,9 +41,32 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (void)resetAssetUpdate;
 
+
+/**
+* Cancels the asset update
+*/
+- (void)cancelUpdate;
+
+/**
+ Returns true if 'cancelUpdate' was called.
+ */
+- (BOOL)isAssetUpdateCanceled;
+
+/**
+* Whether any assets have been downloaded. If this returns NO, you should either check for updates and download the updates, or not use an asset context.
+*/
+- (BOOL)areLocalAssetsAvailable;
+
+/**
+ Deletes any assets that have been downloaded. After doing this, you should either check for updates and download the updates, or not use an asset context.
+ */
+- (void)deleteLocalAssets;
+
 @property (nonatomic) ALAssetContext *assetContext;
 
 - (NSString * __nullable)reportingValues;
+
+- (NSString * )trainingID;
 
 @end
 

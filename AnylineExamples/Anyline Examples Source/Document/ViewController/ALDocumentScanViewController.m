@@ -3,10 +3,7 @@
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
-#import "ALAppDemoLicenses.h"
 #import "UIColor+ALExamplesAdditions.h"
-
-NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 
 @class AnylineDocumentModuleView;
 
@@ -41,7 +38,7 @@ NSString * const kDocumentScanLicenseKey = kDemoAppLicenseKey;
 
     NSError *error = nil;
     
-    self.documentScanPlugin = [[ALDocumentScanPlugin alloc] initWithPluginID:@"DOCUMENT" licenseKey:kDocumentScanLicenseKey delegate:self error:&error];;
+    self.documentScanPlugin = [[ALDocumentScanPlugin alloc] initWithPluginID:@"DOCUMENT" delegate:self error:&error];
     NSAssert(self.documentScanPlugin, @"Setup Error: %@", error.debugDescription);
     self.documentScanPlugin.justDetectCornersIfPossible = NO;
     [self.documentScanPlugin addInfoDelegate:self];

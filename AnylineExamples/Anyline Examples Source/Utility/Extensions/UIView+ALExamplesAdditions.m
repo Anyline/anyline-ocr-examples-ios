@@ -14,5 +14,14 @@
     NSArray *subviews = [self.subviews copy];
     [subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
+
+- (void)addConstraintsToSuperviewWithMargin:(CGFloat)margin {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.superview.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.leftAnchor constraintEqualToAnchor:self.superview.leftAnchor constant:margin].active = YES;
+    [self.rightAnchor constraintEqualToAnchor:self.superview.rightAnchor constant:-margin].active = YES;
+    [self.topAnchor constraintEqualToAnchor:self.superview.topAnchor constant:margin].active = YES;
+    [self.bottomAnchor constraintEqualToAnchor:self.superview.bottomAnchor constant:-margin].active = YES;
+}
     
 @end

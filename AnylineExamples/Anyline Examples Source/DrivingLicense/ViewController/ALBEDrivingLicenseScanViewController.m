@@ -6,13 +6,9 @@
 //
 
 #import "ALBEDrivingLicenseScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 #import <Anyline/Anyline.h>
 
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kBEDrivingLicenseLicenseKey = kDemoAppLicenseKey;
 @interface ALBEDrivingLicenseScanViewController ()<ALIDPluginDelegate, ALInfoDelegate>
 // The Anyline module used to scan machine readable zones
 @property (nonatomic, strong) ALIDScanViewPlugin *drivingLicenseScanViewPlugin;
@@ -36,7 +32,7 @@ NSString * const kBEDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     drivingLicenseConfig.scanMode = ALDrivingLicenseBE;
     
     NSError *error = nil;
-    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kBEDrivingLicenseLicenseKey delegate:self idConfig:drivingLicenseConfig error:&error];
+    self.drivingLicenseScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" delegate:self idConfig:drivingLicenseConfig error:&error];
     NSAssert(self.drivingLicenseScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.drivingLicenseScanPlugin addInfoDelegate:self];
     
@@ -100,9 +96,9 @@ NSString * const kBEDrivingLicenseLicenseKey = kDemoAppLicenseKey;
     ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
     
     NSMutableString * result = [NSMutableString string];
-    [result appendString:[NSString stringWithFormat:@"Document Number: %@\n", [identification documentNumber]]];
-    [result appendString:[NSString stringWithFormat:@"Last Name: %@\n", [identification surname]]];
-    [result appendString:[NSString stringWithFormat:@"First Name: %@\n", [identification givenNames]]];
+    [result appendString:[NSString stringWithFormat:@"Document Number:%@\n", [identification documentNumber]]];
+    [result appendString:[NSString stringWithFormat:@"Last Name:%@\n", [identification surname]]];
+    [result appendString:[NSString stringWithFormat:@"First Name:%@\n", [identification givenNames]]];
     [result appendString:[NSString stringWithFormat:@"Date of Birth: %@", [identification dateOfBirth]]];
     ;
     [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{

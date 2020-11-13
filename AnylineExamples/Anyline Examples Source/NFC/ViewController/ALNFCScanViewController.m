@@ -6,10 +6,7 @@
 //
 
 #import "ALNFCScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
-
-NSString * const kNFCLicenseKey = kDemoAppLicenseKey;
 
 API_AVAILABLE(ios(13.0))
 @interface ALNFCScanViewController () <ALNFCDetectorDelegate, ALIDPluginDelegate,ALScanViewPluginDelegate,ALInfoDelegate>
@@ -80,9 +77,9 @@ API_AVAILABLE(ios(13.0))
 
     //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
     //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
-    self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" licenseKey:kNFCLicenseKey delegate:self idConfig:mrzConfig error:&error];
+    self.mrzScanPlugin = [[ALIDScanPlugin alloc] initWithPluginID:@"ModuleID" delegate:self idConfig:mrzConfig error:&error];
     if (@available(iOS 13.0, *)) {
-        self.nfcDetector=[[ALNFCDetector alloc] initWithLicenseKey:kNFCLicenseKey delegate:self];
+        self.nfcDetector=[[ALNFCDetector alloc] initWithDelegate:self];
     } else {
         // Fallback on earlier versions
     }
@@ -211,14 +208,14 @@ API_AVAILABLE(ios(13.0))
     dispatch_async(dispatch_get_main_queue(), ^{
         
         NSMutableString *nfcResultString = [NSMutableString string];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Issuing State Code: %@\n", nfcResult.dataGroup1.issuingStateCode]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Document Number: %@\n", nfcResult.dataGroup1.documentNumber]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Expiry: %@\n", [self stringForDate:nfcResult.dataGroup1.dateOfExpiry]]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Gender: %@\n", nfcResult.dataGroup1.gender]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Nationality: %@\n", nfcResult.dataGroup1.nationality]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Last Name: %@\n", nfcResult.dataGroup1.lastName]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"First Name: %@\n", nfcResult.dataGroup1.firstName]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Birth: %@",  [self stringForDate:nfcResult.dataGroup1.dateOfBirth]]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Issuing State Code:%@\n", nfcResult.dataGroup1.issuingStateCode]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Document Number:%@\n", nfcResult.dataGroup1.documentNumber]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Expiry:%@\n", [self stringForDate:nfcResult.dataGroup1.dateOfExpiry]]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Gender:%@\n", nfcResult.dataGroup1.gender]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Nationality:%@\n", nfcResult.dataGroup1.nationality]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Last Name:%@\n", nfcResult.dataGroup1.lastName]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"First Name:%@\n", nfcResult.dataGroup1.firstName]];
+        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Birth:%@",  [self stringForDate:nfcResult.dataGroup1.dateOfBirth]]];
         
         [super anylineDidFindResult:nfcResultString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
             NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
@@ -239,7 +236,7 @@ API_AVAILABLE(ios(13.0))
 }
 
 - (void)nfcFailedWithError:(NSError * _Nonnull)error {
-    NSLog(@"NFC failed with error: %@, mrz: %@",error.localizedDescription,self.passportNumberForNFC);
+    NSLog(@"NFC failed with error:%@, mrz:%@",error.localizedDescription,self.passportNumberForNFC);
     //In most cases we don't really need to do anything special here since the NFC UI already shows that it failed. We shouldn't get ALNFCTagErrorNFCNotSupported either because we check +readingAvailable before even showing NFC, so this is just an example of how else that situation could be handled.
     dispatch_async(dispatch_get_main_queue(), ^{
         if (error.code == ALNFCTagErrorNFCNotSupported) {

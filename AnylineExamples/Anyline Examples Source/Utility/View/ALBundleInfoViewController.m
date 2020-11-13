@@ -187,7 +187,7 @@
 #pragma mark - IBActions
 
 - (IBAction)contactUsPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://anyline.com/request/contact-demo/"]  options:@{} completionHandler:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://anyline.com/request/contact/"]  options:@{} completionHandler:nil];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate

@@ -6,7 +6,6 @@
 //
 
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 #import "ALSerialScanViewController.h"
@@ -33,7 +32,7 @@
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"serialscanconfig" ofType:@"json"];
     NSData *jsonFile = [NSData dataWithContentsOfFile:confPath];
     NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData: jsonFile options: NSJSONReadingMutableContainers error: &error];
-    self.serialScanViewPlugin = [ALSerialScanViewPluginComposite scanViewPluginForConfigDict:configDict licenseKey:kDemoAppLicenseKey delegate:self error:&error];
+    self.serialScanViewPlugin = [ALSerialScanViewPluginComposite scanViewPluginForConfigDict:configDict delegate:self error:&error];
     //this should happen within the SDK, but doesn't yet
     [self.serialScanViewPlugin addDelegate:self];
     NSAssert(self.serialScanViewPlugin, @"Setup Error: %@", error.debugDescription);

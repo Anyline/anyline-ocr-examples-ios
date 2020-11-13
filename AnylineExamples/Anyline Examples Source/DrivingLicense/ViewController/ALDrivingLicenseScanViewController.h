@@ -11,4 +11,5 @@
 
 @interface ALDrivingLicenseScanViewController : ALBaseScanViewController
 
+
 @end

@@ -14,5 +14,6 @@
 
 - (void)showAlertWithTitle:(NSString *_Nonnull)title message:(NSString *_Nonnull)message;
 - (void)showAlertWithTitle:(NSString *_Nonnull)title message:(NSString *_Nonnull)message dismissHandler:(nullable void (^)(UIAlertAction * _Nonnull action)) handler;
+- (void)showAlertWithTitle:(NSString *_Nonnull)title message:(NSString *_Nonnull)message  buttonTitle:(NSString *_Nonnull)buttonTitle dismissHandler:(nullable void (^)(UIAlertAction * _Nonnull action))handler;
 
 @end

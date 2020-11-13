@@ -48,7 +48,6 @@ A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this 
 @property (nullable, nonatomic, copy) NSDictionary<NSString *,ALScanViewPluginConfig *> *scanViewPluginConfigs;
 
 + (_Nullable instancetype)scanViewPluginForConfigDict:(NSDictionary *_Nonnull)configDict
-                                           licenseKey:(NSString *_Nonnull)licenseKey
                                              delegate:(id _Nonnull)delegate
                                                 error:(NSError *_Nullable *_Nullable)error;
 

@@ -36,7 +36,6 @@
  @return Boolean indicating the success / failure of the call.
  */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
-                                licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALIDPluginDelegate> _Nonnull)delegate
                                   idConfig:(ALIDConfig * _Nonnull)config
                                      error:(NSError *_Nullable *_Nullable)error;

@@ -38,7 +38,6 @@
     CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.25);
 
     [self.view layoutIfNeeded];
-    self.header.translatesAutoresizingMaskIntoConstraints = NO;
     
     self.header = [[UIView alloc] initWithFrame:headerFrame];
     self.header.backgroundColor = [UIColor whiteColor];

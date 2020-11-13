@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSString *title;
 
+@property BOOL canUpdate;
+
 - (NSInteger)numberOfSections;
 
 - (NSString *)titleForSectionIndex:(NSInteger)index;

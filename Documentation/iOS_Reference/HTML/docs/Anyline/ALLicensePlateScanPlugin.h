@@ -75,7 +75,6 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
  @return Boolean indicating the success / failure of the call.
  */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
-                                licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error NS_DESIGNATED_INITIALIZER;
 

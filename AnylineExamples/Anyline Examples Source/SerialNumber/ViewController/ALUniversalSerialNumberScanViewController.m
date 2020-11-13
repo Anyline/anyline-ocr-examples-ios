@@ -11,12 +11,8 @@
 #import <Anyline/Anyline.h>
 #import "ALBaseViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
 
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -45,8 +41,7 @@ NSString * const kUniversalSerialNumberScanLicenseKey = kDemoAppLicenseKey;
     
     NSError *error = nil;
     
-    self.serialNumberScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                                 licenseKey:kUniversalSerialNumberScanLicenseKey
+    self.serialNumberScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR" 
                                                                    delegate:self
                                                                   ocrConfig:config
                                                                       error:&error];

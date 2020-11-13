@@ -10,11 +10,8 @@
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kRBLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALRBScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -40,10 +37,8 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALGrid;
     config.charHeight = ALRangeMake(22, 45);
-    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"rbf_jan2015_v2" ofType:@"traineddata"];
-    [config setLanguages:@[anylineTraineddata] error:nil];
-    config.charWhiteList = @"2346789ABCDEFGHKLMNPQRTUVWXYZ";
-    config.minConfidence = 75;
+    config.characterWhitelist = @"2346789ABCDEFGHKLMNPQRTUVWXYZ";
+    config.minConfidence = 55;
     config.validationRegex = @"^[0-9A-Z]{4}\n[0-9A-Z]{4}";
     
     config.charCountX = 4;
@@ -55,7 +50,6 @@ NSString * const kRBLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.rbScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                       licenseKey:kRBLicenseKey
                                                          delegate:self
                                                         ocrConfig:config
                                                             error:&error];

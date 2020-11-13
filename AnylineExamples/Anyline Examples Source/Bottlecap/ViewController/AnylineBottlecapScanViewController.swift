@@ -63,7 +63,7 @@ import UIKit
         // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
         do {
             // Init. ScanPlugin with ID, licenseKey, OCRConfig and delegate
-            self.ocrScanPlugin = try ALOCRScanPlugin.init(pluginID: "OCR", licenseKey: kBottlecapLicenseKey, delegate: self, ocrConfig: config);
+            self.ocrScanPlugin = try ALOCRScanPlugin.init(pluginID: "OCR", delegate: self, ocrConfig: config);
             
             //Set ScanViewPluginConfig and scanPluin for the ALOCRScanViewPlugin
             self.ocrScanViewPlugin = ALOCRScanViewPlugin.init(scanPlugin: self.ocrScanPlugin, scanViewPluginConfig: bottlecapUIConfig);

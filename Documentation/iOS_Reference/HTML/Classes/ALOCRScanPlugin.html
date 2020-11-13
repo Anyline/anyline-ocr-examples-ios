@@ -70,11 +70,9 @@
 		
 		<option value="//api/name/addDelegate:">- addDelegate:</option>
 		
-		<option value="//api/name/copyTrainedData:fileHash:error:">- copyTrainedData:fileHash:error:</option>
-		
 		<option value="//api/name/init">- init</option>
 		
-		<option value="//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:">- initWithPluginID:licenseKey:delegate:ocrConfig:error:</option>
+		<option value="//api/name/initWithPluginID:delegate:ocrConfig:error:">- initWithPluginID:delegate:ocrConfig:error:</option>
 		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
@@ -132,8 +130,8 @@ with the {@link ALOOCRConfig} (settings to adapt the recognition to your use cas
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:" title="initWithPluginID:licenseKey:delegate:ocrConfig:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:licenseKey:delegate:ocrConfig:error:">&ndash;&nbsp;initWithPluginID:licenseKey:delegate:ocrConfig:error:</a></code>
+	<a name="//api/name/initWithPluginID:delegate:ocrConfig:error:" title="initWithPluginID:delegate:ocrConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:ocrConfig:error:">&ndash;&nbsp;initWithPluginID:delegate:ocrConfig:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -148,7 +146,7 @@ with the {@link ALOOCRConfig} (settings to adapt the recognition to your use cas
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> licenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em> ocrConfig:(ALBaseOCRConfig *_Nonnull)<em>ocrConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em> ocrConfig:(ALBaseOCRConfig *_Nonnull)<em>ocrConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -159,11 +157,6 @@ with the {@link ALOOCRConfig} (settings to adapt the recognition to your use cas
 					<tr>
 						<th scope="row" class="argument-name"><code>pluginID</code></th>
 						<td><p>An unique pluginID</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The Anyline license key</p></td>
 					</tr>
 				
 					<tr>
@@ -179,6 +172,11 @@ with the {@link ALOOCRConfig} (settings to adapt the recognition to your use cas
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
 					</tr>
 				
 				</table>
@@ -351,75 +349,6 @@ with the {@link ALOOCRConfig} (settings to adapt the recognition to your use cas
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/copyTrainedData:fileHash:error:" title="copyTrainedData:fileHash:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/copyTrainedData:fileHash:error:">&ndash;&nbsp;copyTrainedData:fileHash:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Use this method to copy a custom trained font data into the Anyline work environment.
-This method is mandatory if you want to use custom fonts.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)copyTrainedData:(NSString *_Nonnull)<em>trainedDataPath</em> fileHash:(NSString *_Nullable)<em>fileHash</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>trainedDataPath</code></th>
-						<td><p>The full path to your trained data file</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>fileHash</code></th>
-						<td><p>The hash of the traineddata file so Anyline knows when it changed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The Error object if something fails</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
 </h3>
@@ -466,7 +395,7 @@ This method is mandatory if you want to use custom fonts.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-10-28</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

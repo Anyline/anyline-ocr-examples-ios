@@ -74,9 +74,7 @@
 		
 		<option value="//api/name/frameworkBundle">+ frameworkBundle</option>
 		
-		<option value="//api/name/licenseExpirationDateForLicense:error:">+ licenseExpirationDateForLicense:error:</option>
-		
-		<option value="//api/name/originalFrameworkBundle">+ originalFrameworkBundle</option>
+		<option value="//api/name/licenseExpirationDateForLicense:">+ licenseExpirationDateForLicense:</option>
 		
 		<option value="//api/name/versionNumber">+ versionNumber</option>
 		
@@ -90,9 +88,7 @@
 		
 		<option value="//api/name/initCoreWithError:">- initCoreWithError:</option>
 		
-		<option value="//api/name/initWithLicenseKey:">- initWithLicenseKey:</option>
-		
-		<option value="//api/name/initWithLicenseKey:delegate:">- initWithLicenseKey:delegate:</option>
+		<option value="//api/name/initWithDelegate:error:">- initWithDelegate:error:</option>
 		
 		<option value="//api/name/loadCmdFile:bundlePath:product:assetController:error:">- loadCmdFile:bundlePath:product:assetController:error:</option>
 		
@@ -289,8 +285,8 @@ of the Anyline SDK.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithLicenseKey:" title="initWithLicenseKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithLicenseKey:">&ndash;&nbsp;initWithLicenseKey:</a></code>
+	<a name="//api/name/initWithDelegate:error:" title="initWithDelegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:error:">&ndash;&nbsp;initWithDelegate:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -300,84 +296,19 @@ of the Anyline SDK.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a new AnylineController with a license key. In order to
-correctly run Anyline you will have to set the AnylineController <a href="#//api/name/delegate">delegate</a>
-and load an appropriate configuration.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The license key you purchased for Anyline.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new instance of AnylineController.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithLicenseKey:delegate:" title="initWithLicenseKey:delegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithLicenseKey:delegate:">&ndash;&nbsp;initWithLicenseKey:delegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Initializes a new AnylineController with a license key and <a href="#//api/name/delegate">delegate</a>. In order
+				<p>Initializes a new ALCoreController with a <a href="#//api/name/delegate">delegate</a>. In order
 to correctly run Anyline you will have to load an appropriate configuration.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)<em>licenseKey</em> delegate:(id&lt;ALCoreControllerDelegate&gt; _Nullable)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDelegate:(id&lt;ALCoreControllerDelegate&gt; _Nullable)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>The license key you purchased for Anyline.</p></td>
-					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
@@ -391,7 +322,7 @@ to correctly run Anyline you will have to load an appropriate configuration.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new instance of AnylineController.</p>
+				<p>A new instance of ALCoreController.</p>
 			</div>
 			
 
@@ -1309,8 +1240,8 @@ to make this method work correctly.</p></div>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/licenseExpirationDateForLicense:error:" title="licenseExpirationDateForLicense:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/licenseExpirationDateForLicense:error:">+&nbsp;licenseExpirationDateForLicense:error:</a></code>
+	<a name="//api/name/licenseExpirationDateForLicense:" title="licenseExpirationDateForLicense:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseExpirationDateForLicense:">+&nbsp;licenseExpirationDateForLicense:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1325,7 +1256,7 @@ to make this method work correctly.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nullable)<em>licenseKey</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nonnull)<em>licenseKey</em></code></div>
 
 		    
 			
@@ -1336,11 +1267,6 @@ to make this method work correctly.</p></div>
 					<tr>
 						<th scope="row" class="argument-name"><code>licenseKey</code></th>
 						<td><p>A NSString containing the licenseKey</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>will contain an exception if the validation of the licenseKey fails</p></td>
 					</tr>
 				
 				</table>
@@ -1383,22 +1309,6 @@ to make this method work correctly.</p></div>
 			
 
 			<div class="method-subsection method-declaration"><code>+ (NSBundle *_Nonnull)frameworkBundle</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/originalFrameworkBundle" title="originalFrameworkBundle"></a>
-	<h3 class="method-title"><code><a href="#//api/name/originalFrameworkBundle">+&nbsp;originalFrameworkBundle</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSBundle *_Nonnull)originalFrameworkBundle</code></div>
 
 		    
 		</div>
@@ -1504,7 +1414,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-10-28</p>
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-11-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

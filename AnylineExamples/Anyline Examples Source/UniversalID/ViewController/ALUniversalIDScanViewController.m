@@ -6,13 +6,10 @@
 //
 
 #import "ALUniversalIDScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 #import "ALUniversalIDFieldnameUtil.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
 @interface ALUniversalIDScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 @property (nonatomic, strong) ALIDScanViewPlugin *scanViewPlugin;
@@ -36,7 +33,7 @@ NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"universal_id_config" ofType:@"json"];
      NSData *jsonFile = [NSData dataWithContentsOfFile:jsonFilePath];
      NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData: jsonFile options: NSJSONReadingMutableContainers error: &error];
-    self.scanViewPlugin = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict licenseKey:kUniversalIDLicenseKey delegate:self error:&error];
+    self.scanViewPlugin = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict delegate:self error:&error];
 
     [self.scanViewPlugin addScanViewPluginDelegate:self];
     
@@ -106,7 +103,7 @@ NSString * const kUniversalIDLicenseKey = kDemoAppLicenseKey;
     
     [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
-    [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country: %@", identification.layoutDefinition.country]];
+    [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country:%@", identification.layoutDefinition.country]];
     
     [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.scanViewPlugin completion:^{
         

@@ -10,10 +10,7 @@
 #import <Anyline/Anyline.h>
 #import "ALISBNViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALISBNScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -38,9 +35,6 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     CGRect frame = [self scanViewFrame];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    NSString *engTraineddata = [[NSBundle mainBundle] pathForResource:@"eng_no_dict" ofType:@"traineddata"];
-    NSString *deuTraineddata = [[NSBundle mainBundle] pathForResource:@"deu" ofType:@"traineddata"];
-    [config setLanguages:@[engTraineddata,deuTraineddata] error:nil];
     
     config.characterWhitelist = @"ISBN0123456789<>-X";
     config.validationRegex = @"^ISBN((-)?\\s*(13|10))?:?\\s*((978|979){1}-?\\s*)*[0-9]{1,5}-?\\s*[0-9]{2,7}-?\\s*[0-9]{2,7}-?\\s*[0-9X]$";
@@ -49,7 +43,6 @@ NSString * const kISBNLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.isbnScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                         licenseKey:kISBNLicenseKey
                                                            delegate:self
                                                           ocrConfig:config
                                                               error:&error];

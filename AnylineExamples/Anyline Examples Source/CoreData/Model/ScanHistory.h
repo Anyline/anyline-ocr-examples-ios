@@ -47,6 +47,8 @@ typedef enum : NSUInteger {
     ALScanHistoryTIN = 29,
     ALScanHistoryNFC = 30,
     ALScanHistoryUniversalID = 31,
+    ALScanHistoryBarcodePDF417 = 32,
+    ALScanHistoryBottleCapPepsi = 33,
     //be sure to add any new types to ALScanHistoryType_toString!
 } ALScanHistoryType;
 

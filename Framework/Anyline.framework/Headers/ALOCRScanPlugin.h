@@ -37,7 +37,6 @@
  @return Boolean indicating the success / failure of the call.
  */
 - (instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID
-                                licenseKey:(NSString * _Nonnull)licenseKey
                                   delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate
                                  ocrConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig
                                      error:(NSError *_Nullable *_Nullable)error;
@@ -62,19 +61,6 @@
  *  @return Boolean indicating the success / failure of the call.
  */
 - (BOOL)setOCRConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
-/**
- *  Use this method to copy a custom trained font data into the Anyline work environment.
- *  This method is mandatory if you want to use custom fonts.
- *
- *  @param trainedDataPath  The full path to your trained data file
- *  @param fileHash         The hash of the traineddata file so Anyline knows when it changed.
- *  @param error            The Error object if something fails
- *
- *  @return Boolean indicating the success / failure of the call.
- */
-- (BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath
-               fileHash:(NSString * _Nullable)fileHash
-                  error:(NSError * _Nullable * _Nullable)error __deprecated_msg("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.");
 
 - (void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
 

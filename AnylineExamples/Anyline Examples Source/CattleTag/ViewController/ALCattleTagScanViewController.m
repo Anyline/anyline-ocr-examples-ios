@@ -7,13 +7,10 @@
 
 #import "ALCattleTagScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kCattleTagLicenseKey = kDemoAppLicenseKey;
 @interface ALCattleTagScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
 
 // The Anyline plugin used for OCR
@@ -38,7 +35,6 @@ NSString * const kCattleTagLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.cattleTagScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                        licenseKey:kCattleTagLicenseKey
                                                           delegate:self
                                                          ocrConfig:config
                                                              error:&error];

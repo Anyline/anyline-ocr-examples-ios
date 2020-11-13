@@ -48,6 +48,7 @@
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
                                                        image:[UIImage imageNamed:@"universal_id_350x256px_300dpi"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
+    self.canUpdate = YES;
     
     ALExample *universalIDUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US Driving Licenses", nil)
                                                        image:[UIImage imageNamed:@"us_id_350x256px_300dpi"]

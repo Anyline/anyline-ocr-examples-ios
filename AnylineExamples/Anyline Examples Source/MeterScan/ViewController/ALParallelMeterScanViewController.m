@@ -6,7 +6,6 @@
 //
 
 #import "ALParallelMeterScanViewController.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
@@ -49,14 +48,13 @@
     
     //Add Meter Scan Plugin (Scan Process)
     NSError *error = nil;
-    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" licenseKey:kDemoAppLicenseKey delegate:self error:&error];
+    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" delegate:self error:&error];
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALLine;
     
     config.validationRegex = @"[A-Z0-9]{4,}";
     self.serialNumberScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                                 licenseKey:kDemoAppLicenseKey
                                                                    delegate:self
                                                                   ocrConfig:config
                                                                       error:&error];
@@ -84,7 +82,7 @@
         
     }
     
-    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" licenseKey:kDemoAppLicenseKey delegate:self error:&error];
+    self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     //Set Barcode Formats

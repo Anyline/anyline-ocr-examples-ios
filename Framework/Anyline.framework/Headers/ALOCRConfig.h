@@ -78,23 +78,6 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
     ALAuto
 };
 
-@interface ALOCRLanguage : NSObject
-
-@property (nullable, nonatomic, strong) NSString *path;
-@property (nullable, nonatomic, strong) NSString *md5;
-
-@property (nullable, nonatomic, strong) NSString *filename;
-@property (nullable, nonatomic, strong) NSString *fileExtension;
-
-- (instancetype _Nullable)initWithPath:(NSString * _Nonnull)path error:(NSError * _Nullable * _Nullable)error;
-
-+ (BOOL)copyLanguage:(NSString * _Nonnull)path
-              toPath:(NSString * _Nonnull)toPath
-            fileHash:(NSString * _Nullable)hash
-               error:(NSError * _Nullable * _Nullable)error;
-
-@end
-
 /**
  *  A class used to configure the Anyline OCR scan plugin.
  */
@@ -121,37 +104,40 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *  Property to set the character height.
  */
 @property (nonatomic, assign) ALRange charHeight;
+
 /**
- *  Property to set the tesseract tessdata files as Array of Strings. ex. @[@"eng",@"deu"]
+ *  Property to set the any file as an absolute String paths to the file.
+ *
+ *  Note this method requires the full path with fileending and not only the file name like the old deprecated method.
  */
-@property (nullable, nonatomic, strong) NSArray<NSString *> *tesseractLanguages __deprecated_msg("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.");
+@property (nullable, nonatomic, strong) NSString *model;
 
 /**
  *  Property to set the any files as Array of String paths to the files.
  *
  *  Note this method requires the full path with fileending and not only the file name like the old deprecated method.
+ *
+ *  Warning Only the first model will be used.
  */
-@property (nullable, nonatomic, copy, readonly) NSArray<NSString *> *languages;
+@property (nullable, nonatomic, copy, readonly) NSArray<NSString *> *languages __deprecated_msg("Deprecated since Anyline 26. Use property model instead.");
 
 /**
  Set languages without loading them yet (useful if the language files are to be downloaded from Anyline Trainer)
  */
-- (void)setLanguages:(NSArray<NSString *> * _Nonnull)languages;
+- (void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __deprecated_msg("Deprecated since Anyline 26. Use property model instead.");
 
-- (BOOL)hasLanguages;
+- (BOOL)hasLanguages __deprecated_msg("Deprecated since Anyline 26. Check property model instead.");
 
 /**
- Set languages and immediately attempt to load them
+ Set languages and immediately attempt to load them.
+ 
+ Warning Only the first model will be used.
  */
-- (BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error __deprecated_msg("Deprecated since Anyline 26. Use property model instead.");
 /**
  *  Property for the character whitelist you would like to use.
  */
 @property (nullable, nonatomic, strong) NSString *characterWhitelist;
-/**
- *  Property for the character whitelist you would like to use.
- */
-@property (nullable, nonatomic, strong) NSString *charWhiteList __deprecated_msg("Deprecated since Version 16. Please use the property \"characterWhitelist\" instead.");
 
 /**
  *  Property for the validation regex.
@@ -235,7 +221,5 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
 - (NSDictionary * _Nullable)startVariablesOrError:(NSError * _Nullable * _Nullable)error assetPath:(NSString *_Nullable)assetPath;
 
 - (NSString * _Nullable)toJsonString;
-
-- (BOOL)allLanguagesAnyFiles;
 
 @end

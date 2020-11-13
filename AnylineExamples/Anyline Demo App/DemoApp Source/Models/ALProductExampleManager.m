@@ -18,7 +18,6 @@
 #import "ALISBNScanViewController.h"
 #import "ALRecordNumberScanViewController.h"
 #import "ALRBScanViewController.h"
-#import "ALBottlecapScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
 //#import "ALHashtagScanViewController.h"

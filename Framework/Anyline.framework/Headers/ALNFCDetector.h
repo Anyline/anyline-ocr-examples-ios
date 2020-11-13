@@ -76,7 +76,7 @@ API_AVAILABLE(ios(13.0))
  * @param delegate The delegate to receive results from the NFC once -startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate has been called. This must conform to the ALNFCDetectorDelegate protocol.
  */
 
-- (instancetype _Nullable)initWithLicenseKey:(NSString *_Nonnull)licenseKey delegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate;
+- (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate;
 
 /**
  * Call this to start reading a passport NFC. This will automatically show UI telling the user to bring the phone near a passport, and informing them of the progress. Results will be given to the delegate via the ALNFCDetectorDelegate protocol methods. The parameters are needed to authenticate with the NFC chip; for security, the chip can not be read without some visible information from the passport.

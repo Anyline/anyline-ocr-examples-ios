@@ -10,7 +10,6 @@
 #import "ALEnergyMeterScanViewController.h"
 #import "ALMeterScanResultViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 #import "ALUtils.h"
 #import "NSString+Util.h"
 
@@ -22,9 +21,6 @@
 #import "CustomerSelfReadingResultViewController.h"
 #import "WorkforceToolResultViewController.h"
 
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kALEnergyMeterScanLicenseKey = kDemoAppLicenseKey;
 NSString * const kMeterScanPluginID = @"METER_READING";
 
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
@@ -64,7 +60,6 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     
     
     ALMeterScanPlugin *meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:kMeterScanPluginID
-                                                            licenseKey:kDemoAppLicenseKey
                                                               delegate:self
                                                                  error:&error];
     NSAssert(meterScanPlugin, @"Setup Error: %@", error.debugDescription);
@@ -82,7 +77,6 @@ NSString * const kMeterScanPluginID = @"METER_READING";
      *  Create Barcode Scanning components
      */
     ALBarcodeScanPlugin *barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE"
-                                                                licenseKey:kDemoAppLicenseKey
                                                                   delegate:self error:&error];
     barcodeScanPlugin.barcodeFormatOptions = ALCodeTypeAll;
     NSAssert(barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);

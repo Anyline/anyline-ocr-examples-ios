@@ -10,15 +10,9 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALMeterSerialNumberScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 #import "UISwitch+ALExamplesAdditions.h"
-
-
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kMeterSerialNumberScanLicenseKey = kDemoAppLicenseKey;
 
 static const NSInteger padding = 7;
 
@@ -56,7 +50,7 @@ static const NSInteger padding = 7;
     
     //Add Meter Scan Plugin (Scan Process)
     NSError *error = nil;
-    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" licenseKey:kMeterSerialNumberScanLicenseKey delegate:self error:&error];
+    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" delegate:self error:&error];
     NSAssert(self.meterScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     //Add Meter Scan View Plugin (Scan UI)

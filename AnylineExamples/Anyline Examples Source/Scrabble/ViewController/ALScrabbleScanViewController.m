@@ -12,10 +12,7 @@
 #import "ALCustomBarButton.h"
 #import "ScanHistory.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALScrabbleScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -41,15 +38,12 @@ NSString * const kScrabbleLicenseKey = kDemoAppLicenseKey;
     
     ALOCRConfig *config = [[ALOCRConfig alloc] init];
     config.scanMode = ALAuto;
-    NSString *anylineTraineddata = [[NSBundle mainBundle] pathForResource:@"scrabble" ofType:@"traineddata"];
-    [config setLanguages:@[anylineTraineddata] error:nil];
     config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ";
     config.validationRegex = @"^[A-ZÄÜÖ]{7,10}$";
     
     NSError *error = nil;
     
     self.scrabbleScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                             licenseKey:kScrabbleLicenseKey
                                                                delegate:self
                                                               ocrConfig:config
                                                                   error:&error];

@@ -10,11 +10,7 @@
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultViewController.h"
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALIBANScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -49,7 +45,6 @@ NSString * const kIBANLicenseKey = kDemoAppLicenseKey;
     NSError *error = nil;
     
     self.ibanScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                         licenseKey:kIBANLicenseKey
                                                            delegate:self
                                                           ocrConfig:config
                                                               error:&error];

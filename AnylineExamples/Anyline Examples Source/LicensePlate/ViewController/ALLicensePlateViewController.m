@@ -9,7 +9,6 @@
 #import "ALLicensePlateViewController.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALAppDemoLicenses.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 #import "Anyline/ALMeterScanPlugin.h"
@@ -17,9 +16,6 @@
 
 //#import "Anyline/AnylineLicensePlateModuleView.h"
 
-
-// This is the license key for the examples project used to set up Anyline below
-NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 // The Anyline module used for OCR
@@ -44,7 +40,7 @@ NSString * const kLicensePlateLicenseKey = kDemoAppLicenseKey;
 
     NSError *error = nil;
     
-    self.licensePlateScanPlugin = [[ALLicensePlateScanPlugin alloc] initWithPluginID:@"LICENSE_PLATE" licenseKey:kDemoAppLicenseKey delegate:self error:&error];
+    self.licensePlateScanPlugin = [[ALLicensePlateScanPlugin alloc] initWithPluginID:@"LICENSE_PLATE" delegate:self error:&error];
     NSAssert(self.licensePlateScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.licensePlateScanPlugin addInfoDelegate:self];
     
