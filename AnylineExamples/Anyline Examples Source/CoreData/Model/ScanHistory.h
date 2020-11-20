@@ -63,6 +63,7 @@ extern NSString * _Nonnull const ALScanHistoryType_toString[];
                   inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
                                    error:(NSError **)error;
 
+- (id)copyWithZone:(NSZone *)zone;
 @end
 
 NS_ASSUME_NONNULL_END

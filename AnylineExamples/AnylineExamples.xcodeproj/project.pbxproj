@@ -201,7 +201,6 @@
 		14EB0C78427F9F77DCE02A9C /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		14F0D6980332FF3A5880DA8F /* ALNLDrivingLicenseScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALNLDrivingLicenseScanViewController.h; sourceTree = "<group>"; };
 		171912A30B05E673D21F2578 /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
-		17B78D03255F302600CFD871 /* AnylineExamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnylineExamples.entitlements; sourceTree = "<group>"; };
 		1A22531B381EB3546D5EA58D /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		1B766C462C92BB659644F81E /* UISwitch+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISwitch+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		1B7B12BB758644B00703BD6B /* ALGermanIDFrontScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGermanIDFrontScanViewController.m; sourceTree = "<group>"; };
@@ -1023,7 +1022,6 @@
 		A0C97B3D25E26984321D2BA9 = {
 			isa = PBXGroup;
 			children = (
-				17B78D03255F302600CFD871 /* AnylineExamples.entitlements */,
 				2EDD43DC8833A207723A124E /* Source */,
 				3267477F872F902AE31E6A93 /* Frameworks */,
 				523D37D99AE2821A5FFE17FD /* Products */,
@@ -1531,7 +1529,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = AnylineExamples.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1553,6 +1550,7 @@
 					"$(SDKROOT)/System/Library/Frameworks",
 					./../Framework,
 				);
+				MARKETING_VERSION = 26.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1590,7 +1588,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = AnylineExamples.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1612,6 +1609,7 @@
 					"$(SDKROOT)/System/Library/Frameworks",
 					./../Framework,
 				);
+				MARKETING_VERSION = 26.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "-O3";

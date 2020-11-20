@@ -66,4 +66,27 @@ NSString * const ALScanHistoryType_toString[] = {
     return item;
 }
 
+-(id)copyWithZone:(NSZone *)zone {
+    return [self duplicateUnassociated];
+}
+
+
+/*
+ * Source: https://gist.github.com/steakknife/3bae589c4da8eba9b361#file-nsmanagedobject-duplicate-m
+ */
+
+- (instancetype)duplicateUnassociated {
+    ScanHistory *result = [[ScanHistory alloc]
+                           initWithEntity:self.entity
+                           insertIntoManagedObjectContext:nil];
+    [self duplicateToTarget:result];
+    return result;
+}
+
+- (void)duplicateToTarget:(ScanHistory *)target {
+    NSEntityDescription *entityDescription = self.objectID.entity;
+    NSArray *attributeKeys = entityDescription.attributesByName.allKeys;
+    NSDictionary *attributeKeysAndValues = [self dictionaryWithValuesForKeys:attributeKeys];
+    [target setValuesForKeysWithDictionary:attributeKeysAndValues];
+}
 @end
