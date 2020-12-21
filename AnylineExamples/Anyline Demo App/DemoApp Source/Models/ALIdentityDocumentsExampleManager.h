@@ -11,6 +11,9 @@
 #import "ALExample.h"
 #import "ALExampleManager.h"
 
+extern NSString * const kDriversLicenseTitleString;
+extern NSString * const kIDCardTitleString;
+
 @interface ALIdentityDocumentsExampleManager : ALExampleManager
 
 @end

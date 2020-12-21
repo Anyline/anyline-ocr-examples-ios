@@ -19,7 +19,11 @@
     NSArray *array = @[
         @"surname",
         @"givenNames",
+        @"lastName",
+        @"firstName",
         @"dateOfBirth",
+        @"dateOfIssue",
+        @"dateOfExpiry",
         @"documentNumber",
         @"layoutDefinition.country",
         @"layoutDefinition.type",
@@ -58,18 +62,17 @@
     
     [fieldNames enumerateObjectsUsingBlock:^(NSString *fieldName, NSUInteger idx, BOOL *stop) {
         NSString *fieldNameTitle = [NSString stringWithFormat:@"%@%@", [ALUniversalIDFieldnameUtil camelCaseToTitleCaseModified:fieldName], titleSuffix];
-        if (![fieldName containsString:@"String"]) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]]];
-        }
+        
         if ([identification valueForField:fieldName] && [identification valueForField:fieldName].length > 0) {
+            if (![fieldName localizedCaseInsensitiveContainsString:@"String"] && ![fieldName localizedCaseInsensitiveContainsString:@"checkdigit"] && ![fieldName localizedCaseInsensitiveContainsString:@"confidence"] ) {
+                [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]]];
+            }
             [resultHistoryString appendString:[NSString stringWithFormat:@"%@:%@\n", fieldNameTitle, [identification valueForField:fieldName]]];
         }
     }];
 
     return resultData;
 }
-
-
 
 + (NSString *)camelCaseToTitleCaseModified:(NSString *)inputString {
     NSString *strModified = [inputString stringByReplacingOccurrencesOfString:@"([a-z])([A-Z])"
@@ -100,6 +103,21 @@
         [str2 appendString:ch];
     }
     return [str2.capitalizedString copy];
+}
+
+
++ (BOOL)isPassportForUniversalIDIdentification:(ALUniversalIDIdentification *)identification {
+    
+    BOOL isPassportDocumentType = false;
+    
+    if ([identification hasField:@"documentType"]) {
+        NSString *documentType = [identification valueForField:@"documentType"];
+        NSRange firstLetterRange = NSMakeRange(0, 1);
+        isPassportDocumentType = [[documentType substringWithRange:firstLetterRange] isEqualToString:@"P"] || [[documentType substringWithRange:firstLetterRange] isEqualToString:@"V"];
+         
+    }
+
+    return [identification.layoutDefinition.type isEqualToString:@"mrz"] && isPassportDocumentType;
 }
 
 @end

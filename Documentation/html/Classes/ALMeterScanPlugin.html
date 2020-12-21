@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALMeterScanPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegates">delegates</option>
+		
+		<option value="//api/name/scanMode">scanMode</option>
+		
+		<option value="//api/name/serialNumberCharWhitelist">serialNumberCharWhitelist</option>
+		
+		<option value="//api/name/serialNumberValidationRegex">serialNumberValidationRegex</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/anylineCoreController:didFinishWithOutput:">- anylineCoreController:didFinishWithOutput:</option>
+		
+		<option value="//api/name/getDebugConfigAsJson">- getDebugConfigAsJson</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:delegate:error:">- initWithPluginID:delegate:error:</option>
+		
+		<option value="//api/name/licenseIdentifierForScanMode:">- licenseIdentifierForScanMode:</option>
+		
+		<option value="//api/name/parseALScanModeToAndroidEquivalentString:">- parseALScanModeToAndroidEquivalentString:</option>
+		
+		<option value="//api/name/parseScanModeString:">- parseScanModeString:</option>
+		
+		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
+		
+		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
+		
+		<option value="//api/name/start:error:">- start:error:</option>
+		
+		<option value="//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:">- updateScanModeWithScriptName:resourcesName:startVariables:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALMeterScanPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanPlugin.html">ALAbstractScanPlugin</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALMeterScanPlugin.h<br />ALMeterScanPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The ALMeterScanPlugin class declares the programmatic interface for an object that manages easy access to Anylines energy meter scanning mode.</p>
+
+<p>Communication with the host application is managed with a delegate that conforms to <a href="../Protocols/ALMeterScanPluginDelegate.html">ALMeterScanPluginDelegate</a>.</p>
+
+<p>ALMeterScanPlugin is able to scan the most common energy meters. The scan mode is set with setScanMode:error.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPluginID:delegate:error:" title="initWithPluginID:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:error:">&ndash;&nbsp;initWithPluginID:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor for the MeterScanPlugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginID</code></th>
+						<td><p>An unique pluginID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which receives the results</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;ALMeterScanPluginDelegate&gt; *delegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanMode" title="scanMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the scan mode.
+It has to be ALAnalogMeter, ALGasMeter, <a href="../Classes/ALBarcode.html">ALBarcode</a> or ALSerialNumber</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ALScanMode scanMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serialNumberValidationRegex" title="serialNumberValidationRegex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serialNumberValidationRegex">&nbsp;&nbsp;serialNumberValidationRegex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A validation regex string for the Serial <a href="#//api/name/scanMode">scanMode</a>.
+Regex has to follow the ECMAScript standard.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *serialNumberValidationRegex</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serialNumberCharWhitelist" title="serialNumberCharWhitelist"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serialNumberCharWhitelist">&nbsp;&nbsp;serialNumberCharWhitelist</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A character whitelist for the Serial <a href="#//api/name/scanMode">scanMode</a>.
+This parameter will be ignored in the other scanModes.
+If you want to have no regex this property has to be set to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *serialNumberCharWhitelist</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> There are only numbers and uppercase characters allowed.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScanMode:error:" title="setScanMode:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScanMode:error:">&ndash;&nbsp;setScanMode:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the scan mode and returns an NSError if something failed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setScanMode:(ALScanMode)<em>scanMode</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>The scan mode to set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if something goes wrong. Can be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALMeterScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALMeterScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseScanModeString:" title="parseScanModeString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseScanModeString:">&ndash;&nbsp;parseScanModeString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALScanMode)parseScanModeString:(NSString *_Nonnull)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/start:error:" title="start:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start the scanning with an ImageProvider. Anyline will ask the ImageProvider for new frames until
+we get a result with high enough <a href="#//api/name/confidence">confidence</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The ImageProvider implementation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something went wrong during startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:" title="updateScanModeWithScriptName:resourcesName:startVariables:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:">&ndash;&nbsp;updateScanModeWithScriptName:resourcesName:startVariables:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateScanModeWithScriptName:(NSString *)<em>scriptName</em> resourcesName:(NSString *)<em>resourcesName</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDebugConfigAsJson" title="getDebugConfigAsJson"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDebugConfigAsJson">&ndash;&nbsp;getDebugConfigAsJson</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getDebugConfigAsJson</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licenseIdentifierForScanMode:" title="licenseIdentifierForScanMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseIdentifierForScanMode:">&ndash;&nbsp;licenseIdentifierForScanMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)licenseIdentifierForScanMode:(ALScanMode)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseALScanModeToAndroidEquivalentString:" title="parseALScanModeToAndroidEquivalentString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseALScanModeToAndroidEquivalentString:">&ndash;&nbsp;parseALScanModeToAndroidEquivalentString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)parseALScanModeToAndroidEquivalentString:(ALScanMode)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -15,5 +15,8 @@
 
 + (UIColor *)AL_examplesBlue;
 + (UIColor *)AL_examplesBlueWithAlpha:(CGFloat)alpha;
++ (UIColor *)AL_errorLabelRed;
++ (UIColor *)AL_devTestModeColor;
++ (UIColor *)AL_gray;
 
 @end

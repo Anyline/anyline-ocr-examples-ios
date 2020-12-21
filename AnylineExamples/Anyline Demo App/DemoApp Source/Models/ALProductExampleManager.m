@@ -52,31 +52,31 @@
 - (void)initExampleData {
     self.title = @"Products";
 
-ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
-             image:[UIImage imageNamed:@"barcode_bottle_350x265px_coming soon"] //to replace with barcode_bottle_350x265px once we get Barbarian
-    viewController:[ALMultiformatBarcodeScanViewController class]];
+    ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
+                                                           image:[UIImage imageNamed:@"tile_barcodes"]
+                                                  viewController:[ALMultiformatBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
-                                               image:[UIImage imageNamed:@"id_volker_350x265px"]
+                                               image:[UIImage imageNamed:@"tile_identitydocuments"]
                                       viewController:[ALGridCollectionViewController class]
                                       exampleManager:[ALIdentityDocumentsExampleManager class]];
     
     ALExample *meterReading = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Reading", nil)
-                                                        image:[UIImage imageNamed:@"meter_analog_350x265px"]
+                                                        image:[UIImage imageNamed:@"tile_meterreading"]
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
     
     ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
-                                                                image:[UIImage imageNamed:@"license_plate_02_350x265px"]
+                                                                image:[UIImage imageNamed:@"tile_licenseplate"]
                                                        viewController:[ALLicensePlateViewController class]];
     
     ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Maintenance, Repair & Operations", nil)
-                                                  image:[UIImage imageNamed:@"machine_350x265px"]
+                                                  image:[UIImage imageNamed:@"tile_mro"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
     
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Other", nil)
-                                                  image:[UIImage imageNamed:@"others_350x265px"]
+                                                  image:[UIImage imageNamed:@"tile_other"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALOthersExampleManager class]];
     

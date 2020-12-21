@@ -134,7 +134,9 @@ static const NSInteger padding = 7;
 
 
 - (IBAction)toggleBarcodeScanning:(id)sender {
-    
+    UISwitch * switcher = sender;
+    switcher.enabled = NO;
+    switcher.alpha = 0.5;
     if (self.scanView.captureDeviceManager.barcodeDelegates.count > 0) {
         self.enableBarcodeSwitch.on = false;
         [self.scanView.captureDeviceManager removeBarcodeDelegate:self];
@@ -144,6 +146,11 @@ static const NSInteger padding = 7;
         self.enableBarcodeSwitch.on = true;
         [self.scanView.captureDeviceManager addBarcodeDelegate:self error:nil];
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        switcher.enabled = YES;
+        switcher.alpha = 1;
+    });
 }
 
 #pragma mark - Barcode View layout

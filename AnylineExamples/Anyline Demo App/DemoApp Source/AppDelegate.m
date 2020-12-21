@@ -44,6 +44,7 @@
         NSLog(@"Error with Anyline license: %@",error.localizedDescription);
         return NO;
     }
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

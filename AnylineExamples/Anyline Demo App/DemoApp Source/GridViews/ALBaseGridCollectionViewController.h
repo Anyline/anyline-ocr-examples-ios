@@ -27,5 +27,6 @@
 - (CGSize)headerSize;
 - (void)openExample:(ALExample *)example;
 - (UIViewController *)createViewControllerFrom:(ALExample *)example;
+- (UIView *)createHeaderViewWithTag:(NSInteger)tag forSize:(CGSize)size title:(NSString *)title;
 
 @end

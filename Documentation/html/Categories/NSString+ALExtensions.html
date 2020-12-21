@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSString(ALExtensions) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/documentsDirectory">+ documentsDirectory</option>
+		
+		<option value="//api/name/md5HashOfPath:">+ md5HashOfPath:</option>
+		
+		<option value="//api/name/stringWithCppString:">+ stringWithCppString:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/AL_base64_decodeToData">- AL_base64_decodeToData</option>
+		
+		<option value="//api/name/AL_base64_decodeToString">- AL_base64_decodeToString</option>
+		
+		<option value="//api/name/AL_base64_encode:">- AL_base64_encode:</option>
+		
+		<option value="//api/name/AL_contains:">- AL_contains:</option>
+		
+		<option value="//api/name/AL_occurrenceCountOfCharacter:">- AL_occurrenceCountOfCharacter:</option>
+		
+		<option value="//api/name/cppString">- cppString</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSString(ALExtensions) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NSString+ALExtensions.h<br />NSString+ALExtensions.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/AL_contains:" title="AL_contains:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_contains:">&ndash;&nbsp;AL_contains:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Test if the string contains aString</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)AL_contains:(NSString *)<em>aString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aString</code></th>
+						<td><p>the other string to test
+returns YES if the string contains the other aString, NO otherwise</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSString+ALExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AL_occurrenceCountOfCharacter:" title="AL_occurrenceCountOfCharacter:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_occurrenceCountOfCharacter:">&ndash;&nbsp;AL_occurrenceCountOfCharacter:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)AL_occurrenceCountOfCharacter:(UniChar)<em>character</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AL_base64_encode:" title="AL_base64_encode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_base64_encode:">&ndash;&nbsp;AL_base64_encode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)AL_base64_encode:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AL_base64_decodeToString" title="AL_base64_decodeToString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_base64_decodeToString">&ndash;&nbsp;AL_base64_decodeToString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)AL_base64_decodeToString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AL_base64_decodeToData" title="AL_base64_decodeToData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AL_base64_decodeToData">&ndash;&nbsp;AL_base64_decodeToData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)AL_base64_decodeToData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/documentsDirectory" title="documentsDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentsDirectory">+&nbsp;documentsDirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)documentsDirectory</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/md5HashOfPath:" title="md5HashOfPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/md5HashOfPath:">+&nbsp;md5HashOfPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)md5HashOfPath:(NSString *)<em>path</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringWithCppString:" title="stringWithCppString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringWithCppString:">+&nbsp;stringWithCppString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)stringWithCppString:(std : : string)<em>cppString</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cppString" title="cppString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cppString">&ndash;&nbsp;cppString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (std : : string)cppString</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

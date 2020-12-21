@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALLicensePlateScanPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/characterWhitelist">characterWhitelist</option>
+		
+		<option value="//api/name/delegates">delegates</option>
+		
+		<option value="//api/name/scanMode">scanMode</option>
+		
+		<option value="//api/name/validationRegex">validationRegex</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addCharacterWhiteListEntry:forCountry:">- addCharacterWhiteListEntry:forCountry:</option>
+		
+		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/addValidationRegexEntry:forCountry:">- addValidationRegexEntry:forCountry:</option>
+		
+		<option value="//api/name/anylineCoreController:didFinishWithOutput:">- anylineCoreController:didFinishWithOutput:</option>
+		
+		<option value="//api/name/characterWhitelist">- characterWhitelist</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:delegate:error:">- initWithPluginID:delegate:error:</option>
+		
+		<option value="//api/name/parseScanModeString:">- parseScanModeString:</option>
+		
+		<option value="//api/name/removeCharacterWhiteListEntryForCountry:">- removeCharacterWhiteListEntryForCountry:</option>
+		
+		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
+		
+		<option value="//api/name/removeValidationRegexEntryForCountry:">- removeValidationRegexEntryForCountry:</option>
+		
+		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
+		
+		<option value="//api/name/start:error:">- start:error:</option>
+		
+		<option value="//api/name/startVariables">- startVariables</option>
+		
+		<option value="//api/name/stringForCountryKey:">- stringForCountryKey:</option>
+		
+		<option value="//api/name/stringForLicensePlateScanMode:">- stringForLicensePlateScanMode:</option>
+		
+		<option value="//api/name/validationRegex">- validationRegex</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALLicensePlateScanPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanPlugin.html">ALAbstractScanPlugin</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALLicensePlateScanPlugin.h<br />ALLicensePlateScanPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPluginID:delegate:error:" title="initWithPluginID:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:error:">&ndash;&nbsp;initWithPluginID:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor for the LicensePlateScanPlugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginID</code></th>
+						<td><p>An unique pluginID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which receives the results</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanMode" title="scanMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the license plate scan mode.
+It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicensePlateScanMode</a> (e.g. ALLicensePlateAuto, ALLicensePlateNorway, etc.)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ALLicensePlateScanMode scanMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScanMode:error:" title="setScanMode:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScanMode:error:">&ndash;&nbsp;setScanMode:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the scan mode and returns an NSError if something failed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setScanMode:(ALLicensePlateScanMode)<em>scanMode</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>The scan mode to set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if something goes wrong. Can be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseScanModeString:" title="parseScanModeString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseScanModeString:">&ndash;&nbsp;parseScanModeString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALLicensePlateScanMode)parseScanModeString:(NSString *_Nonnull)<em>scanModeString</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addValidationRegexEntry:forCountry:" title="addValidationRegexEntry:forCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addValidationRegexEntry:forCountry:">&ndash;&nbsp;addValidationRegexEntry:forCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/validationRegex">validationRegex</a> map can be used to set specific a <a href="#//api/name/validationRegex">validationRegex</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addValidationRegexEntry:(NSString *_Nullable)<em>validationRegex</em> forCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>validationRegex</code></th>
+						<td><p>a string value that will be used as valdiationRegex</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/validationRegex">validationRegex</a> will be applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeValidationRegexEntryForCountry:" title="removeValidationRegexEntryForCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeValidationRegexEntryForCountry:">&ndash;&nbsp;removeValidationRegexEntryForCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the <a href="#//api/name/validationRegex">validationRegex</a> for a specific country (<a href="#//api/name/scanMode">scanMode</a>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeValidationRegexEntryForCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/validationRegex">validationRegex</a> will be applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validationRegex" title="validationRegex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validationRegex">&ndash;&nbsp;validationRegex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The validationRegex map can be used to set specific a validationRegex for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary&lt;NSString*,NSString*&gt; *_Nullable)validationRegex</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dicionary of the current validationRegex map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addCharacterWhiteListEntry:forCountry:" title="addCharacterWhiteListEntry:forCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCharacterWhiteListEntry:forCountry:">&ndash;&nbsp;addCharacterWhiteListEntry:forCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The characterWhiteList map can be used to set specific a <a href="#//api/name/characterWhitelist">characterWhitelist</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific <a href="#//api/name/characterWhitelist">characterWhitelist</a> for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addCharacterWhiteListEntry:(NSString *_Nullable)<em>characterWhiteList</em> forCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characterWhiteList</code></th>
+						<td><p>a string value that will be used as <a href="#//api/name/characterWhitelist">characterWhitelist</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanMode</code></th>
+						<td><p>the <a href="#//api/name/scanMode">scanMode</a> in which the <a href="#//api/name/characterWhitelist">characterWhitelist</a> will be applied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeCharacterWhiteListEntryForCountry:" title="removeCharacterWhiteListEntryForCountry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeCharacterWhiteListEntryForCountry:">&ndash;&nbsp;removeCharacterWhiteListEntryForCountry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/characterWhitelist">characterWhitelist</a> map can be used to set specific a <a href="#//api/name/characterWhitelist">characterWhitelist</a> for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific <a href="#//api/name/characterWhitelist">characterWhitelist</a> for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/characterWhitelist" title="characterWhitelist"></a>
+	<h3 class="method-title"><code><a href="#//api/name/characterWhitelist">&ndash;&nbsp;characterWhitelist</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The characterWhitelist map can be used to set specific a characterWhitelist for a country (<a href="#//api/name/scanMode">scanMode</a>).
+E.g.: Set a specific characterWhitelist for austrian licenseplates (ALLicensePlateAustria)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary&lt;NSString*,NSString*&gt; *_Nullable)characterWhitelist</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>dicionary of the current characterWhitelist map.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/start:error:" title="start:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start the scanning with an ImageProvider. Anyline will ask the ImageProvider for new frames until
+we get a result with high enough <a href="#//api/name/confidence">confidence</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The ImageProvider implementation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something went wrong during startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startVariables" title="startVariables"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startVariables">&ndash;&nbsp;startVariables</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)startVariables</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringForCountryKey:" title="stringForCountryKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringForCountryKey:">&ndash;&nbsp;stringForCountryKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringForCountryKey:(NSString *)<em>input</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringForLicensePlateScanMode:" title="stringForLicensePlateScanMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringForLicensePlateScanMode:">&ndash;&nbsp;stringForLicensePlateScanMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringForLicensePlateScanMode:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSHashTable&lt;ALLicensePlateScanPluginDelegate&gt; *delegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validationRegex" title="validationRegex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validationRegex">&nbsp;&nbsp;validationRegex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, atomic, readonly) NSMutableDictionary&lt;NSString*NSString*&gt; *validationRegex</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/characterWhitelist" title="characterWhitelist"></a>
+	<h3 class="method-title"><code><a href="#//api/name/characterWhitelist">&nbsp;&nbsp;characterWhitelist</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, atomic, readonly) NSMutableDictionary&lt;NSString*NSString*&gt; *characterWhitelist</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -28,7 +28,7 @@ API_AVAILABLE(ios(13.0))
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Passport NFC";
+    self.title = @"NFC";
     CGFloat hintMargin = 7;
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];

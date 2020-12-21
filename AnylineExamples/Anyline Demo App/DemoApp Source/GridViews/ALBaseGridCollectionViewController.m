@@ -20,6 +20,8 @@
 #import "ALEnergyBaseViewController.h"
 
 #import "ALNFCScanViewController.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
@@ -44,6 +46,27 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     [self.collectionView layoutSubviews];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.collectionView.userInteractionEnabled = YES;
+    [self setSecretDevModeTheme:[NSUserDefaults AL_secretDevModeEnabled]
+                      forNavBar:[self.navigationController navigationBar]];
+}
+
+- (void)setSecretDevModeTheme:(BOOL)enabled forNavBar:(UINavigationBar *)navBar {
+    UIColor *newColor = nil;
+    if (enabled) {
+        newColor = [UIColor AL_devTestModeColor];
+    } else {
+        newColor = nil;
+    }
+
+    if ([navBar.barTintColor isEqual:newColor]) {
+        return;
+    }
+    [navBar setBarTintColor:newColor];
+}
+
 #pragma mark - UICollectionReusableView methods
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
@@ -58,19 +81,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     collectionView.frame = frame;
     if (self.header.superview != reusableView && [reusableView viewWithTag:headerTag] == nil) {
         if ([self.exampleManager numberOfSections] > 1) {
-            UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];
-            header.tag = headerTag;
-            self.header.backgroundColor = [UIColor whiteColor];
-
-            UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(20,0, headerSize.width, headerSize.height)];
-            label.text = [self.exampleManager titleForSectionIndex:indexPath.section];
-            label.textColor = [UIColor blackColor];
-            label.textAlignment = NSTextAlignmentLeft;
-            //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
-            label.font = [UIFont AL_proximaSemiboldWithSize:22];
-            label.center = CGPointMake(label.center.x, header.center.y);
-            [header addSubview:label];
-            
+            UIView *header = [self createHeaderViewWithTag:headerTag forSize:headerSize title:[self.exampleManager titleForSectionIndex:indexPath.section]];
             [reusableView addSubview:header];
             if (indexPath.section == 0) {
                 self.header = header;
@@ -91,6 +102,34 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     return reusableView;
 }
 
+- (UIView *)createHeaderViewWithTag:(NSInteger)tag forSize:(CGSize)size title:(NSString *)title {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    header.tag = tag;
+
+    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0,0, size.width, size.height)];
+    label.text = title;
+    label.textColor = [UIColor colorWithDisplayP3Red:112.0/255.0 green:112.0/255.0 blue:112.0/255.0 alpha:1.0];
+    label.backgroundColor = [UIColor colorWithDisplayP3Red:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
+    
+    label.textAlignment = NSTextAlignmentLeft;
+    //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
+    label.font = [UIFont AL_proximaSemiboldWithSize:14];
+    label.center = CGPointMake(label.center.x, header.center.y);
+    
+    // Add x padding to our header label
+    NSMutableParagraphStyle *labelTextStyle = [[NSMutableParagraphStyle alloc] init];
+    labelTextStyle.alignment = NSTextAlignmentLeft;
+    labelTextStyle.firstLineHeadIndent = 15.0;
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:label.text attributes:@{
+                    NSParagraphStyleAttributeName : labelTextStyle,
+                    }];
+    label.attributedText = attributedString;
+    
+    [header addSubview:label];
+    return header;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.exampleManager numberOfExamplesInSectionIndex:section];
 }
@@ -107,17 +146,21 @@ NSString * const viewControllerIdentifier = @"gridViewController";
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ALGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    cell.name.text = [[self.exampleManager exampleForIndexPath:indexPath] name];
+    
     cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
     cell.backgroundImageView.image = [[self.exampleManager exampleForIndexPath:indexPath] image];
+    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.backgroundView.contentMode = UIViewContentModeTop;
-    cell.gradientColor = [self gradientColorForIndexPath:indexPath];
+    if (!cell.backgroundImageView.image) {
+//        cell.gradientColor = [self gradientColorForIndexPath:indexPath];
+        cell.name.text = [[self.exampleManager exampleForIndexPath:indexPath] name];
+    }
     cell.name.font = [UIFont AL_proximaSemiboldWithSize:16];
     cell.name.textColor = [UIColor whiteColor];
     cell.name.numberOfLines = 0;
     
     cell.layer.masksToBounds = YES;
-    cell.layer.cornerRadius = 2;
+    cell.layer.cornerRadius = 8;
     
     return cell;
 }
@@ -190,6 +233,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
+    collectionView.userInteractionEnabled = NO;
     [self openExample:example];
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
@@ -205,16 +249,24 @@ NSString * const viewControllerIdentifier = @"gridViewController";
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    float cellWidth = self.view.bounds.size.width / 2.0 - 20;
-    CGSize size = CGSizeMake(cellWidth, cellWidth*(128.0/175.0));
+    NSInteger padding = 10;
+    float cellWidth = 0;
+    float heightRatio = 1;
     
-    return size;
+    if ([self.collectionView numberOfItemsInSection:indexPath.section] == 1) {
+        cellWidth = self.view.bounds.size.width - padding*2;
+        heightRatio = 0.360;
+    } else {
+        cellWidth = self.view.bounds.size.width / 2.0 - padding*2;
+        heightRatio = (256.0/350.0);
+    }
+    return CGSizeMake(cellWidth, cellWidth*heightRatio);;
 }
 
 - (CGSize)headerSize {
     //we never actually show the logo if there is more than one section, so we don't need the headers to be as tall as the logo either. Ideally the height should be based on the title height; the 0.16 multiplier is for consistency with the lock icon on the meter reading screen.
     if ([self.exampleManager numberOfSections] > 1) {
-        return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.16);
+        return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.12);
     }
     return (self.showLogo) ? CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.25) : CGSizeZero;
 }

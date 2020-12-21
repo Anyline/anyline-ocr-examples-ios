@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALOCRScanViewPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/isDefaultConfig">isDefaultConfig</option>
+		
+		<option value="//api/name/ocrScanPlugin">ocrScanPlugin</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/anylineOCRScanPlugin:didFindResult:">- anylineOCRScanPlugin:didFindResult:</option>
+		
+		<option value="//api/name/anylineOCRScanPlugin:ocrConfigUpdated:">- anylineOCRScanPlugin:ocrConfigUpdated:</option>
+		
+		<option value="//api/name/applyDefaults:forOCRConfig:">- applyDefaults:forOCRConfig:</option>
+		
+		<option value="//api/name/defaultScanViewPluginConfigForOCRConfig:">- defaultScanViewPluginConfigForOCRConfig:</option>
+		
+		<option value="//api/name/initWithScanPlugin:">- initWithScanPlugin:</option>
+		
+		<option value="//api/name/initWithScanPlugin:scanViewPluginConfig:">- initWithScanPlugin:scanViewPluginConfig:</option>
+		
+		<option value="//api/name/isDefaultCutoutConfig:forOCRConfig:">- isDefaultCutoutConfig:forOCRConfig:</option>
+		
+		<option value="//api/name/motionDetectorAboveThreshold">- motionDetectorAboveThreshold</option>
+		
+		<option value="//api/name/pluginID">- pluginID</option>
+		
+		<option value="//api/name/setScanViewPluginConfig:">- setScanViewPluginConfig:</option>
+		
+		<option value="//api/name/startAndReturnError:">- startAndReturnError:</option>
+		
+		<option value="//api/name/stopAndReturnError:">- stopAndReturnError:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALOCRScanViewPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanViewPlugin.html">ALAbstractScanViewPlugin</a> : UIView</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALOCRScanViewPlugin.h<br />ALOCRScanViewPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/ocrScanPlugin" title="ocrScanPlugin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ocrScanPlugin">&nbsp;&nbsp;ocrScanPlugin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithScanPlugin:" title="initWithScanPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithScanPlugin:">&ndash;&nbsp;initWithScanPlugin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)<em>ocrScanPlugin</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithScanPlugin:scanViewPluginConfig:" title="initWithScanPlugin:scanViewPluginConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithScanPlugin:scanViewPluginConfig:">&ndash;&nbsp;initWithScanPlugin:scanViewPluginConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)<em>ocrScanPlugin</em> scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)<em>scanViewPluginConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/motionDetectorAboveThreshold" title="motionDetectorAboveThreshold"></a>
+	<h3 class="method-title"><code><a href="#//api/name/motionDetectorAboveThreshold">&ndash;&nbsp;motionDetectorAboveThreshold</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)motionDetectorAboveThreshold</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the Anyline processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong during the startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the Anyline processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong while stopping</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating whether it stopped successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScanViewPluginConfig:" title="setScanViewPluginConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScanViewPluginConfig:">&ndash;&nbsp;setScanViewPluginConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UI Configuration for the scanning UI</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setScanViewPluginConfig:(ALScanViewPluginConfig *)<em>scanViewPluginConfig</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/applyDefaults:forOCRConfig:" title="applyDefaults:forOCRConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/applyDefaults:forOCRConfig:">&ndash;&nbsp;applyDefaults:forOCRConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALScanViewPluginConfig *)applyDefaults:(ALScanViewPluginConfig *)<em>currConfig</em> forOCRConfig:(ALBaseOCRConfig *)<em>ocrConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDefaultCutoutConfig:forOCRConfig:" title="isDefaultCutoutConfig:forOCRConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDefaultCutoutConfig:forOCRConfig:">&ndash;&nbsp;isDefaultCutoutConfig:forOCRConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isDefaultCutoutConfig:(ALCutoutConfig *)<em>cutoutConfig</em> forOCRConfig:(ALBaseOCRConfig *)<em>ocrConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultScanViewPluginConfigForOCRConfig:" title="defaultScanViewPluginConfigForOCRConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultScanViewPluginConfigForOCRConfig:">&ndash;&nbsp;defaultScanViewPluginConfigForOCRConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALScanViewPluginConfig *)defaultScanViewPluginConfigForOCRConfig:(ALBaseOCRConfig *)<em>ocrConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineOCRScanPlugin:didFindResult:" title="anylineOCRScanPlugin:didFindResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineOCRScanPlugin:didFindResult:">&ndash;&nbsp;anylineOCRScanPlugin:didFindResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)<em>anylineOCRScanPlugin</em> didFindResult:(ALOCRResult *)<em>result</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineOCRScanPlugin:ocrConfigUpdated:" title="anylineOCRScanPlugin:ocrConfigUpdated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineOCRScanPlugin:ocrConfigUpdated:">&ndash;&nbsp;anylineOCRScanPlugin:ocrConfigUpdated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)<em>ocrScanPlugin</em> ocrConfigUpdated:(ALBaseOCRConfig *)<em>ocrConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&ndash;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pluginID is useful if there are multiple plugins running at the same time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isDefaultConfig" title="isDefaultConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDefaultConfig">&nbsp;&nbsp;isDefaultConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isDefaultConfig</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -19,6 +19,12 @@
 + (BOOL)AL_dataPolicyAccepted;
 + (void)AL_setDataPolicyAccepted:(BOOL)wasAccepted;
 
++ (BOOL)AL_secretDevModeEnabled;
++ (void)AL_setSecretDevModeEnabled:(BOOL)enabled;
+
++ (BOOL)AL_secretDevModeUnlocked;
++ (void)AL_secretDevModeUnlocked:(BOOL)enabled;
+
 + (void)AL_setMail:(NSString *)mail;
 
 + (NSString *)AL_getMail;

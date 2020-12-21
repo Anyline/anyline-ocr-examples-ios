@@ -42,7 +42,7 @@
     
 
     //Set Barcode Format to PDF417 only
-    [self.barcodeScanPlugin setBarcodeFormatOptions:ALCodeTypePDF417];
+    [self.barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypePDF417]];
     
     
     //Change cutout appearance to fit the PDF417 use case better
@@ -104,7 +104,7 @@
  The main delegate method Anyline uses to report its scanned codes
  */
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
-    
+
     [self anylineDidFindResult:scanResult.result.firstObject.value barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:^{
         //Display the result
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];

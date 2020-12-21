@@ -86,7 +86,7 @@
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     //Set Barcode Formats
-    [self.barcodeScanPlugin setBarcodeFormatOptions:ALCodeTypeAll];
+    [self.barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypeAll]];
     
     //Add Barcode Scan View Plugin (Scan UI)
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin scanViewPluginConfig:scanViewPluginConfig];
@@ -246,6 +246,10 @@
 }
 
  - (IBAction)toggleBarcodeScanning:(id)sender {
+     UISwitch * switcher = sender;
+     switcher.enabled = NO;
+     switcher.alpha = 0.5;
+     
      if (self.enableBarcodeSwitch.on) {
          [self stopPlugin:self.meterScanViewPlugin];
          [self stopPlugin:self.barcodeScanViewPlugin]; //in some rare cases this can still be running, which stops the parallel scan view plugin from starting
@@ -262,12 +266,17 @@
              [self setAsCurrentPlugin:self.meterScanViewPlugin];
          }
      }
+     
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         switcher.enabled = YES;
+         switcher.alpha = 1;
+     });
  }
 
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult * _Nonnull)scanResult {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (scanResult.result) {
-            self.barcodeResult = scanResult.result.firstObject.value;
+            self.barcodeResult = [[scanResult.result firstObject] value];
         } else {
             //if we get a nil barcode result for some reason, we don't want to just be stuck on the screen with no scanners running.
             self.barcodeResult = @"";

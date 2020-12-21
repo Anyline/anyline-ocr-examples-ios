@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALOCRScanPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/currentStartVariables">currentStartVariables</option>
+		
+		<option value="//api/name/currentThresholdedImage">currentThresholdedImage</option>
+		
+		<option value="//api/name/delegates">delegates</option>
+		
+		<option value="//api/name/needsToLoadScript">needsToLoadScript</option>
+		
+		<option value="//api/name/ocrConfig">ocrConfig</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addDelegate:">- addDelegate:</option>
+		
+		<option value="//api/name/addStartVariableWithName:value:">- addStartVariableWithName:value:</option>
+		
+		<option value="//api/name/anylineCoreController:didFinishWithOutput:">- anylineCoreController:didFinishWithOutput:</option>
+		
+		<option value="//api/name/anylineCoreController:reportsVariable:value:">- anylineCoreController:reportsVariable:value:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithPluginID:delegate:ocrConfig:error:">- initWithPluginID:delegate:ocrConfig:error:</option>
+		
+		<option value="//api/name/loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:">- loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:</option>
+		
+		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
+		
+		<option value="//api/name/setOCRConfig:error:">- setOCRConfig:error:</option>
+		
+		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
+		
+		<option value="//api/name/start:error:">- start:error:</option>
+		
+		<option value="//api/name/startVariablesForRegexAndWhitelist:">- startVariablesForRegexAndWhitelist:</option>
+		
+		<option value="//api/name/updateControllerAndReturnError:">- updateControllerAndReturnError:</option>
+		
+		<option value="//api/name/updateControllerForOCRConfig:wasRunning:bundlePath:error:">- updateControllerForOCRConfig:wasRunning:bundlePath:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALOCRScanPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanPlugin.html">ALAbstractScanPlugin</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALOCRScanPlugin.h<br />ALOCRScanPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The ALOCRScanPlugin can be used to recognize text.
+It can be adapted to different kinds of use cases
+with the {@link ALOOCRConfig} (settings to adapt the recognition to your use case).</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPluginID:delegate:ocrConfig:error:" title="initWithPluginID:delegate:ocrConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:ocrConfig:error:">&ndash;&nbsp;initWithPluginID:delegate:ocrConfig:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor for the ALOCRScanPlugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em> ocrConfig:(ALBaseOCRConfig *_Nonnull)<em>ocrConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginID</code></th>
+						<td><p>An unique pluginID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which receives the results</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ocrConfig</code></th>
+						<td><p>The OCRConfig to configure your use-case</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>The Anyline license key</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALOCRScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">&nbsp;&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;ALOCRScanPluginDelegate&gt; *delegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ocrConfig" title="ocrConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ocrConfig">&nbsp;&nbsp;ocrConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Read-only property for the <a href="../Classes/ALOCRConfig.html">ALOCRConfig</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) ALBaseOCRConfig *ocrConfig</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use method <a href="#//api/name/setOCRConfig:error:">setOCRConfig:error:</a> for setting the config.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALOCRScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOCRConfig:error:" title="setOCRConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOCRConfig:error:">&ndash;&nbsp;setOCRConfig:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new <a href="../Classes/ALBaseOCRConfig.html">ALBaseOCRConfig</a> and returns an Error if something failed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setOCRConfig:(ALBaseOCRConfig *_Nonnull)<em>ocrConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ocrConfig</code></th>
+						<td><p>The <a href="../Classes/ALOCRConfig.html">ALOCRConfig</a> to set</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALOCRScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALOCRScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/start:error:" title="start:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start the scanning with an ImageProvider. Anyline will ask the ImageProvider for new frames until
+we get a result with high enough <a href="#//api/name/confidence">confidence</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The ImageProvider implementation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something went wrong during startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:reportsVariable:value:" title="anylineCoreController:reportsVariable:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:reportsVariable:value:">&ndash;&nbsp;anylineCoreController:reportsVariable:value:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addStartVariableWithName:value:" title="addStartVariableWithName:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addStartVariableWithName:value:">&ndash;&nbsp;addStartVariableWithName:value:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addStartVariableWithName:(NSString *)<em>name</em> value:(NSString *)<em>value</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateControllerAndReturnError:" title="updateControllerAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateControllerAndReturnError:">&ndash;&nbsp;updateControllerAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateControllerAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:" title="loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:">&ndash;&nbsp;loadCustomCmdFileForOCRConfig:bundlePath:cmdFile:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadCustomCmdFileForOCRConfig:(ALOCRConfig *)<em>ocrConfig</em> bundlePath:(NSString *)<em>bundlePath</em> cmdFile:(NSString **)<em>cmdFile</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateControllerForOCRConfig:wasRunning:bundlePath:error:" title="updateControllerForOCRConfig:wasRunning:bundlePath:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateControllerForOCRConfig:wasRunning:bundlePath:error:">&ndash;&nbsp;updateControllerForOCRConfig:wasRunning:bundlePath:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateControllerForOCRConfig:(ALOCRConfig *)<em>ocrConfig</em> wasRunning:(BOOL)<em>wasRunning</em> bundlePath:(NSString *)<em>bundlePath</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startVariablesForRegexAndWhitelist:" title="startVariablesForRegexAndWhitelist:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startVariablesForRegexAndWhitelist:">&ndash;&nbsp;startVariablesForRegexAndWhitelist:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)startVariablesForRegexAndWhitelist:(ALBaseOCRConfig *)<em>config</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setupAssetUpdateWithContext:delegate:" title="setupAssetUpdateWithContext:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupAssetUpdateWithContext:delegate:">&ndash;&nbsp;setupAssetUpdateWithContext:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets up the asset service to fetch assets OTA. This needs to be called before trying
+to check for updates with {@link #checkForUpdates()} or updating the assets with
+{@link #updateAssets()}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setupAssetUpdateWithContext:(ALAssetContext *)<em>context</em> delegate:(NSObject&lt;ALAssetDelegate&gt; *)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>context</code></th>
+						<td><p>The context</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/needsToLoadScript" title="needsToLoadScript"></a>
+	<h3 class="method-title"><code><a href="#//api/name/needsToLoadScript">&nbsp;&nbsp;needsToLoadScript</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property BOOL needsToLoadScript</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentThresholdedImage" title="currentThresholdedImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentThresholdedImage">&nbsp;&nbsp;currentThresholdedImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALImage *currentThresholdedImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentStartVariables" title="currentStartVariables"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentStartVariables">&nbsp;&nbsp;currentStartVariables</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary *currentStartVariables</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

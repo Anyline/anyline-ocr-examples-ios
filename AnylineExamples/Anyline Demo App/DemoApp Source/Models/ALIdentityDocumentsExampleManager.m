@@ -24,6 +24,10 @@
 #import "ALUniversalIDScanViewController.h"
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
 
+NSString * const kDriversLicenseTitleString = @"Driver's License";
+NSString * const kIDCardTitleString = @"ID Card";
+NSString * const kPassportVisaTitleString = @"Passport / Visa";
+
 @interface ALIdentityDocumentsExampleManager ()
 
 @property (nonatomic, strong) NSMutableDictionary *examples;
@@ -46,43 +50,45 @@
     self.title = @"Identity Documents";
     
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
-                                                       image:[UIImage imageNamed:@"universal_id_350x256px_300dpi"]
+                                                       image:[UIImage imageNamed:@"tile_universalid"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
     self.canUpdate = YES;
     
-    ALExample *universalIDUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US Driving Licenses", nil)
-                                                       image:[UIImage imageNamed:@"us_id_350x256px_300dpi"]
+    ALExample *drivingLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driver's License", nil)
+                                                       image:[UIImage imageNamed:@"tile_driverslicense"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
-                                                       title:@"US Driving Licenses"];
+                                                       title:kDriversLicenseTitleString];
     
-    ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport/MRZ", nil)
-                                                       image:[UIImage imageNamed:@"passport_austria_350x265px"]
+    ALExample *idCardScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"ID Card", nil)
+                                                       image:[UIImage imageNamed:@"tile_idcard"]
+                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
+                                                       title:kIDCardTitleString];
+    
+    ALExample *passportScanning = [[ALExample alloc] initWithName:NSLocalizedString(kPassportVisaTitleString, nil)
+                                                       image:[UIImage imageNamed:@"tile_passportvisa"]
+                                              viewController:[ALMRZScanViewController class]
+                                                       title:kPassportVisaTitleString];
+    
+    ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"MRZ", nil)
+                                                       image:[UIImage imageNamed:@"tile_mrz"]
                                               viewController:[ALMRZScanViewController class]];
     
-    ALExample *driverLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"AT/DE/UK Driving License", nil)
-                                                            image:[UIImage imageNamed:@"driving_license_350x265px"]
-                                                   viewController:[ALDrivingLicenseScanViewController class]];
-    
-    ALExample *germanIDScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"German ID Front", nil)
-                                                            image:[UIImage imageNamed:@"id_germany_350x265px"]
-                                                   viewController:[ALGermanIDFrontScanViewController class]];
-    
     ALExample *pdf417Scanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PDF417", nil)
-                                                            image:[UIImage imageNamed:@"pdf417_350x265px"]
+                                                            image:[UIImage imageNamed:@"tile_pdf417"]
                                                    viewController:[ALPDF417ScanViewController class]];
     
-    ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Passport NFC", nil)
-                                                            image:[UIImage imageNamed:@"passport_350x265px"]
+    ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NFC", nil)
+                                                            image:[UIImage imageNamed:@"tile_nfc"]
                                                    viewController:[ALNFCScanViewController class]];
 
-    self.sectionNames = @[@"Identity Documents"];
+    self.sectionNames = @[@"Universal ID", @"Available ID types", @"Further capture options"];
+    //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
     self.examples = [@{
-                      self.sectionNames[0] : @[universalID,universalIDUS,mrzScanning,driverLicenseScanning,germanIDScanning,pdf417Scanning]
+                      self.sectionNames[0] : @[universalID],
+                      self.sectionNames[1] : @[drivingLicenseScanning, passportScanning, idCardScanning],
+                      self.sectionNames[2] : @[pdf417Scanning,mrzScanning, nfcScanning]
     } mutableCopy];
     
-   //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
-    self.sectionNames = [self.sectionNames arrayByAddingObject:processTitle];
-    self.examples[self.sectionNames[1]] = @[nfcScanning];
 }
 
 @end

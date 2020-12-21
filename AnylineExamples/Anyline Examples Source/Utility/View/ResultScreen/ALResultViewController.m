@@ -70,17 +70,15 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     CGFloat padding = 10;
     
     self.navigationItem.leftItemsSupplementBackButton = YES;
-    self.navigationItem.title = @"Scan Result";
+    self.navigationItem.title = @"Result Data";
    
-    CGFloat bottomPadding = 10;
-    CGFloat leftPadding = 0;
-    CGFloat rightPadding = 0;
-    if (@available(iOS 11.0, *)) {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
-        bottomPadding = window.safeAreaInsets.bottom;
-        leftPadding = window.safeAreaInsets.left;
-        rightPadding = window.safeAreaInsets.right;
-    }
+
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+    CGFloat bottomPadding = window.safeAreaInsets.bottom;
+    CGFloat leftPadding = window.safeAreaInsets.left;
+    CGFloat rightPadding = window.safeAreaInsets.right;
+    
     //Setup Confirm Button
     self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-50-bottomPadding, self.view.bounds.size.width, 50+bottomPadding)];
     [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -102,19 +100,19 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     self.contentScrollView.scrollEnabled = YES;
     self.contentScrollView.userInteractionEnabled = YES;
     if (@available(iOS 13.0, *)) {
-        //in light mode this is a slightly lighter colour than lightGrayColor, but it still looks okay
-        self.contentScrollView.backgroundColor = [UIColor secondarySystemBackgroundColor];
+        self.contentScrollView.backgroundColor = [UIColor systemBackgroundColor];
     } else {
-        self.contentScrollView.backgroundColor = [UIColor lightGrayColor];
+        self.contentScrollView.backgroundColor = [UIColor whiteColor];
     }
     //Add scrollView to viewController.view
     [self.view addSubview:self.contentScrollView];
     
     //Setup TableView
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.resultTitle.frame.origin.y+self.resultTitle.frame.size.height, self.view.frame.size.width, 300) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(leftPadding+padding, [self headerSize]+padding, self.view.frame.size.width, 300) style:UITableViewStyleGrouped];
     [self.tableView registerClass:[ALResultCell class] forCellReuseIdentifier:@"alResultCell"];
     [self.tableView setSectionHeaderHeight:0];
     self.tableView.userInteractionEnabled = true;
+    self.tableView.scrollEnabled = false;
     if (@available(iOS 13.0, *)) {
         self.tableView.backgroundColor = [UIColor systemBackgroundColor];
     } else {
@@ -131,7 +129,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
                                                                 self.tableView.frame.origin.y + self.tableView.frame.size.height + padding,
                                                                 self.view.frame.size.width - padding*2,
                                                                 [self headerSize])];
-    self.imageTitle.text = @"Control Image";
+//    self.imageTitle.text = @"Control Image";
     self.imageTitle.textAlignment = NSTextAlignmentLeft;
     self.imageTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
     //Add view to scrollView
@@ -166,7 +164,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
                                    imageViewWidth,
                                    50);
         self.alternativeImageText = [[UILabel alloc] initWithFrame:imageViewRect];
-        self.alternativeImageText.text = kResultViewControlerFieldNotAvailable;
+//        self.alternativeImageText.text = kResultViewControlerFieldNotAvailable;
         self.alternativeImageText.textAlignment = NSTextAlignmentLeft;
         self.alternativeImageText.font = [UIFont AL_proximaRegularWithSize:16];
         //Add view to scrollView
@@ -181,7 +179,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
                                                                     self.view.frame.size.width - padding*2,
                                                                     [self headerSize])];
 
-        self.optionalTitleLabel.text = self.optionalTitle;
+//        self.optionalTitleLabel.text = self.optionalTitle;
         self.optionalTitleLabel.textAlignment = NSTextAlignmentLeft;
         self.optionalTitleLabel.font = [UIFont AL_proximaSemiboldWithSize:18];
         //Add view to scrollView
@@ -190,8 +188,9 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
         if (_optionalImage) {
             //Setup Image View
             self.optionalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(padding*2,
-                                                                                    self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
-                                                                                   self.view.frame.size.width/2, self.view.frame.size.width/2)];
+                                                                                   self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
+                                                                                   imageViewWidth,
+                                                                                   imageViewWidth)];
             self.optionalImageView.contentMode = UIViewContentModeScaleAspectFit;
             self.optionalImageView.image = _optionalImage;
             //Resize imageView to fit image size
@@ -207,7 +206,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
                                                                                           self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
                                                                                           imageViewWidth,
                                                                                           50)];
-            self.alternativeOptionalImageText.text = kResultViewControlerFieldNotAvailable;
+//            self.alternativeOptionalImageText.text = kResultViewControlerFieldNotAvailable;
             self.alternativeOptionalImageText.textAlignment = NSTextAlignmentLeft;
             self.alternativeOptionalImageText.font = [UIFont AL_proximaRegularWithSize:16];
             //Add view to scrollView
@@ -229,7 +228,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.tableHeight > self.tableView.contentSize.height) {
+    if (self.tableHeight < self.tableView.contentSize.height) {
         [UIView animateWithDuration:0.2 animations:^{
             self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width, self.tableHeight);
             [self updateViewItemLayout];
@@ -243,9 +242,10 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     [self updateViewItemLayout];
 }
 
+
 - (void)updateViewItemLayout {
     //Update Positions of subviews
-    self.resultTitle.center = CGPointMake(self.view.center.x, self.resultTitle.center.y);
+//    self.resultTitle.center = CGPointMake(self.view.center.x, self.resultTitle.center.y);
     self.imageTitle.center = CGPointMake(self.view.center.x, self.imageTitle.center.y);
     self.imageView.center = CGPointMake(self.view.center.x, self.imageView.center.y);
     
@@ -318,7 +318,10 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
+//    return UITableViewAutomaticDimension;
+    return self.cellHeight;
+    
+//    return ((ALResultCell *)[self.tableView cellForRowAtIndexPath:indexPath]).cellHeight;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -330,7 +333,11 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     }
     
     ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
-    
+    if (@available(iOS 13.0, *)) {
+        cell.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
     [cell setResultEntry:entry];
     [cell layoutSubviews];
     self.cellHeight = cell.cellHeight;
@@ -346,19 +353,23 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    self.resultTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, [self headerSize])];
-    self.resultTitle.text = [[self.resultData allKeys] objectAtIndex:section];
-    self.resultTitle.textAlignment = NSTextAlignmentLeft;
-    self.resultTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self headerSize])];
+//    self.resultTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, [self headerSize])];
+//    self.resultTitle.text = [[self.resultData allKeys] objectAtIndex:section];
+//    self.resultTitle.textAlignment = NSTextAlignmentLeft;
+//    self.resultTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
+    
+    
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, topPadding, self.view.frame.size.width, [self headerSize])];
     if (@available(iOS 13.0, *)) {
         view.backgroundColor = [UIColor systemBackgroundColor];
-        self.resultTitle.backgroundColor = [UIColor systemBackgroundColor];
+//        self.resultTitle.backgroundColor = [UIColor systemBackgroundColor];
     } else {
         view.backgroundColor = [UIColor whiteColor];
-        self.resultTitle.backgroundColor = [UIColor whiteColor];
+//        self.resultTitle.backgroundColor = [UIColor whiteColor];
     }
-    [view addSubview:self.resultTitle];
+//    [view addSubview:self.resultTitle];
     return view;
 }
 
@@ -376,7 +387,7 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 //}
 
 - (CGFloat)headerSize {
-    return 40.0;
+    return 7.0;
 }
 
 #pragma mark - IBAction methods

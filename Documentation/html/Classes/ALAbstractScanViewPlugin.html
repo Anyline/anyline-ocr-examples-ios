@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALAbstractScanViewPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/beepSound">beepSound</option>
+		
+		<option value="//api/name/cropRect">cropRect</option>
+		
+		<option value="//api/name/cutoutRect">cutoutRect</option>
+		
+		<option value="//api/name/motionDetector">motionDetector</option>
+		
+		<option value="//api/name/oldFrame">oldFrame</option>
+		
+		<option value="//api/name/outline">outline</option>
+		
+		<option value="//api/name/pluginID">pluginID</option>
+		
+		<option value="//api/name/sampleBufferImageProvider">sampleBufferImageProvider</option>
+		
+		<option value="//api/name/scale">scale</option>
+		
+		<option value="//api/name/scanImage">scanImage</option>
+		
+		<option value="//api/name/scanView">scanView</option>
+		
+		<option value="//api/name/scanViewPluginConfig">scanViewPluginConfig</option>
+		
+		<option value="//api/name/scanViewPluginConfigs">scanViewPluginConfigs</option>
+		
+		<option value="//api/name/scanViewPluginDelegates">scanViewPluginDelegates</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/parallelScanViewPluginForConfigDict:delegate:error:">+ parallelScanViewPluginForConfigDict:delegate:error:</option>
+		
+		<option value="//api/name/readConfigForComposite:fromConfigDict:delegate:error:">+ readConfigForComposite:fromConfigDict:delegate:error:</option>
+		
+		<option value="//api/name/scanViewPluginForConfigDict:delegate:error:">+ scanViewPluginForConfigDict:delegate:error:</option>
+		
+		<option value="//api/name/serialScanViewPluginForConfigDict:delegate:error:">+ serialScanViewPluginForConfigDict:delegate:error:</option>
+		
+		<option value="//api/name/singleScanViewPluginForConfigDict:delegate:error:">+ singleScanViewPluginForConfigDict:delegate:error:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addScanViewPluginDelegate:">- addScanViewPluginDelegate:</option>
+		
+		<option value="//api/name/anylineScanPlugin:reportInfo:">- anylineScanPlugin:reportInfo:</option>
+		
+		<option value="//api/name/blink">- blink</option>
+		
+		<option value="//api/name/convertCGRect:">- convertCGRect:</option>
+		
+		<option value="//api/name/convertContours:">- convertContours:</option>
+		
+		<option value="//api/name/convertContoursFromVisualization:">- convertContoursFromVisualization:</option>
+		
+		<option value="//api/name/convertJSONContour:">- convertJSONContour:</option>
+		
+		<option value="//api/name/convertSquare:">- convertSquare:</option>
+		
+		<option value="//api/name/convertTextRectFromVisualization:">- convertTextRectFromVisualization:</option>
+		
+		<option value="//api/name/convertVisualization:">- convertVisualization:</option>
+		
+		<option value="//api/name/customInit">- customInit</option>
+		
+		<option value="//api/name/dealloc">- dealloc</option>
+		
+		<option value="//api/name/displayErrorToUser:">- displayErrorToUser:</option>
+		
+		<option value="//api/name/getJsonForNativeBarcodeIsEnabled:">- getJsonForNativeBarcodeIsEnabled:</option>
+		
+		<option value="//api/name/initWithCoder:">- initWithCoder:</option>
+		
+		<option value="//api/name/initWithFrame:">- initWithFrame:</option>
+		
+		<option value="//api/name/layoutSubviews">- layoutSubviews</option>
+		
+		<option value="//api/name/observeValueForKeyPath:ofObject:change:context:">- observeValueForKeyPath:ofObject:change:context:</option>
+		
+		<option value="//api/name/orientationDidChange:">- orientationDidChange:</option>
+		
+		<option value="//api/name/pluginIDWithCutout">- pluginIDWithCutout</option>
+		
+		<option value="//api/name/removeScanViewPluginDelegate:">- removeScanViewPluginDelegate:</option>
+		
+		<option value="//api/name/resetCamera:cutoutRect:">- resetCamera:cutoutRect:</option>
+		
+		<option value="//api/name/startAndReturnError:">- startAndReturnError:</option>
+		
+		<option value="//api/name/startListeningForMotionWithThreshold:delegate:">- startListeningForMotionWithThreshold:delegate:</option>
+		
+		<option value="//api/name/stopAndReturnError:">- stopAndReturnError:</option>
+		
+		<option value="//api/name/stopListeningForMotion">- stopListeningForMotion</option>
+		
+		<option value="//api/name/triggerScannedFeedback">- triggerScannedFeedback</option>
+		
+		<option value="//api/name/updateCutoutRect:forPluginID:">- updateCutoutRect:forPluginID:</option>
+		
+		<option value="//api/name/updateSubviewsWithConfiguration:">- updateSubviewsWithConfiguration:</option>
+		
+		<option value="//api/name/updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:">- updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALAbstractScanViewPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UIView</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ALInfoDelegate.html">ALInfoDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALAbstractScanViewPlugin.h<br />ALAbstractScanViewPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/scanViewPluginDelegates" title="scanViewPluginDelegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginDelegates">&nbsp;&nbsp;scanViewPluginDelegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;ALScanViewPluginDelegate&gt; *scanViewPluginDelegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sampleBufferImageProvider" title="sampleBufferImageProvider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sampleBufferImageProvider">&nbsp;&nbsp;sampleBufferImageProvider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The SampleBufferImageProvider implements <a href="../Protocols/ALImageProvider.html">ALImageProvider</a> and <a href="../Protocols/AnylineVideoDataSampleBufferDelegate.html">AnylineVideoDataSampleBufferDelegate</a>
+and prepares the frame for Anyline processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSampleBufferImageProvider *sampleBufferImageProvider</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanView" title="scanView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanView">&nbsp;&nbsp;scanView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) ALScanView *scanView</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cutoutRect" title="cutoutRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cutoutRect">&nbsp;&nbsp;cutoutRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The position of the Cutout in the View</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) CGRect cutoutRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pluginID is useful if there are multiple plugins running at the same time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginConfig" title="scanViewPluginConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginConfig">&nbsp;&nbsp;scanViewPluginConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UI Configuration for the scanning UI</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) ALScanViewPluginConfig *scanViewPluginConfig</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginConfigs" title="scanViewPluginConfigs"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginConfigs">&nbsp;&nbsp;scanViewPluginConfigs</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this will just be this plugin&rsquo;s <a href="#//api/name/pluginID">pluginID</a> and <a href="#//api/name/scanViewPluginConfig">scanViewPluginConfig</a>. For composite scan view plugins, this will be the plugin IDs and configs for all the child plugins, and not the composite itself.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSDictionary&lt;NSString*ALScanViewPluginConfig*&gt; *scanViewPluginConfigs</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginForConfigDict:delegate:error:" title="scanViewPluginForConfigDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginForConfigDict:delegate:error:">+&nbsp;scanViewPluginForConfigDict:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewPluginForConfigDict:(NSDictionary *_Nonnull)<em>configDict</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the Anyline processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong during the startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the Anyline processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong while stopping</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating whether it stopped successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outline" title="outline"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outline">&nbsp;&nbsp;outline</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSquare *outline</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanImage" title="scanImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanImage">&nbsp;&nbsp;scanImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALImage *scanImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scale" title="scale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scale">&nbsp;&nbsp;scale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat scale</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/customInit" title="customInit"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customInit">&ndash;&nbsp;customInit</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)customInit</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopListeningForMotion" title="stopListeningForMotion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopListeningForMotion">&ndash;&nbsp;stopListeningForMotion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop listening for device motion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopListeningForMotion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerScannedFeedback" title="triggerScannedFeedback"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerScannedFeedback">&ndash;&nbsp;triggerScannedFeedback</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)triggerScannedFeedback</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertContours:" title="convertContours:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertContours:">&ndash;&nbsp;convertContours:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *_Nonnull)convertContours:(ALContours *_Nonnull)<em>contoursValue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertCGRect:" title="convertCGRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertCGRect:">&ndash;&nbsp;convertCGRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALSquare *_Nonnull)convertCGRect:(NSValue *_Nonnull)<em>concreteValue</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertSquare:" title="convertSquare:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertSquare:">&ndash;&nbsp;convertSquare:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALSquare *_Nonnull)convertSquare:(ALSquare *_Nonnull)<em>unconvertedSquare</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCutoutRect:forPluginID:" title="updateCutoutRect:forPluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCutoutRect:forPluginID:">&ndash;&nbsp;updateCutoutRect:forPluginID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCutoutRect:(CGRect)<em>rect</em> forPluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addScanViewPluginDelegate:" title="addScanViewPluginDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addScanViewPluginDelegate:">&ndash;&nbsp;addScanViewPluginDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addScanViewPluginDelegate:(id&lt;ALScanViewPluginDelegate&gt; _Nonnull)<em>scanViewPluginDelegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeScanViewPluginDelegate:" title="removeScanViewPluginDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeScanViewPluginDelegate:">&ndash;&nbsp;removeScanViewPluginDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeScanViewPluginDelegate:(id&lt;ALScanViewPluginDelegate&gt; _Nonnull)<em>scanViewPluginDelegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoder:" title="initWithCoder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoder:">&ndash;&nbsp;initWithCoder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCoder:(NSCoder *)<em>aDecoder</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readConfigForComposite:fromConfigDict:delegate:error:" title="readConfigForComposite:fromConfigDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readConfigForComposite:fromConfigDict:delegate:error:">+&nbsp;readConfigForComposite:fromConfigDict:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (void)readConfigForComposite:(ALAbstractScanViewPluginComposite *)<em>compositePlugin</em> fromConfigDict:(NSDictionary *_Nonnull)<em>serialConfig</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serialScanViewPluginForConfigDict:delegate:error:" title="serialScanViewPluginForConfigDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serialScanViewPluginForConfigDict:delegate:error:">+&nbsp;serialScanViewPluginForConfigDict:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)serialScanViewPluginForConfigDict:(NSDictionary *_Nonnull)<em>compositeConfig</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parallelScanViewPluginForConfigDict:delegate:error:" title="parallelScanViewPluginForConfigDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parallelScanViewPluginForConfigDict:delegate:error:">+&nbsp;parallelScanViewPluginForConfigDict:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)parallelScanViewPluginForConfigDict:(NSDictionary *_Nonnull)<em>compositeConfig</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/singleScanViewPluginForConfigDict:delegate:error:" title="singleScanViewPluginForConfigDict:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/singleScanViewPluginForConfigDict:delegate:error:">+&nbsp;singleScanViewPluginForConfigDict:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)singleScanViewPluginForConfigDict:(NSDictionary *_Nonnull)<em>configDict</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *__autoreleasing _Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/layoutSubviews" title="layoutSubviews"></a>
+	<h3 class="method-title"><code><a href="#//api/name/layoutSubviews">&ndash;&nbsp;layoutSubviews</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)layoutSubviews</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginIDWithCutout" title="pluginIDWithCutout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginIDWithCutout">&ndash;&nbsp;pluginIDWithCutout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)pluginIDWithCutout</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/orientationDidChange:" title="orientationDidChange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/orientationDidChange:">&ndash;&nbsp;orientationDidChange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)orientationDidChange:(NSNotification *)<em>notification</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/observeValueForKeyPath:ofObject:change:context:" title="observeValueForKeyPath:ofObject:change:context:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/observeValueForKeyPath:ofObject:change:context:">&ndash;&nbsp;observeValueForKeyPath:ofObject:change:context:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)observeValueForKeyPath:(NSString *)<em>keyPath</em> ofObject:(id)<em>object</em> change:(NSDictionary *)<em>change</em> context:(void *)<em>context</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineScanPlugin:reportInfo:" title="anylineScanPlugin:reportInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineScanPlugin:reportInfo:">&ndash;&nbsp;anylineScanPlugin:reportInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineScanPlugin:(ALAbstractScanPlugin *_Nonnull)<em>anylineScanPlugin</em> reportInfo:(ALScanInfo *_Nonnull)<em>info</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displayErrorToUser:" title="displayErrorToUser:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayErrorToUser:">&ndash;&nbsp;displayErrorToUser:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)displayErrorToUser:(NSError **)<em>retError</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getJsonForNativeBarcodeIsEnabled:" title="getJsonForNativeBarcodeIsEnabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getJsonForNativeBarcodeIsEnabled:">&ndash;&nbsp;getJsonForNativeBarcodeIsEnabled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getJsonForNativeBarcodeIsEnabled:(BOOL)<em>enabled</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertJSONContour:" title="convertJSONContour:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertJSONContour:">&ndash;&nbsp;convertJSONContour:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALSquare *)convertJSONContour:(NSArray&lt;NSNumber*&gt; *)<em>contour</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertVisualization:" title="convertVisualization:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertVisualization:">&ndash;&nbsp;convertVisualization:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)convertVisualization:(NSString *)<em>visualiJSON</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertTextRectFromVisualization:" title="convertTextRectFromVisualization:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertTextRectFromVisualization:">&ndash;&nbsp;convertTextRectFromVisualization:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALSquare *)convertTextRectFromVisualization:(NSString *)<em>visualiJSON</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertContoursFromVisualization:" title="convertContoursFromVisualization:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertContoursFromVisualization:">&ndash;&nbsp;convertContoursFromVisualization:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableArray&lt;ALSquare*&gt; *)convertContoursFromVisualization:(NSString *)<em>visualiJSON</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateSubviewsWithConfiguration:" title="updateSubviewsWithConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateSubviewsWithConfiguration:">&ndash;&nbsp;updateSubviewsWithConfiguration:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateSubviewsWithConfiguration:(ALScanViewPluginConfig *)<em>newScanViewPluginConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:" title="updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:">&ndash;&nbsp;updateSubviewsWithConfiguration:isHardReset:isLayoutSubViews:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateSubviewsWithConfiguration:(ALScanViewPluginConfig *)<em>newScanViewPluginConfig</em> isHardReset:(BOOL)<em>isHardReset</em> isLayoutSubViews:(BOOL)<em>layoutSubViews</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetCamera:cutoutRect:" title="resetCamera:cutoutRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetCamera:cutoutRect:">&ndash;&nbsp;resetCamera:cutoutRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)resetCamera:(ALScanViewPluginConfig *)<em>config</em> cutoutRect:(CGRect)<em>cutoutRect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blink" title="blink"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blink">&ndash;&nbsp;blink</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)blink</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startListeningForMotionWithThreshold:delegate:" title="startListeningForMotionWithThreshold:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startListeningForMotionWithThreshold:delegate:">&ndash;&nbsp;startListeningForMotionWithThreshold:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)startListeningForMotionWithThreshold:(CGFloat)<em>threshold</em> delegate:(id)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/beepSound" title="beepSound"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beepSound">&nbsp;&nbsp;beepSound</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) SystemSoundID beepSound</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/motionDetector" title="motionDetector"></a>
+	<h3 class="method-title"><code><a href="#//api/name/motionDetector">&nbsp;&nbsp;motionDetector</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALMotionDetector *motionDetector</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/oldFrame" title="oldFrame"></a>
+	<h3 class="method-title"><code><a href="#//api/name/oldFrame">&nbsp;&nbsp;oldFrame</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGRect oldFrame</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cropRect" title="cropRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cropRect">&nbsp;&nbsp;cropRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGRect cropRect</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

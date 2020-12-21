@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"MRZ";
+    self.title = (self.title && self.title.length > 0) ? self.title : @"MRZ";
     
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];

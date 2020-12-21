@@ -78,7 +78,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
      */
     ALBarcodeScanPlugin *barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE"
                                                                   delegate:self error:&error];
-    barcodeScanPlugin.barcodeFormatOptions = ALCodeTypeAll;
+    barcodeScanPlugin.barcodeFormatOptions = @[kCodeTypeAll];
     NSAssert(barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     ALBarcodeScanViewPlugin *barcodeScanViewPlugiun = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:barcodeScanPlugin];

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALBarcodeScanViewPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/barcodeScanPlugin">barcodeScanPlugin</option>
+		
+		<option value="//api/name/lastResult">lastResult</option>
+		
+		<option value="//api/name/queue">queue</option>
+		
+		<option value="//api/name/timer">timer</option>
+		
+		<option value="//api/name/useOnlyNativeBarcodeScanning">useOnlyNativeBarcodeScanning</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/anylineBarcodeScanPlugin:didFindResult:">- anylineBarcodeScanPlugin:didFindResult:</option>
+		
+		<option value="//api/name/anylineBarcodeScanPlugin:updatedBarcodeFormats:">- anylineBarcodeScanPlugin:updatedBarcodeFormats:</option>
+		
+		<option value="//api/name/anylineCaptureDeviceManager:didFindBarcodeResult:type:">- anylineCaptureDeviceManager:didFindBarcodeResult:type:</option>
+		
+		<option value="//api/name/customInit">- customInit</option>
+		
+		<option value="//api/name/initWithScanPlugin:">- initWithScanPlugin:</option>
+		
+		<option value="//api/name/initWithScanPlugin:scanViewPluginConfig:">- initWithScanPlugin:scanViewPluginConfig:</option>
+		
+		<option value="//api/name/invalidateLastResultTimer:">- invalidateLastResultTimer:</option>
+		
+		<option value="//api/name/motionDetectorAboveThreshold">- motionDetectorAboveThreshold</option>
+		
+		<option value="//api/name/nativeFormatsFromALFormats:">- nativeFormatsFromALFormats:</option>
+		
+		<option value="//api/name/pluginID">- pluginID</option>
+		
+		<option value="//api/name/setScanViewPluginConfig:">- setScanViewPluginConfig:</option>
+		
+		<option value="//api/name/startAndReturnError:">- startAndReturnError:</option>
+		
+		<option value="//api/name/stopAndReturnError:">- stopAndReturnError:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALBarcodeScanViewPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/ALAbstractScanViewPlugin.html">ALAbstractScanViewPlugin</a> : UIView</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALBarcodeScanViewPlugin.h<br />ALBarcodeScanViewPlugin.mm</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/barcodeScanPlugin" title="barcodeScanPlugin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/barcodeScanPlugin">&nbsp;&nbsp;barcodeScanPlugin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithScanPlugin:" title="initWithScanPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithScanPlugin:">&ndash;&nbsp;initWithScanPlugin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithScanPlugin:(ALBarcodeScanPlugin *_Nonnull)<em>barcodeScanPlugin</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithScanPlugin:scanViewPluginConfig:" title="initWithScanPlugin:scanViewPluginConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithScanPlugin:scanViewPluginConfig:">&ndash;&nbsp;initWithScanPlugin:scanViewPluginConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithScanPlugin:(ALBarcodeScanPlugin *_Nonnull)<em>barcodeScanPlugin</em> scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)<em>scanViewPluginConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/useOnlyNativeBarcodeScanning" title="useOnlyNativeBarcodeScanning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/useOnlyNativeBarcodeScanning">&nbsp;&nbsp;useOnlyNativeBarcodeScanning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When set to YES we only use the iOS native Barcode scanning.
+That one uses less computing power, but is worse under low light conditions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALBarcodeScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/customInit" title="customInit"></a>
+	<h3 class="method-title"><code><a href="#//api/name/customInit">&ndash;&nbsp;customInit</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)customInit</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startAndReturnError:" title="startAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startAndReturnError:">&ndash;&nbsp;startAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the Anyline processing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong during the startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the Anyline processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something goes wrong while stopping</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating whether it stopped successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/motionDetectorAboveThreshold" title="motionDetectorAboveThreshold"></a>
+	<h3 class="method-title"><code><a href="#//api/name/motionDetectorAboveThreshold">&ndash;&nbsp;motionDetectorAboveThreshold</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)motionDetectorAboveThreshold</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineBarcodeScanPlugin:didFindResult:" title="anylineBarcodeScanPlugin:didFindResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineBarcodeScanPlugin:didFindResult:">&ndash;&nbsp;anylineBarcodeScanPlugin:didFindResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)<em>anylineBarcodeScanPlugin</em> didFindResult:(ALBarcodeResult *)<em>scanResult</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineBarcodeScanPlugin:updatedBarcodeFormats:" title="anylineBarcodeScanPlugin:updatedBarcodeFormats:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineBarcodeScanPlugin:updatedBarcodeFormats:">&ndash;&nbsp;anylineBarcodeScanPlugin:updatedBarcodeFormats:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)<em>anylineBarcodeScanPlugin</em> updatedBarcodeFormats:(NSArray&lt;NSString*&gt; *)<em>formats</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nativeFormatsFromALFormats:" title="nativeFormatsFromALFormats:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nativeFormatsFromALFormats:">&ndash;&nbsp;nativeFormatsFromALFormats:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)nativeFormatsFromALFormats:(NSArray&lt;NSString*&gt; *)<em>barcodeFormatOptions</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScanViewPluginConfig:" title="setScanViewPluginConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScanViewPluginConfig:">&ndash;&nbsp;setScanViewPluginConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UI Configuration for the scanning UI</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setScanViewPluginConfig:(ALScanViewPluginConfig *)<em>scanViewPluginConfig</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCaptureDeviceManager:didFindBarcodeResult:type:" title="anylineCaptureDeviceManager:didFindBarcodeResult:type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCaptureDeviceManager:didFindBarcodeResult:type:">&ndash;&nbsp;anylineCaptureDeviceManager:didFindBarcodeResult:type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)<em>captureDeviceManager</em> didFindBarcodeResult:(NSString *)<em>scanResult</em> type:(NSString *)<em>barcodeType</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/invalidateLastResultTimer:" title="invalidateLastResultTimer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/invalidateLastResultTimer:">&ndash;&nbsp;invalidateLastResultTimer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)invalidateLastResultTimer:(NSTimer *)<em>timer</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&ndash;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pluginID is useful if there are multiple plugins running at the same time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/lastResult" title="lastResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastResult">&nbsp;&nbsp;lastResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (atomic, strong) NSArray&lt;ALBarcode*&gt; *lastResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queue" title="queue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queue">&nbsp;&nbsp;queue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (atomic, strong) NSOperationQueue *queue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timer" title="timer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timer">&nbsp;&nbsp;timer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSTimer *timer</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Anyline GmbH. All rights reserved. Updated: 2020-12-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

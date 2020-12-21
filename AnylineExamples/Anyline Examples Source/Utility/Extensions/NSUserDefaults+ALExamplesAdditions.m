@@ -9,6 +9,8 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 
 NSString * const DATA_POLICY_ACCEPTED = @"dataPrivacyPolicyAccepted";
+NSString * const SECRET_DEV_MODE_ENABLED = @"secretDevModeEnabled";
+NSString * const SECRET_DEV_MODE_UNLOCKED = @"secretDevModeUnlocked";
 
 @implementation NSUserDefaults (ALExamplesAdditions)
 
@@ -68,6 +70,30 @@ NSString * const DATA_POLICY_ACCEPTED = @"dataPrivacyPolicyAccepted";
 
 + (void)AL_setDataPolicyAccepted:(BOOL)wasAccepted {
     [[NSUserDefaults standardUserDefaults] setBool:wasAccepted forKey:DATA_POLICY_ACCEPTED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)AL_secretDevModeEnabled {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:SECRET_DEV_MODE_ENABLED]) {
+        return NO;
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:SECRET_DEV_MODE_ENABLED];
+}
+
++ (void)AL_setSecretDevModeEnabled:(BOOL)enabled {
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:SECRET_DEV_MODE_ENABLED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)AL_secretDevModeUnlocked {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:SECRET_DEV_MODE_UNLOCKED]) {
+        return NO;
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:SECRET_DEV_MODE_UNLOCKED];
+}
+
++ (void)AL_secretDevModeUnlocked:(BOOL)enabled {
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:SECRET_DEV_MODE_UNLOCKED];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *valueLabel;
+@property (strong, nonatomic) IBOutlet UIView *fillerView;
 @property (strong, nonatomic) IBOutlet UIImageView *checkmarkView;
 @end
 
@@ -73,11 +74,15 @@
     self.checkmarkView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     self.checkmarkView.contentMode = UIViewContentModeScaleAspectFill;
     
+    self.fillerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 5)];
+    
+    
     [self.contentView addSubview:_titleLabel];
     [self.contentView addSubview:_valueLabel];
-    [self.contentView addSubview:_checkmarkView];
+//    [self.contentView addSubview:_checkmarkView];
+    [self.contentView addSubview:_fillerView];
     
-    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height+5;
+    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height+self.fillerView.frame.size.height+5;
     self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, height);
     self.cellHeight = self.contentView.frame.size.height;
     
@@ -116,15 +121,18 @@
         self.valueLabel.numberOfLines = 1;
     }
     
-    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height+5;
+    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height + self.fillerView.frame.size.height+5;
     self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, height);
     self.cellHeight = self.contentView.frame.size.height;
     
     //Checkmark setup
-    self.checkmarkView.center = CGPointMake(self.contentView.frame.size.width - checkmarkHeight/2 - padding, self.valueLabel.center.y);
+//    self.checkmarkView.center = CGPointMake(self.contentView.frame.size.width - checkmarkHeight/2 - padding, self.valueLabel.center.y);
+    self.fillerView.frame = CGRectMake(padding,
+                                       self.valueLabel.frame.origin.y+self.valueLabel.frame.size.height,
+                                       self.contentView.frame.size.width - padding*2 - checkmarkHeight-5,
+                                       self.fillerView.frame.size.height);
     
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.titleLabel.frame.size.height + self.valueLabel.frame.size.height);
-    
 }
 
 - (void)setResultEntry:(ALResultEntry *)entry {

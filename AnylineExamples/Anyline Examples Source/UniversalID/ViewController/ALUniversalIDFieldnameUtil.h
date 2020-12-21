@@ -16,4 +16,5 @@
 + (NSMutableArray<ALResultEntry *> *)addIDSubResult:(ALUniversalIDIdentification*)identification titleSuffix:(NSString *)titleSuffix resultHistoryString:(NSMutableString *)resultHistoryString;
 + (NSString *)camelCaseToTitleCaseModified:(NSString *)inputString;
 + (NSString *)camelCaseToTitleCase:(NSString *)inputString;
++ (BOOL)isPassportForUniversalIDIdentification:(ALUniversalIDIdentification *)identification;
 @end
