@@ -32,11 +32,12 @@
         
 //    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*0.35);
     CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.25);
-
-    [self.view layoutIfNeeded];
     
+    [self.view layoutIfNeeded];
     self.header = [[UIView alloc] initWithFrame:headerFrame];
-    self.header.backgroundColor = [UIColor whiteColor];
+    
+    self.view.backgroundColor = [UIColor AL_BackgroundColor];
+    self.header.backgroundColor = [UIColor AL_BackgroundColor];
     
     self.anylineWhite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
     [self.anylineWhite setContentMode:UIViewContentModeScaleAspectFit];
@@ -46,33 +47,73 @@
     [self.anylineWhite.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
     [self.anylineWhite.centerYAnchor constraintEqualToAnchor:self.header.centerYAnchor constant:-10].active = YES;
     
-    self.tabView = [[UISegmentedControl alloc] initWithItems:@[]];
+    [self setupSegmentControl];
 
-    [self.header addSubview:self.tabView];
-    self.tabView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.tabView.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
-    [self.tabView.leftAnchor constraintEqualToAnchor:self.header.leftAnchor].active = YES;
-    [self.tabView.rightAnchor constraintEqualToAnchor:self.header.rightAnchor].active = YES;
+    [self.header addSubview:self.segmentedControl];
     
-    [self.tabView addTarget:self action:@selector(jumpToPage:) forControlEvents:UIControlEventValueChanged];
+    
+    self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.segmentedControl.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
+    [self.segmentedControl.leftAnchor constraintEqualToAnchor:self.header.leftAnchor constant:15].active = YES;
+    [self.segmentedControl.rightAnchor constraintEqualToAnchor:self.header.rightAnchor constant:-15].active = YES;
+    
+    [self.segmentedControl addTarget:self action:@selector(jumpToPage:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.header];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
+
+}
+
+- (void)setupSegmentControl {
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[]];
+    if (@available(iOS 13, *)) {
+        [self.segmentedControl setSelectedSegmentTintColor:[UIColor AL_White]];
+    } else {
+        [self customizeSegmentedControlWithColor:[UIColor AL_White]];
+    }
+    [self.segmentedControl setBackgroundColor:[UIColor AL_SegmentControlUnselected]];
+    [self.segmentedControl setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColor.AL_SegmentControl} forState:UIControlStateNormal];
+    [self.segmentedControl setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColor.AL_Black} forState:UIControlStateSelected];
+}
+
+- (void)customizeSegmentedControlWithColor:(UIColor *)color {
+
+    UIImage *tintColorImage = [self imageWithColor: color];
+    
+    [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateSelected|UIControlStateSelected barMetrics:UIBarMetricsDefault];
+//    [self.segmentedControl setDividerImage:tintColorImage forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
+- (UIImage *)imageWithColor: (UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.segmentedControl.bounds.size.width, self.segmentedControl.bounds.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 - (void)setupTabbar {
-    [self.tabView removeAllSegments];
+    [self.segmentedControl removeAllSegments];
     for (UIViewController *page in self.pages.reverseObjectEnumerator) {
-        [self.tabView insertSegmentWithTitle:[self titleOfExampleManager:page] atIndex:0 animated:NO];
+        [self.segmentedControl insertSegmentWithTitle:[self titleOfExampleManager:page] atIndex:0 animated:NO];
     }
     [self highlightTabAtIndex:0];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor AL_BackgroundColor];
     
     [self setupHeader];
     
-    [self.view bringSubviewToFront:self.tabView];
+    [self.view bringSubviewToFront:self.segmentedControl];
     
     self.dataSource = self;
     self.delegate = self;
@@ -153,7 +194,7 @@
 #pragma mark - Utility Methods
 
 - (void)highlightTabAtIndex:(NSInteger)index {
-    self.tabView.selectedSegmentIndex = index;
+    self.segmentedControl.selectedSegmentIndex = index;
 }
 
 - (CALayer *)addBorder:(UIRectEdge)edge color:(UIColor *)color thickness:(CGFloat)thickness frame:(CGRect)frame padding:(CGFloat)padding {
@@ -188,6 +229,8 @@
         [self gotoPage:tag];
         self.title = [self titleOfExampleManagerOnIndex:tag];
     }
+
+    [[[sender subviews] objectAtIndex:[sender selectedSegmentIndex]] setTintColor:[UIColor AL_White]];
 }
 
 - (void)gotoPage:(NSInteger)index {

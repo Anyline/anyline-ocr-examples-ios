@@ -47,9 +47,11 @@
     [super viewDidLoad];
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    [doneButton setTintColor:[UIColor AL_examplesBlue]];
     self.navigationItem.rightBarButtonItem = doneButton;
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+    [cancelButton setTintColor:[UIColor AL_examplesBlue]];
     self.navigationItem.leftBarButtonItem = cancelButton;
 }
 
@@ -94,11 +96,11 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 38)];
     
-    view.backgroundColor = [UIColor AL_gray];
+    view.backgroundColor = [UIColor AL_BackgroundColor];
     
     UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 305, 38)];
     lbl.font      = [UIFont AL_proximaLightWithSize:14];
-    lbl.textColor = [UIColor darkTextColor];
+    lbl.textColor = [UIColor AL_LabelBlackWhite];
     lbl.textAlignment = NSTextAlignmentLeft;
     
     [view addSubview:lbl];
@@ -130,7 +132,7 @@
         UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
         cell.textLabel.text = @"All";
         cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.textLabel.textColor = [UIColor secondaryLabelColor];
+        cell.textLabel.textColor = [UIColor AL_LabelBlackWhite];
         cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
         __block int numCount = 0;
         [self.items enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSArray * _Nonnull obj, BOOL * _Nonnull stop) {
@@ -163,7 +165,7 @@
     NSString *key = self.headerTitles[indexPath.section-1];
     cell.textLabel.text = self.items[key][indexPath.row];
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
-    cell.textLabel.textColor = [UIColor labelColor];
+    cell.textLabel.textColor = [UIColor AL_LabelBlackWhite];
     cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
     
     return cell;

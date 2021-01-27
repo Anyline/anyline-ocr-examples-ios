@@ -11,6 +11,7 @@
 #import "ALResultOverlayView.h"
 #import "ALAppDemoLicenses.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
+#import "UIFont+ALExamplesAdditions.h"
 
 #import <UIKit/UIKit.h>
 #import <Anyline/Anyline.h>

@@ -58,11 +58,11 @@
     NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     [self.barcodeScanViewPlugin addScanViewPluginDelegate:self];
     
-    
     self.controllerType = ALScanHistoryBarcodePDF417;
     
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.barcodeScanViewPlugin];
+    [self.scanView.captureDeviceManager setValue:@(1) forKey:@"disableNative"];
     
     [self.view addSubview:self.scanView];
     [self.scanView startCamera];

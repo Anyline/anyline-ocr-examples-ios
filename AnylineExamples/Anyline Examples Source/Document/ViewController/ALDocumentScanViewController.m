@@ -71,7 +71,7 @@
     // This view notifies the user of any problems that occur while he is scanning
     self.roundedView = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, 155, self.view.bounds.size.width - 40, 30)];
 
-    self.roundedView.fillColor = [UIColor AL_examplesBlueWithAlpha:0.6];
+    self.roundedView.fillColor = [[UIColor AL_examplesBlue] colorWithAlphaComponent:0.6];
     self.roundedView.textLabel.text = @"";
     self.roundedView.alpha = 0;
     [self.view addSubview:self.roundedView];

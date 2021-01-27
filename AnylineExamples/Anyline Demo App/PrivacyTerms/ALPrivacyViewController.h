@@ -6,9 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ALPrivacyForwardingViewController.h"
 
-@interface ALPrivacyViewController : UIViewController
-
-- (instancetype)initWithCompletion:(void (^)(void))handler;
+@interface ALPrivacyViewController : ALPrivacyForwardingViewController
 
 @end

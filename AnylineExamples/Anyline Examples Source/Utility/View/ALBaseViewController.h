@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALBaseViewController : UIViewController
+@interface ALBaseViewController : UIViewController <UITextViewDelegate>
 
 /*
  This word setter triggers the search for an anagram

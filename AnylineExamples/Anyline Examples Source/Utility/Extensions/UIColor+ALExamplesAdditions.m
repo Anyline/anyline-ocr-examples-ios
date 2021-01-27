@@ -10,24 +10,72 @@
 
 @implementation UIColor (ALExamplesAdditions)
 
-+ (UIColor *)AL_examplesBlue {
-    return RGBA(0, 153, 255, 1);
++ (UIColor *)AL_White {
+    return [UIColor colorNamed:@"AL_White"];
 }
 
-+ (UIColor *)AL_examplesBlueWithAlpha:(CGFloat)alpha {
-    return RGBA(0, 153, 255, alpha);
++ (UIColor *)AL_Black {
+    return [UIColor colorNamed:@"AL_Black"];
+}
+
++ (UIColor *)AL_SegmentControl {
+    return [UIColor colorNamed:@"AL_SegmentControl"];
+}
+
++ (UIColor *)AL_SegmentControlUnselected {
+    return [UIColor colorNamed:@"AL_SegmentControlUnselected"];
+}
+
++ (UIColor *)AL_examplesBlue {
+    return [UIColor colorNamed:@"AL_examplesBlue"];
 }
 
 + (UIColor *)AL_errorLabelRed {
-    return RGBA(217, 43, 10, 1);
+    return [UIColor colorNamed:@"AL_errorLabelRed"];
 }
 
 + (UIColor *)AL_devTestModeColor {
-    return RGBA(194, 117, 255, 1);
+    return [UIColor colorNamed:@"AL_devTestModeColor"];
 }
 
-+ (UIColor *)AL_gray {
-    return RGBA(245, 245, 245, 1);
++ (UIColor *)AL_Gray {
+    return [UIColor colorNamed:@"AL_gray"];
+}
+
++ (UIColor *)AL_SectionGridBG {
+    return [UIColor colorNamed:@"AL_SectionGridBG"];
+}
+
++ (UIColor *)AL_SectionLabel {
+    return [UIColor colorNamed:@"AL_SectionLabel"];
+}
+
++ (UIColor *)AL_NonSelectedToolBarItem {
+    return [UIColor colorNamed:@"AL_NonSelectedToolBarItem"];
+}
+
++(UIColor *)AL_BackgroundColor {
+    return [UIColor colorNamed:@"AL_BackgroundColor"];
+}
+
++ (UIColor *)AL_LabelWhiteBlack {
+    return [UIColor colorNamed:@"AL_LabelWhiteBlack"];
+}
+
++ (UIColor *)AL_LabelBlackWhite {
+    return [UIColor colorNamed:@"AL_LabelBlackWhite"];
+}
+
++(UIColor *)AL_NavigationBG {
+    return  [UIColor colorNamed:@"AL_NavigationBG"];
+}
+
++ (UIColor *)AL_Separator {
+    return  [UIColor colorNamed:@"AL_Separator"];
+}
+
++ (UIColor *)AL_BackButton {
+    return  [UIColor colorNamed:@"AL_BackButton"];
 }
 
 @end

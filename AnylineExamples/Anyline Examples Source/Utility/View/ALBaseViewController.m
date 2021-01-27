@@ -8,9 +8,13 @@
 
 #import "ALBaseViewController.h"
 #import "Reachability.h"
+#import "UIViewController+ALExamplesAdditions.h"
 #import <WebKit/WebKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ALBaseViewController ()  <WKNavigationDelegate>
+NSString * const kForgetMeLinkString = @"hello@anyline.com";
+
+@interface ALBaseViewController ()  <WKNavigationDelegate, UITextViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *progessView;
 @property (nonatomic, strong) WKWebView *webView;

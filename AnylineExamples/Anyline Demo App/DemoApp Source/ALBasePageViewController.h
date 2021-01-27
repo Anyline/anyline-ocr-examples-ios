@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray<UIViewController *> *pages;
 
-@property (nonatomic, strong) UISegmentedControl *tabView;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UIImageView *anylineWhite;
 @property (nonatomic) NSInteger currIndex;

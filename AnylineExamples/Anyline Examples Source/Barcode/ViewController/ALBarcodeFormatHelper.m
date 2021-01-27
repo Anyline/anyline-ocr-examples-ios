@@ -22,11 +22,47 @@ static NSString * const kLegacy = @"LEGACY SYMBOLOGIES";
 @implementation ALBarcodeFormatHelper
 
 + (void)initialize {
-    barcodeFormats = @{k1DRetail : @{@"UPC/EAN" : @[kCodeTypeEAN8,kCodeTypeEAN13,kCodeTypeUPCA,kCodeTypeUPCE,kCodeTypeUPCEANExtension,kCodeTypeUPC_EAN_EXTENSION], @"GS1 DataBar & Composite Codes" : @[kCodeTypeRSS14,kCodeTypeRSSExpanded,kCodeTypeRSS_EXPANDED] },
-                       k1DLogisitcs : @{@"Code 128" : @[kCodeTypeCode128], @"Code 39" : @[kCodeTypeCode39], @"Interleaved 2 of 5" : @[kCodeTypeITF], @"GS1-128" : @[kCodeTypeGS1_128], @"ISBT 128" : @[kCodeTypeISBT_128], @"Trioptic Code 39" : @[kCodeTypeTRIOPTIC], @"Code 32" : @[kCodeTypeCODE_32], @"Code 93" : @[kCodeTypeCode93], @"Matrix 2 of 5" : @[kCodeTypeMATRIX_2_5],},
-                       k2D : @{@"PDF417" : @[kCodeTypePDF417], @"QR Code" : @[kCodeTypeQR], @"MicroPDF417" : @[kCodeTypeMICRO_PDF], @"MicroQR" : @[kCodeTypeMICRO_QR], @"GS1 QR Code" : @[kCodeTypeGS1_QR_CODE], @"Aztec" : @[kCodeTypeAztec],},
-                       kPostal : @{@"US Postnet" : @[kCodeTypeUS_POSTNET], @"US Planet" : @[kCodeTypeUS_PLANET], @"UK Postal" : @[kCodeTypePOST_UK], @"USPS 4CD / One Code / Intelligent Mail" : @[kCodeTypeUSPS_4CB,kCodeTypeDOT_CODE],},
-                       kLegacy : @{@"Code 25" : @[kCodeTypeDISCRETE_2_5], @"Codabar" : @[kCodeTypeCodabar], @"Code 11" : @[kCodeTypeCODE_11]}
+    barcodeFormats =
+    @{
+        k1DRetail : @{@"UPC/EAN"                       : @[kCodeTypeEAN8,kCodeTypeEAN13,kCodeTypeUPCA,kCodeTypeUPCE,kCodeTypeUPCEANExtension,kCodeTypeUPC_EAN_EXTENSION],
+                      @"GS1 DataBar & Composite Codes" : @[kCodeTypeRSS14,kCodeTypeRSSExpanded,kCodeTypeRSS_EXPANDED],
+                      //@"MSI" : @[kCodeTypeMSI]
+        },
+      
+        k1DLogisitcs : @{
+                         @"Code 128"           : @[kCodeTypeCode128],
+                         @"Code 39"            : @[kCodeTypeCode39],
+                         @"Interleaved 2 of 5" : @[kCodeTypeITF],
+                         @"GS1-128"            : @[kCodeTypeGS1_128],
+                         @"ISBT 128"           : @[kCodeTypeISBT_128],
+                         @"Trioptic Code 39"   : @[kCodeTypeTRIOPTIC],
+                         @"Code 32"            : @[kCodeTypeCODE_32],
+                         @"Code 93"            : @[kCodeTypeCode93],
+                         //@"Matrix 2 of 5"      : @[kCodeTypeMATRIX_2_5],
+        },
+        
+        k2D : @{
+                @"Data Matrix" : @[kCodeTypeDataMatrix],
+                @"PDF417"      : @[kCodeTypePDF417],
+                @"QR Code"     : @[kCodeTypeQR],
+                @"MicroPDF417" : @[kCodeTypeMICRO_PDF],
+                @"MicroQR"     : @[kCodeTypeMICRO_QR],
+                @"GS1 QR Code" : @[kCodeTypeGS1_QR_CODE],
+                @"Aztec"       : @[kCodeTypeAztec],
+        },
+                       
+        kPostal : @{
+                    @"US Postnet" : @[kCodeTypeUS_POSTNET],
+                    @"US Planet"  : @[kCodeTypeUS_PLANET],
+                    @"UK Postal"  : @[kCodeTypePOST_UK],
+                    @"USPS 4CD / One Code / Intelligent Mail" : @[kCodeTypeUSPS_4CB,kCodeTypeDOT_CODE],
+        },
+                       
+        kLegacy : @{
+                    @"Code 25" : @[kCodeTypeDISCRETE_2_5],
+                    @"Codabar" : @[kCodeTypeCodabar],
+                    @"Code 11" : @[kCodeTypeCODE_11]
+        }
     };
     
     defaultReadableNames = @[@"UPC/EAN", @"Code 128", @"Code 39", @"Interleaved 2 of 5", @"PDF417", @"QR Code"];

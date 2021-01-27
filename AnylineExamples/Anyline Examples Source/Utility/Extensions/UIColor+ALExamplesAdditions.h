@@ -14,9 +14,21 @@
 @interface UIColor (ALExamplesAdditions)
 
 + (UIColor *)AL_examplesBlue;
-+ (UIColor *)AL_examplesBlueWithAlpha:(CGFloat)alpha;
++ (UIColor *)AL_White;
++ (UIColor *)AL_Black;
 + (UIColor *)AL_errorLabelRed;
 + (UIColor *)AL_devTestModeColor;
-+ (UIColor *)AL_gray;
++ (UIColor *)AL_Gray;
++ (UIColor *)AL_SectionGridBG;
++ (UIColor *)AL_SectionLabel;
++ (UIColor *)AL_NonSelectedToolBarItem;
++ (UIColor *)AL_BackgroundColor;
++ (UIColor *)AL_LabelWhiteBlack;
++ (UIColor *)AL_LabelBlackWhite;
++ (UIColor *)AL_NavigationBG;
++ (UIColor *)AL_SegmentControl;
++ (UIColor *)AL_SegmentControlUnselected;
++ (UIColor *)AL_Separator;
++ (UIColor *)AL_BackButton;
 
 @end

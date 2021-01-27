@@ -108,9 +108,9 @@
     UISwitch *multiBarcode = [[UISwitch alloc] init];
     [self.view addSubview:multiBarcode];
     multiBarcode.translatesAutoresizingMaskIntoConstraints = NO;
-    [multiBarcode.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-bottomPadding-10].active = YES;
-    [multiBarcode.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-rightPadding-10].active = YES;
-    [multiBarcode setTintColor:[UIColor AL_examplesBlue]];
+    [multiBarcode.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-bottomPadding-30].active = YES;
+    [multiBarcode.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-rightPadding-45].active = YES;
+    [multiBarcode setTintColor:[UIColor AL_NonSelectedToolBarItem]];
     [multiBarcode setOnTintColor:[UIColor AL_examplesBlue]];
     [multiBarcode addTarget:self action:@selector(setMultiBarcode:) forControlEvents:UIControlEventValueChanged];
     [multiBarcode setOn:NO];
@@ -124,7 +124,7 @@
     [multiBarcodeLabel.heightAnchor constraintEqualToAnchor:multiBarcode.heightAnchor].active = YES;
     multiBarcodeLabel.text = @"Multi Barcode";
     multiBarcodeLabel.font = [UIFont AL_proximaBoldWithSize:16];
-    multiBarcodeLabel.textColor = UIColor.whiteColor;
+    multiBarcodeLabel.textColor = [UIColor AL_White];
     multiBarcodeLabel.textAlignment = NSTextAlignmentRight;
 }
 

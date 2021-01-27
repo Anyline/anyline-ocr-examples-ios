@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rS3-R9-Ivy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController title="Master" extendedLayoutIncludesOpaqueBars="YES" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,7 +30,7 @@
         <!--Main Page View Controller-->
         <scene sceneID="nmn-ek-8HF">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="30" navigationOrientation="horizontal" spineLocation="none" id="f8e-S6-yxB" customClass="ALMainPageViewController" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" extendedLayoutIncludesOpaqueBars="YES" transitionStyle="scroll" pageSpacing="30" navigationOrientation="horizontal" spineLocation="none" id="f8e-S6-yxB" customClass="ALMainPageViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IdG-Sv-o7t"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFt-hc-fyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,11 +40,11 @@
         <!--Meter Collection View Controller-->
         <scene sceneID="2LS-6E-yFq">
             <objects>
-                <collectionViewController storyboardIdentifier="meterGridViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q34-11-UzZ" customClass="ALMeterCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="meterGridViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q34-11-UzZ" customClass="ALMeterCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="FXO-1C-n5P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="AL_BackgroundColor"/>
                         <inset key="scrollIndicatorInsets" minX="15" minY="12" maxX="15" maxY="12"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwm-a4-efk">
                             <size key="itemSize" width="140" height="140"/>
@@ -104,11 +105,11 @@
         <!--Grid Collection View Controller-->
         <scene sceneID="0do-DJ-IUl">
             <objects>
-                <collectionViewController storyboardIdentifier="gridViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CM8-cn-jC2" customClass="ALGridCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="gridViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CM8-cn-jC2" customClass="ALGridCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="KBz-AW-MVD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="AL_BackgroundColor"/>
                         <inset key="scrollIndicatorInsets" minX="15" minY="12" maxX="15" maxY="12"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AUf-HC-1fH">
                             <size key="itemSize" width="140" height="140"/>
@@ -167,4 +168,9 @@
             <point key="canvasLocation" x="1596" y="466"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AL_BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

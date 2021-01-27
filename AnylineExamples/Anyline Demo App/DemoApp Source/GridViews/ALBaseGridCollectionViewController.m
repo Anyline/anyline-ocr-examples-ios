@@ -36,10 +36,13 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //self.view.backgroundColor = [UIColor whiteColor];
-    //self.collectionView.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(self.exampleManager.title, nil);
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
+    if (self.exampleManager) {
+        [self.collectionView setContentInset:UIEdgeInsetsMake(10, 0, 0, 0)];
+    }
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -58,7 +61,7 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     if (enabled) {
         newColor = [UIColor AL_devTestModeColor];
     } else {
-        newColor = nil;
+        newColor = [UIColor AL_NavigationBG];
     }
 
     if ([navBar.barTintColor isEqual:newColor]) {
@@ -104,12 +107,13 @@ NSString * const viewControllerIdentifier = @"gridViewController";
 
 - (UIView *)createHeaderViewWithTag:(NSInteger)tag forSize:(CGSize)size title:(NSString *)title {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    [header setBackgroundColor:[UIColor AL_SectionGridBG]];
     header.tag = tag;
 
     UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0,0, size.width, size.height)];
     label.text = title;
-    label.textColor = [UIColor colorWithDisplayP3Red:112.0/255.0 green:112.0/255.0 blue:112.0/255.0 alpha:1.0];
-    label.backgroundColor = [UIColor colorWithDisplayP3Red:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
+    label.textColor = [UIColor AL_SectionLabel];
+    label.backgroundColor = [UIColor clearColor];
     
     label.textAlignment = NSTextAlignmentLeft;
     //todo: use dynamic type sizes (e.g. [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2] or scaledFontForFont:)
@@ -148,15 +152,21 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     
     
     cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
-    cell.backgroundImageView.image = [[self.exampleManager exampleForIndexPath:indexPath] image];
+    ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
+    cell.backgroundImageView.image = [example image];
+    if ([[example name] localizedCaseInsensitiveContainsString:@"universal"]) {
+        cell.layer.borderColor = [UIColor AL_SectionGridBG].CGColor;
+        cell.layer.borderWidth = 2;
+    }
     cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.backgroundView.contentMode = UIViewContentModeTop;
     if (!cell.backgroundImageView.image) {
 //        cell.gradientColor = [self gradientColorForIndexPath:indexPath];
-        cell.name.text = [[self.exampleManager exampleForIndexPath:indexPath] name];
+        NSString *name = [example name];
+        cell.name.text = name;
     }
     cell.name.font = [UIFont AL_proximaSemiboldWithSize:16];
-    cell.name.textColor = [UIColor whiteColor];
+    cell.name.textColor = [UIColor AL_White];
     cell.name.numberOfLines = 0;
     
     cell.layer.masksToBounds = YES;

@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger, ALUniversalIDLayoutType) {
      * Used to set allowedLayouts for the layoutType IDFront
      */
     ALUniversalIDLayoutTypeIDFront = 2,
+    /**
+     * Used to set allowedLayouts for the layoutType InsuranceCard
+     */
+    ALUniversalIDLayoutTypeInsuranceCard = 3,
 };
 
 __attribute__((deprecated("please use ALUniversalIDFieldScanOptions instead")))

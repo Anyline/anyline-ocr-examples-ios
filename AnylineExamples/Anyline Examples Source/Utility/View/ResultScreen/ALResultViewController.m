@@ -79,16 +79,6 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     CGFloat leftPadding = window.safeAreaInsets.left;
     CGFloat rightPadding = window.safeAreaInsets.right;
     
-    //Setup Confirm Button
-    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-50-bottomPadding, self.view.bounds.size.width, 50+bottomPadding)];
-    [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmButton setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    [self.confirmButton.titleLabel setFont:[UIFont AL_proximaRegularWithSize:18]];
-    [self.confirmButton.titleLabel setTextColor:[UIColor whiteColor]];
-    self.confirmButton.backgroundColor = [UIColor AL_examplesBlue];
-    //Add button to viewController.view
-    [self.view addSubview:self.confirmButton];
-    
     
     //Setup Content ScrollView
     self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
@@ -217,6 +207,25 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 120.0;
     }
+    
+    //Setup Confirm Button
+    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50+bottomPadding)];
+    [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.confirmButton setTitle:@"CONFIRM" forState:UIControlStateNormal];
+    [self.confirmButton.titleLabel setFont:[UIFont AL_proximaRegularWithSize:18]];
+    [self.confirmButton.titleLabel setTextColor:[UIColor whiteColor]];
+    self.confirmButton.backgroundColor = [UIColor AL_examplesBlue];
+    //Add button to viewController.view
+    [self.view addSubview:self.confirmButton];
+    
+    [self.confirmButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.confirmButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    NSArray *confirmButtonConstraints = @[[self.confirmButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+                                          [self.confirmButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+                                          [self.confirmButton.heightAnchor constraintEqualToConstant:50],
+                                          [self.confirmButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:0]];
+    [self.view addConstraints:confirmButtonConstraints];
+    [NSLayoutConstraint activateConstraints:confirmButtonConstraints];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

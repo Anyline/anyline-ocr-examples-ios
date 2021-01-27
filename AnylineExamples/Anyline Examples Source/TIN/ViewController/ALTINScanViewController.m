@@ -96,7 +96,7 @@
     
     [self.view addSubview:self.flipOrientationButton];
     self.flipOrientationButton.layer.cornerRadius = 3;
-    self.flipOrientationButton.backgroundColor = [UIColor AL_examplesBlueWithAlpha:0.85];
+    self.flipOrientationButton.backgroundColor = [[UIColor AL_examplesBlue] colorWithAlphaComponent:0.85];
     self.isOrientationFlipped = false;
 }
 
