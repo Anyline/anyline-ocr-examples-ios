@@ -12,6 +12,7 @@
 #import <Anyline/Anyline.h>
 #import "ALResultViewController.h"
 #import "UISwitch+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 static const NSInteger padding = 7;
 
@@ -141,7 +142,7 @@ static const NSInteger padding = 7;
     
     self.enableBarcodeSwitch = [[UISwitch alloc] init];
     [self.enableBarcodeSwitch setOn:false];
-    [self.enableBarcodeSwitch setOnTintColor:[UIColor colorWithRed:0.0/255.0 green:153.0/255.0 blue:255.0/255.0 alpha:1.0]];
+    [self.enableBarcodeSwitch setOnTintColor:[UIColor AL_NonSelectedToolBarItem]];
     [self.enableBarcodeSwitch useHighContrast];
     [self.enableBarcodeSwitch addTarget:self action:@selector(toggleBarcodeScanning:) forControlEvents:UIControlEventValueChanged];
     

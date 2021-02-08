@@ -159,6 +159,7 @@
 		DDACD680801D8D6BED0F6F18 /* ALBasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */; };
 		DED860F64AF49DD872DCAC2C /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 084643E9DC61FCF5C414457E /* isbn_config.json */; };
 		DF769EF1A4C7A11DE916D0B1 /* universal_id_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD32A60DAB173ECCAC90D9D4 /* universal_id_config.json */; };
+		E2B5A3C0DD9F2F95F8DBD47A /* ALPrivacyForwardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */; };
 		E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA12F0082427C9B897F096 /* ALSpaceViews.m */; };
 		E7017766A5591720AE2CBCDA /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D42728150F52CC8887535DC /* ALISBNViewController.m */; };
 		E81F0DED94A08AAB70CDBD5F /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC613FC690FD7C7C742CE2F /* ALMRZScanViewController.m */; };
@@ -224,6 +225,7 @@
 		1CC34D7EAD1A849899340DD0 /* ALISBNHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALISBNHeaderCell.h; sourceTree = "<group>"; };
 		1D441F11D2B3236170AB0AE9 /* AnylineExamples 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineExamples 2.xcdatamodel"; sourceTree = "<group>"; };
 		1D90102F4DB805B0DA85EC33 /* ALScrabblePoints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabblePoints.m; sourceTree = "<group>"; };
+		1DD08F40B6F0FE15D8F5D472 /* ALPrivacyForwardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPrivacyForwardingViewController.h; sourceTree = "<group>"; };
 		1EFBCB2ECDA30B85C2A54B48 /* ALSelectionTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALSelectionTable.m; sourceTree = "<group>"; };
 		1F1E78B6137D667B2BAFF771 /* ALProductExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALProductExampleManager.m; sourceTree = "<group>"; };
 		200D1EBB7219D783E812650B /* NSTimer+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ALExamplesAdditions.h"; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 		F72E21F38E68BE8268DA8B75 /* ALVoucherCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVoucherCodeScanViewController.h; sourceTree = "<group>"; };
 		F92107DB6698B83180CD5864 /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		FE8E97DFB75BB606736A5B8F /* ALBasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBasePageViewController.h; sourceTree = "<group>"; };
+		FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPrivacyForwardingViewController.m; sourceTree = "<group>"; };
 		FEFF3B2A195CB1BC742F07A4 /* ReadingDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingDetailsViewController.m; sourceTree = "<group>"; };
 		FFB4E02BFD8726AC4537520C /* ElectricMeterBlackWhiteScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricMeterBlackWhiteScanViewController.swift; sourceTree = "<group>"; };
 		FFC857EC270D2968343ED322 /* ALWarningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWarningView.h; sourceTree = "<group>"; };
@@ -1071,6 +1074,8 @@
 				3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */,
 				ECC67A6891F547B529598E5F /* ALMainPageViewController.h */,
 				30B76762D974C43BF0286E13 /* ALMainPageViewController.m */,
+				1DD08F40B6F0FE15D8F5D472 /* ALPrivacyForwardingViewController.h */,
+				FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */,
 				A7D5F404BA40404FC2843ED9 /* ALUmbrella.h */,
 				9E97F2F856C896EBAFEBFBBB /* AppDelegate.h */,
 				ACF1D09EF06128D92632D6CB /* AppDelegate.m */,
@@ -1532,6 +1537,7 @@
 				4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */,
 				7B974FABA902C5631FDD2681 /* ALPDF417ScanViewController.m in Sources */,
 				A9B86F7EC70516E6742E48BA /* ALParallelMeterScanViewController.m in Sources */,
+				E2B5A3C0DD9F2F95F8DBD47A /* ALPrivacyForwardingViewController.m in Sources */,
 				21A22328A97C63E67AE854BA /* ALProductExampleManager.m in Sources */,
 				9B85D1299B1E0B254BA1C6CA /* ALRBScanViewController.m in Sources */,
 				3A9ED79B2EAD0E0CDC1E2F88 /* ALRecordNumberScanViewController.m in Sources */,
@@ -1636,7 +1642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -1656,6 +1662,7 @@
 					./../Framework,
 					/,
 				);
+				MARKETING_VERSION = 28.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1725,7 +1732,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -1745,6 +1752,7 @@
 					./../Framework,
 					/,
 				);
+				MARKETING_VERSION = 28.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PROVISIONING_PROFILE_SPECIFIER = "";

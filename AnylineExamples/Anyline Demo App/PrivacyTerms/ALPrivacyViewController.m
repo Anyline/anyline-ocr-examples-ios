@@ -24,7 +24,6 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
 @interface ALPrivacyViewController () <MFMailComposeViewControllerDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) UILabel * privacyLabel;
-@property (nonatomic, strong) UILabel * consentLabel;
 @property (nonatomic, strong) ALCheckbox *cbox;
 @property (nonatomic, strong) UIButton *confirmButton;
 @property (nonatomic, copy) CompletionBlock completionBlock;
@@ -45,8 +44,9 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     self.view.backgroundColor = [UIColor AL_BackgroundColor];
     
     BOOL wasAccepted = [NSUserDefaults AL_dataPolicyAccepted];
-
-    self.navigationItem.hidesBackButton = YES;
+    
+    self.navigationItem.hidesBackButton = !wasAccepted;
+    
     // disable the interactivePopGestureRecognizer
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
@@ -58,14 +58,6 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     self.privacyLabel.textColor = [UIColor AL_examplesBlue];
     [self.view addSubview:self.privacyLabel];
     [self.privacyLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    self.consentLabel = [[UILabel alloc] init];
-    self.consentLabel.text = @"Consent"; //barcode screen has no title
-    self.consentLabel.numberOfLines = 0;
-    self.consentLabel.font = [UIFont AL_proximaBoldWithSize:24];
-    self.consentLabel.textAlignment = NSTextAlignmentLeft;
-    [self.view addSubview:self.consentLabel];
-    [self.consentLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     self.privacyPolicyTextView = [self textViewWithTextFromRTF:@"Anyline App Privacy Policy" sideMargin:5 onView:self.view];
     
@@ -122,31 +114,34 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
                                     [self.privacyLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:15],
                                     [self.privacyLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]].mutableCopy;
     
-    [constraints addObjectsFromArray:@[[self.consentLabel.topAnchor constraintEqualToAnchor:self.privacyLabel.bottomAnchor],
-                                       [self.consentLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:15],
-                                       [self.consentLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]]];
-    
-    [constraints addObjectsFromArray:@[[self.privacyPolicyTextView.topAnchor constraintEqualToAnchor:self.consentLabel.bottomAnchor constant:20],
+    NSLayoutConstraint *bottomPrivacyConstraint = [self.privacyPolicyTextView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:0];
+    [bottomPrivacyConstraint setPriority:750];
+    [constraints addObjectsFromArray:@[[self.privacyPolicyTextView.topAnchor constraintEqualToAnchor:self.privacyLabel.bottomAnchor constant:20],
                                        [self.privacyPolicyTextView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:15],
-                                       [self.privacyPolicyTextView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-15]]];
+                                       [self.privacyPolicyTextView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-15],
+                                       bottomPrivacyConstraint]];
     
-    [constraints addObjectsFromArray:@[[self.controlElementsView.topAnchor constraintEqualToAnchor:self.privacyPolicyTextView.bottomAnchor],
-                                       [self.controlElementsView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
-                                       [self.controlElementsView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
-                                       [self.controlElementsView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor]]];
-    
-    
-    [constraints addObjectsFromArray:@[[self.confirmButton.leftAnchor constraintEqualToAnchor:self.controlElementsView.leftAnchor constant:UIButton.roundedButtonHorizontalMargin],
-                                       [self.confirmButton.rightAnchor constraintEqualToAnchor:self.controlElementsView.rightAnchor constant:-UIButton.roundedButtonHorizontalMargin],
-                                       [self.confirmButton.heightAnchor constraintEqualToConstant:UIButton.roundedButtonHeight],
-                                       [self.confirmButton.bottomAnchor constraintEqualToAnchor:self.controlElementsView.bottomAnchor constant:-20],
-                                       [self.confirmButton.topAnchor constraintEqualToAnchor:self.cbox.bottomAnchor constant:10]]];
-    
-    
-    [constraints addObjectsFromArray:@[[self.cbox.leftAnchor constraintEqualToAnchor:self.controlElementsView.leftAnchor constant:UIButton.roundedButtonHorizontalMargin],
-                                       [self.cbox.rightAnchor constraintEqualToAnchor:self.controlElementsView.rightAnchor constant:-UIButton.roundedButtonHorizontalMargin],
-                                       [self.cbox.heightAnchor constraintEqualToConstant:UIButton.roundedButtonHeight],
-                                       [self.cbox.topAnchor constraintEqualToAnchor:self.controlElementsView.topAnchor constant:20]]];
+    if (![NSUserDefaults AL_dataPolicyAccepted]) {
+        [constraints addObjectsFromArray:@[[self.controlElementsView.topAnchor constraintEqualToAnchor:self.privacyPolicyTextView.bottomAnchor],
+                                           [self.controlElementsView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
+                                           [self.controlElementsView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
+                                           [self.controlElementsView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor]]];
+        
+        
+        [constraints addObjectsFromArray:@[[self.confirmButton.leftAnchor constraintEqualToAnchor:self.controlElementsView.leftAnchor constant:UIButton.roundedButtonHorizontalMargin],
+                                           [self.confirmButton.rightAnchor constraintEqualToAnchor:self.controlElementsView.rightAnchor constant:-UIButton.roundedButtonHorizontalMargin],
+                                           [self.confirmButton.heightAnchor constraintEqualToConstant:UIButton.roundedButtonHeight],
+                                           [self.confirmButton.bottomAnchor constraintEqualToAnchor:self.controlElementsView.bottomAnchor constant:-20],
+                                           [self.confirmButton.topAnchor constraintEqualToAnchor:self.cbox.bottomAnchor constant:10]]];
+        
+        
+        [constraints addObjectsFromArray:@[[self.cbox.leftAnchor constraintEqualToAnchor:self.controlElementsView.leftAnchor constant:UIButton.roundedButtonHorizontalMargin],
+                                           [self.cbox.rightAnchor constraintEqualToAnchor:self.controlElementsView.rightAnchor constant:-UIButton.roundedButtonHorizontalMargin],
+                                           [self.cbox.heightAnchor constraintEqualToConstant:UIButton.roundedButtonHeight],
+                                           [self.cbox.topAnchor constraintEqualToAnchor:self.controlElementsView.topAnchor constant:20]]];
+    } else {
+        [self.controlElementsView removeFromSuperview];
+    }
     
     [self.view addConstraints:constraints];
     [NSLayoutConstraint activateConstraints:constraints];

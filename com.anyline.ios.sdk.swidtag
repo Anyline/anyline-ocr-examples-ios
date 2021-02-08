@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoftwareIdentity corpus="true" name="Anyline iOS SDK v28" patch="false" supplemental="false" tagId="com.anyline.ios.sdk-v28" tagVersion="0" version="28" versionScheme="semver" xml:lang="en" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd" xmlns:SHA256="http://www.w3.org/2001/04/xmlenc#sha256" xmlns:n8060="http://csrc.nist.gov/ns/swid/2015-extensions/1.0">
+<SoftwareIdentity corpus="true" name="Anyline iOS SDK v28.1" patch="false" supplemental="false" tagId="com.anyline.ios.sdk-v28.1" tagVersion="0" version="28.1" versionScheme="semver" xml:lang="en" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd" xmlns:SHA256="http://www.w3.org/2001/04/xmlenc#sha256" xmlns:n8060="http://csrc.nist.gov/ns/swid/2015-extensions/1.0">
   <Entity name="Anyline GmbH" regid="https://anyline.com" role="softwareCreator licensor tagCreator distributor"/>
   <Payload n8060:envVarPrefix="$" n8060:envVarSuffix="" n8060:pathSeparator="/">
     <Directory location="" name="">
@@ -76,13 +76,13 @@
       <File SHA256:hash="bc260f961ae1dfbc8c028d1c91fe603fe828c16446e3c86836620a6c11a6868a" name="ALMainPageViewController.h" size="269" version="1.0"/>
       <File SHA256:hash="66063267bac3a380c1d512916a3749a12c0a32b6546cc57d828a824afe4af10c" name="ALMainPageViewController.m" size="2274" version="1.0"/>
       <File SHA256:hash="d3b85dad3596338f76cff34e354b276fcb2202ad8bb887732803e1e87559289a" name="ALPrivacyForwardingViewController.h" size="262" version="1.0"/>
-      <File SHA256:hash="280bc18a12f1cb8e2ce6e93f1cdb0a6c9c5f4ee8ccfd4164e644c66f0c33ebec" name="ALPrivacyForwardingViewController.m" size="1314" version="1.0"/>
+      <File SHA256:hash="25307b41ee26edf2b346aaec1cbd0f29ec17859f1a36a3a7891678e20f5eabae" name="ALPrivacyForwardingViewController.m" size="1363" version="1.0"/>
       <File SHA256:hash="1c5380cd98ba4a8ee27f4e466cc6e9bca27f1469a7b3e5983dd11564d8ac30c9" name="ALUmbrella.h" size="24" version="1.0"/>
       <File SHA256:hash="b554a2e84b819e480eab3dcef912143bf93a0afb484d556e6a4fb6a71949f5e2" name="AppDelegate.h" size="383" version="1.0"/>
       <File SHA256:hash="c2573628bf12a47b58d7c0a9307dd8f6dd4cfc0d9d219252610590527bc1947c" name="AppDelegate.m" size="3824" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/Anyline Demo App/DemoApp Source" name="Components">
-      <File SHA256:hash="64f02fa0653419d6e2105dd9b9c8683a215f0eba0211afa32111155adb38b4da" name="FormFieldView.swift" size="7529" version="1.0"/>
+      <File SHA256:hash="f67866356a89baaf87112cb6a1d4c698b9904dadb0a0f373dc9a5168d9eace85" name="FormFieldView.swift" size="8094" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/Anyline Demo App/DemoApp Source" name="GridViews">
       <File SHA256:hash="a446a194f819398c5edd4fd1c2f43bbb8ef4fdc28daccf9207fc239fcffe644d" name="ALBaseGridCollectionViewController.h" size="1000" version="1.0"/>
@@ -546,7 +546,7 @@
       <File SHA256:hash="5f6dec8b92a03d0f091dc3d890f5a03ab9cbcc782f8f2bb0bad3ef6e4c94685e" name="ALCheckbox.h" size="683" version="1.0"/>
       <File SHA256:hash="59621677d6cff40d8492631032d61c100eb7d76f4b89310c948ce2771c92394d" name="ALCheckbox.m" size="3326" version="1.0"/>
       <File SHA256:hash="03290bff444ad3c6db3b8af24e6aa36bd2eba2c930f2de16196e6fb357da150d" name="ALPrivacyViewController.h" size="247" version="1.0"/>
-      <File SHA256:hash="a3568f34163a65c69e10fcf40cf3740da411572b40f89478b100d50aa56ca88f" name="ALPrivacyViewController.m" size="12173" version="1.0"/>
+      <File SHA256:hash="3e407275c421ecc8b5e00a67626a3f018eae9e6d3f6a1c0a7e738a8a3e71861d" name="ALPrivacyViewController.m" size="11815" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples" name="Anyline Examples Source">
       <File SHA256:hash="557f561aac418f7013c23d92da25840a6b6098b1969128f3919b55efa10ebc8e" name="AnylineExamples-Bridging-Header.h" size="512" version="1.0"/>
@@ -556,9 +556,9 @@
       <File SHA256:hash="dcc0c779c237cf1a6f697e58bbf3fa0b3433335e43818cf4d8db030c4dd6a5be" name="ALBarcodeFormatHelper.h" size="577" version="1.0"/>
       <File SHA256:hash="c8c2b8d79fcebd7d999a0d625256563409e70a5d43c0e5d799cd8fcc35c94231" name="ALBarcodeFormatHelper.m" size="5384" version="1.0"/>
       <File SHA256:hash="858c8084d56251e7f81bc332e3c6cbcb441fa49e80e71180abafc72aebf0a777" name="ALMultiformatBarcodeScanViewController.h" size="312" version="1.0"/>
-      <File SHA256:hash="131103a0508499ed4068937165410915c6a5a19066c9542f955c5327eb0dae47" name="ALMultiformatBarcodeScanViewController.m" size="10343" version="1.0"/>
+      <File SHA256:hash="016cc49f0cd806b1d55513da2a3e61b289629e10c366703284dc539add1d2fc8" name="ALMultiformatBarcodeScanViewController.m" size="10420" version="1.0"/>
       <File SHA256:hash="d2fd1b1f270e412f5a3302e9155c39c1219529c2873190b3e45a1b8a7bc09e99" name="ALSelectionTable.h" size="969" version="1.0"/>
-      <File SHA256:hash="d0dea64ecab479775ce12e650140c27577416f41806261e540a2333ba5287302" name="ALSelectionTable.m" size="10387" version="1.0"/>
+      <File SHA256:hash="9cf208c5d12529ef771f733c7a1e0ad620b6764ce6d696054a42d4e3350040f0" name="ALSelectionTable.m" size="10385" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/Anyline Examples Source" name="Bottlecap">
       <File SHA256:hash="d282642bbbde275b5b8d24c5633976d8dc277255c29fa9f1b0528467616e7916" name="bottlecap_config.json" size="996" version="1.0"/>
@@ -699,7 +699,7 @@
       <File SHA256:hash="7b37e1f58b7e3bd5ee76d4572b55ebd8b912138dcd17c21ea54dc08dc37ccac1" name="ALColor.h" size="239" version="1.0"/>
       <File SHA256:hash="8f1d2ddb7b7d4311ae3f5e69a0d912fabcdcb49943c689aaf79017020bbb4f63" name="ALColor.m" size="300" version="1.0"/>
       <File SHA256:hash="3fe8f15b2b3f922c388b0666647d42bae1227b21e3ba6835052c089a96fb8f69" name="ALDialMeterScanViewController.h" size="306" version="1.0"/>
-      <File SHA256:hash="0babd793784492cea2d0a77fcb774c4dce6038fb5dac189c04db53ec50ead112" name="ALDialMeterScanViewController.m" size="8283" version="1.0"/>
+      <File SHA256:hash="48075757b5cd7bfdb3c8e18d7865aa9e711ca7f1cc1ca3f2a3c63386f9bcecbe" name="ALDialMeterScanViewController.m" size="8281" version="1.0"/>
       <File SHA256:hash="e3e423cbf8754cba44f09666214ecab70cd09b87be3711e844274a731e0095ce" name="ALMeterScanResultViewController.h" size="537" version="1.0"/>
       <File SHA256:hash="6390050039fd78c63b0883ece37a92bdb8b6a8767a9b2641552c835b51a250d8" name="ALMeterScanResultViewController.m" size="5029" version="1.0"/>
       <File SHA256:hash="08225c79ddaef9e2fb3ff4847c74d397753dfb3373c223370ec06225337daebd" name="ALMeterSelectView.h" size="765" version="1.0"/>
@@ -932,7 +932,7 @@
       <File SHA256:hash="e5a7629748e1e67dc474d4073290cc7feea1f41ea87f6f99e8d2c01ac4e76cc2" name="ALAwardsView.h" size="546" version="1.0"/>
       <File SHA256:hash="b2c9b980d69a56125dee51811a3c5af59ddb776cd5c67d5c9f5a15ba0492cfd0" name="ALAwardsView.m" size="3551" version="1.0"/>
       <File SHA256:hash="dae1dce0f915fa337dd8371caf96f3eb1224cfd135a59a9ad9f6be6a63c4c4b8" name="ALBaseViewController.h" size="554" version="1.0"/>
-      <File SHA256:hash="fd3dff57f59cfa1499b72c3d9c2b1d0a89bde544c31fbbb714c1e0da333daaf7" name="ALBaseViewController.m" size="5483" version="1.0"/>
+      <File SHA256:hash="2b9ee0ab74799ac3f16f778eb77031f559433c40612ceb327acc60374e29ba04" name="ALBaseViewController.m" size="5748" version="1.0"/>
       <File SHA256:hash="3a9a046073eb6271eeb065e4b5d23bf62d39784aea94207bae74fcb042a6ba54" name="ALBundleInfoViewController.h" size="325" version="1.0"/>
       <File SHA256:hash="087340edbe309dac5568e691c4144487172263a43de3adda00206904c6fb5bc4" name="ALBundleInfoViewController.m" size="8866" version="1.0"/>
       <File SHA256:hash="d97f6d90ccd994005cec44130ef89c06895205fd08a291bb362f483a3da9de70" name="ALCustomBarButton.h" size="339" version="1.0"/>
@@ -1000,35 +1000,35 @@
       <File SHA256:hash="12ed03f05477a53a9fdc4a0af4e10c3954d23c914d83548dc9176139cfa66bd8" name="AnylineExamples.hmap" size="121" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build/AnylineExamples.build/Debug-iphonesimulator/AnylineExamples.build" name="DerivedSources">
-      <File SHA256:hash="98451e79eca0229f0e0b077490e83d22f51abd4dfa24071e4ec5b01d63519113" name="AnylineExamples-Swift.h" size="22049" version="1.0"/>
+      <File SHA256:hash="6adeb84e1a84230b4408c11e32894dab8d99c328075edcb0cc0799dcfa21ce88" name="AnylineExamples-Swift.h" size="22679" version="1.0"/>
       <File SHA256:hash="46623c3e01efaf78156d45b87107e8a6fde1f9974e5948516459d930d8f7dbd2" name="Entitlements-Simulated.plist" size="390" version="1.0"/>
       <File SHA256:hash="87a3e7fcd67af748b28d049449185056b8b076b8bd65c82720f48c99883022be" name="Entitlements.plist" size="243" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build/AnylineExamples.build/Debug-iphonesimulator/AnylineExamples.build" name="Objects-normal"/>
     <Directory location="AnylineExamples/build/AnylineExamples.build/Debug-iphonesimulator/AnylineExamples.build/Objects-normal" name="arm64">
-      <File SHA256:hash="c55a54417b64f4785a559b30cb3eb7645996a441b5bf3baa741fc1a7d28ee305" name="AnylineExamples-master.swiftdeps" size="713" version="1.0"/>
-      <File SHA256:hash="c55a54417b64f4785a559b30cb3eb7645996a441b5bf3baa741fc1a7d28ee305" name="AnylineExamples-master.swiftdeps~moduleonly" size="713" version="1.0"/>
+      <File SHA256:hash="1570e33e91b82fbd1c467775a1d7b17db1499922624a020844f64d9112190af3" name="AnylineExamples-master.swiftdeps" size="713" version="1.0"/>
+      <File SHA256:hash="1570e33e91b82fbd1c467775a1d7b17db1499922624a020844f64d9112190af3" name="AnylineExamples-master.swiftdeps~moduleonly" size="713" version="1.0"/>
       <File SHA256:hash="3d49c943ab86528aac73b50769d00db4ac8fd194d13ed1eaa8aa99821e765bee" name="AnylineExamples-OutputFileMap.json" size="4756" version="1.0"/>
-      <File SHA256:hash="88a60066a54a42b380beb84a2a083e93c00f427891680a2108ba7bba21c1a436" name="AnylineExamples-Swift.h" size="10978" version="1.0"/>
+      <File SHA256:hash="f51c7dbf4ed24fdd0c78a432d16009be6ded4b7a979cafb214019f792202e189" name="AnylineExamples-Swift.h" size="11293" version="1.0"/>
       <File SHA256:hash="8859545c75fc30531ba48daa1938ffa87c563492b914e3fc1df093158c9be273" name="AnylineExamples.LinkFileList" size="26367" version="1.0"/>
       <File SHA256:hash="2df990b7cfe2cf9e861b069472299000743c48e91d4336a00ddc690ea8e638d7" name="AnylineExamples.swiftdoc" size="396" version="1.0"/>
       <File SHA256:hash="8610493603e003bce26c0fe06afd465bcc08df3c753d17f10925c8f7ae9c87da" name="AnylineExamples.SwiftFileList" size="491" version="1.0"/>
-      <File SHA256:hash="a0782514cbc9569d7d9a6cdcbee67315455966a6d1d98b2deaca8cf051e33162" name="AnylineExamples.swiftmodule" size="73780" version="1.0"/>
-      <File SHA256:hash="c3b82c6f747d2ac0b5e85635f887654adde52a5d96cf7e64d0542b0555716ab3" name="AnylineExamples.swiftsourceinfo" size="5340" version="1.0"/>
+      <File SHA256:hash="9c61b80b8e9393ac48b9ff393e06ff1ef6cf235c425e59915933e0d194a20692" name="AnylineExamples.swiftmodule" size="75528" version="1.0"/>
+      <File SHA256:hash="4d2c453a49565259df069f4ab722a4aad161bf6293fd1ebc33196687eed259a3" name="AnylineExamples.swiftsourceinfo" size="5772" version="1.0"/>
       <File SHA256:hash="0eaa045090ac9d8f844a81cd3de887b24e79539166a023baf54498372175b200" name="ElectricMeterBlackWhiteScanViewController.d" size="100515" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="ElectricMeterBlackWhiteScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="dbb5503cc27299fc50718277b097e362e151123ea3cab406cebdaa83b13643c8" name="ElectricMeterBlackWhiteScanViewController.o" size="76716" version="1.0"/>
+      <File SHA256:hash="d725234e4992c0e96cf3017550b829cb989b797837380d1e8d4c229b79a3da57" name="ElectricMeterBlackWhiteScanViewController.o" size="76716" version="1.0"/>
       <File SHA256:hash="282c10f36e3b03389352695df55f1ffb1b1da3b730b59c638a0a38ddbc176d75" name="ElectricMeterBlackWhiteScanViewController.swiftdeps" size="86696" version="1.0"/>
       <File SHA256:hash="2df990b7cfe2cf9e861b069472299000743c48e91d4336a00ddc690ea8e638d7" name="ElectricMeterBlackWhiteScanViewController~partial.swiftdoc" size="396" version="1.0"/>
       <File SHA256:hash="04fa92c71ebdbb1b1c5fc146130fe6db8c5684584337f287d44e7805d49726f9" name="ElectricMeterBlackWhiteScanViewController~partial.swiftmodule" size="24324" version="1.0"/>
       <File SHA256:hash="b449ae6c43b4a285b5481570b761be085fbb1c6714cad035de5c35371172a2e5" name="ElectricMeterBlackWhiteScanViewController~partial.swiftsourceinfo" size="1796" version="1.0"/>
       <File SHA256:hash="83f9c0f903d223b220e969478bf22498a674e623c7b9307306d6a4e8653f15ba" name="FormFieldView.d" size="100403" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="FormFieldView.dia" size="220" version="1.0"/>
-      <File SHA256:hash="d4c8b8eafc1ae0465b5b8dac3b934b72915c76da3824fabb470619d60842d238" name="FormFieldView.o" size="131748" version="1.0"/>
-      <File SHA256:hash="4ca3b0b27607af9cca818bbafcc11cd682df632202478598f325f110079f9fba" name="FormFieldView.swiftdeps" size="167146" version="1.0"/>
+      <File SHA256:hash="11c2f68f702c51b1647caa6e2a7f7af9fb2c3a367fb04eb6bdb126e2c66833c1" name="FormFieldView.o" size="143040" version="1.0"/>
+      <File SHA256:hash="e4825e4bdc797aae1aa7530d04ca3df4e7bd7a5e3a26c02cf8eacf7efb6b87b6" name="FormFieldView.swiftdeps" size="171818" version="1.0"/>
       <File SHA256:hash="2df990b7cfe2cf9e861b069472299000743c48e91d4336a00ddc690ea8e638d7" name="FormFieldView~partial.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="f14ddc819032f4080520436c6afdd03ec6146e89e935bd8fcb7ca6a5331b656a" name="FormFieldView~partial.swiftmodule" size="35864" version="1.0"/>
-      <File SHA256:hash="b160606968926a56539381f104ea0f522d979d6e12ef711363320e84e6dcd1c9" name="FormFieldView~partial.swiftsourceinfo" size="3056" version="1.0"/>
+      <File SHA256:hash="2623333b4e6cce35548750cd20fac6d927afc4b224ec820fc34f710cf81e353a" name="FormFieldView~partial.swiftmodule" size="38188" version="1.0"/>
+      <File SHA256:hash="5825532c96cc42f7fe7abb35db21b2c3ceaf31cb4dc118bf016244bf89dbb492" name="FormFieldView~partial.swiftsourceinfo" size="3620" version="1.0"/>
       <File SHA256:hash="75d033c39c865b760d18f854fb1b891b2fcd5f2f992fe878180d6b9aa5dd3fa9" name="GifuWrapper.d" size="100395" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="GifuWrapper.dia" size="220" version="1.0"/>
       <File SHA256:hash="a0b854560ec7906e71e3bcf3f8c8b9d7a55e9251970bd815b98a1703a43ab56e" name="GifuWrapper.o" size="29404" version="1.0"/>
@@ -1038,34 +1038,19 @@
       <File SHA256:hash="088153efa89b581c6b42aad93b5eab9c07ddd036f060c0e17c74c497c3620378" name="GifuWrapper~partial.swiftsourceinfo" size="1412" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build/AnylineExamples.build/Debug-iphonesimulator/AnylineExamples.build/Objects-normal" name="x86_64">
-      <File SHA256:hash="1f0319d268b13b41f51c51a841912a1a5089fc970b3e56565796b65a051b272b" name="ALPDF417ScanViewController.d" size="16214" version="1.0"/>
-      <File SHA256:hash="7ed0b4ade44a023bbbeb7174e1e8fdb86196bd9fd776054d8b238e9cd7f7e2fa" name="ALPDF417ScanViewController.dia" size="1400" version="1.0"/>
-      <File SHA256:hash="eed362cf8e702c90a1671be633926e2d702adbd0e917578a8f4c44ccccd61ea3" name="ALPDF417ScanViewController.o" size="43436" version="1.0"/>
       <File SHA256:hash="531f441511b28feb5dc348c01f5d792d590bc7b7f42186c9633af1abbda6dc13" name="ALPrivacyForwardingViewController.dia" size="532" version="1.0"/>
-      <File SHA256:hash="4d40f48b1db0210b58ccf56cdaa29aa472adb379869a40f6ec97891aefd3e60b" name="ALRBScanViewController.d" size="16324" version="1.0"/>
-      <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALRBScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="f1d493b5f7bc8c3faa806b6a4d6a1f2f23b211bc680bc70d2e6a36cf7e45ce10" name="ALRBScanViewController.o" size="42980" version="1.0"/>
-      <File SHA256:hash="420755eafa1ac8b887c48f313cb752427a0d90d27ec1abf1bf561bf37ff9c775" name="ALRecordNumberScanViewController.d" size="16042" version="1.0"/>
-      <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALRecordNumberScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="c8ad58ad87d57b3add96d0bf69a3b8f23204fbe9b14275d4c8d6dc2182851205" name="ALRecordNumberScanViewController.o" size="42712" version="1.0"/>
-      <File SHA256:hash="4a04a1a8148573f973269c733804948ea2b12c313e28e274b8a4d557a6104de0" name="ALResultCell.d" size="1139" version="1.0"/>
-      <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALResultCell.dia" size="220" version="1.0"/>
-      <File SHA256:hash="1984fc046dd2f2d5eec8fc0a801ae7c9c5a7fbdb11b689f453c812896ed09c30" name="ALResultCell.o" size="44492" version="1.0"/>
       <File SHA256:hash="dcb9c3ac2bf3f123b9232a7964b330c5b8b7157a165d0d0b194097677a1bb5c1" name="ALResultEntry.d" size="657" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALResultEntry.dia" size="220" version="1.0"/>
       <File SHA256:hash="0963c989ba57c662ef799bc26ee00252b0598c6e6d89008b00840106c20c6d68" name="ALResultEntry.o" size="14448" version="1.0"/>
       <File SHA256:hash="fc260ab3bb39b209d4ac0a187a51703d1a276e2ff6abaa6b295bd63c01128707" name="ALResultOverlayView.d" size="643" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALResultOverlayView.dia" size="220" version="1.0"/>
       <File SHA256:hash="0ad6d4807b543637b26f6878f04bea8c86c06a7338f8bd2ac6f9bf209ebd1018" name="ALResultOverlayView.o" size="28728" version="1.0"/>
-      <File SHA256:hash="4a8db779e7c2209db72c8d3f58a4b6dee7c7f65fbf91d8430be4d8aadef57d34" name="ALResultViewController.d" size="1315" version="1.0"/>
-      <File SHA256:hash="0a585f95ab5bfe6e834b33fea5f148e367d950f0d3510aad4fb3f0f7973cdaf4" name="ALResultViewController.dia" size="572" version="1.0"/>
-      <File SHA256:hash="e06573f2d2c012b707edfcaa4d98205f2b42e3e9b786358f0d5b337229fdaede" name="ALResultViewController.o" size="119156" version="1.0"/>
       <File SHA256:hash="ab842033a92211291965be26e0b47a58d01c0687485170b3d049e8c14c2b26a8" name="ALRoundedView.d" size="635" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALRoundedView.dia" size="220" version="1.0"/>
       <File SHA256:hash="f8639fc0dbd2af49b62238c57fcba043409eebdeee0123d494e8a953534343ea" name="ALRoundedView.o" size="27904" version="1.0"/>
       <File SHA256:hash="6a2a9104f98b23091a3c4ba6374549dfd958d7c57ca0b53b056e01eb2fdaefd4" name="ALScanResultViewController.d" size="15949" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALScanResultViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="af430fe10475db37f390b76617b2232e4097e0977350074292c3fa96ac407ed7" name="ALScanResultViewController.o" size="32908" version="1.0"/>
+      <File SHA256:hash="b7f800ccb047a11df9a1c39052cf5d959c04c39ac0ef1ea6cde023748af3a632" name="ALScanResultViewController.o" size="32908" version="1.0"/>
       <File SHA256:hash="a4df50bdf631fe713fb21e0489390ea4a5327d7c297c6fadf66e2da59365f74e" name="ALScrabbleLabel.d" size="657" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALScrabbleLabel.dia" size="220" version="1.0"/>
       <File SHA256:hash="f27a8c06ba26204a3462e0e22c39a4d2925f6d7214085d495b38b81ee0669da8" name="ALScrabbleLabel.o" size="21112" version="1.0"/>
@@ -1074,7 +1059,7 @@
       <File SHA256:hash="d58531685c799b711f453c2e12ad8a40a39bcde862ab6e39192f1f68d002e740" name="ALScrabblePoints.o" size="15908" version="1.0"/>
       <File SHA256:hash="717aff756b5c6b1225495b1b70af86f1ee03b93ab11bce0f2d0fcb09bc10ce5d" name="ALScrabbleScanViewController.d" size="16340" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALScrabbleScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="b6f6088c2dbc3270632f1d3a6799392991a1d1d56866f7d98c29d09fb6c94b56" name="ALScrabbleScanViewController.o" size="43168" version="1.0"/>
+      <File SHA256:hash="5d61c5b7c52f90f9047eb18c8cc4e5a644d868fcde4190454c7fc25df34e499a" name="ALScrabbleScanViewController.o" size="43168" version="1.0"/>
       <File SHA256:hash="d7c597d59d92f20df760cc7a15c2e6a4ec0561d04972b2e6aaf01f854d06cd64" name="ALScrabbleViewController.d" size="1435" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALScrabbleViewController.dia" size="220" version="1.0"/>
       <File SHA256:hash="ba3316a8d800314b71dad82e7afdda429d00a0a12271ca7f990a7c2838000fe7" name="ALScrabbleViewController.o" size="47936" version="1.0"/>
@@ -1083,10 +1068,10 @@
       <File SHA256:hash="ce5bfb72dca015b303810a416bbbe7d810435b78066082631d8a3448e57c1336" name="ALScrabbleWord.o" size="7752" version="1.0"/>
       <File SHA256:hash="0cb8a67f77ef042a65c0426cb71068205ed0cc5488741120fcebf47eee8aeef2" name="ALSelectionTable.d" size="15237" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALSelectionTable.dia" size="220" version="1.0"/>
-      <File SHA256:hash="a4a974fb4f8cedf5f6cb44b85ab192d118d52ef9c937eee1409d21b5f6168d5c" name="ALSelectionTable.o" size="74388" version="1.0"/>
+      <File SHA256:hash="666f8522ba518aa191c2d85e40b25a61ea649f68d01a237cde54e512c86209d0" name="ALSelectionTable.o" size="74388" version="1.0"/>
       <File SHA256:hash="f5b67ddbbfaad2884a2563fbb98c7225d4413e1d56e09c4ed9446f7f0583e3c3" name="ALSerialScanViewController.d" size="16035" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALSerialScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="dd80e391fde91a7530388adf5a2394970d69de92a4dc6f40c1522dff17e45ff4" name="ALSerialScanViewController.o" size="41964" version="1.0"/>
+      <File SHA256:hash="6d658b67b06eb60c308202df2dc56e0e9bb04feac4b3ac1bc69b05d6e834198b" name="ALSerialScanViewController.o" size="41964" version="1.0"/>
       <File SHA256:hash="98dbf41539a0c8a0e6c6de369a4ece11382fe75f5f3dcb3d6c06c73f5aec936e" name="ALSpaceViews.d" size="629" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALSpaceViews.dia" size="220" version="1.0"/>
       <File SHA256:hash="5d18b0168594eeffc96fdbf6c880149b9aaab889fd6abac0ec6f9b4f9ab47097" name="ALSpaceViews.o" size="11032" version="1.0"/>
@@ -1095,49 +1080,49 @@
       <File SHA256:hash="0b68cbe9dfea21cc90705f2ac36b0343a7700b0c8c12ebce00850fbadcad7729" name="ALTextViewCell.o" size="23876" version="1.0"/>
       <File SHA256:hash="17039a5fa3cdaad0e0e97f3c1b115b3a65efc0c284369bcef15993a1a065008a" name="ALTINScanViewController.d" size="16609" version="1.0"/>
       <File SHA256:hash="8fdfc7bc77a892e1da14d5142d9b2d35717e108f448a5c3db9f1edd0ef0064f0" name="ALTINScanViewController.dia" size="1348" version="1.0"/>
-      <File SHA256:hash="aca69582241f7d7eb023bbe0693754ec78ec57e213603612fff005448ecc450e" name="ALTINScanViewController.o" size="56664" version="1.0"/>
+      <File SHA256:hash="74b5dd9953bea1f4c80edf4f2fc5f6d6921946b31c2e4860b66bca0dda265449" name="ALTINScanViewController.o" size="56664" version="1.0"/>
       <File SHA256:hash="3fadbb3a71d63ab8cb000f6fa04304fde718c454700a7dc492be6371b70885ca" name="ALToggleControl.d" size="663" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALToggleControl.dia" size="220" version="1.0"/>
       <File SHA256:hash="ba073d0ad2b7f10c3aaca5cdae0079b4fcd0b019e1222f1454ed4267ac06e4a7" name="ALToggleControl.o" size="23232" version="1.0"/>
       <File SHA256:hash="0d887cc66b7ba2a54ae9b27faef29722fbd843ed8eeb9b4b5af8c9393a475e1a" name="ALUniversalIDFieldnameUtil.d" size="15095" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALUniversalIDFieldnameUtil.dia" size="220" version="1.0"/>
-      <File SHA256:hash="bf286140a497706def6f850091943d4264fa46c4749742f967570b8f7c979a45" name="ALUniversalIDFieldnameUtil.o" size="28496" version="1.0"/>
+      <File SHA256:hash="db0a52d91613076863b9b2d6099132a3b195145badfde1cce48e6ae16834e14b" name="ALUniversalIDFieldnameUtil.o" size="28496" version="1.0"/>
       <File SHA256:hash="708016f4d43f96667500bf20c8c321a197581253e099eac5bfe5868287d47980" name="ALUniversalIDScanViewController.d" size="16210" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALUniversalIDScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="ce32d49d048f015d6ce722de5059690c2c8c4eb877fbea0e42919c5e2cbbacf3" name="ALUniversalIDScanViewController.o" size="44580" version="1.0"/>
+      <File SHA256:hash="296318984076b5cf1ba68c9246e6bcc7ced9d0342c075d92185d7b5b5e646884" name="ALUniversalIDScanViewController.o" size="44580" version="1.0"/>
       <File SHA256:hash="084f30b5fc6ade29f2f8cf890a42ac3b8deb103cbe2f8f6a454a28fb5c9e3cf0" name="ALUniversalIDScanViewControllerFrontAndBack.d" size="17703" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALUniversalIDScanViewControllerFrontAndBack.dia" size="220" version="1.0"/>
-      <File SHA256:hash="d0ea9426fdedf126f06ea029f9459e2c8e3a92f8c605216dd03efb1609d0f3b8" name="ALUniversalIDScanViewControllerFrontAndBack.o" size="111600" version="1.0"/>
+      <File SHA256:hash="1d6de6c34b8380d93905fb30ea4ef849a76b7633b255c910ce219a7eef668f2b" name="ALUniversalIDScanViewControllerFrontAndBack.o" size="111600" version="1.0"/>
       <File SHA256:hash="3e6761ad3fa938b8b5e718c42e0a24de6332200f4d492d28863ffb6a9718e33a" name="ALUniversalSerialNumberScanViewController.d" size="16383" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALUniversalSerialNumberScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="8191ac2ca59ab138a754cdb74d74e08f0fd283080e0186d6ecdebe389f8e98de" name="ALUniversalSerialNumberScanViewController.o" size="43948" version="1.0"/>
+      <File SHA256:hash="c4cef74f5726917984ac3d529d87bbf4442a7869e15a1f4441b8e3235c795991" name="ALUniversalSerialNumberScanViewController.o" size="43948" version="1.0"/>
       <File SHA256:hash="4eb0fb74504c7b1701d3e1732be5f030d73de6936d4028c87efb75ae35207e16" name="ALUtils.d" size="15776" version="1.0"/>
       <File SHA256:hash="0c13fdd06a6d697d8070c1b4040e49f892d2cd44fcf4b9e1d4a11d904a893326" name="ALUtils.dia" size="1284" version="1.0"/>
-      <File SHA256:hash="220dc5f4a40773f1188c58164100bf5c5dceb0515a79b03003ff070834cc3100" name="ALUtils.o" size="34500" version="1.0"/>
+      <File SHA256:hash="8e0c70234eb83d2ab1a3d720407c8a349482965a0fdeb3fb30862e4da7c1c214" name="ALUtils.o" size="34500" version="1.0"/>
       <File SHA256:hash="99a420fe6b067e3b95f1a9d9f534684b78e7fa10a3775cea1310623dc7fedc73" name="ALVerticalContainerScanViewController.d" size="16077" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALVerticalContainerScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="36262558788ff33b1dd94e5789b04d374305cc4a7fc8a6f27fa3c415e22b70a1" name="ALVerticalContainerScanViewController.o" size="38472" version="1.0"/>
+      <File SHA256:hash="7048432314d898a46edbc9df8197ae357449b25a08ec6c9bd485765cb38eaefa" name="ALVerticalContainerScanViewController.o" size="38472" version="1.0"/>
       <File SHA256:hash="6c77d537516ae068f792fd3025594cd415858e03b7962a147fabebad6be176ae" name="ALVINScanViewController.d" size="16007" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALVINScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="902bc63aa5624d2d1744e0543e8e2ca5c8e8e2648b199fe3293ca60dda69c853" name="ALVINScanViewController.o" size="37324" version="1.0"/>
+      <File SHA256:hash="281ad4e6de17ce6c306d4f3aa4fb8d17b272b826d881437a21f1b3fa5021b6da" name="ALVINScanViewController.o" size="37324" version="1.0"/>
       <File SHA256:hash="95d73e638cddd7c3da8d1ce4c9c4a11f08b1f893c717b7e1d30f3eb7b16cf343" name="ALVoucherCodeScanViewController.d" size="16360" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALVoucherCodeScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="4b37281a47676ad5a32a0cb97abaeff29dbcd37c23f4df798cfb1d6ae4bbc5a6" name="ALVoucherCodeScanViewController.o" size="42964" version="1.0"/>
+      <File SHA256:hash="5f58c339c2fc93ceadc808cbb072a879d948e7d53a0e782dea0a982438b6c716" name="ALVoucherCodeScanViewController.o" size="42964" version="1.0"/>
       <File SHA256:hash="9dfe4ccc3a97291a75775b42cb4fcb8637e9c3698ea6a48945a834a2e900242c" name="ALWarningView.d" size="767" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ALWarningView.dia" size="220" version="1.0"/>
       <File SHA256:hash="160918a2d346c45f30bad78c47245b9b98f1af7e10039c58437bdbd304dc9aa0" name="ALWarningView.o" size="36788" version="1.0"/>
-      <File SHA256:hash="40c44d949fbe66672c150d271ad45729b11f1f75ef287be080cbcfa02f144db1" name="AnylineExamples-master.swiftdeps" size="713" version="1.0"/>
-      <File SHA256:hash="40c44d949fbe66672c150d271ad45729b11f1f75ef287be080cbcfa02f144db1" name="AnylineExamples-master.swiftdeps~moduleonly" size="713" version="1.0"/>
+      <File SHA256:hash="e66aea6caa5a6cccadc3efa7b5bbad00a6c2e501a0e276582bc2ca8b96e49c67" name="AnylineExamples-master.swiftdeps" size="713" version="1.0"/>
+      <File SHA256:hash="e66aea6caa5a6cccadc3efa7b5bbad00a6c2e501a0e276582bc2ca8b96e49c67" name="AnylineExamples-master.swiftdeps~moduleonly" size="713" version="1.0"/>
       <File SHA256:hash="abb975cdae9e2350ef8b8fcb21343ace40f69db4ba93fdd71095c6eb588b4aa1" name="AnylineExamples-OutputFileMap.json" size="4775" version="1.0"/>
-      <File SHA256:hash="88a60066a54a42b380beb84a2a083e93c00f427891680a2108ba7bba21c1a436" name="AnylineExamples-Swift.h" size="10978" version="1.0"/>
+      <File SHA256:hash="f51c7dbf4ed24fdd0c78a432d16009be6ded4b7a979cafb214019f792202e189" name="AnylineExamples-Swift.h" size="11293" version="1.0"/>
       <File SHA256:hash="238dd31256b6cf3e197c39f943c3f6071da21ace9046b9671026ec1d55312acb" name="AnylineExamples.LinkFileList" size="26496" version="1.0"/>
       <File SHA256:hash="2ad9409bd0915316e30276bf9b22eff3849511044739f5fafe9e8037f9eb161f" name="AnylineExamples.swiftdoc" size="396" version="1.0"/>
       <File SHA256:hash="8610493603e003bce26c0fe06afd465bcc08df3c753d17f10925c8f7ae9c87da" name="AnylineExamples.SwiftFileList" size="491" version="1.0"/>
-      <File SHA256:hash="be1dd997214d99025843a138024b8251419d9b6043b0f5a60c5c65bad42bb8c4" name="AnylineExamples.swiftmodule" size="73780" version="1.0"/>
-      <File SHA256:hash="24d4e4259401ce3d23d8c978801446b288539db93f2830469f99fa89b4b01e9a" name="AnylineExamples.swiftsourceinfo" size="5340" version="1.0"/>
+      <File SHA256:hash="355ff67394b92692ab5e0075e4f9b8650034cedd54622058ccf12738e4f1d27c" name="AnylineExamples.swiftmodule" size="75528" version="1.0"/>
+      <File SHA256:hash="7674d6967e3145d60724ff61d2ddd2f5f4f09f5c62c267f191761835300f9d1a" name="AnylineExamples.swiftsourceinfo" size="5772" version="1.0"/>
       <File SHA256:hash="baf1fc5b2547a7ae12d04fd32b788dca5c125ac3a8689bd6c73c52335547bd53" name="AppDelegate.d" size="15802" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="AppDelegate.dia" size="220" version="1.0"/>
-      <File SHA256:hash="a382f859db291d82d4912eb11d6cd55888f177966b9d71fe05e24bca297d75fd" name="AppDelegate.o" size="36956" version="1.0"/>
+      <File SHA256:hash="72e461abce95857078e23f84606b62504bce7402644a62fb7ccaa050946a5a83" name="AppDelegate.o" size="36956" version="1.0"/>
       <File SHA256:hash="c8b68921bc1141b4f5451afe0ab3958b84f091491244a6a05fd381504a89f7f6" name="CoreDataManager.d" size="2543" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CoreDataManager.dia" size="220" version="1.0"/>
       <File SHA256:hash="603df013924928c2ddd99ed9424a5cfe4b9a333daa8aeb63af4ef15e51a4a701" name="CoreDataManager.o" size="49524" version="1.0"/>
@@ -1152,7 +1137,7 @@
       <File SHA256:hash="8810399bfa9349fc3b66bb2838255e85becc82c852dc973f22aea08e1aef9637" name="CustomerDataView.o" size="54848" version="1.0"/>
       <File SHA256:hash="505c66c805039ea39344a117eaba0ec67e22947e340b2505a33d80ded473b8c4" name="CustomerDataViewController.d" size="16133" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CustomerDataViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="69c11ae4b0c2104a3e9eb0ced55228ba7d656f91f0a66f24af2fdf77f49970f2" name="CustomerDataViewController.o" size="24428" version="1.0"/>
+      <File SHA256:hash="73d8f9df1fd2c28246676efe160eb9347cd8a7d321fea9497f3b13acc1f7bcbc" name="CustomerDataViewController.o" size="24428" version="1.0"/>
       <File SHA256:hash="6350bdf9146db1db1400da0629c8832117722dff96dd7de3296fe4c43ed8b75e" name="CustomerSelfReading+CoreDataProperties.d" size="843" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CustomerSelfReading+CoreDataProperties.dia" size="220" version="1.0"/>
       <File SHA256:hash="451fbeae0118588754028ca0f0b39ba70afe31c3d6fe1f22e364a12423952156" name="CustomerSelfReading+CoreDataProperties.o" size="3636" version="1.0"/>
@@ -1161,27 +1146,27 @@
       <File SHA256:hash="c2a8bbcc9e0478c64c7dd5fee85c09fc33b52eaf420e52ce6eaea9851b3177f6" name="CustomerSelfReading.o" size="15616" version="1.0"/>
       <File SHA256:hash="239be06029741fa2d7266c08ccc17d72c6af9d279b398c7aa9d97c2c732f1ba8" name="CustomerSelfReadingConfirmationViewController.d" size="16890" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CustomerSelfReadingConfirmationViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="b347bc9ffb3689fe1a241401cc1475fe76a37faba19a8a1cb457a41b21859301" name="CustomerSelfReadingConfirmationViewController.o" size="53132" version="1.0"/>
+      <File SHA256:hash="e6cbe05ccbe50339ba6e7a408f3a8222edc1dc9644bd4aa5ed487938cd1a8cd1" name="CustomerSelfReadingConfirmationViewController.o" size="53132" version="1.0"/>
       <File SHA256:hash="c267bd1c99752cef6a383b3e4fa8ade37fd31f9b4369f3ea55a3ff96874ed388" name="CustomerSelfReadingResultViewController.d" size="19113" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CustomerSelfReadingResultViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="733bd986a26ce4eae5cc62b4d167d74c907be7249886f3a42448a0e057175ed0" name="CustomerSelfReadingResultViewController.o" size="49572" version="1.0"/>
+      <File SHA256:hash="d7a5a64f1dda3f274f5375a8edc74442eebea4f898d3566d7aa77e5436d1e0d9" name="CustomerSelfReadingResultViewController.o" size="49572" version="1.0"/>
       <File SHA256:hash="adceff4e96f59870245d3280ba779a1c20abb9f08b3c558daa894a6d145bebb1" name="CustomerSelfReadingViewController.d" size="18605" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="CustomerSelfReadingViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="221f13501bb7146c8cd3e4745d2825ed11e23d5f7d0591baf95d5e43fe9ebbb3" name="CustomerSelfReadingViewController.o" size="31060" version="1.0"/>
+      <File SHA256:hash="874ff52414de51742727aa40e6cbfce38a539b0fd28a7528de6d3701a6fef6db" name="CustomerSelfReadingViewController.o" size="31060" version="1.0"/>
       <File SHA256:hash="eb78c3910f83ef9542c16fbc6976e4689d358887cf40a04f9056b6090e121cda" name="ElectricMeterBlackWhiteScanViewController.d" size="100607" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="ElectricMeterBlackWhiteScanViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="06a6c655e73d22e6cab54e803e6c9ec1c55889d21ffa88a88c5bdc25d0ab9b1f" name="ElectricMeterBlackWhiteScanViewController.o" size="71172" version="1.0"/>
+      <File SHA256:hash="61bc7c2c5dd548bb0477ae6da6ad4790d6466b487768baa8b287a1db9f6c26bf" name="ElectricMeterBlackWhiteScanViewController.o" size="71172" version="1.0"/>
       <File SHA256:hash="a3d6619a293366db95747fd4b6f0aba87e65a37bdce372889db0897545944f88" name="ElectricMeterBlackWhiteScanViewController.swiftdeps" size="86718" version="1.0"/>
       <File SHA256:hash="2ad9409bd0915316e30276bf9b22eff3849511044739f5fafe9e8037f9eb161f" name="ElectricMeterBlackWhiteScanViewController~partial.swiftdoc" size="396" version="1.0"/>
       <File SHA256:hash="51e5d3b8ec9da238722c1939656551f30e0a1ff6790ed11024b5931b1781a3dc" name="ElectricMeterBlackWhiteScanViewController~partial.swiftmodule" size="24324" version="1.0"/>
       <File SHA256:hash="835d2863fe69284363720e85fdb3187755f11cb9ce759a2cb64af1a9d6bde568" name="ElectricMeterBlackWhiteScanViewController~partial.swiftsourceinfo" size="1796" version="1.0"/>
       <File SHA256:hash="e13896ec2b1fa8368111c649cfbc43c31d6dacc911125623fea6ea7848a3e747" name="FormFieldView.d" size="100495" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="FormFieldView.dia" size="220" version="1.0"/>
-      <File SHA256:hash="fec01402dd2f1763982bcc6c4b8f784c2f4fad68af5ff6240f29ab9899ed5740" name="FormFieldView.o" size="120380" version="1.0"/>
-      <File SHA256:hash="c3ac21a9f3151281e94c086c6612f97c006c7a863cf79e4d9273e3b29e80a586" name="FormFieldView.swiftdeps" size="167168" version="1.0"/>
+      <File SHA256:hash="c4fd4451567952222686ee923effbb6df28f5645787f44885543265e71e0ea22" name="FormFieldView.o" size="130816" version="1.0"/>
+      <File SHA256:hash="4b43a4c0c4a7e3c1eba91b6c2cac34e5c9fc053ec426011cafb20e8914a47ad7" name="FormFieldView.swiftdeps" size="171840" version="1.0"/>
       <File SHA256:hash="2ad9409bd0915316e30276bf9b22eff3849511044739f5fafe9e8037f9eb161f" name="FormFieldView~partial.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="11407ac3e747608bb9ad51a34a37b9f6850f77ef58e18fb5772117594549edb2" name="FormFieldView~partial.swiftmodule" size="35864" version="1.0"/>
-      <File SHA256:hash="e48274c11a6f023ab91ca59a40d848c28cf3f5573bd7013954874a75256f291a" name="FormFieldView~partial.swiftsourceinfo" size="3056" version="1.0"/>
+      <File SHA256:hash="29a41143eb1ff3f54914a3e1412ffbc2b7a4a9280fd6dc839549ba1827e9aad3" name="FormFieldView~partial.swiftmodule" size="38188" version="1.0"/>
+      <File SHA256:hash="d7fdff229005a9bce14c5069800446567bf51eac19e1905e7359bc76f0b83865" name="FormFieldView~partial.swiftsourceinfo" size="3620" version="1.0"/>
       <File SHA256:hash="1f57af2a0924e725a04f8a1dc35f70fd5a689fc49137a8787ffff036c8339688" name="GifuWrapper.d" size="100487" version="1.0"/>
       <File SHA256:hash="f1bb2fc091adc4464e86a041bc44ed9b51f9231c964e56e0108ab5bedf303c26" name="GifuWrapper.dia" size="220" version="1.0"/>
       <File SHA256:hash="4bb859cd277e7cd0a7b9d613aefcda5323be7a1a1d94641ea0d127a85ebfe2d3" name="GifuWrapper.o" size="28228" version="1.0"/>
@@ -1230,7 +1215,7 @@
       <File SHA256:hash="cb1a059aad886adcb601ac398440189b46c2a09451ce541aff9fedf69c5216d2" name="Reading.o" size="14312" version="1.0"/>
       <File SHA256:hash="13a16a2cc9585dbd0b64f986b23e801b818326a98c3fb1063dc5629de429ea64" name="ReadingDetailsViewController.d" size="16157" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ReadingDetailsViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="2f63bc96b3a442ddfefbb764aeb4cb9a755f9b285faf351754dff531694259d5" name="ReadingDetailsViewController.o" size="25316" version="1.0"/>
+      <File SHA256:hash="311de39d2e3886bd1ce725d77987aa12538b0a52f84adaf3c351a3e20c06c19a" name="ReadingDetailsViewController.o" size="25316" version="1.0"/>
       <File SHA256:hash="c7c5b5d66818eb02407c6641c4b98e379490e8d4eb66237a40dec1d0f606886f" name="ReadingTableViewCell.d" size="1710" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="ReadingTableViewCell.dia" size="220" version="1.0"/>
       <File SHA256:hash="0f373e0dbeb81bff71d64cdc25229661be6cbe8f9f73442894e849984191f0df" name="ReadingTableViewCell.o" size="26548" version="1.0"/>
@@ -1269,17 +1254,17 @@
       <File SHA256:hash="04e02d1ce05d81b34d577b8711f68da5bd783fe2b473871e10b5622ff5c75971" name="WorkforceTool.o" size="4064" version="1.0"/>
       <File SHA256:hash="b043164e764585f49ef7fb997bcbe171fb137eb2697017a12dc71b202ce7aed7" name="WorkforceToolResultViewController.d" size="19011" version="1.0"/>
       <File SHA256:hash="372e02fa600356e1220c68e761cb2e15963b30059fa67acc2534c59f693032fe" name="WorkforceToolResultViewController.dia" size="167920" version="1.0"/>
-      <File SHA256:hash="757171f50c2251c828bd2398e56742fb3a72949305d6db574d2f6c3cf9d22655" name="WorkforceToolResultViewController.o" size="48604" version="1.0"/>
+      <File SHA256:hash="767182b50f9714e88eaf09dbee2983282c2351cdba22ed118bc5421c31539a65" name="WorkforceToolResultViewController.o" size="48604" version="1.0"/>
       <File SHA256:hash="7b9e4b6cf80b1ec0c2c00d5ca4018b0e001b506fd1151780c9941ed833ced334" name="WorkForceViewController.d" size="17414" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="WorkForceViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="6314035c17ecaffe34485b8d4efdddbad27e0f7b2c3d908a38bb2031dab95ef5" name="WorkForceViewController.o" size="51564" version="1.0"/>
+      <File SHA256:hash="1e5c0789a29b33dfb2de8038b944ec9d2f90cbf683c5c0852e6b8858521d86fd" name="WorkForceViewController.o" size="51564" version="1.0"/>
       <File SHA256:hash="6ecc1f71b7fd00b1c5c44ab09708b4d063399fcdb6646132786e5530b562f399" name="WorkorderViewController.d" size="18358" version="1.0"/>
       <File SHA256:hash="bdaf7777bbee2cd0240258c23877309c6bd6e0557a0224bf55a460b5c93a1e4a" name="WorkorderViewController.dia" size="220" version="1.0"/>
-      <File SHA256:hash="eb385a91987b8df16ebeb30e820d9430928893e2f4f1adc859c739f951111704" name="WorkorderViewController.o" size="35180" version="1.0"/>
+      <File SHA256:hash="c214dd3b5c0255dd7e912967dc124de8e857765ed577120cb6321f2ce251a0d0" name="WorkorderViewController.o" size="35180" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build" name="Debug-iphonesimulator"/>
     <Directory location="AnylineExamples/build/Debug-iphonesimulator" name="Anyline.framework">
-      <File SHA256:hash="c9a936e40bbb721516682e1a4c6ac2e38e7a3bb14d9694958577763a18eddc20" name="Anyline" size="15031344" version="1.0"/>
+      <File SHA256:hash="b732b291532c95bcf21eca0672faf4f8b913e13f44b5728268658227000a2441" name="Anyline" size="15031440" version="1.0"/>
       <File SHA256:hash="f4db42633dc1a2eab3fc3e69e5252ce3c1bbd135d0449072f04c02dd56572c30" name="Info.plist" size="753" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build/Debug-iphonesimulator/Anyline.framework" name="_CodeSignature">
@@ -1396,31 +1381,31 @@
     <Directory location="AnylineExamples/build/Debug-iphonesimulator/AnylineExamples.app" name="Frameworks"/>
     <Directory location="AnylineExamples/build/Debug-iphonesimulator" name="AnylineExamples.swiftmodule">
       <File SHA256:hash="2df990b7cfe2cf9e861b069472299000743c48e91d4336a00ddc690ea8e638d7" name="arm64-apple-ios-simulator.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="a0782514cbc9569d7d9a6cdcbee67315455966a6d1d98b2deaca8cf051e33162" name="arm64-apple-ios-simulator.swiftmodule" size="73780" version="1.0"/>
+      <File SHA256:hash="9c61b80b8e9393ac48b9ff393e06ff1ef6cf235c425e59915933e0d194a20692" name="arm64-apple-ios-simulator.swiftmodule" size="75528" version="1.0"/>
       <File SHA256:hash="2df990b7cfe2cf9e861b069472299000743c48e91d4336a00ddc690ea8e638d7" name="arm64.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="a0782514cbc9569d7d9a6cdcbee67315455966a6d1d98b2deaca8cf051e33162" name="arm64.swiftmodule" size="73780" version="1.0"/>
+      <File SHA256:hash="9c61b80b8e9393ac48b9ff393e06ff1ef6cf235c425e59915933e0d194a20692" name="arm64.swiftmodule" size="75528" version="1.0"/>
       <File SHA256:hash="2ad9409bd0915316e30276bf9b22eff3849511044739f5fafe9e8037f9eb161f" name="x86_64-apple-ios-simulator.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="be1dd997214d99025843a138024b8251419d9b6043b0f5a60c5c65bad42bb8c4" name="x86_64-apple-ios-simulator.swiftmodule" size="73780" version="1.0"/>
+      <File SHA256:hash="355ff67394b92692ab5e0075e4f9b8650034cedd54622058ccf12738e4f1d27c" name="x86_64-apple-ios-simulator.swiftmodule" size="75528" version="1.0"/>
       <File SHA256:hash="2ad9409bd0915316e30276bf9b22eff3849511044739f5fafe9e8037f9eb161f" name="x86_64.swiftdoc" size="396" version="1.0"/>
-      <File SHA256:hash="be1dd997214d99025843a138024b8251419d9b6043b0f5a60c5c65bad42bb8c4" name="x86_64.swiftmodule" size="73780" version="1.0"/>
+      <File SHA256:hash="355ff67394b92692ab5e0075e4f9b8650034cedd54622058ccf12738e4f1d27c" name="x86_64.swiftmodule" size="75528" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build/Debug-iphonesimulator/AnylineExamples.swiftmodule" name="Project">
-      <File SHA256:hash="c3b82c6f747d2ac0b5e85635f887654adde52a5d96cf7e64d0542b0555716ab3" name="arm64-apple-ios-simulator.swiftsourceinfo" size="5340" version="1.0"/>
-      <File SHA256:hash="c3b82c6f747d2ac0b5e85635f887654adde52a5d96cf7e64d0542b0555716ab3" name="arm64.swiftsourceinfo" size="5340" version="1.0"/>
-      <File SHA256:hash="24d4e4259401ce3d23d8c978801446b288539db93f2830469f99fa89b4b01e9a" name="x86_64-apple-ios-simulator.swiftsourceinfo" size="5340" version="1.0"/>
-      <File SHA256:hash="24d4e4259401ce3d23d8c978801446b288539db93f2830469f99fa89b4b01e9a" name="x86_64.swiftsourceinfo" size="5340" version="1.0"/>
+      <File SHA256:hash="4d2c453a49565259df069f4ab722a4aad161bf6293fd1ebc33196687eed259a3" name="arm64-apple-ios-simulator.swiftsourceinfo" size="5772" version="1.0"/>
+      <File SHA256:hash="4d2c453a49565259df069f4ab722a4aad161bf6293fd1ebc33196687eed259a3" name="arm64.swiftsourceinfo" size="5772" version="1.0"/>
+      <File SHA256:hash="7674d6967e3145d60724ff61d2ddd2f5f4f09f5c62c267f191761835300f9d1a" name="x86_64-apple-ios-simulator.swiftsourceinfo" size="5772" version="1.0"/>
+      <File SHA256:hash="7674d6967e3145d60724ff61d2ddd2f5f4f09f5c62c267f191761835300f9d1a" name="x86_64.swiftsourceinfo" size="5772" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build" name="SharedPrecompiledHeaders">
       <File SHA256:hash="9c4632b06ac235673133fa9eba95ec8cf495477224a2bb51fcabc85e6e7bdce2" name="AnylineExamples-Bridging-Header-36CMC0Q2RL44C.dia" size="6988" version="1.0"/>
       <File SHA256:hash="9c4632b06ac235673133fa9eba95ec8cf495477224a2bb51fcabc85e6e7bdce2" name="AnylineExamples-Bridging-Header-4JIF3CIACECT.dia" size="6988" version="1.0"/>
-      <File SHA256:hash="5bb84296bada492eb043d63cf93cefd8418e885788c85cf14f6c12c9d47c8372" name="AnylineExamples-Bridging-Header-swift_7Z2PYCX41TB9-clang_38RFKVQ2DPX52.pch" size="326636" version="1.0"/>
-      <File SHA256:hash="7771a0b5e825288b5219290eb2f30bda9fe8aa131038518564da56da8d0b1356" name="AnylineExamples-Bridging-Header-swift_QQXYAUXH4YRN-clang_WYOC4P34KE4L.pch" size="283968" version="1.0"/>
+      <File SHA256:hash="31292849c4d0af739371b656d0a0fa2fcb2fc0e3295d90b998bddea76f023a74" name="AnylineExamples-Bridging-Header-swift_7Z2PYCX41TB9-clang_38RFKVQ2DPX52.pch" size="326636" version="1.0"/>
+      <File SHA256:hash="42d3309af6ec77acf87dc33a1f7a77066d138c77837309a738ac73877a2eeadb" name="AnylineExamples-Bridging-Header-swift_QQXYAUXH4YRN-clang_WYOC4P34KE4L.pch" size="283968" version="1.0"/>
     </Directory>
     <Directory location="AnylineExamples/build" name="XCBuildData">
-      <File SHA256:hash="049ec489dc977887eb95bf893f6fb141c38648ca216b625b298fffc89b6c5bde" name="4e47318dd73cbe3b8b0350bba126d7d9-desc.xcbuild" size="2301503" version="1.0"/>
-      <File SHA256:hash="4d9b5562a002ea8a95654a465aca0f1c0654ef5ea078651e3d2cec0dd74b43ba" name="4e47318dd73cbe3b8b0350bba126d7d9-manifest.xcbuild" size="2227580" version="1.0"/>
-      <File SHA256:hash="b10b413d468119166bf5a06cc3aad5447864b841d45974f8f6074824251cf56e" name="build.db" size="1359872" version="1.0"/>
-      <File SHA256:hash="1799ed969250be827a3b6bb3df740ad93c5a1055a4abbe12f6633cf7208bd8e5" name="BuildDescriptionCacheIndex-3114f338bc34a3b62ec469806846f248" size="44" version="1.0"/>
+      <File SHA256:hash="9ee2d6a657122d271b8b6eb5dfef3d2210a49dbcd2de7e4dc525425d2681a645" name="6efc4444c1495f2d5b83f6b9281044dd-desc.xcbuild" size="2301551" version="1.0"/>
+      <File SHA256:hash="4d9b5562a002ea8a95654a465aca0f1c0654ef5ea078651e3d2cec0dd74b43ba" name="6efc4444c1495f2d5b83f6b9281044dd-manifest.xcbuild" size="2227580" version="1.0"/>
+      <File SHA256:hash="c0e9cc9c2a13d07438255d20c4d2d3080c9bd0adc34d33f4e031dc0effd5607c" name="build.db" size="1351680" version="1.0"/>
+      <File SHA256:hash="4a011ccb766c8f4813b8b795bd8668867cdf8e88a1179ee1a00f636408008e96" name="BuildDescriptionCacheIndex-3114f338bc34a3b62ec469806846f248" size="44" version="1.0"/>
     </Directory>
     <Directory location="" name="AnylineFont">
       <File SHA256:hash="98b4baec4f01114ac26706152d82b0f54d6d8ba474f91e2cad06c438174aef51" name="AnyOCR.ttf" size="13836" version="1.0"/>
@@ -1430,202 +1415,202 @@
     </Directory>
     <Directory location="" name="Documentation"/>
     <Directory location="Documentation" name="html">
-      <File SHA256:hash="25d1d0f3383c7025cee7140ac312066387746ef2f570943450ad5292cb930546" name="hierarchy.html" size="19606" version="1.0"/>
-      <File SHA256:hash="f13c91b6d4aa8129f9e7cbb70b1343661775e080dc275bcbc38cc4cc044d5489" name="index.html" size="20641" version="1.0"/>
+      <File SHA256:hash="428bbec80ac03803c5e0cb9f4534659646aab1986c73016853d97353da04e29a" name="hierarchy.html" size="19606" version="1.0"/>
+      <File SHA256:hash="d2b0918259aaccea684cdfba50221fc467c5b48d3a9114bf632ec718d79e74af" name="index.html" size="20641" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="Blocks">
-      <File SHA256:hash="3acbbf19dc5b4e2fda67e13303dc565308a7ebf07f1d1358d4fc98476ad2c62f" name="ALImageProviderBlock.html" size="2711" version="1.0"/>
-      <File SHA256:hash="e4705528a3daee9ac9d9048082566b15a6dec9bc39f485b3c487cc1d800a3479" name="APDUCompletionHandler.html" size="2369" version="1.0"/>
-      <File SHA256:hash="be74c638fda8d12bc0790493d9e5799b08b33e50675ae25891e9a9d1ffc1a139" name="DataGroupCompletionHandler.html" size="2395" version="1.0"/>
-      <File SHA256:hash="041a81642e4c619f2defd6efd771f8261e106d700bc7f2afebadfda67c6bb390" name="ErrorHandler.html" size="2296" version="1.0"/>
-      <File SHA256:hash="6b5e111ae1c295018d2ffc266a0e1c8cd5927004615f140e308bedea949c22c7" name="NFCCompletionHandler.html" size="2379" version="1.0"/>
-      <File SHA256:hash="4e88e7d6acdd050f1df573c02943ca5bd187ae9f5a74cff5ba622bbc3604cf24" name="TagReadingCompletionHandler.html" size="2403" version="1.0"/>
+      <File SHA256:hash="d0ae5580bcd2cf876ee8d8c4d249fae0372ee97bdea7f8ba838a71ee8db097f6" name="ALImageProviderBlock.html" size="2711" version="1.0"/>
+      <File SHA256:hash="82c615eeb71da5665eb3b97ea4beea182300ee64489f7a1cd107acb7fc5a4948" name="APDUCompletionHandler.html" size="2369" version="1.0"/>
+      <File SHA256:hash="0921c7a5d4949ad5e211690e24eafcce80cd0cc7cad7cc5a57a3d4d01f80dcf9" name="DataGroupCompletionHandler.html" size="2395" version="1.0"/>
+      <File SHA256:hash="e255b01fc3cadd93ce900fb91dfc91a263f179134c8a6ffc87076c1f07939bdb" name="ErrorHandler.html" size="2296" version="1.0"/>
+      <File SHA256:hash="a07c391ca67ddad64d61b3667de4377011fee4b7d294f71f0eff7112d4a550e8" name="NFCCompletionHandler.html" size="2379" version="1.0"/>
+      <File SHA256:hash="4b45ff9a439982425ac91b9b35f14fcb9918c472c172642e479456ae59615e96" name="TagReadingCompletionHandler.html" size="2403" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="Categories">
-      <File SHA256:hash="d1222464be15080b724cad1c5eff6237011f8e5648f3bc0f72984d3aa4b0a44f" name="NSArray+Additions.html" size="3882" version="1.0"/>
-      <File SHA256:hash="9f1aabdacba405f7bae85ebe3ceb9af99dd21df3f769110f0efcb1df351dd4f2" name="NSArray+PrefixSuffix.html" size="3455" version="1.0"/>
-      <File SHA256:hash="c42eedbca3e1d586f82e8584e4deab33ff5e43bfb9d53684d66e62e673d29421" name="NSBundle+ALExtensions.html" size="3177" version="1.0"/>
-      <File SHA256:hash="9590313318a59d097f01aa00912f9ec9aa65d255b273b4dc394f1e6ccc595b3b" name="NSData+DataArrays.html" size="2808" version="1.0"/>
-      <File SHA256:hash="4eb3c129152110b2eadedd94bb96bc9a57956549b1f9db1012b24602b76bdb21" name="NSDateFormatter+ALExtensions.html" size="4598" version="1.0"/>
-      <File SHA256:hash="8d7f961a3a247177ffccd368bcac72a89b910df80764e4b2e5be0edb4a2751bc" name="NSDictionary+ALJSON.html" size="2971" version="1.0"/>
-      <File SHA256:hash="aee8938e5b73dc4948670f2b83801b288017660c5c3daeb21049bb47e37f3902" name="NSDictionary+CPPWrapper.html" size="2906" version="1.0"/>
-      <File SHA256:hash="0fb84fdc40a401259194689f8ea08686c881cd397483b5a1a23da43959ffc20a" name="NSError+CPPWrapper.html" size="6277" version="1.0"/>
-      <File SHA256:hash="0769f556be8e1b7ab0451e1075a8bf009d32c00bca87f3c9c07392d172f31cf2" name="NSMutableData+DataArrays.html" size="3543" version="1.0"/>
-      <File SHA256:hash="69420463066d1cc1e9277039261d9a6e9ddfad77f65526b75c3a5d0b0d32b7ba" name="NSString+ALExtensions.html" size="8255" version="1.0"/>
-      <File SHA256:hash="f43edf12b07f5df058db1530ebcddc83f805ef20fe9ebeea04850790228ec23f" name="UIColor+ALHexColors.html" size="5720" version="1.0"/>
-      <File SHA256:hash="604eb9ae967f914fe8d9cef3a2113ccedeeb9a245b304e1ec03350c77e73fa5d" name="UIColor+ALOpenCV.html" size="3470" version="1.0"/>
-      <File SHA256:hash="c34604e9a9b29f85f67fdcc64e1d99b208175542d05994a080d107db12f828b4" name="UIImage+ALExtensions.html" size="10203" version="1.0"/>
-      <File SHA256:hash="c656e1f4d6aa1c830330de50adde99a7d61d5ce86b7ef6457d9ffb042e402150" name="UIImage+ALOpenCV.html" size="7820" version="1.0"/>
-      <File SHA256:hash="5e04d7f5b41b88239a2874b286aac0cbf401c90248939f4bd121cb383f38df68" name="UIImage+ALUtil.html" size="21040" version="1.0"/>
-      <File SHA256:hash="148c5cddfe6118d39094aa54e57efce49231ea446f169f3ba32c000a4994f41e" name="UIWindow+ALExtensions.html" size="2924" version="1.0"/>
+      <File SHA256:hash="0f41219fb5cfed796e551afa5659e952233dde2627b7edcded6deb6e6ceb9653" name="NSArray+Additions.html" size="3882" version="1.0"/>
+      <File SHA256:hash="e135285c2490f31acde8469b29bc9865c8f17908b6d8d9a9bca06a9a41d847e4" name="NSArray+PrefixSuffix.html" size="3455" version="1.0"/>
+      <File SHA256:hash="601ec219905f2c7d628aa737be65dd3614d327fb621bb60a5e68f663fbdb6a46" name="NSBundle+ALExtensions.html" size="3177" version="1.0"/>
+      <File SHA256:hash="8174220cba7ba350ccbff1976e17d75a061a4a4f092af811648507ba193a8a4a" name="NSData+DataArrays.html" size="2808" version="1.0"/>
+      <File SHA256:hash="5c54d62d2e9616292b960695747063c31da46bf8955113d74c8d67202600f881" name="NSDateFormatter+ALExtensions.html" size="4598" version="1.0"/>
+      <File SHA256:hash="1f0655fa0bdfeaeecbf7decd53d78972e75bee979e9926f5cf4696ba21320044" name="NSDictionary+ALJSON.html" size="2971" version="1.0"/>
+      <File SHA256:hash="266bfddf33d3cdb7caac491df1ffe89107af5c09d17b9a47b3200d071ef2518d" name="NSDictionary+CPPWrapper.html" size="2906" version="1.0"/>
+      <File SHA256:hash="88f942a0827a8d5c709a8a1a97ce0927abaa7b61441ffa1f4eef4fb9b4fc8d09" name="NSError+CPPWrapper.html" size="6277" version="1.0"/>
+      <File SHA256:hash="5b851dc2418612267a38247b2fe4e8dfac5307abba5fdb14e4ad892cf9c81fc3" name="NSMutableData+DataArrays.html" size="3543" version="1.0"/>
+      <File SHA256:hash="0c6f027045beb6130e26f2b91ac614726514511c490ec029f94526e0da21506b" name="NSString+ALExtensions.html" size="8255" version="1.0"/>
+      <File SHA256:hash="f6d5395655f30bd061c337c679260356982ed08016a66cf94258eb6d5888eead" name="UIColor+ALHexColors.html" size="5720" version="1.0"/>
+      <File SHA256:hash="c115ef0517ab11389624e5846411c767df2a69558c37b9897b65192050fb179d" name="UIColor+ALOpenCV.html" size="3470" version="1.0"/>
+      <File SHA256:hash="510bede5eee8cd4c3cf8c8354ed71be5f9bfd915721f3225af952d7f20eafb6b" name="UIImage+ALExtensions.html" size="10203" version="1.0"/>
+      <File SHA256:hash="fc553c4ec30169b2ea973e41c5fae6091f05472e26a7aa5d60fab462abbc7f82" name="UIImage+ALOpenCV.html" size="7820" version="1.0"/>
+      <File SHA256:hash="7a589dc6df071f756a11c34c6b70f4e0f83befc403d1432ccaa4f8a5e61ca267" name="UIImage+ALUtil.html" size="21040" version="1.0"/>
+      <File SHA256:hash="8f483c9f871f750facabf4c208478a257c6a69748d799f1a5bac8d8f4b930b3e" name="UIWindow+ALExtensions.html" size="2924" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="Classes">
-      <File SHA256:hash="5b32e58e0255bc2fe03e1718f063b112e48d9383d8a27a4d43305aac8fc7a8ea" name="ALAbstractScanPlugin.html" size="32177" version="1.0"/>
-      <File SHA256:hash="3908267894f4f7bbfcaf7f14ee3a7264229b2418715076697f69660ba1e8e038" name="ALAbstractScanViewPlugin.html" size="38658" version="1.0"/>
-      <File SHA256:hash="b22a702fbd798749237f08fefe9905b6856816c3d1c360403ace1a0bb88e99ce" name="ALAbstractScanViewPluginComposite.html" size="10189" version="1.0"/>
-      <File SHA256:hash="107c62e3c86b59b4d73ec26559b8b4b3b7a91b7e4ba1a0e9a21e2545aaaa89f6" name="ALAdaptDataPointAreaBoundingRectsWithoutOutliersOperation.html" size="4893" version="1.0"/>
-      <File SHA256:hash="ca31dc2d54bbc6911fa0ed7da99d3ab2615233fdce8fec5872293fbb3dec7ddd" name="ALAssetContext.html" size="10753" version="1.0"/>
-      <File SHA256:hash="fd803ca60251c1f3e7a8eccc0145a47627e59f936c5b8bc801ecce4779a4cd39" name="ALAssetController.html" size="19504" version="1.0"/>
-      <File SHA256:hash="9c7722605abae687a5e6fe5d4623b3d2db72a42f4eac9036dba909862252953d" name="ALBACHandler.html" size="3828" version="1.0"/>
-      <File SHA256:hash="f7f8d33d70f944c70542457295382a5923cc77105e7d4e82aa22f7ffbd22fc59" name="ALBarcode.html" size="6370" version="1.0"/>
-      <File SHA256:hash="4e5a5f94c43efcaaa96bbccd1284d18c8c73f5c7a5e4bfa571096b02c119171c" name="ALBarcodeResult.html" size="7704" version="1.0"/>
-      <File SHA256:hash="b285a5f505be86003e16775dd5a6f12f700a371b7cad5855b0857557efd376b6" name="ALBarcodeScanPlugin.html" size="17399" version="1.0"/>
-      <File SHA256:hash="c01f9c509def301661cae4138b77a09c968cf6abad3ca9e6065e5f53d0c53695" name="ALBarcodeScanViewPlugin.html" size="17278" version="1.0"/>
-      <File SHA256:hash="1dd242c21e0803023354e17a2504fc68e49fa13ef4bbcc90e5c12bd4be88c75c" name="ALBaseOCRConfig.html" size="3285" version="1.0"/>
-      <File SHA256:hash="cba481ff4502bbf988b1e7fc37007b1dae65fe7ab38882c7edb1ed55338b60f4" name="ALBasicConfig.html" size="7069" version="1.0"/>
-      <File SHA256:hash="7be17e04f9c1de0a93729c241c3dcd1082a6c327939bed6551bfee1b9c9ca19f" name="ALCameraConfig.html" size="14598" version="1.0"/>
-      <File SHA256:hash="1e321007f463a150b736f4fa7c0977d7fd81096cc492ccee9e6bd7b46cfcf034" name="ALCaptureDeviceManager.html" size="33237" version="1.0"/>
-      <File SHA256:hash="600d7e4ca6b6fd0a68a9e273b226783d1c2d99373a22e4122bc1b27ef4d10e6a" name="ALCaptureSessionManager.html" size="6788" version="1.0"/>
-      <File SHA256:hash="18de4b6bc38ed6ced20cf213cf129975c080f28d2a0594ace14b5e664d41f9ca" name="ALCattleTagConfig.html" size="2451" version="1.0"/>
-      <File SHA256:hash="8c50080d6ce139b5506ff110b7af344bbe8fb9cc6c640b130cd83b453bc6d8ff" name="ALCompositeResult.html" size="2260" version="1.0"/>
-      <File SHA256:hash="dfdc15f00500b09ce8f422bad6e2c9123a48a306469720f43c3543237ccb4ec6" name="ALContainerConfig.html" size="7378" version="1.0"/>
-      <File SHA256:hash="56336301111d551fef879b2314bf1f0e680a70643efea013829f6bb4aa4e73f0" name="ALContour.html" size="5373" version="1.0"/>
-      <File SHA256:hash="cd15d026dd310df27b957fc54a9db57e103fc9fd61146dff27a0fb2c005f1fb3" name="ALContours.html" size="4656" version="1.0"/>
-      <File SHA256:hash="328bdb8e39582a7e0d5a2578996bd2068f25bb1d3d648e84fa0d44f03ac4528e" name="ALConversionUtil.html" size="3244" version="1.0"/>
-      <File SHA256:hash="9afbb9de3aa856364f590c39c5d0a12d49ef1365a34b4f9957360e6ee8fb4a47" name="ALCoreController.html" size="56995" version="1.0"/>
-      <File SHA256:hash="bdd27cb7753de57bd09d4eed1e5946e2b1219ce81863f438b6e35702c2282d68" name="ALCutoutConfig.html" size="15669" version="1.0"/>
-      <File SHA256:hash="5cd0bc8d6783517bfd3dd3f5e5543f5c11d48fe1ae2ccc6019c685824b258b5e" name="ALCutoutView.html" size="13972" version="1.0"/>
-      <File SHA256:hash="e8271598b869b1e99d38f72b623d340595a6e2efd8d718b251fdfc155f79c010" name="ALDataGroup1.html" size="9134" version="1.0"/>
-      <File SHA256:hash="a7a7fa88711ab50949702f6a2124bbecb59710ea9c180fa6b496a20cef0c8ade" name="ALDataGroup2.html" size="4143" version="1.0"/>
-      <File SHA256:hash="9d9335224a2beea684b63d67b0d68c43f703755f2e9ceb63ccd4bd2c33709955" name="ALDataGroupParser.html" size="3007" version="1.0"/>
-      <File SHA256:hash="a48705fa36b39dc3fe7f8f235cb7949a4c63d2068a2755fed8187f2cec53f14f" name="ALDataPoint.html" size="10510" version="1.0"/>
-      <File SHA256:hash="05cb3706e31b4749ef2c6db0cfe5a3314dcc7e70a02bf5c18ea52bf445a1ae62" name="ALDESEncryption.html" size="9578" version="1.0"/>
-      <File SHA256:hash="ccd0071c185b929da930990f78b3f8a3f542d174b93a21eaf0b55fcf6cd40c9d" name="ALDigitDataPoint.html" size="17847" version="1.0"/>
-      <File SHA256:hash="030d27c31374e95b1348299a5dc3d2d395667a0efb400cdd30f660291ae9e5bf" name="ALDigitResult.html" size="13731" version="1.0"/>
-      <File SHA256:hash="41aca4fefe94502ba0ea9cabcb10a9892f074243184068c5e72f3379da2f834a" name="ALDispatchTimer.html" size="3444" version="1.0"/>
-      <File SHA256:hash="da1a320d2369b8132be29115126d99d30fca8637ae44b2295e7e44412da43d88" name="ALDisplayResult.html" size="12805" version="1.0"/>
-      <File SHA256:hash="278f8f137380aea47ed98a2e590888309eabf0425edefb2e4ab86ebd548a583e" name="ALDisplaySpecAdjustment.html" size="7977" version="1.0"/>
-      <File SHA256:hash="e61e5dcbb7468dc348bb3fdd0ee2262e5f39dc27c3fb8b1f01691cbb8c0a3eb6" name="ALDocumentScanPlugin.html" size="38920" version="1.0"/>
-      <File SHA256:hash="14e448913c18c27633039afb50e7613cca8dcb492160badf838b6fa58c0e2d67" name="ALDocumentScanViewPlugin.html" size="4565" version="1.0"/>
-      <File SHA256:hash="cfe80af33ae0087ac91caa3cd8648a6595565a1a92206b7fe961d0e714706393" name="ALDrivingLicenseConfig.html" size="3530" version="1.0"/>
-      <File SHA256:hash="796322b78ce843fb848ba6589fdabee4ef718e15d64e70a5a64cf5e16d681d93" name="ALDrivingLicenseFieldConfidences.html" size="9348" version="1.0"/>
-      <File SHA256:hash="91b059062ba4ab77b8a50cd87732cb5307fb277aa54a8bf7e2a37da4fd4b0cf6" name="ALDrivingLicenseFieldScanOptions.html" size="7653" version="1.0"/>
-      <File SHA256:hash="f1c949bfe67d230c625147df109f5ef680ef3d1daf8a285419c5152bc890ca1d" name="ALDrivingLicenseIdentification.html" size="21653" version="1.0"/>
-      <File SHA256:hash="3eaa2e9a3134901c81427404d022af41454291fed2b88523e410b39e3682ba5c" name="ALEnergyResult.html" size="2180" version="1.0"/>
-      <File SHA256:hash="9e18f776f2b71153743de62176847d9b28304a2b5f6272746b8e3a9f1abc5a5d" name="ALErrorManager.html" size="5649" version="1.0"/>
-      <File SHA256:hash="077ca318d827f743dbe7dfce413d7d5429b2d31bbf1ea1760a76c9ad1045dfd2" name="ALFlashButton.html" size="6455" version="1.0"/>
-      <File SHA256:hash="f47a72a2a0f422cd498f398e3ca00b05a3d9da0900f0b6a095c6c9e5152e3d10" name="ALFlashButtonConfig.html" size="7878" version="1.0"/>
-      <File SHA256:hash="867eca97d3eb1b43d764b2e7e9747119b4cfcd5499de1571d514b1a261c2f801" name="ALGermanIDFrontConfig.html" size="2149" version="1.0"/>
-      <File SHA256:hash="e86f418058187c3f046d7eceb8b7a46969595d0f46954f4cf88aeb7f61de2f4a" name="ALGermanIDFrontFieldConfidences.html" size="8246" version="1.0"/>
-      <File SHA256:hash="5c6ee3f64fca9bae35fc7e710a554be105bfd063857c087c2ff540fcabe57cbb" name="ALGermanIDFrontFieldScanOptions.html" size="7184" version="1.0"/>
-      <File SHA256:hash="afff0663f871699c8435cc88c434e744ccecdfca56e8061765841ff4140e87e8" name="ALGermanIDFrontIdentification.html" size="18548" version="1.0"/>
-      <File SHA256:hash="7d067a0cca74be3b9a48252f5b4a4f3b82d92e0ffda4318a25276ba86c6a77ef" name="ALHelpers.html" size="2078" version="1.0"/>
-      <File SHA256:hash="6a906ecb393934da7febf9a7738e257ee20e52a23a9d7a45ccc2af013284e40a" name="ALIDConfig.html" size="5215" version="1.0"/>
-      <File SHA256:hash="f4c48df29627b93e51fc7795fc669851d43c9de29d299c083585237ace26976e" name="ALIDFieldConfidences.html" size="2996" version="1.0"/>
-      <File SHA256:hash="c43aa7e759e5740eee6b9a56ce9fe07f30081fb2a7291916f185f896d33ae058" name="ALIDFieldScanOptions.html" size="2996" version="1.0"/>
-      <File SHA256:hash="396a0130b477dc278c183dbe8655c2a4b1ce7e5f6e15a867d170401cd0faef77" name="ALIDResult.html" size="5877" version="1.0"/>
-      <File SHA256:hash="e3f5c8aaae518738d47cf859d5303ee56806553452110ed3568168bdf026ca49" name="ALIDScanPlugin.html" size="21227" version="1.0"/>
-      <File SHA256:hash="8f09867444e90c40bf40387c441fea4adc1f9eb7bbf35a9a9ecd6268792dbfc6" name="ALIDScanViewPlugin.html" size="11531" version="1.0"/>
-      <File SHA256:hash="52a270329f3f398ba17880f694eb12ae9b0dbb34b93b9a978808eb135d190aa7" name="ALImage.html" size="29885" version="1.0"/>
-      <File SHA256:hash="041fe5216a8cd79ebb0ec457c376a92e6d2490f78d371f9bb3457b9d5fbc436b" name="ALIndexPath.html" size="8650" version="1.0"/>
-      <File SHA256:hash="3152875ef1e38c6814fcbee992b888388f2a3bef5bd9b859fc40326567f7f79b" name="ALInternalCOM.html" size="3972" version="1.0"/>
-      <File SHA256:hash="0a8cef8a612fe0f1206e7b4e1a72e772ac2506f978333ff3b4f622feb2214710" name="ALInternalDataGroup.html" size="6044" version="1.0"/>
-      <File SHA256:hash="3d491485b0f7effaf097754effda70d4512dcad96d6461652e3f3a4a7b1a1a57" name="ALInternalDataGroup1.html" size="2945" version="1.0"/>
-      <File SHA256:hash="58cf5cd448c4133ada63a00ee1c3b9e8a5512d973254e03b79237522904b110e" name="ALInternalDataGroup2.html" size="2917" version="1.0"/>
-      <File SHA256:hash="c21c955fcc5cb0dd3c2de5d0ae06fceba90a651f2ab89968f9140adbf4c75c32" name="ALInternalDataGroup7.html" size="2917" version="1.0"/>
-      <File SHA256:hash="c4f1806196c12fab1813c680fb35736fb4dc2d629a9b1ad90887b350c417002b" name="ALInternalDataGroupNotImplemented.html" size="2203" version="1.0"/>
-      <File SHA256:hash="8507575c7ffd3e3b07f562c462eb6dc59c5ae6bcf149e8282a9d12ae3395320c" name="ALInternalSOD.html" size="2994" version="1.0"/>
-      <File SHA256:hash="cacc9575618227ea0773833dab38a42f6c5ebb8d6538c0b93a881fe096173171" name="ALLayoutDefinition.html" size="4433" version="1.0"/>
-      <File SHA256:hash="61725c46807c4e31e97fea8039a719b3486308b41bb74b93b61d0cba2fee679e" name="ALLicense.html" size="4526" version="1.0"/>
-      <File SHA256:hash="a48b0983cb9dbc925f3cec3879d2c9fd0661e8a4d8de24428023b39c5b83f478" name="ALLicensePlateResult.html" size="4453" version="1.0"/>
-      <File SHA256:hash="65594ea1d2b3ee7bfb619924fad7616bab975aaa853fecdb4abd29941ccb12ab" name="ALLicensePlateScanPlugin.html" size="25946" version="1.0"/>
-      <File SHA256:hash="e21f677a05e85ddbe4fdd657a3231334aba060d6a202ca8eb4026c83985dba33" name="ALLicensePlateScanViewPlugin.html" size="4625" version="1.0"/>
-      <File SHA256:hash="2b52103852e8fff5e0adeaeffa7f41180fa09d666c50b2492f1af6eb07757c4d" name="ALLicenseUtil.html" size="7820" version="1.0"/>
-      <File SHA256:hash="ad6f97647986003725db53d8b86220b245974fa25ebbe09e6994fa1457d3ae52" name="ALLineDurationConverter.html" size="3044" version="1.0"/>
-      <File SHA256:hash="67a62ec5cd20dcad10519f38e7eb84ea67201e219f34710af6fb33425afbef25" name="ALMeterResult.html" size="4731" version="1.0"/>
-      <File SHA256:hash="e67e2552c4f0941ea3865d88db0f0a87f68d44f498e9f57fa758cc8a1534debd" name="ALMeterScanPlugin.html" size="18992" version="1.0"/>
-      <File SHA256:hash="e723858f0a88276cd8cf5841fc32ed8e2d935066be4e0560933da6d616ae6b41" name="ALMeterScanViewPlugin.html" size="17701" version="1.0"/>
-      <File SHA256:hash="76051bce7da661c5ac2b358c204b2c8543402587f716fce79710f1df401e6b07" name="ALMotionDetector.html" size="4738" version="1.0"/>
-      <File SHA256:hash="016fa76cb2ded99a18817ce1906a92ad8d9a7cc4f5112ae03f4b300bb58f098b" name="ALMRZConfig.html" size="4361" version="1.0"/>
-      <File SHA256:hash="76276fee52701d0ad58fb05e4c41a9d4feadd4255a7837fde40a4305a170d7e8" name="ALMRZFieldConfidences.html" size="18926" version="1.0"/>
-      <File SHA256:hash="5e6532178abd73005e54fbcbb9fcf65a2bf9fa55f0bd2fbe125a70dcb2bd488a" name="ALMRZFieldScanOptions.html" size="7756" version="1.0"/>
-      <File SHA256:hash="dc1296fae5be74c3490543addd27c65917daa16316f19cdbe51600a639f45226" name="ALMRZIdentification.html" size="51610" version="1.0"/>
-      <File SHA256:hash="1a5b6bc9b5796e0af90922e71df2a8a775543e114d44d713d8d81aa6b62b9605" name="ALNFCDetector.html" size="7998" version="1.0"/>
-      <File SHA256:hash="ad7f88e810c8554596402ec5e4abe7c317ed1e1007ccf3355d0dd3728691051d" name="ALNFCPassportModel.html" size="7049" version="1.0"/>
-      <File SHA256:hash="001c533ccd13daac43f0a8c7473af8ce5ee08f7f56b09d6549b4711bf83f95b4" name="ALNFCResult.html" size="6255" version="1.0"/>
-      <File SHA256:hash="2ff1294c74f2ac6bc5cfcd7b74ca38ca7aa21714009d531b7f5073dad178e77c" name="ALNFCUtils.html" size="11095" version="1.0"/>
-      <File SHA256:hash="c3cbd34069569e47239c80e239b5da2d65bc4dc67340635a4eed6d419bd3433a" name="ALOCRConfig.html" size="26632" version="1.0"/>
-      <File SHA256:hash="5722f7ccbeb6c41a50fc7d32620d108ab09cc608ad75bcbabb48eeff0f00a8e0" name="ALOCRResult.html" size="8671" version="1.0"/>
-      <File SHA256:hash="835145d6e445442b49d8d626ba34b61e7fc3c4d1449b5a5a194d1bdb37914b4e" name="ALOCRScanPlugin.html" size="21582" version="1.0"/>
-      <File SHA256:hash="883e52535351066ffd08cc91dec182e853ed7ce2e32cb0b8104dfc6d5132c744" name="ALOCRScanViewPlugin.html" size="14583" version="1.0"/>
-      <File SHA256:hash="7d1e5f797802001b41ae813afd676b7b9eabde1c93123ac3e84b1d9b5cd0c99e" name="ALParallelCompositeScanViewPlugin.html" size="2211" version="1.0"/>
-      <File SHA256:hash="209a2931c8b0a1aea4d0a5ed89bcdc1c5ea904ce12b3dd92cb34702512e45581" name="ALParallelScanViewPluginComposite.html" size="2311" version="1.0"/>
-      <File SHA256:hash="c914cab54403c88c149c80da39b95aa64c1c344c8ffa0189bb4c1622b29b0d0c" name="ALPassportReader.html" size="4551" version="1.0"/>
-      <File SHA256:hash="0a90472f895fd7c6672a8f5bc96bb3be809fbd8b85225d34cad92b3f829cf7d9" name="ALPolygon.html" size="5588" version="1.0"/>
-      <File SHA256:hash="a4d7b916ed0a33b9e5fdc40164bbff8c88121e4dd7c7d9a5d699873bb1586228" name="ALPropertyUtilHelper.html" size="3027" version="1.0"/>
-      <File SHA256:hash="9120cf37c3586e24e2550ae46120a42fa0a86d0cb781789a30e2d38d0520f65b" name="ALResolveContoursXDistanceViolationOperation.html" size="4961" version="1.0"/>
-      <File SHA256:hash="1f5458d481f49be9912bbb37b5a87f5761dece645e618ee37a4aae0abc2b4f7b" name="ALResponseAPDU.html" size="4404" version="1.0"/>
-      <File SHA256:hash="fa001169fb037859e61fd4c7f6989197a610708b6b9f64bffc00685d88373596" name="ALResult.html" size="14094" version="1.0"/>
-      <File SHA256:hash="9a0ca0fac1f47b8f0cc857fbffc31466ed6c7094d5fff579c17e4ff0dea052fa" name="ALROISpec.html" size="14072" version="1.0"/>
-      <File SHA256:hash="fcb9b083d9186186899e9d9eb08716b229c9f7202fa9c65c9fd378d7f7e0961b" name="ALRunSkippedReason.html" size="4825" version="1.0"/>
-      <File SHA256:hash="c4a19cea2165b093cdecfef76c067afeff67fc2bd36ec4ddd7664a3f0d41f934" name="ALSampleBufferImageProvider.html" size="8779" version="1.0"/>
-      <File SHA256:hash="9ef0a7c25f4a48aab646d3f42d7a924acac7fb98fd73f12d903d8e88164f9c48" name="ALScanFeedbackConfig.html" size="11469" version="1.0"/>
-      <File SHA256:hash="68888363a3602aa424473c8a3d5bc036fbaecd574aae7e3475436507c60c739a" name="ALScanInfo.html" size="6122" version="1.0"/>
-      <File SHA256:hash="c9feb095a0c8eb9e0e7d206f1f43e009f303f27fc6affb68699a1c331589271a" name="ALScanResult.html" size="10357" version="1.0"/>
-      <File SHA256:hash="c3e3fecd478ac0eadbae84f09b9f853837f1271d13da6e8d81f60fe30abc5d15" name="ALScanView.html" size="37312" version="1.0"/>
-      <File SHA256:hash="45ab5ed2a1a87775b939dca7b8550d834c08e9ecb043b81c50e2265ddc17e803" name="ALScanViewPluginConfig.html" size="16779" version="1.0"/>
-      <File SHA256:hash="5fedcefae045a1cdd5cbead089579c3ae96553c353b9b9d09b8c0840d34c6d81" name="ALSecureMessaging.html" size="4129" version="1.0"/>
-      <File SHA256:hash="3e94c404a5ced6021aac87d5ef7a8352e078865d82da04345507efb6bfefcc2f" name="ALSegmentResult.html" size="7546" version="1.0"/>
-      <File SHA256:hash="2c3cffdb8b4117396cf6434756295faae02f90337d3ab9c798b5e32567db4487" name="ALSegmentSpec.html" size="6411" version="1.0"/>
-      <File SHA256:hash="46aac9daa70add77982c24582c5361b4788683133e3248f0ff1ad64d674b8525" name="ALSerialScanViewPluginComposite.html" size="3269" version="1.0"/>
-      <File SHA256:hash="42918b0440d0c6f4949b3efb251c314595b0db46487dbbf3758bce3f53936174" name="ALSevenSegmentContours.html" size="4372" version="1.0"/>
-      <File SHA256:hash="e9b9e300d78ad5ec7dccba9ccf56675300a689a92aa04a272107e0240140a2c4" name="ALSOD.html" size="6753" version="1.0"/>
-      <File SHA256:hash="10f41ac318722b76a4b6edcd6a205640fd9d0db284ccf6ffd368c858f8342105" name="ALSquare.html" size="20480" version="1.0"/>
-      <File SHA256:hash="0e6142bb6d019f3f45ace29a16598af9b1378a031401e3ebc0f99e4bfe00452b" name="ALStillImageProvider.html" size="2980" version="1.0"/>
-      <File SHA256:hash="c6fa7c1583cf708c2bae46648633a3a8d78e17079df93d36cb1b6e40ffcc42e6" name="ALTagReader.html" size="6323" version="1.0"/>
-      <File SHA256:hash="6d8c9c78df0ad4030ef7423faf2d4f4eb7db7b26e7dd02295db2233237157295" name="ALTemplateConfig.html" size="2137" version="1.0"/>
-      <File SHA256:hash="fa41c682d010bfd05d3462e1a070e823daf833a23d2a245249b055a0c209db48" name="ALTemplateFieldConfidences.html" size="2177" version="1.0"/>
-      <File SHA256:hash="f738d2e517f421e5523c41d03b283ae6dd0d81b56ac7ad0b11c58f2e44568c9b" name="ALTemplateFieldScanOptions.html" size="2177" version="1.0"/>
-      <File SHA256:hash="3660b3c71eadb2384d668415ac0cbd12c33d6908c19ca3d2c9fe930644dbc335" name="ALTemplateIdentification.html" size="2107" version="1.0"/>
-      <File SHA256:hash="bdbf2e590662fd0f5b55d2b12f2cf18d4358415f7f92aafab49d864e9203ec8c" name="ALTextDataPoint.html" size="10726" version="1.0"/>
-      <File SHA256:hash="4f1ac0e2aa25516918d45b1569a827fbd62832cae9c2c8d04a8cf05984e8cc83" name="ALTINConfig.html" size="5449" version="1.0"/>
-      <File SHA256:hash="a090db4bce13d85af092f3f719e1cb827aafa70d3f229e4a8f54e21b62631014" name="ALTorchManager.html" size="8321" version="1.0"/>
-      <File SHA256:hash="ff9155ff7133917f5ae13a18f13164db8978a091254c778de19c283ca92650bd" name="ALTrainerUtils.html" size="6509" version="1.0"/>
-      <File SHA256:hash="5249cddb540f6944773afbd574ff30a2a3401aecef9e22f96fc685f6490d3d73" name="ALTranslationHelper.html" size="9214" version="1.0"/>
-      <File SHA256:hash="a5c5b9150edc7211fd79db4164457150dcb1665e7359ad0b5e259902d3798443" name="ALUIFeedback.html" size="12489" version="1.0"/>
-      <File SHA256:hash="6b6ffcc6a1b8455a04612c1c6c93a07d9c932a30baf010d7fafc13e3936d557d" name="ALUINativeFeedback.html" size="2142" version="1.0"/>
-      <File SHA256:hash="b5af590d80ea1b36b91975ba72f42947d05a4c71b04722312ad07500963f7b47" name="ALUIWebViewFeedback.html" size="2145" version="1.0"/>
-      <File SHA256:hash="7b265e6da89731a77bdd1569c7395b2e7532398a413ab8128660b6ce97a3ef2a" name="ALUniversalIDConfig.html" size="8338" version="1.0"/>
-      <File SHA256:hash="b9915b27a475cbe4915399db93ecf81149ef94a51d5d36516908bf10982a7517" name="ALUniversalIDFieldConfidences.html" size="5831" version="1.0"/>
-      <File SHA256:hash="5203ec78efea66fe795017d07e88f04cff5f3f62b4d130f1802a1cb9f6f35093" name="ALUniversalIDFieldScanOptions.html" size="5831" version="1.0"/>
-      <File SHA256:hash="49f105e3b5e03333d9286a158c563616dca2c7f21aed58e2ddcd988357ae975e" name="ALUniversalIDIdentification.html" size="6795" version="1.0"/>
-      <File SHA256:hash="e8cbcfd4a04008ef36f164285829562c15e9e57cd96ca5ed35800a92bcdf9104" name="ALValuesStack.html" size="14261" version="1.0"/>
-      <File SHA256:hash="053daa16384455e5ae70d19e7442e4e321a3125151b35bb473217259623e7b79" name="ALValuesStackFlipping.html" size="7640" version="1.0"/>
-      <File SHA256:hash="724b5452b75ecd3b7bd7b576ba0d633929b4fffd053089cf1f7ece9f7e971f7c" name="ALVariableWrapper.html" size="4160" version="1.0"/>
-      <File SHA256:hash="099ddc2e595092d59fe9ca948f8be584b62b38924cbd8e74ed257df10d8c5ad6" name="ALVINConfig.html" size="3833" version="1.0"/>
-      <File SHA256:hash="28a3e08e17ac1b23082a2cf1c7b52bb996237d0cdf01858f6d09b71154435366" name="ALVisualFeedbackConfig.html" size="7988" version="1.0"/>
-      <File SHA256:hash="214b391816c15404414f348f48cb77e76c1053886b57286b8e20fa91859fb41a" name="ALVisualFeedbackOverlay.html" size="12411" version="1.0"/>
-      <File SHA256:hash="4fe825445c840c99e152db9ff0802dbf3ac5110d6cfa81e37c10ba9f043107e6" name="ALWatermarkView.html" size="5428" version="1.0"/>
-      <File SHA256:hash="e6719e3f8fc78572cd6a1e2389b26063beae832c1aabdc8d5edb3993e86aa283" name="ALZoomHelper.html" size="6634" version="1.0"/>
-      <File SHA256:hash="90c7848d9d413b62bed89b350a2f5854f9809f1af513fc5f38a6f4e2879a8ef9" name="AnylineSDK.html" size="3612" version="1.0"/>
+      <File SHA256:hash="a393d85058e1e9a8ff3b9eba089fa33629f4203e43591231424d410a8b15112c" name="ALAbstractScanPlugin.html" size="30288" version="1.0"/>
+      <File SHA256:hash="53f489f9d55d6897134c3f15f37ed2ae55d7a6dc6b1056021a94e80a08abfc32" name="ALAbstractScanViewPlugin.html" size="38658" version="1.0"/>
+      <File SHA256:hash="8c3c43f25944d9aca6882b90134581fc36eb2fa906db696c6180873bb6b7f8c3" name="ALAbstractScanViewPluginComposite.html" size="10189" version="1.0"/>
+      <File SHA256:hash="d1cb54f824754b3d20e98a4d05afe24ac9adcbafc07f13a774fcb1376ab2fc0f" name="ALAdaptDataPointAreaBoundingRectsWithoutOutliersOperation.html" size="4893" version="1.0"/>
+      <File SHA256:hash="d7ec68c627dc1fb89e66e5dac89215884f097757fa33ebc8d793a0a97b91f2e1" name="ALAssetContext.html" size="10753" version="1.0"/>
+      <File SHA256:hash="cb8756f02a948d172685813860f75bc4f89d13f85bbf5916b4bcd2d537306940" name="ALAssetController.html" size="19504" version="1.0"/>
+      <File SHA256:hash="21c11e67fd1183a754179c5fc8e7eb81c631dff1c1eac736691f655d9c579d4d" name="ALBACHandler.html" size="3828" version="1.0"/>
+      <File SHA256:hash="d51b4712685a2adfe8aa4ee98c2b6c790e9d6bbf0843e822d59f515be06b65c6" name="ALBarcode.html" size="6370" version="1.0"/>
+      <File SHA256:hash="abfc94e8b11ca76df15e6c1d1a76d0a4de25c680730ce225038cf8bbe507eeb3" name="ALBarcodeResult.html" size="7704" version="1.0"/>
+      <File SHA256:hash="d57e3312a9d7e543afcab925b305a9869a6b313e9974193402ec220d551eb70e" name="ALBarcodeScanPlugin.html" size="17633" version="1.0"/>
+      <File SHA256:hash="ec0388ae1b0776f32bbaf3c918e66b4ea73262c6f1942c8becbd154e96d69703" name="ALBarcodeScanViewPlugin.html" size="17278" version="1.0"/>
+      <File SHA256:hash="f0693151b70136cf03c6b298f39fd61ae8950c0b6584753004060b52a97434cd" name="ALBaseOCRConfig.html" size="3285" version="1.0"/>
+      <File SHA256:hash="892d4e5c09f29bae511828b9325fb74c8d753bb0371fd73367c93ae9fc089c2f" name="ALBasicConfig.html" size="7069" version="1.0"/>
+      <File SHA256:hash="10cdcc7294cb66ccf9e94c034247f1ee1e61c729e68b72df10e7ead566d16769" name="ALCameraConfig.html" size="14598" version="1.0"/>
+      <File SHA256:hash="c7ba0c348597280f4c5bf89c8471a91f5ffc1a5a2c4a1d96f501cf1028d42da1" name="ALCaptureDeviceManager.html" size="33237" version="1.0"/>
+      <File SHA256:hash="15875cb251fb38dd069de113059d39061da9c151bff1759ef343ea38744c8923" name="ALCaptureSessionManager.html" size="6788" version="1.0"/>
+      <File SHA256:hash="f4d6318357e801735ebbe87cb8157b9d67f933435827725bf908fc1ac967c1ff" name="ALCattleTagConfig.html" size="2451" version="1.0"/>
+      <File SHA256:hash="559091858cb347068fd15fe18a5de744149bfe52d35006e30f35de4d92542fa7" name="ALCompositeResult.html" size="2260" version="1.0"/>
+      <File SHA256:hash="2b0208361e5116393f92e20d595a4ea55b61108d8ae9832a09fe1999de169e94" name="ALContainerConfig.html" size="7378" version="1.0"/>
+      <File SHA256:hash="2185cfeac0427e816f346e0f50d1c0c9fae65dd83712594afbe338ca0e277ff1" name="ALContour.html" size="5373" version="1.0"/>
+      <File SHA256:hash="e8f70a7192168916656ea115fc96215b2ddbb1da153a9c15efc12acd809dd14d" name="ALContours.html" size="4656" version="1.0"/>
+      <File SHA256:hash="2f51b741891b47df731dc551cb911acf909ad35e99dcf815874d4741a7621f33" name="ALConversionUtil.html" size="3244" version="1.0"/>
+      <File SHA256:hash="f928ea1a32f9f03c54239905f52ef77679f27844dc73e864e2e46941fb1a7860" name="ALCoreController.html" size="56995" version="1.0"/>
+      <File SHA256:hash="0bd92c21f0a240dbd913be10b229d29ca5f33e07ba124b45cb6d241d75c97e10" name="ALCutoutConfig.html" size="15669" version="1.0"/>
+      <File SHA256:hash="e0eb3d86f04a51b7cbec8570fef05f416d6b9f191d6ce671ee11c33fff5a0464" name="ALCutoutView.html" size="13972" version="1.0"/>
+      <File SHA256:hash="f6804007505525628c12d4315258fb240f62af9479b212d2e1590223ca9862ae" name="ALDataGroup1.html" size="9134" version="1.0"/>
+      <File SHA256:hash="07c461a6e4432e532abc0e2da0e27c39e4472c55dffa8cc46ac25fe1617fdbcd" name="ALDataGroup2.html" size="4143" version="1.0"/>
+      <File SHA256:hash="405bbc1fdb81269abef8236935b151f6b8163b65a6f3fd0e1e07426efe2b9972" name="ALDataGroupParser.html" size="3007" version="1.0"/>
+      <File SHA256:hash="1068cb7283048d129f4f2fe9e2cc40cb2056abbec7d97139c1b7ecb9102a5210" name="ALDataPoint.html" size="10510" version="1.0"/>
+      <File SHA256:hash="e188396cf022995c1a82793c60226a35fd0d67cce34a86988294159c76f47c47" name="ALDESEncryption.html" size="9578" version="1.0"/>
+      <File SHA256:hash="841cf874f3603fe5ae5b9ab2a0874e95fc51e4137a1bf382c12726669212f389" name="ALDigitDataPoint.html" size="17847" version="1.0"/>
+      <File SHA256:hash="5bb5009b726e49f59d27c523a621de2eb4449edace669f48c48aeccd85b02b9c" name="ALDigitResult.html" size="13731" version="1.0"/>
+      <File SHA256:hash="dbbbb1da24713702e2dae26cd13574ee78f65af8602bd0d3ae0d8fafbf7c16bd" name="ALDispatchTimer.html" size="3444" version="1.0"/>
+      <File SHA256:hash="e9ad6d63dc0f56bd251b751431e6afbc9ffe32525ef8b728625e9b72de1ee1b9" name="ALDisplayResult.html" size="12805" version="1.0"/>
+      <File SHA256:hash="720f12a67d60a72593dadcd95e5bd360ced386990dc6638b07852231f8d41ce1" name="ALDisplaySpecAdjustment.html" size="7977" version="1.0"/>
+      <File SHA256:hash="f9667544665b7b043757bfbcd0696f43623e555ae8a3ef333fb8f2e960511db4" name="ALDocumentScanPlugin.html" size="38920" version="1.0"/>
+      <File SHA256:hash="7a9720e4104e68c2c6ea9495c90589a29e0048038e393efdac02d9286b6b242d" name="ALDocumentScanViewPlugin.html" size="4565" version="1.0"/>
+      <File SHA256:hash="26fd59698b2faff66ea12e47ab0ce42c4070f965c9c10efd20bcac72e88542a6" name="ALDrivingLicenseConfig.html" size="3530" version="1.0"/>
+      <File SHA256:hash="5e26f3f5b826558f2d6a4af068522b2917849d28a401cf37a402f3e32515dc99" name="ALDrivingLicenseFieldConfidences.html" size="9348" version="1.0"/>
+      <File SHA256:hash="4ae37590dd16feb7a0e4f482479160f3cc6e1fca84467a26d2cc0dbf67e217e5" name="ALDrivingLicenseFieldScanOptions.html" size="7653" version="1.0"/>
+      <File SHA256:hash="a851634b0e9f6e93581959150ff66afd3735c75d3cb043e50a8ed1dcd0ca6247" name="ALDrivingLicenseIdentification.html" size="21653" version="1.0"/>
+      <File SHA256:hash="1515e1e4dd84eb4968c3380181508bb01e3e14a547bc2210bd44524d6943ad3f" name="ALEnergyResult.html" size="2180" version="1.0"/>
+      <File SHA256:hash="7356fc86fa5ea6a2131b7146d19d387782c8bfcac95838d3413ed7991bd71af6" name="ALErrorManager.html" size="5649" version="1.0"/>
+      <File SHA256:hash="561ebc2687bebea9495064c485f479b5a8b461011fb638c5e19315659fb2f729" name="ALFlashButton.html" size="6455" version="1.0"/>
+      <File SHA256:hash="ef6dda9a61e518d41057c276d7fdec0e6bc115b8a7a8a65e42dc2ed3be0d3dcc" name="ALFlashButtonConfig.html" size="7878" version="1.0"/>
+      <File SHA256:hash="3373c77c9419622e492db80c097817902d0d87d727ba38013a9009ef6519f346" name="ALGermanIDFrontConfig.html" size="2149" version="1.0"/>
+      <File SHA256:hash="576c2c300cf6aec35a56f8c005ecd62e80b8ee5bfb8428fc1c949f054282cba9" name="ALGermanIDFrontFieldConfidences.html" size="8246" version="1.0"/>
+      <File SHA256:hash="4a73c773aa235d39858b698cc0b7ff9cef3f6243c4507072c22622349caaec05" name="ALGermanIDFrontFieldScanOptions.html" size="7184" version="1.0"/>
+      <File SHA256:hash="2cb8c47319d8c95946373d615aa92bc8328a6880d9a68a3fc24f45c00581dfb1" name="ALGermanIDFrontIdentification.html" size="18548" version="1.0"/>
+      <File SHA256:hash="973fd3cdec668c2962520db40ffd305c6f27507a126216cf4aa8589d540cd8c7" name="ALHelpers.html" size="2078" version="1.0"/>
+      <File SHA256:hash="cc564fa973ecd3eaf242f107ebf351cd386103db07557d83a73683f74e009cc5" name="ALIDConfig.html" size="5215" version="1.0"/>
+      <File SHA256:hash="84a0d2be5115a61784a0479144ed7f723f2521358efc3095bbe2552bc6ff9eec" name="ALIDFieldConfidences.html" size="2996" version="1.0"/>
+      <File SHA256:hash="b9159c78d193b924dcffd317f0b4a3138b5ee57771c56f073349fb0827b935e0" name="ALIDFieldScanOptions.html" size="2996" version="1.0"/>
+      <File SHA256:hash="3eb93bcb4c3b0ee21bac136d9d0f00292be06e608a45bb2f308da0713cb6af61" name="ALIDResult.html" size="5877" version="1.0"/>
+      <File SHA256:hash="3100089f3d4b3152cc997daa340e395c84a6e04366c50d82dadce6d884aca47c" name="ALIDScanPlugin.html" size="21461" version="1.0"/>
+      <File SHA256:hash="988aa94c4936079bdbd82e478ceb7dcdc5be7dbf17615922272cb5b0a8183038" name="ALIDScanViewPlugin.html" size="11531" version="1.0"/>
+      <File SHA256:hash="871224db91b2594908e90d13493e4682d0932e5bfccd9a9c1a89855ee25b389b" name="ALImage.html" size="29885" version="1.0"/>
+      <File SHA256:hash="18b27e9c4516611a5b9b1b63f099e1973b45c5458c74d9b86b1f63a4e17a1fa5" name="ALIndexPath.html" size="8650" version="1.0"/>
+      <File SHA256:hash="98dce20f02c3bc6031be3806ff02248065dc49774b838b4db887f879070d1ed3" name="ALInternalCOM.html" size="3972" version="1.0"/>
+      <File SHA256:hash="8c58152194cd091f7f3cfc7975f1eb642232ec0232b1b12d6dc374518bd0b3e0" name="ALInternalDataGroup.html" size="6044" version="1.0"/>
+      <File SHA256:hash="9f0b99b4688e652b93398fc683fe381bc7b71c24b63a2be68c256c6e97e5eb5b" name="ALInternalDataGroup1.html" size="2945" version="1.0"/>
+      <File SHA256:hash="6b3f7413630ba60b53c16dd992cda162d54ee67abce1d43e00ebff05630f937b" name="ALInternalDataGroup2.html" size="2917" version="1.0"/>
+      <File SHA256:hash="9865bf40d1a0dd471c0156c1dd121bf27aa8f03cd3e78d378c91ee53ec9b0a2f" name="ALInternalDataGroup7.html" size="2917" version="1.0"/>
+      <File SHA256:hash="5425f8eaae9a2fa6f6318db97f3355af6fdfe28bbbdba2b6081d5a4dc71da0a2" name="ALInternalDataGroupNotImplemented.html" size="2203" version="1.0"/>
+      <File SHA256:hash="3433ba56e1ef904e7c6d0cf3037da419f60cf6a6079a6885421a84572e95b39d" name="ALInternalSOD.html" size="2994" version="1.0"/>
+      <File SHA256:hash="51c68e81ea961ad7118686fd3a86fdf0bd02eb13246aff9fa11bcd5cb32eec2f" name="ALLayoutDefinition.html" size="4433" version="1.0"/>
+      <File SHA256:hash="3b3b2b6e89d9675e5dad45f67b90414aca3a652820afe6067c26e1f2c911cc44" name="ALLicense.html" size="4526" version="1.0"/>
+      <File SHA256:hash="cd20eddc78e2f6675eea07bb3c1033375cc0dac8883e0c81d0401de68407e002" name="ALLicensePlateResult.html" size="4453" version="1.0"/>
+      <File SHA256:hash="8e3a720bcb9653ae4e5e1bd7f864f38d611d4568fd82f943325f36b86a64b2cd" name="ALLicensePlateScanPlugin.html" size="25946" version="1.0"/>
+      <File SHA256:hash="cc3731f074c5d866910ffa4fc587fa04eb18947fb255232b708e6c5ee072eb42" name="ALLicensePlateScanViewPlugin.html" size="4625" version="1.0"/>
+      <File SHA256:hash="2a63997d392b9541e6fb03c039261ca1830a5842323213b5d461a7cbd11c9fcc" name="ALLicenseUtil.html" size="8929" version="1.0"/>
+      <File SHA256:hash="39d2b53fc24403411c6182249ffd51c143212f316ff423838a39983902c15860" name="ALLineDurationConverter.html" size="3044" version="1.0"/>
+      <File SHA256:hash="8c9c3642ed264d8555aed17035908ce46b39f2a45cfb361be4335569a6748702" name="ALMeterResult.html" size="4731" version="1.0"/>
+      <File SHA256:hash="0354cf7ec5b6ab525cf7e12da92323935e8ecf3c5962a2671f17e27700f6dc49" name="ALMeterScanPlugin.html" size="19226" version="1.0"/>
+      <File SHA256:hash="399c71105d5be74216c001131bbcdd79e5ed6b000466eb5faea5c20eb04ff18f" name="ALMeterScanViewPlugin.html" size="17701" version="1.0"/>
+      <File SHA256:hash="59e95472388930c6ce077eb04ea1d811cb71885bcec8fa5bcbda1e73d2f16af1" name="ALMotionDetector.html" size="4738" version="1.0"/>
+      <File SHA256:hash="d871e821f038a023185e9b57c127159d42fd5170c3f2dbac57be471b4a2598a5" name="ALMRZConfig.html" size="4361" version="1.0"/>
+      <File SHA256:hash="420cfa5e905f8673dbdbfffdfd36623dcf4caceae892b1814b4833575022db7e" name="ALMRZFieldConfidences.html" size="18926" version="1.0"/>
+      <File SHA256:hash="8b47c98101e9102986d16e9d3c43c16ada0bacfe0837bd9ef9d2051c63f37296" name="ALMRZFieldScanOptions.html" size="7756" version="1.0"/>
+      <File SHA256:hash="ebce5959dd3c599b40cfd475c4dd165474886d4397394e9599f111628d98e847" name="ALMRZIdentification.html" size="51610" version="1.0"/>
+      <File SHA256:hash="eb8e1747c5028c63794133a078516f63316dc4b423d918bebf4b0781d7a338cc" name="ALNFCDetector.html" size="7998" version="1.0"/>
+      <File SHA256:hash="f4f2126b6be2a96ba05fc12144407ed008023273a1ac57810bf4c149e195d7d2" name="ALNFCPassportModel.html" size="7049" version="1.0"/>
+      <File SHA256:hash="3d574d4847c797a4df36635f38ef3c262529005830d0fa8402ed3ac0e50fa444" name="ALNFCResult.html" size="6255" version="1.0"/>
+      <File SHA256:hash="cf534c0cd09974029506129bcefc82116df8bb5cbc2593d92905f52a2f4d09bf" name="ALNFCUtils.html" size="11095" version="1.0"/>
+      <File SHA256:hash="4a2ba9c12db1131946371ae11af175108e87055494bb9629c3bdd40dbcd174a3" name="ALOCRConfig.html" size="26632" version="1.0"/>
+      <File SHA256:hash="7e3a82c1db1c697a1462736291245ae585dd977f5ad5824130f101b795fdb967" name="ALOCRResult.html" size="8671" version="1.0"/>
+      <File SHA256:hash="15b9f207be6eba57e50f76290dd4ea6b72c0d1d2e0b5cff0324fa32e982ce932" name="ALOCRScanPlugin.html" size="22050" version="1.0"/>
+      <File SHA256:hash="b94ea4365fe6498d67a9cea0369fcad95284820b001e5176f6793829d45295b5" name="ALOCRScanViewPlugin.html" size="14583" version="1.0"/>
+      <File SHA256:hash="6cb48c25b6931f7e6f7b51b369f4c26a4fe8762652ae6e46c32f8e1a95dcaf63" name="ALParallelCompositeScanViewPlugin.html" size="2211" version="1.0"/>
+      <File SHA256:hash="b6c878fa28755fe752be93866e08919bb71543fa89bb735a2e9cad843bab726d" name="ALParallelScanViewPluginComposite.html" size="2311" version="1.0"/>
+      <File SHA256:hash="0fee42926cd612c4744320a9aa3829b124940d8386dea7838ec535fd5f4129e3" name="ALPassportReader.html" size="4551" version="1.0"/>
+      <File SHA256:hash="69bfb4ed72547ec6fa7bdadc6f19231ea745d5be6c95563799322c549697dee6" name="ALPolygon.html" size="5588" version="1.0"/>
+      <File SHA256:hash="978bbe0d58ad07d3017723b731ccde99c305e1953a60a0fb54e679ffa691aad5" name="ALPropertyUtilHelper.html" size="3027" version="1.0"/>
+      <File SHA256:hash="284f7f1931da9b6c21e07a71e62a45ccc29bb38af5ef1a0c4b85bfdd84fd5bd3" name="ALResolveContoursXDistanceViolationOperation.html" size="4961" version="1.0"/>
+      <File SHA256:hash="fc991e729ca9c71e615bf5b7068d3d35b2e6b9e1486496a0cc6eeb3751f13cb8" name="ALResponseAPDU.html" size="4404" version="1.0"/>
+      <File SHA256:hash="0288fcc67d9035599ed839866c481c1c13e7e3476d603aebc63adbcf8311c6b5" name="ALResult.html" size="14094" version="1.0"/>
+      <File SHA256:hash="3bb72ad55946bc2d4de7831196848a510e761a66f2b42c6a0a1669a0cb6f5f5f" name="ALROISpec.html" size="14072" version="1.0"/>
+      <File SHA256:hash="c8bba1063d65c4bb23ea5ed3e7b35e97e0f4cab4b8665aa59fafddf6ada454a4" name="ALRunSkippedReason.html" size="4825" version="1.0"/>
+      <File SHA256:hash="e313cb7768116c9f55df7d38318cdf26acf5c48443633599eb9cb0fd6ac1f832" name="ALSampleBufferImageProvider.html" size="8779" version="1.0"/>
+      <File SHA256:hash="00e9888e9f6275274cbab179ac19a6a08e1f68a91af2f53d97e14026f0d22838" name="ALScanFeedbackConfig.html" size="11469" version="1.0"/>
+      <File SHA256:hash="cc705357afd3e02be2a96fb55aac790c7cce3f4012ea19647ccde8fdf37a4fe6" name="ALScanInfo.html" size="6122" version="1.0"/>
+      <File SHA256:hash="af37d043085e82edf17c651344094c8452eb7ade3ba033ebd61ff4b35be3477e" name="ALScanResult.html" size="10357" version="1.0"/>
+      <File SHA256:hash="4997e6cb1987fee51d1662093cf18af660fe4fe8c9962ffa844add9a2d3796d0" name="ALScanView.html" size="37312" version="1.0"/>
+      <File SHA256:hash="29079098653384865e71d11585fb37eb6d6740169454148684db3ded086cf5b1" name="ALScanViewPluginConfig.html" size="16779" version="1.0"/>
+      <File SHA256:hash="ebfcf4d436595db9bdd94fd4eaec8463576aa04245b438f3fac51e5b77c3a039" name="ALSecureMessaging.html" size="4129" version="1.0"/>
+      <File SHA256:hash="968b1204e7c3aa1c1797e55dedae242c47c9a2f5534a5aa1f6dff1d5bc17647b" name="ALSegmentResult.html" size="7546" version="1.0"/>
+      <File SHA256:hash="9a34e103d17576935d8157f851496f0550a3ce223a0d747b87d88bad6777d7f5" name="ALSegmentSpec.html" size="6411" version="1.0"/>
+      <File SHA256:hash="cebbe53247608dee416c6d249ca4ce4cf98ad7e98b44028a3b09940180c03512" name="ALSerialScanViewPluginComposite.html" size="3269" version="1.0"/>
+      <File SHA256:hash="ae995dac28131dc13396eebbd4edadea8d60fcd2b338a1fded4671066ca1dc1d" name="ALSevenSegmentContours.html" size="4372" version="1.0"/>
+      <File SHA256:hash="03c47e69ec752eb73f85ca396c836573710106ca94bca55e72d7146257ba38e9" name="ALSOD.html" size="6753" version="1.0"/>
+      <File SHA256:hash="d318cb86edc56f2c40e4353f355ba46297b8708ec9173d10f9ec1d28027fc7f3" name="ALSquare.html" size="20480" version="1.0"/>
+      <File SHA256:hash="30e2a59e10ff26c5fd60f5c07b63d52cd373958ad1cd588b78bb54f39182ec0d" name="ALStillImageProvider.html" size="2980" version="1.0"/>
+      <File SHA256:hash="2ee7f83dc7d965317c4c5e331537bfdbb23da4ec273a5b649dc61244585da684" name="ALTagReader.html" size="6323" version="1.0"/>
+      <File SHA256:hash="55282a85dbcf483cf9efc25f436bbc2909875e2e79bfd50392a1a109416d12ca" name="ALTemplateConfig.html" size="2137" version="1.0"/>
+      <File SHA256:hash="c1fb188355f54da93b725bba12c0c383242685ce5641cdb430d913bfb56e61f6" name="ALTemplateFieldConfidences.html" size="2177" version="1.0"/>
+      <File SHA256:hash="37fd1e2614a71c46acb63dd3a383b945f18cd73fc94a886933f280c28c1a5b37" name="ALTemplateFieldScanOptions.html" size="2177" version="1.0"/>
+      <File SHA256:hash="ddec336824fc1ed00626c29ebbdbb89b55c5eac68ca79be3227ba9b9b454fc68" name="ALTemplateIdentification.html" size="2107" version="1.0"/>
+      <File SHA256:hash="e437bc328066de3e4f7684500b7eaa0419ecdc31b027d88d79bf958e65079b1c" name="ALTextDataPoint.html" size="10726" version="1.0"/>
+      <File SHA256:hash="59ba47695392403581f37ed63b203bcb41a8d628d4ba980bfe675545e54a8c06" name="ALTINConfig.html" size="5449" version="1.0"/>
+      <File SHA256:hash="2a950ba5d797bc07b63b317442a15730c83d02361d696aebfb6b770e4931296e" name="ALTorchManager.html" size="8321" version="1.0"/>
+      <File SHA256:hash="fb204b1f732b3a02933bfee12b67b652ee58ca7479bac9a680d532f184b3b61e" name="ALTrainerUtils.html" size="6509" version="1.0"/>
+      <File SHA256:hash="dd28b1d413dba0d977368cc39ebe80aa38bdcfd85f9282b4cc9f828ec0eef830" name="ALTranslationHelper.html" size="9214" version="1.0"/>
+      <File SHA256:hash="f2cab3b08d0de13c90c3fea52a870e32679454d6f9214fb2940455efccae4c14" name="ALUIFeedback.html" size="12489" version="1.0"/>
+      <File SHA256:hash="b4db15176e5a998eb82f020dc42ed96b1d0009e8863bf23b438e737eb8f16ed6" name="ALUINativeFeedback.html" size="2142" version="1.0"/>
+      <File SHA256:hash="e3e969f1348323b5007953a9d8f4202f4929fa6020e4dec0c64fc2d44bad896c" name="ALUIWebViewFeedback.html" size="2145" version="1.0"/>
+      <File SHA256:hash="e5e6d2f3556941830c95e8e59a3cd8828fd593dba4b567b23ac3d0be16aa3a1f" name="ALUniversalIDConfig.html" size="8338" version="1.0"/>
+      <File SHA256:hash="698309518ecce2825a4fbbe3983b2378e80ff8dbbf8d9422247d0fc835dfc569" name="ALUniversalIDFieldConfidences.html" size="5831" version="1.0"/>
+      <File SHA256:hash="532c4210d6fdbdac937fe0332592621b4bd72071f927966e48766bdedc7a0c92" name="ALUniversalIDFieldScanOptions.html" size="5831" version="1.0"/>
+      <File SHA256:hash="549eb4085bea577023a508d49cc5311754496df675f776480037889d9a30837d" name="ALUniversalIDIdentification.html" size="6795" version="1.0"/>
+      <File SHA256:hash="ea1c6b6cf659db7268c1f1d1edeec636368f88211fc8016242e684e6c9b6c971" name="ALValuesStack.html" size="14261" version="1.0"/>
+      <File SHA256:hash="b6cd4c9c48b6551e771fbff49e321a2f00620a560c9c7753577c9b22e41553c7" name="ALValuesStackFlipping.html" size="7640" version="1.0"/>
+      <File SHA256:hash="43571781b3ec7f4e6f8f671d37a66e3eced58447f9ec32aec1c0881f670b5313" name="ALVariableWrapper.html" size="4160" version="1.0"/>
+      <File SHA256:hash="72d5362139041632bb5879fe295e1d79a10080cf5bfcc6f2658a99d54a29ff32" name="ALVINConfig.html" size="3833" version="1.0"/>
+      <File SHA256:hash="23f84b872d6e97a6f8dce000523fe857f46a60c856034c1d6655022c506361fd" name="ALVisualFeedbackConfig.html" size="7988" version="1.0"/>
+      <File SHA256:hash="6e0a68fd32b475b244042f6bde2eb4c7c09b0461def9de4ce4015f8c7f627148" name="ALVisualFeedbackOverlay.html" size="12411" version="1.0"/>
+      <File SHA256:hash="3fb73ccf0427c82b4c477ae94a7906dd167250d66e3147184ced047f43514050" name="ALWatermarkView.html" size="5428" version="1.0"/>
+      <File SHA256:hash="44e4f9ffadbd1f96ab15ce8aee003de34c6817f86a1b4e936fe6a6d90a271b70" name="ALZoomHelper.html" size="6634" version="1.0"/>
+      <File SHA256:hash="725e433704237e1bca447bdfdce4022a63aa64e8bb5687d6f7e337acd52527fc" name="AnylineSDK.html" size="3612" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="Constants">
-      <File SHA256:hash="0eab01ca43392374f21c4f2d06a126005b6b677bd9c21a0c3dcfdceff2a60d17" name="ALCaptureViewMode.html" size="3560" version="1.0"/>
-      <File SHA256:hash="0c0aa5d4f7591b1af54d368550bae08d66b74863f0107393371082ff7cc5635d" name="ALCaptureViewResolution.html" size="5058" version="1.0"/>
-      <File SHA256:hash="c10cc6e9a196b115c1ef57a189d41aeb515a7f4d5db0fb7b5d46ad35eb3b8835" name="ALContainerScanMode.html" size="4224" version="1.0"/>
-      <File SHA256:hash="36d24b6bcbaf7bf2275311405e0d01ca3c9dc153b871dd2999aea37f8ed7c868" name="ALCutoutAlignment.html" size="5404" version="1.0"/>
-      <File SHA256:hash="ca606a8f58c4eda5c3429b5b7b76272e165408042f5ee387aa24d3c00d505807" name="ALCutoutAnimation.html" size="4638" version="1.0"/>
-      <File SHA256:hash="0d6c3f3b3aa4281c4b3d704aaddf87dd6d854158e577eca7119582b61c649ea6" name="ALDocumentError.html" size="7596" version="1.0"/>
-      <File SHA256:hash="ad4da7fe8e26abaa8ca4921e5b4bb20e8a9c9ffc74b37373bc41261de9152014" name="ALDrivingLicenseScanMode.html" size="5821" version="1.0"/>
-      <File SHA256:hash="10b796b822c40a7c31ff7803f77ddfe2e03e885d72c1556e0f4cc5ff3fc624e4" name="ALErrorCode.html" size="37358" version="1.0"/>
-      <File SHA256:hash="b3189d0441fffe90088d066c1fc23ae9c1809c89ce88380267c25a40180b010e" name="ALFieldScanOption.html" size="4811" version="1.0"/>
-      <File SHA256:hash="6d869d346be4e454c65d26b1c28b31fe30489bccf19efbca1b530575f21810ae" name="ALFlashAlignment.html" size="5958" version="1.0"/>
-      <File SHA256:hash="b773830bcf6d8a5521b3775d3daffdaab18e49f8139ec2cd877ec4b707a08288" name="ALFlashMode.html" size="3853" version="1.0"/>
-      <File SHA256:hash="09a66801dcafea44ca2871f8a6c93c1e93b42c1e5c29c82a4b91d1fa62a06136" name="ALFlashStatus.html" size="4482" version="1.0"/>
-      <File SHA256:hash="6122fe944f31bb548a436ecab1e2c62eb124a6ab481af90b80c76bdd2a0f35b2" name="ALLicensePlateScanMode.html" size="21202" version="1.0"/>
-      <File SHA256:hash="6e516c6ce53edfec325d5608eae0f4a36236a05db7e5a6d731e5d2ad0ea74203" name="ALOCRScanMode.html" size="4778" version="1.0"/>
-      <File SHA256:hash="e44d5b2c8fe1d790088f53a36afdd6be197f310f6a30656eddf90edb10d5f564" name="ALPictureResolution.html" size="4690" version="1.0"/>
-      <File SHA256:hash="39c7030e487412a501e268f68d7167ba53e2c36dd3be0bb691f54d4f744e382a" name="ALRunFailure.html" size="7940" version="1.0"/>
-      <File SHA256:hash="1f08e5cddbe0a825e82229a9c8a7f9ec2fa55a37923c6af7f1ed8e722f3d0302" name="ALScanMode.html" size="6164" version="1.0"/>
-      <File SHA256:hash="53f707093c0866dba4f7e22dc69e23668b9ab2721eafd59bfc2922a57cc4ce33" name="ALScanResultState.html" size="8105" version="1.0"/>
-      <File SHA256:hash="354bb0cf1a7a0a04348415f2ec45bcd87782b6a220268d4630807d809de6c3f4" name="ALTINScanMode.html" size="4131" version="1.0"/>
-      <File SHA256:hash="b99e2a7c7e37257e66ddb488232f335e6acd0a90829d85ba0cb9a2ceca20bbd4" name="ALTINUpsideDownMode.html" size="4763" version="1.0"/>
-      <File SHA256:hash="820730736582772d2671423739c7b096d51f110aeec2b3e989ff64a10a232666" name="ALUIFeedbackStyle.html" size="4729" version="1.0"/>
-      <File SHA256:hash="c0146661c1eb518215c2c4f64c1053a5cb57f1b22b0a94ecdd9f4e00d075d959" name="ALUIVisualFeedbackAnimation.html" size="6104" version="1.0"/>
-      <File SHA256:hash="39ab7961e2e1f593ffe93be5787e213910968c57cff7649bff0eb5a3e81a475b" name="ALUniversalIDLayoutType.html" size="5329" version="1.0"/>
-      <File SHA256:hash="954561391d738f6308925024869ecb70123ca5c452b8d4757a41c70553e3ac54" name="ALWatermarkPosition.html" size="3882" version="1.0"/>
-      <File SHA256:hash="0d8636ca9dacac44373a7f73e23e2ff2f2a70b24aff484a98a34d2d4b5d3bc21" name="DataGroupId.html" size="9323" version="1.0"/>
-      <File SHA256:hash="ca495c9d1205456cb040ae737957eff952fecba4610b0f96e40ee7e9b445c5c5" name="LicenseStatus.html" size="3862" version="1.0"/>
+      <File SHA256:hash="79c48c8638fbbaa2752c626cc2e4ee8199b6df56f6c30047f63cdddb6480b123" name="ALCaptureViewMode.html" size="3560" version="1.0"/>
+      <File SHA256:hash="08c16778dbc223c33b4a19db5f9f9335c45742acafc8a83ec3b9ddff873af2e5" name="ALCaptureViewResolution.html" size="5058" version="1.0"/>
+      <File SHA256:hash="123510c90cbfe8ed0641a34e88e4f8596d6f4e5ecf3cf0e3d1f3c5dde2535034" name="ALContainerScanMode.html" size="4224" version="1.0"/>
+      <File SHA256:hash="4fa7e7157fea686c981d1e7e0706c8ce962b1ddc6513542ffa9784aa424fdebb" name="ALCutoutAlignment.html" size="5404" version="1.0"/>
+      <File SHA256:hash="71f055d29d2631a896816404e0e2177eaafd0dc8b47ea392f935c1d7baa3a1ad" name="ALCutoutAnimation.html" size="4638" version="1.0"/>
+      <File SHA256:hash="f92b74af59c3b205a1caddd870d05c70b8048e6d48185f5e76dc0f7af8b662a9" name="ALDocumentError.html" size="7596" version="1.0"/>
+      <File SHA256:hash="23ae2640879fc36059cf5fb18629669a4a8def4c051bddfd565dfced085931e5" name="ALDrivingLicenseScanMode.html" size="5821" version="1.0"/>
+      <File SHA256:hash="d0096e8b4dbae7c93bafe267e3440994940f4e832f33eaf568d6edd154e26267" name="ALErrorCode.html" size="37358" version="1.0"/>
+      <File SHA256:hash="8d7a7b5cf766079be06b2d7764d81ceba65817ca12e3e90387f77c3a241780e1" name="ALFieldScanOption.html" size="4811" version="1.0"/>
+      <File SHA256:hash="d53799af4ce6d6604d068f1fb5dc86c95bb80f484a455a27c41f6af7b00f58d9" name="ALFlashAlignment.html" size="5958" version="1.0"/>
+      <File SHA256:hash="34f47334237d1797ba864c24c02d35b9b0f0b62397eb1c08e1d281f49ba8d978" name="ALFlashMode.html" size="3853" version="1.0"/>
+      <File SHA256:hash="39c1c44361dcad4bd8453c3df9fc37d201f2ab8815a921ba34ed6b56f3335561" name="ALFlashStatus.html" size="4482" version="1.0"/>
+      <File SHA256:hash="dbfeada92e483b48bec8642906bad45e4f8c01e3770a1b68a4e0660bd7a2d426" name="ALLicensePlateScanMode.html" size="21202" version="1.0"/>
+      <File SHA256:hash="999aa178d863b8541d0a5b88447fac0608a948ea9e20eafcf13521b7881c1558" name="ALOCRScanMode.html" size="4778" version="1.0"/>
+      <File SHA256:hash="eff5b10e70ca1a3bcb115ab89b3cbc32f62c066368830a6c5dd60caf855f49ec" name="ALPictureResolution.html" size="4690" version="1.0"/>
+      <File SHA256:hash="72336aae8e59d83d299152198b9e14233d42c225b06726b06f09ae37cbbaf39b" name="ALRunFailure.html" size="7940" version="1.0"/>
+      <File SHA256:hash="c5de7581eed1d4ad582b47f5acfd79cc410daab563c2052fb930cf48a52fe758" name="ALScanMode.html" size="6164" version="1.0"/>
+      <File SHA256:hash="3c66b094e1686013e8f37dfac9b6e7f66c5f622bc51683f45da6cc9f6f32ad9b" name="ALScanResultState.html" size="8105" version="1.0"/>
+      <File SHA256:hash="7183ce21dbe553a1f81219a4e3893b379d0828adce94f16253a8bf6fc892a186" name="ALTINScanMode.html" size="4131" version="1.0"/>
+      <File SHA256:hash="331d315085b851039e3c1098cdfc5d5c53bd5e293eaac2a36ac0ed5e27ee2ff8" name="ALTINUpsideDownMode.html" size="4763" version="1.0"/>
+      <File SHA256:hash="575373d8ac075aad3a380303b93e9bc44548ef249d8dfa629861ed6dadee4bfa" name="ALUIFeedbackStyle.html" size="4729" version="1.0"/>
+      <File SHA256:hash="4f9f2659144140389076c271b2c9ea87583eb085c8361d61c0bf688ca7c311e8" name="ALUIVisualFeedbackAnimation.html" size="6104" version="1.0"/>
+      <File SHA256:hash="a00ab6a249aa3b0bf448e7180ea4a74637d327b3bd54a910ff8beb9d81007f4b" name="ALUniversalIDLayoutType.html" size="5329" version="1.0"/>
+      <File SHA256:hash="917912db482a8f56cca8e4b629fd193d17c1cf37ae34e4a68d38752f5be1235c" name="ALWatermarkPosition.html" size="3882" version="1.0"/>
+      <File SHA256:hash="cce852e46930b6e8c3229b30e0992376502f23e0e4cba3ad8ee370536f8c4b2c" name="DataGroupId.html" size="9323" version="1.0"/>
+      <File SHA256:hash="f39a8703a42de5f21e867169f3d598556edf1358d00b79c60792a266a1d4c121" name="LicenseStatus.html" size="3862" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="css">
       <File SHA256:hash="d19b9a39683ae1bb0bfaa0ed7c493caee39859f38be869e6629666d0a7b36031" name="style.css" size="7722" version="1.0"/>
@@ -1652,32 +1637,32 @@
       <File SHA256:hash="1129691c08a55f916d32cb7fd85dd5a4c9da8bcf279df474dfc84253eea3b4be" name="script.js" size="1516" version="1.0"/>
     </Directory>
     <Directory location="Documentation/html" name="Protocols">
-      <File SHA256:hash="a3cd98707995b26af9c805088aff78ff2171e194d83c323f41fc45ebf3bf95a0" name="ALAssetDelegate.html" size="8139" version="1.0"/>
-      <File SHA256:hash="fbf511b8ac62264641c528af6d1c094bccf24603e9976edea16da002cdc3905f" name="ALBarcodeScanPluginDelegate.html" size="5854" version="1.0"/>
-      <File SHA256:hash="d80ee787b87696fc9303bcdcd0344b182a91a9edd1a4428f0d1bc19caf9d7e6f" name="ALCaptureSessionManagerDelegate.html" size="3744" version="1.0"/>
-      <File SHA256:hash="63072249f5f1396219ee9e64412ad93d01ab781182bd9f50609683d23a506db5" name="ALCompositeScanPluginDelegate.html" size="4290" version="1.0"/>
-      <File SHA256:hash="e9a5026b6104fc100852caaeabbc23153ad16decda4e459ddf3d28ef6f185a51" name="ALCoreControllerDelegate.html" size="10844" version="1.0"/>
-      <File SHA256:hash="e0ac5fc3d57263c98d769b9eddb6e3f26c8531450486a8f57141dd08576a7e7b" name="ALCutoutDelegate.html" size="3976" version="1.0"/>
-      <File SHA256:hash="8d001942925d4905a4e8847c1cfd57758b13bf1b45aef17bafb7e2f37b08ef64" name="ALDocumentInfoDelegate.html" size="12977" version="1.0"/>
-      <File SHA256:hash="ef9c922a9a48746ba96fbedef9591bba0990cc75456b6ce1a9c19083c296db61" name="ALDocumentScanPluginDelegate.html" size="4619" version="1.0"/>
-      <File SHA256:hash="eeb3faa5289fe1f2f8eee708bf4db102c941c6771631d309e3d3965dd0a3eb94" name="ALFlashButtonAnimationDelegate.html" size="3017" version="1.0"/>
-      <File SHA256:hash="c8fc94f09d2c399f90a69c5cc7918e1cfc6e8e35f9da3e0346b06fafea30db0f" name="ALFlashButtonStatusDelegate.html" size="3111" version="1.0"/>
-      <File SHA256:hash="a4d17b4e9c6ea699c7e64aaf4f84e5bc4bc778d98ff36b34bd5d656aa99287d0" name="ALIDPluginDelegate.html" size="4012" version="1.0"/>
-      <File SHA256:hash="2ab1a60b2d175221ea19e54944b9f8c189d64768c03ac1e121d424df5ad3c6ae" name="ALImageProvider.html" size="5574" version="1.0"/>
-      <File SHA256:hash="5b885cfb9cd0240b23504141bec81cb5572a4a09ec9bdc76417fd2b774219404" name="ALInfoDelegate.html" size="5401" version="1.0"/>
-      <File SHA256:hash="374bec36105a412ab412cea253159c1963fa119327dbc160379f364ad383fecc" name="ALLicensePlateScanPluginDelegate.html" size="4564" version="1.0"/>
-      <File SHA256:hash="799a956736d6fa89ecd180d23ef23ef797aeb14465de725049d3beb8f0cf256f" name="ALMeterScanPluginDelegate.html" size="4049" version="1.0"/>
-      <File SHA256:hash="cc8566c4d5d398c9a69acbe498c597820181c62338c170f847076cef5cb2fb6c" name="ALMotionDetectorDelegate.html" size="3041" version="1.0"/>
-      <File SHA256:hash="ed5006282cb7bc47a28817466a2febe4a6e42057e857503307ca502b7b323c27" name="ALNFCDetectorDelegate.html" size="9519" version="1.0"/>
-      <File SHA256:hash="04f75794c5d2830c31b3a84bd5bdccaa7664e4754577d4b910393440cb791eef" name="ALOCRScanPluginDelegate.html" size="6090" version="1.0"/>
-      <File SHA256:hash="713e0df87d3c5582632af708ac4f22fa04dcf19074cbd89272ac09c30e50f16a" name="ALScanViewPluginDelegate.html" size="3905" version="1.0"/>
-      <File SHA256:hash="703be8241c996e40ff68dd35cddf1b1ba21c7458a232a3fe1ef6f7e26634553a" name="AnylineNativeBarcodeDelegate.html" size="4641" version="1.0"/>
-      <File SHA256:hash="f7c783996dd14e0f4be03f1bedf73791d4de0cd2cf92862bd49ddb22c55fc99b" name="AnylineVideoDataSampleBufferDelegate.html" size="5464" version="1.0"/>
+      <File SHA256:hash="82cc8dd6aeb46a3d61b4208cbde4a6961f28475088ccf21e9e1a8ea1f1041edc" name="ALAssetDelegate.html" size="8139" version="1.0"/>
+      <File SHA256:hash="3da904ec92b47e606cb32bdd47d897d76fd1a867ddfc81d0dae04098dd268521" name="ALBarcodeScanPluginDelegate.html" size="5854" version="1.0"/>
+      <File SHA256:hash="5df8130439883cc27aeeaf6fd665127d67c1624f746c20f4504a8751ccc9b867" name="ALCaptureSessionManagerDelegate.html" size="3744" version="1.0"/>
+      <File SHA256:hash="2c93543825e011488ddc28f49490346622e23591c0afa89a76b606e4eeb771f2" name="ALCompositeScanPluginDelegate.html" size="4290" version="1.0"/>
+      <File SHA256:hash="057564c1391fb2377970e0d46bf3f53397d5c3f09cd9d1ed67610c3de13be79a" name="ALCoreControllerDelegate.html" size="8955" version="1.0"/>
+      <File SHA256:hash="5ed21f2107f04ec68446e5a63a0332d2564105cc59899fce2e8f7ab68b21ed0b" name="ALCutoutDelegate.html" size="3976" version="1.0"/>
+      <File SHA256:hash="db72e43f14eb1612fd514a6011074d224f12908e7c4859b20ee21191cf5c4ab4" name="ALDocumentInfoDelegate.html" size="12977" version="1.0"/>
+      <File SHA256:hash="9578fbc9425f5bb4ffbe3e42a37e9155e467dcd79ce6689d4599ede6be54be91" name="ALDocumentScanPluginDelegate.html" size="4619" version="1.0"/>
+      <File SHA256:hash="328b09f5eca79427a40edee8b681e1982cee861b4b3587122e0493662def074a" name="ALFlashButtonAnimationDelegate.html" size="3017" version="1.0"/>
+      <File SHA256:hash="3b3b224dd79d75fdb333677c3c9e3cb575945d465a99df7c4b23c8eca6fdfa8e" name="ALFlashButtonStatusDelegate.html" size="3111" version="1.0"/>
+      <File SHA256:hash="d6e11ae095c7e1183dcc302c6a649f37c79162cca3735e3e5c33f2b042bd8ca0" name="ALIDPluginDelegate.html" size="4012" version="1.0"/>
+      <File SHA256:hash="596b9c72a76b3f64be20d6a6ead2d898fa6f3cbe6156116c37d4bd0d6c947256" name="ALImageProvider.html" size="5574" version="1.0"/>
+      <File SHA256:hash="d9a6598a07fe0846336d791174e62f6293268ccb33602ff82a9f9ad17e2ca802" name="ALInfoDelegate.html" size="5401" version="1.0"/>
+      <File SHA256:hash="2d482663369bcd10bb3fdcf9a5e3061219df77a1eebe4e830f6cd4f0bb0b7e66" name="ALLicensePlateScanPluginDelegate.html" size="4564" version="1.0"/>
+      <File SHA256:hash="3b56a2c02348b71ea2b0f904a7075164205f8c15ba982a610db907656ed90381" name="ALMeterScanPluginDelegate.html" size="4049" version="1.0"/>
+      <File SHA256:hash="d188ad9b3943a3e11724790a2949567ed6dca483727b27b28b451b300a445a9b" name="ALMotionDetectorDelegate.html" size="3041" version="1.0"/>
+      <File SHA256:hash="90b9fdcdd1eb10f1e41e0b030f033d2c090688c6d3f93d0e9eb3721924b3b543" name="ALNFCDetectorDelegate.html" size="9519" version="1.0"/>
+      <File SHA256:hash="cb1f4ade2efb4f6f441f3f51951b801228f72c12c23b255a8995eaabe1917bab" name="ALOCRScanPluginDelegate.html" size="6090" version="1.0"/>
+      <File SHA256:hash="1363daeab9c1962771a030afb02faca88f0e661371dbed3bc12b14fc75e12d05" name="ALScanViewPluginDelegate.html" size="3905" version="1.0"/>
+      <File SHA256:hash="550412af53b4187177cd5c064654fe0b4e9973c5331c05507df5068970204e13" name="AnylineNativeBarcodeDelegate.html" size="4641" version="1.0"/>
+      <File SHA256:hash="6b84a7392924dd5ef549719e9801deedc80a119e38a4bae75607c6602c1bf12c" name="AnylineVideoDataSampleBufferDelegate.html" size="5464" version="1.0"/>
     </Directory>
     <Directory location="" name="Framework"/>
     <Directory location="Framework" name="Anyline.framework">
-      <File SHA256:hash="b15e2f3928400951bfdab7e2a9036e888934c41e67a25ffdd6dcdc5a5ea1a22e" name="Anyline" size="89298640" version="1.0"/>
-      <File SHA256:hash="ce5543dd05868b8ed0a6e4cd345b7129ab304a090bbd141c434bc7460fbf6efd" name="Info.plist" size="817" version="1.0"/>
+      <File SHA256:hash="83bf198c40f7efdfcb3d6c3e1680adbb824a1ba1a24415ad35975d4590a3381c" name="Anyline" size="89298736" version="1.0"/>
+      <File SHA256:hash="5624f6c886b2d10d7f56a6e35eaa5f340c0ea1233f86b9aea4adf6a141c4e87b" name="Info.plist" size="819" version="1.0"/>
     </Directory>
     <Directory location="Framework/Anyline.framework" name="_CodeSignature">
       <File SHA256:hash="2a7dfeb9bffc777605f1daf18f5f0b8cfa9269302d14f710aaf736164a5c9bdc" name="CodeResources" size="22744" version="1.0"/>
@@ -1775,11 +1760,11 @@
       <File SHA256:hash="77e785c35e57c39103106092792abd227152fe5274a30f2e73941ca26e6051de" name="module.modulemap" size="95" version="1.0"/>
     </Directory>
     <Directory location="Framework" name="Anyline.xcframework">
-      <File SHA256:hash="6a52a90206c8d76556b85fec0e95b880da4bd7bb99381de410275f118dc6734c" name="Info.plist" size="1009" version="1.0"/>
+      <File SHA256:hash="9ba9ab89278f3ef63392760c26660b2b11a29d1f79a15a373c26f971b1c5a021" name="Info.plist" size="1009" version="1.0"/>
     </Directory>
     <Directory location="Framework/Anyline.xcframework" name="ios-arm64"/>
     <Directory location="Framework/Anyline.xcframework/ios-arm64" name="Anyline.framework">
-      <File SHA256:hash="f8c4f91a5a3f0b43ab247865c73a05ab58a8c45dd1c8d0f8d590c23b49f3db94" name="Anyline" size="74241744" version="1.0"/>
+      <File SHA256:hash="afdcec00bd95968ec0e494336254bf9dd89dba4616836fc9bcde598509b9fb58" name="Anyline" size="74241840" version="1.0"/>
       <File SHA256:hash="02d3f55fd08cb366ae4bb75c634968a7fe68cc15cb16ccd42559c24bc74b86a8" name="Info.plist" size="773" version="1.0"/>
     </Directory>
     <Directory location="Framework/Anyline.xcframework/ios-arm64/Anyline.framework" name="_CodeSignature">
@@ -1879,7 +1864,7 @@
     </Directory>
     <Directory location="Framework/Anyline.xcframework" name="ios-x86_64-simulator"/>
     <Directory location="Framework/Anyline.xcframework/ios-x86_64-simulator" name="Anyline.framework">
-      <File SHA256:hash="c9a936e40bbb721516682e1a4c6ac2e38e7a3bb14d9694958577763a18eddc20" name="Anyline" size="15031344" version="1.0"/>
+      <File SHA256:hash="b732b291532c95bcf21eca0672faf4f8b913e13f44b5728268658227000a2441" name="Anyline" size="15031440" version="1.0"/>
       <File SHA256:hash="f4db42633dc1a2eab3fc3e69e5252ce3c1bbd135d0449072f04c02dd56572c30" name="Info.plist" size="753" version="1.0"/>
     </Directory>
     <Directory location="Framework/Anyline.xcframework/ios-x86_64-simulator/Anyline.framework" name="_CodeSignature">
@@ -1978,9 +1963,9 @@
       <File SHA256:hash="77e785c35e57c39103106092792abd227152fe5274a30f2e73941ca26e6051de" name="module.modulemap" size="95" version="1.0"/>
     </Directory>
     <Directory location="Framework" name="AnylineResources.bundle">
-      <File SHA256:hash="0cbe2dc73425d58416bba84230637e454b8da535895d9ac8ec2a6017237fc877" name="Anyline-Info.plist" size="897" version="1.0"/>
+      <File SHA256:hash="e7fbe5a513c8c058f714ac517ba78626537fb552bdb88ffadc2e6f284c7969e2" name="Anyline-Info.plist" size="899" version="1.0"/>
       <File SHA256:hash="5068123befd877a33f7bbbea03f84996d122bf95532c536f933dfbfa59478188" name="subscript_function_list.md" size="2491" version="1.0"/>
-      <File SHA256:hash="c1540e54ed0ad1247885dfe66eb7981678f9a944a4ea1c157f735a0a263852fe" name="threshold_all.ale" size="2872" version="1.0"/>
+      <File SHA256:hash="b4787021447feda3e10b96ad5ed755da6e8ce58cd609145d5ea7496008447d0e" name="threshold_all.ale" size="2872" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="images">
       <File SHA256:hash="ef253a62b7c9e19c514b3a8e2985d13954dbaa3631acfd519ed51261d4c629f1" name="anyline_logo_white.dat" size="4506" version="1.0"/>
@@ -1989,14 +1974,14 @@
       <File SHA256:hash="18d33aa7a1f5934f980cfc116f974b6af72dac9dcafc7ca60f9fbdafefeb7a88" name="flash_white@3x.png" size="2291" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_anyline_ocr">
-      <File SHA256:hash="3652ad9e2a598ca88a5b4e5ca535c92d01e92916f92c950be09e034d4fa49aac" name="anyline_ocr_auto_any.ale" size="25484" version="1.0"/>
-      <File SHA256:hash="a15c4825b688d650de8e42341fc04776b56b81e27f64181d47998d22b3e4be72" name="anyline_ocr_grid_any.ale" size="22988" version="1.0"/>
-      <File SHA256:hash="a4de652200dffd43b3804d1d38282f0816fec913e4f97301a7cf211a5b3b3bfa" name="anyline_ocr_line_any.ale" size="19000" version="1.0"/>
-      <File SHA256:hash="83305b885b40b232c1239c27457c95954fd55bec77eacbf856bdb50099f7471f" name="container_scanner.ale" size="14624" version="1.0"/>
-      <File SHA256:hash="9b9ffcabd1205235d6797ed65c9efce855cfc2cc8c1fad50b67cdff2f54b1e3e" name="container_scanner_vertical.ale" size="21900" version="1.0"/>
-      <File SHA256:hash="fbd8fe9d58b6fa01bd0d39a45f3a0f7a0cefa889f2d4db87028708ca786a5b22" name="cow_tag_scanner.ale" size="21856" version="1.0"/>
-      <File SHA256:hash="1614b42a4f5cbbc0b9b0537bf92158768857bcc8566e0e4275e07312ab86b224" name="tin.ale" size="33548" version="1.0"/>
-      <File SHA256:hash="5cffd81fa7c2fa5479c5b631237ecebd529b9e12214be73d7986c7aa0b09ce50" name="vin.ale" size="18336" version="1.0"/>
+      <File SHA256:hash="db582dfc27dc5447730a4157324ec574567930200787466c73149bb6c58ffec7" name="anyline_ocr_auto_any.ale" size="25484" version="1.0"/>
+      <File SHA256:hash="3ad99e999a69d990703b4db81154960193a4dac559178996867b29b511346e33" name="anyline_ocr_grid_any.ale" size="22988" version="1.0"/>
+      <File SHA256:hash="f086acb78f6452c0acf44730a03dc2432a7ec148ef040e988e295d8896c6e80f" name="anyline_ocr_line_any.ale" size="19000" version="1.0"/>
+      <File SHA256:hash="9bb81ce26fa428bd51ae4fd517ba2b9912a7b78ed5f6406b4d134d084e4fdccb" name="container_scanner.ale" size="14624" version="1.0"/>
+      <File SHA256:hash="b23cdee9af850b0cef96785e780434a2659588e63f941b9ea3faf88ed8cdf08e" name="container_scanner_vertical.ale" size="21900" version="1.0"/>
+      <File SHA256:hash="8d4cb5d3b2c1906d3f35d4f97a2525ca89cd6bb54630499e3eda9dbc3f195cab" name="cow_tag_scanner.ale" size="21856" version="1.0"/>
+      <File SHA256:hash="f0e4e47eba6bd1d46eb76dd3ca820a221f74805cc9294fef466432f84ee88384" name="tin.ale" size="33548" version="1.0"/>
+      <File SHA256:hash="19560ca105c979e215b256278867572f38251b9f9e7028aeffa6cd6a847cf9da" name="vin.ale" size="18336" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_anyline_ocr" name="config_files">
       <File SHA256:hash="59c3a2218829cd8eba5e761458c172c597fa563fe65851dedad78919b6bbb0c6" name="availableManufacturer.md" size="75" version="1.0"/>
@@ -2013,27 +1998,28 @@
       <File SHA256:hash="d9df79e97f4900d7c0f3d1a65a2e4d69fa0ec9787648685f0b1dd3bea253c25a" name="VIN.any" size="903144" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_barcode">
-      <File SHA256:hash="72386f1c4ec2ffe017eaf1812732ffa968d30a7ca1b64f799901be265a6d55a3" name="ean.ale" size="10528" version="1.0"/>
+      <File SHA256:hash="a3b84a25131ca6f8b08a8b76855c01a158e946ba0211e96ad5321931c48561b9" name="ean.ale" size="9888" version="1.0"/>
+      <File SHA256:hash="1cec312986ca9cd872a0594c75aa4427cf9fedc446f78de34dc393adb7e979f0" name="ean_advanced.ale" size="1804" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_document">
-      <File SHA256:hash="2d9304f72eb84c5ba61dee27d4fa72737b7312ac7e83fa3e3038bdf61d93db3b" name="document.ale" size="50380" version="1.0"/>
+      <File SHA256:hash="3cc7ed55b8acbbd7c91a273cf88b33dcf6ba66f5964d521faa1f9401097c7b37" name="document.ale" size="50380" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_document" name="trained_models">
       <File SHA256:hash="59be727caab25d6e614ca0875e8bbf54a8b9ee053c7cf9e8aad6664bf29dd780" name="doc_model_3_25.any" size="258440" version="1.0"/>
       <File SHA256:hash="c62250447d59b98570604e3a2587bebc705554e219b63d2628ee0c54b4334e94" name="doc_model_3_27.any" size="258440" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_energy">
-      <File SHA256:hash="1031198bf857c87d12092ad247cec8a4238023ad1a51a631a8bf978817e004dc" name="analog_digital_auto_mode.ale" size="37624" version="1.0"/>
-      <File SHA256:hash="b53c381a58d025528a26c3a39fb2c714de3c35c074b922d51c7069b79caa86ec" name="analog_meter.ale" size="37344" version="1.0"/>
-      <File SHA256:hash="055666bcf047033dbd96bf1084040a1d041925aeef4fa65a3d9e8faa379a2309" name="brightness.ale" size="396" version="1.0"/>
-      <File SHA256:hash="b197c6e00479e23091dd5c739835a35024f7a495cef48fec45f3b4040a556936" name="dial_meter.ale" size="3936" version="1.0"/>
-      <File SHA256:hash="843c5cd16762c87cb74a1f48104d9fa5a0520603c38993b1025c18bcd6b340b5" name="digital_heat_meter.ale" size="8248" version="1.0"/>
-      <File SHA256:hash="b42a1efd6921c479446ef3f0b3c0ff160b9095bc55fe8a728b8ef78c09a79019" name="digital_meter.ale" size="37516" version="1.0"/>
-      <File SHA256:hash="e2a098b67f4e5a30171e3b1c9af30b44c5d57ebf6bddcccddf09d87d7d9a5562" name="digital_meter_multifields.ale" size="38112" version="1.0"/>
-      <File SHA256:hash="81cebd0a80eccba791a2f47c4f00c07cf2f92f8449f0290839c65d34543c8213" name="dot_matrix_meter.ale" size="8312" version="1.0"/>
-      <File SHA256:hash="442ba14b1d8aa77ae63162a2735b3abf64fe7dc6a1f72239f0d232f87a71d832" name="energy_serial.ale" size="8460" version="1.0"/>
-      <File SHA256:hash="e4fcf50e46374371da999e542745f255f5a317bcbf3116fac0a302d95a1e652f" name="energy_serial_alnum_3_letters.ale" size="21112" version="1.0"/>
-      <File SHA256:hash="ccd4d761d876ebd48d002997137b8be9641f9bc42580bd8a91b97f0400943810" name="energy_serial_capital_letters.ale" size="12620" version="1.0"/>
+      <File SHA256:hash="994f95fb9664ca6d74a2051a758ee32e7333e2fc4e6a097cf7708bd3679ef924" name="analog_digital_auto_mode.ale" size="37624" version="1.0"/>
+      <File SHA256:hash="b86bc77bbcc72e8be51800a59beb1b87f5b4205e676884a05b1a952c5f1f1074" name="analog_meter.ale" size="37344" version="1.0"/>
+      <File SHA256:hash="daa8bae3783138d15c091ac7abf64606c7fc90270c70075c8080012580559b2f" name="brightness.ale" size="396" version="1.0"/>
+      <File SHA256:hash="0e758473c56a7d18328e47b6058fe916a6d2d87258d3616d96206650f8e7b0e9" name="dial_meter.ale" size="3936" version="1.0"/>
+      <File SHA256:hash="c9be5253a421e33c36b38aa0637b6241dfcada28c7d8da293ad56ec23b1f9a85" name="digital_heat_meter.ale" size="8248" version="1.0"/>
+      <File SHA256:hash="a4248931fe7545da8017130c9acd5b882095fd61ead8f3a9d43bf7f917b76ad9" name="digital_meter.ale" size="37516" version="1.0"/>
+      <File SHA256:hash="41306adcbe1e0b5bfa0aefd177a00d422462b1a016b341726f7560664829ff3a" name="digital_meter_multifields.ale" size="38112" version="1.0"/>
+      <File SHA256:hash="232e5b71e4bac96ba8ebf2fd0c98b2d7bf7ad78527ea8c48569240310134535e" name="dot_matrix_meter.ale" size="8312" version="1.0"/>
+      <File SHA256:hash="2099a38418134776e2bde3d42a49bf74b5c6d9c0744e9f211f362f1ecd20bd39" name="energy_serial.ale" size="8460" version="1.0"/>
+      <File SHA256:hash="ef5174d681d65ea08aa8e3122bb5b4e6a47657049726c3f1e431d153271cee49" name="energy_serial_alnum_3_letters.ale" size="21112" version="1.0"/>
+      <File SHA256:hash="44317933ce08bafa4404e346b8f294c78eced43a2f50b397a1ca4bc6afb83fd1" name="energy_serial_capital_letters.ale" size="12620" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_energy" name="trained_models">
       <File SHA256:hash="5e5629f188dbcd864422ce5b1285ab96211eb4b3cb2bb02535a8f972d2dc4267" name="CNN_serialnumbers_combined.any" size="472936" version="1.0"/>
@@ -2044,198 +2030,198 @@
       <File SHA256:hash="ab5811a84144e148443a633a4174e4d378fb3d7c613a8c9967405ba85413b5bd" name="det_auto_synth.any" size="470232" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_id">
-      <File SHA256:hash="8822479a4082e0e6ed47ae90a8e7237828d4a392b58204fff1a07a19f62aee5e" name="anyline_driving_license.ale" size="251488" version="1.0"/>
-      <File SHA256:hash="8cefd8a98a20e2d7de2b582dc5146d1db8ee835468f1d3d53e5e33406192dc1a" name="anyline_driving_license_belgium.ale" size="39544" version="1.0"/>
-      <File SHA256:hash="3173cc1c2860fec0bcd332172a6a425bb2c3fb8315e34582801022fdbd36db52" name="anyline_driving_license_netherlands.ale" size="73824" version="1.0"/>
-      <File SHA256:hash="405ba6d67bd2c2bd90e0d1ffd35ed06c78f7d1acfeacd6c10a5b95cd42669c2b" name="anyline_german_id_front.ale" size="130764" version="1.0"/>
-      <File SHA256:hash="462981c5513712a12c0f10a24b87b2e9a5200d5228a4fd21bf26b6d5c5282246" name="auto_mode_standalone.ale" size="2764" version="1.0"/>
-      <File SHA256:hash="62928f9cd708b9254bc7a2f7a6d1f3db05f6f535bf81038b2ea85b5e3522c64a" name="card_detection_function_test.ale" size="13856" version="1.0"/>
-      <File SHA256:hash="63d91831827003febf88bdeae3eedc482be858daf50d73eba8ee409f217bcd33" name="functions_anonymize_id.ale" size="5792" version="1.0"/>
-      <File SHA256:hash="08ca4b0b6ac254af3cd5a32967ab7a2beccc9a12a08f788b82a5128b45cd0816" name="functions_auto_mode.ale" size="38944" version="1.0"/>
-      <File SHA256:hash="e277c1ba74b5571910109d4b60be86c740f84a43f17ad56648d9a2f2cad64ed8" name="functions_card_detection.ale" size="41484" version="1.0"/>
-      <File SHA256:hash="296a5f3b61571e61fec95df4c671618451152226666e1daa3d999df0364e83ba" name="functions_card_rectification.ale" size="4600" version="1.0"/>
-      <File SHA256:hash="9b3724271dda7426c9e03f1014bd90dd6aed19efe552e4b238910a7f1c54f704" name="functions_common.ale" size="5024" version="1.0"/>
-      <File SHA256:hash="6c6b608c2ef412223e055b487f932e5b7ca0cf42121dfd1cd2feabf2a5a8b67b" name="functions_field_detection.ale" size="5472" version="1.0"/>
-      <File SHA256:hash="6102c60b2ba837b8d671e1c0d54c44e2d8ce2a8c24ad216c64ffbf91f635d5bf" name="functions_mrz_scanning.ale" size="518348" version="1.0"/>
-      <File SHA256:hash="2a41bda79a7d3d4594857e4c545689e1d96376719230676147f69b28375b7fbd" name="functions_square_from_edges.ale" size="32352" version="1.0"/>
-      <File SHA256:hash="f36fea5403748aa0d064e56989fa4104dcb9f4714aa510417eadfe2ee9dd3102" name="functions_template.ale" size="154016" version="1.0"/>
-      <File SHA256:hash="f8ea8a163ab622b81d691386fa984fcefc1dfe2e50140a343202a93788fb2fdb" name="functions_template_scanning.ale" size="74424" version="1.0"/>
-      <File SHA256:hash="d523cd75d4b6e494bd893f9f7ac92dc0fa58f5fb816872e7ea0493a41ff260d6" name="main_id_scanner.ale" size="10380" version="1.0"/>
-      <File SHA256:hash="d1eec11d2c8f1fa3a4fd28ea7a28436b8352b1fe1ed519ad8972f65c4ef2264b" name="mrz_scanning.ale" size="385356" version="1.0"/>
-      <File SHA256:hash="98ac20fce819fd8fc32dcb827969fcb63a4d622e28a388dac701bea27829f8d5" name="template_scanning_standalone.ale" size="93452" version="1.0"/>
+      <File SHA256:hash="e10b51dcb83939951ebf2a47617820a7a78d4395cbf1188b6518712a69c67f84" name="anyline_driving_license.ale" size="251488" version="1.0"/>
+      <File SHA256:hash="6f851ae49ab668e259f5f148e4ec2ed34b169c55acbf8eda92e8625ce6b1acd8" name="anyline_driving_license_belgium.ale" size="39544" version="1.0"/>
+      <File SHA256:hash="e3ee176e6a534bf8852bae469a3fb516734bd5639f8e4d784dc88e350368d14e" name="anyline_driving_license_netherlands.ale" size="73824" version="1.0"/>
+      <File SHA256:hash="65478fc1dc21dd31881fcac26cd99d814995ce3132c51fcac985df2229e73432" name="anyline_german_id_front.ale" size="130764" version="1.0"/>
+      <File SHA256:hash="23059aa93308d0361ea88312ba61f07571cd823ecbdeeef9961c35338aa24893" name="auto_mode_standalone.ale" size="2764" version="1.0"/>
+      <File SHA256:hash="1e15910dcf0318f9077254a2fb077d68fa5b972818923a5004c36be703bea21b" name="card_detection_function_test.ale" size="13856" version="1.0"/>
+      <File SHA256:hash="163dc49f182f5cab06d3fb361a7f15770bd87b860c0589cccdf86ccce1c09fe8" name="functions_anonymize_id.ale" size="5792" version="1.0"/>
+      <File SHA256:hash="19f690a515cc367e4b9ce1fde7d4f00389058a355680ad63c19a5e7c2bce411e" name="functions_auto_mode.ale" size="38944" version="1.0"/>
+      <File SHA256:hash="c7c58623ceb102af8f830600417a97dd5c559af7c67c15df9cdfe6b3b21888bd" name="functions_card_detection.ale" size="41484" version="1.0"/>
+      <File SHA256:hash="8e7abdd6838e16d86706aca04d61c2d0fb56dd639573a80ac6b616a2cb8160a7" name="functions_card_rectification.ale" size="4600" version="1.0"/>
+      <File SHA256:hash="ee27accd6db6a81c5098fd0a6195c820d4a488c6438ccf72c85ed59add30ff0f" name="functions_common.ale" size="5024" version="1.0"/>
+      <File SHA256:hash="c8d86d79edd6a234b5a0d8714da34628dc6eaafbc5d3516511f82f5ba626f2b8" name="functions_field_detection.ale" size="5472" version="1.0"/>
+      <File SHA256:hash="6c50ffd1750493f187eb4ad7217a605cc6cb0814033560b3beb5df37aa71091e" name="functions_mrz_scanning.ale" size="518348" version="1.0"/>
+      <File SHA256:hash="971ba0d99ab6c2d9d10f0932b8e0fa5b6c36e812ddf2a720af0250de7ef5b552" name="functions_square_from_edges.ale" size="32352" version="1.0"/>
+      <File SHA256:hash="ae595b9dbfccb8b6905b02fe2fc7a4699eac78428a16cf12e8d8914a4da3eb94" name="functions_template.ale" size="154016" version="1.0"/>
+      <File SHA256:hash="ee6bbfb4d379e4783bb694c14d01e34582b0161f83548149a71f494f13a2a927" name="functions_template_scanning.ale" size="74424" version="1.0"/>
+      <File SHA256:hash="ab94c5b44b94e160f1e2c84ea062998864ee1e39c68e94e330818ed6b55b0df6" name="main_id_scanner.ale" size="10380" version="1.0"/>
+      <File SHA256:hash="c6c9fc55f5171c4a674668426cc9bcf277ab9d2d900eb8c03b6ebe148ea92a98" name="mrz_scanning.ale" size="385356" version="1.0"/>
+      <File SHA256:hash="c51fdaba12d33060c86334979989a91a19541487835b2e0a5a5c602bde92b143" name="template_scanning_standalone.ale" size="93452" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_id" name="config_files">
-      <File SHA256:hash="9eca677a84f1cad66cb16a68bd48aa92024add4e78e5b11f6aa467bbde1f1240" name="ID_default_start_variables.ale" size="2424" version="1.0"/>
+      <File SHA256:hash="f8f20290ac86ea07a221990355f7670cc6e17e432176154fb1c5f196a6554866" name="ID_default_start_variables.ale" size="2424" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_id/config_files" name="templates">
-      <File SHA256:hash="d82553e26af4b3fa0f80043b665d0026234b8aafb9164951895859e375219122" name="AUS-FO-ACT11.ale" size="11552" version="1.0"/>
-      <File SHA256:hash="522c8cbbc0f9550590ffe9e78ba7c0cacbac846829327dfe6f2b6988d5b89bbd" name="AUS-FO-NSW12.ale" size="11488" version="1.0"/>
-      <File SHA256:hash="db20661acc3e569ed9bedc9e2a116ac12cfc0a4df74d683539d64ba8cfb9d9a1" name="AUS-FO-NT06.ale" size="15052" version="1.0"/>
-      <File SHA256:hash="26b7a4f8ee31f50d8fb4e0455918b87a456aa91fc809927e141531424f86d1cd" name="AUS-FO-QLD19.ale" size="17932" version="1.0"/>
-      <File SHA256:hash="ef5884633ff365ad02c293f7fb995243236eceecabe933c6601c7ebd899b8ec7" name="AUS-FO-SA13.ale" size="10572" version="1.0"/>
-      <File SHA256:hash="954bccfbf7bfa6ac932fdee54f0529cc76acad730cd41b23b3bd8a3d77c38fc7" name="AUS-FO-TAS15.ale" size="11960" version="1.0"/>
-      <File SHA256:hash="7c96e2548fa98edba907885d074ad42d63600bb8a7c1901f5815bf8988fd22fe" name="AUS-FO-VIC09.ale" size="12192" version="1.0"/>
-      <File SHA256:hash="5b9bf9ff91fddb8824ece2e0268c743849bf1b15c310e32b1dbb9743b1565812" name="AUS-FO-WAXX.ale" size="12108" version="1.0"/>
-      <File SHA256:hash="88da979162fb003ed57ea0c3e79cfbefcd128fb5cd63aab16bc5611b29ab5483" name="AUT-BO-02003_02002_02001.ale" size="13196" version="1.0"/>
-      <File SHA256:hash="34958e808a8bf4fa3b2304593ed8298ff1c97c4d20eab6429b7ac6e2a1efcf81" name="AUT-FO-04001.ale" size="17164" version="1.0"/>
-      <File SHA256:hash="afbdad37d97f3838ba83bedb4aa17973d9bdea68d0daa96d574b36d4446f1952" name="AUT-FO-05002_05001.ale" size="16608" version="1.0"/>
-      <File SHA256:hash="b5d59ad3fc1cff35d5c6791d01245bcb61085d7a8218657d126f130344ec0aa9" name="AUT-HI-01f.ale" size="10424" version="1.0"/>
-      <File SHA256:hash="5b99b9bfc13cf3188272ad7d3cb8a4c5bfe4dee213a9def3c6829543a4c7baab" name="BEL-BO-09003_09002_09001.ale" size="18060" version="1.0"/>
-      <File SHA256:hash="65d6189f220edbf1c358376ad268abc5693554ee5b3dcafe44784b297d39852e" name="BEL-BO-10001.ale" size="17376" version="1.0"/>
-      <File SHA256:hash="fded37fe07fb3b5f84b1ef370cffa82e72d5650f79671e2152a41c7d01aa986a" name="BEL-FO-02003_02002_02001.ale" size="17676" version="1.0"/>
-      <File SHA256:hash="0bd3ca08b78d0a609cf59094fadf7c6660d1c8e93a64d202cc2e80f886d1810a" name="BEL-FO-05001_04003_04002_04001_03001.ale" size="14668" version="1.0"/>
-      <File SHA256:hash="1fd12db1ff8992f7fdc1d30488e9b19825e78ef94be0c076d7cdd40332d9a144" name="BGR-BO-02001.ale" size="21304" version="1.0"/>
-      <File SHA256:hash="528ee3f6907ecfdba0d7b2fc9f1d58f5930c1e1bbfde19559fdf79c445af67cd" name="BGR-FO-02001.ale" size="25720" version="1.0"/>
-      <File SHA256:hash="b08a1efa9783c1806d1e7c5386ca58819002813b0ae889357a24221450538aa9" name="BGR-FO-02002.ale" size="28280" version="1.0"/>
-      <File SHA256:hash="5a12484406f840195906d94cb391fe558114148861f0e5da689c8688cfb7ce34" name="CAN-FO-AB19.ale" size="18720" version="1.0"/>
-      <File SHA256:hash="3bcdf8113026ecd96018f4ce91f87c175869c5907744d57ca6aeac63abf95866" name="CAN-FO-BC19.ale" size="18252" version="1.0"/>
-      <File SHA256:hash="71aa34111ededb9d974c1527f6a1ca6cec39089752a74efb4533e7e149a1f305" name="CAN-FO-MB19.ale" size="20556" version="1.0"/>
-      <File SHA256:hash="d45b4daa1273ce027c2ab4ef00b16abe8d310fb4637e6bcf97ea5ccf43e998f5" name="CAN-FO-NB19.ale" size="18232" version="1.0"/>
-      <File SHA256:hash="bcb2dd3b100b464d700a178fb8a4f9e237234aaaf9ab6ed366d5bac920f296f3" name="CAN-FO-NS19.ale" size="19192" version="1.0"/>
-      <File SHA256:hash="53e2cb127cc7e05a54d17be29864a61b14f468765014ff6461cd5ebd51cbb161" name="CAN-FO-ON19.ale" size="16824" version="1.0"/>
-      <File SHA256:hash="0db959d58b0c95a876d39a891ed01ea2c237eea5d8f08041bf582a36f2abdd47" name="CAN-FO-QC19.ale" size="18208" version="1.0"/>
-      <File SHA256:hash="fb28997b7a6a7f1acd0980ec9f2c35150087abd71960de144f3265e1eb473014" name="CAN-FO-SK19.ale" size="17504" version="1.0"/>
-      <File SHA256:hash="7c4b0f4462cbdf02c25b33d44763f3a52f23d930c618d1585ba2bdd9ec0adfdf" name="CHE-BO-01003_01002_01001.ale" size="7352" version="1.0"/>
-      <File SHA256:hash="c608282ce70ee97a940258c8e1f207268e0b7f196c3c2e5b26b36af1ac781eb7" name="CHE-FO-02001.ale" size="16568" version="1.0"/>
-      <File SHA256:hash="19ac2968b416e146fb72a7dc7512e1d2eab71b9de2745ab8b38dff75e0471729" name="CYP-BO-04001.ale" size="18272" version="1.0"/>
-      <File SHA256:hash="eae9fb373b2a6cccc5ff4c2e6faa6ff3d3ec8128526000313f51f5efb6e27032" name="CYP-FO-03001.ale" size="23136" version="1.0"/>
-      <File SHA256:hash="deee33a337dc9768ac60566b5825e02010c943ef96efe6affcc5516403839003" name="CZE-BO-04002_04001.ale" size="17356" version="1.0"/>
-      <File SHA256:hash="1a2d82dea71ca6fe3e6adf9dbf0c0fb55d8aed4a0c4f064181a28ccbbde76434" name="CZE-FO-02003_02002_02001.ale" size="19232" version="1.0"/>
-      <File SHA256:hash="9a1960b3fe2085e0ac0fc015e25ec8ee2b49552d50ae0b79366abca36a710d95" name="DEU-BO-02001.ale" size="11360" version="1.0"/>
-      <File SHA256:hash="0d4805821ef7d80cf29a5972c04268f4adf5bbdbf3b3e8738d7248167f611a07" name="DEU-FO-02006_02003_02002_02001.ale" size="17272" version="1.0"/>
-      <File SHA256:hash="48c67a1245a21ce9cf29a888d373e20a4696e2ea2efe7a9ead76ce5992ac5b0c" name="DEU-FO-02007.ale" size="17248" version="1.0"/>
-      <File SHA256:hash="81df0089443305d635c2ca66220a779d127a6e945d2f0e5f0bf29b4a7e88735a" name="DEU-HI-01f.ale" size="10464" version="1.0"/>
-      <File SHA256:hash="83f36ece370b5737dc63e06015341215124467348e58e897ab440c82f01c0451" name="DNK-FO-03001.ale" size="18296" version="1.0"/>
-      <File SHA256:hash="0df077689fa68f6ea23dcb2cebb04c882c3d3911922efbf1161c9b0319f2c8c9" name="DNK-FO-04001.ale" size="18016" version="1.0"/>
-      <File SHA256:hash="8571d7318b76e1eaad5852307c27b2c495a89c1ba8e5c150b6aafe0592b507b7" name="ESP-BO-03001.ale" size="11640" version="1.0"/>
-      <File SHA256:hash="cc5856f83f36f3bca6fffa2ce8f3b8f1b0aae51ac009ce5c23043d444a458a5d" name="ESP-BO-05001.ale" size="15608" version="1.0"/>
-      <File SHA256:hash="222b08bec24bf88f4588c17d4a176c7439608dd06f04a236692c37c53a47bb90" name="ESP-FO-04002.ale" size="16652" version="1.0"/>
-      <File SHA256:hash="93bba8b77bb14399c4ae830852a25e5c5aab6ece064cbc63939063b9dd846f51" name="ESP-HI-01f.ale" size="8908" version="1.0"/>
-      <File SHA256:hash="5a0a8188a7c985bd4118882955de75a9abc157af280c1ece5812bdcb4a25aaff" name="EST-BO-03001.ale" size="11552" version="1.0"/>
-      <File SHA256:hash="8dec2a13be7d4f2f29857d350fd6a55032b874a1c2f8ccbcf262607b13602b88" name="EST-FO-02004.ale" size="19320" version="1.0"/>
-      <File SHA256:hash="bd736725c4373326d302d4aa19ede3c675222d7ebb13324141e8f1c07aa4e35a" name="FIN-BO-06001.ale" size="19680" version="1.0"/>
-      <File SHA256:hash="6a505af8f444c9fe9b35139d90260f11c674462e552c677f370a3eb7400b2036" name="FIN-BO-09001.ale" size="16352" version="1.0"/>
-      <File SHA256:hash="2a03e73588a7d694c0693aa5366456c89dde9a1a5217188e2ab4914d00e786dd" name="FIN-FO-04001.ale" size="18808" version="1.0"/>
-      <File SHA256:hash="63eb70c79a5de7c4dc1495fcbb4bc3e1140b4eb528ea45bd20c4cb509f7bc62b" name="FIN-FO-05001.ale" size="18784" version="1.0"/>
-      <File SHA256:hash="ca573075a3052670d6a614a3bdbf5fcf749b283a0f078345e74fc59c9857e6c0" name="FRA-BO-02002_02001.ale" size="14476" version="1.0"/>
-      <File SHA256:hash="2c0b1c708d2314f869592fa01878e92fd5fcf4358241b4f27512cfce00e1f02b" name="FRA-FO-07001_06001.ale" size="17656" version="1.0"/>
-      <File SHA256:hash="bbcb9415eabab630ce313f2c18a0d8a4bc18708e88ad45ebb66756011130987a" name="FRA-HI-01f.ale" size="6476" version="1.0"/>
-      <File SHA256:hash="5f742526f2c98017ccab3f78a529e892069ac0ba5b509a4bd2cfe68ca9df1b5a" name="GBR-BO-02001_01001.ale" size="15372" version="1.0"/>
-      <File SHA256:hash="98e8461ee72c8d07ab90b0307cf91e525f4e9a06966edd9028243758e5302d5b" name="GBR-FO-07001.ale" size="18616" version="1.0"/>
-      <File SHA256:hash="3e1920dd0efa25da4b63b3f13ccf51ae24548bab4dfb592fa6efa03d64470369" name="GBR-FO-09002_09001_08002_08001.ale" size="19980" version="1.0"/>
-      <File SHA256:hash="cfa397f4bd6aed126cab3a82fdb0c4b2fe247a70ed25970b07cb60107ba9b0bd" name="GBR-HI-01f.ale" size="8908" version="1.0"/>
-      <File SHA256:hash="61556060b761e0fd31158d0029d890c3468f63a1caa1314a3d21b9ec4a70cd31" name="GRC-FO-03002.ale" size="20620" version="1.0"/>
-      <File SHA256:hash="166501ea931e46f756bec69e3c94b118e4fef166ffd1dfcfa20b2dabd35d582d" name="HRV-BO-03002_03001.ale" size="13920" version="1.0"/>
-      <File SHA256:hash="8f7684b40179649b3a4c86aa761e51d298456765974b7cfc9dfa18a55b504802" name="HRV-FO-02001.ale" size="18272" version="1.0"/>
-      <File SHA256:hash="343e92aa4436b4132569300a7814e6194ae19359b156bc8bc425eacd7d2d4d8e" name="HUN-BO-05004_05003_05002_05001.ale" size="12792" version="1.0"/>
-      <File SHA256:hash="2162c8b6cb3ea1dd9c2f5b8df545a5977948f0e1d11d4380c9455413fda9c844" name="HUN-FO-02001.ale" size="17696" version="1.0"/>
-      <File SHA256:hash="c07044de2ca0fe30b663e7f152b1fd33350065be3a190917047eccf79dfd8cd8" name="HUN-FO-04001_03001.ale" size="16376" version="1.0"/>
-      <File SHA256:hash="8d5f21c486ec80fe1718b13f4bea686fad28e54ae9337544264d68ef9a863bfa" name="IRL-FO-04001.ale" size="22540" version="1.0"/>
-      <File SHA256:hash="eef11f4ab8c919397797512c78e76e19c76939e76e15afe9f4f8846c3babb1dd" name="ISL-FO-06001.ale" size="17760" version="1.0"/>
-      <File SHA256:hash="67953b4ac5789d2305091a8417f6e055ebe0dc7dc2a91491b216ba5cac4d613b" name="ITA-BO-04004.ale" size="20960" version="1.0"/>
-      <File SHA256:hash="e1f93f66b8ff834348d57491aa8e3f294bbd14ccaf1aea1456529e630364998c" name="ITA-FO-05001.ale" size="18380" version="1.0"/>
-      <File SHA256:hash="5bde7a576b87f32469f6163b2a6334d14c90b6fe8b2d27c11fc03b745de73cbc" name="ITA-FO-06001.ale" size="16800" version="1.0"/>
-      <File SHA256:hash="72a927a836b55caa1fd93a8ec0604cafb3e92387675be53e42b59946f8e99515" name="ITA-HI-01f.ale" size="6860" version="1.0"/>
-      <File SHA256:hash="f5bcef22110b3b3670605086a96364d521a6ed17eb47bec745e15c9379755cef" name="LTU-BO-02002_02001.ale" size="14412" version="1.0"/>
-      <File SHA256:hash="96a605f5686d919560b846376e2d35455367297343e5424aab6d0b4067732ee0" name="LTU-FO-02004_02003.ale" size="17784" version="1.0"/>
-      <File SHA256:hash="cce81ccd45ed09c371378303627b05f8d2de981766faa049c003bd5e9ab88b86" name="LTU-FO-03002_03001.ale" size="17400" version="1.0"/>
-      <File SHA256:hash="68337e88086f0117ab1eebf99a37cbd32cb47158491a6d6414d026c6bfbc7315" name="LTU-FO-04001.ale" size="18656" version="1.0"/>
-      <File SHA256:hash="05191d268136a68e0e87fce86a726a8b4308326f1c3a1b9b02ea3e89423d746d" name="LUX-BO-02004.ale" size="21664" version="1.0"/>
-      <File SHA256:hash="a42469c2929cbcefb28f863da54e706be7963fdfe6d22a94f740068da7041945" name="LUX-BO-02005.ale" size="17868" version="1.0"/>
-      <File SHA256:hash="ccc7d76f97bc0fbb377f618bff4f99b9d952473ebbfa30a875c0eb0c64d2f18a" name="LUX-FO-01010.ale" size="18252" version="1.0"/>
-      <File SHA256:hash="550e60e71e4ac43724aaf28e4f10423e9c5c15bb0585b9e83aab2aef94ab14f3" name="LVA-BO-01001.ale" size="14048" version="1.0"/>
-      <File SHA256:hash="b1b180dff79d155930fa3bd54cf96373907367117c91768df343ce67cdc09616" name="LVA-BO-02001.ale" size="14136" version="1.0"/>
-      <File SHA256:hash="345d339909fb64303bef1f9d343d73da780d575decfe6b7eee325d7f92e378b8" name="LVA-FO-01002.ale" size="19704" version="1.0"/>
-      <File SHA256:hash="da3736a5deaacdef2f74f17311db9249f4904a80b71a3402cab0edc44a90a0f8" name="LVA-FO-01003.ale" size="19084" version="1.0"/>
-      <File SHA256:hash="c1ae2400ed36fd134e940df784dbf95710a10687c754b85f715ff228c9d2505e" name="MEX-BO-C.ale" size="25696" version="1.0"/>
-      <File SHA256:hash="1bc107a5b1798c4713ab696a542d9c03aed9730b14474792d50bead974568077" name="MEX-BO-E.ale" size="24992" version="1.0"/>
-      <File SHA256:hash="264cccbf3f06f9f4dd57cc5893f0cc4339900beff79b679990af95ec6acdd5f8" name="MEX-BO-G.ale" size="19680" version="1.0"/>
-      <File SHA256:hash="22278c3b06d77fd7d1a72034cca9a21ddb7aad09a4009216698970dd3bec8dae" name="MLT-BO-03001.ale" size="12512" version="1.0"/>
-      <File SHA256:hash="8f3afac74be704dfefdfb20f125c4e2bf0841ed664af7c00cc557a5021126a82" name="MLT-FO-03001.ale" size="17548" version="1.0"/>
-      <File SHA256:hash="be3229d337ed5eba5089a295a7c247a46ff3cdb57cdfefd4443a35894bed04af" name="NLD-BO-05001_04001.ale" size="12512" version="1.0"/>
-      <File SHA256:hash="21e01689e1af04dac60a4a7dfcfc6d6a177842203e20c4756f2527457da2a335" name="NLD-FO-04001.ale" size="17720" version="1.0"/>
-      <File SHA256:hash="8cf497f368c9b8eb6edcf605399f322257b2e09098ef8ea4e05412c7d139fe3a" name="NLD-FO-05001.ale" size="15136" version="1.0"/>
-      <File SHA256:hash="9ea2bf6f2248213e91e69cddcb0a26d522c150f5ba2cdb19d68da3f8e109ca33" name="NLD-FO-06001.ale" size="16504" version="1.0"/>
-      <File SHA256:hash="592390d8f6c0366d376caf0db1ae0403bece99bb879d13d1ef25286b6e71d6fb" name="NOR-FO-05002_05001.ale" size="18232" version="1.0"/>
-      <File SHA256:hash="22c1cddf800914dd6d22c1e2f96620893040413a737de56024016517bc49e94c" name="NOR-FO-06001.ale" size="19360" version="1.0"/>
-      <File SHA256:hash="88811ee957ff9320af91048a3eb0c3c9602c6002b356f6ded1d216fd392332d5" name="NOR-FO-07001.ale" size="17676" version="1.0"/>
-      <File SHA256:hash="4d963492ce016cf317050e7e6f2cfa729108d892af6fa52852a399da44747c37" name="NZL-FO-14.ale" size="13728" version="1.0"/>
-      <File SHA256:hash="14e876fbcf84fb3daaa801ba3bb2ad20c419e7ec849e2afba2c92a51544e515c" name="POL-BO-03001_02003_02002.ale" size="12024" version="1.0"/>
-      <File SHA256:hash="0bb263a9b7e657baef8e5e3e4bae0d850bc4106a832c6a89b957e2a278b48c17" name="POL-BO-04001.ale" size="14368" version="1.0"/>
-      <File SHA256:hash="e4c58bb94a0848b9ffc78379eeb3e624406d784671623a4ec91cf2ee7bd063f6" name="POL-FO-04001.ale" size="20684" version="1.0"/>
-      <File SHA256:hash="932bc16375d6cd5af08756b99a9b6f9b6029f9d32fd1f70371df762330572b3d" name="PRT-BO-03004_03003_03002_03001.ale" size="12088" version="1.0"/>
-      <File SHA256:hash="68f165b60d0470e7b9450cc6d3568be09f539dde76b5c0c8ad38d975fd66da9e" name="PRT-FO-06001.ale" size="20344" version="1.0"/>
-      <File SHA256:hash="b51a862bfd9debee4edddfd6189d733c2633edc8aefee26461129f83bac1533e" name="ROU-BO-03001_02002_02001_01002.ale" size="19020" version="1.0"/>
-      <File SHA256:hash="33b6bc73b89a2539f4ea8da9b5bc565a12b62c224337c4a71a0464fb4168f99c" name="ROU-FO-06001_05001.ale" size="17356" version="1.0"/>
-      <File SHA256:hash="ea2a2614b1111b18c9c22ace72f164b4f695ea18ce2b89943fc008957d6aef57" name="SVK-BO-05002_05001_04001_03001_02001.ale" size="12536" version="1.0"/>
-      <File SHA256:hash="65e6afd649efdd6da7ef0be20ae07baf888503565acab40ba09cc8995a073ac9" name="SVK-FO-04001_03001.ale" size="17528" version="1.0"/>
-      <File SHA256:hash="8c64e3c667549a89296d4858fd130f2c4b240433043c9e2a38f0868364f104cf" name="SVN-BO-02001.ale" size="9784" version="1.0"/>
-      <File SHA256:hash="42f6111bf5f15a43701d76e4b36de27add56e3b560ff8360525a297fedaca32b" name="SVN-FO-04001.ale" size="19040" version="1.0"/>
-      <File SHA256:hash="512fe2513dffd7217c7590a175743fe4d20065666c14317481c99aa359a41238" name="SWE-BO-03001.ale" size="20108" version="1.0"/>
-      <File SHA256:hash="35aafc17b2d5b7b4bed04f07cd4431e712232623432f8c363d53107185a81091" name="SWE-FO-05001_04001.ale" size="19192" version="1.0"/>
-      <File SHA256:hash="8ef113f946c571c22051698efcd8f40d259075b101593620a380db082952998f" name="SWE-FO-06001.ale" size="18592" version="1.0"/>
-      <File SHA256:hash="e8ef907b004b67806a596e7e4f264b9783f2bcb8201015d374572a6510880eba" name="SWE-FO-07001.ale" size="19660" version="1.0"/>
-      <File SHA256:hash="2cd6d73da9f4e47850a0ae977b0c4c40a924aedb97a7fa6a7166b40143ada089" name="USA-FO-AK19.ale" size="26444" version="1.0"/>
-      <File SHA256:hash="6a4929a2748c23715a05436a4a28765de8054389ff079659c892afb650151e9b" name="USA-FO-AL19.ale" size="22604" version="1.0"/>
-      <File SHA256:hash="e303bc817654c341c180ae1e6057d610ea1fee9e4344aa9461ea8a2f4dc76a1c" name="USA-FO-AR19.ale" size="22476" version="1.0"/>
-      <File SHA256:hash="024fd2a1cfa9586a42a8b56ead31cdeee4d3c6b0763c0df54a05cbbf38928db0" name="USA-FO-AZ19.ale" size="26016" version="1.0"/>
-      <File SHA256:hash="7cd3cd31083472a2260ffe115da1f0f6b20ff3637d74899ad45b04232ca7710c" name="USA-FO-CA19.ale" size="23008" version="1.0"/>
-      <File SHA256:hash="f2ce0966b9c4fd6b6ab031c21c1d08676728df42aebe74366402d174905c2ec8" name="USA-FO-CO19.ale" size="27384" version="1.0"/>
-      <File SHA256:hash="dde984153068fef61c8da7be2ac5465aebe084cdbe0f0c796db5486aeffab69a" name="USA-FO-CT19.ale" size="22752" version="1.0"/>
-      <File SHA256:hash="40ebcaf5a0f7dbaad50f7f862f4bc76b5615220a067bdb1ff6f03a7e5461dbeb" name="USA-FO-CT19_v2.ale" size="22712" version="1.0"/>
-      <File SHA256:hash="f5e980d9649b791533108f8679e96f5df2370fd4388786740deea37aea80218c" name="USA-FO-DC19.ale" size="26872" version="1.0"/>
-      <File SHA256:hash="4e3c3e05c67916d34ef60e84b72c4e9ab7e2e3d281e938630062f9595e37daad" name="USA-FO-DE19.ale" size="24248" version="1.0"/>
-      <File SHA256:hash="d34b470f84146c68c1e60fe62cc0ad8375eb91a1b6dfdf777e23d4b2c4da2222" name="USA-FO-FL19.ale" size="21900" version="1.0"/>
-      <File SHA256:hash="2c879195a1604c94e128a7c4460a4afdfd43a95b187e4ee2d0b37d54cb7faa91" name="USA-FO-FL19_v2.ale" size="21920" version="1.0"/>
-      <File SHA256:hash="e2649cb2272c3edffa0a331256dafbcb8f791c1c65030d26ef1b6a316e8db4ce" name="USA-FO-GA20.ale" size="21816" version="1.0"/>
-      <File SHA256:hash="94c7e71c38e3a8d56f95196d8d5472a7bebf896dc0ec3f1dcb9a07b3de382fac" name="USA-FO-HI19.ale" size="26892" version="1.0"/>
-      <File SHA256:hash="6e8596b70eb1941be5b505eb572f5de598989454dbdf43b576e2a4b2895fafd3" name="USA-FO-IA19.ale" size="23840" version="1.0"/>
-      <File SHA256:hash="86d558534dd6c3918495f2d022698e9e6c8857fb84f759fe3c961fc7951cdd18" name="USA-FO-IA19_v2.ale" size="23840" version="1.0"/>
-      <File SHA256:hash="f0693404a2bffe171f0c5b4a6993a868d2e6e3bf4daf7af3f1e1223c84bf9242" name="USA-FO-ID19.ale" size="26848" version="1.0"/>
-      <File SHA256:hash="d23c04427cd80aabbd48ab15d472e3f2901deb5b0be4c0b300fbe35fc3f97286" name="USA-FO-IL19.ale" size="24992" version="1.0"/>
-      <File SHA256:hash="055895177990865947a1ae720c0c5b05147c840be65e4e9fcfd8043d309268c2" name="USA-FO-IN19.ale" size="26508" version="1.0"/>
-      <File SHA256:hash="eb68123fbe4aa2a6e41dcbb7de780f8b165eb90a5cacd710b92f57c535485caf" name="USA-FO-KS19.ale" size="25912" version="1.0"/>
-      <File SHA256:hash="d5a2af373f9e5d39da76853ace2bcbc53fd89e7afc4ca15db71844ce51c46243" name="USA-FO-KY19.ale" size="22988" version="1.0"/>
-      <File SHA256:hash="006b9f9ee2aa5695af8ad951a0a740884a4e6df43d956d356e09280782125fdd" name="USA-FO-LA19.ale" size="24908" version="1.0"/>
-      <File SHA256:hash="506f14d8592277099a596cbdf4952a90e467291a4a01eb4d86badffcec8d2bda" name="USA-FO-MA19.ale" size="18616" version="1.0"/>
-      <File SHA256:hash="c2623d0462f3ab8da21b779dcb3e2650b8e99946c6b8f0dbe42e9cc9cbaade8f" name="USA-FO-MD19.ale" size="21624" version="1.0"/>
-      <File SHA256:hash="e9c1cbe028004a702b5a75e12e6581dc44f2dd5ce9dc379983eae47f8654660a" name="USA-FO-ME19.ale" size="25036" version="1.0"/>
-      <File SHA256:hash="296f2d88e7ace75cf3068ef40aff2dbe6e9e04c59738bd96c435aff40ff499a6" name="USA-FO-MI19.ale" size="24012" version="1.0"/>
-      <File SHA256:hash="11e6dde4059000b8d1665db42ae84e3d6728bd06d13a853ee601dafd498b5bda" name="USA-FO-MI19_v2.ale" size="24012" version="1.0"/>
-      <File SHA256:hash="f2ddf49547b7151eede7a3a7306cbac1ffef8e5fd03589c59fcb69bd8c098b64" name="USA-FO-MN19.ale" size="26016" version="1.0"/>
-      <File SHA256:hash="8337d4704b12ad22c5d9b81904c0ae7b4648879b9806bd5752c20afa436702d1" name="USA-FO-MO19.ale" size="22008" version="1.0"/>
-      <File SHA256:hash="4b0f1ded9ebdde1c812269ae70808f51c313e80f978eded9e48ae25c22b1ab57" name="USA-FO-MO19_v2.ale" size="22008" version="1.0"/>
-      <File SHA256:hash="dd8c9dcacc4afc6ebe3dcb0233035bcc37323719cc0e36502257ce51b97d9f4d" name="USA-FO-MS19.ale" size="22008" version="1.0"/>
-      <File SHA256:hash="8b89ac7c035bd6194ede5427a2342cbf67158cf2effcec1919dfdee7ab11c75c" name="USA-FO-MT19.ale" size="24160" version="1.0"/>
-      <File SHA256:hash="79d23bfe12d249e398c60c851987b10df57d6601d78c58875115c6b4af5a5be6" name="USA-FO-NC19.ale" size="26508" version="1.0"/>
-      <File SHA256:hash="01908267b998bab6510449e540099015291698863605bdd5a75042820131dd27" name="USA-FO-ND19.ale" size="24416" version="1.0"/>
-      <File SHA256:hash="66d1bc9fcd4ccfd98e4ec69315a9570c3bae6cae97abca41cdc57de59586551c" name="USA-FO-NE19.ale" size="25720" version="1.0"/>
-      <File SHA256:hash="429ca9c9b5444d23dc2895d1e8c5d1f308ffa5e20f3bbab99a03b6247de4b569" name="USA-FO-NH19.ale" size="25036" version="1.0"/>
-      <File SHA256:hash="7c9159cb92a2e06f2fdaa7f2bc4ce69aaa0a49bebf8cfdf57e8a49312a31ab7e" name="USA-FO-NJ19.ale" size="21836" version="1.0"/>
-      <File SHA256:hash="28107440a619879ad5a8ee464702232dfdbf1c987c5fb52e61e9456ceb405b3e" name="USA-FO-NM19.ale" size="21452" version="1.0"/>
-      <File SHA256:hash="2a82ac8fb9fc8c36065f074044b89db621381586d062152892b784390a2c91ee" name="USA-FO-NV19.ale" size="24588" version="1.0"/>
-      <File SHA256:hash="df1ac9cf0bcb3a083de8a87c89807049f9215b003473f1d1a9306de9dc048bca" name="USA-FO-NV19_v2.ale" size="24588" version="1.0"/>
-      <File SHA256:hash="c13b23ad1b0306d8fff4ced2f26236ba21663ba7773ee5535d6b648bac2d8de0" name="USA-FO-NY19.ale" size="17440" version="1.0"/>
-      <File SHA256:hash="3ecbadad0fc0c5798380dbbd18b5adabb9999f010e1922e21def9ee4ad41cc88" name="USA-FO-OH19.ale" size="17548" version="1.0"/>
-      <File SHA256:hash="5e0dcb92feed6b83b3d5c463096f4ea9c7472cd234093171305e071f3cc8df95" name="USA-FO-OK19.ale" size="22752" version="1.0"/>
-      <File SHA256:hash="9e6ce2301dd31a069cd3d0fd4d136d4f4a0cc088cf204abecebb43939db3f887" name="USA-FO-OR19.ale" size="24780" version="1.0"/>
-      <File SHA256:hash="7e248fbb526ef1f4eb5b24945c70ea1ebbb650d963a23033945dbcc57413bf04" name="USA-FO-PA19.ale" size="24844" version="1.0"/>
-      <File SHA256:hash="595ac11ba2988f6c2cca52b61bf5990b19b7bd2b620d487de01c53ca156954f6" name="USA-FO-PA19_v2.ale" size="24844" version="1.0"/>
-      <File SHA256:hash="59abe1a90c7d221ffdfee8166024657c4eaa08fd8186f16bb2f3f21d4224a196" name="USA-FO-RI19.ale" size="25868" version="1.0"/>
-      <File SHA256:hash="74520bb167c59037f032717d900fac3078f49f1b5cc791ef1f483df59a933b6a" name="USA-FO-RI19_v2.ale" size="26252" version="1.0"/>
-      <File SHA256:hash="8feaaa2320ecdc0bfa1ce78508fa31526f9df8242b90fae8d783321d3f8883fe" name="USA-FO-SC19.ale" size="20108" version="1.0"/>
-      <File SHA256:hash="04b10072859b02b6cd1e78d263ec82d09b73a53b188dc4e11c322b0f8ea4d6cd" name="USA-FO-SD19.ale" size="24992" version="1.0"/>
-      <File SHA256:hash="6abc6b8d47e90ca04de51230937399544bb7ba4b9b19bdfc091a438b2c7a13b5" name="USA-FO-TN19.ale" size="20832" version="1.0"/>
-      <File SHA256:hash="ded90a5db8e6970f4224cc3e456844380a10769ebd810a12a0e529368931ebe8" name="USA-FO-TN19_v2.ale" size="20832" version="1.0"/>
-      <File SHA256:hash="a7ce0e07d76d96e91cdb0a891886d3910fcfba200a4137d753be01e3db18bca1" name="USA-FO-TX19.ale" size="20748" version="1.0"/>
-      <File SHA256:hash="e4131096040dd71029c600e19aa5675327a2975ab8894fafe3c814dfc54bc450" name="USA-FO-UT19.ale" size="26188" version="1.0"/>
-      <File SHA256:hash="ecac4dfef8f99bfea567a90767e9072ba7a79512a5bc5683fa6896ce089f9871" name="USA-FO-UT19_v2.ale" size="26188" version="1.0"/>
-      <File SHA256:hash="73e21e0690fd22099bae6de180d53c0e9c8e18b58bd5fa64ee9dfa42af364b52" name="USA-FO-VA19.ale" size="23800" version="1.0"/>
-      <File SHA256:hash="ef3c137b1838ae98feb0228a7e764cc859ea021906f3448d80dd4c14ec604d2a" name="USA-FO-VT19.ale" size="25484" version="1.0"/>
-      <File SHA256:hash="5f9b5c41f5b7a591f804a07ac346479fec159c21ee4923e8233b2d0fd0868672" name="USA-FO-WA19.ale" size="24952" version="1.0"/>
-      <File SHA256:hash="756bb419f65b2fc77ab36cb2a79657cdd84b6ee8e393790fd7487c2c0e7f86b1" name="USA-FO-WI19.ale" size="25464" version="1.0"/>
-      <File SHA256:hash="1f051456c8993788338f3845e86a821aa5cd56c21b496ff7f5643f2920b0198f" name="USA-FO-WV19.ale" size="25208" version="1.0"/>
-      <File SHA256:hash="9772c70161a43504b10217e2b3c5029f08af4a23edb0ec878830715495d050ba" name="USA-FO-WY19.ale" size="26592" version="1.0"/>
+      <File SHA256:hash="95f9a6b8fea7cbae97d2fbb7e82213236754fe9d1da3e99dea64a11fa3037db0" name="AUS-FO-ACT11.ale" size="11552" version="1.0"/>
+      <File SHA256:hash="b79493db70df4cabf7b926ddaff61e9b5877759a85f7c4ecedbdff883a8c0b72" name="AUS-FO-NSW12.ale" size="11488" version="1.0"/>
+      <File SHA256:hash="081930c33bbc632caebe2d87d7f3d02e06366e5438a1c28a22584b7ee8a7dc15" name="AUS-FO-NT06.ale" size="15052" version="1.0"/>
+      <File SHA256:hash="d6e3a69ff4fd8ed0c608e08a642350060ee14af46c65cd2df58204e7bdfdc7ba" name="AUS-FO-QLD19.ale" size="17932" version="1.0"/>
+      <File SHA256:hash="386f241b5adac8f9279c998a98a2a57692d8907ce854bcf6174f637b5e1ea0b1" name="AUS-FO-SA13.ale" size="10572" version="1.0"/>
+      <File SHA256:hash="4fab755823c95761576c73c6b8c5d1c405e108c3092bdaf5c4bb5e1ace11308e" name="AUS-FO-TAS15.ale" size="11960" version="1.0"/>
+      <File SHA256:hash="8a5d32e887fe94f864e0ebe33136cc893269288299451861527880639b970113" name="AUS-FO-VIC09.ale" size="12192" version="1.0"/>
+      <File SHA256:hash="859aba007d83050d0523dadd57be3b19992b1a2f0c2b5b5938e76d3d8c9d1544" name="AUS-FO-WAXX.ale" size="12108" version="1.0"/>
+      <File SHA256:hash="393570b7410b144504947319abe56870cf63c40af37981987d3572152f0d809f" name="AUT-BO-02003_02002_02001.ale" size="13196" version="1.0"/>
+      <File SHA256:hash="00c764df549a5e3e1fe8d920fd4156b8c0170a12b79b7c6cf578f2c3d2d16c50" name="AUT-FO-04001.ale" size="17164" version="1.0"/>
+      <File SHA256:hash="0d156e53aa97dafb2ce16c243192152c6a8ebf189d35af3762a10fb76e980062" name="AUT-FO-05002_05001.ale" size="16608" version="1.0"/>
+      <File SHA256:hash="78e4e9da59d1c3e42dc89e6988aae4236e35ec01a8b156aacd344588c91770fc" name="AUT-HI-01f.ale" size="10424" version="1.0"/>
+      <File SHA256:hash="9b1b9784e5b4787bf734e21ec40d6a4ca975b72177e6394d11a12c3b62a8b1d8" name="BEL-BO-09003_09002_09001.ale" size="18060" version="1.0"/>
+      <File SHA256:hash="7e6015eb46e7473a5f1e39fc8b6feee04723d4a367e0673d36a8e2bb268e254a" name="BEL-BO-10001.ale" size="17376" version="1.0"/>
+      <File SHA256:hash="c98bfd59722b4132af42b346cff190c7c3a4436c6363f13e44a1a1287b86edfe" name="BEL-FO-02003_02002_02001.ale" size="17676" version="1.0"/>
+      <File SHA256:hash="33fcf0b8cff1cbe1326ac6f23099605b6279906aa47d2ad585b7abbde5ca4969" name="BEL-FO-05001_04003_04002_04001_03001.ale" size="14668" version="1.0"/>
+      <File SHA256:hash="b6e66fdc213225e03a702463f9a8d66d7d9272130f3428291da7c8b48978bdc3" name="BGR-BO-02001.ale" size="21304" version="1.0"/>
+      <File SHA256:hash="7a6dd5da8c20b0890d20ef157c3b3b2104be54b36bdb82e6a9499240018a6fb6" name="BGR-FO-02001.ale" size="25720" version="1.0"/>
+      <File SHA256:hash="17512e0ad708bc96a41a3787446cd947883a77637504ec78031e06d537b2d59b" name="BGR-FO-02002.ale" size="28280" version="1.0"/>
+      <File SHA256:hash="390778bd3cea462bbcfa5660f978fad24a2bc20a55979bc73955579b0363dd53" name="CAN-FO-AB19.ale" size="18720" version="1.0"/>
+      <File SHA256:hash="c59cc859b56fee111f68f2c1d31a4f5346b300d701265cadb6386f474a8a1d8d" name="CAN-FO-BC19.ale" size="18252" version="1.0"/>
+      <File SHA256:hash="cc16a201edaff01eb03187d8348eca1bedaa6a36a910f0f6a1ac080eac2b2305" name="CAN-FO-MB19.ale" size="20556" version="1.0"/>
+      <File SHA256:hash="3ce16a8924de64b94a9c1c9a588ed688fd76edcef1a00fdbd111cdd489b529f5" name="CAN-FO-NB19.ale" size="18232" version="1.0"/>
+      <File SHA256:hash="c32c112b983b644e88db097bda9b5ba447b79459f0d71eeb939e0f1d7d8992b7" name="CAN-FO-NS19.ale" size="19192" version="1.0"/>
+      <File SHA256:hash="1dc7afc30cd022a5d9454984f8053cf1a9070114a22eb24a58fd623d3b032d50" name="CAN-FO-ON19.ale" size="16824" version="1.0"/>
+      <File SHA256:hash="2d04b6bf2a75b8ea1df9976850513c5cf930f13e5be92c181f15fd367c278bc3" name="CAN-FO-QC19.ale" size="18208" version="1.0"/>
+      <File SHA256:hash="491370a7e2162d34d8be289dbc15a66058b03c4482ef5ae02dba16820b505cf4" name="CAN-FO-SK19.ale" size="17504" version="1.0"/>
+      <File SHA256:hash="e8a000dea18b777b6a85fe8ee3c85f1d059cf0f5a4607b507d3e820c1a61b933" name="CHE-BO-01003_01002_01001.ale" size="7352" version="1.0"/>
+      <File SHA256:hash="e34799645b1a1cf2bc07316fe6543b7401ce7da9d30b5011df3c31d70dc09ef4" name="CHE-FO-02001.ale" size="16568" version="1.0"/>
+      <File SHA256:hash="1df0f0d432b2b7dbed9bce328cec5079d3fa37cc929f42411336c7573c84e8b1" name="CYP-BO-04001.ale" size="18272" version="1.0"/>
+      <File SHA256:hash="8531acaa9618e60fc5c733ed343cd5be568c13adb031991c29471def90e90382" name="CYP-FO-03001.ale" size="23136" version="1.0"/>
+      <File SHA256:hash="eb7ff092f8e0b99798eb91cfe40f59712577b1e43f501218eaf1af06d51e192e" name="CZE-BO-04002_04001.ale" size="17356" version="1.0"/>
+      <File SHA256:hash="36d900ae70bf607f2377ad722f6a220d3c2722b5a610243b33941b4174871258" name="CZE-FO-02003_02002_02001.ale" size="19232" version="1.0"/>
+      <File SHA256:hash="578e38131ad8514f1998ac383847b9b443928eb9da6b6ffab7f313e6a184aeb0" name="DEU-BO-02001.ale" size="11360" version="1.0"/>
+      <File SHA256:hash="bef9777f7f94299cb1b8fc5d9838aa5c1e3e6ed4d6b902910170539e69d46d3d" name="DEU-FO-02006_02003_02002_02001.ale" size="17272" version="1.0"/>
+      <File SHA256:hash="ab06a056588e23b19f473efd910175ed2e50eeaba66077281586d77ebfc94bc8" name="DEU-FO-02007.ale" size="17248" version="1.0"/>
+      <File SHA256:hash="6f370cd855128c2de72d2685ee1b85859398b335f3b949fc820aa050647c8d48" name="DEU-HI-01f.ale" size="10464" version="1.0"/>
+      <File SHA256:hash="469163c73a40d20276530c8065b019f4916e034c634cdf5f36e83637f6ea76e6" name="DNK-FO-03001.ale" size="18296" version="1.0"/>
+      <File SHA256:hash="9e2a30997c5fd8f9f45b0b3919b0e80ddf86788ddc4049dec1d009f9c25870a5" name="DNK-FO-04001.ale" size="18016" version="1.0"/>
+      <File SHA256:hash="06eb343c4ed7a74a2c400aff432e467ef597065f64f78652ab08bb99bd8df5c3" name="ESP-BO-03001.ale" size="11640" version="1.0"/>
+      <File SHA256:hash="39864d7db7c729b457402d232bf9ceae05cc4b0df33c78416d83f6b9176add7b" name="ESP-BO-05001.ale" size="15608" version="1.0"/>
+      <File SHA256:hash="f89086e58c63e1cdf946452abb06bed965eb5954e70174bbe13cd7284d0613f6" name="ESP-FO-04002.ale" size="16652" version="1.0"/>
+      <File SHA256:hash="3333cf392558b77acc5c4bf90b13cc6e30638d944f9b19cd348681962fcb482c" name="ESP-HI-01f.ale" size="8908" version="1.0"/>
+      <File SHA256:hash="2a6ecc747a9d212f5d78d60edb388078e58caa724c5c51e673723ec0629b2f92" name="EST-BO-03001.ale" size="11552" version="1.0"/>
+      <File SHA256:hash="b017a7b6e207493c239c335680a32d9aac3c6fcad8fa6c89d8395a099572c486" name="EST-FO-02004.ale" size="19320" version="1.0"/>
+      <File SHA256:hash="5c432c9d15c536cd4882ec7fc3168e296ab12206db3524b4a10916130462aa37" name="FIN-BO-06001.ale" size="19680" version="1.0"/>
+      <File SHA256:hash="f0dfa85c1eaa88d3cc0823318ae046c271333260578db3730e519aa9599c1691" name="FIN-BO-09001.ale" size="16352" version="1.0"/>
+      <File SHA256:hash="26faf467b21d2c9035c59d3dcf7fde27f8d553113b2faf7dd1aa58ee0b9d6dd1" name="FIN-FO-04001.ale" size="18808" version="1.0"/>
+      <File SHA256:hash="1bbe86987f1fb2d1985d68a70ee974ff900a12298186b061b931409c83dfc533" name="FIN-FO-05001.ale" size="18784" version="1.0"/>
+      <File SHA256:hash="ee4a6fb179f9b96fa2f7240d479ec1a55b9882144b56d8606d4c7208114861de" name="FRA-BO-02002_02001.ale" size="14476" version="1.0"/>
+      <File SHA256:hash="9b1efb259c93a1d5a0a74e5e61637be042b796acdcfcc9a526251c1c4ccb7929" name="FRA-FO-07001_06001.ale" size="17656" version="1.0"/>
+      <File SHA256:hash="63b4fb828fc1067f40c3db90fdc0cea70b1dfcc29319a3250270c34ca05d4f08" name="FRA-HI-01f.ale" size="6476" version="1.0"/>
+      <File SHA256:hash="9de5dbffe4012fbea32ab910475f06172c53fa28ecefe38e4218956805220a66" name="GBR-BO-02001_01001.ale" size="15372" version="1.0"/>
+      <File SHA256:hash="c031af78dd4ce2c1ee5ffa2aa463c12a62ddfc47e1c1d65e70e9781673037d51" name="GBR-FO-07001.ale" size="18616" version="1.0"/>
+      <File SHA256:hash="270952ccd28b4f353c42bf6094507d09b11b6a268f1b3433d886b5d7fa48361e" name="GBR-FO-09002_09001_08002_08001.ale" size="19980" version="1.0"/>
+      <File SHA256:hash="98a6c58a20eedcc8b6de3dda283ebd45ed96c56ad77b81cffa28ac6df1a0e2fb" name="GBR-HI-01f.ale" size="8908" version="1.0"/>
+      <File SHA256:hash="a37e0ba56f61899e31ccac9a3bcec5a5dced89d329365a8aa7b597b791837ea3" name="GRC-FO-03002.ale" size="20620" version="1.0"/>
+      <File SHA256:hash="eb3e4864be025d446b786ef461fe9ff698f5447fe38d78f1ce8b5a57ef68f5fe" name="HRV-BO-03002_03001.ale" size="13920" version="1.0"/>
+      <File SHA256:hash="9d46db5e0ee018f4d38ba7744d8090ac48f47c9eb4a5892b1ba98266a6695b60" name="HRV-FO-02001.ale" size="18272" version="1.0"/>
+      <File SHA256:hash="f48695cc2cb2c7e5c3a99890c7b6d8a4cc9c71891c593481aa948ea90ee2cf3e" name="HUN-BO-05004_05003_05002_05001.ale" size="12792" version="1.0"/>
+      <File SHA256:hash="8e5811cd33b2c1d2e0108518ea70f423b8729965c12ef94db3844b3a747bfdbe" name="HUN-FO-02001.ale" size="17696" version="1.0"/>
+      <File SHA256:hash="f4973f54955dc7ddfbed21765c8d83247a4111a07aad96d293506baab174345f" name="HUN-FO-04001_03001.ale" size="16376" version="1.0"/>
+      <File SHA256:hash="60c4ba4990a56da576e8c90c33844aec441c69cd5ab167f83c53cc94cd557d19" name="IRL-FO-04001.ale" size="22540" version="1.0"/>
+      <File SHA256:hash="a3d25048a41d7d703c6340a6c7ebeeb2e4c214a75445366cdaf3b6b5e565fefe" name="ISL-FO-06001.ale" size="17760" version="1.0"/>
+      <File SHA256:hash="5121218fdb4b28ac94d5478fd25294bc2e83241a2b73adcbebd2723cde2866cb" name="ITA-BO-04004.ale" size="20960" version="1.0"/>
+      <File SHA256:hash="ec98bf21ba443321476349981092152bc4f20d5f053202cb7da5a7d42c2e2ba6" name="ITA-FO-05001.ale" size="18380" version="1.0"/>
+      <File SHA256:hash="b1fa1aec0f6f64ed2a7f3bdd3b6280f8d1c8b1de796acdecdd579c336c8f701a" name="ITA-FO-06001.ale" size="16800" version="1.0"/>
+      <File SHA256:hash="20ffd4207c5d10f07c12c8c66f79b9423dd5304f05ab22f88080281809d048fa" name="ITA-HI-01f.ale" size="6860" version="1.0"/>
+      <File SHA256:hash="1a0c0abaec3de148116b52246046cf006c1df52c575943c113b229f95d5ae982" name="LTU-BO-02002_02001.ale" size="14412" version="1.0"/>
+      <File SHA256:hash="beeadff87b2017a04b970dfb44a064fd64e8368e3a9412c94d5d0e06ec91c61d" name="LTU-FO-02004_02003.ale" size="17784" version="1.0"/>
+      <File SHA256:hash="ba7aa9504124fa37e3fb3b2e9212bfcf36d951529f3ef0b07be391087d98fe93" name="LTU-FO-03002_03001.ale" size="17400" version="1.0"/>
+      <File SHA256:hash="ab9295e75f01f297d98d4184d0eeee3e77961f7c20fee89e79de54dd0bcb8a9a" name="LTU-FO-04001.ale" size="18656" version="1.0"/>
+      <File SHA256:hash="bb8e87983853446d08fbda4c23d6fb6b077ea1668b1d84c99c3bcf50e38446e0" name="LUX-BO-02004.ale" size="21664" version="1.0"/>
+      <File SHA256:hash="3509b52d79ed0276196238d7cffe34a9197bdca9c22e0a7ade79aa58452f2ab7" name="LUX-BO-02005.ale" size="17868" version="1.0"/>
+      <File SHA256:hash="fc82bf93aedf19131138c1c2dd9ab8238a21bc59f5e522a7b0505cad3b5aa0de" name="LUX-FO-01010.ale" size="18252" version="1.0"/>
+      <File SHA256:hash="803d9d8a3e51d4db536519afbaf1c5548a6efaf39192b6c18cd0b50c8bcd80ae" name="LVA-BO-01001.ale" size="14048" version="1.0"/>
+      <File SHA256:hash="28a35db5f165173ab97d10d2bcd4cf73a97a6ffacd8ff1d5008ff10d9541dffa" name="LVA-BO-02001.ale" size="14136" version="1.0"/>
+      <File SHA256:hash="121ba09f2fd6727ef75023ef601776cac5fc46b5ebe91b8ebd626c0c7b3c4935" name="LVA-FO-01002.ale" size="19704" version="1.0"/>
+      <File SHA256:hash="03c25c8f015bff6fa80859241b85f3c330ec777177eb9a60f147e2232756c011" name="LVA-FO-01003.ale" size="19084" version="1.0"/>
+      <File SHA256:hash="71a58dd1a74dd4ae23ebe12e6c217e5c8252dc0d7dea9940cbf48f9104617ef9" name="MEX-BO-C.ale" size="25696" version="1.0"/>
+      <File SHA256:hash="e512c5bc5f0c07e6513bf3e8cf981156353b15f88ca8da9e79ca7c6fe64dc6fa" name="MEX-BO-E.ale" size="24992" version="1.0"/>
+      <File SHA256:hash="62fc0ccdd5c970576a92d14d90ae584b11c315e6d9ec4e436862f76f9c45c296" name="MEX-BO-G.ale" size="19680" version="1.0"/>
+      <File SHA256:hash="2d97c73fae96f79f89de5a082df7b990a923db51c1d8c2b21f6f31e21acd552f" name="MLT-BO-03001.ale" size="12512" version="1.0"/>
+      <File SHA256:hash="901dcbb591f0916ce295bd90182378c347dab99ca7e6c50af042923904e7f787" name="MLT-FO-03001.ale" size="17548" version="1.0"/>
+      <File SHA256:hash="6f07aae4880080e4674c3ceceaaf4890d3372c6d08c95879c8635feaf5819e83" name="NLD-BO-05001_04001.ale" size="12512" version="1.0"/>
+      <File SHA256:hash="762256411bcdc279591d2e446b29442c63ceb08a8bd9022aacbd1cd7b7c6f93f" name="NLD-FO-04001.ale" size="17720" version="1.0"/>
+      <File SHA256:hash="536246c5242afe6451599405ce999a2938a735204fb15c6e18d7f1a6f72cf971" name="NLD-FO-05001.ale" size="15136" version="1.0"/>
+      <File SHA256:hash="92fff79824fde8dc9bb4486e41c6146d107d1bcaa778e5480a44a24322b5ffcb" name="NLD-FO-06001.ale" size="16504" version="1.0"/>
+      <File SHA256:hash="38c1c44965f133a8c3ff8b20ee293f6a5528114ad992f428980a3111e45ae756" name="NOR-FO-05002_05001.ale" size="18232" version="1.0"/>
+      <File SHA256:hash="331f4f8d5b291010f43c229665c2bc02400c60b536569d977eec3c0048ae620e" name="NOR-FO-06001.ale" size="19360" version="1.0"/>
+      <File SHA256:hash="025ba8c946f4bb64529d6284dd1783bcaa2eee5e550e24da130170cf9f384c34" name="NOR-FO-07001.ale" size="17676" version="1.0"/>
+      <File SHA256:hash="e427b615c7a50d29f3105cb8385692b3e95d24a939fc68bdb77bf7a8e7ce7cf4" name="NZL-FO-14.ale" size="13728" version="1.0"/>
+      <File SHA256:hash="f2f67047ba5f33fcff18c07e55025027a1faf9f85b349d2601416cf968fedb5a" name="POL-BO-03001_02003_02002.ale" size="12024" version="1.0"/>
+      <File SHA256:hash="7e08904ec123dc6bf1225244a74c2a9bc13c091bf85028c085adf8f11ac5abc4" name="POL-BO-04001.ale" size="14368" version="1.0"/>
+      <File SHA256:hash="102f4e4951f7925e5c456695d8c1e924c08defacf6499811e0bda91563eaa65e" name="POL-FO-04001.ale" size="20684" version="1.0"/>
+      <File SHA256:hash="67471459b524024b6cd6c9720b505d236f6462335c59fa4538fa049307260b76" name="PRT-BO-03004_03003_03002_03001.ale" size="12088" version="1.0"/>
+      <File SHA256:hash="4db97992d3c54855ccdf8437fd651f1febd640e212c4a6771be2f08587cc7f85" name="PRT-FO-06001.ale" size="20344" version="1.0"/>
+      <File SHA256:hash="c30262058e201e186345ab464b030a104ea30e86d6fcf0f861cd17644285fc13" name="ROU-BO-03001_02002_02001_01002.ale" size="19020" version="1.0"/>
+      <File SHA256:hash="cbd493ee92f2c57391bc298e3a5e853739f40ae96803661db9a324805d71fa12" name="ROU-FO-06001_05001.ale" size="17356" version="1.0"/>
+      <File SHA256:hash="ada97a4f03d0d92651c8d608ea291b78fcf3d72b58281c13b139e2647e2ad837" name="SVK-BO-05002_05001_04001_03001_02001.ale" size="12536" version="1.0"/>
+      <File SHA256:hash="8ae107550dae1a1826a9a6021e611f851dcf2524b29377bf0192d3400b0df056" name="SVK-FO-04001_03001.ale" size="17528" version="1.0"/>
+      <File SHA256:hash="ee50ba7564df0edf42bbd81d7927accfa29c5a52b07b51ec3a62e35d6536e526" name="SVN-BO-02001.ale" size="9784" version="1.0"/>
+      <File SHA256:hash="4e835e6f47dbf98186a75bea23202a0d521cd54ae0262ed2028f91250e8a1f78" name="SVN-FO-04001.ale" size="19040" version="1.0"/>
+      <File SHA256:hash="c168b3be1482832521ec8f55b4805401f6ab18c0eb478c4bcb985780b54c610e" name="SWE-BO-03001.ale" size="20108" version="1.0"/>
+      <File SHA256:hash="8dc5cea4636468ecc3dee6da85dd5c4661da292cc75fc136e1dd00894cc95ed8" name="SWE-FO-05001_04001.ale" size="19192" version="1.0"/>
+      <File SHA256:hash="799318c5e0f8774040e7def8c11eeb8a513454a700ee61c4ddfdc328f0731087" name="SWE-FO-06001.ale" size="18592" version="1.0"/>
+      <File SHA256:hash="ed7fb64f7194e56463b1835c4b8bcc07f0a6c26e550c9f50ed7dd885d9fcfb8f" name="SWE-FO-07001.ale" size="19660" version="1.0"/>
+      <File SHA256:hash="c72a171b5c913282ade7ea8e65c9e3d60448109ffcb5e4efe17091752ecb71a2" name="USA-FO-AK19.ale" size="26444" version="1.0"/>
+      <File SHA256:hash="e8667cd1350e984f4e11abf05d127e62925371216162a13bb9893d75095ca9b3" name="USA-FO-AL19.ale" size="22604" version="1.0"/>
+      <File SHA256:hash="85a5b6f9ec40bdbe2673b1bb4a65568f684f765fffb6098c03d3b2b692548e47" name="USA-FO-AR19.ale" size="22476" version="1.0"/>
+      <File SHA256:hash="e3de8d1d0674d9d80c1387ce173f1f99887856aa06efd7332f05213161b310e0" name="USA-FO-AZ19.ale" size="26016" version="1.0"/>
+      <File SHA256:hash="e79e9f9c6ec971888d38ad0326e52b1b675e74cd16449f1172a9064535199302" name="USA-FO-CA19.ale" size="23008" version="1.0"/>
+      <File SHA256:hash="d4fc73297f22d4b50842768b1648d057c865ca450bc1e79f64dfbefe8a58ce2d" name="USA-FO-CO19.ale" size="27384" version="1.0"/>
+      <File SHA256:hash="17ae108f6a62d871ac52c21d834bf60f9f707b6b326242963d60c489684683c6" name="USA-FO-CT19.ale" size="22752" version="1.0"/>
+      <File SHA256:hash="8508103b8b3bbfbcbc62b369fd42ab0267a3aba2bd68b7e3d1d985eaf9d456d8" name="USA-FO-CT19_v2.ale" size="22712" version="1.0"/>
+      <File SHA256:hash="ec2bb50b042ea7bc6a7d137bd135ef6e806a45bf5174a4c6ca4a1ce4e1cebe5f" name="USA-FO-DC19.ale" size="26872" version="1.0"/>
+      <File SHA256:hash="a06d4537d62768c86a830f09777caa1969dea9b87e79f50356413ed531e0b6d2" name="USA-FO-DE19.ale" size="24248" version="1.0"/>
+      <File SHA256:hash="f9412862c905286696737c2cf8eeea979489db07aad6d3ca25c50fb3818c1a22" name="USA-FO-FL19.ale" size="21900" version="1.0"/>
+      <File SHA256:hash="02ce7d6435ed4880d7c3f5702e8889889e425da9dea3ef7779d224b3659e2cb9" name="USA-FO-FL19_v2.ale" size="21920" version="1.0"/>
+      <File SHA256:hash="3489e0d4c1e68a07fbdc93c8d2a16836aa7423d977ae88104b9f05bd845e1554" name="USA-FO-GA20.ale" size="21816" version="1.0"/>
+      <File SHA256:hash="7e90eb61510324c4440c66c07fc2b61d135ed5655343063701dd647113f1c0d0" name="USA-FO-HI19.ale" size="26892" version="1.0"/>
+      <File SHA256:hash="f7d9d3080c0e34362ade9f94fdca8836fa6f65342602232667bfd0e7a7144150" name="USA-FO-IA19.ale" size="23840" version="1.0"/>
+      <File SHA256:hash="0b332cc82d72d45b9614a6147e116c9cf3580f387b23df0053fed5d46ce6027d" name="USA-FO-IA19_v2.ale" size="23840" version="1.0"/>
+      <File SHA256:hash="249ba615f49f93f0953bd0cca4f6f6c345c5b342283b4f531b52f937e2ab46e0" name="USA-FO-ID19.ale" size="26848" version="1.0"/>
+      <File SHA256:hash="436070179a6e3d2ba4916ba4308cb8028d1246a6243af91b3e0725d0718e2b5f" name="USA-FO-IL19.ale" size="24992" version="1.0"/>
+      <File SHA256:hash="91f73639ff294cb330a06e635d574821e12fceaae3a804236d1ca3aeddba1eeb" name="USA-FO-IN19.ale" size="26508" version="1.0"/>
+      <File SHA256:hash="3acf6954fe0fb3efbdb0f7f7a58f44ea6634daaad68d954e42613bdfa0f75315" name="USA-FO-KS19.ale" size="25912" version="1.0"/>
+      <File SHA256:hash="2dea16cc166ba5f29e6f528095c84d8eb63a5df9c64562fe7bb4047b9dfc7d85" name="USA-FO-KY19.ale" size="22988" version="1.0"/>
+      <File SHA256:hash="8bc75026842753b0b663cffebc2fa8c949888ef51663e5e4f6ecfbc33b44c044" name="USA-FO-LA19.ale" size="24908" version="1.0"/>
+      <File SHA256:hash="d9fc511eef568f31d5183922ff5499e7ff1c471ac2080e423ad338e96d920a94" name="USA-FO-MA19.ale" size="18616" version="1.0"/>
+      <File SHA256:hash="b1fe62191721b7cb9c86a33c0d94b47f01f84807f9bafe4ccf7d045009c713ec" name="USA-FO-MD19.ale" size="21624" version="1.0"/>
+      <File SHA256:hash="d185fa3706fe9132e420fe553cb48ed3cfda54df455f77380cabb571d49db94a" name="USA-FO-ME19.ale" size="25036" version="1.0"/>
+      <File SHA256:hash="1a146b54f371803d57ddf192046e1b329db1e6126f378b239ed504c804ac0043" name="USA-FO-MI19.ale" size="24012" version="1.0"/>
+      <File SHA256:hash="6a909af55fea4371d0631240e0075a78efa8da0f67afe5c2daf1b2a4efdacd08" name="USA-FO-MI19_v2.ale" size="24012" version="1.0"/>
+      <File SHA256:hash="0f3b643ffc198bba466c49a3e81b259265b7cc1d1667c20571b2f4edca8e83ca" name="USA-FO-MN19.ale" size="26016" version="1.0"/>
+      <File SHA256:hash="e8cb89012de3ef42fd5a479a6c65d648ef276980332557d844f939cc5caa5233" name="USA-FO-MO19.ale" size="22008" version="1.0"/>
+      <File SHA256:hash="a44d1ce34e446a65130d2bd1e6382689ca38d09865c0bfbd2f43c334deeadc1e" name="USA-FO-MO19_v2.ale" size="22008" version="1.0"/>
+      <File SHA256:hash="d274afe0b4ba21e19d9572347af61c3476288667547772b1a858b1f9b331ec61" name="USA-FO-MS19.ale" size="22008" version="1.0"/>
+      <File SHA256:hash="cdb8141a06a0e7485cc0fc5b9659dd070b9f6c9f07fdf6345ba62b3a2a2c0507" name="USA-FO-MT19.ale" size="24160" version="1.0"/>
+      <File SHA256:hash="8d7fa316fd4d7063da37ea123fc7c9dccb6532e9b338b36f3e8781e2a52dbac8" name="USA-FO-NC19.ale" size="26508" version="1.0"/>
+      <File SHA256:hash="c8abfd3b6bee0e02264ae63c75d8caec491159ce28ba0850ad0b4a123c7c2022" name="USA-FO-ND19.ale" size="24416" version="1.0"/>
+      <File SHA256:hash="1af09ab81044fa4ac1c3782d2d96db426beaac360967de4742a3958dbf0fdc7a" name="USA-FO-NE19.ale" size="25720" version="1.0"/>
+      <File SHA256:hash="241d1b8ad9a9eaa95504c5e71b6d740a6d0fd7626560e29b304f06554d34d3d3" name="USA-FO-NH19.ale" size="25036" version="1.0"/>
+      <File SHA256:hash="42601b7db4889f680dcb82fa53c4e1ac2af78546999d5eb23bd1f33d67e4e7d1" name="USA-FO-NJ19.ale" size="21836" version="1.0"/>
+      <File SHA256:hash="8851c49193f45fa35132a86d0e970bae9f9a5d86bc867be0e24e7cacbebb8da2" name="USA-FO-NM19.ale" size="21452" version="1.0"/>
+      <File SHA256:hash="de80440f144cd1eb58c90c66568d15acf333b77814931bea520096ed018aa35d" name="USA-FO-NV19.ale" size="24588" version="1.0"/>
+      <File SHA256:hash="99af88e458e628a80e05ddd8e30e7d07df5a59fd0c72f83a155640407856e3ee" name="USA-FO-NV19_v2.ale" size="24588" version="1.0"/>
+      <File SHA256:hash="4a0a1d72478c9d17210d11dacfd0eb1b3a368d6b89470eb3a72a24e1d50ed16d" name="USA-FO-NY19.ale" size="17440" version="1.0"/>
+      <File SHA256:hash="52c5d71399510988b5dbeb6fcebb9f8b6ecaf804f1f940a926967720f2ff7048" name="USA-FO-OH19.ale" size="17548" version="1.0"/>
+      <File SHA256:hash="0b4d1755fe59bbdead47f9e9e73e42a60599680796fca2880d2b89799f7d120a" name="USA-FO-OK19.ale" size="22752" version="1.0"/>
+      <File SHA256:hash="280d8dbd4264476b88cf9ea9656980a191c22caf343c1e5e4c638f98a2dad771" name="USA-FO-OR19.ale" size="24780" version="1.0"/>
+      <File SHA256:hash="b8991a55a4572afa117ac7c7a47ea301321cc60984c7de254ed3b2d8a6090df5" name="USA-FO-PA19.ale" size="24844" version="1.0"/>
+      <File SHA256:hash="eccb5a7910dcd4b15f90879afca5695464c3600987a6d9518d6c4ea48f576a45" name="USA-FO-PA19_v2.ale" size="24844" version="1.0"/>
+      <File SHA256:hash="c40182f435c96b80f2e7cbbe4e7639a9b2c537cce3f229e7ac5c8e00be00cf59" name="USA-FO-RI19.ale" size="25868" version="1.0"/>
+      <File SHA256:hash="a7392e5a33d39f1573f28cfc050bae2ebc2bebf718bac71b93efd4fac46affed" name="USA-FO-RI19_v2.ale" size="26252" version="1.0"/>
+      <File SHA256:hash="9ba7f76b312cda9cf8346b1c22af9599fc0e5ae377b378c6a97af724b3ed6fdf" name="USA-FO-SC19.ale" size="20108" version="1.0"/>
+      <File SHA256:hash="3d839916548b291ac16af1f5dba4a7889d5de0f14117b3819d07936441f96cf1" name="USA-FO-SD19.ale" size="24992" version="1.0"/>
+      <File SHA256:hash="eca8f33df4c19207017c90d83ca4b2431e55c2b490d6c19d267ee2881e666438" name="USA-FO-TN19.ale" size="20832" version="1.0"/>
+      <File SHA256:hash="27e736bc8ea2d45b8dabeecf42379d14891c06494b4acd0b8e96d344e2ec23b9" name="USA-FO-TN19_v2.ale" size="20832" version="1.0"/>
+      <File SHA256:hash="957d340fabfd12223a715e45487a68d14cdb299163796fe21f407f5b1d378715" name="USA-FO-TX19.ale" size="20748" version="1.0"/>
+      <File SHA256:hash="7a6b5741199e100960562d95ac09770388c30261a7dbae16aae057aa3d13e5be" name="USA-FO-UT19.ale" size="26188" version="1.0"/>
+      <File SHA256:hash="0e8181b268aee27e340d181b052adfc9634740230bb80cce31532fe096813a76" name="USA-FO-UT19_v2.ale" size="26188" version="1.0"/>
+      <File SHA256:hash="e40654fa7d94823168b07b54a1a4066c1639a67d17b922dc7c7e2cb80517f717" name="USA-FO-VA19.ale" size="23800" version="1.0"/>
+      <File SHA256:hash="62ad7622106eb1b6c548b1e45629fc7441194b69541bff82ed82de1d360500ba" name="USA-FO-VT19.ale" size="25484" version="1.0"/>
+      <File SHA256:hash="34bf7fe064e569f7d98d405f12ae3b353dea43fad8dcc4a0a32c1f7a3ffca3c8" name="USA-FO-WA19.ale" size="24952" version="1.0"/>
+      <File SHA256:hash="029b4cd283e7bba2c67cb67a5e34fdc6ee304beab15f3bcdfdb102904b414fd3" name="USA-FO-WI19.ale" size="25464" version="1.0"/>
+      <File SHA256:hash="78c2084b18c6cb7f20daecf4315d014632eb049d6bd02c24db3b54c1f53d6f1e" name="USA-FO-WV19.ale" size="25208" version="1.0"/>
+      <File SHA256:hash="986c8cc6944333453ca31eaf59e6e403aded6d3320ed55a6ab0ce44c76c4d056" name="USA-FO-WY19.ale" size="26592" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_id" name="trained_models">
       <File SHA256:hash="a0f7ac982db5a78b6db8d59a9237591f0cda762c4dfcb01deb7b6f89067b4ffa" name="crnnID_quant.any" size="1136120" version="1.0"/>
@@ -2247,7 +2233,7 @@
       <File SHA256:hash="3990e21b0752e22656d1f3346b8acd62d6ff2cc15faa60a69325525a1b044df3" name="USNr.any" size="904712" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle" name="module_license_plate">
-      <File SHA256:hash="c689a9d57e06bcf8d568e6090c6794c5863b0e4aae27c204f077380e6f989c01" name="license_plates_combined.ale" size="197068" version="1.0"/>
+      <File SHA256:hash="c519a2ce8658aa691191b5fc1406bcaa622d7365cd8defdb3f7ff401380cc022" name="license_plates_combined.ale" size="197068" version="1.0"/>
     </Directory>
     <Directory location="Framework/AnylineResources.bundle/module_license_plate" name="trained_models">
       <File SHA256:hash="0f4913a6704534f7b05516d218d0dd89cb18f25de6814488de9e719d4193920b" name="LPT.any" size="1297272" version="1.0"/>

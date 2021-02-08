@@ -11,6 +11,7 @@
 #import "UIViewController+ALExamplesAdditions.h"
 #import <WebKit/WebKit.h>
 #import <MessageUI/MessageUI.h>
+#import "UIColor+ALExamplesAdditions.h"
 
 NSString * const kForgetMeLinkString = @"hello@anyline.com";
 
@@ -24,6 +25,8 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
 @implementation ALBaseViewController
 
 - (void)viewDidLoad {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     self.view.backgroundColor = [UIColor whiteColor];
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -92,6 +95,32 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
     [UIView animateWithDuration:0.5 animations:^{
         self.webView.alpha = 1;
     }];
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
+    
+    if (NSEqualRanges([[textView.attributedText string] rangeOfString:kForgetMeLinkString], characterRange)) {
+        [self forgetMyDataPressed];
+        //don't also follow the mailto: url to open a blank email
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Custom methods
+
+- (void)forgetMyDataPressed {
 }
 
 

@@ -14,6 +14,7 @@
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 #import "ALResultViewController.h"
+#import "UISwitch+ALExamplesAdditions.h"
 
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
 @interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate, ALSelectionTableDelegate>
@@ -112,6 +113,7 @@
     [multiBarcode.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-rightPadding-45].active = YES;
     [multiBarcode setTintColor:[UIColor AL_NonSelectedToolBarItem]];
     [multiBarcode setOnTintColor:[UIColor AL_examplesBlue]];
+    [multiBarcode useHighContrast];
     [multiBarcode addTarget:self action:@selector(setMultiBarcode:) forControlEvents:UIControlEventValueChanged];
     [multiBarcode setOn:NO];
     

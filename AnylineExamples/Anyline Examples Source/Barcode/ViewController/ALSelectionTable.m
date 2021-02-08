@@ -96,7 +96,7 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 38)];
     
-    view.backgroundColor = [UIColor AL_BackgroundColor];
+    view.backgroundColor = [UIColor AL_SectionGridBG];
     
     UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 305, 38)];
     lbl.font      = [UIFont AL_proximaLightWithSize:14];

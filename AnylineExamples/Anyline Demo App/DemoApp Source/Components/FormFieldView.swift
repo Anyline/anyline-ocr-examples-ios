@@ -12,6 +12,10 @@ import UIKit
     case email = 2
 }
 
+@objc protocol FormFieldViewDelegate {
+    func formFieldEndedEditing()
+}
+
 @objc class FormFieldView: UIView, UITextFieldDelegate {
 
     fileprivate var inputTextHover : UILabel = UILabel()
@@ -24,6 +28,8 @@ import UIKit
     
     @objc var fieldType : FieldType = .validateSimple
     @objc var nextField : UITextField?
+    
+    @objc var delegate : FormFieldViewDelegate?
     
     required init() {
         super.init(frame: CGRect.zero)
@@ -67,15 +73,14 @@ import UIKit
         inputTextField.returnKeyType = .done
         inputTextField.textAlignment = .left
         inputTextField.backgroundColor = UIColor.clear
-        inputTextField.font = UIFont.al_proximaRegular(withSize: 19)
+        inputTextField.font = UIFont.al_proximaRegular(withSize: 16)
         inputTextField.borderStyle = .none
         
         inputTextHover.textAlignment = .left
         inputTextHover.textColor = UIColor.lightGray
         inputTextHover.backgroundColor = UIColor.clear
         inputTextHover.alpha = 0
-        inputTextHover.font = UIFont.al_proximaRegular(withSize: 19)
-        
+        inputTextHover.font = UIFont.al_proximaRegular(withSize: 16)
         
         errorMessageLabel.textAlignment = .left
         errorMessageLabel.textColor = UIColor.red
@@ -88,12 +93,12 @@ import UIKit
     }
     
     fileprivate func setupConstraints() {
-        var constraints = [inputTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-                           inputTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+        var constraints = [inputTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+                           inputTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
                            inputTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
                            inputTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)]
         
-        constraints.append(contentsOf: [underlineView.topAnchor.constraint(equalTo: inputTextField.bottomAnchor, constant: 0),
+        constraints.append(contentsOf: [underlineView.topAnchor.constraint(equalTo: inputTextField.bottomAnchor, constant: 4),
                                         underlineView.leadingAnchor.constraint(equalTo: inputTextField.leadingAnchor, constant: 0),
                                         underlineView.trailingAnchor.constraint(equalTo: inputTextField.trailingAnchor, constant: 0),
                                         underlineView.heightAnchor.constraint(equalToConstant: 1)])
@@ -110,28 +115,30 @@ import UIKit
         self.addConstraints(constraints)
     }
     
-    fileprivate func validateEmail() {
+    fileprivate func isValidEmail() -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        predicate.evaluate(with: self.inputTextField.text)
+        return predicate.evaluate(with: self.inputTextField.text)
     }
     
-    fileprivate func validateSimple() {
-        if (self.inputTextField.text?.isEmpty ?? true) {
-            errorTopConstraints.constant = 5
+    fileprivate func isValidSimple() -> Bool {
+        return !(self.inputTextField.text?.isEmpty ?? true)
+    }
+    
+    fileprivate func animateErrorVisible() {
+        errorTopConstraints.constant = 5
+        UIView.animate(withDuration: 0.5, animations: {
+            self.errorMessageLabel.alpha = 1
             self.layoutIfNeeded()
-            UIView.animate(withDuration: 0.5, animations: {
-                self.errorMessageLabel.alpha = 1
-                self.layoutIfNeeded()
-            })
-        } else {
-            errorTopConstraints.constant = -errorMessageLabel.bounds.height
+        })
+    }
+    
+    fileprivate func animateErrorHide() {
+        errorTopConstraints.constant = -errorMessageLabel.bounds.height
+        UIView.animate(withDuration: 0.5, animations: {
+            self.errorMessageLabel.alpha = 0
             self.layoutIfNeeded()
-            UIView.animate(withDuration: 0.5, animations: {
-                self.errorMessageLabel.alpha = 0
-                self.layoutIfNeeded()
-            })
-        }
+        })
     }
     
     // TODO: when we replace all textfield with this we can add an animation for the hover text going in and out of the field :)
@@ -187,18 +194,33 @@ import UIKit
     // MARK: - UITextViewDelegate
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        var isValid = false
         switch fieldType {
         case .email:
-            validateEmail()
+            isValid = isValidEmail()
         case .validateSimple:
-            validateSimple()
+            isValid = isValidSimple()
         default:
             print("nothing to validate")
         }
+        
+        if isValid {
+            animateErrorHide()
+        } else {
+            animateErrorVisible()
+        }
+        self.delegate?.formFieldEndedEditing()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+    }
+    // TODO: temporary
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if fieldType == .email && isValidEmail() {
+            animateErrorHide()
+        }
+        self.delegate?.formFieldEndedEditing()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
