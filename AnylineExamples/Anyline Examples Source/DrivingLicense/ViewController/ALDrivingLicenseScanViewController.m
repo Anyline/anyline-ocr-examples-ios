@@ -104,6 +104,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.drivingLicenseScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -135,50 +136,50 @@
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         
         [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
-        [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country:%@", identification.layoutDefinition.country]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country isMandatory:NO]];
+        resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
         
-        [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+        [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
             
-            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image  optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImage:nil faceImage:[scanResult.result faceImage] shouldShowDisclaimer:YES];
             [self.navigationController pushViewController:vc animated:YES];
         }];
     } else {
         ALDrivingLicenseIdentification *identification = (ALDrivingLicenseIdentification *)scanResult.result;
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
 
-        NSMutableString * result = [NSMutableString string];
-        [result appendString:[NSString stringWithFormat:@"Document Number:%@\n", [identification documentNumber]]];
-        [result appendString:[NSString stringWithFormat:@"Last Name:%@\n", [identification surname]]];
-        [result appendString:[NSString stringWithFormat:@"First Name:%@\n", [identification givenNames]]];
-        [result appendString:[NSString stringWithFormat:@"Date of Birth:%@", [identification dateOfBirth]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
+
+        if ([identification placeOfBirth]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
+        }
+        if ([identification dateOfIssue]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Issue" value:[identification dateOfIssue]]];
+        }
+        if ([identification dateOfExpiry]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
+        }
+        if ([identification authority]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[identification authority] isMandatory:NO]];
+        }
+        if ([identification categories]) {
+            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories] isMandatory:NO]];
+        }
+        resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
+
         
-        [super anylineDidFindResult:result barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+        [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
 
-            NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Birth" value:[identification dateOfBirth]]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
-
-            if ([identification placeOfBirth]) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Place of Birth" value:[identification placeOfBirth]]];
-            }
-            if ([identification dateOfIssue]) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Issue" value:[identification dateOfIssue]]];
-            }
-            if ([identification dateOfExpiry]) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Date of Expiry" value:[identification dateOfExpiry]]];
-            }
-            if ([identification authority]) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Authority" value:[identification authority]]];
-            }
-            if ([identification categories]) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories]]];
-            }
+            
 
             //Display the result
-            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
+                                                                                      image:scanResult.image
+                                                                                  faceImage:[scanResult.result faceImage]
+                                                                       shouldShowDisclaimer:YES];
 
             [self.navigationController pushViewController:vc animated:YES];
         }];

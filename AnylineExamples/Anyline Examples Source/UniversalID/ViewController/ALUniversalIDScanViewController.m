@@ -72,6 +72,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.scanViewPlugin stopAndReturnError:nil];
 }
 
@@ -103,11 +104,11 @@
     
     [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
-    [resultHistoryString appendString:[NSString stringWithFormat:@"Detected Country:%@", identification.layoutDefinition.country]];
+    resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
     
-    [super anylineDidFindResult:resultHistoryString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.scanViewPlugin completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.scanViewPlugin completion:^{
         
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image  optionalImageTitle:@"Detected Face Image" optionalImage:[scanResult.result faceImage]];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImage:nil faceImage:[scanResult.result faceImage] shouldShowDisclaimer:YES];
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }

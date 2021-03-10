@@ -11,15 +11,15 @@
 @interface ALResultViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary<NSString *, NSMutableArray<ALResultEntry *>*> *resultData;
-@property (strong, nonatomic) UIImage *image;
-
-//optional:
-@property (strong, nonatomic) NSString *optionalTitle;
-@property (strong, nonatomic) UIImage *optionalImage;
+@property (strong, nonatomic) UIImage *faceImage;
+@property (strong, nonatomic) UIImage *documentImage;
+@property (strong, nonatomic) UIImage *documentBackImage;
+@property (assign, nonatomic) BOOL shouldShowDisclaimer;
 
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image;
-
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImageTitle:(NSString *)optTitle optionalImage:(UIImage *)optImage;
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image shouldShowDisclaimer:(BOOL)shouldShow;
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImage:(UIImage *)optImage faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
 
 
 /*
@@ -30,7 +30,12 @@
  */
 - (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
                                        image:(UIImage *)image
-                          optionalImageTitle:(NSString *)optTitle
-                               optionalImage:(UIImage *)optImage;
+                               optionalImage:(UIImage *)optImage
+                                   faceImage:(UIImage *)faceImage;
+- (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
+                                       image:(UIImage *)image
+                               optionalImage:(UIImage *)optImage
+                                   faceImage:(UIImage *)faceImage
+                        shouldShowDisclaimer:(BOOL)shouldShow;
 
 @end

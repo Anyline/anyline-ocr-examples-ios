@@ -7,6 +7,7 @@
 
 #import "ALNFCScanViewController.h"
 #import "ALResultViewController.h"
+#import "ALUniversalIDFieldnameUtil.h"
 
 API_AVAILABLE(ios(13.0))
 @interface ALNFCScanViewController () <ALNFCDetectorDelegate, ALIDPluginDelegate,ALScanViewPluginDelegate,ALInfoDelegate>
@@ -140,6 +141,7 @@ API_AVAILABLE(ios(13.0))
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self stopMRZScanning];
 }
 
@@ -206,30 +208,23 @@ API_AVAILABLE(ios(13.0))
  To display data as it is read instead of waiting until everything has been read, we could also implement nfcSucceededWithDataGroup1: or nfcSucceededWithDataGroup2: */
 - (void)nfcSucceededWithResult:(ALNFCResult * _Nonnull)nfcResult  API_AVAILABLE(ios(13.0)){
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:nfcResult.dataGroup1.firstName]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:nfcResult.dataGroup1.lastName]];
+        [resultData addObject:[self resultEntryWithDate:nfcResult.dataGroup1.dateOfBirth dateString:nil title:@"Date of Birth"]];
+        [resultData addObject:[self resultEntryWithDate:nfcResult.dataGroup1.dateOfExpiry dateString:nil title:@"Date of Expiry"]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:nfcResult.dataGroup1.documentNumber shouldSpellOutValue:YES]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing State Code" value:nfcResult.dataGroup1.issuingStateCode]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Gender" value:nfcResult.dataGroup1.gender]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:nfcResult.dataGroup1.nationality]];
         
-        NSMutableString *nfcResultString = [NSMutableString string];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Issuing State Code:%@\n", nfcResult.dataGroup1.issuingStateCode]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Document Number:%@\n", nfcResult.dataGroup1.documentNumber]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Expiry:%@\n", [self stringForDate:nfcResult.dataGroup1.dateOfExpiry]]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Gender:%@\n", nfcResult.dataGroup1.gender]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Nationality:%@\n", nfcResult.dataGroup1.nationality]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Last Name:%@\n", nfcResult.dataGroup1.lastName]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"First Name:%@\n", nfcResult.dataGroup1.firstName]];
-        [nfcResultString appendString:[NSString stringWithFormat:@"Date of Birth:%@",  [self stringForDate:nfcResult.dataGroup1.dateOfBirth]]];
-        
-        [super anylineDidFindResult:nfcResultString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
-            NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Issuing State Code" value:nfcResult.dataGroup1.issuingStateCode]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:nfcResult.dataGroup1.documentNumber shouldSpellOutValue:YES]];
-            [resultData addObject:[self resultEntryWithDate:nfcResult.dataGroup1.dateOfExpiry dateString:nil title:@"Date of Expiry"]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Gender" value:nfcResult.dataGroup1.gender]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:nfcResult.dataGroup1.nationality]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Last Name" value:nfcResult.dataGroup1.lastName]];
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"First Name" value:nfcResult.dataGroup1.firstName]];
-            [resultData addObject:[self resultEntryWithDate:nfcResult.dataGroup1.dateOfBirth dateString:nil title:@"Date of Birth"]];
+        resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
+    
+        [self anylineDidFindResult:@"" barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
+            
             NSMutableDictionary *resultDataDict = [[NSMutableDictionary alloc] init];
             [resultDataDict setObject:resultData forKey:@"NFC"];
-            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultDataDictionary:resultDataDict image:nfcResult.dataGroup2.faceImage optionalImageTitle:@"Detected Face Image" optionalImage:nil];
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:nfcResult.dataGroup2.faceImage];
             [self.navigationController pushViewController:vc animated:YES];
         }];
     });

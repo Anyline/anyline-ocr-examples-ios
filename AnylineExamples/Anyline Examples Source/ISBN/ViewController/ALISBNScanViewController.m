@@ -85,6 +85,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.isbnScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -120,6 +121,7 @@
  This is the main delegate method Anyline uses to report its results
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
+    //TODO: (RNR) align this with other calls so it creates a proper json string
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.isbnScanViewPlugin completion:^{
         [self stopAnyline];
         ALISBNViewController *vc = [[ALISBNViewController alloc] init];

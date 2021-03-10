@@ -157,6 +157,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.parallelScanViewPlugin stopAndReturnError:nil];
     [self.meterScanViewPlugin stopAndReturnError:nil];
 }
@@ -204,16 +205,18 @@
 }
 
 - (void)displayResults {
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:self.meterResult]];
+    if (self.barcodeResult) {
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
+    } else if (self.serialNumberResult) {
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Serial Number" value:self.barcodeResult shouldSpellOutValue:YES]];
+    }
+    
     //stop scanning, since we don't need to scan the serial and the barcode, only one of them
-    [self anylineDidFindResult:self.meterResult barcodeResult:self.barcodeResult image:self.meterImage scanPlugin:self.meterScanPlugin viewPlugin:self.parallelScanViewPlugin completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:self.barcodeResult image:self.meterImage scanPlugin:self.meterScanPlugin viewPlugin:self.parallelScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:self.meterResult]];
-        if (self.barcodeResult) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
-        } else if (self.serialNumberResult) {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Serial Number" value:self.barcodeResult shouldSpellOutValue:YES]];
-        }
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:self.meterImage];
         NSError *error;
         [self.parallelScanViewPlugin stopAndReturnError:&error];

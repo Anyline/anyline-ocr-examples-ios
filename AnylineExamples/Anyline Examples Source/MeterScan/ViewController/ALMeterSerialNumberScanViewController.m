@@ -103,8 +103,7 @@ static const NSInteger padding = 7;
 }
 
 - (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-        
+    [super viewDidLayoutSubviews];    
     [self updateLayoutBarcodeSwitchView];
 }
 
@@ -112,6 +111,7 @@ static const NSInteger padding = 7;
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.meterScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -178,13 +178,13 @@ static const NSInteger padding = 7;
  */
 - (void)anylineMeterScanPlugin:(ALMeterScanPlugin *)anylineMeterScanPlugin
                  didFindResult:(ALMeterResult *)scanResult {
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Serial Number" value:scanResult.result]];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
     
-    [self anylineDidFindResult:scanResult.result barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Serial Number" value:scanResult.result]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
-        
+    
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

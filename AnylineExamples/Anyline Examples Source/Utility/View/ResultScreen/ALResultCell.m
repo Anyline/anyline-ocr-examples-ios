@@ -56,89 +56,56 @@
 }
 
 - (void)customInit {
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
     
-    self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 25)];
+    self.valueLabel = [[UILabel alloc] init];
     self.valueLabel.font = [UIFont AL_proximaRegularWithSize:16];
+    self.valueLabel.textColor = [UIColor AL_LabelBlackWhite];
     if (@available(iOS 13.0, *)) {
-        self.valueLabel.textColor = [UIColor labelColor];
         self.titleLabel.textColor = [UIColor secondaryLabelColor];
     } else {
-        self.valueLabel.textColor = [UIColor blackColor];
         self.titleLabel.textColor = [UIColor lightGrayColor];
     }
-    self.valueLabel.numberOfLines = 0;
-    self.valueLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.titleLabel.numberOfLines = 0;
+    self.valueLabel.numberOfLines = 0;    
+    
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.valueLabel];
+    self.titleLabel.tag = 12;
+    self.valueLabel.tag = 13;
+    
+    [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.valueLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self setupConstraints];
+    
+}
 
-    self.checkmarkView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    self.checkmarkView.contentMode = UIViewContentModeScaleAspectFill;
+- (void)setupConstraints {
+    NSMutableArray *constraints = @[[self.titleLabel.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:5],
+                                    [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:10],
+                                    [self.titleLabel.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-10],
+                                    [self.titleLabel.bottomAnchor constraintEqualToAnchor:self.valueLabel.topAnchor constant:0],
+                                    [self.titleLabel.heightAnchor constraintEqualToConstant:24]].mutableCopy;
     
-    self.fillerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 5)];
+    [constraints addObjectsFromArray:@[[self.valueLabel.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:10],
+                                       [self.valueLabel.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-10],
+                                       [self.valueLabel.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-10]]];
     
-    
-    [self.contentView addSubview:_titleLabel];
-    [self.contentView addSubview:_valueLabel];
-//    [self.contentView addSubview:_checkmarkView];
-    [self.contentView addSubview:_fillerView];
-    
-    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height+self.fillerView.frame.size.height+5;
-    self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, height);
-    self.cellHeight = self.contentView.frame.size.height;
-    
+    [self.contentView addConstraints:constraints];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    CGFloat padding = 10;
-    CGFloat checkmarkHeight = self.checkmarkView.frame.size.height;
-    
-    //Title setup
-    self.titleLabel.frame = CGRectMake(padding, 0, self.contentView.frame.size.width - padding*2, 20);
-    
-    //Value setup
-    self.valueLabel.frame = CGRectMake(padding,
-                                       self.titleLabel.frame.origin.y+self.titleLabel.frame.size.height,
-                                       self.contentView.frame.size.width - padding*2 - checkmarkHeight-5,
-                                       self.valueLabel.frame.size.height);
-    //Check if single or multiple lines
-    NSUInteger numberOfRows = [self numberOfLinesForString:self.valueLabel.text];
-    if (numberOfRows > 1){
-        if (numberOfRows >= 5) {
-            self.valueLabel.font = [UIFont AL_proximaRegularWithSize:12];
-        }
-        CGRect rect = [self.valueLabel.text
-                                    boundingRectWithSize:CGSizeMake(self.valueLabel.frame.size.width, MAXFLOAT)
-                                    options:NSStringDrawingUsesLineFragmentOrigin
-                                    attributes:@{NSFontAttributeName:self.valueLabel.font}
-                                    context:nil];
-        CGRect labelFrame = self.valueLabel.frame;
-        labelFrame.size.height = rect.size.height;
-        self.valueLabel.frame = labelFrame;
-    } else {
-        self.valueLabel.adjustsFontSizeToFitWidth = YES;
-        self.valueLabel.numberOfLines = 1;
-    }
-    
-    CGFloat height = self.titleLabel.frame.size.height + self.valueLabel.frame.size.height + self.fillerView.frame.size.height+5;
-    self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, height);
-    self.cellHeight = self.contentView.frame.size.height;
-    
-    //Checkmark setup
-//    self.checkmarkView.center = CGPointMake(self.contentView.frame.size.width - checkmarkHeight/2 - padding, self.valueLabel.center.y);
-    self.fillerView.frame = CGRectMake(padding,
-                                       self.valueLabel.frame.origin.y+self.valueLabel.frame.size.height,
-                                       self.contentView.frame.size.width - padding*2 - checkmarkHeight-5,
-                                       self.fillerView.frame.size.height);
-    
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.titleLabel.frame.size.height + self.valueLabel.frame.size.height);
 }
 
 - (void)setResultEntry:(ALResultEntry *)entry {
     _resultEntry = entry;
     self.titleLabel.text = self.resultEntry.title;
     self.valueLabel.text = self.resultEntry.value;
+    
     if (self.resultEntry.shouldSpellOutValue && self.resultEntry.isAvailable) {
         if (@available(iOS 13.0, *)) {
         //make sure VoiceOver reads the result letter-by-letter for codes/license plates/etc. The user can use the rotor to do this manually (and the character setting in the rotor even uses the phonetic alphabet to make things clearer), but if we can save them from switching between rotor settings when we know something won't make sense read as a word, it's a bit smoother.
@@ -150,7 +117,6 @@
             //in earlier versions of iOS, we could try adding spaces between characters, but this is not ideal as some characters will be pronounced as single-letter words or Roman numerals.
         }
     }
-    self.checkmarkView.image = (self.resultEntry.isAvailable) ? [UIImage imageNamed:@"blue round checkmark"] : nil;
 }
 
 #pragma mark - Private Methods

@@ -26,10 +26,7 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
-   
-    [super viewDidLoad];
+    
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = NSLocalizedString(@"Scan Document", @"Scan Document");
@@ -89,6 +86,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.documentScanViewPlugin stopAndReturnError:nil];
 }
 

@@ -24,7 +24,12 @@
 @property (nullable, nonatomic, strong) ALScanView *scanView;
 
 // A debug label to show scanned results
+@property (nonatomic, strong) ALBarcodeResult* lastBarcodeResult;
 @property (nonatomic, strong) UILabel *resultLabel;
+@property (nonatomic, strong) UIButton *scanButton;
+@property (nonatomic, strong) NSTimer *fadeTimer;
+@property (nonatomic, strong) UISwitch *multiBarcode;
+
 
 @property (nonatomic, strong) NSArray<NSString *> *defaultReadableSymbologies;
 
@@ -60,8 +65,10 @@
     
     ALScanViewPluginConfig * config =  [ALScanViewPluginConfig defaultBarcodeConfig];
     config.cutoutConfig.alignment = ALCutoutAlignmentMiddle;
-    config.cancelOnResult = YES;
-
+    config.cancelOnResult = NO;
+    config.scanFeedbackConfig.vibrateOnResult = NO;
+    config.scanFeedbackConfig.blinkAnimationOnResult = NO;
+    config.scanFeedbackConfig.beepOnResult = NO;
     
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin scanViewPluginConfig:config];
     NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
@@ -104,18 +111,20 @@
     
     UIWindow *window = UIApplication.sharedApplication.keyWindow;
     CGFloat bottomPadding = window.safeAreaInsets.bottom;
-    CGFloat rightPadding = window.safeAreaInsets.right;
+    CGFloat topPadding    = window.safeAreaInsets.top;
+    CGFloat rightPadding  = window.safeAreaInsets.right;
+    CGFloat horizontalPadding = 30;
     
-    UISwitch *multiBarcode = [[UISwitch alloc] init];
-    [self.view addSubview:multiBarcode];
-    multiBarcode.translatesAutoresizingMaskIntoConstraints = NO;
-    [multiBarcode.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-bottomPadding-30].active = YES;
-    [multiBarcode.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-rightPadding-45].active = YES;
+    
+    UISwitch *multiBarcode = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 70, 20, 70, 60)];
+    [self.scanView addSubview:multiBarcode];
+    
     [multiBarcode setTintColor:[UIColor AL_NonSelectedToolBarItem]];
     [multiBarcode setOnTintColor:[UIColor AL_examplesBlue]];
     [multiBarcode useHighContrast];
-    [multiBarcode addTarget:self action:@selector(setMultiBarcode:) forControlEvents:UIControlEventValueChanged];
+    [multiBarcode addTarget:self action:@selector(switchMultiBarcode:) forControlEvents:UIControlEventValueChanged];
     [multiBarcode setOn:NO];
+    self.multiBarcode = multiBarcode;
     
     UILabel *multiBarcodeLabel = [[UILabel alloc] init];
     [self.view addSubview:multiBarcodeLabel];
@@ -128,11 +137,41 @@
     multiBarcodeLabel.font = [UIFont AL_proximaBoldWithSize:16];
     multiBarcodeLabel.textColor = [UIColor AL_White];
     multiBarcodeLabel.textAlignment = NSTextAlignmentRight;
+    
+    
+    //Setup Confirm Button
+    UIButton * scanButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50+bottomPadding)];
+    [self.scanView addSubview:scanButton];
+    [scanButton addTarget:self action:@selector(scanAction:) forControlEvents:UIControlEventTouchUpInside];
+    [scanButton setTitle:@"Scan" forState:UIControlStateNormal];
+    [scanButton.titleLabel setFont:[UIFont AL_proximaBoldWithSize:18]];
+    [scanButton.titleLabel setTextColor:[UIColor whiteColor]];
+    scanButton.backgroundColor = [UIColor AL_examplesBlue];
+    [scanButton.layer setCornerRadius:50/2];
+    [scanButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [scanButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    
+    NSArray *scanButtonConstraints = @[
+        [scanButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-horizontalPadding],
+        [scanButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:horizontalPadding],
+        [scanButton.heightAnchor  constraintEqualToConstant:50],
+        [scanButton.bottomAnchor  constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-30]
+    ];
+    [self.view addConstraints:scanButtonConstraints];
+    [NSLayoutConstraint activateConstraints:scanButtonConstraints];
+    scanButton.alpha = 0;
+    self.scanButton = scanButton;
 }
 
-- (IBAction)setMultiBarcode:(id)sender {
-    UISwitch * multiSwitch = sender;
-    self.barcodeScanPlugin.multiBarcode = multiSwitch.isOn;
+#pragma mark - IBAction methods
+
+- (void)scanAction:(id)sender {
+    [self showResultControllerWithResult:self.lastBarcodeResult];
+}
+
+- (IBAction)switchMultiBarcode:(id)sender {
+    BOOL multi = self.multiBarcode.isOn;
+    self.barcodeScanPlugin.multiBarcode = multi;
 }
 
 - (void)showSymbologySelector:(id)button {
@@ -171,6 +210,8 @@
     [self.barcodeScanViewPlugin stopAndReturnError:nil];
     usleep(200000);
 }
+
+
 - (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
     //Update Position of Warning Indicator
     [self updateWarningPosition:
@@ -183,30 +224,49 @@
 
 #pragma mark -- AnylineBarcodeModuleDelegate
 
-
 - (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info {
     if ([info.variableName isEqualToString:@"$brightness"]) {
         [self updateBrightness:[info.value floatValue] forModule:self.barcodeScanPlugin];
     }
+    
 }
 
-
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
+
+    self.lastBarcodeResult = scanResult;
     
-    NSMutableString * resultSring = [NSMutableString string];
-    [resultSring appendFormat:@"Results: %lu\n", (unsigned long)scanResult.result.count];
+    if(self.multiBarcode.isOn ) {
+        [self.fadeTimer invalidate];
+        
+        // show scan button
+        [UIView animateWithDuration:0.3 animations:^{ self.scanButton.alpha = 1; }];
+        
+        // fade away in 3 seconds
+        self.fadeTimer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:NO block:^(NSTimer * _Nonnull timer) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.scanButton.alpha = 0;
+            }];
+        }];
+        
+        return;
+    }
+    
+
+    [self showResultControllerWithResult:scanResult];
+}
+
+- (void)showResultControllerWithResult:(ALBarcodeResult*)scanResult {
+    
+    [self.barcodeScanPlugin stopAndReturnError:nil];
     
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     for (ALBarcode* barcodeResult in scanResult.result) {
-        NSString * value = barcodeResult.value;
-        [resultSring appendString:value];
-        [resultSring appendFormat:@"\n"];
         
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:barcodeResult.value shouldSpellOutValue:YES]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Format" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
     }
-
-    [self anylineDidFindResult:resultSring
+    
+    [self anylineDidFindResult:@""
                  barcodeResult:@""
                          image:scanResult.image
                     scanPlugin:self.barcodeScanPlugin
@@ -216,6 +276,7 @@
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
+    
 }
 
 @end

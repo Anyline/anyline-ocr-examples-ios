@@ -10,7 +10,7 @@
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
 
-@interface ALVerticalContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALVerticalContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *containerScanViewPlugin;
@@ -46,6 +46,7 @@
     
     self.containerScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.containerScanPlugin
                                                               scanViewPluginConfig:scanViewPluginConfig];
+    [self.containerScanViewPlugin addScanViewPluginDelegate:self];
     NSAssert(self.containerScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.containerScanViewPlugin];
@@ -82,6 +83,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.containerScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -94,6 +96,16 @@
  */
 - (void)startAnyline {
     [self startPlugin:self.containerScanViewPlugin];
+    self.startTime = CACurrentMediaTime();
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 
@@ -104,12 +116,11 @@
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
                didFindResult:(ALOCRResult *)result {
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result shouldSpellOutValue:YES]];
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.containerScanViewPlugin completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.containerScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result shouldSpellOutValue:YES]];
-        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

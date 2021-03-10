@@ -14,6 +14,7 @@
 #import "ALUtils.h"
 #import "NSManagedObjectContext+ALExamplesAdditions.h"
 #import "NSManagedObject+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 @interface WorkForceViewController ()
 
@@ -62,7 +63,8 @@
     self.orders = [[workForce.orders allObjects] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(orderNr)) ascending:YES]]];
     
     [self.workOrdersTableView registerNib:[UINib nibWithNibName:@"ReadingTableViewCell" bundle:nil] forCellReuseIdentifier:[ReadingTableViewCell reuseIdentifier]];
-    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     self.isSyncing = false;
 }
 

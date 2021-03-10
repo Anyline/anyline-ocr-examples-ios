@@ -33,6 +33,7 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 @property (nullable, nonatomic, strong) NSMutableArray<ALResultEntry *> *resultData;
 @property (nullable, nonatomic, strong) UIImage *frontScanImage;
 @property (nullable, nonatomic, strong) UIImage *backScanImage;
+@property (nullable, nonatomic, strong) UIImage *faceScanImage;
 @property (nullable, nonatomic, strong) NSTimer *scanTimeout;
 @property (nullable, nonatomic, strong) NSTimer *frontScanTimeout;
 @property (nullable, nonatomic, strong) GifuWrapper *gifImageView;
@@ -272,6 +273,7 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
         [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type] forFieldName:@"layoutDefinition.type" withOffset:0];
         
         self.frontScanImage = scanResult.image;
+        self.faceScanImage = [scanResult.result faceImage];
         
         [self prepareForBacksideScanning];
     }
@@ -320,8 +322,9 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 
     vc = [[ALResultViewController alloc] initWithResultData:self.resultData
                                                       image:self.frontScanImage
-                                         optionalImageTitle:@"ID Backside Image"
-                                              optionalImage:self.backScanImage];
+                                              optionalImage:self.backScanImage
+                                                  faceImage:self.faceScanImage
+                                       shouldShowDisclaimer:NO];
   
     [self.navigationController pushViewController:vc animated:YES];
     

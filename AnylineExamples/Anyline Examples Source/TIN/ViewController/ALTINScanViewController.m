@@ -15,7 +15,7 @@
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 
-@interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *tinScanViewPlugin;
@@ -49,6 +49,7 @@
     ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultTINConfig];
     viewPluginConfig.delayStartScanTime = 2000;
     self.tinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin scanViewPluginConfig:viewPluginConfig];
+    [self.tinScanViewPlugin addScanViewPluginDelegate:self];
     NSAssert(self.tinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
     
@@ -101,6 +102,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     CGFloat bottomPadding;
     if (@available(iOS 11, *)) {
         UIWindow *window = UIApplication.sharedApplication.keyWindow;
@@ -155,6 +157,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.tinScanViewPlugin stopAndReturnError:nil];
     [self enableLandscapeOrientation:NO];
 }
@@ -171,6 +174,15 @@
     [self startPlugin:self.tinScanViewPlugin];
 }
 
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    //Update Position of Warning Indicator
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
+}
+
 #pragma mark -- AnylineOCRModuleDelegate
 
 /*
@@ -181,10 +193,12 @@
     
     [self enableLandscapeOrientation:NO];
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number" value:result.result shouldSpellOutValue:YES]];
+    
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number" value:result.result shouldSpellOutValue:YES]];
+        
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

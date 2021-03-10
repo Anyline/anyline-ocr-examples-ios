@@ -123,6 +123,7 @@
  This is the main delegate method Anyline uses to report its results
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
+    //TODO: (RNR) convert this result to the json string so we have the same types across the scanmodes
     [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.scrabbleScanViewPlugin completion:^{
         [self stopAnyline];
         ALScrabbleViewController *vc = [[ALScrabbleViewController alloc] init];

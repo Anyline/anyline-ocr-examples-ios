@@ -30,6 +30,7 @@
 #import "ALIdentityDocumentsExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
+#import "ALLicensePlateExampleManager.h"
 
 @interface ALProductExampleManager ()
 
@@ -66,9 +67,9 @@
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
     
-    ALExample *licensePlateScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
-                                                                image:[UIImage imageNamed:@"tile_licenseplate"]
-                                                       viewController:[ALLicensePlateViewController class]];
+    ALExample *licensePlate = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
+                                                  image:[UIImage imageNamed:@"tile_licenseplate_old"]
+                                         viewController:[ALLicensePlateViewController class]];
     
     ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Maintenance, Repair & Operations", nil)
                                                   image:[UIImage imageNamed:@"tile_mro"]
@@ -84,7 +85,7 @@
     self.examples = @{
                       self.sectionNames[0] : @[barcodeScanning,identityDocuments,
                                                meterReading,
-                                               licensePlateScanning,
+                                               licensePlate,
                                                mro,
                                                others],
                       };

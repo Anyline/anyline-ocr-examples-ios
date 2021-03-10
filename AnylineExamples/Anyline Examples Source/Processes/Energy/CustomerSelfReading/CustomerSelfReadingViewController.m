@@ -14,6 +14,7 @@
 #import "ALUtils.h"
 #import "NSManagedObjectContext+ALExamplesAdditions.h"
 #import "NSManagedObject+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 #import "ALEnergyMeterScanViewController.h"
 
@@ -34,7 +35,8 @@
 
     self.navigationItem.leftItemsSupplementBackButton = YES;
     self.navigationItem.title = @"Self Reading";
-    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     [self.readingTableView registerNib:[UINib nibWithNibName:@"ReadingTableViewCell" bundle:nil] forCellReuseIdentifier:[ReadingTableViewCell reuseIdentifier]];
     
     self.csr = [[CustomerSelfReading findAllInContext:self.managedObjectContext] firstObject];

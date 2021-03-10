@@ -11,8 +11,6 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
-#import "Anyline/ALMeterScanPlugin.h"
-#import "Anyline/ALMeterScanViewPlugin.h"
 
 //#import "Anyline/AnylineLicensePlateModuleView.h"
 
@@ -33,7 +31,7 @@
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"License Plate";
+    self.title = @"EU License Plate";
     
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
@@ -42,6 +40,7 @@
     
     self.licensePlateScanPlugin = [[ALLicensePlateScanPlugin alloc] initWithPluginID:@"LICENSE_PLATE" delegate:self error:&error];
     NSAssert(self.licensePlateScanPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.licensePlateScanPlugin setScanMode:ALLicensePlateAuto error:nil];
     [self.licensePlateScanPlugin addInfoDelegate:self];
     
     
@@ -85,6 +84,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.licensePlateScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -118,13 +118,14 @@
 - (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *)anylineLicensePlateScanPlugin
                         didFindResult:(ALLicensePlateResult *)result {
     //build a string with country+result for the ScanHistory model -- if country==nil only take result
-    NSString *formattedScanResult = (result.country.length) ? [NSString stringWithFormat:@"%@-%@", result.country, result.result] : result.result;
-    [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
+    
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
         
+
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

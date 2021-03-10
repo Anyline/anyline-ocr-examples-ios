@@ -87,6 +87,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.barcodeScanViewPlugin stopAndReturnError:nil];
 }
 - (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
@@ -104,12 +105,11 @@
  The main delegate method Anyline uses to report its scanned codes
  */
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"PDF417" value:scanResult.result.firstObject.value]];
 
-    [self anylineDidFindResult:scanResult.result.firstObject.value barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"PDF417" value:scanResult.result.firstObject.value]];
-        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

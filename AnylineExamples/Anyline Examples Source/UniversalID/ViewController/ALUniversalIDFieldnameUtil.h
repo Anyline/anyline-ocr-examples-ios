@@ -12,6 +12,9 @@
 @interface ALUniversalIDFieldnameUtil : NSObject
 
 + (NSArray *)fieldNamesOrderArray;
++ (NSArray *)sortResultData:(NSArray *)resultData;
+
++ (NSArray *)sortResultDataUsingFieldNamesWithSpace:(NSArray *)resultData;
 
 + (NSMutableArray<ALResultEntry *> *)addIDSubResult:(ALUniversalIDIdentification*)identification titleSuffix:(NSString *)titleSuffix resultHistoryString:(NSMutableString *)resultHistoryString;
 + (NSString *)camelCaseToTitleCaseModified:(NSString *)inputString;

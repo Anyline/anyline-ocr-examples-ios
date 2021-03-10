@@ -8,7 +8,9 @@
 
 #import "ALBaseViewController.h"
 #import "Reachability.h"
+#import "ALPrivacyViewController.h"
 #import "UIViewController+ALExamplesAdditions.h"
+#import "ALDeviceInformationHelper.h"
 #import <WebKit/WebKit.h>
 #import <MessageUI/MessageUI.h>
 #import "UIColor+ALExamplesAdditions.h"
@@ -25,6 +27,7 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
 @implementation ALBaseViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -107,6 +110,12 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
         return NO;
     }
     
+    if ([URL.absoluteString localizedCaseInsensitiveContainsString:@"privacy-policy"]) {
+        ALPrivacyViewController *privacyViewController = [[ALPrivacyViewController alloc] init];
+        [self.navigationController pushViewController:privacyViewController animated:NO];
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -121,6 +130,27 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
 #pragma mark - Custom methods
 
 - (void)forgetMyDataPressed {
+    if (![MFMailComposeViewController canSendMail]) {
+        [self showAlertWithTitle:@"Mail Settings"
+                                    message:@"Please set up an email account in the Settings App"];
+        return;
+    }
+    MFMailComposeViewController* composeVC = [[MFMailComposeViewController alloc] init];
+    composeVC.mailComposeDelegate = self;
+    
+    // Configure the fields of the interface.
+    [composeVC setToRecipients:@[@"hello@anyline.com"]];
+    [composeVC setSubject:@"Forget my Data"];
+    
+    
+    NSString *mailTextStart = @"Hello,</br></br>===========================</br>Do not delete this text:";
+    NSString *mailTextEnd = @"===========================</br></br>Thank you";
+    
+    NSString *messageBody = [NSString stringWithFormat:@"%@</br><b>%@</b></br>%@", mailTextStart, [ALDeviceInformationHelper getUUID], mailTextEnd];
+    [composeVC setMessageBody:messageBody isHTML:YES];
+    
+    // Present the view controller modally.
+    [self presentViewController:composeVC animated:YES completion:nil];
 }
 
 

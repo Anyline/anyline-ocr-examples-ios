@@ -124,4 +124,7 @@
  */
 - (void)enableZoomPinchGesture:(BOOL)enabled;
 
+
+- (void)updatePolygons:(NSArray *)square forPluginID:(NSString *)pluginID;
+
 @end

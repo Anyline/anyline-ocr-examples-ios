@@ -33,12 +33,14 @@
 - (void)setSquare:(ALSquare * _Nullable)square forPluginID:(NSString * _Nonnull)pluginID;
 - (void)setPolygon:(ALPolygon * _Nullable)polygon forPluginID:(NSString * _Nonnull)pluginID;
 - (void)setContours:(NSArray * _Nullable)contours forPluginID:(NSString * _Nonnull)pluginID;
+- (void)setPolygons:(NSArray<ALSquare*>* _Nullable)polygons forPluginID:(NSString * _Nullable)pluginID;
 
 - (CGRect)cutoutForPluginID:(NSString *_Nonnull)pluginID;
 
 - (void)addCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
 
 - (void)removeCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
+
 
 
 @end

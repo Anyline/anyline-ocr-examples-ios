@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,10 +34,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnylineLogo" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-YK-qO1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnylineLogo" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-YK-qO1">
                     <rect key="frame" x="82.5" y="47" width="210.5" height="149"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="257" id="1ED-fS-JG1"/>
+                        <constraint firstAttribute="width" constant="210.5" id="B3J-B3-WMO"/>
+                        <constraint firstAttribute="height" constant="149" id="DmL-gr-ykV"/>
                         <constraint firstAttribute="height" constant="87" id="ecD-y5-Yka"/>
                     </constraints>
                     <variation key="default">
@@ -47,8 +50,8 @@
                     </variation>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="veT-rR-MUx">
-                    <rect key="frame" x="0.0" y="302" width="375" height="298"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="0.0" y="301" width="375" height="299"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cBF-9e-OZy"/>
@@ -56,19 +59,19 @@
                     </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workorders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5J-a5-Jg3">
-                    <rect key="frame" x="16" y="273" width="87" height="21"/>
+                    <rect key="frame" x="16" y="273" width="87" height="20"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Orders Synced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te1-2u-U2q">
-                    <rect key="frame" x="56" y="622.5" width="126.5" height="21"/>
+                    <rect key="frame" x="56" y="622.5" width="129" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="141" id="CMt-e9-6jF"/>
                         <constraint firstAttribute="height" constant="21" id="PwB-YH-eRP"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -76,7 +79,7 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMq-f8-RfV">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMq-f8-RfV">
                     <rect key="frame" x="325" y="618" width="34" height="30"/>
                     <state key="normal" title="Sync"/>
                     <state key="disabled" title="Syncing..."/>
@@ -85,17 +88,17 @@
                     </connections>
                 </button>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bAk-we-fLm">
-                    <rect key="frame" x="16" y="657" width="343" height="2"/>
+                    <rect key="frame" x="16" y="655" width="343" height="4"/>
                 </progressView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue round checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="smE-0e-Cma">
-                    <rect key="frame" x="16" y="619" width="28.000000000000014" height="28"/>
+                    <rect key="frame" x="16" y="619" width="28" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="28" id="MyC-ce-2Eg"/>
                         <constraint firstAttribute="height" constant="28" id="zgT-9O-1O4"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKFORCE TOOL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms9-sa-QhH">
-                    <rect key="frame" x="98" y="208" width="179.5" height="24.5"/>
+                    <rect key="frame" x="94.5" y="208" width="186.5" height="23.5"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -135,5 +138,11 @@
     <resources>
         <image name="AnylineLogo" width="210.5" height="149"/>
         <image name="blue round checkmark" width="49" height="49"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

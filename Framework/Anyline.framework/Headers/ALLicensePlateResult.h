@@ -14,6 +14,7 @@
  *  The country found on the license plate
  */
 @property (nullable, nonatomic, strong, readonly) NSString *country;
+@property (nullable, nonatomic, strong, readonly) NSString *area;
 
 
 - (instancetype _Nullable)initWithResult:(NSString * _Nonnull)result
@@ -21,6 +22,7 @@
                                fullImage:(UIImage * _Nullable)fullImage
                               confidence:(NSInteger)confidence
                                 pluginID:(NSString *_Nonnull)pluginID
-                                 country:(NSString * _Nullable)country;
+                                 country:(NSString * _Nullable)country
+                                    area:(NSString * _Nullable)area;
 
 @end

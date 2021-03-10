@@ -128,15 +128,11 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     [self startAnyline];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-
-}
-
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.serialComposite stopAndReturnError:nil];
 }
 
@@ -229,6 +225,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
 
 #pragma mark - Anyline Result Delegates
 - (void)anylineMeterScanPlugin:(ALMeterScanPlugin *)anylineMeterScanPlugin didFindResult:(ALMeterResult *)scanResult {
+    //TODO: (RNR) convert this result to the json string so we have the same types across the scanmodes
     [self anylineDidFindResult:scanResult.result barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin completion:^{
         [self displayReading:scanResult];
     }];

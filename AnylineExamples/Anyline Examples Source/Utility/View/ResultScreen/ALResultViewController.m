@@ -11,25 +11,24 @@
 #import "ALResultCell.h"
 #import "ALResultEntry.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "NSAttributedString+ALExamplesAdditions.h"
+#import "ALUniversalIDFieldnameUtil.h"
 
-NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
+static NSString *disclaimerString = @"The result fields above display a selection of scannable ID information only. Please review the documentation for a full list of scannable ID information.";
+static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentation.anyline.com/toc/products/id/index.html";
 
 @interface ALResultViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+
+@property (strong, nonatomic) NSArray *entryArray;
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property (strong, nonatomic) IBOutlet UIImageView *faceImageView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UILabel *resultTitle;
-@property (strong, nonatomic) IBOutlet UILabel *imageTitle;
-@property (strong, nonatomic) IBOutlet UILabel *alternativeImageText;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *firstImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *secondImageView;
+@property (strong, nonatomic) IBOutlet UITextView *disclaimerTextView;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
 
-//optional:
-@property (strong, nonatomic) IBOutlet UILabel *optionalTitleLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *optionalImageView;
-@property (strong, nonatomic) IBOutlet UILabel *alternativeOptionalImageText;
-
-@property (nonatomic) NSInteger cellHeight;
-@property (nonatomic) NSInteger tableHeight;
+@property (nonatomic, strong) NSLayoutConstraint *tableViewHeightConstraint;
 
 @end
 
@@ -39,193 +38,230 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image {
     return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
                                         image:image
-                           optionalImageTitle:nil
-                                optionalImage:nil];
+                                optionalImage:nil
+                                    faceImage:nil
+                         shouldShowDisclaimer:NO];
 }
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImageTitle:(NSString *)optTitle optionalImage:(UIImage *)optImage {
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+                             image:(UIImage *)image
+              shouldShowDisclaimer:(BOOL)shouldShow {
     return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
-                              image:image
-                 optionalImageTitle:optTitle
-                      optionalImage:optImage];
+                                        image:image
+                                optionalImage:nil
+                                    faceImage:nil
+                         shouldShowDisclaimer:shouldShow];
+}
+
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+                             image:(UIImage *)image
+                         faceImage:(UIImage *)faceImage
+              shouldShowDisclaimer:(BOOL)shouldShow {
+    return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
+                                        image:image
+                                optionalImage:nil
+                                    faceImage:faceImage
+                         shouldShowDisclaimer:shouldShow];
+}
+
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+                             image:(UIImage *)image
+                     optionalImage:(UIImage *)optImage
+              shouldShowDisclaimer:(BOOL)shouldShow {
+    return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
+                                        image:image
+                                optionalImage:optImage
+                                    faceImage:nil
+                         shouldShowDisclaimer:shouldShow];
+}
+
+- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+                             image:(UIImage *)image
+                     optionalImage:(UIImage *)optImage
+                         faceImage:(UIImage *)faceImage
+              shouldShowDisclaimer:(BOOL)shouldShow {
+    return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
+                                        image:image
+                                optionalImage:optImage
+                                    faceImage:faceImage
+                         shouldShowDisclaimer:shouldShow];
+}
+
+- (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
+                                       image:(UIImage *)image
+                               optionalImage:(UIImage *)optImage
+                                   faceImage:(UIImage *)faceImage {
+    return [self initWithResultDataDictionary:resultDataDictionary image:image optionalImage:optImage faceImage:faceImage shouldShowDisclaimer:NO];;
 }
 
 
 - (instancetype)initWithResultDataDictionary:(NSDictionary *)resultDataDictionary
                                        image:(UIImage *)image
-                          optionalImageTitle:(NSString *)optTitle
-                               optionalImage:(UIImage *)optImage {
+                               optionalImage:(UIImage *)optImage
+                                   faceImage:(UIImage *)faceImage
+                        shouldShowDisclaimer:(BOOL)shouldShow {
     self = [super init];
     if (self) {
-        _image = image;
+        _documentImage = image;
         _resultData = resultDataDictionary;
-        _optionalTitle = optTitle;
-        _optionalImage = optImage;
+        _documentBackImage = optImage;
+        _faceImage = faceImage;
+        _shouldShowDisclaimer = shouldShow;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGFloat padding = 10;
-    
     self.navigationItem.leftItemsSupplementBackButton = YES;
     self.navigationItem.title = @"Result Data";
-   
+    self.view.backgroundColor = [UIColor AL_BackgroundColor];
+    [self setupScrollView];
+    [self setupScrollViewContent];
+    [self setupConfirmButton];
+    [self setupContraints];
+}
 
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
-    CGFloat topPadding = window.safeAreaInsets.top;
-    CGFloat bottomPadding = window.safeAreaInsets.bottom;
-    CGFloat leftPadding = window.safeAreaInsets.left;
-    CGFloat rightPadding = window.safeAreaInsets.right;
-    
-    
+- (void)setupScrollView {
     //Setup Content ScrollView
-    self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
-                                                                            self.view.bounds.origin.y,
-                                                                            self.view.bounds.size.width,
-                                                                            self.view.bounds.size.height - self.confirmButton.frame.size.height)];
+    self.contentScrollView = [[UIScrollView alloc] init];
     self.contentScrollView.delegate = self;
     self.contentScrollView.showsVerticalScrollIndicator = YES;
     self.contentScrollView.scrollEnabled = YES;
     self.contentScrollView.userInteractionEnabled = YES;
-    if (@available(iOS 13.0, *)) {
-        self.contentScrollView.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-        self.contentScrollView.backgroundColor = [UIColor whiteColor];
-    }
-    //Add scrollView to viewController.view
+    self.contentScrollView.backgroundColor = [UIColor AL_BackgroundColor];
     [self.view addSubview:self.contentScrollView];
+    [self.contentScrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+}
+
+- (void)setupConfirmButton {
+    //Setup Confirm Button
+    self.confirmButton = [[UIButton alloc] init];
+    [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.confirmButton setTitle:@"Confirm" forState:UIControlStateNormal];
+    [self.confirmButton.titleLabel setFont:[UIFont AL_proximaBoldWithSize:18]];
+    [self.confirmButton.titleLabel setTextColor:[UIColor whiteColor]];
+    self.confirmButton.backgroundColor = [UIColor AL_examplesBlue];
+    [self.confirmButton.layer setCornerRadius:50/2];
+    [self.view addSubview:self.confirmButton];
+    [self.confirmButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+}
+
+- (void)setupScrollViewContent {
+    
+    self.faceImageView = [[UIImageView alloc] init];
+    self.faceImageView.image = self.faceImage;
+    
+    [self.contentScrollView addSubview:self.faceImageView];
+    [self.faceImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     //Setup TableView
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(leftPadding+padding, [self headerSize]+padding, self.view.frame.size.width, 300) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] init];
     [self.tableView registerClass:[ALResultCell class] forCellReuseIdentifier:@"alResultCell"];
     [self.tableView setSectionHeaderHeight:0];
     self.tableView.userInteractionEnabled = true;
-    self.tableView.scrollEnabled = false;
-    if (@available(iOS 13.0, *)) {
-        self.tableView.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-        self.tableView.backgroundColor = [UIColor whiteColor];
-    }
+    self.tableView.scrollEnabled = NO;
+    self.tableView.allowsSelection = NO;
+    self.tableView.backgroundColor = [UIColor AL_BackgroundColor];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.tableView.estimatedRowHeight = 60;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
     //Add view to scrollView
     [self.contentScrollView addSubview:self.tableView];
-    
-    //Setup Title Label for Image
-    self.imageTitle = [[UILabel alloc] initWithFrame:CGRectMake(padding,
-                                                                self.tableView.frame.origin.y + self.tableView.frame.size.height + padding,
-                                                                self.view.frame.size.width - padding*2,
-                                                                [self headerSize])];
-//    self.imageTitle.text = @"Control Image";
-    self.imageTitle.textAlignment = NSTextAlignmentLeft;
-    self.imageTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
-    //Add view to scrollView
-    [self.contentScrollView addSubview:self.imageTitle];
+    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     //Setup Image View
-    CGFloat imageViewWidth = self.view.frame.size.width-4*padding;
-    CGRect imageViewRect;
+    self.firstImageView = [[UIImageView alloc] init];
+    self.firstImageView.image = self.documentImage;
+    self.firstImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.contentScrollView addSubview:self.firstImageView];
+    [self.firstImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    if (self.image) {
-        imageViewRect = CGRectMake(padding*2, self.imageTitle.frame.origin.y + self.imageTitle.frame.size.height, imageViewWidth, imageViewWidth);
-        self.imageView = [[UIImageView alloc] initWithFrame:imageViewRect];
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        self.imageView.clipsToBounds = true;
-        self.imageView.image = _image;
+    //Setup Image View
+    self.secondImageView = [[UIImageView alloc] init];
+    self.secondImageView.image = self.documentBackImage;
+    self.secondImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.contentScrollView addSubview:self.secondImageView];
+    [self.secondImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    if (_shouldShowDisclaimer) {
+        self.disclaimerTextView = [[UITextView alloc] init];
+        [self setHyperlinkInsideTextView];
+        [self.disclaimerTextView setScrollEnabled:NO];
+        [self.disclaimerTextView setClipsToBounds:NO];
+        [self.disclaimerTextView setUserInteractionEnabled:YES];
+        [self.disclaimerTextView setEditable:NO];
+        [self.contentScrollView addSubview:self.disclaimerTextView];
+        [self.disclaimerTextView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    }
+}
 
-        //Resize imageView to fit image size
-        CGSize imageSize = [self onScreenPointSizeOfImageInImageView:self.imageView];
-        CGRect imageViewRect = self.imageView.frame;
-        //_image should not be nil, but if it is, we don't want to crash by setting the size to NaN
-        if (isnan(imageSize.height) || isnan(imageSize.width)) {
-            imageSize = CGSizeZero;
-        }
-        imageViewRect.size = imageSize;
-        self.imageView.frame = imageViewRect;
-        //Add view to scrollView
-        [self.contentScrollView addSubview:self.imageView];
-    } else {
-        //Setup alternative text label for Image
-        imageViewRect = CGRectMake(padding*2,
-                                   self.imageTitle.frame.origin.y + self.imageTitle.frame.size.height,
-                                   imageViewWidth,
-                                   50);
-        self.alternativeImageText = [[UILabel alloc] initWithFrame:imageViewRect];
-//        self.alternativeImageText.text = kResultViewControlerFieldNotAvailable;
-        self.alternativeImageText.textAlignment = NSTextAlignmentLeft;
-        self.alternativeImageText.font = [UIFont AL_proximaRegularWithSize:16];
-        //Add view to scrollView
-        [self.contentScrollView addSubview:self.alternativeImageText];
+- (void)setupContraints {
+    CGFloat verticalPadding = 10;
+    CGFloat horizontalPadding = 30;
+    NSMutableArray *constraints = @[[self.contentScrollView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                    [self.contentScrollView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+                                    [self.contentScrollView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]].mutableCopy;
+    NSLayoutYAxisAnchor *topTableVieWConstraints = self.contentScrollView.topAnchor;
+    if (self.faceImage) {
+        [constraints addObjectsFromArray:@[[self.faceImageView.topAnchor constraintEqualToAnchor:self.contentScrollView.topAnchor constant:verticalPadding],
+                                           [self.faceImageView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding],
+                                           [self.faceImageView.widthAnchor constraintLessThanOrEqualToConstant:100],
+                                           [self.faceImageView.heightAnchor constraintLessThanOrEqualToConstant:100]]];
+        topTableVieWConstraints = self.faceImageView.bottomAnchor;
     }
     
+    self.tableViewHeightConstraint = [self.tableView.heightAnchor constraintEqualToConstant:100];
+    [constraints addObjectsFromArray:@[[self.tableView.topAnchor constraintEqualToAnchor:topTableVieWConstraints constant:verticalPadding],
+                                       [self.tableView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:20],
+                                       [self.tableView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-20],
+                                       self.tableViewHeightConstraint,
+                                       [self.tableView.bottomAnchor constraintEqualToAnchor:self.firstImageView.topAnchor constant:-verticalPadding]]];
     
-    if (_optionalTitle) {
-        //Setup Title Label for Image
-        self.optionalTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding,
-                                                                    imageViewRect.origin.y + imageViewRect.size.height + padding,
-                                                                    self.view.frame.size.width - padding*2,
-                                                                    [self headerSize])];
+    CGFloat ratio = self.documentImage.size.height / self.documentImage.size.width;
+    CGFloat width = self.view.bounds.size.width-(horizontalPadding*2);
+    CGFloat height = width*ratio;
+    [constraints addObjectsFromArray:@[[self.firstImageView.topAnchor constraintEqualToAnchor:self.tableView.bottomAnchor constant:verticalPadding],
+                                       [self.firstImageView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding],
+                                       [self.firstImageView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-horizontalPadding],
+                                       [self.firstImageView.heightAnchor constraintLessThanOrEqualToConstant:isnan(height) ? 0 : height],
+                                       [self.firstImageView.widthAnchor constraintEqualToConstant:isnan(width) ? 0 : width],
+                                       [self.firstImageView.bottomAnchor constraintEqualToAnchor:self.secondImageView.topAnchor constant:-verticalPadding]]];
 
-//        self.optionalTitleLabel.text = self.optionalTitle;
-        self.optionalTitleLabel.textAlignment = NSTextAlignmentLeft;
-        self.optionalTitleLabel.font = [UIFont AL_proximaSemiboldWithSize:18];
-        //Add view to scrollView
-        [self.contentScrollView addSubview:self.optionalTitleLabel];
-    
-        if (_optionalImage) {
-            //Setup Image View
-            self.optionalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(padding*2,
-                                                                                   self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
-                                                                                   imageViewWidth,
-                                                                                   imageViewWidth)];
-            self.optionalImageView.contentMode = UIViewContentModeScaleAspectFit;
-            self.optionalImageView.image = _optionalImage;
-            //Resize imageView to fit image size
-            CGSize optionalImageSize = [self onScreenPointSizeOfImageInImageView:self.optionalImageView];
-            CGRect optionalImageViewRect = self.optionalImageView.frame;
-            optionalImageViewRect.size = optionalImageSize;
-            self.optionalImageView.frame = optionalImageViewRect;
-            //Add view to scrollView
-            [self.contentScrollView addSubview:self.optionalImageView];
-        } else {
-            //Setup alternative text label for Image
-            self.alternativeOptionalImageText = [[UILabel alloc] initWithFrame:CGRectMake(padding*2,
-                                                                                          self.optionalTitleLabel.frame.origin.y + self.optionalTitleLabel.frame.size.height,
-                                                                                          imageViewWidth,
-                                                                                          50)];
-//            self.alternativeOptionalImageText.text = kResultViewControlerFieldNotAvailable;
-            self.alternativeOptionalImageText.textAlignment = NSTextAlignmentLeft;
-            self.alternativeOptionalImageText.font = [UIFont AL_proximaRegularWithSize:16];
-            //Add view to scrollView
-            [self.contentScrollView addSubview:self.alternativeOptionalImageText];
-        }
-        
-//        [self.tableView layoutSubviews];
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 120.0;
+    ratio = self.documentBackImage.size.height / self.documentBackImage.size.width;
+    height = width*ratio;
+    NSLayoutAnchor *secondImageViewBottomAnchor = _shouldShowDisclaimer ? self.disclaimerTextView.topAnchor : self.contentScrollView.bottomAnchor;
+    [constraints addObjectsFromArray:@[[self.secondImageView.topAnchor constraintEqualToAnchor:self.firstImageView.bottomAnchor constant:verticalPadding],
+                                       [self.secondImageView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding],
+                                       [self.secondImageView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-horizontalPadding],
+                                       [self.secondImageView.heightAnchor constraintEqualToConstant:isnan(height) ? 0 : height],
+                                       [self.secondImageView.widthAnchor constraintEqualToAnchor:self.firstImageView.widthAnchor],
+                                       [self.secondImageView.bottomAnchor constraintEqualToAnchor:secondImageViewBottomAnchor constant:-verticalPadding]]];
+    if (_shouldShowDisclaimer) {
+        CGSize size = [self.disclaimerTextView sizeThatFits:CGSizeMake(width, 100)];
+        CGFloat disclaimerHeight = size.height;
+        [constraints addObjectsFromArray:@[[self.disclaimerTextView.topAnchor constraintEqualToAnchor:self.secondImageView.bottomAnchor constant:verticalPadding],
+                                           [self.disclaimerTextView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding],
+                                           [self.disclaimerTextView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-horizontalPadding],
+                                           [self.disclaimerTextView.bottomAnchor constraintEqualToAnchor:self.contentScrollView.bottomAnchor constant:-verticalPadding],
+                                           [self.disclaimerTextView.heightAnchor constraintEqualToConstant:disclaimerHeight]]];
     }
     
-    //Setup Confirm Button
-    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50+bottomPadding)];
-    [self.confirmButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmButton setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    [self.confirmButton.titleLabel setFont:[UIFont AL_proximaRegularWithSize:18]];
-    [self.confirmButton.titleLabel setTextColor:[UIColor whiteColor]];
-    self.confirmButton.backgroundColor = [UIColor AL_examplesBlue];
-    //Add button to viewController.view
-    [self.view addSubview:self.confirmButton];
+    [constraints addObjectsFromArray:@[[self.confirmButton.topAnchor constraintEqualToAnchor:self.contentScrollView.bottomAnchor constant:verticalPadding],
+                                       [self.confirmButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-horizontalPadding],
+                                       [self.confirmButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:horizontalPadding],
+                                       [self.confirmButton.heightAnchor constraintEqualToConstant:50],
+                                       [self.confirmButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-verticalPadding]]];
     
-    [self.confirmButton setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.confirmButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    NSArray *confirmButtonConstraints = @[[self.confirmButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
-                                          [self.confirmButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
-                                          [self.confirmButton.heightAnchor constraintEqualToConstant:50],
-                                          [self.confirmButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:0]];
-    [self.view addConstraints:confirmButtonConstraints];
-    [NSLayoutConstraint activateConstraints:confirmButtonConstraints];
+    
+    [self.view addConstraints:constraints];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -234,156 +270,44 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     self.navigationController.navigationBarHidden = NO;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    if (self.tableHeight < self.tableView.contentSize.height) {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width, self.tableHeight);
-            [self updateViewItemLayout];
-        } completion:^(BOOL finished) { }];
-        
-    }
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
 }
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    [self updateViewItemLayout];
-}
-
-
-- (void)updateViewItemLayout {
-    //Update Positions of subviews
-//    self.resultTitle.center = CGPointMake(self.view.center.x, self.resultTitle.center.y);
-    self.imageTitle.center = CGPointMake(self.view.center.x, self.imageTitle.center.y);
-    self.imageView.center = CGPointMake(self.view.center.x, self.imageView.center.y);
-    
-    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
-                                      self.tableView.frame.origin.y,
-                                      self.tableView.frame.size.width,
-                                      self.tableView.contentSize.height+[self headerSize]);
-    
-    
-    self.imageTitle.frame = CGRectMake(self.imageTitle.frame.origin.x,
-                                       self.tableView.frame.origin.y+self.tableView.frame.size.height,
-                                       self.imageTitle.frame.size.width,
-                                       self.imageTitle.frame.size.height);
-    
-    CGRect imageViewRect;
-    
-    if (self.imageView) {
-        imageViewRect = CGRectMake(self.imageView.frame.origin.x,
-                                   self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
-                                   self.imageView.frame.size.width,
-                                   self.imageView.frame.size.height);
-        self.imageView.frame = imageViewRect;
-    } else if (self.alternativeImageText) {
-        imageViewRect = CGRectMake(self.alternativeImageText.frame.origin.x,
-                                   self.imageTitle.frame.origin.y+self.imageTitle.frame.size.height,
-                                   self.alternativeImageText.frame.size.width,
-                                   self.alternativeImageText.frame.size.height);
-        self.alternativeImageText.frame = imageViewRect;
-    }
-    
-    CGFloat contentSizeHeight = self.imageView.frame.origin.y + self.imageView.frame.size.height;
-    
-    if (_optionalTitle) {
-        self.optionalTitleLabel.frame = CGRectMake(self.optionalTitleLabel.frame.origin.x,
-                                                   imageViewRect.origin.y+imageViewRect.size.height,
-                                                   self.optionalTitleLabel.frame.size.width,
-                                                   self.optionalTitleLabel.frame.size.height);
-        
-        CGRect optionalImageViewRect;
-        if (_optionalImage) {
-            self.optionalImageView.frame = CGRectMake(self.optionalImageView.frame.origin.x,
-                                                      self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
-                                                      self.optionalImageView.frame.size.width,
-                                                      self.optionalImageView.frame.size.height);
-            
-            self.optionalImageView.center = CGPointMake(self.contentScrollView.center.x, self.optionalImageView.center.y);
-            optionalImageViewRect = self.optionalImageView.frame;
-        } else {
-            self.alternativeOptionalImageText.frame = CGRectMake(self.alternativeOptionalImageText.frame.origin.x,
-                                                                 self.optionalTitleLabel.frame.origin.y+self.optionalTitleLabel.frame.size.height,
-                                                                 self.alternativeOptionalImageText.frame.size.width,
-                                                                 self.alternativeOptionalImageText.frame.size.height);
-            
-            self.alternativeOptionalImageText.center = CGPointMake(self.contentScrollView.center.x, self.alternativeOptionalImageText.center.y);
-            optionalImageViewRect = self.alternativeOptionalImageText.frame;
-        }
-        
-        //Update content size with optional imageView
-        contentSizeHeight = optionalImageViewRect.origin.y + (optionalImageViewRect.size.height *2);
-    }
-    
-    self.contentScrollView.contentSize = CGSizeMake(self.view.frame.size.width, contentSizeHeight);
-    
+    [self.tableView layoutIfNeeded];
+    self.tableViewHeightConstraint.constant = self.tableView.contentSize.height;
 }
 
 #pragma mark - UITableView methods
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-    return self.cellHeight;
-    
-//    return ((ALResultCell *)[self.tableView cellForRowAtIndexPath:indexPath]).cellHeight;
-}
-
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"alResultCell";
     ALResultCell *cell;
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[ALResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[ALResultCell alloc] init];
     }
     
     ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
-    if (@available(iOS 13.0, *)) {
-        cell.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-        cell.backgroundColor = [UIColor whiteColor];
-    }
+    cell.backgroundColor = [UIColor AL_BackgroundColor];
     [cell setResultEntry:entry];
-    [cell layoutSubviews];
-    self.cellHeight = cell.cellHeight;
-    self.tableHeight = self.tableHeight + self.cellHeight;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = 300;
+    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return [self.resultData  count];
     return [self.resultData[[[self.resultData allKeys] objectAtIndex:section]] count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    self.resultTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, [self headerSize])];
-//    self.resultTitle.text = [[self.resultData allKeys] objectAtIndex:section];
-//    self.resultTitle.textAlignment = NSTextAlignmentLeft;
-//    self.resultTitle.font = [UIFont AL_proximaSemiboldWithSize:18];
-    
-    
     UIWindow *window = UIApplication.sharedApplication.keyWindow;
     CGFloat topPadding = window.safeAreaInsets.top;
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, topPadding, self.view.frame.size.width, [self headerSize])];
-    if (@available(iOS 13.0, *)) {
-        view.backgroundColor = [UIColor systemBackgroundColor];
-//        self.resultTitle.backgroundColor = [UIColor systemBackgroundColor];
-    } else {
-        view.backgroundColor = [UIColor whiteColor];
-//        self.resultTitle.backgroundColor = [UIColor whiteColor];
-    }
-//    [view addSubview:self.resultTitle];
+    view.backgroundColor = [UIColor AL_BackgroundColor];
+    
     return view;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [self headerSize];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -391,12 +315,18 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 }
 
 #pragma mark - Utility methods
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return self.cellHeight;
-//}
 
 - (CGFloat)headerSize {
     return 7.0;
+}
+
+- (void)setHyperlinkInsideTextView {
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:disclaimerString];
+    NSRange linkRange = [[attString mutableString] rangeOfString:@"documentation"];
+    [attString addAttributes:@{NSLinkAttributeName : [NSURL URLWithString:WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID]} range:linkRange];
+    
+    [self.disclaimerTextView setAttributedText:[attString withFont:[UIFont AL_proximaRegularWithSize:16]]];
+    [self.disclaimerTextView setTextColor:[UIColor AL_LabelBlackWhite]];
 }
 
 #pragma mark - IBAction methods
@@ -404,30 +334,12 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(CGSize)onScreenPointSizeOfImageInImageView:(UIImageView *)imageView {
-    CGFloat scale;
-    if (imageView.frame.size.width > imageView.frame.size.height) {
-        if (imageView.image.size.width > imageView.image.size.height) {
-            scale = imageView.image.size.height / imageView.frame.size.height;
-        } else {
-            scale = imageView.image.size.width / imageView.frame.size.width;
-        }
-    } else {
-        if (imageView.image.size.width > imageView.image.size.height) {
-            scale = imageView.image.size.width / imageView.frame.size.width;
-        } else {
-            scale = imageView.image.size.height / imageView.frame.size.height;
-        }
-    }
-    return CGSizeMake(imageView.image.size.width / scale, imageView.image.size.height / scale);
-}
-
 - (BOOL)tableView:(UITableView*)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath*)indexPath withSender:(id)sender {
-
+    
     if (action == @selector(copy:)) {
         return YES;
     }
-
+    
     return NO;
 }
 
@@ -436,13 +348,12 @@ NSString * const kResultViewControlerFieldNotAvailable = @"Not Available";
 }
 
 -(void)tableView:(UITableView*)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath*)indexPath withSender:(id)sender {
-
+    
     UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
-
+    
     ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     
     pasteboard.string = entry.value;
 }
 
 @end
-            

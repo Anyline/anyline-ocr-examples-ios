@@ -87,6 +87,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.ibanScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -124,12 +125,11 @@
  This is the main delegate method Anyline uses to report its results
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
         [self stopAnyline];
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
-        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

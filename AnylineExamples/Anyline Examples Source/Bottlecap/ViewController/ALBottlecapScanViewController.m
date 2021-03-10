@@ -90,6 +90,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.bottlecapScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -112,11 +113,11 @@
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
                didFindResult:(ALOCRResult *)result {
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.bottlecapScanViewPlugin completion:^{
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Pepsi Code" value:result.result shouldSpellOutValue:YES]];
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.bottlecapScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Pepsi Code" value:result.result shouldSpellOutValue:YES]];
-        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

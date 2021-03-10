@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ALBarcodeTypes.h"
+#import "ALSquare.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,9 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSString * _Nonnull barcodeFormat;
 @property (nonatomic, copy,   readonly) NSString * _Nonnull value;
+@property (nonatomic, copy,   readonly) ALSquare * _Nullable coordinates;
 
 - (instancetype _Nonnull )initWithValue:(NSString * _Nonnull)value
                                  format:(NSString * _Nonnull)barcodeFormat;
+
+- (instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value
+                                format:(NSString * _Nonnull)barcodeFormat
+                           coordinates:(NSString * _Nonnull)coordinates;
 
 - (NSString * _Nonnull)toJSONString;
 

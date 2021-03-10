@@ -30,5 +30,7 @@
 + (UIColor *)AL_SegmentControlUnselected;
 + (UIColor *)AL_Separator;
 + (UIColor *)AL_BackButton;
++ (UIColor *)AL_NoResultLabel;
+
 
 @end

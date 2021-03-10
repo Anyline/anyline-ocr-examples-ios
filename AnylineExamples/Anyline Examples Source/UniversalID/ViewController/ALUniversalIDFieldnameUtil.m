@@ -15,58 +15,132 @@
 
 @implementation ALUniversalIDFieldnameUtil
 
++ (NSArray *)sortResultData:(NSArray *)resultData {
+    NSArray *priorityFieldsArray = [ALUniversalIDFieldnameUtil fieldNamesOrderArray];
+    NSArray *sortedArray = [resultData sortedArrayUsingComparator:^NSComparisonResult(ALResultEntry *entry1, ALResultEntry *entry2) {
+        NSUInteger index1 = [priorityFieldsArray indexOfObjectPassingTest:^BOOL(NSString *title, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [entry1.title localizedCaseInsensitiveContainsString:title];
+        }];
+        NSUInteger index2 = [priorityFieldsArray indexOfObjectPassingTest:^BOOL(NSString *title, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [entry2.title localizedCaseInsensitiveContainsString:title];
+        }];
+        if (index2 == index1) {
+            return (NSComparisonResult)NSOrderedSame;
+        } else if (index1 == NSNotFound && index2 != NSNotFound) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (index2 == NSNotFound && index1 != NSNotFound) {
+            return (NSComparisonResult)NSOrderedAscending;
+        } else if (index2 > index1) {
+            return (NSComparisonResult)NSOrderedAscending;
+        } else if (index1 > index2) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
+    return sortedArray;
+}
+
 + (NSArray *)fieldNamesOrderArray {
     NSArray *array = @[
+        @"name",
         @"surname",
-        @"givenNames",
         @"lastName",
+        @"givenNames",
         @"firstName",
         @"dateOfBirth",
+        @"placeOfBirth",
         @"dateOfIssue",
         @"dateOfExpiry",
         @"documentNumber",
         @"layoutDefinition.country",
-        @"layoutDefinition.type",
+        @"formattedDateOfBirth",
+        @"formattedDateOfIssue",
+        @"formattedDateOfExpiry",
     ];
     return [array copy];
 }
 
++ (NSArray *)fieldNamesWithSpaceOrderArray {
+    NSArray *array = @[
+        @"name",
+        @"surname",
+        @"lastName",
+        @"given Names",
+        @"first Name",
+        @"date Of Birth",
+        @"place Of Birth",
+        @"date Of Issue",
+        @"date Of Expiry",
+        @"document Number",
+        @"country",
+    ];
+    return [array copy];
+}
+
++ (NSArray *)sortResultDataUsingFieldNamesWithSpace:(NSArray *)resultData {
+    NSArray *priorityFieldsArray = [ALUniversalIDFieldnameUtil fieldNamesWithSpaceOrderArray];
+    NSArray *sortedArray = [resultData sortedArrayUsingComparator:^NSComparisonResult(ALResultEntry *entry1, ALResultEntry *entry2) {
+        NSUInteger index1 = [priorityFieldsArray indexOfObjectPassingTest:^BOOL(NSString *title, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [entry1.title localizedCaseInsensitiveContainsString:title];
+        }];
+        NSUInteger index2 = [priorityFieldsArray indexOfObjectPassingTest:^BOOL(NSString *title, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [entry2.title localizedCaseInsensitiveContainsString:title];
+        }];
+        if (index2 == index1) {
+            return (NSComparisonResult)NSOrderedSame;
+        } else if (index1 == NSNotFound && index2 != NSNotFound) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (index2 == NSNotFound && index1 != NSNotFound) {
+            return (NSComparisonResult)NSOrderedAscending;
+        } else if (index2 > index1) {
+            return (NSComparisonResult)NSOrderedAscending;
+        } else if (index1 > index2) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
+    return sortedArray;
+}
+
 + (NSMutableArray<ALResultEntry *> *)addIDSubResult:(ALUniversalIDIdentification*)identification titleSuffix:(NSString *)titleSuffix resultHistoryString:(NSMutableString *)resultHistoryString {
     
-    
+    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
     NSMutableArray<ALResultEntry *> *resultData = [[NSMutableArray alloc] init];
     
-    // Put all fieldNames containing "name" first for result screen
-    NSArray *fieldNameArray = [[identification fieldNames] sortedArrayUsingComparator:^NSComparisonResult (id obj1, id obj2) {
-            if ([obj1 isKindOfClass:[NSString class]] && [obj2 isKindOfClass:[NSString class]]) {
-                NSUInteger index1 = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:obj1];
-                NSUInteger index2 = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:obj2];
-                
-                if (index2 == index1) {
-                    return (NSComparisonResult)NSOrderedSame;
-                } else if (index1 == NSNotFound && index2 != NSNotFound) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (index2 == NSNotFound && index1 != NSNotFound) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                } else if (index2 > index1) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                } else if (index1 > index2) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                }
-            }
-         return (NSComparisonResult)NSOrderedSame;
-                
-    }];
-    NSMutableArray *fieldNames = [fieldNameArray mutableCopy];
+    NSMutableOrderedSet *baseSet = [NSMutableOrderedSet orderedSetWithArray:[ALUniversalIDFieldnameUtil fieldNamesOrderArray]];
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:[identification fieldNames]];
     
+    [baseSet unionOrderedSet:orderedSet];
+    
+    NSArray *fieldNames = [baseSet array];
+    NSArray *fieldsNamesWithSpace = [self fieldNamesWithSpaceOrderArray];
     
     [fieldNames enumerateObjectsUsingBlock:^(NSString *fieldName, NSUInteger idx, BOOL *stop) {
         NSString *fieldNameTitle = [NSString stringWithFormat:@"%@%@", [ALUniversalIDFieldnameUtil camelCaseToTitleCaseModified:fieldName], titleSuffix];
-        
-        if ([identification valueForField:fieldName] && [identification valueForField:fieldName].length > 0) {
-            if (![fieldName localizedCaseInsensitiveContainsString:@"String"] && ![fieldName localizedCaseInsensitiveContainsString:@"checkdigit"] && ![fieldName localizedCaseInsensitiveContainsString:@"confidence"] ) {
-                [resultData addObject:[[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]]];
+        if (![fieldName localizedCaseInsensitiveContainsString:@"String"] &&
+            ![fieldName localizedCaseInsensitiveContainsString:@"checkdigit"] &&
+            ![fieldName localizedCaseInsensitiveContainsString:@"confidence"] &&
+            [identification valueForField:fieldName] &&
+            [[[identification valueForField:fieldName] stringByTrimmingCharactersInSet: set] length] > 0) {
+            
+            if (![fieldName localizedCaseInsensitiveContainsString:@"formatted"]) {
+                __block ALResultEntry *newEntry = [[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]];
+                [fieldsNamesWithSpace enumerateObjectsUsingBlock:^(NSString  * _Nonnull fieldname, NSUInteger idx, BOOL * _Nonnull stop) {
+                    BOOL isMandatory = [fieldname localizedCaseInsensitiveCompare:newEntry.title] == NSOrderedSame;
+                    [newEntry setIsMandatory:isMandatory];
+                    *stop = isMandatory;
+                }];
+                [resultData addObject:newEntry];
+            } else {
+                [resultData enumerateObjectsUsingBlock:^(ALResultEntry * _Nonnull entry, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([[entry title] localizedCaseInsensitiveContainsString:[fieldNameTitle stringByReplacingOccurrencesOfString:@"Formatted " withString:@""]]) {
+                        [entry setValue:[identification valueForField:fieldName]];
+                    }
+                }];
             }
+            
             [resultHistoryString appendString:[NSString stringWithFormat:@"%@:%@\n", fieldNameTitle, [identification valueForField:fieldName]]];
         }
     }];

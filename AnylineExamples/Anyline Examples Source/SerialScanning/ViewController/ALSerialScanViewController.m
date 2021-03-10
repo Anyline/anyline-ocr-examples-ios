@@ -71,6 +71,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.serialScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -136,8 +137,12 @@
             }
         }
     }
-    //we could have any number of images, but ALResultViewController can handle at least one and at most two, so for simplicity let's show the first and last. 
-    ALResultViewController *vc = [[ALResultViewController alloc] initWithResultDataDictionary:resultDataDict image:lastImage optionalImageTitle:@"First scan image" optionalImage:firstImage];
+    //we could have any number of images, but ALResultViewController can handle at least one and at most two, so for simplicity let's show the first and last.
+    
+    ALResultViewController *vc = [[ALResultViewController alloc] initWithResultDataDictionary:resultDataDict
+                                                                                        image:lastImage
+                                                                                optionalImage:firstImage
+                                                                                    faceImage:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

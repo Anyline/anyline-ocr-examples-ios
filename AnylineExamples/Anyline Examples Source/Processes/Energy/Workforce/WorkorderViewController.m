@@ -14,6 +14,7 @@
 #import "ALMeterReading.h"
 #import "ALUtils.h"
 #import <Anyline/Anyline.h>
+#import "UIColor+ALExamplesAdditions.h"
 
 #import "ALEnergyMeterScanViewController.h"
 
@@ -47,7 +48,8 @@
     self.title = NSLocalizedString(@"Workorder", @"title");
     
     self.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Order #%d", @"title"), [self.order.orderNr intValue]];
-
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     self.customers = [[self.order.customers allObjects] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:NSStringFromSelector(@selector(meterID)) ascending:YES]]];
     
     [self.customerTableView registerNib:[UINib nibWithNibName:@"ReadingTableViewCell" bundle:nil] forCellReuseIdentifier:[ReadingTableViewCell reuseIdentifier]];

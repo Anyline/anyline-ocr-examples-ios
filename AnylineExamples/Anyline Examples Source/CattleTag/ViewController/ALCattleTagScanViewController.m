@@ -79,6 +79,7 @@
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.cattleTagScanViewPlugin stopAndReturnError:nil];
 }
 
@@ -100,12 +101,12 @@
  */
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
                didFindResult:(ALOCRResult *)result {
+    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Cattle Tag Number" value:result.result shouldSpellOutValue:YES]];
+    
     // We are done. Cancel scanning
-    [self anylineDidFindResult:result.result barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.cattleTagScanViewPlugin completion:^{
+    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.cattleTagScanViewPlugin completion:^{
         //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Cattle Tag Number" value:result.result shouldSpellOutValue:YES]];
-        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

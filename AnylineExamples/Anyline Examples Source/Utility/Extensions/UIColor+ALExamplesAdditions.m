@@ -78,4 +78,8 @@
     return  [UIColor colorNamed:@"AL_BackButton"];
 }
 
++ (UIColor *)AL_NoResultLabel {
+    return  [UIColor colorNamed:@"AL_NoResultLabel"];
+}
+
 @end
