@@ -121,8 +121,8 @@
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
-    
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
         //Display the result
         
 

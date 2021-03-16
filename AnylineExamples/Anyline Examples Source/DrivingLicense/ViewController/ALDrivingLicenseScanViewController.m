@@ -138,8 +138,8 @@
         [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country isMandatory:NO]];
         resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
-        
-        [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+        NSString *jsonString = [self jsonStringFromResultData:resultData];
+        [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
             
             ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImage:nil faceImage:[scanResult.result faceImage] shouldShowDisclaimer:YES];
             [self.navigationController pushViewController:vc animated:YES];
@@ -169,9 +169,9 @@
             [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories] isMandatory:NO]];
         }
         resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
-
+        NSString *jsonString = [self jsonStringFromResultData:resultData];
         
-        [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+        [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
 
             
 

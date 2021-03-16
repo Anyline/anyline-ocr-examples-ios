@@ -118,8 +118,9 @@
                didFindResult:(ALOCRResult *)result {
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Shipping Container Number" value:result.result shouldSpellOutValue:YES]];
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
     // We are done. Cancel scanning
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.containerScanViewPlugin completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.containerScanViewPlugin completion:^{
         //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

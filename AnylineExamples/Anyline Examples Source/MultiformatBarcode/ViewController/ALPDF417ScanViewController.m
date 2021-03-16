@@ -107,8 +107,8 @@
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"PDF417" value:scanResult.result.firstObject.value]];
-
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:^{
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineBarcodeScanPlugin viewPlugin:self.barcodeScanViewPlugin completion:^{
         //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];

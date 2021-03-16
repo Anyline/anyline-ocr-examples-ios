@@ -219,8 +219,8 @@ API_AVAILABLE(ios(13.0))
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:nfcResult.dataGroup1.nationality]];
         
         resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
-    
-        [self anylineDidFindResult:@"" barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
+        NSString *jsonString = [self jsonStringFromResultData:resultData];
+        [self anylineDidFindResult:jsonString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
             
             NSMutableDictionary *resultDataDict = [[NSMutableDictionary alloc] init];
             [resultDataDict setObject:resultData forKey:@"NFC"];

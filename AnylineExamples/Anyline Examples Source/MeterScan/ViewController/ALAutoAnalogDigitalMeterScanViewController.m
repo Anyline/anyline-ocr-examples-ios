@@ -189,8 +189,8 @@ static const NSInteger padding = 7;
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:scanResult.result]];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
-    
-    [self anylineDidFindResult:@"" barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
         //Display the result
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];

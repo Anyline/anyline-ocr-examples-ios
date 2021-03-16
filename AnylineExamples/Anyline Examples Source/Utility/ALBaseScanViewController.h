@@ -27,6 +27,8 @@
 
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule;
 
+- (NSString *)jsonStringFromResultData:(NSArray*)resultData;
+
 - (void)anylineDidFindResult:(NSString*)result
                barcodeResult:(NSString *)barcodeResult
                        image:(UIImage*)image

@@ -191,8 +191,9 @@
     
     [resultData addObjectsFromArray:vizResultData];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
     
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
                                                                                   image:scanResult.image

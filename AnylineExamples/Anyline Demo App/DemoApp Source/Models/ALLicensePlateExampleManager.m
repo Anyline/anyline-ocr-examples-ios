@@ -40,7 +40,6 @@
 
 
     self.sectionNames = @[@"License Plate"];
-    //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
     self.examples = [@{
                       self.sectionNames[0] : @[licensePlateEU, licensePlateUS],
     } mutableCopy];

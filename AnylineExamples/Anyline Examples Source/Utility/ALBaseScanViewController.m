@@ -56,6 +56,10 @@
     self.startTime = CACurrentMediaTime();
 }
 
+- (NSString *)jsonStringFromResultData:(NSArray*)resultData {
+    return @"";
+}
+
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule; {
     [self updateBrightness:brightness forModule:anylineModule ignoreTooDark:NO];
 }

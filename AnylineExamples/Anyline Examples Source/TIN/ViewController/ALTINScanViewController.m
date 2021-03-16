@@ -195,8 +195,8 @@
     // We are done. Cancel scanning
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number" value:result.result shouldSpellOutValue:YES]];
-    
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
         //Display the result
         
         

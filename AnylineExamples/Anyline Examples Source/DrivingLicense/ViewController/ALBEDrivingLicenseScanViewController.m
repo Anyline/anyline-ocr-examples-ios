@@ -120,8 +120,9 @@
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Categories" value:[identification categories]]];
     }
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
     
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.drivingLicenseScanViewPlugin completion:^{
         //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
                                                                                   image:scanResult.image

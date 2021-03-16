@@ -127,7 +127,8 @@
 - (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
-    [self anylineDidFindResult:@"" barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
         [self stopAnyline];
         //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];

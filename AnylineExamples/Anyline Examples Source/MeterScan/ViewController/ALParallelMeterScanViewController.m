@@ -213,9 +213,9 @@
     } else if (self.serialNumberResult) {
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Serial Number" value:self.barcodeResult shouldSpellOutValue:YES]];
     }
-    
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
     //stop scanning, since we don't need to scan the serial and the barcode, only one of them
-    [self anylineDidFindResult:@"" barcodeResult:self.barcodeResult image:self.meterImage scanPlugin:self.meterScanPlugin viewPlugin:self.parallelScanViewPlugin completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:self.meterImage scanPlugin:self.meterScanPlugin viewPlugin:self.parallelScanViewPlugin completion:^{
         //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:self.meterImage];
         NSError *error;

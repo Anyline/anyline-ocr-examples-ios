@@ -266,7 +266,8 @@
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
     }
     
-    [self anylineDidFindResult:@""
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:scanResult.image
                     scanPlugin:self.barcodeScanPlugin
