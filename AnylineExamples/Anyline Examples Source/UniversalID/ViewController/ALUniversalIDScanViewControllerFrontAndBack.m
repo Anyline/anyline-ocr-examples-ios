@@ -269,8 +269,8 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     
     if ([anylineIDScanPlugin.pluginID isEqualToString:kScanViewPluginFrontID]) {
         [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:self.resultHistoryString]];
-        [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country] forFieldName:@"layoutDefinition.country" withOffset:0];
-        [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type] forFieldName:@"layoutDefinition.type" withOffset:0];
+        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country]];
+        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type]];
         
         self.frontScanImage = scanResult.image;
         self.faceScanImage = [scanResult.result faceImage];
@@ -286,10 +286,9 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
         NSUInteger resultDataLength = [self.resultData count];
         [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@" Back" resultHistoryString:self.resultHistoryString]];
         NSUInteger resultDataLength2 = [self.resultData count];
-        NSUInteger resultDataDelta = (resultDataLength > 0) ? resultDataLength2 - resultDataLength : 0;
         
-        [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Country Back" value:layoutDefinition.country] forFieldName:@"layoutDefinition.country" withOffset:resultDataDelta];
-        [self addResultAtIndex:[[ALResultEntry alloc] initWithTitle:@"Detected Type Back" value:layoutDefinition.type] forFieldName:@"layoutDefinition.type" withOffset:resultDataDelta];
+        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country]];
+        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type]];
 
         self.backScanImage = scanResult.image;
         
