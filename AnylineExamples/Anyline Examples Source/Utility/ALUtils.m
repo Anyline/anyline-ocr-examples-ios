@@ -33,6 +33,14 @@
     return sharedInstance;
 }
 
+#pragma mark - Read Bundle files
++ (NSDictionary *)getInfoPlistWithName:(NSString*)name {
+    NSString *stringPath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:stringPath];
+    NSAssert(dictionary, @"ERROR - missing %@.plist file", name);
+    return dictionary;
+}
+
 #pragma mark - Mocked Reading Sync.
 + (void)syncReading:(Reading *)reading withBlock:(ALSyncBlock)block {
     // check if it's enabled for this target

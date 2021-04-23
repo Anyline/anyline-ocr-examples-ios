@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 * Cancels the asset update
 */
-- (void)cancelUpdate;
+- (void)cancel;
 
 /**
  Returns true if 'cancelUpdate' was called.
@@ -66,7 +66,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString * __nullable)reportingValues;
 
-- (NSString * )trainingID;
+- (NSString * __nullable)assetID;
+- (NSString * __nullable)projectID;
 
 @end
 

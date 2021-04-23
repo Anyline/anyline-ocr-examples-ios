@@ -12,6 +12,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALUniversalIDFieldnameUtil.h"
 #import "ALResultViewController.h"
+#import "ALTutorialViewController.h"
 
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
 @interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -32,6 +33,16 @@
     // Set the background color to black to have a nicer transition
     self.view.backgroundColor = [UIColor blackColor];
     self.title = (self.title && self.title.length > 0) ? self.title : @"MRZ";
+    
+    if (![[[NSBundle mainBundle] bundleIdentifier] localizedCaseInsensitiveContainsString:@"bundle"]) {
+        UIBarButtonItem *infoBarItem;
+        if (@available(iOS 13.0, *)) {
+            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"info.circle.fill"] style:UIBarButtonItemStylePlain target:self action:@selector(infoPressed:)];
+        } else {
+            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info"] style:UIBarButtonItemStylePlain target:self action:@selector(infoPressed:)];
+        }
+        self.navigationItem.rightBarButtonItem = infoBarItem;
+    }
     
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
@@ -135,6 +146,11 @@
 - (void)startAnyline {
     [self startPlugin:self.mrzScanViewPlugin];
     self.startTime = CACurrentMediaTime();
+}
+
+- (IBAction)infoPressed:(id)sender {
+    ALTutorialViewController *vc = [[ALTutorialViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark -- AnylineMRZModuleDelegate

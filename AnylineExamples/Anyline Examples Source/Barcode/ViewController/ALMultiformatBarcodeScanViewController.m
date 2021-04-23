@@ -15,9 +15,10 @@
 #import "UIFont+ALExamplesAdditions.h"
 #import "ALResultViewController.h"
 #import "UISwitch+ALExamplesAdditions.h"
+#import "ALRoundedView.h"
 
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
-@interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALScanViewPluginDelegate, ALSelectionTableDelegate>
+@interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALSelectionTableDelegate>
 // The Anyline plugin used to scan barcodes
 @property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
 @property (nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin;
@@ -29,7 +30,6 @@
 @property (nonatomic, strong) UIButton *scanButton;
 @property (nonatomic, strong) NSTimer *fadeTimer;
 @property (nonatomic, strong) UISwitch *multiBarcode;
-
 
 @property (nonatomic, strong) NSArray<NSString *> *defaultReadableSymbologies;
 
@@ -51,12 +51,12 @@
     
     //Add Barcode Scan Plugin (Scan Process)
     NSError *error = nil;
-
+    
     self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     [self.barcodeScanPlugin addInfoDelegate:self];
-        
+    
     self.defaultReadableSymbologies = [ALBarcodeFormatHelper defaultReadableName];
     
     //Set Barcode Formats
@@ -69,18 +69,26 @@
     config.scanFeedbackConfig.vibrateOnResult = NO;
     config.scanFeedbackConfig.blinkAnimationOnResult = NO;
     config.scanFeedbackConfig.beepOnResult = NO;
+    config.scanFeedbackConfig.strokeWidth = 3;
+    config.cutoutConfig.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    config.cutoutConfig.maxPercentWidth  = 1;
+    config.cutoutConfig.maxPercentHeight = 1;
+    config.cutoutConfig.widthPercent     = 1;
+    config.cutoutConfig.strokeColor = [UIColor clearColor];
+    config.cutoutConfig.feedbackStrokeColor = [UIColor clearColor];
+    config.cutoutConfig.usesAnimatedRect = YES;
+    
     
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:self.barcodeScanPlugin scanViewPluginConfig:config];
     NSAssert(self.barcodeScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     [self.barcodeScanViewPlugin addScanViewPluginDelegate:self];
     
-    
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.barcodeScanViewPlugin];
     [self.scanView.captureDeviceManager setValue:@(1) forKey:@"disableNative"];
     
-    
     [self.view addSubview:self.scanView];
+    
     [self.scanView startCamera];
     
     self.barcodeScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
@@ -111,10 +119,7 @@
     
     UIWindow *window = UIApplication.sharedApplication.keyWindow;
     CGFloat bottomPadding = window.safeAreaInsets.bottom;
-    CGFloat topPadding    = window.safeAreaInsets.top;
-    CGFloat rightPadding  = window.safeAreaInsets.right;
     CGFloat horizontalPadding = 30;
-    
     
     UISwitch *multiBarcode = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 70, 20, 70, 60)];
     [self.scanView addSubview:multiBarcode];
@@ -161,6 +166,12 @@
     [NSLayoutConstraint activateConstraints:scanButtonConstraints];
     scanButton.alpha = 0;
     self.scanButton = scanButton;
+    
+    ALRoundedView * feedback = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, frame.size.height/3, frame.size.width - 40, frame.size.height/3)];
+    feedback.borderColor  = [UIColor colorWithWhite:1 alpha:0.8];
+    feedback.borderWidth  = 2;
+    feedback.cornerRadius = 15;
+    [self.scanView addSubview:feedback];
 }
 
 #pragma mark - IBAction methods
@@ -176,7 +187,7 @@
 
 - (void)showSymbologySelector:(id)button {
     NSArray<NSString *> *selectedItems = [ALBarcodeFormatHelper readableNameForFormats:self.barcodeScanPlugin.barcodeFormatOptions];
-        
+    
     ALSelectionTable* table = [[ALSelectionTable alloc] initWithSelectedItems:selectedItems
                                                                      allItems:[ALBarcodeFormatHelper readableBarcodeNamesDict]
                                                                  headerTitles:[ALBarcodeFormatHelper readableHeaderArray]
@@ -191,7 +202,7 @@
 
 - (void)selectionTable:(ALSelectionTable *)selectionTable selectedItems:(NSArray<NSString *> *)selectedItems {
     [self.barcodeScanPlugin setBarcodeFormatOptions:[ALBarcodeFormatHelper
-                            formatsForReadableNames:selectedItems]];
+                                                     formatsForReadableNames:selectedItems]];
 }
 
 /*
@@ -228,40 +239,38 @@
     if ([info.variableName isEqualToString:@"$brightness"]) {
         [self updateBrightness:[info.value floatValue] forModule:self.barcodeScanPlugin];
     }
-    
 }
 
-- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
-
-    self.lastBarcodeResult = scanResult;
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin scannedBarcodes:(ALBarcodeResult*)scanResult {
+    // Enable this to see the barcode result on screen
+    // self.resultLabel.text = scanResult.barcodes.firstObject.value;
     
+    self.lastBarcodeResult = scanResult;
     if(self.multiBarcode.isOn ) {
         [self.fadeTimer invalidate];
-        
         // show scan button
         [UIView animateWithDuration:0.3 animations:^{ self.scanButton.alpha = 1; }];
-        
         // fade away in 3 seconds
         self.fadeTimer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:NO block:^(NSTimer * _Nonnull timer) {
             [UIView animateWithDuration:0.3 animations:^{
                 self.scanButton.alpha = 0;
             }];
         }];
-        
-        return;
+    } else {
+        [self showResultControllerWithResult:scanResult];
     }
-    
+}
 
-    [self showResultControllerWithResult:scanResult];
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
+    // Nothing to do there
+    // we get the results with anylineBarcodeScanPlugin:scannedBarcodes:
 }
 
 - (void)showResultControllerWithResult:(ALBarcodeResult*)scanResult {
-    
     [self.barcodeScanPlugin stopAndReturnError:nil];
     
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     for (ALBarcode* barcodeResult in scanResult.result) {
-        
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:barcodeResult.value shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
     }
@@ -277,7 +286,6 @@
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];
-    
 }
 
 @end

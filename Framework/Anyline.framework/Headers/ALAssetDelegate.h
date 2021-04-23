@@ -34,7 +34,7 @@
  * Callback after finishing downloading assets
  * @param assetsUpdated Returns true if the assets were updated successfully
  */
-- (void)assetUpdateFinished:(BOOL)assetsUpdated;
+- (void)assetUpdateFinished;
 
 
 @end

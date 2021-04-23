@@ -33,4 +33,6 @@
 + (UIColor *)AL_NoResultLabel;
 
 
++ (UIColor *)AL_colorWithHexString:(NSString *)hexString;
+
 @end

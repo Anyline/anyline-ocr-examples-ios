@@ -67,7 +67,7 @@
 
 @required
 /**
- *  Returns the scanned values
+ *  Returns every new barcode scanned by the plugin. Values that were already scanned will not be returned
  *
  *  @param anylineBarcodeScanPlugin The plugin
  *  @param scanResult The scanned values
@@ -75,8 +75,18 @@
  */
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*_Nonnull)scanResult;
 
-
 @optional
+
+/**
+ *  Returns the scanned barcodes of every frame
+ *
+ *  @param anylineBarcodeScanPlugin The plugin
+ *  @param scanResult The scanned values
+ *
+ */
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin scannedBarcodes:(ALBarcodeResult*_Nonnull)scanResult;
+
+
 /**
  *  Will be called as soon as the ALBarcodeFormatOptions of the scanPlugin have been modified.
  *

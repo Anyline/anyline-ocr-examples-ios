@@ -128,11 +128,15 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     [self startAnyline];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+}
+
 /*
  Cancel scanning to allow the module to clean up
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
     [self.serialComposite stopAndReturnError:nil];
 }
 
@@ -255,7 +259,7 @@ NSString * const kMeterScanPluginID = @"METER_READING";
 - (void)anylineCompositeScanPlugin:(ALAbstractScanViewPluginComposite *)anylineCompositeScanPlugin
                      didFindResult:(ALCompositeResult *)scanResult {
     //If you only need the final result, you can use this method
-    // ALCompositeResult *scanResult will contain one result per added scanViewPlugin. 
+    // ALCompositeResult *scanResult will contain one result per added scanViewPlugin.
 }
 
 #pragma mark - Anyline Utility Methods

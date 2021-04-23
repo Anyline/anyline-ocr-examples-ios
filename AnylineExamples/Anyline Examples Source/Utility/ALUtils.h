@@ -16,6 +16,8 @@ typedef void(^ALSyncBlock)(BOOL success);
 
 @interface ALUtils : NSObject
 
++ (NSDictionary *)getInfoPlistWithName:(NSString*)name;
+
 + (void)syncReading:(Reading *)reading withBlock:(ALSyncBlock)block;
 
 + (ALFlashMode)defaultFlashMode;

@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/ALAssetController.h</key>
 		<data>
-		eu+OW8hOMD/T60OUNPWDuC9iJFw=
+		CENSWUAXe5GU09rKspgvAuDl4d8=
 		</data>
 		<key>Headers/ALAssetDelegate.h</key>
 		<data>
-		Njk/hYkq7TunoPvHnjLWGCK1ftw=
+		NaCJdsJkaiBW4eXGviaUlD8Xta4=
 		</data>
 		<key>Headers/ALBarcode.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/ALBarcodeScanPlugin.h</key>
 		<data>
-		lV4VKiC4d8oad2RK03RWmlbO8Ic=
+		QlSeXu3xSAZsJ21OBxgOcEIWO6M=
 		</data>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>
 		<data>
@@ -395,14 +395,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VaBWwiO1eTs9+MmLEvw2g9TJ1Rlp1/0uUHOL73U0vEE=
+			EdGEL2OMDwuLQVAUjkvZQnCCrChSsW2Yu/iPt8Dul0w=
 			</data>
 		</dict>
 		<key>Headers/ALAssetDelegate.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MaNSwa6gQBIQwBqMX5qtgj/9mXxQlU3csm4Bw67Pg5w=
+			cPWealouTqTcAl80BxeTkrO4O/0UgtLolO7gwPdwXyc=
 			</data>
 		</dict>
 		<key>Headers/ALBarcode.h</key>
@@ -423,7 +423,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fSevjEYe3L4B4j/Im4o2w4yre7P1sEy+A6duCPIcL7c=
+			HiZNJAfRCFV9oZ4dp10s3d13bszlrv3qIm4eUeFSYgo=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>

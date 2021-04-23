@@ -115,11 +115,38 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     [super viewDidLoad];
     self.navigationItem.leftItemsSupplementBackButton = YES;
     self.navigationItem.title = @"Result Data";
+    UIBarButtonItem *shareBarItem;
+    
+    shareBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(askToShareItems:)];
+    [shareBarItem setTintColor:[UIColor AL_LabelBlackWhite]];
+
+    
+    self.navigationItem.rightBarButtonItem = shareBarItem;
     self.view.backgroundColor = [UIColor AL_BackgroundColor];
     [self setupScrollView];
     [self setupScrollViewContent];
     [self setupConfirmButton];
     [self setupContraints];
+}
+
+- (void)askToShareItems:(id)sender {
+    NSArray *resultDataArray = [self.resultData objectForKey:@"Result Data"];
+    NSMutableString *shareText = [NSMutableString stringWithString:@"Anyline Scanner Result\n\n"];
+    
+    for (ALResultEntry *entry in resultDataArray) {
+        [shareText appendFormat:@"%@: %@\n", entry.title, entry.value];
+    }
+    
+    UIActivityViewController *activityController =  [[UIActivityViewController alloc] initWithActivityItems:@[shareText, self.documentImage]
+                                                                                      applicationActivities:nil];
+    [activityController setValue:@"Anyline Scanner Result" forKey:@"Subject"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityController animated:YES completion:nil];
+    } else {
+        // Change Rect to position Popover
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityController];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
 }
 
 - (void)setupScrollView {

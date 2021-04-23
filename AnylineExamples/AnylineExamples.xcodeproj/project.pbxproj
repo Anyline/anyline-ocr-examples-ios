@@ -64,6 +64,7 @@
 		3F5D3D6335DD200637C834A9 /* ALSelectionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFBCB2ECDA30B85C2A54B48 /* ALSelectionTable.m */; };
 		3FD6E7E2F5050E4CE427F62F /* ALMeterReadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90082EB5EF42EDECAF5C0CA0 /* ALMeterReadingView.m */; };
 		406E5D4689D2162E66631DCF /* iban_config.json in Resources */ = {isa = PBXBuildFile; fileRef = C6710658F42970400FD78BD0 /* iban_config.json */; };
+		409F58D9331828393B73B29D /* ALTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */; };
 		4132425F48F3428439BDDBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF1D09EF06128D92632D6CB /* AppDelegate.m */; };
 		41EB653535CEAEE4A8E075C5 /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997B2A1F82805B0685BBA76E /* ALIBANScanViewController.m */; };
 		43634ADB573CB04CB232A831 /* ReadingTransformationPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEC72683D3FF92AF8DB9468 /* ReadingTransformationPolicy.m */; };
@@ -153,6 +154,7 @@
 		BF5534687932FF0FBC0742BB /* record_number_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 57B53E62AD3B670B163C3777 /* record_number_config.json */; };
 		BF6F82EFCC1CC484AB861FEF /* ALContainerScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F1BC85E70148A9D26AAE9 /* ALContainerScanViewController.m */; };
 		C170B4970555750081E80741 /* ALUniversalIDScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186AC71508B2BFEF5BB5537E /* ALUniversalIDScanViewController.m */; };
+		C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */; };
 		C42ACC412805B581937ABA15 /* ALScrabblePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D90102F4DB805B0DA85EC33 /* ALScrabblePoints.m */; };
 		C8302D96CB313E588383B035 /* container_scanner_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0DB9AD5AA0BBB178E0D2 /* container_scanner_capture_config.json */; };
 		C9E50E9B907B2A85325FE0A1 /* ALMeterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34760A85BED4BAACE6AEE1EB /* ALMeterCollectionViewController.m */; };
@@ -251,6 +253,7 @@
 		2AC802CBECE3BEC190BB90BC /* ALGridCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGridCollectionViewController.m; sourceTree = "<group>"; };
 		2AE01852827507975736BFED /* Customer+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Customer+CoreDataProperties.m"; sourceTree = "<group>"; };
 		2C08840AC53504FC564F74C4 /* ReadingTransformationPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTransformationPolicy.h; sourceTree = "<group>"; };
+		2C4BB2860826353A412BB303 /* ALHeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		2E8F1BC85E70148A9D26AAE9 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
 		2FC2BB5DD1BB6961AD1E9871 /* ALRBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRBScanViewController.h; sourceTree = "<group>"; };
@@ -299,6 +302,7 @@
 		5964989AD328FEB7B4A99F6D /* AnylineExamples.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnylineExamples.xcdatamodel; sourceTree = "<group>"; };
 		598D07C6130DFA2781497A50 /* ALResultEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultEntry.m; sourceTree = "<group>"; };
 		59F2143CC6945384EC804BA0 /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
+		5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTutorialViewController.m; sourceTree = "<group>"; };
 		5ABFBDA9A84B279E7614CE2D /* UIToolbar+ExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+ExamplesExtensions.h"; sourceTree = "<group>"; };
 		5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AnylineResources.bundle; sourceTree = "<group>"; };
 		5D734F16D23B623323CB450A /* ALOthersExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALOthersExampleManager.m; sourceTree = "<group>"; };
@@ -417,6 +421,7 @@
 		A680DA979CBA5B2D057A62BA /* WorkforceTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkforceTool.h; sourceTree = "<group>"; };
 		A69B1A2F844B7CED945DC4AF /* CustomerSelfReadingResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerSelfReadingResultViewController.xib; sourceTree = "<group>"; };
 		A701089685066A8503F97EB2 /* ALToggleControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALToggleControl.h; sourceTree = "<group>"; };
+		A715603292CC221B09D405FD /* ALTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTutorialViewController.h; sourceTree = "<group>"; };
 		A7D5F404BA40404FC2843ED9 /* ALUmbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUmbrella.h; sourceTree = "<group>"; };
 		A8CB4729C4A9C0FEBF226E57 /* ALScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScanResultViewController.m; sourceTree = "<group>"; };
 		AAC2E6C8E9E1996B60427EA3 /* CustomerSelfReadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSelfReadingViewController.h; sourceTree = "<group>"; };
@@ -510,6 +515,7 @@
 		F5F3F4D726FC915731B73AE3 /* ALDocumentScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDocumentScanViewController.m; sourceTree = "<group>"; };
 		F7151F89C55A657556691214 /* ScanHistory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F72E21F38E68BE8268DA8B75 /* ALVoucherCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVoucherCodeScanViewController.h; sourceTree = "<group>"; };
+		F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		F92107DB6698B83180CD5864 /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		FDCEFD699881115D834BAA3A /* ALDeviceInformationHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDeviceInformationHelper.m; sourceTree = "<group>"; };
 		FE8E97DFB75BB606736A5B8F /* ALBasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBasePageViewController.h; sourceTree = "<group>"; };
@@ -1128,10 +1134,14 @@
 			children = (
 				FE8E97DFB75BB606736A5B8F /* ALBasePageViewController.h */,
 				3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */,
+				2C4BB2860826353A412BB303 /* ALHeaderCollectionReusableView.h */,
+				F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */,
 				ECC67A6891F547B529598E5F /* ALMainPageViewController.h */,
 				30B76762D974C43BF0286E13 /* ALMainPageViewController.m */,
 				1DD08F40B6F0FE15D8F5D472 /* ALPrivacyForwardingViewController.h */,
 				FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */,
+				A715603292CC221B09D405FD /* ALTutorialViewController.h */,
+				5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */,
 				A7D5F404BA40404FC2843ED9 /* ALUmbrella.h */,
 				9E97F2F856C896EBAFEBFBBB /* AppDelegate.h */,
 				ACF1D09EF06128D92632D6CB /* AppDelegate.m */,
@@ -1569,6 +1579,7 @@
 				F64F0BED24A7FD29C86D25FA /* ALGermanIDFrontScanViewController.m in Sources */,
 				FDC12FEC02C4898E09BDA87B /* ALGridCollectionViewCell.m in Sources */,
 				3960189A0D924E92E93599B8 /* ALGridCollectionViewController.m in Sources */,
+				C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */,
 				41EB653535CEAEE4A8E075C5 /* ALIBANScanViewController.m in Sources */,
 				B4934189062336BC98D6B05D /* ALISBNAPI.m in Sources */,
 				841B7C06D4FA85F6D334580C /* ALISBNHeaderCell.m in Sources */,
@@ -1621,6 +1632,7 @@
 				4D515F3438EE08E225088CA7 /* ALTINScanViewController.m in Sources */,
 				3E02A9E81691C221D70DD201 /* ALTextViewCell.m in Sources */,
 				216AD56855460694DB2EAFD2 /* ALToggleControl.m in Sources */,
+				409F58D9331828393B73B29D /* ALTutorialViewController.m in Sources */,
 				253C818A2B144F00DB6636B0 /* ALUSLicensePlateViewController.m in Sources */,
 				122FC76CBA910344E10CA488 /* ALUniversalIDFieldnameUtil.m in Sources */,
 				C170B4970555750081E80741 /* ALUniversalIDScanViewController.m in Sources */,
@@ -1709,7 +1721,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1730,7 +1741,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "./Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 5;
@@ -1798,7 +1808,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1819,7 +1828,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "./Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 5;

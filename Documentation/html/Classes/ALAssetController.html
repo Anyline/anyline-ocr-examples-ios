@@ -60,6 +60,8 @@
 		
 		<option value="//api/name/assetService">assetService</option>
 		
+		<option value="//api/name/assetServiceQueue">assetServiceQueue</option>
+		
 		<option value="//api/name/isCanceled">isCanceled</option>
 		
 		<option value="//api/name/wrappedDelegate">wrappedDelegate</option>
@@ -76,7 +78,9 @@
 		
 		<option value="//api/name/assetFiles">- assetFiles</option>
 		
-		<option value="//api/name/cancelUpdate">- cancelUpdate</option>
+		<option value="//api/name/assetID">- assetID</option>
+		
+		<option value="//api/name/cancel">- cancel</option>
 		
 		<option value="//api/name/checkForUpdates">- checkForUpdates</option>
 		
@@ -103,8 +107,6 @@
 		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
 		
 		<option value="//api/name/throwIfNotActive">- throwIfNotActive</option>
-		
-		<option value="//api/name/trainingID">- trainingID</option>
 		
 		<option value="//api/name/updateAssets">- updateAssets</option>
 		
@@ -394,8 +396,8 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cancelUpdate" title="cancelUpdate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cancelUpdate">&ndash;&nbsp;cancelUpdate</a></code>
+	<a name="//api/name/cancel" title="cancel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
 </h3>
 
 	<div class="method-info">
@@ -410,7 +412,7 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)cancelUpdate</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
 
 		    
 			
@@ -590,8 +592,8 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/trainingID" title="trainingID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/trainingID">&ndash;&nbsp;trainingID</a></code>
+	<a name="//api/name/assetID" title="assetID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetID">&ndash;&nbsp;assetID</a></code>
 </h3>
 
 	<div class="method-info">
@@ -599,10 +601,80 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p><summary>
+Gets the asset ID.
+</summary></p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)trainingID</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)assetID</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/projectID" title="projectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/projectID">&ndash;&nbsp;projectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><summary>
+Gets the project ID.
+</summary></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)projectID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -643,49 +715,6 @@ Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWi
 			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *)assetFiles</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/projectID" title="projectID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/projectID">&ndash;&nbsp;projectID</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p><summary>
-Gets the project ID.
-</summary></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)projectID</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -792,6 +821,22 @@ Gets the project ID.
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetServiceQueue" title="assetServiceQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetServiceQueue">&nbsp;&nbsp;assetServiceQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, assign) dispatch_queue_t assetServiceQueue</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -807,7 +852,7 @@ Gets the project ID.
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-03-16</p>
+						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-04-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

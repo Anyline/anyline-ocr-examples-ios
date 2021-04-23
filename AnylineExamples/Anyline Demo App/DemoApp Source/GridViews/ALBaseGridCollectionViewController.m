@@ -22,13 +22,15 @@
 #import "ALNFCScanViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "ALHeaderCollectionReusableView.h"
 
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
+NSString * const headerViewReuseIdentifier = @"HeaderView";
 
 @interface ALBaseGridCollectionViewController ()
 
-@property (weak, nonatomic) IBOutlet UICollectionReusableView *headerView;
+@property (weak, nonatomic) IBOutlet ALHeaderCollectionReusableView *headerView;
 
 @end
 
@@ -38,6 +40,9 @@ NSString * const viewControllerIdentifier = @"gridViewController";
     [super viewDidLoad];
     self.title = NSLocalizedString(self.exampleManager.title, nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.collectionView registerClass:[ALHeaderCollectionReusableView class]
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                   withReuseIdentifier:headerViewReuseIdentifier];
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
     if (self.exampleManager) {
@@ -77,18 +82,17 @@ NSString * const viewControllerIdentifier = @"gridViewController";
                                  atIndexPath:(NSIndexPath *)indexPath {
     //todo: make this a custom class so we don't have to worry about adding subviews too many times
     int headerTag = 1337;
-    UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+    ALHeaderCollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                                      withReuseIdentifier:headerViewReuseIdentifier
+                                                                                             forIndexPath:indexPath];
     CGSize headerSize = [self headerSize];
 
     CGRect frame = [[UIScreen mainScreen] bounds];
     collectionView.frame = frame;
     if (self.header.superview != reusableView && [reusableView viewWithTag:headerTag] == nil) {
         if ([self.exampleManager numberOfSections] > 1) {
-            UIView *header = [self createHeaderViewWithTag:headerTag forSize:headerSize title:[self.exampleManager titleForSectionIndex:indexPath.section]];
-            [reusableView addSubview:header];
-            if (indexPath.section == 0) {
-                self.header = header;
-            }
+            NSString *title = [self.exampleManager titleForSectionIndex:indexPath.section];
+            reusableView.headerTitleLabel.text = title;
         } else if (_showLogo) {
         
             self.header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerSize.width, headerSize.height)];

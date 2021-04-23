@@ -43,6 +43,7 @@
 
 + (NSArray *)fieldNamesOrderArray {
     NSArray *array = @[
+        @"Face Match Level",
         @"name",
         @"surname",
         @"lastName",
@@ -63,6 +64,7 @@
 
 + (NSArray *)fieldNamesWithSpaceOrderArray {
     NSArray *array = @[
+        @"Face Match Level",
         @"name",
         @"surname",
         @"lastName",

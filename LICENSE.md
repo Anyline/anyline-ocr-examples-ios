@@ -126,15 +126,14 @@ You may revoke your consent to this Privacy Policy for process of your data in t
 1. JSON-CPP
 2. Easylogging++
 3. OpenCV
-4. Tesseract
-5. Leptonica
-6. ZXING
-7. libJPEG
-8. zlib
-9. TensorFlow
-10. BearSSL
-11. FlatBuffer
-12. Eigen
+4. Leptonica
+5. ZXING
+6. libJPEG
+7. zlib
+8. TensorFlow
+9. BearSSL
+10. FlatBuffer
+11. Eigen
 
 ### JSON-CPP ###
 
@@ -217,21 +216,6 @@ loss of use, data, or profits; or business interruption) however caused
 and on any theory of liability, whether in contract, strict liability,
 or tort (including negligence or otherwise) arising in any way out of
 the use of this software, even if advised of the possibility of such damage.
-
-
-### Tesseract ###
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 
 
 ### Leptonica ###
