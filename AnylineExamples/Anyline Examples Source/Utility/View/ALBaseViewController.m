@@ -112,6 +112,7 @@ NSString * const kForgetMeLinkString = @"hello@anyline.com";
     
     if ([URL.absoluteString localizedCaseInsensitiveContainsString:@"privacy-policy"]) {
         ALPrivacyViewController *privacyViewController = [[ALPrivacyViewController alloc] init];
+        [privacyViewController setFileName:@"Anyline App Privacy Policy"];
         [self.navigationController pushViewController:privacyViewController animated:NO];
         return NO;
     }

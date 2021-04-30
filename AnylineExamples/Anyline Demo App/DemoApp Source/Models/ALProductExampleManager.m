@@ -58,7 +58,7 @@
                                                   viewController:[ALMultiformatBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
-                                               image:[UIImage imageNamed:@"tile_identitydocuments"]
+                                               image:[UIImage imageNamed:@"tile_identitydocuments_NEW"]
                                       viewController:[ALGridCollectionViewController class]
                                       exampleManager:[ALIdentityDocumentsExampleManager class]];
     
@@ -84,7 +84,8 @@
     
     self.sectionNames = @[@"Products",];
     self.examples = @{
-                      self.sectionNames[0] : @[barcodeScanning,identityDocuments,
+                      self.sectionNames[0] : @[barcodeScanning,
+                                               identityDocuments,
                                                meterReading,
                                                licensePlate,
                                                mro,

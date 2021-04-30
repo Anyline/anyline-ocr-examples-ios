@@ -52,8 +52,8 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
                                                        image:[UIImage imageNamed:@"tile_universalid"]
                                               viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
-    //TODO: (PM) temporarily disabled due to OTA changes (R30 / 2021/04/15)
-    self.canUpdate = NO;
+    
+    self.canUpdate = YES;
     
     ALExample *drivingLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driver's License", nil)
                                                        image:[UIImage imageNamed:@"tile_driverslicense"]
@@ -82,12 +82,12 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
                                                             image:[UIImage imageNamed:@"tile_nfc"]
                                                    viewController:[ALNFCScanViewController class]];
 
-    self.sectionNames = @[@"Universal ID", @"Available ID types", @"Technology showcase"];
+    self.sectionNames = @[@"Universal ID", @"Technology showcase", @"Available ID types"];
     //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
     self.examples = [@{
                       self.sectionNames[0] : @[universalID],
-                      self.sectionNames[1] : @[drivingLicenseScanning, passportScanning, idCardScanning],
-                      self.sectionNames[2] : @[nfcScanning, pdf417Scanning,mrzScanning]
+                      self.sectionNames[1] : @[nfcScanning, pdf417Scanning,mrzScanning],
+                      self.sectionNames[2] : @[drivingLicenseScanning, passportScanning, idCardScanning],
     } mutableCopy];
     
 }

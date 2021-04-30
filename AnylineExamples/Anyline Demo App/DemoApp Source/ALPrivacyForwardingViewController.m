@@ -34,9 +34,9 @@
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     
-    if ([URL.scheme localizedCaseInsensitiveContainsString:@"privacy-policy"]) {
+    if ([URL.absoluteString localizedCaseInsensitiveContainsString:@"privacy-policy"]) {
         ALPrivacyViewController *privacyViewController = [[ALPrivacyViewController alloc] init];
-        
+        [privacyViewController setFileName:@"Anyline App Privacy Policy"];
         [self.navigationController pushViewController:privacyViewController animated:NO];
         return false;
     } else {

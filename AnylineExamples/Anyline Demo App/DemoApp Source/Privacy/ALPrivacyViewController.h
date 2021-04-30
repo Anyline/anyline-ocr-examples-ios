@@ -10,4 +10,6 @@
 
 @interface ALPrivacyViewController : ALPrivacyForwardingViewController
 
+@property (nonatomic, strong) NSString *fileName;
+
 @end

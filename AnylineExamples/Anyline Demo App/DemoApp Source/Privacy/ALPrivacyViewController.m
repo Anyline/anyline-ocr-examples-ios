@@ -20,6 +20,7 @@
 typedef void (^CompletionBlock)(void);
 
 NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en/";
+NSString * const kBaseFileName = @"DataProcessingConsent";
 
 @interface ALPrivacyViewController () <MFMailComposeViewControllerDelegate, UITextViewDelegate>
 
@@ -28,9 +29,9 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
 @property (nonatomic, strong) UIButton *confirmButton;
 @property (nonatomic, copy) CompletionBlock completionBlock;
 
-//@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *controlElementsView;
 @property (nonatomic, strong) UITextView *privacyPolicyTextView;
+@property (nonatomic, assign) BOOL isBaseFile;
 
 @end
 
@@ -39,27 +40,45 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    self.title = @"Privacy Policy";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
+    
+    self.privacyLabel = [[UILabel alloc] init];
+    if (!self.fileName) {
+        self.title = @"Privacy Policy & Data Processing";
+        self.privacyLabel.text = @"Privacy Policy and\nData Processing Consent";
+        self.isBaseFile = YES;
+        self.fileName = kBaseFileName;
+    } else {
+        self.title = @"Privacy Policy";
+        self.privacyLabel.text = @"Privacy Policy";
+    }
+    
     self.view.backgroundColor = [UIColor AL_BackgroundColor];
     
     BOOL wasAccepted = [NSUserDefaults AL_dataPolicyAccepted];
     
-    self.navigationItem.hidesBackButton = !wasAccepted;
+    self.navigationItem.hidesBackButton = !wasAccepted && self.isBaseFile;
     
     // disable the interactivePopGestureRecognizer
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
-    self.privacyLabel = [[UILabel alloc] init];
-    self.privacyLabel.text = @"Privacy Policy"; //barcode screen has no title
+    
+    
     self.privacyLabel.numberOfLines = 0;
     self.privacyLabel.font = [UIFont AL_proximaBoldWithSize:24];
     self.privacyLabel.textAlignment = NSTextAlignmentLeft;
     self.privacyLabel.textColor = [UIColor AL_examplesBlue];
+    NSMutableAttributedString *mutableAttString = [[NSMutableAttributedString alloc] initWithString:self.privacyLabel.text attributes:@{NSFontAttributeName:self.privacyLabel.font}];
+    NSRange range = [mutableAttString.mutableString rangeOfString:@"Data Processing Consent" options:NSCaseInsensitiveSearch];
+    [mutableAttString addAttributes:@{NSForegroundColorAttributeName:[UIColor AL_LabelBlackWhite]} range:range];
+    [self.privacyLabel setAttributedText:mutableAttString];
+    
     [self.view addSubview:self.privacyLabel];
     [self.privacyLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    self.privacyPolicyTextView = [self textViewWithTextFromRTF:@"Anyline App Privacy Policy" sideMargin:5 onView:self.view];
+    self.privacyPolicyTextView = [self textViewWithTextFromRTF:self.fileName sideMargin:5 onView:self.view];
     
     self.privacyPolicyTextView.attributedText = [self.privacyPolicyTextView.attributedText withFont:[UIFont AL_proximaRegularWithSize:16]];
     [self.privacyPolicyTextView setDelegate:self];
@@ -73,34 +92,10 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     [self.view addSubview:self.controlElementsView];
     self.controlElementsView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.confirmButton = [UIButton roundedButton];
     
+    [self setupAcceptButton:wasAccepted];
     
-    self.confirmButton.center = CGPointMake(self.view.center.x, self.confirmButton.center.y);
-    [self.confirmButton setTitle:@"Continue" forState:UIControlStateNormal];
-    [self.confirmButton addTarget:self action:@selector(onContinue:) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmButton setEnabled:wasAccepted];
-    self.confirmButton.backgroundColor = [self buttonColorForEnabled:wasAccepted];
-    
-    
-    [self.controlElementsView addSubview:self.confirmButton];
-    self.confirmButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    
-    self.cbox = [[ALCheckbox alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, self.confirmButton.frame.origin.y - 30 , self.view.frame.size.width/2+10, 20)];
-    [self.controlElementsView addSubview:self.cbox];
-    [self.cbox setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.cbox.text = @"I accept the Data Privacy Policy";
-    self.cbox.showTextLabel = YES;
-    self.cbox.labelFont = [UIFont AL_proximaRegularWithSize:12];
-    self.cbox.isChecked = wasAccepted;
-    [self.cbox addTarget:self action:@selector(checkAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    if (@available(iOS 13.0, *)) {
-        self.cbox.labelTextColor = [UIColor labelColor];
-    } else {
-        self.cbox.labelTextColor = [UIColor blackColor];
-    }
+    [self setupCheckbox:wasAccepted];
     
     self.privacyPolicyTextView.scrollEnabled = YES;
     
@@ -121,7 +116,7 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
                                        [self.privacyPolicyTextView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-15],
                                        bottomPrivacyConstraint]];
     
-    if (![NSUserDefaults AL_dataPolicyAccepted]) {
+    if (![NSUserDefaults AL_dataPolicyAccepted] && self.isBaseFile) {
         [constraints addObjectsFromArray:@[[self.controlElementsView.topAnchor constraintEqualToAnchor:self.privacyPolicyTextView.bottomAnchor],
                                            [self.controlElementsView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
                                            [self.controlElementsView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
@@ -167,7 +162,8 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
     
     NSURL *aboutTextURL = [NSBundle.mainBundle URLForResource:fileName withExtension:@"rtf"];
     if (aboutTextURL) {
-        aboutTextView.editable = true;
+        aboutTextView.delegate = self;
+        aboutTextView.editable = false;
         aboutTextView.userInteractionEnabled = true;
         NSAttributedString *text = [[[NSAttributedString alloc] initWithURL:aboutTextURL options:@{NSDocumentTypeDocumentOption:NSRTFTextDocumentType} documentAttributes:nil error:nil] withSystemColors];
         
@@ -180,39 +176,35 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
 }
 
 - (void)setupCheckbox:(BOOL)wasAccepted {
-    self.cbox = [[ALCheckbox alloc] init];
-    
-    self.cbox.text = @"I accept the Data Privacy Policy";
+    self.cbox = [[ALCheckbox alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, self.confirmButton.frame.origin.y - 30 , self.view.frame.size.width/2+10, 20)];
+    [self.controlElementsView addSubview:self.cbox];
+    [self.cbox setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.cbox.text = @"I expressly consent";
     self.cbox.showTextLabel = YES;
     self.cbox.labelFont = [UIFont AL_proximaRegularWithSize:12];
     self.cbox.isChecked = wasAccepted;
+    [self.cbox addTarget:self action:@selector(checkAction:) forControlEvents:UIControlEventTouchUpInside];
     
     if (@available(iOS 13.0, *)) {
         self.cbox.labelTextColor = [UIColor labelColor];
     } else {
         self.cbox.labelTextColor = [UIColor blackColor];
     }
-    
-    [self.cbox addTarget:self action:@selector(checkAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.cbox];
-    [self.cbox setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view bringSubviewToFront:self.cbox];
 }
 
 - (void)setupAcceptButton:(BOOL)wasAccepted {
-//    self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(30, self.view.frame.size.height-bottomPadding-50, ((self.view.bounds.size.width)-60), 40)];
-    self.confirmButton = [[UIButton alloc] init];
-    self.confirmButton.center = CGPointMake(self.view.center.x, self.confirmButton.center.y);
+    self.confirmButton = [UIButton roundedButton];
     
-    self.confirmButton.titleLabel.font = [UIFont AL_proximaRegularWithSize:18];
+    
+    self.confirmButton.center = CGPointMake(self.view.center.x, self.confirmButton.center.y);
     [self.confirmButton setTitle:@"Continue" forState:UIControlStateNormal];
+    [self.confirmButton addTarget:self action:@selector(onContinue:) forControlEvents:UIControlEventTouchUpInside];
     [self.confirmButton setEnabled:wasAccepted];
     self.confirmButton.backgroundColor = [self buttonColorForEnabled:wasAccepted];
-    [self.confirmButton addTarget:self action:@selector(onContinue:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:self.confirmButton];
-    [self.confirmButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self.controlElementsView addSubview:self.confirmButton];
+    self.confirmButton.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)checkAction:(id)sender {
@@ -246,6 +238,20 @@ NSString * const ALDataPrivacyFileLink = @"https://anyline.com/privacy-policy-en
         [self dismissViewControllerAnimated:wasAccepted completion:nil];
     }
     
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
+    
+    if ([URL.absoluteString localizedCaseInsensitiveContainsString:@"privacy-policy"]) {
+        ALPrivacyViewController *privacyViewController = [[ALPrivacyViewController alloc] init];
+        [privacyViewController setFileName:@"Anyline App Privacy Policy"];
+        [self.navigationController pushViewController:privacyViewController animated:NO];
+        return false;
+    } else {
+        return true;
+    }
 }
 
 @end
