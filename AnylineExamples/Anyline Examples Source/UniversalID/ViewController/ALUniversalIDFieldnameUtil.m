@@ -130,7 +130,7 @@
             if (![fieldName localizedCaseInsensitiveContainsString:@"formatted"]) {
                 __block ALResultEntry *newEntry = [[ALResultEntry alloc] initWithTitle:fieldNameTitle value:[identification valueForField:fieldName]];
                 [fieldsNamesWithSpace enumerateObjectsUsingBlock:^(NSString  * _Nonnull fieldname, NSUInteger idx, BOOL * _Nonnull stop) {
-                    BOOL isMandatory = [fieldname localizedCaseInsensitiveCompare:newEntry.title] == NSOrderedSame;
+                    BOOL isMandatory = [newEntry.title localizedCaseInsensitiveContainsString:fieldname];
                     [newEntry setIsMandatory:isMandatory];
                     *stop = isMandatory;
                 }];

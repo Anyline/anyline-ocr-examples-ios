@@ -1,9 +1,9 @@
 //
-//  ScanHistory.h
+//  ScanHistory+CoreDataClass.h
 //  AnylineExamples
 //
-//  Created by Daniel Albertini on 13/05/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
+//  Created by Renato Neves Ribeiro on 28.03.21.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -56,10 +56,18 @@ extern NSString * _Nonnull const ALScanHistoryType_toString[];
 
 @interface ScanHistory : NSManagedObject
 
+//+ (ScanHistory *)insertNewObjectWithType:(ALScanHistoryType)type
+//                                  result:(NSString *)result
+//                           barcodeResult:(NSString *)barcodeResult
+//                                   image:(UIImage *)image
+//                  inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+//                                   error:(NSError **)error;
+
 + (ScanHistory *)insertNewObjectWithType:(ALScanHistoryType)type
                                   result:(NSString *)result
                            barcodeResult:(NSString *)barcodeResult
-                                   image:(UIImage *)image
+                               faceImage:(UIImage *)faceImage
+                                  images:(NSArray *)images
                   inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
                                    error:(NSError **)error;
 

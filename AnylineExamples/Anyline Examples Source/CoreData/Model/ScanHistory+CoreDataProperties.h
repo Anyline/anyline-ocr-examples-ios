@@ -2,24 +2,25 @@
 //  ScanHistory+CoreDataProperties.h
 //  AnylineExamples
 //
-//  Created by Daniel Albertini on 13/05/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
+//  Created by Renato Neves Ribeiro on 28.03.21.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
-#import "ScanHistory.h"
+#import "ScanHistory+CoreDataClass.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ScanHistory (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *timestamp;
-@property (nullable, nonatomic, retain) NSNumber *type;
-@property (nullable, nonatomic, retain) NSString *result;
-@property (nullable, nonatomic, retain) NSData *image;
-@property (nullable, nonatomic, retain) NSString *barcodeResult;
++ (NSFetchRequest<ScanHistory *> *)fetchRequest;
+
+@property (nullable, nonatomic, copy) NSString *barcodeResult;
+@property (nullable, nonatomic, retain) NSData *images;
+@property (nullable, nonatomic, copy) NSString *result;
+@property (nullable, nonatomic, copy) NSDate *timestamp;
+@property (nullable, nonatomic, copy) NSNumber *type;
+@property (nullable, nonatomic, retain) NSData *faceImage;
 
 @end
 

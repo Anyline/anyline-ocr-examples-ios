@@ -1,12 +1,12 @@
 //
-//  ScanHistory.m
+//  ScanHistory+CoreDataClass.m
 //  AnylineExamples
 //
-//  Created by Daniel Albertini on 13/05/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
+//  Created by Renato Neves Ribeiro on 28.03.21.
+//
 //
 
-#import "ScanHistory.h"
+#import "ScanHistory+CoreDataClass.h"
 
 NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryNone] = @"0",
@@ -50,7 +50,8 @@ NSString * const ALScanHistoryType_toString[] = {
 + (ScanHistory *)insertNewObjectWithType:(ALScanHistoryType)type
                                   result:(NSString *)result
                            barcodeResult:(NSString *)barcodeResult
-                                   image:(UIImage *)image
+                               faceImage:(UIImage *)faceImage
+                                  images:(NSArray *)images
                   inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
                                    error:(NSError **)error {
     ScanHistory *item = [NSEntityDescription insertNewObjectForEntityForName:@"ScanHistory" inManagedObjectContext:managedObjectContext];
@@ -58,7 +59,11 @@ NSString * const ALScanHistoryType_toString[] = {
     item.type = @(type);
     item.result = result;
     item.barcodeResult = barcodeResult;
-    item.image = UIImagePNGRepresentation(image);
+    
+    NSError *archiveDataError = nil;
+    item.images = [NSKeyedArchiver archivedDataWithRootObject:images requiringSecureCoding:NO error:&archiveDataError];
+    
+    item.faceImage = UIImagePNGRepresentation(faceImage);
     item.timestamp = [NSDate date];
     
     [managedObjectContext save:error];

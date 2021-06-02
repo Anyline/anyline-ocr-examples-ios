@@ -155,7 +155,7 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
     ALGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     
-    cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
+    cell.backgroundImageView.backgroundColor = [UIColor AL_BackgroundColor];
     ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
     cell.backgroundImageView.image = [example image];
     if ([[example name] localizedCaseInsensitiveContainsString:@"universal"]) {
@@ -165,7 +165,6 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
     cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.backgroundView.contentMode = UIViewContentModeTop;
     if (!cell.backgroundImageView.image) {
-//        cell.gradientColor = [self gradientColorForIndexPath:indexPath];
         NSString *name = [example name];
         cell.name.text = name;
     }

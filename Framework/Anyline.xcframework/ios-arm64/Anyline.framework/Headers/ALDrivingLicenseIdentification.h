@@ -31,6 +31,7 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+@property (nonatomic, assign) CGRect faceImageBounds;
 
 @property (nullable, nonatomic, strong) ALDrivingLicenseFieldConfidences *fieldConfidences;
 

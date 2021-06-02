@@ -16,6 +16,10 @@
 		<data>
 		rgXebzFmzFJi5H/u7nyRizfHqho=
 		</data>
+		<key>Headers/ALArabicIDConfig.h</key>
+		<data>
+		V2FQfDW0UrltPXzTECy4pZJRvj8=
+		</data>
 		<key>Headers/ALAssetContext.h</key>
 		<data>
 		ydNIL4Z3tbQfgeldQ1Lru02h/Gc=
@@ -30,7 +34,7 @@
 		</data>
 		<key>Headers/ALBarcode.h</key>
 		<data>
-		T/XFEBI+IMwgctPuq+cn0vGAIT0=
+		ECmiBLdf+HstltJAKcit74AitBw=
 		</data>
 		<key>Headers/ALBarcodeResult.h</key>
 		<data>
@@ -46,7 +50,7 @@
 		</data>
 		<key>Headers/ALBarcodeTypes.h</key>
 		<data>
-		GjlNLcQ66Zjon2gUYlg4cJWSVLQ=
+		xk+ujJ2sneicho9/tfiTeo9/bkc=
 		</data>
 		<key>Headers/ALBaseOCRConfig.h</key>
 		<data>
@@ -126,7 +130,7 @@
 		</data>
 		<key>Headers/ALDrivingLicenseIdentification.h</key>
 		<data>
-		5/G+ajEStqWgnTZZigO33z+xhMc=
+		JVDGgN7Ly9ulCaVeuGskJIuxqbQ=
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
@@ -146,7 +150,7 @@
 		</data>
 		<key>Headers/ALGermanIDFrontIdentification.h</key>
 		<data>
-		CFWJskK0iXi7l+gCABS1+MKnlfc=
+		QBa3pkEfw15soUQLfAHHcr0wUyc=
 		</data>
 		<key>Headers/ALIDConfig.h</key>
 		<data>
@@ -194,7 +198,7 @@
 		</data>
 		<key>Headers/ALMRZIdentification.h</key>
 		<data>
-		jyK2K8A63usOX65S0U22oHruDH4=
+		IxBufIyozM5mKAOydSyluoW6H2s=
 		</data>
 		<key>Headers/ALMeterResult.h</key>
 		<data>
@@ -326,7 +330,7 @@
 		</data>
 		<key>Headers/ALUniversalIDIdentification.h</key>
 		<data>
-		Z1c5L6JzT1S/ORSrCmbmTC4aeW8=
+		Rhp5In6DbtwOcuvLm+ug/LX149k=
 		</data>
 		<key>Headers/ALVINConfig.h</key>
 		<data>
@@ -384,6 +388,13 @@
 			GXYachzDmBZYZTMauhzuEleRAEWxYu8JKuq3x4OyXYA=
 			</data>
 		</dict>
+		<key>Headers/ALArabicIDConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			slfiI/PtVDQlfmthiT0u24BqSzeU5GWhgb2v53pyLeU=
+			</data>
+		</dict>
 		<key>Headers/ALAssetContext.h</key>
 		<dict>
 			<key>hash2</key>
@@ -409,7 +420,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/IwomTPF8yylESz93FjctIl2qcWwsFfFBcd4h0J/lEY=
+			O8hrcxfFTizS5jXrgibmNjimnMgMfZYXr0IAPCTTRWw=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeResult.h</key>
@@ -437,7 +448,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k2eQHUiEqRjFqfiDmcAzk1O1wel/VUNfPC/wmyG51Ok=
+			oydWp+EyNmpIQay8L1Ctx5h/3YkkLGQNRFOMfqagxZo=
 			</data>
 		</dict>
 		<key>Headers/ALBaseOCRConfig.h</key>
@@ -577,7 +588,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hYxUjZns7sTl1GLhXN1Ey0MuWZkFUsFc7FLAaVY7K/w=
+			vcq3Ra4TPp7Gw9ohUMxH4OtP5hHxYqO4EjlljUtWQSM=
 			</data>
 		</dict>
 		<key>Headers/ALError.h</key>
@@ -612,7 +623,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IpEkd2aKjoItgZJTeUfkZyq6SFbAUTjUxHZmCHn9bg0=
+			2IudE8VAltyETbM5NhO9dsEXEBS2vuYfBtU5sZyP9tU=
 			</data>
 		</dict>
 		<key>Headers/ALIDConfig.h</key>
@@ -696,7 +707,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MR1rTovZjinA3Iy7oPw0Y0Q5fqtOLkLq0gCby5H3bIs=
+			bcDOwof0wLqmNLQqwRdJ7lhLv0AK4Y9YRqWWqGyy+fM=
 			</data>
 		</dict>
 		<key>Headers/ALMeterResult.h</key>
@@ -927,7 +938,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hQiyTt5NcyIto0IhkyDkJj6V33YwkcXGvIdwGljQQNw=
+			roa19oENd9H3+B8SK+0RGF72h31RqaZX+wbLF68t3+g=
 			</data>
 		</dict>
 		<key>Headers/ALVINConfig.h</key>

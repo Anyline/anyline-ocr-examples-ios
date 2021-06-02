@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Customer" representedClassName="Customer" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="annualConsumption" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -30,7 +30,7 @@
     </entity>
     <entity name="ScanHistory" representedClassName="ScanHistory" syncable="YES">
         <attribute name="barcodeResult" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" elementID="imagesMigration" syncable="YES"/>
         <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -43,7 +43,7 @@
         <element name="CustomerSelfReading" positionX="-18" positionY="-72" width="128" height="60"/>
         <element name="Order" positionX="-54" positionY="-216" width="128" height="90"/>
         <element name="Reading" positionX="-198" positionY="-315" width="128" height="120"/>
-        <element name="ScanHistory" positionX="63" positionY="90" width="128" height="120"/>
+        <element name="ScanHistory" positionX="63" positionY="90" width="128" height="118"/>
         <element name="WorkforceTool" positionX="-270" positionY="156" width="128" height="60"/>
     </elements>
 </model>
