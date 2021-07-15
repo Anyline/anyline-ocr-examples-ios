@@ -29,7 +29,7 @@
 }
 
 - (void)initExampleData {
-    self.title = @"Identity Documents";
+    self.title = @"License Plate";
     
     ALExample *licensePlateEU = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
                                                        image:[UIImage imageNamed:@"tile_licenseplate_eu"]

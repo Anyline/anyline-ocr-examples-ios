@@ -11,6 +11,7 @@
 #import "ALScanResult.h"
 #import "ALGermanIDFrontConfig.h"
 
+DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
 @interface ALGermanIDFrontIdentification : NSObject
 
 
