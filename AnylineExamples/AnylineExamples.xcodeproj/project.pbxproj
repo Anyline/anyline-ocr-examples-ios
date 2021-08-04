@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -269,7 +269,7 @@
 		2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		2E8F1BC85E70148A9D26AAE9 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
 		2FC2BB5DD1BB6961AD1E9871 /* ALRBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRBScanViewController.h; sourceTree = "<group>"; };
-		300276EF42074182013FDB3B /* FaceTecSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FaceTecSDK.xcframework; path = Vendor/FaceTec/FaceTecSDK.xcframework; sourceTree = "<group>"; };
+		300276EF42074182013FDB3B /* FaceTecSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FaceTecSDK.xcframework; path = ../../../Downloads/AnylineSDK_iOS_32/Framework/FaceTecSDK.xcframework; sourceTree = "<group>"; };
 		30B76762D974C43BF0286E13 /* ALMainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMainPageViewController.m; sourceTree = "<group>"; };
 		3233635513FC2480136E99EB /* ReadingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTableViewCell.h; sourceTree = "<group>"; };
 		34760A85BED4BAACE6AEE1EB /* ALMeterCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterCollectionViewController.m; sourceTree = "<group>"; };
@@ -533,7 +533,7 @@
 		F3BA12F0082427C9B897F096 /* ALSpaceViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALSpaceViews.m; sourceTree = "<group>"; };
 		F42A27CA9FFD045D6393C9F7 /* ALBEDrivingLicenseScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBEDrivingLicenseScanViewController.h; sourceTree = "<group>"; };
 		F489CC9CA221D896272E881A /* ALISBNAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALISBNAPI.h; sourceTree = "<group>"; };
-		F5B8C4A5C1C168BE0488198F /* anyline_austrian_driving_license.ale */ = {isa = PBXFileReference; path = anyline_austrian_driving_license.ale; sourceTree = "<group>"; };
+		F5B8C4A5C1C168BE0488198F /* anyline_austrian_driving_license.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = anyline_austrian_driving_license.ale; sourceTree = "<group>"; };
 		F5F3F4D726FC915731B73AE3 /* ALDocumentScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDocumentScanViewController.m; sourceTree = "<group>"; };
 		F7151F89C55A657556691214 /* ScanHistory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F72E21F38E68BE8268DA8B75 /* ALVoucherCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVoucherCodeScanViewController.h; sourceTree = "<group>"; };
