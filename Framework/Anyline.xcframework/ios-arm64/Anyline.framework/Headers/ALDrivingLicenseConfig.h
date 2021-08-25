@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ALDrivingLicenseScanMode) {
 
 @class ALDrivingLicenseFieldScanOptions;
 
-DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
+DEPRECATED_MSG_ATTRIBUTE("This class will be removed with release 35 end of 2021. Please use UniversalIDConfig instead.")
 @interface ALDrivingLicenseConfig : ALIDConfig
 
 /**
@@ -61,7 +61,7 @@ DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by Novemb
  *
  *  Note: The default behavior might be affected if you use this object.
  */
-DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
+DEPRECATED_MSG_ATTRIBUTE("This class will be removed with release 35 end of 2021. Please use UniversalIDConfig instead.")
 @interface ALDrivingLicenseFieldScanOptions : ALIDFieldScanOptions
 
 @property (nonatomic) ALFieldScanOption surname;
@@ -76,7 +76,7 @@ DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by Novemb
 
 @end
 
-DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
+DEPRECATED_MSG_ATTRIBUTE("This class will be removed with release 35 end of 2021. Please use ALUniversalIDFieldConfidences instead.")
 @interface ALDrivingLicenseFieldConfidences : ALIDFieldConfidences
 
 @property (nonatomic) ALFieldConfidence surname;

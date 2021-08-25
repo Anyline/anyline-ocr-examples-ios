@@ -118,6 +118,8 @@
     
     if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Ara"]) {
         titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Ara" withString:@" Arabic"];
+    } else if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Zho"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Zho" withString:@" Chinese"];
     } else {
         titleString = self.resultEntry.title;
     }

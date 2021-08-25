@@ -7,6 +7,7 @@
 
 #import "NSAttributedString+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "NSMutableAttributedString+ALExamplesAdditions.h"
 
 @implementation NSAttributedString (ALExamplesAdditions)
 
@@ -20,10 +21,13 @@
     }
 }
 
+// Note: applying a font to the string by simplying using `addAttributes:range:` will also strip all existing
+// formatting (e.g. boldface) from it. To preserve existing style attributes while changing the font, use the
+// NSMutableAttributedString extension `setFontFaceWithFont:color:` (a custom method) instead.
 - (NSAttributedString *)withFont:(UIFont *)font {
-    NSMutableAttributedString *string = [self mutableCopy];
-    [string addAttributes:@{NSFontAttributeName:font } range:NSMakeRange(0,string.length)];
-    return string;
+    NSMutableAttributedString *mutableAttrStr = [self mutableCopy];
+    [mutableAttrStr setFontFaceWithFont:font color:nil];
+    return mutableAttrStr;
 }
 
 @end

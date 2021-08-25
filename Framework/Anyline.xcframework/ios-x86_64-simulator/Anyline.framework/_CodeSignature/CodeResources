@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/ALBarcodeScanPlugin.h</key>
 		<data>
-		QlSeXu3xSAZsJ21OBxgOcEIWO6M=
+		PhkozYnZ2cbynSPZ0wOs9iEVy+g=
 		</data>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Headers/ALDocumentScanPlugin.h</key>
 		<data>
-		U/osYmumuL2D28weBy/dU9Xl+XI=
+		d/dq8JBFR0oz81Gvw3z63EHpvvo=
 		</data>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>Headers/ALDrivingLicenseConfig.h</key>
 		<data>
-		nz7PAD6y5TTrgrnwEKhwgmZXd8g=
+		EfH2a2hUOb24+mRO93XkOogcVT8=
 		</data>
 		<key>Headers/ALDrivingLicenseIdentification.h</key>
 		<data>
-		mej8M3wq/Ha5t8vj7d/mjwjXl6M=
+		Q6EvN9mzt4ZZ4xYk9YYbC9KE2/o=
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
@@ -146,11 +146,11 @@
 		</data>
 		<key>Headers/ALGermanIDFrontConfig.h</key>
 		<data>
-		qqh3MrgSJVgGIjrCxUEHA4Ee2Zk=
+		Amx1GR/E/0qE/NtYA0R65T5VoW0=
 		</data>
 		<key>Headers/ALGermanIDFrontIdentification.h</key>
 		<data>
-		TUXsJ24WaiEv57gnnQvCjrbG+Wg=
+		oVjEfRiqSsF39K3nzRDnlFfA6w8=
 		</data>
 		<key>Headers/ALIDConfig.h</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>Headers/ALIDScanPlugin.h</key>
 		<data>
-		7+KRozBygmIehadzZ4i4gefAk4E=
+		8hlT/Kd83og9N7Ju4JUpjB9Eplo=
 		</data>
 		<key>Headers/ALIDScanViewPlugin.h</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>Headers/ALLicensePlateScanPlugin.h</key>
 		<data>
-		YFsIFdumD2cOCmT82SixnRdP2h4=
+		bGfhHpCYMXoj9PtcacK6WOnnF1E=
 		</data>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>
 		<data>
@@ -210,7 +210,7 @@
 		</data>
 		<key>Headers/ALMeterScanPlugin.h</key>
 		<data>
-		ITyl91UuX5f6ujTPwuAmKgIH77o=
+		QCI15BIRIdf63hfclrD+5FVac68=
 		</data>
 		<key>Headers/ALMeterScanViewPlugin.h</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>Headers/ALOCRConfig.h</key>
 		<data>
-		X9QZJHuOAQMs6f50xfIYPLV59x4=
+		7p48UaVPYeghBo2QSZmDpMYF8dE=
 		</data>
 		<key>Headers/ALOCRResult.h</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Headers/ALOCRScanPlugin.h</key>
 		<data>
-		5so7pGPWOvKxH1G6Almv9y1RmaU=
+		1QSv6+OXXe8q0eiAH7clLmXQ+KY=
 		</data>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Headers/ALScanView.h</key>
 		<data>
-		a6YNXOv16J6vPe9TmDfM3ecQ8rg=
+		zekOUHPRz6eoYcexpo8Da0jDa7g=
 		</data>
 		<key>Headers/ALScanViewPluginConfig.h</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		H42L++/iFUlsy7YO1gagsC3snPs=
+		a1V3Yd2XqYiH6/h27/jr9o2ZodM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -438,7 +438,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HiZNJAfRCFV9oZ4dp10s3d13bszlrv3qIm4eUeFSYgo=
+			pCwLU7wmTcDPc2GJWnoV0M4dAcOo4CTz/+e8B9w9AlE=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>
@@ -571,7 +571,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mG6+5RF1Kn6m7Sx6OetO/0q0pDynh3rsECyz6+DE4bA=
+			1QpNrD2u/I7qa1W5zbP9td8iFQ+QFDSkyU2TPlC+jeI=
 			</data>
 		</dict>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
@@ -585,14 +585,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IilWC9c4kfX8NR2RK2uR4EACIWB8ViDjsNnBFzmQyqA=
+			OeiKaqbwDY+mOEe9GhyPYnMeJTujKs6cY+0G3itzprM=
 			</data>
 		</dict>
 		<key>Headers/ALDrivingLicenseIdentification.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6VAiLvsowJggiGdJwfKWCkBkwezks/CYx96Z1iIjdcA=
+			w7QyZKH2biZI1TuHnC0NN2XA1vu2KdeThIVxulZ6rjA=
 			</data>
 		</dict>
 		<key>Headers/ALError.h</key>
@@ -620,14 +620,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			89FuIpDC2sJC8hL+NlkQiQAvObuH6Y4YpNEi7F4ppSw=
+			kwQdCHquD12PLtsydvO55rGxQ25CCUL4m5ogPDt3eRI=
 			</data>
 		</dict>
 		<key>Headers/ALGermanIDFrontIdentification.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vsfYgTVVl+U48hpO3HbNFijlS3ot6yB1gMyfG+EBN4k=
+			L/xK4EGIrh5CaAgSjn3Xduyx1IeR4U1CoXr/s0m3ytE=
 			</data>
 		</dict>
 		<key>Headers/ALIDConfig.h</key>
@@ -648,7 +648,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3x+BNbKZLNPUUabt9KxQgMbvHuhvXAHer+OJgqgs5fQ=
+			Qbip1eqRbO3nTdZ9lCOGSVid8QWxRp9XIPfH5Sfvv58=
 			</data>
 		</dict>
 		<key>Headers/ALIDScanViewPlugin.h</key>
@@ -697,7 +697,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bIbTGiXLx0Pipq5v5tDk/ZDLIvj8FZs1eNuD7z43y9k=
+			92taBgJADrXzOZgYu/ABpIhWNjHWW/2g0zKqW229R3o=
 			</data>
 		</dict>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>
@@ -732,7 +732,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aCDB1xPRQtNWE4d28YWlxoLjifrM7l0GkgDwR5FYG7E=
+			tWhgMX1fGI+Y8D17rheaVgx51kesM+g3Gv7DW8W0zHA=
 			</data>
 		</dict>
 		<key>Headers/ALMeterScanViewPlugin.h</key>
@@ -760,7 +760,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fJMhofiHCOUqibl/6BQZ9xjEPD1CbT9tU0LNh15fBpA=
+			DleSqEN/uDUlNVmXKiOb4y85ffOFas76jpxX59yXkH4=
 			</data>
 		</dict>
 		<key>Headers/ALOCRResult.h</key>
@@ -774,7 +774,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nn1CJzcYRmUbpP1W3boTJlIgkOudizOTvU1Z5dsz+5o=
+			TC8tB4mDhVlGBg8bPUC+83nkU7epfIEOf27/WoMovc4=
 			</data>
 		</dict>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
@@ -865,7 +865,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bxSepGKeKxOSD9+3cQJN4qDrwRnGB07RCt2LbkLCDpo=
+			l2rwpsBis072MindQ224edOGXZjr3rejxTwZfTT0PIk=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewPluginConfig.h</key>

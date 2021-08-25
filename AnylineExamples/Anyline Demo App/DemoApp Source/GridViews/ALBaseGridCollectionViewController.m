@@ -11,18 +11,15 @@
 #import "ALMeterCollectionViewController.h"
 #import "ALGridCollectionViewController.h"
 #import "ALExample.h"
-
 #import "ALBaseScanViewController.h"
-
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
-
 #import "ALEnergyBaseViewController.h"
-
 #import "ALNFCScanViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "ALHeaderCollectionReusableView.h"
+#import "ALUniversalIDScanViewControllerFrontAndBack.h"
 
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
@@ -155,7 +152,7 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
     ALGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     
-    cell.backgroundImageView.backgroundColor = [UIColor AL_BackgroundColor];
+    cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
     ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
     cell.backgroundImageView.image = [example image];
     if ([[example name] localizedCaseInsensitiveContainsString:@"universal"]) {

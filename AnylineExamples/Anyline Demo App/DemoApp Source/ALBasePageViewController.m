@@ -16,7 +16,10 @@
 
 @interface ALBasePageViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
+@property (nonatomic, strong) NSLayoutConstraint *logoTopAnchor;
+
 @end
+
 
 @implementation ALBasePageViewController
 
@@ -25,16 +28,12 @@
     CGRect pageViewFrame = [[UIScreen mainScreen] bounds];
     pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + navigationBarHeight, pageViewFrame.size.width, pageViewFrame.size.height - navigationBarHeight);
     self.view.frame = pageViewFrame;
+
+    CGRect headerFrame = [self headerFrame];
     
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
-    CGFloat topPadding = window.safeAreaInsets.top;
-    CGFloat leftPadding = window.safeAreaInsets.left;
-        
-//    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*0.35);
-    CGRect headerFrame = CGRectMake(leftPadding, self.view.frame.origin.y + topPadding, self.view.frame.size.width, self.view.frame.size.width*0.25);
-    
-    [self.view layoutIfNeeded];
     self.header = [[UIView alloc] initWithFrame:headerFrame];
+    [self.view addSubview:self.header];
+    [self.view layoutIfNeeded];
     
     self.view.backgroundColor = [UIColor AL_BackgroundColor];
     self.header.backgroundColor = [UIColor AL_BackgroundColor];
@@ -45,25 +44,48 @@
     self.anylineWhite.translatesAutoresizingMaskIntoConstraints = NO;
     [self.anylineWhite.widthAnchor constraintEqualToAnchor:self.header.widthAnchor multiplier:99.0/375.0].active = YES;
     [self.anylineWhite.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
-    [self.anylineWhite.centerYAnchor constraintEqualToAnchor:self.header.centerYAnchor constant:-10].active = YES;
+    
+    self.logoTopAnchor = [self.anylineWhite.topAnchor
+                          constraintEqualToAnchor:self.header.topAnchor constant:0];
+    self.logoTopAnchor.active = YES;
     
     [self setupSegmentControl];
-
     [self.header addSubview:self.segmentedControl];
-    
-    
     self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.segmentedControl.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
+
+    [self.segmentedControl.topAnchor constraintEqualToAnchor:self.anylineWhite.bottomAnchor constant: -10].active = YES;
+    
     [self.segmentedControl.leftAnchor constraintEqualToAnchor:self.header.leftAnchor constant:15].active = YES;
+    
+    [self.segmentedControl.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
+    
     [self.segmentedControl.rightAnchor constraintEqualToAnchor:self.header.rightAnchor constant:-15].active = YES;
     
+    [self.segmentedControl.heightAnchor constraintEqualToConstant:30].active = YES;
+    
     [self.segmentedControl addTarget:self action:@selector(jumpToPage:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:self.header];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
 
+}
+
+- (CGRect)headerFrame {
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+    CGFloat leftPadding = window.safeAreaInsets.left;
+    
+    // multiplied to screen width to partially determine header height
+    // (logo image + segmented control)
+    CGFloat heightToWidthRatio = 0.25f;
+    
+    CGFloat headerHeight = self.view.frame.size.width * heightToWidthRatio;
+    
+    return CGRectMake(leftPadding,
+                      self.view.frame.origin.y + topPadding,
+                      self.view.frame.size.width,
+                      headerHeight);
 }
 
 - (void)setupSegmentControl {
@@ -271,6 +293,12 @@
         }
     }
     _currIndex = index;
+}
+
+// adjusts the vertical positioning of the logo to accomodate
+// any graphical elements placed over it.
+- (void)setLogoYOffset:(CGFloat)yOffset {
+    self.logoTopAnchor.constant = yOffset;
 }
 
 @end
