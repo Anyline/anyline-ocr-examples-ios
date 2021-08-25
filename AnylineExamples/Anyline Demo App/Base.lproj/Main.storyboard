@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -120,8 +121,8 @@
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="gridCell" reuseIdentifier="gridCell" id="gLm-jS-6Ms" customClass="ALGridCollectionViewCell">
                                 <rect key="frame" x="15" y="53" width="140" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4Z3-OK-J1N">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -135,17 +136,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerX" secondItem="gLm-jS-6Ms" secondAttribute="centerX" id="3Cw-Bl-tpT"/>
-                                    <constraint firstItem="Gnu-7w-4sR" firstAttribute="leading" secondItem="gLm-jS-6Ms" secondAttribute="leadingMargin" constant="4" id="89m-CM-Qsp"/>
-                                    <constraint firstItem="Gnu-7w-4sR" firstAttribute="top" secondItem="gLm-jS-6Ms" secondAttribute="topMargin" constant="2" id="PaD-dH-Ad6"/>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerY" secondItem="gLm-jS-6Ms" secondAttribute="centerY" id="ZV2-ec-HnM"/>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="top" secondItem="gLm-jS-6Ms" secondAttribute="top" id="dk4-Ei-K4k"/>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="height" secondItem="gLm-jS-6Ms" secondAttribute="height" id="ppy-fN-V0c"/>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerX" secondItem="Gnu-7w-4sR" secondAttribute="centerX" id="reM-Zk-GdD"/>
-                                    <constraint firstItem="xHv-cQ-SBN" firstAttribute="width" secondItem="gLm-jS-6Ms" secondAttribute="width" id="w7b-CM-3As"/>
-                                </constraints>
+                                    <constraints>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerX" secondItem="4Z3-OK-J1N" secondAttribute="centerX" id="3Cw-Bl-tpT"/>
+                                        <constraint firstItem="Gnu-7w-4sR" firstAttribute="leading" secondItem="4Z3-OK-J1N" secondAttribute="leadingMargin" constant="4" id="89m-CM-Qsp"/>
+                                        <constraint firstItem="Gnu-7w-4sR" firstAttribute="top" secondItem="4Z3-OK-J1N" secondAttribute="topMargin" constant="2" id="PaD-dH-Ad6"/>
+                                        <constraint firstAttribute="trailing" secondItem="xHv-cQ-SBN" secondAttribute="trailing" id="TbE-fm-SGr"/>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerY" secondItem="4Z3-OK-J1N" secondAttribute="centerY" id="ZV2-ec-HnM"/>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="top" secondItem="4Z3-OK-J1N" secondAttribute="top" id="dk4-Ei-K4k"/>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="leading" secondItem="4Z3-OK-J1N" secondAttribute="leading" id="mAp-xt-I3G"/>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="height" secondItem="4Z3-OK-J1N" secondAttribute="height" id="ppy-fN-V0c"/>
+                                        <constraint firstItem="xHv-cQ-SBN" firstAttribute="centerX" secondItem="Gnu-7w-4sR" secondAttribute="centerX" id="reM-Zk-GdD"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="xHv-cQ-SBN" id="Zjb-E3-fBh"/>
                                     <outlet property="name" destination="Gnu-7w-4sR" id="e23-OS-D41"/>

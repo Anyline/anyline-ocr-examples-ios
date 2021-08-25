@@ -11,18 +11,15 @@
 #import "ALMeterCollectionViewController.h"
 #import "ALGridCollectionViewController.h"
 #import "ALExample.h"
-
 #import "ALBaseScanViewController.h"
-
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
-
 #import "ALEnergyBaseViewController.h"
-
 #import "ALNFCScanViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "ALHeaderCollectionReusableView.h"
+#import "ALUniversalIDScanViewControllerFrontAndBack.h"
 
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
@@ -165,7 +162,6 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
     cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.backgroundView.contentMode = UIViewContentModeTop;
     if (!cell.backgroundImageView.image) {
-//        cell.gradientColor = [self gradientColorForIndexPath:indexPath];
         NSString *name = [example name];
         cell.name.text = name;
     }

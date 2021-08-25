@@ -10,23 +10,42 @@
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 
-@interface ALSelectionTable () <UITableViewDelegate, UITableViewDataSource>
+const CGFloat kSearchBarHeight = 70;
+NSString * const kResetSettingsConfirmationMsg = @"This will reset all your barcode type settings to their original defaults.";
+NSString * const kResetSettingsBtnTitleCancel = @"Cancel";
+NSString * const kResetSettingsBtnTitleReset = @"Reset All Settings";
+NSString * const kSearchRegionsPlaceholderText = @"Search regions";
 
-@property (nonatomic, strong) NSDictionary<NSString *,NSArray*>* items;
-@property (nonatomic, strong) NSMutableArray* selectedItems;
-@property (nonatomic, strong) NSArray<NSString *>* defaultItems;
-@property (nonatomic, strong) NSArray<NSString *>* headerTitles;
+NSString * const kCellTextAll = @"All";
+NSString * const kCellTextDeselectAll = @"Deselect all";
+NSString * const kCellTextSelectAll = @"Select all";
+NSString * const kCellTextResetSettings = @"Reset Settings";
+
+@interface ALSelectionTable () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+
+@property (nonatomic, strong) NSDictionary<NSString *, NSArray*>* items;
+
+@property (nonatomic, strong) NSMutableArray *selectedItems;
+
+@property (nonatomic, strong) NSArray<NSString *> *defaultItems;
+
+@property (nonatomic, strong) NSArray<NSString *> *headerTitles;
 
 @property (nonatomic, assign) BOOL singleSelect;
 
+@property (nonatomic, strong) NSString *searchText;
+
+@property (nonatomic, strong) NSArray<NSString *> *filteredItems;
+
 @end
+
 
 @implementation ALSelectionTable
 
-- (instancetype)initWithSelectedItems:(NSArray<NSString*>*)selectedItems
-                             allItems:(NSDictionary<NSString *,NSArray*>*)items
-                         headerTitles:(NSArray<NSString *>*)headerTitles
-                         defaultItems:(NSArray<NSString*>*)defaultItems
+- (instancetype)initWithSelectedItems:(NSArray<NSString *> *)selectedItems
+                             allItems:(NSDictionary<NSString *,NSArray *> *)items
+                         headerTitles:(NSArray<NSString *> *)headerTitles
+                         defaultItems:(NSArray<NSString *> *)defaultItems
                                 title:(NSString *)title
                          singleSelect:(BOOL)singleSelect
 {
@@ -37,7 +56,6 @@
         self.singleSelect = singleSelect;
         self.defaultItems = defaultItems;
         self.headerTitles = headerTitles;
-        
         self.title = title;
     }
     return self;
@@ -53,72 +71,87 @@
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
     [cancelButton setTintColor:[UIColor AL_examplesBlue]];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UISearchBar *searchBar = [[self class] getSearchBar];
+    searchBar.delegate = self;
+    self.tableView.tableHeaderView = searchBar;
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"item"];
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    if (self.delegate) {
-        [self.delegate selectionTable:self selectedItems:self.selectedItems];
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (weakSelf.delegate) {
+            [weakSelf.delegate selectionTable:weakSelf selectedItems:weakSelf.selectedItems];
+        }
+    }];
 }
 
-- (IBAction)cancelButtonPressed:(id)sender {    
-    [self dismissViewControllerAnimated:YES completion:NULL];
+- (IBAction)cancelButtonPressed:(id)sender {
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(selectionTableCancelled:)]) {
+            [weakSelf.delegate selectionTableCancelled:weakSelf];
+        }
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // extra sections each containing one of "select all", and "reset"
     int add = 1;
     if (!self.singleSelect) {
-        add = 2;
+        add += 1;
     }
-    return self.items.allKeys.count + add;
+    if ([self inSearchMode]) {
+        return 1 + add; // all search results go inside a single section.
+    } else {
+        return self.items.allKeys.count + add;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if ([self isSelectAllSection:section] || [self isResetSettingsSection:section]) {
         return 1;
     }
-    if (!self.singleSelect) {
-        if (section == self.headerTitles.count + 1) {
-            return 1;
-        }
+    if ([self inSearchMode]) {
+        return self.filteredItems.count;
     }
     NSString *header = self.headerTitles[section-1];
     return self.items[header].count;
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if( section == 0) {
-        
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ([self isSelectAllSection:section]) {
         return nil;
     }
-    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 38)];
-    
     view.backgroundColor = [UIColor AL_SectionGridBG];
-    
-    UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 305, 38)];
-    lbl.font      = [UIFont AL_proximaLightWithSize:14];
+
+    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 305, 38)];
+    lbl.font = [UIFont AL_proximaLightWithSize:14];
     lbl.textColor = [UIColor AL_LabelBlackWhite];
     lbl.textAlignment = NSTextAlignmentLeft;
-    
     [view addSubview:lbl];
     
-    if (!self.singleSelect) {
-        if( section == (self.items.allKeys.count + 1)) {
-            lbl.text      = @"";
-            return view;
-        }
+    if ([self isResetSettingsSection:section]) {
+        lbl.text = @"";
+        return view;
     }
-    lbl.text = self.headerTitles[section-1];
-    
+    if ([self inSearchMode]) {
+        lbl.text = self.filteredItems.count < 1 ? @"Empty Search Results" : @"Search Results";
+    } else {
+        lbl.text = self.headerTitles[section-1];
+    }
     return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
+    if ([self isSelectAllSection:section]) {
         return 0;
+    }
+    if ([self isResetSettingsSection:section]) {
+        return self.filteredItems.count > 0 ? 12 : 0;
     }
     return 36;
 }
@@ -127,10 +160,11 @@
     return 42;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0) {
-        UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-        cell.textLabel.text = @"All";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self isSelectAllSection:indexPath.section]) {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        cell.textLabel.text = kCellTextAll;
         cell.textLabel.textAlignment = NSTextAlignmentLeft;
         cell.textLabel.textColor = [UIColor AL_LabelBlackWhite];
         cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
@@ -139,138 +173,182 @@
             numCount += obj.count;
         }];
         if (self.selectedItems.count == numCount) {
-            cell.detailTextLabel.text = @"Deselect all";
+            cell.detailTextLabel.text = kCellTextDeselectAll;
         } else {
-            cell.detailTextLabel.text = @"Select all";
+            cell.detailTextLabel.text = kCellTextSelectAll;
         }
-        
         cell.detailTextLabel.font = [UIFont AL_proximaLightWithSize:18];
         cell.detailTextLabel.textColor = [UIColor AL_examplesBlue];
         cell.detailTextLabel.textAlignment = NSTextAlignmentRight;
-        
         return cell;
     }
-    if (!self.singleSelect) {
-        if(indexPath.section == self.items.allKeys.count + 1) {
-            UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-            cell.textLabel.text = @"Reset Settings";
-            cell.textLabel.textAlignment = NSTextAlignmentLeft;
-            cell.textLabel.textColor = [UIColor AL_examplesBlue];
-            cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
-            return cell;
-        }
-    }
 
-    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-    NSString *key = self.headerTitles[indexPath.section-1];
-    cell.textLabel.text = self.items[key][indexPath.row];
+    if ([self isResetSettingsSection:indexPath.section]) {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        cell.textLabel.text = kCellTextResetSettings;
+        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        cell.textLabel.textColor = [UIColor AL_examplesBlue];
+        cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
+        return cell;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+    }
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     cell.textLabel.textColor = [UIColor AL_LabelBlackWhite];
     cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
     
+    if ([self inSearchMode]) {
+        cell.textLabel.text = self.filteredItems[indexPath.row];
+    } else {
+        NSString *key = self.headerTitles[indexPath.section-1];
+        cell.textLabel.text = self.items[key][indexPath.row];
+    }
     return cell;
     
     NSAssert(NO, @"Something went wrong with %@", NSStringFromClass([self class]));
-    // Never happens ;)
-    return nil;
+    return nil; // Never happens ;)
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if(indexPath.section == 0) {
-        if(indexPath.row == 0) {
-            __block int numCount = 0;
-            [self.items enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSArray * _Nonnull obj, BOOL * _Nonnull stop) {
-                numCount += obj.count;
-            }];
-            if (self.selectedItems.count == numCount) {
-                self.selectedItems = [@[] mutableCopy];
-            } else {
-                NSMutableArray *allItems = [@[] mutableCopy];
-                for (NSArray *items in self.items.allValues) {
-                    [allItems addObjectsFromArray:items];
-                }
-                self.selectedItems = allItems;
+    if ([self isSelectAllSection:indexPath.section]) {
+        __block int numCount = 0;
+        [self.items enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSArray * _Nonnull obj, BOOL * _Nonnull stop) {
+            numCount += obj.count;
+        }];
+        if (self.selectedItems.count == numCount) {
+            self.selectedItems = [@[] mutableCopy];
+        } else {
+            NSMutableArray *allItems = [@[] mutableCopy];
+            for (NSArray *items in self.items.allValues) {
+                [allItems addObjectsFromArray:items];
             }
-            
-            if (self.selectedItems.count == 0) {
-                self.navigationItem.rightBarButtonItem.enabled = NO;
-            } else {
-                self.navigationItem.rightBarButtonItem.enabled = YES;
-            }
-            
-            [self.tableView reloadData];
-            return;
+            self.selectedItems = allItems;
         }
+        [self refreshDoneBtnEnableState];
+        [self.tableView reloadData];
+        return;
     }
-    if (!self.singleSelect) {
-        if(indexPath.section == self.items.allKeys.count + 1) {
-            
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
-                                                                                     message:@"This will reset all your barcode type settings to their original defaults."
-                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Reset All Settings" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                self.selectedItems = [self.defaultItems mutableCopy];
-                
-                if (self.selectedItems.count == 0) {
-                    self.navigationItem.rightBarButtonItem.enabled = NO;
-                } else {
-                    self.navigationItem.rightBarButtonItem.enabled = YES;
-                }
-                
-                [self.tableView reloadData];
-            }]];
-            [self.navigationController presentViewController:alertController animated:YES completion:nil];
-            
-            return;
-        }
+    if ([self isResetSettingsSection:indexPath.section]) {
+        __weak __block typeof(self) weakSelf = self;
+        [self showResetDialog:^{
+            weakSelf.selectedItems = [weakSelf.defaultItems mutableCopy];
+            [weakSelf refreshDoneBtnEnableState];
+            [weakSelf.tableView reloadData];
+        }];
+        return;
     }
-    
     NSString *key = self.headerTitles[indexPath.section-1];
-    NSString *symb = self.items[key][indexPath.row];
-    
+    NSString *symb = [self inSearchMode] ? self.filteredItems[indexPath.row] : self.items[key][indexPath.row];
     if (!self.singleSelect) {
-        if([self.selectedItems containsObject:symb]) {
+        if ([self.selectedItems containsObject:symb]) {
             [self.selectedItems removeObject:symb];
         } else {
             [self.selectedItems addObject:symb];
         }
-        
-        if (self.selectedItems.count == 0) {
-            self.navigationItem.rightBarButtonItem.enabled = NO;
-        } else {
-            self.navigationItem.rightBarButtonItem.enabled = YES;
-        }
-        
+        [self refreshDoneBtnEnableState];
         NSIndexPath *all = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath,all] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath, all] withRowAnimation:UITableViewRowAnimationNone];
     } else {
         self.selectedItems = [@[symb] mutableCopy];
-            
-        if (self.selectedItems.count == 0) {
-            self.navigationItem.rightBarButtonItem.enabled = NO;
-        } else {
-            self.navigationItem.rightBarButtonItem.enabled = YES;
-        }
-        
+        [self refreshDoneBtnEnableState];
         [self.tableView reloadData];
     }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (indexPath.section == self.items.allKeys.count + 1 || indexPath.section == 0) {
+    if (indexPath.section == 0 || [self isResetSettingsSection:indexPath.section]) {
         return;
     }
     NSString *key = self.headerTitles[indexPath.section-1];
-    NSString * symb = self.items[key][indexPath.row];
-    
-    if([self.selectedItems containsObject:symb]) {
+    NSString *symb = [self inSearchMode] ? self.filteredItems[indexPath.row] : self.items[key][indexPath.row];
+    if ([self.selectedItems containsObject:symb]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+}
+
+// MARK: - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.searchText = searchText;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchText = @"";
+    [searchBar resignFirstResponder];
+}
+
+// MARK: - Miscellaneous
+
+- (void)refreshDoneBtnEnableState {
+    self.navigationItem.rightBarButtonItem.enabled = self.selectedItems.count > 0;
+}
+
+- (void)showResetDialog:(void (^ __nullable)(void))resetHandler {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
+                                                                             message:kResetSettingsConfirmationMsg
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:kResetSettingsBtnTitleCancel
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:nil]];
+    [alertController addAction:[UIAlertAction actionWithTitle:kResetSettingsBtnTitleReset
+                                                        style:UIAlertActionStyleDestructive
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+        resetHandler();
+    }]];
+    
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+}
+
+// MARK: - Search Mode
+
++ (UISearchBar *)getSearchBar {
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 1, kSearchBarHeight)];
+    searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    searchBar.placeholder = kSearchRegionsPlaceholderText;
+    searchBar.returnKeyType = UIReturnKeyDone;
+    searchBar.showsCancelButton = YES;
+    [searchBar sizeToFit];
+    return searchBar;
+}
+
+- (void)setSearchText:(NSString *)searchText {
+    _searchText = searchText;
+    [self fillFilteredItems];
+}
+
+- (void)fillFilteredItems {
+    if (_searchText.length < 1) {
+        _filteredItems = nil;
+    }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", _searchText];
+    self.filteredItems = [_defaultItems filteredArrayUsingPredicate:predicate];
+    [self.tableView reloadData];
+}
+
+- (BOOL)inSearchMode {
+    return _searchText.length > 0;
+}
+
+- (BOOL)isSelectAllSection:(NSInteger)section {
+    return section == 0;
+}
+
+- (BOOL)isResetSettingsSection:(NSInteger)section {
+    if (self.singleSelect) {
+        return NO;
+    }
+    return [self inSearchMode] ? (section == 2) : (section == self.items.allKeys.count + 1);
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Anyline/Anyline.h>
-#import "ScanHistory.h"
+#import "ScanHistory+CoreDataClass.h"
 #import "ALWarningView.h"
 
 @interface ALBaseScanViewController : UIViewController
@@ -28,6 +28,28 @@
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule;
 
 - (NSString *)jsonStringFromResultData:(NSArray*)resultData;
+
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                       image:(UIImage*)image
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion;
+
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                      images:(NSArray*)images
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion;
+
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                   faceImage:(UIImage*)faceImage
+                      images:(NSArray*)images
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion;
 
 - (void)anylineDidFindResult:(NSString*)result
                barcodeResult:(NSString *)barcodeResult

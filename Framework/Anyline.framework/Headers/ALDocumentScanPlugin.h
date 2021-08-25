@@ -79,7 +79,7 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
                                   delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error NS_DESIGNATED_INITIALIZER;
 
-- (instancetype _Nullable)init NS_UNAVAILABLE;
+- (instancetype _Null_unspecified)init NS_UNAVAILABLE;
 
 - (BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
 

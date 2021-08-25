@@ -27,13 +27,17 @@
 		13805B096B1C7489DE2D956E /* WorkforceToolResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5CA65FF0C687D43AC37D3 /* WorkforceToolResultViewController.m */; };
 		14D077C321FC3BD2C4E48A2A /* ALCattleTagScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AE6E061296A4581FB66B20 /* ALCattleTagScanViewController.m */; };
 		169B4C9E31B54A76C796C481 /* ALCustomBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8559369BC2271AFE0A5F4A67 /* ALCustomBarButton.m */; };
+		17A13B5426D6A65500079030 /* AnylineFaceAuthentication.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17A13B4426D6A41D00079030 /* AnylineFaceAuthentication.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17A13B6626D6A95800079030 /* FaceTecSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17A13B6526D6A95800079030 /* FaceTecSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		182D8027B52B44AEF891E12D /* serial_number_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A5A0B8B16A226B0EAC39924 /* serial_number_view_config.json */; };
 		18CCD1DA39115412EB8F04DD /* ALMROExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D5067A874DE2D141541714 /* ALMROExampleManager.m */; };
 		190C9F7DC0103BDD709F6701 /* GifuWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4413505AA97F9234BD1A420 /* GifuWrapper.swift */; };
+		194E973F43A3B0B57A330BB5 /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DC7E98210F6761127C7F0CD /* energyMockData2.json */; };
+		1B339AD1A6982A23A58AFBD5 /* AnylineEnergyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42A56CBF24159FDD12C0076B /* AnylineEnergyModel.xcdatamodeld */; };
 		1BDA70B0798FEBA9AED871A9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A55CA11F512D1EB3147C6D35 /* Reachability.m */; };
-		1F4743B7944CC462EFA3C8C3 /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9DC328BF59C022522617A321 /* Model.xcmappingmodel */; };
 		216AD56855460694DB2EAFD2 /* ALToggleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 602AF9DF62FC564C6646D2E5 /* ALToggleControl.m */; };
 		21A22328A97C63E67AE854BA /* ALProductExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E78B6137D667B2BAFF771 /* ALProductExampleManager.m */; };
+		2281E6053A1BED4163CDDC0F /* universal_id_arabic_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B87E9374F67894CA3A1F4FE /* universal_id_arabic_config.json */; };
 		236D1FD2A106E2966CD41B30 /* WorkforceTool+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C474F22983E364473A5F91A8 /* WorkforceTool+CoreDataProperties.m */; };
 		253C818A2B144F00DB6636B0 /* ALUSLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3E107E3628045E2154C532 /* ALUSLicensePlateViewController.m */; };
 		2546FA63E48995AA69412DE5 /* CustomerDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59DF7BD4220A8FE5450AAA9 /* CustomerDataView.xib */; };
@@ -48,10 +52,8 @@
 		2D1EC37BF43B70AA6016824D /* CustomerSelfReadingConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E539A0891F231A43F3A7089A /* CustomerSelfReadingConfirmationViewController.xib */; };
 		2FEAFACDC392E8898C3C97BD /* ALRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A15FCC2BD1A9E95397F7F99F /* ALRoundedView.m */; };
 		332E5FE5513F6CDD2346D6D2 /* ALUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF6BE85BA00F9E1011D1E1 /* ALUtils.m */; };
-		34F9E6B83A485CEB8C8B04BF /* energyMockData1.json in Resources */ = {isa = PBXBuildFile; fileRef = B953F9C3A416B87963028E4D /* energyMockData1.json */; };
 		37B2D510A28CED75400D97AF /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F93940133379A464B2ECA1 /* ALExampleManager.m */; };
 		37B8BA82610E2579475245FC /* ALNFCScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76DB0B1EDA3DEE5553F4D2 /* ALNFCScanViewController.m */; };
-		37C8A36B17DA9E088CFB3987 /* AnylineEnergyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCC80A4D0EE79333126917B2 /* AnylineEnergyModel.xcdatamodeld */; };
 		37FA8753994D60E353707D5E /* cow_tag_capture_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 464FAFFE2D244084E91CABC9 /* cow_tag_capture_config.json */; };
 		382DD1C0C8F51585A0F699F6 /* CustomerSelfReadingConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04F45409076E98165CCE2D /* CustomerSelfReadingConfirmationViewController.m */; };
 		385239AF4AE6238CE1452B31 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C8024BC707860460ECFCE /* Customer.m */; };
@@ -67,7 +69,6 @@
 		409F58D9331828393B73B29D /* ALTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */; };
 		4132425F48F3428439BDDBA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF1D09EF06128D92632D6CB /* AppDelegate.m */; };
 		41EB653535CEAEE4A8E075C5 /* ALIBANScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997B2A1F82805B0685BBA76E /* ALIBANScanViewController.m */; };
-		43634ADB573CB04CB232A831 /* ReadingTransformationPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEC72683D3FF92AF8DB9468 /* ReadingTransformationPolicy.m */; };
 		443B304C865770E9A68AE47A /* Customer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE01852827507975736BFED /* Customer+CoreDataProperties.m */; };
 		45B56AD8B67E62C142CCAA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F0702B990CC38E25592A32 /* Images.xcassets */; };
 		45E1C7C5AE4504472B25C3F6 /* ALWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DCE9A06F9F059A640F026B /* ALWarningView.m */; };
@@ -87,7 +88,6 @@
 		5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */; };
 		5BC563C4483045E763BA0EAF /* NSManagedObject+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */; };
 		5CCB3AF7E1298CAEC8334021 /* ALDrivingLicenseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497E86067346FBAC04DEF96C /* ALDrivingLicenseScanViewController.m */; };
-		5CD5C802C0FB048295B7C937 /* ScanHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABA46A3ED59A9E5E85B132 /* ScanHistory.m */; };
 		61C7AE6154B61194D1172E15 /* ALResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1058FCA2400D2F03E7623698 /* ALResultViewController.m */; };
 		620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C42E39BF797CCFDCA51E9 /* UIFont+ALExamplesAdditions.m */; };
 		6A3B7F7A4EB2FA1224CB7B3C /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8BBF33123C5DED64F598FF /* ALEnergyBaseViewController.m */; };
@@ -95,6 +95,7 @@
 		6AF9495FFED8E9A54544FD4B /* anyline_austrian_driving_license.ale in Resources */ = {isa = PBXBuildFile; fileRef = F5B8C4A5C1C168BE0488198F /* anyline_austrian_driving_license.ale */; };
 		6E36CB15F322CF98A84D8467 /* ALScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CB4729C4A9C0FEBF226E57 /* ALScanResultViewController.m */; };
 		6F2D74D4191D76740986B1C8 /* drivingLicense_universalID_config.json in Resources */ = {isa = PBXBuildFile; fileRef = D0395CA97C1858ADC1B0FC9D /* drivingLicense_universalID_config.json */; };
+		6F80C436AEC24B717740CF88 /* ScanHistoryMigration3to4.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5FEA61C1C1ACB0265F519 /* ScanHistoryMigration3to4.m */; };
 		70A4D305EAB9D7D45D30B58A /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 96A3D3139D636DFCF875E8FA /* voucher_code_config.json */; };
 		7160AD923669EB0720FCD3C9 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11E06DF396B1B2615A7D5C2 /* CoreDataManager.m */; };
 		71E8873219BC85D682B35AF1 /* UIViewController+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E94F5B4D905C28394B2AD /* UIViewController+ALExamplesAdditions.m */; };
@@ -102,13 +103,14 @@
 		724A4CCD1468DE0493A8A608 /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3F4D726FC915731B73AE3 /* ALDocumentScanViewController.m */; };
 		74BDDA1262C89D83FE54EECB /* ALPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */; };
 		7767A2D8F27569E8A6599102 /* serialscanconfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 3915E1A2329C99C2D5A72047 /* serialscanconfig.json */; };
+		78450894B4E04FD3F2CBC860 /* ScanHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBDB086634A2C26C320F12 /* ScanHistory+CoreDataClass.m */; };
 		784A6C370FAB2C150DF9CBFB /* Reading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB1A422354B6B767547049 /* Reading+CoreDataProperties.m */; };
 		7B974FABA902C5631FDD2681 /* ALPDF417ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE844E43F308E9D0C6E8736D /* ALPDF417ScanViewController.m */; };
 		7C713962A6B7C0A985E3C912 /* ALNLDrivingLicenseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA13F9911841DA160E60F74 /* ALNLDrivingLicenseScanViewController.m */; };
 		7EB82DE3643F08FE57BAE893 /* ALMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = EB78932388C374EF93341EE8 /* ALMeter.m */; };
 		7F57D792ED6FECA6A50A3F37 /* UIButton+ALExamplesExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B765E09017714AD35B457E0 /* UIButton+ALExamplesExtensions.m */; };
 		804335D16FFBAA47CAF17ED7 /* ALSerialScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504E791436152C201F0B41CD /* ALSerialScanViewController.m */; };
-		81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; };
+		81F2A082BFB556E51C85E783 /* Anyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82098553EF9F70DCD53166C1 /* NSUserDefaults+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */; };
 		825554D17F253D580D3E6603 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E4BDD67B0B2AA88763193 /* ALMeterExampleManager.m */; };
 		83C2E2BFA23265B9E254A1D1 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A507ABFDFAE4C3298D842D /* ALBaseScanViewController.m */; };
@@ -125,12 +127,12 @@
 		9516DCB1D2B2D301D7A01D36 /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678532EDC412A7D9CFA127A7 /* colors.xcassets */; };
 		960A7953672EA0B639A30FA5 /* WorkforceToolResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2093FE4EF48CEEDBC2CE51D8 /* WorkforceToolResultViewController.xib */; };
 		993857DE93729EB601CD1A8E /* ALMeterSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCB00C4D68018A8D821988 /* ALMeterSelectView.m */; };
-		99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AEE556559232DFCD1E18C3A /* ALCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E8D46EC14ED14B84F0FAE /* ALCheckbox.m */; };
 		9B532D0EF25503B8C2C004C8 /* ALEUDrivingLicenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D385BA44D7A71B573ACAF0 /* ALEUDrivingLicenseView.m */; };
 		9B85D1299B1E0B254BA1C6CA /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B96E1E727AC69E01649E6 /* ALRBScanViewController.m */; };
 		9BA532A518522696002B0872 /* ALAwardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B40EC29D2A0CFA6AC2651C /* ALAwardsView.m */; };
 		9D6D1A47066EC5C9D3CAE9F4 /* ALLicensePlateExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */; };
+		9EE2296B7A577AFA8F2C8CCE /* ALFaceAuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */; };
 		A19EC2C4EDE4E23A8233D63A /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DEF617BE080B414491B04 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
 		A66630A6C0A9ECB50C022625 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */; };
 		A70B12B1EB0583ABBFAAAECF /* CustomerSelfReading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DF764271604E0EB992306FBB /* CustomerSelfReading+CoreDataProperties.m */; };
@@ -138,6 +140,7 @@
 		A8924A6DC244EC095BD6BCB1 /* AnylineExamples.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D498A3A2FC5316566EC89F7F /* AnylineExamples.xcdatamodeld */; };
 		A8E6D97EEE1E0D0A5C675964 /* CustomerDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442C9FF1588611259A884BC4 /* CustomerDataViewController.xib */; };
 		A9B86F7EC70516E6742E48BA /* ALParallelMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6D34271AD62305E175DE9 /* ALParallelMeterScanViewController.m */; };
+		AE24A6531BBE3500185E26EE /* energyMockData1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8423FA8B204ED6781568BABD /* energyMockData1.json */; };
 		AE4562D43E2A1260A78D10EE /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F54895F8F550A096FEF90C1 /* ALScrabbleWord.m */; };
 		AE64F68FC2C785CC42C6D626 /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9444087F811BB5FA23DCE9AB /* ISBNInfo.m */; };
 		AF2D476FCB0DE9B3542991EE /* ALResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CEE047492B9C3C53DD2D30 /* ALResultOverlayView.m */; };
@@ -145,6 +148,7 @@
 		B4934189062336BC98D6B05D /* ALISBNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E59D1138CECF3DF866E2B /* ALISBNAPI.m */; };
 		B49B5638CE76407C30941E70 /* scrabble_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FCF06B3B2CD8A6056D6CAD5 /* scrabble_config.json */; };
 		B8C1BB40368F01856FE10792 /* ReadingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF3B2A195CB1BC742F07A4 /* ReadingDetailsViewController.m */; };
+		B9C04394AB2B1F3688EABC98 /* ReadingTransformationPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4156A1644B315B70FE0B8419 /* ReadingTransformationPolicy.m */; };
 		BB1A1B3F63B629057BC79103 /* ALMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B76762D974C43BF0286E13 /* ALMainPageViewController.m */; };
 		BCBE543B8A4F2D0438610730 /* ALBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2143CC6945384EC804BA0 /* ALBaseViewController.m */; };
 		BCEDAE444AB969E5885E0B84 /* ALIntroHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84E52042DF87A432B7C4A09 /* ALIntroHelpView.m */; };
@@ -168,7 +172,9 @@
 		DDACD680801D8D6BED0F6F18 /* ALBasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */; };
 		DED860F64AF49DD872DCAC2C /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 084643E9DC61FCF5C414457E /* isbn_config.json */; };
 		DF769EF1A4C7A11DE916D0B1 /* universal_id_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD32A60DAB173ECCAC90D9D4 /* universal_id_config.json */; };
+		DFFFD961846F72E077B90DC9 /* ALScriptSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */; };
 		E2B5A3C0DD9F2F95F8DBD47A /* ALPrivacyForwardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */; };
+		E4660E0BAEC49D4B4180D824 /* ScanHistoryMigration3to4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3D8772DC75560F15A05F6C69 /* ScanHistoryMigration3to4.xcmappingmodel */; };
 		E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA12F0082427C9B897F096 /* ALSpaceViews.m */; };
 		E7017766A5591720AE2CBCDA /* ALISBNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D42728150F52CC8887535DC /* ALISBNViewController.m */; };
 		E81F0DED94A08AAB70CDBD5F /* ALMRZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC613FC690FD7C7C742CE2F /* ALMRZScanViewController.m */; };
@@ -176,7 +182,7 @@
 		E980239BD86AEAFB3F31054D /* WorkorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E9384C128A108EB06BEEE /* WorkorderViewController.m */; };
 		EDFD83EF777DB60784943E89 /* NSTimer+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2FCCDD73155DB06E083452 /* NSTimer+ALExamplesAdditions.m */; };
 		EFCF9293DCE54B0BB32ED198 /* rb_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E9D04C26C4E7E9D9FBEA655 /* rb_config.json */; };
-		F169DC2A5D1E048F6ECC72A7 /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5106643C873644DD1C25C /* energyMockData2.json */; };
+		F00A3D1FC8632FEA4AB60C44 /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C279DBD77DEDB8A0AB2D80C9 /* Model.xcmappingmodel */; };
 		F2966A08EF5C306C23684775 /* ReadingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83ADD2847DFDE9E397F66B99 /* ReadingDetailsViewController.xib */; };
 		F41D6D9F6AD538727145B081 /* ALBlackWhiteSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA4A73673E308855423FF7 /* ALBlackWhiteSelectView.m */; };
 		F4A12D154F1AA631417B5910 /* ALEnergyMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0018BF97083F73F2EAAFAC3B /* ALEnergyMeterScanViewController.m */; };
@@ -184,6 +190,7 @@
 		F64F0BED24A7FD29C86D25FA /* ALGermanIDFrontScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D89CA05BDD127ACB523A6E04 /* ALGermanIDFrontScanViewController.m */; };
 		F7BFE2085451648DD83A41FB /* ALBundleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12ECB31388816698425036A /* ALBundleInfoViewController.m */; };
 		F9EC2303CE0D73D7FD969655 /* UISwitch+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB1474AA11E583864902DE /* UISwitch+ALExamplesAdditions.m */; };
+		FB59DBE530C4A7AE40738423 /* NSMutableAttributedString+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24923CA36F1AD9C467B08D23 /* NSMutableAttributedString+ALExamplesAdditions.m */; };
 		FDC12FEC02C4898E09BDA87B /* ALGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 915CDA4B2C757B7BA6510E8D /* ALGridCollectionViewCell.m */; };
 		FDF9C7606A984B1535B26B21 /* ALAnagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C20747B24FE141B33681784 /* ALAnagramAPI.m */; };
 /* End PBXBuildFile section */
@@ -195,7 +202,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */,
+				17A13B5426D6A65500079030 /* AnylineFaceAuthentication.xcframework in Embed Frameworks */,
+				17A13B6626D6A95800079030 /* FaceTecSDK.xcframework in Embed Frameworks */,
+				81F2A082BFB556E51C85E783 /* Anyline.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +231,10 @@
 		13881BADEC0C6D4F757DEC90 /* ALLicensePlateResultOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateResultOverlayView.m; sourceTree = "<group>"; };
 		13CA7904806E9C88E9330369 /* ALDrivingLicenseScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDrivingLicenseScanViewController.h; sourceTree = "<group>"; };
 		13E9FE873FC5D8CA2D980753 /* UIViewController+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ALExamplesAdditions.h"; sourceTree = "<group>"; };
-		14583A4C3FE4ADA76C2C82F6 /* ScanHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanHistory.h; sourceTree = "<group>"; };
 		154CDA4F434DE3D5A626CD6F /* ALColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALColor.h; sourceTree = "<group>"; };
 		16DB7A75A5F8AD5B606F58EE /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataProperties.m"; sourceTree = "<group>"; };
+		17A13B4426D6A41D00079030 /* AnylineFaceAuthentication.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnylineFaceAuthentication.xcframework; sourceTree = "<group>"; };
+		17A13B6526D6A95800079030 /* FaceTecSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FaceTecSDK.xcframework; sourceTree = "<group>"; };
 		182DEF617BE080B414491B04 /* ALAutoAnalogDigitalMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAutoAnalogDigitalMeterScanViewController.m; sourceTree = "<group>"; };
 		186AC71508B2BFEF5BB5537E /* ALUniversalIDScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalIDScanViewController.m; sourceTree = "<group>"; };
 		1ABD76C461AA42B794A0F884 /* NSUserDefaults+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+ALExamplesAdditions.h"; sourceTree = "<group>"; };
@@ -241,19 +251,22 @@
 		1F1E78B6137D667B2BAFF771 /* ALProductExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALProductExampleManager.m; sourceTree = "<group>"; };
 		200D1EBB7219D783E812650B /* NSTimer+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		2093FE4EF48CEEDBC2CE51D8 /* WorkforceToolResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkforceToolResultViewController.xib; sourceTree = "<group>"; };
+		22E8CB56EA54CFB534DA589B /* AnylineExamples 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineExamples 3.xcdatamodel"; sourceTree = "<group>"; };
 		23117B72847A07EB7D0A2AC0 /* NSString+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
 		2408E133998590A79393C9F5 /* ALIdentityDocumentsExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIdentityDocumentsExampleManager.h; sourceTree = "<group>"; };
 		243B0BAAB8D99EDCD9DED87C /* ALGridCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALGridCollectionViewCell.h; sourceTree = "<group>"; };
 		24612698857CFE3971A3AE51 /* WorkforceTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkforceTool.m; sourceTree = "<group>"; };
+		24923CA36F1AD9C467B08D23 /* NSMutableAttributedString+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		254FBCFC83BBCE0B37B8CD99 /* ReadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadingTableViewCell.xib; sourceTree = "<group>"; };
 		25A60D43D79D5825421AEE0C /* NSManagedObjectContext+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		26ADB261A4028273D6D149D4 /* ALUniversalIDFieldnameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUniversalIDFieldnameUtil.h; sourceTree = "<group>"; };
 		292FF76F299F378309092273 /* NSAttributedString+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ALExamplesAdditions.h"; sourceTree = "<group>"; };
+		296AB81BA49A0F52F5E679E3 /* AnylineEnergyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnylineEnergyModel.xcdatamodel; sourceTree = "<group>"; };
 		2AB85CDAF0E3CBE3888B5576 /* ALIntroHelpViewElectric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIntroHelpViewElectric.m; sourceTree = "<group>"; };
 		2AC802CBECE3BEC190BB90BC /* ALGridCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGridCollectionViewController.m; sourceTree = "<group>"; };
 		2AE01852827507975736BFED /* Customer+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Customer+CoreDataProperties.m"; sourceTree = "<group>"; };
-		2C08840AC53504FC564F74C4 /* ReadingTransformationPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTransformationPolicy.h; sourceTree = "<group>"; };
 		2C4BB2860826353A412BB303 /* ALHeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		2DC7E98210F6761127C7F0CD /* energyMockData2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = energyMockData2.json; sourceTree = "<group>"; };
 		2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		2E8F1BC85E70148A9D26AAE9 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
 		2FC2BB5DD1BB6961AD1E9871 /* ALRBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRBScanViewController.h; sourceTree = "<group>"; };
@@ -272,14 +285,17 @@
 		3A67ACF7B450115C3E36A9EA /* vertical_container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vertical_container_scanner_capture_config.json; sourceTree = "<group>"; };
 		3AF73219598C155CF0603175 /* ALCustomToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCustomToolbar.m; sourceTree = "<group>"; };
 		3B765E09017714AD35B457E0 /* UIButton+ALExamplesExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ALExamplesExtensions.m"; sourceTree = "<group>"; };
+		3D8772DC75560F15A05F6C69 /* ScanHistoryMigration3to4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = ScanHistoryMigration3to4.xcmappingmodel; sourceTree = "<group>"; };
 		3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBasePageViewController.m; sourceTree = "<group>"; };
 		3FF8D23972FFE05B6EE9954C /* ALMeterReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterReading.h; sourceTree = "<group>"; };
 		400F02921D3C7A566560C545 /* ALUniversalSerialNumberScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUniversalSerialNumberScanViewController.h; sourceTree = "<group>"; };
 		4034A31CD2F393BE7D5E1EC4 /* ALUniversalIDScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUniversalIDScanViewController.h; sourceTree = "<group>"; };
 		40D95BAB90478502C129F9F4 /* ALRecordNumberScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALRecordNumberScanViewController.m; sourceTree = "<group>"; };
+		4156A1644B315B70FE0B8419 /* ReadingTransformationPolicy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingTransformationPolicy.m; sourceTree = "<group>"; };
 		41F0702B990CC38E25592A32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4206191D0D142A20C1D05C8F /* ALVerticalContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALVerticalContainerScanViewController.m; sourceTree = "<group>"; };
 		42B4B012ACF1BCFB9BE76DED /* ALLicensePlateResultOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateResultOverlayView.h; sourceTree = "<group>"; };
+		42F084242F64F44150C36582 /* ScanHistory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataClass.h"; sourceTree = "<group>"; };
 		43BE0DB9AD5AA0BBB178E0D2 /* container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = container_scanner_capture_config.json; sourceTree = "<group>"; };
 		442C9FF1588611259A884BC4 /* CustomerDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDataViewController.xib; sourceTree = "<group>"; };
 		44F4A434C2E88DA003698E0B /* Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
@@ -288,7 +304,6 @@
 		49A507ABFDFAE4C3298D842D /* ALBaseScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseScanViewController.m; sourceTree = "<group>"; };
 		4AD2327535110C3026475005 /* ALUniversalIDFieldnameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalIDFieldnameUtil.m; sourceTree = "<group>"; };
 		4B2EB9E82C48102735C47BF0 /* ALIdentificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIdentificationView.m; sourceTree = "<group>"; };
-		4BC5106643C873644DD1C25C /* energyMockData2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = energyMockData2.json; sourceTree = "<group>"; };
 		4BDE8754C4C6459C4483851D /* ALVINScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALVINScanViewController.m; sourceTree = "<group>"; };
 		502F956464F930CDC7019386 /* ALMRZScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMRZScanViewController.h; sourceTree = "<group>"; };
 		504E791436152C201F0B41CD /* ALSerialScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALSerialScanViewController.m; sourceTree = "<group>"; };
@@ -304,11 +319,16 @@
 		59F2143CC6945384EC804BA0 /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTutorialViewController.m; sourceTree = "<group>"; };
 		5ABFBDA9A84B279E7614CE2D /* UIToolbar+ExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+ExamplesExtensions.h"; sourceTree = "<group>"; };
-		5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AnylineResources.bundle; sourceTree = "<group>"; };
+		5B87E9374F67894CA3A1F4FE /* universal_id_arabic_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = universal_id_arabic_config.json; sourceTree = "<group>"; };
+		5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = AnylineResources.bundle; sourceTree = "<group>"; };
 		5D734F16D23B623323CB450A /* ALOthersExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALOthersExampleManager.m; sourceTree = "<group>"; };
 		5D7732507A0D4EA588C3067F /* ALUSLicensePlateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUSLicensePlateViewController.h; sourceTree = "<group>"; };
 		5DB5343E5509AE0CE37F2384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5ECFD208BD47657AE983B207 /* ALScriptSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScriptSelectionViewController.h; sourceTree = "<group>"; };
+		5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALFaceAuthentificationViewController.m; sourceTree = "<group>"; };
 		602AF9DF62FC564C6646D2E5 /* ALToggleControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALToggleControl.m; sourceTree = "<group>"; };
+		616461B6587A181665857FC9 /* AnylineEnergyModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		61A5FEA61C1C1ACB0265F519 /* ScanHistoryMigration3to4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanHistoryMigration3to4.m; sourceTree = "<group>"; };
 		61AE6E061296A4581FB66B20 /* ALCattleTagScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCattleTagScanViewController.m; sourceTree = "<group>"; };
 		61B15A0A73D0C8E7D041B7C9 /* ALScrabbleLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleLabel.m; sourceTree = "<group>"; };
 		61CEE047492B9C3C53DD2D30 /* ALResultOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultOverlayView.m; sourceTree = "<group>"; };
@@ -358,11 +378,11 @@
 		7DD1CC4044B59146DF078A85 /* ALSelectionTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALSelectionTable.h; sourceTree = "<group>"; };
 		7E65C2A8FE68C13A20583F31 /* ALIdentificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIdentificationView.h; sourceTree = "<group>"; };
 		7EAC107D810BDA1E0DD6A546 /* ALEnergyBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALEnergyBaseViewController.h; sourceTree = "<group>"; };
-		813F6209E106C9FF45CCEEEF /* AnylineEnergyModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		821B9CF8C823115446349BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		82F96EB29788438DC60C51BF /* ALBarcodeFormatHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeFormatHelper.h; sourceTree = "<group>"; };
 		83ADB2D0DE56FFFBDBC03619 /* ALAnagramAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAnagramAPI.h; sourceTree = "<group>"; };
 		83ADD2847DFDE9E397F66B99 /* ReadingDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadingDetailsViewController.xib; sourceTree = "<group>"; };
+		8423FA8B204ED6781568BABD /* energyMockData1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = energyMockData1.json; sourceTree = "<group>"; };
 		8503EA812C39D3BDEEC5B46C /* ALNFCScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALNFCScanViewController.h; sourceTree = "<group>"; };
 		85261241AEA4DA6EBF3B2F7D /* ALScrabbleScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleScanViewController.h; sourceTree = "<group>"; };
 		8559369BC2271AFE0A5F4A67 /* ALCustomBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCustomBarButton.m; sourceTree = "<group>"; };
@@ -375,18 +395,17 @@
 		8997ECCC3F31FC24E06298FD /* NSArray+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		8C20747B24FE141B33681784 /* ALAnagramAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAnagramAPI.m; sourceTree = "<group>"; };
 		8E2FCCDD73155DB06E083452 /* NSTimer+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ALExamplesAdditions.m"; sourceTree = "<group>"; };
-		8EABA46A3ED59A9E5E85B132 /* ScanHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanHistory.m; sourceTree = "<group>"; };
 		8F54895F8F550A096FEF90C1 /* ALScrabbleWord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleWord.m; sourceTree = "<group>"; };
 		8F9592E10BAADEF3FFCD6D52 /* ALTextViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTextViewCell.h; sourceTree = "<group>"; };
 		8FC613FC690FD7C7C742CE2F /* ALMRZScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMRZScanViewController.m; sourceTree = "<group>"; };
 		90082EB5EF42EDECAF5C0CA0 /* ALMeterReadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterReadingView.m; sourceTree = "<group>"; };
 		915CDA4B2C757B7BA6510E8D /* ALGridCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGridCollectionViewCell.m; sourceTree = "<group>"; };
 		91E148202561E98484D64F0C /* ALScrabbleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleViewController.m; sourceTree = "<group>"; };
-		9225BA88899E4AC85452A1FD /* AnylineEnergyModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		92A698A60AD33BFD242A7B53 /* ALCustomToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCustomToolbar.h; sourceTree = "<group>"; };
 		9424406670994538E1F5D202 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		9444087F811BB5FA23DCE9AB /* ISBNInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISBNInfo.m; sourceTree = "<group>"; };
 		95EC580E5D102787DB5DB9AD /* ALContainerScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALContainerScanViewController.h; sourceTree = "<group>"; };
+		967A11DE190C7EA881C5F751 /* ALFaceAuthentificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALFaceAuthentificationViewController.h; sourceTree = "<group>"; };
 		96A3D3139D636DFCF875E8FA /* voucher_code_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = voucher_code_config.json; sourceTree = "<group>"; };
 		9780D7F513FBA5687A612B99 /* ALGridCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALGridCollectionViewController.h; sourceTree = "<group>"; };
 		980C37F45E2EF4A932C992D3 /* ALSerialScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALSerialScanViewController.h; sourceTree = "<group>"; };
@@ -398,7 +417,7 @@
 		9B2C52A1458BA3161852471B /* ALMeterExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterExampleManager.h; sourceTree = "<group>"; };
 		9D39733E2B7D3BF8963BE7BD /* ScanHistory+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ScanHistory+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9DA13F9911841DA160E60F74 /* ALNLDrivingLicenseScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALNLDrivingLicenseScanViewController.m; sourceTree = "<group>"; };
-		9DC328BF59C022522617A321 /* Model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model.xcmappingmodel; sourceTree = "<group>"; };
+		9DC43065B0F5C05CA4A099BD /* NSMutableAttributedString+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		9E4BE99055F2D9911A46580F /* ALMeterCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterCollectionViewController.h; sourceTree = "<group>"; };
 		9E96287CC71693DD8C9232C6 /* UIColor+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		9E97F2F856C896EBAFEBFBBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -410,7 +429,6 @@
 		A15FCC2BD1A9E95397F7F99F /* ALRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALRoundedView.m; sourceTree = "<group>"; };
 		A18C42E39BF797CCFDCA51E9 /* UIFont+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		A1D9E32583A9312C676B518E /* AnylineExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnylineExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A25DB09C64B7EB53FE5DC426 /* AnylineEnergyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnylineEnergyModel.xcdatamodel; sourceTree = "<group>"; };
 		A32C1BCB5B5C13059FAF6ED8 /* Customer+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Customer+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A3E33501354D63AEBF450ACA /* ALTINScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTINScanViewController.m; sourceTree = "<group>"; };
 		A424D0F5DC83E2BFF249BA05 /* ALDialMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDialMeterScanViewController.m; sourceTree = "<group>"; };
@@ -418,10 +436,12 @@
 		A55CA11F512D1EB3147C6D35 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A570607C0C1C45A39FFE134C /* NSManagedObjectContext+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		A5AFADA28C4329DEC5E6100F /* ALUniversalIDScanViewControllerFrontAndBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalIDScanViewControllerFrontAndBack.m; sourceTree = "<group>"; };
+		A5EBDB086634A2C26C320F12 /* ScanHistory+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ScanHistory+CoreDataClass.m"; sourceTree = "<group>"; };
 		A680DA979CBA5B2D057A62BA /* WorkforceTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkforceTool.h; sourceTree = "<group>"; };
 		A69B1A2F844B7CED945DC4AF /* CustomerSelfReadingResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerSelfReadingResultViewController.xib; sourceTree = "<group>"; };
 		A701089685066A8503F97EB2 /* ALToggleControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALToggleControl.h; sourceTree = "<group>"; };
 		A715603292CC221B09D405FD /* ALTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTutorialViewController.h; sourceTree = "<group>"; };
+		A79B7275D336824CB329A214 /* AnylineEnergyModel 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 4.xcdatamodel"; sourceTree = "<group>"; };
 		A7D5F404BA40404FC2843ED9 /* ALUmbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUmbrella.h; sourceTree = "<group>"; };
 		A8CB4729C4A9C0FEBF226E57 /* ALScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScanResultViewController.m; sourceTree = "<group>"; };
 		AAC2E6C8E9E1996B60427EA3 /* CustomerSelfReadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSelfReadingViewController.h; sourceTree = "<group>"; };
@@ -435,7 +455,6 @@
 		B796B03399AA17084BF87FE2 /* ALIntroHelpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIntroHelpView.h; sourceTree = "<group>"; };
 		B7B4776BB82FA4F7729784D0 /* ALExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExample.m; sourceTree = "<group>"; };
 		B7F93940133379A464B2ECA1 /* ALExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExampleManager.m; sourceTree = "<group>"; };
-		B953F9C3A416B87963028E4D /* energyMockData1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = energyMockData1.json; sourceTree = "<group>"; };
 		B99D95A790613724D2917D97 /* ALScanResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALScanResultViewController.xib; sourceTree = "<group>"; };
 		BA89E85175CED5995CE165C6 /* ALExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALExample.h; sourceTree = "<group>"; };
 		BAA0A933607B261163D39272 /* ALDialMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDialMeterScanViewController.h; sourceTree = "<group>"; };
@@ -453,10 +472,10 @@
 		BFA2D24537BE819B9E82E04D /* WorkorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkorderViewController.h; sourceTree = "<group>"; };
 		BFADAFA9683F3BC78869E42C /* UIButton+ALExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ALExamplesExtensions.h"; sourceTree = "<group>"; };
 		BFC15BAECD966B47C03DB1BF /* CustomerDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataView.m; sourceTree = "<group>"; };
-		BFEC72683D3FF92AF8DB9468 /* ReadingTransformationPolicy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingTransformationPolicy.m; sourceTree = "<group>"; };
 		C0978B57E2E7E3A98728F35F /* ALSpaceViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALSpaceViews.h; sourceTree = "<group>"; };
 		C12ECB31388816698425036A /* ALBundleInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBundleInfoViewController.m; sourceTree = "<group>"; };
 		C26DCA1CBAC60A9A22BE6DDC /* ALBaseGridCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseGridCollectionViewController.h; sourceTree = "<group>"; };
+		C279DBD77DEDB8A0AB2D80C9 /* Model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model.xcmappingmodel; sourceTree = "<group>"; };
 		C2DE5E7E740DE6CE65330E56 /* ALISBNScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALISBNScanViewController.m; sourceTree = "<group>"; };
 		C35708656BE5895E6037B2A8 /* ALVerticalContainerScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVerticalContainerScanViewController.h; sourceTree = "<group>"; };
 		C401B4BF009D1D8E2BED8173 /* CustomerSelfReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerSelfReading.m; sourceTree = "<group>"; };
@@ -465,6 +484,7 @@
 		C6710658F42970400FD78BD0 /* iban_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iban_config.json; sourceTree = "<group>"; };
 		C693A94797CE4C0904AAA627 /* NSArray+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		C7B781000A27A5EBD168F708 /* ALTINScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTINScanViewController.h; sourceTree = "<group>"; };
+		CA1844EA54C7D8B97D895C05 /* ReadingTransformationPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTransformationPolicy.h; sourceTree = "<group>"; };
 		CB56AC0CF88F101A75FF5F3E /* vin_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vin_capture_config.json; sourceTree = "<group>"; };
 		CC75DF6BB98F730B445F418A /* WorkForceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkForceViewController.h; sourceTree = "<group>"; };
 		CD45FF61F08237CA8F7D06B2 /* ALCheckbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCheckbox.h; sourceTree = "<group>"; };
@@ -480,9 +500,11 @@
 		D89CA05BDD127ACB523A6E04 /* ALGermanIDFrontScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALGermanIDFrontScanViewController.m; sourceTree = "<group>"; };
 		D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
 		D9F533C26CE1AF0173FA55D8 /* WorkForceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkForceViewController.m; sourceTree = "<group>"; };
+		DA8B29DE351FABD5EF6EEAA1 /* AnylineEnergyModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		DBCCB00C4D68018A8D821988 /* ALMeterSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterSelectView.m; sourceTree = "<group>"; };
 		DC8BBF33123C5DED64F598FF /* ALEnergyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEnergyBaseViewController.m; sourceTree = "<group>"; };
 		DCA6D34271AD62305E175DE9 /* ALParallelMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALParallelMeterScanViewController.m; sourceTree = "<group>"; };
+		DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScriptSelectionViewController.m; sourceTree = "<group>"; };
 		DD646209B4D968D82B196CA2 /* ALResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALResultCell.h; sourceTree = "<group>"; };
 		DE877C4DDA2EEA809EBBE1D8 /* ALResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultCell.m; sourceTree = "<group>"; };
 		DF3FF2562FFAF1D0AC162F63 /* Reading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reading.m; sourceTree = "<group>"; };
@@ -516,6 +538,7 @@
 		F7151F89C55A657556691214 /* ScanHistory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F72E21F38E68BE8268DA8B75 /* ALVoucherCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVoucherCodeScanViewController.h; sourceTree = "<group>"; };
 		F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		F8F473BAEC7288A2E304C228 /* ScanHistoryMigration3to4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanHistoryMigration3to4.h; sourceTree = "<group>"; };
 		F92107DB6698B83180CD5864 /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		FDCEFD699881115D834BAA3A /* ALDeviceInformationHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDeviceInformationHelper.m; sourceTree = "<group>"; };
 		FE8E97DFB75BB606736A5B8F /* ALBasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBasePageViewController.h; sourceTree = "<group>"; };
@@ -530,7 +553,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +591,15 @@
 				3F8D864CC1FBB735930B1943 /* ViewController */,
 			);
 			path = Barcode;
+			sourceTree = "<group>";
+		};
+		157525FAB05CFED5BBB9DAE1 /* FaceAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				967A11DE190C7EA881C5F751 /* ALFaceAuthentificationViewController.h */,
+				5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */,
+			);
+			path = FaceAuthentication;
 			sourceTree = "<group>";
 		};
 		16C90035C38013048BAC4561 /* ViewController */ = {
@@ -721,6 +752,8 @@
 			children = (
 				CD45FF61F08237CA8F7D06B2 /* ALCheckbox.h */,
 				1D7E8D46EC14ED14B84F0FAE /* ALCheckbox.m */,
+				5ECFD208BD47657AE983B207 /* ALScriptSelectionViewController.h */,
+				DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */,
 				D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */,
 			);
 			path = Components;
@@ -770,6 +803,8 @@
 			children = (
 				292FF76F299F378309092273 /* NSAttributedString+ALExamplesAdditions.h */,
 				54C6C24B452735E53395244B /* NSAttributedString+ALExamplesAdditions.m */,
+				9DC43065B0F5C05CA4A099BD /* NSMutableAttributedString+ALExamplesAdditions.h */,
+				24923CA36F1AD9C467B08D23 /* NSMutableAttributedString+ALExamplesAdditions.m */,
 				BFADAFA9683F3BC78869E42C /* UIButton+ALExamplesExtensions.h */,
 				3B765E09017714AD35B457E0 /* UIButton+ALExamplesExtensions.m */,
 			);
@@ -913,7 +948,6 @@
 				7212AEEBA9351E028AFC229F /* WorkforceTool+CoreDataProperties.h */,
 				C474F22983E364473A5F91A8 /* WorkforceTool+CoreDataProperties.m */,
 				50494BD46BC6ABEF8504466F /* CustomerSelfReading */,
-				D468B93C93B30536007C6426 /* Datamodels */,
 				D060D46C2B51104DE5091B0A /* ScanViewController */,
 				D3C9911ACD47A693F72D9EAC /* Workforce */,
 			);
@@ -932,7 +966,16 @@
 		5829676095E89FA2B57CAD0E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				42A56CBF24159FDD12C0076B /* AnylineEnergyModel.xcdatamodeld */,
 				D498A3A2FC5316566EC89F7F /* AnylineExamples.xcdatamodeld */,
+				8423FA8B204ED6781568BABD /* energyMockData1.json */,
+				2DC7E98210F6761127C7F0CD /* energyMockData2.json */,
+				C279DBD77DEDB8A0AB2D80C9 /* Model.xcmappingmodel */,
+				CA1844EA54C7D8B97D895C05 /* ReadingTransformationPolicy.h */,
+				4156A1644B315B70FE0B8419 /* ReadingTransformationPolicy.m */,
+				F8F473BAEC7288A2E304C228 /* ScanHistoryMigration3to4.h */,
+				61A5FEA61C1C1ACB0265F519 /* ScanHistoryMigration3to4.m */,
+				3D8772DC75560F15A05F6C69 /* ScanHistoryMigration3to4.xcmappingmodel */,
 				A083AD87561B20ECA2968506 /* Model */,
 			);
 			path = CoreData;
@@ -1004,6 +1047,7 @@
 		761C0429062CC48DC697E44E /* UniversalID */ = {
 			isa = PBXGroup;
 			children = (
+				5B87E9374F67894CA3A1F4FE /* universal_id_arabic_config.json */,
 				BD32A60DAB173ECCAC90D9D4 /* universal_id_config.json */,
 				7827C4BE8CF0D9B0246BF7C8 /* ViewController */,
 			);
@@ -1020,6 +1064,7 @@
 				E2D4B221C41469C27B5628E7 /* ALUniversalIDScanViewControllerFrontAndBack.h */,
 				A5AFADA28C4329DEC5E6100F /* ALUniversalIDScanViewControllerFrontAndBack.m */,
 				D4413505AA97F9234BD1A420 /* GifuWrapper.swift */,
+				157525FAB05CFED5BBB9DAE1 /* FaceAuthentication */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1085,6 +1130,8 @@
 		916DD56E93DD157AE9FD2C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17A13B6526D6A95800079030 /* FaceTecSDK.xcframework */,
+				17A13B4426D6A41D00079030 /* AnylineFaceAuthentication.xcframework */,
 				79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */,
 			);
 			name = Frameworks;
@@ -1158,8 +1205,8 @@
 		A083AD87561B20ECA2968506 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14583A4C3FE4ADA76C2C82F6 /* ScanHistory.h */,
-				8EABA46A3ED59A9E5E85B132 /* ScanHistory.m */,
+				42F084242F64F44150C36582 /* ScanHistory+CoreDataClass.h */,
+				A5EBDB086634A2C26C320F12 /* ScanHistory+CoreDataClass.m */,
 				F7151F89C55A657556691214 /* ScanHistory+CoreDataProperties.h */,
 				9D39733E2B7D3BF8963BE7BD /* ScanHistory+CoreDataProperties.m */,
 			);
@@ -1272,19 +1319,6 @@
 				355AD17D434245A0D11FBA9E /* WorkorderViewController.xib */,
 			);
 			path = Workforce;
-			sourceTree = "<group>";
-		};
-		D468B93C93B30536007C6426 /* Datamodels */ = {
-			isa = PBXGroup;
-			children = (
-				CCC80A4D0EE79333126917B2 /* AnylineEnergyModel.xcdatamodeld */,
-				B953F9C3A416B87963028E4D /* energyMockData1.json */,
-				4BC5106643C873644DD1C25C /* energyMockData2.json */,
-				9DC328BF59C022522617A321 /* Model.xcmappingmodel */,
-				2C08840AC53504FC564F74C4 /* ReadingTransformationPolicy.h */,
-				BFEC72683D3FF92AF8DB9468 /* ReadingTransformationPolicy.m */,
-			);
-			path = Datamodels;
 			sourceTree = "<group>";
 		};
 		DC41F252D23DC10AB3D96BCE /* ViewController */ = {
@@ -1526,8 +1560,8 @@
 				37FA8753994D60E353707D5E /* cow_tag_capture_config.json in Resources */,
 				6F2D74D4191D76740986B1C8 /* drivingLicense_universalID_config.json in Resources */,
 				049E97906E60141C7E94EADB /* drivinglicense_capture_config.json in Resources */,
-				34F9E6B83A485CEB8C8B04BF /* energyMockData1.json in Resources */,
-				F169DC2A5D1E048F6ECC72A7 /* energyMockData2.json in Resources */,
+				AE24A6531BBE3500185E26EE /* energyMockData1.json in Resources */,
+				194E973F43A3B0B57A330BB5 /* energyMockData2.json in Resources */,
 				406E5D4689D2162E66631DCF /* iban_config.json in Resources */,
 				DED860F64AF49DD872DCAC2C /* isbn_config.json in Resources */,
 				126C1E99EAA1D1E63FAB2CCE /* meter_barcode_view_config.json in Resources */,
@@ -1536,6 +1570,7 @@
 				B49B5638CE76407C30941E70 /* scrabble_config.json in Resources */,
 				182D8027B52B44AEF891E12D /* serial_number_view_config.json in Resources */,
 				7767A2D8F27569E8A6599102 /* serialscanconfig.json in Resources */,
+				2281E6053A1BED4163CDDC0F /* universal_id_arabic_config.json in Resources */,
 				DF769EF1A4C7A11DE916D0B1 /* universal_id_config.json in Resources */,
 				507F27646299BFC4E6A3B20E /* vertical_container_scanner_capture_config.json in Resources */,
 				51C38786D4765B59D70915BC /* vin_capture_config.json in Resources */,
@@ -1576,6 +1611,7 @@
 				F4A12D154F1AA631417B5910 /* ALEnergyMeterScanViewController.m in Sources */,
 				6A5F1FB469924DC9ACCF4163 /* ALExample.m in Sources */,
 				37B2D510A28CED75400D97AF /* ALExampleManager.m in Sources */,
+				9EE2296B7A577AFA8F2C8CCE /* ALFaceAuthentificationViewController.m in Sources */,
 				F64F0BED24A7FD29C86D25FA /* ALGermanIDFrontScanViewController.m in Sources */,
 				FDC12FEC02C4898E09BDA87B /* ALGridCollectionViewCell.m in Sources */,
 				3960189A0D924E92E93599B8 /* ALGridCollectionViewController.m in Sources */,
@@ -1626,6 +1662,7 @@
 				0AFBB4F74889B1364B1EA233 /* ALScrabbleScanViewController.m in Sources */,
 				27533612D3BBEC73BCD89200 /* ALScrabbleViewController.m in Sources */,
 				AE4562D43E2A1260A78D10EE /* ALScrabbleWord.m in Sources */,
+				DFFFD961846F72E077B90DC9 /* ALScriptSelectionViewController.m in Sources */,
 				3F5D3D6335DD200637C834A9 /* ALSelectionTable.m in Sources */,
 				804335D16FFBAA47CAF17ED7 /* ALSerialScanViewController.m in Sources */,
 				E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */,
@@ -1643,7 +1680,7 @@
 				5696F41B6116EFE209F7D4A4 /* ALVerticalContainerScanViewController.m in Sources */,
 				DBD0CB5D7B8AED3B3E083BE3 /* ALVoucherCodeScanViewController.m in Sources */,
 				45E1C7C5AE4504472B25C3F6 /* ALWarningView.m in Sources */,
-				37C8A36B17DA9E088CFB3987 /* AnylineEnergyModel.xcdatamodeld in Sources */,
+				1B339AD1A6982A23A58AFBD5 /* AnylineEnergyModel.xcdatamodeld in Sources */,
 				A8924A6DC244EC095BD6BCB1 /* AnylineExamples.xcdatamodeld in Sources */,
 				4132425F48F3428439BDDBA5 /* AppDelegate.m in Sources */,
 				7160AD923669EB0720FCD3C9 /* CoreDataManager.m in Sources */,
@@ -1660,11 +1697,12 @@
 				A66630A6C0A9ECB50C022625 /* FormFieldView.swift in Sources */,
 				190C9F7DC0103BDD709F6701 /* GifuWrapper.swift in Sources */,
 				AE64F68FC2C785CC42C6D626 /* ISBNInfo.m in Sources */,
-				1F4743B7944CC462EFA3C8C3 /* Model.xcmappingmodel in Sources */,
+				F00A3D1FC8632FEA4AB60C44 /* Model.xcmappingmodel in Sources */,
 				8DF1F05CDED63700EEF343C5 /* NSArray+ALExamplesAdditions.m in Sources */,
 				87CCC52F9F8B0CFEE789DAFF /* NSAttributedString+ALExamplesAdditions.m in Sources */,
 				5BC563C4483045E763BA0EAF /* NSManagedObject+ALExamplesAdditions.m in Sources */,
 				91302FC86FDA4BCFCE864CAD /* NSManagedObjectContext+ALExamplesAdditions.m in Sources */,
+				FB59DBE530C4A7AE40738423 /* NSMutableAttributedString+ALExamplesAdditions.m in Sources */,
 				473E4D82CC7B3C037319283D /* NSString+Util.m in Sources */,
 				EDFD83EF777DB60784943E89 /* NSTimer+ALExamplesAdditions.m in Sources */,
 				82098553EF9F70DCD53166C1 /* NSUserDefaults+ALExamplesAdditions.m in Sources */,
@@ -1675,9 +1713,11 @@
 				DA33191870A1459EB23DCD4A /* Reading.m in Sources */,
 				B8C1BB40368F01856FE10792 /* ReadingDetailsViewController.m in Sources */,
 				0F5545C5A922F2ABCFAE2845 /* ReadingTableViewCell.m in Sources */,
-				43634ADB573CB04CB232A831 /* ReadingTransformationPolicy.m in Sources */,
+				B9C04394AB2B1F3688EABC98 /* ReadingTransformationPolicy.m in Sources */,
+				78450894B4E04FD3F2CBC860 /* ScanHistory+CoreDataClass.m in Sources */,
 				486D260E0AA1DCD6BC257483 /* ScanHistory+CoreDataProperties.m in Sources */,
-				5CD5C802C0FB048295B7C937 /* ScanHistory.m in Sources */,
+				6F80C436AEC24B717740CF88 /* ScanHistoryMigration3to4.m in Sources */,
+				E4660E0BAEC49D4B4180D824 /* ScanHistoryMigration3to4.xcmappingmodel in Sources */,
 				7F57D792ED6FECA6A50A3F37 /* UIButton+ALExamplesExtensions.m in Sources */,
 				07C382512D3E2C2456D47B16 /* UIColor+ALExamplesAdditions.m in Sources */,
 				620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */,
@@ -1740,6 +1780,7 @@
 					./../Framework,
 					/,
 				);
+				MARKETING_VERSION = 33;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1829,6 +1870,7 @@
 					./../Framework,
 					/,
 				);
+				MARKETING_VERSION = 33;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1925,14 +1967,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CCC80A4D0EE79333126917B2 /* AnylineEnergyModel.xcdatamodeld */ = {
+		42A56CBF24159FDD12C0076B /* AnylineEnergyModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9225BA88899E4AC85452A1FD /* AnylineEnergyModel 2.xcdatamodel */,
-				813F6209E106C9FF45CCEEEF /* AnylineEnergyModel 3.xcdatamodel */,
-				A25DB09C64B7EB53FE5DC426 /* AnylineEnergyModel.xcdatamodel */,
+				616461B6587A181665857FC9 /* AnylineEnergyModel 2.xcdatamodel */,
+				DA8B29DE351FABD5EF6EEAA1 /* AnylineEnergyModel 3.xcdatamodel */,
+				A79B7275D336824CB329A214 /* AnylineEnergyModel 4.xcdatamodel */,
+				296AB81BA49A0F52F5E679E3 /* AnylineEnergyModel.xcdatamodel */,
 			);
-			currentVersion = 813F6209E106C9FF45CCEEEF /* AnylineEnergyModel 3.xcdatamodel */;
+			currentVersion = A79B7275D336824CB329A214 /* AnylineEnergyModel 4.xcdatamodel */;
 			path = AnylineEnergyModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
@@ -1941,9 +1984,10 @@
 			isa = XCVersionGroup;
 			children = (
 				1D441F11D2B3236170AB0AE9 /* AnylineExamples 2.xcdatamodel */,
+				22E8CB56EA54CFB534DA589B /* AnylineExamples 3.xcdatamodel */,
 				5964989AD328FEB7B4A99F6D /* AnylineExamples.xcdatamodel */,
 			);
-			currentVersion = 1D441F11D2B3236170AB0AE9 /* AnylineExamples 2.xcdatamodel */;
+			currentVersion = 22E8CB56EA54CFB534DA589B /* AnylineExamples 3.xcdatamodel */;
 			path = AnylineExamples.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

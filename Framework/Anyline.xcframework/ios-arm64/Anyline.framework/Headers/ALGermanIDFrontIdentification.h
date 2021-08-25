@@ -11,6 +11,7 @@
 #import "ALScanResult.h"
 #import "ALGermanIDFrontConfig.h"
 
+DEPRECATED_MSG_ATTRIBUTE("This class will be removed with release 35 end of 2021. Please use ALUniversalIDIdentification instead.")
 @interface ALGermanIDFrontIdentification : NSObject
 
 
@@ -29,6 +30,7 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+@property (nonatomic, assign) CGRect faceImageBounds;
 
 @property (nullable, nonatomic, strong) ALGermanIDFrontFieldConfidences *fieldConfidences;
 

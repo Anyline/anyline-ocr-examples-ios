@@ -97,13 +97,34 @@
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
+- (void)alignLabelsTextRight {
+    [self.titleLabel setTextAlignment:NSTextAlignmentRight];
+    [self.valueLabel setTextAlignment:NSTextAlignmentRight];
+}
+
+- (void)alignLabelsTextLeft {
+    [self.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [self.valueLabel setTextAlignment:NSTextAlignmentLeft];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
 }
 
 - (void)setResultEntry:(ALResultEntry *)entry {
     _resultEntry = entry;
-    self.titleLabel.text = self.resultEntry.title;
+    
+    NSString *titleString;
+    
+    if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Ara"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Ara" withString:@" Arabic"];
+    } else if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Zho"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Zho" withString:@" Chinese"];
+    } else {
+        titleString = self.resultEntry.title;
+    }
+    
+    self.titleLabel.text = titleString;
     self.valueLabel.text = self.resultEntry.value;
     
     if (self.resultEntry.shouldSpellOutValue && self.resultEntry.isAvailable) {

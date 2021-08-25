@@ -2,21 +2,23 @@
 //  ScanHistory+CoreDataProperties.m
 //  AnylineExamples
 //
-//  Created by Daniel Albertini on 13/05/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
+//  Created by Renato Neves Ribeiro on 28.03.21.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
 #import "ScanHistory+CoreDataProperties.h"
 
 @implementation ScanHistory (CoreDataProperties)
 
++ (NSFetchRequest<ScanHistory *> *)fetchRequest {
+	return [NSFetchRequest fetchRequestWithEntityName:@"ScanHistory"];
+}
+
+@dynamic barcodeResult;
+@dynamic images;
+@dynamic result;
 @dynamic timestamp;
 @dynamic type;
-@dynamic result;
-@dynamic image;
-@dynamic barcodeResult;
+@dynamic faceImage;
 
 @end

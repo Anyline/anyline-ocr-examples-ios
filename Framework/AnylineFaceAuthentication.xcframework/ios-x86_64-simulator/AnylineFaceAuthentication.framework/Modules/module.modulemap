@@ -1,0 +1,11 @@
+framework module AnylineFaceAuthentication {
+  umbrella header "AnylineFaceAuthentication.h"
+
+  export *
+  module * { export * }
+}
+
+module AnylineFaceAuthentication.Swift {
+    header "AnylineFaceAuthentication-Swift.h"
+    requires objc
+}

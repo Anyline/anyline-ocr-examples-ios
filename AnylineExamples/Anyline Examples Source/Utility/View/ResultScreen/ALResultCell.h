@@ -16,5 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame;
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder;
+- (void)alignLabelsTextRight;
+- (void)alignLabelsTextLeft;
 
 @end
