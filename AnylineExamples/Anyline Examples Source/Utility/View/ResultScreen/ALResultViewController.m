@@ -237,8 +237,14 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
                                     [self.contentScrollView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]].mutableCopy;
     NSLayoutYAxisAnchor *topTableVieWConstraints = self.contentScrollView.topAnchor;
     if (self.faceImage) {
+        NSLayoutConstraint *horizontalConstraint;
+        if (self.isArabicScript) {
+            horizontalConstraint = [self.faceImageView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-horizontalPadding];
+        } else {
+            horizontalConstraint = [self.faceImageView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding];
+        }
         [constraints addObjectsFromArray:@[[self.faceImageView.topAnchor constraintEqualToAnchor:self.contentScrollView.topAnchor constant:verticalPadding],
-                                           [self.faceImageView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:horizontalPadding],
+                                           horizontalConstraint,
                                            [self.faceImageView.widthAnchor constraintLessThanOrEqualToConstant:100],
                                            [self.faceImageView.heightAnchor constraintLessThanOrEqualToConstant:100]]];
         topTableVieWConstraints = self.faceImageView.bottomAnchor;
@@ -320,12 +326,17 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     ALResultEntry *entry = [self.resultData[[[self.resultData allKeys] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     cell.backgroundColor = [UIColor AL_BackgroundColor];
     [cell setResultEntry:entry];
+    if (self.isArabicScript) {
+        [cell alignLabelsTextRight];
+    }
+    
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.resultData[[[self.resultData allKeys] objectAtIndex:section]] count];
+    NSInteger rowCount = [self.resultData[[[self.resultData allKeys] objectAtIndex:section]] count];
+    return self.isArabicScript ? rowCount - 1 : rowCount;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

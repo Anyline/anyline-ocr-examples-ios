@@ -9,7 +9,7 @@
 #import "ALBaseScanViewController.h"
 
 #import "ALWarningView.h"
-#import "ScanHistory.h"
+#import "ScanHistory+CoreDataClass.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 
 #import "ALAwardsView.h"
@@ -112,6 +112,28 @@
         completion();
     }
     
+}
+
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                      images:(NSArray*)images
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion {
+    [self anylineDidFindResult:result barcodeResult:barcodeResult faceImage:nil images:images scanPlugin:scanPlugin viewPlugin:viewPlugin completion:completion];
+}
+
+- (void)anylineDidFindResult:(NSString*)result
+               barcodeResult:(NSString *)barcodeResult
+                   faceImage:(UIImage*)faceImage
+                      images:(NSArray*)images
+                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
+                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  completion:(void (^)(void))completion {
+    self.successfulScan = YES;
+    if (completion){
+        completion();
+    }
 }
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {

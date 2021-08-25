@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong, readonly) NSString *vizDateOfExpiry;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+@property (nonatomic, assign) CGRect faceImageBounds;
 
 //Check Digits
 @property (nullable, nonatomic, strong, readonly) NSString *checkDigitDateOfExpiry;

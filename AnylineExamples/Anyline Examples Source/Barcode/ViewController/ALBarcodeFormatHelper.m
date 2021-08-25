@@ -49,6 +49,7 @@ static NSString * const kLegacy = @"LEGACY SYMBOLOGIES";
                 @"MicroQR"     : @[kCodeTypeMICRO_QR],
                 @"GS1 QR Code" : @[kCodeTypeGS1_QR_CODE],
                 @"Aztec"       : @[kCodeTypeAztec],
+                @"MaxiCode"    : @[kCodeTypeMaxiCode],
         },
                        
         kPostal : @{

@@ -13,7 +13,7 @@
 #import "ALResultViewController.h"
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALBottlecapScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate>
+@interface ALBottlecapScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *bottlecapScanViewPlugin;
@@ -53,15 +53,15 @@
                                                                   ocrConfig:config
                                                                       error:&error];
     NSAssert(self.bottlecapvinScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.bottlecapvinScanPlugin addInfoDelegate:self];
     
     NSString *confPath = [[NSBundle mainBundle] pathForResource:@"bottlecap_config" ofType:@"json"];
     ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
     
     self.bottlecapScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.bottlecapvinScanPlugin
                                                               scanViewPluginConfig:scanViewPluginConfig];
-    NSAssert(self.bottlecapScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
+    NSAssert(self.bottlecapScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+    [self.bottlecapScanViewPlugin addScanViewPluginDelegate:self];
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.bottlecapScanViewPlugin];
     
     // After setup is complete we add the scanView to the view of this view controller
@@ -103,6 +103,14 @@
  */
 - (void)startAnyline {
     [self startPlugin:self.bottlecapScanViewPlugin];
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    [self updateWarningPosition:
+     cutoutRect.origin.y +
+     cutoutRect.size.height +
+     self.scanView.frame.origin.y +
+     80];
 }
 
 #pragma mark -- ALOCRScanPluginDelegate

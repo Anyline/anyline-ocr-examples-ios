@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ALIDConfig.h"
 
+
 @class ALGermanIDFrontFieldScanOptions;
 
+DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
 @interface ALGermanIDFrontConfig : ALIDConfig
 
 @end
@@ -25,6 +27,7 @@
  *
  *  Note: The default behavior might be affected if you use this object.
  */
+DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
 @interface ALGermanIDFrontFieldScanOptions : ALIDFieldScanOptions
 
 @property (nonatomic) ALFieldScanOption surname;
@@ -38,6 +41,7 @@
 
 @end
 
+DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
 @interface ALGermanIDFrontFieldConfidences : ALIDFieldConfidences
 
 @property (nonatomic) ALFieldConfidence surname;

@@ -271,7 +271,14 @@
     
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     for (ALBarcode* barcodeResult in scanResult.result) {
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:barcodeResult.value shouldSpellOutValue:YES]];
+        
+         // Sometimes barcodes are encrypted. If that is the case the value is usually nil. We use the base64 version in that case.
+        NSString * barcodeString = barcodeResult.value;
+        if (barcodeString.length == 0) {
+            barcodeString = barcodeResult.base64;
+        }
+        
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:barcodeString shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
     }
     

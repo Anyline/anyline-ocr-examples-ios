@@ -11,6 +11,7 @@
 #import "ALScanResult.h"
 #import "ALDrivingLicenseConfig.h"
 
+DEPRECATED_MSG_ATTRIBUTE("This class is deprecated and will be removed by November 2021 please use class 'UniversalIDConfig'")
 @interface ALDrivingLicenseIdentification : NSObject
 
 @property (nullable, nonatomic, strong, readonly) NSString *surname;
@@ -31,6 +32,7 @@
 @property (nullable, nonatomic, strong, readonly) NSDate *dateOfExpiryObject;
 
 @property (nullable, nonatomic, strong) UIImage *faceImage;
+@property (nonatomic, assign) CGRect faceImageBounds;
 
 @property (nullable, nonatomic, strong) ALDrivingLicenseFieldConfidences *fieldConfidences;
 
