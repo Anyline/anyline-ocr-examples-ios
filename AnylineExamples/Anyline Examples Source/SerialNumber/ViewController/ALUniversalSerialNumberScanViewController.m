@@ -136,13 +136,8 @@
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    
-    [self anylineDidFindResult:jsonString
-                 barcodeResult:@""
-                         image:result.image
-                    scanPlugin:anylineOCRScanPlugin
-                    viewPlugin:self.serialNumberScanViewPlugin
-                    completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.serialNumberScanViewPlugin completion:^{
+        //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

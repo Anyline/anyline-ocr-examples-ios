@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class ALExample;
-
 @interface ALBasePageViewController : UIPageViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -25,8 +23,5 @@
 - (void)highlightTabAtIndex:(NSInteger)index;
 - (NSString *)titleOfExampleManagerOnIndex:(NSInteger)idx;
 - (void)setupTabbar;
-
-- (CGRect)headerFrame;
-- (void)setLogoYOffset:(CGFloat)yOffset;
 
 @end

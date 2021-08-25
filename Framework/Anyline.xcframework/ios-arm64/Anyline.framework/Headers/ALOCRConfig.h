@@ -110,13 +110,7 @@ typedef NS_ENUM(NSInteger, ALOCRScanMode) {
  *
  *  Note this method requires the full path with fileending and not only the file name like the old deprecated method.
  */
-@property (nullable, nonatomic, strong) NSString *model __deprecated_msg("Deprecated since Anyline 33. Use property models instead.");
-
-/**
- *  Property to set the any file as an array of absolute String paths to the file. If a relative path is given we search all NSBundle
- *
- */
-@property (nullable, nonatomic, strong) NSArray<NSString *> *models;
+@property (nullable, nonatomic, strong) NSString *model;
 
 /**
  *  Property to set the any files as Array of String paths to the files.

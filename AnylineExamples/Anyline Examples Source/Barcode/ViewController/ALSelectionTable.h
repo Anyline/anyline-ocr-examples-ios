@@ -31,9 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)selectionTable:(ALSelectionTable *)selectionTable selectedItems:(NSArray<NSString *>*)selectedItems;
 
-@optional
-- (void)selectionTableCancelled:(ALSelectionTable *)selectionTable;
-
 @end
 
 NS_ASSUME_NONNULL_END

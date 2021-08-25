@@ -209,13 +209,8 @@
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
     NSString *jsonString = [self jsonStringFromResultData:resultData];
     
-    [self anylineDidFindResult:jsonString
-                 barcodeResult:@""
-                     faceImage:[identification faceImage]
-                        images:@[scanResult.image]
-                    scanPlugin:anylineIDScanPlugin
-                    viewPlugin:self.mrzScanViewPlugin
-                    completion:^{
+    [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.mrzScanViewPlugin completion:^{
+        
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
                                                                                   image:scanResult.image
                                                                               faceImage:[identification faceImage]

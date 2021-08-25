@@ -10,7 +10,7 @@
 #import <Anyline/Anyline.h>
 #import "ALScrabbleViewController.h"
 #import "ALCustomBarButton.h"
-#import "ScanHistory+CoreDataClass.h"
+#import "ScanHistory.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results

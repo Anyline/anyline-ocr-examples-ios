@@ -23,7 +23,6 @@
 #import "ALBEDrivingLicenseScanViewController.h"
 #import "ALUniversalIDScanViewController.h"
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
-#import "ALFaceAuthentificationViewController.h"
 
 NSString * const kDriversLicenseTitleString = @"Driver's License";
 NSString * const kIDCardTitleString = @"ID Card";
@@ -79,11 +78,6 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
                                                             image:[UIImage imageNamed:@"tile_pdf417"]
                                                    viewController:[ALPDF417ScanViewController class]];
     
-    ALExample *livenessID = [[ALExample alloc] initWithName:NSLocalizedString(@"Liveness Verification", nil)
-                                                          image:[UIImage imageNamed:@"tile_authentication_NEW"]
-                                                 viewController:[ALFaceAuthentificationViewController class]
-                                                          title:@"Face Authentication"];
-    
     ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NFC", nil)
                                                             image:[UIImage imageNamed:@"tile_nfc"]
                                                    viewController:[ALNFCScanViewController class]];
@@ -92,7 +86,7 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
     //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
     self.examples = [@{
                       self.sectionNames[0] : @[universalID],
-                      self.sectionNames[1] : @[livenessID, nfcScanning, pdf417Scanning,mrzScanning],
+                      self.sectionNames[1] : @[nfcScanning, pdf417Scanning,mrzScanning],
                       self.sectionNames[2] : @[drivingLicenseScanning, passportScanning, idCardScanning],
     } mutableCopy];
     

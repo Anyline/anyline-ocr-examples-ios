@@ -41,7 +41,7 @@
                                  ocrConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig
                                      error:(NSError *_Nullable *_Nullable)error;
 
-- (instancetype _Null_unspecified)init NS_UNAVAILABLE;
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 
 @property (nonatomic, strong, readonly) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
 

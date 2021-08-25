@@ -40,7 +40,7 @@
                                   idConfig:(ALIDConfig * _Nonnull)config
                                      error:(NSError *_Nullable *_Nullable)error;
 
-- (instancetype _Null_unspecified)init NS_UNAVAILABLE;
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 
 @property (nonatomic, strong, readonly) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
 

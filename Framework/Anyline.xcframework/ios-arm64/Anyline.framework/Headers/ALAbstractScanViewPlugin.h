@@ -77,8 +77,6 @@ A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this 
 
 - (void)customInit;
 
-- (CGRect)getCropRect;
-
 /**
  * Stop listening for device motion.
  */

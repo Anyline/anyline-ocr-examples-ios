@@ -15,7 +15,6 @@
 @property (strong, nonatomic) UIImage *documentImage;
 @property (strong, nonatomic) UIImage *documentBackImage;
 @property (assign, nonatomic) BOOL shouldShowDisclaimer;
-@property (assign, nonatomic) BOOL isArabicScript;
 
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image;
 - (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image shouldShowDisclaimer:(BOOL)shouldShow;

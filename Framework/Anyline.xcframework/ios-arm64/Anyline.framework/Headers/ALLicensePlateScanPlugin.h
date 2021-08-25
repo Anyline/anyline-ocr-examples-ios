@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
                                   delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error NS_DESIGNATED_INITIALIZER;
 
-- (instancetype _Null_unspecified)init NS_UNAVAILABLE;
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 
 /**
  *  Sets the license plate scan mode.

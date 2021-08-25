@@ -57,7 +57,7 @@ extern NSString * _Nonnull const kCodeTypeCODE_11;
 extern NSString * _Nonnull const kCodeTypeCODE_32;
 extern NSString * _Nonnull const kCodeTypeUPC_EAN_EXTENSION;
 extern NSString * _Nonnull const kCodeTypeDATABAR;
-extern NSString * _Nonnull const kCodeTypeMaxiCode;
+
 
 
 NS_ASSUME_NONNULL_END

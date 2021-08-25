@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSString * _Nonnull barcodeFormat;
 @property (nonatomic, copy,   readonly) NSString * _Nonnull value;
-@property (nonatomic, copy,   readonly) NSString * _Nonnull base64;
 @property (nonatomic, copy,   readonly) ALSquare * _Nullable coordinates;
 
 - (instancetype _Nonnull )initWithValue:(NSString * _Nonnull)value
@@ -24,8 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value
                                 format:(NSString * _Nonnull)barcodeFormat
-                           coordinates:(NSString * _Nonnull)coordinates
-                                base64:(NSString * _Nonnull)base64;
+                           coordinates:(NSString * _Nonnull)coordinates;
 
 - (NSString * _Nonnull)toJSONString;
 

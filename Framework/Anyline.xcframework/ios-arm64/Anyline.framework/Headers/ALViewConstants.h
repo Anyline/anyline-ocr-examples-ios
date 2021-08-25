@@ -76,11 +76,9 @@ typedef NS_ENUM(NSUInteger, ALCaptureViewMode) {
 };
 
 typedef NS_ENUM(NSUInteger, ALFlashMode) {
-    ALFlashModeManual=0, // deprecated -- use ALFlashModeManualOff instead, which will give you the same behaviour
+    ALFlashModeManual=0,
     ALFlashModeNone=1,
-    ALFlashModeAuto=2,
-    ALFlashModeManualOff=3,
-    ALFlashModeManualOn=4
+    ALFlashModeAuto=2
 };
 
 /**

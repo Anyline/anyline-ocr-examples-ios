@@ -67,6 +67,7 @@
 
  @param frame The frame for the ScanView
  @param configPath An absolute path to the Anyline json config file
+ @param licenseKey The Anyline license key
  @param delegate The delegate which will be called when scanning (ALIDPluginDelegate, ALOCRScanPluginDelegate,
                  ALMeterScanPluginDelegate, ALBarcodeScanPluginDelegate, ALDocumentScanPluginDelegate or ALLicensePlateScanPluginDelegate)
  @param error The error if something goes wrong during setup
@@ -82,6 +83,7 @@
 
  @param frame The frame for the ScanView
  @param configDict A dictionary representing an Anyline json config
+ @param licenseKey The Anyline license key
  @param delegate The delegate which will be called when scanning (ALIDPluginDelegate, ALOCRScanPluginDelegate,
                  ALMeterScanPluginDelegate, ALBarcodeScanPluginDelegate, ALDocumentScanPluginDelegate or ALLicensePlateScanPluginDelegate)
  @param error The error if something goes wrong during setup
@@ -123,6 +125,6 @@
 - (void)enableZoomPinchGesture:(BOOL)enabled;
 
 
-- (void)updatePolygons:(NSArray * _Nonnull)square forPluginID:(NSString * _Nonnull)pluginID;
+- (void)updatePolygons:(NSArray *)square forPluginID:(NSString *)pluginID;
 
 @end

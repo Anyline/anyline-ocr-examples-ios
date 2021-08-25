@@ -21,7 +21,7 @@
  */
 @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
 
-- (instancetype _Null_unspecified)init NS_UNAVAILABLE;
+- (instancetype _Nullable)init NS_UNAVAILABLE;
 /**
  Constructor for the BarcodeScanPlugin
  

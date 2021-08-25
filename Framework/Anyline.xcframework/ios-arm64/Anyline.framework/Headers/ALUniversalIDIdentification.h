@@ -30,7 +30,6 @@ __attribute__((deprecated("please use ALUniversalIDIdentification instead")))
 @property (nullable, nonatomic, strong) ALUniversalIDFieldConfidences *fieldConfidences;
 @property (nullable, nonatomic, strong) ALLayoutDefinition *layoutDefinition;
 @property (nullable, nonatomic, strong) UIImage *faceImage;
-@property (nonatomic, assign) CGRect faceImageBounds;
 
 - (void)addField:(NSString *)fieldName value:(NSString *)value;
 - (NSArray<NSString *> *)fieldNames;

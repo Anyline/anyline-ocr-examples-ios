@@ -13,7 +13,7 @@ import UIKit
 }
 
 @objc protocol FormFieldViewDelegate {
-    func formFieldEndedEditing(field: UITextField)
+    func formFieldEndedEditing()
 }
 
 @objc class FormFieldView: UIView, UITextFieldDelegate {
@@ -26,12 +26,7 @@ import UIKit
     fileprivate var hoverBottomConstraints : NSLayoutConstraint = NSLayoutConstraint()
     fileprivate var errorTopConstraints : NSLayoutConstraint = NSLayoutConstraint()
     
-    @objc var fieldType: FieldType = .validateSimple {
-        didSet {
-           configureByFieldType()
-        }
-    }
-
+    @objc var fieldType : FieldType = .validateSimple
     @objc var nextField : UITextField?
     
     @objc var delegate : FormFieldViewDelegate?
@@ -60,6 +55,7 @@ import UIKit
         self.addSubview(inputTextField)
         inputTextField.translatesAutoresizingMaskIntoConstraints = false
         
+        
         self.addSubview(underlineView)
         underlineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -67,14 +63,14 @@ import UIKit
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         setupStyles()
+        
         setupConstraints()
     }
     
     fileprivate func setupStyles() {
         
         inputTextField.keyboardType = .emailAddress
-        inputTextField.autocorrectionType = .no
-        inputTextField.returnKeyType = .next
+        inputTextField.returnKeyType = .done
         inputTextField.textAlignment = .left
         inputTextField.backgroundColor = UIColor.clear
         inputTextField.font = UIFont.al_proximaRegular(withSize: 16)
@@ -91,7 +87,7 @@ import UIKit
         errorMessageLabel.backgroundColor = UIColor.clear
         errorMessageLabel.alpha = 0
         errorMessageLabel.text = "This field is required"
-        errorMessageLabel.font = UIFont.al_proximaRegular(withSize: 12)
+        errorMessageLabel.font = UIFont.al_proximaRegular(withSize: 14)
         
         underlineView.backgroundColor = UIColor.gray
     }
@@ -107,8 +103,7 @@ import UIKit
                                         underlineView.trailingAnchor.constraint(equalTo: inputTextField.trailingAnchor, constant: 0),
                                         underlineView.heightAnchor.constraint(equalToConstant: 1)])
         
-        hoverBottomConstraints = inputTextHover.bottomAnchor.constraint(equalTo: inputTextField.topAnchor,
-                                                                        constant: inputTextHover.bounds.height - 4)
+        hoverBottomConstraints = inputTextHover.bottomAnchor.constraint(equalTo: inputTextField.topAnchor, constant: inputTextHover.bounds.height)
         constraints.append(contentsOf: [hoverBottomConstraints,
                                         inputTextHover.leadingAnchor.constraint(equalTo: self.inputTextField.leadingAnchor, constant: 0)])
         
@@ -131,8 +126,8 @@ import UIKit
     }
     
     fileprivate func animateErrorVisible() {
-        errorTopConstraints.constant = 8
-        UIView.animate(withDuration: 0.3, animations: {
+        errorTopConstraints.constant = 5
+        UIView.animate(withDuration: 0.5, animations: {
             self.errorMessageLabel.alpha = 1
             self.layoutIfNeeded()
         })
@@ -140,36 +135,22 @@ import UIKit
     
     fileprivate func animateErrorHide() {
         errorTopConstraints.constant = -errorMessageLabel.bounds.height
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.errorMessageLabel.alpha = 0
             self.layoutIfNeeded()
         })
     }
     
-    fileprivate func showHoverText() {
-        UIView.animate(withDuration: 0.1, delay: 0.85, options: []) {
-            self.inputTextHover.alpha = 1
-        }
+    // TODO: when we replace all textfield with this we can add an animation for the hover text going in and out of the field :)
+    fileprivate func animateHoverTextUp() {
+        
     }
     
-    fileprivate func hideHoverText() {
-        self.inputTextHover.alpha = 0
-    }
-    
-    // make additional customizations to the field after being assigned a field type.
-    fileprivate func configureByFieldType() {
-        switch self.fieldType {
-        case .email:
-            inputTextField.autocapitalizationType = .none
-        default:
-            break
-        }
+    fileprivate func animateHoverTextIn() {
+        
     }
     
     // MARK: - Public Methods
-    @objc func setReturnKeyType(_ returnKeyType: UIReturnKeyType) {
-        self.inputTextField.returnKeyType = returnKeyType
-    }
     
     // Hover Text
     @objc func setHoverText(text: String) {
@@ -228,32 +209,18 @@ import UIKit
         } else {
             animateErrorVisible()
         }
-        self.delegate?.formFieldEndedEditing(field: textField)
+        self.delegate?.formFieldEndedEditing()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        let currentText = (textField.text ?? "")
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        
-        if updatedText.isEmpty {
-            self.hideHoverText()
-        } else {
-            self.showHoverText()
-        }
-        return true
-    }
-    
+    // TODO: temporary
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if fieldType == .email && isValidEmail() {
             animateErrorHide()
         }
-        self.delegate?.formFieldEndedEditing(field: textField)
+        self.delegate?.formFieldEndedEditing()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
