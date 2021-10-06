@@ -10,65 +10,108 @@
 
 #import "ALGridCollectionViewController.h"
 #import "ALProductExampleManager.h"
-
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 
 @interface ALBasePageViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property (nonatomic, strong) NSLayoutConstraint *logoTopAnchor;
+@property (nonatomic, strong) NSLayoutConstraint *segmentedControlHeightAnchor;
 
 @end
 
 
 @implementation ALBasePageViewController
 
-- (void)setupHeader {
-    CGFloat navigationBarHeight = self.hideNavigationBar ? 0 : self.navigationController.navigationBar.frame.size.height;
-    CGRect pageViewFrame = [[UIScreen mainScreen] bounds];
-    pageViewFrame = CGRectMake(pageViewFrame.origin.x, pageViewFrame.origin.y + navigationBarHeight, pageViewFrame.size.width, pageViewFrame.size.height - navigationBarHeight);
-    self.view.frame = pageViewFrame;
+- (UIPageViewController *)pageViewController {
+    if (!_pageViewController) {
+        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    }
+    return _pageViewController;
+}
 
-    CGRect headerFrame = [self headerFrame];
-    
-    self.header = [[UIView alloc] initWithFrame:headerFrame];
-    [self.view addSubview:self.header];
-    [self.view layoutIfNeeded];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupHeader];
+    [self setupNavbarButtons];
+    [self setupPageView];
+    [self addConstraints];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self updatePageControlLocation];
+}
+
+- (BOOL)hidesBottomBarWhenPushed {
+    return NO;
+}
+
+- (void)setupHeader {
     
     self.view.backgroundColor = [UIColor AL_BackgroundColor];
+    
+    self.header = [[UIView alloc] init];
+    [self.view addSubview:self.header];
+    self.header.translatesAutoresizingMaskIntoConstraints = NO;
     self.header.backgroundColor = [UIColor AL_BackgroundColor];
     
-    self.anylineWhite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
-    [self.anylineWhite setContentMode:UIViewContentModeScaleAspectFit];
-    [self.header addSubview:self.anylineWhite];
-    self.anylineWhite.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.anylineWhite.widthAnchor constraintEqualToAnchor:self.header.widthAnchor multiplier:99.0/375.0].active = YES;
-    [self.anylineWhite.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
-    
-    self.logoTopAnchor = [self.anylineWhite.topAnchor
-                          constraintEqualToAnchor:self.header.topAnchor constant:0];
-    self.logoTopAnchor.active = YES;
+    self.anylineLogoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AnylineLogo"]];
+    [self.anylineLogoImageView setContentMode:UIViewContentModeScaleAspectFill];
+    [self.header addSubview:self.anylineLogoImageView];
+    self.anylineLogoImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self setupSegmentControl];
     [self.header addSubview:self.segmentedControl];
     self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-
-    [self.segmentedControl.topAnchor constraintEqualToAnchor:self.anylineWhite.bottomAnchor constant: -10].active = YES;
-    
-    [self.segmentedControl.leftAnchor constraintEqualToAnchor:self.header.leftAnchor constant:15].active = YES;
-    
-    [self.segmentedControl.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor constant:2].active = YES;
-    
-    [self.segmentedControl.rightAnchor constraintEqualToAnchor:self.header.rightAnchor constant:-15].active = YES;
-    
-    [self.segmentedControl.heightAnchor constraintEqualToConstant:30].active = YES;
-    
     [self.segmentedControl addTarget:self action:@selector(jumpToPage:) forControlEvents:UIControlEventValueChanged];
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void)setupNavbarButtons {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];
+}
 
+- (void)addConstraints {
+    
+    // header height is precomputed based on screen size, we will let logo image autoadjust
+    CGFloat logoHeight = 76.0f;
+    CGFloat logoHeightToWidthRatio = 99.0f/375.0;
+    CGFloat segmentedControlHeight = [self shouldShowSegmentedControl] ? 30 : 0;
+    CGFloat logoToSegmentedMargin = -10.0f; // actually pull the two closer together
+    CGFloat segmentedLeftMargin = 15;
+    
+    // Header
+    self.headerTopToViewTopAnchor = [self.header.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
+    self.headerTopToViewTopAnchor.active = YES;
+    
+    [self.header.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
+    [self.header.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
+    
+    // Logo
+    [self.anylineLogoImageView.topAnchor constraintEqualToAnchor:self.header.topAnchor constant:0].active = YES;
+    [self.anylineLogoImageView.heightAnchor constraintEqualToConstant:logoHeight].active = YES;
+    [self.anylineLogoImageView.widthAnchor constraintEqualToAnchor:self.header.widthAnchor multiplier:logoHeightToWidthRatio].active = YES;
+    [self.anylineLogoImageView.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
+
+    // Segmented control (not shown on 'bundle' version of the app)
+    [self.segmentedControl.topAnchor constraintEqualToAnchor:self.anylineLogoImageView.bottomAnchor constant:logoToSegmentedMargin].active = YES;
+    [self.segmentedControl.leftAnchor constraintEqualToAnchor:self.header.leftAnchor constant:segmentedLeftMargin].active = YES;
+    [self.segmentedControl.centerXAnchor constraintEqualToAnchor:self.header.centerXAnchor].active = YES;
+    [self.segmentedControl.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor].active = YES;
+    
+    self.segmentedControlHeightAnchor = [self.segmentedControl.heightAnchor constraintEqualToConstant:segmentedControlHeight];
+    self.segmentedControlHeightAnchor.active = YES;
+    
+    UIView *pageView = self.pageViewController.view;
+    pageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [pageView.topAnchor constraintEqualToAnchor:self.header.bottomAnchor].active = YES;
+    [pageView.leftAnchor constraintEqualToAnchor:self.header.leftAnchor].active = YES;
+    [pageView.rightAnchor constraintEqualToAnchor:self.header.rightAnchor].active = YES;
+    [pageView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = YES;
 }
 
 - (CGRect)headerFrame {
@@ -88,6 +131,11 @@
                       headerHeight);
 }
 
+// the store app has it set to YES
+- (BOOL)shouldShowSegmentedControl {
+    return NO;
+}
+
 - (void)setupSegmentControl {
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[]];
     if (@available(iOS 13, *)) {
@@ -98,54 +146,36 @@
     [self.segmentedControl setBackgroundColor:[UIColor AL_SegmentControlUnselected]];
     [self.segmentedControl setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColor.AL_SegmentControl} forState:UIControlStateNormal];
     [self.segmentedControl setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColor.AL_Black} forState:UIControlStateSelected];
+    
+    self.segmentedControl.hidden = ![self shouldShowSegmentedControl];
 }
 
 - (void)customizeSegmentedControlWithColor:(UIColor *)color {
-
     UIImage *tintColorImage = [self imageWithColor: color];
-    
     [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     [self.segmentedControl setBackgroundImage:tintColorImage forState:UIControlStateSelected|UIControlStateSelected barMetrics:UIBarMetricsDefault];
-//    [self.segmentedControl setDividerImage:tintColorImage forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
-- (UIImage *)imageWithColor: (UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, self.segmentedControl.bounds.size.width, self.segmentedControl.bounds.size.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
-
-- (void)setupTabbar {
+- (void)prepareSegmentedControl {
     [self.segmentedControl removeAllSegments];
     for (UIViewController *page in self.pages.reverseObjectEnumerator) {
-        [self.segmentedControl insertSegmentWithTitle:[self titleOfExampleManager:page] atIndex:0 animated:NO];
+        [self.segmentedControl insertSegmentWithTitle:[self titleOfExampleManager:page]
+                                              atIndex:0 animated:NO];
     }
-    [self highlightTabAtIndex:0];
+    [self highlightSegmentedControlAtIndex:0];
+    
+    self.segmentedControl.hidden = NO;
+    self.segmentedControlHeightAnchor.constant = 30;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor AL_BackgroundColor];
-    
-    [self setupHeader];
-    
-    [self.view bringSubviewToFront:self.segmentedControl];
-    
-    self.dataSource = self;
-    self.delegate = self;
+- (void)setupPageView {
+    [self addChildViewController:self.pageViewController];
+    [self.pageViewController didMoveToParentViewController:self];
+    [self.view addSubview:self.pageViewController.view];
+    self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
 }
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    [self updatePageControlLocation];
-}
-
 
 - (void)updatePageControlLocation {
     for (UIView* view in self.view.subviews) {
@@ -155,12 +185,8 @@
         }
     }
 }
-#pragma mark - UIViewController methods
-- (BOOL)hidesBottomBarWhenPushed {
-    return NO;
-}
 
-#pragma mark - UIPageViewControllerDataSource
+#pragma mark - UIPageViewController
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     if (nil == viewController) {
@@ -201,21 +227,43 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     
     if (completed) {
-        NSInteger idx = [self.pages indexOfObject:self.viewControllers[0]];
+        NSInteger idx = [self.pages indexOfObject:pageViewController.viewControllers[0]];
         NSParameterAssert(idx != NSNotFound);
         if (self.currIndex != idx) {
             self.currIndex = idx;
             
             self.title = [self titleOfExampleManagerOnIndex:self.currIndex];
-            [self highlightTabAtIndex:self.currIndex];
+            [self highlightSegmentedControlAtIndex:self.currIndex];
         }
 
     }
 }
 
+- (void)jumpToPage:(UISegmentedControl *)sender {
+    NSInteger tag = sender.selectedSegmentIndex;
+    if (tag >= 0 && tag < [_pages count] && tag != self.currIndex) {
+        [self gotoPage:tag];
+        self.title = [self titleOfExampleManagerOnIndex:tag];
+    }
+    [[[sender subviews] objectAtIndex:[sender selectedSegmentIndex]] setTintColor:[UIColor AL_White]];
+}
+
+- (void)gotoPage:(NSInteger)index {
+    UIViewController *viewController = _pages[index];
+    UIPageViewControllerNavigationDirection direction = UIPageViewControllerNavigationDirectionReverse;
+    if (_currIndex <= index) {
+        direction = UIPageViewControllerNavigationDirectionForward;
+    }
+    [self.pageViewController setViewControllers:@[viewController]
+                                      direction:direction
+                                       animated:YES
+                                     completion:nil];
+    _currIndex = index;
+}
+
 #pragma mark - Utility Methods
 
-- (void)highlightTabAtIndex:(NSInteger)index {
+- (void)highlightSegmentedControlAtIndex:(NSInteger)index {
     self.segmentedControl.selectedSegmentIndex = index;
 }
 
@@ -243,62 +291,16 @@
     return border;
 }
 
-
-
-- (void)jumpToPage:(UISegmentedControl *)sender {
-    NSInteger tag = sender.selectedSegmentIndex;
-    if (tag >= 0 && tag < [_pages count] && tag != self.currIndex) {
-        [self gotoPage:tag];
-        self.title = [self titleOfExampleManagerOnIndex:tag];
-    }
-
-    [[[sender subviews] objectAtIndex:[sender selectedSegmentIndex]] setTintColor:[UIColor AL_White]];
-}
-
-- (void)gotoPage:(NSInteger)index {
-    UIViewController *viewController = _pages[index];
-    
-    UIPageViewControllerNavigationDirection direction;
-    if(_currIndex <= index){
-        direction = UIPageViewControllerNavigationDirectionForward;
-    }
-    else
-    {
-        direction = UIPageViewControllerNavigationDirectionReverse;
-    }
-    
-    if(_currIndex < index)
-    {
-        for (int i = 0; i <= index; i++)
-        {
-            if (i == index) {
-                [self setViewControllers:@[viewController]
-                                                  direction:direction
-                                                   animated:YES
-                                                 completion:nil];
-            }
-        }
-    }
-    else
-    {
-        for (int i = (int)_currIndex; i >= index; i--)
-        {
-            if (i == index) {
-                [self setViewControllers:@[viewController]
-                                                  direction:direction
-                                                   animated:YES
-                                                 completion:nil];
-            }
-
-        }
-    }
-    _currIndex = index;
-}
-
-// adjusts the vertical positioning of the logo to accomodate
-// any graphical elements placed over it.
-- (void)setLogoYOffset:(CGFloat)yOffset {
-    self.logoTopAnchor.constant = yOffset;
+// TODO: should turn this into an extension method for UIColor (and remove the duplicates)
+- (UIImage *)imageWithColor: (UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.segmentedControl.bounds.size.width, self.segmentedControl.bounds.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 @end

@@ -300,7 +300,6 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = YES;
-    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewWillLayoutSubviews {

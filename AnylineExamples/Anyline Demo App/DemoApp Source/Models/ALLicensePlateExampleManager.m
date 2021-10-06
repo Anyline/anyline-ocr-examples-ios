@@ -9,6 +9,7 @@
 #import "ALLicensePlateExampleManager.h"
 #import "ALLicensePlateViewController.h"
 #import "ALUSLicensePlateViewController.h"
+#import "ALAFLicensePlateViewController.h"
 
 @interface ALLicensePlateExampleManager ()
 
@@ -36,12 +37,13 @@
                                               viewController:[ALLicensePlateViewController class]];
     ALExample *licensePlateUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US License plate", nil)
                                                        image:[UIImage imageNamed:@"tile_licenseplate_us"]
-                                              viewController:[ALUSLicensePlateViewController class]];
-
-
+                                              viewController:[ALUSLicensePlateViewController class]];    
+    ALExample *licensePlateAF = [[ALExample alloc] initWithName:NSLocalizedString(@"African License plate", nil)
+                                                          image:[UIImage imageNamed:@"tile_licenseplate_af"]
+                                                 viewController:[ALAFLicensePlateViewController class]];
     self.sectionNames = @[@"License Plate"];
     self.examples = [@{
-                      self.sectionNames[0] : @[licensePlateEU, licensePlateUS],
+                      self.sectionNames[0] : @[licensePlateEU, licensePlateUS, licensePlateAF],
     } mutableCopy];
     
 }

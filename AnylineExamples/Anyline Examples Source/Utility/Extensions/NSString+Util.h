@@ -20,4 +20,7 @@
     
 - (nonnull NSString *)stringByCleaningWhitespace;
 
+- (nonnull NSString *)trimmed;
+
+
 @end

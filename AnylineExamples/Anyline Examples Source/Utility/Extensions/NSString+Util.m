@@ -50,4 +50,11 @@
     return final;
 }
 
+
+/// Unlike stringByCleaningWhitespace, removes only leading and trailing whitespace
+- (nonnull NSString *)trimmed {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+
 @end

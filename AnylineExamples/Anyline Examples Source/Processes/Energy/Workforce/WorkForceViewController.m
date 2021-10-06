@@ -78,7 +78,6 @@
     self.navigationItem.title = @"Workforce";
     
     self.navigationController.toolbarHidden = YES;
-    self.navigationController.navigationBarHidden = NO;
     [self _updateSyncingLabelAndSymbol];
 }
 

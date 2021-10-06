@@ -19,46 +19,53 @@
 
 @end
 
+
 @implementation ALMainPageViewController
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setupPages];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO];
+    [super viewWillDisappear:animated];
+}
+
 - (void)setupPages {
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    frame = CGRectMake(frame.origin.x, self.header.frame.origin.y + self.header.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height - self.header.frame.size.height);
-    /*
-     * set up three pages, each with a different background color
-     */
+    
     ALGridCollectionViewController *products = (ALGridCollectionViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"gridViewController"];
-    products.collectionView.frame = frame;
     products.exampleManager = [[ALProductExampleManager alloc] init];
     products.managedObjectContext = self.managedObjectContext;
 
-    self.pages = @[products];
-    
     self.onboardingDidShow = false;
     self.currIndex = 0;
     self.title = [self titleOfExampleManagerOnIndex:self.currIndex];
     
-    // set the initially visible page's view controller... if you don't do this
-    // you won't see anything.
-    [self setViewControllers:@[self.pages[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:NULL];
+    self.pages = @[products];
     
-    //Add action to Header view, to open BundleInfoViewController
+    [self.pageViewController setViewControllers:@[self.pages[0]]
+                                      direction:UIPageViewControllerNavigationDirectionForward
+                                       animated:YES
+                                     completion:NULL];
+    
+    // Add action to Header view, to open BundleInfoViewController
     [self.header setUserInteractionEnabled:YES];
-    [self.header addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showInfo:)]];
-
+    [self.header addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(showInfo:)]];
 }
 
 #pragma mark - Action methods
+
 - (void)showInfo:(id)sender {
     ALBundleInfoViewController *infoVC = [[ALBundleInfoViewController alloc] init];
     infoVC.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:infoVC animated:YES];
 }
-
 
 @end

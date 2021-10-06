@@ -66,6 +66,8 @@
 		
 		<option value="//api/name/delegate">delegate</option>
 		
+		<option value="//api/name/headerStatements">headerStatements</option>
+		
 		<option value="//api/name/imageProvider">imageProvider</option>
 		
 		<option value="//api/name/moduleIdentifier">moduleIdentifier</option>
@@ -114,11 +116,17 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addHeaderStatementKey:andValue:">- addHeaderStatementKey:andValue:</option>
+		
+		<option value="//api/name/clearStatements">- clearStatements</option>
+		
 		<option value="//api/name/dealloc">- dealloc</option>
 		
 		<option value="//api/name/enableReporting:">- enableReporting:</option>
 		
 		<option value="//api/name/errorForOfCustomImageProvider:">- errorForOfCustomImageProvider:</option>
+		
+		<option value="//api/name/getHeaderStatementsJsonString">- getHeaderStatementsJsonString</option>
 		
 		<option value="//api/name/getIPAddress">- getIPAddress</option>
 		
@@ -1455,6 +1463,64 @@ and use the reportScanResultState: for reporting</p></td>
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/addHeaderStatementKey:andValue:" title="addHeaderStatementKey:andValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addHeaderStatementKey:andValue:">&ndash;&nbsp;addHeaderStatementKey:andValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a statement to pass down to the core headers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addHeaderStatementKey:(NSString *_Nonnull)<em>key</em> andValue:(id _Nonnull)<em>value</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The name for the value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value passed down.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1672,6 +1738,38 @@ and use the reportScanResultState: for reporting</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/clearStatements" title="clearStatements"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearStatements">&ndash;&nbsp;clearStatements</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clearStatements</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getHeaderStatementsJsonString" title="getHeaderStatementsJsonString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getHeaderStatementsJsonString">&ndash;&nbsp;getHeaderStatementsJsonString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)getHeaderStatementsJsonString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/infoPlistDictionary" title="infoPlistDictionary"></a>
 	<h3 class="method-title"><code><a href="#//api/name/infoPlistDictionary">+&nbsp;infoPlistDictionary</a></code>
 </h3>
@@ -1824,6 +1922,22 @@ and use the reportScanResultState: for reporting</p></td>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/headerStatements" title="headerStatements"></a>
+	<h3 class="method-title"><code><a href="#//api/name/headerStatements">&nbsp;&nbsp;headerStatements</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableDictionary *headerStatements</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/reportCustomIncludesQueue" title="reportCustomIncludesQueue"></a>
 	<h3 class="method-title"><code><a href="#//api/name/reportCustomIncludesQueue">&nbsp;&nbsp;reportCustomIncludesQueue</a></code>
 </h3>
@@ -1934,7 +2048,7 @@ and use the reportScanResultState: for reporting</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-08-25</p>
+						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-10-06</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

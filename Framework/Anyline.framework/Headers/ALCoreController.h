@@ -251,6 +251,15 @@
 
 - (NSArray *_Nonnull)runStatistics;
 
+/**
+ *  Adds a statement to pass down to the core headers
+ *
+ *
+ *  @param key The name for the value.
+ *  @param value The value passed down.
+ */
+- (void)addHeaderStatementKey:(NSString *_Nonnull)key andValue:(id _Nonnull)value;
+
 @end
 
 /**

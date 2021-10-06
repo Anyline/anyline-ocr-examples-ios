@@ -35,6 +35,7 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = NSLocalizedString(self.exampleManager.title, nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.collectionView registerClass:[ALHeaderCollectionReusableView class]
@@ -54,6 +55,7 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.collectionView.userInteractionEnabled = YES;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     [self setSecretDevModeTheme:[NSUserDefaults AL_secretDevModeEnabled]
                       forNavBar:[self.navigationController navigationBar]];
 }
@@ -70,6 +72,12 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
         return;
     }
     [navBar setBarTintColor:newColor];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    // when you switch from light mode to dark mode this is called to ensure
+    // that the correct gridview cell border color is used.
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionReusableView methods
@@ -150,28 +158,44 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ALGridCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    
-    cell.backgroundImageView.backgroundColor = [UIColor AL_examplesBlue];
-    ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
-    cell.backgroundImageView.image = [example image];
-    if ([[example name] localizedCaseInsensitiveContainsString:@"universal"]) {
-        cell.layer.borderColor = [UIColor AL_SectionGridBG].CGColor;
-        cell.layer.borderWidth = 2;
-    }
-    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
-    cell.backgroundView.contentMode = UIViewContentModeTop;
-    if (!cell.backgroundImageView.image) {
-        NSString *name = [example name];
-        cell.name.text = name;
-    }
-    cell.name.font = [UIFont AL_proximaSemiboldWithSize:16];
-    cell.name.textColor = [UIColor AL_White];
-    cell.name.numberOfLines = 0;
-    
+    return [self decorateCell:cell indexPath:indexPath];
+}
+
+- (ALGridCollectionViewCell *)decorateCell:(ALGridCollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 8;
     
+    // Certain tiles should have borders around them. Useful to make them pop out in dark mode
+    // these are defined in `-[ALIdentityDocumentsExampleManager initExampleData]`
+    NSArray<NSString *> *specialTiles = @[@"Universal ID", @"Arabic ID", @"Cyrillic ID"];
+
+    ALExample *example = [self.exampleManager exampleForIndexPath:indexPath];
+    if (example.image != nil) { // non-null image imply a store app with images for tiles
+        
+        // special case for Universal ID - paint a border so there's clear indication in
+        // dark mode that this is a button like others, rather than a banner.
+        for (NSString *specialTile in specialTiles) {
+            if ([[example name] localizedCompare:specialTile] == NSOrderedSame) {
+                cell.layer.borderColor = [UIColor AL_SectionGridBG].CGColor;
+                cell.layer.borderWidth = 2;
+                break;
+            }
+        }
+        
+        cell.backgroundImageView.image = example.image;
+        cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+        cell.backgroundView.contentMode = UIViewContentModeTop;
+        cell.name.font = [UIFont AL_proximaSemiboldWithSize:16];
+        cell.name.textColor = [UIColor AL_LabelBlackWhite];
+        cell.name.numberOfLines = 0;
+    } else {
+        cell.backgroundImageView.backgroundColor = [UIColor AL_BackgroundColor];
+        cell.name.text = example.name;
+        cell.layer.borderColor = [UIColor AL_SectionGridBG].CGColor;
+        cell.layer.borderWidth = 2;
+    }
+
     return cell;
 }
 
@@ -189,8 +213,13 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 }
 
 - (void)showViewController:(ALExample *)example {
-    UIViewController * vc = [self createViewControllerFrom:example];
-    [self.navigationController pushViewController:vc animated:YES];
+    UIViewController *vc = [self createViewControllerFrom:example];
+    [self pushViewController:vc];
+}
+
+- (void)pushViewController:(UIViewController *)viewController {
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 //todo: share this code with the method in ALBaseScanViewController (in a category on UIViewController?)
@@ -223,20 +252,12 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
             ALMeterCollectionViewController *vc = (ALMeterCollectionViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"meterGridViewController"];
             vc.exampleManager = [[example.exampleManager alloc] init];
             vc.managedObjectContext = self.managedObjectContext;
-
-            if (vc) {
-                [self.navigationController pushViewController:vc animated:YES];
-            }
+            [self pushViewController:vc];
         } else if ([example.viewController isSubclassOfClass:[ALBaseGridCollectionViewController class]]) {
             ALGridCollectionViewController *vc = (ALGridCollectionViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"gridViewController"];
             vc.exampleManager = [[example.exampleManager alloc] init];
             vc.managedObjectContext = self.managedObjectContext;
-            //as per the redesign we don't want to show the logo on any of these screens
-            //vc.showLogo = YES;
-            
-            if (vc) {
-                [self.navigationController pushViewController:vc animated:YES];
-            }
+            [self pushViewController:vc];
         }
     }
 }

@@ -50,7 +50,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = YES;
-    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {

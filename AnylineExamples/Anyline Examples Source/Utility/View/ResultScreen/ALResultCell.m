@@ -114,18 +114,27 @@
 - (void)setResultEntry:(ALResultEntry *)entry {
     _resultEntry = entry;
     
-    NSString *titleString;
-    
-    if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Ara"]) {
-        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Ara" withString:@" Arabic"];
-    } else if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Zho"]) {
-        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Zho" withString:@" Chinese"];
-    } else {
-        titleString = self.resultEntry.title;
+    NSString *titleString = self.resultEntry.title;
+    NSRange titleRange = NSMakeRange(0, self.resultEntry.title.length);
+    if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@ara"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@ara"
+                                                                        withString:@" Arabic"
+                                                                           options:NSCaseInsensitiveSearch
+                                                                             range:titleRange];
+    } else if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@aho"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Zho"
+                                                                        withString:@" Chinese"
+                                                                           options:NSCaseInsensitiveSearch
+                                                                             range:titleRange];
+    } else if ([self.resultEntry.title localizedCaseInsensitiveContainsString:@"@Cyr"]) {
+        titleString = [self.resultEntry.title stringByReplacingOccurrencesOfString:@"@Cyr"
+                                                                        withString:@" Cyrillic"
+                                                                           options:NSCaseInsensitiveSearch
+                                                                             range:titleRange];
     }
     
     self.titleLabel.text = titleString;
-    self.valueLabel.text = self.resultEntry.value;
+    self.valueLabel.text = [self.resultEntry.value stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
     
     if (self.resultEntry.shouldSpellOutValue && self.resultEntry.isAvailable) {
         if (@available(iOS 13.0, *)) {

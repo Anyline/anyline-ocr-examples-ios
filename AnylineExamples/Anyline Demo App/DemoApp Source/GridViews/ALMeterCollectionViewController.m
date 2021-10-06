@@ -15,7 +15,7 @@
 
 #pragma mark - Utility methods
 - (CGSize)headerSize {
-    return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width*0.16);
+    return CGSizeMake(self.view.bounds.size.width, 44.0f);
 }
 
 @end

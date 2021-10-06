@@ -160,8 +160,10 @@
 
 - (CGRect)scanViewFrame {
     CGRect frame = [[UIScreen mainScreen] bounds];
-      frame = CGRectMake(frame.origin.x, frame.origin.y + CGRectGetMaxY(self.navigationController.navigationBar.frame), frame.size.width, frame.size.height - CGRectGetMaxY(self.navigationController.navigationBar.frame));
-    return frame;
+    CGFloat navbarHeight = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    navbarHeight = MAX(navbarHeight, 0);
+    return CGRectMake(frame.origin.x, frame.origin.y + navbarHeight,
+                      frame.size.width, frame.size.height - navbarHeight);
 }
 
 @end

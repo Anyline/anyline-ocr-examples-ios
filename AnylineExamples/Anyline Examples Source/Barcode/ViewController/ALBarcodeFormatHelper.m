@@ -24,7 +24,7 @@ static NSString * const kLegacy = @"LEGACY SYMBOLOGIES";
 + (void)initialize {
     barcodeFormats =
     @{
-        k1DRetail : @{@"UPC/EAN"                       : @[kCodeTypeEAN8,kCodeTypeEAN13,kCodeTypeUPCA,kCodeTypeUPCE,kCodeTypeUPCEANExtension,kCodeTypeUPC_EAN_EXTENSION],
+        k1DRetail : @{@"UPC/EAN"                       : @[kCodeTypeONE_D_INVERSE,kCodeTypeEAN8,kCodeTypeEAN13,kCodeTypeUPCA,kCodeTypeUPCE,kCodeTypeUPCEANExtension,kCodeTypeUPC_EAN_EXTENSION],
                       @"GS1 DataBar & Composite Codes" : @[kCodeTypeRSS14,kCodeTypeRSSExpanded,kCodeTypeRSS_EXPANDED],
                       @"MSI" : @[kCodeTypeMSI]
         },

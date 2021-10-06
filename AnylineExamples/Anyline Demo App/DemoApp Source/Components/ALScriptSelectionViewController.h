@@ -6,13 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ALIDCountryHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol ALScriptSelectionDelegate;
 
 @interface ALScriptSelectionViewController : UIViewController
 
-@property (nonatomic, assign) BOOL isArabicScript;
+@property (nonatomic, assign) ALScriptType scriptType;
 @property (copy) void (^blockForAfterViewDismissal)(void);
 @property (nonatomic, weak) id<ALScriptSelectionDelegate> delegate;
 
@@ -23,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ALScriptSelectionDelegate <NSObject>
 
 @required
--(void)changeScript:(BOOL)isArabic;
+- (void)changeScript:(ALScriptType)scriptType;
 
 @end
 

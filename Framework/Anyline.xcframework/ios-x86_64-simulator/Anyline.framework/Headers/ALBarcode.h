@@ -24,8 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value
                                 format:(NSString * _Nonnull)barcodeFormat
-                           coordinates:(NSString * _Nonnull)coordinates
-                                base64:(NSString * _Nonnull)base64;
+                           coordinates:(NSString * _Nullable)coordinates
+                                base64:(NSString * _Nullable)base64;
 
 - (NSString * _Nonnull)toJSONString;
 

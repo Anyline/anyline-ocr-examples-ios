@@ -59,7 +59,8 @@ typedef NS_ENUM(NSInteger, ALLicensePlateScanMode) {
     ALLicensePlateUkraine = 46,
     ALLicensePlateSwitzerland = 47,
     ALLicensePlateAndorra = 48,
-    ALLicensePlateUnitedStates = 49
+    ALLicensePlateUnitedStates = 49,
+    ALLicensePlateAfrica = 50
 };
 
 @protocol ALLicensePlateScanPluginDelegate;

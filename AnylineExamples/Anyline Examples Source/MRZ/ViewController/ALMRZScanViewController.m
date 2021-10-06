@@ -13,6 +13,7 @@
 #import "ALUniversalIDFieldnameUtil.h"
 #import "ALResultViewController.h"
 #import "ALTutorialViewController.h"
+#import "NSString+Util.h"
 
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
 @interface ALMRZScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -57,8 +58,6 @@
     scanOptions.vizGivenNames = ALDefault;
     scanOptions.vizDateOfBirth = ALDefault;
     scanOptions.vizDateOfExpiry = ALDefault;
-    
-    
     
     //Set scanOptions for MRZConfig
     mrzConfig.idFieldScanOptions = scanOptions;
@@ -162,7 +161,6 @@
     ALMRZIdentification *identification = (ALMRZIdentification*)scanResult.result;
     
     [self.mrzScanViewPlugin stopAndReturnError:nil];
-    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
     //MRZ Fields
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
@@ -174,36 +172,48 @@
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationalityCountryCode] isMandatory:NO]];
     
-    if ([identification personalNumber] && ([[[identification personalNumber] stringByTrimmingCharactersInSet: set] length] > 0)) {
+    if (identification.personalNumber.trimmed.length > 0) {
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[identification personalNumber] isMandatory:NO]];
     }
     
     //VIZ Fields
     NSMutableArray <ALResultEntry*> *vizResultData = [[NSMutableArray alloc] init];
-    if ([identification vizSurname] && [[identification vizSurname] isEqualToString:@""]) {
-        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification vizSurname]]];
-    }
-    if ([identification vizGivenNames] && [[identification vizGivenNames] isEqualToString:@""]) {
-      [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification vizGivenNames]]];
-    }
-    if ([identification vizAddress] && [[identification vizAddress] isEqualToString:@""]) {
-        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address" value:[identification vizAddress] isMandatory:NO]];
-    }
-    if ([identification vizDateOfBirth] && [[identification vizDateOfBirth] isEqualToString:@""]) {
-        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfBirthObject] dateString:[identification vizDateOfBirth] title:@"Date of Birth"]];
-    }
-    if ([identification vizDateOfIssue] && [[identification vizDateOfIssue] isEqualToString:@""]) {
-        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfIssueObject] dateString:[identification vizDateOfIssue] title:@"Date of Issue"]];
-    }
-    if ([identification vizDateOfExpiry] && [[identification vizDateOfExpiry] isEqualToString:@""]) {
-        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfExpiryObject] dateString:[identification vizDateOfExpiry] title:@"Date of Expiry"]];
+    if (identification.vizSurname.trimmed.length > 0) {
+        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname"
+                                                                value:[identification vizSurname]]];
     }
     
-    if ([identification personalNumber] && ([[[identification personalNumber] stringByTrimmingCharactersInSet: set] length] > 0)) {
-        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[identification personalNumber] isMandatory:NO]];
+    if (identification.vizGivenNames.trimmed.length > 0) {
+      [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names"
+                                                              value:[identification vizGivenNames]]];
+    }
+    if (identification.vizAddress.trimmed.length > 0) {
+        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address"
+                                                                value:[identification vizAddress] isMandatory:NO]];
+    }
+    if (identification.vizDateOfBirth.trimmed.length > 0) {
+        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfBirthObject]
+                                                dateString:[identification vizDateOfBirth]
+                                                     title:@"Date of Birth"]];
+    }
+    if (identification.vizDateOfIssue.trimmed.length > 0) {
+        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfIssueObject]
+                                                dateString:[identification vizDateOfIssue]
+                                                     title:@"Date of Issue"]];
+    }
+    if (identification.vizDateOfExpiry.trimmed.length > 0) {
+        [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfExpiryObject]
+                                                dateString:[identification vizDateOfExpiry]
+                                                     title:@"Date of Expiry"]];
     }
     
-    [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex" value:[identification sex] isMandatory:NO]];
+    if (identification.personalNumber.trimmed.length > 0) {
+        [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number"
+                                                                value:[identification personalNumber] isMandatory:NO]];
+    }
+    
+    [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex"
+                                                            value:[identification sex] isMandatory:NO]];
     
     [resultData addObjectsFromArray:vizResultData];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;

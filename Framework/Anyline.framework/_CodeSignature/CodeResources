@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/ALBarcode.h</key>
 		<data>
-		ECmiBLdf+HstltJAKcit74AitBw=
+		+2/yTytUbVYd4or1zxaaoOsYLdM=
 		</data>
 		<key>Headers/ALBarcodeResult.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/ALCoreController.h</key>
 		<data>
-		Wi8JHT2MqbvfKtwNZTLtDH0gSYw=
+		inW0i62/y2AH5SrlDqRDsWj1iJM=
 		</data>
 		<key>Headers/ALCutoutConfig.h</key>
 		<data>
@@ -91,6 +91,10 @@
 		<key>Headers/ALCutoutView.h</key>
 		<data>
 		GhZSff+YtRSDQtZbyCbBTd/6kD4=
+		</data>
+		<key>Headers/ALCyrillicIDConfig.h</key>
+		<data>
+		AKXhzF7xQ3lEr0cQAPBYN/0jmLU=
 		</data>
 		<key>Headers/ALDataGroup1.h</key>
 		<data>
@@ -190,7 +194,7 @@
 		</data>
 		<key>Headers/ALLicensePlateScanPlugin.h</key>
 		<data>
-		bGfhHpCYMXoj9PtcacK6WOnnF1E=
+		SXmEuwXdnLbwdaTgQvRMSU3nMeg=
 		</data>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>
 		<data>
@@ -424,7 +428,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O8hrcxfFTizS5jXrgibmNjimnMgMfZYXr0IAPCTTRWw=
+			YokfKd55lNmiaAOfUG0uHc31mxmYEf9yG9CWQw2fB7U=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeResult.h</key>
@@ -508,7 +512,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I0yvIoqEr9Ce652F71n7KgnZ7HT8glWtHM55N1NhXXU=
+			pY9WQ0JLIqIH8aVxgZRuSKW81NxabSfNJqG45PwLWGM=
 			</data>
 		</dict>
 		<key>Headers/ALCutoutConfig.h</key>
@@ -523,6 +527,13 @@
 			<key>hash2</key>
 			<data>
 			psAQ8KGKpkw0aKtIZ7YA2dQIMKSQjBoXmCwd1wyXUVY=
+			</data>
+		</dict>
+		<key>Headers/ALCyrillicIDConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			F6OMPYN/br27KRunVxFKNRXWoI4jG2kvhhgVtdlX55Y=
 			</data>
 		</dict>
 		<key>Headers/ALDataGroup1.h</key>
@@ -697,7 +708,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			92taBgJADrXzOZgYu/ABpIhWNjHWW/2g0zKqW229R3o=
+			LXUIZ5Ccu42aV2kBOk5bHWkFV9EUps0Hw0I4sNRBnvo=
 			</data>
 		</dict>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>

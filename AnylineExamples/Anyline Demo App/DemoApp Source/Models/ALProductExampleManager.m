@@ -67,7 +67,7 @@
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
     
-    ALExample *licensePlate = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
+    ALExample *licensePlate = [[ALExample alloc] initWithName:NSLocalizedString(@"License Plate", nil)
                                                         image:[UIImage imageNamed:@"tile_licenseplate"]
                                                viewController:[ALGridCollectionViewController class]
                                                exampleManager:[ALLicensePlateExampleManager class]];

@@ -68,7 +68,6 @@
     [latinButton setImage:checkMarkImage forState:UIControlStateHighlighted];
     [latinButton setTintColor:[UIColor AL_LabelBlackWhite]];
     [latinButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [latinButton setSelected:!self.isArabicScript];
     [latinButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [latinButton setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
     [latinButton setImageEdgeInsets:UIEdgeInsetsMake(0, 110, 0, 0)];
@@ -85,7 +84,6 @@
     [arabicButton setTintColor:[UIColor AL_LabelBlackWhite]];
     [arabicButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [arabicButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [arabicButton setSelected:self.isArabicScript];
     [arabicButton setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
     [arabicButton setImageEdgeInsets:UIEdgeInsetsMake(0, 100, 0, 0)];
     self.arabicScriptbutton = arabicButton;
@@ -120,7 +118,6 @@
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self changeScript:self.isArabicScript];
 }
 
 
@@ -140,7 +137,6 @@
 
 -(void)selectedScriptSelected:(UIButton*)sender {
     [sender setSelected:YES];
-    self.isArabicScript = self.arabicScriptbutton == sender;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

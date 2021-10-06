@@ -10,23 +10,30 @@
 
 @class ALExample;
 
-@interface ALBasePageViewController : UIPageViewController
+@interface ALBasePageViewController : UIViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray<UIViewController *> *pages;
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIView *header;
-@property (nonatomic, strong) UIImageView *anylineWhite;
+@property (nonatomic, strong) UIImageView *anylineLogoImageView;
 @property (nonatomic) NSInteger currIndex;
 @property (nonatomic) BOOL onboardingDidShow;
-@property (nonatomic) BOOL hideNavigationBar;
 
-- (void)highlightTabAtIndex:(NSInteger)index;
+@property (nonatomic, readonly) BOOL shouldShowSegmentedControl;
+
+// if there's a banner, it's below it. and this should be deactivated.
+@property (nonatomic, strong) NSLayoutConstraint *headerTopToViewTopAnchor;
+
+@property (nonatomic, strong) UIPageViewController *pageViewController;
+
+- (void)highlightSegmentedControlAtIndex:(NSInteger)index;
 - (NSString *)titleOfExampleManagerOnIndex:(NSInteger)idx;
-- (void)setupTabbar;
+- (void)prepareSegmentedControl;
 
 - (CGRect)headerFrame;
-- (void)setLogoYOffset:(CGFloat)yOffset;
+
+
 
 @end
