@@ -9,6 +9,8 @@
 #import <Anyline/Anyline.h>
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
+#import "UIColor+ALExamplesAdditions.h"
+
 
 @interface ALContainerScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
@@ -24,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor AL_BackgroundColor];
     self.title = @"Horizontal Shipping Container";
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
@@ -54,8 +56,15 @@
     [self.scanView enableZoomPinchGesture:YES];
     
     // After setup is complete we add the scanView to the view of this view controller
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
     
     //Start Camera:
     [self.scanView startCamera];

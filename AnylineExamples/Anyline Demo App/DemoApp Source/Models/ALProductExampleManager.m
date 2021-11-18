@@ -52,13 +52,13 @@
 
 - (void)initExampleData {
     self.title = @"Products";
-
+    
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
                                                            image:[UIImage imageNamed:@"tile_barcodes"]
                                                   viewController:[ALMultiformatBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
-                                               image:[UIImage imageNamed:@"tile_identitydocuments_NEW"]
+                                               image:[UIImage imageNamed:@"tile_identitydocuments"]
                                       viewController:[ALGridCollectionViewController class]
                                       exampleManager:[ALIdentityDocumentsExampleManager class]];
     
@@ -84,13 +84,14 @@
     
     self.sectionNames = @[@"Products",];
     self.examples = @{
-                      self.sectionNames[0] : @[barcodeScanning,
-                                               identityDocuments,
-                                               meterReading,
-                                               licensePlate,
-                                               mro,
-                                               others],
-                      };
+        self.sectionNames[0] : @[
+            barcodeScanning,
+            identityDocuments,
+            meterReading,
+            licensePlate,
+            mro,
+            others],
+    };
 }
 
 @end

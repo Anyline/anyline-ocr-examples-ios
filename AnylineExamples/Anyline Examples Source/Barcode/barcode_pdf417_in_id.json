@@ -1,0 +1,41 @@
+{
+    "camera" : {
+        "captureResolution" : "1080p"
+    },
+    "viewPlugin" : {
+        "plugin":{
+            "id":"Barcode_ID",
+            "barcodePlugin": {
+              "barcodeFormatOptions": ["PDF_417"]
+            }
+        },
+        "cutoutConfig" : {
+            "animation": "none",
+            "style": "rect",
+            "maxWidthPercent": "80%",
+            "maxHeightPercent": "80%",
+            "alignment": "center",
+            "strokeWidth": 0,
+            "cornerRadius": 0,
+            "strokeColor": "FFFFFF",
+            "outerColor": "000000",
+            "outerAlpha": 0,
+            "ratioFromSize" : {
+                "width": 100,
+                "height": 80
+            },
+            "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedback" : {
+            "style": "none",
+            "animation": "none",
+            "strokeWidth": 0,
+            "strokeColor": "000000",
+            "fillColor": "00000000",
+            "beepOnResult": false,
+            "vibrateOnResult": false,
+            "blinkAnimationOnFresult": false,
+        },
+        "cancelOnResult": true
+    }
+}

@@ -93,13 +93,15 @@
     self.controllerType = ALScanHistoryMrz;
     
     // After setup is complete we add the scanView to the view of this view controller
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
-    
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
-    
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
     
     //Start Camera:
     [self.scanView startCamera];

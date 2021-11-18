@@ -18,7 +18,7 @@
 @class ALScanView;
 @interface ALAbstractScanViewPlugin : UIView<ALInfoDelegate>
 
-@property (nonatomic, strong, readonly) NSHashTable<ALScanViewPluginDelegate> * _Nullable scanViewPluginDelegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALScanViewPluginDelegate> * _Nullable scanViewPluginDelegates;
 /**
  The SampleBufferImageProvider implements ALImageProvider and AnylineVideoDataSampleBufferDelegate
  and prepares the frame for Anyline processing
@@ -36,6 +36,13 @@
  The pluginID is useful if there are multiple plugins running at the same time
  */
 @property (nullable, nonatomic, readonly) NSString *pluginID;
+
+
+/**
+ * Used when a indicating a child plugin of a composite scan view plugin is allowed to be
+ * skipped depending on rules determined by the parent plugin. Has no significance otherwise.
+ */
+@property (nonatomic, assign) BOOL isOptional;
 
 /**
  * The UI Configuration for the scanning UI
@@ -76,8 +83,6 @@ A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this 
 @property (nonatomic, assign) CGFloat scale;
 
 - (void)customInit;
-
-- (CGRect)getCropRect;
 
 /**
  * Stop listening for device motion.

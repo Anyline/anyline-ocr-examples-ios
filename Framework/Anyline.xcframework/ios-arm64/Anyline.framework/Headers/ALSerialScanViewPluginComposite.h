@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ALSerialScanViewPluginComposite : ALAbstractScanViewPluginComposite
+
+@property (nonatomic, retain, null_unspecified) NSNumber *timeout;
+
 - (BOOL)startFromID:(NSString * _Nonnull)pluginID andReturnError:(NSError * _Nullable * _Nullable)error;
 
 @end

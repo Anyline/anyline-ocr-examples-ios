@@ -18,7 +18,7 @@
 @property (nonatomic, strong) ALPolygon * _Nonnull polygon;
 @property (nonatomic, strong) NSArray   * _Nonnull contours;
 
-@property (nonatomic, strong, readonly) NSHashTable<ALCutoutDelegate> * _Nullable cutoutDelegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALCutoutDelegate> * _Nullable cutoutDelegates;
 
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
                           pluginConfigs:(NSDictionary<NSString *,ALScanViewPluginConfig *> *_Nonnull)configs;

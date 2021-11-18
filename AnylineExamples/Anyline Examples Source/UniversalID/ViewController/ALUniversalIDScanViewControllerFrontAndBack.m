@@ -8,11 +8,9 @@
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
-
 #import "AnylineExamples-Swift.h"
-
 #import "ALUniversalIDFieldnameUtil.h"
-
+#import "ALBarcodeResultUtil.h"
 
 NSString * const kScanIDFrontLabelText = @"Scan your ID";
 NSString * const kScanIDBackLabelText = @"Turn ID over";
@@ -20,25 +18,45 @@ NSString * const kScanIDBackLabelText = @"Turn ID over";
 NSString * const kScanViewPluginFrontID = @"IDPluginFront";
 NSString * const kScanViewPluginBackID = @"IDPluginBack";
 
-@interface ALUniversalIDScanViewControllerFrontAndBack ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, AnylineNativeBarcodeDelegate>
+NSString * const kScanViewPluginBarcodeID = @"BarcodePlugin";
+
+NSString * const kScanViewPluginSerialID = @"SerialPlugin";
+NSString * const kScanViewPluginParallelID = @"ParallelPlugin";
+
+NSInteger const kUniversalIDSerialScanTimeout = 10;
+NSInteger const kUniversalIDBacksideScanTimeout = 5;
+NSInteger const kBarcodeBacksideScanTimeout = 0.7;
+
+@interface ALUniversalIDScanViewControllerFrontAndBack ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALBarcodeScanPluginDelegate, ALCompositeScanPluginDelegate>
 
 @property (nonatomic, strong) ALIDScanPlugin *scanPluginFront;
 @property (nonatomic, strong) ALIDScanViewPlugin *scanViewPluginFront;
 
 @property (nonatomic, strong) ALIDScanPlugin *scanPluginBack;
 @property (nonatomic, strong) ALIDScanViewPlugin *scanViewPluginBack;
+
+@property (nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
+@property (nonatomic, strong) ALBarcodeScanViewPlugin *barcodeScanViewPlugin;
+
 @property (nonatomic, strong) ALSerialScanViewPluginComposite *serialScanViewPlugin;
+@property (nonatomic, strong) ALParallelScanViewPluginComposite *parallelScanViewPlugin;
+
 @property (nullable, nonatomic, strong) ALScanView *scanView;
 
+@property (nonatomic, strong) NSLayoutConstraint *cutoutGuideYOffsetConstraint;
+
 @property (nullable, nonatomic, strong) NSMutableArray<ALResultEntry *> *resultData;
+
 @property (nullable, nonatomic, strong) UIImage *frontScanImage;
 @property (nullable, nonatomic, strong) UIImage *backScanImage;
 @property (nullable, nonatomic, strong) UIImage *faceScanImage;
-@property (nullable, nonatomic, strong) NSTimer *scanTimeout;
-@property (nullable, nonatomic, strong) NSTimer *frontScanTimeout;
+
+@property (nullable, nonatomic, strong) NSTimer *scanTimeoutFront;
+@property (nullable, nonatomic, strong) NSTimer *scanTimeoutBack;
+
 @property (nullable, nonatomic, strong) GifuWrapper *gifImageView;
 
-@property (nonatomic, strong) NSString *detectedBarcode;
+@property (nonatomic, strong) ALBarcodeResult *detectedBarcode;
 @property (nonatomic, strong) NSMutableString *resultHistoryString;
 
 @property (nullable, nonatomic, strong) UIView *hintView;
@@ -46,74 +64,100 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 
 @end
 
+
 @implementation ALUniversalIDScanViewControllerFrontAndBack
 
-
+// MARK: - UIViewController Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the background color to black to have a nicer transition
+    
     self.view.backgroundColor = [UIColor blackColor];
     self.title = (self.title && self.title.length > 0) ? self.title : @"Universal ID";
-
-    CGFloat hintMargin = 7;
     
-    CGRect frame = [self scanViewFrame];
-
-    // First we load our Universal ID config
     NSError *error = nil;
-    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"universal_id_config" ofType:@"json"];
-    NSData *jsonFile = [NSData dataWithContentsOfFile:jsonFilePath];
-    NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
-                                                               options:NSJSONReadingMutableContainers
-                                                                 error:&error];
     
-    // Then Initializing our first scan mode (ScanPlugin + ScanViewPlugin).
-    self.scanViewPluginFront = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict
-                                                                                             delegate:self error:&error];
-
+    // Front ID scan plugin and scan view plugin
+    NSDictionary *idScanConfigDict = [[self class] configDictForIDScanPlugin];
+    self.scanViewPluginFront = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin
+                                                      scanViewPluginForConfigDict:idScanConfigDict
+                                                      delegate:self
+                                                      error:&error];
+    NSAssert(self.scanViewPluginFront, @"Setup Error: %@", error.debugDescription);
+    
     [self.scanViewPluginFront addScanViewPluginDelegate:self];
+    
     ALScanViewPluginConfig *configFront = self.scanViewPluginFront.scanViewPluginConfig;
     configFront.cutoutConfig.animation = ALCutoutAnimationFade;
     [self.scanViewPluginFront setScanViewPluginConfig:configFront];
     
-    
-    NSAssert(self.scanViewPluginFront, @"Setup Error: %@", error.debugDescription);
     self.scanPluginFront = self.scanViewPluginFront.idScanPlugin;
     [self.scanPluginFront setPluginID:kScanViewPluginFrontID];
-    
     [self.scanPluginFront addInfoDelegate:self];
     
-    // Now we need our second scan mode
-    self.scanViewPluginBack = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin scanViewPluginForConfigDict:configDict
-                                                                                             delegate:self error:&error];
-
+    // Back ID scan and scan view plugin (config is almost identical with that of the front ID)
+    self.scanViewPluginBack = (ALIDScanViewPlugin *)[ALAbstractScanViewPlugin
+                                                     scanViewPluginForConfigDict:idScanConfigDict
+                                                     delegate:self
+                                                     error:&error];
+    NSAssert(self.scanViewPluginBack, @"Setup Error: %@", error.debugDescription);
     [self.scanViewPluginBack addScanViewPluginDelegate:self];
     ALScanViewPluginConfig *configBack = self.scanViewPluginFront.scanViewPluginConfig;
     configBack.cutoutConfig.animation = ALCutoutAnimationFade;
     [self.scanViewPluginFront setScanViewPluginConfig:configBack];
     
-    
-    NSAssert(self.scanViewPluginBack, @"Setup Error: %@", error.debugDescription);
     self.scanPluginBack = self.scanViewPluginBack.idScanPlugin;
     [self.scanPluginBack setPluginID:kScanViewPluginBackID];
-    
     [self.scanPluginBack addInfoDelegate:self];
     
+    // Barcode (to be paired with back id in a parallel scan)
+    ALBarcodeScanPlugin *barcodeScanPlugin = [[ALBarcodeScanPlugin alloc]
+                                              initWithPluginID:kScanViewPluginBarcodeID
+                                              delegate:self
+                                              error:&error];
     
-    // Combine them in a SerialScanViewPlugin
-    ALSerialScanViewPluginComposite *serialScanViewPlugin = [[ALSerialScanViewPluginComposite alloc] initWithPluginID:@"UniversalID_frontAndBack"];
+    [barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypePDF417]];
+    [barcodeScanPlugin setParsePDF417:YES];
+    
+    self.barcodeScanPlugin = barcodeScanPlugin;
+    
+    ALBarcodeScanViewPlugin *barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc]
+                                                      initWithScanPlugin:barcodeScanPlugin];
+    
+    self.barcodeScanViewPlugin = barcodeScanViewPlugin;
+    
+    ALScanViewPluginConfig *barcodeScanViewConfig = [ALScanViewPluginConfig defaultBarcodeConfig];
+    barcodeScanViewConfig.cutoutConfig.strokeWidth = 0;
+    barcodeScanViewConfig.cutoutConfig.backgroundColor = [UIColor clearColor];
+    barcodeScanViewConfig.scanFeedbackConfig.vibrateOnResult = NO;
+    barcodeScanViewConfig.scanFeedbackConfig.strokeWidth = 0;
+    
+    self.barcodeScanViewPlugin.scanViewPluginConfig = barcodeScanViewConfig;
+    
+    self.parallelScanViewPlugin = [[ALParallelScanViewPluginComposite alloc] initWithPluginID:kScanViewPluginParallelID];
+    
+    self.parallelScanViewPlugin.optionalTimeoutDelay = @(kBarcodeBacksideScanTimeout);
+    [self.parallelScanViewPlugin addDelegate:self];
+    
+    [self.parallelScanViewPlugin addPlugin:self.scanViewPluginBack];
+    
+    self.barcodeScanViewPlugin.isOptional = YES;
+    [self.parallelScanViewPlugin addPlugin:self.barcodeScanViewPlugin];
+
+    // Combine front and back (which also includes barcode) in a SerialScanViewPlugin
+    ALSerialScanViewPluginComposite *serialScanViewPlugin = [[ALSerialScanViewPluginComposite alloc]
+                                                             initWithPluginID:kScanViewPluginSerialID];
+    
+    serialScanViewPlugin.timeout = @(kUniversalIDBacksideScanTimeout);
     [serialScanViewPlugin addPlugin:self.scanViewPluginFront];
-    [serialScanViewPlugin addPlugin:self.scanViewPluginBack];
+    [serialScanViewPlugin addPlugin:self.parallelScanViewPlugin];
     
     self.serialScanViewPlugin = serialScanViewPlugin;
+    [serialScanViewPlugin addDelegate:self];
     
     // Create ScanView and add our ScanViewPlugin Composite
+    CGRect frame = [self scanViewFrame];
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.serialScanViewPlugin];
-    
-    // Setup nativeBarcode Scanner for only PDF417
-    [self.scanView.captureDeviceManager addBarcodeDelegate:self error:nil];
-    [self.scanView.captureDeviceManager setNativeBarcodeFormats: @[AVMetadataObjectTypePDF417Code]];
     
     self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
     
@@ -123,15 +167,25 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
     [self.view addSubview:self.scanView];
     [self.view sendSubviewToBack:self.scanView];
     
-    //Start Camera:
+    // Start Camera
     [self.scanView startCamera];
     [self startListeningForMotion];
     
-    
     // Add scan hint label
-    self.hintView = [self createScanHintView:hintMargin];
+    self.hintView = [[self class] createScanHintViewCenteredInView:self.view];
     [self.view addSubview:self.hintView];
-
+    
+    self.hintView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.hintView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    self.cutoutGuideYOffsetConstraint = [self.hintView.topAnchor constraintEqualToAnchor:self.view.topAnchor];
+    self.cutoutGuideYOffsetConstraint.active = YES;
+    
+    self.hintViewLabel = [[self class] createScanHintViewLabelWithText:kScanIDFrontLabelText inView:self.hintView margin:7.0f];
+    
+    [self.hintView.heightAnchor constraintEqualToAnchor:self.hintViewLabel.heightAnchor constant:20].active = YES;
+    [self.hintView.widthAnchor constraintEqualToAnchor:self.hintViewLabel.widthAnchor constant:20].active = YES;
+    
     self.gifImageView = [[GifuWrapper alloc] init];
     self.gifImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.scanView addSubview:self.gifImageView];
@@ -141,133 +195,105 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 
     CGRect gifFrame =  CGRectMake(0, 0, 500, 310);
     self.gifImageView.frame = gifFrame;
-//    [self.gifImageView setGIFWithGifName:@"turn_card_over_animation.gif" loopCount:1 frame:gifFrame];
 }
 
-/*
- This method will be called once the view controller and its subviews have appeared on screen
- */
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    // We use this subroutine to start Anyline. The reason it has its own subroutine is
-    // so that we can later use it to restart the scanning process.
-    [self startAnyline];
+    [self startAnylineScanner];
 }
 
-/*
- Cancel scanning to allow the module to clean up
- */
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.serialScanViewPlugin stopAndReturnError:nil];
-    
+    NSError *error;
+    [self.serialScanViewPlugin stopAndReturnError:&error];
     [self resetResultData];
+    [super viewWillDisappear:animated];
 }
 
-/*
- This method is used to tell Anyline to start scanning. It gets called in
- viewDidAppear to start scanning the moment the view appears. Once a result
- is found scanning will stop automatically (you can change this behaviour
- with cancelOnResult:). When the user dismisses self.identificationView this
- method will get called again.
- */
-- (void)startAnyline {
+// MARK: - Plugin Management
 
+- (void)startAnylineScanner {
     NSError *error;
     BOOL success = [self.serialScanViewPlugin startAndReturnError:&error];
-    if( !success ) {
-        //sometimes this alert will show, sometimes the slightly-less-friendly one from the SDK will show instead.
+    if (!success) {
         [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];
     }
-        
     [self resetResultData];
+    
+    self.scanTimeoutFront = [self startTimeout:kUniversalIDSerialScanTimeout
+                                scanViewPlugin:self.scanViewPluginFront];
+    
 }
 
-
-- (UIView *)createScanHintView:(CGFloat)hintMargin {
-    UILabel * hintViewLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    UIView * hintView = [[UILabel alloc] initWithFrame:CGRectZero];
-    hintViewLabel.text = kScanIDFrontLabelText;
-    [hintViewLabel sizeToFit];
-    [hintView addSubview:hintViewLabel];
-    hintView.frame = UIEdgeInsetsInsetRect(hintViewLabel.frame, UIEdgeInsetsMake(-hintMargin, -hintMargin, -hintMargin, -hintMargin));
-    hintView.center = CGPointMake(self.view.center.x, 0);
-    hintViewLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [hintViewLabel.centerYAnchor constraintEqualToAnchor:hintView.centerYAnchor constant:0].active = YES;
-    [hintViewLabel.centerXAnchor constraintEqualToAnchor:hintView.centerXAnchor constant:0].active = YES;
-    hintView.layer.cornerRadius = 8;
-    hintView.layer.masksToBounds = true;
-    hintView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-    hintViewLabel.textColor = [UIColor whiteColor];
-    
-    //We shouldn't do this here:
-    self.hintViewLabel = hintViewLabel;
-    
-    return hintView;
-}
-
-- (void)updateHintPosition:(CGFloat)newPosition {
-    self.hintView.center = CGPointMake(self.hintView.center.x, newPosition);
-}
-
-
-- (void)prepareForBacksideScanning {
-    if (self.frontScanTimeout) {
-        [self.frontScanTimeout invalidate];
-    }
-    [self.serialScanViewPlugin stopAndReturnError:nil];
-    
+- (void)prepareForBacksideScanWithDelay:(NSTimeInterval)secondsToDisplay
+                             completion:(void (^ __nullable)(void))completion {
     [self updateScanLabelWithStringWithAnimation:kScanIDBackLabelText];
-    
     self.gifImageView.hidden = false;
     [self hideGIFView:false];
-    
     [self.gifImageView startGIFWithGifName:@"flip_id" loopCount:1];
-    dispatch_time_t gifTimeout = dispatch_time(DISPATCH_TIME_NOW, 4 * NSEC_PER_SEC);
+    if (completion == nil) {
+        return;
+    }
+    __weak __block typeof(self) weakSelf = self;
+    dispatch_time_t gifTimeout = dispatch_time(DISPATCH_TIME_NOW, secondsToDisplay * NSEC_PER_SEC);
     dispatch_after(gifTimeout, dispatch_get_main_queue(), ^(void){
-        [self.gifImageView stopGIF];
-        [self hideGIFView:true];
-    });
-    
-    
-    
-    double delayInSeconds = 2000; // set the time
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_MSEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self.serialScanViewPlugin startFromID:kScanViewPluginBackID andReturnError:nil];
+        [weakSelf.gifImageView stopGIF];
+        [weakSelf hideGIFView:true];
+        completion();
     });
 }
 
-
-        
-
-
-- (void)hideGIFView:(BOOL)willBeHidden {
-    
-    [UIView transitionWithView:self.gifImageView
-                      duration:0.8
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^(void){
-                        self.gifImageView.hidden = willBeHidden;
-                    }
-                    completion:nil];
+- (NSTimer *)startTimeout:(NSTimeInterval)timeoutInterval scanViewPlugin:(ALAbstractScanViewPlugin *)scanViewPlugin {
+    return [NSTimer scheduledTimerWithTimeInterval:timeoutInterval
+                                            target:self
+                                          selector:@selector(scanningTimedOut:)
+                                          userInfo:@{ @"plugin": scanViewPlugin }
+                                           repeats:NO];
 }
 
-#pragma mark -- AnylineIDPlugin Delegate
 
-/*
- This is the main delegate method Anyline uses to report its results
- */
-- (void)anylineIDScanPlugin:(ALIDScanPlugin *)anylineIDScanPlugin
-              didFindResult:(ALIDResult *)scanResult {
-    [self.serialScanViewPlugin stopAndReturnError:nil];
-    
-    
+- (void)scanningTimedOut:(NSTimer *)timer {
+    ALAbstractScanViewPlugin *scanViewPlugin = [[timer userInfo] valueForKey:@"plugin"];
+    [self timer:timer timedOutWithPlugin:scanViewPlugin];
+}
+
+// MARK: - Scan View Plugin Delegate Methods
+
+- (void)timer:(NSTimer *)timer timedOutWithPlugin:(ALAbstractScanViewPlugin *)scanViewPlugin {
+    if (timer == self.scanTimeoutFront) { // front scan timed out, should move to back side
+        __weak __block typeof(self) weakSelf = self;
+        [self prepareForBacksideScanWithDelay:0.3 completion:^{
+            NSError *error;
+            [weakSelf.serialScanViewPlugin startFromID:kScanViewPluginParallelID andReturnError:&error];
+            weakSelf.scanTimeoutBack = [weakSelf startTimeout:kUniversalIDBacksideScanTimeout
+                                               scanViewPlugin:weakSelf.parallelScanViewPlugin];
+        }];
+    } else if (timer == self.scanTimeoutBack) {
+        [self presentResult];
+    }
+}
+
+- (void)anylineCompositeScanPlugin:(ALAbstractScanViewPluginComposite * _Nonnull)anylineCompositeScanPlugin
+                     didFindResult:(ALCompositeResult * _Nonnull)scanResult {
+    if (anylineCompositeScanPlugin == self.serialScanViewPlugin) {
+        [self presentResult];
+    }
+}
+
+- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin
+                   didFindResult:(ALBarcodeResult * _Nonnull)scanResult {
+    self.detectedBarcode = scanResult;
+}
+
+- (void)anylineIDScanPlugin:(ALIDScanPlugin *)idScanPlugin didFindResult:(ALIDResult *)scanResult {
     
     ALUniversalIDIdentification *identification = (ALUniversalIDIdentification *)scanResult.result;
     ALLayoutDefinition *layoutDefinition = identification.layoutDefinition;
     
-    if ([anylineIDScanPlugin.pluginID isEqualToString:kScanViewPluginFrontID]) {
+    if (idScanPlugin == self.scanPluginFront) {
+        
+        [self.scanTimeoutFront invalidate];
+        self.scanTimeoutFront = nil;
+        
         [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:self.resultHistoryString]];
         [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country]];
         [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type]];
@@ -275,47 +301,72 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
         self.frontScanImage = scanResult.image;
         self.faceScanImage = [scanResult.result faceImage];
         
-        [self prepareForBacksideScanning];
-    }
+        __weak __block typeof(self) weakSelf = self;
+        [self prepareForBacksideScanWithDelay:0.3 completion:^{
+            weakSelf.scanTimeoutBack = [weakSelf startTimeout:kUniversalIDBacksideScanTimeout
+                                               scanViewPlugin:weakSelf.parallelScanViewPlugin];
+        }];
     
-    
-    if ([anylineIDScanPlugin.pluginID isEqualToString:kScanViewPluginBackID]) {
-        [self.scanTimeout invalidate];
-        
-        //TODO: fix this quick fix...
-        NSUInteger resultDataLength = [self.resultData count];
-        [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@" Back" resultHistoryString:self.resultHistoryString]];
-        NSUInteger resultDataLength2 = [self.resultData count];
-        
+    } else if (idScanPlugin == self.scanPluginBack) {
+        [self.resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil
+                                              addIDSubResult:identification
+                                              titleSuffix:@" Back"
+                                              resultHistoryString:self.resultHistoryString]];
         [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:layoutDefinition.country]];
-        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Type" value:layoutDefinition.type]];
-
+        [self.resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Type"
+                                                                  value:layoutDefinition.type]];
         self.backScanImage = scanResult.image;
-        
-        [self presentResult];
     }
 }
 
-- (void)presentResult {
-    if (self.scanTimeout) {
-        [self.scanTimeout invalidate];
+- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info {
+    if ([info.variableName isEqualToString:@"$brightness"]) {
+        [self updateBrightness:[info.value floatValue] forModule:self.scanViewPluginFront];
     }
+}
+
+- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+    // Update Position of warning indicator
+    [self updateWarningPosition:cutoutRect.origin.y + cutoutRect.size.height + self.scanView.frame.origin.y + 80];
+    [self updateHintPosition:cutoutRect.origin.y + self.scanView.frame.origin.y - 50];
+    self.gifImageView.frame = CGRectMake(cutoutRect.origin.x, cutoutRect.origin.x, cutoutRect.size.width * 0.9, cutoutRect.size.height * 0.9);
+    self.gifImageView.center = CGPointMake(cutoutRect.origin.x + cutoutRect.size.width/2, cutoutRect.origin.y + cutoutRect.size.height/2);
+}
+
+// MARK: - Handle Results
+
+- (void)presentResult {
     
-    if (self.detectedBarcode.length > 0) {
-        //Add barcode result to our final result array
-        ALResultEntry *barcodeResult = [[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:self.detectedBarcode];
-        [self.resultData addObject:barcodeResult];
+    NSError *error;
+    
+    [self.serialScanViewPlugin stopAndReturnError:&error];
+    
+    [self.scanTimeoutFront invalidate];
+    [self.scanTimeoutBack invalidate];
+    self.scanTimeoutFront = nil;
+    self.scanTimeoutBack = nil;
+
+    NSString *barcodeString = @"";
+    if (self.detectedBarcode != nil) {
+        if (self.detectedBarcode.result.count > 0) {
+            barcodeString = [ALBarcodeResultUtil strValueFromBarcode:self.detectedBarcode.result[0]];
+        }
+        [self.resultData addObjectsFromArray:[ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:self.detectedBarcode]];
     }
 
     ALResultViewController *vc;
 
-    if (self.resultData.count > 0 || self.detectedBarcode.length > 0) {
+    if (self.resultData.count > 0) {
         // Write result in history
-        [super anylineDidFindResult:self.resultHistoryString barcodeResult:self.detectedBarcode image:self.frontScanImage scanPlugin:self.scanViewPluginFront.idScanPlugin viewPlugin:self.serialScanViewPlugin completion:^{
+        [super anylineDidFindResult:self.resultHistoryString
+                      barcodeResult:barcodeString
+                              image:self.frontScanImage
+                         scanPlugin:self.scanViewPluginFront.idScanPlugin
+                         viewPlugin:self.serialScanViewPlugin completion:^{
         }];
     } else {
         // We couldn't read the back side of the ID
-        ALResultEntry *barcodeResult = [[ALResultEntry alloc] initWithTitle:@"Result Data" value:@"This ID is either not supported yet or the scan wasn't\ncaptured properly. Please try again." isAvailable:NO];
+        ALResultEntry *barcodeResult = [[ALResultEntry alloc] initWithTitle:@"Result Data" value:@"This ID is either not supported yet or the scan wasn't captured properly.\n\nPlease try again." isAvailable:NO];
         [self.resultData addObject:barcodeResult];
     }
 
@@ -325,56 +376,27 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
                                                   faceImage:self.faceScanImage
                                        shouldShowDisclaimer:NO];
   
+    [self resetResultData];    
     [self.navigationController pushViewController:vc animated:YES];
-    
-    [self resetResultData];
 }
-
-
-- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager
-               didFindBarcodeResult:(NSString *)scanResult
-                               type:(NSString *)barcodeType {
-    self.detectedBarcode = scanResult;
-}
-
-- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
-    if ([info.variableName isEqualToString:@"$brightness"]) {
-        [self updateBrightness:[info.value floatValue] forModule:self.scanViewPluginFront];
-    }
-    
-}
-
-- (void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin
-               runSkipped:(ALRunSkippedReason * _Nonnull)runSkippedReason {
-    if (runSkippedReason.reason == ALRunFailureIDTypeNotSupported) {
-//        [self updateScanWarnings:ALWarningStateIDNotSupported];
-        
-        [self triggerTimeOutWithPluginID:anylineScanPlugin.pluginID];
-    }
-}
-
 
 - (void)resetResultData {
-    self.resultData = [[NSMutableArray alloc] init];
+    self.resultData = [NSMutableArray array];
     self.resultHistoryString = [NSMutableString string];
     self.detectedBarcode = nil;
-    
     self.backScanImage = nil;
     self.frontScanImage = nil;
-    [self.scanTimeout invalidate];
-    self.scanTimeout = nil;
-    [self.frontScanTimeout invalidate];
-    self.frontScanTimeout = nil;
+    self.faceScanImage = nil;
+    self.scanTimeoutFront = nil;
+    self.scanTimeoutBack = nil;
     self.hintViewLabel.text = kScanIDFrontLabelText;
     [self.hintViewLabel sizeToFit];
-    
     [self hideGIFView:true];
     [self.gifImageView stopGIF];
 }
 
 - (NSUInteger)getOrderedIndexForFieldName:(NSString *)fieldName withOffset:(NSUInteger)offset {
     NSUInteger idx = [[ALUniversalIDFieldnameUtil fieldNamesOrderArray] indexOfObject:fieldName];
-    
     if (idx == NSNotFound || idx >= ([self.resultData count]+offset)) {
         return [self.resultData count];
     }
@@ -382,69 +404,70 @@ NSString * const kScanViewPluginBackID = @"IDPluginBack";
 }
 
 - (void)addResultAtIndex:(ALResultEntry *)entry forFieldName:(NSString *)fieldName withOffset:(NSUInteger)offset {
-
     [self.resultData insertObject:entry atIndex:[self getOrderedIndexForFieldName:fieldName withOffset:offset]];
 }
 
-- (void)triggerTimeOutWithPluginID:(NSString *)pluginID {
-    double timeoutTime = 4.2;
-    
-    
-    if ([pluginID isEqualToString:kScanViewPluginFrontID]) {
-        if (!self.frontScanTimeout.valid) {
-                self.frontScanTimeout = self.scanTimeout = [NSTimer scheduledTimerWithTimeInterval:timeoutTime
-                                                                                            target:self
-                                                                                          selector:@selector(prepareForBacksideScanning)
-                                                                                          userInfo:nil
-                                                                                           repeats:NO];
-        }
-    } else if ([pluginID isEqualToString:kScanViewPluginBackID]) {
-        if (!self.scanTimeout.valid) {
-            self.scanTimeout = [NSTimer scheduledTimerWithTimeInterval:timeoutTime
-                                                                target:self
-                                                              selector:@selector(presentResult)
-                                                              userInfo:nil
-                                                               repeats:NO];
-        }
-    }
-    
-}
-
-- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     cutoutRect.origin.y +
-     cutoutRect.size.height +
-     self.scanView.frame.origin.y +
-     80];
-    [self updateHintPosition:cutoutRect.origin.y +
-    self.scanView.frame.origin.y -
-    50];
-    
-    self.gifImageView.frame = CGRectMake(cutoutRect.origin.x, cutoutRect.origin.x, cutoutRect.size.width * 0.9, cutoutRect.size.height * 0.9);
-    self.gifImageView.center = CGPointMake(cutoutRect.origin.x + cutoutRect.size.width/2, cutoutRect.origin.y + cutoutRect.size.height/2);
-}
+// MARK: - Manage Onscreen Guides
 
 - (void)updateScanLabelWithStringWithAnimation:(NSString *)labelText {
-    self.hintViewLabel.transform = CGAffineTransformScale(self.hintViewLabel.transform, .25, .25);
-
     self.hintViewLabel.text = labelText;
+    self.hintViewLabel.transform = CGAffineTransformScale(self.hintViewLabel.transform, .25, .25);
     [UIView animateWithDuration:0.4 animations:^{
         self.hintViewLabel.transform = CGAffineTransformScale(self.hintViewLabel.transform, 4.5, 4.5);
-        
     } completion:^(BOOL finished) {
-        
         [UIView animateWithDuration:0.15 animations:^{
             self.hintViewLabel.transform = CGAffineTransformScale(self.hintViewLabel.transform, 0.875, 0.875);
-            
         } completion:^(BOOL finished) {
-            
             self.hintViewLabel.transform = CGAffineTransformScale(self.hintViewLabel.transform, 1.0, 1.0);
             [self.hintViewLabel sizeToFit];
-        
         }];
-    
     }];
+}
+
+- (void)updateHintPosition:(CGFloat)newPosition {
+    self.cutoutGuideYOffsetConstraint.constant = newPosition;
+}
+
+- (void)hideGIFView:(BOOL)willBeHidden {
+    [UIView transitionWithView:self.gifImageView duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
+        self.gifImageView.hidden = willBeHidden;
+    } completion:nil];
+}
+
+
+// MARK: - Miscellaneous
+
++ (NSDictionary *)configDictForIDScanPlugin {
+    NSError *error = nil;
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"universal_id_config" ofType:@"json"];
+    NSData *jsonFile = [NSData dataWithContentsOfFile:jsonFilePath];
+    NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
+                                                               options:NSJSONReadingMutableContainers
+                                                                 error:&error];
+    return configDict;
+}
+
++ (UIView *)createScanHintViewCenteredInView:(UIView * _Nonnull)view {
+    UIView *hintView = [[UILabel alloc] init];
+    hintView.center = CGPointMake(view.center.x, 0);
+    hintView.layer.cornerRadius = 8;
+    hintView.layer.masksToBounds = true;
+    hintView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    return hintView;
+}
+
++ (UILabel *)createScanHintViewLabelWithText:(NSString *)text inView:(UIView * _Nonnull)hintView margin:(CGFloat)margin {
+    UILabel *hintViewLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    hintViewLabel.text = text;
+    [hintViewLabel sizeToFit];
+    
+    hintViewLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [hintView addSubview:hintViewLabel];
+    [hintViewLabel.centerXAnchor constraintEqualToAnchor:hintView.centerXAnchor].active = YES;
+    [hintViewLabel.centerYAnchor constraintEqualToAnchor:hintView.centerYAnchor].active = YES;
+    
+    return hintViewLabel;
 }
 
 @end

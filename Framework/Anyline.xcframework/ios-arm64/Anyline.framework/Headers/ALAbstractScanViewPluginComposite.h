@@ -18,6 +18,7 @@
 @property BOOL isRunning;
 
 - (void)addPlugin:(ALAbstractScanViewPlugin * _Nonnull)plugin;
+
 - (void)removePlugin:(NSString * _Nonnull)pluginID;
 - (instancetype _Nonnull )initWithPluginID:(NSString *_Nonnull)pluginID;
 - (void)addDelegate:(id<ALCompositeScanPluginDelegate>_Nonnull)delegate;

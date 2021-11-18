@@ -60,6 +60,8 @@
 		
 		<option value="//api/name/cutoutRect">cutoutRect</option>
 		
+		<option value="//api/name/isOptional">isOptional</option>
+		
 		<option value="//api/name/motionDetector">motionDetector</option>
 		
 		<option value="//api/name/oldFrame">oldFrame</option>
@@ -129,8 +131,6 @@
 		<option value="//api/name/dealloc">- dealloc</option>
 		
 		<option value="//api/name/displayErrorToUser:">- displayErrorToUser:</option>
-		
-		<option value="//api/name/getCropRect">- getCropRect</option>
 		
 		<option value="//api/name/getJsonForNativeBarcodeIsEnabled:">- getJsonForNativeBarcodeIsEnabled:</option>
 		
@@ -221,7 +221,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSHashTable&lt;ALScanViewPluginDelegate&gt; *scanViewPluginDelegates</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSPointerArray&lt;ALScanViewPluginDelegate&gt; *scanViewPluginDelegates</code></div>
 
 		    
 		</div>
@@ -343,6 +343,48 @@ and prepares the frame for Anyline processing</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isOptional" title="isOptional"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isOptional">&nbsp;&nbsp;isOptional</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Used when a indicating a child plugin of a composite scan view plugin is allowed to be
+skipped depending on rules determined by the parent plugin. Has no significance otherwise.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isOptional</code></div>
 
 		    
 			
@@ -645,22 +687,6 @@ and prepares the frame for Anyline processing</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getCropRect" title="getCropRect"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCropRect">&ndash;&nbsp;getCropRect</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (CGRect)getCropRect</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/stopListeningForMotion" title="stopListeningForMotion"></a>
 	<h3 class="method-title"><code><a href="#//api/name/stopListeningForMotion">&ndash;&nbsp;stopListeningForMotion</a></code>
 </h3>
@@ -864,7 +890,7 @@ and prepares the frame for Anyline processing</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (void)readConfigForComposite:(ALAbstractScanViewPluginComposite *)<em>compositePlugin</em> fromConfigDict:(NSDictionary *_Nonnull)<em>serialConfig</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)readConfigForComposite:(ALAbstractScanViewPluginComposite *)<em>compositePlugin</em> fromConfigDict:(NSDictionary *_Nonnull)<em>configDict</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 		</div>
@@ -1008,11 +1034,43 @@ and prepares the frame for Anyline processing</p>
 		<div class="method-info-container">
 			
 			
+			<div class="method-subsection brief-description">
+				<p>Called with interesting values that arise during processing.</p>
+
+
+<p>
+Some possibly reported values:
+<ul>
+<li>$brightness - the brightness of the center region of the cutout as a float value </li>
+<li>$confidence - the confidence, an Integer value between 0 and 100 </li>
+<li>$thresholdedImage - the current image transformed into black and white (the base image used for OCR)</li>
+</ul>
+</p>
+
+			</div>
+			
 		    
 
 			<div class="method-subsection method-declaration"><code>- (void)anylineScanPlugin:(ALAbstractScanPlugin *_Nonnull)<em>anylineScanPlugin</em> reportInfo:(ALScanInfo *_Nonnull)<em>info</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anylineScanPlugin</code></th>
+						<td><p>The <a href="../Classes/ALAbstractScanPlugin.html">ALAbstractScanPlugin</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>info</code></th>
+						<td><p>An object containing the variable name and value</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1297,7 +1355,7 @@ and prepares the frame for Anyline processing</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-10-06</p>
+						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-11-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

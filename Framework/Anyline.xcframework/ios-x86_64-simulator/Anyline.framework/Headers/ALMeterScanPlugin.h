@@ -35,7 +35,7 @@
 
 - (instancetype _Null_unspecified)init NS_UNAVAILABLE;
 
-@property (nonatomic, strong, readonly) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALMeterScanPluginDelegate> * _Nullable delegates;
 
 /**
  *  Sets the scan mode.

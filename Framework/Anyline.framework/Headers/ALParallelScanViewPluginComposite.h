@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALParallelScanViewPluginComposite : ALAbstractScanViewPluginComposite
 
+@property (nonatomic, retain, null_unspecified) NSNumber *optionalTimeoutDelay;
+
 @end
 
 NS_ASSUME_NONNULL_END

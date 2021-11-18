@@ -87,7 +87,17 @@ static const NSInteger padding = 7;
     //Add ScanView (Camera and Flashbutton)
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:[self selectedPlugin]];
     
+    //Adding the scanView
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
+    
     [self.scanView startCamera];
     
     BOOL enableReporting = [NSUserDefaults AL_reportingEnabled];
@@ -95,15 +105,7 @@ static const NSInteger padding = 7;
     self.meterScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the scanView to the view of this view controller
-    
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
-    
-    
     self.controllerType = ALScanHistoryElectricMeter;
-    
-    [self.view sendSubviewToBack:self.scanView];
     [self.scanView addSubview:[self createBarcodeSwitchView]];
     [self.scanView bringSubviewToFront:self.enableBarcodeView];
 }

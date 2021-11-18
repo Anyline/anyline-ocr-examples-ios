@@ -6,15 +6,15 @@
 	<dict>
 		<key>Headers/ALAbstractScanPlugin.h</key>
 		<data>
-		ZzZ/W57YZp6/2yUDCjBBn5+GB2g=
+		P8vOtxgGD3Mo0M2SShGkiq8c4lo=
 		</data>
 		<key>Headers/ALAbstractScanViewPlugin.h</key>
 		<data>
-		v9w4t/Gh48J3uvQERfm6sLoGp14=
+		gQh1yZR1xS8vjBkN4YWVN393Xhc=
 		</data>
 		<key>Headers/ALAbstractScanViewPluginComposite.h</key>
 		<data>
-		rgXebzFmzFJi5H/u7nyRizfHqho=
+		aHXSeXuOM6f6thnSkrOwO4nDGks=
 		</data>
 		<key>Headers/ALArabicIDConfig.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/ALBarcode.h</key>
 		<data>
-		+2/yTytUbVYd4or1zxaaoOsYLdM=
+		Az8NmCTM97E5S8fxRp+W1h15lE0=
 		</data>
 		<key>Headers/ALBarcodeResult.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/ALBarcodeScanPlugin.h</key>
 		<data>
-		PhkozYnZ2cbynSPZ0wOs9iEVy+g=
+		S+hkAX4VQlf9/g5IqGRs2XH8ud0=
 		</data>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/ALCaptureDeviceManager.h</key>
 		<data>
-		JT44VSvymwzlHQ3yVyQ8MMK8CXw=
+		Xo3zrEdXlIWyY5VNAJKCSIOCI44=
 		</data>
 		<key>Headers/ALCattleTagConfig.h</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Headers/ALDocumentScanPlugin.h</key>
 		<data>
-		d/dq8JBFR0oz81Gvw3z63EHpvvo=
+		wEcx3a5kUy1CUAW3aVw7Eu7BP0s=
 		</data>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Headers/ALIDScanPlugin.h</key>
 		<data>
-		8hlT/Kd83og9N7Ju4JUpjB9Eplo=
+		MqHWGX9Mz+nLbGSOuAw4DqHOPXA=
 		</data>
 		<key>Headers/ALIDScanViewPlugin.h</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>Headers/ALMeterScanPlugin.h</key>
 		<data>
-		QCI15BIRIdf63hfclrD+5FVac68=
+		wv02K/gyJmkRZxRedQmRLskBFT4=
 		</data>
 		<key>Headers/ALMeterScanViewPlugin.h</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Headers/ALOCRScanPlugin.h</key>
 		<data>
-		1QSv6+OXXe8q0eiAH7clLmXQ+KY=
+		vWa+79FC3JtrvPk7BEKwhlnQGfY=
 		</data>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Headers/ALParallelScanViewPluginComposite.h</key>
 		<data>
-		hPZN5g6wqZnlM50RmgAHKohSW8c=
+		iSMz4luPtgol8WrpNLFYxSssdKA=
 		</data>
 		<key>Headers/ALPolygon.h</key>
 		<data>
@@ -306,7 +306,7 @@
 		</data>
 		<key>Headers/ALSerialScanViewPluginComposite.h</key>
 		<data>
-		D7khL463mtcXQWH+vYaob7R98Tg=
+		9nMyKpGrC8OsVsq78hfRj5awN0M=
 		</data>
 		<key>Headers/ALSquare.h</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Headers/ALTINConfig.h</key>
 		<data>
-		SCmyhe/9G1usGzKq/u7Kho1Pars=
+		xxB7qns/723FdNna9wX+QTFMUYA=
 		</data>
 		<key>Headers/ALTextDataPoint.h</key>
 		<data>
@@ -330,7 +330,7 @@
 		</data>
 		<key>Headers/ALUIFeedback.h</key>
 		<data>
-		zrlJUUQjLY5bfUT8krwDQMQbqus=
+		2qW/5JxOHxGzD7/QSRfgFk+Yagc=
 		</data>
 		<key>Headers/ALUniversalIDConfig.h</key>
 		<data>
@@ -379,21 +379,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dtiuM0VFu98ttJQUwl0s/YaF57YYfxGbKOk62cURjp0=
+			9SgM78PRC2jBjMMscQkyoBGzN6E64RMvIi8cG/3DaeE=
 			</data>
 		</dict>
 		<key>Headers/ALAbstractScanViewPlugin.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ceJzqVotqSz8N9vC5nwCFMlt+n2hLLRYHSKjgCJQVbs=
+			HBm0JtXScxRZZl7ZuxLZ1GPGHInzSb8tRnt1FpjqI+Q=
 			</data>
 		</dict>
 		<key>Headers/ALAbstractScanViewPluginComposite.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GXYachzDmBZYZTMauhzuEleRAEWxYu8JKuq3x4OyXYA=
+			EqXiAs7uE1PJNPrLEFrAbkrGPtCBsJtj9GIl+BOpXPA=
 			</data>
 		</dict>
 		<key>Headers/ALArabicIDConfig.h</key>
@@ -428,7 +428,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YokfKd55lNmiaAOfUG0uHc31mxmYEf9yG9CWQw2fB7U=
+			y3fpPNI+yYVfrvzeEcDyGLu/GYUdFPSgl4bFgsY7hhw=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeResult.h</key>
@@ -442,7 +442,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pCwLU7wmTcDPc2GJWnoV0M4dAcOo4CTz/+e8B9w9AlE=
+			7OBn5+xyYUSvYHBns+k1mHx5DPNYoktZZFABZBiBdoQ=
 			</data>
 		</dict>
 		<key>Headers/ALBarcodeScanViewPlugin.h</key>
@@ -484,7 +484,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I8xGxAdMxULpuSY5aGesBKQw0GMxxKT2cCsNoZ392WQ=
+			kZAqsLcGxAvIXEFWinengB60+2BOwSF3aPQJCXaLNdc=
 			</data>
 		</dict>
 		<key>Headers/ALCattleTagConfig.h</key>
@@ -582,7 +582,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1QpNrD2u/I7qa1W5zbP9td8iFQ+QFDSkyU2TPlC+jeI=
+			g0xqryBA+zgKjN2qKbb5BOQBniDFpvx0IXNNX9M5WII=
 			</data>
 		</dict>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
@@ -659,7 +659,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qbip1eqRbO3nTdZ9lCOGSVid8QWxRp9XIPfH5Sfvv58=
+			DJ3qq4FXPdQygIDzRcHDTe+BYu4NIqaUvwbaoApNYec=
 			</data>
 		</dict>
 		<key>Headers/ALIDScanViewPlugin.h</key>
@@ -743,7 +743,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tWhgMX1fGI+Y8D17rheaVgx51kesM+g3Gv7DW8W0zHA=
+			v6kOGb2bwm8tFfx8MRs4fI2XRukMo2Hb3I9rHI6gDuM=
 			</data>
 		</dict>
 		<key>Headers/ALMeterScanViewPlugin.h</key>
@@ -785,7 +785,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TC8tB4mDhVlGBg8bPUC+83nkU7epfIEOf27/WoMovc4=
+			bKmmKktt6fcxtyKi/tnhs5M2nWFOTsfRI5LBN3qhD6s=
 			</data>
 		</dict>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
@@ -799,7 +799,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			448maQv8klSREQWf7gYzyUcKkL2qPpg43JlhFlbRtxg=
+			TOC/fkjwlcuf9pYI448FaqiirPe82M7n09kE5uZqH8I=
 			</data>
 		</dict>
 		<key>Headers/ALPolygon.h</key>
@@ -904,7 +904,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ke9naoomnZ6I7VcevJ8LJsr7SOqKov1lrfqwI0Z/qhs=
+			9EgD8VkOXZCCDq1JDB2eZp/hOnoGNyR47mOI0ehBXHo=
 			</data>
 		</dict>
 		<key>Headers/ALSquare.h</key>
@@ -918,7 +918,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RctgJ9DLngAaLWHyFmve0Xj8VZ4xinp5JxwlJMjvAC8=
+			0BwWZZMnA/1HEjEeqfu0M1IsEfBXSxhIoqv5wJxtdMA=
 			</data>
 		</dict>
 		<key>Headers/ALTextDataPoint.h</key>
@@ -946,7 +946,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LCRRqchEghGxSsc3D42GTaSZWvvbM5MdCgGMq2cKCd8=
+			aR9K2pVmBlPo7odm+wej2rTKmBWGfQQSrMXlhKjum+w=
 			</data>
 		</dict>
 		<key>Headers/ALUniversalIDConfig.h</key>

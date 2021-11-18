@@ -37,7 +37,9 @@
     controller.managedObjectContext = [CoreDataManager sharedInstance].localContext;
     
     [self.window setTintColor:[UIColor AL_examplesBlue]];
-
+    
+    [[self class] applyAppearanceTweaks];
+    
     NSError *error;
     [AnylineSDK setupWithLicenseKey:kDemoAppLicenseKey error:&error];
     if (error) {
@@ -81,5 +83,23 @@
         return UIInterfaceOrientationMaskPortrait;
     }
 }
-@end
 
++ (void)applyAppearanceTweaks {
+    // This restores pre-iOS 15 navbar and 'toolbar' appearances
+    // https://nemecek.be/blog/126/how-to-disable-automatic-transparent-navbar-in-ios-15
+    if (@available(iOS 15, *)) {
+        UINavigationBarAppearance *barAppearance = [[UINavigationBarAppearance alloc] init];
+        [barAppearance configureWithOpaqueBackground];
+        [[UINavigationBar appearance] setCompactAppearance:barAppearance];
+        [[UINavigationBar appearance] setStandardAppearance:barAppearance];
+        [[UINavigationBar appearance] setScrollEdgeAppearance:barAppearance];
+        
+        UIToolbarAppearance *toolbarAppearance = [[UIToolbarAppearance alloc] init];
+        [toolbarAppearance configureWithOpaqueBackground];
+        [[UIToolbar appearance] setCompactAppearance:toolbarAppearance];
+        [[UIToolbar appearance] setStandardAppearance:toolbarAppearance];
+        [[UIToolbar appearance] setScrollEdgeAppearance:toolbarAppearance];
+    }
+}
+
+@end

@@ -61,8 +61,14 @@
     
     // After setup is complete we add the scanView to the view of this view controller
     [self.view addSubview:self.scanView];
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view sendSubviewToBack:self.scanView];
-    
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
     // Enable zoom gesture for scanView
     [self.scanView enableZoomPinchGesture:true];
     
@@ -125,6 +131,8 @@
         NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
+        
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Area" value:result.area]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

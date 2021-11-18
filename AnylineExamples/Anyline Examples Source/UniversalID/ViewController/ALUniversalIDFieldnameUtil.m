@@ -7,11 +7,10 @@
 
 #import "ALUniversalIDFieldnameUtil.h"
 
-
 @interface ALUniversalIDFieldnameUtil ()
 
-
 @end
+
 
 @implementation ALUniversalIDFieldnameUtil
 

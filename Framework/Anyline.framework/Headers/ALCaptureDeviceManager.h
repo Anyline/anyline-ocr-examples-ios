@@ -25,11 +25,11 @@
  
  @warning Do not implement this delegate when you use the Barcode module.
  */
-@property (nonatomic, strong, readonly) NSHashTable<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
+@property (nonatomic, strong, readonly) NSPointerArray<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
 /**
  The Sample Buffer Delegate gives you access to the video frames. You will get frames around 25 times per second. Do only access as much frames as you need, otherwise the performance will suffer.
  */
-@property (nonatomic, strong, readonly) NSHashTable<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
+@property (nonatomic, strong, readonly) NSPointerArray<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
 
 @property (nullable, nonatomic, strong) ALCameraConfig *cameraConfig;
 

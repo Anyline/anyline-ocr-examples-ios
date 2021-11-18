@@ -35,7 +35,7 @@
                                   delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate
                                      error:(NSError *_Nullable *_Nullable)error;
 
-@property (nonatomic, strong, readonly) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALBarcodeScanPluginDelegate> * _Nullable delegates;
 
 /**
  *  Sets the type of code to recognize. Valid values are:
@@ -56,6 +56,8 @@
  */
 
 @property (nonatomic, assign) BOOL multiBarcode;
+
+@property (nonatomic, assign) BOOL parsePDF417;
 
 - (void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
 

@@ -43,7 +43,7 @@
 
 - (instancetype _Null_unspecified)init NS_UNAVAILABLE;
 
-@property (nonatomic, strong, readonly) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALOCRScanPluginDelegate> * _Nullable delegates;
 
 /**
  *  Read-only property for the ALOCRConfig

@@ -150,7 +150,7 @@ NSString * const kBaseFileName = @"DataProcessingConsent";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    self.navigationController.toolbarHidden = NO;
     if (self.completionBlock) {
         self.completionBlock();
     }

@@ -12,7 +12,6 @@
 #import "ALResultEntry.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "NSAttributedString+ALExamplesAdditions.h"
-#import "ALUniversalIDFieldnameUtil.h"
 
 static NSString *disclaimerString = @"The result fields above display a selection of scannable ID information only. Please review the documentation for a full list of scannable ID information.";
 static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentation.anyline.com/toc/products/id/index.html";
@@ -35,7 +34,7 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
 
 @implementation ALResultViewController
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image {
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData image:(UIImage *)image {
     return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
                                         image:image
                                 optionalImage:nil
@@ -43,7 +42,7 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
                          shouldShowDisclaimer:NO];
 }
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData
                              image:(UIImage *)image
               shouldShowDisclaimer:(BOOL)shouldShow {
     return [self initWithResultDataDictionary:@{ @"Result Data" : resultData}
@@ -53,7 +52,7 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
                          shouldShowDisclaimer:shouldShow];
 }
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData
                              image:(UIImage *)image
                          faceImage:(UIImage *)faceImage
               shouldShowDisclaimer:(BOOL)shouldShow {
@@ -64,7 +63,7 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
                          shouldShowDisclaimer:shouldShow];
 }
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData
                              image:(UIImage *)image
                      optionalImage:(UIImage *)optImage
               shouldShowDisclaimer:(BOOL)shouldShow {
@@ -75,7 +74,7 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
                          shouldShowDisclaimer:shouldShow];
 }
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData
                              image:(UIImage *)image
                      optionalImage:(UIImage *)optImage
                          faceImage:(UIImage *)faceImage

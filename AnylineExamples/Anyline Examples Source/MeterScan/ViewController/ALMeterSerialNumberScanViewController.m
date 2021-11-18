@@ -73,23 +73,25 @@ static const NSInteger padding = 7;
     [self.scanView enableZoomPinchGesture:YES];
     
     //Adding the scanView
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.scanView];
+    [self.view sendSubviewToBack:self.scanView];
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
     [self.scanView startCamera];
     
     BOOL enableReporting = [NSUserDefaults AL_reportingEnabled];
     [self.meterScanPlugin enableReporting:enableReporting];
     self.meterScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    //After setup is complete we add the module to the view of this view controller
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
 
     
     self.controllerType = ALScanHistoryElectricMeter;
 
     self.barcodeResult = @"";
-    [self.view sendSubviewToBack:self.scanView];
     [self.scanView addSubview:[self createBarcodeSwitchView]];
     [self.scanView bringSubviewToFront:self.enableBarcodeView];
 }

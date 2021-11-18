@@ -42,7 +42,7 @@
 
 - (instancetype _Null_unspecified)init NS_UNAVAILABLE;
 
-@property (nonatomic, strong, readonly) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALIDPluginDelegate> * _Nullable delegates;
 
 - (void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
 

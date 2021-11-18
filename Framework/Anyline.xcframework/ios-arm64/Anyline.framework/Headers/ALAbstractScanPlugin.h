@@ -19,7 +19,7 @@
 
 @interface ALAbstractScanPlugin : NSObject<ALCoreControllerDelegate>
 
-@property (nonatomic, strong, readonly) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
+@property (nonatomic, strong, readonly) NSPointerArray<ALInfoDelegate> * _Nullable infoDelegates;
 
 /**
  The pluginID is useful if there are multiple plugins running at the same time

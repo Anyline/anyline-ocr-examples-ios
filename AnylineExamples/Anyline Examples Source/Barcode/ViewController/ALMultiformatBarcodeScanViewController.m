@@ -16,6 +16,7 @@
 #import "ALResultViewController.h"
 #import "UISwitch+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
+#import "ALBarcodeResultUtil.h"
 
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
 @interface ALMultiformatBarcodeScanViewController() <ALBarcodeScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALSelectionTableDelegate>
@@ -53,6 +54,7 @@
     NSError *error = nil;
     
     self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
+    self.barcodeScanPlugin.parsePDF417 = YES;
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     [self.barcodeScanPlugin addInfoDelegate:self];
@@ -94,9 +96,13 @@
     self.barcodeScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the scanView to the view of this view controller
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView}]];
-    id topGuide = self.topLayoutGuide;
-    [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-0-[scanView]|" options:0 metrics:nil views:@{@"scanView" : self.scanView, @"topGuide" : topGuide}]];
+    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
+                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
+                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [self.view addConstraints:scanViewConstraints];
+    [NSLayoutConstraint activateConstraints:scanViewConstraints];
     
     // The resultLabel is used as a debug view to see the scanned results. We set its text
     // in anylineBarcodeModuleView:didFindScanResult:atImage below
@@ -264,32 +270,22 @@
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
     // Nothing to do there
     // we get the results with anylineBarcodeScanPlugin:scannedBarcodes:
+    
 }
 
-- (void)showResultControllerWithResult:(ALBarcodeResult*)scanResult {
+- (void)showResultControllerWithResult:(ALBarcodeResult *)scanResult {
     [self.barcodeScanPlugin stopAndReturnError:nil];
     
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    for (ALBarcode* barcodeResult in scanResult.result) {
-        
-         // Sometimes barcodes are encrypted. If that is the case the value is usually nil. We use the base64 version in that case.
-        NSString * barcodeString = barcodeResult.value;
-        if (barcodeString.length == 0) {
-            barcodeString = barcodeResult.base64;
-        }
-        
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result" value:barcodeString shouldSpellOutValue:YES]];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcodeResult.barcodeFormat shouldSpellOutValue:YES]];
-    }
+    NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:scanResult];
     
     NSString *jsonString = [self jsonStringFromResultData:resultData];
+    
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:scanResult.image
                     scanPlugin:self.barcodeScanPlugin
                     viewPlugin:self.barcodeScanViewPlugin
                     completion:^{
-        //Display the result
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
         [self.navigationController pushViewController:vc animated:YES];
     }];

@@ -13,13 +13,17 @@
  */
 typedef NS_ENUM(NSInteger, ALTINScanMode) {
     /**
-     *  The ALTINStandard mode has a fixed regex for certain TIN types.
+     *  The ALTINDotStrict mode has a fixed regex for certain TIN types.
      */
-    ALTINStandard,
+    ALTINDotStrict,
     /**
-     *  The ALTINFlexible mode has more flexible RegEx.
+     *  The ALTINDot mode has more flexible RegEx.
      */
-    ALTINFlexible,
+    ALTINDot,
+    /**
+     *  The ALTINUniversal mode has more flexible RegEx.
+     */
+    ALTINUniversal,
 };
 
 /**

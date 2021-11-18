@@ -10,17 +10,17 @@
 
 @interface ALResultViewController : UIViewController
 
-@property (strong, nonatomic) NSDictionary<NSString *, NSMutableArray<ALResultEntry *>*> *resultData;
+@property (strong, nonatomic) NSDictionary<NSString *, NSArray<ALResultEntry *>*> *resultData;
 @property (strong, nonatomic) UIImage *faceImage;
 @property (strong, nonatomic) UIImage *documentImage;
 @property (strong, nonatomic) UIImage *documentBackImage;
 @property (assign, nonatomic) BOOL shouldShowDisclaimer;
 @property (assign, nonatomic) BOOL isArabicScript;
 
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image;
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image shouldShowDisclaimer:(BOOL)shouldShow;
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
-- (instancetype)initWithResultData:(NSMutableArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImage:(UIImage *)optImage faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData image:(UIImage *)image;
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData image:(UIImage *)image shouldShowDisclaimer:(BOOL)shouldShow;
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData image:(UIImage *)image faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
+- (instancetype)initWithResultData:(NSArray<ALResultEntry *>*)resultData image:(UIImage *)image optionalImage:(UIImage *)optImage faceImage:(UIImage *)faceImage shouldShowDisclaimer:(BOOL)shouldShow;
 
 
 /*
