@@ -81,7 +81,7 @@ There are more modules specific options - take a look at the description of the 
 ### 5. Enjoy scanning and have fun! :movie_camera:
 
 
-> Anyline is also available as Cocoapod: `pod 'Anyline', '~> 26'`
+> Anyline is also available as Cocoapod: `pod 'Anyline'`
 
 
 ## Sample Codes & Documentation 
