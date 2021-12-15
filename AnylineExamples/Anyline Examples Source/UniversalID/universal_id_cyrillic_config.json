@@ -1,19 +1,10 @@
 {
-    "camera" : {
-        "captureResolution" : "1080p",
-        "zoomGesture": true
-    },
-    "flash" : {
-        "mode": "manual",
-        "alignment": "bottom_right",
-        "imageOn": "flash_on",
-        "imageOff": "flash_off"
-    },
     "viewPlugin" : {
         "plugin":{
             "id":"ID",
             "idPlugin": {
-                "cyrillicIdConfig": {
+                "universalIdConfig": {
+                    "alphabet": "cyrillic",
                     "faceDetection": true,
                     "allowedLayouts": {
                         "mrz": [],

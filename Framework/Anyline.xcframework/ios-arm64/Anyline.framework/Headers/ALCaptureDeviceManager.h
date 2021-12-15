@@ -49,6 +49,7 @@
 - (void)addSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
 
 - (void)removeSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
+- (void)removeAllSampleBufferDelegates;
 
 - (void)addVideoLayerOnView:(UIView * _Nonnull)view;
 - (void)updateVideoLayer:(UIView * _Nonnull)view;

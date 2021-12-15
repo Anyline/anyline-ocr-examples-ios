@@ -16,10 +16,6 @@
 		<data>
 		aHXSeXuOM6f6thnSkrOwO4nDGks=
 		</data>
-		<key>Headers/ALArabicIDConfig.h</key>
-		<data>
-		V2FQfDW0UrltPXzTECy4pZJRvj8=
-		</data>
 		<key>Headers/ALAssetContext.h</key>
 		<data>
 		ydNIL4Z3tbQfgeldQ1Lru02h/Gc=
@@ -66,7 +62,7 @@
 		</data>
 		<key>Headers/ALCaptureDeviceManager.h</key>
 		<data>
-		Xo3zrEdXlIWyY5VNAJKCSIOCI44=
+		+DCK269IVpBxDAOO5d6iqbnmGWw=
 		</data>
 		<key>Headers/ALCattleTagConfig.h</key>
 		<data>
@@ -91,10 +87,6 @@
 		<key>Headers/ALCutoutView.h</key>
 		<data>
 		GhZSff+YtRSDQtZbyCbBTd/6kD4=
-		</data>
-		<key>Headers/ALCyrillicIDConfig.h</key>
-		<data>
-		AKXhzF7xQ3lEr0cQAPBYN/0jmLU=
 		</data>
 		<key>Headers/ALDataGroup1.h</key>
 		<data>
@@ -128,17 +120,13 @@
 		<data>
 		rbBe4yVjyki4RNIJqoSjhaqw/ek=
 		</data>
-		<key>Headers/ALDrivingLicenseConfig.h</key>
-		<data>
-		EfH2a2hUOb24+mRO93XkOogcVT8=
-		</data>
-		<key>Headers/ALDrivingLicenseIdentification.h</key>
-		<data>
-		Q6EvN9mzt4ZZ4xYk9YYbC9KE2/o=
-		</data>
 		<key>Headers/ALError.h</key>
 		<data>
 		B+1GVbsla4ZsgjHeBEgSCVU4ZGI=
+		</data>
+		<key>Headers/ALErrorManager.h</key>
+		<data>
+		0oUU40QlEr+aTkdJfTdh5tkwUMI=
 		</data>
 		<key>Headers/ALFlashButton.h</key>
 		<data>
@@ -148,25 +136,17 @@
 		<data>
 		VA2QxRlo/rOx1hn80kmups0jO3k=
 		</data>
-		<key>Headers/ALGermanIDFrontConfig.h</key>
-		<data>
-		Amx1GR/E/0qE/NtYA0R65T5VoW0=
-		</data>
-		<key>Headers/ALGermanIDFrontIdentification.h</key>
-		<data>
-		oVjEfRiqSsF39K3nzRDnlFfA6w8=
-		</data>
 		<key>Headers/ALIDConfig.h</key>
 		<data>
 		o5yFMvdstBfpLxloKvOyYUBIzDY=
 		</data>
 		<key>Headers/ALIDResult.h</key>
 		<data>
-		sg+GKeYeKDDLKWAwclWj17xCKZI=
+		4kn/XjKI0iNEgs6dCdXGpQBItn4=
 		</data>
 		<key>Headers/ALIDScanPlugin.h</key>
 		<data>
-		MqHWGX9Mz+nLbGSOuAw4DqHOPXA=
+		ibqysi6NLhNPq9cE6wU+J5pLalY=
 		</data>
 		<key>Headers/ALIDScanViewPlugin.h</key>
 		<data>
@@ -294,7 +274,7 @@
 		</data>
 		<key>Headers/ALScanViewPluginConfig.h</key>
 		<data>
-		P0d46ZTfTNH2WHnTdgBMGOxIVU4=
+		NLtr0k9Z0Pgcrf6M++m2SxGcCmo=
 		</data>
 		<key>Headers/ALSegmentResult.h</key>
 		<data>
@@ -334,7 +314,7 @@
 		</data>
 		<key>Headers/ALUniversalIDConfig.h</key>
 		<data>
-		CQ6APJhZ3nAV3Pt45dETxndNyTk=
+		f0qv3kyPsCK2W2pgayLvgQXZrOY=
 		</data>
 		<key>Headers/ALUniversalIDIdentification.h</key>
 		<data>
@@ -358,7 +338,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		Ih3aHJiwkIvfC0lYJZFpMsid5c8=
+		vb+9rcixUhtlOUWIsTfAQZ+QkRs=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -394,13 +374,6 @@
 			<key>hash2</key>
 			<data>
 			EqXiAs7uE1PJNPrLEFrAbkrGPtCBsJtj9GIl+BOpXPA=
-			</data>
-		</dict>
-		<key>Headers/ALArabicIDConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			slfiI/PtVDQlfmthiT0u24BqSzeU5GWhgb2v53pyLeU=
 			</data>
 		</dict>
 		<key>Headers/ALAssetContext.h</key>
@@ -484,7 +457,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kZAqsLcGxAvIXEFWinengB60+2BOwSF3aPQJCXaLNdc=
+			77LsDdt7xVsH1VFgoaknV9fcsFAjauiukGXu///3ux0=
 			</data>
 		</dict>
 		<key>Headers/ALCattleTagConfig.h</key>
@@ -527,13 +500,6 @@
 			<key>hash2</key>
 			<data>
 			psAQ8KGKpkw0aKtIZ7YA2dQIMKSQjBoXmCwd1wyXUVY=
-			</data>
-		</dict>
-		<key>Headers/ALCyrillicIDConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			F6OMPYN/br27KRunVxFKNRXWoI4jG2kvhhgVtdlX55Y=
 			</data>
 		</dict>
 		<key>Headers/ALDataGroup1.h</key>
@@ -592,25 +558,18 @@
 			RhsBvxSwV7jPz3QLtkfJ1p059D31SLFQOvdunL3wAp0=
 			</data>
 		</dict>
-		<key>Headers/ALDrivingLicenseConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OeiKaqbwDY+mOEe9GhyPYnMeJTujKs6cY+0G3itzprM=
-			</data>
-		</dict>
-		<key>Headers/ALDrivingLicenseIdentification.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			w7QyZKH2biZI1TuHnC0NN2XA1vu2KdeThIVxulZ6rjA=
-			</data>
-		</dict>
 		<key>Headers/ALError.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			wOiqNom+p70AxCPc+jHNy6fnNT9VRs60aQ19Z1nHbzg=
+			</data>
+		</dict>
+		<key>Headers/ALErrorManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mj37IHPtm4FlvURcKMvk8pl/NxHgMRF0Z80HLoGDr/w=
 			</data>
 		</dict>
 		<key>Headers/ALFlashButton.h</key>
@@ -627,20 +586,6 @@
 			5IRwMQDhLiESmpcc/qO9Osjd/6UnyuevrSluBsQeZMc=
 			</data>
 		</dict>
-		<key>Headers/ALGermanIDFrontConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kwQdCHquD12PLtsydvO55rGxQ25CCUL4m5ogPDt3eRI=
-			</data>
-		</dict>
-		<key>Headers/ALGermanIDFrontIdentification.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			L/xK4EGIrh5CaAgSjn3Xduyx1IeR4U1CoXr/s0m3ytE=
-			</data>
-		</dict>
 		<key>Headers/ALIDConfig.h</key>
 		<dict>
 			<key>hash2</key>
@@ -652,14 +597,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cBiq9mm8P5pUsRa8elQH4axjXm+wL3u0UgAONdPWUCk=
+			Vprp1p2VqDT200ZOiuouEoxoOpcWXxGc7CsOTL8wpa4=
 			</data>
 		</dict>
 		<key>Headers/ALIDScanPlugin.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DJ3qq4FXPdQygIDzRcHDTe+BYu4NIqaUvwbaoApNYec=
+			T4P3rgNjrGl5YuDJ5t+oSWMiJLDFKXzINUuzCg8UpAo=
 			</data>
 		</dict>
 		<key>Headers/ALIDScanViewPlugin.h</key>
@@ -883,7 +828,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			18Zo6Gw3z+JSzGK/Ds7iI6CMsEHp//1LxyUULd4akgg=
+			IFJCoAFGWcBmDy8kHptIul43bKCZ+Aq6h12cjc3uO9A=
 			</data>
 		</dict>
 		<key>Headers/ALSegmentResult.h</key>
@@ -953,7 +898,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RrHxOD9slRIIaSK8r8vKQsOBsLRiAc6KhUwNL9TgOxo=
+			dcUkZOnA7rrvVPZ3CY83soLA+ircrnAbBUsX3G1r7yc=
 			</data>
 		</dict>
 		<key>Headers/ALUniversalIDIdentification.h</key>
@@ -995,7 +940,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0vhj13xKFCVT+JsxY10Xh54XxXMKr4zJvM/XIvex8O4=
+			nxiSjFB2A1IcaxU7JwjxMBDUS4utR2HATuDr8x2gOnk=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>

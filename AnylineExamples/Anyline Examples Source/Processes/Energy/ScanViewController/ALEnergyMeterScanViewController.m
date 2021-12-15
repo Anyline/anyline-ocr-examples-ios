@@ -66,7 +66,10 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     BOOL success = [meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
-        [self showAlertWithTitle:@"Set ScanMode Error" message:error.debugDescription];
+        __weak __block typeof(self) weakSelf = self;
+        [self showAlertWithTitle:@"Set ScanMode Error" message:error.debugDescription completion:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
     }
     //Add Meter Scan View Plugin (Scan UI)
     ALMeterScanViewPlugin *meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:meterScanPlugin];
@@ -284,7 +287,9 @@ NSString * const kMeterScanPluginID = @"METER_READING";
     }
     
     if (!self.customer) {
-        [self showAlertWithTitle:@"Customer not found" message:@"Make sure you are scanning a meter reading customer from the Anyline Examples sheet."];
+        [self showAlertWithTitle:@"Customer not found"
+                         message:@"Make sure you are scanning a meter reading customer from the Anyline Examples sheet."
+                      completion:nil];
     }
 }
 

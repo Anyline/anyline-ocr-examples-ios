@@ -41,8 +41,8 @@ typedef enum : NSUInteger {
     ALScanHistorySerial = 23,
     ALScanHistoryVIN = 24,
     ALScanHistoryContainer = 25,
-    ALScanHistoryDrivingLicense = 26,
-    ALScanHistoryGermanIDFront = 27,
+    ALScanHistoryDrivingLicense = 26, // DEPRECATED
+    ALScanHistoryGermanIDFront = 27, // DEPRECATED
     ALScanHistoryCattleTag = 28,
     ALScanHistoryTIN = 29,
     ALScanHistoryNFC = 30,

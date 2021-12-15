@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ALResultEntry.h"
+#import "NSString+Util.h"
 
 NSString * const kResultDataTitleKey = @"title";
 NSString * const kResultDataValueKey = @"value";
@@ -28,7 +29,7 @@ NSString * const kResultDataValueNotAvailableString = @"Not available";
     self = [super init];
     if (self) {
         _title = title;
-        _value = (![self stringIsNilOrEmpty:value]) ? value : kResultDataValueNotAvailableString;
+        _value = (![self stringIsNilOrEmpty:value]) ? [value trimmed] : kResultDataValueNotAvailableString;
         _isAvailable = (![self stringIsNilOrEmpty:value]) ? true : false;
         _shouldSpellOutValue = shouldSpellOutValue;
         _isMandatory = isMandatory;

@@ -61,6 +61,8 @@
 - (void)startListeningForMotion;
 - (void)startPlugin:(ALAbstractScanViewPlugin *)plugin;
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message completion:(void (^ _Nullable)(void))completion;
+- (void)showAlertForScanningError:(NSError * _Nonnull)error completion:(void (^ _Nullable)(void))completion dismissHandler:(void (^ _Nullable)(void))dismissHandler;
 - (CGRect)scanViewFrame;
 
 - (instancetype)initWithTitle:(NSString *)title;

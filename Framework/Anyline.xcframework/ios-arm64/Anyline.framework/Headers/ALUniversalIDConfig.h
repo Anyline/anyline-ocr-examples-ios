@@ -66,6 +66,11 @@ __attribute__((deprecated("please use ALUniversalIDConfig instead")))
 
 @interface ALUniversalIDConfig : ALIDConfig
 
+/// Describes the script to be used by the scan view plugin
+/// ("latin", "arabic", or "cyrillic" supported currently).
+/// Can only be set during initialization by JSON dictionary.
+@property (nonatomic, copy, readonly) NSString *alphabet;
+
 - (NSDictionary *_Nonnull)toStartVariableJsonDictionary;
 
 /**

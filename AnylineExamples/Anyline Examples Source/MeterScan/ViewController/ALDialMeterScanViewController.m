@@ -66,9 +66,10 @@ static const NSInteger padding = 7;
     BOOL success = [self.meterScanPlugin setScanMode:ALDialMeter error:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
-        [self showAlertWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription];
-        
+        __weak __block typeof(self) weakSelf = self;
+        [self showAlertWithTitle:@"Set ScanMode Error" message:error.debugDescription completion:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
     }
     
     self.barcodeScanPlugin = [[ALBarcodeScanPlugin alloc] initWithPluginID:@"BARCODE" delegate:self error:&error];
@@ -152,7 +153,8 @@ static const NSInteger padding = 7;
     [plugin stopAndReturnError:&error];
      if (error) {
          [self showAlertWithTitle:@"Error stopping scanning"
-                                     message:error.debugDescription];
+                          message:error.debugDescription
+                       completion:nil];
      }
 }
 

@@ -8,9 +8,7 @@
 
 #import "ALScanResult.h"
 
-#import "ALDrivingLicenseIdentification.h"
 #import "ALMRZIdentification.h"
-#import "ALGermanIDFrontIdentification.h"
 #import "ALUniversalIDIdentification.h"
 #import "ALIDConfig.h"
 
@@ -22,7 +20,7 @@
 /**
  * Boolean indicating if all the check digits where valid
  */
-@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid __deprecated_msg("Deprecated since Version 10. Please use the property \"allCheckDigitsValid\" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.");
+@property (nonatomic, assign, readonly) BOOL allCheckDigitsValid __deprecated_msg("Deprecated since Version 10. Please use the property \"allCheckDigitsValid\" from any Identification Object such as ALMRZIdentification instead.");
 
 - (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
                                    image:(UIImage * _Nullable)image

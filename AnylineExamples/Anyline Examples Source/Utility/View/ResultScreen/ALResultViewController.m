@@ -126,6 +126,8 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     [self setupScrollViewContent];
     [self setupConfirmButton];
     [self setupContraints];
+    
+    [self updateLayout];
 }
 
 - (void)askToShareItems:(id)sender {
@@ -253,8 +255,9 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     [constraints addObjectsFromArray:@[[self.tableView.topAnchor constraintEqualToAnchor:topTableVieWConstraints constant:verticalPadding],
                                        [self.tableView.leadingAnchor constraintEqualToAnchor:self.contentScrollView.leadingAnchor constant:20],
                                        [self.tableView.trailingAnchor constraintEqualToAnchor:self.contentScrollView.trailingAnchor constant:-20],
-                                       self.tableViewHeightConstraint,
-                                       [self.tableView.bottomAnchor constraintEqualToAnchor:self.firstImageView.topAnchor constant:-verticalPadding]]];
+                                       self.tableViewHeightConstraint
+                                     ]
+    ];
     
     CGFloat ratio = self.documentImage.size.height / self.documentImage.size.width;
     CGFloat width = self.view.bounds.size.width-(horizontalPadding*2);
@@ -301,12 +304,12 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     self.navigationController.toolbarHidden = YES;
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-}
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    [self updateLayout];
+}
+
+- (void)updateLayout {
     [self.tableView layoutIfNeeded];
     self.tableViewHeightConstraint.constant = self.tableView.contentSize.height;
 }
@@ -327,8 +330,6 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
     if (self.isArabicScript) {
         [cell alignLabelsTextRight];
     }
-    
-    
     return cell;
 }
 

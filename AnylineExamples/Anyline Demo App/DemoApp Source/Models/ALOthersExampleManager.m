@@ -18,7 +18,6 @@
 #import "ALDocumentScanViewController.h"
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
-#import "ALDrivingLicenseScanViewController.h"
 #import "ALCattleTagScanViewController.h"
 
 @interface ALOthersExampleManager ()

@@ -23,6 +23,9 @@ NSString * const kScanViewPluginBarcodeID = @"BarcodePlugin";
 NSString * const kScanViewPluginSerialID = @"SerialPlugin";
 NSString * const kScanViewPluginParallelID = @"ParallelPlugin";
 
+NSString * const kCameraConfigJSON = @"universal_id_camera_config";
+NSString * const kFlashConfigJSON = @"universal_id_flash_config";
+
 NSInteger const kUniversalIDSerialScanTimeout = 10;
 NSInteger const kUniversalIDBacksideScanTimeout = 5;
 NSInteger const kBarcodeBacksideScanTimeout = 0.7;
@@ -157,9 +160,17 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
     
     // Create ScanView and add our ScanViewPlugin Composite
     CGRect frame = [self scanViewFrame];
-    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.serialScanViewPlugin];
+
+    NSString *configPath = [[NSBundle mainBundle] pathForResource:kCameraConfigJSON ofType:@"json"];
+    ALCameraConfig *cameraConfig = [[ALCameraConfig alloc] initWithJsonFilePath:configPath];
     
-    self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
+    configPath = [[NSBundle mainBundle] pathForResource:kFlashConfigJSON ofType:@"json"];
+    ALFlashButtonConfig *flashConfig = [[ALFlashButtonConfig alloc] initWithJsonFilePath:configPath];
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:frame
+                                       scanViewPlugin:self.serialScanViewPlugin
+                                         cameraConfig:cameraConfig
+                                    flashButtonConfig:flashConfig];
     
     self.controllerType = ALScanHistoryUniversalID;
     
@@ -215,7 +226,23 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
     NSError *error;
     BOOL success = [self.serialScanViewPlugin startAndReturnError:&error];
     if (!success) {
-        [self showAlertWithTitle:@"Could not start scanning" message:error.localizedDescription];
+        
+        __weak __block typeof(self) weakSelf = self;
+        [self showAlertForScanningError:error completion:^{
+            // Prevent the trouble scanning timeout timer from setting off
+            //
+            // NOTE: this won't help with the exceptional instance of user going to the
+            // the univ-id first thing on new install, and the user sitting on the
+            // request camera permission alert that comes out. But it will absolutely
+            // work when the user had already previously revoked / denied the camera
+            // access permission before entering the screen.
+            [weakSelf.scanTimeoutFront invalidate];
+            [weakSelf.scanTimeoutBack invalidate];
+            weakSelf.scanTimeoutFront = nil;
+            weakSelf.scanTimeoutBack = nil;
+        } dismissHandler:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
     }
     [self resetResultData];
     
@@ -453,13 +480,14 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
     hintView.center = CGPointMake(view.center.x, 0);
     hintView.layer.cornerRadius = 8;
     hintView.layer.masksToBounds = true;
-    hintView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    hintView.backgroundColor = [[UIColor darkTextColor] colorWithAlphaComponent:0.6];
     return hintView;
 }
 
 + (UILabel *)createScanHintViewLabelWithText:(NSString *)text inView:(UIView * _Nonnull)hintView margin:(CGFloat)margin {
     UILabel *hintViewLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     hintViewLabel.text = text;
+    hintViewLabel.textColor = [UIColor lightTextColor];
     [hintViewLabel sizeToFit];
     
     hintViewLabel.translatesAutoresizingMaskIntoConstraints = NO;

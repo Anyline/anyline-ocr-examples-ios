@@ -17,6 +17,7 @@
 
 // Custom Objects
 #import "ALError.h"
+#import "ALErrorManager.h"
 
 #import "ALIndexPath.h"
 #import "ALImage.h"

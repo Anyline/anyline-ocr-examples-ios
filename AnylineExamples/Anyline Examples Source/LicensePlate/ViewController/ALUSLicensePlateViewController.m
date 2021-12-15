@@ -132,7 +132,7 @@
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
         
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Area" value:result.area]];
+        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"State" value:result.area]];
         
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
         [self.navigationController pushViewController:vc animated:YES];

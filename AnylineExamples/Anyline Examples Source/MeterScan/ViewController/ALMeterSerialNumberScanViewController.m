@@ -61,8 +61,11 @@ static const NSInteger padding = 7;
     BOOL success = [self.meterScanPlugin setScanMode:ALSerialNumber error:&error];
     if( !success ) {
         // Something went wrong. The error object contains the error description
+        __weak __block typeof(self) weakSelf = self;
         [self showAlertWithTitle:@"Set ScanMode Error"
-                                    message:error.debugDescription];
+                         message:error.debugDescription completion:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
         
     }
     

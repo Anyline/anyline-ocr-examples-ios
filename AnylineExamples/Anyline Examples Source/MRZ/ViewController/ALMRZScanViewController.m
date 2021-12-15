@@ -85,10 +85,7 @@
     
     [self.mrzScanViewPlugin addScanViewPluginDelegate:self];
     
-    
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.mrzScanViewPlugin];
-    
-    self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
     
     self.controllerType = ALScanHistoryMrz;
     
@@ -163,22 +160,35 @@
     ALMRZIdentification *identification = (ALMRZIdentification*)scanResult.result;
     
     [self.mrzScanViewPlugin stopAndReturnError:nil];
-    //MRZ Fields
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname" value:[identification surname]]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names" value:[identification givenNames]]];
     
-    [resultData addObject:[self resultEntryWithDate:[identification dateOfBirthObject] dateString:[identification dateOfBirth] title:@"Date of Birth"]];
-    [resultData addObject:[self resultEntryWithDate:[identification dateOfExpiryObject] dateString:[identification dateOfExpiry] title:@"Date of Expiry"]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type" value:[identification documentType] isMandatory:NO]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number" value:[identification documentNumber] shouldSpellOutValue:YES]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality" value:[identification nationalityCountryCode] isMandatory:NO]];
+    // MRZ Fields
+    NSMutableArray<ALResultEntry *> *resultData = [NSMutableArray array];
     
-    if (identification.personalNumber.trimmed.length > 0) {
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Personal Number" value:[identification personalNumber] isMandatory:NO]];
-    }
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname"
+                                                         value:[identification surname]]];
     
-    //VIZ Fields
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Given Names"
+                                                         value:[identification givenNames]]];
+    
+    [resultData addObject:[self resultEntryWithDate:[identification dateOfBirthObject]
+                                         dateString:[identification dateOfBirth] title:@"Date of Birth"]];
+    
+    [resultData addObject:[self resultEntryWithDate:[identification dateOfExpiryObject]
+                                         dateString:[identification dateOfExpiry] title:@"Date of Expiry"]];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Type"
+                                                         value:[identification documentType]
+                                                   isMandatory:NO]];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Document Number"
+                                                         value:[identification documentNumber]
+                                           shouldSpellOutValue:YES]];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Nationality"
+                                                         value:[identification nationalityCountryCode]
+                                                   isMandatory:NO]];
+    
+    // VIZ Fields
     NSMutableArray <ALResultEntry*> *vizResultData = [[NSMutableArray alloc] init];
     if (identification.vizSurname.trimmed.length > 0) {
         [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Surname"
@@ -191,7 +201,8 @@
     }
     if (identification.vizAddress.trimmed.length > 0) {
         [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Address"
-                                                                value:[identification vizAddress] isMandatory:NO]];
+                                                                value:[identification vizAddress]
+                                                          isMandatory:NO]];
     }
     if (identification.vizDateOfBirth.trimmed.length > 0) {
         [vizResultData addObject:[self resultEntryWithDate:[identification vizDateOfBirthObject]
@@ -215,7 +226,8 @@
     }
     
     [vizResultData addObject:[[ALResultEntry alloc] initWithTitle:@"Sex"
-                                                            value:[identification sex] isMandatory:NO]];
+                                                            value:[identification sex]
+                                                      isMandatory:NO]];
     
     [resultData addObjectsFromArray:vizResultData];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;

@@ -44,8 +44,6 @@
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.scanViewPlugin];
     
-    self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
-    
     self.controllerType = ALScanHistoryUniversalID;
     
     // After setup is complete we add the scanView to the view of this view controller

@@ -1,11 +1,4 @@
 {
-    "camera": {
-        "captureResolution": "1080"
-    },
-    "flash": {
-        "mode": "manual",
-        "alignment": "bottom_right"
-    },
     "viewPlugin": {
         "cutoutConfig": {
             "style": "rect",

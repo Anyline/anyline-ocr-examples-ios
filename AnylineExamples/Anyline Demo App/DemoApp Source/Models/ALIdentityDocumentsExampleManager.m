@@ -9,18 +9,13 @@
 #import "ALIdentityDocumentsExampleManager.h"
 
 #import "ALMRZScanViewController.h"
-#import "ALDrivingLicenseScanViewController.h"
-
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
-#import "ALGermanIDFrontScanViewController.h"
 #import "ALPDF417ScanViewController.h"
 #import "ALNFCScanViewController.h"
 
-#import "ALNLDrivingLicenseScanViewController.h"
-#import "ALBEDrivingLicenseScanViewController.h"
 #import "ALUniversalIDScanViewController.h"
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
 #import "ALFaceAuthentificationViewController.h"

@@ -95,8 +95,6 @@ API_AVAILABLE(ios(13.0))
     
     self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.mrzScanViewPlugin];
     
-    self.scanView.flashButtonConfig.flashAlignment = ALFlashAlignmentTopLeft;
-    
     self.controllerType = ALScanHistoryNFC;
     
     // After setup is complete we add the scanView to the view of this view controller
@@ -236,7 +234,9 @@ API_AVAILABLE(ios(13.0))
     //In most cases we don't really need to do anything special here since the NFC UI already shows that it failed. We shouldn't get ALNFCTagErrorNFCNotSupported either because we check +readingAvailable before even showing NFC, so this is just an example of how else that situation could be handled.
     dispatch_async(dispatch_get_main_queue(), ^{
         if (error.code == ALNFCTagErrorNFCNotSupported) {
-            [self showAlertWithTitle:@"NFC Not Supported" message:@"NFC passport reading is not supported on this device."];
+            [self showAlertWithTitle:@"NFC Not Supported"
+                             message:@"NFC passport reading is not supported on this device."
+                          completion:nil];
         }
         if (error.code == ALNFCTagErrorResponseError || //error ALNFCTagErrorResponseError can mean the MRZ key was wrong
             error.code == ALNFCTagErrorUnexpectedError) { //error ALNFCTagErrorUnexpectedError can mean the user pressed the 'Cancel' button while scanning. It could also mean the phone lost the connection with the NFC chip because it was moved.
