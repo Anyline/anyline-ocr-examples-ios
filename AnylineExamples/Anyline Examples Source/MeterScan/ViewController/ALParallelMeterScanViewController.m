@@ -49,7 +49,6 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
                                                                             delegate:self
                                                                                error:&error];
     NSAssert(meterScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [meterScanPlugin enableReporting:[NSUserDefaults AL_reportingEnabled]];
     
     // Set ScanMode to ALAutoAnalogDigitalMeter
     BOOL success = [meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];

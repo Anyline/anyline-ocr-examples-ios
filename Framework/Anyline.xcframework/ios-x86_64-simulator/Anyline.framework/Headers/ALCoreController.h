@@ -239,14 +239,6 @@
 
 + (NSBundle *_Nonnull)frameworkBundle;
 
-/**
- * Reporting ON Switch, off by default
- *
- * @param enable if YES, anyline will report for QA failed scan tries. Use reportImageForLog in ALC file, 
- *               and use the reportScanResultState: for reporting
- */
-- (void) enableReporting:(BOOL) enable;
-
 - (void)reportIncludeValues:(NSString *_Nonnull)values;
 
 - (NSArray *_Nonnull)runStatistics;

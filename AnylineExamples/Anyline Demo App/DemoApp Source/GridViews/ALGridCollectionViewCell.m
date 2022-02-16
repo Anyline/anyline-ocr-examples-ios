@@ -8,6 +8,7 @@
 
 #import "ALGridCollectionViewCell.h"
 #import "UIFont+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
 
 @interface ALGridCollectionViewCell ()
 @property CAGradientLayer *gradientLayer;
@@ -25,7 +26,7 @@
         
         _name = [[UILabel alloc] init];
         _name.font = [UIFont AL_proximaSemiboldWithSize:16];
-        _name.textColor = [UIColor whiteColor];
+        _name.textColor = [UIColor AL_LabelBlackWhite];
         _name.numberOfLines = 0;
         self.frame = frame;
         [self.contentView addSubview:_name];

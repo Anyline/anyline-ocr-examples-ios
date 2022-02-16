@@ -54,7 +54,6 @@
     //    self.documentScanViewPlugin
     [self.documentScanPlugin setPostProcessingEnabled:YES];
     
-    [self.documentScanPlugin enableReporting:[NSUserDefaults AL_reportingEnabled]];
     self.controllerType = ALScanHistoryDocument;
     self.documentScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     

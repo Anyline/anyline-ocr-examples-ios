@@ -10,10 +10,6 @@
 
 @interface NSUserDefaults (ALExamplesAdditions)
 
-+ (BOOL)AL_reportingEnabled;
-
-+ (void)AL_setReportingEnabled:(BOOL)reportingEnabled;
-
 + (BOOL)AL_createEntryOnce:(NSString *)entry;
 
 + (BOOL)AL_dataPolicyAccepted;
@@ -24,6 +20,9 @@
 
 + (BOOL)AL_secretDevModeUnlocked;
 + (void)AL_secretDevModeUnlocked:(BOOL)enabled;
+
++ (BOOL)AL_hasRegistered;
++ (void)AL_setHasRegistered:(BOOL)wasAccepted;
 
 + (void)AL_setMail:(NSString *)mail;
 

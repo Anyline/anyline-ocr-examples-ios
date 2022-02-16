@@ -100,7 +100,7 @@
 		
 		<option value="//api/name/anylineCoreController:reportsVariable:value:">- anylineCoreController:reportsVariable:value:</option>
 		
-		<option value="//api/name/assetPath">- assetPath</option>
+		<option value="//api/name/assetController">- assetController</option>
 		
 		<option value="//api/name/createModuleErrorWithCode:message:">- createModuleErrorWithCode:message:</option>
 		
@@ -108,21 +108,17 @@
 		
 		<option value="//api/name/delayedScanTimeFulfilled">- delayedScanTimeFulfilled</option>
 		
-		<option value="//api/name/enableReporting:">- enableReporting:</option>
-		
 		<option value="//api/name/isRunning">- isRunning</option>
 		
 		<option value="//api/name/modelKey">- modelKey</option>
 		
 		<option value="//api/name/removeInfoDelegate:">- removeInfoDelegate:</option>
 		
-		<option value="//api/name/setAssetPath:">- setAssetPath:</option>
+		<option value="//api/name/setAssetController:error:">- setAssetController:error:</option>
 		
 		<option value="//api/name/setCurrentScanStartTime">- setCurrentScanStartTime</option>
 		
 		<option value="//api/name/setCurrentScanStartTimeInvalid">- setCurrentScanStartTimeInvalid</option>
-		
-		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
 		
 		<option value="//api/name/start:error:">- start:error:</option>
 		
@@ -393,61 +389,6 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/enableReporting:" title="enableReporting:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enableReporting:">&ndash;&nbsp;enableReporting:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Method to enable/disable the reporting functionality. Anyline reports anonymous scan data
-to there servers to improve and monitor scan quality. Depending on your license reporting
-is already disabled or can&rsquo;t be disabled.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)enableReporting:(BOOL)<em>enable</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enable</code></th>
-						<td><p>Boolean if reporting should be on/off</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/isRunning" title="isRunning"></a>
 	<h3 class="method-title"><code><a href="#//api/name/isRunning">&ndash;&nbsp;isRunning</a></code>
 </h3>
@@ -630,8 +571,24 @@ No result will be returned unless this method returns true.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setupAssetUpdateWithContext:delegate:" title="setupAssetUpdateWithContext:delegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupAssetUpdateWithContext:delegate:">&ndash;&nbsp;setupAssetUpdateWithContext:delegate:</a></code>
+	<a name="//api/name/assetController" title="assetController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetController">&ndash;&nbsp;assetController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALAssetController *_Nullable)assetController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAssetController:error:" title="setAssetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetController:error:">&ndash;&nbsp;setAssetController:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -641,14 +598,12 @@ No result will be returned unless this method returns true.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sets up the asset service to fetch assets OTA. This needs to be called before trying
-to check for updates with {@link #checkForUpdates()} or updating the assets with
-{@link #updateAssets()}</p>
+				<p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setupAssetUpdateWithContext:(ALAssetContext *_Nonnull)<em>context</em> delegate:(NSObject&lt;ALAssetDelegate&gt; *_Nonnull)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setAssetController:(ALAssetController *_Nonnull)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -657,13 +612,13 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>context</code></th>
-						<td><p>The context</p></td>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An NSError passed by reference</p></td>
 					</tr>
 				
 				</table>
@@ -683,7 +638,7 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
 			</div>
 			
 			
@@ -747,14 +702,47 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 
 		<div class="method-info-container">
 			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic) NSString *productName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetController" title="assetController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetController">&nbsp;&nbsp;assetController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALAssetController *assetController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceSubdirectory" title="resourceSubdirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceSubdirectory">&nbsp;&nbsp;resourceSubdirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
 			
 			<div class="method-subsection brief-description">
-				<p>The name of the product.</p>
+				<p>Plugin-specific subdirectory containing the resources for said plugin. Needs to
+be set when a ALScanPlugin subclass is initialized.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic) NSString *productName</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSString *resourceSubdirectory</code></div>
 
 		    
 			
@@ -779,24 +767,8 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/assetController" title="assetController"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetController">&nbsp;&nbsp;assetController</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALAssetController *assetController</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/assetPath" title="assetPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetPath">&ndash;&nbsp;assetPath</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/assetPath">&nbsp;&nbsp;assetPath</a></code>
 </h3>
 
 	<div class="method-info">
@@ -804,10 +776,36 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>If an active <a href="#//api/name/assetController">assetController</a> matching the current plugin can be found, its asset
+path can be used to provide the source of the plugin resources.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)assetPath</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *assetPath</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -877,40 +875,17 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 		<div class="method-info-container">
 			
 			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate that the processing has successfully finished and gives the delegate the final
-output object.</p>
-			</div>
-			
 		    
 
 			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>object</code></th>
-						<td><p>The result object of the processing.
-The result is specified with the RETURN statement in the .alc file.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
 			
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This delegate method must be inplemented to receive any results from the <a href="../Classes/AnylineSDK.html">AnylineSDK</a></p>
-			</div>
 			
 
 			
@@ -937,45 +912,17 @@ The result is specified with the RETURN statement in the .alc file.</p></td>
 		<div class="method-info-container">
 			
 			
-			<div class="method-subsection brief-description">
-				<p>Tells the delegate a specified intermediate result. Which intermediate results are reported
-can be specified in the .alc command file with the REPORT function.</p>
-			</div>
-			
 		    
 
 			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>anylineController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>variableName</code></th>
-						<td><p>The variable name in the .alc file which should be reported.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>value</code></th>
-						<td><p>The value of the reported variable.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
 			
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is optional. It provides intermediate results, therefore Anyline did not completed the
-task yet.</p>
-			</div>
 			
 
 			
@@ -1046,22 +993,6 @@ for example that the display or paper frame could not be found.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setAssetPath:" title="setAssetPath:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setAssetPath:">&ndash;&nbsp;setAssetPath:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)setAssetPath:(NSString *)<em>assetPath</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/modelKey" title="modelKey"></a>
 	<h3 class="method-title"><code><a href="#//api/name/modelKey">&ndash;&nbsp;modelKey</a></code>
 </h3>
@@ -1118,22 +1049,6 @@ for example that the display or paper frame could not be found.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/assetPath" title="assetPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetPath">&nbsp;&nbsp;assetPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property NSString *assetPath</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/startVariables" title="startVariables"></a>
 	<h3 class="method-title"><code><a href="#//api/name/startVariables">&nbsp;&nbsp;startVariables</a></code>
 </h3>
@@ -1145,22 +1060,6 @@ for example that the display or paper frame could not be found.</p>
 			
 
 			<div class="method-subsection method-declaration"><code>@property NSDictionary *startVariables</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/resourceSubdirectory" title="resourceSubdirectory"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resourceSubdirectory">&nbsp;&nbsp;resourceSubdirectory</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property NSString *resourceSubdirectory</code></div>
 
 		    
 		</div>
@@ -1196,7 +1095,7 @@ for example that the display or paper frame could not be found.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-12-15</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-02-16</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

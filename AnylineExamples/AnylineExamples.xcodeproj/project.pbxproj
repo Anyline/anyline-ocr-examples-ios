@@ -23,6 +23,7 @@
 		0BA197D595DC6A8477FC5343 /* ALAFLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00A41DD54298180480D664 /* ALAFLicensePlateViewController.m */; };
 		0F5545C5A922F2ABCFAE2845 /* ReadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A174D434351C30AA815B7 /* ReadingTableViewCell.m */; };
 		110B69C401740F597F4D4237 /* ALISBNScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE5E7E740DE6CE65330E56 /* ALISBNScanViewController.m */; };
+		1175ADE866CE976EFFC54EDB /* TireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB06AE3FB930F1B0781316C /* TireViewController.swift */; };
 		122FC76CBA910344E10CA488 /* ALUniversalIDFieldnameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2327535110C3026475005 /* ALUniversalIDFieldnameUtil.m */; };
 		126C1E99EAA1D1E63FAB2CCE /* meter_barcode_view_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A74558707FFE3B297265433 /* meter_barcode_view_config.json */; };
 		13805B096B1C7489DE2D956E /* WorkforceToolResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5CA65FF0C687D43AC37D3 /* WorkforceToolResultViewController.m */; };
@@ -489,6 +490,7 @@
 		CC75DF6BB98F730B445F418A /* WorkForceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkForceViewController.h; sourceTree = "<group>"; };
 		CCFB0172F33527DC467752AE /* ALConfigurationDialogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALConfigurationDialogViewController.h; sourceTree = "<group>"; };
 		CD45FF61F08237CA8F7D06B2 /* ALCheckbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCheckbox.h; sourceTree = "<group>"; };
+		CDB06AE3FB930F1B0781316C /* TireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TireViewController.swift; sourceTree = "<group>"; };
 		CE844E43F308E9D0C6E8736D /* ALPDF417ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPDF417ScanViewController.m; sourceTree = "<group>"; };
 		D0A26198973324CFA59191B6 /* ALUniversalSerialNumberScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalSerialNumberScanViewController.m; sourceTree = "<group>"; };
 		D11E06DF396B1B2615A7D5C2 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
@@ -850,6 +852,7 @@
 				B9093E871C67AE267941ED79 /* Scrabble */,
 				636219877DDB2A0EC0458AEB /* SerialNumber */,
 				D1ABF7FDD836391CA8BBD34C /* TIN */,
+				F9E818A444CA5C245D4F4123 /* Tire */,
 				761C0429062CC48DC697E44E /* UniversalID */,
 				27E8F4A161675EE05890151F /* Utility */,
 				EC8DCF8EDC90B897688C6F82 /* VIN */,
@@ -1403,6 +1406,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F9E818A444CA5C245D4F4123 /* Tire */ = {
+			isa = PBXGroup;
+			children = (
+				CDB06AE3FB930F1B0781316C /* TireViewController.swift */,
+			);
+			path = Tire;
+			sourceTree = "<group>";
+		};
 		FCCCCEB66ACAC7F418ABEBA7 /* Document */ = {
 			isa = PBXGroup;
 			children = (
@@ -1665,6 +1676,7 @@
 				486D260E0AA1DCD6BC257483 /* ScanHistory+CoreDataProperties.m in Sources */,
 				6F80C436AEC24B717740CF88 /* ScanHistoryMigration3to4.m in Sources */,
 				E4660E0BAEC49D4B4180D824 /* ScanHistoryMigration3to4.xcmappingmodel in Sources */,
+				1175ADE866CE976EFFC54EDB /* TireViewController.swift in Sources */,
 				7F57D792ED6FECA6A50A3F37 /* UIButton+ALExamplesExtensions.m in Sources */,
 				07C382512D3E2C2456D47B16 /* UIColor+ALExamplesAdditions.m in Sources */,
 				620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */,

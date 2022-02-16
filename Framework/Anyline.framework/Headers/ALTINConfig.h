@@ -6,10 +6,10 @@
 //  Copyright © 2019 Anyline GmbH. All rights reserved.
 //
 
-#import "ALBaseOCRConfig.h"
+#import "ALBaseTireConfig.h"
 
 /**
- *  The possible ALTINScanMode for the AnylineOCR plugin
+ *  The possible ALTINScanMode for the Anyline Tire plugin
  */
 typedef NS_ENUM(NSInteger, ALTINScanMode) {
     /**
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, ALTINScanMode) {
 };
 
 /**
-Possible values for the upsideDownMode of an ALTinConfig
+Possible values for the upsideDownMode of an ALTINConfig and ALTireSizeConfig
  */
 typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
     /**
@@ -45,9 +45,9 @@ typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
 };
 
 /**
- *  A class used to configure the Anyline OCR plugin for Container.
+ *  A class used to configure the Anyline Tire plugin for Container.
  */
-@interface ALTINConfig : ALBaseOCRConfig
+@interface ALTINConfig : ALBaseTireConfig
 /**
  *  The TIN scan mode.
  *  @see ALTINScanMode
@@ -59,6 +59,12 @@ typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
  *  @see ALTINUpsideDownMode
  */
 @property (nonatomic, assign) ALTINUpsideDownMode upsideDownMode;
+
+/**
+ *  The min confidence to accept the result. Between 0-100, but should normally be at least 50.
+ *  The spped / accurracy of Anyline can be controlled with this property.
+ */
+@property (nonatomic, assign) NSUInteger minConfidence;
 
 - (instancetype)init;
 @end

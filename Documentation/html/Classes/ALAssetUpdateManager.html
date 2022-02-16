@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALAssetUpdateManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/assetUpdateTaskFactory">assetUpdateTaskFactory</option>
+		
+		<option value="//api/name/count">count</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedManager">+ sharedManager</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addUpdateTask:delegate:">- addUpdateTask:delegate:</option>
+		
+		<option value="//api/name/assetControllerForID:">- assetControllerForID:</option>
+		
+		<option value="//api/name/assetUpdateTaskWithID:">- assetUpdateTaskWithID:</option>
+		
+		<option value="//api/name/checkForUpdates:downloadIfOutdated:">- checkForUpdates:downloadIfOutdated:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithAssetUpdateTaskFactory:">- initWithAssetUpdateTaskFactory:</option>
+		
+		<option value="//api/name/localAssetsFound:">- localAssetsFound:</option>
+		
+		<option value="//api/name/removeAll">- removeAll</option>
+		
+		<option value="//api/name/removeUpdateTask:">- removeUpdateTask:</option>
+		
+		<option value="//api/name/requestAssetDownload:">- requestAssetDownload:</option>
+		
+		<option value="//api/name/resetTask:">- resetTask:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALAssetUpdateManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALAssetUpdateManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger count</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetUpdateTaskFactory" title="assetUpdateTaskFactory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetUpdateTaskFactory">&nbsp;&nbsp;assetUpdateTaskFactory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALAssetUpdateTaskFactory *assetUpdateTaskFactory</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (ALAssetUpdateManager *)sharedManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAssetUpdateTaskFactory:" title="initWithAssetUpdateTaskFactory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAssetUpdateTaskFactory:">&ndash;&nbsp;initWithAssetUpdateTaskFactory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAssetUpdateTaskFactory:(ALAssetUpdateTaskFactory *_Nullable)<em>assetUpdateTaskFactory</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addUpdateTask:delegate:" title="addUpdateTask:delegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addUpdateTask:delegate:">&ndash;&nbsp;addUpdateTask:delegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addUpdateTask:(ALAssetContext *)<em>assetContext</em> delegate:(id&lt;ALAssetUpdateDelegate&gt; _Nonnull)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetUpdateTaskWithID:" title="assetUpdateTaskWithID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetUpdateTaskWithID:">&ndash;&nbsp;assetUpdateTaskWithID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALAssetUpdateTask *_Nullable)assetUpdateTaskWithID:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/localAssetsFound:" title="localAssetsFound:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/localAssetsFound:">&ndash;&nbsp;localAssetsFound:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)localAssetsFound:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkForUpdates:downloadIfOutdated:" title="checkForUpdates:downloadIfOutdated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkForUpdates:downloadIfOutdated:">&ndash;&nbsp;checkForUpdates:downloadIfOutdated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)checkForUpdates:(NSString *)<em>id</em> downloadIfOutdated:(BOOL)<em>downloadIfOutdated</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestAssetDownload:" title="requestAssetDownload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestAssetDownload:">&ndash;&nbsp;requestAssetDownload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)requestAssetDownload:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetTask:" title="resetTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetTask:">&ndash;&nbsp;resetTask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)resetTask:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeUpdateTask:" title="removeUpdateTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeUpdateTask:">&ndash;&nbsp;removeUpdateTask:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALAssetUpdateTask *)removeUpdateTask:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAll" title="removeAll"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAll">&ndash;&nbsp;removeAll</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeAll</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetControllerForID:" title="assetControllerForID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetControllerForID:">&ndash;&nbsp;assetControllerForID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALAssetController *)assetControllerForID:(NSString *)<em>id</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-02-16</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

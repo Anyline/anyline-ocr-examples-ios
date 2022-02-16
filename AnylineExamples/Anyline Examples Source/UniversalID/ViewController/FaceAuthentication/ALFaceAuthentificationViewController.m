@@ -6,174 +6,305 @@
 //
 
 #import "ALFaceAuthentificationViewController.h"
+#import <AnylineFaceAuthentication/AnylineFaceAuthentication-Swift.h>
+#import "ALAppDemoLicenses.h"
+#import "UIFont+ALExamplesAdditions.h"
 #import "ALResultEntry.h"
 #import "ALResultViewController.h"
-#import <MessageUI/MessageUI.h>
-
-#import "AnylineExamples-Swift.h"
-
 #import "ALUniversalIDFieldnameUtil.h"
-#import "ALSelectionTable.h"
 
-#import "ALIdentityDocumentsExampleManager.h"
-#import "ALScriptSelectionViewController.h"
+#define kPublicProdFaceScanEncryptionKey \
+@"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAylyQZr7haCsQ5OeBGZP0\nMA+k5z6iLu1XrCfQOHsBzNRe67aScP0CPwTQ+gDy+h0keQunBgShvb2ZN67LuHtO\nxbtJhXTrSJ6m8wSb0jHYaUZpjgjgsv+6ig1aXOAxidx+Vd7zwfBy7WjhNSJgTNU+\nY1lY1ZVlj1nY4lqfgCtC7t0Y6qenIL6KmSebQRrB+RjcO77HKj2bxNpq8roZj0JD\nFG1Asd9l3LqYKS4gX1dqbSgLLtLAAhcBMpHF/HqtnaJQpe1f9lfZt7H3UTBdZdOQ\nuluf4QteyPxVT1vKV2FIjU6hXGjLgcTjn0FLyM2w38tOOYS8zlNYdliZ272l5uxh\nQQIDAQAB\n-----END PUBLIC KEY-----"
 
-#import <FaceTecSDK/FaceTecSDK.h>
-#import "AnylineExamples-Swift.h"
-#import "ALUtils.h"
+@interface ALFaceAuthentificationViewController() <AnylineFaceAuthenticationDelegate, NSURLSessionDelegate>
 
-#import <AnylineFaceAuthentication/AnylineFaceAuthentication.h>
-#import <AnylineFaceAuthentication/AnylineFaceAuthentication-Swift.h>
+@property (nonatomic, retain) FaceAuthenticationViewController *faceAuthenticationViewController;
 
-#import "UIViewController+ALExamplesAdditions.h"
+@property (nonatomic, retain) UIButton *restartButton;
 
-/*
- * Configuration
- */
-NSString * const kScanIDLabelText = @"Scan your ID";
-
-@interface ALFaceAuthentificationViewController ()<FaceAuthenticationDelegate, ALScriptSelectionDelegate>
-
-
-@property (nonatomic, strong) NSMutableString *resultHistoryString;
-
-@property (nonatomic, strong) FaceAuthenticationPluginController *faceAuthenticationViewController;
+@property (nonatomic, retain) UITextView *infoView;
 
 @end
+
 
 @implementation ALFaceAuthentificationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSError *error = nil;
-    BOOL success = [AnylineFaceAuthenticationSDK.sdk setupDevelopmentModeWithAnylineLicenseKey:kDemoAppLicenseKey
-                                                                                         error:&error
-                                                                                    completion:^(BOOL success) {
-        NSAssert(success, @"Init failed");
-        
-        self.faceAuthenticationViewController = [AnylineFaceAuthenticationSDK.sdk createViewControllerWithDelegate:self];
-        
-        [self addChildViewController:self.faceAuthenticationViewController];
-        [self.view addSubview:self.faceAuthenticationViewController.view];
-        [self.faceAuthenticationViewController didMoveToParentViewController:self];
-        
-    }];
-    NSAssert(success, @"Init failed");
-}
 
-/*
- This method will be called once the view controller and its subviews have appeared on screen
- */
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-}
+    // prevent the FaceAuth sub-view from showing under the navbar
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = UIColor.systemBackgroundColor;
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
-#pragma mark -- FaceVerificationDelegate Delegate
-
-- (void)onErrorWithFaceAuthenticationController:(FaceAuthenticationPluginController * _Nonnull)faceAuthenticationController
-                                          error:(NSError * _Nonnull)error {
-    if (error.code == 18446744073709550607) {
-        [self showAlertWithTitle:@"No Internet Connection"
-                         message:@"Face Authentication requires an Internet connection. Make sure that you are connected and start again."
-                  dismissHandler:^(UIAlertAction * _Nonnull action) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-    } else {
-        [self showAlertWithTitle:@"Error"
-                         message:@"Something went wrong, please try again later."
-                  dismissHandler:^(UIAlertAction * _Nonnull action) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
+    if (![self checkFaceAuthCapability]) {
+        return;
     }
+    
+    [self getFaceTecProductionKey:^(NSString * _Nullable key, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error trying to get FaceTec production key: %@", [error localizedDescription]);
+            return;
+        }
+        
+        AnylineFaceAuthenticationSDK *sdk = [AnylineFaceAuthenticationSDK sdk];
+
+        [sdk setupProdModeWithAnylineLicenseKey:kDemoAppLicenseKey
+                                  encryptionKey:kPublicProdFaceScanEncryptionKey
+                           faceTecLicenseString:key
+                            deviceKeyIdentifier:@"dtBkVYeM01q8U5VTykshIXNkq4xbWIy4"
+                                    endpointUrl:@"https://face.anyline.com/v1"
+                                     completion:^(BOOL success, NSError * _Nullable error) {
+            
+            if (error) {
+                NSString *title = @"Error";
+                NSString *message = error.localizedDescription;
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                         message:message
+                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    NSAssert(false, @"Init failed");
+                }];
+                [alertController addAction:dismissAction];
+                [self.navigationController presentViewController:alertController animated:YES completion:nil];
+                return;
+            }
+            
+            self.faceAuthenticationViewController = [sdk createViewControllerWithDelegate:self facetecConfig:nil];
+            [self configureViews];
+            [self installFaceAuthVC];
+        }];
+    }];
 }
 
-- (void)onFaceAuthenticationCompletedWithFaceAuthenticationController:(FaceAuthenticationPluginController * _Nonnull)faceAuthenticationController
-                                                       livenessResult:(id<FaceTecSessionResult> _Nonnull)livenessResult
-                                                           scanResult:(ALIDResult<id> * _Nonnull)scanResult
-                                                                match:(BOOL)match
-                                                           matchLevel:(NSInteger)matchLevel {
-    NSLog(@"Finished the whole process. Starting Result controller");
-    // Handle a UniversalID result
+/// Adds the AnylineFaceAuthenticationViewController as a child to this view controller
+- (void)installFaceAuthVC {
+    NSAssert(self.faceAuthenticationViewController != nil, @"faceAuthVC should not be nil");
+
+    [self addChildViewController:self.faceAuthenticationViewController];
+    [self.view addSubview:self.faceAuthenticationViewController.view];
+
+    // constraints
+    UIView *faceView = self.faceAuthenticationViewController.view;
+    faceView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [faceView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [faceView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [faceView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [faceView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:-50].active = YES;
+
+    [self.faceAuthenticationViewController didMoveToParentViewController:self];
+}
+
+- (void)configureViews {
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    btn.translatesAutoresizingMaskIntoConstraints = NO;
+    [btn addTarget:self action:@selector(didPressRetryButton:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"START OVER" forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor colorWithRed:0 green:0.6 blue:1 alpha:1]];
+    [btn.titleLabel setTextColor:[UIColor whiteColor]];
+    [btn.titleLabel setFont:[UIFont AL_proximaSemiboldWithSize:22]];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.layer.cornerRadius = 12.0f;
+    
+    [self.view addSubview:btn];
+    
+    [btn.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+    [btn.heightAnchor constraintEqualToConstant:60].active = YES;
+    [btn.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [btn.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-20].active = YES;
+        
+    self.restartButton = btn;
+    
+    UITextView *textView = [[UITextView alloc] init];
+    textView.text = @"";
+    [textView sizeToFit];
+    textView.editable = NO;
+    textView.font = [UIFont systemFontOfSize:14];
+    textView.textAlignment = NSTextAlignmentCenter;
+    textView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:textView];
+    self.infoView = textView;
+
+    [textView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+    [textView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [textView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:20].active = YES;
+    [textView.bottomAnchor constraintEqualToAnchor:self.restartButton.topAnchor constant:-20].active = YES;
+}
+
+- (void)didPressRetryButton:(UIButton *)button {
+    [self installFaceAuthVC];
+}
+
+- (void)removeFaceAuthVC {
+    [self.faceAuthenticationViewController removeFromParentViewController];
+    [self.faceAuthenticationViewController.view removeFromSuperview];
+}
+
+/// Checks the currently-set up license key whether it has the "FAU" (face authentication) scope. If it doesn't,
+/// the demo will not run. Also returns whether the check succeeded or not.
+- (BOOL)checkFaceAuthCapability {
+    NSError *error;
+    [[ALLicenseCheck sharedInstance] checkFaceAuthenticationSupport:&error];
+    if (error != nil) {
+        NSString *title = @"Error";
+        NSString *message = [NSString stringWithFormat:@"There was a problem loading Face Authentication. The error: %@", error.localizedDescription];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        __weak __block typeof(self) weakSelf = self;
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * _Nonnull action) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    return YES;
+}
+
+// MARK: - Misc
+
++ (NSString *)strForUniversalIDIdentification:(ALUniversalIDIdentification *)identification {
+    
+    NSMutableArray<NSString *> *identificationValues = [NSMutableArray arrayWithCapacity:6];
+    NSArray *fieldNamesOfInterest = @[
+        @"firstName", @"lastName", @"fullName", @"formattedDateOfBirth", @"formattedDateOfIssue",
+        @"formattedDateOfExpiry", @"dateOfBirth", @"dateOfIssue", @"dateOfExpiry", @"documentNumber",
+        @"documentType", @"issuingCountryCode", @"documentDiscriminator", @"personalNumber", @"sex",
+        @"address", @"nationalityCountryCode", @"licenseClass", @"eyes", @"hair", @"height", @"weight",
+        @"restrictions", @"endorsements", @"drivingLicenseString",
+    ];
+    for (NSString *fieldName in fieldNamesOfInterest) {
+        if ([identification hasField:fieldName]) {
+            [identificationValues addObject:[NSString stringWithFormat:@"%@: %@",
+                                             fieldName,
+                                             [identification valueForField:fieldName]]];
+        }
+    }
+    return [identificationValues componentsJoinedByString:@"\n"];
+}
+
+// MARK: - FaceAuthenticationViewControllerDelegate
+
+- (void)faceAuthentication:(AnylineFaceAuthenticationSDK *)faceAuthentication
+        completedWithError:(NSError *)error {
+    
+    NSString *message = [NSString stringWithFormat:@"Something went wrong, please try again later. The error: %@", [error localizedDescription]];
+    if (error.code == -1009) {
+        message = @"Face Authentication requires an Internet connection. Make sure that you are connected and start again.";
+    }
+    
+    self.infoView.text = message;
+    [self.infoView sizeToFit];
+    self.restartButton.hidden = NO;
+}
+
+- (void)faceAuthenticationProceedToLivenessCheck:(AnylineFaceAuthenticationSDK *)faceAuthentication {
+}
+
+- (void)faceAuthentication:(AnylineFaceAuthenticationSDK *)faceAuthentication
+   completedWithScanResult:(ALIDResult<id> *)scanResult
+          livenessDetected:(BOOL)livenessDetected
+        livenessFaceBase64:(NSString *)livenessFaceBase64
+                matchLevel:(enum MatchLevel)matchLevel {
+
     ALUniversalIDIdentification *identification = (ALUniversalIDIdentification *)scanResult.result;
     NSMutableString *resultHistoryString = [NSMutableString string];
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    
-    [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil addIDSubResult:identification titleSuffix:@"" resultHistoryString:resultHistoryString]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
+    NSMutableArray<ALResultEntry *> *resultData = [NSMutableArray array];
+
+    [resultData addObjectsFromArray:[ALUniversalIDFieldnameUtil
+                                     addIDSubResult:identification
+                                     titleSuffix:@""
+                                     resultHistoryString:resultHistoryString]];
+
+    // include the country detected for this ID
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country"
+                                                         value:identification.layoutDefinition.country]];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
-    
-    NSString *matchString = @"";
-    
-    switch (matchLevel) {
-        case 1:
-            matchString = @"99%";
-            break;
-        case 2:
-            matchString = @"99.6%";
-            break;
-        case 3:
-            matchString = @"99.8%";
-            break;
-        case 4:
-            matchString = @"99.9%";
-            break;
-        case 5:
-            matchString = @"99.99%";
-            break;
-        case 6:
-            matchString = @"99.999%";
-            break;
-        case 7:
-            matchString = @"99.9998%";
-            break;
-        
-        default:
-            matchString = @"Failed";
-            break;
+
+    NSString *matchString = [FaceAuthentication matchStringForLevelWithMatchLevel:matchLevel];
+    ALResultEntry *matchResult = [[ALResultEntry alloc] initWithTitle:@"Match Level"
+                                                                value:matchString
+                                                  shouldSpellOutValue:YES];
+    [resultData insertObject:matchResult atIndex:0];
+
+    // Insert hardcoded liveness check "PASS" - I believe you can't get a failing liveness
+    // check when you reach this point.
+    NSString *livenessCheckResult = @"Failed";
+    if (livenessDetected) {
+        livenessCheckResult = @"Passed";
     }
-    
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Face Match Level" value:matchString]];
-    
-    resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
-    
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
+    ALResultEntry *livenessResult = [[ALResultEntry alloc] initWithTitle:@"Liveness Check"
+                                                                   value:livenessCheckResult
+                                                     shouldSpellOutValue:YES];
+    [resultData insertObject:livenessResult atIndex:0];
 
-    UIImage *faceImage = [self stringToUIImage:livenessResult.auditTrailCompressedBase64[0]];
-    [self anylineDidFindResult:jsonString
-                 barcodeResult:@""
-                     faceImage:[scanResult.result faceImage]
-                        images:@[scanResult.image, faceImage]
-                    scanPlugin:nil
-                    viewPlugin:nil
-                    completion:^{
-        
-        
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
-                                                                                  image:scanResult.image
-                                                                          optionalImage:faceImage
-                                                                              faceImage:[scanResult.result faceImage]
-                                                                   shouldShowDisclaimer:YES];
-        
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-    
-    
+    UIImage *livenessFaceImage = nil;
+    NSData *livenessFaceData = [[NSData alloc] initWithBase64EncodedString:livenessFaceBase64 options:0];
+    if (livenessFaceData.length > 0) {
+        livenessFaceImage = [[UIImage alloc] initWithData:livenessFaceData];
+    }
 
-    NSLog(@"Finished the whole process. Finished launching result");
+    ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
+                                                                              image:scanResult.image
+                                                                      optionalImage:livenessFaceImage
+                                                                          faceImage:nil
+                                                               shouldShowDisclaimer:YES];
+
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
--(UIImage *)stringToUIImage:(NSString *)string
-{
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:string
-                                                      options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [UIImage imageWithData:data];
+// MARK: - Miscellaneous
+
+- (void)getFaceTecProductionKey:(void (^)(NSString * _Nullable key, NSError * _Nullable error))completion {
+    
+    NSString *finalUrl = @"https://face.anyline.com/key";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:finalUrl]];
+
+    [request setHTTPMethod:@"GET"];
+    [request addValue:@"kabdtnHLrN3xxf1W8dVoK59bCjG6xBIbrb7T9U45" forHTTPHeaderField:@"x-api-key"];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionTask *latestNetworkRequest = [session dataTaskWithRequest:request
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data == nil) {
+            NSLog(@"Exception raised while attempting HTTPS call.");
+            if (error == nil) {
+                error = [NSError errorWithDomain:@"com.anyline.faceverification"
+                                            code:106
+                                        userInfo:@{ NSLocalizedDescriptionKey: @"Response data is nil" }];
+            }
+            completion(nil, error);
+            return;
+        }
+    
+        NSDictionary<NSString *, id> *responseJSONObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        if (responseJSONObject == nil) {
+            NSLog(@"Exception raised while attempting HTTPS call.");
+            if (error == nil) {
+                error = [NSError errorWithDomain:@"com.anyline.faceverification"
+                                            code:106
+                                        userInfo:@{ NSLocalizedDescriptionKey: @"Response could not be parsed as JSON" }];
+            }
+            completion(nil, error);
+            return;
+        }
+        NSString *appId = responseJSONObject[@"appId"];
+        NSString *expiryDate = responseJSONObject[@"expiryDate"];
+        NSString *key = responseJSONObject[@"key"];
+        NSString *productionKeyString = [NSString stringWithFormat:@"appId = %@\nexpiryDate = %@\nkey = %@\n",
+                                         appId, expiryDate, key];
+        completion(productionKeyString, nil);
+    }];
+    
+    [latestNetworkRequest resume];
+    
 }
 
 @end

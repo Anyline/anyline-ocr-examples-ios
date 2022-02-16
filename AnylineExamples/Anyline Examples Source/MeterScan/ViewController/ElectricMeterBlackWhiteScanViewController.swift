@@ -43,8 +43,6 @@ import UIKit
         
         self.view.sendSubviewToBack(self.scanView);
         
-        self.meterScanPlugin.enableReporting(UserDefaults.al_reportingEnabled());
-        
         self.controllerType = ALScanHistoryElectricMeter;
     }
     

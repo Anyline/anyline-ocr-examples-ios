@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/ALAbstractScanPlugin.h</key>
 		<data>
-		P8vOtxgGD3Mo0M2SShGkiq8c4lo=
+		3zQeV612u/nHvhCpZ/ssnQzUClo=
 		</data>
 		<key>Headers/ALAbstractScanViewPlugin.h</key>
 		<data>
-		gQh1yZR1xS8vjBkN4YWVN393Xhc=
+		pTd/w0P4psJt5OMz2qbg/VBBv4E=
 		</data>
 		<key>Headers/ALAbstractScanViewPluginComposite.h</key>
 		<data>
@@ -18,15 +18,23 @@
 		</data>
 		<key>Headers/ALAssetContext.h</key>
 		<data>
-		ydNIL4Z3tbQfgeldQ1Lru02h/Gc=
+		Y1fCy3zsA7UskMpg8B0f7uJBXE0=
 		</data>
 		<key>Headers/ALAssetController.h</key>
 		<data>
-		CENSWUAXe5GU09rKspgvAuDl4d8=
+		6PfCx4YyzqNk/gti4OkU94vtoto=
 		</data>
 		<key>Headers/ALAssetDelegate.h</key>
 		<data>
 		NaCJdsJkaiBW4eXGviaUlD8Xta4=
+		</data>
+		<key>Headers/ALAssetUpdateManager.h</key>
+		<data>
+		o5twt8FsyT2U/zwG/yWYfVOQa/w=
+		</data>
+		<key>Headers/ALAssetUpdateTask.h</key>
+		<data>
+		tWmZ60yNft89ndiUXSbK46nZHHA=
 		</data>
 		<key>Headers/ALBarcode.h</key>
 		<data>
@@ -52,6 +60,10 @@
 		<data>
 		bR167TvJNgs69waNdheou/fKaXU=
 		</data>
+		<key>Headers/ALBaseTireConfig.h</key>
+		<data>
+		8jWc1O4TGRKkhC6uTGeG/+Ad9gs=
+		</data>
 		<key>Headers/ALBasicConfig.h</key>
 		<data>
 		xndEi5YzrFADD/qAxvGMeHm122k=
@@ -68,6 +80,10 @@
 		<data>
 		hBpb1HZyfP8Bz2EBVYH5XXlQDXA=
 		</data>
+		<key>Headers/ALCommercialTireIdConfig.h</key>
+		<data>
+		RFqt6hB8Q9z1//hrKmxDVAKeysw=
+		</data>
 		<key>Headers/ALContainerConfig.h</key>
 		<data>
 		pqtzT37r5+dMndiA3CxRJ+JTLpI=
@@ -78,7 +94,7 @@
 		</data>
 		<key>Headers/ALCoreController.h</key>
 		<data>
-		inW0i62/y2AH5SrlDqRDsWj1iJM=
+		uTrPBallq+6N2dVj5aH14YJQw+U=
 		</data>
 		<key>Headers/ALCutoutConfig.h</key>
 		<data>
@@ -100,6 +116,10 @@
 		<data>
 		TM9qIG4a0IGu7iRKSou/oQRptPA=
 		</data>
+		<key>Headers/ALDefStruct.h</key>
+		<data>
+		30f24uddCoxQb04TvQvjNbSLEQE=
+		</data>
 		<key>Headers/ALDigitDataPoint.h</key>
 		<data>
 		MM8RMaE8HWGML+ImwVdZ/UQiVQk=
@@ -114,7 +134,7 @@
 		</data>
 		<key>Headers/ALDocumentScanPlugin.h</key>
 		<data>
-		wEcx3a5kUy1CUAW3aVw7Eu7BP0s=
+		FAbgsh/JWAgOzdpRi3ZJFpzVY2o=
 		</data>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
 		<data>
@@ -168,6 +188,10 @@
 		<data>
 		DhX0L2oBwlYbK0qTstioQ3gPDaw=
 		</data>
+		<key>Headers/ALLicenseCheck.h</key>
+		<data>
+		dlxMfxzvQeo6yzy6RRYN/aGLz/c=
+		</data>
 		<key>Headers/ALLicensePlateResult.h</key>
 		<data>
 		hNPhpIGuQq3Kpx2fFFtiL6vg9HQ=
@@ -202,7 +226,7 @@
 		</data>
 		<key>Headers/ALNFCDetector.h</key>
 		<data>
-		O3YywkKCSoJST6iJ5iFaOjTqI74=
+		x4irl/mBXsTcSOLeBPJt09FgYqY=
 		</data>
 		<key>Headers/ALNFCResult.h</key>
 		<data>
@@ -210,7 +234,7 @@
 		</data>
 		<key>Headers/ALOCRConfig.h</key>
 		<data>
-		7p48UaVPYeghBo2QSZmDpMYF8dE=
+		BqzUt5xv2uxiArIEewpAWQEE7A0=
 		</data>
 		<key>Headers/ALOCRResult.h</key>
 		<data>
@@ -294,11 +318,31 @@
 		</data>
 		<key>Headers/ALTINConfig.h</key>
 		<data>
-		xxB7qns/723FdNna9wX+QTFMUYA=
+		rhyglwdF+MEF7EthWQcZbO8aTHw=
 		</data>
 		<key>Headers/ALTextDataPoint.h</key>
 		<data>
 		NzaC3XFtb/oAWhgmb0C7ucrkHq0=
+		</data>
+		<key>Headers/ALTireConfig.h</key>
+		<data>
+		refBiTvBVPNgi04ZnIB8OrKs180=
+		</data>
+		<key>Headers/ALTireResult.h</key>
+		<data>
+		13HC+Ae01++9IFCcXFuLW61PQio=
+		</data>
+		<key>Headers/ALTireScanPlugin.h</key>
+		<data>
+		ghjR1obkVfuzU5nNRFN+gtfw8Oo=
+		</data>
+		<key>Headers/ALTireScanViewPlugin.h</key>
+		<data>
+		dj67q1zLOHxSjV97Sw3yh+yA7Aw=
+		</data>
+		<key>Headers/ALTireSizeConfig.h</key>
+		<data>
+		6zG7lPFyTjov++z+5/maa970TUI=
 		</data>
 		<key>Headers/ALTorchManager.h</key>
 		<data>
@@ -338,7 +382,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		vb+9rcixUhtlOUWIsTfAQZ+QkRs=
+		GH5Uqb+jinzH8MVZW8TxH0dE8GA=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -359,14 +403,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9SgM78PRC2jBjMMscQkyoBGzN6E64RMvIi8cG/3DaeE=
+			xSj0zPKVDRkW/8gZYpvN0YcofTe4ONeSdVrrVUqiNy4=
 			</data>
 		</dict>
 		<key>Headers/ALAbstractScanViewPlugin.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HBm0JtXScxRZZl7ZuxLZ1GPGHInzSb8tRnt1FpjqI+Q=
+			JHZC284ghDfKaqvJ+eZPii2NcD49SKSaQpCruilir24=
 			</data>
 		</dict>
 		<key>Headers/ALAbstractScanViewPluginComposite.h</key>
@@ -380,14 +424,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0aLWZXNF1fOmx8WjjtK4UNL6BU2RFBuI3M7o1RER/xA=
+			9CSkdeEJtOf0NN7BjbX2D02VNbeYBQjjQeh+vPcPCFY=
 			</data>
 		</dict>
 		<key>Headers/ALAssetController.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EdGEL2OMDwuLQVAUjkvZQnCCrChSsW2Yu/iPt8Dul0w=
+			OW2cE96gXzDYlur04uWXfuXL8+u7vLFYziVSby/4xIc=
 			</data>
 		</dict>
 		<key>Headers/ALAssetDelegate.h</key>
@@ -395,6 +439,20 @@
 			<key>hash2</key>
 			<data>
 			cPWealouTqTcAl80BxeTkrO4O/0UgtLolO7gwPdwXyc=
+			</data>
+		</dict>
+		<key>Headers/ALAssetUpdateManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qayw+RwPlom9dr/fjfYDHUUSVXrFpODcfQdR2Q2W6to=
+			</data>
+		</dict>
+		<key>Headers/ALAssetUpdateTask.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xMBeC7Pr/1ih/nbBSjEnsrFAdcBh3nnxemqqS8HCUOw=
 			</data>
 		</dict>
 		<key>Headers/ALBarcode.h</key>
@@ -439,6 +497,13 @@
 			e6IM96annpKbeHvoTmv/bkx3VBRNU1iAvmrxio2PEMM=
 			</data>
 		</dict>
+		<key>Headers/ALBaseTireConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			as8bebQlUhe06wUf9dkalZ/XPW2KJq+krgxm2kyJ9Dc=
+			</data>
+		</dict>
 		<key>Headers/ALBasicConfig.h</key>
 		<dict>
 			<key>hash2</key>
@@ -467,6 +532,13 @@
 			UH+uHARN+ZcD9JWgE8WXqaknIHVQh/Er7NU2nOeTeG0=
 			</data>
 		</dict>
+		<key>Headers/ALCommercialTireIdConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zFGLD9AqEXrkjBflXS0C/+Y0Yo7D2YNKfQ9U3CfVegg=
+			</data>
+		</dict>
 		<key>Headers/ALContainerConfig.h</key>
 		<dict>
 			<key>hash2</key>
@@ -485,7 +557,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pY9WQ0JLIqIH8aVxgZRuSKW81NxabSfNJqG45PwLWGM=
+			QzN/eQxRUDl1XT4AcFGbYGxOsoqkj9AL1I6Lc6Fo1yo=
 			</data>
 		</dict>
 		<key>Headers/ALCutoutConfig.h</key>
@@ -523,6 +595,13 @@
 			IY3OV/a8tJvEl4CSiUQz2pY4ZlLKSpWD8tUAFUcfO/o=
 			</data>
 		</dict>
+		<key>Headers/ALDefStruct.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			I29qn7Ptlfv+h0RiuCclo6G6BHNX+GW4i94Z+05fgn4=
+			</data>
+		</dict>
 		<key>Headers/ALDigitDataPoint.h</key>
 		<dict>
 			<key>hash2</key>
@@ -548,7 +627,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g0xqryBA+zgKjN2qKbb5BOQBniDFpvx0IXNNX9M5WII=
+			Dm0m9pY/8qSr9h9nvqixIer2jmb07SjbncMchQJBYqA=
 			</data>
 		</dict>
 		<key>Headers/ALDocumentScanViewPlugin.h</key>
@@ -642,6 +721,13 @@
 			ki3PazwwLQt9o9nUzi4D/YgUALq/sBqQRfcsExdtRhU=
 			</data>
 		</dict>
+		<key>Headers/ALLicenseCheck.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TjHixSOOzIHSJeSZEymk/CS1eFqoMlRXFjB4RmoZRvc=
+			</data>
+		</dict>
 		<key>Headers/ALLicensePlateResult.h</key>
 		<dict>
 			<key>hash2</key>
@@ -702,7 +788,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fJKwy9GSbLO1+Zdvj2mVuFIXDASH06rSIUvHcOvNPD0=
+			LWGr3Waw994czNau80oDWfdPUuhfMtyafcY6R79t1zc=
 			</data>
 		</dict>
 		<key>Headers/ALNFCResult.h</key>
@@ -716,7 +802,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DleSqEN/uDUlNVmXKiOb4y85ffOFas76jpxX59yXkH4=
+			HYXIMuzUsS9/MljrRyn+ffZrj8D+2RTuoh6IX8XUVJY=
 			</data>
 		</dict>
 		<key>Headers/ALOCRResult.h</key>
@@ -863,7 +949,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0BwWZZMnA/1HEjEeqfu0M1IsEfBXSxhIoqv5wJxtdMA=
+			FJphWmrkWggyuoeJHH5Sd5PWO3IPyo+hFpVTXJ9d5fI=
 			</data>
 		</dict>
 		<key>Headers/ALTextDataPoint.h</key>
@@ -871,6 +957,41 @@
 			<key>hash2</key>
 			<data>
 			ExyOJjfSbII+GmGj/XNEbwGi8isZU6YCf3HZtCkC/yI=
+			</data>
+		</dict>
+		<key>Headers/ALTireConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gFTLGq6+ejbUDa1bMnpTh/28j51QH9KijGYlxzppaE4=
+			</data>
+		</dict>
+		<key>Headers/ALTireResult.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Bq+lhPQGJXCiVIawjUWBaC82EW7dZCdB/SSBh5Y86bY=
+			</data>
+		</dict>
+		<key>Headers/ALTireScanPlugin.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8n2fVJq/ziR/6g/ku7IxQ0cfzg30LqiBlbosXrpOevw=
+			</data>
+		</dict>
+		<key>Headers/ALTireScanViewPlugin.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EloamcNg/FMl2gEgtkerATN2U26Tc/mmv2jJFsM/NTs=
+			</data>
+		</dict>
+		<key>Headers/ALTireSizeConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/jz+DEVmGAyyCHLfMG7+1es75c7fh5Y+cO3xaAMRdVc=
 			</data>
 		</dict>
 		<key>Headers/ALTorchManager.h</key>
@@ -940,7 +1061,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nxiSjFB2A1IcaxU7JwjxMBDUS4utR2HATuDr8x2gOnk=
+			h8fCf0Nqj2SRQyTbKkiydrXgzQ1Z+ELBGvYR0dFVfQQ=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>

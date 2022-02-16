@@ -50,15 +50,6 @@
 - (BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
     
 /**
- Method to enable/disable the reporting functionality. Anyline reports anonymous scan data
- to there servers to improve and monitor scan quality. Depending on your license reporting
- is already disabled or can't be disabled.
-
- @param enable Boolean if reporting should be on/off
- */
-- (void)enableReporting:(BOOL)enable;
-    
-/**
  The isRunning boolean indicates if a Anyline process is started.
 
  @return Boolean indicating if Anyline is running
@@ -85,16 +76,10 @@
  */
 - (void)setCurrentScanStartTime;
 
-/**
-* Sets up the asset service to fetch assets OTA. This needs to be called before trying
-* to check for updates with {@link #checkForUpdates()} or updating the assets with
-* {@link #updateAssets()}
-*
-* @param context The context
-* @param delegate The delegate
-*/
-- (void)setupAssetUpdateWithContext:(ALAssetContext *_Nonnull)context delegate:(NSObject<ALAssetDelegate> *_Nonnull)delegate;
+- (ALAssetController  * _Nullable)assetController;
 
+- (void)setAssetController:(ALAssetController * _Nonnull)assetController
+                     error:(NSError * _Nullable * _Nullable)error;
 
 // Internal Properties
 @property (nonatomic, assign) NSInteger confidence;
@@ -102,12 +87,17 @@
 @property (nullable, nonatomic, strong, readonly) ALImage *scanImage;
 
 @property (nullable, nonatomic, strong) ALCoreController *coreController;
-/// The name of the product.
+
 @property (nullable, nonatomic) NSString *productName;
 
 @property (nullable, nonatomic, strong) ALAssetController *assetController;
 
-- (NSString * _Nonnull)assetPath;
+/// Plugin-specific subdirectory containing the resources for said plugin. Needs to
+/// be set when a ALScanPlugin subclass is initialized.
+@property (nullable, nonatomic, copy) NSString *resourceSubdirectory;
+
+@property (nonatomic, readonly) NSString * _Nonnull assetPath;
+
 @end
 
 /**
@@ -142,6 +132,4 @@
 - (void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin
                runSkipped:(ALRunSkippedReason * _Nonnull)runSkippedReason;
 
-
-    
 @end

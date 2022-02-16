@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *stage;
 @property NSString *anylineVersion;
 @property NSString *training;
+@property NSString *assetID;
+@property NSString *assetVersion;
 
 - (NSString *)toJSON;
 

@@ -85,8 +85,6 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
 
 - (BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
 
-- (void)enableReporting:(BOOL)enable;
-
 - (BOOL)isRunning;
 
 - (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError * _Nullable * _Nullable)error;

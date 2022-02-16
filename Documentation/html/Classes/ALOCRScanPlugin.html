@@ -90,9 +90,9 @@
 		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
-		<option value="//api/name/setOCRConfig:error:">- setOCRConfig:error:</option>
+		<option value="//api/name/setAssetController:error:">- setAssetController:error:</option>
 		
-		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
+		<option value="//api/name/setOCRConfig:error:">- setOCRConfig:error:</option>
 		
 		<option value="//api/name/start:error:">- start:error:</option>
 		
@@ -486,10 +486,31 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 
 		<div class="method-info-container">
 			
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -502,10 +523,31 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 
 		<div class="method-info-container">
 			
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -538,6 +580,64 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 			<div class="method-subsection method-declaration"><code>- (BOOL)updateControllerAndReturnError:(NSError **)<em>error</em></code></div>
 
 		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAssetController:error:" title="setAssetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetController:error:">&ndash;&nbsp;setAssetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAssetController:(ALAssetController *_Nonnull)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An NSError passed by reference</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -586,66 +686,6 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 			<div class="method-subsection method-declaration"><code>- (NSDictionary *)startVariablesForRegexAndWhitelist:(ALBaseOCRConfig *)<em>config</em></code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setupAssetUpdateWithContext:delegate:" title="setupAssetUpdateWithContext:delegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupAssetUpdateWithContext:delegate:">&ndash;&nbsp;setupAssetUpdateWithContext:delegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets up the asset service to fetch assets OTA. This needs to be called before trying
-to check for updates with {@link #checkForUpdates()} or updating the assets with
-{@link #updateAssets()}</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setupAssetUpdateWithContext:(ALAssetContext *)<em>context</em> delegate:(NSObject&lt;ALAssetDelegate&gt; *)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>context</code></th>
-						<td><p>The context</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div>
@@ -719,7 +759,7 @@ to check for updates with {@link #checkForUpdates()} or updating the assets with
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-12-15</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-02-16</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

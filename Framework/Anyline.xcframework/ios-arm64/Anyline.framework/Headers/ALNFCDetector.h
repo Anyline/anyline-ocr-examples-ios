@@ -8,7 +8,10 @@
 
 #ifndef NFCDetector_h
 #define NFCDetector_h
+
 #import "ALNFCResult.h"
+
+@class ALLicenseUtil;
 
 API_AVAILABLE(ios(13.0))
 @protocol ALNFCDetectorDelegate <NSObject>
@@ -72,9 +75,13 @@ API_AVAILABLE(ios(13.0))
 /**
  * Initialise the NFC Detector.
  *
- * @param licenseKey The Anyline license key for this application bundle
- * @param delegate The delegate to receive results from the NFC once -startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate has been called. This must conform to the ALNFCDetectorDelegate protocol.
+ * @param delegate The delegate to receive results from the NFC once
+ * @param licenseUtil The ALLicenseUtil class instance which encapsulates the license key string used
+ * to initialize the SDK, if this is nil, then the `sharedInstance` of the class is used.
+ *  -startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate has been called. This must conform to the ALNFCDetectorDelegate protocol.
  */
+- (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate
+                               licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil;
 
 - (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate;
 

@@ -11,20 +11,9 @@
 NSString * const DATA_POLICY_ACCEPTED = @"dataPrivacyPolicyAccepted";
 NSString * const SECRET_DEV_MODE_ENABLED = @"secretDevModeEnabled";
 NSString * const SECRET_DEV_MODE_UNLOCKED = @"secretDevModeUnlocked";
+NSString * const HAS_REGISTERED = @"hasRegistered";
 
 @implementation NSUserDefaults (ALExamplesAdditions)
-
-+ (BOOL)AL_reportingEnabled {
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"anylineReportingEnabled"]) {
-        return YES;
-    }
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"anylineReportingEnabled"];
-}
-
-+ (void)AL_setReportingEnabled:(BOOL)reportingEnabled {
-    [[NSUserDefaults standardUserDefaults] setBool:reportingEnabled forKey:@"anylineReportingEnabled"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
 
 + (BOOL)AL_createEntryOnce:(NSString*)entry {
     BOOL defaultsEntry = [[NSUserDefaults standardUserDefaults] boolForKey:entry];
@@ -94,6 +83,18 @@ NSString * const SECRET_DEV_MODE_UNLOCKED = @"secretDevModeUnlocked";
 
 + (void)AL_secretDevModeUnlocked:(BOOL)enabled {
     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:SECRET_DEV_MODE_UNLOCKED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)AL_hasRegistered {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:HAS_REGISTERED]) {
+        return NO;
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:HAS_REGISTERED];
+}
+
++ (void)AL_setHasRegistered:(BOOL)wasAccepted {
+    [[NSUserDefaults standardUserDefaults] setBool:wasAccepted forKey:HAS_REGISTERED];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

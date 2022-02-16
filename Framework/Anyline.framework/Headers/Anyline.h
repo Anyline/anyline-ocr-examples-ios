@@ -52,6 +52,7 @@
 #import "ALLicensePlateScanPlugin.h"
 #import "ALDocumentScanPlugin.h"
 #import "ALOCRScanPlugin.h"
+#import "ALTireScanPlugin.h"
 #import "ALIDScanPlugin.h"
 #import "ALBarcodeScanPlugin.h"
 
@@ -60,6 +61,7 @@
 #import "ALLicensePlateScanViewPlugin.h"
 #import "ALDocumentScanViewPlugin.h"
 #import "ALOCRScanViewPlugin.h"
+#import "ALTireScanViewPlugin.h"
 #import "ALIDScanViewPlugin.h"
 #import "ALBarcodeScanViewPlugin.h"
 
@@ -71,10 +73,13 @@
 
 #import "ALScanView.h"
 
+#import "ALLicenseCheck.h"
 #import "ALNFCDetector.h"
 
 #import "ALAssetContext.h"
 #import "ALAssetDelegate.h"
 #import "ALTrainerUtils.h"
+#import "ALAssetUpdateManager.h"
+#import "ALAssetUpdateTask.h"
 
 #import "AnylineSDK.h"

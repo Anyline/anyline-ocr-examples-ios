@@ -1,5 +1,5 @@
 framework module AnylineFaceAuthentication {
-  umbrella header "AnylineFaceAuthentication.h"
+  umbrella header "AnylineFaceAuthentication-umbrella.h"
 
   export *
   module * { export * }

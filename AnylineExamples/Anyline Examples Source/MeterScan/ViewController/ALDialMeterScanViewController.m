@@ -100,9 +100,6 @@ static const NSInteger padding = 7;
     [NSLayoutConstraint activateConstraints:scanViewConstraints];
     
     [self.scanView startCamera];
-    
-    BOOL enableReporting = [NSUserDefaults AL_reportingEnabled];
-    [self.meterScanPlugin enableReporting:enableReporting];
     self.meterScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the scanView to the view of this view controller

@@ -52,37 +52,53 @@
 
 	
 	
-
-	
-	<optgroup label="Class Methods">
+	<optgroup label="Properties">
 		
-		<option value="//api/name/_licenseDict">+ _licenseDict</option>
-		
-		<option value="//api/name/arrayForValueNamed:">+ arrayForValueNamed:</option>
-		
-		<option value="//api/name/boolForValueNamed:">+ boolForValueNamed:</option>
-		
-		<option value="//api/name/doesKeyExist:">+ doesKeyExist:</option>
-		
-		<option value="//api/name/isAdvancedBarcodeEnabled">+ isAdvancedBarcodeEnabled</option>
-		
-		<option value="//api/name/isInitialized">+ isInitialized</option>
-		
-		<option value="//api/name/isLicenseValid">+ isLicenseValid</option>
-		
-		<option value="//api/name/scopeEnabledFor:">+ scopeEnabledFor:</option>
-		
-		<option value="//api/name/showPopup">+ showPopup</option>
-		
-		<option value="//api/name/showWatermark">+ showWatermark</option>
-		
-		<option value="//api/name/stringForValueNamed:">+ stringForValueNamed:</option>
-		
-		<option value="//api/name/wasLicenseChecked">+ wasLicenseChecked</option>
+		<option value="//api/name/licenseProvider">licenseProvider</option>
 		
 	</optgroup>
 	
 
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedInstance">+ sharedInstance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/arrayForValueNamed:">- arrayForValueNamed:</option>
+		
+		<option value="//api/name/boolForValueNamed:">- boolForValueNamed:</option>
+		
+		<option value="//api/name/doesKeyExist:">- doesKeyExist:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/isAdvancedBarcodeEnabled">- isAdvancedBarcodeEnabled</option>
+		
+		<option value="//api/name/isInitialized">- isInitialized</option>
+		
+		<option value="//api/name/isLicenseValid">- isLicenseValid</option>
+		
+		<option value="//api/name/licenseDict">- licenseDict</option>
+		
+		<option value="//api/name/scopeEnabledFor:">- scopeEnabledFor:</option>
+		
+		<option value="//api/name/scopeExplicitlyIncludes:">- scopeExplicitlyIncludes:</option>
+		
+		<option value="//api/name/showPopup">- showPopup</option>
+		
+		<option value="//api/name/showWatermark">- showWatermark</option>
+		
+		<option value="//api/name/stringForValueNamed:">- stringForValueNamed:</option>
+		
+		<option value="//api/name/wasLicenseChecked">- wasLicenseChecked</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -124,8 +140,40 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/licenseProvider" title="licenseProvider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseProvider">&nbsp;&nbsp;licenseProvider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALLicenseProvider *licenseProvider</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)sharedInstance</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/isLicenseValid" title="isLicenseValid"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isLicenseValid">+&nbsp;isLicenseValid</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/isLicenseValid">&ndash;&nbsp;isLicenseValid</a></code>
 </h3>
 
 	<div class="method-info">
@@ -134,46 +182,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isLicenseValid</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/wasLicenseChecked" title="wasLicenseChecked"></a>
-	<h3 class="method-title"><code><a href="#//api/name/wasLicenseChecked">+&nbsp;wasLicenseChecked</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)wasLicenseChecked</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/showWatermark" title="showWatermark"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showWatermark">+&nbsp;showWatermark</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)showWatermark</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isLicenseValid</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/isInitialized" title="isInitialized"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isInitialized">+&nbsp;isInitialized</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/isInitialized">&ndash;&nbsp;isInitialized</a></code>
 </h3>
 
 	<div class="method-info">
@@ -182,14 +198,46 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isInitialized</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isInitialized</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wasLicenseChecked" title="wasLicenseChecked"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wasLicenseChecked">&ndash;&nbsp;wasLicenseChecked</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)wasLicenseChecked</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showWatermark" title="showWatermark"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showWatermark">&ndash;&nbsp;showWatermark</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)showWatermark</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/showPopup" title="showPopup"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showPopup">+&nbsp;showPopup</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/showPopup">&ndash;&nbsp;showPopup</a></code>
 </h3>
 
 	<div class="method-info">
@@ -198,14 +246,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)showPopup</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)showPopup</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/boolForValueNamed:" title="boolForValueNamed:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/boolForValueNamed:">+&nbsp;boolForValueNamed:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/boolForValueNamed:">&ndash;&nbsp;boolForValueNamed:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -214,14 +262,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)boolForValueNamed:(NSString *)<em>valueName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)boolForValueNamed:(NSString *)<em>valueName</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/stringForValueNamed:" title="stringForValueNamed:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stringForValueNamed:">+&nbsp;stringForValueNamed:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/stringForValueNamed:">&ndash;&nbsp;stringForValueNamed:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -230,14 +278,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)stringForValueNamed:(NSString *)<em>valueName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringForValueNamed:(NSString *)<em>valueName</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/arrayForValueNamed:" title="arrayForValueNamed:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/arrayForValueNamed:">+&nbsp;arrayForValueNamed:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/arrayForValueNamed:">&ndash;&nbsp;arrayForValueNamed:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -246,14 +294,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)arrayForValueNamed:(NSString *)<em>valueName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray *)arrayForValueNamed:(NSString *)<em>valueName</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/scopeEnabledFor:" title="scopeEnabledFor:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scopeEnabledFor:">+&nbsp;scopeEnabledFor:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/scopeEnabledFor:">&ndash;&nbsp;scopeEnabledFor:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -262,14 +310,30 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)scopeEnabledFor:(NSString *)<em>valueName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)scopeEnabledFor:(NSString *)<em>valueName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scopeExplicitlyIncludes:" title="scopeExplicitlyIncludes:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scopeExplicitlyIncludes:">&ndash;&nbsp;scopeExplicitlyIncludes:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)scopeExplicitlyIncludes:(NSString *)<em>valueName</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/isAdvancedBarcodeEnabled" title="isAdvancedBarcodeEnabled"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isAdvancedBarcodeEnabled">+&nbsp;isAdvancedBarcodeEnabled</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/isAdvancedBarcodeEnabled">&ndash;&nbsp;isAdvancedBarcodeEnabled</a></code>
 </h3>
 
 	<div class="method-info">
@@ -278,7 +342,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isAdvancedBarcodeEnabled</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isAdvancedBarcodeEnabled</code></div>
 
 		    
 		</div>
@@ -292,8 +356,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/doesKeyExist:" title="doesKeyExist:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/doesKeyExist:">+&nbsp;doesKeyExist:</a></code>
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 </h3>
 
 	<div class="method-info">
@@ -302,14 +366,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)doesKeyExist:(NSString *)<em>valueName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/_licenseDict" title="_licenseDict"></a>
-	<h3 class="method-title"><code><a href="#//api/name/_licenseDict">+&nbsp;_licenseDict</a></code>
+	<a name="//api/name/doesKeyExist:" title="doesKeyExist:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/doesKeyExist:">&ndash;&nbsp;doesKeyExist:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -318,7 +382,23 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)_licenseDict</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)doesKeyExist:(NSString *)<em>valueName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licenseDict" title="licenseDict"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseDict">&ndash;&nbsp;licenseDict</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)licenseDict</code></div>
 
 		    
 		</div>
@@ -338,7 +418,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-12-15</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-02-16</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

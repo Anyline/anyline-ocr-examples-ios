@@ -103,6 +103,9 @@ A dictionary mapping plugin IDs to configs. For a simple scan view plugin, this 
 
 - (void)removeScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
 
+// Note: Used by the Anyline Collector
+- (CGRect)getCropRect;
+
 @end
 
 @protocol ALScanViewPluginDelegate <NSObject>

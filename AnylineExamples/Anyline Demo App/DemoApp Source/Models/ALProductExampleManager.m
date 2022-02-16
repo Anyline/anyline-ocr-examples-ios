@@ -20,7 +20,6 @@
 #import "ALRBScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
-//#import "ALHashtagScanViewController.h"
 
 #import "ALLicensePlateViewController.h"
 
@@ -51,7 +50,7 @@
 }
 
 - (void)initExampleData {
-    self.title = @"Products";
+    self.title = @"Solutions";
     
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
                                                            image:[UIImage imageNamed:@"tile_barcodes"]
@@ -82,7 +81,7 @@
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALOthersExampleManager class]];
     
-    self.sectionNames = @[@"Products",];
+    self.sectionNames = @[@"Solutions",];
     self.examples = @{
         self.sectionNames[0] : @[
             barcodeScanning,

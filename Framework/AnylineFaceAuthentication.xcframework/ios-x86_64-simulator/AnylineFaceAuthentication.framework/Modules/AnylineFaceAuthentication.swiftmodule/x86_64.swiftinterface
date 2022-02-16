@@ -1,34 +1,64 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AnylineFaceAuthentication
+// swift-compiler-version: Apple Swift version 5.5.2 effective-4.1.50 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name AnylineFaceAuthentication
 import Anyline
 @_exported import AnylineFaceAuthentication
 import FaceTecSDK
 import Foundation
 import Swift
 import UIKit
-@objc public protocol FaceAuthenticationDelegate {
-  @objc func onFaceAuthenticationCompleted(faceAuthenticationController: AnylineFaceAuthentication.FaceAuthenticationPluginController, livenessResult: FaceTecSDK.FaceTecSessionResult, scanResult: Anyline.ALIDResult<Swift.AnyObject>, match: Swift.Bool, matchLevel: Swift.Int)
-  @objc func onError(faceAuthenticationController: AnylineFaceAuthentication.FaceAuthenticationPluginController, error: Foundation.NSError)
+import _Concurrency
+@objc public enum MatchLevel : Swift.Int {
+  case failed = 0
+  case level1
+  case level2
+  case level3
+  case level4
+  case level5
+  case level6
+  case level7
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
-@_hasMissingDesignatedInitializers @objc public class FaceAuthenticationPluginController : UIKit.UIViewController, Anyline.ALIDPluginDelegate, FaceTecSDK.FaceTecFaceScanProcessorDelegate, Anyline.ALInfoDelegate, UIKit.UIViewControllerTransitioningDelegate {
-  @objc public func setAnylineIDConfigPath(anylineIDConfigPath: Swift.String)
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc public func startLiveness()
-  @objc public func processSessionWhileFaceTecSDKWaits(sessionResult: FaceTecSDK.FaceTecSessionResult, faceScanResultCallback: FaceTecSDK.FaceTecFaceScanResultCallback)
-  @objc public func onFaceTecSDKCompletelyDone()
-  @objc public func anylineIDScanPlugin(_ anylineIDScanPlugin: Anyline.ALIDScanPlugin, didFind scanResult: Anyline.ALIDResult<Swift.AnyObject>)
-  @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+@_inheritsConvenienceInitializers @objc public class FaceAuthentication : ObjectiveC.NSObject {
+  @objc public class func matchStringForLevel(matchLevel: AnylineFaceAuthentication.MatchLevel) -> Swift.String
+  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnylineFaceAuthenticationSDK : ObjectiveC.NSObject {
   @objc public static let sdk: AnylineFaceAuthentication.AnylineFaceAuthenticationSDK
-  @objc public func retrieveConfigurationWizardCustomization() -> FaceTecSDK.FaceTecCustomization
-  @objc public func setupDevelopmentMode(anylineLicenseKey: Swift.String, completion: @escaping (Swift.Bool) -> ()) throws
-  @objc public func setupProductionMode(anylineLicenseKey: Swift.String, encryptionKey: Swift.String, facetecLicenseString: Swift.String, endpointUrl: Swift.String, completion: @escaping (Swift.Bool) -> ()) throws
-  @objc public func setupProductionMode(anylineLicenseKey: Swift.String, encryptionKey: Swift.String, endpointUrl: Swift.String, completion: @escaping (Swift.Bool) -> ()) throws
-  @objc public func createViewController(delegate: AnylineFaceAuthentication.FaceAuthenticationDelegate) -> AnylineFaceAuthentication.FaceAuthenticationPluginController?
-  @objc public func createViewController(delegate: AnylineFaceAuthentication.FaceAuthenticationDelegate, facetecConfig: FaceTecSDK.FaceTecCustomization, anylineIDConfigPath: Swift.String) -> AnylineFaceAuthentication.FaceAuthenticationPluginController?
+  public struct Constants {
+  }
+  @objc public func setupDevMode(anylineLicenseKey: Swift.String, deviceKeyIdentifier: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
+  @objc public func setupProdMode(anylineLicenseKey: Swift.String, encryptionKey: Swift.String, faceTecLicenseString: Swift.String, deviceKeyIdentifier: Swift.String, endpointUrl: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
+  @objc public func createViewController(delegate: AnylineFaceAuthentication.AnylineFaceAuthenticationDelegate, facetecConfig: FaceTecSDK.FaceTecCustomization? = nil) -> AnylineFaceAuthentication.FaceAuthenticationViewController?
+  @objc public func createViewController(delegate: AnylineFaceAuthentication.AnylineFaceAuthenticationDelegate, facetecConfig: FaceTecSDK.FaceTecCustomization, anylineIDConfigPath: Swift.String) -> AnylineFaceAuthentication.FaceAuthenticationViewController?
   @objc deinit
 }
+@objc public protocol AnylineFaceAuthenticationDelegate {
+  @objc func faceAuthentication(_ faceAuthentication: AnylineFaceAuthentication.AnylineFaceAuthenticationSDK, completedWithError error: Foundation.NSError)
+  @objc func faceAuthentication(_ faceAuthentication: AnylineFaceAuthentication.AnylineFaceAuthenticationSDK, completedWithScanResult scanResult: Anyline.ALIDResult<Swift.AnyObject>, livenessDetected: Swift.Bool, livenessFaceBase64: Swift.String?, matchLevel: AnylineFaceAuthentication.MatchLevel)
+  @objc func faceAuthenticationProceedToLivenessCheck(_ faceAuthentication: AnylineFaceAuthentication.AnylineFaceAuthenticationSDK)
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class FaceAuthenticationViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+}
+extension AnylineFaceAuthentication.FaceAuthenticationViewController : Anyline.ALIDPluginDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func anylineIDScanPlugin(_ anylineIDScanPlugin: Anyline.ALIDScanPlugin, didFind scanResult: Anyline.ALIDResult<Swift.AnyObject>)
+}
+extension AnylineFaceAuthentication.FaceAuthenticationViewController : FaceTecSDK.FaceTecFaceScanProcessorDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func processSessionWhileFaceTecSDKWaits(sessionResult: FaceTecSDK.FaceTecSessionResult, faceScanResultCallback: FaceTecSDK.FaceTecFaceScanResultCallback)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func onFaceTecSDKCompletelyDone()
+}
+extension AnylineFaceAuthentication.FaceAuthenticationViewController : Anyline.ALInfoDelegate {
+}
+extension AnylineFaceAuthentication.FaceAuthenticationViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+extension AnylineFaceAuthentication.MatchLevel : Swift.Equatable {}
+extension AnylineFaceAuthentication.MatchLevel : Swift.Hashable {}
+extension AnylineFaceAuthentication.MatchLevel : Swift.RawRepresentable {}

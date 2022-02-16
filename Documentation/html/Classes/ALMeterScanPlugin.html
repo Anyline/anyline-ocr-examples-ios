@@ -60,6 +60,10 @@
 		
 		<option value="//api/name/scanMode">scanMode</option>
 		
+		<option value="//api/name/scriptName">scriptName</option>
+		
+		<option value="//api/name/scriptVars">scriptVars</option>
+		
 		<option value="//api/name/serialNumberCharWhitelist">serialNumberCharWhitelist</option>
 		
 		<option value="//api/name/serialNumberValidationRegex">serialNumberValidationRegex</option>
@@ -90,11 +94,13 @@
 		
 		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
+		<option value="//api/name/setAssetController:error:">- setAssetController:error:</option>
+		
 		<option value="//api/name/setScanMode:error:">- setScanMode:error:</option>
 		
 		<option value="//api/name/start:error:">- start:error:</option>
 		
-		<option value="//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:">- updateScanModeWithScriptName:resourcesName:startVariables:error:</option>
+		<option value="//api/name/updateScanModeWithError:">- updateScanModeWithError:</option>
 		
 	</optgroup>
 	
@@ -508,6 +514,64 @@ If you want to have no regex this property has to be set to nil.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/setAssetController:error:" title="setAssetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetController:error:">&ndash;&nbsp;setAssetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAssetController:(ALAssetController *)<em>assetController</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An NSError passed by reference</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/start:error:" title="start:error:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
 </h3>
@@ -588,8 +652,8 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:" title="updateScanModeWithScriptName:resourcesName:startVariables:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateScanModeWithScriptName:resourcesName:startVariables:error:">&ndash;&nbsp;updateScanModeWithScriptName:resourcesName:startVariables:error:</a></code>
+	<a name="//api/name/updateScanModeWithError:" title="updateScanModeWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateScanModeWithError:">&ndash;&nbsp;updateScanModeWithError:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -598,7 +662,7 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)updateScanModeWithScriptName:(NSString *)<em>scriptName</em> resourcesName:(NSString *)<em>resourcesName</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateScanModeWithError:(NSError **)<em>error</em></code></div>
 
 		    
 		</div>
@@ -654,6 +718,46 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 </div>
 						</div>
 						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/scriptName" title="scriptName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scriptName">&nbsp;&nbsp;scriptName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSString *scriptName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scriptVars" title="scriptVars"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scriptVars">&nbsp;&nbsp;scriptVars</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSDictionary *scriptVars</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
 					</div>
 					
 					
@@ -666,7 +770,7 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Anyline GmbH. All rights reserved. Updated: 2021-12-15</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-02-16</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

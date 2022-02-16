@@ -178,6 +178,8 @@ static NSString *WEBLINK_ANYLINE_DOCUMENTATION_PRODUCTID = @"https://documentati
 - (void)setupScrollViewContent {
     
     self.faceImageView = [[UIImageView alloc] init];
+    self.faceImageView.contentMode = UIViewContentModeScaleAspectFit;
+
     self.faceImageView.image = self.faceImage;
     
     [self.contentScrollView addSubview:self.faceImageView];

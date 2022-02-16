@@ -19,11 +19,10 @@
 #import "ALContactUsViewController.h"
 #endif
 
-@interface ALTINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALConfigurationDialogViewControllerDelegate>
+@interface ALTINScanViewController ()<ALTireScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALConfigurationDialogViewControllerDelegate>
 
-// The Anyline plugin used for OCR
-@property (nonatomic, strong) ALOCRScanViewPlugin *tinScanViewPlugin;
-@property (nonatomic, strong) ALOCRScanPlugin *tinScanPlugin;
+@property (nonatomic, strong) ALTireScanViewPlugin *tinScanViewPlugin;
+@property (nonatomic, strong) ALTireScanPlugin *tinScanPlugin;
 @property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
@@ -143,16 +142,18 @@
     [config setScanMode:scanMode];
     NSError *error = nil;
     
-    self.tinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                          delegate:self
-                                                         ocrConfig:config
-                                                             error:&error];
+    self.tinScanPlugin = [[ALTireScanPlugin alloc] initWithPluginID:@"TIRE"
+                                                           delegate:self
+                                                         tireConfig:config
+                                                              error:&error];
+
     NSAssert(self.tinScanPlugin, @"Setup Error: %@", error.debugDescription);
     [self.tinScanPlugin addInfoDelegate:self];
     
     ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultTINConfig];
     viewPluginConfig.delayStartScanTime = 2000;
-    self.tinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin scanViewPluginConfig:viewPluginConfig];
+    self.tinScanViewPlugin = [[ALTireScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin scanViewPluginConfig:viewPluginConfig];
+
     [self.tinScanViewPlugin addScanViewPluginDelegate:self];
     NSAssert(self.tinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
     
@@ -270,29 +271,33 @@
 #endif
 }
 
-#pragma mark -- AnylineOCRModuleDelegate
+// MARK: - ALTireScanPluginDelegate
 
-/*
- This is the main delegate method Anyline uses to report its results
- */
-- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
-               didFindResult:(ALOCRResult *)result {
-    
+- (void)anylineTireScanPlugin:(ALTireScanPlugin * _Nonnull)anylineTireScanPlugin
+                didFindResult:(ALTireResult * _Nonnull)result {
+
     [self enableLandscapeOrientation:NO];
-    // We are done. Cancel scanning
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number" value:result.result shouldSpellOutValue:YES]];
+
+    NSMutableArray <ALResultEntry*> *resultData = [NSMutableArray array];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number"
+                                                         value:result.result
+                                           shouldSpellOutValue:YES]];
+
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.tinScanViewPlugin completion:^{
-        //Display the result
-        
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+    __weak __block typeof(self) weakSelf = self;
+    [self anylineDidFindResult:jsonString barcodeResult:@""
+                         image:result.image
+                    scanPlugin:anylineTireScanPlugin
+                    viewPlugin:self.tinScanViewPlugin
+                    completion:^{
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
+                                                                                  image:result.image];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 
-#pragma mark -- ALConfigurationDialogViewControllerDelegate
+// MARK: - ALConfigurationDialogViewControllerDelegate
 
 - (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
     switch (index) {
@@ -312,12 +317,9 @@
     }
 }
 
-- (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {
-  // unused
-}
+- (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {}
 
-- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {
-    [self dialogCancelled];
-}
+- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {}
+
 
 @end
