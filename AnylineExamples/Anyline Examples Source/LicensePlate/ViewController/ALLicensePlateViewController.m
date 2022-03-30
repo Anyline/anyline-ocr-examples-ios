@@ -9,10 +9,7 @@
 #import "ALLicensePlateViewController.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
-
-//#import "Anyline/AnylineLicensePlateModuleView.h"
+#import "AnylineExamples-Swift.h"
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
 @interface ALLicensePlateViewController ()<ALLicensePlateScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -46,7 +43,6 @@
     
     //Set a delayed scan start time in the scanViewPluginConfig
     ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultLicensePlateConfig];
-    viewPluginConfig.delayStartScanTime = 2000;
     
     
     self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin scanViewPluginConfig:viewPluginConfig];
@@ -124,20 +120,31 @@
 
 - (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *)anylineLicensePlateScanPlugin
                         didFindResult:(ALLicensePlateResult *)result {
-    //build a string with country+result for the ScanHistory model -- if country==nil only take result
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
-    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
-        //Display the result
-        
 
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+    NSMutableArray<ALResultEntry *> *resultData = [[NSMutableArray alloc] init];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate"
+                                                         value:result.result
+                                           shouldSpellOutValue:YES]];
+
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country"
+                                                         value:result.country]];
+
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self anylineDidFindResult:jsonString
+                 barcodeResult:@""
+                         image:result.image
+                    scanPlugin:anylineLicensePlateScanPlugin
+                    viewPlugin:self.licensePlateScanViewPlugin
+                    completion:^{
+
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = result.image;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
-
 
 - (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
     if ([info.variableName isEqualToString:@"$brightness"]) {

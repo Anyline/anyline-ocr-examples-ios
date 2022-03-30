@@ -9,9 +9,10 @@
 #import "ALMRZScanViewController.h"
 #import "ALIdentificationView.h"
 #import <Anyline/Anyline.h>
+#import "AnylineExamples-Swift.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALUniversalIDFieldnameUtil.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "ALTutorialViewController.h"
 #import "NSString+Util.h"
 
@@ -232,7 +233,8 @@
     [resultData addObjectsFromArray:vizResultData];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                      faceImage:[identification faceImage]
@@ -240,11 +242,11 @@
                     scanPlugin:anylineIDScanPlugin
                     viewPlugin:self.mrzScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
-                                                                                  image:scanResult.image
-                                                                              faceImage:[identification faceImage]
-                                                                   shouldShowDisclaimer:YES];
-        [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = scanResult.image;
+        vc.imageFace = identification.faceImage;
+        vc.showDisclaimer = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

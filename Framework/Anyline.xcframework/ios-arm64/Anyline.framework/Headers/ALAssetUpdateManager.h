@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Anyline/ALAssetUpdateTask.h>
+#import "ALAssetUpdateTask.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

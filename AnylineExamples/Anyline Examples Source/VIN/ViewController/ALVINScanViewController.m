@@ -7,11 +7,9 @@
 
 #import "ALVINScanViewController.h"
 #import <Anyline/Anyline.h>
+#import "AnylineExamples-Swift.h"
 
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
-
-@interface ALVINScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
+@interface ALVINScanViewController () <ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
 @property (nonatomic, strong) ALOCRScanViewPlugin *vinScanViewPlugin;
@@ -121,15 +119,20 @@
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Vehicle Identification Number" value:result.result shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    // We are done. Cancel scanning    
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:result.image
                     scanPlugin:anylineOCRScanPlugin
                     viewPlugin:self.vinScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = result.image;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

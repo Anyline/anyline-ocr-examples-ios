@@ -7,10 +7,7 @@
 
 #import "ALTINScanViewController.h"
 #import <Anyline/Anyline.h>
-
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
-
+#import "AnylineExamples-Swift.h"
 #import "ALUmbrella.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
@@ -291,8 +288,10 @@
                     scanPlugin:anylineTireScanPlugin
                     viewPlugin:self.tinScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
-                                                                                  image:result.image];
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = result.image;
+
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }

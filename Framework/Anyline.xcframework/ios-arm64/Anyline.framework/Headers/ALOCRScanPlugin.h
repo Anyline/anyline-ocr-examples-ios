@@ -29,7 +29,6 @@
  Constructor for the ALOCRScanPlugin
 
  @param pluginID An unique pluginID
- @param licenseKey The Anyline license key
  @param delegate The delegate which receives the results
  @param ocrConfig The OCRConfig to configure your use-case
  @param error The Error object if something fails

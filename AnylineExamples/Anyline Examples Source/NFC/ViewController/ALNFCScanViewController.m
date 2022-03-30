@@ -6,7 +6,7 @@
 //
 
 #import "ALNFCScanViewController.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "ALUniversalIDFieldnameUtil.h"
 
 API_AVAILABLE(ios(13.0))
@@ -219,12 +219,17 @@ API_AVAILABLE(ios(13.0))
         
         resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
         NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+        __weak __block typeof(self) weakSelf = self;
         [self anylineDidFindResult:jsonString barcodeResult:@"" image:nfcResult.dataGroup2.faceImage scanPlugin:nil viewPlugin:nil completion:^{
             
             NSMutableDictionary *resultDataDict = [[NSMutableDictionary alloc] init];
             [resultDataDict setObject:resultData forKey:@"NFC"];
-            ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:nfcResult.dataGroup2.faceImage];
-            [self.navigationController pushViewController:vc animated:YES];
+
+            ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+            vc.imagePrimary = nfcResult.dataGroup2.faceImage;
+
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         }];
     });
 }

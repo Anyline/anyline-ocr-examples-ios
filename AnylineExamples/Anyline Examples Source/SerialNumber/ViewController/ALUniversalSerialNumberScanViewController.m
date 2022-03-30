@@ -11,8 +11,7 @@
 #import <Anyline/Anyline.h>
 #import "ALBaseViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -143,15 +142,19 @@
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:result.image
                     scanPlugin:anylineOCRScanPlugin
                     viewPlugin:self.serialNumberScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = result.image;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

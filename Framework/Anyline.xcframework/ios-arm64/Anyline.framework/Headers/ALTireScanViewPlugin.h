@@ -6,7 +6,7 @@
 //  Copyright © 2022 Anyline GmbH. All rights reserved.
 //
 
-#import <Anyline/Anyline.h>
+#import "Anyline.h"
 #import "ALTireScanPlugin.h"
 
 NS_ASSUME_NONNULL_BEGIN

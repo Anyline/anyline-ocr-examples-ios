@@ -9,7 +9,7 @@
 #import "ALPDF417ScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "ALBarcodeResultUtil.h"
 
 // The controller has to conform to <AnylineBarcodeModuleDelegate> to be able to receive results
@@ -112,14 +112,19 @@
     NSArray <ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:scanResult];
     
     NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:scanResult.image
                     scanPlugin:self.barcodeScanPlugin
                     viewPlugin:self.barcodeScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
-        [self.navigationController pushViewController:vc animated:YES];
+
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = scanResult.image;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];    
 }
 

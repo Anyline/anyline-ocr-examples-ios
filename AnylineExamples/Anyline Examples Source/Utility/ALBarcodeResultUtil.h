@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ALResultEntry.h"
 #import <Anyline/ALBarcodeResult.h>
+#import "AnylineExamples-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <Anyline/ALAssetDelegate.h>
-#import <Anyline/ALAssetContext.h>
+#import "ALAssetDelegate.h"
+#import "ALAssetContext.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

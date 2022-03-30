@@ -6,8 +6,7 @@
 //
 
 #import "ALUniversalIDScanViewController.h"
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "ALUniversalIDFieldnameUtil.h"
 
 @interface ALUniversalIDScanViewController ()<ALIDPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -104,10 +103,15 @@
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Detected Country" value:identification.layoutDefinition.country]];
     resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
     NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString barcodeResult:@"" image:scanResult.image scanPlugin:anylineIDScanPlugin viewPlugin:self.scanViewPlugin completion:^{
         
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image optionalImage:nil faceImage:[scanResult.result faceImage] shouldShowDisclaimer:YES];
-        [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = scanResult.image;
+        vc.imageFace = [scanResult.result faceImage];
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

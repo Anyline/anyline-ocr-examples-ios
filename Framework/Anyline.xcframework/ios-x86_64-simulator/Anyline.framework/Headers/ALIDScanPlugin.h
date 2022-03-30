@@ -27,7 +27,6 @@
  The Constructor for the IDScanPlugin.
  
  @param pluginID An unique pluginID to identify the results
- @param licenseKey The Anyline license key
  @param delegate The delegate to receive the results
  @param config The IDConfig object (DrivingLicense or MRZ)
  @param error The Error object if something fails

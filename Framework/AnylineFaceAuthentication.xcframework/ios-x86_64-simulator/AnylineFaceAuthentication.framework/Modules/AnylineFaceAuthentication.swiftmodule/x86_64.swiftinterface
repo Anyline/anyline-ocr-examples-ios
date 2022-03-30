@@ -28,12 +28,13 @@ import _Concurrency
   @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnylineFaceAuthenticationSDK : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnylineFaceAuthenticationSDK : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
   @objc public static let sdk: AnylineFaceAuthentication.AnylineFaceAuthenticationSDK
   public struct Constants {
   }
-  @objc public func setupDevMode(anylineLicenseKey: Swift.String, deviceKeyIdentifier: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
-  @objc public func setupProdMode(anylineLicenseKey: Swift.String, encryptionKey: Swift.String, faceTecLicenseString: Swift.String, deviceKeyIdentifier: Swift.String, endpointUrl: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
+  @objc public func getFacetecLicenseKey(anylineLicenseKey: Swift.String, licenseKeyCallback: @escaping (Swift.String?, Swift.Error?) -> ())
+  @objc public func setupDeveloperMode(anylineLicenseKey: Swift.String, facetecLicenseKey: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
+  @objc public func setupProdMode(anylineLicenseKey: Swift.String, encryptionKey: Swift.String, facetecLicenseString: Swift.String, deviceKeyIdentifier: Swift.String, endpointUrl: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> ())
   @objc public func createViewController(delegate: AnylineFaceAuthentication.AnylineFaceAuthenticationDelegate, facetecConfig: FaceTecSDK.FaceTecCustomization? = nil) -> AnylineFaceAuthentication.FaceAuthenticationViewController?
   @objc public func createViewController(delegate: AnylineFaceAuthentication.AnylineFaceAuthenticationDelegate, facetecConfig: FaceTecSDK.FaceTecCustomization, anylineIDConfigPath: Swift.String) -> AnylineFaceAuthentication.FaceAuthenticationViewController?
   @objc deinit

@@ -6,8 +6,6 @@
 //
 
 #import "ALUniversalIDScanViewControllerFrontAndBack.h"
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
 #import "AnylineExamples-Swift.h"
 #import "ALUniversalIDFieldnameUtil.h"
 #import "ALBarcodeResultUtil.h"
@@ -397,12 +395,11 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
         [self.resultData addObject:barcodeResult];
     }
 
-    vc = [[ALResultViewController alloc] initWithResultData:self.resultData
-                                                      image:self.frontScanImage
-                                              optionalImage:self.backScanImage
-                                                  faceImage:self.faceScanImage
-                                       shouldShowDisclaimer:NO];
-  
+    vc = [[ALResultViewController alloc] initWithResults:self.resultData];
+    vc.imagePrimary = self.frontScanImage;
+    vc.imageSecondary = self.backScanImage;
+    vc.imageFace = self.faceScanImage;
+
     [self resetResultData];    
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -23,7 +23,6 @@
  Constructor for the MeterScanPlugin
 
  @param pluginID An unique pluginID
- @param licenseKey The Anyline license key
  @param delegate The delegate which receives the results
  @param error The Error object if something fails
  

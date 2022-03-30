@@ -10,8 +10,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 
 //This example shows how the native barcode scanning can be used in conjunction with any other plugin. It has been replaced in the example app with a parallel composite plugin which runs an Anyline barcode scanner at the same time as a meter scanner and serial number scanner. However, this single plugin + native barcode strategy can still be used in simpler cases.
 
@@ -194,9 +193,9 @@ static const NSInteger padding = 7;
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
     [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
-        //Display the result
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = scanResult.image;
         [self.navigationController pushViewController:vc animated:YES];
     }];
     

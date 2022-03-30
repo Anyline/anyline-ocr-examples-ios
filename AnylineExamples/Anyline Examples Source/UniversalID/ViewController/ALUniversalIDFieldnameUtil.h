@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Anyline/Anyline.h"
-#import "ALResultEntry.h"
+#import "AnylineExamples-Swift.h"
 
 @interface ALUniversalIDFieldnameUtil : NSObject
 

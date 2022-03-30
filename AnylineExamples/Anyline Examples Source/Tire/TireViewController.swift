@@ -128,11 +128,11 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
                                         shouldSpellOutValue: true))
         let jsonString = self.jsonString(fromResultData: resultData)
         self.anylineDidFindResult(jsonString, barcodeResult: "", image: result.image!, scanPlugin: anylineTireScanPlugin, viewPlugin: self.tireScanViewPlugin) {
-            let vc = ALResultViewController(resultData: resultData, image: result.image!)!
+            let vc = ALResultViewController(results: resultData)
+            vc.imagePrimary = result.image
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 @objc class TireSizeViewController: TireViewController {

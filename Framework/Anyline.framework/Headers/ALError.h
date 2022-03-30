@@ -93,6 +93,7 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
   ALCameraAccessDenied = 8002,
   ALFlashNotAvailable = 8003,
   ALCameraConnectionError = 8004,
+  ALCameraAccessRequestPending = 8005,
     
   ALModuleSimpleOCRConfigIsNil = 9001,
   ALModuleSimpleOCRConfigTesseractConfigIsNil = 9002,

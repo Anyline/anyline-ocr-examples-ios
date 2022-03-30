@@ -8,8 +8,7 @@
 
 #import "ALUSLicensePlateViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 
 //#import "Anyline/AnylineLicensePlateModuleView.h"
 
@@ -48,7 +47,6 @@
     
     //Set a delayed scan start time in the scanViewPluginConfig
     ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultLicensePlateConfig];
-    viewPluginConfig.delayStartScanTime = 2000;
     
     
     self.licensePlateScanViewPlugin = [[ALLicensePlateScanViewPlugin alloc] initWithScanPlugin:self.licensePlateScanPlugin scanViewPluginConfig:viewPluginConfig];
@@ -124,18 +122,34 @@
 
 - (void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin *)anylineLicensePlateScanPlugin
                         didFindResult:(ALLicensePlateResult *)result {
-    //build a string with country+result for the ScanHistory model -- if country==nil only take result
-    NSString *formattedScanResult = (result.country.length) ? [NSString stringWithFormat:@"%@-%@-%@", result.country, result.result, result.area] : result.result;
-    [self anylineDidFindResult:formattedScanResult barcodeResult:@"" image:result.image scanPlugin:anylineLicensePlateScanPlugin viewPlugin:self.licensePlateScanViewPlugin completion:^{
-        //Display the result
-        NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES]];
+
+    NSMutableArray<ALResultEntry *> *resultData = @[
+        [[ALResultEntry alloc] initWithTitle:@"License Plate" value:result.result shouldSpellOutValue:YES],
+    ].mutableCopy;
+
+    if (result.country != nil) {
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Country" value:result.country]];
-        
+    }
+
+    if (result.area != nil) {
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"State" value:result.area]];
+    }
+
+    NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
+
+    [self anylineDidFindResult:jsonString
+                 barcodeResult:@""
+                         image:result.image
+                    scanPlugin:anylineLicensePlateScanPlugin
+                    viewPlugin:self.licensePlateScanViewPlugin
+                    completion:^{
         
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = result.image;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

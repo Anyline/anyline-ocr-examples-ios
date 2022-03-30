@@ -190,6 +190,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import Anyline;
 @import FaceTecSDK;
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -226,13 +227,14 @@ SWIFT_PROTOCOL("_TtP25AnylineFaceAuthentication33AnylineFaceAuthenticationDelega
 @class FaceAuthenticationViewController;
 
 SWIFT_CLASS("_TtC25AnylineFaceAuthentication28AnylineFaceAuthenticationSDK")
-@interface AnylineFaceAuthenticationSDK : NSObject
+@interface AnylineFaceAuthenticationSDK : NSObject <NSURLSessionDelegate>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AnylineFaceAuthenticationSDK * _Nonnull sdk;)
 + (AnylineFaceAuthenticationSDK * _Nonnull)sdk SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-- (void)setupDevModeWithAnylineLicenseKey:(NSString * _Nonnull)anylineLicenseKey deviceKeyIdentifier:(NSString * _Nonnull)deviceKeyIdentifier completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)setupProdModeWithAnylineLicenseKey:(NSString * _Nonnull)anylineLicenseKey encryptionKey:(NSString * _Nonnull)encryptionKey faceTecLicenseString:(NSString * _Nonnull)faceTecLicenseString deviceKeyIdentifier:(NSString * _Nonnull)deviceKeyIdentifier endpointUrl:(NSString * _Nonnull)endpointUrl completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)getFacetecLicenseKeyWithAnylineLicenseKey:(NSString * _Nonnull)anylineLicenseKey licenseKeyCallback:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))licenseKeyCallback;
+- (void)setupDeveloperModeWithAnylineLicenseKey:(NSString * _Nonnull)anylineLicenseKey facetecLicenseKey:(NSString * _Nonnull)facetecLicenseKey completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)setupProdModeWithAnylineLicenseKey:(NSString * _Nonnull)anylineLicenseKey encryptionKey:(NSString * _Nonnull)encryptionKey facetecLicenseString:(NSString * _Nonnull)facetecLicenseString deviceKeyIdentifier:(NSString * _Nonnull)deviceKeyIdentifier endpointUrl:(NSString * _Nonnull)endpointUrl completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (FaceAuthenticationViewController * _Nullable)createViewControllerWithDelegate:(id <AnylineFaceAuthenticationDelegate> _Nonnull)delegate facetecConfig:(FaceTecCustomization * _Nullable)facetecConfig SWIFT_WARN_UNUSED_RESULT;
 - (FaceAuthenticationViewController * _Nullable)createViewControllerWithDelegate:(id <AnylineFaceAuthenticationDelegate> _Nonnull)delegate facetecConfig:(FaceTecCustomization * _Nonnull)facetecConfig anylineIDConfigPath:(NSString * _Nonnull)anylineIDConfigPath SWIFT_WARN_UNUSED_RESULT;
 @end

@@ -8,12 +8,12 @@
 
 #import "ALMultiformatBarcodeScanViewController.h"
 #import <Anyline/Anyline.h>
+#import "AnylineExamples-Swift.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALSelectionTable.h"
 #import "ALBarcodeFormatHelper.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
-#import "ALResultViewController.h"
 #import "UISwitch+ALExamplesAdditions.h"
 #import "ALRoundedView.h"
 #import "ALBarcodeResultUtil.h"
@@ -270,7 +270,6 @@
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
     // Nothing to do there
     // we get the results with anylineBarcodeScanPlugin:scannedBarcodes:
-    
 }
 
 - (void)showResultControllerWithResult:(ALBarcodeResult *)scanResult {
@@ -279,15 +278,19 @@
     NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:scanResult];
     
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:@""
                          image:scanResult.image
                     scanPlugin:self.barcodeScanPlugin
                     viewPlugin:self.barcodeScanViewPlugin
                     completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:scanResult.image];
-        [self.navigationController pushViewController:vc animated:YES];
+
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = scanResult.image;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

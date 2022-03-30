@@ -10,7 +10,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "ALDialMeterScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "UISwitch+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 
@@ -240,13 +240,16 @@ static const NSInteger padding = 7;
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
     }
     NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:self.meterImage scanPlugin:self.meterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
-        //Display the result
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:self.meterImage];
-        [self.navigationController pushViewController:vc animated:YES];
+
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = self.meterImage;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
-    
-    //reset found barcodes
+
     self.barcodeResult = @"";
 }
 

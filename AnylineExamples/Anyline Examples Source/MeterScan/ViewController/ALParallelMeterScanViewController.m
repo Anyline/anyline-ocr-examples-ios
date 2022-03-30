@@ -7,8 +7,7 @@
 
 #import "ALParallelMeterScanViewController.h"
 
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UISwitch+ALExamplesAdditions.h"
 
@@ -222,22 +221,23 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
     }
 
     NSString *jsonString = [self jsonStringFromResultData:resultData];
-    
+
+    __weak __block typeof(self) weakSelf = self;
     // stop scanning, since we don't need to scan the serial and the barcode, only one of them
     [self anylineDidFindResult:jsonString
                  barcodeResult:self.barcodeResultStr
                          image:self.meterImage
                     scanPlugin:self.meterScanViewPlugin.meterScanPlugin
                     viewPlugin:self.parallelScanViewPlugin completion:^{
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
-                                                                                  image:self.meterImage];
+
+        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+        vc.imagePrimary = weakSelf.meterImage;
+
+        [weakSelf.navigationController pushViewController:vc animated:YES];
         NSError *error;
         [self.parallelScanViewPlugin stopAndReturnError:&error];
         [self.meterScanViewPlugin stopAndReturnError:&error];
         [self.barcodeScanViewPlugin stopAndReturnError:&error];
-        
-        [self.navigationController pushViewController:vc animated:YES];
         
         // reset results (needs to be run inside the closure in case there is a delay
         // from showing an award view)

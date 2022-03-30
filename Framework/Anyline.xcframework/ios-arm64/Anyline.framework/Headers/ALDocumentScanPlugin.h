@@ -12,9 +12,6 @@
 
 typedef NS_ENUM(NSInteger, ALDocumentError) {
     ALDocumentErrorUnknown          = -1,
-    /**
-     *  @deprecated use ALDocumentErrorUnknown instead
-     */
     ALDocumentErrorUnkown API_DEPRECATED_WITH_REPLACEMENT("ALDocumentErrorUnknown",ios(9.0, 10.0)) = ALDocumentErrorUnknown,
     ALDocumentErrorOutlineNotFound  = -2,
     ALDocumentErrorSkewTooHigh      = -3,
@@ -69,7 +66,6 @@ extern CGFloat const ALDocumentRatioLetterPortrait;
  Constructor for the DocumentScanPlugin
  
  @param pluginID An unique pluginID
- @param licenseKey The Anyline license key
  @param delegate The delegate which receives the results
  @param error The Error object if something fails
  

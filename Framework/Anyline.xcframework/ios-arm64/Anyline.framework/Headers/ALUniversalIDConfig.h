@@ -69,7 +69,7 @@ __attribute__((deprecated("please use ALUniversalIDConfig instead")))
 /// Describes the script to be used by the scan view plugin
 /// ("latin", "arabic", or "cyrillic" supported currently).
 /// Can only be set during initialization by JSON dictionary.
-@property (nonatomic, copy, readonly) NSString *alphabet;
+@property (nonatomic, copy, readonly) NSString * _Nonnull alphabet;
 
 - (NSDictionary *_Nonnull)toStartVariableJsonDictionary;
 
@@ -87,7 +87,6 @@ __attribute__((deprecated("please use ALUniversalIDConfig instead")))
  * Set the allowed layouts for a specific layoutType
  * e.g. which allowedLayouts are set for driving licenses
  *
- *  @param allowedLayouts an array that contains all enabled layouts
  *  @param layoutType which type of layouts do the "allowedLayouts" belong to
  *
  *  @return returns a dictionary containing all enabled layouts for a specific layout type
@@ -98,7 +97,6 @@ __attribute__((deprecated("please use ALUniversalIDConfig instead")))
  * Set the allowed layouts for a specific layoutType
  * e.g. which allowedLayouts are set for driving licenses
  *
- *  @param allowedLayouts an array that contains all enabled layouts
  *
  *  @return returns a dictionary containing all enabled layouts for all layout types.
  */

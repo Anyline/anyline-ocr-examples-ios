@@ -9,8 +9,7 @@
 #import <AnylineFaceAuthentication/AnylineFaceAuthentication-Swift.h>
 #import "ALAppDemoLicenses.h"
 #import "UIFont+ALExamplesAdditions.h"
-#import "ALResultEntry.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 #import "ALUniversalIDFieldnameUtil.h"
 
 #define kPublicProdFaceScanEncryptionKey \
@@ -50,7 +49,7 @@
 
         [sdk setupProdModeWithAnylineLicenseKey:kDemoAppLicenseKey
                                   encryptionKey:kPublicProdFaceScanEncryptionKey
-                           faceTecLicenseString:key
+                           facetecLicenseString:key
                             deviceKeyIdentifier:@"dtBkVYeM01q8U5VTykshIXNkq4xbWIy4"
                                     endpointUrl:@"https://face.anyline.com/v1"
                                      completion:^(BOOL success, NSError * _Nullable error) {
@@ -250,11 +249,11 @@
         livenessFaceImage = [[UIImage alloc] initWithData:livenessFaceData];
     }
 
-    ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData
-                                                                              image:scanResult.image
-                                                                      optionalImage:livenessFaceImage
-                                                                          faceImage:nil
-                                                               shouldShowDisclaimer:YES];
+    ALResultViewController *vc = [[ALResultViewController alloc]
+                                  initWithResults:resultData];
+    vc.imagePrimary = scanResult.image;
+    vc.imageSecondary = livenessFaceImage;
+    vc.showDisclaimer = YES;
 
     [self.navigationController pushViewController:vc animated:YES];
 }

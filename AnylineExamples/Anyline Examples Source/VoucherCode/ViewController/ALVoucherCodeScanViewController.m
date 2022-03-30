@@ -10,7 +10,7 @@
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
-#import "ALResultViewController.h"
+#import "AnylineExamples-Swift.h"
 
 // The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
 @interface ALVoucherCodeScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
@@ -133,12 +133,14 @@
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
     [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Voucher Code" value:result.result shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
+
+    __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.voucherScanViewPlugin completion:^{
         [self stopAnyline];
-        //Display the result
-        
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResultData:resultData image:result.image];
-        [self.navigationController pushViewController:vc animated:YES];
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = result.image;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

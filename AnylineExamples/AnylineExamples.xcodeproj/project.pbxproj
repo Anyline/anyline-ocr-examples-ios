@@ -43,7 +43,6 @@
 		2546FA63E48995AA69412DE5 /* CustomerDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59DF7BD4220A8FE5450AAA9 /* CustomerDataView.xib */; };
 		258A4B98277993719781A15A /* ALBarcodeFormatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF35330525A5B4B80547BB /* ALBarcodeFormatHelper.m */; };
 		264757EB2EB2998FB04CDC77 /* ALDeviceInformationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCEFD699881115D834BAA3A /* ALDeviceInformationHelper.m */; };
-		26ABA3209AC04F3404BB0C2A /* ALResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE877C4DDA2EEA809EBBE1D8 /* ALResultCell.m */; };
 		27533612D3BBEC73BCD89200 /* ALScrabbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E148202561E98484D64F0C /* ALScrabbleViewController.m */; };
 		283D6E7FAC03BE4255C5B030 /* ALColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 678CE157440B405ADF327B28 /* ALColor.m */; };
 		29831F17C4FF37E76BC5B011 /* ALLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF08A08B5EE72241A016DF0 /* ALLicensePlateViewController.m */; };
@@ -75,7 +74,6 @@
 		486D260E0AA1DCD6BC257483 /* ScanHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D39733E2B7D3BF8963BE7BD /* ScanHistory+CoreDataProperties.m */; };
 		48BF457F44BE29DECD0930B7 /* WorkForceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9D4EDF7F1ACEEF688A8784 /* WorkForceViewController.xib */; };
 		4A5A1D0364B519D7F3FFABC6 /* ALDialMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A424D0F5DC83E2BFF249BA05 /* ALDialMeterScanViewController.m */; };
-		4AF738439F90D31D8AB82E1D /* ALResultEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 598D07C6130DFA2781497A50 /* ALResultEntry.m */; };
 		4D515F3438EE08E225088CA7 /* ALTINScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E33501354D63AEBF450ACA /* ALTINScanViewController.m */; };
 		4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D734F16D23B623323CB450A /* ALOthersExampleManager.m */; };
 		503DCA316D0C202AF406CCAA /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */; };
@@ -88,7 +86,6 @@
 		57575CDA59059B724131801E /* FaceTecSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 300276EF42074182013FDB3B /* FaceTecSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */; };
 		5BC563C4483045E763BA0EAF /* NSManagedObject+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */; };
-		61C7AE6154B61194D1172E15 /* ALResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1058FCA2400D2F03E7623698 /* ALResultViewController.m */; };
 		620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C42E39BF797CCFDCA51E9 /* UIFont+ALExamplesAdditions.m */; };
 		6A3B7F7A4EB2FA1224CB7B3C /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8BBF33123C5DED64F598FF /* ALEnergyBaseViewController.m */; };
 		6A5F1FB469924DC9ACCF4163 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B4776BB82FA4F7729784D0 /* ALExample.m */; };
@@ -100,6 +97,7 @@
 		723A8C0CB10EAE3CCCDA2A5F /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA2AE99970DC8FDF5C7C42 /* Order.m */; };
 		724A4CCD1468DE0493A8A608 /* ALDocumentScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3F4D726FC915731B73AE3 /* ALDocumentScanViewController.m */; };
 		74BDDA1262C89D83FE54EECB /* ALPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */; };
+		77171349F799855BAE9C564A /* ALResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7DC7F34357ECB360C50C3 /* ALResultViewController.swift */; };
 		78450894B4E04FD3F2CBC860 /* ScanHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBDB086634A2C26C320F12 /* ScanHistory+CoreDataClass.m */; };
 		784A6C370FAB2C150DF9CBFB /* Reading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB1A422354B6B767547049 /* Reading+CoreDataProperties.m */; };
 		7B974FABA902C5631FDD2681 /* ALPDF417ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE844E43F308E9D0C6E8736D /* ALPDF417ScanViewController.m */; };
@@ -138,6 +136,7 @@
 		A8924A6DC244EC095BD6BCB1 /* AnylineExamples.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D498A3A2FC5316566EC89F7F /* AnylineExamples.xcdatamodeld */; };
 		A8E6D97EEE1E0D0A5C675964 /* CustomerDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442C9FF1588611259A884BC4 /* CustomerDataViewController.xib */; };
 		A9B86F7EC70516E6742E48BA /* ALParallelMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6D34271AD62305E175DE9 /* ALParallelMeterScanViewController.m */; };
+		ACD1F695702B436C98BFB2A1 /* ALResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A569212ED42ECA2D294EA7A /* ALResultCell.swift */; };
 		AE24A6531BBE3500185E26EE /* energyMockData1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8423FA8B204ED6781568BABD /* energyMockData1.json */; };
 		AE4562D43E2A1260A78D10EE /* ALScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F54895F8F550A096FEF90C1 /* ALScrabbleWord.m */; };
 		AE64F68FC2C785CC42C6D626 /* ISBNInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9444087F811BB5FA23DCE9AB /* ISBNInfo.m */; };
@@ -187,6 +186,7 @@
 		EFCF9293DCE54B0BB32ED198 /* rb_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E9D04C26C4E7E9D9FBEA655 /* rb_config.json */; };
 		F00A3D1FC8632FEA4AB60C44 /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C279DBD77DEDB8A0AB2D80C9 /* Model.xcmappingmodel */; };
 		F2966A08EF5C306C23684775 /* ReadingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83ADD2847DFDE9E397F66B99 /* ReadingDetailsViewController.xib */; };
+		F37CF9F01356EC3739529DB9 /* ALResultEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705BFBBA0600773D0A9A837 /* ALResultEntry.swift */; };
 		F41D6D9F6AD538727145B081 /* ALBlackWhiteSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA4A73673E308855423FF7 /* ALBlackWhiteSelectView.m */; };
 		F4A12D154F1AA631417B5910 /* ALEnergyMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0018BF97083F73F2EAAFAC3B /* ALEnergyMeterScanViewController.m */; };
 		F4F2A31F71743A62504EF460 /* ALMeterScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0774AF77528E119EC1C3DA /* ALMeterScanResultViewController.m */; };
@@ -229,7 +229,6 @@
 		0D76DB0B1EDA3DEE5553F4D2 /* ALNFCScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALNFCScanViewController.m; sourceTree = "<group>"; };
 		0ECC3257448DCAB603DC774A /* UIView+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		0FDE2987C13D2F7C0E76AFD8 /* ALBarcodeResultUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeResultUtil.h; sourceTree = "<group>"; };
-		1058FCA2400D2F03E7623698 /* ALResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultViewController.m; sourceTree = "<group>"; };
 		111253080C848FCF66FC8FE6 /* ALBundleInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBundleInfoViewController.h; sourceTree = "<group>"; };
 		128D3D12B6C087CF8CF11306 /* UIFont+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		13881BADEC0C6D4F757DEC90 /* ALLicensePlateResultOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateResultOverlayView.m; sourceTree = "<group>"; };
@@ -281,7 +280,6 @@
 		3539C0A29CDC3ADF0C13AF08 /* Reading+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reading+CoreDataProperties.h"; sourceTree = "<group>"; };
 		355AD17D434245A0D11FBA9E /* WorkorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkorderViewController.xib; sourceTree = "<group>"; };
 		367F467BC78460348A00040D /* ALScrabblePoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabblePoints.h; sourceTree = "<group>"; };
-		37D0A78CADD29416E1FDA6A2 /* ALResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALResultViewController.h; sourceTree = "<group>"; };
 		393827A2900685456384FB31 /* AnylineExamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnylineExamples-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPrivacyViewController.m; sourceTree = "<group>"; };
 		3A67ACF7B450115C3E36A9EA /* vertical_container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vertical_container_scanner_capture_config.json; sourceTree = "<group>"; };
@@ -312,13 +310,14 @@
 		5408415289B1FE9524543AA3 /* ALBaseGridCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseGridCollectionViewController.m; sourceTree = "<group>"; };
 		54C6C24B452735E53395244B /* NSAttributedString+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		554E9384C128A108EB06BEEE /* WorkorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkorderViewController.m; sourceTree = "<group>"; };
+		5705BFBBA0600773D0A9A837 /* ALResultEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALResultEntry.swift; sourceTree = "<group>"; };
 		57B53E62AD3B670B163C3777 /* record_number_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = record_number_config.json; sourceTree = "<group>"; };
 		5964989AD328FEB7B4A99F6D /* AnylineExamples.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnylineExamples.xcdatamodel; sourceTree = "<group>"; };
-		598D07C6130DFA2781497A50 /* ALResultEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultEntry.m; sourceTree = "<group>"; };
 		59F2143CC6945384EC804BA0 /* ALBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBaseViewController.m; sourceTree = "<group>"; };
 		5A168F44A92FFCA7CAD631C9 /* ALTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTutorialViewController.m; sourceTree = "<group>"; };
 		5ABFBDA9A84B279E7614CE2D /* UIToolbar+ExamplesExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+ExamplesExtensions.h"; sourceTree = "<group>"; };
 		5B87E9374F67894CA3A1F4FE /* universal_id_arabic_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = universal_id_arabic_config.json; sourceTree = "<group>"; };
+		5CE7DC7F34357ECB360C50C3 /* ALResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALResultViewController.swift; sourceTree = "<group>"; };
 		5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = AnylineResources.bundle; sourceTree = "<group>"; };
 		5D734F16D23B623323CB450A /* ALOthersExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALOthersExampleManager.m; sourceTree = "<group>"; };
 		5D7732507A0D4EA588C3067F /* ALUSLicensePlateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUSLicensePlateViewController.h; sourceTree = "<group>"; };
@@ -370,7 +369,6 @@
 		7A459BC0A1F181E2AF7D5C6D /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
 		7A74558707FFE3B297265433 /* meter_barcode_view_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = meter_barcode_view_config.json; sourceTree = "<group>"; };
 		7A8B3E959502E4A04A0D95FF /* UIView+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ALExamplesAdditions.m"; sourceTree = "<group>"; };
-		7AF5BC0870B2FFF2FD9B44F1 /* ALResultEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALResultEntry.h; sourceTree = "<group>"; };
 		7AFD7B0BB707496B3B440353 /* CustomerSelfReadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerSelfReadingViewController.xib; sourceTree = "<group>"; };
 		7B9E6F9BED62D417EA6BFF21 /* ALScrabbleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabbleViewController.h; sourceTree = "<group>"; };
 		7D1C8024BC707860460ECFCE /* Customer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
@@ -393,6 +391,7 @@
 		88CC746AF0CAB765A1C24179 /* ALCattleTagScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCattleTagScanViewController.h; sourceTree = "<group>"; };
 		88DAC270B239121767EBC0C9 /* Reading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reading.h; sourceTree = "<group>"; };
 		8997ECCC3F31FC24E06298FD /* NSArray+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ALExamplesAdditions.m"; sourceTree = "<group>"; };
+		8A569212ED42ECA2D294EA7A /* ALResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALResultCell.swift; sourceTree = "<group>"; };
 		8C20747B24FE141B33681784 /* ALAnagramAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAnagramAPI.m; sourceTree = "<group>"; };
 		8E2FCCDD73155DB06E083452 /* NSTimer+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		8F54895F8F550A096FEF90C1 /* ALScrabbleWord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScrabbleWord.m; sourceTree = "<group>"; };
@@ -507,8 +506,6 @@
 		DC8BBF33123C5DED64F598FF /* ALEnergyBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALEnergyBaseViewController.m; sourceTree = "<group>"; };
 		DCA6D34271AD62305E175DE9 /* ALParallelMeterScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALParallelMeterScanViewController.m; sourceTree = "<group>"; };
 		DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALScriptSelectionViewController.m; sourceTree = "<group>"; };
-		DD646209B4D968D82B196CA2 /* ALResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALResultCell.h; sourceTree = "<group>"; };
-		DE877C4DDA2EEA809EBBE1D8 /* ALResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultCell.m; sourceTree = "<group>"; };
 		DF3FF2562FFAF1D0AC162F63 /* Reading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reading.m; sourceTree = "<group>"; };
 		DF764271604E0EB992306FBB /* CustomerSelfReading+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CustomerSelfReading+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E01BF8D357703EF4FA7E4F3F /* ALMeterReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterReading.m; sourceTree = "<group>"; };
@@ -1113,12 +1110,9 @@
 		9A3297751DF48A61091BD809 /* ResultScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DD646209B4D968D82B196CA2 /* ALResultCell.h */,
-				DE877C4DDA2EEA809EBBE1D8 /* ALResultCell.m */,
-				7AF5BC0870B2FFF2FD9B44F1 /* ALResultEntry.h */,
-				598D07C6130DFA2781497A50 /* ALResultEntry.m */,
-				37D0A78CADD29416E1FDA6A2 /* ALResultViewController.h */,
-				1058FCA2400D2F03E7623698 /* ALResultViewController.m */,
+				8A569212ED42ECA2D294EA7A /* ALResultCell.swift */,
+				5705BFBBA0600773D0A9A837 /* ALResultEntry.swift */,
+				5CE7DC7F34357ECB360C50C3 /* ALResultViewController.swift */,
 			);
 			path = ResultScreen;
 			sourceTree = "<group>";
@@ -1610,10 +1604,10 @@
 				21A22328A97C63E67AE854BA /* ALProductExampleManager.m in Sources */,
 				9B85D1299B1E0B254BA1C6CA /* ALRBScanViewController.m in Sources */,
 				3A9ED79B2EAD0E0CDC1E2F88 /* ALRecordNumberScanViewController.m in Sources */,
-				26ABA3209AC04F3404BB0C2A /* ALResultCell.m in Sources */,
-				4AF738439F90D31D8AB82E1D /* ALResultEntry.m in Sources */,
+				ACD1F695702B436C98BFB2A1 /* ALResultCell.swift in Sources */,
+				F37CF9F01356EC3739529DB9 /* ALResultEntry.swift in Sources */,
 				AF2D476FCB0DE9B3542991EE /* ALResultOverlayView.m in Sources */,
-				61C7AE6154B61194D1172E15 /* ALResultViewController.m in Sources */,
+				77171349F799855BAE9C564A /* ALResultViewController.swift in Sources */,
 				2FEAFACDC392E8898C3C97BD /* ALRoundedView.m in Sources */,
 				6E36CB15F322CF98A84D8467 /* ALScanResultViewController.m in Sources */,
 				B094C3A7DF4722135BDA09BD /* ALScrabbleLabel.m in Sources */,

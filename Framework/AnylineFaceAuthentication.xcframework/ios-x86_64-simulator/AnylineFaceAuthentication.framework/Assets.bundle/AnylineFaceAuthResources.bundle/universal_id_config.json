@@ -71,9 +71,9 @@
         "x": -50,
         "y": -50
       },
-      "cropOffset": {
+      "offset": {
         "x": 0,
-        "y": 0
+        "y": -40
       },
       "feedbackStrokeColor": "0099FF"
     },

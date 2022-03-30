@@ -6,7 +6,7 @@
 //  Copyright © 2021 Anyline GmbH. All rights reserved.
 //
 
-#import <Anyline/Anyline.h>
+#import "Anyline.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
