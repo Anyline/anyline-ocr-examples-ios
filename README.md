@@ -91,6 +91,19 @@ Have look at some of our code examples: [Sample Code](https://www.anyline.com/de
 Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com)
 
 
+## Get Help (Support)
+
+We don't actively monitor the Github Issues, please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
+When raising a support request based on this Github Issue, please fill out and include the following information:
+
+```
+Support request concerning Anyline Github Repository: anyline-ocr-examples-ios
+```
+
+Thank you!
+
+
+
 ## License 
 
 To claim a free developer / trial license, go to: [Anyline SDK Register Form](https://anyline.com/free-demos/)
