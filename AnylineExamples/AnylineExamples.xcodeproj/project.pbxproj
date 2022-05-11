@@ -83,7 +83,6 @@
 		51E7110C5AC4276620609EAC /* WorkforceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24612698857CFE3971A3AE51 /* WorkforceTool.m */; };
 		53029EFD2163E8748EC913AE /* ALDialogSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CEF352E355ABC1E7A6A81 /* ALDialogSelectionTableViewCell.m */; };
 		5696F41B6116EFE209F7D4A4 /* ALVerticalContainerScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206191D0D142A20C1D05C8F /* ALVerticalContainerScanViewController.m */; };
-		57575CDA59059B724131801E /* FaceTecSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 300276EF42074182013FDB3B /* FaceTecSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */; };
 		5BC563C4483045E763BA0EAF /* NSManagedObject+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */; };
 		620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C42E39BF797CCFDCA51E9 /* UIFont+ALExamplesAdditions.m */; };
@@ -107,7 +106,6 @@
 		82098553EF9F70DCD53166C1 /* NSUserDefaults+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */; };
 		825554D17F253D580D3E6603 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E4BDD67B0B2AA88763193 /* ALMeterExampleManager.m */; };
 		83C2E2BFA23265B9E254A1D1 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A507ABFDFAE4C3298D842D /* ALBaseScanViewController.m */; };
-		83F94847AE3A1572C559604D /* AnylineFaceAuthentication.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F2782E89897FD14045C46A64 /* AnylineFaceAuthentication.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841B7C06D4FA85F6D334580C /* ALISBNHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7474A92ECB1EC93FFE2A523F /* ALISBNHeaderCell.m */; };
 		8543A04986941842302938D1 /* UIView+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B3E959502E4A04A0D95FF /* UIView+ALExamplesAdditions.m */; };
 		8678F0EF3FACD7EB8A9AAE26 /* ReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254FBCFC83BBCE0B37B8CD99 /* ReadingTableViewCell.xib */; };
@@ -128,7 +126,6 @@
 		9B85D1299B1E0B254BA1C6CA /* ALRBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B96E1E727AC69E01649E6 /* ALRBScanViewController.m */; };
 		9BA532A518522696002B0872 /* ALAwardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B40EC29D2A0CFA6AC2651C /* ALAwardsView.m */; };
 		9D6D1A47066EC5C9D3CAE9F4 /* ALLicensePlateExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */; };
-		9EE2296B7A577AFA8F2C8CCE /* ALFaceAuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */; };
 		A19EC2C4EDE4E23A8233D63A /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DEF617BE080B414491B04 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
 		A66630A6C0A9ECB50C022625 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */; };
 		A70B12B1EB0583ABBFAAAECF /* CustomerSelfReading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DF764271604E0EB992306FBB /* CustomerSelfReading+CoreDataProperties.m */; };
@@ -165,7 +162,6 @@
 		D1ECDA522B38A0E201B91196 /* CustomerSelfReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8662031085DE12141D4411AF /* CustomerSelfReadingViewController.m */; };
 		D221E2CBB91120179EF6758D /* ALConfigurationDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F289962042BE8D33F12F6561 /* ALConfigurationDialogViewController.m */; };
 		D30B74B0A2CFE68B8E57FE58 /* universal_id_flash_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BB58D041BD1FA3AE07D151E4 /* universal_id_flash_config.json */; };
-		D62BEA99FD207A795F5DE229 /* AnylineFaceAuthentication.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2782E89897FD14045C46A64 /* AnylineFaceAuthentication.xcframework */; };
 		D80E517E3BE07B4373E44F22 /* CustomerDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC15BAECD966B47C03DB1BF /* CustomerDataView.m */; };
 		DA33191870A1459EB23DCD4A /* Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3FF2562FFAF1D0AC162F63 /* Reading.m */; };
 		DBD0CB5D7B8AED3B3E083BE3 /* ALVoucherCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 680F47A285E894B2DED8FA49 /* ALVoucherCodeScanViewController.m */; };
@@ -174,7 +170,6 @@
 		DED860F64AF49DD872DCAC2C /* isbn_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 084643E9DC61FCF5C414457E /* isbn_config.json */; };
 		DF769EF1A4C7A11DE916D0B1 /* universal_id_config.json in Resources */ = {isa = PBXBuildFile; fileRef = BD32A60DAB173ECCAC90D9D4 /* universal_id_config.json */; };
 		DFFFD961846F72E077B90DC9 /* ALScriptSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */; };
-		E1A22F588EB6613534FF6FE5 /* FaceTecSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300276EF42074182013FDB3B /* FaceTecSDK.xcframework */; };
 		E2B5A3C0DD9F2F95F8DBD47A /* ALPrivacyForwardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */; };
 		E4660E0BAEC49D4B4180D824 /* ScanHistoryMigration3to4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3D8772DC75560F15A05F6C69 /* ScanHistoryMigration3to4.xcmappingmodel */; };
 		E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA12F0082427C9B897F096 /* ALSpaceViews.m */; };
@@ -206,8 +201,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */,
-				83F94847AE3A1572C559604D /* AnylineFaceAuthentication.xcframework in Embed Frameworks */,
-				57575CDA59059B724131801E /* FaceTecSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +265,6 @@
 		2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		2E8F1BC85E70148A9D26AAE9 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
 		2FC2BB5DD1BB6961AD1E9871 /* ALRBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRBScanViewController.h; sourceTree = "<group>"; };
-		300276EF42074182013FDB3B /* FaceTecSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FaceTecSDK.xcframework; path = Vendor/FaceTec/FaceTecSDK.xcframework; sourceTree = "<group>"; };
 		30B76762D974C43BF0286E13 /* ALMainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMainPageViewController.m; sourceTree = "<group>"; };
 		3233635513FC2480136E99EB /* ReadingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTableViewCell.h; sourceTree = "<group>"; };
 		34760A85BED4BAACE6AEE1EB /* ALMeterCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterCollectionViewController.m; sourceTree = "<group>"; };
@@ -323,7 +315,6 @@
 		5D7732507A0D4EA588C3067F /* ALUSLicensePlateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALUSLicensePlateViewController.h; sourceTree = "<group>"; };
 		5E2CEF352E355ABC1E7A6A81 /* ALDialogSelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDialogSelectionTableViewCell.m; sourceTree = "<group>"; };
 		5ECFD208BD47657AE983B207 /* ALScriptSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScriptSelectionViewController.h; sourceTree = "<group>"; };
-		5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALFaceAuthentificationViewController.m; sourceTree = "<group>"; };
 		602AF9DF62FC564C6646D2E5 /* ALToggleControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALToggleControl.m; sourceTree = "<group>"; };
 		616461B6587A181665857FC9 /* AnylineEnergyModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineEnergyModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		61A5FEA61C1C1ACB0265F519 /* ScanHistoryMigration3to4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanHistoryMigration3to4.m; sourceTree = "<group>"; };
@@ -404,7 +395,6 @@
 		9424406670994538E1F5D202 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		9444087F811BB5FA23DCE9AB /* ISBNInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISBNInfo.m; sourceTree = "<group>"; };
 		95EC580E5D102787DB5DB9AD /* ALContainerScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALContainerScanViewController.h; sourceTree = "<group>"; };
-		967A11DE190C7EA881C5F751 /* ALFaceAuthentificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALFaceAuthentificationViewController.h; sourceTree = "<group>"; };
 		96A3D3139D636DFCF875E8FA /* voucher_code_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = voucher_code_config.json; sourceTree = "<group>"; };
 		9780D7F513FBA5687A612B99 /* ALGridCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALGridCollectionViewController.h; sourceTree = "<group>"; };
 		987864E0F8E8E2F22C729406 /* CustomerSelfReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSelfReading.h; sourceTree = "<group>"; };
@@ -528,7 +518,6 @@
 		EEB003E6E30CAC9DB3C20C66 /* ALMeterReadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterReadingView.h; sourceTree = "<group>"; };
 		EECA5BF9DE5003F3B36EC15C /* ALRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALRoundedView.h; sourceTree = "<group>"; };
 		EFF08A08B5EE72241A016DF0 /* ALLicensePlateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateViewController.m; sourceTree = "<group>"; };
-		F2782E89897FD14045C46A64 /* AnylineFaceAuthentication.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AnylineFaceAuthentication.xcframework; path = ../Framework/AnylineFaceAuthentication.xcframework; sourceTree = "<group>"; };
 		F289962042BE8D33F12F6561 /* ALConfigurationDialogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALConfigurationDialogViewController.m; sourceTree = "<group>"; };
 		F3BA12F0082427C9B897F096 /* ALSpaceViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALSpaceViews.m; sourceTree = "<group>"; };
 		F489CC9CA221D896272E881A /* ALISBNAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALISBNAPI.h; sourceTree = "<group>"; };
@@ -552,8 +541,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */,
-				D62BEA99FD207A795F5DE229 /* AnylineFaceAuthentication.xcframework in Frameworks */,
-				E1A22F588EB6613534FF6FE5 /* FaceTecSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,15 +571,6 @@
 				3F8D864CC1FBB735930B1943 /* ViewController */,
 			);
 			path = Barcode;
-			sourceTree = "<group>";
-		};
-		157525FAB05CFED5BBB9DAE1 /* FaceAuthentication */ = {
-			isa = PBXGroup;
-			children = (
-				967A11DE190C7EA881C5F751 /* ALFaceAuthentificationViewController.h */,
-				5F9FD17D2A4D5D0C6A55336B /* ALFaceAuthentificationViewController.m */,
-			);
-			path = FaceAuthentication;
 			sourceTree = "<group>";
 		};
 		16C90035C38013048BAC4561 /* ViewController */ = {
@@ -1025,7 +1003,6 @@
 				E2D4B221C41469C27B5628E7 /* ALUniversalIDScanViewControllerFrontAndBack.h */,
 				A5AFADA28C4329DEC5E6100F /* ALUniversalIDScanViewControllerFrontAndBack.m */,
 				D4413505AA97F9234BD1A420 /* GifuWrapper.swift */,
-				157525FAB05CFED5BBB9DAE1 /* FaceAuthentication */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1083,8 +1060,6 @@
 			isa = PBXGroup;
 			children = (
 				79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */,
-				F2782E89897FD14045C46A64 /* AnylineFaceAuthentication.xcframework */,
-				300276EF42074182013FDB3B /* FaceTecSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1565,7 +1540,6 @@
 				F4A12D154F1AA631417B5910 /* ALEnergyMeterScanViewController.m in Sources */,
 				6A5F1FB469924DC9ACCF4163 /* ALExample.m in Sources */,
 				37B2D510A28CED75400D97AF /* ALExampleManager.m in Sources */,
-				9EE2296B7A577AFA8F2C8CCE /* ALFaceAuthentificationViewController.m in Sources */,
 				FDC12FEC02C4898E09BDA87B /* ALGridCollectionViewCell.m in Sources */,
 				3960189A0D924E92E93599B8 /* ALGridCollectionViewController.m in Sources */,
 				C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */,
@@ -1720,7 +1694,6 @@
 					./../Framework,
 					"$(SRCROOT)/",
 					"\"../Framework\"",
-					"\"Vendor/FaceTec\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1808,7 +1781,6 @@
 					./../Framework,
 					"$(SRCROOT)/",
 					"\"../Framework\"",
-					"\"Vendor/FaceTec\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Anyline Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

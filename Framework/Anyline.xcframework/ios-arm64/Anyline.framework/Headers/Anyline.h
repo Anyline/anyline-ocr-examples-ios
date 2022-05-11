@@ -73,7 +73,6 @@
 
 #import "ALScanView.h"
 
-#import "ALLicenseCheck.h"
 #import "ALNFCDetector.h"
 
 #import "ALAssetContext.h"

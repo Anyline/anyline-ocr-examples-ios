@@ -73,7 +73,6 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
     self.title = (self.title && self.title.length > 0) ? self.title : @"Universal ID";
     
     NSError *error = nil;

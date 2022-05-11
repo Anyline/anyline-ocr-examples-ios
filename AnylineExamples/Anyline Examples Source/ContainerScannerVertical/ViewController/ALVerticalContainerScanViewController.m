@@ -22,8 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
+
     self.title = @"Vertical Shipping Container";
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];

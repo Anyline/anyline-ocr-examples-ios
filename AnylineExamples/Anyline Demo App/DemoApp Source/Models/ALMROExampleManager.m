@@ -56,11 +56,11 @@
     
     ALExample *tireSizeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Size Specifications", nil)
                                                             image:[UIImage imageNamed:@"tin"]
-                                                   viewController:[TireViewController class] title:@"Tire Size Specifications"];
+                                                   viewController:[TireSizeViewController class] title:@"Tire Size Specifications"];
     
     ALExample *commercialTireScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Commercial Tire Identification Number", nil)
                                                                   image:[UIImage imageNamed:@"tin"]
-                                                         viewController:[TireViewController class] title:@"Commercial Tire Identification Number"];
+                                                         viewController:[CommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
     self.sectionNames = @[@"MRO",];
     self.examples = @{

@@ -40,7 +40,6 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
     self.title = @"Analog/Digital Meter";
     
     NSError *error = nil;

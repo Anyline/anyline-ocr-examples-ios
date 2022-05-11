@@ -51,6 +51,7 @@ the camera from Settings.";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     
     self.successfulScan = NO;
     

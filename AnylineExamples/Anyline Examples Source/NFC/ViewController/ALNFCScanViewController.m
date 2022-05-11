@@ -31,8 +31,6 @@ API_AVAILABLE(ios(13.0))
     [super viewDidLoad];
     self.title = @"NFC";
     CGFloat hintMargin = 7;
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
     
     UILabel * hintViewLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     UIView * hintView = [[UILabel alloc] initWithFrame:CGRectZero];

@@ -46,9 +46,6 @@ static const NSInteger padding = 7;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
-    
     self.title = @"Dial Meter";
     CGRect frame = [self scanViewFrame];
     

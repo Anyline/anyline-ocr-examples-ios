@@ -1,6 +1,0 @@
-framework module FaceTecSDK {
-  umbrella header "FaceTecSDK.h"
-
-  export *
-  module * { export * }
-}

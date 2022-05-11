@@ -28,8 +28,7 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
+
     self.title = @"Voucher Code";
     
     CGRect frame = [self scanViewFrame];

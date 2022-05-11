@@ -45,8 +45,6 @@ NSString * const kMeterScanPluginID = @"METER_READING";
  We will do our main setup in viewDidLoad. Its called once the view controller is getting ready to be displayed.
  */
 - (void)viewDidLoad {
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
     
     self.title = @"Barcode";
     CGRect frame = [self scanViewFrame];

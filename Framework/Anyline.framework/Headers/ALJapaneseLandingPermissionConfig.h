@@ -6,7 +6,8 @@
 //  Copyright © 2021 Anyline GmbH. All rights reserved.
 //
 
-#import "Anyline.h"
+#import <Foundation/Foundation.h>
+#import "ALUniversalIDConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

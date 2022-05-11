@@ -22,19 +22,6 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // a quick, temporary way to use a different config on startup through the featured banner
-        // (ALFeaturedExampleLoader)
-        switch title {
-        case "Tire Size Specifications":
-            configType = .tireSizeConfig
-        case "Commercial Tire Identification Number":
-            configType = .commercialTireConfig
-        case "Tire Identification Number (DOT)":
-            configType = .tinConfig
-        default: break
-        }
-
         setupTirePlugin()
     }
     
@@ -69,9 +56,6 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     }
     
     func setupTirePlugin() {
-
-        let instructionBackground = UIView()
-        view.addSubview(instructionBackground)
         do {
             var tireConfig: ALBaseTireConfig = .init()
             switch configType {

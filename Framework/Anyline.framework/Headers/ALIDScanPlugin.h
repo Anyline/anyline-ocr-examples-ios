@@ -11,6 +11,7 @@
 #import "ALIDConfig.h"
 #import "ALMRZConfig.h"
 #import "ALUniversalIDConfig.h"
+#import "ALJapaneseLandingPermissionConfig.h"
 #import "ALIDResult.h"
 
 @protocol ALIDPluginDelegate;

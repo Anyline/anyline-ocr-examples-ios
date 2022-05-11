@@ -19,11 +19,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        // Set the background color to black to have a nicer transition
-        self.view.backgroundColor = UIColor.black
-        
-        self.title = "Electric Meter";
-    
+        self.title = "Electric Meter";    
     
         do {
             self.meterScanPlugin = try ALMeterScanPlugin.init(pluginID:"ENERGY", delegate: self);

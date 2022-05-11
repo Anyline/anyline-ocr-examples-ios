@@ -32,8 +32,7 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the background color to black to have a nicer transition
-    self.view.backgroundColor = [UIColor blackColor];
+
     self.title = (self.title && self.title.length > 0) ? self.title : @"MRZ";
     
     if (![[[NSBundle mainBundle] bundleIdentifier] localizedCaseInsensitiveContainsString:@"bundle"]) {
