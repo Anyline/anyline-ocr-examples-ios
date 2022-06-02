@@ -50,9 +50,11 @@ In the import screen select Copy items if needed and Create groups and add the f
 
 #### 1.2 Or via Swift Package Manager (SwiftPM)
 
-Starting with version 40, we are officially supporting Swift Package Manager.
+Starting with version 40, we are officially supporting Swift Package Manager (Xcode 11 or later required).
 
-Simply add the Anyline SDK as a dependency on Package.swift as follows:
+To use, click on File > Swift Packages > Add Package Dependency, and enter https://github.com/Anyline/anyline-ocr-spm-module.git in the search box.
+
+If you are a framework author relying on Anyline SDK as a dependency, edit your Package.swift to add the dependency as follows:
 
 ```
 dependencies: [
