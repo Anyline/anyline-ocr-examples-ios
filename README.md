@@ -5,6 +5,7 @@
     |__|__|_|_|_  |_|_|_|_|___|
               |___|            
 
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
 # Anyline Examples App 
 
@@ -73,6 +74,18 @@ Bitcode needs to be disabled. Just search for “Bit” and set Enable Bitcode t
 ![Build Bitcode iOS](/images/iOS_build_bitcode.png)
 
 [Apple Documentation on Bitcode](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html)
+
+#### Swift Package Manager
+
+Starting with version 40, we are officially supporting Swift Package Manager.
+
+Simply add the Anyline SDK as a dependency on Package.swift as follows:
+
+```
+dependencies: [
+    .package(url: "https://github.com/Anyline/anyline-ocr-examples-ios.git", .upToNextMajor(from: "40.0.0"))
+]
+```
 
 ### 4. Init an AnylineModuleView in your ViewController or Storyboard
 
