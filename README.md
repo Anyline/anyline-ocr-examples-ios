@@ -5,8 +5,6 @@
     |__|__|_|_|_  |_|_|_|_|___|
               |___|            
 
-[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
-
 # Anyline Examples App 
 
 [Anyline](https://www.anyline.com) is a mobile OCR SDK, which can be customized to scan all kinds of numbers, characters, text and codes.
@@ -83,9 +81,11 @@ Simply add the Anyline SDK as a dependency on Package.swift as follows:
 
 ```
 dependencies: [
-    .package(url: "https://github.com/Anyline/anyline-ocr-examples-ios.git", .upToNextMajor(from: "40.0.0"))
+    .package(url: "https://github.com/Anyline/anyline-ocr-spm-module.git", .upToNextMajor(from: "40.0.0"))
 ]
 ```
+
+Please note that it is https://github.com/Anyline/anyline-ocr-spm-module.git, not https://github.com/Anyline/anyline-ocr-examples-ios.git
 
 ### 4. Init an AnylineModuleView in your ViewController or Storyboard
 
