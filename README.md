@@ -57,13 +57,13 @@ After the framework and bundle got imported go to your project inspector. In the
 * AssetsLibrary.framework
 
 After adding the libraries, it should look like this (notice the AnylineResources bundle, if its not in Copy Bundle Resources add it): 
+
 ![Link Frameworks](/images/LinkFrameworks.png)
 
 ### 3. Linker Flags
 
-> This changed from -ObjC to -all_load in Anyline SDK Version 3.6.
+In your project inspector, switch to the **Build Settings** tab and search for **Other Linker Flags**. Select Other - Other Linker Flags and add `-ObjC`. This flag causes the linker to load every object file in the library that defines an Objective-C class or category.
 
-In your project inspector switch to the Build Settings tab and search for Other Linker Flags. Select Other - Other Linker Flags and add -all_load. This flag causes the linker to load every object file in the library that defines an Objective-C class or category.
 ![Linker Flags](/images/LinkerFlags.jpg)
 
 #### 3.1 Bitcode
