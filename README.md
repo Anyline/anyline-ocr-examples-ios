@@ -39,7 +39,7 @@ If you prefer downloading a package, use the provided `zip` package on the [Rele
 
 Simply add `pod 'Anyline'` to your Podfile and run `pod install` or `pod update`. (Please make sure you are on the latest version of CocoaPods.)
 
-You’re all done and can jump to point 3.1.
+You’re all done and can jump to point 3 (Set Linker Flags).
 
 #### 1.1 Or via local copy of the Anyline.xcframework & AnylineResources.bundle
 
