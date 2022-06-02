@@ -79,7 +79,7 @@ After adding the libraries, the Build Phases tab for the app target should look 
 
 ![Link Frameworks](/images/LinkFrameworks.jpg)
 
-### 3. Linker Flags
+### 3. Set Linker Flags
 
 In your project inspector, switch to the **Build Settings** tab and search for **Other Linker Flags**. Select "Other > Other Linker Flags" and add `-ObjC`. This flag causes the linker to load every object file in the library that defines an Objective-C class or category.
 
