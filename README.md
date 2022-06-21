@@ -1,3 +1,4 @@
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange)
 
      _____         _ _         
     |  _  |___ _ _| |_|___ ___ 
@@ -5,13 +6,11 @@
     |__|__|_|_|_  |_|_|_|_|___|
               |___|            
 
-
 # Anyline Examples App 
 
-[Anyline](https://www.anyline.com) is a mobile OCR SDK, which can be customized to scan all kinds of numbers, characters, text and codes.
+[Anyline](https://www.anyline.com) is a mobile OCR SDK, which you can configure to scan various kinds of numbers, characters, text and codes.
 
-The Example App provides many preconfigured modules, to show case of what the SDK is capable of. 
-
+The **Example App** provides many preconfigured modules to showcase the many capabilities of the Anyline SDK.
 
 ## Release notes
 
@@ -27,73 +26,93 @@ A list of the currently known-limitations can be found [here](https://documentat
 
 ### 0. Clone or Download
 
-* If you'd like to clone the repository you will have to use git-lfs. Use the following commands to install git-lfs.
+If you'd like to clone the repository you will have to use [git-lfs](https://git-lfs.github.com/). Use the following commands to install git-lfs:
+
 ```
 brew install git-lfs
 git lfs install
 ```
 
-* If you prefer downloading a package, use the provided `zip` package on the [releases page](https://github.com/Anyline/anyline-ocr-examples-ios/releases). Be aware that the github download zip button does not work for projects with git-lfs.
+If you prefer downloading a package, use the provided `zip` package on the [Releases page](https://github.com/Anyline/anyline-ocr-examples-ios/releases). Please note that Github's "Download ZIP" button does not work for projects with `git-lfs`.
 
 ### 1. With Cocoapods
 
-Simply add pod ‘Anyline’ to your Podfile and run pod install or pod update. (Please make sure you are on the latest version of CocoaPods)
+Simply add `pod 'Anyline'` to your Podfile and run `pod install` or `pod update`. (Please make sure you are on the latest version of CocoaPods.)
 
-You’re all done and can jump to point 3.1.
+You’re all done and can jump to point 3 (Set Linker Flags).
 
-Or via local copy of the Anyline.framework & AnylineResources.bundle #####
+#### 1.1 Or via local copy of the Anyline.xcframework & AnylineResources.bundle
 
-Simply drag & drop Anyline.framework & AnylineResources.bundle into your project tree. 
-!¢[Add Framework](/images/AddFramework.jpg)
+Simply drag & drop Anyline.xcframework & AnylineResources.bundle into your project tree. 
+![Add Framework](/images/AddFramework.jpg)
 
 In the import screen select Copy items if needed and Create groups and add the files to your target.
 ![Copy Framework](/images/CopyFramework.jpg)
 
-### 2. Linking Frameworks
+#### 1.2 Or via Swift Package Manager (SwiftPM)
 
-After the framework and bundle got imported go to your project inspector. In the Build Phases tab, add the following libraries:
+Starting with version 40, we are officially supporting Swift Package Manager (Xcode 11 or later required).
 
-* libc++.tbd
-* libz.tbd
-* AssetsLibrary.framework
+To use, click on File > Swift Packages > Add Package Dependency, and enter https://github.com/Anyline/anyline-ocr-spm-module.git in the search box.
 
-After adding the libraries, it should look like this (notice the AnylineResources bundle, if its not in Copy Bundle Resources add it): 
-![Link Frameworks](/images/LinkFrameworks.png)
+If you are a framework author relying on Anyline SDK as a dependency, edit your Package.swift to add the dependency as follows:
 
-### 3. Linker Flags
+```
+dependencies: [
+    .package(url: "https://github.com/Anyline/anyline-ocr-spm-module.git", .upToNextMajor(from: "40.0.0"))
+]
+```
 
-> This changed from -ObjC to -all_load in Anyline SDK Version 3.6.
+Please make sure that the URL is https://github.com/Anyline/anyline-ocr-spm-module.git, instead of https://github.com/Anyline/anyline-ocr-examples-ios.git.
 
-In your project inspector switch to the Build Settings tab and search for Other Linker Flags. Select Other - Other Linker Flags and add -all_load. This flag causes the linker to load every object file in the library that defines an Objective-C class or category.
+
+### 2. Link and embed Anyline.xcframework
+
+Go to your project inspector and open the **Build Phases** tab. First, add the following libraries to **Link Binary With Libraries**:
+
+- libc++.tbd
+- libz.tbd
+
+Next, locate the **Embed Frameworks** build phase and drag Anyline.xcframework from the project navigator into it. Ensure that "Code Sign on Copy" is checked. (If no **Embed Frameworks** build phase is found, add a **Copy Files** phase to the target and set **Destination** to "Frameworks".) 
+
+After adding the libraries, the Build Phases tab for the app target should look like this: 
+
+![Link Frameworks](/images/LinkFrameworks.jpg)
+
+### 3. Set Linker Flags
+
+In your project inspector, switch to the **Build Settings** tab and search for **Other Linker Flags**. Select "Other > Other Linker Flags" and add `-ObjC`. This flag causes the linker to load every object file in the library that defines an Objective-C class or category.
+
 ![Linker Flags](/images/LinkerFlags.jpg)
 
 #### 3.1 Bitcode
 
-Bitcode needs to be disabled. Just search for “Bit” and set Enable Bitcode to No.
+To use Anyline, Bitcode needs to be disabled. Simply set the **Enable Bitcode** build setting to **No**.
+
 ![Build Bitcode iOS](/images/iOS_build_bitcode.png)
 
 [Apple Documentation on Bitcode](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html)
 
-### 4. Init an AnylineModuleView in your ViewController or Storyboard
+### 4. Create a ScanView on your ViewController or Storyboard
 
-There are more modules specific options - take a look at the description of the desired module in the Anyline Documentation to get more detailed information. 
+Now you need to create and configure a scan plugin to your needs, and set it to a scan view on a view hierarchy of your choice. A quick example can be found in https://documentation.anyline.com/toc/platforms/ios/plugins/index.html.
+
+Each scan plugin can be configured to suit nearly every possible scenario you can think of, so please make sure to check out our documentation page on [Plugins](https://documentation.anyline.com/toc/platforms/ios/plugins/index.html) to find more detailed information. 
 
 ### 5. Enjoy scanning and have fun! :movie_camera:
 
 
-> Anyline is also available as Cocoapod: `pod 'Anyline'`
-
-
 ## Sample Codes & Documentation 
 
-Have look at some of our code examples: [Sample Code](https://www.anyline.com/demos-sample-code)
+Try and run our code examples here: [Anyline Examples](https://github.com/Anyline/anyline-ocr-examples-ios/tree/master/AnylineExamples)
 
 Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com)
 
 
 ## Get Help (Support)
 
-We don't actively monitor the Github Issues, please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
+We don't actively monitor the Github Issues, so please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
+
 When raising a support request based on this Github Issue, please fill out and include the following information:
 
 ```
@@ -102,16 +121,11 @@ Support request concerning Anyline Github Repository: anyline-ocr-examples-ios
 
 Thank you!
 
-
-
 ## License 
 
 To claim a free developer / trial license, go to: [Anyline SDK Register Form](https://anyline.com/free-demos/)
 The software underlies the MIT License. As Anyline is a paid software for Commerical Projects, the License Agreement of Anyline GmbH apply, when used commercially. Please have a look at [Anyline License Agreement](https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/12/ULA-AnylineSDK-August2015.pdf)
 
-
 # KITT <3
 
 ![KITT](images/visualFeedback/kitt/contour_point.gif)
-
-
