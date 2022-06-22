@@ -239,6 +239,8 @@
 
 + (NSBundle *_Nonnull)frameworkBundle;
 
++ (NSURL * _Nonnull)frameworkBundleURL;
+
 - (void)reportIncludeValues:(NSString *_Nonnull)values;
 
 - (NSArray *_Nonnull)runStatistics;

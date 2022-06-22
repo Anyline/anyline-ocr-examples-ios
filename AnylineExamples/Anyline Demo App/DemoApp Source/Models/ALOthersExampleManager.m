@@ -19,6 +19,8 @@
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALCattleTagScanViewController.h"
+#import "ALContainerScanViewController.h"
+#import "ALVerticalContainerScanViewController.h"
 
 @interface ALOthersExampleManager ()
 
@@ -41,6 +43,19 @@
 - (void)initExampleData {
     self.title = @"Others";
     //OCR
+    
+    ALExample *serialNumberScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal Serial Number", nil)
+                                                                image:[UIImage imageNamed:@"serial number"]
+                                                       viewController:[ALUniversalSerialNumberScanViewController class]];
+    
+    ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
+                                                             image:[UIImage imageNamed:@"container serial numbers"]
+                                                    viewController:[ALContainerScanViewController class]];
+    
+    ALExample *verticalContainerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Vertical Shipping Container", nil)
+                                                                     image:[UIImage imageNamed:@"vertical container scanner"]
+                                                            viewController:[ALVerticalContainerScanViewController class]];
+    
     ALExample *ibanScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"IBAN", nil)
                                                         image:[UIImage imageNamed:@"iban"]
                                                viewController:[ALIBANScanViewController class]];
@@ -76,7 +91,7 @@
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner],
+                      self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner],
                       };
 }
 

@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, ALTINUpsideDownMode) {
     ALTINUpsideDownModeAuto = 2
 };
 
-@interface ALBaseTireConfig : ALBaseOCRConfig
+@interface ALBaseTireConfig : NSObject
 
 /**
  *  Whether TINs will be read upside down, right-side-up, or both.

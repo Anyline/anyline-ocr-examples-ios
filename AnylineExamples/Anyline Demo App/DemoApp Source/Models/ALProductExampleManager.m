@@ -71,13 +71,13 @@
                                                viewController:[ALGridCollectionViewController class]
                                                exampleManager:[ALLicensePlateExampleManager class]];
     
-    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Maintenance, Repair & Operations", nil)
-                                                  image:[UIImage imageNamed:@"tile_mro"]
+    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Vehicle", nil)
+                                                  image:[UIImage imageNamed:@"tile_vehicle_new"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALMROExampleManager class]];
     
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Other", nil)
-                                                  image:[UIImage imageNamed:@"tile_other"]
+                                                  image:[UIImage imageNamed:@"tile_mro"]
                                          viewController:[ALGridCollectionViewController class]
                                          exampleManager:[ALOthersExampleManager class]];
     

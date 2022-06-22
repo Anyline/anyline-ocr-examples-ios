@@ -13,6 +13,7 @@
 #import "ALUniversalIDConfig.h"
 #import "ALJapaneseLandingPermissionConfig.h"
 #import "ALIDResult.h"
+#import "ALVehicleRegistrationCertificateConfig.h"
 
 @protocol ALIDPluginDelegate;
 

@@ -85,9 +85,7 @@
 }
 
 + (void)applyAppearanceTweaks {
-    // This restores pre-iOS 15 navbar and 'toolbar' appearances
-    // https://nemecek.be/blog/126/how-to-disable-automatic-transparent-navbar-in-ios-15
-    if (@available(iOS 15, *)) {
+    if (@available(iOS 13, *)) {
         UINavigationBarAppearance *barAppearance = [[UINavigationBarAppearance alloc] init];
         [barAppearance configureWithOpaqueBackground];
         [[UINavigationBar appearance] setCompactAppearance:barAppearance];
@@ -98,7 +96,15 @@
         [toolbarAppearance configureWithOpaqueBackground];
         [[UIToolbar appearance] setCompactAppearance:toolbarAppearance];
         [[UIToolbar appearance] setStandardAppearance:toolbarAppearance];
-        [[UIToolbar appearance] setScrollEdgeAppearance:toolbarAppearance];
+
+        // This restores pre-iOS 15 navbar and 'toolbar' appearances
+        // https://nemecek.be/blog/126/how-to-disable-automatic-transparent-navbar-in-ios-15
+        // but older Xcode shouldn't touch this
+#if __clang_major__ >= 13
+        if (@available(iOS 15.0, *)) {
+            [[UIToolbar appearance] setScrollEdgeAppearance:toolbarAppearance];
+        }
+#endif
     }
 }
 

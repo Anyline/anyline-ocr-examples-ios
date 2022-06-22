@@ -32,23 +32,11 @@
 }
 
 - (void)initExampleData {
-    self.title = @"MRO";
-    
-    ALExample *serialNumberScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal Serial Number", nil)
-                                                                image:[UIImage imageNamed:@"serial number"]
-                                                       viewController:[ALUniversalSerialNumberScanViewController class]];
+    self.title = @"Vehicle";
     
     ALExample *vinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Vehicle Identification Number", nil)
                                                        image:[UIImage imageNamed:@"vin"]
                                               viewController:[ALVINScanViewController class]];
-    
-    ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
-                                                             image:[UIImage imageNamed:@"container serial numbers"]
-                                                    viewController:[ALContainerScanViewController class]];
-    
-    ALExample *verticalContainerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Vertical Shipping Container", nil)
-                                                                     image:[UIImage imageNamed:@"vertical container scanner"]
-                                                            viewController:[ALVerticalContainerScanViewController class]];
     
     ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Identification Number (DOT)", nil)
                                                        image:[UIImage imageNamed:@"tin"]
@@ -62,16 +50,13 @@
                                                                   image:[UIImage imageNamed:@"tin"]
                                                          viewController:[CommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
-    self.sectionNames = @[@"MRO",];
+    self.sectionNames = @[@"Vehicle",];
     self.examples = @{
         self.sectionNames[0] : @[
-            serialNumberScanning,
             vinScanning,
             tinScanning,
             tireSizeScanning,
-            commercialTireScanning,
-            containerScanning,
-            verticalContainerScanning,
+            commercialTireScanning
         ],
     };
 }

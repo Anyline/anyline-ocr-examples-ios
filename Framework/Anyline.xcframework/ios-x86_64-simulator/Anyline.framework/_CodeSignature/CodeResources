@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/ALBaseTireConfig.h</key>
 		<data>
-		UOsiNjkRdLhj0aMkEa0zeOvxc3c=
+		VNQlRK+qWrS2rm2gy4CyDT5/Hms=
 		</data>
 		<key>Headers/ALBasicConfig.h</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/ALCoreController.h</key>
 		<data>
-		uTrPBallq+6N2dVj5aH14YJQw+U=
+		dSNPRqXiRjQ2R0KdlpXSkToeFQI=
 		</data>
 		<key>Headers/ALCutoutConfig.h</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Headers/ALIDScanPlugin.h</key>
 		<data>
-		19VkrodNIszReDFQmURL+xL6/LU=
+		yyMXxM3QSSV0xpN6BPp1kweLFNo=
 		</data>
 		<key>Headers/ALIDScanViewPlugin.h</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Headers/ALLicensePlateScanPlugin.h</key>
 		<data>
-		phfptOwSdaEd/D7Vnl7M9v0k9Gs=
+		IPwkZlDjNJjkLFrS4xrGXbAyC7U=
 		</data>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Headers/ALOCRScanPlugin.h</key>
 		<data>
-		YrJMRAi/2K0e6yiDQ4OEqXC1tb8=
+		jmXX6S0Yj+Mni1GMSdAaPlBQqaI=
 		</data>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
 		<data>
@@ -372,6 +372,10 @@
 		<data>
 		Io8RtszD9OzuhbjKaCiCZbwwMDg=
 		</data>
+		<key>Headers/ALVehicleRegistrationCertificateConfig.h</key>
+		<data>
+		nSL+50pA3y4YAfHoVZ0TxIWpXz8=
+		</data>
 		<key>Headers/ALViewConstants.h</key>
 		<data>
 		21g8xoCCdTQCsWlUi8a9WRNkFIA=
@@ -386,7 +390,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sTKTZjJ4WyotqR0Nsd3rR2MzuDc=
+		ZiMEFZ1350A0X+a0kajSyR8ClJA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -497,7 +501,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zhfang90tEiwnTRyyCRNTnMxTGW3fC1lloAjzhVKWzs=
+			ZUBFVAgUOnJRTcf1eIw0clQodG2uD/YIliojzlqMW3g=
 			</data>
 		</dict>
 		<key>Headers/ALBasicConfig.h</key>
@@ -553,7 +557,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QzN/eQxRUDl1XT4AcFGbYGxOsoqkj9AL1I6Lc6Fo1yo=
+			cqoNda1UfzkkZDXkKHnTYRuQPjbLPSyBHp9NwQnqHyA=
 			</data>
 		</dict>
 		<key>Headers/ALCutoutConfig.h</key>
@@ -679,7 +683,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0tF0RD+Vf6CqEpxGXLfxAE/+K0ilqLtAbGyhb3Iwc+o=
+			BYhLY7A5CDzVx5eb0TZle8B1HFy9X7HVOTwsEc684FM=
 			</data>
 		</dict>
 		<key>Headers/ALIDScanViewPlugin.h</key>
@@ -728,7 +732,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kYWIxvig01w0iPrW4GohghAPr2XImQEBoLqdQnOhyNw=
+			BFuC0DA0CTZwGObXTL3NBd+2rmi+WYO8UpElKQTFfmg=
 			</data>
 		</dict>
 		<key>Headers/ALLicensePlateScanViewPlugin.h</key>
@@ -805,7 +809,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jFpiqBWmFpItcRA9TiV2fSlPz1o1nCvCbOjLRa7jaew=
+			55ySjISDDH4dJguiiFdnUwN3HlAOW/EgHLc3FrYV/E0=
 			</data>
 		</dict>
 		<key>Headers/ALOCRScanViewPlugin.h</key>
@@ -1037,6 +1041,13 @@
 			<key>hash2</key>
 			<data>
 			/lPFtFoBB/lJEqFem7xtQfxukOkbHNHF7eX1cyqWRw0=
+			</data>
+		</dict>
+		<key>Headers/ALVehicleRegistrationCertificateConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MbWTraWXLpBTHfoeV0Ze3Bx80vBcHieGSMgkZLLLUho=
 			</data>
 		</dict>
 		<key>Headers/ALViewConstants.h</key>
