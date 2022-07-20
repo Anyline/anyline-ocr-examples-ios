@@ -69,11 +69,6 @@
     config.scanFeedbackConfig.blinkAnimationOnResult = NO;
     config.scanFeedbackConfig.beepOnResult = NO;
     config.scanFeedbackConfig.strokeWidth = 3;
-    config.cutoutConfig.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-    config.cutoutConfig.maxPercentWidth  = 1;
-    config.cutoutConfig.maxPercentHeight = 1;
-    config.cutoutConfig.widthPercent     = 1;
-    config.cutoutConfig.strokeColor = [UIColor clearColor];
     config.cutoutConfig.feedbackStrokeColor = [UIColor clearColor];
     config.cutoutConfig.usesAnimatedRect = YES;
     
@@ -170,11 +165,6 @@
     scanButton.alpha = 0;
     self.scanButton = scanButton;
     
-    ALRoundedView * feedback = [[ALRoundedView alloc] initWithFrame:CGRectMake(20, frame.size.height/3, frame.size.width - 40, frame.size.height/3)];
-    feedback.borderColor  = [UIColor colorWithWhite:1 alpha:0.8];
-    feedback.borderWidth  = 2;
-    feedback.cornerRadius = 15;
-    [self.scanView addSubview:feedback];
 }
 
 #pragma mark - IBAction methods

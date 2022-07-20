@@ -12,6 +12,7 @@ import Anyline
 class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     
     var tireScanViewPlugin : ALTireScanViewPlugin?
+    
     @objc public enum TireConfigType: NSInteger {
         case tinConfig
         case tireSizeConfig
@@ -23,6 +24,7 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTirePlugin()
+        setupFlipOrientationButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +75,7 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
             tireScanViewPlugin = ALTireScanViewPlugin.init(scanPlugin: tireScanPlugin, scanViewPluginConfig: scanViewPluginConfig)
             
             if let scanView = ALScanView(frame: view.bounds, scanViewPlugin: tireScanViewPlugin) {
-                scanView.flashButtonConfig = ALFlashButtonConfig(flashMode: .none,
+                scanView.flashButtonConfig = ALFlashButtonConfig(flashMode: .manualOff,
                                                                  flashAlignment: .topLeft,
                                                                  flashOffset: .zero)
                 view.addSubview(scanView)
@@ -111,6 +113,7 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
                                         value: String(result.result),
                                         shouldSpellOutValue: true))
         let jsonString = self.jsonString(fromResultData: resultData)
+        enableLandscapeOrientation(false)
         self.anylineDidFindResult(jsonString, barcodeResult: "", image: result.image!, scanPlugin: anylineTireScanPlugin, viewPlugin: self.tireScanViewPlugin) {
             let vc = ALResultViewController(results: resultData)
             vc.imagePrimary = result.image

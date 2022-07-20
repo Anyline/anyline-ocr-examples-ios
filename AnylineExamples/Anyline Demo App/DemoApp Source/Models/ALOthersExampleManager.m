@@ -21,6 +21,8 @@
 #import "ALCattleTagScanViewController.h"
 #import "ALContainerScanViewController.h"
 #import "ALVerticalContainerScanViewController.h"
+#import "ALParallelMeterWithJSONScanViewController.h"
+
 
 @interface ALOthersExampleManager ()
 
@@ -67,10 +69,10 @@
     ALExample *voucherCodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Voucher Code", nil)
                                                                image:[UIImage imageNamed:@"voucher"]
                                                       viewController:[ALVoucherCodeScanViewController class]];
-
+    
     ALExample *documentScanner = [[ALExample alloc] initWithName:NSLocalizedString(@"Document Scanner", nil)
-                                                                image:[UIImage imageNamed:@"document"]
-                                                       viewController:[ALDocumentScanViewController class]];
+                                                           image:[UIImage imageNamed:@"document"]
+                                                  viewController:[ALDocumentScanViewController class]];
     
     ALExample *scrabbleScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Scrabble Anagram", nil)
                                                             image:[UIImage imageNamed:@"scrabble"]
@@ -88,11 +90,15 @@
                                                              image:[UIImage imageNamed:@"cow-tag"]
                                                     viewController:[ALCattleTagScanViewController class]];
     
+    ALExample *parallelScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Parallel Scanning (Meter + Barcode)", nil)
+                                                            image:[UIImage imageNamed:@"parallel-scanning"]
+                                                   viewController:[ALParallelMeterWithJSONScanViewController class]];
+    
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-                      self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner],
-                      };
+        self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner, parallelScanning],
+    };
 }
 
 @end

@@ -32,6 +32,8 @@ __attribute__((deprecated("please use ALUniversalIDIdentification instead")))
 @property (nullable, nonatomic, strong) UIImage *faceImage;
 @property (nonatomic, assign) CGRect faceImageBounds;
 
+@property (nonatomic, readonly) NSDictionary<NSString *, NSString *> *resultData;
+
 - (void)addField:(NSString *)fieldName value:(NSString *)value;
 - (NSArray<NSString *> *)fieldNames;
 - (NSString *)valueForField:(NSString *)fieldName;

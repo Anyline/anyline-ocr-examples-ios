@@ -22,8 +22,6 @@
 @property (nonatomic, strong) ALTireScanPlugin *tinScanPlugin;
 @property (nullable, nonatomic, strong) ALScanView *scanView;
 
-@property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
-@property () BOOL isOrientationFlipped;
 @property () NSUInteger dialogIndexSelected;
 
 
@@ -59,40 +57,11 @@
     self.flipOrientationButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height-self.flipOrientationButton.frame.size.height/2-bottomPadding-10);
 }
 
-- (void)flipOrientationPressed:(id)sender {
-    self.isOrientationFlipped = !self.isOrientationFlipped;
-    [self enableLandscapeOrientation:self.isOrientationFlipped];
-}
-
-- (void)enableLandscapeOrientation:(BOOL)isLandscape {
-    [self enableLandscapeRight:isLandscape];
-    
-    NSNumber *value;
-    if (isLandscape) {
-        value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
-    } else {
-        value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-    }
-    
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    [UIViewController attemptRotationToDeviceOrientation];
-}
-
-- (BOOL)shouldAutorotate {
-    return NO;
-}
-
-- (void)enableLandscapeRight:(BOOL)enable {
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    appDelegate.enableLandscapeRight = enable;
-}
-
 /*
  This method will be called once the view controller and its subviews have appeared on screen
  */
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self enableLandscapeOrientation:self.isOrientationFlipped];
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
     [self startAnyline];
@@ -104,7 +73,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.tinScanViewPlugin stopAndReturnError:nil];
-    [self enableLandscapeOrientation:NO];
 }
 
 
@@ -179,31 +147,6 @@
     
     [self.view addConstraints:constraints];
     [NSLayoutConstraint activateConstraints:constraints];
-}
-
-- (void)setupFlipOrientationButton {
-    self.flipOrientationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.flipOrientationButton addTarget:self
-                                   action:@selector(flipOrientationPressed:)
-                         forControlEvents:UIControlEventTouchUpInside];
-    
-    self.flipOrientationButton.frame = CGRectMake(0, 0, 220, 50);
-    UIImage *buttonImage = [UIImage imageNamed:@"baseline_screen_rotation_white_24pt"];
-    [self.flipOrientationButton setImage:buttonImage forState:UIControlStateNormal];
-    self.flipOrientationButton.imageView.tintColor = UIColor.whiteColor;
-    [self.flipOrientationButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 10.0)];
-    self.flipOrientationButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.flipOrientationButton.adjustsImageWhenDisabled = NO;
-    
-    [self.flipOrientationButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 5.0, 0.0, 5.0)];
-    [self.flipOrientationButton setTitle:@"Change Screen Orientation" forState:UIControlStateNormal];
-    self.flipOrientationButton.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
-    
-    
-    [self.view addSubview:self.flipOrientationButton];
-    self.flipOrientationButton.layer.cornerRadius = 3;
-    self.flipOrientationButton.backgroundColor = [[UIColor AL_examplesBlue] colorWithAlphaComponent:0.85];
-    self.isOrientationFlipped = false;
 }
 
 - (void)setupNavigationBar {

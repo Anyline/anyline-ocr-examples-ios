@@ -49,6 +49,7 @@
 		29D8242790C62F87231582E6 /* ALLicensePlateResultOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13881BADEC0C6D4F757DEC90 /* ALLicensePlateResultOverlayView.m */; };
 		2D1EC37BF43B70AA6016824D /* CustomerSelfReadingConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E539A0891F231A43F3A7089A /* CustomerSelfReadingConfirmationViewController.xib */; };
 		2FEAFACDC392E8898C3C97BD /* ALRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A15FCC2BD1A9E95397F7F99F /* ALRoundedView.m */; };
+		30F4F4027665E6F24DC48EC5 /* ALParallelMeterWithJSONScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A51CA256F52B88A59AE0 /* ALParallelMeterWithJSONScanViewController.m */; };
 		332E5FE5513F6CDD2346D6D2 /* ALUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEF6BE85BA00F9E1011D1E1 /* ALUtils.m */; };
 		37B2D510A28CED75400D97AF /* ALExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F93940133379A464B2ECA1 /* ALExampleManager.m */; };
 		37B8BA82610E2579475245FC /* ALNFCScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76DB0B1EDA3DEE5553F4D2 /* ALNFCScanViewController.m */; };
@@ -108,6 +109,7 @@
 		83C2E2BFA23265B9E254A1D1 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A507ABFDFAE4C3298D842D /* ALBaseScanViewController.m */; };
 		841B7C06D4FA85F6D334580C /* ALISBNHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7474A92ECB1EC93FFE2A523F /* ALISBNHeaderCell.m */; };
 		8543A04986941842302938D1 /* UIView+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B3E959502E4A04A0D95FF /* UIView+ALExamplesAdditions.m */; };
+		860F95A49274210ADE787DA0 /* meter_barcode_parallel.json in Resources */ = {isa = PBXBuildFile; fileRef = F84B123B1654CB102F551D25 /* meter_barcode_parallel.json */; };
 		8678F0EF3FACD7EB8A9AAE26 /* ReadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254FBCFC83BBCE0B37B8CD99 /* ReadingTableViewCell.xib */; };
 		86E32185F510312CB5C33314 /* CustomerSelfReading.m in Sources */ = {isa = PBXBuildFile; fileRef = C401B4BF009D1D8E2BED8173 /* CustomerSelfReading.m */; };
 		87CCC52F9F8B0CFEE789DAFF /* NSAttributedString+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6C24B452735E53395244B /* NSAttributedString+ALExamplesAdditions.m */; };
@@ -400,6 +402,7 @@
 		987864E0F8E8E2F22C729406 /* CustomerSelfReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSelfReading.h; sourceTree = "<group>"; };
 		993E94F5B4D905C28394B2AD /* UIViewController+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		997B2A1F82805B0685BBA76E /* ALIBANScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIBANScanViewController.m; sourceTree = "<group>"; };
+		9990A51CA256F52B88A59AE0 /* ALParallelMeterWithJSONScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALParallelMeterWithJSONScanViewController.m; sourceTree = "<group>"; };
 		9A230B5C8B947BEC3F18730B /* ALMeter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeter.h; sourceTree = "<group>"; };
 		9A5A0B8B16A226B0EAC39924 /* serial_number_view_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = serial_number_view_config.json; sourceTree = "<group>"; };
 		9B2C52A1458BA3161852471B /* ALMeterExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterExampleManager.h; sourceTree = "<group>"; };
@@ -440,6 +443,7 @@
 		B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		B1D774A5ADDF5C4E7628C04F /* ALLicensePlateExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateExampleManager.h; sourceTree = "<group>"; };
 		B2609040C0044ED642B23323 /* ALMeterSerialNumberScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterSerialNumberScanViewController.m; sourceTree = "<group>"; };
+		B47BD6FE89D95F7402CF807D /* ALParallelMeterWithJSONScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALParallelMeterWithJSONScanViewController.h; sourceTree = "<group>"; };
 		B796B03399AA17084BF87FE2 /* ALIntroHelpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALIntroHelpView.h; sourceTree = "<group>"; };
 		B7B4776BB82FA4F7729784D0 /* ALExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExample.m; sourceTree = "<group>"; };
 		B7F93940133379A464B2ECA1 /* ALExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExampleManager.m; sourceTree = "<group>"; };
@@ -525,6 +529,7 @@
 		F7151F89C55A657556691214 /* ScanHistory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F72E21F38E68BE8268DA8B75 /* ALVoucherCodeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVoucherCodeScanViewController.h; sourceTree = "<group>"; };
 		F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		F84B123B1654CB102F551D25 /* meter_barcode_parallel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = meter_barcode_parallel.json; sourceTree = "<group>"; };
 		F8F473BAEC7288A2E304C228 /* ScanHistoryMigration3to4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanHistoryMigration3to4.h; sourceTree = "<group>"; };
 		F92107DB6698B83180CD5864 /* CustomerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDataViewController.m; sourceTree = "<group>"; };
 		FDCEFD699881115D834BAA3A /* ALDeviceInformationHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDeviceInformationHelper.m; sourceTree = "<group>"; };
@@ -810,6 +815,7 @@
 				0773AADFFF89D2B32D9D4BEA /* MeterImagesAssets.xcassets */,
 				130C58F489D374A154DB76C2 /* Barcode */,
 				920FC7041BC75E7BC7B66293 /* CattleTag */,
+				FE110D9D8770D6DC4767AC0C /* CompositeScanning */,
 				FDBF785D090EB8336A7FD16D /* ContainerScannerHorizontal */,
 				0D9835CFDE0CC62A1A02D0DF /* ContainerScannerVertical */,
 				5829676095E89FA2B57CAD0E /* CoreData */,
@@ -1410,6 +1416,16 @@
 			path = ContainerScannerHorizontal;
 			sourceTree = "<group>";
 		};
+		FE110D9D8770D6DC4767AC0C /* CompositeScanning */ = {
+			isa = PBXGroup;
+			children = (
+				B47BD6FE89D95F7402CF807D /* ALParallelMeterWithJSONScanViewController.h */,
+				9990A51CA256F52B88A59AE0 /* ALParallelMeterWithJSONScanViewController.m */,
+				F84B123B1654CB102F551D25 /* meter_barcode_parallel.json */,
+			);
+			path = CompositeScanning;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1490,6 +1506,7 @@
 				194E973F43A3B0B57A330BB5 /* energyMockData2.json in Resources */,
 				406E5D4689D2162E66631DCF /* iban_config.json in Resources */,
 				DED860F64AF49DD872DCAC2C /* isbn_config.json in Resources */,
+				860F95A49274210ADE787DA0 /* meter_barcode_parallel.json in Resources */,
 				126C1E99EAA1D1E63FAB2CCE /* meter_barcode_view_config.json in Resources */,
 				EFCF9293DCE54B0BB32ED198 /* rb_config.json in Resources */,
 				BF5534687932FF0FBC0742BB /* record_number_config.json in Resources */,
@@ -1573,6 +1590,7 @@
 				4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */,
 				7B974FABA902C5631FDD2681 /* ALPDF417ScanViewController.m in Sources */,
 				A9B86F7EC70516E6742E48BA /* ALParallelMeterScanViewController.m in Sources */,
+				30F4F4027665E6F24DC48EC5 /* ALParallelMeterWithJSONScanViewController.m in Sources */,
 				E2B5A3C0DD9F2F95F8DBD47A /* ALPrivacyForwardingViewController.m in Sources */,
 				74BDDA1262C89D83FE54EECB /* ALPrivacyViewController.m in Sources */,
 				21A22328A97C63E67AE854BA /* ALProductExampleManager.m in Sources */,

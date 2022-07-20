@@ -44,26 +44,15 @@
                                                                 image:[UIImage imageNamed:@"dial meter"]
                                                        viewController:[ALDialMeterScanViewController class]];
     
-    
-    ALExample *selfScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Self Reading", nil)
-                                                                          image:[UIImage imageNamed:@"Self Reading"]
-                                                                 viewController:[CustomerSelfReadingViewController class]];
-    
-    ALExample *workforce = [[ALExample alloc] initWithName:NSLocalizedString(@"Workforce", nil)
-                                                             image:[UIImage imageNamed:@"Workforce"]
-                                                    viewController:[WorkForceViewController class]];
-    
     ALExample *serialScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Serial Number", nil)
                                                           image:[UIImage imageNamed:@"serial number"]
                                                  viewController:[ALMeterSerialNumberScanViewController class]];
     
-    self.sectionNames = @[@"Meter Types", @"Processes", @"Others"];
+    self.sectionNames = @[@"Meter Types"];
     self.examples = @{
                       self.sectionNames[0] : @[autoAnalogDigitalMeterScanning,
-                                               dialMeterScanning,],
-                      self.sectionNames[1] : @[selfScanning,
-                                               workforce,],
-                      self.sectionNames[2] : @[serialScanning,],
+                                               dialMeterScanning,
+                                               serialScanning]
                       };
 }
 

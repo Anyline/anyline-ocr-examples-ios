@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Universal Serial Number";
+    self.title = @"Meter Serial Number";
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     CGRect frame = [self scanViewFrame];
     
@@ -139,7 +139,7 @@
                didFindResult:(ALOCRResult *)result {
     // We are done. Cancel scanning
     NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result shouldSpellOutValue:YES]];
+    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Serial Number" value:result.result shouldSpellOutValue:YES]];
     NSString *jsonString = [self jsonStringFromResultData:resultData];
 
     __weak __block typeof(self) weakSelf = self;

@@ -12,6 +12,9 @@
 #import "ScanHistory+CoreDataClass.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIFont+ALExamplesAdditions.h"
+#import "UIColor+ALExamplesAdditions.h"
+#import "AppDelegate.h"
 
 @import CoreMotion;
 
@@ -67,6 +70,12 @@ the camera from Settings.";
     [super viewDidAppear:animated];
     
     self.startTime = CACurrentMediaTime();
+    [self enableLandscapeOrientation:self.isOrientationFlipped];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self enableLandscapeOrientation:NO];
 }
 
 - (NSString *)jsonStringFromResultData:(NSArray*)resultData {
@@ -232,6 +241,69 @@ the camera from Settings.";
     navbarHeight = MAX(navbarHeight, 0);
     return CGRectMake(frame.origin.x, frame.origin.y + navbarHeight,
                       frame.size.width, frame.size.height - navbarHeight);
+}
+
+#pragma mark - FlipOrietation
+
+- (void)flipOrientationPressed:(id)sender {
+    self.isOrientationFlipped = !self.isOrientationFlipped;
+    [self enableLandscapeOrientation:self.isOrientationFlipped];
+}
+
+- (void)enableLandscapeOrientation:(BOOL)isLandscape {
+    [self enableLandscapeRight:isLandscape];
+    
+    NSNumber *value;
+    if (isLandscape) {
+        value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+    } else {
+        value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    }
+    
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    [UIViewController attemptRotationToDeviceOrientation];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (void)enableLandscapeRight:(BOOL)enable {
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    appDelegate.enableLandscapeRight = enable;
+}
+
+- (void)setupFlipOrientationButton {
+    self.flipOrientationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.flipOrientationButton addTarget:self
+                                   action:@selector(flipOrientationPressed:)
+                         forControlEvents:UIControlEventTouchUpInside];
+    
+    self.flipOrientationButton.frame = CGRectMake(0, 0, 220, 50);
+    UIImage *buttonImage = [UIImage imageNamed:@"baseline_screen_rotation_white_24pt"];
+    [self.flipOrientationButton setImage:buttonImage forState:UIControlStateNormal];
+    self.flipOrientationButton.imageView.tintColor = UIColor.whiteColor;
+    [self.flipOrientationButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 10.0)];
+    self.flipOrientationButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.flipOrientationButton.adjustsImageWhenDisabled = NO;
+    
+    [self.flipOrientationButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 5.0, 0.0, 5.0)];
+    [self.flipOrientationButton setTitle:@"Change Screen Orientation" forState:UIControlStateNormal];
+    self.flipOrientationButton.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
+    
+    [self.flipOrientationButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:self.flipOrientationButton];
+    self.flipOrientationButton.layer.cornerRadius = 3;
+    self.flipOrientationButton.backgroundColor = [[UIColor AL_examplesBlue] colorWithAlphaComponent:0.85];
+    self.isOrientationFlipped = false;
+
+    NSArray *flipCosntraints = @[[self.flipOrientationButton.widthAnchor constraintEqualToConstant:220],
+                                 [self.flipOrientationButton.heightAnchor constraintEqualToConstant:50],
+                                 [self.flipOrientationButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-20],
+                                 [self.flipOrientationButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0]];
+    
+    [self.view addConstraints:flipCosntraints];
+    [NSLayoutConstraint activateConstraints:flipCosntraints];
 }
 
 #pragma mark - NSKeyValueObserving

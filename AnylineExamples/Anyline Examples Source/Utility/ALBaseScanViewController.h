@@ -19,6 +19,9 @@
 
 @property (nonatomic) ALScanHistoryType controllerType;
 
+@property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
+@property () BOOL isOrientationFlipped;
+
 - (void)updateScanWarnings:(ALWarningState)warningState;
 
 - (void)updateWarningPosition:(CGFloat)newPosition;
@@ -66,5 +69,10 @@
 - (CGRect)scanViewFrame;
 
 - (instancetype)initWithTitle:(NSString *)title;
+
+// To add a flip orietation button to any scan mode that extends ALBasescanViewController
+// you need to call this method on view did load.
+- (void)setupFlipOrientationButton;
+- (void)enableLandscapeOrientation:(BOOL)isLandscape;
 
 @end

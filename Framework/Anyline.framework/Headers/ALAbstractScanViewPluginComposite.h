@@ -17,16 +17,25 @@
 
 @property BOOL isRunning;
 
+@property (nonatomic, readonly) NSDictionary<NSString *, ALAbstractScanViewPlugin *> * _Nullable childPlugins;
+
 - (void)addPlugin:(ALAbstractScanViewPlugin * _Nonnull)plugin;
 
 - (void)removePlugin:(NSString * _Nonnull)pluginID;
+
 - (instancetype _Nonnull )initWithPluginID:(NSString *_Nonnull)pluginID;
+
 - (void)addDelegate:(id<ALCompositeScanPluginDelegate>_Nonnull)delegate;
+
 - (void)removeDelegate:(id<ALCompositeScanPluginDelegate>_Nonnull)delegate;
+
 @end
 
-@interface ALCompositeResult : ALScanResult< NSDictionary<NSString *,ALScanResult *> *>
+
+@interface ALCompositeResult : ALScanResult<NSDictionary<NSString *, ALScanResult *> *>
+
 @end
+
 
 @protocol ALCompositeScanPluginDelegate <NSObject>
 
@@ -39,10 +48,8 @@
  *
  */
 - (void)anylineCompositeScanPlugin:(ALAbstractScanViewPluginComposite * _Nonnull)anylineCompositeScanPlugin
-                   didFindResult:(ALCompositeResult * _Nonnull)scanResult;
-
+                     didFindResult:(ALCompositeResult * _Nonnull)scanResult;
 
 @end
 
 #endif /* ALAbstractScanViewPluginComposite_h */
-

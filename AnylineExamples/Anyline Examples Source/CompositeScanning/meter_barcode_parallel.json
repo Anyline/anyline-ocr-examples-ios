@@ -1,0 +1,86 @@
+{
+    "parallelViewPluginComposite": {
+        "id": "meter_barcode_parallel_scan",
+        "cancelOnResult": true,
+        "viewPlugins": [
+            {
+                "viewPlugin": {
+                    "plugin": {
+                        "id": "METER",
+                        "meterPlugin": {
+                            "scanMode": "AUTO_ANALOG_DIGITAL_METER"
+                        }
+                    },
+                    "cutoutConfig": {
+                        "style": "rect",
+                        "width": 768,
+                        "alignment": "top_half",
+                        "maxWidthPercent": "100%",
+                        "strokeWidth": 2,
+                        "strokeColor": "FF0000",
+                        "cornerRadius": 4,
+                        "outerColor": "000000",
+                        "outerAlpha": 0.5,
+                        "feedbackStrokeColor": "0099FF",
+                        "offset": {
+                            "x": 0,
+                            "y": 20
+                        }
+                    },
+                    "scanFeedback": {
+                        "style": "CONTOUR_RECT",
+                        "strokeColor": "FFFFFF",
+                        "strokeWidth": 2,
+                        "fillColor": "220099FF",
+                        "cornerRadius": 2,
+                        "redrawTimeout": 200,
+                        "animationDuration": 75,
+                        "blinkOnResult": true,
+                        "beepOnResult": true,
+                        "vibrateOnResult": true
+                    },
+                    "cancelOnResult": true
+                }
+            },
+            {
+                "viewPlugin": {
+                    "plugin" : {
+                        "id" : "BARCODE",
+                        "barcodePlugin" : {
+                            "barcodeFormatOptions" : ["CODE_128"]
+                        }
+                    },
+                    "cutoutConfig": {
+                        "style": "rect",
+                        "width": 512,
+                        "alignment": "center",
+                        "maxWidthPercent": "100%",
+                        "ratioFromSize": {
+                            "width": 3,
+                            "height": 1
+                        },
+                        "strokeWidth": 2,
+                        "cornerRadius": 2,
+                        "strokeColor": "FFFFFF",
+                        "outerColor": "000000",
+                        "outerAlpha": 0.75,
+                        "feedbackStrokeColor": "0099FF",
+                        "offset": {
+                            "x": 0,
+                            "y": -60
+                        }
+                    },
+                    "scanFeedback": {
+                        "style": "contour_rect",
+                        "strokeColor": "0099FF",
+                        "fillColor": "220099FF",
+                        "beepOnResult": true,
+                        "vibrateOnResult": true,
+                        "blinkAnimationOnResult": true
+                    },
+                    "cancelOnResult": true
+                }
+            }
+        ]
+    }
+}
