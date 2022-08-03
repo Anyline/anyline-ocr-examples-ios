@@ -8,15 +8,20 @@
 
 #import "ALScanResult.h"
 
+/**
+ Supported scan modes for the ALMeterScanPlugin.
+ */
 typedef NS_ENUM(NSInteger, ALScanMode) {
-    ALAnalogMeter,
-    ALSerialNumber,
-    ALDigitalMeter,
-    ALHeatMeter4, ALHeatMeter5, ALHeatMeter6,
     ALAutoAnalogDigitalMeter,
+    ALSerialNumber,
+    ALHeatMeter4,
+    ALHeatMeter5,
+    ALHeatMeter6,
     ALDialMeter,
-    ALDotMatrixMeter,
-    ALMeterBarcode // This scanMode is ignored in the plugin and only used in the AnylineEnergyModuleView.
+    ALAnalogMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
+    ALDigitalMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
+    ALDotMatrixMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
+    ALMeterBarcode // This scanMode has since been removed and will lead to an error if set as the scan mode.
 };
 
 /**

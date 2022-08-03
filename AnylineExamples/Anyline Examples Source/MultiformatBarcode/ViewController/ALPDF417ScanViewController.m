@@ -40,7 +40,7 @@
     NSAssert(self.barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     //Set Barcode Format to PDF417 only
-    [self.barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypePDF417]];
+    [self.barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypePDF417, kCodeTypeMICRO_PDF]];
     
     //Change cutout appearance to fit the PDF417 use case better
     ALScanViewPluginConfig *uiConfig = [ALScanViewPluginConfig defaultBarcodeConfig];

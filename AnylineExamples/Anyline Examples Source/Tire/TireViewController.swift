@@ -60,18 +60,21 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     func setupTirePlugin() {
         do {
             var tireConfig: ALBaseTireConfig = .init()
+            
+            let scanViewPluginConfig = ALScanViewPluginConfig.defaultTIN()
+            scanViewPluginConfig.cutoutConfig.backgroundColor = .clear
+            
             switch configType {
             case .tinConfig:
                 tireConfig = ALTINConfig()
             case .tireSizeConfig:
                 tireConfig = ALTireSizeConfig()
+                scanViewPluginConfig.scanFeedbackConfig.style = .rect
             case .commercialTireConfig:
                 tireConfig = ALCommercialTireIdConfig()
             }
             
             let tireScanPlugin = try ALTireScanPlugin.init(pluginID: "TIRE", delegate: self, tireConfig: tireConfig)
-            let scanViewPluginConfig = ALScanViewPluginConfig.defaultTIN()
-            scanViewPluginConfig.cutoutConfig.backgroundColor = .clear
             tireScanViewPlugin = ALTireScanViewPlugin.init(scanPlugin: tireScanPlugin, scanViewPluginConfig: scanViewPluginConfig)
             
             if let scanView = ALScanView(frame: view.bounds, scanViewPlugin: tireScanViewPlugin) {

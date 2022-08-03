@@ -210,11 +210,11 @@
 		</data>
 		<key>Headers/ALMeterResult.h</key>
 		<data>
-		z+yYx1R0kssEUPUZPgV6N9cNzV4=
+		i44X8iokTers2p25qDyBGw03O4c=
 		</data>
 		<key>Headers/ALMeterScanPlugin.h</key>
 		<data>
-		fl2CVa1HyEGz4UCm5P8JM+0Gazc=
+		mxXIx3OkUOohBxQ4kXp/4wsBHXM=
 		</data>
 		<key>Headers/ALMeterScanViewPlugin.h</key>
 		<data>
@@ -390,7 +390,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YLsBu8OupnEGCzwxRwossoVjZT0=
+		ytroXQwdfdDqUug1Ga2yMF4MWYg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -760,14 +760,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UgZVueGsJnIhTKR7sdHIfFu+2Iou+gzNULbb+MMvxQE=
+			aMEzjhOACyrHEABh8/aQo0DhTQNN3D2mwf3UVNzUq/c=
 			</data>
 		</dict>
 		<key>Headers/ALMeterScanPlugin.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TsFgypHLaY5gYojYbOVQvp90mYbz7GFliu8yMMq6q/E=
+			pNhvtsYhsULyUk3IJ8Yte45z4JWTHKWvt1RAh5ejPtc=
 			</data>
 		</dict>
 		<key>Headers/ALMeterScanViewPlugin.h</key>

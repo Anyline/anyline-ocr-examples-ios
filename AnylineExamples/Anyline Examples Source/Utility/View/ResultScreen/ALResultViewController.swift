@@ -71,7 +71,7 @@ The result fields above display a selection of scannable ID information only. Pl
     lazy var confirmButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(confirmAction(_:)), for: .touchUpInside)
-        button.setTitle("Confirm", for: .normal)
+        button.setTitle("Continue scanning", for: .normal)
         button.titleLabel?.font = .al_proximaBold(withSize: 18)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .al_examplesBlue()
