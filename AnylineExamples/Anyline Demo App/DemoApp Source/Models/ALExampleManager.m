@@ -22,6 +22,8 @@
 #import "ALDocumentScanViewController.h"
 #import "ALLicensePlateViewController.h"
 
+NSString * const processTitle = @"Processes";
+
 @interface ALExampleManager ()
 
 @property (nonatomic, strong) NSDictionary *examples;

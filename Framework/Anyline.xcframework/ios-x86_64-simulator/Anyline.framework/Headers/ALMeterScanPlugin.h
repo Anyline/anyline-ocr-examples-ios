@@ -37,9 +37,7 @@
 @property (nonatomic, strong, readonly) NSPointerArray<ALMeterScanPluginDelegate> * _Nullable delegates;
 
 /**
- *  Sets the scan mode.
- *  It has to be ALAnalogMeter, ALGasMeter, ALBarcode or ALSerialNumber
- *
+ *  Returns the scan mode.
  */
 @property (nonatomic, assign, readonly) ALScanMode scanMode;
 /**
@@ -59,12 +57,18 @@
 @property (nonatomic, strong) NSString * _Nullable serialNumberCharWhitelist;
 
 /**
- *  Sets the scan mode and returns an NSError if something failed.
+ * Sets the scan mode and returns an NSError if something failed.
  *
- *  @param scanMode The scan mode to set.
- *  @param error The error if something goes wrong. Can be nil.
+ * Valid scan modes: ALAutoAnalogDigitalMeter (default), ALDialMeter, ALSerialNumber, ALHeatMeter4,
+ * ALHeatMeter5, ALHeatMeter6
  *
- *  @return Boolean indicating the success / failure of the call.
+ * NOTE: Modes ALAnalogMeter, ALDigitalMeter, and ALDotMatrixMeter are deprecated and will be
+ * removed in a future version of Anyline. In each case, please use ALAutoAnalogDigitalMeter instead.
+ *
+ * @param scanMode The scan mode to set.
+ * @param error The error if something goes wrong. Can be nil.
+ *
+ * @return Boolean indicating the success / failure of the call.
  */
 - (BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
 
