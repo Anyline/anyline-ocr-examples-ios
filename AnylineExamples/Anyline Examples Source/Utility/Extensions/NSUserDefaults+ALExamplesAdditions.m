@@ -12,6 +12,7 @@ NSString * const DATA_POLICY_ACCEPTED = @"dataPrivacyPolicyAccepted";
 NSString * const SECRET_DEV_MODE_ENABLED = @"secretDevModeEnabled";
 NSString * const SECRET_DEV_MODE_UNLOCKED = @"secretDevModeUnlocked";
 NSString * const HAS_REGISTERED = @"hasRegistered";
+NSString * const kSelectedSymbologies = @"selectedSymbologies";
 
 @implementation NSUserDefaults (ALExamplesAdditions)
 
@@ -95,6 +96,15 @@ NSString * const HAS_REGISTERED = @"hasRegistered";
 
 + (void)AL_setHasRegistered:(BOOL)wasAccepted {
     [[NSUserDefaults standardUserDefaults] setBool:wasAccepted forKey:HAS_REGISTERED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSArray<NSString *> *)AL_selectedSymbologiesForBarcode {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kSelectedSymbologies];
+}
+
++ (void)AL_setSelectedSymbologiesForBarcode:(NSArray<NSString *> *)selectedSymbologies {
+    [[NSUserDefaults standardUserDefaults] setValue:selectedSymbologies forKeyPath:kSelectedSymbologies];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

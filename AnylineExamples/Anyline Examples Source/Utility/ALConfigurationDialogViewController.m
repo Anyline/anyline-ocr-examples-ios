@@ -213,6 +213,7 @@ NSString * const kApplyButtonText = @"Apply";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (_type) {
         case ALConfigDialogTypeScriptSelection:
+        case ALConfigDialogTypeScanModeSelection:
             self.selections = @[@(indexPath.row)];
             [tableView reloadData];
             break;
@@ -233,10 +234,9 @@ NSString * const kApplyButtonText = @"Apply";
 
 // applicable for display modes that return only one selected index, if at all
 - (NSNumber *)selectedIndex {
-    if (self.type == ALConfigDialogTypeScriptSelection) {
-        if (self.selections.count > 0) {
-            return self.selections[0];
-        }
+    if (((self.type == ALConfigDialogTypeScriptSelection) || (self.type == ALConfigDialogTypeScanModeSelection)) &&
+        (self.selections.count > 0)){
+        return self.selections[0];
     }
     return nil;
 }

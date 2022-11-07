@@ -8,9 +8,6 @@
 
 #import "ALOnboardingMailViewController.h"
 
-
-#import "ALReportingController.h"
-
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 
@@ -152,12 +149,6 @@
         
         return NO;
     }
-    
-    NSString *mail = [NSUserDefaults AL_getMail];
-    if (mail)
-        [ALReportingController resetUser];
-    
-    [ALReportingController registerUser:address source:@"AppOnBoarding"];
     
     [NSUserDefaults AL_setMail:address];
     

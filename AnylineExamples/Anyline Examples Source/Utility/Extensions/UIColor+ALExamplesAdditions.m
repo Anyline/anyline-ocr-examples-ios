@@ -58,6 +58,10 @@
     return [UIColor colorNamed:@"AL_BackgroundColor"];
 }
 
++(UIColor *)AL_BackgroundSettingsHeaderColor {
+    return [UIColor colorNamed:@"AL_BackgroundSettingsHeaderColor"];
+}
+
 + (UIColor *)AL_LabelWhiteBlack {
     return [UIColor colorNamed:@"AL_LabelWhiteBlack"];
 }
@@ -76,6 +80,10 @@
 
 + (UIColor *)AL_BackButton {
     return  [UIColor colorNamed:@"AL_BackButton"];
+}
+
++ (UIColor *)AL_ExitRegistrationButton {
+    return  [UIColor colorNamed:@"AL_ExitRegistrationButton"];
 }
 
 + (UIColor *)AL_colorWithHexString:(NSString *)hexString {

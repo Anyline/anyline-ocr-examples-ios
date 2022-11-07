@@ -12,6 +12,9 @@
 #import "ALVINScanViewController.h"
 #import "ALContainerScanViewController.h"
 #import "ALVerticalContainerScanViewController.h"
+#import "ALVehicleRegistrationCertificateViewController.h"
+
+NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certificate";
 
 @interface ALMROExampleManager ()
 
@@ -50,13 +53,19 @@
                                                                   image:[UIImage imageNamed:@"tin"]
                                                          viewController:[CommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
+    ALExample *vehicleRegistrationCertificate = [[ALExample alloc] initWithName:NSLocalizedString(kVehicleRegistrationCertificate, nil)
+                                                       image:[UIImage imageNamed:@""]
+                                              viewController:[ALVehicleRegistrationCertificateViewController class]
+                                                       title:kVehicleRegistrationCertificate];
+    
     self.sectionNames = @[@"Vehicle",];
     self.examples = @{
         self.sectionNames[0] : @[
             vinScanning,
             tinScanning,
             tireSizeScanning,
-            commercialTireScanning
+            commercialTireScanning,
+            vehicleRegistrationCertificate
         ],
     };
 }

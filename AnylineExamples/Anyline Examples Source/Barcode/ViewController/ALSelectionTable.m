@@ -19,7 +19,6 @@ NSString * const kSearchRegionsPlaceholderText = @"Search regions";
 NSString * const kCellTextAll = @"All";
 NSString * const kCellTextDeselectAll = @"Deselect all";
 NSString * const kCellTextSelectAll = @"Select all";
-NSString * const kCellTextResetSettings = @"Reset Settings";
 
 @interface ALSelectionTable () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -98,8 +97,7 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // extra sections each containing one of "select all", and "reset"
-    int add = 1;
+    int add = 0;
     if (!self.singleSelect) {
         add += 1;
     }
@@ -111,7 +109,7 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self isSelectAllSection:section] || [self isResetSettingsSection:section]) {
+    if ([self isSelectAllSection:section]) {
         return 1;
     }
     if ([self inSearchMode]) {
@@ -134,10 +132,6 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
     lbl.textAlignment = NSTextAlignmentLeft;
     [view addSubview:lbl];
     
-    if ([self isResetSettingsSection:section]) {
-        lbl.text = @"";
-        return view;
-    }
     if ([self inSearchMode]) {
         lbl.text = self.filteredItems.count < 1 ? @"Empty Search Results" : @"Search Results";
     } else {
@@ -149,9 +143,6 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self isSelectAllSection:section]) {
         return 0;
-    }
-    if ([self isResetSettingsSection:section]) {
-        return self.filteredItems.count > 0 ? 12 : 0;
     }
     return 36;
 }
@@ -180,15 +171,6 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
         cell.detailTextLabel.font = [UIFont AL_proximaLightWithSize:18];
         cell.detailTextLabel.textColor = [UIColor AL_examplesBlue];
         cell.detailTextLabel.textAlignment = NSTextAlignmentRight;
-        return cell;
-    }
-
-    if ([self isResetSettingsSection:indexPath.section]) {
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-        cell.textLabel.text = kCellTextResetSettings;
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.textLabel.textColor = [UIColor AL_examplesBlue];
-        cell.textLabel.font = [UIFont AL_proximaLightWithSize:18];
         return cell;
     }
     
@@ -232,15 +214,7 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
         [self.tableView reloadData];
         return;
     }
-    if ([self isResetSettingsSection:indexPath.section]) {
-        __weak __block typeof(self) weakSelf = self;
-        [self showResetDialog:^{
-            weakSelf.selectedItems = [weakSelf.defaultItems mutableCopy];
-            [weakSelf refreshDoneBtnEnableState];
-            [weakSelf.tableView reloadData];
-        }];
-        return;
-    }
+
     NSString *key = self.headerTitles[indexPath.section-1];
     NSString *symb = [self inSearchMode] ? self.filteredItems[indexPath.row] : self.items[key][indexPath.row];
     if (!self.singleSelect) {
@@ -260,7 +234,7 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (indexPath.section == 0 || [self isResetSettingsSection:indexPath.section]) {
+    if (indexPath.section == 0) {
         return;
     }
     NSString *key = self.headerTitles[indexPath.section-1];
@@ -342,13 +316,6 @@ NSString * const kCellTextResetSettings = @"Reset Settings";
 
 - (BOOL)isSelectAllSection:(NSInteger)section {
     return section == 0;
-}
-
-- (BOOL)isResetSettingsSection:(NSInteger)section {
-    if (self.singleSelect) {
-        return NO;
-    }
-    return [self inSearchMode] ? (section == 2) : (section == self.items.allKeys.count + 1);
 }
 
 @end

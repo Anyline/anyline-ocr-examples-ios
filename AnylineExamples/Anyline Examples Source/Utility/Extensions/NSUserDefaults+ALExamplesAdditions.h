@@ -24,6 +24,9 @@
 + (BOOL)AL_hasRegistered;
 + (void)AL_setHasRegistered:(BOOL)wasAccepted;
 
++ (NSArray<NSString *> *)AL_selectedSymbologiesForBarcode;
++ (void)AL_setSelectedSymbologiesForBarcode:(NSArray<NSString *> *)selectedSymbologies;
+
 + (void)AL_setMail:(NSString *)mail;
 
 + (NSString *)AL_getMail;

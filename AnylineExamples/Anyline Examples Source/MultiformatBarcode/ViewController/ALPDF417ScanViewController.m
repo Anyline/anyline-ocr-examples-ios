@@ -106,7 +106,7 @@
  */
 - (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult *)scanResult {
     
-    NSArray <ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:scanResult];
+    NSArray <ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResultArray:scanResult.result];
     
     NSString *jsonString = [self jsonStringFromResultData:resultData];
 

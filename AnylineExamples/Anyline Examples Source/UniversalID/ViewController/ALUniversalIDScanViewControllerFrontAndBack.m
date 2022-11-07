@@ -375,7 +375,7 @@ NSInteger const kBarcodeBacksideScanTimeout = 0.7;
         if (self.detectedBarcode.result.count > 0) {
             barcodeString = [ALBarcodeResultUtil strValueFromBarcode:self.detectedBarcode.result[0]];
         }
-        [self.resultData addObjectsFromArray:[ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:self.detectedBarcode]];
+        [self.resultData addObjectsFromArray:[ALBarcodeResultUtil barcodeResultDataFromBarcodeResultArray:self.detectedBarcode.result]];
     }
 
     ALResultViewController *vc;

@@ -39,7 +39,7 @@ NSString * const kBaseFileName = @"DataProcessingConsent";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController.navigationBar setHidden:NO];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem.backBarButtonItem setTintColor:[UIColor AL_BackButton]];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor AL_BackButton]];

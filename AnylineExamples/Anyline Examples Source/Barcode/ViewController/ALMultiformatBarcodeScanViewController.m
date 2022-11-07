@@ -262,7 +262,7 @@
 - (void)showResultControllerWithResult:(ALBarcodeResult *)scanResult {
     [self.barcodeScanPlugin stopAndReturnError:nil];
     
-    NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResult:scanResult];
+    NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil barcodeResultDataFromBarcodeResultArray:scanResult.result];
     
     NSString *jsonString = [self jsonStringFromResultData:resultData];
 

@@ -23,6 +23,7 @@
 + (UIColor *)AL_SectionLabel;
 + (UIColor *)AL_NonSelectedToolBarItem;
 + (UIColor *)AL_BackgroundColor;
++(UIColor *)AL_BackgroundSettingsHeaderColor;
 + (UIColor *)AL_LabelWhiteBlack;
 + (UIColor *)AL_LabelBlackWhite;
 + (UIColor *)AL_NavigationBG;
@@ -31,6 +32,7 @@
 + (UIColor *)AL_Separator;
 + (UIColor *)AL_BackButton;
 + (UIColor *)AL_NoResultLabel;
++ (UIColor *)AL_ExitRegistrationButton;
 
 
 + (UIColor *)AL_colorWithHexString:(NSString *)hexString;

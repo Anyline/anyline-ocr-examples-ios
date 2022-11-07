@@ -11,7 +11,7 @@
 @interface ALDeviceInformationHelper : NSObject
 
 + (NSString *)getUUID;
-
 + (NSString *)getBundleIdentifier;
++ (NSString *)getAppLocalization;
 
 @end

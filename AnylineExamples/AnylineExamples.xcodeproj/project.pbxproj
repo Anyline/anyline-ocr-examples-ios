@@ -89,6 +89,7 @@
 		620A72D55067A153CAD7F4DF /* UIFont+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C42E39BF797CCFDCA51E9 /* UIFont+ALExamplesAdditions.m */; };
 		6A3B7F7A4EB2FA1224CB7B3C /* ALEnergyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8BBF33123C5DED64F598FF /* ALEnergyBaseViewController.m */; };
 		6A5F1FB469924DC9ACCF4163 /* ALExample.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B4776BB82FA4F7729784D0 /* ALExample.m */; };
+		6D18D4FC00EE5AACCBB6B2BD /* ALVehicleRegistrationCertificateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DAADF2E811C3B198393F6C /* ALVehicleRegistrationCertificateViewController.m */; };
 		6E36CB15F322CF98A84D8467 /* ALScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CB4729C4A9C0FEBF226E57 /* ALScanResultViewController.m */; };
 		6F80C436AEC24B717740CF88 /* ScanHistoryMigration3to4.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5FEA61C1C1ACB0265F519 /* ScanHistoryMigration3to4.m */; };
 		70A4D305EAB9D7D45D30B58A /* voucher_code_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 96A3D3139D636DFCF875E8FA /* voucher_code_config.json */; };
@@ -129,6 +130,7 @@
 		9BA532A518522696002B0872 /* ALAwardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B40EC29D2A0CFA6AC2651C /* ALAwardsView.m */; };
 		9D6D1A47066EC5C9D3CAE9F4 /* ALLicensePlateExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */; };
 		A19EC2C4EDE4E23A8233D63A /* ALAutoAnalogDigitalMeterScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DEF617BE080B414491B04 /* ALAutoAnalogDigitalMeterScanViewController.m */; };
+		A58132C2E27BA742474165A3 /* vehicle_registration_certificate_config.json in Resources */ = {isa = PBXBuildFile; fileRef = ECBB4E54E07A19394D2AD07B /* vehicle_registration_certificate_config.json */; };
 		A66630A6C0A9ECB50C022625 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */; };
 		A70B12B1EB0583ABBFAAAECF /* CustomerSelfReading+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DF764271604E0EB992306FBB /* CustomerSelfReading+CoreDataProperties.m */; };
 		A7778909FCEA0763AF157E37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7026ED1172CCE2593E132DFF /* main.m */; };
@@ -275,6 +277,7 @@
 		355AD17D434245A0D11FBA9E /* WorkorderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkorderViewController.xib; sourceTree = "<group>"; };
 		367F467BC78460348A00040D /* ALScrabblePoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScrabblePoints.h; sourceTree = "<group>"; };
 		393827A2900685456384FB31 /* AnylineExamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnylineExamples-Bridging-Header.h"; sourceTree = "<group>"; };
+		395C010F945BB525FA78FA95 /* ALVehicleRegistrationCertificateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVehicleRegistrationCertificateViewController.h; sourceTree = "<group>"; };
 		3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPrivacyViewController.m; sourceTree = "<group>"; };
 		3A67ACF7B450115C3E36A9EA /* vertical_container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vertical_container_scanner_capture_config.json; sourceTree = "<group>"; };
 		3AF73219598C155CF0603175 /* ALCustomToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCustomToolbar.m; sourceTree = "<group>"; };
@@ -331,6 +334,7 @@
 		63BB1A422354B6B767547049 /* Reading+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reading+CoreDataProperties.m"; sourceTree = "<group>"; };
 		63F14023856F87ABE98CD7BB /* UIToolbar+ExamplesExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+ExamplesExtensions.m"; sourceTree = "<group>"; };
 		64EDE98D6457AAEEED1DAEE4 /* ALEnergyMeterScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALEnergyMeterScanViewController.h; sourceTree = "<group>"; };
+		65DAADF2E811C3B198393F6C /* ALVehicleRegistrationCertificateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALVehicleRegistrationCertificateViewController.m; sourceTree = "<group>"; };
 		65DCF7ACFE373E5E0AD7B3FA /* ALMeterScanResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterScanResultViewController.h; sourceTree = "<group>"; };
 		678532EDC412A7D9CFA127A7 /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 		678CE157440B405ADF327B28 /* ALColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALColor.m; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 		E9ECA85494F681157BC59F5B /* ALDeviceInformationHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDeviceInformationHelper.h; sourceTree = "<group>"; };
 		EB78932388C374EF93341EE8 /* ALMeter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeter.m; sourceTree = "<group>"; };
 		EC5ACE76FC9E35F836FCF969 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		ECBB4E54E07A19394D2AD07B /* vehicle_registration_certificate_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vehicle_registration_certificate_config.json; sourceTree = "<group>"; };
 		ECC67A6891F547B529598E5F /* ALMainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMainPageViewController.h; sourceTree = "<group>"; };
 		ED0774AF77528E119EC1C3DA /* ALMeterScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterScanResultViewController.m; sourceTree = "<group>"; };
 		EE07C3AB77F30E4471803B65 /* ALPDF417ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPDF417ScanViewController.h; sourceTree = "<group>"; };
@@ -716,6 +721,16 @@
 			path = VoucherCode;
 			sourceTree = "<group>";
 		};
+		2F6F5EE96EB464D7C09E4BAC /* Vehicle Registration Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				395C010F945BB525FA78FA95 /* ALVehicleRegistrationCertificateViewController.h */,
+				65DAADF2E811C3B198393F6C /* ALVehicleRegistrationCertificateViewController.m */,
+				ECBB4E54E07A19394D2AD07B /* vehicle_registration_certificate_config.json */,
+			);
+			path = "Vehicle Registration Certificate";
+			sourceTree = "<group>";
+		};
 		388930835AE5FC35528C20F7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +851,7 @@
 				F9E818A444CA5C245D4F4123 /* Tire */,
 				761C0429062CC48DC697E44E /* UniversalID */,
 				27E8F4A161675EE05890151F /* Utility */,
+				2F6F5EE96EB464D7C09E4BAC /* Vehicle Registration Certificate */,
 				EC8DCF8EDC90B897688C6F82 /* VIN */,
 				2C0947BBF98459EB5C3E8ADA /* VoucherCode */,
 			);
@@ -1517,6 +1533,7 @@
 				DF769EF1A4C7A11DE916D0B1 /* universal_id_config.json in Resources */,
 				F941A07E7CE5C1FA5D76DC06 /* universal_id_cyrillic_config.json in Resources */,
 				D30B74B0A2CFE68B8E57FE58 /* universal_id_flash_config.json in Resources */,
+				A58132C2E27BA742474165A3 /* vehicle_registration_certificate_config.json in Resources */,
 				507F27646299BFC4E6A3B20E /* vertical_container_scanner_capture_config.json in Resources */,
 				51C38786D4765B59D70915BC /* vin_capture_config.json in Resources */,
 				70A4D305EAB9D7D45D30B58A /* voucher_code_config.json in Resources */,
@@ -1621,6 +1638,7 @@
 				03DF5696948CA0436A2D9AA8 /* ALUniversalSerialNumberScanViewController.m in Sources */,
 				332E5FE5513F6CDD2346D6D2 /* ALUtils.m in Sources */,
 				BF07386056E53CFE5C441BB7 /* ALVINScanViewController.m in Sources */,
+				6D18D4FC00EE5AACCBB6B2BD /* ALVehicleRegistrationCertificateViewController.m in Sources */,
 				5696F41B6116EFE209F7D4A4 /* ALVerticalContainerScanViewController.m in Sources */,
 				DBD0CB5D7B8AED3B3E083BE3 /* ALVoucherCodeScanViewController.m in Sources */,
 				45E1C7C5AE4504472B25C3F6 /* ALWarningView.m in Sources */,

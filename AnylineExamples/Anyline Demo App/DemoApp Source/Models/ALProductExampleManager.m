@@ -71,10 +71,10 @@
                                                viewController:[ALGridCollectionViewController class]
                                                exampleManager:[ALLicensePlateExampleManager class]];
     
-    ALExample *mro = [[ALExample alloc] initWithName:NSLocalizedString(@"Vehicle", nil)
-                                                  image:[UIImage imageNamed:@"tile_vehicle_new"]
-                                         viewController:[ALGridCollectionViewController class]
-                                         exampleManager:[ALMROExampleManager class]];
+    ALExample *vehicle = [[ALExample alloc] initWithName:NSLocalizedString(@"Vehicle", nil)
+                                                   image:[UIImage imageNamed:@"tile_vehicle_new"]
+                                          viewController:[ALGridCollectionViewController class]
+                                          exampleManager:[ALMROExampleManager class]];
     
     ALExample *others = [[ALExample alloc] initWithName:NSLocalizedString(@"Other", nil)
                                                   image:[UIImage imageNamed:@"tile_mro"]
@@ -88,7 +88,7 @@
             identityDocuments,
             meterReading,
             licensePlate,
-            mro,
+            vehicle,
             others],
     };
 }

@@ -21,4 +21,8 @@
     return [[NSBundle mainBundle] bundleIdentifier];
 }
 
++ (NSString *)getAppLocalization {
+    return [[NSLocale preferredLanguages] objectAtIndex:0];
+}
+
 @end

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)strValueFromBarcode:(ALBarcode *)barcode;
 
-+ (NSArray<ALResultEntry *> *)barcodeResultDataFromBarcodeResult:(ALBarcodeResult *)barcodeResult;
++ (NSArray<ALResultEntry *> *)barcodeResultDataFromBarcodeResultArray:(NSArray<ALBarcode *> *)resultData;
 
 @end
 

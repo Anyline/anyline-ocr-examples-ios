@@ -66,7 +66,7 @@ static NSString * const kLegacy = @"LEGACY SYMBOLOGIES";
         }
     };
     
-    defaultReadableNames = @[@"UPC/EAN", @"Code 128", @"Code 39", @"Interleaved 2 of 5", @"PDF417", @"QR Code"];
+    defaultReadableNames = @[@"UPC/EAN", @"GS1 DataBar & Composite Codes", @"MSI", @"Code 128", @"Code 39", @"Interleaved 2 of 5", @"GS1-128", @"ISBT 128", @"Trioptic Code 39", @"Code 32", @"Code 93", @"Data Matrix", @"PDF417", @"QR Code", @"MicroPDF417", @"MicroQR", @"GS1 QR Code", @"Aztec", @"MaxiCode", @"US Postnet", @"US Planet", @"UK Postal", @"USPS 4CD / One Code / Intelligent Mail", @"Code 25", @"Codabar", @"Code 11"];
     
     headerNames = @[k1DRetail, k1DLogisitcs, k2D, kPostal, kLegacy];
 }

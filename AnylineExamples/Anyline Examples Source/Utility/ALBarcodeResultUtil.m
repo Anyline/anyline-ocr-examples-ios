@@ -11,14 +11,14 @@
 @implementation ALBarcodeResultUtil
 
 /// Returns an array of ALResultEntry for use with a results screen, given an
-/// ALBarcodeResult. The results may also include PDF417-AAMVA parsed data, if
+/// NSArray<ALBarcode *> *. The results may also include PDF417-AAMVA parsed data, if
 /// the barcode scan plugin's `parsePDF417` property had been set to YES.
 ///
-/// @param barcodeResult A barcode scan result
+/// @param resultData An array of barcode scan result
 ///
-+ (NSArray<ALResultEntry *> *)barcodeResultDataFromBarcodeResult:(ALBarcodeResult *)barcodeResult {
-    NSMutableArray<ALResultEntry *> *resultData = [NSMutableArray array];
-    for (ALBarcode *barcode in barcodeResult.result) {
++ (NSArray<ALResultEntry *> *)barcodeResultDataFromBarcodeResultArray:(NSArray<ALBarcode *> *)resultData {
+    NSMutableArray<ALResultEntry *> *resultMutableData = [NSMutableArray array];
+    for (ALBarcode *barcode in resultData) {
         NSString *barcodeString = [[self class] strValueFromBarcode:barcode];
         // If we are have a parsed PDF417 result display it in a different way
         NSMutableArray<ALResultEntry *> *pdf417Results = [NSMutableArray<ALResultEntry *> array];
@@ -36,15 +36,15 @@
         }
         
         if (pdf417Results.count > 0) {
-            [resultData addObjectsFromArray:pdf417Results];
+            [resultMutableData addObjectsFromArray:pdf417Results];
         } else {
-            [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result"
+            [resultMutableData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result"
                                                                  value:barcodeString
                                                    shouldSpellOutValue:YES]];
         }
-        [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcode.barcodeFormat shouldSpellOutValue:YES]];
+        [resultMutableData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology" value:barcode.barcodeFormat shouldSpellOutValue:YES]];
     }
-    return resultData;
+    return resultMutableData;
 }
 
 /// Returns a string value of a barcode, in base64 in case the raw
