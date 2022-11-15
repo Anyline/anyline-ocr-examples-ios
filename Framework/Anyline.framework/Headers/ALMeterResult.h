@@ -18,10 +18,11 @@ typedef NS_ENUM(NSInteger, ALScanMode) {
     ALHeatMeter5,
     ALHeatMeter6,
     ALDialMeter,
+    ALDigitalMeter2Experimental, // Uses meter models optimized for a certain use case. This is not intended for public use.
     ALAnalogMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
     ALDigitalMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
     ALDotMatrixMeter, // deprecated as of 41, will be removed soon. Use ALAutoAnalogDigitalMeter instead.
-    ALMeterBarcode // This scanMode has since been removed and will lead to an error if set as the scan mode.
+    ALMeterBarcode, // This scanMode has since been removed and will lead to an error if set as the scan mode.
 };
 
 /**

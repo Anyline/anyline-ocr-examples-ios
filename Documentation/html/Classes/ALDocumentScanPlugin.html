@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -144,6 +144,8 @@
 		
 		<option value="//api/name/resetValues">- resetValues</option>
 		
+		<option value="//api/name/setDocumentRatios:">- setDocumentRatios:</option>
+		
 		<option value="//api/name/start:error:">- start:error:</option>
 		
 		<option value="//api/name/stopAndReturnError:">- stopAndReturnError:</option>
@@ -199,6 +201,557 @@
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithPluginID:delegate:error:" title="initWithPluginID:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:error:">&ndash;&nbsp;initWithPluginID:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructor for the DocumentScanPlugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginID</code></th>
+						<td><p>An unique <a href="#//api/name/pluginID">pluginID</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate which receives the results</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The Error object if something fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/start:error:" title="start:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isRunning" title="isRunning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isRunning">&ndash;&nbsp;isRunning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isRunning</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDocumentRatios:" title="setDocumentRatios:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDocumentRatios:">&ndash;&nbsp;setDocumentRatios:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setDocumentRatios:(NSArray&lt;NSNumber*&gt; *)<em>ratios</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerPictureCornerDetectionAndReturnError:" title="triggerPictureCornerDetectionAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerPictureCornerDetectionAndReturnError:">&ndash;&nbsp;triggerPictureCornerDetectionAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALDocumentScanPluginDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALDocumentScanPluginDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addInfoDelegate:" title="addInfoDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInfoDelegate:">&ndash;&nbsp;addInfoDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt;)<em>infoDelegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeInfoDelegate:" title="removeInfoDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeInfoDelegate:">&ndash;&nbsp;removeInfoDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt;)<em>infoDelegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transformImageWithSquare:image:error:" title="transformImageWithSquare:image:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transformImageWithSquare:image:error:">&ndash;&nbsp;transformImageWithSquare:image:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)transformImageWithSquare:(ALSquare *)<em>square</em> image:(UIImage *)<em>image</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>square</code></th>
+						<td><p>The input image will be transformed to this square</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The UIImage which will be processed and transformed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occured</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transformALImageWithSquare:image:error:" title="transformALImageWithSquare:image:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transformALImageWithSquare:image:error:">&ndash;&nbsp;transformALImageWithSquare:image:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
+After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
+In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)transformALImageWithSquare:(ALSquare *)<em>square</em> image:(ALImage *)<em>image</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>square</code></th>
+						<td><p>The input image will be transformed to this square</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The <a href="../Classes/ALImage.html">ALImage</a> which will be processed and transformed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error that occured</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delayedScanTimeFulfilled" title="delayedScanTimeFulfilled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delayedScanTimeFulfilled">&ndash;&nbsp;delayedScanTimeFulfilled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The delayedScanTimeFulfilled indicates if the configured <a href="#//api/name/delayStartScanTime">delayStartScanTime</a> has been fulfilled.
+No result will be returned unless this method returns true.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)delayedScanTimeFulfilled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating if the <a href="#//api/name/delayStartScanTime">delayStartScanTime</a> has been fulfilled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:reportsVariable:value:" title="anylineCoreController:reportsVariable:value:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:reportsVariable:value:">&ndash;&nbsp;anylineCoreController:reportsVariable:value:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didAbortRun:" title="anylineCoreController:didAbortRun:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didAbortRun:">&ndash;&nbsp;anylineCoreController:didAbortRun:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didAbortRun:(NSError *)<em>reason</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureHighResPicture" title="captureHighResPicture"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureHighResPicture">&ndash;&nbsp;captureHighResPicture</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)captureHighResPicture</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageCaptured:fullImage:documentImage:" title="imageCaptured:fullImage:documentImage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageCaptured:fullImage:documentImage:">&ndash;&nbsp;imageCaptured:fullImage:documentImage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)imageCaptured:(ALSquare *)<em>highResSquare</em> fullImage:(UIImage *)<em>fullImage</em> documentImage:(UIImage *)<em>documentImage</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/_finishManualSnap" title="_finishManualSnap"></a>
+	<h3 class="method-title"><code><a href="#//api/name/_finishManualSnap">&ndash;&nbsp;_finishManualSnap</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)_finishManualSnap</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:" title="fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:">&ndash;&nbsp;fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALSquare *)fullImageSquareFrom:(ALSquare *)<em>square</em> withFullImageSize:(CGSize)<em>fullImageSize</em> smallFrameSize:(CGSize)<em>smallFrameSize</em> fullFrameSize:(CGSize)<em>fullFrameSize</em> resizeWidth:(CGFloat)<em>resizeWidth</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetValues" title="resetValues"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetValues">&ndash;&nbsp;resetValues</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)resetValues</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
 						
 
 						
@@ -318,74 +871,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithPluginID:delegate:error:" title="initWithPluginID:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithPluginID:delegate:error:">&ndash;&nbsp;initWithPluginID:delegate:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Constructor for the DocumentScanPlugin</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginID:(NSString *_Nullable)<em>pluginID</em> delegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>pluginID</code></th>
-						<td><p>An unique <a href="#//api/name/pluginID">pluginID</a></p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The delegate which receives the results</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The Error object if something fails</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/init" title="init"></a>
 	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 </h3>
@@ -399,210 +884,6 @@
 			<div class="method-subsection method-declaration"><code>- (instancetype _Null_unspecified)init</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/start:error:" title="start:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isRunning" title="isRunning"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isRunning">&ndash;&nbsp;isRunning</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)isRunning</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/triggerPictureCornerDetectionAndReturnError:" title="triggerPictureCornerDetectionAndReturnError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/triggerPictureCornerDetectionAndReturnError:">&ndash;&nbsp;triggerPictureCornerDetectionAndReturnError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)triggerPictureCornerDetectionAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/transformImageWithSquare:image:error:" title="transformImageWithSquare:image:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/transformImageWithSquare:image:error:">&ndash;&nbsp;transformImageWithSquare:image:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
-After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
-In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)transformImageWithSquare:(ALSquare *_Nullable)<em>square</em> image:(UIImage *_Nullable)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>square</code></th>
-						<td><p>The input image will be transformed to this square</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The UIImage which will be processed and transformed</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error that occured</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/transformALImageWithSquare:image:error:" title="transformALImageWithSquare:image:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/transformALImageWithSquare:image:error:">&ndash;&nbsp;transformALImageWithSquare:image:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Crops an arbitrary rectangle (e.g. trapezoid) of the input image and perspectively transforms it to a rectangle (e.g. square).
-After the transformation is complete the result delegate anylineDocumentScanPlugin:hasResult:fullImage:documentCorners will be triggered.
-In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before using this method.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)transformALImageWithSquare:(ALSquare *_Nullable)<em>square</em> image:(ALImage *_Nullable)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>square</code></th>
-						<td><p>The input image will be transformed to this square</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The <a href="../Classes/ALImage.html">ALImage</a> which will be processed and transformed</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error that occured</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the call.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -775,70 +1056,6 @@ In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before usi
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALDocumentScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/addInfoDelegate:" title="addInfoDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addInfoDelegate:">&ndash;&nbsp;addInfoDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)addInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt; _Nonnull)<em>infoDelegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeInfoDelegate:" title="removeInfoDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeInfoDelegate:">&ndash;&nbsp;removeInfoDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)removeInfoDelegate:(id&lt;ALDocumentInfoDelegate&gt; _Nonnull)<em>infoDelegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/delayStartScanTime" title="delayStartScanTime"></a>
 	<h3 class="method-title"><code><a href="#//api/name/delayStartScanTime">&nbsp;&nbsp;delayStartScanTime</a></code>
 </h3>
@@ -850,205 +1067,6 @@ In any case call [ALDocumentScanPlugin cancelScanningAndReturnError:] before usi
 			
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic) CGFloat delayStartScanTime</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/delayedScanTimeFulfilled" title="delayedScanTimeFulfilled"></a>
-	<h3 class="method-title"><code><a href="#//api/name/delayedScanTimeFulfilled">&ndash;&nbsp;delayedScanTimeFulfilled</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The delayedScanTimeFulfilled indicates if the configured <a href="#//api/name/delayStartScanTime">delayStartScanTime</a> has been fulfilled.
-No result will be returned unless this method returns true.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)delayedScanTimeFulfilled</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating if the <a href="#//api/name/delayStartScanTime">delayStartScanTime</a> has been fulfilled.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALDocumentScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/dealloc" title="dealloc"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineCoreController:reportsVariable:value:" title="anylineCoreController:reportsVariable:value:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:reportsVariable:value:">&ndash;&nbsp;anylineCoreController:reportsVariable:value:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> reportsVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineCoreController:didAbortRun:" title="anylineCoreController:didAbortRun:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didAbortRun:">&ndash;&nbsp;anylineCoreController:didAbortRun:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didAbortRun:(NSError *)<em>reason</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/captureHighResPicture" title="captureHighResPicture"></a>
-	<h3 class="method-title"><code><a href="#//api/name/captureHighResPicture">&ndash;&nbsp;captureHighResPicture</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)captureHighResPicture</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/imageCaptured:fullImage:documentImage:" title="imageCaptured:fullImage:documentImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/imageCaptured:fullImage:documentImage:">&ndash;&nbsp;imageCaptured:fullImage:documentImage:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)imageCaptured:(ALSquare *)<em>highResSquare</em> fullImage:(UIImage *)<em>fullImage</em> documentImage:(UIImage *)<em>documentImage</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/_finishManualSnap" title="_finishManualSnap"></a>
-	<h3 class="method-title"><code><a href="#//api/name/_finishManualSnap">&ndash;&nbsp;_finishManualSnap</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)_finishManualSnap</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:" title="fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:">&ndash;&nbsp;fullImageSquareFrom:withFullImageSize:smallFrameSize:fullFrameSize:resizeWidth:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (ALSquare *)fullImageSquareFrom:(ALSquare *)<em>square</em> withFullImageSize:(CGSize)<em>fullImageSize</em> smallFrameSize:(CGSize)<em>smallFrameSize</em> fullFrameSize:(CGSize)<em>fullFrameSize</em> resizeWidth:(CGFloat)<em>resizeWidth</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/resetValues" title="resetValues"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resetValues">&ndash;&nbsp;resetValues</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)resetValues</code></div>
 
 		    
 		</div>
@@ -1252,10 +1270,10 @@ No result will be returned unless this method returns true.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

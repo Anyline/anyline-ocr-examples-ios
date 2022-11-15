@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -102,6 +102,8 @@
 		
 		<option value="//api/name/assetController">- assetController</option>
 		
+		<option value="//api/name/assetPath">- assetPath</option>
+		
 		<option value="//api/name/createModuleErrorWithCode:message:">- createModuleErrorWithCode:message:</option>
 		
 		<option value="//api/name/dealloc">- dealloc</option>
@@ -169,8 +171,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/infoDelegates" title="infoDelegates"></a>
-	<h3 class="method-title"><code><a href="#//api/name/infoDelegates">&nbsp;&nbsp;infoDelegates</a></code>
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
 </h3>
 
 	<div class="method-info">
@@ -179,14 +181,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSPointerArray&lt;ALInfoDelegate&gt; *infoDelegates</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/pluginID" title="pluginID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
+	<a name="//api/name/addInfoDelegate:" title="addInfoDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addInfoDelegate:">&ndash;&nbsp;addInfoDelegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -194,40 +196,15 @@
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>The pluginID is useful if there are multiple plugins running at the same time</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *pluginID</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addInfoDelegate:(id&lt;ALInfoDelegate&gt;)<em>infoDelegate</em></code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/imageProvider" title="imageProvider"></a>
-	<h3 class="method-title"><code><a href="#//api/name/imageProvider">&nbsp;&nbsp;imageProvider</a></code>
+	<a name="//api/name/removeInfoDelegate:" title="removeInfoDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeInfoDelegate:">&ndash;&nbsp;removeInfoDelegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -235,35 +212,10 @@
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>The ImageProvider implementation takes care of getting new images in the SDK for processing</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;ALImageProvider&gt; imageProvider</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeInfoDelegate:(id&lt;ALInfoDelegate&gt;)<em>infoDelegate</em></code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -284,7 +236,7 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
 
 		    
 			
@@ -347,7 +299,7 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError **)<em>error</em></code></div>
 
 		    
 			
@@ -432,54 +384,6 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 			</div>
 			
 			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/addInfoDelegate:" title="addInfoDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addInfoDelegate:">&ndash;&nbsp;addInfoDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)addInfoDelegate:(id&lt;ALInfoDelegate&gt; _Nonnull)<em>infoDelegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeInfoDelegate:" title="removeInfoDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeInfoDelegate:">&ndash;&nbsp;removeInfoDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)removeInfoDelegate:(id&lt;ALInfoDelegate&gt; _Nonnull)<em>infoDelegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/delayStartScanTime" title="delayStartScanTime"></a>
-	<h3 class="method-title"><code><a href="#//api/name/delayStartScanTime">&nbsp;&nbsp;delayStartScanTime</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) int delayStartScanTime</code></div>
-
-		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -568,270 +472,6 @@ No result will be returned unless this method returns true.</p>
 			</div>
 			
 			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetController" title="assetController"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetController">&ndash;&nbsp;assetController</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (ALAssetController *_Nullable)assetController</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setAssetController:error:" title="setAssetController:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setAssetController:error:">&ndash;&nbsp;setAssetController:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setAssetController:(ALAssetController *_Nonnull)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetController</code></th>
-						<td><p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>An NSError passed by reference</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/confidence" title="confidence"></a>
-	<h3 class="method-title"><code><a href="#//api/name/confidence">&nbsp;&nbsp;confidence</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger confidence</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/scanImage" title="scanImage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanImage">&nbsp;&nbsp;scanImage</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) ALImage *scanImage</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/coreController" title="coreController"></a>
-	<h3 class="method-title"><code><a href="#//api/name/coreController">&nbsp;&nbsp;coreController</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCoreController *coreController</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/productName" title="productName"></a>
-	<h3 class="method-title"><code><a href="#//api/name/productName">&nbsp;&nbsp;productName</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic) NSString *productName</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetController" title="assetController"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetController">&nbsp;&nbsp;assetController</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALAssetController *assetController</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/resourceSubdirectory" title="resourceSubdirectory"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resourceSubdirectory">&nbsp;&nbsp;resourceSubdirectory</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Plugin-specific subdirectory containing the resources for said plugin. Needs to
-be set when a ALScanPlugin subclass is initialized.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSString *resourceSubdirectory</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetPath" title="assetPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetPath">&nbsp;&nbsp;assetPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>If an active <a href="#//api/name/assetController">assetController</a> matching the current plugin can be found, its asset
-path can be used to provide the source of the plugin resources. NOTE: If a subclass
-uses a config specifying a custom file path for assets, this path should be used
-instead.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *assetPath</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/dealloc" title="dealloc"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
-
-		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -995,6 +635,108 @@ for example that the display or paper frame could not be found.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/setAssetController:error:" title="setAssetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetController:error:">&ndash;&nbsp;setAssetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAssetController:(ALAssetController *_Nonnull)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>An <a href="../Classes/ALAssetController.html">ALAssetController</a> supplied to the plugin by <a href="../Classes/ALAssetUpdateManager.html">ALAssetUpdateManager</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An NSError passed by reference</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetPath" title="assetPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetPath">&ndash;&nbsp;assetPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If an active <a href="#//api/name/assetController">assetController</a> matching the current plugin can be found, its asset
+path can be used to provide the source of the plugin resources. NOTE: If a subclass
+uses a config specifying a custom file path for assets, this path should be used
+instead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)assetPath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/modelKey" title="modelKey"></a>
 	<h3 class="method-title"><code><a href="#//api/name/modelKey">&ndash;&nbsp;modelKey</a></code>
 </h3>
@@ -1030,6 +772,266 @@ for example that the display or paper frame could not be found.</p>
 						</div>
 						
 
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/infoDelegates" title="infoDelegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/infoDelegates">&nbsp;&nbsp;infoDelegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSPointerArray&lt;ALInfoDelegate&gt; *infoDelegates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The pluginID is useful if there are multiple plugins running at the same time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/imageProvider" title="imageProvider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/imageProvider">&nbsp;&nbsp;imageProvider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The ImageProvider implementation takes care of getting new images in the SDK for processing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) id&lt;ALImageProvider&gt; imageProvider</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delayStartScanTime" title="delayStartScanTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delayStartScanTime">&nbsp;&nbsp;delayStartScanTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) int delayStartScanTime</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetController" title="assetController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetController">&ndash;&nbsp;assetController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALAssetController *_Nullable)assetController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/confidence" title="confidence"></a>
+	<h3 class="method-title"><code><a href="#//api/name/confidence">&nbsp;&nbsp;confidence</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger confidence</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanImage" title="scanImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanImage">&nbsp;&nbsp;scanImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) ALImage *scanImage</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/coreController" title="coreController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/coreController">&nbsp;&nbsp;coreController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALCoreController *coreController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/productName" title="productName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/productName">&nbsp;&nbsp;productName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic) NSString *productName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetController" title="assetController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetController">&nbsp;&nbsp;assetController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALAssetController *assetController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resourceSubdirectory" title="resourceSubdirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resourceSubdirectory">&nbsp;&nbsp;resourceSubdirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Plugin-specific subdirectory containing the resources for said plugin. Needs to
+be set when a ALScanPlugin subclass is initialized.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSString *resourceSubdirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="Extension Methods" name="task_Extension Methods"></a>
 						<h2 class="task-title">Extension Methods</h2>
 
@@ -1046,6 +1048,22 @@ for example that the display or paper frame could not be found.</p>
 			
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *scanStartTime</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetPath" title="assetPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetPath">&nbsp;&nbsp;assetPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property NSString *assetPath</code></div>
 
 		    
 		</div>
@@ -1097,10 +1115,10 @@ for example that the display or paper frame could not be found.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

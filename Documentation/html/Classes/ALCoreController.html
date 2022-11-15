@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -234,6 +234,1501 @@ can execute totally different tasks.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/initWithDelegate:error:" title="initWithDelegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:error:">&ndash;&nbsp;initWithDelegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a new ALCoreController with a <a href="#//api/name/delegate">delegate</a>. In order
+to correctly run Anyline you will have to load an appropriate configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(id&lt;ALCoreControllerDelegate&gt;)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The <a href="#//api/name/delegate">delegate</a> where for the Anyline callbacks.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new instance of ALCoreController.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithModuleIdentifier:delegate:error:" title="initWithModuleIdentifier:delegate:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithModuleIdentifier:delegate:error:">&ndash;&nbsp;initWithModuleIdentifier:delegate:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithModuleIdentifier:(NSString *)<em>moduleIdentifier</em> delegate:(id&lt;ALCoreControllerDelegate&gt;)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadScript:bundlePath:product:assetController:error:" title="loadScript:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:bundlePath:product:assetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method loads the Anyline SDK with an configuration string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *)<em>script</em> bundlePath:(NSString *)<em>bundlePath</em> product:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>script</code></th>
+						<td><p>The string which represents the configuration.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bundlePath</code></th>
+						<td><p>The bundlePath where the additional ressources are located.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadScript:scriptName:bundlePath:product:assetController:error:" title="loadScript:scriptName:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:product:assetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method loads the Anyline SDK with an configuration string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *)<em>script</em> scriptName:(NSString *)<em>scriptName</em> bundlePath:(NSString *)<em>bundlePath</em> product:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>script</code></th>
+						<td><p>The string which represents the configuration.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scriptName</code></th>
+						<td><p>The filename of the script.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bundlePath</code></th>
+						<td><p>The bundlePath where the additional ressources are located.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadCmdFile:bundlePath:product:assetController:error:" title="loadCmdFile:bundlePath:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:product:assetController:error:">&ndash;&nbsp;loadCmdFile:bundlePath:product:assetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method loads the Anyline SDK with an configuration file which is located
+at the bundlePath. The configuration must ether be an .alc unencrypted file
+or an .ale encrypted file.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *)<em>cmdFileName</em> bundlePath:(NSString *)<em>bundlePath</em> product:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cmdFileName</code></th>
+						<td><p>Configuration filename. Ether .alc or .ale. Located at
+the bundlePath</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bundlePath</code></th>
+						<td><p>The bundlePath where the configuration and the additional
+ressources are located.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>product</code></th>
+						<td><p>The product identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetController</code></th>
+						<td><p>The asset controller, if there is one</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bundleIdentifier" title="bundleIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bundleIdentifier">+&nbsp;bundleIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)bundleIdentifier</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/platformIdentifier" title="platformIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/platformIdentifier">+&nbsp;platformIdentifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)platformIdentifier</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initCore" title="initCore"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initCore">&ndash;&nbsp;initCore</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)initCore</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initCoreWithError:" title="initCoreWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initCoreWithError:">&ndash;&nbsp;initCoreWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method initialises the core without loading any scripts
+*  @param error will be set to nil if setup is finished, or an error object when setup failed.
+* @return whether setup succeeded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)initCoreWithError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/load:scriptName:bundlePath:isFile:product:assetController:error:" title="load:scriptName:bundlePath:isFile:product:assetController:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/load:scriptName:bundlePath:isFile:product:assetController:error:">&ndash;&nbsp;load:scriptName:bundlePath:isFile:product:assetController:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)load:(NSString *)<em>cmdFile</em> scriptName:(NSString *)<em>scriptName</em> bundlePath:(NSString *)<em>bundlePath</em> isFile:(BOOL)<em>isFile</em> product:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/errorForOfCustomImageProvider:" title="errorForOfCustomImageProvider:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/errorForOfCustomImageProvider:">&ndash;&nbsp;errorForOfCustomImageProvider:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSError *)errorForOfCustomImageProvider:(id)<em>imageProvider</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithImageProvider:error:" title="startWithImageProvider:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithImageProvider:error:">&ndash;&nbsp;startWithImageProvider:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a continious image processing workflow where the images are provided from the
+image provider interface. Should for example be called in the viewDidAppear:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The image provider which is responsible for providing the frames for the
+computation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if the processing can not be started.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the start process.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithImageProvider:startVariables:error:" title="startWithImageProvider:startVariables:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithImageProvider:startVariables:error:">&ndash;&nbsp;startWithImageProvider:startVariables:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a continious image processing workflow where the images are provided from the
+image provider interface. Should for example be called in the viewDidAppear:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> startVariables:(NSDictionary *)<em>startVariables</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The image provider which is responsible for providing the frames for the
+computation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startVariables</code></th>
+						<td><p>Variables which will be added to the process and can be referenced in the
+Anyline Command File.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if the processing can not be started.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the start process.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentBundleName" title="currentBundleName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentBundleName">+&nbsp;currentBundleName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)currentBundleName</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops a previously started image processing workflow. Should be called ex. in viewDidDisappear:
+or viewWillDisappear:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>The error if processing workflow could not be stopped</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success / failure of the stop.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processImage:error:" title="processImage:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processImage:error:">&ndash;&nbsp;processImage:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a single image run with an UIImage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *)<em>image</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL indicating if the processing could be started.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processImage:startVariables:error:" title="processImage:startVariables:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processImage:startVariables:error:">&ndash;&nbsp;processImage:startVariables:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a single image run with an UIImage and a start variable dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *)<em>image</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>variables</code></th>
+						<td><p>Variables which will be added for this single process. They can be used and
+controlled in the .alc files. @see ALConfig for global config variables.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL indicating if the processing could be started.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processALImage:error:" title="processALImage:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processALImage:error:">&ndash;&nbsp;processALImage:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a single image run with an <a href="../Classes/ALImage.html">ALImage</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *)<em>alImage</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>alImage</code></th>
+						<td><p>The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL indicating if the processing could be started.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processALImage:startVariables:error:" title="processALImage:startVariables:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processALImage:startVariables:error:">&ndash;&nbsp;processALImage:startVariables:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts a single image run with an <a href="../Classes/ALImage.html">ALImage</a> and a start variable dictionary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *)<em>alImage</em> startVariables:(NSDictionary *)<em>variables</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>alImage</code></th>
+						<td><p>The image or video frame which should be processed. This image is referenced as $image
+in the .alc configuation file.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>variables</code></th>
+						<td><p>Variables which will be added for this single process. They can be used and
+controlled in the .alc files. @see ALConfig for global config variables.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL indicating if the processing could be started.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setParameter:forKey:" title="setParameter:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setParameter:forKey:">&ndash;&nbsp;setParameter:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a parameter with a key in the Interpreter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setParameter:(id)<em>parameter</em> forKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameter</code></th>
+						<td><p>Parameter to set.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key for the parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/versionNumber" title="versionNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/versionNumber">+&nbsp;versionNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Version number of the current Anyline framework.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)versionNumber</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Version number as String</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> The Anyline SDK must be added to the Copy Bundle Ressources
+to make this method work correctly.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licenseExpirationDateForLicense:" title="licenseExpirationDateForLicense:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseExpirationDateForLicense:">+&nbsp;licenseExpirationDateForLicense:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Expiration Date of a License Key.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)licenseExpirationDateForLicense:(NSString *)<em>licenseKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>licenseKey</code></th>
+						<td><p>A NSString containing the licenseKey</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>license expiration Date as NSString</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateVersionNumberString:" title="validateVersionNumberString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateVersionNumberString:">+&nbsp;validateVersionNumberString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)validateVersionNumberString:(NSString *)<em>string</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/buildNumber" title="buildNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/buildNumber">+&nbsp;buildNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Build number of the current Anyline framework.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)buildNumber</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Build number as String</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> The Anyline SDK must be added to the Copy Bundle Ressources
+to make this method work correctly.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportIncludeValues:" title="reportIncludeValues:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportIncludeValues:">&ndash;&nbsp;reportIncludeValues:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)reportIncludeValues:(NSString *)<em>values</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:" title="includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:">&ndash;&nbsp;includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processImageVar:startVariables:" title="processImageVar:startVariables:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processImageVar:startVariables:">&ndash;&nbsp;processImageVar:startVariables:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)processImageVar:(ALImage *)<em>image</em> startVariables:(NSDictionary *)<em>startVariables</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startVariables" title="startVariables"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startVariables">&ndash;&nbsp;startVariables</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary *)startVariables</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processFromImageProvider" title="processFromImageProvider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processFromImageProvider">&ndash;&nbsp;processFromImageProvider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)processFromImageProvider</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processImageVarSync:startVariables:" title="processImageVarSync:startVariables:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processImageVarSync:startVariables:">&ndash;&nbsp;processImageVarSync:startVariables:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)processImageVarSync:(ALImage *)<em>inImage</em> startVariables:(NSDictionary *)<em>inStartVariables</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addHeaderStatementKey:andValue:" title="addHeaderStatementKey:andValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addHeaderStatementKey:andValue:">&ndash;&nbsp;addHeaderStatementKey:andValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a statement to pass down to the core headers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addHeaderStatementKey:(NSString *_Nonnull)<em>key</em> andValue:(id _Nonnull)<em>value</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The name for the value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value passed down.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCoreController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clearStatements" title="clearStatements"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearStatements">&ndash;&nbsp;clearStatements</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)clearStatements</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getHeaderStatementsJsonString" title="getHeaderStatementsJsonString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getHeaderStatementsJsonString">&ndash;&nbsp;getHeaderStatementsJsonString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)getHeaderStatementsJsonString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/infoPlistDictionary" title="infoPlistDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/infoPlistDictionary">+&nbsp;infoPlistDictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)infoPlistDictionary</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/frameworkBundle" title="frameworkBundle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frameworkBundle">+&nbsp;frameworkBundle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSBundle *)frameworkBundle</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/frameworkBundleURL" title="frameworkBundleURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frameworkBundleURL">+&nbsp;frameworkBundleURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSURL *)frameworkBundleURL</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recursivePathForResource:inDirectory:" title="recursivePathForResource:inDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recursivePathForResource:inDirectory:">+&nbsp;recursivePathForResource:inDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)recursivePathForResource:(NSString *)<em>name</em> inDirectory:(NSString *)<em>directoryPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/runStatistics" title="runStatistics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/runStatistics">&ndash;&nbsp;runStatistics</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)runStatistics</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/jsonReportingValuesForProduct:" title="jsonReportingValuesForProduct:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/jsonReportingValuesForProduct:">&ndash;&nbsp;jsonReportingValuesForProduct:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)jsonReportingValuesForProduct:(NSString *)<em>product</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getIPAddress" title="getIPAddress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getIPAddress">&ndash;&nbsp;getIPAddress</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getIPAddress</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showAnylineLicenseExpiredPrompt" title="showAnylineLicenseExpiredPrompt"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showAnylineLicenseExpiredPrompt">&ndash;&nbsp;showAnylineLicenseExpiredPrompt</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)showAnylineLicenseExpiredPrompt</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportIncludeFullFrame:cropRect:" title="reportIncludeFullFrame:cropRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportIncludeFullFrame:cropRect:">&ndash;&nbsp;reportIncludeFullFrame:cropRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)reportIncludeFullFrame:(ALImage *)<em>image</em> cropRect:(CGRect)<em>rect</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/asyncSDK" title="asyncSDK"></a>
 	<h3 class="method-title"><code><a href="#//api/name/asyncSDK">&nbsp;&nbsp;asyncSDK</a></code>
 </h3>
@@ -350,1501 +1845,6 @@ of the Anyline SDK.</p>
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDelegate:error:" title="initWithDelegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDelegate:error:">&ndash;&nbsp;initWithDelegate:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Initializes a new ALCoreController with a <a href="#//api/name/delegate">delegate</a>. In order
-to correctly run Anyline you will have to load an appropriate configuration.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDelegate:(id&lt;ALCoreControllerDelegate&gt; _Nullable)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The <a href="#//api/name/delegate">delegate</a> where for the Anyline callbacks.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new instance of ALCoreController.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initCoreWithError:" title="initCoreWithError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initCoreWithError:">&ndash;&nbsp;initCoreWithError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This method initialises the core without loading any scripts
-*  @param error will be set to nil if setup is finished, or an error object when setup failed.
-* @return whether setup succeeded</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)initCoreWithError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/loadScript:bundlePath:product:assetController:error:" title="loadScript:bundlePath:product:assetController:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:bundlePath:product:assetController:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This method loads the Anyline SDK with an configuration string.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>script</code></th>
-						<td><p>The string which represents the configuration.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>bundlePath</code></th>
-						<td><p>The bundlePath where the additional ressources are located.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>product</code></th>
-						<td><p>The product identifier</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetController</code></th>
-						<td><p>The asset controller, if there is one</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/loadScript:scriptName:bundlePath:product:assetController:error:" title="loadScript:scriptName:bundlePath:product:assetController:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadScript:scriptName:bundlePath:product:assetController:error:">&ndash;&nbsp;loadScript:scriptName:bundlePath:product:assetController:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This method loads the Anyline SDK with an configuration string.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadScript:(NSString *_Nonnull)<em>script</em> scriptName:(NSString *_Nonnull)<em>scriptName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>script</code></th>
-						<td><p>The string which represents the configuration.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>scriptName</code></th>
-						<td><p>The filename of the script.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>bundlePath</code></th>
-						<td><p>The bundlePath where the additional ressources are located.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>product</code></th>
-						<td><p>The product identifier</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetController</code></th>
-						<td><p>The asset controller, if there is one</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/loadCmdFile:bundlePath:product:assetController:error:" title="loadCmdFile:bundlePath:product:assetController:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadCmdFile:bundlePath:product:assetController:error:">&ndash;&nbsp;loadCmdFile:bundlePath:product:assetController:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This method loads the Anyline SDK with an configuration file which is located
-at the bundlePath. The configuration must ether be an .alc unencrypted file
-or an .ale encrypted file.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadCmdFile:(NSString *_Nonnull)<em>cmdFileName</em> bundlePath:(NSString *_Nonnull)<em>bundlePath</em> product:(NSString *_Nonnull)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>cmdFileName</code></th>
-						<td><p>Configuration filename. Ether .alc or .ale. Located at
-the bundlePath</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>bundlePath</code></th>
-						<td><p>The bundlePath where the configuration and the additional
-ressources are located.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>product</code></th>
-						<td><p>The product identifier</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetController</code></th>
-						<td><p>The asset controller, if there is one</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>will be set to nil if setup is finished, or an error object when setup failed.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startWithImageProvider:error:" title="startWithImageProvider:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startWithImageProvider:error:">&ndash;&nbsp;startWithImageProvider:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a continious image processing workflow where the images are provided from the
-image provider interface. Should for example be called in the viewDidAppear:</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>imageProvider</code></th>
-						<td><p>The image provider which is responsible for providing the frames for the
-computation.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if the processing can not be started.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the start process.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startWithImageProvider:startVariables:error:" title="startWithImageProvider:startVariables:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startWithImageProvider:startVariables:error:">&ndash;&nbsp;startWithImageProvider:startVariables:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a continious image processing workflow where the images are provided from the
-image provider interface. Should for example be called in the viewDidAppear:</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)startWithImageProvider:(id&lt;ALImageProvider&gt; _Nonnull)<em>imageProvider</em> startVariables:(NSDictionary *_Nullable)<em>startVariables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>imageProvider</code></th>
-						<td><p>The image provider which is responsible for providing the frames for the
-computation.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>startVariables</code></th>
-						<td><p>Variables which will be added to the process and can be referenced in the
-Anyline Command File.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if the processing can not be started.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the start process.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stopAndReturnError:" title="stopAndReturnError:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopAndReturnError:">&ndash;&nbsp;stopAndReturnError:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Stops a previously started image processing workflow. Should be called ex. in viewDidDisappear:
-or viewWillDisappear:</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)stopAndReturnError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>The error if processing workflow could not be stopped</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success / failure of the stop.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processImage:error:" title="processImage:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processImage:error:">&ndash;&nbsp;processImage:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a single image run with an UIImage.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *_Nonnull)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>BOOL indicating if the processing could be started.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processImage:startVariables:error:" title="processImage:startVariables:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processImage:startVariables:error:">&ndash;&nbsp;processImage:startVariables:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a single image run with an UIImage and a start variable dictionary.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)processImage:(UIImage *_Nonnull)<em>image</em> startVariables:(NSDictionary *_Nullable)<em>variables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>variables</code></th>
-						<td><p>Variables which will be added for this single process. They can be used and
-controlled in the .alc files. @see ALConfig for global config variables.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>BOOL indicating if the processing could be started.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processALImage:error:" title="processALImage:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processALImage:error:">&ndash;&nbsp;processALImage:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a single image run with an <a href="../Classes/ALImage.html">ALImage</a>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *_Nonnull)<em>alImage</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>alImage</code></th>
-						<td><p>The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>BOOL indicating if the processing could be started.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processALImage:startVariables:error:" title="processALImage:startVariables:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processALImage:startVariables:error:">&ndash;&nbsp;processALImage:startVariables:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Starts a single image run with an <a href="../Classes/ALImage.html">ALImage</a> and a start variable dictionary.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)processALImage:(ALImage *_Nonnull)<em>alImage</em> startVariables:(NSDictionary *_Nullable)<em>variables</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>alImage</code></th>
-						<td><p>The image or video frame which should be processed. This image is referenced as $image
-in the .alc configuation file.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>variables</code></th>
-						<td><p>Variables which will be added for this single process. They can be used and
-controlled in the .alc files. @see ALConfig for global config variables.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>If an error occured while trying to start processing, it is passed here.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>BOOL indicating if the processing could be started.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setParameter:forKey:" title="setParameter:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setParameter:forKey:">&ndash;&nbsp;setParameter:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets a parameter with a key in the Interpreter.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setParameter:(id _Nonnull)<em>parameter</em> forKey:(NSString *_Nonnull)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>parameter</code></th>
-						<td><p>Parameter to set.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>The key for the parameter.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/versionNumber" title="versionNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/versionNumber">+&nbsp;versionNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The Version number of the current Anyline framework.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)versionNumber</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The Version number as String</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> The Anyline SDK must be added to the Copy Bundle Ressources
-to make this method work correctly.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/buildNumber" title="buildNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/buildNumber">+&nbsp;buildNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The Build number of the current Anyline framework.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)buildNumber</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The Build number as String</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> The Anyline SDK must be added to the Copy Bundle Ressources
-to make this method work correctly.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/licenseExpirationDateForLicense:" title="licenseExpirationDateForLicense:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/licenseExpirationDateForLicense:">+&nbsp;licenseExpirationDateForLicense:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Expiration Date of a License Key.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)licenseExpirationDateForLicense:(NSString *_Nonnull)<em>licenseKey</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>licenseKey</code></th>
-						<td><p>A NSString containing the licenseKey</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>license expiration Date as NSString</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/frameworkBundle" title="frameworkBundle"></a>
-	<h3 class="method-title"><code><a href="#//api/name/frameworkBundle">+&nbsp;frameworkBundle</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSBundle *_Nonnull)frameworkBundle</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/frameworkBundleURL" title="frameworkBundleURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/frameworkBundleURL">+&nbsp;frameworkBundleURL</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSURL *_Nonnull)frameworkBundleURL</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/reportIncludeValues:" title="reportIncludeValues:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/reportIncludeValues:">&ndash;&nbsp;reportIncludeValues:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)reportIncludeValues:(NSString *_Nonnull)<em>values</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/runStatistics" title="runStatistics"></a>
-	<h3 class="method-title"><code><a href="#//api/name/runStatistics">&ndash;&nbsp;runStatistics</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSArray *_Nonnull)runStatistics</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/addHeaderStatementKey:andValue:" title="addHeaderStatementKey:andValue:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addHeaderStatementKey:andValue:">&ndash;&nbsp;addHeaderStatementKey:andValue:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Adds a statement to pass down to the core headers</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)addHeaderStatementKey:(NSString *_Nonnull)<em>key</em> andValue:(id _Nonnull)<em>value</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>The name for the value.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>value</code></th>
-						<td><p>The value passed down.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALCoreController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/initWithModuleIdentifier:delegate:error:" title="initWithModuleIdentifier:delegate:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithModuleIdentifier:delegate:error:">&ndash;&nbsp;initWithModuleIdentifier:delegate:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithModuleIdentifier:(NSString *)<em>moduleIdentifier</em> delegate:(id&lt;ALCoreControllerDelegate&gt;)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/bundleIdentifier" title="bundleIdentifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/bundleIdentifier">+&nbsp;bundleIdentifier</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *)bundleIdentifier</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/platformIdentifier" title="platformIdentifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/platformIdentifier">+&nbsp;platformIdentifier</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *)platformIdentifier</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initCore" title="initCore"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initCore">&ndash;&nbsp;initCore</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)initCore</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/load:scriptName:bundlePath:isFile:product:assetController:error:" title="load:scriptName:bundlePath:isFile:product:assetController:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/load:scriptName:bundlePath:isFile:product:assetController:error:">&ndash;&nbsp;load:scriptName:bundlePath:isFile:product:assetController:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)load:(NSString *)<em>cmdFile</em> scriptName:(NSString *)<em>scriptName</em> bundlePath:(NSString *)<em>bundlePath</em> isFile:(BOOL)<em>isFile</em> product:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/errorForOfCustomImageProvider:" title="errorForOfCustomImageProvider:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/errorForOfCustomImageProvider:">&ndash;&nbsp;errorForOfCustomImageProvider:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSError *)errorForOfCustomImageProvider:(id)<em>imageProvider</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/currentBundleName" title="currentBundleName"></a>
-	<h3 class="method-title"><code><a href="#//api/name/currentBundleName">+&nbsp;currentBundleName</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *)currentBundleName</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/validateVersionNumberString:" title="validateVersionNumberString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/validateVersionNumberString:">+&nbsp;validateVersionNumberString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)validateVersionNumberString:(NSString *)<em>string</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:" title="includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:">&ndash;&nbsp;includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:assetController:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)includeBasicReportingValuesAndIncludeValuesFromQueueForProduct:(NSString *)<em>product</em> assetController:(ALAssetController *_Nullable)<em>assetController</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processImageVar:startVariables:" title="processImageVar:startVariables:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processImageVar:startVariables:">&ndash;&nbsp;processImageVar:startVariables:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)processImageVar:(ALImage *)<em>image</em> startVariables:(NSDictionary *)<em>startVariables</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startVariables" title="startVariables"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startVariables">&ndash;&nbsp;startVariables</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSMutableDictionary *)startVariables</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processFromImageProvider" title="processFromImageProvider"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processFromImageProvider">&ndash;&nbsp;processFromImageProvider</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)processFromImageProvider</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/processImageVarSync:startVariables:" title="processImageVarSync:startVariables:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processImageVarSync:startVariables:">&ndash;&nbsp;processImageVarSync:startVariables:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)processImageVarSync:(ALImage *)<em>inImage</em> startVariables:(NSDictionary *)<em>inStartVariables</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/clearStatements" title="clearStatements"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clearStatements">&ndash;&nbsp;clearStatements</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)clearStatements</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getHeaderStatementsJsonString" title="getHeaderStatementsJsonString"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getHeaderStatementsJsonString">&ndash;&nbsp;getHeaderStatementsJsonString</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)getHeaderStatementsJsonString</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/infoPlistDictionary" title="infoPlistDictionary"></a>
-	<h3 class="method-title"><code><a href="#//api/name/infoPlistDictionary">+&nbsp;infoPlistDictionary</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)infoPlistDictionary</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/recursivePathForResource:inDirectory:" title="recursivePathForResource:inDirectory:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/recursivePathForResource:inDirectory:">+&nbsp;recursivePathForResource:inDirectory:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *)recursivePathForResource:(NSString *)<em>name</em> inDirectory:(NSString *)<em>directoryPath</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/jsonReportingValuesForProduct:" title="jsonReportingValuesForProduct:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/jsonReportingValuesForProduct:">&ndash;&nbsp;jsonReportingValuesForProduct:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)jsonReportingValuesForProduct:(NSString *)<em>product</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getIPAddress" title="getIPAddress"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getIPAddress">&ndash;&nbsp;getIPAddress</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)getIPAddress</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/showAnylineLicenseExpiredPrompt" title="showAnylineLicenseExpiredPrompt"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showAnylineLicenseExpiredPrompt">&ndash;&nbsp;showAnylineLicenseExpiredPrompt</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)showAnylineLicenseExpiredPrompt</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/reportIncludeFullFrame:cropRect:" title="reportIncludeFullFrame:cropRect:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/reportIncludeFullFrame:cropRect:">&ndash;&nbsp;reportIncludeFullFrame:cropRect:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)reportIncludeFullFrame:(ALImage *)<em>image</em> cropRect:(CGRect)<em>rect</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dealloc" title="dealloc"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
-
-		    
-		</div>
-	</div>
 </div>
 						</div>
 						
@@ -1854,22 +1854,6 @@ to make this method work correctly.</p></div>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/anylineCore" title="anylineCore"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineCore">&nbsp;&nbsp;anylineCore</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) std : : shared_ptr&lt;al::AnylineCore&gt; anylineCore</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/imageProvider" title="imageProvider"></a>
 	<h3 class="method-title"><code><a href="#//api/name/imageProvider">&nbsp;&nbsp;imageProvider</a></code>
 </h3>
@@ -2013,6 +1997,22 @@ to make this method work correctly.</p></div>
 		    
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCore" title="anylineCore"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCore">&nbsp;&nbsp;anylineCore</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) std : : shared_ptr&lt;al::AnylineCore&gt; anylineCore</code></div>
+
+		    
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -2028,10 +2028,10 @@ to make this method work correctly.</p></div>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

@@ -66,6 +66,7 @@ NSString * const fontName = @"Avenir Next";
     switch (self.scanMode) {
         case ALDigitalMeter:
         case ALAutoAnalogDigitalMeter:
+        case ALDigitalMeter2Experimental:
             unit = @"kWh";
             break;
         case ALHeatMeter4:

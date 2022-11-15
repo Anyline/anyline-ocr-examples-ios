@@ -39,8 +39,16 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"Analog/Digital Meter";
+
+    // ALMeterCollectionViewController can give it its title
+    if (!self.title.length) {
+        self.title = @"Analog/Digital Meter";
+    }
+
+    ALScanMode scanMode = ALAutoAnalogDigitalMeter;
+    if ([self.title isEqualToString:@"Digital (APAC)"]) {
+        scanMode = ALDigitalMeter2Experimental;
+    }
     
     NSError *error = nil;
     ALMeterScanPlugin *meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:kMeterScanViewPluginID
@@ -49,7 +57,7 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
     NSAssert(meterScanPlugin, @"Setup Error: %@", error.debugDescription);
     
     // Set ScanMode to ALAutoAnalogDigitalMeter
-    BOOL success = [meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
+    BOOL success = [meterScanPlugin setScanMode:scanMode error:&error];
     if (!success) {
         __weak __block typeof(self) weakSelf = self;
         [self showAlertWithTitle:@"Set ScanMode Error" message:error.debugDescription completion:^{
@@ -58,17 +66,23 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
     }
     
     self.meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:meterScanPlugin];
-    
+
+    // since barcode cutout region (full screen) doesn't match meter, we will disable have both's cutout
+    // BG colors be clear so as to avoid having visible areas where the cutout mask don't intersect while
+    // parallel scanning mode is on.
+    ALScanViewPluginConfig *meterScanViewPluginConfig = [ALScanViewPluginConfig defaultMeterConfig];
+    meterScanViewPluginConfig.cutoutConfig.backgroundColor = [UIColor clearColor];
+    self.meterScanViewPlugin.scanViewPluginConfig  = meterScanViewPluginConfig;
+
     ALBarcodeScanPlugin *barcodeScanPlugin = [[ALBarcodeScanPlugin alloc]
                                               initWithPluginID:kBarcodeScanViewPluginID
                                               delegate:self // we don't needed this, but must
                                               error:&error];
-    
+
     NSAssert(barcodeScanPlugin, @"Setup Error: %@", error.debugDescription);
     [barcodeScanPlugin setBarcodeFormatOptions:@[kCodeTypeAll]];
     
-    // will borrow from the meter scan config (so that they share identical cutout regions)
-    ALScanViewPluginConfig *barcodeScanViewPluginConfig = self.meterScanViewPlugin.scanViewPluginConfig;
+    ALScanViewPluginConfig *barcodeScanViewPluginConfig = [self.class barcodeScanViewPluginConfig];
     self.barcodeScanViewPlugin = [[ALBarcodeScanViewPlugin alloc] initWithScanPlugin:barcodeScanPlugin
                                                                 scanViewPluginConfig:barcodeScanViewPluginConfig];
     
@@ -108,6 +122,22 @@ NSString * const kParallelScanViewPluginID = @"PARALLEL (Energy + Barcode)";
     self.controllerType = ALScanHistoryElectricMeter;
     
     [self.scanView startCamera];
+}
+
++ (ALScanViewPluginConfig *)barcodeScanViewPluginConfig {
+    ALScanViewPluginConfig *barcodeScanViewPluginConfig = [ALScanViewPluginConfig defaultBarcodeConfig];
+    barcodeScanViewPluginConfig.cutoutConfig = [ALCutoutConfig defaultCutoutConfig];
+    barcodeScanViewPluginConfig.cutoutConfig.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1024, 1920)];
+    barcodeScanViewPluginConfig.cutoutConfig.strokeWidth = 0; // hide this
+    barcodeScanViewPluginConfig.cutoutConfig.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+    barcodeScanViewPluginConfig.cutoutConfig.cornerRadius = 0;
+    barcodeScanViewPluginConfig.cutoutConfig.alignment = ALCutoutAlignmentMiddle;
+    barcodeScanViewPluginConfig.scanFeedbackConfig.strokeWidth = 0;
+    barcodeScanViewPluginConfig.scanFeedbackConfig.beepOnResult = NO;
+    barcodeScanViewPluginConfig.scanFeedbackConfig.vibrateOnResult = NO;
+    barcodeScanViewPluginConfig.scanFeedbackConfig.fillColor = [UIColor clearColor];
+    barcodeScanViewPluginConfig.scanFeedbackConfig.strokeColor = [UIColor clearColor];
+    return barcodeScanViewPluginConfig;
 }
 
 // MARK: - UIViewController Lifecycle Methods

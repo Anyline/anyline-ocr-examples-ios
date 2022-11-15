@@ -143,6 +143,7 @@ static const NSInteger padding = 7;
         self.barcodeResult = @"";
     } else {
         self.enableBarcodeSwitch.on = true;
+        [self.scanView.captureDeviceManager setNativeBarcodeFormats:[self.class nativeBarcodeFormats]];
         [self.scanView.captureDeviceManager addBarcodeDelegate:self error:nil];
     }
     
@@ -212,5 +213,25 @@ static const NSInteger padding = 7;
     });
 }
 
+
+#pragma mark - List of (native) barcode formats to support
+
++ (NSArray *)nativeBarcodeFormats {
+    return @[
+        AVMetadataObjectTypeAztecCode,
+        AVMetadataObjectTypeCode128Code,
+        AVMetadataObjectTypeCode39Code,
+        AVMetadataObjectTypeCode39Mod43Code,
+        AVMetadataObjectTypeCode93Code,
+        AVMetadataObjectTypeDataMatrixCode,
+        AVMetadataObjectTypeEAN13Code,
+        AVMetadataObjectTypeEAN8Code,
+        AVMetadataObjectTypeITF14Code,
+        AVMetadataObjectTypeInterleaved2of5Code,
+        AVMetadataObjectTypePDF417Code,
+        AVMetadataObjectTypeQRCode,
+        AVMetadataObjectTypeUPCECode,
+    ];
+}
 
 @end

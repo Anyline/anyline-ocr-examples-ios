@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -210,8 +210,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	<a name="//api/name/loadLicensePlateCmdFileWithScanMode:error:" title="loadLicensePlateCmdFileWithScanMode:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadLicensePlateCmdFileWithScanMode:error:">&ndash;&nbsp;loadLicensePlateCmdFileWithScanMode:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -220,14 +220,46 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Null_unspecified)init</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadLicensePlateCmdFileWithScanMode:(ALLicensePlateScanMode)<em>scanMode</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/scanMode" title="scanMode"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/start:error:" title="start:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -237,17 +269,39 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sets the license plate scan mode.
-It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicensePlateScanMode</a> (e.g. ALLicensePlateAuto, ALLicensePlateNorway, etc.)</p>
+				<p>Start the scanning with an ImageProvider. Anyline will ask the ImageProvider for new frames until
+we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#//api/name/confidence">confidence</a>.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ALLicensePlateScanMode scanMode</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
 
 		    
 			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>imageProvider</code></th>
+						<td><p>The ImageProvider implementation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>An error if something went wrong during startup</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating the success of the start</p>
+			</div>
 			
 
 			
@@ -261,10 +315,26 @@ It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicens
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
 			</div>
 			
 			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startVariables" title="startVariables"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startVariables">&ndash;&nbsp;startVariables</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)startVariables</code></div>
+
+		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -331,8 +401,8 @@ It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicens
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
+	<a name="//api/name/scriptFileNameWithScanMode:" title="scriptFileNameWithScanMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scriptFileNameWithScanMode:">&ndash;&nbsp;scriptFileNameWithScanMode:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -341,39 +411,7 @@ It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicens
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;ALLicensePlateScanPluginDelegate&gt; _Nonnull)<em>delegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/parseScanModeString:" title="parseScanModeString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/parseScanModeString:">&ndash;&nbsp;parseScanModeString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (ALLicensePlateScanMode)parseScanModeString:(NSString *_Nonnull)<em>scanModeString</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)scriptFileNameWithScanMode:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
 
 		    
 		</div>
@@ -491,6 +529,136 @@ E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateA
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/stringForCountryKey:" title="stringForCountryKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringForCountryKey:">&ndash;&nbsp;stringForCountryKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringForCountryKey:(NSString *)<em>input</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringForLicensePlateScanMode:" title="stringForLicensePlateScanMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringForLicensePlateScanMode:">&ndash;&nbsp;stringForLicensePlateScanMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringForLicensePlateScanMode:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseScanModeString:" title="parseScanModeString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseScanModeString:">&ndash;&nbsp;parseScanModeString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (ALLicensePlateScanMode)parseScanModeString:(NSString *)<em>scanModeString</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Null_unspecified)init</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanMode" title="scanMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the license plate scan mode.
+It has to be of type <a href="../Constants/ALLicensePlateScanMode.html">ALLicensePlateScanMode</a> (e.g. ALLicensePlateAuto, ALLicensePlateNorway, etc.)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ALLicensePlateScanMode scanMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALLicensePlateScanPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/validationRegex" title="validationRegex"></a>
 	<h3 class="method-title"><code><a href="#//api/name/validationRegex">&ndash;&nbsp;validationRegex</a></code>
 </h3>
@@ -535,174 +703,6 @@ E.g.: Set a specific valdiationRegex for austrian licenseplates (ALLicensePlateA
 			</div>
 			
 			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/loadLicensePlateCmdFileWithScanMode:error:" title="loadLicensePlateCmdFileWithScanMode:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/loadLicensePlateCmdFileWithScanMode:error:">&ndash;&nbsp;loadLicensePlateCmdFileWithScanMode:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadLicensePlateCmdFileWithScanMode:(ALLicensePlateScanMode)<em>scanMode</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/start:error:" title="start:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/start:error:">&ndash;&nbsp;start:error:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Start the scanning with an ImageProvider. Anyline will ask the ImageProvider for new frames until
-we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#//api/name/confidence">confidence</a>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)start:(id&lt;ALImageProvider&gt;)<em>imageProvider</em> error:(NSError **)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>imageProvider</code></th>
-						<td><p>The ImageProvider implementation</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>An error if something went wrong during startup</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Boolean indicating the success of the start</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanPlugin.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/startVariables" title="startVariables"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startVariables">&ndash;&nbsp;startVariables</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSDictionary *)startVariables</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/scriptFileNameWithScanMode:" title="scriptFileNameWithScanMode:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scriptFileNameWithScanMode:">&ndash;&nbsp;scriptFileNameWithScanMode:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)scriptFileNameWithScanMode:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stringForCountryKey:" title="stringForCountryKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stringForCountryKey:">&ndash;&nbsp;stringForCountryKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)stringForCountryKey:(NSString *)<em>input</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stringForLicensePlateScanMode:" title="stringForLicensePlateScanMode:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stringForLicensePlateScanMode:">&ndash;&nbsp;stringForLicensePlateScanMode:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)stringForLicensePlateScanMode:(ALLicensePlateScanMode)<em>scanMode</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/anylineCoreController:didFinishWithOutput:" title="anylineCoreController:didFinishWithOutput:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineCoreController:didFinishWithOutput:">&ndash;&nbsp;anylineCoreController:didFinishWithOutput:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)anylineCoreController:(ALCoreController *)<em>coreController</em> didFinishWithOutput:(id)<em>object</em></code></div>
-
-		    
 		</div>
 	</div>
 </div>
@@ -760,10 +760,10 @@ we get a result with high enough <a href="../Classes/ALAbstractScanPlugin.html#/
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

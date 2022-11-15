@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -74,8 +74,6 @@
 		
 		<option value="//api/name/uiOverlayView">uiOverlayView</option>
 		
-		<option value="//api/name/watermarkRect">watermarkRect</option>
-		
 		<option value="//api/name/watermarkTimer">watermarkTimer</option>
 		
 		<option value="//api/name/watermarkView">watermarkView</option>
@@ -126,6 +124,10 @@
 		
 		<option value="//api/name/refreshWebView">- refreshWebView</option>
 		
+		<option value="//api/name/setFlashButtonConfig:">- setFlashButtonConfig:</option>
+		
+		<option value="//api/name/setScanViewPlugin:">- setScanViewPlugin:</option>
+		
 		<option value="//api/name/setupWebView:">- setupWebView:</option>
 		
 		<option value="//api/name/startCamera">- startCamera</option>
@@ -149,6 +151,8 @@
 		<option value="//api/name/updateWebView:forPluginID:">- updateWebView:forPluginID:</option>
 		
 		<option value="//api/name/updateWebViewWithMultipleConfigs:visiblePlugins:">- updateWebViewWithMultipleConfigs:visiblePlugins:</option>
+		
+		<option value="//api/name/watermarkRect">- watermarkRect</option>
 		
 		<option value="//api/name/willMoveToSuperview:">- willMoveToSuperview:</option>
 		
@@ -194,120 +198,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/uiOverlayView" title="uiOverlayView"></a>
-	<h3 class="method-title"><code><a href="#//api/name/uiOverlayView">&nbsp;&nbsp;uiOverlayView</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALUIFeedback *uiOverlayView</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cameraConfig" title="cameraConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cameraConfig">&nbsp;&nbsp;cameraConfig</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALCameraConfig *cameraConfig</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/flashButtonConfig" title="flashButtonConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/flashButtonConfig">&nbsp;&nbsp;flashButtonConfig</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALFlashButtonConfig *flashButtonConfig</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/flashButton" title="flashButton"></a>
-	<h3 class="method-title"><code><a href="#//api/name/flashButton">&nbsp;&nbsp;flashButton</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/torchManager" title="torchManager"></a>
-	<h3 class="method-title"><code><a href="#//api/name/torchManager">&nbsp;&nbsp;torchManager</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/captureDeviceManager" title="captureDeviceManager"></a>
-	<h3 class="method-title"><code><a href="#//api/name/captureDeviceManager">&nbsp;&nbsp;captureDeviceManager</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/scanViewPlugin" title="scanViewPlugin"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanViewPlugin">&nbsp;&nbsp;scanViewPlugin</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALAbstractScanViewPlugin *scanViewPlugin</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/watermarkRect" title="watermarkRect"></a>
-	<h3 class="method-title"><code><a href="#//api/name/watermarkRect">&nbsp;&nbsp;watermarkRect</a></code>
+	<a name="//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:" title="initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:">&ndash;&nbsp;initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -317,25 +209,52 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</p>
+				<p>  Constructor for ScanView</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGRect watermarkRect</code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em> cameraConfig:(ALCameraConfig *_Nonnull)<em>cameraConfig</em> flashButtonConfig:(ALFlashButtonConfig *_Nonnull)<em>flashButtonConfig</em></code></div>
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> May be nil before the layout process is completed or the license is not community.</p></div>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>The frame for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cameraConfig</code></th>
+						<td><p>The CameraConfig for the ScanView</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashButtonConfig</code></th>
+						<td><p>The flashButtonCOnfig for the ScanView</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An instance of a ScanView</p>
+			</div>
+			
+
+			
+
 			
 
 			
@@ -415,8 +334,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:" title="initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:">&ndash;&nbsp;initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:</a></code>
+	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -424,67 +343,10 @@
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>  Constructor for ScanView</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(ALAbstractScanViewPlugin *_Nullable)<em>scanViewPlugin</em> cameraConfig:(ALCameraConfig *_Nonnull)<em>cameraConfig</em> flashButtonConfig:(ALFlashButtonConfig *_Nonnull)<em>flashButtonConfig</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em></code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>frame</code></th>
-						<td><p>The frame for the ScanView</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
-						<td><p>The ScanViewPlugin which you want to use for scanning (ID,Meter, Barcode, OCR or LicensePlate)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>cameraConfig</code></th>
-						<td><p>The CameraConfig for the ScanView</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>flashButtonConfig</code></th>
-						<td><p>The flashButtonCOnfig for the ScanView</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An instance of a ScanView</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanView.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -504,7 +366,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configPath:(NSString *_Nonnull)<em>configPath</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)scanViewForFrame:(CGRect)<em>frame</em> configPath:(NSString *_Nonnull)<em>configPath</em> delegate:(id _Nonnull)<em>delegate</em> error:(NSError **)<em>error</em></code></div>
 
 		    
 			
@@ -636,6 +498,260 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/initCamera" title="initCamera"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initCamera">&ndash;&nbsp;initCamera</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)initCamera</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFlash" title="initFlash"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFlash">&ndash;&nbsp;initFlash</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)initFlash</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setupWebView:" title="setupWebView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setupWebView:">&ndash;&nbsp;setupWebView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setupWebView:(NSDictionary&lt;NSString*,ALScanViewPluginConfig*&gt; *)<em>configs</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateWebViewWithMultipleConfigs:visiblePlugins:" title="updateWebViewWithMultipleConfigs:visiblePlugins:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateWebViewWithMultipleConfigs:visiblePlugins:">&ndash;&nbsp;updateWebViewWithMultipleConfigs:visiblePlugins:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateWebViewWithMultipleConfigs:(NSDictionary&lt;NSString*,ALScanViewPluginConfig*&gt; *)<em>configs</em> visiblePlugins:(NSSet&lt;NSString*&gt; *)<em>visible</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshWebView" title="refreshWebView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshWebView">&ndash;&nbsp;refreshWebView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)refreshWebView</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateWebView:forPluginID:" title="updateWebView:forPluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateWebView:forPluginID:">&ndash;&nbsp;updateWebView:forPluginID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateWebView:(ALScanViewPluginConfig *)<em>config</em> forPluginID:(NSString *)<em>pluginID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCutoutView:" title="updateCutoutView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCutoutView:">&ndash;&nbsp;updateCutoutView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCutoutView:(ALCutoutConfig *)<em>cutoutConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateVisualFeedbackView:" title="updateVisualFeedbackView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateVisualFeedbackView:">&ndash;&nbsp;updateVisualFeedbackView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateVisualFeedbackView:(ALScanFeedbackConfig *)<em>scanFeedbackConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willMoveToSuperview:" title="willMoveToSuperview:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willMoveToSuperview:">&ndash;&nbsp;willMoveToSuperview:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)willMoveToSuperview:(UIView *)<em>newSuperview</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/layoutSubviews" title="layoutSubviews"></a>
+	<h3 class="method-title"><code><a href="#//api/name/layoutSubviews">&ndash;&nbsp;layoutSubviews</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)layoutSubviews</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFlashButtonConfig:" title="setFlashButtonConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFlashButtonConfig:">&ndash;&nbsp;setFlashButtonConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setFlashButtonConfig:(ALFlashButtonConfig *)<em>flashButtonConfig</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setScanViewPlugin:" title="setScanViewPlugin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setScanViewPlugin:">&ndash;&nbsp;setScanViewPlugin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setScanViewPlugin:(ALAbstractScanViewPlugin *)<em>scanViewPlugin</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/watermarkRect" title="watermarkRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/watermarkRect">&ndash;&nbsp;watermarkRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the bounding Rect of the visible WatermarkView with the correct location on the Module View.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (CGRect)watermarkRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> May be nil before the layout process is completed or the license is not community.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/startCamera" title="startCamera"></a>
 	<h3 class="method-title"><code><a href="#//api/name/startCamera">&ndash;&nbsp;startCamera</a></code>
 </h3>
@@ -718,6 +834,22 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/updatePolygons:forPluginID:" title="updatePolygons:forPluginID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updatePolygons:forPluginID:">&ndash;&nbsp;updatePolygons:forPluginID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updatePolygons:(NSArray *)<em>square</em> forPluginID:(NSString *)<em>pluginID</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/updateTextRect:forPluginID:" title="updateTextRect:forPluginID:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/updateTextRect:forPluginID:">&ndash;&nbsp;updateTextRect:forPluginID:</a></code>
 </h3>
@@ -734,7 +866,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateTextRect:(ALSquare *_Nonnull)<em>square</em> forPluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateTextRect:(ALSquare *)<em>square</em> forPluginID:(NSString *)<em>pluginID</em></code></div>
 
 		    
 			
@@ -756,275 +888,6 @@
 			</div>
 			
 			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateCutoutView:" title="updateCutoutView:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateCutoutView:">&ndash;&nbsp;updateCutoutView:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updateCutoutView:(ALCutoutConfig *_Nonnull)<em>cutoutConfig</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateVisualFeedbackView:" title="updateVisualFeedbackView:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateVisualFeedbackView:">&ndash;&nbsp;updateVisualFeedbackView:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updateVisualFeedbackView:(ALScanFeedbackConfig *_Nonnull)<em>scanFeedbackConfig</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateWebView:forPluginID:" title="updateWebView:forPluginID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateWebView:forPluginID:">&ndash;&nbsp;updateWebView:forPluginID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updateWebView:(ALScanViewPluginConfig *_Nonnull)<em>config</em> forPluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateWebViewWithMultipleConfigs:visiblePlugins:" title="updateWebViewWithMultipleConfigs:visiblePlugins:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateWebViewWithMultipleConfigs:visiblePlugins:">&ndash;&nbsp;updateWebViewWithMultipleConfigs:visiblePlugins:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updateWebViewWithMultipleConfigs:(NSDictionary&lt;NSString*,ALScanViewPluginConfig*&gt; *_Nonnull)<em>configs</em> visiblePlugins:(NSSet&lt;NSString*&gt; *_Nonnull)<em>visible</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/enableZoomPinchGesture:" title="enableZoomPinchGesture:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enableZoomPinchGesture:">&ndash;&nbsp;enableZoomPinchGesture:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Zoom Features</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)enableZoomPinchGesture:(BOOL)<em>enabled</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enabled</code></th>
-						<td><p>Whether to enable the pinch gesture to zoom in and out</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updatePolygons:forPluginID:" title="updatePolygons:forPluginID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updatePolygons:forPluginID:">&ndash;&nbsp;updatePolygons:forPluginID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)updatePolygons:(NSArray *_Nonnull)<em>square</em> forPluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
-
-		    
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/initWithFrame:" title="initWithFrame:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:">&ndash;&nbsp;initWithFrame:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initCamera" title="initCamera"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initCamera">&ndash;&nbsp;initCamera</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)initCamera</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initFlash" title="initFlash"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initFlash">&ndash;&nbsp;initFlash</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)initFlash</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setupWebView:" title="setupWebView:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setupWebView:">&ndash;&nbsp;setupWebView:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)setupWebView:(NSDictionary&lt;NSString*,ALScanViewPluginConfig*&gt; *)<em>configs</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/refreshWebView" title="refreshWebView"></a>
-	<h3 class="method-title"><code><a href="#//api/name/refreshWebView">&ndash;&nbsp;refreshWebView</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)refreshWebView</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/willMoveToSuperview:" title="willMoveToSuperview:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/willMoveToSuperview:">&ndash;&nbsp;willMoveToSuperview:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)willMoveToSuperview:(UIView *)<em>newSuperview</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/layoutSubviews" title="layoutSubviews"></a>
-	<h3 class="method-title"><code><a href="#//api/name/layoutSubviews">&ndash;&nbsp;layoutSubviews</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)layoutSubviews</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dealloc" title="dealloc"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
-
-		    
 		</div>
 	</div>
 </div><div class="section-method">
@@ -1156,6 +1019,59 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/enableZoomPinchGesture:" title="enableZoomPinchGesture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableZoomPinchGesture:">&ndash;&nbsp;enableZoomPinchGesture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Zoom Features</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)enableZoomPinchGesture:(BOOL)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>Whether to enable the pinch gesture to zoom in and out</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/handleZoomGesture:" title="handleZoomGesture:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/handleZoomGesture:">&ndash;&nbsp;handleZoomGesture:</a></code>
 </h3>
@@ -1167,6 +1083,126 @@
 			
 
 			<div class="method-subsection method-declaration"><code>- (void)handleZoomGesture:(UIPinchGestureRecognizer *)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/uiOverlayView" title="uiOverlayView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uiOverlayView">&nbsp;&nbsp;uiOverlayView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALUIFeedback *uiOverlayView</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cameraConfig" title="cameraConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cameraConfig">&nbsp;&nbsp;cameraConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALCameraConfig *cameraConfig</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashButtonConfig" title="flashButtonConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashButtonConfig">&nbsp;&nbsp;flashButtonConfig</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALFlashButtonConfig *flashButtonConfig</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashButton" title="flashButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashButton">&nbsp;&nbsp;flashButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALFlashButton *flashButton</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/torchManager" title="torchManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/torchManager">&nbsp;&nbsp;torchManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALTorchManager *torchManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/captureDeviceManager" title="captureDeviceManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/captureDeviceManager">&nbsp;&nbsp;captureDeviceManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALCaptureDeviceManager *captureDeviceManager</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPlugin" title="scanViewPlugin"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPlugin">&nbsp;&nbsp;scanViewPlugin</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALAbstractScanViewPlugin *scanViewPlugin</code></div>
 
 		    
 		</div>
@@ -1274,10 +1310,10 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

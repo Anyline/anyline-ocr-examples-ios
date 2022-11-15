@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -114,6 +114,8 @@
 		
 		<option value="//api/name/restoreFromBackup">- restoreFromBackup</option>
 		
+		<option value="//api/name/setAssetContext:">- setAssetContext:</option>
+		
 		<option value="//api/name/setAssetDelegate:">- setAssetDelegate:</option>
 		
 		<option value="//api/name/setupAssetUpdateWithContext:delegate:">- setupAssetUpdateWithContext:delegate:</option>
@@ -164,8 +166,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/assetContext" title="assetContext"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetContext">&nbsp;&nbsp;assetContext</a></code>
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
 </h3>
 
 	<div class="method-info">
@@ -174,7 +176,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALAssetContext *assetContext</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
 
 		    
 		</div>
@@ -212,49 +214,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/checkForUpdates" title="checkForUpdates"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkForUpdates">&ndash;&nbsp;checkForUpdates</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Checks whether asset updates are available</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)checkForUpdates</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/reportingValues" title="reportingValues"></a>
-	<h3 class="method-title"><code><a href="#//api/name/reportingValues">&ndash;&nbsp;reportingValues</a></code>
+	<a name="//api/name/setAssetContext:" title="setAssetContext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetContext:">&ndash;&nbsp;setAssetContext:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -263,98 +224,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)reportingValues</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setAssetContext:(ALAssetContext *)<em>assetContext</em></code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/assetID" title="assetID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetID">&ndash;&nbsp;assetID</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p><summary>
-Gets the asset ID.
-</summary></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)assetID</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/projectID" title="projectID"></a>
-	<h3 class="method-title"><code><a href="#//api/name/projectID">&ndash;&nbsp;projectID</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Gets the project ID.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *__nullable)projectID</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/path" title="path"></a>
-	<h3 class="method-title"><code><a href="#//api/name/path">&ndash;&nbsp;path</a></code>
+	<a name="//api/name/setAssetDelegate:" title="setAssetDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAssetDelegate:">&ndash;&nbsp;setAssetDelegate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -363,50 +240,9 @@ Gets the asset ID.
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)path</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setAssetDelegate:(NSObject&lt;ALAssetDelegate&gt; *)<em>assetDelegate</em></code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateAssets" title="updateAssets"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateAssets">&ndash;&nbsp;updateAssets</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Updates the assets, only after {@link #<a href="#//api/name/checkForUpdates">checkForUpdates</a>()} was successfully called</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)updateAssets</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -469,49 +305,6 @@ callbacks. After this method is called, the AssetController is considered &lsquo
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/isActive" title="isActive"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isActive">&ndash;&nbsp;isActive</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns true if &lsquo;setupAssetUpdateWithContext:delegate:&rsquo; was called.
-Returns false if &lsquo;resetAssetUpdate&rsquo; was called or setupAssetUpdateWithContext:delegate:&lsquo; has
-not been called.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)isActive</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/resetAssetUpdate" title="resetAssetUpdate"></a>
 	<h3 class="method-title"><code><a href="#//api/name/resetAssetUpdate">&ndash;&nbsp;resetAssetUpdate</a></code>
 </h3>
@@ -547,7 +340,349 @@ not been called.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/path" title="path"></a>
+	<h3 class="method-title"><code><a href="#//api/name/path">&ndash;&nbsp;path</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)path</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backupPath" title="backupPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backupPath">&ndash;&nbsp;backupPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)backupPath</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/areLocalAssetsAvailable" title="areLocalAssetsAvailable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/areLocalAssetsAvailable">&ndash;&nbsp;areLocalAssetsAvailable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether any assets have been downloaded. If this returns NO, you should either check
+for updates and download the updates, or not use an asset context.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)areLocalAssetsAvailable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteLocalAssets" title="deleteLocalAssets"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteLocalAssets">&ndash;&nbsp;deleteLocalAssets</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deletes any assets that have been downloaded. After doing this, you should either check
+for updates and download the updates, or not use an asset context.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteLocalAssets</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetFiles" title="assetFiles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetFiles">&ndash;&nbsp;assetFiles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *)assetFiles</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/projectID" title="projectID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/projectID">&ndash;&nbsp;projectID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gets the project ID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)projectID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetID" title="assetID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetID">&ndash;&nbsp;assetID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><summary>
+Gets the asset ID.
+</summary></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)assetID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isActive" title="isActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isActive">&ndash;&nbsp;isActive</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><summary>
+Returns true if the AssetController if &lsquo;SetupAssetUpdate&rsquo; was called.
+Returns false if &lsquo;ResetAssetUpdate&rsquo; was called or &lsquo;SetupAssetUpdate&rsquo; has not been called.
+</summary></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isActive</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkForUpdates" title="checkForUpdates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkForUpdates">&ndash;&nbsp;checkForUpdates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Checks whether asset updates are available</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)checkForUpdates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateAssets" title="updateAssets"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateAssets">&ndash;&nbsp;updateAssets</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Updates the assets, only after {@link #<a href="#//api/name/checkForUpdates">checkForUpdates</a>()} was successfully called</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateAssets</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetController.mm</code></p>
 			</div>
 			
 			
@@ -636,8 +771,8 @@ not been called.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/areLocalAssetsAvailable" title="areLocalAssetsAvailable"></a>
-	<h3 class="method-title"><code><a href="#//api/name/areLocalAssetsAvailable">&ndash;&nbsp;areLocalAssetsAvailable</a></code>
+	<a name="//api/name/throwIfNotActive" title="throwIfNotActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/throwIfNotActive">&ndash;&nbsp;throwIfNotActive</a></code>
 </h3>
 
 	<div class="method-info">
@@ -645,41 +780,15 @@ not been called.</p>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Whether any assets have been downloaded. If this returns NO, you should either check
-for updates and download the updates, or not use an asset context.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)areLocalAssetsAvailable</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)throwIfNotActive</code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/deleteLocalAssets" title="deleteLocalAssets"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deleteLocalAssets">&ndash;&nbsp;deleteLocalAssets</a></code>
+	<a name="//api/name/reportingValues" title="reportingValues"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportingValues">&ndash;&nbsp;reportingValues</a></code>
 </h3>
 
 	<div class="method-info">
@@ -687,36 +796,10 @@ for updates and download the updates, or not use an asset context.</p>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Deletes any assets that have been downloaded. After doing this, you should either check
-for updates and download the updates, or not use an asset context.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (void)deleteLocalAssets</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)reportingValues</code></div>
 
 		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAssetController.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -776,8 +859,8 @@ for updates and download the updates, or not use an asset context.</p>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/dealloc" title="dealloc"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+	<a name="//api/name/assetContext" title="assetContext"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetContext">&nbsp;&nbsp;assetContext</a></code>
 </h3>
 
 	<div class="method-info">
@@ -786,71 +869,7 @@ for updates and download the updates, or not use an asset context.</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setAssetDelegate:" title="setAssetDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setAssetDelegate:">&ndash;&nbsp;setAssetDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)setAssetDelegate:(NSObject&lt;ALAssetDelegate&gt; *)<em>assetDelegate</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/backupPath" title="backupPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/backupPath">&ndash;&nbsp;backupPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)backupPath</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetFiles" title="assetFiles"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetFiles">&ndash;&nbsp;assetFiles</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *)assetFiles</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/throwIfNotActive" title="throwIfNotActive"></a>
-	<h3 class="method-title"><code><a href="#//api/name/throwIfNotActive">&ndash;&nbsp;throwIfNotActive</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (void)throwIfNotActive</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALAssetContext *assetContext</code></div>
 
 		    
 		</div>
@@ -974,10 +993,10 @@ for updates and download the updates, or not use an asset context.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-07</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-11-15</p>
 						
 						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
