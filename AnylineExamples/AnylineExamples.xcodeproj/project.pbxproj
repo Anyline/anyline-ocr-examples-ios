@@ -1472,7 +1472,7 @@
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					242FC013065B3266CB6CC4CB = {
-						DevelopmentTeam = 2MSE892CA7;
+						DevelopmentTeam = 35RHL53WRE;
 					};
 				};
 			};
@@ -1725,7 +1725,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AnylineExamples.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2MSE892CA7;
+				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					./../Framework,
@@ -1744,7 +1744,7 @@
 					/,
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.test;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "./Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 5;
@@ -1813,7 +1813,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AnylineExamples.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2MSE892CA7;
+				DEVELOPMENT_TEAM = 35RHL53WRE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					./../Framework,
@@ -1832,7 +1832,7 @@
 					/,
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.bundle;
+				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.examples.test;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "./Anyline Examples Source/AnylineExamples-Bridging-Header.h";
 				SWIFT_VERSION = 5;
