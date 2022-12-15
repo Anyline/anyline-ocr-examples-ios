@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALMRZFieldScanOptions Class Reference</title>
+	<title>ALMrzFieldScanOptions Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,11 +56,39 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/)">)</option>
+		<option value="//api/name/checkDigitDateOfBirth">checkDigitDateOfBirth</option>
+		
+		<option value="//api/name/checkDigitDateOfExpiry">checkDigitDateOfExpiry</option>
+		
+		<option value="//api/name/checkDigitDocumentNumber">checkDigitDocumentNumber</option>
+		
+		<option value="//api/name/checkDigitFinal">checkDigitFinal</option>
+		
+		<option value="//api/name/checkDigitPersonalNumber">checkDigitPersonalNumber</option>
 		
 		<option value="//api/name/dateOfBirth">dateOfBirth</option>
 		
 		<option value="//api/name/dateOfExpiry">dateOfExpiry</option>
+		
+		<option value="//api/name/documentNumber">documentNumber</option>
+		
+		<option value="//api/name/documentType">documentType</option>
+		
+		<option value="//api/name/givenNames">givenNames</option>
+		
+		<option value="//api/name/issuingCountryCode">issuingCountryCode</option>
+		
+		<option value="//api/name/mrzString">mrzString</option>
+		
+		<option value="//api/name/nationalityCountryCode">nationalityCountryCode</option>
+		
+		<option value="//api/name/optionalData">optionalData</option>
+		
+		<option value="//api/name/personalNumber">personalNumber</option>
+		
+		<option value="//api/name/sex">sex</option>
+		
+		<option value="//api/name/surname">surname</option>
 		
 		<option value="//api/name/vizAddress">vizAddress</option>
 		
@@ -93,16 +121,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALMRZFieldScanOptions Class Reference</h1>
+					<h1 class="title">ALMrzFieldScanOptions Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALIDFieldScanOptions.html">ALIDFieldScanOptions</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALMRZConfig.h</td>
+	<td>ALPluginConfig.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,13 +140,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Will set the ALIDFieldScanOption for the respective fields</p>
-
-<p>By default this object will be nil.</p>
-
-<p>If you init this object, all fields will be set to &ldquo;ALDefault&rdquo; by default.</p>
-
-<p>Note: The default behavior might be affected if you use this object.</p>
+						<p>The fieldmrzScanOptions configure which text fields shall be captured mandatory, optional
+or not at all.</p>
 					</div>
 					
 					
@@ -134,8 +157,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/vizDateOfIssue" title="vizDateOfIssue"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizDateOfIssue">&nbsp;&nbsp;vizDateOfIssue</a></code>
+	<a name="//api/name/checkDigitDateOfBirth" title="checkDigitDateOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDateOfBirth">&nbsp;&nbsp;checkDigitDateOfBirth</a></code>
 </h3>
 
 	<div class="method-info">
@@ -144,14 +167,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizDateOfIssue</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *checkDigitDateOfBirth</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/vizAddress" title="vizAddress"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizAddress">&nbsp;&nbsp;vizAddress</a></code>
+	<a name="//api/name/checkDigitDateOfExpiry" title="checkDigitDateOfExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDateOfExpiry">&nbsp;&nbsp;checkDigitDateOfExpiry</a></code>
 </h3>
 
 	<div class="method-info">
@@ -160,14 +183,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizAddress</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *checkDigitDateOfExpiry</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/vizSurname" title="vizSurname"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizSurname">&nbsp;&nbsp;vizSurname</a></code>
+	<a name="//api/name/checkDigitDocumentNumber" title="checkDigitDocumentNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitDocumentNumber">&nbsp;&nbsp;checkDigitDocumentNumber</a></code>
 </h3>
 
 	<div class="method-info">
@@ -176,14 +199,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizSurname</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *checkDigitDocumentNumber</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/vizGivenNames" title="vizGivenNames"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizGivenNames">&nbsp;&nbsp;vizGivenNames</a></code>
+	<a name="//api/name/checkDigitFinal" title="checkDigitFinal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitFinal">&nbsp;&nbsp;checkDigitFinal</a></code>
 </h3>
 
 	<div class="method-info">
@@ -192,14 +215,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizGivenNames</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *checkDigitFinal</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/vizDateOfBirth" title="vizDateOfBirth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizDateOfBirth">&nbsp;&nbsp;vizDateOfBirth</a></code>
+	<a name="//api/name/checkDigitPersonalNumber" title="checkDigitPersonalNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkDigitPersonalNumber">&nbsp;&nbsp;checkDigitPersonalNumber</a></code>
 </h3>
 
 	<div class="method-info">
@@ -208,23 +231,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizDateOfBirth</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/vizDateOfExpiry" title="vizDateOfExpiry"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vizDateOfExpiry">&nbsp;&nbsp;vizDateOfExpiry</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption vizDateOfExpiry</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *checkDigitPersonalNumber</code></div>
 
 		    
 		</div>
@@ -240,7 +247,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption dateOfBirth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *dateOfBirth</code></div>
 
 		    
 		</div>
@@ -256,14 +263,14 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption dateOfExpiry</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *dateOfExpiry</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/)" title=")"></a>
-	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+	<a name="//api/name/documentNumber" title="documentNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentNumber">&nbsp;&nbsp;documentNumber</a></code>
 </h3>
 
 	<div class="method-info">
@@ -272,7 +279,247 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) ALFieldScanOption dateOfIssue __deprecated_msg ( &quot;Deprecated since Version 10.1. Please use vizDateOfIssue instead&quot; )</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *documentNumber</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/documentType" title="documentType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentType">&nbsp;&nbsp;documentType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *documentType</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/givenNames" title="givenNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/givenNames">&nbsp;&nbsp;givenNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *givenNames</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/issuingCountryCode" title="issuingCountryCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/issuingCountryCode">&nbsp;&nbsp;issuingCountryCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *issuingCountryCode</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mrzString" title="mrzString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrzString">&nbsp;&nbsp;mrzString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *mrzString</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nationalityCountryCode" title="nationalityCountryCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nationalityCountryCode">&nbsp;&nbsp;nationalityCountryCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *nationalityCountryCode</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/optionalData" title="optionalData"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optionalData">&nbsp;&nbsp;optionalData</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *optionalData</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personalNumber" title="personalNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personalNumber">&nbsp;&nbsp;personalNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *personalNumber</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sex" title="sex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sex">&nbsp;&nbsp;sex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *sex</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/surname" title="surname"></a>
+	<h3 class="method-title"><code><a href="#//api/name/surname">&nbsp;&nbsp;surname</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *surname</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizAddress" title="vizAddress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizAddress">&nbsp;&nbsp;vizAddress</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizAddress</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizDateOfBirth" title="vizDateOfBirth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizDateOfBirth">&nbsp;&nbsp;vizDateOfBirth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizDateOfBirth</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizDateOfExpiry" title="vizDateOfExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizDateOfExpiry">&nbsp;&nbsp;vizDateOfExpiry</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizDateOfExpiry</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizDateOfIssue" title="vizDateOfIssue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizDateOfIssue">&nbsp;&nbsp;vizDateOfIssue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizDateOfIssue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizGivenNames" title="vizGivenNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizGivenNames">&nbsp;&nbsp;vizGivenNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizGivenNames</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vizSurname" title="vizSurname"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vizSurname">&nbsp;&nbsp;vizSurname</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALMrzScanOption *vizSurname</code></div>
 
 		    
 		</div>
@@ -292,7 +539,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

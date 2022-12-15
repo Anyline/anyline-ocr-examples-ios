@@ -1,84 +1,27 @@
-//
-//  Anyline.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 19.03.13.
-//  Copyright (c) 2013 9Yards GmbH. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-// Anyline UIViews
-#import "ALCutoutView.h"
-#import "ALFlashButton.h"
-
-// UIView Addons
-#import "ALViewConstants.h"
-
-// Custom Objects
+#import "ALCameraConfig.h"
 #import "ALError.h"
-#import "ALErrorManager.h"
-
-#import "ALIndexPath.h"
-#import "ALImage.h"
-#import "ALContours.h"
-#import "ALSquare.h"
-
-#import "ALROISpec.h"
-#import "ALDigitDataPoint.h"
-#import "ALTextDataPoint.h"
-#import "ALDataPoint.h"
-#import "ALSegmentSpec.h"
-
-#import "ALResult.h"
-#import "ALSegmentResult.h"
-#import "ALDigitResult.h"
-#import "ALDisplayResult.h"
-#import "ALScanResultState.h"
-#import "ALBarcode.h"
-#import "ALBarcodeTypes.h"
-#import "ALBarcodeResult.h"
-
-#import "ALValuesStack.h"
-#import "ALValuesStackFlipping.h"
-
-// Generic Anyline Interface for all Use-cases
-#import "ALCoreController.h"
-// Interface which should be implemented by the Image gathering source
-#import "ALImageProvider.h"
-
-//Scan Plugins
-#import "ALMeterScanPlugin.h"
-#import "ALLicensePlateScanPlugin.h"
-#import "ALDocumentScanPlugin.h"
-#import "ALOCRScanPlugin.h"
-#import "ALTireScanPlugin.h"
-#import "ALIDScanPlugin.h"
-#import "ALBarcodeScanPlugin.h"
-
-//Scan View Plugins
-#import "ALMeterScanViewPlugin.h"
-#import "ALLicensePlateScanViewPlugin.h"
-#import "ALDocumentScanViewPlugin.h"
-#import "ALOCRScanViewPlugin.h"
-#import "ALTireScanViewPlugin.h"
-#import "ALIDScanViewPlugin.h"
-#import "ALBarcodeScanViewPlugin.h"
-
-
-//ScanViewPluginComposites
-#import "ALAbstractScanViewPluginComposite.h"
-#import "ALSerialScanViewPluginComposite.h"
-#import "ALParallelScanViewPluginComposite.h"
-
+#import "ALFlashConfig.h"
+#import "ALJSONUtilities.h"
+#import "ALPluginConfig+Extras.h"
+#import "ALPluginConfig.h"
+#import "ALPluginResult+Extras.h"
+#import "ALPluginResult.h"
+#import "ALScanPlugin.h"
+#import "ALScanPluginConfig.h"
+#import "ALScanResult.h"
 #import "ALScanView.h"
+#import "ALScanViewConfig.h"
+#import "ALScanViewPlugin.h"
+#import "ALScanViewPluginFactory.h"
+#import "ALViewPluginComposite.h"
 
 #import "ALNFCDetector.h"
+#import "ALNFCResult.h"
 
-#import "ALAssetContext.h"
-#import "ALAssetDelegate.h"
-#import "ALTrainerUtils.h"
 #import "ALAssetUpdateManager.h"
 #import "ALAssetUpdateTask.h"
+#import "ALAssetContext.h"
 
 #import "AnylineSDK.h"

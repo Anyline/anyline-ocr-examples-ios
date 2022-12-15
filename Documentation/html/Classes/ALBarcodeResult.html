@@ -58,29 +58,11 @@
 		
 		<option value="//api/name/barcodes">barcodes</option>
 		
-		<option value="//api/name/result">result</option>
-		
 	</optgroup>
 	
 
 	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/barcodeFormatForNativeString:">+ barcodeFormatForNativeString:</option>
-		
-		<option value="//api/name/barcodeFormatForString:">+ barcodeFormatForString:</option>
-		
-		<option value="//api/name/barcodeFormatsForStringArray:">+ barcodeFormatsForStringArray:</option>
-		
-	</optgroup>
-	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/initWithBarcodes:image:fullImage:confidence:pluginID:">- initWithBarcodes:image:fullImage:confidence:pluginID:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -101,10 +83,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALScanResult.html">ALScanResult</a></td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALBarcodeResult.h</td>
+	<td>ALPluginResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -114,7 +96,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <a href="#//api/name/result">result</a> object for the AnylineBarcodePlugin</p>
+						<p>Describes result information of scanning <a href="#//api/name/barcodes">barcodes</a></p>
 					</div>
 					
 					
@@ -126,51 +108,10 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
+						
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithBarcodes:image:fullImage:confidence:pluginID:" title="initWithBarcodes:image:fullImage:confidence:pluginID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithBarcodes:image:fullImage:confidence:pluginID:">&ndash;&nbsp;initWithBarcodes:image:fullImage:confidence:pluginID:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The scanned barcode format</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithBarcodes:(NSArray&lt;ALBarcode*&gt; *_Nonnull)<em>result</em> image:(UIImage *_Nullable)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALBarcodeResult.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/barcodes" title="barcodes"></a>
 	<h3 class="method-title"><code><a href="#//api/name/barcodes">&nbsp;&nbsp;barcodes</a></code>
 </h3>
@@ -180,30 +121,14 @@
 
 		<div class="method-info-container">
 			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray&lt;ALBarcode*&gt; *barcodes</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/result" title="result"></a>
-	<h3 class="method-title"><code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
 			
 			<div class="method-subsection brief-description">
-				<p>The scanned result.</p>
+				<p>Contains a list of one or more barcodes found on the processed image</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray&lt;ALBarcode*&gt; *result</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray&lt;ALBarcode*&gt; *barcodes</code></div>
 
 		    
 			
@@ -221,66 +146,10 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanResult.h</code></p>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
 			</div>
 			
 			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Private Methods" name="task_Private Methods"></a>
-						<h2 class="task-title">Private Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/barcodeFormatForString:" title="barcodeFormatForString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeFormatForString:">+&nbsp;barcodeFormatForString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)barcodeFormatForString:(NSString *_Nonnull)<em>inputFormat</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/barcodeFormatsForStringArray:" title="barcodeFormatsForStringArray:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeFormatsForStringArray:">+&nbsp;barcodeFormatsForStringArray:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *_Nullable)barcodeFormatsForStringArray:(NSArray *_Nullable)<em>inputFormats</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/barcodeFormatForNativeString:" title="barcodeFormatForNativeString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeFormatForNativeString:">+&nbsp;barcodeFormatForNativeString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)barcodeFormatForNativeString:(NSString *_Nonnull)<em>barcodeType</em></code></div>
-
-		    
 		</div>
 	</div>
 </div>
@@ -298,7 +167,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

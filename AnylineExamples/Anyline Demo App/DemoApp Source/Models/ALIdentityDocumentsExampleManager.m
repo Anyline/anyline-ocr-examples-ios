@@ -15,13 +15,7 @@
 #import "ALMeterCollectionViewController.h"
 #import "ALPDF417ScanViewController.h"
 #import "ALNFCScanViewController.h"
-
 #import "ALUniversalIDScanViewController.h"
-#import "ALUniversalIDScanViewControllerFrontAndBack.h"
-
-NSString * const kDriversLicenseTitleString = @"Driver's License";
-NSString * const kIDCardTitleString = @"ID Card";
-NSString * const kPassportVisaTitleString = @"Passport / Visa";
 
 @interface ALIdentityDocumentsExampleManager ()
 
@@ -46,18 +40,18 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
     
     ALExample *universalID = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal ID", nil)
                                                        image:[UIImage imageNamed:@"tile_universalid"]
-                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]];
+                                              viewController:[ALUniversalIDScanViewController class]];
     
     self.canUpdate = YES;
     
     ALExample *drivingLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driver's License", nil)
                                                        image:[UIImage imageNamed:@"tile_driverslicense"]
-                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
+                                              viewController:[ALUniversalIDScanViewController class]
                                                        title:kDriversLicenseTitleString];
     
     ALExample *idCardScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"ID Card", nil)
                                                        image:[UIImage imageNamed:@"tile_idcard"]
-                                              viewController:[ALUniversalIDScanViewControllerFrontAndBack class]
+                                              viewController:[ALUniversalIDScanViewController class]
                                                        title:kIDCardTitleString];
     
     ALExample *passportScanning = [[ALExample alloc] initWithName:NSLocalizedString(kPassportVisaTitleString, nil)

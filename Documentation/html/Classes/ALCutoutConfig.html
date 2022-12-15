@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -56,9 +58,11 @@
 		
 		<option value="//api/name/alignment">alignment</option>
 		
+		<option value="//api/name/alignmentString">alignmentString</option>
+		
 		<option value="//api/name/animation">animation</option>
 		
-		<option value="//api/name/backgroundColor">backgroundColor</option>
+		<option value="//api/name/animationString">animationString</option>
 		
 		<option value="//api/name/cornerRadius">cornerRadius</option>
 		
@@ -68,23 +72,23 @@
 		
 		<option value="//api/name/feedbackStrokeColor">feedbackStrokeColor</option>
 		
-		<option value="//api/name/maxPercentHeight">maxPercentHeight</option>
+		<option value="//api/name/image">image</option>
 		
-		<option value="//api/name/maxPercentWidth">maxPercentWidth</option>
+		<option value="//api/name/maxHeightPercent">maxHeightPercent</option>
+		
+		<option value="//api/name/maxWidthPercent">maxWidthPercent</option>
 		
 		<option value="//api/name/offset">offset</option>
 		
-		<option value="//api/name/overlayImage">overlayImage</option>
+		<option value="//api/name/outerColor">outerColor</option>
 		
-		<option value="//api/name/path">path</option>
+		<option value="//api/name/ratioFromSize">ratioFromSize</option>
 		
 		<option value="//api/name/strokeColor">strokeColor</option>
 		
 		<option value="//api/name/strokeWidth">strokeWidth</option>
 		
-		<option value="//api/name/usesAnimatedRect">usesAnimatedRect</option>
-		
-		<option value="//api/name/widthPercent">widthPercent</option>
+		<option value="//api/name/width">width</option>
 		
 	</optgroup>
 	
@@ -94,19 +98,15 @@
 		
 		<option value="//api/name/defaultCutoutConfig">+ defaultCutoutConfig</option>
 		
+		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
+		
 	</optgroup>
 	
 
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
-		
-		<option value="//api/name/initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:">- initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:</option>
-		
-		<option value="//api/name/setCutoutPathForWidth:height:">- setCutoutPathForWidth:height:</option>
-		
-		<option value="//api/name/updateCutoutWidth:">- updateCutoutWidth:</option>
+		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
 	</optgroup>
 	
@@ -131,6 +131,9 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ALJSONStringRepresentable.html">ALJSONStringRepresentable</a></td>
+</tr><tr>
 	<th>Declared in</th>
 	<td>ALCutoutConfig.h</td>
 </tr>
@@ -138,6 +141,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Configuration object for a plugin&rsquo;s cutout visible on the ScanView</p>
+					</div>
+					
+					
 
 					
 					
@@ -150,54 +161,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/widthPercent" title="widthPercent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/widthPercent">&nbsp;&nbsp;widthPercent</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat widthPercent</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/maxPercentWidth" title="maxPercentWidth"></a>
-	<h3 class="method-title"><code><a href="#//api/name/maxPercentWidth">&nbsp;&nbsp;maxPercentWidth</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat maxPercentWidth</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/maxPercentHeight" title="maxPercentHeight"></a>
-	<h3 class="method-title"><code><a href="#//api/name/maxPercentHeight">&nbsp;&nbsp;maxPercentHeight</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat maxPercentHeight</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/alignment" title="alignment"></a>
 	<h3 class="method-title"><code><a href="#//api/name/alignment">&nbsp;&nbsp;alignment</a></code>
 </h3>
@@ -207,15 +170,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Preset position indicating where a cutout is generally placed</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCutoutAlignment alignment</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALCutoutAlignment alignment</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/usesAnimatedRect" title="usesAnimatedRect"></a>
-	<h3 class="method-title"><code><a href="#//api/name/usesAnimatedRect">&nbsp;&nbsp;usesAnimatedRect</a></code>
+	<a name="//api/name/width" title="width"></a>
+	<h3 class="method-title"><code><a href="#//api/name/width">&nbsp;&nbsp;width</a></code>
 </h3>
 
 	<div class="method-info">
@@ -223,15 +211,41 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Suggested width in pixels (based on device capture resolution width) of the cutout.
+Used, unless <a href="#//api/name/maxWidthPercent">maxWidthPercent</a> is specified, and evaluates to a smaller width.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL usesAnimatedRect</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger width</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/offset" title="offset"></a>
-	<h3 class="method-title"><code><a href="#//api/name/offset">&nbsp;&nbsp;offset</a></code>
+	<a name="//api/name/maxWidthPercent" title="maxWidthPercent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxWidthPercent">&nbsp;&nbsp;maxWidthPercent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -239,15 +253,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum <a href="#//api/name/width">width</a> in percent (0-100) of the scan view the cutout will occupy</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint offset</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger maxWidthPercent</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/path" title="path"></a>
-	<h3 class="method-title"><code><a href="#//api/name/path">&nbsp;&nbsp;path</a></code>
+	<a name="//api/name/maxHeightPercent" title="maxHeightPercent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxHeightPercent">&nbsp;&nbsp;maxHeightPercent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -255,15 +294,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum height in percent (0-100) of the scan view the cutout will occupy</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) UIBezierPath *path</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger maxHeightPercent</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cropPadding" title="cropPadding"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cropPadding">&nbsp;&nbsp;cropPadding</a></code>
+	<a name="//api/name/ratioFromSize" title="ratioFromSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ratioFromSize">&nbsp;&nbsp;ratioFromSize</a></code>
 </h3>
 
 	<div class="method-info">
@@ -271,90 +335,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>A CGSize value indicating the cutout width-height ratio</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGSize cropPadding</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize ratioFromSize</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cropOffset" title="cropOffset"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cropOffset">&nbsp;&nbsp;cropOffset</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGPoint cropOffset</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/backgroundColor" title="backgroundColor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/backgroundColor">&nbsp;&nbsp;backgroundColor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *backgroundColor</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/strokeColor" title="strokeColor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *strokeColor</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/feedbackStrokeColor" title="feedbackStrokeColor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/feedbackStrokeColor">&nbsp;&nbsp;feedbackStrokeColor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *feedbackStrokeColor</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/overlayImage" title="overlayImage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/overlayImage">&nbsp;&nbsp;overlayImage</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *overlayImage</code></div>
+			
 
-		    
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -367,10 +376,117 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stroke <a href="#//api/name/width">width</a> of the cutout</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger strokeWidth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger strokeWidth</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/strokeColor" title="strokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/strokeColor">&nbsp;&nbsp;strokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stroke color of the cutout: use a hex string (&ldquo;00CCFF&rdquo;)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *strokeColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/feedbackStrokeColor" title="feedbackStrokeColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStrokeColor">&nbsp;&nbsp;feedbackStrokeColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Color of the cutout when the scanner is reporting feedback: use a hex string (eg &ldquo;00CCFF&rdquo;)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *feedbackStrokeColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -383,10 +499,159 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Amount of corner rounding applied to the cutout</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger cornerRadius</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger cornerRadius</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/outerColor" title="outerColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/outerColor">&nbsp;&nbsp;outerColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Background color as a hex string. Use a hex string format (&ldquo;XXXXXX&rdquo;, or &ldquo;XXXXXXXX&rdquo; in which the
+alpha component takes the first two characters).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *outerColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offset" title="offset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offset">&nbsp;&nbsp;offset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Position offset of the cutout, used in conjunction with <a href="#//api/name/alignment"><code>alignment</code></a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGPoint offset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/image" title="image"></a>
+	<h3 class="method-title"><code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>(Not currently supported) image used for the cutout</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *image</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -399,15 +664,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>(Not currently supported) animation shown with the cutout</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCutoutAnimation animation</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALCutoutAnimationStyle animation</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setCutoutPathForWidth:height:" title="setCutoutPathForWidth:height:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setCutoutPathForWidth:height:">&ndash;&nbsp;setCutoutPathForWidth:height:</a></code>
+	<a name="//api/name/cropPadding" title="cropPadding"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cropPadding">&nbsp;&nbsp;cropPadding</a></code>
 </h3>
 
 	<div class="method-info">
@@ -415,15 +705,42 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Amount of padding to be applied to the cutout (use positive amounts only). A crop padding
+truncates the visual area represented by the cutout; used in optimizing scan performance
+for some plugins</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setCutoutPathForWidth:(CGFloat)<em>width</em> height:(CGFloat)<em>height</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGSize cropPadding</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/updateCutoutWidth:" title="updateCutoutWidth:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateCutoutWidth:">&ndash;&nbsp;updateCutoutWidth:</a></code>
+	<a name="//api/name/cropOffset" title="cropOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cropOffset">&nbsp;&nbsp;cropOffset</a></code>
 </h3>
 
 	<div class="method-info">
@@ -431,10 +748,118 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Used in conjunction with <a href="#//api/name/cropPadding"><code>cropPadding</code></a>. The <a href="#//api/name/offset">offset</a> further adjusts the crop position after
+the padding is applied</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateCutoutWidth:(CGFloat)<em>width</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGPoint cropOffset</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/alignmentString" title="alignmentString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/alignmentString">&nbsp;&nbsp;alignmentString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The cutout <a href="#//api/name/alignment">alignment</a> as a human-readable string</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *alignmentString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/animationString" title="animationString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/animationString">&nbsp;&nbsp;animationString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The cutout <a href="#//api/name/animation">animation</a> as a human-readable string</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *animationString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -447,15 +872,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Used to create a cutout configuration with default values; possibly useful as a base for further customization</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nonnull instancetype)defaultCutoutConfig</code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALCutoutConfig *)defaultCutoutConfig</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+	<a name="//api/name/initWithJSONDictionary:error:" title="initWithJSONDictionary:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONDictionary:error:">&ndash;&nbsp;initWithJSONDictionary:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -463,15 +913,57 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a CutoutConfig with a JSON Dictionary</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)<em>configDict</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)<em>JSONDict</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDict</code></th>
+						<td><p>JSON dictionary. &ldquo;cutoutConfig&rdquo; can be the parent node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an NSError object which is filled when attempting to initialize with the JSON fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:" title="initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:">&ndash;&nbsp;initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:animation:</a></code>
+	<a name="//api/name/withJSONDictionary:" title="withJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withJSONDictionary:">+&nbsp;withJSONDictionary:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -479,10 +971,47 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience initializer that takes a JSON Dictionary</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithWidthPercent:(CGFloat)<em>widthPercent</em> maxPercentWidth:(CGFloat)<em>maxPercentWidth</em> maxPercentHeight:(CGFloat)<em>maxPercentHeight</em> alignment:(ALCutoutAlignment)<em>alignment</em> offset:(CGPoint)<em>offset</em> path:(UIBezierPath *_Nonnull)<em>path</em> cropPadding:(CGSize)<em>cropPadding</em> cropOffset:(CGPoint)<em>cropOffset</em> backgroundColor:(UIColor *_Nonnull)<em>backgroundColor</em> strokeColor:(UIColor *_Nonnull)<em>strokeColor</em> feedbackStrokeColor:(UIColor *_Nonnull)<em>feedbackStrokeColor</em> overlayImage:(UIImage *_Nullable)<em>overlayImage</em> strokeWidth:(NSInteger)<em>strokeWidth</em> cornerRadius:(NSInteger)<em>cornerRadius</em> animation:(ALCutoutAnimation)<em>animation</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALCutoutConfig *_Nullable)withJSONDictionary:(NSDictionary *)<em>JSONDict</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDict</code></th>
+						<td><p>the JSON Dictionary</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCutoutConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -500,7 +1029,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

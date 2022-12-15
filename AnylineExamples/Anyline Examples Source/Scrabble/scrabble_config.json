@@ -12,10 +12,10 @@
             },
             "strokeWidth": 2,
             "cornerRadius": 4,
-            "strokeColor": "FFFFFF",
+            "strokeColor": "0099FF",
             "outerColor": "000000",
             "outerAlpha": 0.3,
-            "feedbackStrokeColor": "660099FF"
+            "feedbackStrokeColor": "0099FF"
         },
         "scanFeedback" : {
             "style": "CONTOUR_POINT",

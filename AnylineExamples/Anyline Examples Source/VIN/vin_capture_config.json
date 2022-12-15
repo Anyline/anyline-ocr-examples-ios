@@ -11,8 +11,8 @@
             },
             "outerColor": "000000",
             "outerAlpha": 0.3,
-            "strokeWidth": 1,
-            "strokeColor": "FFFFFF",
+            "strokeWidth": 2,
+            "strokeColor": "0099FF",
             "cornerRadius": 2,
             "feedbackStrokeColor": "0099FF"
         },

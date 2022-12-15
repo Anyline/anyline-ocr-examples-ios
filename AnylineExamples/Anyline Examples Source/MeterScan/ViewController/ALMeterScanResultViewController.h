@@ -12,7 +12,7 @@
 
 @interface ALMeterScanResultViewController : UIViewController
 
-@property (nonatomic) ALScanMode scanMode;
+//@property (nonatomic) ALScanMode scanMode;
 
 @property (nonatomic, strong) NSString *result;
 

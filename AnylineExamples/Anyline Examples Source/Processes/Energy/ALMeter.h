@@ -36,14 +36,14 @@ typedef NS_ENUM(NSUInteger, ALScannerType) {
 + (UIImage *)symbolImageForMeterType:(ALScannerType)type;
 
 + (ALScannerType)scannerTypeForMeterTypeString:(NSString *)meterTypeString;
-+ (ALScanMode)scanModeForScannerType:(ALScannerType)scannerType;
-+ (ALScannerType)scannerTypeForScanMode:(ALScanMode)scanMode;
+//+ (ALScanMode)scanModeForScannerType:(ALScannerType)scannerType;
+//+ (ALScannerType)scannerTypeForScanMode:(ALScanMode)scanMode;
 
 /**
  *  Returns a readable string representation of the passed scan mode
  *
  *  @return - readable string or nil
  */
-+ (NSString *)readableStringForScanMode:(ALScanMode)scanMode;
+//+ (NSString *)readableStringForScanMode:(ALScanMode)scanMode;
 
 @end

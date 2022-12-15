@@ -41,7 +41,9 @@
     [[self class] applyAppearanceTweaks];
     
     NSError *error;
-    [AnylineSDK setupWithLicenseKey:kDemoAppLicenseKey error:&error];
+
+    NSString *licenseKey = kDemoAppLicenseKey_Bundle;
+    [AnylineSDK setupWithLicenseKey:licenseKey error:&error];
     if (error) {
         NSLog(@"Error with Anyline license: %@",error.localizedDescription);
         return NO;

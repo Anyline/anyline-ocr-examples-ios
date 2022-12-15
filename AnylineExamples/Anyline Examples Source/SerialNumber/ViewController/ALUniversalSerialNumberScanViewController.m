@@ -1,25 +1,11 @@
-//
-//  ALUniversalSerialNumberScanViewController.m
-//  AnylineExamples
-//
-//  Created by Philipp Mueller on 24/11/16.
-//  Copyright © 2016 Anyline GmbH. All rights reserved.
-//
-
-
 #import "ALUniversalSerialNumberScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALBaseViewController.h"
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "AnylineExamples-Swift.h"
 
-// The controller has to conform to <ALOCRScanPluginDelegate> to be able to receive results
-@interface ALUniversalSerialNumberScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
-
-// The Anyline plugin used for OCR
-@property (nonatomic, strong) ALOCRScanViewPlugin *serialNumberScanViewPlugin;
-@property (nonatomic, strong) ALOCRScanPlugin *serialNumberScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_number_view_config";
+@interface ALUniversalSerialNumberScanViewController () <ALScanPluginDelegate>
 
 @end
 
@@ -30,139 +16,102 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"Universal Serial Number";
-    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [self scanViewFrame];
+    self.controllerType = ALScanHistoryBarcode;
     
-    ALOCRConfig *config = [self ocrConfig];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"] style:UIBarButtonItemStylePlain target:self action:@selector(showSettings:)];
     
-    NSError *error = nil;
-    
-    self.serialNumberScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR" 
-                                                                   delegate:self
-                                                                  ocrConfig:config
-                                                                      error:&error];
-    NSAssert(self.serialNumberScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.serialNumberScanPlugin addInfoDelegate:self];
-    
-    ALScanViewPluginConfig *scanViewPluginConfig = [self scanViewPluginConfig];
-    
-    self.serialNumberScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.serialNumberScanPlugin
-                                                                 scanViewPluginConfig:scanViewPluginConfig];
-    NSAssert(self.serialNumberScanViewPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.serialNumberScanViewPlugin addScanViewPluginDelegate:self];
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.serialNumberScanViewPlugin];
-    
-    //Enable Zoom Gesture
-    [self.scanView enableZoomPinchGesture:YES];
-    
-    // After setup is complete we add the scanView to the view of this view controller
-    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:self.scanView];
-    [self.view sendSubviewToBack:self.scanView];
-    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
-                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
-                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
-    [self.view addConstraints:scanViewConstraints];
-    [NSLayoutConstraint activateConstraints:scanViewConstraints];
-    
-    //Start Camera:
-    [self.scanView startCamera];
-    [self startListeningForMotion];
-    
+    [self setColors];
+
     self.controllerType = ALScanHistorySerial;
 }
 
-- (ALOCRConfig *)ocrConfig {
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    
-    config.scanMode = ALAuto;
-    
-    config.validationRegex = @"[A-Z0-9]{4,}";
-    return config;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self reloadScanView];
+    [self.scanViewPlugin startWithError:nil];
 }
 
-- (ALScanViewPluginConfig *)scanViewPluginConfig {
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"serial_number_view_config" ofType:@"json"];
-     return [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
-}
-
-/*
- This method will be called once the view controller and its subviews have appeared on screen
- */
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    // We use this subroutine to start Anyline. The reason it has its own subroutine is
-    // so that we can later use it to restart the scanning process.
-    [self startAnyline];
-}
-
-/*
- Cancel scanning to allow the module to clean up
- */
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.serialNumberScanViewPlugin stopAndReturnError:nil];
+    [self.scanViewPlugin stop];
 }
 
-/*
- This method is used to tell Anyline to start scanning. It gets called in
- viewDidAppear to start scanning the moment the view appears. Once a result
- is found scanning will stop automatically (you can change this behaviour
- with cancelOnResult:). When the user dismisses self.identificationView this
- method will get called again.
- */
-- (void)startAnyline {
-    [self startPlugin:self.serialNumberScanViewPlugin];
-    self.startTime = CACurrentMediaTime();
+- (void)reloadScanView {
+    ALScanViewPlugin *scanViewPlugin = [self.class scanViewPluginWithUpdatedSettings];
+    scanViewPlugin.scanPlugin.delegate = self;
+
+    self.scanViewPlugin = scanViewPlugin;
+
+    if (!self.scanView) {
+        self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                           scanViewPlugin:scanViewPlugin
+                                                    error:nil];
+        [self installScanView:self.scanView];
+
+
+    } else {
+        [self.scanView setScanViewPlugin:scanViewPlugin error:nil];
+    }
+    [self.scanView startCamera];
+    [self.view bringSubviewToFront:self.scanView];
 }
 
-- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     cutoutRect.origin.y +
-     cutoutRect.size.height +
-     self.scanView.frame.origin.y +
-     80];
+// MARK: - Serial Settings
+
++ (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kUniversalSerailNumberScanVC_configJSONFilename
+                                                             ofType:@"json"];
+    NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
+                                                    encoding:NSUTF8StringEncoding
+                                                       error:NULL];
+    return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
 }
 
-#pragma mark -- AnylineOCRModuleDelegate
++ (ALScanViewPlugin *)scanViewPluginWithUpdatedSettings {
+    ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
+    
+    ALPluginConfig *newPluginConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig;
+    newPluginConfig.ocrConfig = [self.class ocrConfig];
+    
+    ALScanPluginConfig *newScanPluginConfig = [[ALScanPluginConfig alloc] initWithPluginConfig:newPluginConfig];
+    
+    NSDictionary *newCutoutConfigDictionary = [CutoutSettings.shared customizedCutoutConfigFrom:scanViewPluginConfig.cutoutConfig];
+    ALCutoutConfig *newCutoutConfig = [[ALCutoutConfig alloc] initWithJSONDictionary:newCutoutConfigDictionary error:nil];
+    
+    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:newScanPluginConfig cutoutConfig:newCutoutConfig scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig error:nil];
+    
+    return [[ALScanViewPlugin alloc] initWithConfig:newScanViewPluginConfig error:nil];
+}
 
-/*
- This is the main delegate method Anyline uses to report its results
- */
-- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
-               didFindResult:(ALOCRResult *)result {
-    // We are done. Cancel scanning
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Universal Serial Number" value:result.result shouldSpellOutValue:YES]];
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
++ (ALOcrConfig *)ocrConfig {
+    return [[SerialNumberSettings shared] toOCRConfig];
+}
 
-    __weak __block typeof(self) weakSelf = self;
-    [self anylineDidFindResult:jsonString
+- (IBAction)showSettings:(id)sender {
+    SerialNumberSettingsViewController *controller = [[SerialNumberSettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+// MARK: - ALScanPluginDelegate
+
+- (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
+    NSArray <ALResultEntry*> *resultData = scanResult.pluginResult.ocrResult.resultEntryList;
+    NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
+    __weak ALUniversalSerialNumberScanViewController *weakSelf = self;
+    [self anylineDidFindResult:resultDataJSONStr
                  barcodeResult:@""
-                         image:result.image
-                    scanPlugin:anylineOCRScanPlugin
-                    viewPlugin:self.serialNumberScanViewPlugin
+                         image:scanResult.croppedImage
+                    scanPlugin:scanPlugin
+                    viewPlugin:self.scanViewPlugin
                     completion:^{
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
-        vc.imagePrimary = result.image;
-
+        vc.imagePrimary = scanResult.croppedImage;
+        
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
-
-- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
-    if ([info.variableName isEqualToString:@"$brightness"]) {
-        [self updateBrightness:[info.value floatValue] forModule:self.serialNumberScanViewPlugin];
-    }
-    
-}
-
 
 @end

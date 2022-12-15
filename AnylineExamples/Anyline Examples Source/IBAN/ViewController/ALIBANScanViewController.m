@@ -13,12 +13,12 @@
 #import "AnylineExamples-Swift.h"
 
 // The controller has to conform to <AnylineOCRModuleDelegate> to be able to receive results
-@interface ALIBANScanViewController ()<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
+@interface ALIBANScanViewController () //<ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for OCR
-@property (nonatomic, strong) ALOCRScanViewPlugin *ibanScanViewPlugin;
-@property (nonatomic, strong) ALOCRScanPlugin *ibanScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+//@property (nonatomic, strong) ALOCRScanViewPlugin *ibanScanViewPlugin;
+//@property (nonatomic, strong) ALOCRScanPlugin *ibanScanPlugin;
+//@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @end
 
@@ -31,34 +31,34 @@
 
     self.title = @"IBAN";
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [self scanViewFrame];
-    
-    ALOCRConfig *config = [[ALOCRConfig alloc] init];
-    config.scanMode = ALLine;
-    config.charHeight = ALRangeMake(25, 65);
-    config.minConfidence = 70;
-    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-    config.scanMode = ALLine;
-    
-    NSError *error = nil;
-    
-    self.ibanScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                           delegate:self
-                                                          ocrConfig:config
-                                                              error:&error];
-    NSAssert(self.ibanScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.ibanScanPlugin addInfoDelegate:self];
-    
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"iban_config" ofType:@"json"];
-    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
-    
-    self.ibanScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.ibanScanPlugin
-                                                         scanViewPluginConfig:scanViewPluginConfig];
-    NSAssert(self.ibanScanViewPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.ibanScanViewPlugin addScanViewPluginDelegate:self];
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.ibanScanViewPlugin];
+//    CGRect frame = [self scanViewFrame];
+//
+//    ALOCRConfig *config = [[ALOCRConfig alloc] init];
+//    config.scanMode = ALLine;
+//    config.charHeight = ALRangeMake(25, 65);
+//    config.minConfidence = 70;
+//    config.characterWhitelist = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+//    config.validationRegex = @"^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
+//    config.scanMode = ALLine;
+//
+//    NSError *error = nil;
+//
+//    self.ibanScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
+//                                                           delegate:self
+//                                                          ocrConfig:config
+//                                                              error:&error];
+//    NSAssert(self.ibanScanPlugin, @"Setup Error: %@", error.debugDescription);
+//    [self.ibanScanPlugin addInfoDelegate:self];
+//
+//    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"iban_config" ofType:@"json"];
+//    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
+//
+//    self.ibanScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.ibanScanPlugin
+//                                                         scanViewPluginConfig:scanViewPluginConfig];
+//    NSAssert(self.ibanScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+//    [self.ibanScanViewPlugin addScanViewPluginDelegate:self];
+//
+//    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.ibanScanViewPlugin];
     
     // After setup is complete we add the scanView to the view of this view controller
     [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -73,7 +73,7 @@
     
     //Start Camera:
     [self.scanView startCamera];
-    [self startListeningForMotion];
+//    [self startListeningForMotion];
     
     self.controllerType = ALScanHistoryIban;
 }
@@ -81,21 +81,21 @@
 /*
  This method will be called once the view controller and its subviews have appeared on screen
  */
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    // We use this subroutine to start Anyline. The reason it has its own subroutine is
-    // so that we can later use it to restart the scanning process.
-    [self startAnyline];
-}
+//-(void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//
+//    // We use this subroutine to start Anyline. The reason it has its own subroutine is
+//    // so that we can later use it to restart the scanning process.
+//    [self startAnyline];
+//}
 
 /*
  Cancel scanning to allow the module to clean up
  */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.ibanScanViewPlugin stopAndReturnError:nil];
-}
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.ibanScanViewPlugin stopAndReturnError:nil];
+//}
 
 /*
  This method is used to tell Anyline to start scanning. It gets called in
@@ -104,52 +104,52 @@
  with cancelOnResult:). When the user dismisses self.identificationView this
  method will get called again.
  */
-- (void)startAnyline {
-    [self startPlugin:self.ibanScanViewPlugin];
-    
-    self.startTime = CACurrentMediaTime();
-}
+//- (void)startAnyline {
+//    [self startPlugin:self.ibanScanViewPlugin];
+//
+//    self.startTime = CACurrentMediaTime();
+//}
 
-- (void)stopAnyline {
-    if (self.ibanScanPlugin.isRunning) {
-        [self.ibanScanViewPlugin stopAndReturnError:nil];
-    }
-}
+//- (void)stopAnyline {
+//    if (self.ibanScanPlugin.isRunning) {
+//        [self.ibanScanViewPlugin stopAndReturnError:nil];
+//    }
+//}
 
-- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     cutoutRect.origin.y +
-     cutoutRect.size.height +
-     self.scanView.frame.origin.y +
-     80];
-}
+//- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
+//    //Update Position of Warning Indicator
+//    [self updateWarningPosition:
+//     cutoutRect.origin.y +
+//     cutoutRect.size.height +
+//     self.scanView.frame.origin.y +
+//     80];
+//}
 
 #pragma mark -- AnylineOCRModuleDelegate
 
 /*
  This is the main delegate method Anyline uses to report its results
  */
-- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
-
-    __weak __block typeof(self) weakSelf = self;
-    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
-        [self stopAnyline];
-        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
-        vc.imagePrimary = result.image;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    }];
-}
-
-- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
-    if ([info.variableName isEqualToString:@"$brightness"]) {
-        [self updateBrightness:[info.value floatValue] forModule:self.ibanScanViewPlugin];
-    }
-    
-}
+//- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin didFindResult:(ALOCRResult *)result {
+//    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+//    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"IBAN" value:result.result shouldSpellOutValue:YES]];
+//    NSString *jsonString = [self JSONStringFromResultData:resultData];
+//
+//    __weak __block typeof(self) weakSelf = self;
+//    [self anylineDidFindResult:jsonString barcodeResult:@"" image:result.image scanPlugin:anylineOCRScanPlugin viewPlugin:self.ibanScanViewPlugin completion:^{
+//        [self stopAnyline];
+//        ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
+//        vc.imagePrimary = result.image;
+//        [weakSelf.navigationController pushViewController:vc animated:YES];
+//    }];
+//}
+//
+//- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info{
+//    if ([info.variableName isEqualToString:@"$brightness"]) {
+//        [self updateBrightness:[info.value floatValue] forModule:self.ibanScanViewPlugin];
+//    }
+//    
+//}
 
 - (NSString *)formattedIbanText:(NSString*)originalString {
     NSMutableString *resultString = [NSMutableString string];

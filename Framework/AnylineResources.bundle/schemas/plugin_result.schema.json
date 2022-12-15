@@ -1,0 +1,818 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PluginResult",
+    "description": "Describes all kinds of scan results",
+    "type": "object",
+    "allOf": [
+        { "required": ["pluginID", "confidence"] },
+        { "oneOf": [
+            { "required": ["barcodeResult"] },
+            { "required": ["universalIdResult"] },
+            { "required": ["vehicleRegistrationCertificateResult"] },
+            { "required": ["mrzResult"] },
+            { "required": ["licensePlateResult"] },
+            { "required": ["japaneseLandingPermissionResult"] },
+            { "required": ["meterResult"] },
+            { "required": ["ocrResult"] },
+            { "required": ["tinResult"] },
+            { "required": ["tireSizeResult"] },
+            { "required": ["commercialTireIdResult"] },
+            { "required": ["containerResult"] },
+            { "required": ["vinResult"] }
+			
+        ]}
+    ],
+    "properties": {
+        "blobKey": {
+          "type": "string",
+		  "description": "The blobKey (provided optionally, depending on the Anyline license settings)"
+        },
+        "pluginID": { 
+          "type": "string",
+		  "description": "The ID of the ScanPlugin that processed the result"
+        },
+        "cropRect": {
+          "type": "object",
+		  "description": "The rect information of the region that was processed within the image",
+          "properties": {
+              "x": { "type": "integer", "description": "The X value" },
+              "y": { "type": "integer", "description": "The Y value" },
+              "width": { "type": "integer", "description": "The width" },
+              "height": { "type": "integer", "description": "The height" }
+          },
+          "required": ["x", "y", "width", "height"],
+          "additionalProperties": false
+        },
+        "confidence": {
+          "type": "integer",
+		  "description": "Provides a general confidence value between 0 and 100 if applicable. -1 if no confidence was calculated",
+          "default": -1,
+          "minimum": -1,
+          "maximum": 100
+        },
+        "barcodeResult": { "$ref": "#/definitions/barcodeResult" },
+        "universalIdResult": { "$ref": "#/definitions/universalIdResult" },
+        "vehicleRegistrationCertificateResult": { "$ref": "#/definitions/vehicleRegistrationCertificateResult" },
+        "mrzResult": { "$ref": "#/definitions/mrzResult" },
+        "licensePlateResult": { "$ref": "#/definitions/licensePlateResult" },
+        "japaneseLandingPermissionResult": { "$ref": "#/definitions/japaneseLandingPermissionResult" },
+		"meterResult": { "$ref": "#/definitions/meterResult" },
+		"ocrResult": { "$ref": "#/definitions/ocrResult" },
+		"tinResult": { "$ref": "#/definitions/tinResult" },
+		"tireSizeResult": { "$ref": "#/definitions/tireSizeResult" },
+        "commercialTireIdResult": { "$ref": "#/definitions/commercialTireIdResult" },
+		"containerResult": { "$ref": "#/definitions/containerResult" },
+		"vinResult": { "$ref": "#/definitions/vinResult" }
+    },
+	"definitions": {
+		"vinResult": {
+			"description": "Describes result information of scanning vehicle identification numbers (VIN)",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The VIN text value"
+				}
+			},
+			"additionalProperties": false
+		},
+		"containerResult": {
+			"description": "Describes result information of scanning shipping containers",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text value of the shipping container"
+				}
+			},
+			"additionalProperties": false
+		},
+		"commercialTireIdResult": {
+			"description": "Describes result information of scanning commercial tire IDs",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text value of the commercial tire ID"
+				}
+			},
+			"additionalProperties": false			
+		},
+		"tireSizeResult": {
+			"description": "Describes result information of scanning tire size specifications",
+			"type": "object",
+			"properties": {
+				"commercialTire": { "$ref": "#/definitions/tireSizeResultField" },
+				"construction": { "$ref": "#/definitions/tireSizeResultField" },
+				"diameter": { "$ref": "#/definitions/tireSizeResultField" },
+				"extraLoad": { "$ref": "#/definitions/tireSizeResultField" },
+				"loadIndex": { "$ref": "#/definitions/tireSizeResultField" },
+				"prettifiedString": { "$ref": "#/definitions/tireSizeResultField" },
+				"prettifiedStringWithMeta": { "$ref": "#/definitions/tireSizeResultField" },
+				"ratio": { "$ref": "#/definitions/tireSizeResultField" },
+				"speedRating": { "$ref": "#/definitions/tireSizeResultField" },
+				"text": { "$ref": "#/definitions/tireSizeResultField" },
+				"vehicleType": { "$ref": "#/definitions/tireSizeResultField" },
+				"width": { "$ref": "#/definitions/tireSizeResultField" },
+				"winter": { "$ref": "#/definitions/tireSizeResultField" }
+			},
+			"additionalProperties": false
+		},
+		"tireSizeResultField": {
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text value of the tire size field."
+				},
+				"confidence": {
+					"type": "integer",
+					"description": "The confidence value of the tire size field."
+				}
+			}
+		},
+		"tinResult": {
+			"description": "Describes result information of scanning tire identification numbers (TIN)",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The TIN text value."
+				}
+			},
+			"additionalProperties": false
+		},
+		"ocrResult": {
+			"description": "Describes result information of scanning general OCR",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The OCR text value."
+				}
+			},
+			"additionalProperties": false
+		},
+		"meterResult": {
+			"description": "Describes result information of scanning meters",
+			"type": "object",
+			"properties": {
+				"value": {
+					"description": "The meter value.",
+					"type": "string"            
+				},
+				"unit": {
+					"description": "The unit value. Only applicable for multi-field meter scanning.",
+					"type": "string"
+				},
+				"position": {
+					"description": "The position. Only applicable for OBIS meters - see https://onemeter.com/docs/device/obis/",
+					"type": "string"
+				}
+			},
+			"required": ["value"],
+			"additionalProperties": false			
+		},
+		"japaneseLandingPermissionResultField": {
+			"type": "object",
+			"description": "Provides result information for japanese landing permission fields",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text information of the field"
+				},
+				"confidence": {
+					"type": "integer",
+					"description": "The confidence information of the field",
+					"default": -1,
+					"minimum": -1,
+					"maximum": 100
+				}
+			},
+			"additionalProperties": false,
+			"required": ["text", "confidence"]
+		},
+		"japaneseLandingPermissionResult": {
+			"description": "Describes result information of scanning japanese landing permission tickets",
+			"type": "object",
+			"properties": {
+				"result": {
+					"title": "JlpResult",
+					"type": "object",
+					"description": "Yields field information of a japanese landing permission ticket",
+					"properties": {
+						"airport": { "$ref": "#/definitions/japaneseLandingPermissionResultField" },
+						"dateOfExpiry": { "$ref": "#/definitions/japaneseLandingPermissionResultField" },
+						"dateOfIssue": { "$ref": "#/definitions/japaneseLandingPermissionResultField" },
+						"duration": { "$ref": "#/definitions/japaneseLandingPermissionResultField" },
+						"status": { "$ref": "#/definitions/japaneseLandingPermissionResultField" }
+					},
+					"additionalProperties": false
+				}
+			},
+			"required": ["result"],
+			"additionalProperties": false
+		},
+		"licensePlateResult":{
+			"description": "Describes result information of scanning license plates",
+			"type": "object",
+			"properties": {
+				"country": {
+					"type":"string",
+					"description": "The country information",
+					"enum": ["", "A", "GB", "IRE", "P", "N", "N_SPECIAL", "D", "CZ", "FIN", "F", "HR", "SK", "SLO", "AL", "AND", "AM", "AZ", "BY", "B", "BIH", "BG", "CY", "DK", "EST", "GE", "GR", "H", "IS", "I", "LV", "FL", "LT", "L", "M", "MO", "MC", "MNE", "NL", "NMK", "PL", "RO", "RUS", "SRB", "E", "S", "CH", "TR", "UA", "US", "AF"],
+					"default": ""
+				},
+				"area": {
+					"type":"string",
+					"description": "The area information",
+					"enum": ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+				},
+				"plateText": {
+					"type":"string",
+					"description": "The plate text",
+					"default": ""
+				}
+			},
+			"dependencies": {
+				"area": { 
+					"properties" : {
+						"country": {
+							"enum": ["US", ""]
+						}
+					}
+				}
+			},
+			"required": ["country", "plateText"],
+			"additionalProperties": false
+		},
+		"confidence": {			
+			"type": "integer",
+			"description": "The confidence value of the field",
+			"default": -1,
+			"minimum": -1,
+			"maximum": 100
+		},
+		"mrzResult": {
+			"description": "Describes result information of scanning MRZ",
+			"type": "object",
+			"properties": {
+				"allCheckDigitsValid": { "type": "boolean", "description": "True if all check digits are valid" },
+				"dateOfBirth": { "type": "string", "description": "The DateOfBirth" },
+				"dateOfBirthObject": { "type": "string", "description": "The DateOfBirthObject" },
+				"dateOfExpiry": { "type": "string", "description": "The DateOfExpiry" },
+				"dateOfExpiryObject": { "type": "string", "description": "The DateOfExpiryObject" },
+				"documentNumber": { "type": "string", "description": "The DocumentNumber" },
+				"documentType": { "type": "string", "description": "The DocumentType" },
+				"issuingCountryCode": { "type": "string", "description": "The IssuingCountryCode" },
+				"nationalityCountryCode": { "type": "string", "description": "The NationalityCountryCode" },
+				"sex": { "type": "string", "description": "The Sex" },
+				"personalNumber": { "type": "string", "description": "The PersonalNumber" },
+				"checkDigitDateOfExpiry": { "type": "string", "description": "The CheckDigitDateOfExpiry" },
+				"checkDigitDocumentNumber": { "type": "string", "description": "The CheckDigitDocumentNumber" },
+				"checkDigitPersonalNumber": { "type": "string", "description": "The CheckDigitPersonalNumber" },
+				"checkDigitDateOfBirth": { "type": "string", "description": "The CheckDigitDateOfBirth" },
+				"checkDigitFinal": { "type": "string", "description": "The CheckDigitFinal" },
+				"mrzString": { "type": "string", "description": "The MRZString" },
+
+				"surname": { "type": "string", "description": "The Surname" },
+				"givenNames": { "type": "string", "description": "The GivenNames" },
+				"firstName": { "type": "string", "description": "The FirstName" },
+				"lastName": { "type": "string", "description": "The LastName" },
+
+				"optionalData": { "type": "string", "description": "The OptionalData" },
+				"vizAddress": { "type": "string", "description": "The Adress of the Visual Inspection Zone" },
+				"vizDateOfIssue": { "type": "string", "description": "The DateOfIssue of the Visual Inspection Zone" },
+				"vizDateOfIssueObject": { "type": "string", "description": "The DateOfIssueObject of the Visual Inspection Zone" },
+				"vizSurname": { "type": "string", "description": "The Surname of the Visual Inspection Zone" },
+				"vizGivenNames": { "type": "string", "description": "The GivenNames of the Visual Inspection Zone" },
+				"vizDateOfBirth": { "type": "string", "description": "The DateOfBirth of the Visual Inspection Zone" },
+				"vizDateOfBirthObject": { "type": "string", "description": "The DateOfBirthObject of the Visual Inspection Zone" },
+				"vizDateOfExpiry": { "type": "string", "description": "The DateOfExpiry of the Visual Inspection Zone" },
+				"vizDateOfExpiryObject": { "type": "string", "description": "The DateOfExpiryObject of the Visual Inspection Zone" },
+
+				"fieldConfidences": {
+					"type": "object",
+					"description": "The confidence values of each field",
+					"properties": {
+						"surname":  { "$ref": "#/definitions/confidence" },
+						"givenNames":  { "$ref": "#/definitions/confidence" },
+						"dateOfBirth":  { "$ref": "#/definitions/confidence" },
+						"dateOfExpiry":  { "$ref": "#/definitions/confidence" },
+						"documentNumber":  { "$ref": "#/definitions/confidence" },
+						"documentType":  { "$ref": "#/definitions/confidence" },
+						"issuingCountryCode":  { "$ref": "#/definitions/confidence" },
+						"nationalityCountryCode":  { "$ref": "#/definitions/confidence" },
+						"sex":  { "$ref": "#/definitions/confidence" },
+						"personalNumber":  { "$ref": "#/definitions/confidence" },
+						"optionalData":  { "$ref": "#/definitions/confidence" },
+						"mrzString":  { "$ref": "#/definitions/confidence" },
+						"checkDigitDateOfExpiry":  { "$ref": "#/definitions/confidence" },
+						"checkDigitDocumentNumber":  { "$ref": "#/definitions/confidence" },
+						"checkDigitPersonalNumber":  { "$ref": "#/definitions/confidence" },
+						"checkDigitDateOfBirth":  { "$ref": "#/definitions/confidence" },
+						"checkDigitFinal":  { "$ref": "#/definitions/confidence" },
+						"vizAddress":  { "$ref": "#/definitions/confidence" },
+						"vizDateOfIssue":  { "$ref": "#/definitions/confidence" },
+						"vizSurname":  { "$ref": "#/definitions/confidence" },
+						"vizGivenNames":  { "$ref": "#/definitions/confidence" },
+						"vizDateOfBirth":  { "$ref": "#/definitions/confidence" },
+						"vizDateOfExpiry":  { "$ref": "#/definitions/confidence" }
+					},
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"allCheckDigitsValid", 
+				"dateOfBirth", 
+				"dateOfBirthObject", 
+				"dateOfExpiry", 
+				"dateOfExpiryObject", 
+				"documentNumber", 
+				"documentType", 
+				"issuingCountryCode", 
+				"nationalityCountryCode", 
+				"sex", 
+				"personalNumber", 
+				"checkDigitDateOfExpiry", 
+				"checkDigitDocumentNumber", 
+				"checkDigitPersonalNumber", 
+				"checkDigitDateOfBirth", 
+				"checkDigitFinal", 
+				"mrzString"
+			],
+			"oneOf": [
+				{
+					"required": [
+						"lastName", 
+						"firstName"
+					]
+				},
+				{
+					"required": [
+						"surname", 
+						"givenNames"
+					]
+				}
+			],
+			"additionalProperties": false			
+		},
+		"visualization": {
+			"type": "object",
+			"description": "Information about the visualization data of the scanned ID",
+			"properties": {
+				"contours": {					
+					"type": "array",
+					"description": "The found contours of the fields on the ID",
+					"items": {
+						"type": "array",
+						"description": "An array of integer values",
+						"items": { "type": "integer" },
+						"minItems": 4,
+						"maxItems": 4
+					}
+				},
+				"contourPoints": {
+					"type": "array",
+					"description": "The found contour points of the fields on the ID",
+					"items": {
+						"type": "array",
+						"description": "An array of contour points",
+						"items": {
+							"type": "array",
+							"description": "An array of integer values",
+							"items": { "type": "integer" },
+							"minItems": 2,
+							"maxItems": 2
+						}
+					}
+				},
+				"textRect": {
+					"description": "The found bounding rect of the text fields on the ID",
+					"type": "array",
+					"items": { "type": "integer" },
+					"minItems": 4,
+					"maxItems": 4
+				}
+			}, 
+			"required": ["contours", "textRect"],
+			"additionalProperties": false
+		},
+		"vehicleRegistrationCertificateResultField": {
+			"type": "object",
+			"description": "Describes scanned parameters of a vehicle registration certificate field",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text value"
+				},
+				"confidence": {
+					"type": "integer",
+					"description": "The confidence value",
+					"default": -1,
+					"minimum": -1,
+					"maximum": 100
+				}
+			},
+			"additionalProperties": false,
+			"required": ["text", "confidence"]
+		},
+		"vehicleRegistrationCertificateResult": {
+			"description": "Describes result information of scanning vehicle registration certificates",
+			"type": "object",
+			"properties": {
+				"result": {
+					"title": "VrcResult",
+					"type": "object",
+					"description": "Yields field information of the vehicle registration certificate",
+					"properties": {
+						"documentNumber": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"licensePlate": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"lastName": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"firstName": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"address": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"firstIssued": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"formattedFirstIssued": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"manufacturerCode": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"vehicleTypeCode": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"vehicleIdentificationNumber": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"brand": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"vehicleType": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"displacement": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"tire": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"documentRegionDefinition": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"documentCategoryDefinition": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"documentTypeDefinition": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"documentVersionsDefinition": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" },
+						"documentSideDefinition": { "$ref": "#/definitions/vehicleRegistrationCertificateResultField" }
+					},
+					"additionalProperties": false
+				},
+				"visualization": {
+					"$ref": "#/definitions/visualization"
+				}
+			}, 			
+			"required": ["result", "visualization"],
+			"additionalProperties": false			
+		},
+		"universalIdResultField": {
+			"type": "object",
+			"description": "Describes scanned parameters of an ID field",
+			"properties": {
+				"textValues": {
+					"type": "object",
+					"description": "Describes the text values of an ID field",
+					"properties": {
+						"latin": {
+							"type": "object",
+							"description": "The text parameters",
+							"properties": {
+								"text": {
+									"type": "string",
+									"description": "The text value"
+								},
+								"confidence": {
+									"type": "integer",
+									"description": "The confidence value",
+									"default": -1,
+									"minimum": -1,
+									"maximum": 100
+								}
+							},
+							"additionalProperties": false,
+							"required": ["text", "confidence"]
+						},
+						"cyrillic": {
+							"type": "object",
+							"description": "The text parameters",
+							"properties": {
+								"text": {
+									"type": "string",
+									"description": "The text value"
+								},
+								"confidence": {
+									"type": "integer",
+									"description": "The confidence value",
+									"default": -1,
+									"minimum": -1,
+									"maximum": 100
+								}
+							},
+							"additionalProperties": false,
+							"required": ["text", "confidence"]
+						},
+						"arabic": {
+							"type": "object",
+							"description": "The text parameters",
+							"properties": {
+								"text": {
+									"type": "string",
+									"description": "The text value"
+								},
+								"confidence": {
+									"type": "integer",
+									"description": "The confidence value",
+									"default": -1,
+									"minimum": -1,
+									"maximum": 100
+								}
+							},
+							"additionalProperties": false,
+							"required": ["text", "confidence"]
+						}
+					},
+					"additionalProperties": false,
+					"anyOf": [
+						{"required": ["latin"]},
+						{"required": ["cyrillic"]},
+						{"required": ["arabic"]}
+					]
+				},
+				"dateValue": {
+					"type": "object",
+					"description": "Describes the date value of an ID field",
+					"properties": {
+						"year": { "type": "integer", "description": "The year" },
+						"month": {
+							"type": "integer",
+							"description": "The month",
+							"minimum": 1,
+							"maximum": 12
+						},
+						"day": {
+							"type": "integer",
+							"description": "The day",
+							"minimum": 1,
+							"maximum": 31
+						},
+						"text": { 
+							"type": "string",
+							"description": "The text value"
+						},
+						"formattedText": {
+							"type": "string",
+							"description": "The formatted text value"
+						},
+						"confidence": {							
+							"type": "integer",
+							"description": "The confidence value",
+							"default": -1,
+							"minimum": -1,
+							"maximum": 100
+						}
+					},
+					"additionalProperties": false,
+					"required": ["year", "month", "day", "text", "formattedText", "confidence"]
+				}
+			},
+			"additionalProperties": false,
+			"required": ["textValues"]
+		},		
+		"universalIdResult": {
+			"description": "Describes result information of scanning different kinds of IDs",
+			"type": "object",
+			"properties": {
+				"layoutDefinition": {
+					"type": "object",
+					"description": "The layout information of the scanned ID",
+					"properties": {
+						"country": {
+							"type": "string",
+							"description": "The country"
+						},
+						"type": { 
+							"type": "string",
+							"description": "The type of layout",
+							"enum": ["mrz", "drivingLicense", "idFront", "insuranceCard"]
+						},
+						"layout": {
+							"type": "string",
+							"description": "The actual layout"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["country", "layout", "type"]
+				},
+				"result": {
+					"title": "IdResult",
+					"type": "object",
+					"description": "Yields field information of the ID",
+					"properties": {
+						"additionalInformation": { "$ref": "#/definitions/universalIdResultField" },
+						"additionalInformation1": { "$ref": "#/definitions/universalIdResultField" },
+						"additionalInformation2": { "$ref": "#/definitions/universalIdResultField" },
+						"additionalInformation3": { "$ref": "#/definitions/universalIdResultField" },
+						"age": { "$ref": "#/definitions/universalIdResultField" },
+						"address": { "$ref": "#/definitions/universalIdResultField" },
+						"airport": { "$ref": "#/definitions/universalIdResultField" },
+						"allCheckDigitsValid": { "$ref": "#/definitions/universalIdResultField" },
+						"audit": { "$ref": "#/definitions/universalIdResultField" },
+						"authority": { "$ref": "#/definitions/universalIdResultField" },
+						"barcode": { "$ref": "#/definitions/universalIdResultField" },
+						"bloodType": { "$ref": "#/definitions/universalIdResultField" },
+						"cardAccessNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"checkDigitDateOfExpiry": { "$ref": "#/definitions/universalIdResultField" },
+						"checkDigitDocumentNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"checkDigitPersonalNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"checkDigitDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"checkDigitFinal": { "$ref": "#/definitions/universalIdResultField" },
+						"cityNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"conditions": { "$ref": "#/definitions/universalIdResultField" },
+						"country": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfBirthObject": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfExpiry": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfExpiryObject": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfIssue": { "$ref": "#/definitions/universalIdResultField" },
+						"dateOfRegistration": { "$ref": "#/definitions/universalIdResultField" },
+						"degreeOfDisability": { "$ref": "#/definitions/universalIdResultField" },
+						"divisionNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"documentCategoryDefinition": { "$ref": "#/definitions/universalIdResultField" },
+						"documentDiscriminator": { "$ref": "#/definitions/universalIdResultField" },
+						"documentNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"documentRegionDefinition": { "$ref": "#/definitions/universalIdResultField" },
+						"documentSideDefinition": { "$ref": "#/definitions/universalIdResultField" },
+						"documentType": { "$ref": "#/definitions/universalIdResultField" },
+						"documentTypeDefinition": { "$ref": "#/definitions/universalIdResultField" },
+						"documentVersionsDefinition": { "$ref": "#/definitions/universalIdResultField" },
+						"drivingLicenseString": { "$ref": "#/definitions/universalIdResultField" },
+						"duplicate": { "$ref": "#/definitions/universalIdResultField" },
+						"duration": { "$ref": "#/definitions/universalIdResultField" },
+						"educationalInstitution": { "$ref": "#/definitions/universalIdResultField" },
+						"employer": { "$ref": "#/definitions/universalIdResultField" },
+						"endorsements": { "$ref": "#/definitions/universalIdResultField" },
+						"eyes": { "$ref": "#/definitions/universalIdResultField" },
+						"familyNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"familyRelation": { "$ref": "#/definitions/universalIdResultField" },
+						"face": { "$ref": "#/definitions/universalIdResultField" },
+						"fathersName": { "$ref": "#/definitions/universalIdResultField" },
+						"firstIssued": { "$ref": "#/definitions/universalIdResultField" },
+						"firstName": { "$ref": "#/definitions/universalIdResultField" },
+						"fullName": { "$ref": "#/definitions/universalIdResultField" },
+						"folio": { "$ref": "#/definitions/universalIdResultField" },
+						"formattedDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"formattedDateOfExpiry": { "$ref": "#/definitions/universalIdResultField" },
+						"formattedDateOfIssue": { "$ref": "#/definitions/universalIdResultField" },
+						"givenNames": { "$ref": "#/definitions/universalIdResultField" },
+						"hair": { "$ref": "#/definitions/universalIdResultField" },
+						"headOfFamily": { "$ref": "#/definitions/universalIdResultField" },
+						"height": { "$ref": "#/definitions/universalIdResultField" },
+						"hologram": { "$ref": "#/definitions/universalIdResultField" },
+						"idFrontString": { "$ref": "#/definitions/universalIdResultField" },
+						"initials": { "$ref": "#/definitions/universalIdResultField" },
+						"initialsAndDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"issuingCountryCode": { "$ref": "#/definitions/universalIdResultField" },
+						"lastName": { "$ref": "#/definitions/universalIdResultField" },
+						"licenseClass": { "$ref": "#/definitions/universalIdResultField" },
+						"licenseType": { "$ref": "#/definitions/universalIdResultField" },
+						"maidenName": { "$ref": "#/definitions/universalIdResultField" },
+						"militaryRank": { "$ref": "#/definitions/universalIdResultField" },
+						"mirrorNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"mothersName": { "$ref": "#/definitions/universalIdResultField" },
+						"mrz": { "$ref": "#/definitions/universalIdResultField" },
+						"mrzString": { "$ref": "#/definitions/universalIdResultField" },
+						"municipalityNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"nationality": { "$ref": "#/definitions/universalIdResultField" },
+						"nationalityCountryCode": { "$ref": "#/definitions/universalIdResultField" },
+						"occupation": { "$ref": "#/definitions/universalIdResultField" },
+						"optionalData": { "$ref": "#/definitions/universalIdResultField" },
+						"office": { "$ref": "#/definitions/universalIdResultField" },
+						"parentsFirstName": { "$ref": "#/definitions/universalIdResultField" },
+						"parish": { "$ref": "#/definitions/universalIdResultField" },
+						"personalNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"placeAndDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"placeOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"previousType": { "$ref": "#/definitions/universalIdResultField" },
+						"pseudonym": { "$ref": "#/definitions/universalIdResultField" },
+						"religion": { "$ref": "#/definitions/universalIdResultField" },
+						"restrictions": { "$ref": "#/definitions/universalIdResultField" },
+						"sex": { "$ref": "#/definitions/universalIdResultField" },
+						"signature": { "$ref": "#/definitions/universalIdResultField" },
+						"socialSecurityNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"state": { "$ref": "#/definitions/universalIdResultField" },
+						"stateNumber": { "$ref": "#/definitions/universalIdResultField" },
+						"status": { "$ref": "#/definitions/universalIdResultField" },
+						"surname": { "$ref": "#/definitions/universalIdResultField" },
+						"vizAddress": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfIssue": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfIssueObject": { "$ref": "#/definitions/universalIdResultField" },
+						"vizSurname": { "$ref": "#/definitions/universalIdResultField" },
+						"vizGivenNames": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfBirthObject": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfExpiry": { "$ref": "#/definitions/universalIdResultField" },
+						"vizDateOfExpiryObject": { "$ref": "#/definitions/universalIdResultField" },
+						"voterId": { "$ref": "#/definitions/universalIdResultField" },
+						"weight": { "$ref": "#/definitions/universalIdResultField" },
+						"workPermitNumber": { "$ref": "#/definitions/universalIdResultField" }
+					},
+					"additionalProperties": false
+				},
+				"visualization": {
+					"$ref": "#/definitions/visualization"
+				}
+			},
+			"required": ["layoutDefinition", "result"],
+			"oneOf": [
+				{
+					"properties": {
+						"layoutDefinition": {
+							"properties": {
+								"type": { "const": "mrz" }
+							}
+						}
+					}
+				},
+				{ "required": ["visualization"] }
+			],
+			"additionalProperties": false			
+		},
+		"barcodeResult": {
+			"description": "Describes result information of scanning barcodes",
+			"type": "object",
+			"properties": {
+				"barcodes": {
+					"type": "array",
+					"description": "Contains a list of one or more barcodes found on the processed image",
+					"items": {
+						"$ref": "#/definitions/barcode"
+					}
+				}
+			},
+			"required": ["barcodes"],
+			"additionalProperties": false
+		},
+		"barcode": {
+			"type": "object",
+			"description": "Describes barcode information",
+			"properties": {
+				"value": {
+					"type": "string",
+					"description": "The value of the barcode"
+				},
+				"format": {
+					"type": "string",
+					"description": "The barcode format"
+				},
+				"coordinates": {					
+					"type": "array",
+					"description": "The coordinate points on the processed image",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"isBase64": {
+					"type": "boolean",
+					"description": "Information of whether or not the found barcode value was encoded to base64"
+				},
+				"aamva": {
+					"$ref": "#/definitions/aamva"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["value", "format", "isBase64"]			
+		},
+		"aamva": {
+			"type": "object",
+			"description": "Holds all encoded barcode information according to the AAMVA standard",
+			"properties": {
+				"AAMVA_version": {
+					"type": "integer"
+				},
+				"body-part": {
+					"type": "object",
+					"properties": {
+						"auditInformation": { "type": "string" },
+						"cardRevisionDate": { "type": "string" },
+						"city": { "type": "string" },
+						"complianceType": { "type": "string" },
+						"countryID": { "type": "string" },
+						"customerIDNumber": { "type": "string" },
+						"dateOfBirth": { "type": "string" },
+						"dateOfExpiry": { "type": "string" },
+						"dateOfIssue": { "type": "string" },
+						"documentDiscriminator": { "type": "string" },
+						"drivingPrivilege": { "type": "string" },
+						"endorsementCode": { "type": "string" },
+						"eyes": { "type": "string" },
+						"firstName": { "type": "string" },
+						"firstNameTruncated": { "type": "string" },
+						"hair": { "type": "string" },
+						"height": { "type": "string" },
+						"inventoryControlNumber": { "type": "string" },
+						"jurisdictionCode": { "type": "string" },
+						"lastName": { "type": "string" },
+						"lastNameTruncated": { "type": "string" },
+						"licenseClass": { "type": "string" },
+						"middleName": { "type": "string" },
+						"middleNameTruncated": { "type": "string" },
+						"postalCode": { "type": "string" },
+						"sex": { "type": "string" },
+						"street": { "type": "string" }
+					}
+				}
+			}			
+		}
+	},
+    "additionalProperties": false
+}

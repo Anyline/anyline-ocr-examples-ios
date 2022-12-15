@@ -15,6 +15,8 @@
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "AppDelegate.h"
+#import <Anyline/Anyline.h>
+#import "AnylineExamples-Swift.h"
 
 @import CoreMotion;
 
@@ -36,7 +38,7 @@ the camera from Settings.";
     [self.motionManager stopDeviceMotionUpdates];
     
     @try {
-        [[ALErrorManager sharedInstance] removeObserver:self forKeyPath:@"error"];
+//        [[ALErrorManager sharedInstance] removeObserver:self forKeyPath:@"error"];
     } @catch (NSException * __unused exception) {}
 }
 
@@ -45,9 +47,9 @@ the camera from Settings.";
     if (self) {
         self.title = (title && title.length > 0) ? title : @"";
         
-        [[ALErrorManager sharedInstance] addObserver:self forKeyPath:@"error"
-                                             options:NSKeyValueObservingOptionNew
-                                             context:nil];
+//        [[ALErrorManager sharedInstance] addObserver:self forKeyPath:@"error"
+//                                             options:NSKeyValueObservingOptionNew
+//                                             context:nil];
     }
     return self;
 }
@@ -78,6 +80,23 @@ the camera from Settings.";
     [self enableLandscapeOrientation:NO];
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    [self setColors];
+}
+
+- (void)setColors {
+    // override
+}
+
+- (BOOL)isDarkMode {
+    BOOL isDarkMode = NO;
+    if (@available(iOS 13.0, *)) {
+        isDarkMode = self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark;
+    }
+    return isDarkMode;
+}
+
 - (NSString *)jsonStringFromResultData:(NSArray*)resultData {
     return @"";
 }
@@ -87,33 +106,31 @@ the camera from Settings.";
 }
 
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule ignoreTooDark:(BOOL)ignoreTooDark {
-    if([anylineModule isKindOfClass:[ALOCRScanViewPlugin class]]) {
-        if( brightness < 40 && !ignoreTooDark) {
-            [self updateScanWarnings:ALWarningStateTooDark];
-        } else if (brightness > 200) {
-            [self updateScanWarnings:ALWarningStateTooBright];
-        }
-    }
+//    if([anylineModule isKindOfClass:[ALOCRScanViewPlugin class]]) {
+//        if( brightness < 40 && !ignoreTooDark) {
+//            [self updateScanWarnings:ALWarningStateTooDark];
+//        } else if (brightness > 200) {
+//            [self updateScanWarnings:ALWarningStateTooBright];
+//        }
+//    }
 }
 
-
-
-- (void)startListeningForMotion {
-    __weak __block typeof(self) welf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        CMMotionManager * motionManager = [[CMMotionManager alloc] init];
-        motionManager.deviceMotionUpdateInterval = 1.0/60.0;
-        [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
-                                           withHandler:^(CMDeviceMotion *motion, NSError *error) {
-                                               CGFloat threshold = 0.05;
-                                               if( fabs(motion.userAcceleration.x) > threshold ||
-                                                   fabs(motion.userAcceleration.y) > threshold) {
-                                                   [welf updateScanWarnings:ALWarningStateHoldStill];
-                                               }
-                                           }];
-        welf.motionManager = motionManager;
-    });
-}
+//- (void)startListeningForMotion {
+//    __weak __block typeof(self) welf = self;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        CMMotionManager * motionManager = [[CMMotionManager alloc] init];
+//        motionManager.deviceMotionUpdateInterval = 1.0/60.0;
+//        [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+//                                           withHandler:^(CMDeviceMotion *motion, NSError *error) {
+//                                               CGFloat threshold = 0.05;
+//                                               if( fabs(motion.userAcceleration.x) > threshold ||
+//                                                   fabs(motion.userAcceleration.y) > threshold) {
+//                                                   [welf updateScanWarnings:ALWarningStateHoldStill];
+//                                               }
+//                                           }];
+//        welf.motionManager = motionManager;
+//    });
+//}
 
 - (void)updateScanWarnings:(ALWarningState)warningState {
     [self.warningView showWarning:warningState];
@@ -126,12 +143,14 @@ the camera from Settings.";
 - (void)anylineDidFindResult:(NSString *)result
                barcodeResult:(NSString *)barcodeResult
                        image:(UIImage *)image
-                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
-                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  scanPlugin:(ALScanPlugin *)scanPlugin
+                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     self.successfulScan = YES;
-    if (completion){
-        completion();
+    if (completion) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion();
+        });
     }
     
 }
@@ -139,8 +158,8 @@ the camera from Settings.";
 - (void)anylineDidFindResult:(NSString*)result
                barcodeResult:(NSString *)barcodeResult
                       images:(NSArray*)images
-                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
-                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  scanPlugin:(ALScanPlugin *)scanPlugin
+                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     [self anylineDidFindResult:result barcodeResult:barcodeResult faceImage:nil images:images scanPlugin:scanPlugin viewPlugin:viewPlugin completion:completion];
 }
@@ -149,8 +168,8 @@ the camera from Settings.";
                barcodeResult:(NSString *)barcodeResult
                    faceImage:(UIImage*)faceImage
                       images:(NSArray*)images
-                  scanPlugin:(ALAbstractScanPlugin *)scanPlugin
-                  viewPlugin:(ALAbstractScanViewPlugin *)viewPlugin
+                  scanPlugin:(ALScanPlugin *)scanPlugin
+                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     self.successfulScan = YES;
     if (completion){
@@ -224,16 +243,40 @@ the camera from Settings.";
     }];
 }
 
-- (void)startPlugin:(ALAbstractScanViewPlugin *)plugin {
-    NSError *error;
-    BOOL success = [plugin startAndReturnError:&error];
-    if (!success) {
-        __weak __block typeof(self) weakSelf = self;
-        [self showAlertForScanningError:error completion:nil dismissHandler:^{
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }];
+- (void)showAlertControllerWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray <UIAlertAction *> *)actions {
+    UIAlertController *sender = [UIAlertController alertControllerWithTitle:title
+                                                                    message:message
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+    for (UIAlertAction *action in actions) {
+        if ([action isKindOfClass:[UIAlertAction class]]) {
+            [sender addAction:action];
+        }
     }
+    [self presentViewController:sender animated:YES completion:nil];
 }
+
+
+- (NSString *)configJSONStrWithFilename:(NSString *)filename {
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:filename
+                                                             ofType:@"json"];
+
+    NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
+                                                    encoding:NSUTF8StringEncoding
+                                                       error:NULL];
+
+    return configStr;
+}
+
+//- (void)startPlugin:(id<ALScanViewPluginBase>)plugin {
+//    NSError *error;
+//    BOOL success = [plugin startAndReturnError:&error];
+//    if (!success) {
+//        __weak __block typeof(self) weakSelf = self;
+//        [self showAlertForScanningError:error completion:nil dismissHandler:^{
+//            [weakSelf.navigationController popViewControllerAnimated:YES];
+//        }];
+//    }
+//}
 
 - (CGRect)scanViewFrame {
     CGRect frame = [[UIScreen mainScreen] bounds];
@@ -243,7 +286,7 @@ the camera from Settings.";
                       frame.size.width, frame.size.height - navbarHeight);
 }
 
-#pragma mark - FlipOrietation
+#pragma mark - FlipOrientation
 
 - (void)flipOrientationPressed:(id)sender {
     self.isOrientationFlipped = !self.isOrientationFlipped;
@@ -306,7 +349,17 @@ the camera from Settings.";
     [NSLayoutConstraint activateConstraints:flipCosntraints];
 }
 
-#pragma mark - NSKeyValueObserving
+- (void)installScanView:(ALScanView *)scanView {
+    [self.view addSubview:scanView];
+
+    scanView.translatesAutoresizingMaskIntoConstraints = false;
+    [scanView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
+    [scanView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor].active = YES;
+    [scanView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+}
+
+// MARK: - NSKeyValueObserving
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
@@ -327,17 +380,17 @@ the camera from Settings.";
         //
         // You shouldn't stop the running plugin here either, as the SDK will have taken
         // care of it already.
-        NSError *error = [[ALErrorManager sharedInstance] error];
-        if (error && ![error.userInfo[@"cached"] isEqual:@(YES)]) {
-            // We only do this part here because we believe an SDK-based alert error is also
-            // being shown at this point; and that the SDK shouldn't provide this
-            // behavior, for obvious reasons.
-            __weak __block typeof(self) weakSelf = self;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)),
-                           dispatch_get_main_queue(), ^{
-                [weakSelf.navigationController popViewControllerAnimated:YES];
-            });
-        }
+//        NSError *error = [[ALErrorManager sharedInstance] error];
+//        if (error && ![error.userInfo[@"cached"] isEqual:@(YES)]) {
+//            // We only do this part here because we believe an SDK-based alert error is also
+//            // being shown at this point; and that the SDK shouldn't provide this
+//            // behavior, for obvious reasons.
+//            __weak __block typeof(self) weakSelf = self;
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)),
+//                           dispatch_get_main_queue(), ^{
+//                [weakSelf.navigationController popViewControllerAnimated:YES];
+//            });
+//        }
     }
 }
 

@@ -36,9 +36,9 @@
       "maxWidthPercent": "90%",
       "maxHeightPercent": "80%",
       "alignment": "center",
-      "strokeWidth": 3,
-      "cornerRadius": 8,
-      "strokeColor": "FFFFFF",
+      "strokeWidth": 2,
+      "cornerRadius": 4,
+      "strokeColor": "0099FF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
       "ratioFromSize": {

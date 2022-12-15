@@ -1,15 +1,5 @@
-//
-//  ALLicensePlateExampleManager.m
-//  AnylineExamples
-//
-//  Created by Philipp Müller on 05/03/2021.
-//  Copyright © 2021 Anyline GmbH. All rights reserved.
-//
-
 #import "ALLicensePlateExampleManager.h"
-#import "ALLicensePlateViewController.h"
-#import "ALUSLicensePlateViewController.h"
-#import "ALAFLicensePlateViewController.h"
+#import "ALLicensePlateScanViewController.h"
 
 @interface ALLicensePlateExampleManager ()
 
@@ -19,11 +9,11 @@
 
 @end
 
+
 @implementation ALLicensePlateExampleManager
 
 - (instancetype)init {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         [self initExampleData];
     }
     return self;
@@ -33,17 +23,20 @@
     self.title = @"License Plate";
     
     ALExample *licensePlateEU = [[ALExample alloc] initWithName:NSLocalizedString(@"EU License Plate", nil)
-                                                       image:[UIImage imageNamed:@"tile_licenseplate_eu"]
-                                              viewController:[ALLicensePlateViewController class]];
-    ALExample *licensePlateUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US License plate", nil)
-                                                       image:[UIImage imageNamed:@"tile_licenseplate_us"]
-                                              viewController:[ALUSLicensePlateViewController class]];    
-    ALExample *licensePlateAF = [[ALExample alloc] initWithName:NSLocalizedString(@"African License plate", nil)
+                                                          image:[UIImage imageNamed:@"tile_licenseplate_eu"]
+                                                 viewController:[ALLicensePlateScanViewController class]
+                                                          title:@"EU License Plate"];
+    ALExample *licensePlateUS = [[ALExample alloc] initWithName:NSLocalizedString(@"US License Plate", nil)
+                                                          image:[UIImage imageNamed:@"tile_licenseplate_us"]
+                                                 viewController:[ALLicensePlateScanViewController class]
+                                                          title:@"US License Plate"];
+    ALExample *licensePlateAF = [[ALExample alloc] initWithName:NSLocalizedString(@"African License Plate", nil)
                                                           image:[UIImage imageNamed:@"tile_licenseplate_af"]
-                                                 viewController:[ALAFLicensePlateViewController class]];
+                                                 viewController:[ALLicensePlateScanViewController class]
+                                                          title:@"African License Plate"];
     self.sectionNames = @[@"License Plate"];
     self.examples = [@{
-                      self.sectionNames[0] : @[licensePlateEU, licensePlateUS, licensePlateAF],
+        self.sectionNames[0] : @[ licensePlateEU, licensePlateUS, licensePlateAF ],
     } mutableCopy];
     
 }

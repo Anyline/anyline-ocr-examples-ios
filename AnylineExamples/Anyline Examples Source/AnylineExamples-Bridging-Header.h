@@ -13,5 +13,6 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "ALPluginResultHelper.h"
 #import <UIKit/UIKit.h>
 #import <Anyline/Anyline.h>

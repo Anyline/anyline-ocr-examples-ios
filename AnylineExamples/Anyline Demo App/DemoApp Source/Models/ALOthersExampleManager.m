@@ -1,27 +1,7 @@
-//
-//  ALOthersExampleManager.m
-//  AnylineExamples
-//
-//  Created by Philipp Müller on 21/11/2017.
-//  Copyright © 2017 Anyline GmbH. All rights reserved.
-//
-
 #import "ALOthersExampleManager.h"
-
-#import "ALMRZScanViewController.h"
-#import "ALIBANScanViewController.h"
-#import "ALVoucherCodeScanViewController.h"
-#import "ALISBNScanViewController.h"
-#import "ALRecordNumberScanViewController.h"
-#import "ALRBScanViewController.h"
-#import "ALScrabbleScanViewController.h"
-#import "ALDocumentScanViewController.h"
 #import "ALUniversalSerialNumberScanViewController.h"
-#import "ALVINScanViewController.h"
-#import "ALCattleTagScanViewController.h"
 #import "ALContainerScanViewController.h"
-#import "ALVerticalContainerScanViewController.h"
-#import "ALParallelMeterWithJSONScanViewController.h"
+#import "ALBottlecapScanViewController.h"
 
 
 @interface ALOthersExampleManager ()
@@ -52,52 +32,22 @@
     
     ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
                                                              image:[UIImage imageNamed:@"container serial numbers"]
-                                                    viewController:[ALContainerScanViewController class]];
+                                                    viewController:[ALContainerScanViewController class]
+                                                             title:NSLocalizedString(@"Horizontal Shipping Container", nil)];
     
     ALExample *verticalContainerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Vertical Shipping Container", nil)
                                                                      image:[UIImage imageNamed:@"vertical container scanner"]
-                                                            viewController:[ALVerticalContainerScanViewController class]];
+                                                            viewController:[ALContainerScanViewController class]
+                                                                     title:NSLocalizedString(@"Vertical Shipping Container", nil)];
     
-    ALExample *ibanScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"IBAN", nil)
-                                                        image:[UIImage imageNamed:@"iban"]
-                                               viewController:[ALIBANScanViewController class]];
-    
-    ALExample *rbScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"RedBull Mobile Collect", nil)
-                                                      image:[UIImage imageNamed:@"red bull mobile collect"]
-                                             viewController:[ALRBScanViewController class]];
-    
-    ALExample *voucherCodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Voucher Code", nil)
-                                                               image:[UIImage imageNamed:@"voucher"]
-                                                      viewController:[ALVoucherCodeScanViewController class]];
-    
-    ALExample *documentScanner = [[ALExample alloc] initWithName:NSLocalizedString(@"Document Scanner", nil)
-                                                           image:[UIImage imageNamed:@"document"]
-                                                  viewController:[ALDocumentScanViewController class]];
-    
-    ALExample *scrabbleScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Scrabble Anagram", nil)
-                                                            image:[UIImage imageNamed:@"scrabble"]
-                                                   viewController:[ALScrabbleScanViewController class]];
-    
-    ALExample *recordScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Record Number", nil)
-                                                          image:[UIImage imageNamed:@"vinyl record number"]
-                                                 viewController:[ALRecordNumberScanViewController class]];
-    
-    ALExample *isbnScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"ISBN", nil)
-                                                        image:[UIImage imageNamed:@"isbn"]
-                                               viewController:[ALISBNScanViewController class]];
-    
-    ALExample *cattleTagScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Cattle Tag", nil)
-                                                             image:[UIImage imageNamed:@"cow-tag"]
-                                                    viewController:[ALCattleTagScanViewController class]];
-    
-    ALExample *parallelScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Parallel Scanning (Meter + Barcode)", nil)
-                                                            image:[UIImage imageNamed:@"parallel-scanning"]
-                                                   viewController:[ALParallelMeterWithJSONScanViewController class]];
+    ALExample *bottleCapScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Pepsi Code", nil)
+                                                             image:[UIImage imageNamed:@"tile_pepsicode"]
+                                                    viewController:[ALBottlecapScanViewController class]];
     
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-        self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, cattleTagScanning, ibanScanning, rbScanning, voucherCodeScanning, scrabbleScanning, recordScanning, isbnScanning, documentScanner, parallelScanning],
+        self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, bottleCapScanning],
     };
 }
 

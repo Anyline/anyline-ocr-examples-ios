@@ -1,36 +1,61 @@
 {
-    "viewPlugin" : {
-        "cutoutConfig" : {
-            "style": "animated_rect",
-            "maxWidthPercent": "80%",
-            "maxHeightPercent": "80%",
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "pictureResolution": "1080p",
+        "zoomGesture": true
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_right"
+    },
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "com.anyline.configs.plugin.pepsi-bottlecap",
+            "ocrConfig": {
+                "customCmdFile": "pepsi_code_scanner.ale",
+                "model": "PepsiCo.any",
+                "scanMode": "grid"
+            },
+            "cancelOnResult": true
+        },
+        "cutoutConfig": {
+            "animation": "none",
+            "maxWidthPercent": "100%",
+            "maxHeightPercent": "100%",
+            "width": 500,
             "alignment": "center",
-            "width": 300,
             "ratioFromSize": {
                 "width": 2,
                 "height": 1
             },
-            "strokeWidth": 2,
-            "cornerRadius": 5,
-            "strokeColor": "FFFFFF",
-            "outerColor": "000000",
-            "outerAlpha": 0.7,
+            "offset": {
+                "x": 0,
+                "y": 0
+            },
+            "cropOffset": {
+                "x": 0,
+                "y": 0
+            },
             "cropPadding": {
                 "x": 0,
                 "y": 0
             },
-            "feedbackStrokeColor": "0099FF"
+            "cornerRadius": 4,
+            "strokeColor": "0099ff",
+            "strokeWidth": 2,
+            "outerColor": "000000",
+            "feedbackStrokeColor": "0099FF",
+            "outerAlpha": 0.3
         },
-        "scanFeedback" : {
+        "scanFeedbackConfig": {
             "style": "rect",
-            "strokeWidth": 1,
+            "strokeWidth": 2,
+            "cornerRadius": 2,
             "strokeColor": "0099FF",
-            "fillColor": "220099FF",
-            "cornerRadius": 10,
-            "beepOnResult": true,
+            "fillColor": "330099FF",
+            "beepOnResult": false,
             "vibrateOnResult": true,
-            "blinkAnimationOnResult": true
-        },
-        "cancelOnResult" : true
+            "blinkAnimationOnResult": false
+        }
     }
 }

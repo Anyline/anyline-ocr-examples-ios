@@ -1,25 +1,20 @@
-//
-//  TireViewController.swift
-//  AnylineExamples
-//
-//  Created by Renato Neves Ribeiro on 31.01.22.
-//
-
 import Foundation
 import Anyline
 
 @objc(TireViewController)
-class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
-    
-    var tireScanViewPlugin : ALTireScanViewPlugin?
-    
+class TireViewController: ALBaseScanViewController {
+
     @objc public enum TireConfigType: NSInteger {
         case tinConfig
         case tireSizeConfig
         case commercialTireConfig
     }
-    
+
     @objc public var configType: TireConfigType = .tinConfig
+
+    var scanViewPlugin: ALScanViewPluginBase?
+    var scanViewConfig: ALScanViewConfig?
+    var configJSONString: NSString?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,114 +24,137 @@ class TireViewController: ALBaseScanViewController, ALTireScanPluginDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startScanner()
-    }
-    
-    func startScanner() {
-        do {
-            try tireScanViewPlugin?.start()
-        } catch let error {
-            print("Start error: \(error.localizedDescription)")
-        }
-    }
-    
-    func stopScanner() {
-        do {
-            try tireScanViewPlugin?.stop()
-        } catch let error {
-            print("Stop error: \(error.localizedDescription)")
-        }
-    }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         do {
-            try tireScanViewPlugin?.stop()
-        } catch let error {
-            print("Stop error: \(error.localizedDescription)")
+            try scanViewPlugin?.start()
+        } catch {
+            print("error: \(error.localizedDescription)")
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        scanViewPlugin?.stop()
+        super.viewWillDisappear(animated)
     }
     
     func setupTirePlugin() {
-        do {
-            var tireConfig: ALBaseTireConfig = .init()
-            
-            let scanViewPluginConfig = ALScanViewPluginConfig.defaultTIN()
-            scanViewPluginConfig.cutoutConfig.backgroundColor = .clear
-            
-            switch configType {
-            case .tinConfig:
-                tireConfig = ALTINConfig()
-            case .tireSizeConfig:
-                tireConfig = ALTireSizeConfig()
-                scanViewPluginConfig.scanFeedbackConfig.style = .rect
-            case .commercialTireConfig:
-                tireConfig = ALCommercialTireIdConfig()
+        var JSONFileName: String?
+        var titleString: String?
+        switch configType {
+        case .tinConfig:
+            JSONFileName = "tire_config_tin"
+            titleString = "TIN"
+            self.controllerType = ALScanHistoryTIN
+        case .tireSizeConfig:
+            JSONFileName = "tire_config_tire_size"
+            titleString = "Tire Size"
+            self.controllerType = ALScanHistoryTireSizeConfiguration
+        case .commercialTireConfig:
+            JSONFileName = "tire_config_commercial_tire_id"
+            titleString = "Commercial Tire"
+            self.controllerType = ALScanHistoryCommercialTireID
+        }
+
+        self.title = titleString;
+
+        guard let filename = JSONFileName else {
+            print("Initialization error: unable to load scan plugin from config")
+            return;
+        }
+        let JSONStr = self.configJSONStr(withFilename: filename)
+
+        configJSONString = JSONStr as NSString?
+
+        if let configJSONDict = configJSONString?.asJSONObject() as? [String: Any],
+           let scanViewPlugin = ALScanViewPluginFactory.withJSONDictionary(configJSONDict) as? ALScanViewPlugin {
+
+            self.scanViewPlugin = scanViewPlugin
+
+            if let scanViewConfig = try? ALScanViewConfig(jsonDictionary: configJSONDict),
+               let scanView = try? ALScanView(frame: .zero,
+                                              scanViewPlugin: scanViewPlugin,
+                                              scanViewConfig: scanViewConfig) {
+                self.scanView = scanView
+            } else {
+                print("error: ScanView was not created. Please check the error.")
             }
-            
-            let tireScanPlugin = try ALTireScanPlugin.init(pluginID: "TIRE", delegate: self, tireConfig: tireConfig)
-            tireScanViewPlugin = ALTireScanViewPlugin.init(scanPlugin: tireScanPlugin, scanViewPluginConfig: scanViewPluginConfig)
-            
-            if let scanView = ALScanView(frame: view.bounds, scanViewPlugin: tireScanViewPlugin) {
-                scanView.flashButtonConfig = ALFlashButtonConfig(flashMode: .manualOff,
-                                                                 flashAlignment: .topLeft,
-                                                                 flashOffset: .zero)
-                view.addSubview(scanView)
-                scanView.translatesAutoresizingMaskIntoConstraints = false
-                if #available(iOS 11.0, *) {
-                    scanView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-                } else {
-                    scanView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-                }
-                scanView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-                scanView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-                scanView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                scanView.startCamera()
-            }
-        } catch let error {
-            print("Initialization error: \(error.localizedDescription)")
-            showAlert(withTitle: "Initialization error", message: error.localizedDescription)
-            self.stopScanner()
+
+            self.installScanView(self.scanView!)
+
+            let scanPlugin: ALScanPlugin = (self.scanViewPlugin as! ALScanViewPlugin).scanPlugin
+            scanPlugin.delegate = self
+
+            self.scanView?.startCamera()
+
+        } else {
+            let msg = "Initialization error: tireConfig couldn't be converted in json object"
+            assertionFailure(msg)
         }
     }
-        
-    func showAlert(title: String) {
-        let alert = UIAlertController(title: title, message: "Please try scanning again", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
-            self.startScanner()
-        })
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - ALTireScanPluginDelegate
-    func anylineTireScanPlugin(_ anylineTireScanPlugin: ALTireScanPlugin, didFind result: ALTireResult) {
-        var resultData = [ALResultEntry]()
-        resultData.append(ALResultEntry(title: title,
-                                        value: String(result.result),
-                                        shouldSpellOutValue: true))
-        let jsonString = self.jsonString(fromResultData: resultData)
+}
+
+extension TireViewController: ALScanPluginDelegate {
+
+    func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
+
         enableLandscapeOrientation(false)
-        self.anylineDidFindResult(jsonString, barcodeResult: "", image: result.image!, scanPlugin: anylineTireScanPlugin, viewPlugin: self.tireScanViewPlugin) {
+
+        var resultData: Array<ALResultEntry>!
+        var resultString: String?
+        let result = scanResult.pluginResult
+        switch configType {
+        case .commercialTireConfig:
+            if let commercialTireIDResult = result.commercialTireIDResult {
+                resultData = commercialTireIDResult.resultEntryList
+                resultString = resultData.JSONStringFromResultData
+            }
+        case .tinConfig:
+            if let tinResult = result.tinResult {
+                resultData = tinResult.resultEntryList
+                resultString = resultData.JSONStringFromResultData
+            }
+        case .tireSizeConfig:
+            if let tireSizeResult = result.tireSizeResult {
+                resultData = tireSizeResult.resultEntryList
+                resultString = resultData.JSONStringFromResultData
+            }
+        }
+
+        guard let resultData = resultData, let resultString = resultString else {
+            assertionFailure("no value to scan (not possible)!")
+            return
+        }
+
+        self.anylineDidFindResult(resultString,
+                                  barcodeResult: nil,
+                                  image: scanResult.croppedImage,
+                                  scanPlugin: scanPlugin,
+                                  viewPlugin: self.scanViewPlugin!) { [weak self] in
+
             let vc = ALResultViewController(results: resultData)
-            vc.imagePrimary = result.image
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.imagePrimary = scanResult.croppedImage
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
 
 @objc class TireSizeViewController: TireViewController {
-    
     override func viewDidLoad() {
-        configType = TireConfigType.tireSizeConfig
+        configType = .tireSizeConfig
         super.viewDidLoad()
     }
 }
 
 @objc class CommercialTireIdViewController: TireViewController {
-    
     override func viewDidLoad() {
-        configType = TireConfigType.commercialTireConfig
+        configType = .commercialTireConfig
+        super.viewDidLoad()
+    }
+}
+
+@objc class TINDotViewController: TireViewController {
+    override func viewDidLoad() {
+        configType = .tinConfig
         super.viewDidLoad()
     }
 }

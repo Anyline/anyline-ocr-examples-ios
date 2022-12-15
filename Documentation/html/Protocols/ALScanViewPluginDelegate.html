@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -58,7 +60,17 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/anylineScanViewPlugin:updatedCutout:">- anylineScanViewPlugin:updatedCutout:</option>
+		<option value="//api/name/scanViewPlugin:brightnessUpdated:">- scanViewPlugin:brightnessUpdated:</option>
+		
+		<option value="//api/name/scanViewPlugin:cutoutVisibilityChanged:">- scanViewPlugin:cutoutVisibilityChanged:</option>
+		
+		<option value="//api/name/scanViewPlugin:visualFeedbackReceived:">- scanViewPlugin:visualFeedbackReceived:</option>
+		
+		<option value="//api/name/scanViewPluginResultBeepTriggered:">- scanViewPluginResultBeepTriggered:</option>
+		
+		<option value="//api/name/scanViewPluginResultBlinkTriggered:">- scanViewPluginResultBlinkTriggered:</option>
+		
+		<option value="//api/name/scanViewPluginResultVibrateTriggered:">- scanViewPluginResultVibrateTriggered:</option>
 		
 	</optgroup>
 	
@@ -84,12 +96,20 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALAbstractScanViewPlugin.h</td>
+	<td>ALScanViewPlugin.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Object that is notified when an <a href="../Classes/ALScanViewPlugin.html"><code>ALScanViewPlugin</code></a> reports events of interest</p>
+					</div>
+					
+					
 
 					
 					
@@ -102,8 +122,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/anylineScanViewPlugin:updatedCutout:" title="anylineScanViewPlugin:updatedCutout:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/anylineScanViewPlugin:updatedCutout:">&ndash;&nbsp;anylineScanViewPlugin:updatedCutout:</a></code>
+	<a name="//api/name/scanViewPlugin:visualFeedbackReceived:" title="scanViewPlugin:visualFeedbackReceived:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPlugin:visualFeedbackReceived:">&ndash;&nbsp;scanViewPlugin:visualFeedbackReceived:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -113,12 +133,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Called if the cutout was updated within the ScanViewPlugin class.</p>
+				<p>Method called when the scan view plugin has detected objects that can be drawn as visual feedback</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *_Nonnull)<em>anylineScanViewPlugin</em> updatedCutout:(CGRect)<em>cutoutRect</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPlugin:(ALScanViewPlugin *)<em>scanViewPlugin</em> visualFeedbackReceived:(ALEvent *)<em>event</em></code></div>
 
 		    
 			
@@ -127,8 +147,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>cutoutRect</code></th>
-						<td><p>The updated cutout rect(x, y, width, height)</p></td>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>the event containing details about the visual feedback</p></td>
 					</tr>
 				
 				</table>
@@ -148,7 +173,282 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALAbstractScanViewPlugin.h</code></p>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginResultBeepTriggered:" title="scanViewPluginResultBeepTriggered:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginResultBeepTriggered:">&ndash;&nbsp;scanViewPluginResultBeepTriggered:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the scan view plugin has found and scanned an object, and that a beep has been requested</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPluginResultBeepTriggered:(ALScanViewPlugin *)<em>scanViewPlugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginResultBlinkTriggered:" title="scanViewPluginResultBlinkTriggered:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginResultBlinkTriggered:">&ndash;&nbsp;scanViewPluginResultBlinkTriggered:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the scan view plugin has found and scanned an object, and that a visual blink on the screen has been requested</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPluginResultBlinkTriggered:(ALScanViewPlugin *)<em>scanViewPlugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPluginResultVibrateTriggered:" title="scanViewPluginResultVibrateTriggered:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPluginResultVibrateTriggered:">&ndash;&nbsp;scanViewPluginResultVibrateTriggered:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the scan view plugin has found and scanned an object, and that a vibration has been requested</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPluginResultVibrateTriggered:(ALScanViewPlugin *)<em>scanViewPlugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPlugin:brightnessUpdated:" title="scanViewPlugin:brightnessUpdated:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPlugin:brightnessUpdated:">&ndash;&nbsp;scanViewPlugin:brightnessUpdated:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the scan view plugin has detected objects that can be drawn as visual feedback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPlugin:(ALScanViewPlugin *)<em>scanViewPlugin</em> brightnessUpdated:(ALEvent *)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>the event containing details about the visual feedback</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanViewPlugin:cutoutVisibilityChanged:" title="scanViewPlugin:cutoutVisibilityChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewPlugin:cutoutVisibilityChanged:">&ndash;&nbsp;scanViewPlugin:cutoutVisibilityChanged:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the scan view plugin has detected objects that can be drawn as visual feedback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewPlugin:(ALScanViewPlugin *)<em>scanViewPlugin</em> cutoutVisibilityChanged:(ALEvent *)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanViewPlugin</code></th>
+						<td><p>the scan view plugin calling this method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>the event containing details about the visual feedback</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanViewPlugin.h</code></p>
 			</div>
 			
 			
@@ -169,7 +469,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

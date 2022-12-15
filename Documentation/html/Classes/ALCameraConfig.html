@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -58,7 +60,11 @@
 		
 		<option value="//api/name/defaultCamera">defaultCamera</option>
 		
+		<option value="//api/name/maxZoomFactor">maxZoomFactor</option>
+		
 		<option value="//api/name/pictureResolution">pictureResolution</option>
+		
+		<option value="//api/name/zoomFactor">zoomFactor</option>
 		
 		<option value="//api/name/zoomGesture">zoomGesture</option>
 		
@@ -68,11 +74,9 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/configurationFromJsonFilePath:">+ configurationFromJsonFilePath:</option>
-		
 		<option value="//api/name/defaultCameraConfig">+ defaultCameraConfig</option>
 		
-		<option value="//api/name/defaultDocumentCameraConfig">+ defaultDocumentCameraConfig</option>
+		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
 		
 	</optgroup>
 	
@@ -80,27 +84,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:">- initWithDefaultCamera:captureResolution:pictureResolution:</option>
-		
-		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:">- initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:</option>
-		
-		<option value="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:">- initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:</option>
-		
-		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
-		
-		<option value="//api/name/initWithJsonFilePath:">- initWithJsonFilePath:</option>
-		
-		<option value="//api/name/maxZoomFactor">- maxZoomFactor</option>
-		
-		<option value="//api/name/setFocalLength:">- setFocalLength:</option>
-		
-		<option value="//api/name/setMaxFocalLength:">- setMaxFocalLength:</option>
-		
-		<option value="//api/name/setMaxZoomRatio:">- setMaxZoomRatio:</option>
-		
-		<option value="//api/name/setZoomRatio:">- setZoomRatio:</option>
-		
-		<option value="//api/name/zoomFactor">- zoomFactor</option>
+		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
 	</optgroup>
 	
@@ -125,6 +109,9 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ALJSONStringRepresentable.html">ALJSONStringRepresentable</a></td>
+</tr><tr>
 	<th>Declared in</th>
 	<td>ALCameraConfig.h</td>
 </tr>
@@ -132,6 +119,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An object that configures the scan view camera</p>
+					</div>
+					
+					
 
 					
 					
@@ -153,10 +148,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Camera to be used for scanning. Could be &ldquo;FRONT&rdquo; or &ldquo;BACK&rdquo;</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *defaultCamera</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *defaultCamera</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -169,10 +189,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Resolution in which the camera operates. Currently only 1080p is supported.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCaptureViewResolution captureResolution</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALCaptureViewResolution captureResolution</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -185,10 +230,117 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Picture resolution in which the camera operates. Currently only 1080p is supported.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALPictureResolution pictureResolution</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALPictureResolution pictureResolution</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/zoomFactor" title="zoomFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zoomFactor">&nbsp;&nbsp;zoomFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Camera focal length (default: 1)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGFloat zoomFactor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxZoomFactor" title="maxZoomFactor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxZoomFactor">&nbsp;&nbsp;maxZoomFactor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Camera max focal length. Default: 0 => Device maxAvailableVideoZoom</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGFloat maxZoomFactor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -201,15 +353,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether the pinch-to-zoom gesture is enabled. Defaults to false</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL zoomGesture</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL zoomGesture</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/configurationFromJsonFilePath:" title="configurationFromJsonFilePath:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/configurationFromJsonFilePath:">+&nbsp;configurationFromJsonFilePath:</a></code>
+	<a name="//api/name/initWithJSONDictionary:error:" title="initWithJSONDictionary:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONDictionary:error:">&ndash;&nbsp;initWithJSONDictionary:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -217,15 +394,62 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an ALCameraConfig with an NSDictionary representing the JSON config object</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)configurationFromJsonFilePath:(NSString *_Nonnull)<em>jsonFile</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *_Nonnull)<em>JSONDictionary</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>NSDictionary representing the JSON config object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError object which is filled with appropriate information when initialization fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALCameraConfig</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithJsonFilePath:" title="initWithJsonFilePath:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithJsonFilePath:">&ndash;&nbsp;initWithJsonFilePath:</a></code>
+	<a name="//api/name/withJSONDictionary:" title="withJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withJSONDictionary:">+&nbsp;withJSONDictionary:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -233,74 +457,52 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an ALCameraConfig with an NSDictionary representing the JSON config object</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithJsonFilePath:(NSString *_Nonnull)<em>jsonFile</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)withJSONDictionary:(NSDictionary *_Nonnull)<em>JSONDictionary</em></code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>NSDictionary representing the JSON config object</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)<em>configDict</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:" title="initWithDefaultCamera:captureResolution:pictureResolution:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureResolution:pictureResolution:">&ndash;&nbsp;initWithDefaultCamera:captureResolution:pictureResolution:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALCameraConfig</p>
+			</div>
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)<em>defaultCamera</em> captureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:" title="initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:">&ndash;&nbsp;initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)<em>defaultCamera</em> captureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomGesture:(BOOL)<em>zoomGesture</em> zoomRatio:(CGFloat)<em>zoomRatio</em> maxZoomRatio:(CGFloat)<em>maxZoomRatio</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:" title="initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:">&ndash;&nbsp;initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)<em>defaultCamera</em> captureResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomGesture:(BOOL)<em>zoomGesture</em> focalLength:(CGFloat)<em>focalLength</em> maxFocalLength:(CGFloat)<em>maxFocalLength</em></code></div>
+			
 
-		    
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -313,122 +515,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an ALCameraConfig with default values, suitable for further custimization</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)defaultCameraConfig</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/defaultDocumentCameraConfig" title="defaultDocumentCameraConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/defaultDocumentCameraConfig">+&nbsp;defaultDocumentCameraConfig</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)defaultDocumentCameraConfig</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setFocalLength:" title="setFocalLength:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setFocalLength:">&ndash;&nbsp;setFocalLength:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALCameraConfig</p>
+			</div>
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setFocalLength:(CGFloat)<em>focalLength</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setZoomRatio:" title="setZoomRatio:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setZoomRatio:">&ndash;&nbsp;setZoomRatio:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setZoomRatio:(CGFloat)<em>ratio</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setMaxZoomRatio:" title="setMaxZoomRatio:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setMaxZoomRatio:">&ndash;&nbsp;setMaxZoomRatio:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setMaxZoomRatio:(CGFloat)<em>maxZoomRatio</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setMaxFocalLength:" title="setMaxFocalLength:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setMaxFocalLength:">&ndash;&nbsp;setMaxFocalLength:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (void)setMaxFocalLength:(CGFloat)<em>maxFocalLength</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/maxZoomFactor" title="maxZoomFactor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/maxZoomFactor">&ndash;&nbsp;maxZoomFactor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (CGFloat)maxZoomFactor</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/zoomFactor" title="zoomFactor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/zoomFactor">&ndash;&nbsp;zoomFactor</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
-
-			<div class="method-subsection method-declaration"><code>- (CGFloat)zoomFactor</code></div>
-
-		    
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -446,7 +566,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -11,7 +11,7 @@
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
 
-#import "ALMultiformatBarcodeScanViewController.h"
+#import "ALBarcodeScanViewController.h"
 #import "ALMRZScanViewController.h"
 #import "ALIBANScanViewController.h"
 #import "ALVoucherCodeScanViewController.h"
@@ -21,7 +21,7 @@
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
 
-#import "ALLicensePlateViewController.h"
+#import "ALLicensePlateScanViewController.h"
 
 #import "ALOthersExampleManager.h"
 #import "ALMeterExampleManager.h"
@@ -54,7 +54,7 @@
     
     ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
                                                            image:[UIImage imageNamed:@"tile_barcodes"]
-                                                  viewController:[ALMultiformatBarcodeScanViewController class]];
+                                                  viewController:[ALBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
                                                image:[UIImage imageNamed:@"tile_identitydocuments"]

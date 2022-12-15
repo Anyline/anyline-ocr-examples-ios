@@ -19,10 +19,8 @@
 
 @implementation ALScriptSelectionViewController
 
-+ (UIBarButtonItem*)createBarButtonForScriptSelection:(UIViewController *)viewController {
-    
++ (UIBarButtonItem *)createBarButtonForScriptSelection:(UIViewController *)viewController {
     UIButton *scriptSelectionButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    
     [scriptSelectionButton setContentMode:UIViewContentModeScaleAspectFit];
     [scriptSelectionButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [scriptSelectionButton setImage:[UIImage imageNamed:@"script_selection"] forState:UIControlStateNormal];
@@ -116,17 +114,17 @@
     [self setArabicScriptButtonActions];
 }
 
--(void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 }
 
 
--(void)setLatinScriptButtonActions {
+- (void)setLatinScriptButtonActions {
     [self.latinScriptButton addTarget:self action:@selector(selectedScriptSelected:) forControlEvents:UIControlEventTouchUpInside];
     [self.latinScriptButton addTarget:self action:@selector(setUnselectedButton:) forControlEvents:UIControlEventTouchDown];
 }
 
--(void)setArabicScriptButtonActions {
+- (void)setArabicScriptButtonActions {
     [self.arabicScriptbutton addTarget:self action:@selector(selectedScriptSelected:) forControlEvents:UIControlEventTouchUpInside];
     [self.arabicScriptbutton addTarget:self action:@selector(setUnselectedButton:) forControlEvents:UIControlEventTouchDown];
 }
@@ -135,12 +133,12 @@
     [sender setSelected:NO];
 }
 
--(void)selectedScriptSelected:(UIButton*)sender {
+- (void)selectedScriptSelected:(UIButton*)sender {
     [sender setSelected:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)changeScript:(BOOL)isArabic {
+- (void)changeScript:(BOOL)isArabic {
     if (self.delegate) {
         [self.delegate changeScript:isArabic];
     }

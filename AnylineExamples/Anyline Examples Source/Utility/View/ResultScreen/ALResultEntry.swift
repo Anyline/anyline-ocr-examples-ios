@@ -1,10 +1,3 @@
-//
-//  ALResultEntry.swift
-//  AnylineExamples
-//
-//  Created by Aldrich Co on 3/18/22.
-//
-
 import Foundation
 import UIKit
 
@@ -121,5 +114,31 @@ class ALResultEntry: NSObject {
         dict[DictionaryKeys.shouldSpellOutValue.rawValue] = self.shouldSpellOutValue
 
         return dict
+    }
+
+    @objc
+    static func with(title: String, value: String) -> ALResultEntry {
+        return .init(title: title, value: value)
+    }
+
+    @objc
+    static func with(title: String, value: String, shouldSpellOutValue: Bool) -> ALResultEntry {
+        return .init(title: title, value: value, shouldSpellOutValue: shouldSpellOutValue)
+    }
+
+    @objc
+    static func JSONStringFromList(_ list: [ALResultEntry]) -> String? {
+        return list.JSONStringFromResultData
+    }
+}
+
+extension Array where Element == ALResultEntry {
+    var JSONStringFromResultData: String? {
+        let maps: [[String: Any]] = self.map { $0.toDictionary() }
+        let dict = ["result": maps]
+        if let data = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) {
+            return .init(data: data, encoding: .utf8)
+        }
+        return nil
     }
 }

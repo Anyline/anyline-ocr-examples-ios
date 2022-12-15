@@ -56,19 +56,19 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/)">)</option>
+		<option value="//api/name/blobKey">blobKey</option>
 		
-		<option value="//api/name/confidence">confidence</option>
+		<option value="//api/name/croppedImage">croppedImage</option>
 		
-		<option value="//api/name/fullImage">fullImage</option>
+		<option value="//api/name/faceImage">faceImage</option>
 		
-		<option value="//api/name/image">image</option>
-		
-		<option value="//api/name/isEmpty">isEmpty</option>
+		<option value="//api/name/fullSizeImage">fullSizeImage</option>
 		
 		<option value="//api/name/pluginID">pluginID</option>
 		
-		<option value="//api/name/result">result</option>
+		<option value="//api/name/pluginResult">pluginResult</option>
+		
+		<option value="//api/name/resultDictionary">resultDictionary</option>
 		
 	</optgroup>
 	
@@ -76,7 +76,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/emptyScanResultWithID:">+ emptyScanResultWithID:</option>
+		<option value="//api/name/withScanResultEvent:">+ withScanResultEvent:</option>
 		
 	</optgroup>
 	
@@ -84,7 +84,9 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:pluginID:">- initWithResult:image:fullImage:confidence:pluginID:</option>
+		<option value="//api/name/initWithJSONDictionary:image:error:">- initWithJSONDictionary:image:error:</option>
+		
+		<option value="//api/name/initWithScanResultEvent:">- initWithScanResultEvent:</option>
 		
 	</optgroup>
 	
@@ -106,8 +108,11 @@
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
 	<th>Conforms to</th>
-	<td>ObjectType<br />__covariant</td>
+	<td><a href="../Protocols/ALJSONStringRepresentable.html">ALJSONStringRepresentable</a></td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>ALScanResult.h</td>
@@ -120,7 +125,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The base <a href="#//api/name/result">result</a> object for all the modules</p>
+						<p>Object containing details for a successful scan result</p>
 					</div>
 					
 					
@@ -136,6 +141,47 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/blobKey" title="blobKey"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blobKey">&nbsp;&nbsp;blobKey</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Blob key uniquely identifying this scan</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *blobKey</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/pluginID" title="pluginID"></a>
 	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
 </h3>
@@ -147,12 +193,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The pluginID which created this ScanPlugin</p>
+				<p>ID of the plugin that was initialized for this scan</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) NSString *pluginID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *pluginID</code></div>
 
 		    
 			
@@ -177,8 +223,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/result" title="result"></a>
-	<h3 class="method-title"><code><a href="#//api/name/result">&nbsp;&nbsp;result</a></code>
+	<a name="//api/name/fullSizeImage" title="fullSizeImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fullSizeImage">&nbsp;&nbsp;fullSizeImage</a></code>
 </h3>
 
 	<div class="method-info">
@@ -188,12 +234,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The scanned result.</p>
+				<p>A full sized image taken from the device camera that the successful scan was based on</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) ObjectType result</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *fullSizeImage</code></div>
 
 		    
 			
@@ -218,8 +264,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/image" title="image"></a>
-	<h3 class="method-title"><code><a href="#//api/name/image">&nbsp;&nbsp;image</a></code>
+	<a name="//api/name/croppedImage" title="croppedImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/croppedImage">&nbsp;&nbsp;croppedImage</a></code>
 </h3>
 
 	<div class="method-info">
@@ -229,13 +275,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The image where the scanned text was found.
-This is nil if the <a href="#//api/name/result">result</a> is from a composite scan view plugin (images from the individual plugins can be found in the scanned <a href="#//api/name/result">result</a>), or in emptyScanResult</p>
+				<p>A cropped version of the image taken from the device consisting of the region shown on
+the cutout</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) UIImage *image</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *croppedImage</code></div>
 
 		    
 			
@@ -260,8 +306,8 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fullImage" title="fullImage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fullImage">&nbsp;&nbsp;fullImage</a></code>
+	<a name="//api/name/faceImage" title="faceImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/faceImage">&nbsp;&nbsp;faceImage</a></code>
 </h3>
 
 	<div class="method-info">
@@ -271,12 +317,12 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The full frme <a href="#//api/name/image">image</a> where the scanned text was found.</p>
+				<p>Image of detected facial photo, if any</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIImage *fullImage</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) UIImage *faceImage</code></div>
 
 		    
 			
@@ -301,8 +347,8 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/confidence" title="confidence"></a>
-	<h3 class="method-title"><code><a href="#//api/name/confidence">&nbsp;&nbsp;confidence</a></code>
+	<a name="//api/name/pluginResult" title="pluginResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginResult">&nbsp;&nbsp;pluginResult</a></code>
 </h3>
 
 	<div class="method-info">
@@ -312,12 +358,13 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The confidence for the scanned value.</p>
+				<p>An <a href="../Classes/ALPluginResult.html"><code>ALPluginResult</code></a> object which contains complete plugin-specific details regarding
+the scan result</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSInteger confidence</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALPluginResult *pluginResult</code></div>
 
 		    
 			
@@ -342,8 +389,8 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/)" title=")"></a>
-	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+	<a name="//api/name/resultDictionary" title="resultDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resultDictionary">&nbsp;&nbsp;resultDictionary</a></code>
 </h3>
 
 	<div class="method-info">
@@ -353,12 +400,12 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The outline of the found text in relation to the ModuleView.</p>
+				<p>The scan result in NSDictionary form</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) ALSquare *__deprecated_msg ( &quot;Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.&quot; )</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *resultDictionary</code></div>
 
 		    
 			
@@ -383,8 +430,8 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/isEmpty" title="isEmpty"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isEmpty">&nbsp;&nbsp;isEmpty</a></code>
+	<a name="//api/name/initWithJSONDictionary:image:error:" title="initWithJSONDictionary:image:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONDictionary:image:error:">&ndash;&nbsp;initWithJSONDictionary:image:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -392,15 +439,68 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALScanResult</code> with a suitably-structured dictionary, and the
+image associated with the scan result</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isEmpty</code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)<em>resultJSON</em> image:(UIImage *)<em>image</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resultJSON</code></th>
+						<td><p>the <code>NSDictionary</code> that encapsulates the scan result data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>image</code></th>
+						<td><p>a <code>UIImage</code> of the scan that led to this result</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error information that is filled when initialization fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALScanResult</code> object, if no error is encountered, otherwise null</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:pluginID:" title="initWithResult:image:fullImage:confidence:pluginID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:pluginID:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:pluginID:</a></code>
+	<a name="//api/name/initWithScanResultEvent:" title="initWithScanResultEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithScanResultEvent:">&ndash;&nbsp;initWithScanResultEvent:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -408,15 +508,57 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALScanResult</code> with an scan result-related <code>ALEvent</code> object</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)<em>result</em> image:(UIImage *_Nullable)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> pluginID:(NSString *_Nonnull)<em>pluginID</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithScanResultEvent:(ALEvent *)<em>event</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>an <code>ALEvent</code> object containing details about the scan result</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALScanResult</code> object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/emptyScanResultWithID:" title="emptyScanResultWithID:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/emptyScanResultWithID:">+&nbsp;emptyScanResultWithID:</a></code>
+	<a name="//api/name/withScanResultEvent:" title="withScanResultEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withScanResultEvent:">+&nbsp;withScanResultEvent:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -424,10 +566,52 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an <code>ALScanResult</code> with an scan result-related <code>ALEvent</code> object</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype _Nonnull)emptyScanResultWithID:(NSString *_Nonnull)<em>pluginID</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALScanResult *)withScanResultEvent:(ALEvent *)<em>event</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>an <code>ALEvent</code> object containing details about the scan result</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALScanResult</code> object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -445,7 +629,7 @@ This is nil if the <a href="#//api/name/result">result</a> is from a composite s
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

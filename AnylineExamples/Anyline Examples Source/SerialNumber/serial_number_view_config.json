@@ -1,33 +1,58 @@
 {
-    "viewPlugin" : {
-        "cutoutConfig" : {
-            "style": "animated_rect",
-            "maxWidthPercent": "67%",
-            "width": 1080,
-            "alignment": "top_half",
-            "ratioFromSize" : {
-                "width": 720,
-                "height": 144
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "pictureResolution": "1080p",
+        "zoomGesture": true
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_right"
+    },
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "com.anyline.configs.plugin.universal-serial-number",
+            "ocrConfig": {
+                "scanMode": "AUTO",
+                "model": "USNr.any"
             },
-            "strokeWidth": 3,
-            "strokeColor": "FFFFFF",
-            "cornerRadius": 4,
-            "outerColor": "000000",
-            "outerAlpha": 0.5,
-            "feedbackStrokeColor": "0099FF",
+            "cancelOnResult": true
+        },
+        "cutoutConfig": {
+            "animation": "none",
+            "maxWidthPercent": "80%",
+            "alignment": "top_half",
+            "ratioFromSize": {
+                "width": 5,
+                "height": 1
+            },
             "offset": {
                 "x": 0,
-                "y": -15
-            }
+                "y": 0
+            },
+            "cropOffset": {
+                "x": 0,
+                "y": 0
+            },
+            "cropPadding": {
+                "x": 0,
+                "y": 0
+            },
+            "cornerRadius": 4,
+            "strokeColor": "0099ff",
+            "strokeWidth": 2,
+            "outerColor": "000000",
+            "feedbackStrokeColor": "0099FF",
+            "outerAlpha": 0.3
         },
-        "scanFeedback" : {
-            "style": "CONTOUR_RECT",
-            "strokeColor": "0099FF",
+        "scanFeedbackConfig": {
+            "style": "rect",
+            "strokeWidth": 2,
             "cornerRadius": 2,
+            "strokeColor": "0099FF",
+            "fillColor": "330099FF",
             "beepOnResult": true,
             "vibrateOnResult": true,
-            "blinkAnimationOnResult": true
-        },
-        "cancelOnResult" : true
+            "blinkAnimationOnResult": false
+        }
     }
 }

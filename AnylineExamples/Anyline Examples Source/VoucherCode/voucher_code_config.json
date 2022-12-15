@@ -11,8 +11,8 @@
                 "height": 1
             },
             "strokeWidth": 2,
-            "cornerRadius": 10,
-            "strokeColor": "FFFFFF",
+            "cornerRadius": 4,
+            "strokeColor": "0099FF",
             "outerColor": "000000",
             "outerAlpha": 0.3,
             "feedbackStrokeColor": "32ADFF"
@@ -20,7 +20,7 @@
         "scanFeedback" : {
             "style": "contour_point",
             "strokeColor": "32ADFF",
-            "strokeWidth": 3,
+            "strokeWidth": 2,
             "beepOnResult": true,
             "vibrateOnResult": true,
             "blinkAnimationOnResult": true

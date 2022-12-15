@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -58,17 +60,13 @@
 		
 		<option value="//api/name/country">country</option>
 		
+		<option value="//api/name/plateText">plateText</option>
+		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:pluginID:country:area:">- initWithResult:image:fullImage:confidence:pluginID:country:area:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -89,18 +87,23 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALScanResult.html">ALScanResult</a></td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td>*<br />NSString</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALLicensePlateResult.h</td>
+	<td>ALPluginResult.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Describes result information of scanning license plates</p>
+					</div>
+					
+					
 
 					
 					
@@ -113,8 +116,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/country" title="country"></a>
-	<h3 class="method-title"><code><a href="#//api/name/country">&nbsp;&nbsp;country</a></code>
+	<a name="//api/name/area" title="area"></a>
+	<h3 class="method-title"><code><a href="#//api/name/area">&nbsp;&nbsp;area</a></code>
 </h3>
 
 	<div class="method-info">
@@ -124,12 +127,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The country found on the license plate</p>
+				<p>The area information</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *country</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALArea *area</code></div>
 
 		    
 			
@@ -147,15 +150,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALLicensePlateResult.h</code></p>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/area" title="area"></a>
-	<h3 class="method-title"><code><a href="#//api/name/area">&nbsp;&nbsp;area</a></code>
+	<a name="//api/name/country" title="country"></a>
+	<h3 class="method-title"><code><a href="#//api/name/country">&nbsp;&nbsp;country</a></code>
 </h3>
 
 	<div class="method-info">
@@ -163,15 +166,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The country information</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *area</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALCountry *country</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:pluginID:country:area:" title="initWithResult:image:fullImage:confidence:pluginID:country:area:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:pluginID:country:area:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:pluginID:country:area:</a></code>
+	<a name="//api/name/plateText" title="plateText"></a>
+	<h3 class="method-title"><code><a href="#//api/name/plateText">&nbsp;&nbsp;plateText</a></code>
 </h3>
 
 	<div class="method-info">
@@ -179,10 +207,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The plate text</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)<em>result</em> image:(UIImage *_Nonnull)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> pluginID:(NSString *_Nonnull)<em>pluginID</em> country:(NSString *_Nullable)<em>country</em> area:(NSString *_Nullable)<em>area</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *plateText</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -200,7 +253,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

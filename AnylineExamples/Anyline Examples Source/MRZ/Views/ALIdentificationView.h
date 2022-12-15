@@ -10,6 +10,6 @@
 #import <Anyline/Anyline.h>
 @interface ALIdentificationView : UIView
 
-- (void)updateIdentification:(ALIdentification *)aIdentification;
+//- (void)updateIdentification:(ALIdentification *)aIdentification;
 
 @end

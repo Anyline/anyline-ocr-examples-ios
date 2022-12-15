@@ -56,19 +56,17 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/scanMode">scanMode</option>
+		<option value="//api/name/position">position</option>
+		
+		<option value="//api/name/unit">unit</option>
+		
+		<option value="//api/name/value">value</option>
 		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:pluginID:scanMode:">- initWithResult:image:fullImage:confidence:pluginID:scanMode:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -89,13 +87,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALScanResult.html">ALScanResult</a></td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td>*<br />NSString</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALMeterResult.h</td>
+	<td>ALPluginResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -105,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The result object for the <a href="../Classes/ALMeterScanPlugin.html">ALMeterScanPlugin</a></p>
+						<p>Describes result information of scanning meters</p>
 					</div>
 					
 					
@@ -121,8 +116,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/scanMode" title="scanMode"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
+	<a name="//api/name/position" title="position"></a>
+	<h3 class="method-title"><code><a href="#//api/name/position">&nbsp;&nbsp;position</a></code>
 </h3>
 
 	<div class="method-info">
@@ -132,12 +127,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The used scanMode</p>
+				<p>The position. Only applicable for OBIS meters - see <a href="https://onemeter.com/docs/device/obis/">https://onemeter.com/docs/device/obis/</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ALScanMode scanMode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *position</code></div>
 
 		    
 			
@@ -155,15 +150,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALMeterResult.h</code></p>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:pluginID:scanMode:" title="initWithResult:image:fullImage:confidence:pluginID:scanMode:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:pluginID:scanMode:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:pluginID:scanMode:</a></code>
+	<a name="//api/name/unit" title="unit"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unit">&nbsp;&nbsp;unit</a></code>
 </h3>
 
 	<div class="method-info">
@@ -171,10 +166,76 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The unit <a href="#//api/name/value">value</a>. Only applicable for multi-field meter scanning.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)<em>result</em> image:(UIImage *_Nonnull)<em>image</em> fullImage:(UIImage *_Nonnull)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> pluginID:(NSString *_Nonnull)<em>pluginID</em> scanMode:(ALScanMode)<em>scanMode</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *unit</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The meter value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *value</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -192,7 +253,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

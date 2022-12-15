@@ -11,7 +11,7 @@
 #import "ALAutoAnalogDigitalMeterScanViewController.h"
 #import "ALDialMeterScanViewController.h"
 
-#import "ALMultiformatBarcodeScanViewController.h"
+#import "ALBarcodeScanViewController.h"
 #import "ALMRZScanViewController.h"
 #import "ALIBANScanViewController.h"
 #import "ALVoucherCodeScanViewController.h"
@@ -20,7 +20,7 @@
 #import "ALRBScanViewController.h"
 #import "ALScrabbleScanViewController.h"
 #import "ALDocumentScanViewController.h"
-#import "ALLicensePlateViewController.h"
+#import "ALLicensePlateScanViewController.h"
 
 NSString * const processTitle = @"Processes";
 

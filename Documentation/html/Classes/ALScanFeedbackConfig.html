@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -54,15 +56,21 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/animation">animation</option>
-		
 		<option value="//api/name/animationDuration">animationDuration</option>
+		
+		<option value="//api/name/animationStyle">animationStyle</option>
+		
+		<option value="//api/name/animationStyleStr">animationStyleStr</option>
 		
 		<option value="//api/name/beepOnResult">beepOnResult</option>
 		
 		<option value="//api/name/blinkAnimationOnResult">blinkAnimationOnResult</option>
 		
 		<option value="//api/name/cornerRadius">cornerRadius</option>
+		
+		<option value="//api/name/feedbackStyle">feedbackStyle</option>
+		
+		<option value="//api/name/feedbackStyleStr">feedbackStyleStr</option>
 		
 		<option value="//api/name/fillColor">fillColor</option>
 		
@@ -71,8 +79,6 @@
 		<option value="//api/name/strokeColor">strokeColor</option>
 		
 		<option value="//api/name/strokeWidth">strokeWidth</option>
-		
-		<option value="//api/name/style">style</option>
 		
 		<option value="//api/name/vibrateOnResult">vibrateOnResult</option>
 		
@@ -84,15 +90,15 @@
 		
 		<option value="//api/name/defaultScanFeedbackConfig">+ defaultScanFeedbackConfig</option>
 		
+		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
+		
 	</optgroup>
 	
 
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
-		
-		<option value="//api/name/initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:">- initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:</option>
+		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
 	</optgroup>
 	
@@ -117,6 +123,9 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ALJSONStringRepresentable.html">ALJSONStringRepresentable</a></td>
+</tr><tr>
 	<th>Declared in</th>
 	<td>ALScanFeedbackConfig.h</td>
 </tr>
@@ -124,6 +133,15 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Object configuring how the scan view responds when it finds an object
+it recognizes</p>
+					</div>
+					
+					
 
 					
 					
@@ -136,8 +154,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/style" title="style"></a>
-	<h3 class="method-title"><code><a href="#//api/name/style">&nbsp;&nbsp;style</a></code>
+	<a name="//api/name/feedbackStyle" title="feedbackStyle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStyle">&nbsp;&nbsp;feedbackStyle</a></code>
 </h3>
 
 	<div class="method-info">
@@ -145,26 +163,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The scan feedback style displayed when an object is detected</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALUIFeedbackStyle style</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALScanFeedbackStyle feedbackStyle</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/animation" title="animation"></a>
-	<h3 class="method-title"><code><a href="#//api/name/animation">&nbsp;&nbsp;animation</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALUIVisualFeedbackAnimation animation</code></div>
+			
 
-		    
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -177,10 +204,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stroke color of the visual feedback. Use a &ldquo;XXXXXX&rdquo; hex string</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *strokeColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *strokeColor</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -193,10 +245,36 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stroke color of the visual feedback. Use a &ldquo;XXXXXXXX&rdquo; hex string with the
+first two characters representing the alpha component of the fill</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) UIColor *fillColor</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fillColor</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -209,10 +287,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Stroke width of the visual feedback</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger strokeWidth</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger strokeWidth</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -225,26 +328,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The corner rounding level for visual feedback</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger cornerRadius</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger cornerRadius</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/animationDuration" title="animationDuration"></a>
-	<h3 class="method-title"><code><a href="#//api/name/animationDuration">&nbsp;&nbsp;animationDuration</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger animationDuration</code></div>
+			
 
-		    
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -257,15 +369,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The amount of time the visual feedback remains on screen until it is removed</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger redrawTimeout</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/beepOnResult" title="beepOnResult"></a>
-	<h3 class="method-title"><code><a href="#//api/name/beepOnResult">&nbsp;&nbsp;beepOnResult</a></code>
+	<a name="//api/name/animationDuration" title="animationDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/animationDuration">&nbsp;&nbsp;animationDuration</a></code>
 </h3>
 
 	<div class="method-info">
@@ -273,15 +410,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>How long the animation lasts, in ms</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL beepOnResult</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger animationDuration</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/vibrateOnResult" title="vibrateOnResult"></a>
-	<h3 class="method-title"><code><a href="#//api/name/vibrateOnResult">&nbsp;&nbsp;vibrateOnResult</a></code>
+	<a name="//api/name/animationStyle" title="animationStyle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/animationStyle">&nbsp;&nbsp;animationStyle</a></code>
 </h3>
 
 	<div class="method-info">
@@ -289,10 +451,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The animation style used with the visual feedback drawn on the scan view</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL vibrateOnResult</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALFeedbackAnimationStyle animationStyle</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -305,15 +492,41 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicate whether a brief &ldquo;flicker&rdquo; of the scan view is shown when an object
+is successfully scanned</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL blinkAnimationOnResult</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL blinkAnimationOnResult</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+	<a name="//api/name/beepOnResult" title="beepOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beepOnResult">&nbsp;&nbsp;beepOnResult</a></code>
 </h3>
 
 	<div class="method-info">
@@ -321,15 +534,41 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicate whether a device beep sound is played when an object is successfully
+scanned</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)<em>configDict</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL beepOnResult</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:" title="initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:">&ndash;&nbsp;initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:</a></code>
+	<a name="//api/name/vibrateOnResult" title="vibrateOnResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vibrateOnResult">&nbsp;&nbsp;vibrateOnResult</a></code>
 </h3>
 
 	<div class="method-info">
@@ -337,10 +576,239 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicate whether the device will vibrate briefly when an object is successfully
+scanned</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithStyle:(ALUIFeedbackStyle)<em>style</em> animation:(ALUIVisualFeedbackAnimation)<em>animation</em> strokeColor:(UIColor *_Nonnull)<em>strokeColor</em> fillColor:(UIColor *_Nonnull)<em>fillColor</em> strokeWidth:(NSInteger)<em>strokeWidth</em> cornerRadius:(NSInteger)<em>cornerRadius</em> animationDuration:(NSInteger)<em>animationDuration</em> redrawTimeout:(NSInteger)<em>redrawTimeout</em> beepOnResult:(BOOL)<em>beepOnResult</em> vibrateOnResult:(BOOL)<em>vibrateOnResult</em> blinkAnimationOnResult:(BOOL)<em>blinkAnimationOnResult</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL vibrateOnResult</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/feedbackStyleStr" title="feedbackStyleStr"></a>
+	<h3 class="method-title"><code><a href="#//api/name/feedbackStyleStr">&nbsp;&nbsp;feedbackStyleStr</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The string representation of the feedback style</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *feedbackStyleStr</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/animationStyleStr" title="animationStyleStr"></a>
+	<h3 class="method-title"><code><a href="#//api/name/animationStyleStr">&nbsp;&nbsp;animationStyleStr</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The string representation of the feedback animation style</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *animationStyleStr</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithJSONDictionary:error:" title="initWithJSONDictionary:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONDictionary:error:">&ndash;&nbsp;initWithJSONDictionary:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALScanFeedbackConfig</code> with an <code>NSDictionary</code> representing the JSON config object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *_Nonnull)<em>JSONDictionary</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>an <code>NSDictionary</code> representing the JSON config object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p><code>NSError</code> object which is filled with appropriate information when initialization fails</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALScanFeedbackConfig</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withJSONDictionary:" title="withJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withJSONDictionary:">+&nbsp;withJSONDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an ALScanFeedbackConfig with an NSDictionary representing the JSON config object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ALScanFeedbackConfig *_Nullable)withJSONDictionary:(NSDictionary *)<em>JSONDictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>NSDictionary representing the JSON config object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALScanFeedbackConfig</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -353,10 +821,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>an instance of ALScanFeedbackConfig</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>+ (_Nonnull instancetype)defaultScanFeedbackConfig</code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALScanFeedbackConfig *)defaultScanFeedbackConfig</code></div>
 
 		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an instance of ALScanFeedbackConfig</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanFeedbackConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -374,7 +872,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

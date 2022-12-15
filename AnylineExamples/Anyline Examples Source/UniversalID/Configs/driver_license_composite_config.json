@@ -1,0 +1,103 @@
+{
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "pictureResolution": "1080p",
+        "zoomGesture": true
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_left",
+        "offset": { "x": 0, "y": 0 }
+    },
+    "viewPluginCompositeConfig": {
+        "id": "com.anyline.configs.plugin.parallel-id-barcode",
+        "processingMode": "parallel",
+        "viewPlugins": [
+            {
+                "viewPluginConfig": {
+                    "pluginConfig": {
+                        "id": "com.anyline.configs.plugin.id",
+                        "universalIdConfig": {
+                            "allowedLayouts": {
+                                "drivingLicense": [],
+                                "mrz": []
+                            },
+                            "drivingLicense": {
+                                "lastName": {"scanOption": 0, "minConfidence": 40},
+                                "firstName": {"scanOption": 0, "minConfidence": 40},
+                                "fullName": {"scanOption": 0, "minConfidence": 40},
+                                "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
+                                "placeOfBirth": {"scanOption": 1, "minConfidence": 50},
+                                "dateOfIssue": {"scanOption": 0, "minConfidence": 50},
+                                "dateOfExpiry": {"scanOption": 1, "minConfidence": 50},
+                                "authority": {"scanOption": 1, "minConfidence": 30},
+                                "documentNumber": {"scanOption": 0, "minConfidence": 40},
+                                "licenseClass": {"scanOption": 1, "minConfidence": 30},
+                                "address": {"scanOption": 0},
+                                "sex": {"scanOption": 1,"minConfidence": 60},
+                                "personalNumber": {"scanOption": 1,"minConfidence": 60}
+                            },
+                            "alphabet": "latin"
+                        },
+                        "cancelOnResult": true
+                    },
+                    "cutoutConfig" : {
+                        "style": "rect",
+                        "maxWidthPercent": "90%",
+                        "maxHeightPercent": "90%",
+                        "alignment": "center",
+                        "strokeWidth": 2,
+                        "cornerRadius": 4,
+                        "strokeColor": "0099FF",
+                        "outerColor": "000000",
+                        "outerAlpha": 0,
+                        "ratioFromSize" : {
+                            "width": 50,
+                            "height": 31
+                        },
+                        "cropPadding": {
+                            "x": 25,
+                            "y": 25
+                        },
+                        "cropOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "feedbackStrokeColor": "0099FF"
+                    },
+                    "scanFeedbackConfig" : {
+                        "style": "CONTOUR_RECT",
+                        "visualFeedbackRedrawTimeout": 100,
+                        "strokeColor": "0099FF",
+                        "fillColor" : "220099FF",
+                        "beepOnResult": true,
+                        "vibrateOnResult": true,
+                        "strokeWidth": 2
+                    }
+                }
+            },
+            {
+                "viewPluginConfig": {
+                    "pluginConfig": {
+                        "id": "com.anyline.configs.plugin.barcode",
+                        "barcodeConfig": {
+                            "barcodeFormats": [ "PDF_417" ],
+                            "parseAAMVA": true
+                        },
+                        "cancelOnResult": true
+                    },
+                    "scanFeedbackConfig" : {
+                        "style": "none",
+                        "animation": "none",
+                        "strokeWidth": 0,
+                        "strokeColor": "000000",
+                        "fillColor": "00000000",
+                        "beepOnResult": true,
+                        "vibrateOnResult": true,
+                        "blinkAnimationOnResult": false,
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -122,33 +122,33 @@
 }
 
 
-- (void)updateIdentification:(ALMRZIdentification *)aIdentification {
-    
-    self.nr.text = aIdentification.documentNumber;
-    self.surname.text = aIdentification.surname;
-    self.given_names.text = aIdentification.givenNames;
-    self.code.text = aIdentification.nationalityCountryCode;
-    self.type.text = aIdentification.documentType;
-    
-    if (aIdentification.dateOfBirthObject) {
-        self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfBirthObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
-        [self.dob sizeToFit];
-    } else {
-        self.dob.text = aIdentification.dateOfBirth;
-    }
-    
-    if (aIdentification.dateOfExpiryObject) {
-        self.expiration_date.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfExpiryObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
-        [self.expiration_date sizeToFit];
-    } else {
-        self.expiration_date.text = aIdentification.dateOfExpiry;
-    }
-
-    self.sex.text = aIdentification.sex;
-    
-    self.line0.text = [aIdentification.mrzString stringByReplacingOccurrencesOfString:@"\\n"
-                                                                           withString:@"\n"];
-    self.line0.numberOfLines = 0;
-}
+//- (void)updateIdentification:(ALMRZIdentification *)aIdentification {
+//
+//    self.nr.text = aIdentification.documentNumber;
+//    self.surname.text = aIdentification.surname;
+//    self.given_names.text = aIdentification.givenNames;
+//    self.code.text = aIdentification.nationalityCountryCode;
+//    self.type.text = aIdentification.documentType;
+//
+//    if (aIdentification.dateOfBirthObject) {
+//        self.dob.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfBirthObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+//        [self.dob sizeToFit];
+//    } else {
+//        self.dob.text = aIdentification.dateOfBirth;
+//    }
+//
+//    if (aIdentification.dateOfExpiryObject) {
+//        self.expiration_date.text = [NSDateFormatter localizedStringFromDate:aIdentification.dateOfExpiryObject dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+//        [self.expiration_date sizeToFit];
+//    } else {
+//        self.expiration_date.text = aIdentification.dateOfExpiry;
+//    }
+//
+//    self.sex.text = aIdentification.sex;
+//
+//    self.line0.text = [aIdentification.mrzString stringByReplacingOccurrencesOfString:@"\\n"
+//                                                                           withString:@"\n"];
+//    self.line0.numberOfLines = 0;
+//}
 
 @end

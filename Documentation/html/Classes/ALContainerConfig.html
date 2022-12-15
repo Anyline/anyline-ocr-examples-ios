@@ -56,7 +56,7 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/characterWhitelist">characterWhitelist</option>
+		<option value="//api/name/minConfidence">minConfidence</option>
 		
 		<option value="//api/name/scanMode">scanMode</option>
 		
@@ -67,12 +67,6 @@
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/init">- init</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -93,10 +87,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALBaseOCRConfig.html">ALBaseOCRConfig</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALContainerConfig.h</td>
+	<td>ALPluginConfig.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -106,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class used to configure the Anyline OCR plugin for Container.</p>
+						<p>Configuration for scanning shipping container numbers</p>
 					</div>
 					
 					
@@ -122,6 +116,47 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/minConfidence" title="minConfidence"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minConfidence">&nbsp;&nbsp;minConfidence</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a minimum confidence which has to be reached in order to trigger a scan result.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) NSNumber *minConfidence</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/scanMode" title="scanMode"></a>
 	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
 </h3>
@@ -133,12 +168,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The container scan mode.</p>
+				<p>Determines if container numbers shall be scanned horizontally or vertically.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALContainerScanMode scanMode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALContainerConfigScanMode *scanMode</code></div>
 
 		    
 			
@@ -151,21 +186,12 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/ALContainerScanMode.html">ALContainerScanMode</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALContainerConfig.h</code></p>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
 			</div>
 			
 			
@@ -183,12 +209,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The regex which any scanned text should match. If this is nil, only the <a href="#//api/name/characterWhitelist">characterWhitelist</a> is used to validate scans. This can be used alone or in combination with <a href="#//api/name/characterWhitelist">characterWhitelist</a>; if both are set, then only codes which match the validationRegex and only contain characters from <a href="#//api/name/characterWhitelist">characterWhitelist</a> will be scanned.</p>
+				<p>Sets a regular expression which the scanned text needs to match in order to trigger a
+scan result.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSString *validationRegex</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *validationRegex</code></div>
 
 		    
 			
@@ -206,89 +233,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALContainerConfig.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/characterWhitelist" title="characterWhitelist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/characterWhitelist">&nbsp;&nbsp;characterWhitelist</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Characters which are allowed in the scanned text. If this is nil or empty, all digits and uppercase characters will be accepted. This can be used alone or in combination with <a href="#//api/name/validationRegex">validationRegex</a>; if both are non-nil, then only codes which match the <a href="#//api/name/validationRegex">validationRegex</a> and only contain characters from characterWhitelist will be scanned.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) NSString *characterWhitelist</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALContainerConfig.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Initialises a horizontal container config which accepts any pattern of digits and uppercase letters.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)init</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALContainerConfig.h</code></p>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
 			</div>
 			
 			
@@ -309,7 +254,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

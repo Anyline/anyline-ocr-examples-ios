@@ -1,55 +1,59 @@
-//
-//  ALScanResult.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 15/03/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "ALSquare.h"
+#import "ALJSONUtilities.h"
 
-/**
- *  The base result object for all the modules
- */
-@interface ALScanResult<__covariant ObjectType> : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
-/**
- The pluginID which created this ScanPlugin
- */
-@property (nonnull, nonatomic, strong, readonly) NSString *pluginID;
-/**
- *  The scanned result.
- */
-@property (nonnull, nonatomic, strong, readonly) ObjectType result;
-/**
- *  The image where the scanned text was found.
- *  This is nil if the result is from a composite scan view plugin (images from the individual plugins can be found in the scanned result), or in emptyScanResult
- */
-@property (nullable, nonatomic, strong, readonly) UIImage *image;
-/**
- *  The full frme image where the scanned text was found.
- */
-@property (nullable, nonatomic, strong) UIImage *fullImage;
-/**
- *  The confidence for the scanned value.
- */
-@property (nonatomic, assign, readonly) NSInteger confidence;
-/**
- *  The outline of the found text in relation to the ModuleView.
- */
-@property (nullable, nonatomic, strong) ALSquare *outline __deprecated_msg("Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.");
+@class ALImage;
+@class ALEvent;
+@class ALMultiImageEvent;
+@class ALPluginResult;
 
-@property (readonly) BOOL isEmpty;
+/// Object containing details for a successful scan result
+@interface ALScanResult : NSObject <ALJSONStringRepresentable>
 
-- (instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result
-                                   image:(UIImage * _Nullable)image
-                               fullImage:(UIImage * _Nullable)fullImage
-                              confidence:(NSInteger)confidence
-                                pluginID:(NSString *_Nonnull)pluginID;
-/*
- An empty scan result with the given ID. This is used as the result for plugins within a composite scan view plugin which were skipped. Check whether a scan result is empty using isEmpty
- */
-+ (instancetype _Nonnull)emptyScanResultWithID:(NSString *_Nonnull)pluginID ;
+/// Blob key uniquely identifying this scan
+@property (nonatomic, readonly) NSString *blobKey;
+
+/// ID of the plugin that was initialized for this scan
+@property (nonatomic, readonly) NSString *pluginID;
+
+/// A full sized image taken from the device camera that the successful scan was based on
+@property (nonatomic, readonly) UIImage *fullSizeImage;
+
+/// A cropped version of the image taken from the device consisting of the region shown on
+/// the cutout
+@property (nonatomic, readonly) UIImage *croppedImage;
+
+/// Image of detected facial photo, if any
+@property (nonatomic, readonly, nullable) UIImage *faceImage;
+
+/// An `ALPluginResult` object which contains complete plugin-specific details regarding
+/// the scan result
+@property (nonatomic, readonly) ALPluginResult *pluginResult;
+
+/// The scan result in NSDictionary form
+@property (nonatomic, readonly) NSDictionary *resultDictionary;
+
+/// Initializes an `ALScanResult` with a suitably-structured dictionary, and the
+/// image associated with the scan result
+/// @param resultJSON the `NSDictionary` that encapsulates the scan result data
+/// @param image a `UIImage` of the scan that led to this result
+/// @param error error information that is filled when initialization fails
+/// @return the `ALScanResult` object, if no error is encountered, otherwise null
+- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)resultJSON
+                                           image:(UIImage *)image
+                                           error:(NSError * _Nullable * _Nullable)error;
+
+/// Initializes an `ALScanResult` with an scan result-related `ALEvent` object
+/// @param event an `ALEvent` object containing details about the scan result
+/// @return the `ALScanResult` object
+- (instancetype)initWithScanResultEvent:(ALEvent *)event;
+
+/// Creates an `ALScanResult` with an scan result-related `ALEvent` object
+/// @param event an `ALEvent` object containing details about the scan result
+/// @return the `ALScanResult` object
++ (ALScanResult *)withScanResultEvent:(ALEvent *)event;
 
 @end
+
+NS_ASSUME_NONNULL_END

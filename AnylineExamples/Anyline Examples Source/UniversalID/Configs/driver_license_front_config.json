@@ -1,0 +1,56 @@
+{
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "pictureResolution": "1080p"
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_left",
+        "offset": { "x": 0, "y": 0 }
+    },
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "com.anyline.configs.plugin.id",
+            "universalIdConfig": {
+                "allowedLayouts": {
+                    "drivingLicense": []
+                },
+                "alphabet": "latin"
+            },
+            "cancelOnResult": true
+        },
+        "cutoutConfig" : {
+            "style": "animated_rect",
+            "maxWidthPercent": "90%",
+            "maxHeightPercent": "90%",
+            "alignment": "center",
+            "strokeWidth": 2,
+            "cornerRadius": 4,
+            "strokeColor": "0099FF",
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "ratioFromSize" : {
+                "width": 50,
+                "height": 31
+            },
+            "cropPadding": {
+                "x": 25,
+                "y": 25
+            },
+            "cropOffset": {
+                "x": 0,
+                "y": 0
+            },
+            "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedbackConfig" : {
+            "style": "CONTOUR_RECT",
+            "visualFeedbackRedrawTimeout": 100,
+            "strokeColor": "0099FF",
+            "fillColor" : "220099FF",
+            "beepOnResult": true,
+            "vibrateOnResult": true,
+            "strokeWidth": 2
+        }
+    }
+}

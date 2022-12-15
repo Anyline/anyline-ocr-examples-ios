@@ -1,137 +1,88 @@
-//
-//  ALVINScanViewController.m
-//  AnylineExamples
-//
-//  Created by Daniel Albertini on 18.12.17.
-//
-
 #import "ALVINScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "AnylineExamples-Swift.h"
+#import "ALPluginResultHelper.h"
 
-@interface ALVINScanViewController () <ALOCRScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate>
+@interface ALVINScanViewController () <ALScanPluginDelegate>
 
-// The Anyline plugin used for OCR
-@property (nonatomic, strong) ALOCRScanViewPlugin *vinScanViewPlugin;
-@property (nonatomic, strong) ALOCRScanPlugin *vinScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
+
+@property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
+
+@property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
 
 @end
 
+
+NSString * const kALVINScanVC_configFilename = @"ocr_config_vin";
+
+
 @implementation ALVINScanViewController
+
+- (void)dealloc {
+    NSLog(@"dealloc ALVINScanViewController");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.title = @"VIN";
-    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    CGRect frame = [self scanViewFrame];
-    
-    ALVINConfig *config = [[ALVINConfig alloc] init];
-    
-    NSError *error = nil;
-    
-    self.vinScanPlugin = [[ALOCRScanPlugin alloc] initWithPluginID:@"ANYLINE_OCR"
-                                                          delegate:self
-                                                         ocrConfig:config
-                                                             error:&error];
-    NSAssert(self.vinScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.vinScanPlugin addInfoDelegate:self];
-    
-    NSString *confPath = [[NSBundle mainBundle] pathForResource:@"vin_capture_config" ofType:@"json"];
-    ALScanViewPluginConfig *scanViewPluginConfig = [ALScanViewPluginConfig configurationFromJsonFilePath:confPath];
-    
-    self.vinScanViewPlugin = [[ALOCRScanViewPlugin alloc] initWithScanPlugin:self.vinScanPlugin
-                                                        scanViewPluginConfig:scanViewPluginConfig];
-    [self.vinScanViewPlugin addScanViewPluginDelegate:self];
-    NSAssert(self.vinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.vinScanViewPlugin];
-    
-    //Enable Zoom Gesture
-    [self.scanView enableZoomPinchGesture:YES];
-    
-    // After setup is complete we add the scanView to the view of this view controller
-    [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:self.scanView];
-    [self.view sendSubviewToBack:self.scanView];
-    NSArray *scanViewConstraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-                                     [self.scanView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor],
-                                     [self.scanView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor],
-                                     [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
-    [self.view addConstraints:scanViewConstraints];
-    [NSLayoutConstraint activateConstraints:scanViewConstraints];
-    
-    //Start Camera:
-    [self.scanView startCamera];
-    [self startListeningForMotion];
-    
     self.controllerType = ALScanHistoryVIN;
-}
-
-/*
- This method will be called once the view controller and its subviews have appeared on screen
- */
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
-    // We use this subroutine to start Anyline. The reason it has its own subroutine is
-    // so that we can later use it to restart the scanning process.
-    [self startAnyline];
+    NSError *error;
+    self.scanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:self.scanViewConfigDict];
+    
+    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:&error];
+
+    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                       scanViewPlugin:self.scanViewPlugin
+                                       scanViewConfig:self.scanViewConfig
+                                                error:&error];
+    
+    [self installScanView:self.scanView];
+
+    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
+    scanViewPlugin.scanPlugin.delegate = self;
+
+    [self.scanView startCamera];
 }
 
-/*
- Cancel scanning to allow the module to clean up
- */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.vinScanViewPlugin stopAndReturnError:nil];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSError *error;
+    [self.scanViewPlugin startWithError:&error]; // could check the error
 }
 
-/*
- This method is used to tell Anyline to start scanning. It gets called in
- viewDidAppear to start scanning the moment the view appears. Once a result
- is found scanning will stop automatically (you can change this behaviour
- with cancelOnResult:). When the user dismisses self.identificationView this
- method will get called again.
- */
-- (void)startAnyline {
-    [self startPlugin:self.vinScanViewPlugin];
+// MARK: - Getters and Setters
+
+- (NSDictionary *)scanViewConfigDict {
+    return [[self configJSONStrWithFilename:kALVINScanVC_configFilename] asJSONObject]; // could check the error
 }
 
-- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     cutoutRect.origin.y +
-     cutoutRect.size.height +
-     self.scanView.frame.origin.y +
-     80];
-}
 
-#pragma mark -- AnylineOCRModuleDelegate
+// MARK: - Handle & present results
 
-/*
- This is the main delegate method Anyline uses to report its results
- */
-- (void)anylineOCRScanPlugin:(ALOCRScanPlugin *)anylineOCRScanPlugin
-               didFindResult:(ALOCRResult *)result {
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Vehicle Identification Number" value:result.result shouldSpellOutValue:YES]];
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
+- (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
+    [self enableLandscapeOrientation:NO];
+
+    ALVinResult *vinResult = scanResult.pluginResult.vinResult;
+    NSArray<ALResultEntry *> *resultData = vinResult.resultEntryList;
+    NSString *JSONResultString = [ALResultEntry JSONStringFromList:resultData];
 
     __weak __block typeof(self) weakSelf = self;
-    [self anylineDidFindResult:jsonString
-                 barcodeResult:@""
-                         image:result.image
-                    scanPlugin:anylineOCRScanPlugin
-                    viewPlugin:self.vinScanViewPlugin
-                    completion:^{
+    [self anylineDidFindResult:JSONResultString
+                 barcodeResult:nil
+                         image:scanResult.croppedImage
+                    scanPlugin:scanPlugin
+                    viewPlugin:self.scanViewPlugin completion:^{
 
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
-        vc.imagePrimary = result.image;
-
+        vc.imagePrimary = scanResult.croppedImage;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 
 @end
+

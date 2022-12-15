@@ -1,0 +1,112 @@
+{
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "pictureResolution": "1080p",
+        "zoomGesture": true
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_left",
+        "offset": { "x": 0, "y": 0 }
+    },
+    "viewPluginCompositeConfig": {
+        "id": "com.anyline.configs.plugin.parallel-id-barcode",
+        "processingMode": "parallel",
+        "viewPlugins": [
+            {
+                "viewPluginConfig": {
+                    "pluginConfig": {
+                        "id": "com.anyline.configs.plugin.id",
+                        "universalIdConfig": {
+                            "allowedLayouts": {
+                                "insuranceCard": [],
+                                "idFront": [],
+                                "mrz": []
+                            },
+                            "insuranceCard": {
+                                "lastName": {"scanOption": 0, "minConfidence": 50},
+                                "firstName": {"scanOption": 0, "minConfidence": 50},
+                                "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
+                                "personalNumber": {"scanOption": 0, "minConfidence": 50},
+                                "authority": {"scanOption": 0, "minConfidence": 50},
+                                "documentNumber": {"scanOption": 0, "minConfidence": 50},
+                                "dateOfExpiry": {"scanOption": 0, "minConfidence": 50},
+                                "nationality": {"scanOption": 0, "minConfidence": 50}
+                            },
+                            "idFront": {
+                                "lastName": {"scanOption": 0, "minConfidence": 60},
+                                "firstName": {"scanOption": 0, "minConfidence": 60},
+                                "fullName": {"scanOption": 0, "minConfidence": 60},
+                                "dateOfBirth": {"scanOption": 0,"minConfidence": 60},
+                                "placeOfBirth": {"scanOption": 1,"minConfidence": 60},
+                                "dateOfIssue": {"scanOption": 0, "minConfidence": 60},
+                                "dateOfExpiry": {"scanOption": 1,"minConfidence": 60},
+                                "cardAccessNumber": {"scanOption": 1,"minConfidence": 60},
+                                "documentNumber": {"scanOption": 0,"minConfidence": 60},
+                                "nationality": {"scanOption": 1,"minConfidence": 60},
+                                "sex": {"scanOption": 1,"minConfidence": 60},
+                                "personalNumber": {"scanOption": 1,"minConfidence": 60}
+                            },
+                            "alphabet": "latin"
+                        },
+                        "cancelOnResult": true
+                    },
+                    "cutoutConfig" : {
+                        "style": "animated_rect",
+                        "maxWidthPercent": "90%",
+                        "maxHeightPercent": "90%",
+                        "alignment": "center",
+                        "strokeWidth": 2,
+                        "cornerRadius": 4,
+                        "strokeColor": "0099FF",
+                        "outerColor": "000000",
+                        "outerAlpha": 0.3,
+                        "ratioFromSize" : {
+                            "width": 50,
+                            "height": 31
+                        },
+                        "cropPadding": {
+                            "x": 25,
+                            "y": 25
+                        },
+                        "cropOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "feedbackStrokeColor": "0099FF"
+                    },
+                    "scanFeedbackConfig" : {
+                        "style": "CONTOUR_RECT",
+                        "visualFeedbackRedrawTimeout": 100,
+                        "strokeColor": "0099FF",
+                        "fillColor" : "220099FF",
+                        "beepOnResult": true,
+                        "vibrateOnResult": true,
+                        "strokeWidth": 2
+                    }
+                }
+            },
+            {
+                "viewPluginConfig": {
+                    "pluginConfig": {
+                        "id": "com.anyline.configs.plugin.barcode",
+                        "barcodeConfig": {
+                            "barcodeFormats": [ "PDF_417" ]
+                        },
+                        "cancelOnResult": true
+                    },
+                    "scanFeedbackConfig" : {
+                        "style": "none",
+                        "animation": "none",
+                        "strokeWidth": 0,
+                        "strokeColor": "000000",
+                        "fillColor": "00000000",
+                        "beepOnResult": false,
+                        "vibrateOnResult": false,
+                        "blinkAnimationOnResult": false,
+                    }
+                }
+            }
+        ]
+    }
+}

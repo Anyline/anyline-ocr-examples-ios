@@ -1,0 +1,46 @@
+{
+  "cameraConfig": {
+    "captureResolution": "1080p",
+    "zoomGesture": true
+  },
+  "flashConfig": {
+    "mode": "manual",
+    "alignment": "top_left",
+  },
+  "viewPluginConfig": {
+    "pluginConfig": {
+      "id": "VIN",
+      "cancelOnResult": true,
+      "vinConfig": {
+      }
+    },
+    "cutoutConfig": {
+      "style": "animated_rect",
+      "maxWidthPercent": "70%",
+      "maxHeightPercent": "70%",
+      "alignment": "top_half",
+      "ratioFromSize": {
+        "width": 62,
+        "height": 9
+      },
+      "outerColor": "000000",
+      "outerAlpha": 0.3,
+      "strokeWidth": 2,
+      "strokeColor": "0099FF",
+      "cornerRadius": 4,
+      "feedbackStrokeColor": "0099FF"
+    },
+    "scanFeedbackConfig": {
+      "animation": "traverse_multi",
+      "animationDuration": 250,
+      "style": "contour_rect",
+      "strokeWidth": 2,
+      "strokeColor": "0099FF",
+      "fillColor": "220099FF",
+      "beepOnResult": true,
+      "vibrateOnResult": true,
+      "blinkAnimationOnResult": true
+    }
+  }
+}
+

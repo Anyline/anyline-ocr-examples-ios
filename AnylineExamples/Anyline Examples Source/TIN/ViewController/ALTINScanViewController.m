@@ -1,26 +1,29 @@
-//
-//  ALTINScanViewController.m
-//  AnylineExamples
-//
-//  Created by Angela Brett on 26.08.19.
-//
-
 #import "ALTINScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "AnylineExamples-Swift.h"
-#import "ALUmbrella.h"
-#import "UIColor+ALExamplesAdditions.h"
-#import "UIFont+ALExamplesAdditions.h"
 #import "ALConfigurationDialogViewController.h"
+#import "AnylineExamples-Swift.h" // for ALResultEntry
+#import "ALPluginResultHelper.h"
+
 #if __has_include("ALContactUsViewController.h")
-#import "ALContactUsViewController.h"
+    #import "ALContactUsViewController.h"
 #endif
 
-@interface ALTINScanViewController ()<ALTireScanPluginDelegate, ALInfoDelegate, ALScanViewPluginDelegate, ALConfigurationDialogViewControllerDelegate>
+typedef enum {
+    ALTINScanModeUniversal = 0,
+    ALTINScanModeDOT
+} ALTINScanMode;
 
-@property (nonatomic, strong) ALTireScanViewPlugin *tinScanViewPlugin;
-@property (nonatomic, strong) ALTireScanPlugin *tinScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+NSString * const kALTINScanVC_configFilename = @"tire_config_tin";
+
+
+@interface ALTINScanViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
+
+// TODO: most of these can go to a superclass.
+@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
+
+@property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
+
+@property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
 
 @property () NSUInteger dialogIndexSelected;
 
@@ -29,145 +32,116 @@
 
 @implementation ALTINScanViewController
 
+- (void)dealloc {
+    NSLog(@"dealloc ALTINScanViewController");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"TIN";
-    self.dialogIndexSelected = 0;
-    [self setupScanner:ALTINUniversal];
-    
-    [self setupConstraints];
-    
     self.controllerType = ALScanHistoryTIN;
-    
     [self setupFlipOrientationButton];
+    self.dialogIndexSelected = 0;
     [self setupNavigationBar];
+
+    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:nil];
+    [self setUpScanMode:ALTINScanModeUniversal];
+    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                       scanViewPlugin:self.scanViewPlugin
+                                       scanViewConfig:self.scanViewConfig
+                                                error:nil];
+    
+    [self installScanView:self.scanView];
+
+    [self.scanView startCamera];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    CGFloat bottomPadding;
-    if (@available(iOS 11, *)) {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
-        bottomPadding = window.safeAreaInsets.bottom;
-    } else {
-        bottomPadding = 0;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.scanViewPlugin startWithError:nil];
+}
+
+// MARK: - Getters and Setters
+
+- (NSDictionary *)scanViewConfigDict {
+    return [[self configJSONStrWithFilename:kALTINScanVC_configFilename] asJSONObject];
+}
+
+// MARK: - Setup
+
+- (void)setUpScanMode:(ALTINScanMode)scanMode {
+
+    NSDictionary *JSONConfigObj = self.scanViewConfigDict;
+
+    // Will edit this object before constructing an ALScanViewPlugin with it later
+    ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
+
+    // Change the mode...
+    ALTinConfig *tinConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig.tinConfig;
+    tinConfig.scanMode = ALTinConfigScanMode.universal;
+    switch (scanMode) {
+        case ALTINScanModeUniversal:
+            tinConfig.scanMode = ALTinConfigScanMode.universal;
+            break;
+        case ALTINScanModeDOT:
+            tinConfig.scanMode = ALTinConfigScanMode.dot; //or .dotStrict?
+            break;
+        default: break;
     }
 
-    self.flipOrientationButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height-self.flipOrientationButton.frame.size.height/2-bottomPadding-10);
-}
-
-/*
- This method will be called once the view controller and its subviews have appeared on screen
- */
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    // We use this subroutine to start Anyline. The reason it has its own subroutine is
-    // so that we can later use it to restart the scanning process.
-    [self startAnyline];
-}
-
-/*
- Cancel scanning to allow the module to clean up
- */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.tinScanViewPlugin stopAndReturnError:nil];
-}
-
-
-/*
- This method is used to tell Anyline to start scanning. It gets called in
- viewDidAppear to start scanning the moment the view appears. Once a result
- is found scanning will stop automatically (you can change this behaviour
- with cancelOnResult:). When the user dismisses self.identificationView this
- method will get called again.
- */
-- (void)startAnyline {
-    [self startPlugin:self.tinScanViewPlugin];
-}
-
-- (void)anylineScanViewPlugin:(ALAbstractScanViewPlugin *)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect {
-    //Update Position of Warning Indicator
-    [self updateWarningPosition:
-     cutoutRect.origin.y +
-     cutoutRect.size.height +
-     self.scanView.frame.origin.y +
-     80];
-}
-
-#pragma mark - Custom Actions
-
-- (void)setupScanner:(ALTINScanMode)scanMode {
-    [self.scanView removeFromSuperview];
-    self.scanView = nil;
-    
-    ALTINConfig *config = [[ALTINConfig alloc] init];
-    [config setScanMode:scanMode];
-    NSError *error = nil;
-    
-    self.tinScanPlugin = [[ALTireScanPlugin alloc] initWithPluginID:@"TIRE"
-                                                           delegate:self
-                                                         tireConfig:config
-                                                              error:&error];
-
-    NSAssert(self.tinScanPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.tinScanPlugin addInfoDelegate:self];
-    
-    ALScanViewPluginConfig *viewPluginConfig = [ALScanViewPluginConfig defaultTINConfig];
-    viewPluginConfig.delayStartScanTime = 2000;
-    self.tinScanViewPlugin = [[ALTireScanViewPlugin alloc] initWithScanPlugin:self.tinScanPlugin scanViewPluginConfig:viewPluginConfig];
-
-    [self.tinScanViewPlugin addScanViewPluginDelegate:self];
-    NSAssert(self.tinScanViewPlugin, @"Setup Error: %@", error.debugDescription);
-    
-    
-    // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
-    self.scanView = [[ALScanView alloc] initWithFrame:self.view.bounds scanViewPlugin:self.tinScanViewPlugin];
-    
-    //Enable Zoom Gesture
-    [self.scanView enableZoomPinchGesture:YES];
-    
-    // After setup is complete we add the scanView to the view of this view controller
-    [self.view addSubview:self.scanView];
-    
-    //Start Camera:
-    [self.scanView startCamera];
-    [self startListeningForMotion];
-}
-
-- (void)setupConstraints {
-    self.scanView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    NSArray *constraints = @[[self.scanView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
-                             [self.scanView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
-                             [self.scanView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
-                             [self.scanView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
-    
-    
-    [self.view addConstraints:constraints];
-    [NSLayoutConstraint activateConstraints:constraints];
-}
-
-- (void)setupNavigationBar {
-    UIBarButtonItem *scanModeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"]
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self
-                                                                      action:@selector(showOptionsSelectionDialog)];
-    
-    self.navigationItem.rightBarButtonItem = scanModeButton;
+    // Recreate the ScanViewPlugin. Since this is a different ScanViewPlugin than
+    // the previous one, reset the delegate.
+    self.scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:nil];
+    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
+    scanViewPlugin.scanPlugin.delegate = self;
 }
 
 - (void)changeScanViewMode:(ALTINScanMode)scanMode {
-    [self.tinScanViewPlugin stopAndReturnError:nil];
-    [self setupScanner:scanMode];
-    [self setupConstraints];
-    [self.view bringSubviewToFront:self.flipOrientationButton];
-    [self.tinScanViewPlugin startAndReturnError:nil];
+    [self.scanViewPlugin stop];
+    [self setUpScanMode:scanMode];
+
+    if (!self.scanView) {
+        self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                           scanViewPlugin:self.scanViewPlugin
+                                           scanViewConfig:self.scanViewConfig
+                                                    error:nil];
+        [self installScanView:self.scanView];
+        [self.scanView startCamera];
+    } else {
+        [self.scanView setScanViewPlugin:self.scanViewPlugin error:nil];
+        [self.scanView startCamera];
+    }
+    [self.scanViewPlugin startWithError:nil];
 }
 
+// MARK: - Handle & present results
+
+- (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
+
+    [self enableLandscapeOrientation:NO];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self anylineDidFindResult:scanResult.pluginResult.tinResult.text
+                 barcodeResult:nil
+                         image:[scanResult croppedImage]
+                    scanPlugin:scanPlugin viewPlugin:self.scanViewPlugin completion:^{
+        NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.tinResult.resultEntryList;
+        ALResultViewController *vc = [[ALResultViewController alloc]
+                                      initWithResults:resultData];
+        vc.imagePrimary = scanResult.croppedImage;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+}
+
+// MARK: - Allow changing the scan mode
+
 - (void)showOptionsSelectionDialog {
-    NSArray<NSString *> *choices = @[ @"Universal TIN/DOT", @"TIN/DOT (North America only)", @"Other tire sidewall information" ];
+    NSArray<NSString *> *choices = @[
+        @"Universal TIN/DOT",
+        @"TIN/DOT (North America only)",
+        @"Other tire sidewall information"
+    ];
     NSArray<NSNumber *> *selections = @[@(self.dialogIndexSelected)];
     ALConfigurationDialogViewController *vc = [[ALConfigurationDialogViewController alloc]
                                                initWithChoices:choices
@@ -178,89 +152,54 @@
     vc.delegate = self;
     [vc setSelectionDialogFontSize:16.0];
     [self presentViewController:vc animated:YES completion:nil];
-    [self dialogStarted];
-}
-
-- (void)dialogStarted {
-    [self startCamera:NO];
-}
-
-- (void)dialogCancelled {
-    [self startCamera:YES];
-}
-
-- (void)startCamera:(BOOL)start {
-    if (start) {
-        [self.scanView startCamera];
-    } else {
-        [self.scanView stopCamera];
-    }
-}
-
-- (void)presentContactUsDialog {
-    ALTINScanViewController __weak *weakself = self;
-#if __has_include("ALContactUsViewController.h")
-    [self dismissViewControllerAnimated:YES completion:^{
-        ALContactUsViewController *contactVC = [[ALContactUsViewController alloc] init];
-        [weakself presentViewController:contactVC animated:YES completion:nil];
-        [contactVC setPresentationBlock:^{
-            [weakself dialogCancelled];
-        }];
-    }];
-#endif
-}
-
-// MARK: - ALTireScanPluginDelegate
-
-- (void)anylineTireScanPlugin:(ALTireScanPlugin * _Nonnull)anylineTireScanPlugin
-                didFindResult:(ALTireResult * _Nonnull)result {
-
-    [self enableLandscapeOrientation:NO];
-
-    NSMutableArray <ALResultEntry*> *resultData = [NSMutableArray array];
-
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Tire Identification Number"
-                                                         value:result.result
-                                           shouldSpellOutValue:YES]];
-
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
-    __weak __block typeof(self) weakSelf = self;
-    [self anylineDidFindResult:jsonString barcodeResult:@""
-                         image:result.image
-                    scanPlugin:anylineTireScanPlugin
-                    viewPlugin:self.tinScanViewPlugin
-                    completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc]
-                                      initWithResults:resultData];
-        vc.imagePrimary = result.image;
-
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    }];
+    [self.scanView stopCamera];
 }
 
 // MARK: - ALConfigurationDialogViewControllerDelegate
-
-- (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
-    switch (index) {
-        case 0: //universal
-            self.dialogIndexSelected = index;
-            [self changeScanViewMode:ALTINUniversal];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
-        case 1: //standart
-            self.dialogIndexSelected = index;
-            [self changeScanViewMode:ALTINDot];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
-        case 2: // popup
-            [self presentContactUsDialog];
-            break;
-    }
-}
 
 - (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {}
 
 - (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {}
 
+- (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
+    switch (index) {
+        case 0:
+            self.dialogIndexSelected = index;
+            [self changeScanViewMode:ALTINScanModeUniversal];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+        case 1:
+            self.dialogIndexSelected = index;
+            [self changeScanViewMode:ALTINScanModeDOT];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+        case 2:
+            [self presentContactUsDialog];
+            break;
+    }
+}
+
+// MARK: - Miscellaneous
+
+- (void)setupNavigationBar {
+    UIBarButtonItem *scanModeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"]
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(showOptionsSelectionDialog)];
+    self.navigationItem.rightBarButtonItem = scanModeButton;
+}
+
+- (void)presentContactUsDialog {
+    ALTINScanViewController __weak *weakSelf = self;
+#if __has_include("ALContactUsViewController.h")
+    [self dismissViewControllerAnimated:YES completion:^{
+        ALContactUsViewController *contactVC = [[ALContactUsViewController alloc] init];
+        [weakSelf presentViewController:contactVC animated:YES completion:nil];
+        [contactVC setPresentationBlock:^{
+            [weakSelf.scanView startCamera];
+        }];
+    }];
+#endif
+}
 
 @end

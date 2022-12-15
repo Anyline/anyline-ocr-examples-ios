@@ -11,8 +11,7 @@
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALContainerScanViewController.h"
-#import "ALVerticalContainerScanViewController.h"
-#import "ALVehicleRegistrationCertificateViewController.h"
+#import "ALVRCScanViewController.h"
 
 NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certificate";
 
@@ -54,9 +53,9 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
                                                          viewController:[CommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
     ALExample *vehicleRegistrationCertificate = [[ALExample alloc] initWithName:NSLocalizedString(kVehicleRegistrationCertificate, nil)
-                                                       image:[UIImage imageNamed:@""]
-                                              viewController:[ALVehicleRegistrationCertificateViewController class]
-                                                       title:kVehicleRegistrationCertificate];
+                                                                          image:[UIImage imageNamed:@"vrc"]
+                                                                 viewController:[ALVRCScanViewController class]
+                                                                          title:kVehicleRegistrationCertificate];
     
     self.sectionNames = @[@"Vehicle",];
     self.examples = @{

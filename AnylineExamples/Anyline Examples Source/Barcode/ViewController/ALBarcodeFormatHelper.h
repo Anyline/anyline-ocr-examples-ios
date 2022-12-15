@@ -1,13 +1,7 @@
-//
-//  ALBarcodeFormatHelper.h
-//  AnylineExamples
-//
-//  Created by Daniel Albertini on 11.12.20.
-//
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class ALBarcodeFormat;
 
 @interface ALBarcodeFormatHelper : NSObject
 
@@ -15,11 +9,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray<NSString*> *)readableHeaderArray;
 
-+ (NSArray<NSString *> *)defaultReadableName;
++ (NSArray<NSString *> *)defaultSymbologiesReadableNames;
 
-+ (NSArray<NSString *> *)readableNameForFormats:(NSArray<NSString *> *)formats;
++ (NSArray<NSString *> *)readableNameForFormats:(NSArray<ALBarcodeFormat *> *)formats;
 
-+ (NSArray<NSString *> *)formatsForReadableNames:(NSArray<NSString *> *)readableNames;
++ (NSArray<ALBarcodeFormat *> *)formatsForReadableNames:(NSArray<NSString *> *)readableNames;
 
 @end
 

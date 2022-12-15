@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALTINConfig Class Reference</title>
+	<title>ALTinConfig Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,19 +56,17 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/minConfidence">minConfidence</option>
+		
 		<option value="//api/name/scanMode">scanMode</option>
 		
+		<option value="//api/name/upsideDownMode">upsideDownMode</option>
+		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/init">- init</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -83,16 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALTINConfig Class Reference</h1>
+					<h1 class="title">ALTinConfig Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALBaseTireConfig.html">ALBaseTireConfig</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALTINConfig.h</td>
+	<td>ALPluginConfig.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -102,7 +100,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class used to configure the Anyline Tire plugin for Container.</p>
+						<p>Configuration for scanning TIN numbers</p>
 					</div>
 					
 					
@@ -118,6 +116,47 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/minConfidence" title="minConfidence"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minConfidence">&nbsp;&nbsp;minConfidence</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a minimum confidence which has to be reached in order to trigger a scan result.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) NSNumber *minConfidence</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/scanMode" title="scanMode"></a>
 	<h3 class="method-title"><code><a href="#//api/name/scanMode">&nbsp;&nbsp;scanMode</a></code>
 </h3>
@@ -129,12 +168,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The TIN scan mode.</p>
+				<p>Sets the mode to scan universal TIN numbers (&lsquo;UNIVERSAL&rsquo;), TIN numbers of any length
+starting with DOT (&lsquo;DOT&rsquo;) or fixed-length TIN numbers (&lsquo;DOT_STRICT&rsquo;).</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ALTINScanMode scanMode</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALTinConfigScanMode *scanMode</code></div>
 
 		    
 			
@@ -147,29 +187,20 @@
 
 			
 
-			
-			<div class="method-subsection see-also-section">
-				<h4 class="method-subtitle">See Also</h4>
-				<ul>
-					
-					<li><code><p><a href="../Constants/ALTINScanMode.html">ALTINScanMode</a></p></code></li>
-					
-				</ul>
-			</div>
 			
 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALTINConfig.h</code></p>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	<a name="//api/name/upsideDownMode" title="upsideDownMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/upsideDownMode">&nbsp;&nbsp;upsideDownMode</a></code>
 </h3>
 
 	<div class="method-info">
@@ -177,10 +208,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets whether the text shall also be scanned upside-down. By default, it is disabled.</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -198,7 +254,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

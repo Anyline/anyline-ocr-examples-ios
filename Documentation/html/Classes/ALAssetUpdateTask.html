@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -116,6 +118,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An object managing the update of an asset</p>
+					</div>
+					
+					
 
 					
 					
@@ -137,10 +147,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The asset update delegate</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;ALAssetUpdateDelegate&gt; assetUpdateDelegate</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -153,10 +188,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The asset context</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALAssetContext *assetContext</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -169,10 +229,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The asset controller</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) ALAssetController *assetController</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -185,10 +270,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>ID string of the update task</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *id</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -201,10 +311,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>A factor to create asset controllers</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) ALAssetControllerFactory *assetControllerFactory</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -217,10 +352,62 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an ALAssetUpdateTask</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (id)initWithAssetContext:(ALAssetContext *)<em>assetContext</em> assetUpdateDelegate:(id&lt;ALAssetUpdateDelegate&gt;)<em>assetUpdateDelegate</em> assetControllerFactory:(ALAssetControllerFactory *_Nullable)<em>assetControllerFactory</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetContext</code></th>
+						<td><p><a href="#//api/name/assetContext">assetContext</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetUpdateDelegate</code></th>
+						<td><p><a href="#//api/name/assetUpdateDelegate">assetUpdateDelegate</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetControllerFactory</code></th>
+						<td><p><a href="#//api/name/assetControllerFactory">assetControllerFactory</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an <code>ALAssetUpdateTask</code> object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -233,10 +420,57 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALAssetUpdateTask</code></p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (id)initWithAssetContext:(ALAssetContext *)<em>assetContext</em> assetUpdateDelegate:(id&lt;ALAssetUpdateDelegate&gt;)<em>assetUpdateDelegate</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetContext</code></th>
+						<td><p><a href="#//api/name/assetContext">assetContext</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetUpdateDelegate</code></th>
+						<td><p><a href="#//api/name/assetUpdateDelegate">assetUpdateDelegate</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>an <code>ALAssetUpdateTask</code> object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -249,10 +483,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel an ongoing update task</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -265,10 +524,48 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Issues request to check if an updated version of the asset is available</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)checkForUpdates:(BOOL)<em>downloadIfOutdated</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>downloadIfOutdated</code></th>
+						<td><p>if false and there are updates, the delegate will only report that an
+update is available but no downloads will automatically take place</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -281,10 +578,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Issues request to get the latest version of the asset</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)downloadAssets</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -297,10 +619,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove locally-downloaded files associated with the asset</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (void)removeDownloads</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
@@ -313,10 +660,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this check whether or not there are locally-downloaded assets on the device</p>
+			</div>
+			
+		    
 
 			<div class="method-subsection method-declaration"><code>- (BOOL)hasLocalAssets</code></div>
 
 		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>whether there are locally-downloaded assets on the device</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALAssetUpdateTask.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -334,7 +711,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

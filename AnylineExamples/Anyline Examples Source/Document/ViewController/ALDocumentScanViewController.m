@@ -7,12 +7,12 @@
 
 @class AnylineDocumentModuleView;
 
-@interface ALDocumentScanViewController () <ALDocumentScanPluginDelegate, ALInfoDelegate, ALDocumentInfoDelegate, ALScanViewPluginDelegate>
+@interface ALDocumentScanViewController () //<ALDocumentScanPluginDelegate, ALInfoDelegate, ALDocumentInfoDelegate, ALScanViewPluginDelegate>
 
 // The Anyline plugin used for Document
-@property (nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
-@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+//@property (nonatomic, strong) ALDocumentScanViewPlugin *documentScanViewPlugin;
+//@property (nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
+//@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @property (nonatomic, strong) ALRoundedView *roundedView;
 @property (nonatomic, assign) NSInteger showingLabel;
@@ -33,27 +33,27 @@
 
     NSError *error = nil;
     
-    self.documentScanPlugin = [[ALDocumentScanPlugin alloc] initWithPluginID:@"DOCUMENT" delegate:self error:&error];
-    NSAssert(self.documentScanPlugin, @"Setup Error: %@", error.debugDescription);
-    self.documentScanPlugin.justDetectCornersIfPossible = NO;
-    [self.documentScanPlugin addInfoDelegate:self];
+//    self.documentScanPlugin = [[ALDocumentScanPlugin alloc] initWithPluginID:@"DOCUMENT" delegate:self error:&error];
+//    NSAssert(self.documentScanPlugin, @"Setup Error: %@", error.debugDescription);
+//    self.documentScanPlugin.justDetectCornersIfPossible = NO;
+//    [self.documentScanPlugin addInfoDelegate:self];
     
-    self.documentScanViewPlugin = [[ALDocumentScanViewPlugin alloc] initWithScanPlugin:self.documentScanPlugin];
-    NSAssert(self.documentScanViewPlugin, @"Setup Error: %@", error.debugDescription);
-    [self.documentScanViewPlugin addScanViewPluginDelegate:self];
+//    self.documentScanViewPlugin = [[ALDocumentScanViewPlugin alloc] initWithScanPlugin:self.documentScanPlugin];
+//    NSAssert(self.documentScanViewPlugin, @"Setup Error: %@", error.debugDescription);
+//    [self.documentScanViewPlugin addScanViewPluginDelegate:self];
     
-    [self.documentScanViewPlugin setValue:self forKey:@"tmpOutlineDelegate"];
-    self.scanView = [[ALScanView alloc] initWithFrame:frame
-                                       scanViewPlugin:self.documentScanViewPlugin
-                                         cameraConfig:[ALCameraConfig defaultDocumentCameraConfig]
-                                    flashButtonConfig:[ALFlashButtonConfig defaultFlashConfig]];
+//    [self.documentScanViewPlugin setValue:self forKey:@"tmpOutlineDelegate"];
+//    self.scanView = [[ALScanView alloc] initWithFrame:frame
+//                                       scanViewPlugin:self.documentScanViewPlugin
+//                                         cameraConfig:[ALCameraConfig defaultDocumentCameraConfig]
+//                                    flashButtonConfig:[ALFlashButtonConfig defaultFlashConfig]];
     
     // Stop scanning after a result has been found
     //    self.documentScanViewPlugin
-    [self.documentScanPlugin setPostProcessingEnabled:YES];
+//    [self.documentScanPlugin setPostProcessingEnabled:YES];
     
     self.controllerType = ALScanHistoryDocument;
-    self.documentScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.documentScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
     
     // After setup is complete we add the scanView to the view of this view controller
     [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -81,97 +81,97 @@
 /*
  This method will be called once the view controller and its subviews have appeared on screen
  */
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self startPlugin:self.documentScanViewPlugin];
-}
+//-(void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    [self startPlugin:self.documentScanViewPlugin];
+//}
 
 /*
  Cancel scanning to allow the module to clean up
  */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.documentScanViewPlugin stopAndReturnError:nil];
-}
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.documentScanViewPlugin stopAndReturnError:nil];
+//}
 
 #pragma mark -- AnylineDocumentModuleDelegate
 
 /*
  This is the main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
-                        hasResult:(UIImage *)transformedImage
-                        fullImage:(UIImage *)fullFrame
-                  documentCorners:(ALSquare *)corners {
-    UIViewController *viewController = [[UIViewController alloc] init];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:viewController.view.bounds];
-    imageView.center = CGPointMake(imageView.center.x, imageView.center.y + 30);
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.image = transformedImage;
-    [viewController.view addSubview:imageView];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
+//                        hasResult:(UIImage *)transformedImage
+//                        fullImage:(UIImage *)fullFrame
+//                  documentCorners:(ALSquare *)corners {
+//    UIViewController *viewController = [[UIViewController alloc] init];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:viewController.view.bounds];
+//    imageView.center = CGPointMake(imageView.center.x, imageView.center.y + 30);
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    imageView.image = transformedImage;
+//    [viewController.view addSubview:imageView];
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 /*
  This method receives errors that occured during the scan.
  */
-- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
-  reportsPictureProcessingFailure:(ALDocumentError)error {
-    [self showUserLabel:error];
-}
+//- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
+//  reportsPictureProcessingFailure:(ALDocumentError)error {
+//    [self showUserLabel:error];
+//}
 
 /*
  This method receives errors that occured during the scan.
  */
-- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
-  reportsPreviewProcessingFailure:(ALDocumentError)error {
-    [self showUserLabel:error];
-}
+//- (void)anylineDocumentScanPlugin:(ALDocumentScanPlugin *)anylineDocumentScanPlugin
+//  reportsPreviewProcessingFailure:(ALDocumentError)error {
+//    [self showUserLabel:error];
+//}
 
 #pragma mark -- Helper Methods
 
 /*
  Shows a little round label at the bottom of the screen to inform the user what happended
  */
-- (void)showUserLabel:(ALDocumentError)error {
-    NSString *helpString = nil;
-    switch (error) {
-        case ALDocumentErrorNotSharp:
-            helpString = @"Document not Sharp";
-            break;
-        case ALDocumentErrorSkewTooHigh:
-            helpString = @"Wrong Perspective";
-            break;
-        case ALDocumentErrorImageTooDark:
-            helpString = @"Too Dark";
-            break;
-        case ALDocumentErrorShakeDetected:
-            helpString = @"Shake detected";
-            break;
-        default:
-            break;
-    }
-    
-    // The error is not in the list above or a label is on screen at the moment
-    if(!helpString || self.showingLabel == 1) {
-        return;
-    }
-    
-    self.showingLabel = 1;
-    self.roundedView.textLabel.text = helpString;
-    
-    
-    // Animate the appearance of the label
-    CGFloat fadeDuration = 0.8;
-    [UIView animateWithDuration:fadeDuration animations:^{
-        self.roundedView.alpha = 1;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:fadeDuration animations:^{
-            self.roundedView.alpha = 0;
-        } completion:^(BOOL finished) {
-            self.showingLabel = 0;
-        }];
-    }];
-}
+//- (void)showUserLabel:(ALDocumentError)error {
+//    NSString *helpString = nil;
+//    switch (error) {
+//        case ALDocumentErrorNotSharp:
+//            helpString = @"Document not Sharp";
+//            break;
+//        case ALDocumentErrorSkewTooHigh:
+//            helpString = @"Wrong Perspective";
+//            break;
+//        case ALDocumentErrorImageTooDark:
+//            helpString = @"Too Dark";
+//            break;
+//        case ALDocumentErrorShakeDetected:
+//            helpString = @"Shake detected";
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    // The error is not in the list above or a label is on screen at the moment
+//    if(!helpString || self.showingLabel == 1) {
+//        return;
+//    }
+//    
+//    self.showingLabel = 1;
+//    self.roundedView.textLabel.text = helpString;
+//    
+//    
+//    // Animate the appearance of the label
+//    CGFloat fadeDuration = 0.8;
+//    [UIView animateWithDuration:fadeDuration animations:^{
+//        self.roundedView.alpha = 1;
+//    } completion:^(BOOL finished) {
+//        [UIView animateWithDuration:fadeDuration animations:^{
+//            self.roundedView.alpha = 0;
+//        } completion:^(BOOL finished) {
+//            self.showingLabel = 0;
+//        }];
+//    }];
+//}
 
 @end

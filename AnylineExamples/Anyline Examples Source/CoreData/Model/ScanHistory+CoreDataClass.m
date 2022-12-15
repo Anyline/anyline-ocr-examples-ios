@@ -38,11 +38,14 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryDrivingLicense] = @"Driving License", // deprecated
     [ALScanHistoryGermanIDFront] = @"German ID Front", // deprecated
     [ALScanHistoryCattleTag] = @"Cattle Tag",
-    [ALScanHistoryTIN] = @"TIN Scanner",
+    [ALScanHistoryTIN] = @"Tire Identification Number",
+    [ALScanHistoryTireSizeConfiguration] = @"Tire Size Configuration",
+    [ALScanHistoryCommercialTireID] = @"Commercial Tire ID",
     [ALScanHistoryNFC] = @"NFC Reader",
     [ALScanHistoryUniversalID] = @"Universal ID",
     [ALScanHistoryBarcodePDF417] = @"PDF 417",
     [ALScanHistoryBottleCapPepsi] = @"Pepsi Code",
+    [ALScanHistoryVehicleRegistrationCertificate] = @"Vehicle Registration Certificate",
 };
 
 @implementation ScanHistory

@@ -17,12 +17,12 @@
 static const NSInteger padding = 7;
 
 // The controller has to conform to <AnylineEnergyModuleDelegate> to be able to receive results
-@interface ALAutoAnalogDigitalMeterScanViewController ()<ALMeterScanPluginDelegate, AnylineNativeBarcodeDelegate>
+@interface ALAutoAnalogDigitalMeterScanViewController () //<ALMeterScanPluginDelegate, AnylineNativeBarcodeDelegate>
 
 // The Anyline plugins used to scan
-@property (nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
-@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
-@property (nullable, nonatomic, strong) ALScanView *scanView;
+//@property (nonatomic, strong) ALMeterScanViewPlugin *meterScanViewPlugin;
+//@property (nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
+//@property (nullable, nonatomic, strong) ALScanView *scanView;
 
 //Native barcode scanning properties
 @property (nonatomic, strong) NSString *barcodeResult;
@@ -47,30 +47,30 @@ static const NSInteger padding = 7;
     
     //Add Meter Scan Plugin (Scan Process)
     NSError *error = nil;
-    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" delegate:self error:&error];
-    NSAssert(self.meterScanPlugin, @"Setup Error: %@", error.debugDescription);
-    
-    //Add Meter Scan View Plugin (Scan UI)
-    self.meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:self.meterScanPlugin];
-    
-    
-    //Set ScanMode to ALAutoAnalogDigitalMeter
-    BOOL success = [self.meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
-    if( !success ) {
-        // Something went wrong. The error object contains the error description
-        __weak __block typeof(self) weakSelf = self;
-        [self showAlertWithTitle:@"Set ScanMode Error"
-                         message:error.debugDescription completion:^{
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }];
-        
-    }
-    
-    //Add ScanView (Camera and Flashbutton)
-    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.meterScanViewPlugin];
-    
-    //Enable Zoom Gesture
-    [self.scanView enableZoomPinchGesture:YES];
+//    self.meterScanPlugin = [[ALMeterScanPlugin alloc] initWithPluginID:@"ENERGY" delegate:self error:&error];
+//    NSAssert(self.meterScanPlugin, @"Setup Error: %@", error.debugDescription);
+//
+//    //Add Meter Scan View Plugin (Scan UI)
+//    self.meterScanViewPlugin = [[ALMeterScanViewPlugin alloc] initWithScanPlugin:self.meterScanPlugin];
+//
+//
+//    //Set ScanMode to ALAutoAnalogDigitalMeter
+//    BOOL success = [self.meterScanPlugin setScanMode:ALAutoAnalogDigitalMeter error:&error];
+//    if( !success ) {
+//        // Something went wrong. The error object contains the error description
+//        __weak __block typeof(self) weakSelf = self;
+//        [self showAlertWithTitle:@"Set ScanMode Error"
+//                         message:error.debugDescription completion:^{
+//            [weakSelf.navigationController popViewControllerAnimated:YES];
+//        }];
+//
+//    }
+//
+//    //Add ScanView (Camera and Flashbutton)
+//    self.scanView = [[ALScanView alloc] initWithFrame:frame scanViewPlugin:self.meterScanViewPlugin];
+//
+//    //Enable Zoom Gesture
+//    [self.scanView enableZoomPinchGesture:YES];
     
     //Adding the scanView
     [self.scanView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -84,7 +84,7 @@ static const NSInteger padding = 7;
     [NSLayoutConstraint activateConstraints:scanViewConstraints];
     [self.scanView startCamera];
     
-    self.meterScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.meterScanViewPlugin.translatesAutoresizingMaskIntoConstraints = NO;
 
     self.controllerType = ALScanHistoryElectricMeter;
 
@@ -97,61 +97,60 @@ static const NSInteger padding = 7;
 /*
  This method will be called once the view controller and its subviews have appeared on screen
  */
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self startPlugin:self.meterScanViewPlugin];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    [self updateLayoutBarcodeSwitchView];
-}
-
-- (void)updateLayoutBarcodeSwitchView {
-    self.enableBarcodeLabel.center = CGPointMake(self.enableBarcodeLabel.frame.size.width/2,
-                                                 self.enableBarcodeView.frame.size.height/2);
-
-    self.enableBarcodeSwitch.center = CGPointMake(self.enableBarcodeLabel.frame.size.width + self.enableBarcodeSwitch.frame.size.width/2 + padding,
-                                                  self.enableBarcodeView.frame.size.height/2);
-
-    CGFloat width = self.enableBarcodeSwitch.frame.size.width + padding + self.enableBarcodeLabel.frame.size.width;
-    self.enableBarcodeView.frame = CGRectMake(self.scanView.frame.size.width-width-15,
-                                              self.scanView.frame.size.height-self.enableBarcodeView.frame.size.height-55,
-                                              width,
-                                              50);
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    [self startPlugin:self.meterScanViewPlugin];
+//}
+//
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    [self updateLayoutBarcodeSwitchView];
+//}
+//
+//- (void)updateLayoutBarcodeSwitchView {
+//    self.enableBarcodeLabel.center = CGPointMake(self.enableBarcodeLabel.frame.size.width/2,
+//                                                 self.enableBarcodeView.frame.size.height/2);
+//
+//    self.enableBarcodeSwitch.center = CGPointMake(self.enableBarcodeLabel.frame.size.width + self.enableBarcodeSwitch.frame.size.width/2 + padding,
+//                                                  self.enableBarcodeView.frame.size.height/2);
+//
+//    CGFloat width = self.enableBarcodeSwitch.frame.size.width + padding + self.enableBarcodeLabel.frame.size.width;
+//    self.enableBarcodeView.frame = CGRectMake(self.scanView.frame.size.width-width-15,
+//                                              self.scanView.frame.size.height-self.enableBarcodeView.frame.size.height-55,
+//                                              width,
+//                                              50);
+//}
 
 /*
  Cancel scanning to allow the module to clean up
  */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.meterScanViewPlugin stopAndReturnError:nil];
-}
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.meterScanViewPlugin stopAndReturnError:nil];
+//}
 
 #pragma mark - IBAction methods
 
 
-- (IBAction)toggleBarcodeScanning:(id)sender {
-    UISwitch * switcher = sender;
-    switcher.enabled = NO;
-    switcher.alpha = 0.5;
-    if (self.scanView.captureDeviceManager.barcodeDelegates.count > 0) {
-        self.enableBarcodeSwitch.on = false;
-        [self.scanView.captureDeviceManager removeBarcodeDelegate:self];
-        //reset found barcode
-        self.barcodeResult = @"";
-    } else {
-        self.enableBarcodeSwitch.on = true;
-        [self.scanView.captureDeviceManager setNativeBarcodeFormats:[self.class nativeBarcodeFormats]];
-        [self.scanView.captureDeviceManager addBarcodeDelegate:self error:nil];
-    }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        switcher.enabled = YES;
-        switcher.alpha = 1;
-    });
-}
+//- (IBAction)toggleBarcodeScanning:(id)sender {
+//    UISwitch * switcher = sender;
+//    switcher.enabled = NO;
+//    switcher.alpha = 0.5;
+//    if (self.scanView.captureDeviceManager.barcodeDelegates.count > 0) {
+//        self.enableBarcodeSwitch.on = false;
+//        [self.scanView.captureDeviceManager removeBarcodeDelegate:self];
+//        //reset found barcode
+//        self.barcodeResult = @"";
+//    } else {
+//        self.enableBarcodeSwitch.on = true;
+//        [self.scanView.captureDeviceManager addBarcodeDelegate:self error:nil];
+//    }
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        switcher.enabled = YES;
+//        switcher.alpha = 1;
+//    });
+//}
 
 #pragma mark - Barcode View layout
 - (UIView *)createBarcodeSwitchView {
@@ -184,54 +183,34 @@ static const NSInteger padding = 7;
 /*
  The main delegate method Anyline uses to report its scanned codes
  */
-- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *)anylineMeterScanPlugin
-                 didFindResult:(ALMeterResult *)scanResult {
-    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:scanResult.result]];
-    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
-    NSString *jsonString = [self jsonStringFromResultData:resultData];
-    [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
-        ALResultViewController *vc = [[ALResultViewController alloc]
-                                      initWithResults:resultData];
-        vc.imagePrimary = scanResult.image;
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-    
-    //reset found barcodes
-    self.barcodeResult = @"";
-}
+//- (void)anylineMeterScanPlugin:(ALMeterScanPlugin *)anylineMeterScanPlugin
+//                 didFindResult:(ALMeterResult *)scanResult {
+//    NSMutableArray <ALResultEntry*> *resultData = [[NSMutableArray alloc] init];
+//    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Meter Reading" value:scanResult.result]];
+//    [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode" value:self.barcodeResult shouldSpellOutValue:YES]];
+//    NSString *jsonString = [self JSONStringFromResultData:resultData];
+//    [self anylineDidFindResult:jsonString barcodeResult:self.barcodeResult image:(UIImage*)scanResult.image scanPlugin:anylineMeterScanPlugin viewPlugin:self.meterScanViewPlugin  completion:^{
+//        ALResultViewController *vc = [[ALResultViewController alloc]
+//                                      initWithResults:resultData];
+//        vc.imagePrimary = scanResult.image;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }];
+//
+//    //reset found barcodes
+//    self.barcodeResult = @"";
+//}
 
-#pragma mark - AnylineNativeBarcodeDelegate methods
+//#pragma mark - AnylineNativeBarcodeDelegate methods
 /*
  An additional delegate which will add all found, and unique, barcodes to a Dictionary simultaneously.
  */
-- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if ([scanResult length] > 0 && ![self.barcodeResult isEqualToString:scanResult]) {
-            self.barcodeResult = scanResult;
-        }
-    });
-}
+//- (void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        if ([scanResult length] > 0 && ![self.barcodeResult isEqualToString:scanResult]) {
+//            self.barcodeResult = scanResult;
+//        }
+//    });
+//}
 
-
-#pragma mark - List of (native) barcode formats to support
-
-+ (NSArray *)nativeBarcodeFormats {
-    return @[
-        AVMetadataObjectTypeAztecCode,
-        AVMetadataObjectTypeCode128Code,
-        AVMetadataObjectTypeCode39Code,
-        AVMetadataObjectTypeCode39Mod43Code,
-        AVMetadataObjectTypeCode93Code,
-        AVMetadataObjectTypeDataMatrixCode,
-        AVMetadataObjectTypeEAN13Code,
-        AVMetadataObjectTypeEAN8Code,
-        AVMetadataObjectTypeITF14Code,
-        AVMetadataObjectTypeInterleaved2of5Code,
-        AVMetadataObjectTypePDF417Code,
-        AVMetadataObjectTypeQRCode,
-        AVMetadataObjectTypeUPCECode,
-    ];
-}
 
 @end

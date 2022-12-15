@@ -7,6 +7,7 @@
 //
 
 #import "ALBaseGridCollectionViewController.h"
+#import <Anyline/Anyline.h>
 #import "ALGridCollectionViewCell.h"
 #import "ALMeterCollectionViewController.h"
 #import "ALGridCollectionViewController.h"
@@ -19,7 +20,8 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "ALHeaderCollectionReusableView.h"
-#import "ALUniversalIDScanViewControllerFrontAndBack.h"
+#import "ALUniversalIDScanViewController.h"
+#import "ALLicensePlateScanViewController.h"
 
 NSString * const reuseIdentifier = @"gridCell";
 NSString * const viewControllerIdentifier = @"gridViewController";
@@ -272,8 +274,12 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 #pragma mark - Utility Methods
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return [self headerSize];
+                  layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    if ([self.exampleManager numberOfSections] > 1) {
+        return [self headerSize];
+    } else {
+        return CGSizeZero;
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView

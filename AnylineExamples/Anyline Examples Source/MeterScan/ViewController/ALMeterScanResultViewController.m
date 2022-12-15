@@ -63,22 +63,21 @@ NSString * const fontName = @"Avenir Next";
     
     NSString *unit = @"";
     
-    switch (self.scanMode) {
-        case ALDigitalMeter:
-        case ALAutoAnalogDigitalMeter:
-        case ALDigitalMeter2Experimental:
-            unit = @"kWh";
-            break;
-        case ALHeatMeter4:
-        case ALHeatMeter5:
-        case ALHeatMeter6:
-        case ALAnalogMeter:
-            unit = @"m\u00B3";
-            break;
-        default:
-            unit = @"";
-            break;
-    }
+//    switch (self.scanMode) {
+//        case ALDigitalMeter:
+//        case ALAutoAnalogDigitalMeter:
+//            unit = @"kWh";
+//            break;
+//        case ALHeatMeter4:
+//        case ALHeatMeter5:
+//        case ALHeatMeter6:
+//        case ALAnalogMeter:
+//            unit = @"m\u00B3";
+//            break;
+//        default:
+//            unit = @"";
+//            break;
+//    }
     self.unitLabel.text = unit;
     
     if (![self.barcodeResult isEqualToString:@""] && self.barcodeResult.length > 0) {

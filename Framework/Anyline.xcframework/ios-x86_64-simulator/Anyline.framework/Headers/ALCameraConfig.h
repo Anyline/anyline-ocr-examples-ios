@@ -1,60 +1,82 @@
-//
-//  ALCameraConfig.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 05.04.18.
-//  Copyright © 2018 9Yards GmbH. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "ALJSONUtilities.h"
 
-#import <Foundation/Foundation.h>
-#import "ALViewConstants.h"
+/// Picture resolution for ALCameraConfig
+typedef NS_ENUM(NSUInteger, ALPictureResolution) {
 
-@interface ALCameraConfig : NSObject
+    /// none specified
+    ALPictureResolutionNone=0,
 
-// Default Camera: Can be FRONT or BACK
-@property (nullable, nonatomic, strong) NSString *defaultCamera;
-@property (nonatomic, assign) ALCaptureViewResolution captureResolution;
-@property (nonatomic, assign) ALPictureResolution pictureResolution;
+    /// the highest resolution possible
+    ALPictureResolutionHighest=1,
 
-@property (nonatomic, assign) BOOL zoomGesture; //Default: false
+    /// 1080p
+    ALPictureResolution1080=2,
 
+    /// 720p
+    ALPictureResolution720=3,
 
+    /// 480p
+    ALPictureResolution480=4,
+};
 
+/**
+ *  Capture resolution for ALCameraConfig. Only ALCaptureViewResolution1080 is supported.
+ */
+typedef NS_ENUM(NSUInteger, ALCaptureViewResolution) {
+    /**
+     *  1080p resolution
+     */
+    ALCaptureViewResolution1080=0,
+    /**
+     *  @deprecated since Anyline 3.22. Use ALCaptureViewResolution1080 instead
+     */
+    ALCaptureViewResolution720 DEPRECATED_ATTRIBUTE = 1,
+    /**
+     *  @deprecated since Anyline 3.22. Use ALCaptureViewResolution1080 instead
+     */
+    ALCaptureViewResolution480 DEPRECATED_ATTRIBUTE = 2
+};
 
-+ (_Nullable instancetype)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+NS_ASSUME_NONNULL_BEGIN
 
-- (_Nullable instancetype)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+/// An object that configures the scan view camera
+@interface ALCameraConfig : NSObject <ALJSONStringRepresentable>
 
-- (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+/// Camera to be used for scanning. Could be "FRONT" or "BACK"
+@property (nonatomic, readonly, nullable) NSString *defaultCamera;
 
-- (instancetype _Nullable)initWithDefaultCamera:(NSString *_Nonnull)defaultCamera
-                              captureResolution:(ALCaptureViewResolution)captureResolution
-                              pictureResolution:(ALPictureResolution)pictureResolution;
+/// Resolution in which the camera operates. Currently only 1080p is supported.
+@property (nonatomic, readonly) ALCaptureViewResolution captureResolution;
 
-- (instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera
-                              captureResolution:(ALCaptureViewResolution)captureResolution
-                              pictureResolution:(ALPictureResolution)pictureResolution
-                                    zoomGesture:(BOOL)zoomGesture
-                                      zoomRatio:(CGFloat)zoomRatio //Default: 0 => will not be used
-                                   maxZoomRatio:(CGFloat)maxZoomRatio; //Default: 0 => will not be used
+/// Picture resolution in which the camera operates. Currently only 1080p is supported.
+@property (nonatomic, readonly) ALPictureResolution pictureResolution;
 
-- (instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera
-                              captureResolution:(ALCaptureViewResolution)captureResolution
-                              pictureResolution:(ALPictureResolution)pictureResolution
-                                    zoomGesture:(BOOL)zoomGesture
-                                    focalLength:(CGFloat)focalLength //Default: 0 => will not be used
-                                 maxFocalLength:(CGFloat)maxFocalLength; //Default: 0 => will not be used
+/// Camera focal length (default: 1)
+@property (nonatomic, readonly) CGFloat zoomFactor;
 
+/// Camera max focal length. Default: 0 => Device maxAvailableVideoZoom
+@property (nonatomic, readonly) CGFloat maxZoomFactor;
+
+/// Determines whether the pinch-to-zoom gesture is enabled. Defaults to false
+@property (nonatomic, readonly) BOOL zoomGesture;
+
+/// Initializes an ALCameraConfig with an NSDictionary representing the JSON config object
+/// @param JSONDictionary NSDictionary representing the JSON config object
+/// @param error NSError object which is filled with appropriate information when initialization fails
+/// @return an instance of ALCameraConfig
+- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary
+                                           error:(NSError * _Nullable * _Nullable)error;
+
+/// Creates an ALCameraConfig with an NSDictionary representing the JSON config object
+/// @param JSONDictionary NSDictionary representing the JSON config object
+/// @return an instance of ALCameraConfig
++ (instancetype _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary;
+
+/// Creates an ALCameraConfig with default values, suitable for further custimization
+/// @return an instance of ALCameraConfig
 + (instancetype _Nullable)defaultCameraConfig;
 
-+ (instancetype _Nullable)defaultDocumentCameraConfig;
-
-- (void)setFocalLength:(CGFloat)focalLength;    //Default: 0 => will not be used
-- (void)setZoomRatio:(CGFloat)ratio;    //Default: 0 => will not be used
-- (void)setMaxZoomRatio:(CGFloat)maxZoomRatio;  //Default: 0 => will not be used
-- (void)setMaxFocalLength:(CGFloat)maxFocalLength;  //Default: 0 => will not be used
-
-- (CGFloat)maxZoomFactor;
-- (CGFloat)zoomFactor;
-
 @end
+
+NS_ASSUME_NONNULL_END

@@ -21,7 +21,23 @@ The result fields above display a selection of scannable ID information only. Pl
     }
 
     // the keys can be used as titles for section headers, we choose not to display them
+    @objc
     var resultData: [String: [ALResultEntry]] = [:]
+
+    @objc
+    var resultList: [ALResultEntry] {
+        get {
+            // Constants.defaultSectionTitle or first
+            var key: String! = Constants.defaultSectionTitle
+            if !resultData.keys.contains(Constants.defaultSectionTitle) {
+                key = resultData.keys.first
+            }
+            return resultData[key] ?? []
+        }
+        set {
+            resultData[Constants.defaultSectionTitle] = newValue
+        }
+    }
 
     @objc
     var imageFace: UIImage?
@@ -110,6 +126,10 @@ The result fields above display a selection of scannable ID information only. Pl
     @objc
     func confirmAction(_ button: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     @objc

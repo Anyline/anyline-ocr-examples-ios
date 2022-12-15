@@ -1,0 +1,1292 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PluginConfig",    
+    "description": "General configuration for scan plugins",
+	"type": "object",
+    "allOf": [
+        {
+            "required": [
+                "id"
+            ]
+        },
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "barcodeConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "meterConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "universalIdConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "mrzConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "japaneseLandingPermissionConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "vehicleRegistrationCertificateConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "licensePlateConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "tinConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "tireSizeConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "commercialTireIdConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "vinConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "containerConfig"
+                    ]
+                },
+                {
+                    "required": [
+                        "ocrConfig"
+                    ]
+                }
+            ]
+        }
+    ],
+    "properties": {
+        "id": {
+            "description": "Sets a name for the scan plugin.",
+            "type": "string"
+        },
+        "cancelOnResult": {
+            "type": "boolean",
+            "default": true,
+            "description": "Sets whether or not to continue scanning once a result is found."
+        },
+        "startScanDelay": {
+            "description": "Sets an initial time period where scanned frames are not processed as results.",
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 1000000
+        },
+		"startVariables": {
+			"type": "array",
+			"description": "Allows to fine-tune a list of options for plugins.",
+			"items": {
+				"$ref": "#/definitions/startVariable"
+			}
+		},
+        "barcodeConfig": {
+            "$ref": "#/definitions/barcodeConfig"
+        },
+        "meterConfig": {
+            "$ref": "#/definitions/meterConfig"
+        },
+        "universalIdConfig": {
+            "$ref": "#/definitions/universalIdConfig"
+        },
+        "mrzConfig": {
+            "$ref": "#/definitions/mrzConfig"
+        },
+        "japaneseLandingPermissionConfig": {
+			"$ref": "#/definitions/japaneseLandingPermissionConfig"
+        },
+        "vehicleRegistrationCertificateConfig": {
+            "$ref": "#/definitions/vehicleRegistrationCertificateConfig"
+        },
+        "licensePlateConfig": {
+            "$ref": "#/definitions/licensePlateConfig"
+        },
+        "tinConfig": {
+            "$ref": "#/definitions/tinConfig"
+        },
+        "tireSizeConfig": {
+            "$ref": "#/definitions/tireSizeConfig"
+        },
+        "commercialTireIdConfig": {
+            "$ref": "#/definitions/commercialTireIdConfig"
+        },
+        "vinConfig": {
+            "$ref": "#/definitions/vinConfig"
+        },
+        "containerConfig": {
+            "$ref": "#/definitions/containerConfig"
+        },
+        "ocrConfig": {
+            "$ref": "#/definitions/ocrConfig"
+        }
+    },
+    "definitions": {
+		"startVariable": {
+			"type": "object",
+			"description": "Describes a start variable for fine-tuning plugins.", 
+			"properties": {
+				"key": {
+					"type": "string",
+					"description": "The key of the variable."
+				},
+				"value": {
+					"type": ["string", "number", "integer", "boolean"],
+					"description": "The value of the variable."
+				}
+			},
+			"required": ["key", "value"],
+			"additionalProperties": false			
+		},
+		"ocrConfig": {
+			"description": "Configuration for general OCR scanning use-cases",
+			"type": "object",
+			"properties":
+			{
+				"scanMode": {
+					"type":"string",
+					"enum": ["line", "grid", "auto"],
+					"default": "auto",
+					"description": "Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds text automatically."
+				},
+				"model": { 
+					"type": "string",
+					"description": "Sets a custom Anyline model. The file has to be located in the project and point to a path relative from the project root."
+				},
+				"customCmdFile": { 
+					"type": "string",
+					"description": "Sets a custom Anyline script. The file has to be located in the project and point to a path relative from the project root."
+				},
+				"minSharpness": {
+					"type": "integer",
+					"description": "Sets a sharpnes factor (0-100) to rule out blurry images."
+				},
+				"charCountX": { 
+					"type": "integer",
+					"description": "Sets the number of characters in each text line for 'grid' mode."
+				},
+				"charCountY": { 
+					"type": "integer",
+					"description": "Sets the number of text lines for 'grid' mode."
+				},
+				"charPaddingXFactor": {
+					"type": "number",
+					"description": "Defines the average horizontal distance between two characters in 'grid' mode, measured in percentage of the characters width."
+				},
+				"charPaddingYFactor": {
+					"type": "number",
+					"description": "Defines the average vertical distance between two characters in 'grid' mode, measured in percentage of the characters height."
+				},
+				"minConfidence": { 
+					"type": "integer",
+					"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+				},
+				"minCharHeight": { 
+					"type": "integer",
+					"description" : "Sets a minimum character height (in pixels) to be considered in the scanning process."
+				},
+				"maxCharHeight": { 
+					"type": "integer",
+					"description" : "Sets a maximum character height (in pixels) to be considered in the scanning process."
+				},
+				"validationRegex": {
+					"type": "string",
+					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+				},
+				"charWhitelist": {
+					"type": "string",
+					"description" : "Restricts the scanner to a set of characters to be detected."
+				}
+			},
+			"dependencies": {
+				"minSharpness": { 
+					"properties" : {
+						"scanMode": {
+							"enum": ["line"]
+						}
+					}
+				},
+				"charCountX": { 
+					"properties" : {
+						"scanMode": {
+							"enum": ["grid"]
+						}
+					}
+				},
+				"charCountY": { 
+					"properties" : {
+						"scanMode": {
+							"enum": ["grid"]
+						}
+					}
+				},
+				"charPaddingXFactor": { 
+					"properties" : {
+						"scanMode": {
+							"enum": ["grid"]
+						}
+					}
+				},
+				"charPaddingYFactor": { 
+					"properties" : {
+						"scanMode": {
+							"enum": ["grid"]
+						}
+					}
+				}
+			},
+			"additionalProperties": false			
+		},
+		"containerConfig": {
+			"description": "Configuration for scanning shipping container numbers",
+			"type": "object",
+			"properties": {
+				"scanMode": {
+					"type":"string",
+					"description": "Determines if container numbers shall be scanned horizontally or vertically.",
+					"enum": ["HORIZONTAL", "VERTICAL"],
+					"default": "HORIZONTAL"
+				},
+				"minConfidence": {			
+					"type": "integer",
+					"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+				},
+				"validationRegex": {
+					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result.",
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"vinConfig": {
+			"description": "Configuration for scanning vehicle identification numbers (VIN)",
+			"type": "object",
+			"properties": {
+				"validationRegex": {
+					"type": "string",
+					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+				},
+				"charWhitelist": {
+					"type": "string",
+					"description" : "Restricts the scanner to a set of characters to be detected."
+				}
+			},
+			"additionalProperties": false
+		},
+		"commercialTireIdConfig": {
+			"description": "Configuration for scanning commercial Tire IDs",
+			"type": "object",
+			"properties": {
+			  "upsideDownMode": {
+				  "description" : "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+				  "type":"string",
+				  "enum": ["DISABLED", "ENABLED", "AUTO"],
+				  "default": "DISABLED"
+			  },
+			  "minConfidence": {
+				"type":"integer",
+				"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+			  }
+			},
+			"additionalProperties": false
+		},
+        "tireSizeConfig": {
+            "description": "Configuration for scanning Tire Size Specifications",
+            "type": "object",
+            "properties": {
+                "upsideDownMode": {
+                    "type": "string",
+                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "enum": [
+                        "DISABLED",
+                        "ENABLED",
+                        "AUTO"
+                    ],
+                    "default": "DISABLED"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
+        "tinConfig": {
+            "description": "Configuration for scanning TIN numbers",
+            "type": "object",
+            "properties": {
+                "scanMode": {
+                    "type": "string",
+                    "description": "Sets the mode to scan universal TIN numbers ('UNIVERSAL'), TIN numbers of any length starting with DOT ('DOT') or fixed-length TIN numbers ('DOT_STRICT').",
+                    "enum": [
+                        "UNIVERSAL",
+                        "DOT",
+                        "DOT_STRICT"
+                    ],
+                    "default": "UNIVERSAL"
+                },
+                "upsideDownMode": {
+                    "type": "string",
+                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "enum": [
+                        "DISABLED",
+                        "ENABLED",
+                        "AUTO"
+                    ],
+                    "default": "DISABLED"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
+        "licensePlateConfig": {
+            "description": "Configuration for scanning license plates",
+            "type": "object",
+            "properties": {
+                "scanMode": {
+                    "description": "Specifies a country or location of which license plates shall be scanned.",
+                    "type": "string",
+                    "enum": [
+                        "auto",
+                        "austria",
+                        "unitedkingdom",
+                        "ireland",
+                        "poland",
+                        "norway",
+                        "norwayspecial",
+                        "germany",
+                        "czech",
+                        "finland",
+                        "france",
+                        "croatia",
+                        "slovakia",
+                        "slovenia",
+                        "albania",
+                        "andorra",
+                        "armenia",
+                        "azerbaijan",
+                        "belarus",
+                        "belgium",
+                        "bosniaandherzegovina",
+                        "bulgaria",
+                        "cyprus",
+                        "denmark",
+                        "estonia",
+                        "georgia",
+                        "greece",
+                        "hungary",
+                        "iceland",
+                        "italy",
+                        "latvia",
+                        "liechtenstein",
+                        "lithuania",
+                        "luxembourg",
+                        "malta",
+                        "moldova",
+                        "monaco",
+                        "montenegro",
+                        "netherlands",
+                        "northmacedonia",
+                        "portugal",
+                        "romania",
+                        "russia",
+                        "serbia",
+                        "spain",
+                        "sweden",
+                        "switzerland",
+                        "turkey",
+                        "ukraine",
+                        "unitedstates",
+                        "africa"
+                    ],
+                    "default": "auto"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result.",
+                    "default": 0
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
+        "barcodeConfig": {
+            "description": "Configuration for scanning barcodes",
+            "type": "object",
+            "properties": {
+                "multiBarcode": {
+                    "type": "boolean",
+                    "description": "Setting this to 'true' will enable reading multiple barcodes per frame.",
+                    "default": false
+                },
+				"parseAAMVA": {
+					"type": "boolean",
+					"description": "If this option is set, barcodes parsed according to the AAMVA standard. This only works for PDF417 codes on driving licenses.",
+					"default": false
+				},
+				"consecutiveEqualResults": {
+					"type": "boolean",
+					"description": "If this option is set, allows consecutive barcode results of the same barcode when scanning continuously.",
+					"default": false
+				},
+                "barcodeFormats": {
+                    "type": "array",
+                    "description": "Set this to filter which barcode formats should be scanned. Setting 'ALL' will enable scanning all supported formats.",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "ALL",
+                            "ONE_D_INVERSE",
+                            "AZTEC",
+                            "AZTEC_INVERSE",
+                            "BOOKLAND",
+                            "CODABAR",
+                            "CODE_11",
+                            "CODE_32",
+                            "CODE_39",
+                            "CODE_93",
+                            "CODE_128",
+                            "DATABAR",
+                            "COUPON",
+                            "DATA_MATRIX",
+                            "DISCRETE_2_5",
+                            "DOT_CODE",
+                            "EAN_8",
+                            "EAN_13",
+                            "GS1_QR_CODE",
+                            "GS1_128",
+                            "ITF",
+                            "ISSN_EAN",
+                            "ISBT_128",
+                            "KIX",
+                            "MATRIX_2_5",
+                            "MSI",
+                            "MICRO_QR",
+                            "MICRO_PDF",
+                            "PDF_417",
+                            "POST_UK",
+                            "QR_CODE",
+                            "QR_INVERSE",
+                            "RSS_14",
+                            "RSS_EXPANDED",
+                            "TRIOPTIC",
+                            "UPC_A",
+                            "UPC_E",
+                            "UPC_EAN_EXTENSION",
+                            "UPU_FICS",
+                            "USPS_4CB",
+                            "US_PLANET",
+                            "US_POSTNET",
+                            "MAXICODE"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "barcodeFormats"
+            ],
+            "additionalProperties": false
+        },
+        "meterConfig": {
+            "description": "Configuration for scanning meters",
+            "type": "object",
+            "required": [
+                "scanMode"
+            ],
+            "properties": {
+                "scanMode": {
+                    "type": "string",
+                    "description": "Determines which types of meters to scan.",
+                    "enum": [
+                        "auto_analog_digital_meter",
+                        "dial_meter",
+                        "multi_field_digital_meter",
+						"digital_meter_2_experimental"
+                    ],
+                    "default": "auto_analog_digital_meter"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
+        "allowedLayout": {
+            "description": "Sets a set of layouts to be included by the scanner. If none are set, every supported layout is included.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "([A-Z]{2}(-[A-Z]{2,3})?_[A-Z]{3}_[A-Z]+_[A-Z0-9]+(-[A-Z0-9]+)*_(F|B)(_v[0-9])?)"
+            }
+        },
+        "layoutMRZ": {
+            "title": "layoutMrz",
+            "description": "Contains all the supported field scan options for MRZ.",
+            "type": "object",
+            "properties": {
+                "vizAddress": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "vizDateOfIssue": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "vizSurname": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "vizGivenNames": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "vizDateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "vizDateOfExpiry": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfExpiry": {
+                    "$ref": "#/definitions/universalIdField"
+                }
+            },
+            "additionalProperties": false
+        },
+        "layoutDrivingLicense": {
+            "description": "Contains all the supported field scan options for driving licenses.",
+            "type": "object",
+            "properties": {
+                "additionalInformation": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "additionalInformation1": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "address": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "audit": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "authority": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "cardNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "categories": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "conditions": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfExpiry": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfIssue": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "documentDiscriminator": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "documentNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "duplicate": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "duration": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "endorsements": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "eyes": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "firstIssued": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "firstName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "fullName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "givenNames": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "hair": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "height": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "licenceNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "licenseClass": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "licenseNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "name": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "office": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "parish": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "personalNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "placeOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "previousType": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "restrictions": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "revoked": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "sex": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "surname": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "type": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "version": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "verticalNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "weight": {
+                    "$ref": "#/definitions/universalIdField"
+                }
+            },
+            "additionalProperties": false
+        },
+        "layoutIdFront": {
+            "description": "Contains all the supported field scan options for ID front cards.",
+            "type": "object",
+            "properties": {
+                "additionalInformation": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "additionalInformation1": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "address": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "age": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "authority": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "cardAccessNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "citizenship": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "cityNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfExpiry": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfIssue": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfRegistration": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "divisionNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "documentNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "familyName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "fathersName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "firstName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "folio": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "fullName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "givenNames": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "height": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "licenseClass": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "licenseType": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "municipalityNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "nationalId": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "nationality": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "parentsGivenName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "personalNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "placeAndDateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "placeOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "sex": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "stateNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "supportNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "surname": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "voterId": {
+                    "$ref": "#/definitions/universalIdField"
+                }
+            },
+            "additionalProperties": false
+        },
+        "layoutInsuranceCard": {
+            "description": "Contains all the supported field scan options for insurance cards.",
+            "type": "object",
+            "properties": {
+                "authority": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfBirth": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "dateOfExpiry": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "documentNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "nationality": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "personalNumber": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/universalIdField"
+                },
+				"firstName": {
+                    "$ref": "#/definitions/universalIdField"
+                }
+            },
+            "additionalProperties": false
+        },
+        "universalIdField": {
+            "type": "object",
+            "description": "Configures scanning options for ID fields in order to fine-tune the ID scanner.",
+            "properties": {
+                "scanOption": {
+                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                },
+                "minConfidence": {
+                    "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                }
+            },
+            "additionalProperties": false
+        },
+        "universalIdConfig": {
+            "description": "Configuration for scanning all kinds of identification documents",
+            "type": "object",
+            "properties": {
+                "alphabet": {
+                    "description": "Sets a specific character set. Per default, only latin characters are processed.",
+                    "type": "string",
+                    "enum": [
+                        "latin",
+                        "arabic",
+                        "cyrillic"
+                    ],
+                    "default": "latin"
+                },
+                "allowedLayouts": {
+                    "type": "object",
+                    "description": "Specifies the document types to be scanned and optionally further specifies which types of layout are scanned per type.",
+                    "properties": {
+                        "mrz": {
+                            "$ref": "#/definitions/allowedLayout"
+                        },
+                        "drivingLicense": {
+                            "$ref": "#/definitions/allowedLayout"
+                        },
+                        "idFront": {
+                            "$ref": "#/definitions/allowedLayout"
+                        },
+                        "insuranceCard": {
+                            "$ref": "#/definitions/allowedLayout"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "mrz": {
+                    "$ref": "#/definitions/layoutMRZ"
+                },
+                "drivingLicense": {
+                    "$ref": "#/definitions/layoutDrivingLicense"
+                },
+                "idFront": {
+                    "$ref": "#/definitions/layoutIdFront"
+                },
+                "insuranceCard": {
+                    "$ref": "#/definitions/layoutInsuranceCard"
+                }
+            },
+            "dependencies": {
+                "mrz": {
+                    "properties": {
+                        "allowedLayouts": {
+                            "required": [
+                                "mrz"
+                            ]
+                        }
+                    }
+                },
+                "drivingLicense": {
+                    "properties": {
+                        "allowedLayouts": {
+                            "required": [
+                                "drivingLicense"
+                            ]
+                        }
+                    }
+                },
+                "idFront": {
+                    "properties": {
+                        "allowedLayouts": {
+                            "required": [
+                                "idFront"
+                            ]
+                        }
+                    }
+                },
+                "insuranceCard": {
+                    "properties": {
+                        "allowedLayouts": {
+                            "required": [
+                                "insuranceCard"
+                            ]
+                        }
+                    }
+                }
+            },            
+            "additionalProperties": false
+        },
+        "mrzScanOption": {
+            "type": "string",
+            "description": "The mrzScanOption determines whether a field is considered optional, mandatory, disabled or follows a default behavior.",
+            "enum": [
+                "mandatory",
+                "optional",
+                "disabled",
+                "default"
+            ]
+        },
+        "minConfidenceField": {
+            "type": "integer",
+            "description": "The minimum field confidence determines the minimum confidence a field text needs to reach in order to be taken into account.",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "mrzConfig": {
+            "description": "Configuration for scanning machine-readable zones (MRZ) of passports and other IDs",
+            "type": "object",
+            "properties": {
+                "mrzFieldScanOptions": {
+                    "type": "object",
+                    "description": "The fieldmrzScanOptions configure which text fields shall be captured mandatory, optional or not at all.",
+                    "properties": {
+                        "surname": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "givenNames": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "dateOfBirth": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "dateOfExpiry": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "documentNumber": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "documentType": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "issuingCountryCode": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "nationalityCountryCode": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "sex": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "personalNumber": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "optionalData": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "mrzString": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "checkDigitDateOfExpiry": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "checkDigitDocumentNumber": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "checkDigitPersonalNumber": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "checkDigitDateOfBirth": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "checkDigitFinal": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizAddress": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizDateOfIssue": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizSurname": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizGivenNames": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizDateOfBirth": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        },
+                        "vizDateOfExpiry": {
+                            "$ref": "#/definitions/mrzScanOption"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "mrzMinFieldConfidences": {
+                    "type": "object",
+                    "description": "The minFieldConfidences configure which fields must reach which confidence thresholds in order to be part of the scan result.",
+                    "properties": {
+                        "surname": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "givenNames": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "dateOfBirth": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "dateOfExpiry": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "documentNumber": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "documentType": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "issuingCountryCode": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "nationalityCountryCode": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "sex": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "personalNumber": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "optionalData": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "mrzString": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "checkDigitDateOfExpiry": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "checkDigitDocumentNumber": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "checkDigitPersonalNumber": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "checkDigitDateOfBirth": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "checkDigitFinal": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizAddress": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizDateOfIssue": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizSurname": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizGivenNames": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizDateOfBirth": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        },
+                        "vizDateOfExpiry": {
+                            "$ref": "#/definitions/minConfidenceField"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "strictMode": {
+                    "type": "boolean",
+                    "description": "The strictMode determines whether or not the MRZ must follow the ICAO standard.",
+                    "default": false
+                },
+                "cropAndTransformID": {
+                    "type": "boolean",
+                    "description": "The cropAndTransformID determines whether or not the image shall be cropped and transformed.",
+                    "default": false
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result.",
+                    "default": 60,
+                    "minimum": 0,
+                    "maximum": 100
+                }
+            },
+            "required": [
+                "strictMode",
+                "cropAndTransformID"
+            ],
+            "additionalProperties": false
+        },
+        "layoutVehicleRegistrationCertificate": {
+            "description": "Contains all the supported field scan options for vehicle registration certificates.",
+            "type": "object",
+            "properties": {
+                "documentNumber": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The DocumentNumber Field"
+                },
+                "licensePlate": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The LicensePlate Field"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The LastName Field"
+                },
+                "firstName": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The FirstName Field"
+                },
+                "address": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The Address Field"
+                },
+                "firstIssued": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The FirstIssued Field"
+                },
+                "manufacturerCode": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The ManufacturerCode Field"
+                },
+                "vehicleTypeCode": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The VehicleTypeCode Field"
+                },
+                "vehicleIdentificationNumber": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The VehicleIdentificationNumber Field"
+                },
+                "brand": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The Brand Field"
+                },
+                "vehicleType": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The VehicleType Field"
+                },
+                "displacement": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The Displacement Field"
+                },
+                "tire": {
+                    "$ref": "#/definitions/vehicleRegistrationCertificateField",
+                    "description": "The Tire Field"
+                }
+            },
+            "additionalProperties": false
+        },
+        "vehicleRegistrationCertificateField": {
+            "type": "object",
+            "description": "Configures scanning options per field",
+            "properties": {
+                "scanOption": {
+                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                },
+                "minConfidence": {
+                    "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                }
+            },
+            "additionalProperties": false
+        },
+        "vehicleRegistrationCertificateConfig": {
+            "description": "Configuration for scanning Vehicle Registration Certificates",
+            "type": "object",
+            "properties": {
+                "vehicleRegistrationCertificate": {
+                    "$ref": "#/definitions/layoutVehicleRegistrationCertificate"
+                }
+            },
+            "additionalProperties": false
+        },
+		"japaneseLandingPermissionConfig": {        
+			"description": "Configuration for scanning japanese landing permission tickets",
+            "type": "object",
+			"properties": {
+				"dateOfIssue": {
+					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+				},
+				"dateOfExpiry": {
+					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+				},
+				"status": {
+					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+				},
+				"duration": {
+					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+				},
+				"airport": {
+					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+				}
+			}
+        },
+		"japaneseLandingPermissionConfigFieldOption": {
+            "type": "object",
+			"description": "Field option for JLP fields",
+			"properties": {
+				"scanOption": {			
+					"description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
+					"type": "integer"
+				},
+				"minConfidence": {
+					"description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
+					"type": "integer"
+				}
+			}	
+        }
+    },
+    "additionalProperties": false
+}

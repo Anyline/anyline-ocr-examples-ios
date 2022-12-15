@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -54,25 +56,23 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/allowedLayouts">allowedLayouts</option>
+		
 		<option value="//api/name/alphabet">alphabet</option>
 		
+		<option value="//api/name/drivingLicense">drivingLicense</option>
+		
+		<option value="//api/name/insuranceCard">insuranceCard</option>
+		
+		<option value="//api/name/mrz">mrz</option>
+		
+		<option value="//api/name/theIDFront">theIDFront</option>
+		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/allowedLayoutsDictionary">- allowedLayoutsDictionary</option>
-		
-		<option value="//api/name/getAllowedLayoutsForLayoutType:">- getAllowedLayoutsForLayoutType:</option>
-		
-		<option value="//api/name/setAllowedLayouts:forLayoutType:">- setAllowedLayouts:forLayoutType:</option>
-		
-		<option value="//api/name/toStartVariableJsonDictionary">- toStartVariableJsonDictionary</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -93,15 +93,23 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALIDConfig.html">ALIDConfig</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALUniversalIDConfig.h</td>
+	<td>ALPluginConfig.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Configuration for scanning all kinds of identification documents</p>
+					</div>
+					
+					
 
 					
 					
@@ -114,6 +122,48 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/allowedLayouts" title="allowedLayouts"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowedLayouts">&nbsp;&nbsp;allowedLayouts</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies the document types to be scanned and optionally further specifies which types
+of layout are scanned per type.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALAllowedLayouts *allowedLayouts</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/alphabet" title="alphabet"></a>
 	<h3 class="method-title"><code><a href="#//api/name/alphabet">&nbsp;&nbsp;alphabet</a></code>
 </h3>
@@ -125,14 +175,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Describes the script to be used by the scan view plugin
-(&ldquo;latin&rdquo;, &ldquo;arabic&rdquo;, or &ldquo;cyrillic&rdquo; supported currently).
-Can only be set during initialization by JSON dictionary.</p>
+				<p>Sets a specific character set. Per default, only latin characters are processed.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *alphabet</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, assign) ALAlphabet *alphabet</code></div>
 
 		    
 			
@@ -150,15 +198,15 @@ Can only be set during initialization by JSON dictionary.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALUniversalIDConfig.h</code></p>
+				<p><code class="declared-in-ref">ALPluginConfig.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/toStartVariableJsonDictionary" title="toStartVariableJsonDictionary"></a>
-	<h3 class="method-title"><code><a href="#//api/name/toStartVariableJsonDictionary">&ndash;&nbsp;toStartVariableJsonDictionary</a></code>
+	<a name="//api/name/drivingLicense" title="drivingLicense"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drivingLicense">&nbsp;&nbsp;drivingLicense</a></code>
 </h3>
 
 	<div class="method-info">
@@ -167,14 +215,14 @@ Can only be set during initialization by JSON dictionary.</p>
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nonnull)toStartVariableJsonDictionary</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALLayoutDrivingLicense *drivingLicense</code></div>
 
 		    
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setAllowedLayouts:forLayoutType:" title="setAllowedLayouts:forLayoutType:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setAllowedLayouts:forLayoutType:">&ndash;&nbsp;setAllowedLayouts:forLayoutType:</a></code>
+	<a name="//api/name/theIDFront" title="theIDFront"></a>
+	<h3 class="method-title"><code><a href="#//api/name/theIDFront">&nbsp;&nbsp;theIDFront</a></code>
 </h3>
 
 	<div class="method-info">
@@ -182,58 +230,15 @@ Can only be set during initialization by JSON dictionary.</p>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Set the allowed layouts for a specific layoutType
-e.g. which allowedLayouts are set for driving licenses</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setAllowedLayouts:(NSArray&lt;NSString*&gt; *_Nullable)<em>allowedLayouts</em> forLayoutType:(ALUniversalIDLayoutType)<em>layoutType</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALLayoutIDFront *theIDFront</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>allowedLayouts</code></th>
-						<td><p>an array that contains all enabled layouts</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>layoutType</code></th>
-						<td><p>which type of layouts do the &ldquo;allowedLayouts&rdquo; belong to</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALUniversalIDConfig.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getAllowedLayoutsForLayoutType:" title="getAllowedLayoutsForLayoutType:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getAllowedLayoutsForLayoutType:">&ndash;&nbsp;getAllowedLayoutsForLayoutType:</a></code>
+	<a name="//api/name/insuranceCard" title="insuranceCard"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insuranceCard">&nbsp;&nbsp;insuranceCard</a></code>
 </h3>
 
 	<div class="method-info">
@@ -241,58 +246,15 @@ e.g. which allowedLayouts are set for driving licenses</p>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Set the allowed layouts for a specific layoutType
-e.g. which allowedLayouts are set for driving licenses</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray&lt;NSString*&gt; *_Nullable)getAllowedLayoutsForLayoutType:(ALUniversalIDLayoutType)<em>layoutType</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALLayoutInsuranceCard *insuranceCard</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>layoutType</code></th>
-						<td><p>which type of layouts do the &ldquo;allowedLayouts&rdquo; belong to</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>returns a dictionary containing all enabled layouts for a specific layout type</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALUniversalIDConfig.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/allowedLayoutsDictionary" title="allowedLayoutsDictionary"></a>
-	<h3 class="method-title"><code><a href="#//api/name/allowedLayoutsDictionary">&ndash;&nbsp;allowedLayoutsDictionary</a></code>
+	<a name="//api/name/mrz" title="mrz"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrz">&nbsp;&nbsp;mrz</a></code>
 </h3>
 
 	<div class="method-info">
@@ -300,41 +262,10 @@ e.g. which allowedLayouts are set for driving licenses</p>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>Set the allowed layouts for a specific layoutType
-e.g. which allowedLayouts are set for driving licenses</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDictionary&lt;NSString*,NSArray&lt;NSString*&gt; *&gt; *_Nullable)allowedLayoutsDictionary</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALLayoutMrz *mrz</code></div>
 
 		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>returns a dictionary containing all enabled layouts for all layout types.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALUniversalIDConfig.h</code></p>
-			</div>
-			
-			
 		</div>
 	</div>
 </div>
@@ -352,7 +283,7 @@ e.g. which allowedLayouts are set for driving licenses</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

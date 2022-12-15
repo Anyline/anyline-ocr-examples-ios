@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ALOCRResult Class Reference</title>
+	<title>ALOcrResult Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,23 +56,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/)">)</option>
-		
-		<option value="//api/name/thresholdedImage">thresholdedImage</option>
+		<option value="//api/name/text">text</option>
 		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:">- initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</option>
-		
-		<option value="//api/name/initWithText:image:thresholdedImage:">- initWithText:image:thresholdedImage:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -87,19 +77,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ALOCRResult Class Reference</h1>
+					<h1 class="title">ALOcrResult Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/ALScanResult.html">ALScanResult</a></td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td>*<br />NSString</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALOCRResult.h</td>
+	<td>ALPluginResult.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -109,7 +96,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The result object for the AnylineOCRModule</p>
+						<p>Describes result information of scanning general OCR</p>
 					</div>
 					
 					
@@ -125,8 +112,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/)" title=")"></a>
-	<h3 class="method-title"><code><a href="#//api/name/)">&nbsp;&nbsp;)</a></code>
+	<a name="//api/name/text" title="text"></a>
+	<h3 class="method-title"><code><a href="#//api/name/text">&nbsp;&nbsp;text</a></code>
 </h3>
 
 	<div class="method-info">
@@ -136,12 +123,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The scanned text in the frame. (<b class="deprecated">Deprecated:</b><span class="deprecated"> since 3.10. Use result property instead</span>)</p>
+				<p>The OCR text value.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *__deprecated_msg ( &quot;Deprecated since 3.10 Use result property instead.&quot; )</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *text</code></div>
 
 		    
 			
@@ -159,172 +146,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/thresholdedImage" title="thresholdedImage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/thresholdedImage">&nbsp;&nbsp;thresholdedImage</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The thresholded image where the scanned text was found</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) UIImage *thresholdedImage</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithText:image:thresholdedImage:" title="initWithText:image:thresholdedImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithText:image:thresholdedImage:">&ndash;&nbsp;initWithText:image:thresholdedImage:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>since 3.10 (<b class="deprecated">Deprecated:</b><span class="deprecated"> since 3.10</span>)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithText:(NSString *_Nonnull)<em>text</em> image:(UIImage *_Nonnull)<em>image</em> thresholdedImage:(UIImage *_Nullable)<em>thresholdedImage</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:" title="initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:">&ndash;&nbsp;initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Constructor for an OCRResult</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithResult:(NSString *_Nonnull)<em>result</em> image:(UIImage *_Nonnull)<em>image</em> fullImage:(UIImage *_Nullable)<em>fullImage</em> confidence:(NSInteger)<em>confidence</em> pluginID:(NSString *_Nonnull)<em>pluginID</em> thresholdedImage:(UIImage *_Nullable)<em>thresholdedImage</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>The string scan result</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>image</code></th>
-						<td><p>The image where the result was found</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>fullImage</code></th>
-						<td><p>A fullframe image from the result</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>confidence</code></th>
-						<td><p>The confidence for the result</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>pluginID</code></th>
-						<td><p>The pluginID which generated the result</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>thresholdedImage</code></th>
-						<td><p>A thresholded Image of the result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Instance of an OCRResult</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALOCRResult.h</code></p>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
 			</div>
 			
 			
@@ -345,7 +167,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

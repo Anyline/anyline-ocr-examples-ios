@@ -1,16 +1,19 @@
-//
-//  ALUniversalIDViewController.h
-//  AnylineExamples
-//
-//  Created by Angela Brett on 25.06.20.
-//
-
 #import "ALBaseScanViewController.h"
+#import "ALIDCountryHelper.h"
+#import <Anyline/Anyline.h>
 
-NS_ASSUME_NONNULL_BEGIN
+extern NSString * const kArabicIDTitleString;
+
+extern NSString * const kCyrillicIDTitleString;
+
+extern NSString * const kDriversLicenseTitleString;
+
+extern NSString * const kPassportVisaTitleString;
+
+extern NSString * const kIDCardTitleString;
 
 @interface ALUniversalIDScanViewController : ALBaseScanViewController
 
-@end
+@property (nonatomic, assign) ALScriptType scriptType;
 
-NS_ASSUME_NONNULL_END
+@end

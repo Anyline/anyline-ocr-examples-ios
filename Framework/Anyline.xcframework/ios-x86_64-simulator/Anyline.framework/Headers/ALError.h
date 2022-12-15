@@ -1,10 +1,12 @@
-//
-//  ALError.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 28.10.13.
-//  Copyright (c) 2013 9Yards GmbH. All rights reserved.
-//
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+#define ALError(ERR_MSG,CODE,DOMAIN) [NSError errorWithDomain:(DOMAIN) code:(CODE) userInfo:@{ NSLocalizedDescriptionKey : (ERR_MSG) }]
+
+#define NSLicenseViolationError(func) [NSError errorWithDomain:ALLicenseViolationDomain code:ALLicenseNotValidForFeature userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The following feature is not available with your license: %@",(func)]}];
+
+static NSString * const ALBadLicenseErrorMsg = @"It seems like there is an issue with your license! Did you call the setup method with a valid license key?";
 
 /**
  *  The Error Domain used by the Anyline SDK
@@ -21,109 +23,135 @@ static NSString * const ALNFCDomain = @"ALNFCDomain";
 static NSString *const ALParserErrorLineNumber = @"ALParserErrorLineNumber";
 static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
 static NSString *const ALParserErrorParameterName =
-    @"ALParserErrorParameterName";
+@"ALParserErrorParameterName";
 
 typedef NS_ENUM(NSInteger, ALErrorCode) {
-  // Anyline Exception - this type must be caught within Anyline Core
-  ALOperationNotFound = 1001,
 
-  // Syntax Exception
-  ALSyntaxError = 2001,
-  ALTypeError = 2002,
-  ALParameterInvalid = 2003,
+    /// An error indicating that the type / object created is internally inconsistent
+    ALTypeError = 2002,
 
-  // License Exception
-  ALLicenseKeyInvalid = 3001,
-  ALLicenseNotValidForFunction = 3002,
-  ALWatermarkImageNotFound = 3003,
-  ALWatermarkNotOnWindow = 3004,
-  ALWatermarkNotCorrectInViewHierarchy = 3005,
-  ALWatermarkHidden = 3006,
-  ALWatermarkOutsideApplicationFrame = 3007,
-  ALWatermarkNotNearCutout = 3008,
-  ALWatermarkViewBoundsOutOfSnyc = 3009,
-  ALWatermarkViewTooSmall = 3010,
-  ALWatermarkViewNoSubviewsAllowed = 3011,
-  ALWatermarkViewAlphaViolation = 3012,
-  ALWatermarkViewCountViolation = 3013,
-  ALWatermarkViewSubviewOnTopViolation = 3014,
-  ALWatermarkImageModified = 3015,
-  ALWatermarkUnknownError = 3016,
-  ALLicenseSetupNotDone = 3017,
-  ALLicenseNotValidForFeature = 3018,
-    
-  // Argument Exceptions
-  ALArgumentIsNull = 4001,
-  ALArgumentIsEmpty = 4002,
-  ALArgumentNotValid = 4003,
-  ALInterpreterNotLoaded = 4004,
+    /// An invalid parameter was passed to a method
+    ALParameterInvalid = 2003,
 
-  // Run Failures
-  ALNotEnoughContoursFound = 5001,
-  ALStackDidNotFoundResult = 5002,
-  ALDigitFirstDistanceExceeded = 5003,
-  ALDistanceBetweenDigitsExceeded = 5004,
-  ALDistanceViolationsNotResolved = 5005,
-  ALResultNotValid = 5006,
-  ALInvalidDataPointIdentifier = 5007,
-  ALRegionOfInterestOutsideImageBounds = 5008,
-  ALNotEnoughPointsFound = 5009,
-  ALAnglesOutsideOfTolerance = 5010,
-  ALImageNotSharp = 5011,
-  ALTooDark = 5012,
-  ALTooMuchReflections = 5013,
-  ALConfidenceNotReached = 5014,
-  ALStringPatternNotMatching = 5015,
-  ALIntAssertionFailed = 5016,
-  ALDocumentRatioOutsideOfTolerance = 5019,
-  ALDocumentBoundsOutsideOfTolerance = 5020,
-  ALPointsOutOfCutout = 5021,
+    /// The license key supplied to Anyline during initialization was not valid
+    ALLicenseKeyInvalid = 3001,
 
-  ALOtherConditionNotMet = 5555,
+    /// The license key supplied was not valid for the function being used
+    ALLicenseNotValidForFunction = 3002,
 
-  ALNoInformationFound = 6001,
-  ALImageColorConvertionProblem = 6002,
+    /// The image used to display the watermark is not found
+    ALWatermarkImageNotFound = 3003,
 
-  //
-  ALImageProviderIsNil = 7001,
-  ALRunStopError = 7002,
-  ALSingleImageRunError = 7003,
+    /// Watermark not on window
+    ALWatermarkNotOnWindow = 3004,
 
-  ALCameraResolutionNotSupportedByDevice = 8001,
-  ALCameraAccessDenied = 8002,
-  ALFlashNotAvailable = 8003,
-  ALCameraConnectionError = 8004,
-  ALCameraAccessRequestPending = 8005,
-    
-  ALModuleSimpleOCRConfigIsNil = 9001,
-  ALModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
-  ALModuleSimpleOCRConfigTextHeightNotSet = 9003,
-  ALBarcodeModuleNativeDelegateWrong = 9004,
-  ALEnergyScanPluginBarcodeNotSupported = 9005,
-  ALModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
-  ALInvalidConfigSet = 9007,
-    
+    /// Watermark not installed correctly in the view hierarchy
+    ALWatermarkNotCorrectInViewHierarchy = 3005,
 
-  ALNFCTagErrorResponseError = 10001,
-  ALNFCTagErrorInvalidResponse = 10002,
-  ALNFCTagErrorUnexpectedError = 10003,
-  ALNFCTagErrorNFCNotSupported = 10004,
-  ALNFCTagErrorNoConnectedTag = 10005,
-  ALNFCTagErrorD087Malformed = 10006,
-  ALNFCTagErrorInvalidResponseChecksum = 10007,
-  ALNFCTagErrorMissingMandatoryFields = 10008,
-  ALNFCTagErrorCannotDecodeASN1Length = 10009,
-  ALNFCTagErrorInvalidASN1Value = 10010,
-  ALNFCTagErrorUnableToProtectAPDU = 10011,
-  ALNFCTagErrorUnableToUnprotectAPDU = 10012,
-  ALNFCTagErrorUnsupportedDataGroup = 10013,
-  ALNFCTagErrorDataGroupNotRead = 10014,
-  ALNFCTagErrorUnknownTag = 10015,
-  ALNFCTagErrorUnknownImageFormat = 10016,
-  ALNFCTagErrorNotImplemented = 10017,
-    
-  ALTimeoutError = 11001
+    /// Watermark was hidden
+    ALWatermarkHidden = 3006,
+
+    /// Watermark was positioned outside the application frame
+    ALWatermarkOutsideApplicationFrame = 3007,
+
+    /// Watermark is placed too far from the cutout
+    ALWatermarkNotNearCutout = 3008,
+
+    /// Watermark view bounds is out of sync
+    ALWatermarkViewBoundsOutOfSnyc = 3009,
+
+    /// Watermark view is too small
+    ALWatermarkViewTooSmall = 3010,
+
+    /// Watermark view has subviews
+    ALWatermarkViewNoSubviewsAllowed = 3011,
+
+    /// Watermark has modified alpha value
+    ALWatermarkViewAlphaViolation = 3012,
+
+    /// Watermark view count violation
+    ALWatermarkViewCountViolation = 3013,
+
+    /// Watermark view has subviews on top
+    ALWatermarkViewSubviewOnTopViolation = 3014,
+
+    /// Watermark image had been modified
+    ALWatermarkImageModified = 3015,
+
+    /// The license key supplied is not valid for the Anyline feature being used
+    ALLicenseNotValidForFeature = 3018,
+
+    /// The requested camera resolution was not supported by the device
+    ALCameraResolutionNotSupportedByDevice = 8001,
+
+    /// User denied camera usage access when prompted
+    ALCameraAccessDenied = 8002,
+
+    /// Flash not supported by device
+    ALFlashNotAvailable = 8003,
+
+    /// Camera native barcode was enabled too early (try initializing it when the scan view is running)
+    ALCameraNativeBarcodeEnabledTooEarly = 8006,
+
+    /// Unsupported format requested while using native barcode reader
+    ALCameraNativeBarcodeUnsupportedFormat = 8007,
+
+    /// Error on the NFC tag reader response
+    ALNFCTagErrorResponseError = 10001,
+
+    /// Invalid response received from the NFC Tag Reading session
+    ALNFCTagErrorInvalidResponse = 10002,
+
+    /// Unexpected error using the NFC tag reader
+    ALNFCTagErrorUnexpectedError = 10003,
+
+    /// Device does not support NFC tag reading
+    ALNFCTagErrorNFCNotSupported = 10004,
+
+    /// Unable to initialize tag reader for NFC connection
+    ALNFCTagErrorNoConnectedTag = 10005,
+
+    /// NFC: D087 is malformed
+    ALNFCTagErrorD087Malformed = 10006,
+
+    /// NFC: Invalid checksum
+    ALNFCTagErrorInvalidResponseChecksum = 10007,
+
+    /// NFC: Missing mandatory fields
+    ALNFCTagErrorMissingMandatoryFields = 10008,
+
+    /// NFC: Cannot decode ASN1 length
+    ALNFCTagErrorCannotDecodeASN1Length = 10009,
+
+    /// NFC: ASN1 value is invalid
+    ALNFCTagErrorInvalidASN1Value = 10010,
+
+    /// NFC: unable to protect APDU
+    ALNFCTagErrorUnableToProtectAPDU = 10011,
+
+    /// NFC: unable to unprotect APDU
+    ALNFCTagErrorUnableToUnprotectAPDU = 10012,
+
+    /// NFC: unsupported data group
+    ALNFCTagErrorUnsupportedDataGroup = 10013,
+
+    /// NFC: data group not read
+    ALNFCTagErrorDataGroupNotRead = 10014,
+
+    /// NFC tag not recognized
+    ALNFCTagErrorUnknownTag = 10015,
+
+    /// NFC: the image format being read is unknown
+    ALNFCTagErrorUnknownImageFormat = 10016,
+
+    /// NFC: Not implemented error
+    ALNFCTagErrorNotImplemented = 10017,
+
+    /// Timeout encountered while waiting for a time consuming operation
+    ALTimeoutError = 11001,
+
+    /// Error serializing or deserializing JSON object
+    ALJSONError = 12001
 };
 
-
-#define NSLicenseViolationError(func) [NSError errorWithDomain:ALLicenseViolationDomain code:ALLicenseNotValidForFeature userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The following feature is not available with your license: %@",(func)]}];
+NS_ASSUME_NONNULL_END

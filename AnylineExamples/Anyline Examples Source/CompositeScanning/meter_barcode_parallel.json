@@ -29,7 +29,7 @@
                     },
                     "scanFeedback": {
                         "style": "CONTOUR_RECT",
-                        "strokeColor": "FFFFFF",
+                        "strokeColor": "0099FF",
                         "strokeWidth": 2,
                         "fillColor": "220099FF",
                         "cornerRadius": 2,
@@ -61,9 +61,9 @@
                         },
                         "strokeWidth": 2,
                         "cornerRadius": 2,
-                        "strokeColor": "FFFFFF",
+                        "strokeColor": "0099FF",
                         "outerColor": "000000",
-                        "outerAlpha": 0.75,
+                        "outerAlpha": 0.3,
                         "feedbackStrokeColor": "0099FF",
                         "offset": {
                             "x": 0,

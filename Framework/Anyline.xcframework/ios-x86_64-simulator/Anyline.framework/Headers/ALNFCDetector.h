@@ -1,61 +1,56 @@
-//
-//  NFCDetector.h
-//  Anyline
-//
-//  Created by Angela Brett on 12.09.19.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
 #ifndef NFCDetector_h
 #define NFCDetector_h
 
-#import "ALNFCResult.h"
-
 @class ALLicenseUtil;
+@class ALNFCResult;
+@class ALDataGroup1;
+@class ALDataGroup2;
+@class ALSOD;
 
 API_AVAILABLE(ios(13.0))
+/// The NFC detector delegate
 @protocol ALNFCDetectorDelegate <NSObject>
 @required
 /**
-*  Called when all data groups have been read from the NFC chip.
-*
-*  @param nfcResult The data read from the chip
-*
-*/
+ *  Called when all data groups have been read from the NFC chip.
+ *
+ *  @param nfcResult The data read from the chip
+ *
+ */
 - (void)nfcSucceededWithResult:(ALNFCResult *_Nonnull)nfcResult;
 
 
 /**
-*  Called when there is an error reading the NFC chip
-*
-*  @param error The error encountered
-*
-*/
+ *  Called when there is an error reading the NFC chip
+ *
+ *  @param error The error encountered
+ *
+ */
 - (void)nfcFailedWithError:(NSError *_Nonnull)error;
 
 @optional
 /**
-*  Called when the first data group, containing textual and date information, has been read from the NFC chip. Implement this if you want to show this data as soon as it is loaded instead of waiting for all data to be read.
-*
-*  @param dataGroup1 The dataGroup object
-*
-*/
+ *  Called when the first data group, containing textual and date information, has been read from the NFC chip. Implement this if you want to show this data as soon as it is loaded instead of waiting for all data to be read.
+ *
+ *  @param dataGroup1 The dataGroup object
+ *
+ */
 - (void)nfcSucceededWithDataGroup1:(ALDataGroup1 *_Nonnull)dataGroup1 API_AVAILABLE(ios(13.0));
 
 /**
-*  Called when the second data group, containing the face image, has been read from the NFC chip. Implement this if you want to show this data as soon as it is loaded instead of waiting for all data to be read.
-*
-*  @param dataGroup2 The dataGroup object
-*
-*/
+ *  Called when the second data group, containing the face image, has been read from the NFC chip. Implement this if you want to show this data as soon as it is loaded instead of waiting for all data to be read.
+ *
+ *  @param dataGroup2 The dataGroup object
+ *
+ */
 - (void)nfcSucceededWithDataGroup2:(ALDataGroup2 *_Nonnull)dataGroup2 API_AVAILABLE(ios(13.0));
 
 /**
-*  Called when the SOD (Document Security Object), has been read from the NFC chip. This feature will be available in a future version of the SDK.
-*
-*  @param sod The SOD object
-*
-*/
+ *  Called when the SOD (Document Security Object), has been read from the NFC chip. This feature will be available in a future version of the SDK.
+ *
+ *  @param sod The SOD object
+ *
+ */
 - (void)nfcSucceededWithSOD:(ALSOD *_Nonnull)sod API_AVAILABLE(ios(13.0));
 
 @end
@@ -73,9 +68,9 @@ API_AVAILABLE(ios(13.0))
 + (BOOL)readingAvailable;
 
 /**
- * Initialise the NFC Detector.
+ * Initialize the NFC Detector
  *
- * @param delegate The delegate to receive results from the NFC once
+ * @param delegate The delegate to receive results from the NFC once the data has been read
  * @param licenseUtil The ALLicenseUtil class instance which encapsulates the license key string used
  * to initialize the SDK, if this is nil, then the `sharedInstance` of the class is used.
  *  -startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate has been called. This must conform to the ALNFCDetectorDelegate protocol.
@@ -83,6 +78,8 @@ API_AVAILABLE(ios(13.0))
 - (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate
                                licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil;
 
+/// Initialize the NFC Detector
+/// @param delegate The delegate to receive results from the NFC once the data has been read
 - (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate;
 
 /**

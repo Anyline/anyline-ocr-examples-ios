@@ -168,7 +168,7 @@
         sdkVersionView.backgroundColor = titleLabelBackgroundColor;
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, sdkVersionView.frame.size.height)];
-        label.text = [NSString stringWithFormat:@"SDK: %@ (%@)", [ALCoreController versionNumber], [ALCoreController buildNumber]];
+        label.text = [NSString stringWithFormat:@"SDK: %@ (%@)", @"N/A", @"N/A"]; //[ALCoreController versionNumber], [ALCoreController buildNumber]];
         label.numberOfLines = 0;
         label.font = [UIFont AL_proximaRegularWithSize:17];
         label.textColor = [UIColor whiteColor];

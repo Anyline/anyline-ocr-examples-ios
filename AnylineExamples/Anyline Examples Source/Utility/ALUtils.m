@@ -64,20 +64,20 @@
 
 #pragma mark - Private
 
-+ (ALFlashMode)defaultFlashMode {
-    NSString *flashModeString = InfoPlist[@"NYDefaultFlashMode"];
-
-    if ([flashModeString isEqualToString:@"auto"]) {
-        return ALFlashModeAuto;
-    } else if ([flashModeString isEqualToString:@"manual"]) {
-        return ALFlashModeManual;
-    } else if ([flashModeString isEqualToString:@"none"]) {
-        return ALFlashModeNone;
-    } else {
-        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Unknown flash mode: %@. Supported are: auto, manual, none", flashModeString] userInfo:nil];
-    }
-    return ALFlashModeAuto;
-}
+//+ (ALFlashMode)defaultFlashMode {
+//    NSString *flashModeString = InfoPlist[@"NYDefaultFlashMode"];
+//
+//    if ([flashModeString isEqualToString:@"auto"]) {
+//        return ALFlashModeAuto;
+//    } else if ([flashModeString isEqualToString:@"manual"]) {
+//        return ALFlashModeManual;
+//    } else if ([flashModeString isEqualToString:@"none"]) {
+//        return ALFlashModeNone;
+//    } else {
+//        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Unknown flash mode: %@. Supported are: auto, manual, none", flashModeString] userInfo:nil];
+//    }
+//    return ALFlashModeAuto;
+//}
 
 void _VerifyAnylineModuleSetup(BOOL success, NSError *error) {
     if (!success) {

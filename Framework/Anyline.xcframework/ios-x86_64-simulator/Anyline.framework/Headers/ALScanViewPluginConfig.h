@@ -1,50 +1,72 @@
-//
-//  ALScanViewPluginConfig.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 09.05.18.
-//  Copyright © 2018 9Yards GmbH. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "ALScanFeedbackConfig.h"
 #import "ALCutoutConfig.h"
+#import "ALScanFeedbackConfig.h"
+#import "ALScanPluginConfig.h"
+#import "ALJSONUtilities.h"
 
-@interface ALScanViewPluginConfig : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
-@property (nonatomic, strong) ALScanFeedbackConfig * _Nonnull scanFeedbackConfig;
-@property (nonatomic, strong) ALCutoutConfig * _Nonnull cutoutConfig;
+/// Configuration object for a ScanViewPlugin
+@interface ALScanViewPluginConfig : NSObject <ALJSONStringRepresentable>
 
-@property (nonatomic, assign) BOOL cancelOnResult;
-@property (nonatomic, assign) int delayStartScanTime;
-- (BOOL)shouldUseNewVisualFeedback;
+/// Configuration object for the associated cutout config
+@property (nonatomic, readonly) ALCutoutConfig *cutoutConfig;
 
-- (instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+/// Configuration object for the associated scan feedback config
+@property (nonatomic, readonly) ALScanFeedbackConfig *scanFeedbackConfig;
 
-+ (_Nullable instancetype)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+/// Configuration object for the associated scan plugin config
+@property (nonatomic, readonly) ALScanPluginConfig *scanPluginConfig;
 
-- (_Nullable instancetype)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+/// Initializes an `ALScanViewPluginConfig` with ScanPluginConfig, CutoutConfig, and
+/// ScanFeedbackConfig components.
+/// @param scanPluginConfig Configuration object for the associated scan plugin config
+/// @param cutoutConfig Configuration object for the associated cutout config
+/// @param scanFeedbackConfig Configuration object for the associated scan feedback config
+/// @param error NSError object which is filled with appropriate information when initialization fails
+/// @return the ALScanViewPluginConfig instance
+- (instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig *)scanPluginConfig
+                                      cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig
+                                scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig
+                                             error:(NSError * _Nullable * _Nullable)error;
 
-- (instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig
-                                        cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig
-                                      cancelOnResult:(BOOL)cancelOnResult
-                                  delayStartScanTime:(int)delayStartScanTime;
+/**
+ Initializes the ScanViewPluginConfig with an ALScanPluginConfig instance
 
-- (instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig
-                                        cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig
-                                      cancelOnResult:(BOOL)cancelOnResult;
+ @param scanPluginConfig The ScanPluginConfig instance
+ @param error An NSError object that is filled with the appropriate error information when initialization fails
+ @return the ALScanViewPluginConfig instance
+ */
+- (instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig *)scanPluginConfig
+                                             error:(NSError * _Nullable * _Nullable)error;
 
-+ (_Nonnull instancetype)defaultScanViewPluginConfig;
+/// Initializes a ScanViewPluginConfig with an NSDictionary representing the configuration
+/// @param JSONDictionary the JSON object representing the configuration
+/// @param error NSError object that is filled with the appropriate error information when initialization fails
+- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)JSONDictionary
+                                           error:(NSError * _Nullable * _Nullable)error;
 
-+ (_Nonnull instancetype)defaultDocumentScannerConfig;
-+ (_Nonnull instancetype)defaultBarcodeConfig;
-+ (_Nonnull instancetype)defaultLicensePlateConfig;
-+ (_Nonnull instancetype)defaultOCRConfig;
-+ (_Nonnull instancetype)defaultVINConfig;
-+ (_Nonnull instancetype)defaultTINConfig;
-+ (_Nonnull instancetype)defaultContainerConfig;
-+ (_Nonnull instancetype)defaultCattleTagConfig;
-+ (_Nonnull instancetype)defaultMRZConfig;
-+ (_Nonnull instancetype)defaultMeterConfig;
+/// Creates a ScanViewPluginConfig with with ScanPluginConfig, CutoutConfig,
+/// and ScanFeedbackConfig components.
+/// @param scanPluginConfig Configuration object for the associated scan plugin config
+/// @param cutoutConfig (Optional) Configuration object for the associated cutout config
+/// @param scanFeedbackConfig (Optional) Configuration object for the associated scan feedback config
+/// @return the ALScanViewPluginConfig instance
++ (ALScanViewPluginConfig * _Nullable)withScanPluginConfig:(ALScanPluginConfig *)scanPluginConfig
+                                              cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig
+                                        scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig;
+
+/// Creates a ScanViewPluginConfig with with ScanPluginConfig, CutoutConfig,
+/// and ScanFeedbackConfig components.
+/// @param scanPluginConfig Configuration object for the associated scan plugin config
+/// @return the ALScanViewPluginConfig instance
++ (ALScanViewPluginConfig * _Nullable)withScanPluginConfig:(ALScanPluginConfig *)scanPluginConfig;
+
+/// Creates a ScanViewPluginConfig with an NSDictionary representing the configuration
+/// @param JSONDictionary the JSON object representing the configuration
+/// @return the ALScanViewPluginConfig instance
++ (instancetype _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary;
 
 @end
+
+NS_ASSUME_NONNULL_END

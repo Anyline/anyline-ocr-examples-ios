@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALScanViewDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/scanView:didReceiveNativeBarcodeResult:">- scanView:didReceiveNativeBarcodeResult:</option>
+		
+		<option value="//api/name/scanView:updatedCutoutWithPluginID:frame:">- scanView:updatedCutoutWithPluginID:frame:</option>
+		
+		<option value="//api/name/scanViewMotionExceededThreshold:">- scanViewMotionExceededThreshold:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALScanViewDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALScanView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Object that is notified when an <a href="../Classes/ALScanView.html"><code>ALScanView</code></a> reports events of interest</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/scanViewMotionExceededThreshold:" title="scanViewMotionExceededThreshold:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanViewMotionExceededThreshold:">&ndash;&nbsp;scanViewMotionExceededThreshold:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called when the scan view has managed to detect large and sustained movement
+of the device during scanning, degrading scanning performance. This can be utilized to inform
+the user to limit shaking as much as possible</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanViewMotionExceededThreshold:(ALScanView *)<em>scanView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanView</code></th>
+						<td><p>the scan view calling this method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanView:didReceiveNativeBarcodeResult:" title="scanView:didReceiveNativeBarcodeResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanView:didReceiveNativeBarcodeResult:">&ndash;&nbsp;scanView:didReceiveNativeBarcodeResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called to report any barcodes found on the frame by the iOS native barcode scanner.
+Note, that the quality of the results may not match those of the Anyline Barcode plugin and the
+performance is not expected to be as good.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanView:(ALScanView *)<em>scanView</em> didReceiveNativeBarcodeResult:(ALScanResult *)<em>scanResult</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanView</code></th>
+						<td><p>the scan view calling this method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanResult</code></th>
+						<td><p>the barcode scan results</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanView:updatedCutoutWithPluginID:frame:" title="scanView:updatedCutoutWithPluginID:frame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanView:updatedCutoutWithPluginID:frame:">&ndash;&nbsp;scanView:updatedCutoutWithPluginID:frame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is called to report the latest <code>CGRect</code> frame of the cutout in display. An interesting
+way this could be utilized is to position any UI overlays / prompts over the scan view cutout.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scanView:(ALScanView *)<em>scanView</em> updatedCutoutWithPluginID:(NSString *)<em>pluginID</em> frame:(CGRect)<em>frame</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scanView</code></th>
+						<td><p>the scan view calling this method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pluginID</code></th>
+						<td><p>the ID of the plugin, useful in a composite scanning setup</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>frame</code></th>
+						<td><p>the size and position of the cutout. If the cutout was hidden, the reported frame is null</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALScanView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

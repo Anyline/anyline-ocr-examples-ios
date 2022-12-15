@@ -1,0 +1,21 @@
+{
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "com.anyline.configs.plugin.barcode-fullframe",
+            "barcodeConfig": {
+                "multiBarcode": true,
+                "barcodeFormats": [ "ALL" ]
+            },
+            "cancelOnResult": true
+        },
+        "scanFeedbackConfig": {
+            "style": "rect",
+            "strokeWidth": 2,
+            "strokeColor": "0099FF",
+            "fillColor": "330099FF",
+            "beepOnResult": false,
+            "vibrateOnResult": false,
+            "blinkAnimationOnResult": false
+        }
+    }
+}

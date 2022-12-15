@@ -12,7 +12,7 @@
             },
             "strokeWidth": 2,
             "cornerRadius": 80,
-            "strokeColor": "FFFFFF",
+            "strokeColor": "0099FF",
             "outerColor": "000000",
             "outerAlpha": 0.3,
             "feedbackStrokeColor": "0099FF"
@@ -21,8 +21,8 @@
             "style": "rect",
             "strokeColor": "0099FF",
             "fillColor": "330099FF",
-            "strokeWidth": 1,
-            "cornerRadius": 10,
+            "strokeWidth": 2,
+            "cornerRadius": 4,
             "beepOnResult": true,
             "vibrateOnResult": true,
             "blinkAnimationOnResult": true

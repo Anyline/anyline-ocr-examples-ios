@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -54,13 +56,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/barcodeFormat">barcodeFormat</option>
-		
-		<option value="//api/name/base64">base64</option>
+		<option value="//api/name/aamva">aamva</option>
 		
 		<option value="//api/name/coordinates">coordinates</option>
 		
-		<option value="//api/name/parsedPDF417">parsedPDF417</option>
+		<option value="//api/name/format">format</option>
+		
+		<option value="//api/name/isBase64">isBase64</option>
 		
 		<option value="//api/name/value">value</option>
 		
@@ -68,27 +70,7 @@
 	
 
 	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/advancedBarcodeFormats">+ advancedBarcodeFormats</option>
-		
-		<option value="//api/name/allBarcodeFormats">+ allBarcodeFormats</option>
-		
-		<option value="//api/name/basicBarcodeFormats">+ basicBarcodeFormats</option>
-		
-	</optgroup>
-	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/initWithValue:format:">- initWithValue:format:</option>
-		
-		<option value="//api/name/initWithValue:format:coordinates:base64:parsedPDF417:">- initWithValue:format:coordinates:base64:parsedPDF417:</option>
-		
-		<option value="//api/name/toJSONString">- toJSONString</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -112,12 +94,20 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ALBarcode.h</td>
+	<td>ALPluginResult.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Describes barcode information</p>
+					</div>
+					
+					
 
 					
 					
@@ -130,8 +120,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/barcodeFormat" title="barcodeFormat"></a>
-	<h3 class="method-title"><code><a href="#//api/name/barcodeFormat">&nbsp;&nbsp;barcodeFormat</a></code>
+	<a name="//api/name/aamva" title="aamva"></a>
+	<h3 class="method-title"><code><a href="#//api/name/aamva">&nbsp;&nbsp;aamva</a></code>
 </h3>
 
 	<div class="method-info">
@@ -140,39 +130,7 @@
 		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *barcodeFormat</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/value" title="value"></a>
-	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *value</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/base64" title="base64"></a>
-	<h3 class="method-title"><code><a href="#//api/name/base64">&nbsp;&nbsp;base64</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *base64</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALAamva *aamva</code></div>
 
 		    
 		</div>
@@ -187,15 +145,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The coordinate points on the processed image</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) ALSquare *coordinates</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSArray&lt;NSNumber*&gt; *coordinates</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/parsedPDF417" title="parsedPDF417"></a>
-	<h3 class="method-title"><code><a href="#//api/name/parsedPDF417">&nbsp;&nbsp;parsedPDF417</a></code>
+	<a name="//api/name/format" title="format"></a>
+	<h3 class="method-title"><code><a href="#//api/name/format">&nbsp;&nbsp;format</a></code>
 </h3>
 
 	<div class="method-info">
@@ -203,15 +186,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The barcode format</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDictionary *parsedPDF417</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *format</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithValue:format:" title="initWithValue:format:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithValue:format:">&ndash;&nbsp;initWithValue:format:</a></code>
+	<a name="//api/name/isBase64" title="isBase64"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isBase64">&nbsp;&nbsp;isBase64</a></code>
 </h3>
 
 	<div class="method-info">
@@ -219,15 +227,40 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>Information of whether or not the found barcode <a href="#//api/name/value">value</a> was encoded to base64</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)initWithValue:(NSString *_Nonnull)<em>value</em> format:(NSString *_Nonnull)<em>barcodeFormat</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isBase64</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithValue:format:coordinates:base64:parsedPDF417:" title="initWithValue:format:coordinates:base64:parsedPDF417:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithValue:format:coordinates:base64:parsedPDF417:">&ndash;&nbsp;initWithValue:format:coordinates:base64:parsedPDF417:</a></code>
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
 </h3>
 
 	<div class="method-info">
@@ -235,74 +268,35 @@
 
 		<div class="method-info-container">
 			
+			
+			<div class="method-subsection brief-description">
+				<p>The value of the barcode</p>
+			</div>
+			
+		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nonnull)initWithValue:(NSString *_Nonnull)<em>value</em> format:(NSString *_Nonnull)<em>barcodeFormat</em> coordinates:(NSString *_Nullable)<em>coordinates</em> base64:(NSString *_Nullable)<em>base64</em> parsedPDF417:(NSString *_Nullable)<em>parsedPDF417</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *value</code></div>
 
 		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/toJSONString" title="toJSONString"></a>
-	<h3 class="method-title"><code><a href="#//api/name/toJSONString">&ndash;&nbsp;toJSONString</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)toJSONString</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/allBarcodeFormats" title="allBarcodeFormats"></a>
-	<h3 class="method-title"><code><a href="#//api/name/allBarcodeFormats">+&nbsp;allBarcodeFormats</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *_Nullable)allBarcodeFormats</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/basicBarcodeFormats" title="basicBarcodeFormats"></a>
-	<h3 class="method-title"><code><a href="#//api/name/basicBarcodeFormats">+&nbsp;basicBarcodeFormats</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *_Nullable)basicBarcodeFormats</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/advancedBarcodeFormats" title="advancedBarcodeFormats"></a>
-	<h3 class="method-title"><code><a href="#//api/name/advancedBarcodeFormats">+&nbsp;advancedBarcodeFormats</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
 			
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *_Nullable)advancedBarcodeFormats</code></div>
+			
 
-		    
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>
@@ -320,7 +314,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-13</p>
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

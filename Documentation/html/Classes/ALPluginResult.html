@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALPluginResult Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Anyline SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Anyline GmbH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/barcodeResult">barcodeResult</option>
+		
+		<option value="//api/name/blobKey">blobKey</option>
+		
+		<option value="//api/name/commercialTireIDResult">commercialTireIDResult</option>
+		
+		<option value="//api/name/confidence">confidence</option>
+		
+		<option value="//api/name/containerResult">containerResult</option>
+		
+		<option value="//api/name/cropRect">cropRect</option>
+		
+		<option value="//api/name/japaneseLandingPermissionResult">japaneseLandingPermissionResult</option>
+		
+		<option value="//api/name/licensePlateResult">licensePlateResult</option>
+		
+		<option value="//api/name/meterResult">meterResult</option>
+		
+		<option value="//api/name/mrzResult">mrzResult</option>
+		
+		<option value="//api/name/ocrResult">ocrResult</option>
+		
+		<option value="//api/name/pluginID">pluginID</option>
+		
+		<option value="//api/name/tinResult">tinResult</option>
+		
+		<option value="//api/name/tireSizeResult">tireSizeResult</option>
+		
+		<option value="//api/name/universalIDResult">universalIDResult</option>
+		
+		<option value="//api/name/vehicleRegistrationCertificateResult">vehicleRegistrationCertificateResult</option>
+		
+		<option value="//api/name/vinResult">vinResult</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/fromData:error:">+ fromData:error:</option>
+		
+		<option value="//api/name/fromJSON:encoding:error:">+ fromJSON:encoding:error:</option>
+		
+		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
+		
+		<option value="//api/name/withJSONString:">+ withJSONString:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
+		
+		<option value="//api/name/initWithJSONString:error:">- initWithJSONString:error:</option>
+		
+		<option value="//api/name/toData:">- toData:</option>
+		
+		<option value="//api/name/toJSON:error:">- toJSON:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALPluginResult Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALPluginResult.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Describes all kinds of scan results
+Extension methods to work with <code>ALPluginResult</code> objects</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/barcodeResult" title="barcodeResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/barcodeResult">&nbsp;&nbsp;barcodeResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALBarcodeResult *barcodeResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/blobKey" title="blobKey"></a>
+	<h3 class="method-title"><code><a href="#//api/name/blobKey">&nbsp;&nbsp;blobKey</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The blobKey (provided optionally, depending on the Anyline license settings)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, copy) NSString *blobKey</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commercialTireIDResult" title="commercialTireIDResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commercialTireIDResult">&nbsp;&nbsp;commercialTireIDResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALCommercialTireIDResult *commercialTireIDResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/confidence" title="confidence"></a>
+	<h3 class="method-title"><code><a href="#//api/name/confidence">&nbsp;&nbsp;confidence</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provides a general confidence value between 0 and 100 if applicable. -1 if no confidence
+was calculated</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger confidence</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/containerResult" title="containerResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/containerResult">&nbsp;&nbsp;containerResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALContainerResult *containerResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cropRect" title="cropRect"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cropRect">&nbsp;&nbsp;cropRect</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The rect information of the region that was processed within the image</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALCropRect *cropRect</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/japaneseLandingPermissionResult" title="japaneseLandingPermissionResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/japaneseLandingPermissionResult">&nbsp;&nbsp;japaneseLandingPermissionResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALJapaneseLandingPermissionResult *japaneseLandingPermissionResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licensePlateResult" title="licensePlateResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licensePlateResult">&nbsp;&nbsp;licensePlateResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALLicensePlateResult *licensePlateResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/meterResult" title="meterResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/meterResult">&nbsp;&nbsp;meterResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALMeterResult *meterResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mrzResult" title="mrzResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mrzResult">&nbsp;&nbsp;mrzResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALMrzResult *mrzResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ocrResult" title="ocrResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ocrResult">&nbsp;&nbsp;ocrResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALOcrResult *ocrResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pluginID" title="pluginID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginID">&nbsp;&nbsp;pluginID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The ID of the ScanPlugin that processed the result</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *pluginID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tinResult" title="tinResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tinResult">&nbsp;&nbsp;tinResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALTinResult *tinResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tireSizeResult" title="tireSizeResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tireSizeResult">&nbsp;&nbsp;tireSizeResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALTireSizeResult *tireSizeResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/universalIDResult" title="universalIDResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/universalIDResult">&nbsp;&nbsp;universalIDResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALUniversalIDResult *universalIDResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vehicleRegistrationCertificateResult" title="vehicleRegistrationCertificateResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vehicleRegistrationCertificateResult">&nbsp;&nbsp;vehicleRegistrationCertificateResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALVehicleRegistrationCertificateResult *vehicleRegistrationCertificateResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vinResult" title="vinResult"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vinResult">&nbsp;&nbsp;vinResult</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) ALVinResult *vinResult</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fromJSON:encoding:error:" title="fromJSON:encoding:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fromJSON:encoding:error:">+&nbsp;fromJSON:encoding:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)fromJSON:(NSString *)<em>json</em> encoding:(NSStringEncoding)<em>encoding</em> error:(NSError *_Nullable *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fromData:error:" title="fromData:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fromData:error:">+&nbsp;fromData:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)fromData:(NSData *)<em>data</em> error:(NSError *_Nullable *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toJSON:error:" title="toJSON:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toJSON:error:">&ndash;&nbsp;toJSON:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nullable)toJSON:(NSStringEncoding)<em>encoding</em> error:(NSError *_Nullable *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toData:" title="toData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toData:">&ndash;&nbsp;toData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSData *_Nullable)toData:(NSError *_Nullable *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="ALExtras Methods" name="task_ALExtras Methods"></a>
+						<h2 class="task-title">ALExtras Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/withJSONString:" title="withJSONString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withJSONString:">+&nbsp;withJSONString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructs an <code>ALPluginResult</code> object. Returns a null value if the string
+cannot be serialized into a valid object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ALPluginResult *_Nullable)withJSONString:(NSString *)<em>JSONString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONString</code></th>
+						<td><p>JSON string for the plugin result</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALPluginResult</code> object, or null</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult+Extras.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withJSONDictionary:" title="withJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withJSONDictionary:">+&nbsp;withJSONDictionary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructs an <code>ALPluginResult</code> object. Returns a null value if the string
+cannot be serialized into a valid object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ALPluginResult *_Nullable)withJSONDictionary:(NSDictionary *)<em>JSONDictionary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>JSON dictionary containing the plugin result</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALPluginResult</code> object, or null</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult+Extras.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithJSONString:error:" title="initWithJSONString:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONString:error:">&ndash;&nbsp;initWithJSONString:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALPluginResult</code> object. Returns a null value if the string
+cannot be serialized into a valid object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONString:(NSString *)<em>JSONString</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONString</code></th>
+						<td><p>JSON string for the plugin result</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an error object which is set if an error during serialization is encountered</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALPluginResult</code> object, or null</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult+Extras.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithJSONDictionary:error:" title="initWithJSONDictionary:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithJSONDictionary:error:">&ndash;&nbsp;initWithJSONDictionary:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALPluginResult</code> object. Returns a null value if the string
+cannot be serialized into a valid object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)<em>JSONDictionary</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>JSONDictionary</code></th>
+						<td><p>JSON dictionary containing the plugin result</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>an error object which is set if an error during serialization is encountered</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <code>ALPluginResult</code> object, or null</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALPluginResult+Extras.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

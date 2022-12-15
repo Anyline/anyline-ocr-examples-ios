@@ -11,16 +11,16 @@
                 "height": 1
             },
             "strokeWidth": 2,
-            "cornerRadius": 10,
-            "strokeColor": "FFFFFF",
+            "cornerRadius": 4,
+            "strokeColor": "0099FF",
             "outerColor": "000000",
             "outerAlpha": 0.3,
-            "feedbackStrokeColor": "990099FF"
+            "feedbackStrokeColor": "0099FF"
         },
         "scanFeedback" : {
             "style": "contour_underline",
             "strokeColor": "990099FF",
-            "strokeWidth": 3,
+            "strokeWidth": 2,
             "beepOnResult": true,
             "vibrateOnResult": true,
             "blinkAnimationOnResult": true
