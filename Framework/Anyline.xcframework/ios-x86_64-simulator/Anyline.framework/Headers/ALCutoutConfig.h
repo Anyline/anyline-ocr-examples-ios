@@ -105,6 +105,39 @@ typedef NS_ENUM(NSUInteger, ALCutoutAnimationStyle) {
 /// @param JSONDict the JSON Dictionary
 + (ALCutoutConfig * _Nullable)withJSONDictionary:(NSDictionary *)JSONDict;
 
+
+- (instancetype _Nullable)initWithAlignment:(ALCutoutAlignment)alignment
+                                  animation:(ALCutoutAnimationStyle)animation
+                              ratioFromSize:(CGSize)ratioFromSize
+                                     offset:(CGPoint)offset
+                                      width:(NSInteger)width
+                           maxHeightPercent:(NSInteger)maxHeightPercent
+                            maxWidthPercent:(NSInteger)maxWidthPercent
+                               cornerRadius:(NSInteger)cornerRadius
+                                strokeWidth:(NSInteger)strokeWidth
+                                strokeColor:(NSString * _Nullable)strokeColor
+                        feedbackStrokeColor:(NSString * _Nullable)feedbackStrokeColor
+                                 outerColor:(NSString * _Nullable)outerColor
+                                 cropOffset:(CGPoint)cropOffset
+                                cropPadding:(CGSize)cropPadding
+                                      image:(NSString * _Nullable)image NS_DESIGNATED_INITIALIZER;
+
++ (ALCutoutConfig *)withAlignment:(ALCutoutAlignment)alignment
+                        animation:(ALCutoutAnimationStyle)animation
+                    ratioFromSize:(CGSize)ratioFromSize
+                           offset:(CGPoint)offset
+                            width:(NSInteger)width
+                 maxHeightPercent:(NSInteger)maxHeightPercent
+                  maxWidthPercent:(NSInteger)maxWidthPercent
+                     cornerRadius:(NSInteger)cornerRadius
+                      strokeWidth:(NSInteger)strokeWidth
+                      strokeColor:(NSString * _Nullable)strokeColor
+              feedbackStrokeColor:(NSString * _Nullable)feedbackStrokeColor
+                       outerColor:(NSString * _Nullable)outerColor
+                       cropOffset:(CGPoint)cropOffset
+                      cropPadding:(CGSize)cropPadding
+                            image:(NSString * _Nullable)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

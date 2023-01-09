@@ -72,6 +72,8 @@
 		
 		<option value="//api/name/defaultFlashConfig">+ defaultFlashConfig</option>
 		
+		<option value="//api/name/withFlashMode:flashAlignment:flashImageName:flashOffset:">+ withFlashMode:flashAlignment:flashImageName:flashOffset:</option>
+		
 		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
 		
 	</optgroup>
@@ -79,6 +81,8 @@
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithFlashMode:flashAlignment:flashImageName:flashOffset:">- initWithFlashMode:flashAlignment:flashImageName:flashOffset:</option>
 		
 		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
@@ -460,6 +464,137 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFlashMode:flashAlignment:flashImageName:flashOffset:" title="initWithFlashMode:flashAlignment:flashImageName:flashOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFlashMode:flashAlignment:flashImageName:flashOffset:">&ndash;&nbsp;initWithFlashMode:flashAlignment:flashImageName:flashOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALFlashConfig</code> object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithFlashMode:(ALFlashMode)<em>flashMode</em> flashAlignment:(ALFlashAlignment)<em>flashAlignment</em> flashImageName:(NSString *_Nullable)<em>flashImageName</em> flashOffset:(CGPoint)<em>flashOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashMode</code></th>
+						<td><p>The flash mode</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashAlignment</code></th>
+						<td><p>The starting location of the flash button in the scan view</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashImageName</code></th>
+						<td><p>If provided, the image shown for the flash</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashOffset</code></th>
+						<td><p>A point offset positioning the flash button. Used in conjunction with the flash alignment</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALFlashConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withFlashMode:flashAlignment:flashImageName:flashOffset:" title="withFlashMode:flashAlignment:flashImageName:flashOffset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withFlashMode:flashAlignment:flashImageName:flashOffset:">+&nbsp;withFlashMode:flashAlignment:flashImageName:flashOffset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an <code>ALFlashConfig</code> object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ALFlashConfig *)withFlashMode:(ALFlashMode)<em>flashMode</em> flashAlignment:(ALFlashAlignment)<em>flashAlignment</em> flashImageName:(NSString *_Nullable)<em>flashImageName</em> flashOffset:(CGPoint)<em>flashOffset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashAlignment</code></th>
+						<td><p>The starting location of the flash button in the scan view</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashImageName</code></th>
+						<td><p>If provided, the image shown for the flash</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flashOffset</code></th>
+						<td><p>A point offset positioning the flash button. Used in conjunction with the flash alignment</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALFlashConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -475,7 +610,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-01-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

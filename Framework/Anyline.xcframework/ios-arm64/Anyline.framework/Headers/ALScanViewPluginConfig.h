@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig *)scanPluginConfig
                                       cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig
                                 scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig
-                                             error:(NSError * _Nullable * _Nullable)error;
+                                             error:(NSError * _Nullable * _Nullable)error NS_DESIGNATED_INITIALIZER;
 
 /**
  Initializes the ScanViewPluginConfig with an ALScanPluginConfig instance

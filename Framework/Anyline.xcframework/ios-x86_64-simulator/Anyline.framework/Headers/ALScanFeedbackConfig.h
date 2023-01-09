@@ -117,6 +117,30 @@ typedef NS_ENUM(NSUInteger, ALFeedbackAnimationStyle) {
 /// @return an instance of ALScanFeedbackConfig
 + (ALScanFeedbackConfig *)defaultScanFeedbackConfig;
 
+- (instancetype)initWithFeedbackStyle:(ALScanFeedbackStyle)feedbackStyle
+                       animationStyle:(ALFeedbackAnimationStyle)animationStyle
+                    animationDuration:(NSInteger)animationDuration
+                          strokeWidth:(NSInteger)strokeWidth
+                          strokeColor:(NSString * _Nullable)strokeColor
+                            fillColor:(NSString * _Nullable)fillColor
+                         cornerRadius:(NSInteger)cornerRadius
+                        redrawTimeout:(NSInteger)redrawTimeout
+                         beepOnResult:(BOOL)beepOnResult
+               blinkAnimationOnResult:(BOOL)blinkAnimationOnResult
+                      vibrateOnResult:(BOOL)vibrateOnResult NS_DESIGNATED_INITIALIZER;
+
++ (ALScanFeedbackConfig *)withFeedbackStyle:(ALScanFeedbackStyle)feedbackStyle
+                             animationStyle:(ALFeedbackAnimationStyle)animationStyle
+                          animationDuration:(NSInteger)animationDuration
+                                strokeWidth:(NSInteger)strokeWidth
+                                strokeColor:(NSString * _Nullable)strokeColor
+                                  fillColor:(NSString * _Nullable)fillColor
+                               cornerRadius:(NSInteger)cornerRadius
+                              redrawTimeout:(NSInteger)redrawTimeout
+                               beepOnResult:(BOOL)beepOnResult
+                     blinkAnimationOnResult:(BOOL)blinkAnimationOnResult
+                            vibrateOnResult:(BOOL)vibrateOnResult;
+
 @end
 
 NS_ASSUME_NONNULL_END

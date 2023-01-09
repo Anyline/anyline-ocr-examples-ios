@@ -1,3 +1,4 @@
+
 #import "ALBottlecapScanViewController.h"
 #import <Anyline/Anyline.h>
 #import "ALResultOverlayView.h"
@@ -17,13 +18,13 @@ NSString * const kBottleCapVC_configJSONFilename = @"bottlecap_config";
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"Pepsi Code";
-
+    
     self.controllerType = ALScanHistoryBottleCapPepsi;
-
+    
     [self reloadScanView];
-
+    
     [self setColors];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,7 +39,14 @@ NSString * const kBottleCapVC_configJSONFilename = @"bottlecap_config";
 
 - (void)reloadScanView {
     NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBottleCapVC_configJSONFilename] asJSONObject];
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:nil];
+    
+    NSError *error;
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:&error];
+    
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+    
     scanViewPlugin.scanPlugin.delegate = self;
     
     [self.scanView stopCamera];
@@ -49,10 +57,15 @@ NSString * const kBottleCapVC_configJSONFilename = @"bottlecap_config";
     self.scanViewPlugin = scanViewPlugin;
     
     ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:configJSONDictionary];
-        self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                           scanViewPlugin:scanViewPlugin
-                                           scanViewConfig:scanViewConfig
-                                                    error:nil];
+    
+    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                       scanViewPlugin:scanViewPlugin
+                                       scanViewConfig:scanViewConfig
+                                                error:&error];
+    
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
     
     [self installScanView:self.scanView]; // call startCamera and start the plugin outside
     

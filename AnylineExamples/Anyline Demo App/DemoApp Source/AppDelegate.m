@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  AnylineExamples
-//
-//  Created by Daniel Albertini on 05/02/15.
-//  Copyright (c) 2015 9yards GmbH. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "ALMainPageViewController.h"
 #import "UIColor+ALExamplesAdditions.h"
@@ -26,7 +18,16 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    NSError *error = nil;
+    NSString *licenseKey = kDemoAppLicenseKey_Bundle;
+    [AnylineSDK setupWithLicenseKey:licenseKey error:&error];
+    if (error) {
+        NSLog(@"There was an error initializing the AnylineSDK. Reason: %@", error.localizedDescription);
+        // nothing to be done now. We'll let the app continue on. But attempts to create a scan view plugin
+        // will fail and then we'll get to show the error as an alert in the demo apps.
+    }
+
     [[CoreDataManager sharedInstance] setupCoreData];
     if ([NSUserDefaults AL_createEntryOnce:NSStringFromClass([[CoreDataManager sharedInstance] class])]) {
         [[CoreDataManager sharedInstance] resetDemoData];
@@ -40,14 +41,6 @@
     
     [[self class] applyAppearanceTweaks];
     
-    NSError *error;
-
-    NSString *licenseKey = kDemoAppLicenseKey_Bundle;
-    [AnylineSDK setupWithLicenseKey:licenseKey error:&error];
-    if (error) {
-        NSLog(@"Error with Anyline license: %@",error.localizedDescription);
-        return NO;
-    }
     return YES;
 }
 
@@ -79,7 +72,7 @@
 }
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    if(self.enableLandscapeRight) {
+    if (self.enableLandscapeRight) {
         return UIInterfaceOrientationMaskLandscapeRight;
     } else {
         return UIInterfaceOrientationMaskPortrait;

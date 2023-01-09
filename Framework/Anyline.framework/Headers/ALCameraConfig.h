@@ -77,6 +77,34 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return an instance of ALCameraConfig
 + (instancetype _Nullable)defaultCameraConfig;
 
+/// Initializes an `ALCameraConfig` object.
+/// @param defaultCamera Camera to be used for scanning. Could be "FRONT" or "BACK"
+/// @param captureResolution Resolution in which the camera operates. Currently only 1080p is supported.
+/// @param pictureResolution Picture resolution in which the camera operates. Currently only 1080p is supported.
+/// @param zoomFactor Camera focal length (default: 1)
+/// @param maxZoomFactor Camera max focal length. Default: 0 => Device maxAvailableVideoZoom
+/// @param zoomGesture Determines whether the pinch-to-zoom gesture is enabled. Defaults to false
+- (instancetype)initWithDefaultCamera:(NSString *)defaultCamera
+                captureViewResolution:(ALCaptureViewResolution)captureResolution
+                    pictureResolution:(ALPictureResolution)pictureResolution
+                           zoomFactor:(CGFloat)zoomFactor
+                        maxZoomFactor:(CGFloat)maxZoomFactor
+                          zoomGesture:(BOOL)zoomGesture NS_DESIGNATED_INITIALIZER;
+
+/// Creates an `ALCameraConfig` object.
+/// @param defaultCamera Camera to be used for scanning. Could be "FRONT" or "BACK"
+/// @param captureResolution Resolution in which the camera operates. Currently only 1080p is supported.
+/// @param pictureResolution Picture resolution in which the camera operates. Currently only 1080p is supported.
+/// @param zoomFactor Camera focal length (default: 1)
+/// @param maxZoomFactor Camera max focal length. Default: 0 => Device maxAvailableVideoZoom
+/// @param zoomGesture Determines whether the pinch-to-zoom gesture is enabled. Defaults to false
++ (ALCameraConfig *)withDefaultCamera:(NSString *)defaultCamera
+                captureViewResolution:(ALCaptureViewResolution)captureResolution
+                    pictureResolution:(ALPictureResolution)pictureResolution
+                           zoomFactor:(CGFloat)zoomFactor
+                        maxZoomFactor:(CGFloat)maxZoomFactor
+                          zoomGesture:(BOOL)zoomGesture;
+
 @end
 
 NS_ASSUME_NONNULL_END

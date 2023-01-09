@@ -1,9 +1,8 @@
 #import "ALMeterExampleManager.h"
-#import "ALDialMeterScanViewController.h"
-#import "ALMeterSerialNumberScanViewController.h"
 #import "CustomerSelfReadingViewController.h"
 #import "WorkForceViewController.h"
 #import "AnylineExamples-Swift.h"
+#import "ALUniversalSerialNumberScanViewController.h"
 
 @interface ALMeterExampleManager ()
 
@@ -35,6 +34,10 @@
                                                              image:[UIImage imageNamed:@"dial meter"]
                                                     viewController:[ALMeterScanViewController class]
                                                              title:@"Dial Meter"];
+    
+    ALExample *meterSerialNumberScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Serial Number", nil)
+                                                                image:[UIImage imageNamed:@"serial number"]
+                                                       viewController:[ALUniversalSerialNumberScanViewController class]];
 
     // this is merely a parallel meter/barcode scanner, like with Analog/Digital, but using the now-defunct
     // ALSerialNumber meter scan mode.
@@ -49,7 +52,7 @@
         self.sectionNames[0] : @[
             analogDigitalMeterScanning,
             dialMeterScanning,
-            // serialScanning
+            meterSerialNumberScanning
         ]
     };
 }

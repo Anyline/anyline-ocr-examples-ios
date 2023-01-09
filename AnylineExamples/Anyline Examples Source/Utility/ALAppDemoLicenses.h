@@ -1,21 +1,83 @@
-//
-//  AppDemoLicense.h
-//  AnylineExamples
-//
-//  Created by Philipp Müller on 07/12/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
-//
-
 #ifndef Anyline_ALAppDemoLicenses_h
 #define Anyline_ALAppDemoLicenses_h
 
+/**
+ Works for all iOS app ids, expires end of 2023, all scope, watermark, debugReporting = on
 
+ {
+   "licenseKeyVersion": "3.0",
+   "debugReporting": "on",
+   "majorVersion": "37",
+   "scope": [
+     "ALL"
+   ],
+   "maxDaysNotReported": 30,
+   "advancedBarcode": true,
+   "multiBarcode": true,
+   "supportedBarcodeFormats": [
+     "ALL"
+   ],
+   "platform": [
+     "iOS",
+     "Android"
+   ],
+   "showWatermark": true,
+   "toleranceDays": 30,
+   "valid": "2023-12-31",
+   "iosIdentifier": [
+     "io.anyline.AnylineExamples",
+     "io.anyline.AnylineExamples.bundle",
+     "com.anyline.prototypes"
+   ],
+   "androidIdentifier": [
+     "io.anyline.AnylineExamples",
+     "io.anyline.AnylineExamples.bundle",
+     "com.anyline.prototypes"
+   ]
+ }
+ gJtnMP3qfHwR2ta4cggf9eb4s1VF5XABEJihwVd5AHCKzXr2mwWIzBCgAb6LGA96XwG/DP1uDKwun6IE4duTZ4S8t9j8jrIuS9verTjKjsSub42UF4wt70GHaqC8iE5TGhJgfMh8ytFRM47wVSsjB9Xf621JM8qOQ22fIvvUm1nssePqD9bdDgOxvPj1dFBdgEfOI+FMml8okV+AMQpZbglXNVUdKULHE41N0CVavPF9CptW/zziX9aAqQB93SoaZWPQj/aOH0/l7tIHUFuKpUfpJGe4cLQvpDnJeWYpfS9PDB9XXyfTAOXVGMSrajbwMxOEzwbquStqPkKA/6wVGQ==
+ */
+#define kDemoAppLicenseKey_Store \
+@"ewogICJsaWNlbnNlS2V5VmVyc2lvbiI6ICIzLjAiLAogICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsCiAgIm1ham9yVmVyc2lvbiI6ICIzNyIsCiAgInNjb3BlIjogWwogICAgIkFMTCIKICBdLAogICJtYXhEYXlzTm90UmVwb3J0ZWQiOiAzMCwKICAiYWR2YW5jZWRCYXJjb2RlIjogdHJ1ZSwKICAibXVsdGlCYXJjb2RlIjogdHJ1ZSwKICAic3VwcG9ydGVkQmFyY29kZUZvcm1hdHMiOiBbCiAgICAiQUxMIgogIF0sCiAgInBsYXRmb3JtIjogWwogICAgImlPUyIsCiAgICAiQW5kcm9pZCIKICBdLAogICJzaG93V2F0ZXJtYXJrIjogdHJ1ZSwKICAidG9sZXJhbmNlRGF5cyI6IDMwLAogICJ2YWxpZCI6ICIyMDIzLTEyLTMxIiwKICAiaW9zSWRlbnRpZmllciI6IFsKICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcyIsCiAgICAiaW8uYW55bGluZS5BbnlsaW5lRXhhbXBsZXMuYnVuZGxlIiwKICAgICJjb20uYW55bGluZS5wcm90b3R5cGVzIgogIF0sCiAgImFuZHJvaWRJZGVudGlmaWVyIjogWwogICAgImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzIiwKICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcy5idW5kbGUiLAogICAgImNvbS5hbnlsaW5lLnByb3RvdHlwZXMiCiAgXQp9CmdKdG5NUDNxZkh3UjJ0YTRjZ2dmOWViNHMxVkY1WEFCRUppaHdWZDVBSENLelhyMm13V0l6QkNnQWI2TEdBOTZYd0cvRFAxdURLd3VuNklFNGR1VFo0Uzh0OWo4anJJdVM5dmVyVGpLanNTdWI0MlVGNHd0NzBHSGFxQzhpRTVUR2hKZ2ZNaDh5dEZSTTQ3d1ZTc2pCOVhmNjIxSk04cU9RMjJmSXZ2VW0xbnNzZVBxRDliZERnT3h2UGoxZEZCZGdFZk9JK0ZNbWw4b2tWK0FNUXBaYmdsWE5WVWRLVUxIRTQxTjBDVmF2UEY5Q3B0Vy96emlYOWFBcVFCOTNTb2FaV1BRai9hT0gwL2w3dElIVUZ1S3BVZnBKR2U0Y0xRdnBEbkplV1lwZlM5UERCOVhYeWZUQU9YVkdNU3JhamJ3TXhPRXp3YnF1U3RxUGtLQS82d1ZHUT09"
+
+
+/**
+ Works for all iOS app ids, expires end of 2023, all scope, watermark, debugReporting = ping
+
+ {
+   "licenseKeyVersion": "3.0",
+   "debugReporting": "ping",
+   "majorVersion": "37",
+   "scope": [
+     "ALL"
+   ],
+   "maxDaysNotReported": 30,
+   "advancedBarcode": true,
+   "multiBarcode": true,
+   "supportedBarcodeFormats": [
+     "ALL"
+   ],
+   "platform": [
+     "iOS",
+     "Android"
+   ],
+   "showWatermark": true,
+   "toleranceDays": 30,
+   "valid": "2023-12-31",
+   "iosIdentifier": [
+     "io.anyline.AnylineExamples",
+     "io.anyline.AnylineExamples.bundle",
+     "com.anyline.prototypes"
+   ],
+   "androidIdentifier": [
+     "io.anyline.AnylineExamples",
+     "io.anyline.AnylineExamples.bundle",
+     "com.anyline.prototypes"
+   ]
+ }
+ Wgmm7rZ+NU/HhUfaR07DptVYhfgHbdEhhzOEAmOCAICeKY0gzc4sB/JbP7rr9LmlkcB4mUxiUFz0jWp7vXgDeeV7Sv62kFaRu9wVlWXSLYPD9RnJEUD+ZL40mYgVfLpbx3Ix39teyD3br0h3WJaU9raQjRZ3q/JZp8f8Uv0d2PywJycwy9Nu1ZOt1DBAt2ueeZhQ6qt+/vPmAswWSq9VLkkH6cYpOdcLiFEMXG4X/fc9vOCL0POcCEpcrQrl51QjKIAqeHCG/5Pk+3MCVXHt7b5f033yKhuZ58Lvm+xvCHzV+qePMEY2Zfr+ertaw16EXGUjvJ8/IzF6A95yEVXvpw==
+ */
 #define kDemoAppLicenseKey_Bundle \
-@"ew0KICAibGljZW5zZUtleVZlcnNpb24iOiAiMy4wIiwNCiAgImRlYnVnUmVwb3J0aW5nIjogInBpbmciLA0KICAibWFqb3JWZXJzaW9uIjogIjM3IiwNCiAgInNjb3BlIjogWw0KICAgICJBTEwiDQogIF0sDQogICJtYXhEYXlzTm90UmVwb3J0ZWQiOiAzMCwNCiAgImFkdmFuY2VkQmFyY29kZSI6IHRydWUsDQogICJtdWx0aUJhcmNvZGUiOiB0cnVlLA0KICAic3VwcG9ydGVkQmFyY29kZUZvcm1hdHMiOiBbDQogICAgIkFMTCINCiAgXSwNCiAgInBsYXRmb3JtIjogWw0KICAgICJpT1MiLA0KICAgICJBbmRyb2lkIg0KICBdLA0KICAic2hvd1dhdGVybWFyayI6IHRydWUsDQogICJ0b2xlcmFuY2VEYXlzIjogMzAsDQogICJ2YWxpZCI6ICIyMDIzLTA2LTMwIiwNCiAgImlvc0lkZW50aWZpZXIiOiBbDQogICAgImlvLmFueWxpbmUuZXhhbXBsZXMiLA0KICAgICJpby5hbnlsaW5lLmV4YW1wbGVzLnN0b3JlIiwNCiAgICAiaW8uYW55bGluZS5leGFtcGxlcy5idW5kbGUiLA0KICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcyIsDQogICAgImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzLmJldGEiLA0KICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcy50ZXN0IiwNCiAgICAiaW8uYW55bGluZS5leGFtcGxlcy50ZXN0Ig0KICBdLA0KICAiYW5kcm9pZElkZW50aWZpZXIiOiBbDQogICAgImlvLmFueWxpbmUuZXhhbXBsZXMiLA0KICAgICJpby5hbnlsaW5lLmV4YW1wbGVzLnN0b3JlIiwNCiAgICAiaW8uYW55bGluZS5leGFtcGxlcy5idW5kbGUiLA0KICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcyIsDQogICAgImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzLmJldGEiLA0KICAgICJpby5hbnlsaW5lLmV4YW1wbGVzLnRlc3QiDQogIF0NCn0KUkNsdndZRituM0c5am5YQnE5QVAwd0M0dVRubWNDMmhDT1R1Yys1ZmhDNVk3K3pqTzhUeWdCV0dsSnVBNmp1SVdpZ3ovb3pqUi95eE1TLzhoeHJ6R0EwdFpJRFhHU1laRmtYVTNnVm16TERtTTFNZkdEQk4wMVN5bjFUQ2RUQ3Zqc0VPVlozMW91UHJzNUtNTVVWTzVleWtMdDRBNXM0b0FnemdRM25XQ2Q5RHgyOU5yOWxOZmdraXFoNkxEbTdrMnF3ME9CMDJYWjFsS2phVENtRkpMUXB0em83UG1iaXRHWEtGUXVvZGpicEJDcDQ1NGJ2SHhuMWFXUGtsR1NSVUJ1NkxBZyt0cEp0eWFuWVlDQjVJTTN6QUV0TjlhSENSdEYwNWliaVhoaUQyYUFZRUlpZ1ZHK2pQTFdDa0syMHlEcTlRNkl6V1dGMmxpcFovZDVJQXZ3PT0="
+@"ewogICJsaWNlbnNlS2V5VmVyc2lvbiI6ICIzLjAiLAogICJkZWJ1Z1JlcG9ydGluZyI6ICJwaW5nIiwKICAibWFqb3JWZXJzaW9uIjogIjM3IiwKICAic2NvcGUiOiBbCiAgICAiQUxMIgogIF0sCiAgIm1heERheXNOb3RSZXBvcnRlZCI6IDMwLAogICJhZHZhbmNlZEJhcmNvZGUiOiB0cnVlLAogICJtdWx0aUJhcmNvZGUiOiB0cnVlLAogICJzdXBwb3J0ZWRCYXJjb2RlRm9ybWF0cyI6IFsKICAgICJBTEwiCiAgXSwKICAicGxhdGZvcm0iOiBbCiAgICAiaU9TIiwKICAgICJBbmRyb2lkIgogIF0sCiAgInNob3dXYXRlcm1hcmsiOiB0cnVlLAogICJ0b2xlcmFuY2VEYXlzIjogMzAsCiAgInZhbGlkIjogIjIwMjMtMTItMzEiLAogICJpb3NJZGVudGlmaWVyIjogWwogICAgImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzIiwKICAgICJpby5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcy5idW5kbGUiLAogICAgImNvbS5hbnlsaW5lLnByb3RvdHlwZXMiCiAgXSwKICAiYW5kcm9pZElkZW50aWZpZXIiOiBbCiAgICAiaW8uYW55bGluZS5BbnlsaW5lRXhhbXBsZXMiLAogICAgImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzLmJ1bmRsZSIsCiAgICAiY29tLmFueWxpbmUucHJvdG90eXBlcyIKICBdCn0KV2dtbTdyWitOVS9IaFVmYVIwN0RwdFZZaGZnSGJkRWhoek9FQW1PQ0FJQ2VLWTBnemM0c0IvSmJQN3JyOUxtbGtjQjRtVXhpVUZ6MGpXcDd2WGdEZWVWN1N2NjJrRmFSdTl3VmxXWFNMWVBEOVJuSkVVRCtaTDQwbVlnVmZMcGJ4M0l4Mzl0ZXlEM2JyMGgzV0phVTlyYVFqUlozcS9KWnA4ZjhVdjBkMlB5d0p5Y3d5OU51MVpPdDFEQkF0MnVlZVpoUTZxdCsvdlBtQXN3V1NxOVZMa2tINmNZcE9kY0xpRkVNWEc0WC9mYzl2T0NMMFBPY0NFcGNyUXJsNTFRaktJQXFlSENHLzVQayszTUNWWEh0N2I1ZjAzM3lLaHVaNThMdm0reHZDSHpWK3FlUE1FWTJaZnIrZXJ0YXcxNkVYR1Vqdko4L0l6RjZBOTV5RVZYdnB3PT0="
 
-#define kCommunityLicense_v1 \
-@"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0iOlsiaU9TIiwiQW5kcm9pZCIsIldpbmRvd3MiXSwidmFsaWQiOiIyMDE3LTA2LTA2IiwibWFqb3JWZXJzaW9uIjoiMyIsImlzQ29tbWVyY2lhbCI6ZmFsc2UsInRvbGVyYW5jZURheXMiOjYwLCJpb3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzIl0sImFuZHJvaWRJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzIl0sIndpbmRvd3NJZGVudGlmaWVyIjpbImlvLmFueWxpbmUuQW55bGluZUV4YW1wbGVzIl19CkkwL1VNUGEvSnVsKzFTVXdzMlJqRGorWlhJVXlYZTE5QnlVZ1J5K2ZkNUJSTExRLzNlUUFOVkNYQm9zZ2YxUFJUWWp2c05aakpqSWFYVTdLc2JkL25zdC9oZTV4Qjk5MnZMTDFqcDhSMXJIR2dmNUsxVFg2TXNaK2VKbmFvak9nMThUbjBBSWt3YkU3aHA5M0lnRXlPb25KanR5Mno0bVYrdVhPTXRIR0hpVXRMZExQaHE2aUZOTW5OTEFDT0FwM0N4NjNXblhNakJKVGUwRjlzOUtHbGsvZExCQWExdW1KUkk5bE1qVmQ1Q2ZLTDkxb0F0Yk1sdzcxOHdvcWpwaE1PUGE0c1o0a3ZYRzZnSm9iSkRQWXpqTlVBc2xNTUUwS0Q3Rjh1bVROZnJ1NGJXczRvK2NYZjFmQnNMeHpDNmJRbHRwT0dZd0xFSlhPQXdqR2p4SVBhZz09"
-
-#define kDocumentLicense \
-@"eyJzY29wZSI6WyJHRU5FUklDIl0sInBsYXRmb3JtIjpbImlPUyJdLCJ2YWxpZCI6IjIwMTctMDEtMDEiLCJtYWpvclZlcnNpb24iOiIzIiwiaXNDb21tZXJjaWFsIjpmYWxzZSwiaW9zSWRlbnRpZmllciI6WyJhdC5hbnlsaW5lLkFueWxpbmVFeGFtcGxlcyJdfQpJRFNINHFnd1ROQytCVlB1b29Pd2RNMmVBa2hjNDRKbFJpRjNkMTM0anc0VkgyaUtHVHN1QVg0dEpjTjhIdGdHT2Qydmh1UnB3OWkwRTAvblRsbmFTUnZ5ZjlreGpHZnBEb3VsQ0hsMk84SUpURjREdGQxVGw3L252aHBJaGUzaDlCaDhZSGROak10TE1TemJpM25jZjQ4eHREbkFCVXN0NitnWXRPeGFVUmNwdjlYOGpwc2lmV0lBdXVkTTRPVWNnYi9wdUVHVUI3TUNQZlBZcXFlSjFMbFM2WWlVWVlXUjZ6bU5IVjZscVNmdWk3Zk4xcU0ra2JvaDBmS2JLbFVTUzBNSmRXeDNPekVsVTR2dWZzb2NQNjdBSVVWMDAyQ0NPUThXK2loNmtodGxCUXdDN000QVhWN2ppaExHQy90ZUErWmluQ3E3M3VUdURRZFp6U1Rxd2c9PQ"
 #endif

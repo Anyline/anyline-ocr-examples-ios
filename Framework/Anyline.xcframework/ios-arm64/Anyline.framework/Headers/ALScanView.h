@@ -3,8 +3,6 @@
 #import "ALScanViewConfig.h"
 #import "ALScanViewPlugin.h"
 
-@protocol ALUIFeedback;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ALScanViewDelegate;
@@ -21,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// populated with the reasons for the failure
 /// @return the `ALScanView` object
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                         scanViewPlugin:(id<ALScanViewPluginBase>)scanViewPlugin
+                         scanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
                          scanViewConfig:(ALScanViewConfig * _Nullable)scanViewConfig
                                   error:(NSError * _Nullable * _Nullable)error;
 
@@ -32,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// populated with the reasons for the failure
 /// @return the `ALScanView` object
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                         scanViewPlugin:(id<ALScanViewPluginBase>)scanViewPlugin
+                         scanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
                                   error:(NSError * _Nullable * _Nullable)error;
 
 /// Update a scan view with a different scan view plugin. The cutout and feedback layers
@@ -41,14 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param error if error is encountered while setting the ScanViewPlugin object, this will be
 /// populated with the reason for the failure
 /// @return a boolean indicating whether or not the operation succeeded.
-- (BOOL)setScanViewPlugin:(id<ALScanViewPluginBase>)scanViewPlugin
+- (BOOL)setScanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
                     error:(NSError * _Nullable * _Nullable)error;
 
 /// The object to be notified of events reported by the scan view
 @property (nonatomic, weak) id<ALScanViewDelegate> delegate;
 
 /// The scan view plugin instance
-@property (nonatomic, readonly) id<ALScanViewPluginBase> scanViewPlugin;
+@property (nonatomic, readonly) NSObject<ALScanViewPluginBase> * scanViewPlugin;
 
 /// The frame of the visible flash toggle button. The frame can be useful for some
 /// operations done on the UI layer
@@ -57,29 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// The scan view config passed to this object during initialization
 @property (nonatomic, readonly) ALScanViewConfig * _Nullable scanViewConfig;
 
-/// An event provider to inform subscribers when too much motion is currently
-/// detected while the scan view is running, which poses problems for object
-/// detection.
-@property (nonatomic, readonly) id<ALEventProviding> motionExceededThreshold;
-
-/// When native barcode mode is enabled, subscribers to this event provider
-/// will be able to obtain any applicable barcode results emitted back. Note
-/// that native barcode scanning as a feature is different from the ScanPlugin
-/// with a barcode config
-@property (nonatomic, readonly) id<ALEventProviding> nativeBarcodeResult;
-
 /// Enable native barcode scanning by providing a list of valid barcode formats to use.
 /// You may also set an empty array to scan all possible types (may impact performance),
 /// or null to disable. In either case, do so before calling `startCamera`. This is by
 /// default null.
 @property (nonatomic, strong, nullable) NSArray<AVMetadataObjectType> *supportedNativeBarcodeFormats;
-
-/// Copied from internal implementation of ALScanView, to make this visible to the tests.
-/// As there are potentially two feedback layers in play (native and web), we
-/// need to know to which one is visible at a given time. For instance, with
-/// parallel scanning, we can have both being shown simultaneously if for instance
-/// at least one plugin uses web and at least one other is using native feedback.
-@property (nonatomic, readonly) NSSet<UIView<ALUIFeedback> *> *visibleFeedbackLayers;
 
 /// Starts the scan view camera
 - (void)startCamera;
@@ -114,6 +94,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param frame the size and position of the cutout. If the cutout was hidden, the reported frame is null
 /// @param pluginID the ID of the plugin, useful in a composite scanning setup
 - (void)scanView:(ALScanView *)scanView updatedCutoutWithPluginID:(NSString *)pluginID frame:(CGRect)frame;
+
+/// This method is called when a the scan view encountered an error during scanning.
+/// @param scanView the scan view calling this method
+/// @param error an NSError object holding information about the error encountered
+- (void)scanView:(ALScanView *)scanView encounteredError:(NSError *)error;
 
 @end
 

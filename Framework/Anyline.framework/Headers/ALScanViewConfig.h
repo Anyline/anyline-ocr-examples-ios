@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param flashConfig Component object configuring the flash / torch module
 /// @return an instance of ALScanViewConfig
 - (instancetype)initWithCameraConfig:(ALCameraConfig * _Nullable)cameraConfig
-                         flashConfig:(ALFlashConfig * _Nullable)flashConfig;
+                         flashConfig:(ALFlashConfig * _Nullable)flashConfig NS_DESIGNATED_INITIALIZER;
 
 /// Initializes an ALScanViewConfig with a NSDictionary holding the configuration object in JSON
 /// @param JSONDictionary the Dictionary containing the scan view config

@@ -1,6 +1,5 @@
 #import "ALEnergyMeterScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "ALMeterScanResultViewController.h"
 #import "CustomerSelfReadingResultViewController.h"
 #import "WorkforceToolResultViewController.h"
 #import "CustomerDataView.h"
@@ -32,7 +31,7 @@
     NSString *configJSONStr = [self configJSONStrWithFilename:@"serial_meter_barcode_config"];
     NSDictionary *JSONDict = [configJSONStr asJSONObject];
 
-    id obj = [ALScanViewPluginFactory withJSONDictionary:JSONDict ];
+    id obj = [ALScanViewPluginFactory withJSONDictionary:JSONDict error:nil];
     NSAssert([obj isKindOfClass:ALViewPluginComposite.class], @"should be a plugin composite!");
 
     ALScanViewConfig *scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:JSONDict error:nil];
@@ -47,10 +46,15 @@
         }
     }
 
+    NSError *error;
     self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                        scanViewPlugin:self.viewPluginComposite
                                        scanViewConfig:scanViewConfig
-                                                error:nil];
+                                                error:&error];
+
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
     
     self.scanView.translatesAutoresizingMaskIntoConstraints = NO;
 

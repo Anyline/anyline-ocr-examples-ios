@@ -42,15 +42,15 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
     
     ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Identification Number (DOT)", nil)
                                                        image:[UIImage imageNamed:@"tin"]
-                                              viewController:[TireViewController class] title:@"Tire Identification Number (DOT)"];
+                                              viewController:[ALTireViewController class] title:@"Tire Identification Number (DOT)"];
     
     ALExample *tireSizeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Size Specifications", nil)
                                                             image:[UIImage imageNamed:@"tin"]
-                                                   viewController:[TireSizeViewController class] title:@"Tire Size Specifications"];
+                                                   viewController:[ALTireSizeViewController class] title:@"Tire Size Specifications"];
     
     ALExample *commercialTireScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Commercial Tire Identification Number", nil)
                                                                   image:[UIImage imageNamed:@"tin"]
-                                                         viewController:[CommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
+                                                         viewController:[ALCommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
     ALExample *vehicleRegistrationCertificate = [[ALExample alloc] initWithName:NSLocalizedString(kVehicleRegistrationCertificate, nil)
                                                                           image:[UIImage imageNamed:@"vrc"]
