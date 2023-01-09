@@ -7,6 +7,10 @@
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
 #import "UISwitch+ALExamplesAdditions.h"
+#import "ALConfigurationDialogViewController.h"
+#import "ALBarcodeSettingsViewController.h"
+#import "ALBarcodeBatchCountView.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 
 NSTimeInterval const kBarcodeTroubleScanningTimeoutTime = 15;
 
@@ -17,14 +21,28 @@ take a look at the settings to find out if your barcode is currently selected fo
 
 NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 
+NSString * const kBarcodeActionText = @"OK";
 
-@interface ALBarcodeScanViewController () <ALScanPluginDelegate, ALScanViewPluginDelegate, ALSelectionTableDelegate>
+NSString * const kSingleSelection = @"Single";
+NSString * const kMultiSelection = @"Multi";
+NSString * const kBatchSelection = @"Batch";
+
+typedef enum : NSUInteger {
+    BarcodeSingleScanMode,
+    BarcodeMultiScanMode,
+    BarcodeBatchScanMode,
+} BarcodeScanMode;
+
+
+@interface ALBarcodeScanViewController () <ALScanPluginDelegate, ALScanViewPluginDelegate, ALBarcodeSettingsDelegate, ALConfigurationDialogViewControllerDelegate>
 
 @property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
 
 @property (nonatomic, readonly) ALScanViewPluginConfig *scanViewPluginConfigDefault;
 
 @property (nonatomic, strong) ALScanResult *latestScanResult;
+
+@property (nonatomic, strong) NSMutableArray<ALBarcode *> *latestUniqueBarcodeScanResult;
 
 @property (nonatomic, strong) NSArray<ALBarcodeFormat *> *selectedBarcodeFormats;
 
@@ -34,18 +52,22 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 
 @property (nonatomic, strong) NSTimer *fadeTimer;
 
-@property (nonatomic, strong) UISwitch *barcodeModeToggle;
-
 @property (nonatomic, assign) BOOL isMultiBarcode;
 
-@property (nonatomic, strong) NSArray<NSString *> *defaultBarcodeSymbologiesReadable;
-
 @property (nullable, nonatomic, strong) NSTimer *troubleScanningTimeout;
+
+@property (nullable, nonatomic, strong) ALBarcodeSettingsViewController *barcodeSettingsViewController;
+@property (nonatomic, assign) BarcodeScanMode dialogIndexScanModeSelected;
+@property (nonatomic, assign) BOOL isSingleManualScanEnabled;
+@property (nonatomic, assign) BOOL isMultiManualScanEnabled;
+@property (nonatomic, strong) UIButton *scanModeSelectionButton;
+@property (nonatomic, strong) ALBarcodeBatchCountView *batchCountView;
 
 + (ALScanViewPluginConfig *)defaultScanViewPluginConfig;
 
 + (ALScanViewPlugin *)scanViewPluginWithBarcodeFormats:(NSArray<ALBarcodeFormat *> *)barcodeFormats
-                                        isMultiBarcode:(BOOL)isMultiBarcode;
+                                        isMultiBarcode:(BOOL)isMultiBarcode
+                                                 error:(NSError * _Nullable * _Nullable)error;
 
 @end
 
@@ -53,38 +75,42 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 @implementation ALBarcodeScanViewController
 
 - (void)dealloc {
-    NSLog(@"dealloc ALBarcodeScanViewController");
+    // NSLog(@"dealloc ALBarcodeScanViewController");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"Barcodes";
     self.controllerType = ALScanHistoryBarcode;
-
+    self.isMultiManualScanEnabled = YES;
+    self.dialogIndexScanModeSelected = BarcodeSingleScanMode;
+    self.barcodeSettingsViewController = [[ALBarcodeSettingsViewController alloc] init];
+    self.barcodeSettingsViewController.delegate = self;
+    
     [self setupSettingsNavBarBtn];
-
-    self.defaultBarcodeSymbologiesReadable = [ALBarcodeFormatHelper defaultSymbologiesReadableNames];
+    [self setupScanModeSelectionButton];
+    [self setupBatchCountView];
+    [self setupConfirmScanButton];
+    
+    NSArray<ALBarcodeFormat *> *selectedSymbologies = [ALBarcodeFormatHelper formatsForReadableNames:[NSUserDefaults AL_selectedSymbologiesForBarcode]];
+    if (!selectedSymbologies || (selectedSymbologies.count < 1)) {
+        selectedSymbologies = [self.barcodeSettingsViewController getDefaultFormatsForDefaultReadableNames];
+    }
+    _selectedBarcodeFormats = selectedSymbologies;
 
     // NOTE: we don't use the `self.* = ` notation here to avoid calling the reloadScanView each time
     // The values of these two properties are defined here and their corresponding values on the
     // config JSON file are ignored. Also, must give this property a value otherwise a crash will
     // ensue.
     _isMultiBarcode = NO;
-
+    
     // or alternatively,
     //   _selectedBarcodeFormats = @[ <ALBarcodeFormat Constant>,... ];
-    _selectedBarcodeFormats = [ALBarcodeFormatHelper formatsForReadableNames:
-                               self.defaultBarcodeSymbologiesReadable];
 
     [self reloadScanView];
-    
-    [self setupConfirmScanButton];
-
-    [self setupMultiBarcodeToggleButton];
 
     [self setColors];
-
     // ACO - maybe no need for this.
     // [self setupResultLabel];
 
@@ -95,6 +121,11 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.scanViewPlugin startWithError:nil];
+    if (self.dialogIndexScanModeSelected == BarcodeSingleScanMode) {
+        [self setScanButtonHidden:!_isSingleManualScanEnabled andEnable:NO];
+    } else if (self.dialogIndexScanModeSelected == BarcodeMultiScanMode) {
+        [self setScanButtonHidden:!_isMultiManualScanEnabled andEnable:NO];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -106,7 +137,7 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     [super viewWillDisappear:animated];
     [self.scanViewPlugin stop];
     [self stopTroubleScanningTimeout];
-
+    [self saveBarcodeSymbologies];
     // ACO do we still need this?
     // usleep(200000);
 }
@@ -114,6 +145,23 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [super traitCollectionDidChange:previousTraitCollection];
     [self setColors];
+}
+
+- (void)removeRepeatedResultsFromResultArray:(NSArray<ALBarcode *> *)scanResultArray {
+   
+    [self.latestUniqueBarcodeScanResult addObjectsFromArray:scanResultArray];
+    
+    __block NSMutableSet *uniqueTypeIDs = [NSMutableSet set];
+    NSIndexSet *set = [self.latestUniqueBarcodeScanResult indexesOfObjectsPassingTest:^BOOL(ALBarcode *object, NSUInteger idx, BOOL *stop) {
+        if([uniqueTypeIDs containsObject:object.value]) {
+            return NO;
+        } else {
+            [uniqueTypeIDs addObject:object.value];
+            return YES;
+        }
+    }];
+    
+    self.latestUniqueBarcodeScanResult = [self.latestUniqueBarcodeScanResult objectsAtIndexes:set].mutableCopy;
 }
 
 // MARK: - Getters and Setters
@@ -127,12 +175,6 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
 }
 
-- (void)setIsMultiBarcode:(BOOL)isMultiBarcode {
-    [self.scanViewPlugin stop];
-    _isMultiBarcode = isMultiBarcode;
-    [self reloadScanView];
-}
-
 - (void)setSelectedBarcodeFormats:(NSArray<ALBarcodeFormat *> *)selectedBarcodeFormats {
     [self.scanViewPlugin stop];
     _selectedBarcodeFormats = selectedBarcodeFormats;
@@ -144,17 +186,25 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 /// `_isMultiBarcode` ).
 - (void)reloadScanView {
 
+    NSError *error;
     ALScanViewPlugin *scanViewPlugin = [self.class scanViewPluginWithBarcodeFormats:self.selectedBarcodeFormats
-                                                                     isMultiBarcode:self.isMultiBarcode];
+                                                                     isMultiBarcode:self.isMultiBarcode
+                                                                              error:&error];
+
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
     scanViewPlugin.scanPlugin.delegate = self;
     scanViewPlugin.delegate = self;
-
-    self.scanButton.alpha = self.isMultiBarcode ? 1 : 0;
     
     self.scanViewPlugin = scanViewPlugin;
 
     if (self.scanView) {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:nil];
+        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
     } else {
         NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBarcodeScanVC_configJSONFilename]
                                               asJSONObject];
@@ -163,7 +213,12 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                            scanViewPlugin:scanViewPlugin
                                            scanViewConfig:scanViewConfig
-                                                    error:nil];
+                                                    error:&error];
+
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+
         [self installScanView:self.scanView]; // call startCamera and start the plugin outside
     }
 
@@ -174,7 +229,8 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 }
 
 + (ALScanViewPlugin *)scanViewPluginWithBarcodeFormats:(NSArray<ALBarcodeFormat *> *)barcodeFormats
-                                        isMultiBarcode:(BOOL)isMultiBarcode {
+                                        isMultiBarcode:(BOOL)isMultiBarcode
+                                                 error:(NSError **)error {
     ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
     // reach into the barcode config and change the formats and multibarcode flags
     ALPluginConfig *pluginConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig;
@@ -186,7 +242,6 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     barcodeConfig.barcodeFormats = barcodeFormats;
     barcodeConfig.multiBarcode = @(isMultiBarcode);
 
-    // ALScanFeedbackConfig *scanFeedbackConfig =
     NSMutableDictionary *scanFeedbackConfigDict = [NSMutableDictionary dictionaryWithDictionary:[[scanViewPluginConfig.scanFeedbackConfig asJSONString] asJSONObject]];
 
     scanFeedbackConfigDict[@"beepOnResult"] = @(!isMultiBarcode);
@@ -195,10 +250,59 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 
     scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:scanViewPluginConfig.scanPluginConfig cutoutConfig:scanViewPluginConfig.cutoutConfig scanFeedbackConfig:scanFeedbackConfig error:nil];
 
-    return [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:nil];
+    return [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:error];
+}
+
+- (void)saveBarcodeSymbologies {
+    [NSUserDefaults AL_setSelectedSymbologiesForBarcode:[ALBarcodeFormatHelper readableNameForFormats:self.selectedBarcodeFormats]];
 }
 
 // MARK: - Setup UI Elements
+
+- (void)setupScanModeSelectionButton {
+    self.scanModeSelectionButton = [[UIButton alloc] init];
+    CGFloat margin = 20;
+    CGFloat buttonWidth = 98;
+    CGFloat buttonHeight = 36;
+    self.scanModeSelectionButton.layer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75].CGColor;
+    self.scanModeSelectionButton.layer.cornerRadius = round(buttonHeight / 2.0f);
+    self.scanModeSelectionButton.layer.borderWidth = 0.6;
+    self.scanModeSelectionButton.layer.borderColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
+    [self.scanModeSelectionButton setTitle:kSingleSelection forState:UIControlStateNormal];
+    [self.scanModeSelectionButton setSelected:NO];
+    [[self.scanModeSelectionButton titleLabel] setFont:[UIFont AL_proximaRegularWithSize:14]];
+    [self.view addSubview:self.scanModeSelectionButton];
+    self.scanModeSelectionButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.scanModeSelectionButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
+    [self.scanModeSelectionButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
+    [self.scanModeSelectionButton.widthAnchor constraintEqualToConstant:buttonWidth].active= YES;
+    [self.scanModeSelectionButton.heightAnchor constraintEqualToConstant:buttonHeight].active = YES;
+    
+    [self.scanModeSelectionButton addTarget:self action:@selector(showOptionsSelectionDialog) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setupBatchCountView {
+    self.latestUniqueBarcodeScanResult = [NSMutableArray array];
+    UINib *batchNib = [UINib nibWithNibName:@"ALBarcodeBatchCountView" bundle:[NSBundle mainBundle]];
+    
+    if ([batchNib instantiateWithOwner:self.batchCountView options:nil].count > 0) {
+        self.batchCountView = [batchNib instantiateWithOwner:self.batchCountView options:nil].firstObject;
+        [self.batchCountView resetLabels];
+        self.batchCountView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+        [self.batchCountView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.batchCountView setHidden:YES];
+        [self.view addSubview:self.batchCountView];
+        
+        NSArray *batchContainerConstraints = @[[self.batchCountView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
+                                               [self.batchCountView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
+                                               [self.batchCountView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+                                               [self.batchCountView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.2]];
+        
+        [self.view addConstraints:batchContainerConstraints];
+        [NSLayoutConstraint activateConstraints:batchContainerConstraints];
+    }
+}
 
 - (void)setupConfirmScanButton {
     CGFloat horizontalPadding = 30;
@@ -208,7 +312,7 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     self.scanButton = scanButton;
 
     scanButton.backgroundColor = [UIColor AL_examplesBlue];
-    scanButton.alpha = 0;
+    scanButton.alpha = 1;
     [scanButton addTarget:self action:@selector(scanAction:) forControlEvents:UIControlEventTouchUpInside];
     [scanButton setTitle:@"Scan" forState:UIControlStateNormal];
     [scanButton.titleLabel setFont:[UIFont AL_proximaBoldWithSize:18]];
@@ -216,7 +320,6 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     [scanButton.layer setCornerRadius:50/2];
     [scanButton setTranslatesAutoresizingMaskIntoConstraints:NO];
     [scanButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-
     NSArray *scanButtonConstraints = @[
         [scanButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:horizontalPadding],
         [scanButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-horizontalPadding],
@@ -252,39 +355,8 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"]
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
-                                                                     action:@selector(showSymbologiesSelector:)];
-    // UIColor *tintColor = [UIColor lightGrayColor];
+                                                                     action:@selector(showSettings:)];
     self.navigationItem.rightBarButtonItem = anotherButton;
-}
-
-- (void)setupMultiBarcodeToggleButton {
-    UISwitch *multiBarcodeSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:multiBarcodeSwitch];
-
-    multiBarcodeSwitch.translatesAutoresizingMaskIntoConstraints = NO;
-    [multiBarcodeSwitch.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-20].active = YES;
-    [multiBarcodeSwitch.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:115].active = YES;
-    [multiBarcodeSwitch setTintColor:[UIColor AL_NonSelectedToolBarItem]];
-    [multiBarcodeSwitch setOnTintColor:[UIColor AL_examplesBlue]];
-    [multiBarcodeSwitch useHighContrast];
-
-    [multiBarcodeSwitch addTarget:self action:@selector(toggleMultiBarcode:) forControlEvents:UIControlEventValueChanged];
-    [multiBarcodeSwitch setOn:self.isMultiBarcode];
-
-    self.barcodeModeToggle = multiBarcodeSwitch;
-
-    UILabel *multiBarcodeLabel = [[UILabel alloc] init];
-    [self.view addSubview:multiBarcodeLabel];
-    multiBarcodeLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [multiBarcodeLabel.centerYAnchor constraintEqualToAnchor:multiBarcodeSwitch.centerYAnchor].active = YES;
-    [multiBarcodeLabel.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
-    [multiBarcodeLabel.rightAnchor constraintEqualToAnchor:multiBarcodeSwitch.leftAnchor constant:-10].active = YES;
-    [multiBarcodeLabel.heightAnchor constraintEqualToAnchor:multiBarcodeSwitch.heightAnchor].active = YES;
-
-    multiBarcodeLabel.text = @"Multi Barcode";
-    multiBarcodeLabel.font = [UIFont AL_proximaBoldWithSize:16];
-    multiBarcodeLabel.textColor = [UIColor AL_White];
-    multiBarcodeLabel.textAlignment = NSTextAlignmentRight;
 }
 
 - (void)setColors {
@@ -299,39 +371,30 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 
 // MARK: - IBAction methods
 
-- (void)scanAction:(id)sender {
+- (IBAction)showSettings:(id)sender {
+    [self.barcodeSettingsViewController setBarcodeFormatOptions:[ALBarcodeFormatHelper readableNameForFormats:self.selectedBarcodeFormats]];
+    [self.barcodeSettingsViewController setIsSingleManualScanEnabled:_isSingleManualScanEnabled];
+    [self.barcodeSettingsViewController setIsMultiManualScanEnabled:_isMultiManualScanEnabled];
+    [self.navigationController pushViewController:_barcodeSettingsViewController animated:YES];
+}
 
+- (void)scanAction:(id)sender {
     [self showResultControllerWithResults]; // maybe save the last scanned cropped image result too
 }
 
-- (IBAction)toggleMultiBarcode:(id)sender {
-    self.isMultiBarcode = self.barcodeModeToggle.isOn; // calls the setter for this property
-    [self.scanViewPlugin startWithError:nil];
-}
 
-- (void)showSymbologiesSelector:(id)button {
-    NSArray<NSString *> *selectedItems = [ALBarcodeFormatHelper readableNameForFormats:self.selectedBarcodeFormats];
-    NSString *title = @"Select Symbologies"; // "Select Barcode Symbologies" would've been clearer, but is a bit long
-    ALSelectionTable *table = [[ALSelectionTable alloc] initWithSelectedItems:selectedItems
-                                                                     allItems:[ALBarcodeFormatHelper readableBarcodeNamesDict]
-                                                                 headerTitles:[ALBarcodeFormatHelper readableHeaderArray]
-                                                                 defaultItems:self.defaultBarcodeSymbologiesReadable
-                                                                        title:title
-                                                                 singleSelect:NO];
-    table.delegate = self;
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:table];
-    navController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:navController animated:YES completion:nil];
-}
-
-// MARK: - ALSelectionTableDelegate
-
-- (void)selectionTable:(ALSelectionTable *)selectionTable
-         selectedItems:(NSArray<NSString *> *)selectedItems {
-    // this calls the setter for this property.
-    self.selectedBarcodeFormats = [ALBarcodeFormatHelper
-                                   formatsForReadableNames:selectedItems];
-    [self.scanViewPlugin startWithError:nil];
+- (void)showOptionsSelectionDialog {
+    NSArray<NSString *> *choices = @[ kSingleSelection, kMultiSelection, kBatchSelection ];
+    NSArray<NSNumber *> *selections = @[@(self.dialogIndexScanModeSelected)];
+    ALConfigurationDialogViewController *vc = [[ALConfigurationDialogViewController alloc]
+                                               initWithChoices:choices
+                                               selections:selections
+                                               secondaryTexts:@[]
+                                               showApplyBtn:NO
+                                               dialogType:ALConfigDialogTypeScanModeSelection];
+    vc.delegate = self;
+    [vc setSelectionDialogFontSize:16.0];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 // MARK: - ALScanPluginDelegate
@@ -348,13 +411,43 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
 
     self.latestScanResult = scanResult;
 
+    NSArray<ALBarcode *> *barcodesFound = [NSArray arrayWithArray:self.latestScanResult.pluginResult
+                                           .barcodeResult.barcodes];
     NSArray<ALBarcode *> *barcodes = scanResult.pluginResult.barcodeResult.barcodes;
+    NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil resultDataFromBarcodeResults:barcodesFound];
     if (barcodes.count < 1) {
         return;
     }
 
-    if (!self.isMultiBarcode) {
-        [self showResultControllerWithResults];
+    switch (self.dialogIndexScanModeSelected) {
+        case BarcodeSingleScanMode:
+            if (_isSingleManualScanEnabled) {
+                [self setScanButtonHidden:NO andEnable:YES];
+                [self startTroubleScanningTimeout];
+            } else {
+                [self showResultControllerWithResults];
+                [self stopTroubleScanningTimeout];
+            }
+            break;
+        case BarcodeMultiScanMode:
+            if (_isMultiManualScanEnabled) {
+                [self setScanButtonHidden:NO andEnable:YES];
+                [self startTroubleScanningTimeout];
+            } else {
+                [self showResultControllerWithResults];
+                [self stopTroubleScanningTimeout];
+            }
+            break;
+        case BarcodeBatchScanMode:
+            [self removeRepeatedResultsFromResultArray:barcodes];
+            [self stopTroubleScanningTimeout];
+            [self.scanButton setHidden:YES];
+            [self.batchCountView setCountResultText:resultData.firstObject.value];
+            [self.batchCountView setBatchCountSymbologyText:[barcodes.firstObject format]];
+            [self.batchCountView setBatchCountText:[NSString stringWithFormat:@"%lu", (unsigned long)self.latestUniqueBarcodeScanResult.count]];
+            break;
+        default:
+            break;
     }
 }
 
@@ -415,7 +508,8 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
     NSAssert(barcodesFound.count > 0, @"no barcodes found");
 
     self.latestScanResult = nil;
-
+    self.latestUniqueBarcodeScanResult = [NSMutableArray array];
+    
     NSArray<ALResultEntry *> *resultData = [ALBarcodeResultUtil resultDataFromBarcodeResults:barcodesFound];
     NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
 
@@ -472,6 +566,86 @@ NSString * const kBarcodeScanVC_configJSONFilename = @"sample_barcode_config";
         [weakSelf.scanViewPlugin startWithError:nil];
         [weakSelf startTroubleScanningTimeout];
     }];
+}
+
+// MARK: - ALBarcodeSettingsDelegate
+
+- (void)isSingleScanTriggerEnabled:(BOOL)isEnabled {
+    self.isSingleManualScanEnabled = isEnabled;
+    [self setScanButtonHidden:!_isSingleManualScanEnabled andEnable:NO];
+}
+
+- (void)isMultiScanTriggerEnabled:(BOOL)isEnabled {
+    self.isMultiManualScanEnabled = isEnabled;
+    [self setScanButtonHidden:!_isMultiManualScanEnabled andEnable:NO];
+}
+
+- (void)selectedSymbologies:(nonnull NSArray<NSString *> *)selectedItems {
+    [NSUserDefaults AL_setSelectedSymbologiesForBarcode:selectedItems];
+    [self setSelectedBarcodeFormats:[ALBarcodeFormatHelper formatsForReadableNames:selectedItems]];
+}
+
+- (void)setScanButtonHidden:(BOOL)isHidden andEnable:(BOOL)isEnabled {
+    if (self.dialogIndexScanModeSelected == BarcodeBatchScanMode) {
+        return;
+    }
+    [self.scanButton setHidden:isHidden];
+    [self.scanButton setEnabled:isEnabled];
+    if (isEnabled) {
+        [self.scanButton setBackgroundColor:[UIColor AL_examplesBlue]];
+    } else {
+        [self.scanButton setBackgroundColor:[UIColor grayColor]];
+    }
+}
+
+// MARK: - ALConfigurationDialogViewControllerDelegate
+
+- (void)configDialog:(nonnull ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
+    NSString *buttonTitleString = kSingleSelection;
+    BOOL isMultiBarcodeEnabled = NO;
+    BOOL isBatchHidden = YES;
+    [self.scanViewPlugin stop];
+    self.dialogIndexScanModeSelected = index;
+    switch (index) {
+        case BarcodeSingleScanMode:
+            buttonTitleString = kSingleSelection;
+            isBatchHidden = YES;
+            [self setScanButtonHidden:!_isSingleManualScanEnabled andEnable:NO];
+            break;
+        case BarcodeMultiScanMode:
+            buttonTitleString = kMultiSelection;
+            isMultiBarcodeEnabled = YES;
+            isBatchHidden = YES;
+            [self setScanButtonHidden:!_isMultiManualScanEnabled andEnable:NO];
+            break;
+        case BarcodeBatchScanMode:
+            buttonTitleString = kBatchSelection;
+            isMultiBarcodeEnabled = YES;
+            isBatchHidden = NO;
+            [self setScanButtonHidden:YES andEnable:NO];
+            break;
+        default:
+            break;
+    }
+    [self.scanModeSelectionButton setTitle:buttonTitleString forState:UIControlStateNormal];
+    self.isMultiBarcode = isMultiBarcodeEnabled;
+    [self resetBatchCount:isBatchHidden];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self reloadScanView];
+    [self.scanViewPlugin startWithError:nil];
+}
+
+- (void)resetBatchCount:(BOOL)isBatchHidden {
+    [self.batchCountView setHidden:isBatchHidden];
+    [self.batchCountView resetLabels];
+}
+
+- (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {
+    // required implementation
+}
+
+- (void)configDialogCancelled:(nonnull ALConfigurationDialogViewController *)dialog {
+//    [self dialogCancelled];
 }
 
 @end

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// successfully.
 /// @param licenseKey the Anyline license key for the application
 /// @return the date of expiry as a string, or null if the license wasn't yet initialized
-+ (NSString *)licenseExpirationDateForLicense:(NSString *)licenseKey;
++ (NSString *)licenseExpirationDate;
 
 /// Version number of the SDK
 /// @return the version number of the SDK

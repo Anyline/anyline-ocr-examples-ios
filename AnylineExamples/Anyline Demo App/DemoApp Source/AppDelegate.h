@@ -10,8 +10,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property () BOOL enableLandscapeRight;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, assign) BOOL enableLandscapeRight;
 
 - (NSManagedObjectContext *)managedObjectContext;
 

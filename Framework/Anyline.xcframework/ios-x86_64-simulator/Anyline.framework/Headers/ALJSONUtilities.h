@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// Methods to convert an NSData to a valid JSON object (dictionary or array)
-@interface NSData (ALExtras)
+@interface NSData (ALJSONExtras)
 
 /// Returns a JSON object (could be an `NSDictionary` or an `NSArray`) converted from the `NSData`
 /// object, or null, if conversion is not possible. In this case the `error` param passed will be
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// Methods to convert an NSString to a valid JSON object (dictionary or array)
-@interface NSString (ALExtras)
+@interface NSString (ALJSONExtras)
 
 /// Returns a JSON object (could be an `NSDictionary` or an `NSArray`) converted from the `NSData`
 /// object, or null, if conversion is not possible. In this case the `error` param passed will be
@@ -66,13 +66,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// This extends `NSDictionary` to the type `ALJSONStringRepresentable`, making it possible
 /// to obtain a JSON string as output
-@interface NSDictionary (ALExtras) <ALJSONStringRepresentable>
+@interface NSDictionary (ALJSONExtras) <ALJSONStringRepresentable>
 
 @end
 
 /// This extends `NSArray` to the type `ALJSONStringRepresentable`, making it possible
 /// to obtain a JSON string as output
-@interface NSArray (ALExtras) <ALJSONStringRepresentable>
+@interface NSArray (ALJSONExtras) <ALJSONStringRepresentable>
 
 @end
 

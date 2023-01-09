@@ -64,8 +64,6 @@
 		
 		<option value="//api/name/delegate">delegate</option>
 		
-		<option value="//api/name/imageProvider">imageProvider</option>
-		
 		<option value="//api/name/isStarted">isStarted</option>
 		
 		<option value="//api/name/pluginConfigs">pluginConfigs</option>
@@ -87,6 +85,10 @@
 		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
 		<option value="//api/name/pluginWithID:">- pluginWithID:</option>
+		
+		<option value="//api/name/startWithError:">- startWithError:</option>
+		
+		<option value="//api/name/stop">- stop</option>
 		
 	</optgroup>
 	
@@ -161,47 +163,6 @@ is an error encountered.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;ALViewPluginCompositeDelegate&gt; delegate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALViewPluginComposite.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/imageProvider" title="imageProvider"></a>
-	<h3 class="method-title"><code><a href="#//api/name/imageProvider">&nbsp;&nbsp;imageProvider</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The object providing the image to the composite</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id&lt;ALImageProviding&gt; imageProvider</code></div>
 
 		    
 			
@@ -365,7 +326,7 @@ is an error encountered.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;id&lt;ALScanViewPluginBase&gt; &gt; *children</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSObject&lt;ALScanViewPluginBase&gt; *&gt; *children</code></div>
 
 		    
 			
@@ -592,7 +553,7 @@ is an error encountered.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithID:(NSString *)<em>ID</em> mode:(ALCompositeProcessingMode)<em>mode</em> children:(NSArray&lt;id&lt;ALScanViewPluginBase&gt; &gt; *)<em>children</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithID:(NSString *)<em>ID</em> mode:(ALCompositeProcessingMode)<em>mode</em> children:(NSArray&lt;NSObject&lt;ALScanViewPluginBase&gt; *&gt; *)<em>children</em> error:(NSError **)<em>error</em></code></div>
 
 		    
 			
@@ -665,7 +626,7 @@ is an error encountered.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id&lt;ALScanViewPluginBase&gt; _Nullable)pluginWithID:(NSString *)<em>pluginID</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSObject&lt;ALScanViewPluginBase&gt; *_Nullable)pluginWithID:(NSString *)<em>pluginID</em></code></div>
 
 		    
 			
@@ -706,6 +667,105 @@ is an error encountered.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithError:" title="startWithError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithError:">&ndash;&nbsp;startWithError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Starts the plugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)startWithError:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>if an error is encountered, this will be filled with the necessary information</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a boolean indicating whether or not the plugin was started successfully</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALViewPluginComposite.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stop" title="stop"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stops the plugin</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stop</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALViewPluginComposite.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -721,7 +781,7 @@ is an error encountered.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-01-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
