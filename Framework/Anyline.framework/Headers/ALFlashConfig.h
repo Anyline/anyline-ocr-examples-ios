@@ -82,6 +82,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// Creates an ALFlashConfig with default values, useful for further customization
 + (instancetype _Nonnull)defaultFlashConfig;
 
+/// Initializes an `ALFlashConfig` object
+/// @param flashMode The flash mode
+/// @param flashAlignment The starting location of the flash button in the scan view
+/// @param flashImageName If provided, the image shown for the flash
+/// @param flashOffset A point offset positioning the flash button. Used in conjunction with the flash alignment
+- (instancetype _Nullable)initWithFlashMode:(ALFlashMode)flashMode
+                             flashAlignment:(ALFlashAlignment)flashAlignment
+                             flashImageName:(NSString * _Nullable)flashImageName
+                                flashOffset:(CGPoint)flashOffset NS_DESIGNATED_INITIALIZER;
+
+/// Creates an `ALFlashConfig` object
+/// @param flashAlignment The starting location of the flash button in the scan view
+/// @param flashImageName If provided, the image shown for the flash
+/// @param flashOffset A point offset positioning the flash button. Used in conjunction with the flash alignment
++ (ALFlashConfig *)withFlashMode:(ALFlashMode)flashMode
+                  flashAlignment:(ALFlashAlignment)flashAlignment
+                  flashImageName:(NSString * _Nullable)flashImageName
+                     flashOffset:(CGPoint)flashOffset;
+
 @end
 
 

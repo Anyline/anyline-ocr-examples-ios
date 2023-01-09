@@ -26,10 +26,6 @@
     self.title = @"Others";
     //OCR
     
-    ALExample *serialNumberScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal Serial Number", nil)
-                                                                image:[UIImage imageNamed:@"serial number"]
-                                                       viewController:[ALUniversalSerialNumberScanViewController class]];
-    
     ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
                                                              image:[UIImage imageNamed:@"container serial numbers"]
                                                     viewController:[ALContainerScanViewController class]
@@ -47,7 +43,7 @@
     
     self.sectionNames = @[@"Others",];
     self.examples = @{
-        self.sectionNames[0] : @[serialNumberScanning, containerScanning, verticalContainerScanning, bottleCapScanning],
+        self.sectionNames[0] : @[containerScanning, verticalContainerScanning, bottleCapScanning],
     };
 }
 

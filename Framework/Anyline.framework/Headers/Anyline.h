@@ -15,7 +15,12 @@
 #import "ALScanViewConfig.h"
 #import "ALScanViewPlugin.h"
 #import "ALScanViewPluginFactory.h"
+#import "ALScanViewFactory.h"
 #import "ALViewPluginComposite.h"
+
+#import "ALEvent.h"
+#import "ALImage.h"
+#import "ALLicenseUtil.h"
 
 #import "ALNFCDetector.h"
 #import "ALNFCResult.h"
@@ -23,5 +28,7 @@
 #import "ALAssetUpdateManager.h"
 #import "ALAssetUpdateTask.h"
 #import "ALAssetContext.h"
+#import "ALAssetController.h"
+#import "ALAssetDelegate.h"
 
 #import "AnylineSDK.h"

@@ -60,17 +60,11 @@
 		
 		<option value="//api/name/flashButtonFrame">flashButtonFrame</option>
 		
-		<option value="//api/name/motionExceededThreshold">motionExceededThreshold</option>
-		
-		<option value="//api/name/nativeBarcodeResult">nativeBarcodeResult</option>
-		
 		<option value="//api/name/scanViewConfig">scanViewConfig</option>
 		
 		<option value="//api/name/scanViewPlugin">scanViewPlugin</option>
 		
 		<option value="//api/name/supportedNativeBarcodeFormats">supportedNativeBarcodeFormats</option>
-		
-		<option value="//api/name/visibleFeedbackLayers">visibleFeedbackLayers</option>
 		
 	</optgroup>
 	
@@ -157,7 +151,7 @@ as well as user input, and passes them to the scan plugin for processing</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(id&lt;ALScanViewPluginBase&gt;)<em>scanViewPlugin</em> scanViewConfig:(ALScanViewConfig *_Nullable)<em>scanViewConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(NSObject&lt;ALScanViewPluginBase&gt; *)<em>scanViewPlugin</em> scanViewConfig:(ALScanViewConfig *_Nullable)<em>scanViewConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -231,7 +225,7 @@ populated with the reasons for the failure</p></td>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(id&lt;ALScanViewPluginBase&gt;)<em>scanViewPlugin</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithFrame:(CGRect)<em>frame</em> scanViewPlugin:(NSObject&lt;ALScanViewPluginBase&gt; *)<em>scanViewPlugin</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -301,7 +295,7 @@ will also be updated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)setScanViewPlugin:(id&lt;ALScanViewPluginBase&gt;)<em>scanViewPlugin</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)setScanViewPlugin:(NSObject&lt;ALScanViewPluginBase&gt; *)<em>scanViewPlugin</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -406,7 +400,7 @@ populated with the reason for the failure</p></td>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;ALScanViewPluginBase&gt; scanViewPlugin</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSObject&lt;ALScanViewPluginBase&gt; *scanViewPlugin</code></div>
 
 		    
 			
@@ -514,93 +508,6 @@ operations done on the UI layer</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/motionExceededThreshold" title="motionExceededThreshold"></a>
-	<h3 class="method-title"><code><a href="#//api/name/motionExceededThreshold">&nbsp;&nbsp;motionExceededThreshold</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>An event provider to inform subscribers when too much motion is currently
-detected while the scan view is running, which poses problems for object
-detection.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;ALEventProviding&gt; motionExceededThreshold</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/nativeBarcodeResult" title="nativeBarcodeResult"></a>
-	<h3 class="method-title"><code><a href="#//api/name/nativeBarcodeResult">&nbsp;&nbsp;nativeBarcodeResult</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>When native barcode mode is enabled, subscribers to this event provider
-will be able to obtain any applicable barcode results emitted back. Note
-that native barcode scanning as a feature is different from the ScanPlugin
-with a barcode config</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id&lt;ALEventProviding&gt; nativeBarcodeResult</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/supportedNativeBarcodeFormats" title="supportedNativeBarcodeFormats"></a>
 	<h3 class="method-title"><code><a href="#//api/name/supportedNativeBarcodeFormats">&nbsp;&nbsp;supportedNativeBarcodeFormats</a></code>
 </h3>
@@ -621,51 +528,6 @@ default null.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSArray&lt;AVMetadataObjectType&gt; *supportedNativeBarcodeFormats</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ALScanView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/visibleFeedbackLayers" title="visibleFeedbackLayers"></a>
-	<h3 class="method-title"><code><a href="#//api/name/visibleFeedbackLayers">&nbsp;&nbsp;visibleFeedbackLayers</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Copied from internal implementation of ALScanView, to make this visible to the tests.
-As there are potentially two feedback layers in play (native and web), we
-need to know to which one is visible at a given time. For instance, with
-parallel scanning, we can have both being shown simultaneously if for instance
-at least one plugin uses web and at least one other is using native feedback.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSSet&lt;UIView&lt;ALUIFeedback&gt; *&gt; *visibleFeedbackLayers</code></div>
 
 		    
 			
@@ -786,7 +648,7 @@ at least one plugin uses web and at least one other is using native feedback.</p
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-01-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
