@@ -1,4 +1,5 @@
 Anyline, AnylineSDK
+
 Copyright (c) 2023 Anyline GmbH All rights reserved.
 
 Community Version User License Agreement
