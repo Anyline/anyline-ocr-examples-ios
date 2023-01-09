@@ -37,7 +37,7 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = NSLocalizedString(self.exampleManager.title, nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.collectionView registerClass:[ALHeaderCollectionReusableView class]
@@ -49,9 +49,14 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
         [self.collectionView setContentInset:UIEdgeInsetsMake(10, 0, 0, 0)];
     }
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.collectionView layoutSubviews];
+
+    // this forces -collectionView:layout:sizeForItemAtIndexPath: to be called again
+    // particularly useful if coming back from scan view while on landscape mode
+    // TODO: would be nicer if we only invalidate layouts this if this is indeed the case
+    [self.collectionViewLayout invalidateLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -291,13 +296,13 @@ NSString * const headerViewReuseIdentifier = @"HeaderView";
     float heightRatio = 1;
     
     if ([self.collectionView numberOfItemsInSection:indexPath.section] == 1) {
-        cellWidth = self.view.bounds.size.width - padding*2;
+        cellWidth = self.view.bounds.size.width - padding * 2;
         heightRatio = 0.360;
     } else {
-        cellWidth = self.view.bounds.size.width / 2.0 - padding*2;
-        heightRatio = (256.0/350.0);
+        cellWidth = self.view.bounds.size.width / 2.0 - padding * 2;
+        heightRatio = (256.0 / 350.0);
     }
-    return CGSizeMake(cellWidth, cellWidth*heightRatio);;
+    return CGSizeMake(cellWidth, cellWidth * heightRatio);
 }
 
 - (CGSize)headerSize {

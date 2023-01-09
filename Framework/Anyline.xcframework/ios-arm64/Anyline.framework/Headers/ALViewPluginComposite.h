@@ -5,6 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ALScanViewPluginConfig;
 @class ALScanResult;
+@class ALScanViewPlugin;
 
 @protocol ALViewPluginCompositeDelegate;
 
@@ -25,9 +26,6 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
 /// is an error encountered.
 @property (nonatomic, weak) id<ALViewPluginCompositeDelegate> delegate;
 
-/// The object providing the image to the composite
-@property (nonatomic, strong) id<ALImageProviding> imageProvider;
-
 /// The processing mode of the composite
 @property (nonatomic, readonly) ALCompositeProcessingMode processingMode;
 
@@ -38,7 +36,7 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
 @property (nonatomic, readonly) NSString *pluginID;
 
 /// A list of the children plugins added to this composite
-@property (nonatomic, readonly) NSArray<id<ALScanViewPluginBase>> *children;
+@property (nonatomic, readonly) NSArray<NSObject<ALScanViewPluginBase> *> *children;
 
 /// The child ScanViewPlugin currently running
 @property (nonatomic, readonly, nullable) ALScanViewPlugin *activeChild;
@@ -64,13 +62,21 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
 /// @return the `ALViewPluginComposite` object
 - (instancetype _Nullable)initWithID:(NSString *)ID
                                 mode:(ALCompositeProcessingMode)mode
-                            children:(NSArray<id<ALScanViewPluginBase>> *)children
+                            children:(NSArray<NSObject<ALScanViewPluginBase> *> *)children
                                error:(NSError **)error;
 
 /// Returns a child scan view plugin given its ID, or null
 /// @param pluginID the ID of the child scan view plugin
 /// @return the ScanViewPlugin of the child when found, otherwise null
-- (id<ALScanViewPluginBase> _Nullable)pluginWithID:(NSString *)pluginID;
+- (NSObject<ALScanViewPluginBase> * _Nullable)pluginWithID:(NSString *)pluginID;
+
+/// Starts the plugin
+/// @param error if an error is encountered, this will be filled with the necessary information
+/// @return a boolean indicating whether or not the plugin was started successfully
+- (BOOL)startWithError:(NSError * _Nullable * _Nullable)error;
+
+/// Stops the plugin
+- (void)stop;
 
 @end
 

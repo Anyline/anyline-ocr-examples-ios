@@ -7,7 +7,7 @@
 //
 
 #import "ALWarningView.h"
-#import "ALRoundedView.h"
+//#import "ALRoundedView.h"
 
 @interface ALWarningView ()
 @property (nonatomic, strong) UIImageView * imageView;

@@ -9,9 +9,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// Creates a scan view plugin (`ALScanViewPlugin` or `ALViewPluginComposite`) from a JSON
 /// dictionary
 /// @param JSONDictionary a suitably-formatted JSON `NSDictionary`
-/// @return an object of type `id<ALScanViewPluginBase>` (`ALScanViewPlugin` or `ALViewPluginComposite`),
+/// @param error an NSError object that will contain error information if creation
+/// of the scan view plugin is unsuccessful
+/// @return an object of type `NSObject<ALScanViewPluginBase> *` (`ALScanViewPlugin` or
+///  `ALViewPluginComposite`),
 /// or null if the JSON object could not be deserialized
-+ (id<ALScanViewPluginBase> _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary;
++ (NSObject<ALScanViewPluginBase> * _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary
+                                                   error:(NSError * _Nullable * _Nullable)error;
 
 @end
 

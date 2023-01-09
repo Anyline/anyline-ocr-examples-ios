@@ -76,6 +76,8 @@
 		
 		<option value="//api/name/defaultCameraConfig">+ defaultCameraConfig</option>
 		
+		<option value="//api/name/withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:">+ withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:</option>
+		
 		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
 		
 	</optgroup>
@@ -83,6 +85,8 @@
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:">- initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:</option>
 		
 		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
@@ -551,6 +555,162 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:" title="initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:">&ndash;&nbsp;initWithDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes an <code>ALCameraConfig</code> object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDefaultCamera:(NSString *)<em>defaultCamera</em> captureViewResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomFactor:(CGFloat)<em>zoomFactor</em> maxZoomFactor:(CGFloat)<em>maxZoomFactor</em> zoomGesture:(BOOL)<em>zoomGesture</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>defaultCamera</code></th>
+						<td><p>Camera to be used for scanning. Could be &ldquo;FRONT&rdquo; or &ldquo;BACK&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>captureResolution</code></th>
+						<td><p>Resolution in which the camera operates. Currently only 1080p is supported.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pictureResolution</code></th>
+						<td><p>Picture resolution in which the camera operates. Currently only 1080p is supported.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zoomFactor</code></th>
+						<td><p>Camera focal length (default: 1)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxZoomFactor</code></th>
+						<td><p>Camera max focal length. Default: 0 => Device maxAvailableVideoZoom</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zoomGesture</code></th>
+						<td><p>Determines whether the pinch-to-zoom gesture is enabled. Defaults to false</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:" title="withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:">+&nbsp;withDefaultCamera:captureViewResolution:pictureResolution:zoomFactor:maxZoomFactor:zoomGesture:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an <code>ALCameraConfig</code> object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ALCameraConfig *)withDefaultCamera:(NSString *)<em>defaultCamera</em> captureViewResolution:(ALCaptureViewResolution)<em>captureResolution</em> pictureResolution:(ALPictureResolution)<em>pictureResolution</em> zoomFactor:(CGFloat)<em>zoomFactor</em> maxZoomFactor:(CGFloat)<em>maxZoomFactor</em> zoomGesture:(BOOL)<em>zoomGesture</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>defaultCamera</code></th>
+						<td><p>Camera to be used for scanning. Could be &ldquo;FRONT&rdquo; or &ldquo;BACK&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>captureResolution</code></th>
+						<td><p>Resolution in which the camera operates. Currently only 1080p is supported.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pictureResolution</code></th>
+						<td><p>Picture resolution in which the camera operates. Currently only 1080p is supported.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zoomFactor</code></th>
+						<td><p>Camera focal length (default: 1)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxZoomFactor</code></th>
+						<td><p>Camera max focal length. Default: 0 => Device maxAvailableVideoZoom</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>zoomGesture</code></th>
+						<td><p>Determines whether the pinch-to-zoom gesture is enabled. Defaults to false</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALCameraConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -566,7 +726,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2022 Anyline GmbH. All rights reserved. Updated: 2022-12-15</p>
+						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-01-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

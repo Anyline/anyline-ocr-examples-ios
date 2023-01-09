@@ -1,10 +1,8 @@
-#import "ALMRZScanViewController.h"
-#import "ALIdentificationView.h"
 #import <Anyline/Anyline.h>
 #import "AnylineExamples-Swift.h"
-#import "NSUserDefaults+ALExamplesAdditions.h"
-#import "AnylineExamples-Swift.h"
+#import "ALMRZScanViewController.h"
 #import "ALTutorialViewController.h"
+#import "NSUserDefaults+ALExamplesAdditions.h"
 #import "NSString+Util.h"
 #import "ALPluginResultHelper.h"
 
@@ -27,7 +25,7 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = (self.title && self.title.length > 0) ? self.title : @"MRZ";
     [self setColors];
 }
@@ -48,30 +46,39 @@
         self.navigationItem.rightBarButtonItem = infoBarItem;
         [self setColors];
     }
-
+    
     id JSONConfigObj = [[self configJSONStrWithFilename:@"mrz_config"] asJSONObject];
-
-    self.scanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:JSONConfigObj];
+    
+    NSError *error;
+    self.scanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:JSONConfigObj error:&error];
+    
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
     
     self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
-
+    
     if (self.scanView) {
-        [self.scanView setScanViewPlugin:self.scanViewPlugin error:nil];
+        [self.scanView setScanViewPlugin:self.scanViewPlugin error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
     } else {
-        
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                            scanViewPlugin:self.scanViewPlugin
                                            scanViewConfig:self.scanViewConfig
-                                                    error:nil];
-        
+                                                    error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
         [self installScanView:self.scanView];
     }
     ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
-
+    
     scanViewPlugin.scanPlugin.delegate = self;
-
+    
     [self.scanView startCamera];
-
+    
     self.controllerType = ALScanHistoryMrz;
     
     [self.scanViewPlugin startWithError:nil];
@@ -103,17 +110,17 @@
     [self enableLandscapeOrientation:NO];
     NSArray <ALResultEntry *> *resultData = scanResult.pluginResult.mrzResult.resultEntryList;
     NSString *resultJSON = [ALResultEntry JSONStringFromList:resultData];
-
+    
     __weak __block ALMRZScanViewController *weakSelf = self;
-
+    
     [self anylineDidFindResult:resultJSON
                  barcodeResult:nil
                      faceImage:scanResult.faceImage
                         images:@[scanResult.croppedImage]
                     scanPlugin:scanPlugin
                     viewPlugin:self.scanViewPlugin completion:^{
-
-
+        
+        
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
         vc.imageFace = scanResult.faceImage;

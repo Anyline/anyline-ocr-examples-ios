@@ -20,15 +20,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// for detectable objects
 @property (nonatomic, assign) CGRect regionOfInterest;
 
+/// Indicates whether the plugin composite has started or not
+@property (nonatomic, readonly) BOOL isStarted;
+
+/// Unique plugin ID for the scan view plugin
+@property (nonatomic, readonly) NSString *pluginID;
+
+/// Starts the plugin
+/// @param error if an error is encountered, this will be filled with the necessary information
+/// @return a boolean indicating whether or not the plugin was started successfully
+- (BOOL)startWithError:(NSError * _Nullable * _Nullable)error;
+
+/// Stops the plugin
+- (void)stop;
+
 /// Children of the scan view plugin, if any
-@property (nonatomic, readonly) NSArray<ALScanViewPlugin *> *children;
+@property (nonatomic, readonly) NSArray<NSObject<ALScanViewPluginBase> *> *children;
 
 /// The configuration object for the scan view plugin
 @property (nonatomic, readonly) ALScanViewPluginConfig *scanViewPluginConfig;
-
-/// The object delivering the image frames for the scanning process
-@property (nonatomic, strong) id<ALImageProviding> imageProvider;
-
 
 /// Initializes an `ALScanViewPlugin` object with a configuration object
 /// @param config an `ALScanViewPluginConfig` object
