@@ -35,7 +35,7 @@
                         "outerAlpha": 0.3
                     },
                     "scanFeedbackConfig": {
-                        "style": "contour_rect",
+                        "style": "rect",
                         "strokeWidth": 2,
                         "strokeColor": "0099FF",
                         "fillColor": "220099FF",
@@ -72,7 +72,7 @@
                         "feedbackStrokeColor": "0099FF"
                     },
                     "scanFeedbackConfig": {
-                        "style": "contour_rect",
+                        "style": "rect",
                         "strokeWidth": 2,
                         "strokeColor": "0099FF",
                         "fillColor": "220099FF",

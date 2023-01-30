@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// JSON representation of the event
 @property (nonatomic, readonly, nullable) id JSONObject;
 
+/// Event channel
+@property (nonatomic, copy, nullable) NSString *channel;
+
 /// Timestamp of an event
 @property (nonatomic, readonly) NSDate *timestamp;
 

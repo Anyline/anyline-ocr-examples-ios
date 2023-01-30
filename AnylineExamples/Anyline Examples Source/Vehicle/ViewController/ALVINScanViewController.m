@@ -30,28 +30,15 @@ NSString * const kALVINScanVC_configFilename = @"vin_ocr_config";
     self.controllerType = ALScanHistoryVIN;
     
     NSError *error;
-    self.scanViewPlugin = (ALScanViewPlugin *)[ALScanViewPluginFactory
-                                               withJSONDictionary:self.scanViewConfigDict
-                                               error:&error];
+    NSString *path = [[NSBundle mainBundle] pathForResource:kALVINScanVC_configFilename ofType:@"json"];
+    self.scanView = [ALScanViewFactory withConfigFilePath:path delegate:self error:&error];
     if ([self popWithAlertOnError:error]) {
         return;
     }
-    
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict
-                                                                     error:&error];
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:self.scanViewPlugin
-                                       scanViewConfig:self.scanViewConfig
-                                                error:&error];
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }
+
     [self installScanView:self.scanView];
     
-    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
-    scanViewPlugin.scanPlugin.delegate = self;
-    
+    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
     [self.scanView startCamera];
 }
 
@@ -62,20 +49,12 @@ NSString * const kALVINScanVC_configFilename = @"vin_ocr_config";
     [self.scanViewPlugin startWithError:&error]; // could check the error
 }
 
-// MARK: - Getters and Setters
-
-- (NSDictionary *)scanViewConfigDict {
-    return [[self configJSONStrWithFilename:kALVINScanVC_configFilename] asJSONObject]; // could check the error
-}
-
-
 // MARK: - Handle & present results
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
     [self enableLandscapeOrientation:NO];
     
-    ALVinResult *vinResult = scanResult.pluginResult.vinResult;
-    NSArray<ALResultEntry *> *resultData = vinResult.resultEntryList;
+    NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *JSONResultString = [ALResultEntry JSONStringFromList:resultData];
     
     __weak __block typeof(self) weakSelf = self;

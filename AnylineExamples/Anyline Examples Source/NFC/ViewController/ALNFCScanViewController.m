@@ -32,51 +32,31 @@ API_AVAILABLE(ios(13.0))
     }
     
     if (@available(iOS 13.0, *)) {
-        self.nfcDetector = [[ALNFCDetector alloc] initWithDelegate:self];
+        NSError *error;
+        self.nfcDetector = [[ALNFCDetector alloc] initWithDelegate:self error:&error];
+
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
     }
     
     self.hintView = [self.class makeHintView];
     [self.view addSubview:self.hintView];
     [self.hintView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.hintView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
-    
-    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"mrz_nfc_config"
-                                                             ofType:@"json"];
-    NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
-                                                    encoding:NSUTF8StringEncoding
-                                                       error:NULL];
-    id JSONConfigObj = [configStr asJSONObject];
-    
-    // instead of directly creating a scan view plugin, we can let a factory determine
-    // whether the result is a plain ALScanViewPlugin or an ALViewPluginComposite.
+
     NSError *error;
-    self.scanViewPlugin = (ALScanViewPlugin *)[ALScanViewPluginFactory withJSONDictionary:JSONConfigObj error:&error];
-    
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"mrz_config" ofType:@"json"];
+    self.scanView = [ALScanViewFactory withConfigFilePath:path delegate:self error:&error];
     if ([self popWithAlertOnError:error]) {
         return;
     }
-    
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
-    
-    // Tweak the MRZ tolerances here if necessary.
-    // [self configureScanViewConfig];
-    
-    self.scanViewPlugin.scanPlugin.delegate = self;
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:self.scanViewPlugin
-                                       scanViewConfig:self.scanViewConfig
-                                                error:&error];
-    
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }
-    
     [self installScanView:self.scanView];
+
+    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
     
-    [self.scanView startCamera];    
-    
-    [self.view addSubview:self.scanView];
+    [self.scanView startCamera];
     
     // TODO: we also used the erstwhile ScanInfoDelegate in the old version
     // to track the cutout position.

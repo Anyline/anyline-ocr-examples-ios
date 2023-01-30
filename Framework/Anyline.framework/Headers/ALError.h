@@ -22,8 +22,7 @@ static NSString * const ALNFCDomain = @"ALNFCDomain";
 
 static NSString *const ALParserErrorLineNumber = @"ALParserErrorLineNumber";
 static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
-static NSString *const ALParserErrorParameterName =
-@"ALParserErrorParameterName";
+static NSString *const ALParserErrorParameterName = @"ALParserErrorParameterName";
 
 typedef NS_ENUM(NSInteger, ALErrorCode) {
 
@@ -80,6 +79,9 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
 
     /// The license key supplied is not valid for the Anyline feature being used
     ALLicenseNotValidForFeature = 3018,
+
+    /// Using an Anyline feature before having initialized the license successfully
+    ALLicenseNotYetInitialized = 3019,
 
     /// The requested camera resolution was not supported by the device
     ALCameraResolutionNotSupportedByDevice = 8001,

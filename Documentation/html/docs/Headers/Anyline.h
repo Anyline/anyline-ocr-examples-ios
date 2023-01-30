@@ -19,6 +19,7 @@
 #import "ALViewPluginComposite.h"
 
 #import "ALEvent.h"
+#import "ALBarcodeTypes.h"
 #import "ALImage.h"
 #import "ALLicenseUtil.h"
 

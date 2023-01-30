@@ -96,10 +96,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param flashAlignment The starting location of the flash button in the scan view
 /// @param flashImageName If provided, the image shown for the flash
 /// @param flashOffset A point offset positioning the flash button. Used in conjunction with the flash alignment
-+ (ALFlashConfig *)withFlashMode:(ALFlashMode)flashMode
-                  flashAlignment:(ALFlashAlignment)flashAlignment
-                  flashImageName:(NSString * _Nullable)flashImageName
-                     flashOffset:(CGPoint)flashOffset;
++ (ALFlashConfig * _Nullable)withFlashMode:(ALFlashMode)flashMode
+                            flashAlignment:(ALFlashAlignment)flashAlignment
+                            flashImageName:(NSString * _Nullable)flashImageName
+                               flashOffset:(CGPoint)flashOffset;
 
 @end
 

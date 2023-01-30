@@ -37,7 +37,7 @@
         "scanFeedbackConfig": {
             "style": "rect",
             "visualFeedbackRedrawTimeout": 100,
-            "strokeWidth": 2,
+            "strokeWidth": 1,
             "strokeColor": "0099FF",
             "fillColor": "220099FF",
             "beepOnResult": true,

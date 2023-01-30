@@ -8,7 +8,6 @@ NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_
 @interface ALContainerScanViewController () <ALScanPluginDelegate>
 
 @property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
-// @property (nullable, nonatomic, strong) ALScanView *scanView;
 
 @property (assign, nonatomic) BOOL isVertical;
 
@@ -30,7 +29,6 @@ NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_
     [self reloadScanView];
 
     [self setColors];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,7 +88,7 @@ NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_
 #pragma mark -- ALScanPluginDelegate
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
-    NSArray <ALResultEntry*> *resultData = scanResult.pluginResult.containerResult.resultEntryList;
+    NSArray<ALResultEntry*> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
     __weak ALContainerScanViewController *weakSelf = self;
     [self anylineDidFindResult:resultDataJSONStr

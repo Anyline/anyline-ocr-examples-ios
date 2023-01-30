@@ -47,12 +47,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// Initializes an `ALScanResult` with an scan result-related `ALEvent` object
 /// @param event an `ALEvent` object containing details about the scan result
 /// @return the `ALScanResult` object
-- (instancetype)initWithScanResultEvent:(ALEvent *)event;
+- (instancetype _Nullable)initWithScanResultEvent:(ALEvent *)event;
 
 /// Creates an `ALScanResult` with an scan result-related `ALEvent` object
 /// @param event an `ALEvent` object containing details about the scan result
 /// @return the `ALScanResult` object
-+ (ALScanResult *)withScanResultEvent:(ALEvent *)event;
++ (ALScanResult * _Nullable)withScanResultEvent:(ALEvent *)event;
 
 @end
 

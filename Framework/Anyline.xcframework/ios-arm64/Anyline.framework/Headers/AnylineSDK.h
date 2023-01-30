@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// Provides a human-readble date for when the Anyline license key expires.
 /// Make sure to call this only after `setupWithLicenseKey:` had been completed
 /// successfully.
-/// @param licenseKey the Anyline license key for the application
 /// @return the date of expiry as a string, or null if the license wasn't yet initialized
 + (NSString *)licenseExpirationDate;
 

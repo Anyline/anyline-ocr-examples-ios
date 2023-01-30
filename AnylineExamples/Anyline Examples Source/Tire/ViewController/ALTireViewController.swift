@@ -14,7 +14,6 @@ class ALTireViewController: ALBaseScanViewController {
 
     var scanViewPlugin: ALScanViewPluginBase?
     var scanViewConfig: ALScanViewConfig?
-    var configJSONString: NSString?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,6 @@ class ALTireViewController: ALBaseScanViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         do {
             try scanViewPlugin?.start()
         } catch {
@@ -38,7 +36,8 @@ class ALTireViewController: ALBaseScanViewController {
     }
     
     func setupTirePlugin() {
-        var JSONFileName: String?
+
+        var JSONFileName = ""
         var titleString: String?
         switch configType {
         case .tinConfig:
@@ -57,54 +56,18 @@ class ALTireViewController: ALBaseScanViewController {
 
         self.title = titleString;
 
-        guard let filename = JSONFileName else {
-            print("Initialization error: unable to load scan plugin from config")
-            return;
-        }
-        let JSONStr = self.configJSONStr(withFilename: filename)
+        let path = Bundle.main.path(forResource:JSONFileName, ofType: "json") ?? ""
 
-        configJSONString = JSONStr as NSString?
-
-        if let configJSONDict = configJSONString?.asJSONObject() as? [String: Any] {
-
-            var scanViewPlugin: ALScanViewPlugin!
-            do {
-                scanViewPlugin = try ALScanViewPluginFactory.withJSONDictionary(configJSONDict) as? ALScanViewPlugin
-            } catch {
-                if (self.popWithAlert(onError: error)) {
-                    return
-                }
+        do {
+            let scanView = try ALScanViewFactory.withConfigFilePath(path, delegate: self)
+            self.scanViewPlugin = scanView.scanViewPlugin as? ALScanViewPlugin
+            self.installScanView(scanView)
+            scanView.startCamera()
+            self.scanView = scanView
+        } catch {
+            if (self.popWithAlert(onError: error)) {
+                return
             }
-
-            self.scanViewPlugin = scanViewPlugin
-
-            if let scanViewConfig = try? ALScanViewConfig(jsonDictionary: configJSONDict) {
-
-                do {
-                    let scanView = try ALScanView(frame: .zero,
-                                                   scanViewPlugin: scanViewPlugin,
-                                                   scanViewConfig: scanViewConfig)
-                    self.scanView = scanView
-
-                    self.installScanView(self.scanView!)
-
-                    let scanPlugin: ALScanPlugin = (self.scanViewPlugin as! ALScanViewPlugin).scanPlugin
-                    scanPlugin.delegate = self
-
-                    self.scanView?.startCamera()
-
-                } catch {
-                    if (self.popWithAlert(onError: error)) {
-                        return
-                    }
-                }
-            } else {
-                print("error: ScanView was not created. Please check the error.")
-            }
-
-        } else {
-            let msg = "Initialization error: tireConfig couldn't be converted in json object"
-            assertionFailure(msg)
         }
     }
 }
@@ -115,29 +78,10 @@ extension ALTireViewController: ALScanPluginDelegate {
 
         enableLandscapeOrientation(false)
 
-        var resultData: Array<ALResultEntry>!
-        var resultString: String?
-        let result = scanResult.pluginResult
-        switch configType {
-        case .commercialTireConfig:
-            if let commercialTireIDResult = result.commercialTireIDResult {
-                resultData = commercialTireIDResult.resultEntryList
-                resultString = resultData.JSONStringFromResultData
-            }
-        case .tinConfig:
-            if let tinResult = result.tinResult {
-                resultData = tinResult.resultEntryList
-                resultString = resultData.JSONStringFromResultData
-            }
-        case .tireSizeConfig:
-            if let tireSizeResult = result.tireSizeResult {
-                resultData = tireSizeResult.resultEntryList
-                resultString = resultData.JSONStringFromResultData
-            }
-        }
+        let resultEntries: [ALResultEntry] = (scanResult.pluginResult.fieldList() as NSArray).resultEntries
 
-        guard let resultData = resultData, let resultString = resultString else {
-            assertionFailure("no value to scan (not possible)!")
+        guard let resultString = resultEntries.JSONStringFromResultData else {
+            assertionFailure("no resultString!")
             return
         }
 
@@ -147,7 +91,7 @@ extension ALTireViewController: ALScanPluginDelegate {
                                   scanPlugin: scanPlugin,
                                   viewPlugin: self.scanViewPlugin!) { [weak self] in
 
-            let vc = ALResultViewController(results: resultData)
+            let vc = ALResultViewController(results: resultEntries)
             vc.imagePrimary = scanResult.croppedImage
             self?.navigationController?.pushViewController(vc, animated: true)
         }

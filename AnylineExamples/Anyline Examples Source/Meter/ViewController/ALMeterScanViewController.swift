@@ -226,21 +226,34 @@ extension ALMeterScanViewController: ALScanPluginDelegate, ALScanViewPluginDeleg
     }
 
     func loadBarcodeResult(from scanResult: ALScanResult) -> String? {
-        if let barcodeResult = scanResult.pluginResult.barcodeResult {
-            self.barcodeResultEntries = barcodeResult.resultEntryList
+
+        if let _ = scanResult.pluginResult.barcodeResult {
+
+            let arr = scanResult.pluginResult.fieldList() as NSArray
+            self.barcodeResultEntries = arr.resultEntries
             self.barcodeImage = scanResult.croppedImage
-            return barcodeResult.barcodes.first?.decoded() // get one for the barcode string to be used later
+
+            let decodeValue = arr
+                .compactMap { $0 as? [String: String] }
+                .filter { $0["name"] == "barcode" }
+                .map { $0["value"] }
+                .first;
+
+            return decodeValue ?? ""
         }
         return nil
     }
 
     func loadMeterResult(from scanResult: ALScanResult) -> String? {
+
         if let meterResult = scanResult.pluginResult.meterResult {
             var result = meterResult.value
             if let meterUnit = meterResult.unit {
                 result += String(format: " %@", meterUnit)
             } // move this result to extension
-            self.meterResultEntries = meterResult.resultEntryList
+
+            let arr = scanResult.pluginResult.fieldList() as NSArray
+            self.meterResultEntries = arr.resultEntries
             self.meterImage = scanResult.croppedImage
             return result
         }

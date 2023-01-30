@@ -34,35 +34,19 @@ NSString * const kLicensePlateScanVC_configAF = @"license_plate_af_config";
     } else if ([self.title isEqualToString:@"African License Plate"] || [self.title isEqualToString:@"AF License Plate"]) {
         licensePlateConfigJSONFile = kLicensePlateScanVC_configAF;
     }
-    
-    id JSONConfigObj = [[self configJSONStrWithFilename:licensePlateConfigJSONFile] asJSONObject];
-    
+
     NSError *error;
-    self.scanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:JSONConfigObj error:&error];
-    
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }
-    
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:self.scanViewPlugin
-                                       scanViewConfig:self.scanViewConfig
-                                                error:&error];
-    
+    NSString *path = [[NSBundle mainBundle] pathForResource:licensePlateConfigJSONFile ofType:@"json"];
+    self.scanView = [ALScanViewFactory withConfigFilePath:path delegate:self error:&error];
     if ([self popWithAlertOnError:error]) {
         return;
     }
     
     [self installScanView:self.scanView];
-    
-    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
-    
-    scanViewPlugin.scanPlugin.delegate = self;
-    
     [self.scanView startCamera];
-    
+
+    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
+   
     self.controllerType = ALScanHistoryLicensePlates;
 }
 
@@ -70,17 +54,15 @@ NSString * const kLicensePlateScanVC_configAF = @"license_plate_af_config";
     [super viewDidAppear:animated];
     // We use this subroutine to start Anyline. The reason it has its own subroutine is
     // so that we can later use it to restart the scanning process.
-    [self.scanViewPlugin startWithError:nil];
+    NSError *error;
+    [self.scanViewPlugin startWithError:&error];
 }
-
 
 // MARK: - Handle & present results
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
     [self enableLandscapeOrientation:NO];
-    ALLicensePlateResult *result = scanResult.pluginResult.licensePlateResult;
-    
-    NSArray <ALResultEntry *> *resultData = result.resultEntryList;
+    NSArray <ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultString = [ALResultEntry JSONStringFromList:resultData];
     UIImage *image = scanResult.croppedImage;
     

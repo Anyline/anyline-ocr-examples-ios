@@ -18,15 +18,19 @@
 		</data>
 		<key>Headers/ALAssetUpdateManager.h</key>
 		<data>
-		XFwh66vRpuR0EmlyyB0drwUw+K8=
+		rNNaUrpNOQFDw5eyJ13yqCxc3FY=
 		</data>
 		<key>Headers/ALAssetUpdateTask.h</key>
 		<data>
-		cVpW+AXSzOFpJcKNR8f5MRocFfY=
+		8GTXXP3pKqIz1F4YjRKZSOtUTa4=
+		</data>
+		<key>Headers/ALBarcodeTypes.h</key>
+		<data>
+		XsttT0YFHJ0UbKGGe3mK9VwHhDk=
 		</data>
 		<key>Headers/ALCameraConfig.h</key>
 		<data>
-		76JxiW7groYBl6dKu4UIz4Wjtx4=
+		nHfbfZ89yy3eKRiZISjIKq4atRs=
 		</data>
 		<key>Headers/ALCutoutConfig.h</key>
 		<data>
@@ -34,15 +38,15 @@
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
-		PjkWWTT/DimtglTzTrtXrIt27nc=
+		+zMJYfJXl5QNN6wTvpIotBwrZsY=
 		</data>
 		<key>Headers/ALEvent.h</key>
 		<data>
-		oevHxG7bbFiNYLrip94gTWsRfOg=
+		xI2ufrsnKpKHQqP56B2JjiKBptQ=
 		</data>
 		<key>Headers/ALFlashConfig.h</key>
 		<data>
-		Ueb4AQYO/5O4KtUXcLP1r3C3GWg=
+		Wfbsdla5Fei0ul0AgQ4q9Parh2k=
 		</data>
 		<key>Headers/ALImage.h</key>
 		<data>
@@ -58,11 +62,11 @@
 		</data>
 		<key>Headers/ALNFCDetector.h</key>
 		<data>
-		QkkVvp1usreDj2aCWK3FxMeuIeU=
+		P32jqkSngpJTUu74T8nr+wd4+Ww=
 		</data>
 		<key>Headers/ALNFCResult.h</key>
 		<data>
-		InmBCqtg48HT5UQ56A9iCXOKI94=
+		BRSZNgIaTBmpg7lpeI91qsjox7c=
 		</data>
 		<key>Headers/ALPluginConfig+Extras.h</key>
 		<data>
@@ -74,7 +78,7 @@
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
-		qYDrSzF7Rhqzbs+clGNZGkWPsaI=
+		bL+9uvkadBd6qfad8dKZbg8r+mg=
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
@@ -94,7 +98,7 @@
 		</data>
 		<key>Headers/ALScanResult.h</key>
 		<data>
-		ta0BI8xNcXv3IbGZ1X5eLLXucLM=
+		U+ox6QnwZildC4zDO2E4thiQJzE=
 		</data>
 		<key>Headers/ALScanView.h</key>
 		<data>
@@ -130,15 +134,15 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		ZYug7N/qLmlq2JJ8JYaz734e/98=
+		WNRY2m5SDjlVfNsKOHNeYNRro24=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
-		UumqsD3jRbvJ5eVk8I/u3BAhDr0=
+		RhI/e5jfLuOHY34VcJE7jfc3nGI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+7tDrpZH6leN3tlgjU/zhBsGw90=
+		Vr9+rsTpckjl4NrCt0B0150olrI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -172,21 +176,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k2HwDZLbyKZPBWWOUrVBiRZa8vAqAyCbhh8QcerqJq0=
+			nYBDGWC9BjX/JZodFdbJIKxzUS3qEVaBTUs0Cgnbs80=
 			</data>
 		</dict>
 		<key>Headers/ALAssetUpdateTask.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JcWhmObd0tTIpNZRldWGw3gH7vl4+QsH/wG6GqpQrIo=
+			RkZ9MUeIOOGRXeNuZNU39XgKCAhk7EQNPocVuB4D3ho=
+			</data>
+		</dict>
+		<key>Headers/ALBarcodeTypes.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BTBq7Yu4QnaQkdEDBGiiiXc/4Ehky+k6CeNB+0dgNbo=
 			</data>
 		</dict>
 		<key>Headers/ALCameraConfig.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Di3t3/strCgQ65fU54ves9HYex3xljYIsCL+yEJbqAk=
+			sKMlXHDOOgD70lk4lptF6EE40U9rilsWwbof77KoYNk=
 			</data>
 		</dict>
 		<key>Headers/ALCutoutConfig.h</key>
@@ -200,21 +211,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8zZQLhDoaXpTvbOaFWksLIGdazOjeBaVip9HIkWZIeA=
+			EDdg3i2MNmpZ9T7RX3TZMTLkrTPvhMMRMszxq3Vw4VY=
 			</data>
 		</dict>
 		<key>Headers/ALEvent.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lj0R+VrQRoGlvVSUnstf+/2qZ3Lb2QM687/drKBCKfY=
+			0GNnJVEpF28Mz4fhv0Z8SIMPpjPpOT19xjtABBaTYNY=
 			</data>
 		</dict>
 		<key>Headers/ALFlashConfig.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fUQmahkhkl2nuqREksH0J1lemxhhd3xSKJQF+HxGNsk=
+			rEExSFHQT6lWi80NIATToFBXdu38ajOaCbIy5Ik7ESc=
 			</data>
 		</dict>
 		<key>Headers/ALImage.h</key>
@@ -242,14 +253,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			krfCwQ5KlVBMmnkf+CtloAnNhV43xfeYwYlq8D5+Vus=
+			MLR1lq2XwYNNkxnf4EZ1in6leL1YV/lfrPcPlk0GAcE=
 			</data>
 		</dict>
 		<key>Headers/ALNFCResult.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			thzU8CQxa29T6aUccvj/7aYQ6A1+i81EJHsx6lLKCV0=
+			0VEDysz/JqE3Y3gw+8i9tLz3ewxWHQBA52/5iwzk7po=
 			</data>
 		</dict>
 		<key>Headers/ALPluginConfig+Extras.h</key>
@@ -270,7 +281,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bTIakxmvTM1RXgHqNl8Inx/NRVT6Xn9ZsmrZSld9PA0=
+			/vPLfzUuQB5QPpss4JnSzIHn8WjaEc5CSxmrZ3znfw0=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult.h</key>
@@ -305,7 +316,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			22zQBkyqr1s52ec2rI2e9sgp0Jn792BPy3yF/qfFj+E=
+			rPMev4KAR27GLkeuKR8AbsB5NRX2tWmVDpplxgqEKrg=
 			</data>
 		</dict>
 		<key>Headers/ALScanView.h</key>
@@ -368,14 +379,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yw3jRG9gd+M4tOf08VhwUmXtPHEq/e9X0cLfHaq3Vec=
+			6P1UDUg23KgUCqK6OkOoouvf43umovfTSLOpAVJVkrM=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BlmmN0fL/LPhRrKeTURm/ryLXuDzzDZqM26PjDu70bY=
+			3YINhkNKZHs+IST9GMQgMhDEn3EPaUjR1+sMyhOYEtE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

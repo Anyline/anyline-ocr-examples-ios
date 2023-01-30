@@ -106,7 +106,7 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
 // MARK: - ALScanPluginDelegate
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
-    NSArray <ALResultEntry*> *resultData = scanResult.pluginResult.ocrResult.resultEntryList;
+    NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
     __weak ALUniversalSerialNumberScanViewController *weakSelf = self;
     [self anylineDidFindResult:resultDataJSONStr

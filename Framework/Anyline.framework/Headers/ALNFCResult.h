@@ -37,7 +37,7 @@ API_AVAILABLE(ios(13.0))
 /// @param sod sod
 - (instancetype)initWithDataGroup1:(ALDataGroup1 *)dataGroup1
                         dataGroup2:(ALDataGroup2 *)dataGroup2
-                               sod:(ALSOD *)sod;
+                               sod:(ALSOD * _Nullable)sod;
 
 @end
 
@@ -46,31 +46,31 @@ API_AVAILABLE(ios(13.0))
 @interface ALDataGroup1 : NSObject
 
 /// Document type
-@property NSString *documentType;
+@property (nonatomic, copy, nullable) NSString *documentType;
 
 /// Issuing state code
-@property NSString *issuingStateCode;
+@property (nonatomic, copy, nullable) NSString *issuingStateCode;
 
 /// Document number
-@property NSString *documentNumber;
+@property (nonatomic, copy, nullable) NSString *documentNumber;
 
 /// Date of expiry
-@property NSDate *dateOfExpiry;
+@property (nonatomic, strong, nullable) NSDate *dateOfExpiry;
 
 /// Gender
-@property NSString *gender;
+@property (nonatomic, copy, nullable) NSString *gender;
 
 /// Nationality
-@property NSString *nationality;
+@property (nonatomic, copy, nullable) NSString *nationality;
 
 /// Last name
-@property NSString *lastName;
+@property (nonatomic, copy, nullable) NSString *lastName;
 
 /// First name
-@property NSString *firstName;
+@property (nonatomic, copy, nullable) NSString *firstName;
 
 /// Date of birth
-@property NSDate *dateOfBirth;
+@property (nonatomic, strong, nullable) NSDate *dateOfBirth;
 
 /// Initializes a data group with string / date information from a passport
 ///   @param documentType documentType
@@ -83,15 +83,15 @@ API_AVAILABLE(ios(13.0))
 ///   @param firstName firstName
 ///   @param dateOfBirth dateOfBirth
 ///   @return the ALDataGroup1 object
-- (instancetype)initWithDocumentType:(NSString *)documentType
-                    issuingStateCode:(NSString *)issuingStateCode
-                      documentNumber:(NSString *)documentNumber
-                        dateOfExpiry:(NSDate *)dateOfExpiry
-                              gender:(NSString *)gender
-                         nationality:(NSString *)nationality
-                            lastName:(NSString *)lastName
-                           firstName:(NSString *)firstName
-                         dateOfBirth:(NSDate *)dateOfBirth;
+- (instancetype)initWithDocumentType:(NSString * _Nullable)documentType
+                    issuingStateCode:(NSString * _Nullable)issuingStateCode
+                      documentNumber:(NSString * _Nullable)documentNumber
+                        dateOfExpiry:(NSDate * _Nullable)dateOfExpiry
+                              gender:(NSString * _Nullable)gender
+                         nationality:(NSString * _Nullable)nationality
+                            lastName:(NSString * _Nullable)lastName
+                           firstName:(NSString * _Nullable)firstName
+                         dateOfBirth:(NSDate * _Nullable)dateOfBirth;
 
 /// Initializes a data group with a dictionary of passport details
 /// @param passportDataElements NSDictionary mapping fields to their values
@@ -105,12 +105,12 @@ API_AVAILABLE(ios(13.0))
 @interface ALDataGroup2 : NSObject
 
 /// The face image read from the passport's NFC chip
-@property UIImage *faceImage;
+@property (nonatomic, strong, nullable) UIImage *faceImage;
 
 /// Initializes a data group with string / date information from a passport
 /// @param faceImage faceImage
 /// @return the ALDataGroup2 object
-- (instancetype)initWithFaceImage:(UIImage *)faceImage;
+- (instancetype)initWithFaceImage:(UIImage * _Nullable)faceImage;
 
 @end
 

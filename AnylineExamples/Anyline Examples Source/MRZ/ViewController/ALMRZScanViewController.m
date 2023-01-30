@@ -20,9 +20,7 @@
 @end
 
 @implementation ALMRZScanViewController
-/*
- We will do our main setup in viewDidLoad. Its called once the view controller is getting ready to be displayed.
- */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -36,6 +34,30 @@
 }
 
 - (void)startMRZScanMode {
+
+    [self setupUI];
+    
+    NSError *error;
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"mrz_config" ofType:@"json"];
+    self.scanView = [ALScanViewFactory withConfigFilePath:path delegate:self error:&error];
+    [self installScanView:self.scanView];
+
+    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
+
+    [self.scanView startCamera];
+    
+    self.controllerType = ALScanHistoryMrz;
+    
+    [self.scanViewPlugin startWithError:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.scanViewPlugin stop];
+}
+
+- (void)setupUI {
     if (![[[NSBundle mainBundle] bundleIdentifier] localizedCaseInsensitiveContainsString:@"bundle"]) {
         UIBarButtonItem *infoBarItem;
         if (@available(iOS 13.0, *)) {
@@ -46,42 +68,6 @@
         self.navigationItem.rightBarButtonItem = infoBarItem;
         [self setColors];
     }
-    
-    id JSONConfigObj = [[self configJSONStrWithFilename:@"mrz_config"] asJSONObject];
-    
-    NSError *error;
-    self.scanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:JSONConfigObj error:&error];
-    
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }
-    
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
-    
-    if (self.scanView) {
-        [self.scanView setScanViewPlugin:self.scanViewPlugin error:&error];
-        if ([self popWithAlertOnError:error]) {
-            return;
-        }
-    } else {
-        self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                           scanViewPlugin:self.scanViewPlugin
-                                           scanViewConfig:self.scanViewConfig
-                                                    error:&error];
-        if ([self popWithAlertOnError:error]) {
-            return;
-        }
-        [self installScanView:self.scanView];
-    }
-    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
-    
-    scanViewPlugin.scanPlugin.delegate = self;
-    
-    [self.scanView startCamera];
-    
-    self.controllerType = ALScanHistoryMrz;
-    
-    [self.scanViewPlugin startWithError:nil];
 }
 
 - (void)setColors {
@@ -93,14 +79,6 @@
     self.navigationItem.rightBarButtonItem.tintColor = tintColor;
 }
 
-/*
- Cancel scanning to allow the module to clean up
- */
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
-}
-
 - (IBAction)infoPressed:(id)sender {
     ALTutorialViewController *vc = [[ALTutorialViewController alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
@@ -108,7 +86,7 @@
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
     [self enableLandscapeOrientation:NO];
-    NSArray <ALResultEntry *> *resultData = scanResult.pluginResult.mrzResult.resultEntryList;
+    NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultJSON = [ALResultEntry JSONStringFromList:resultData];
     
     __weak __block ALMRZScanViewController *weakSelf = self;

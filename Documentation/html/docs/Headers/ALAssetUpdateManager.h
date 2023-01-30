@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger count;
 
 /// An `ALAssetUpdateTaskFactory` instance
-@property (nonatomic, strong) ALAssetUpdateTaskFactory *assetUpdateTaskFactory;
+@property (nonatomic, strong, nullable) ALAssetUpdateTaskFactory *assetUpdateTaskFactory;
 
 /// A shared (singleton) instance of this object
 + (ALAssetUpdateManager *)sharedManager;
@@ -62,14 +62,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Remove the asset update task from the update manager
 /// @param id the id of the asset task
-- (ALAssetUpdateTask *)removeUpdateTask:(NSString *)id;
+- (ALAssetUpdateTask * _Nullable)removeUpdateTask:(NSString *)id;
 
 /// Remove all asset update tasks from the update manager
 - (void)removeAll;
 
 /// Obtain the asset controller associated with an asset update task ID
 /// @param id the id of the asset task
-- (ALAssetController *)assetControllerForID:(NSString *)id;
+- (ALAssetController * _Nullable)assetControllerForID:(NSString *)id;
 
 @end
 

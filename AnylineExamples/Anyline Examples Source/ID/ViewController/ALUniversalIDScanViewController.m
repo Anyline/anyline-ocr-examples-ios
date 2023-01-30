@@ -540,16 +540,9 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     if (scanResult.pluginResult.barcodeResult) {
         self.barcodeResult = scanResult.pluginResult.barcodeResult;
     }
-    
-    ALUniversalIDResult *IDResult = scanResult.pluginResult.universalIDResult;
-    
-    [self addResultsAtIndex:IDResult.resultEntryList.mutableCopy];
-    
-    NSArray *pdf417ResultsList = self.barcodeResult.resultEntryList;
-    if (pdf417ResultsList.count > 0) {
-        [self addResultsAtIndex:pdf417ResultsList.mutableCopy];
-    }
-    
+
+    [self addResultsAtIndex:scanResult.pluginResult.fieldList.resultEntries.mutableCopy];
+
     if (scanResult.faceImage && !self.faceImage) { // save only the first face image that is scanned
         // front side will have a first chance to do so, then the back side.
         // so if both sides have photos, the front pic will be used.
@@ -568,7 +561,9 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
             }];
         });
     } else {
-        
+
+        ALUniversalIDResult *IDResult = scanResult.pluginResult.universalIDResult;
+
         // if it was barcode, wait for ID before returning
         [self stopTroubleScanningTimeout];
         

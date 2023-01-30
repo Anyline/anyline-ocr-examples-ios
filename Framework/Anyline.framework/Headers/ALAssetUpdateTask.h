@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *id;
 
 /// A factor to create asset controllers
-@property (nonatomic, strong) ALAssetControllerFactory *assetControllerFactory;
+@property (nonatomic, strong, nullable) ALAssetControllerFactory *assetControllerFactory;
 
 /// Initializes an ALAssetUpdateTask
 /// @param assetContext assetContext

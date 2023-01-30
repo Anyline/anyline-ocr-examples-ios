@@ -146,7 +146,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
                  barcodeResult:nil
                          image:[scanResult croppedImage]
                     scanPlugin:scanPlugin viewPlugin:self.scanViewPlugin completion:^{
-        NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.tinResult.resultEntryList;
+        NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
         vc.imagePrimary = scanResult.croppedImage;

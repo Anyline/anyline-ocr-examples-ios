@@ -5,7 +5,7 @@
   },
   "flashConfig": {
     "mode": "manual",
-    "alignment": "top_left",
+    "alignment": "top_left"
   },
   "viewPluginConfig": {
     "pluginConfig": {

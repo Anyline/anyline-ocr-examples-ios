@@ -75,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Creates an ALCameraConfig with default values, suitable for further custimization
 /// @return an instance of ALCameraConfig
-+ (instancetype _Nullable)defaultCameraConfig;
++ (instancetype)defaultCameraConfig;
 
 /// Initializes an `ALCameraConfig` object.
 /// @param defaultCamera Camera to be used for scanning. Could be "FRONT" or "BACK"

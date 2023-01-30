@@ -91,7 +91,7 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
     
     NSAssert(barcodesFound.count > 0, @"no barcodes found");
     
-    NSArray <ALResultEntry *> *resultData = scanResult.pluginResult.barcodeResult.resultEntryList;
+    NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
     
     __weak __block typeof(self) weakSelf = self;
