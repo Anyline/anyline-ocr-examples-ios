@@ -571,28 +571,7 @@
 		"universalIdResult": {
 			"description": "Describes result information of scanning different kinds of IDs",
 			"type": "object",
-			"properties": {
-				"layoutDefinition": {
-					"type": "object",
-					"description": "The layout information of the scanned ID",
-					"properties": {
-						"country": {
-							"type": "string",
-							"description": "The country"
-						},
-						"type": { 
-							"type": "string",
-							"description": "The type of layout",
-							"enum": ["mrz", "drivingLicense", "idFront", "insuranceCard"]
-						},
-						"layout": {
-							"type": "string",
-							"description": "The actual layout"
-						}
-					},
-					"additionalProperties": false,
-					"required": ["country", "layout", "type"]
-				},
+			"properties": {				
 				"result": {
 					"title": "IdResult",
 					"type": "object",
@@ -634,8 +613,7 @@
 						"documentSideDefinition": { "$ref": "#/definitions/universalIdResultField" },
 						"documentType": { "$ref": "#/definitions/universalIdResultField" },
 						"documentTypeDefinition": { "$ref": "#/definitions/universalIdResultField" },
-						"documentVersionsDefinition": { "$ref": "#/definitions/universalIdResultField" },
-						"drivingLicenseString": { "$ref": "#/definitions/universalIdResultField" },
+						"documentVersionsDefinition": { "$ref": "#/definitions/universalIdResultField" },						
 						"duplicate": { "$ref": "#/definitions/universalIdResultField" },
 						"duration": { "$ref": "#/definitions/universalIdResultField" },
 						"educationalInstitution": { "$ref": "#/definitions/universalIdResultField" },
@@ -657,8 +635,7 @@
 						"hair": { "$ref": "#/definitions/universalIdResultField" },
 						"headOfFamily": { "$ref": "#/definitions/universalIdResultField" },
 						"height": { "$ref": "#/definitions/universalIdResultField" },
-						"hologram": { "$ref": "#/definitions/universalIdResultField" },
-						"idFrontString": { "$ref": "#/definitions/universalIdResultField" },
+						"hologram": { "$ref": "#/definitions/universalIdResultField" },						
 						"initials": { "$ref": "#/definitions/universalIdResultField" },
 						"initialsAndDateOfBirth": { "$ref": "#/definitions/universalIdResultField" },
 						"issuingCountryCode": { "$ref": "#/definitions/universalIdResultField" },
@@ -712,19 +689,7 @@
 					"$ref": "#/definitions/visualization"
 				}
 			},
-			"required": ["layoutDefinition", "result"],
-			"oneOf": [
-				{
-					"properties": {
-						"layoutDefinition": {
-							"properties": {
-								"type": { "const": "mrz" }
-							}
-						}
-					}
-				},
-				{ "required": ["visualization"] }
-			],
+			"required": ["result"],			
 			"additionalProperties": false			
 		},
 		"barcodeResult": {

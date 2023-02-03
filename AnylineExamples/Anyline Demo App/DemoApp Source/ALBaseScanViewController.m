@@ -106,6 +106,7 @@ the camera from Settings.";
 - (void)addWarningSubview {
     ALWarningView *warningView = [[ALWarningView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
     warningView.center = CGPointMake(self.view.center.x, 0);
+    
     self.warningView = warningView;
     [self.view addSubview:warningView];
     self.warningView.alpha = 0;
@@ -144,10 +145,6 @@ the camera from Settings.";
 
 - (void)updateScanWarnings:(ALWarningState)warningState {
     [self.warningView showWarning:warningState];
-}
-
-- (void)updateWarningPosition:(CGFloat)newPosition {
-    self.warningView.center = CGPointMake(self.warningView.center.x, newPosition);
 }
 
 // MARK: - anylineDidFindResult
@@ -487,7 +484,12 @@ the camera from Settings.";
 }
 
 - (void)scanView:(ALScanView *)scanView updatedCutoutWithPluginID:(NSString *)pluginID frame:(CGRect)frame {
-    [self updateWarningPosition:frame.origin.y + frame.size.height + scanView.frame.origin.y + 80];
+    CGFloat xPos = (frame.origin.x + (frame.size.width/2));
+    CGFloat yPos = frame.origin.y + frame.size.height + scanView.frame.origin.y + 80;
+    if (_isOrientationFlipped) {
+        yPos = frame.origin.y;
+    }
+    self.warningView.center = CGPointMake(xPos, yPos);
 }
 
 - (void)scanView:(ALScanView *)scanView encounteredError:(NSError *)error {

@@ -62,8 +62,10 @@ class ALTireViewController: ALBaseScanViewController {
             let scanView = try ALScanViewFactory.withConfigFilePath(path, delegate: self)
             self.scanViewPlugin = scanView.scanViewPlugin as? ALScanViewPlugin
             self.installScanView(scanView)
+            scanView.delegate = self
             scanView.startCamera()
             self.scanView = scanView
+
         } catch {
             if (self.popWithAlert(onError: error)) {
                 return

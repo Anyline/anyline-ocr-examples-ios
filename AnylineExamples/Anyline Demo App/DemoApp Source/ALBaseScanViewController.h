@@ -34,8 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateScanWarnings:(ALWarningState)warningState;
 
-- (void)updateWarningPosition:(CGFloat)newPosition;
-
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule ignoreTooDark:(BOOL)ignoreTooDark;
 
 - (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule;
