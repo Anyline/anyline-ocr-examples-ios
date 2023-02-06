@@ -27,8 +27,6 @@
 @class ALTireSizeResult;
 @class ALTireSizeResultField;
 @class ALUniversalIDResult;
-@class ALLayoutDefinition;
-@class ALType;
 @class ALIDResult;
 @class ALUniversalIDResultField;
 @class ALDateValue;
@@ -161,16 +159,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALCountry *)tr;
 + (ALCountry *)ua;
 + (ALCountry *)us;
-@end
-
-/// The type of layout
-@interface ALType : NSObject
-@property (nonatomic, readonly, copy) NSString *value;
-+ (instancetype _Nullable)withValue:(NSString *)value;
-+ (ALType *)drivingLicense;
-+ (ALType *)insuranceCard;
-+ (ALType *)mrz;
-+ (ALType *)theIDFront;
 @end
 
 #pragma mark - Object interfaces
@@ -461,21 +449,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Describes result information of scanning different kinds of IDs
 @interface ALUniversalIDResult : NSObject
-/// The layout information of the scanned ID
-@property (nonatomic, strong) ALLayoutDefinition *layoutDefinition;
 /// Yields field information of the ID
 @property (nonatomic, strong)           ALIDResult *result;
 @property (nonatomic, nullable, strong) ALVisualization *visualization;
-@end
-
-/// The layout information of the scanned ID
-@interface ALLayoutDefinition : NSObject
-/// The country
-@property (nonatomic, copy) NSString *country;
-/// The actual layout
-@property (nonatomic, copy) NSString *layout;
-/// The type of layout
-@property (nonatomic, assign) ALType *type;
 @end
 
 /// Yields field information of the ID
@@ -517,7 +493,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *documentType;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *documentTypeDefinition;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *documentVersionsDefinition;
-@property (nonatomic, nullable, strong) ALUniversalIDResultField *drivingLicenseString;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *duplicate;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *duration;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *educationalInstitution;
@@ -540,7 +515,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *headOfFamily;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *height;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *hologram;
-@property (nonatomic, nullable, strong) ALUniversalIDResultField *theIDFrontString;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *initials;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *initialsAndDateOfBirth;
 @property (nonatomic, nullable, strong) ALUniversalIDResultField *issuingCountryCode;
