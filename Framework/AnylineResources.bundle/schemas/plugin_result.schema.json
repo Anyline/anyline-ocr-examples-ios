@@ -726,16 +726,16 @@
 						"type": "integer"
 					}
 				},
-				"isBase64": {
-					"type": "boolean",
-					"description": "Information of whether or not the found barcode value was encoded to base64"
+				"base64value": {
+					"type": "string",
+					"description": "Contains the base64-encoded value"
 				},
 				"aamva": {
 					"$ref": "#/definitions/aamva"
 				}
 			},
 			"additionalProperties": false,
-			"required": ["value", "format", "isBase64"]			
+			"required": ["value", "format"]			
 		},
 		"aamva": {
 			"type": "object",

@@ -58,11 +58,11 @@
 		</data>
 		<key>Headers/ALLicenseUtil.h</key>
 		<data>
-		+WUcNA9NDZ2W9qXohj6wZ0c/Q7E=
+		v8Ky04qX4nJJwk08eRJTHdCZlcI=
 		</data>
 		<key>Headers/ALNFCDetector.h</key>
 		<data>
-		P32jqkSngpJTUu74T8nr+wd4+Ww=
+		K0FKGHYhtRi1UXgiqkRraZHvDF4=
 		</data>
 		<key>Headers/ALNFCResult.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Headers/ALViewPluginComposite.h</key>
 		<data>
-		Z2gDzKhobSdcmYc1UTzuraPwWZI=
+		NspzsxSA+ABjA3ou78NOv3FewDY=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bsqnv3P0Gz3lYUsYh3TDLprYMN0=
+		s9NS4FpqnkKWcfVqGdZAPQhWWUE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -246,14 +246,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SvsAPZiP9TTIFz9kvj8b4psmKxmDB31VHRcnYsIZhO4=
+			N2IYM7xihWI3/nA4pyCICJxOz0eLqn9/l0GU1y68P/E=
 			</data>
 		</dict>
 		<key>Headers/ALNFCDetector.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MLR1lq2XwYNNkxnf4EZ1in6leL1YV/lfrPcPlk0GAcE=
+			d8X7jwRYvbd8n5kkjwmFrh7bm6856GZTvy8nrYStHCM=
 			</data>
 		</dict>
 		<key>Headers/ALNFCResult.h</key>
@@ -372,7 +372,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wA8KcEC6uNnScN+Rz2augs497wRNBmrf7c4/O/8Y0ls=
+			KbecpDo7hUsDEtB4mGn1hNeKZgxwoa/yRZ84FG7DIWI=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>

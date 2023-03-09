@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		036F7E59E334D31A9A5F0A1F /* id_composite_config.json in Resources */ = {isa = PBXBuildFile; fileRef = A2A3EE6CB8387C36E189E792 /* id_composite_config.json */; };
 		03DC0905EAC8CA8DAFC0161E /* WorkForceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F533C26CE1AF0173FA55D8 /* WorkForceViewController.m */; };
+		0497B5F83C7A3232E9DDDD60 /* ALCompositeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F265241B8B0732E50240B8F2 /* ALCompositeScanViewController.m */; };
 		04FFBE2C339512AE85FE10C8 /* id_front_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B89BFF9E6FF26CAC25315FAE /* id_front_config.json */; };
 		0522C4A4434C13E4419ED836 /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DB7A75A5F8AD5B606F58EE /* Order+CoreDataProperties.m */; };
 		05811D0CE8A832E9CBFF0411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A170BE2654710390ADC3DE5 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		1B11D7F095261EF011C146D2 /* vin_ocr_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AF1EDDFA2A6C01BE649FEF4 /* vin_ocr_config.json */; };
 		1B7D8D1B4FDAA322CD23EFC7 /* ScanAreaEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D704839C929FA2058D9E89A0 /* ScanAreaEditorViewController.swift */; };
 		1BDA70B0798FEBA9AED871A9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A55CA11F512D1EB3147C6D35 /* Reachability.m */; };
+		1DBCEE81DA9B14226DEB842D /* parallel_first_vin_barcode.json in Resources */ = {isa = PBXBuildFile; fileRef = C572C567B013995154E661D5 /* parallel_first_vin_barcode.json */; };
 		216AD56855460694DB2EAFD2 /* ALToggleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 602AF9DF62FC564C6646D2E5 /* ALToggleControl.m */; };
 		21A22328A97C63E67AE854BA /* ALProductExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E78B6137D667B2BAFF771 /* ALProductExampleManager.m */; };
 		22B26B83986CE68386E7554B /* ScanHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B93640C21B7EED6296EF3C4 /* ScanHistory+CoreDataClass.m */; };
@@ -434,6 +436,7 @@
 		C474F22983E364473A5F91A8 /* WorkforceTool+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WorkforceTool+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C4C91C9B86D18C08298D87D6 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
 		C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateExampleManager.m; sourceTree = "<group>"; };
+		C572C567B013995154E661D5 /* parallel_first_vin_barcode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = parallel_first_vin_barcode.json; sourceTree = "<group>"; };
 		C693A94797CE4C0904AAA627 /* NSArray+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		CC75DF6BB98F730B445F418A /* WorkForceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkForceViewController.h; sourceTree = "<group>"; };
 		CCFB0172F33527DC467752AE /* ALConfigurationDialogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALConfigurationDialogViewController.h; sourceTree = "<group>"; };
@@ -475,9 +478,11 @@
 		EDB9AB28BEA5B61E6EC0ECEA /* ALUniversalSerialNumberScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalSerialNumberScanViewController.m; sourceTree = "<group>"; };
 		EE56A15754A593AB5CE2C523 /* ALJSONDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALJSONDownloader.h; sourceTree = "<group>"; };
 		EEB003E6E30CAC9DB3C20C66 /* ALMeterReadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterReadingView.h; sourceTree = "<group>"; };
+		F265241B8B0732E50240B8F2 /* ALCompositeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCompositeScanViewController.m; sourceTree = "<group>"; };
 		F289962042BE8D33F12F6561 /* ALConfigurationDialogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALConfigurationDialogViewController.m; sourceTree = "<group>"; };
 		F3BA12F0082427C9B897F096 /* ALSpaceViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALSpaceViews.m; sourceTree = "<group>"; };
 		F435C44B617D3AC0AF049A9F /* ALBarcodeBatchCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeBatchCountView.h; sourceTree = "<group>"; };
+		F702EFFCD1962BFDB8C83AAE /* ALCompositeScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALCompositeScanViewController.h; sourceTree = "<group>"; };
 		F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		F86E7080D32D1E1EDC89BD88 /* license_plate_af_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = license_plate_af_config.json; sourceTree = "<group>"; };
 		F8D01F5681E0B6B8860858B0 /* mrz_nfc_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mrz_nfc_config.json; sourceTree = "<group>"; };
@@ -644,6 +649,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		32C94BD80CC1D46E1D49BB0F /* Composite Scanning */ = {
+			isa = PBXGroup;
+			children = (
+				C572C567B013995154E661D5 /* parallel_first_vin_barcode.json */,
+				5E637A13853C11CC31EC1041 /* ViewController */,
+			);
+			path = "Composite Scanning";
+			sourceTree = "<group>";
+		};
 		388930835AE5FC35528C20F7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +673,7 @@
 		39FD7DEACEA11059C80A4485 /* Processes */ = {
 			isa = PBXGroup;
 			children = (
+				32C94BD80CC1D46E1D49BB0F /* Composite Scanning */,
 				51FADB476B4BBF2F567D5EAF /* Energy */,
 			);
 			path = Processes;
@@ -837,6 +852,15 @@
 				F6A12E72845BDF2D34EBEB80 /* ViewController */,
 			);
 			path = MRZ;
+			sourceTree = "<group>";
+		};
+		5E637A13853C11CC31EC1041 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F702EFFCD1962BFDB8C83AAE /* ALCompositeScanViewController.h */,
+				F265241B8B0732E50240B8F2 /* ALCompositeScanViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5FBF17AEF0C355A1F3C242B0 /* Barcode settings */ = {
@@ -1255,6 +1279,7 @@
 				0EDA113E63BC700CEF98F86E /* meter_config.json in Resources */,
 				928506238F97E4339010FB34 /* mrz_config.json in Resources */,
 				C206A70E2DC25AB00C539498 /* mrz_nfc_config.json in Resources */,
+				1DBCEE81DA9B14226DEB842D /* parallel_first_vin_barcode.json in Resources */,
 				120B9C0ED222249242CDF755 /* parallel_meter_barcode_config.json in Resources */,
 				2311BF58E7C0C70EADF84D27 /* sample_barcode_config.json in Resources */,
 				CC67FAA55F51DF471B2E95E4 /* sample_barcode_fullframe_config.json in Resources */,
@@ -1294,6 +1319,7 @@
 				BCBE543B8A4F2D0438610730 /* ALBaseViewController.m in Sources */,
 				F7BFE2085451648DD83A41FB /* ALBundleInfoViewController.m in Sources */,
 				9AEE556559232DFCD1E18C3A /* ALCheckbox.m in Sources */,
+				0497B5F83C7A3232E9DDDD60 /* ALCompositeScanViewController.m in Sources */,
 				D221E2CBB91120179EF6758D /* ALConfigurationDialogViewController.m in Sources */,
 				344179C6F252F1984A5761FE /* ALContainerScanViewController.m in Sources */,
 				169B4C9E31B54A76C796C481 /* ALCustomBarButton.m in Sources */,

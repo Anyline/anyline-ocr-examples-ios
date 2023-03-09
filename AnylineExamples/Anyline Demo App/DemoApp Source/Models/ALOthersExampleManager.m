@@ -1,7 +1,7 @@
 #import "ALOthersExampleManager.h"
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALContainerScanViewController.h"
-
+#import "ALCompositeScanViewController.h"
 
 @interface ALOthersExampleManager ()
 
@@ -23,8 +23,7 @@
 
 - (void)initExampleData {
     self.title = @"Others";
-    //OCR
-    
+
     ALExample *containerScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Horizontal Shipping Container", nil)
                                                              image:[UIImage imageNamed:@"container serial numbers"]
                                                     viewController:[ALContainerScanViewController class]
@@ -35,9 +34,15 @@
                                                             viewController:[ALContainerScanViewController class]
                                                                      title:NSLocalizedString(@"Vertical Shipping Container", nil)];
 
-    self.sectionNames = @[ @"Others" ];
+    ALExample *parallelFirstExample = [[ALExample alloc] initWithName:NSLocalizedString(@"VIN + Barcode Parallel Either-OR", nil)
+                                                                     image:[UIImage imageNamed:@"vin-barcode-parallel-either-or"]
+                                                            viewController:[ALCompositeScanViewController class]
+                                                                     title:NSLocalizedString(@"VIN + Barcode Parallel Either-OR", nil)];
+
+    self.sectionNames = @[ @"OCR", @"Composites" ];
     self.examples = @{
         self.sectionNames[0] : @[ containerScanning, verticalContainerScanning ],
+        self.sectionNames[1] : @[ parallelFirstExample ],
     };
 }
 

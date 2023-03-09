@@ -14,7 +14,9 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
     /// The children plugins are run one at a time.
     ALCompositeProcessingModeSequential,
     /// The children plugins are run simultaneously, with each showing a cutout on the scan view.
-    ALCompositeProcessingModeParallel
+    ALCompositeProcessingModeParallel,
+    /// The children plugins are run simultaneously, the first result found causes the plugin to return with it.
+    ALCompositeProcessingModeParallelFirstScan,
 };
 
 /// A plugin composite holds children scan view plugins to run them simultaneously or in sequence.

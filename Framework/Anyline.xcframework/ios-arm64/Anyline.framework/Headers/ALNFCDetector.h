@@ -67,19 +67,6 @@ API_AVAILABLE(ios(13.0))
  */
 + (BOOL)readingAvailable;
 
-/**
- * Initialize the NFC Detector
- *
- * @param delegate The delegate to receive results from the NFC once the data has been read
- * @param licenseUtil The ALLicenseUtil class instance which encapsulates the license key string used
- * to initialize the SDK, if this is nil, then the `sharedInstance` of the class is used.
- *  -startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate has been called. This must conform to the ALNFCDetectorDelegate protocol.
- *  @param error An error object that contains an error in case initialization failed.
- */
-- (instancetype _Nullable)initWithDelegate:(id <ALNFCDetectorDelegate> _Nonnull)delegate
-                               licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil
-                                     error:(NSError * _Nullable * _Nullable)error;
-
 /// Initialize the NFC Detector
 /// @param delegate The delegate to receive results from the NFC once the data has been read
 /// @param error An error object that contains an error in case initialization failed.

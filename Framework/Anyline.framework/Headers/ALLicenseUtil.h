@@ -11,10 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// Indicates whether the license had allowed the watermark to be shown/not shown.
 @property (nonatomic, readonly) BOOL showWatermark;
 
-/// Indicates whether the license had expired but still within tolerance period.
-/// Hence, a popup about it will be shown.
-@property (nonatomic, readonly) BOOL showPopup;
-
 /// Singleton instance for ALLicenseUtil
 /// @return the shared instance of ALLicenseUtil
 + (instancetype)sharedInstance;
