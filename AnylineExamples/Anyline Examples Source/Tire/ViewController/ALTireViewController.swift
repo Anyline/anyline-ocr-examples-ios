@@ -118,5 +118,9 @@ extension ALTireViewController: ALScanPluginDelegate {
     override func viewDidLoad() {
         configType = .tinConfig
         super.viewDidLoad()
+
+        // starts in landscape mode (APP-383)
+        self.isOrientationFlipped = true
+        self.enableLandscapeOrientation(true)
     }
 }

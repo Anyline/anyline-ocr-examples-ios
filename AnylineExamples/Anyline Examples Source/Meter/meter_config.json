@@ -4,7 +4,7 @@
         "pictureResolution": "1080p"
     },
     "flashConfig": {
-        "mode": "manual_on",
+        "mode": "manual_off",
         "alignment": "top_left"
     },
     "viewPluginConfig": {

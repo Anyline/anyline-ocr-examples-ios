@@ -1,17 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "title": "PluginConfig",    
+    "title": "PluginConfig",
     "description": "General configuration for scan plugins",
-	"type": "object",
-    "allOf": [
-        {
+    "type": "object",
+    "allOf": [{
             "required": [
                 "id"
             ]
         },
         {
-            "oneOf": [
-                {
+            "oneOf": [{
                     "required": [
                         "barcodeConfig"
                     ]
@@ -96,13 +94,13 @@
             "minimum": 0,
             "maximum": 1000000
         },
-		"startVariables": {
-			"type": "array",
-			"description": "Allows to fine-tune a list of options for plugins.",
-			"items": {
-				"$ref": "#/definitions/startVariable"
-			}
-		},
+        "startVariables": {
+            "type": "array",
+            "description": "Allows to fine-tune a list of options for plugins.",
+            "items": {
+                "$ref": "#/definitions/startVariable"
+            }
+        },
         "barcodeConfig": {
             "$ref": "#/definitions/barcodeConfig"
         },
@@ -116,7 +114,7 @@
             "$ref": "#/definitions/mrzConfig"
         },
         "japaneseLandingPermissionConfig": {
-			"$ref": "#/definitions/japaneseLandingPermissionConfig"
+            "$ref": "#/definitions/japaneseLandingPermissionConfig"
         },
         "vehicleRegistrationCertificateConfig": {
             "$ref": "#/definitions/vehicleRegistrationCertificateConfig"
@@ -144,174 +142,177 @@
         }
     },
     "definitions": {
-		"startVariable": {
-			"type": "object",
-			"description": "Describes a start variable for fine-tuning plugins.", 
-			"properties": {
-				"key": {
-					"type": "string",
-					"description": "The key of the variable."
-				},
-				"value": {
-					"type": ["string", "number", "integer", "boolean"],
-					"description": "The value of the variable."
-				}
-			},
-			"required": ["key", "value"],
-			"additionalProperties": false			
-		},
-		"ocrConfig": {
-			"description": "Configuration for general OCR scanning use-cases",
-			"type": "object",
-			"properties":
-			{
-				"scanMode": {
-					"type":"string",
-					"enum": ["line", "grid", "auto"],
-					"default": "auto",
-					"description": "Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds text automatically."
-				},
-				"model": { 
-					"type": "string",
-					"description": "Sets a custom Anyline model. The file has to be located in the project and point to a path relative from the project root."
-				},
-				"customCmdFile": { 
-					"type": "string",
-					"description": "Sets a custom Anyline script. The file has to be located in the project and point to a path relative from the project root."
-				},
-				"minSharpness": {
-					"type": "integer",
-					"description": "Sets a sharpnes factor (0-100) to rule out blurry images."
-				},
-				"charCountX": { 
-					"type": "integer",
-					"description": "Sets the number of characters in each text line for 'grid' mode."
-				},
-				"charCountY": { 
-					"type": "integer",
-					"description": "Sets the number of text lines for 'grid' mode."
-				},
-				"charPaddingXFactor": {
-					"type": "number",
-					"description": "Defines the average horizontal distance between two characters in 'grid' mode, measured in percentage of the characters width."
-				},
-				"charPaddingYFactor": {
-					"type": "number",
-					"description": "Defines the average vertical distance between two characters in 'grid' mode, measured in percentage of the characters height."
-				},
-				"minConfidence": { 
-					"type": "integer",
-					"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
-				},
-				"minCharHeight": { 
-					"type": "integer",
-					"description" : "Sets a minimum character height (in pixels) to be considered in the scanning process."
-				},
-				"maxCharHeight": { 
-					"type": "integer",
-					"description" : "Sets a maximum character height (in pixels) to be considered in the scanning process."
-				},
-				"validationRegex": {
-					"type": "string",
-					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
-				},
-				"charWhitelist": {
-					"type": "string",
-					"description" : "Restricts the scanner to a set of characters to be detected."
-				}
-			},
-			"dependencies": {
-				"minSharpness": { 
-					"properties" : {
-						"scanMode": {
-							"enum": ["line"]
-						}
-					}
-				},
-				"charCountX": { 
-					"properties" : {
-						"scanMode": {
-							"enum": ["grid"]
-						}
-					}
-				},
-				"charCountY": { 
-					"properties" : {
-						"scanMode": {
-							"enum": ["grid"]
-						}
-					}
-				},
-				"charPaddingXFactor": { 
-					"properties" : {
-						"scanMode": {
-							"enum": ["grid"]
-						}
-					}
-				},
-				"charPaddingYFactor": { 
-					"properties" : {
-						"scanMode": {
-							"enum": ["grid"]
-						}
-					}
-				}
-			},
-			"additionalProperties": false			
-		},
-		"containerConfig": {
-			"description": "Configuration for scanning shipping container numbers",
-			"type": "object",
-			"properties": {
-				"scanMode": {
-					"type":"string",
-					"description": "Determines if container numbers shall be scanned horizontally or vertically.",
-					"enum": ["HORIZONTAL", "VERTICAL"],
-					"default": "HORIZONTAL"
-				},
-				"minConfidence": {			
-					"type": "integer",
-					"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
-				},
-				"validationRegex": {
-					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result.",
-					"type": "string"
-				}
-			},
-			"additionalProperties": false
-		},
-		"vinConfig": {
-			"description": "Configuration for scanning vehicle identification numbers (VIN)",
-			"type": "object",
-			"properties": {
-				"validationRegex": {
-					"type": "string",
-					"description" : "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
-				},
-				"charWhitelist": {
-					"type": "string",
-					"description" : "Restricts the scanner to a set of characters to be detected."
-				}
-			},
-			"additionalProperties": false
-		},
-		"commercialTireIdConfig": {
-			"description": "Configuration for scanning commercial Tire IDs",
-			"type": "object",
-			"properties": {
-			  "upsideDownMode": {
-				  "description" : "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
-				  "type":"string",
-				  "enum": ["DISABLED", "ENABLED", "AUTO"],
-				  "default": "DISABLED"
-			  },
-			  "minConfidence": {
-				"type":"integer",
-				"description" : "Sets a minimum confidence which has to be reached in order to trigger a scan result."
-			  }
-			},
-			"additionalProperties": false
-		},
+        "startVariable": {
+            "type": "object",
+            "description": "Describes a start variable for fine-tuning plugins.",
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "The key of the variable."
+                },
+                "value": {
+                    "type": ["string", "number", "integer", "boolean"],
+                    "description": "The value of the variable."
+                }
+            },
+            "required": ["key", "value"],
+            "additionalProperties": false
+        },
+        "ocrConfig": {
+            "description": "Configuration for general OCR scanning use-cases",
+            "type": "object",
+            "properties": {
+                "scanMode": {
+                    "type": "string",
+                    "enum": ["line", "grid", "auto"],
+                    "default": "auto",
+                    "description": "Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds text automatically."
+                },
+                "model": {
+                    "type": "string",
+                    "description": "Sets a custom Anyline model. The file has to be located in the project and point to a path relative from the project root."
+                },
+                "customCmdFile": {
+                    "type": "string",
+                    "description": "Sets a custom Anyline script. The file has to be located in the project and point to a path relative from the project root."
+                },
+                "minSharpness": {
+                    "type": "integer",
+                    "description": "Sets a sharpnes factor (0-100) to rule out blurry images."
+                },
+                "charCountX": {
+                    "type": "integer",
+                    "description": "Sets the number of characters in each text line for 'grid' mode."
+                },
+                "charCountY": {
+                    "type": "integer",
+                    "description": "Sets the number of text lines for 'grid' mode."
+                },
+                "charPaddingXFactor": {
+                    "type": "number",
+                    "description": "Defines the average horizontal distance between two characters in 'grid' mode, measured in percentage of the characters width."
+                },
+                "charPaddingYFactor": {
+                    "type": "number",
+                    "description": "Defines the average vertical distance between two characters in 'grid' mode, measured in percentage of the characters height."
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "minCharHeight": {
+                    "type": "integer",
+                    "description": "Sets a minimum character height (in pixels) to be considered in the scanning process."
+                },
+                "maxCharHeight": {
+                    "type": "integer",
+                    "description": "Sets a maximum character height (in pixels) to be considered in the scanning process."
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+                },
+                "charWhitelist": {
+                    "type": "string",
+                    "description": "Restricts the scanner to a set of characters to be detected."
+                }
+            },
+            "dependencies": {
+                "minSharpness": {
+                    "properties": {
+                        "scanMode": {
+                            "enum": ["line"]
+                        }
+                    }
+                },
+                "charCountX": {
+                    "properties": {
+                        "scanMode": {
+                            "enum": ["grid"]
+                        }
+                    }
+                },
+                "charCountY": {
+                    "properties": {
+                        "scanMode": {
+                            "enum": ["grid"]
+                        }
+                    }
+                },
+                "charPaddingXFactor": {
+                    "properties": {
+                        "scanMode": {
+                            "enum": ["grid"]
+                        }
+                    }
+                },
+                "charPaddingYFactor": {
+                    "properties": {
+                        "scanMode": {
+                            "enum": ["grid"]
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "containerConfig": {
+            "description": "Configuration for scanning shipping container numbers",
+            "type": "object",
+            "properties": {
+                "scanMode": {
+                    "type": "string",
+                    "description": "Determines if container numbers shall be scanned horizontally or vertically.",
+                    "enum": ["HORIZONTAL", "VERTICAL"],
+                    "default": "HORIZONTAL"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "validationRegex": {
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "vinConfig": {
+            "description": "Configuration for scanning vehicle identification numbers (VIN)",
+            "type": "object",
+            "properties": {
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+                },
+                "charWhitelist": {
+                    "type": "string",
+                    "description": "Restricts the scanner to a set of characters to be detected."
+                }
+            },
+            "additionalProperties": false
+        },
+        "commercialTireIdConfig": {
+            "description": "Configuration for scanning commercial Tire IDs",
+            "type": "object",
+            "properties": {
+                "upsideDownMode": {
+                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "type": "string",
+                    "enum": ["DISABLED", "ENABLED", "AUTO"],
+                    "default": "DISABLED"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the commercial tire id text needs to match in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
         "tireSizeConfig": {
             "description": "Configuration for scanning Tire Size Specifications",
             "type": "object",
@@ -329,6 +330,10 @@
                 "minConfidence": {
                     "type": "integer",
                     "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the tire size text needs to match in order to trigger a scan result."
                 }
             },
             "additionalProperties": false
@@ -360,6 +365,15 @@
                 "minConfidence": {
                     "type": "integer",
                     "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "validateProductionDate": {
+                    "type": "boolean",
+                    "description": "Sets wether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true.",
+                    "default": true
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the TIN text needs to match in order to trigger a scan result."
                 }
             },
             "additionalProperties": false
@@ -447,16 +461,16 @@
                     "description": "Setting this to 'true' will enable reading multiple barcodes per frame.",
                     "default": false
                 },
-				"parseAAMVA": {
-					"type": "boolean",
-					"description": "If this option is set, barcodes parsed according to the AAMVA standard. This only works for PDF417 codes on driving licenses.",
-					"default": false
-				},
-				"consecutiveEqualResults": {
-					"type": "boolean",
-					"description": "If this option is set, allows consecutive barcode results of the same barcode when scanning continuously.",
-					"default": false
-				},
+                "parseAAMVA": {
+                    "type": "boolean",
+                    "description": "If this option is set, barcodes parsed according to the AAMVA standard. This only works for PDF417 codes on driving licenses.",
+                    "default": false
+                },
+                "consecutiveEqualResults": {
+                    "type": "boolean",
+                    "description": "If this option is set, allows consecutive barcode results of the same barcode when scanning continuously.",
+                    "default": false
+                },
                 "barcodeFormats": {
                     "type": "array",
                     "description": "Set this to filter which barcode formats should be scanned. Setting 'ALL' will enable scanning all supported formats.",
@@ -530,7 +544,7 @@
                         "auto_analog_digital_meter",
                         "dial_meter",
                         "multi_field_digital_meter",
-						"digital_meter_2_experimental"
+                        "digital_meter_2_experimental"
                     ],
                     "default": "auto_analog_digital_meter"
                 },
@@ -851,7 +865,7 @@
                 "lastName": {
                     "$ref": "#/definitions/universalIdField"
                 },
-				"firstName": {
+                "firstName": {
                     "$ref": "#/definitions/universalIdField"
                 }
             },
@@ -962,7 +976,7 @@
                         }
                     }
                 }
-            },            
+            },
             "additionalProperties": false
         },
         "mrzScanOption": {
@@ -1252,40 +1266,40 @@
             },
             "additionalProperties": false
         },
-		"japaneseLandingPermissionConfig": {        
-			"description": "Configuration for scanning japanese landing permission tickets",
+        "japaneseLandingPermissionConfig": {
+            "description": "Configuration for scanning japanese landing permission tickets",
             "type": "object",
-			"properties": {
-				"dateOfIssue": {
-					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
-				},
-				"dateOfExpiry": {
-					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
-				},
-				"status": {
-					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
-				},
-				"duration": {
-					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
-				},
-				"airport": {
-					"$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
-				}
-			}
+            "properties": {
+                "dateOfIssue": {
+                    "$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+                },
+                "dateOfExpiry": {
+                    "$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+                },
+                "status": {
+                    "$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+                },
+                "duration": {
+                    "$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+                },
+                "airport": {
+                    "$ref": "#/definitions/japaneseLandingPermissionConfigFieldOption"
+                }
+            }
         },
-		"japaneseLandingPermissionConfigFieldOption": {
+        "japaneseLandingPermissionConfigFieldOption": {
             "type": "object",
-			"description": "Field option for JLP fields",
-			"properties": {
-				"scanOption": {			
-					"description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
-					"type": "integer"
-				},
-				"minConfidence": {
-					"description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
-					"type": "integer"
-				}
-			}	
+            "description": "Field option for JLP fields",
+            "properties": {
+                "scanOption": {
+                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
+                    "type": "integer"
+                },
+                "minConfidence": {
+                    "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
+                    "type": "integer"
+                }
+            }
         }
     },
     "additionalProperties": false

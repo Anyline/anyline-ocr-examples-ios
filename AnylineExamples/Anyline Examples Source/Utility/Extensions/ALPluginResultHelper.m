@@ -4,28 +4,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@implementation ALBarcode (ALExtras)
-
-- (NSString *)decoded {
-    NSString *barcodeResultStr = self.value;
-    if (self.isBase64) {
-        barcodeResultStr = self.value; // set the fallback if this fails
-        NSData *data = [[NSData alloc] initWithBase64EncodedString:self.value
-                                                           options:0];
-        if (data) {
-            NSString *decodedStr = [[NSString alloc] initWithData:data
-                                                         encoding:NSUTF8StringEncoding];
-            if (decodedStr.length > 0) {
-                barcodeResultStr = decodedStr;
-            }
-        }
-    }
-    return barcodeResultStr;
-}
-
-@end
-
-
 @implementation NSArray (ALExtras)
 
 - (NSArray<ALResultEntry *> *)resultEntries {

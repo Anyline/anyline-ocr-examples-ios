@@ -6,7 +6,6 @@
 + (NSArray<ALResultEntry *> *)resultDataFromBarcodeResults:(NSArray<ALBarcode *> *)barcodes {
     NSMutableArray<ALResultEntry *> *resultData = [NSMutableArray arrayWithCapacity:barcodes.count];
     for (ALBarcode *barcode in barcodes) {
-        NSString *barcodeString = [[self class] strValueFromBarcode:barcode];
         // If we are have a parsed PDF417 result display it in a different way
 //        NSMutableArray<ALResultEntry *> *pdf417Results = [NSMutableArray<ALResultEntry *> array];
 //        if (barcode.parsedPDF417 != nil) {
@@ -31,7 +30,7 @@
 //        }
 
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Result"
-                                                             value:barcodeString
+                                                             value:barcode.value
                                                shouldSpellOutValue:YES]];
         [resultData addObject:[[ALResultEntry alloc] initWithTitle:@"Barcode Symbology"
                                                              value:barcode.format
@@ -76,26 +75,5 @@
 //    }
 //    return resultData;
 //}
-
-/// Returns a string value of a barcode, even when initially in base64.
-///
-/// @param barcode An ALBarcode
-///
-+ (NSString *)strValueFromBarcode:(ALBarcode *)barcode {
-    NSString *barcodeResultStr = barcode.value;
-    if (barcode.isBase64) {
-        barcodeResultStr = barcode.value; // set the fallback if this fails
-        NSData *data = [[NSData alloc] initWithBase64EncodedString:barcode.value
-                                                           options:0];
-        if (data) {
-            NSString *decodedStr = [[NSString alloc] initWithData:data
-                                                         encoding:NSUTF8StringEncoding];
-            if (decodedStr.length > 0) {
-                barcodeResultStr = decodedStr;
-            }
-        }
-    }
-    return barcodeResultStr;
-}
 
 @end

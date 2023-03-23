@@ -12,7 +12,7 @@
         "pluginConfig": {
             "id": "com.anyline.configs.plugin.universal-serial-number",
             "ocrConfig": {
-                "scanMode": "AUTO",
+                "scanMode": "auto",
                 "model": "USNr.any"
             },
             "cancelOnResult": true

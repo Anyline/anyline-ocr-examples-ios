@@ -10,8 +10,6 @@
 #import "Order+CoreDataProperties.h"
 #import "Customer+CoreDataProperties.h"
 #import "Reading+CoreDataProperties.h"
-#import "CustomerSelfReading+CoreDataProperties.h"
-#import "WorkforceTool+CoreDataProperties.h"
 #import "NSManagedObjectContext+ALExamplesAdditions.h"
 #import "NSManagedObject+ALExamplesAdditions.h"
 
@@ -51,8 +49,6 @@ static NSString * const kNumberOfTotalScansKey = @"kAnylineNumberOfTotalScansKey
         if (![[NSUserDefaults standardUserDefaults]objectForKey:kDatabaseSeeded]) {
             [[NSUserDefaults standardUserDefaults]setObject:@YES forKey:kDatabaseSeeded];
             [[NSUserDefaults standardUserDefaults]synchronize];
-            
-            [self seedTestData];
         }
     }
 }
@@ -66,50 +62,8 @@ static NSString * const kNumberOfTotalScansKey = @"kAnylineNumberOfTotalScansKey
 
 - (void)resetDemoData{
     [self saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [WorkforceTool truncateAllInContext:localContext];
-        [CustomerSelfReading truncateAllInContext:localContext];
         [Reading truncateAllInContext:localContext];
     }];
-    
-    [self seedTestData];
-}
-
-- (void)seedTestData{
-    [self saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [self seedCustomerSelfReadingData];
-        [self seedWorkforceTollData];
-    }];
-}
-
-- (void)seedCustomerSelfReadingData{
-    NSArray *customerData = [self serializeJSONWithName:@"energyMockData1"];
-    
-    CustomerSelfReading *csr = [CustomerSelfReading createEntityInContext:self.localContext];
-    
-    for (NSDictionary *dataSet in customerData) {
-         [csr addCustomersObject:[self customerFromDataSet:dataSet]];
-    }
-}
-
-- (void)seedWorkforceTollData{
-    NSArray *orders = @[[self serializeJSONWithName:@"energyMockData1"], [self serializeJSONWithName:@"energyMockData2"]];
-
-    WorkforceTool *workForce = [WorkforceTool createEntityInContext:self.localContext];
-
-    int ordNr = 103;
-
-    for (NSArray *orderData in orders) {
-
-        Order *order = [Order createEntityInContext:self.localContext];
-        order.orderNr = @(ordNr);
-        [workForce addOrdersObject:order];
-
-        for (NSDictionary *dataSet in orderData) {
-            [order addCustomersObject:[self customerFromDataSet:dataSet]];
-        }
-
-        ordNr ++;
-    }
 }
 
 - (Customer*)customerFromDataSet:(NSDictionary*)dataSet{
@@ -170,7 +124,7 @@ static NSString * const kNumberOfTotalScansKey = @"kAnylineNumberOfTotalScansKey
     return jsonRecipes;
 }
 
-- (void) saveWithBlockAndWait:(void(^)(NSManagedObjectContext *localContext))block {
+- (void)saveWithBlockAndWait:(void(^)(NSManagedObjectContext *localContext))block {
 //    NSManagedObjectContext *localContext;
     [self.localContext performBlockAndWait:^{
         [self.localContext setWorkingName:NSStringFromSelector(_cmd)];

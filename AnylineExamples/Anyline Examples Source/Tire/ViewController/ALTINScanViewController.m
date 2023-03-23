@@ -62,6 +62,10 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     [self.scanView startCamera];
 
     [self setupFlipOrientationButton];
+
+    // starts in landscape mode (APP-383)
+    self.isOrientationFlipped = YES;
+    [self enableLandscapeOrientation:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

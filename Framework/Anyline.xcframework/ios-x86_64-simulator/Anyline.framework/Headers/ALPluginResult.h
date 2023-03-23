@@ -203,12 +203,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// Describes barcode information
 @interface ALBarcode : NSObject
 @property (nonatomic, nullable, strong) ALAamva *aamva;
-/// The coordinate points on the processed image
+/// Contains the base64-encoded value
+@property (nonatomic, nullable, copy) NSString *base64Value;
+/// Corner points of a polygon surrounding the discovered barcode, starting from the
+/// bottom-left coordinate going counter-clockwise. The coordinates are in reference to the
+/// 'cropRect' of the plugin result.
 @property (nonatomic, nullable, copy) NSArray<NSNumber *> *coordinates;
 /// The barcode format
 @property (nonatomic, copy) NSString *format;
-/// Information of whether or not the found barcode value was encoded to base64
-@property (nonatomic, assign) BOOL isBase64;
 /// The value of the barcode
 @property (nonatomic, copy) NSString *value;
 @end
@@ -419,8 +421,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Describes result information of scanning tire identification numbers (TIN)
 @interface ALTinResult : NSObject
+/// The production date on the TIN reformatted to YYYY/MM.
+@property (nonatomic, nullable, copy) NSString *productionDate;
+/// The TIN text split by context with spaces as delimiter.
+@property (nonatomic, nullable, copy) NSString *resultPrettified;
 /// The TIN text value.
-@property (nonatomic, nullable, copy) NSString *text;
+@property (nonatomic, copy) NSString *text;
+/// The computed tire age in years rounded down.
+@property (nonatomic, nullable, copy) NSString *tireAgeInYearsRoundedDown;
 @end
 
 /// Describes result information of scanning tire size specifications

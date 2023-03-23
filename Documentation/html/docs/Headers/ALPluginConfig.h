@@ -446,6 +446,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, assign) ALTinConfigScanMode *scanMode;
 /// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
+/// Sets wether the production date validation is enabled. If it is set to false the scan
+/// result is also returned for invalid and missing dates. Defaults to true.
+@property (nonatomic, nullable, strong) NSNumber *validateProductionDate;
 @end
 
 /// Configuration for scanning Tire Size Specifications

@@ -138,8 +138,21 @@
 				"text": {
 					"type": "string",
 					"description": "The TIN text value."
+				},
+				"productionDate": {
+					"type": "string",
+					"description": "The production date on the TIN reformatted to YYYY/MM."
+				},
+				"tireAgeInYearsRoundedDown": {
+					"type": "string",
+					"description": "The computed tire age in years rounded down."
+				},
+				"resultPrettified": {
+					"type": "string",
+					"description": "The TIN text split by context with spaces as delimiter."
 				}
 			},
+			"required": ["text"],
 			"additionalProperties": false
 		},
 		"ocrResult": {
@@ -721,7 +734,7 @@
 				},
 				"coordinates": {					
 					"type": "array",
-					"description": "The coordinate points on the processed image",
+					"description": "Corner points of a polygon surrounding the discovered barcode, starting from the bottom-left coordinate going counter-clockwise. The coordinates are in reference to the image of the plugin result.",
 					"items": {
 						"type": "integer"
 					}

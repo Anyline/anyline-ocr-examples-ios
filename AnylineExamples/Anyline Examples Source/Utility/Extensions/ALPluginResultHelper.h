@@ -12,11 +12,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
-@interface ALBarcode (ALExtras)
-
-- (NSString *)decoded;
-
-@end
-
 NS_ASSUME_NONNULL_END

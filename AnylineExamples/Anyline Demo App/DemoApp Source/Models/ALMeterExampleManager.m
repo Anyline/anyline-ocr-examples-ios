@@ -1,6 +1,4 @@
 #import "ALMeterExampleManager.h"
-#import "CustomerSelfReadingViewController.h"
-#import "WorkForceViewController.h"
 #import "AnylineExamples-Swift.h"
 #import "ALUniversalSerialNumberScanViewController.h"
 

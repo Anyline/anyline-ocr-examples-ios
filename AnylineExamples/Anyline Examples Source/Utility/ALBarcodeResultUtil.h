@@ -7,8 +7,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALBarcodeResultUtil : NSObject
 
-+ (NSString *)strValueFromBarcode:(ALBarcode *)barcode;
-
 //+ (NSArray<ALResultEntry *> *)barcodeResultDataFromBarcodeResult:(ALBarcodeResult *)barcodeResult;
 
 + (NSArray<ALResultEntry *> *)resultDataFromBarcodeResults:(NSArray<ALBarcode *> *)barcodes;
