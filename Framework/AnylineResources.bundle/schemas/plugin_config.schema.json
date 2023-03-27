@@ -368,12 +368,12 @@
                 },
                 "validateProductionDate": {
                     "type": "boolean",
-                    "description": "Sets wether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true.",
+                    "description": "Sets wether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true. Note that this option is ignored and set to true (default) if the scanMode is DOT_STRICT.",
                     "default": true
                 },
                 "validationRegex": {
                     "type": "string",
-                    "description": "Sets a regular expression which the TIN text needs to match in order to trigger a scan result."
+                    "description": "Sets a regular expression which the TIN text needs to match in order to trigger a scan result. Note that this option is ignored if validateProductionDate is true or scanMode is DOT_STRICT."
                 }
             },
             "additionalProperties": false
