@@ -16,7 +16,7 @@ The **Example App** provides many preconfigured modules to showcase the many cap
 
 ### Current release notes
 
-You can find the latest release notes in our online documentation: https://documentation.anyline.com/toc/platforms/ios/release_guide/index.html
+You can find the latest release notes in our online documentation: https://documentation-preview.anyline.com/ios-sdk-component/latest/changelog.html
 
 ### Current known-limitations
 
