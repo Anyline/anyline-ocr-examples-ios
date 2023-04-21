@@ -5,8 +5,6 @@
 
 @interface ALVRCScanViewController () <ALScanPluginDelegate>
 
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
-
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
@@ -26,7 +24,7 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"VRC";
+    self.title = @"Vehicle Registration Certificate";
     self.controllerType = ALScanHistoryVehicleRegistrationCertificate;
 
     NSError *error;
@@ -38,7 +36,7 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
 
     [self installScanView:self.scanView];
 
-    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
+    [self setupFlipOrientationButton];
     [self.scanView startCamera];
 }
 
@@ -46,13 +44,32 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
     [super viewWillAppear:animated];
 
     NSError *error;
-    [self.scanViewPlugin startWithError:&error]; // could check the error
+    [self startScanning:&error];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self stopScanning];
+    [super viewWillDisappear:animated];
+}
+
+// detect when a rotation is done
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    __weak __block typeof(self) weakSelf = self;
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {}
+                                 completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        if (weakSelf.scanViewPlugin.isStarted) {
+            [weakSelf.scanView setScanViewPlugin:self.scanViewPlugin error:nil];
+            [weakSelf.scanView startCamera];
+            [weakSelf startScanning:nil];
+        }
+    }];
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
 // MARK: - Handle & present results
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
-    [self enableLandscapeOrientation:NO];
 
     NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
 
@@ -67,6 +84,9 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
         vc.imagePrimary = scanResult.croppedImage;
+
+        [weakSelf enableLandscapeOrientation:NO];
+        weakSelf.isOrientationFlipped = NO;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }

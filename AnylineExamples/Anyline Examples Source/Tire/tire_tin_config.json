@@ -9,36 +9,37 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "TIRE",
+      "id": "tin",
       "cancelOnResult": true,
       "tinConfig": {
-
+          "upsideDownMode": "AUTO"
       }
     },
     "cutoutConfig": {
-      "style": "animated_rect",
       "maxWidthPercent": "80%",
-      "maxHeightPercent": "80%",
       "alignment": "center",
+      "offset": {
+          "x": 0, "y": 0
+      },
       "strokeWidth": 2,
-      "cornerRadius": 4,
-      "strokeColor": "0099FF",
+      "cornerRadius": 6,
+      "strokeColor": "FFFFFF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
-      "width": 720,
       "ratioFromSize": {
-        "width": 720,
-        "height": 144
+        "width": 31,
+        "height": 6
       },
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedbackConfig": {
       "animation": "traverse_multi",
       "animationDuration": 250,
-      "style": "rect",
+      "style": "animated_rect",
       "strokeColor": "0099FF",
+      "strokeWidth": 1,
       "beepOnResult": true,
-      "vibrateOnResult": false,
+      "vibrateOnResult": true,
       "strokeWidth": 2
     }
   }

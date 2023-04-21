@@ -3,25 +3,42 @@
 #import "AnylineExamples-Swift.h"
 #import "UIColor+ALExamplesAdditions.h"
 
-NSString * const kContainerVC_configJSONFilename = @"horizontal_container_scanner_capture_config";
-NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_scanner_capture_config";
-@interface ALContainerScanViewController () <ALScanPluginDelegate>
+NSString * const kContainerVC_configName_horiz = @"horizontal_container_scanner_capture_config";
+NSString * const kContainerVC_configName_vert = @"vertical_container_scanner_capture_config";
 
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
+static const NSUInteger kChoicesCount = 2;
+
+// NOTE: This is a C array
+static NSString *kChoiceTitles[kChoicesCount] = {
+    @"Horizontal",
+    @"Vertical"
+};
+
+static NSString *kConfigs[kChoicesCount] = {
+    kContainerVC_configName_horiz,
+    kContainerVC_configName_vert,
+};
+
+
+@interface ALContainerScanViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
 
 @property (assign, nonatomic) BOOL isVertical;
 
+@property (nonatomic, assign) NSUInteger dialogIndexSelected;
+
 @end
+
 
 @implementation ALContainerScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.isVertical = [self.title localizedCaseInsensitiveContainsString:@"Vertical"];
     if (_isVertical) {
         self.title = @"Vertical Shipping Container";
     } else {
-        self.title = @"Horizontal Shipping Container";
+        self.title = @"Shipping Container";
     }
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     self.controllerType = ALScanHistoryContainer;
@@ -29,63 +46,76 @@ NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_
     [self reloadScanView];
 
     [self setColors];
+
+    [self setupModeToggle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
+    [self stopScanning];
 }
 
 - (void)reloadScanView {
     NSDictionary *configJSONDictionary;
     
     if (self.isVertical) {
-        configJSONDictionary = [[self configJSONStrWithFilename:kVerticalContainerVC_configJSONFilename] asJSONObject];
+        configJSONDictionary = [[self configJSONStrWithFilename:kContainerVC_configName_vert] asJSONObject];
     } else {
-        configJSONDictionary = [[self configJSONStrWithFilename:kContainerVC_configJSONFilename] asJSONObject];
+        configJSONDictionary = [[self configJSONStrWithFilename:kContainerVC_configName_horiz] asJSONObject];
     }
 
     NSError *error;
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:&error];
 
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }
-
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary
+                                                                                  error:&error];
     scanViewPlugin.scanPlugin.delegate = self;
-    
-    [self.scanView stopCamera];
-    if (self.scanView) {
-        [self.scanView removeFromSuperview];
-    }
-    
-    self.scanViewPlugin = scanViewPlugin;
-
-    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:configJSONDictionary];
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:scanViewPlugin
-                                       scanViewConfig:scanViewConfig
-                                                error:&error];
-
     if ([self popWithAlertOnError:error]) {
         return;
     }
-    
-    [self installScanView:self.scanView]; // call startCamera and start the plugin outside
-    
-    // we've just readded the ScanView, make sure it goes beneath the other views.
-    [self.view sendSubviewToBack:self.scanView];
-    
+
+    if (!self.scanView) {
+        self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                           scanViewPlugin:scanViewPlugin
+                                                    error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+        [self installScanView:self.scanView];
+    } else {
+        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+    }
+
     [self.scanView startCamera];
-    
+    [self startScanning:nil];
 }
 
-#pragma mark -- ALScanPluginDelegate
+// MARK: - Allow changing the scan mode
+
+- (void)setupModeToggle {
+    __weak __block typeof(self) weakSelf = self;
+    [self addModeSelectButtonWithTitle:kChoiceTitles[self.dialogIndexSelected] buttonPressed:^{
+        [weakSelf showOptionsSelectionDialog];
+    }];
+}
+
+- (void)showOptionsSelectionDialog {
+    NSArray *choices = [NSArray arrayWithObjects:kChoiceTitles count:kChoicesCount];
+    ALConfigurationDialogViewController *vc = [ALConfigurationDialogViewController singleSelectDialogWithChoices:choices
+                                                                                                   selectedIndex:self.dialogIndexSelected
+                                                                                                        delegate:self];
+    [self presentViewController:vc animated:YES completion:nil];
+    [self.scanView stopCamera];
+}
+
+// MARK: - ALScanPluginDelegate
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
     NSArray<ALResultEntry*> *resultData = scanResult.pluginResult.fieldList.resultEntries;
@@ -103,6 +133,22 @@ NSString * const kVerticalContainerVC_configJSONFilename = @"vertical_container_
         
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+}
+
+// MARK: - ALConfigurationDialogViewControllerDelegate
+
+- (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {}
+
+- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {
+    [self.scanView startCamera];
+}
+
+- (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
+    self.dialogIndexSelected = index;
+    [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
+    self.isVertical = index == 1;
+    [self reloadScanView];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

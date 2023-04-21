@@ -215,10 +215,8 @@
 }
 
 - (NSString *)titleOfExampleManager:(UIViewController *)viewController {
-    id<ALExampleManagerController> vc = (id<ALExampleManagerController>)viewController;
-    return vc.exampleManager.title;
+    return viewController.title; // "Scanners" or "Industries" (APP-169)
 }
-
 
 - (NSString *)titleOfExampleManagerOnIndex:(NSInteger)idx {
     return [self titleOfExampleManager:[_pages objectAtIndex:idx]];

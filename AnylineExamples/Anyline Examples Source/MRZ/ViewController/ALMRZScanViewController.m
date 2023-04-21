@@ -9,15 +9,12 @@
 // The controller has to conform to <AnylineMRZModuleDelegate> to be able to receive results
 @interface ALMRZScanViewController () <ALScanPluginDelegate>
 
-// The Anyline module used to scan machine readable zones
-@property (nonatomic, strong) id<ALScanViewPluginBase> scanViewPlugin;
-
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, readonly) NSString *configJSONStr;
 
-
 @end
+
 
 @implementation ALMRZScanViewController
 
@@ -25,45 +22,37 @@
     [super viewDidLoad];
     
     self.title = (self.title && self.title.length > 0) ? self.title : @"MRZ";
-    [self setColors];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self startMRZScanMode];
-}
-
-- (void)startMRZScanMode {
+    self.controllerType = ALScanHistoryMrz;
 
     [self setupUI];
-    
-    NSError *error;
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"mrz_config" ofType:@"json"];
+
+    NSError *error;
     self.scanView = [ALScanViewFactory withConfigFilePath:path delegate:self error:&error];
     [self installScanView:self.scanView];
-
-    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
-
     [self.scanView startCamera];
-    
-    self.controllerType = ALScanHistoryMrz;
-    
-    [self.scanViewPlugin startWithError:nil];
+
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self startScanning:nil];
 }
 
 - (void)setupUI {
     if (![[[NSBundle mainBundle] bundleIdentifier] localizedCaseInsensitiveContainsString:@"bundle"]) {
         UIBarButtonItem *infoBarItem;
         if (@available(iOS 13.0, *)) {
-            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"info.circle.fill"] style:UIBarButtonItemStylePlain target:self action:@selector(infoPressed:)];
+            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"info.circle.fill"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(infoPressed:)];
         } else {
-            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info"] style:UIBarButtonItemStylePlain target:self action:@selector(infoPressed:)];
+            infoBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(infoPressed:)];
         }
         self.navigationItem.rightBarButtonItem = infoBarItem;
         [self setColors];

@@ -14,9 +14,21 @@ NSString * const kPassportVisaTitleString = @"Passport / Visa";
 
 NSString * const kArabicIDTitleString = @"Arabic";
 NSString * const kCyrillicIDTitleString = @"Cyrillic";
+NSString * const kLatinIDTitleString = @"Latin";
 NSString * const kDefaultIDTitleString = @"ID";
 
-NSString * const kDocumentationSupportedIdsURL =  @"https://documentation.anyline.com/toc/products/id/universal_id/index.html#supported-document-types-and-countries";
+NSString * const kOneSide = @"1 side";
+NSString * const kTwoSide = @"2 sides";
+
+static const NSUInteger kChoicesCount = 3;
+
+static NSString *kChoiceTitles[kChoicesCount] = { // NOTE: a C array
+    kLatinIDTitleString,
+    kArabicIDTitleString,
+    kCyrillicIDTitleString,
+};
+
+NSString * const kDocumentationSupportedIdsURL = @"https://documentation.anyline.com/toc/products/id/universal_id/index.html#supported-document-types-and-countries";
 NSString * const kRequestSupportMsgBodyFmt = @"Dear Anyline Support,</br></br>I have recurrently faced an error updating the content.</br></br>This is related to the deployment \"%@\".</br></br>The error I received is: \"%@\".</br></br>Kind regards";
 
 NSString * const kScanIDFrontLabelText = @"Scan your ID";
@@ -65,7 +77,6 @@ NSTimeInterval const kUniversalIDBacksideScanTimeout = 0.5;
 // successfully scanned.
 // NSInteger const kBarcodePDF417Timeout = 1;
 
-
 typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     ALUniversalIDScanTypeGeneric = 0,
     ALUniversalIDScanTypeDriverLicense,
@@ -74,8 +85,6 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 
 
 @interface ALUniversalIDScanViewController () <ALScanPluginDelegate, ALUniversalIDScanConfigControllerDelegate, MFMailComposeViewControllerDelegate>
-
-@property (nonatomic, strong) id<ALScanViewPluginBase> scanViewPlugin;
 
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
@@ -114,6 +123,8 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 
 @property (nonatomic, readonly) ALUniversalIDScanType scanType;
 
+@property (nonatomic, assign) NSUInteger dialogIndexSelected;
+
 @property (nonatomic, strong, nullable) ALBarcodeResult *barcodeResult;
 
 @property (nonatomic, strong, nullable) ALUniversalIDResult *backsideIDResult;
@@ -135,6 +146,8 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     if (!_countryIDHelper) {
         _countryIDHelper = [[ALIDCountryHelper alloc] init];
     }
+
+    self.dialogIndexSelected = 0;
     
     self.title = (self.title && self.title.length > 0) ? self.title : kDefaultIDTitleString;
     
@@ -153,12 +166,15 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     [self.view addSubview:self.hintView];
     
     [self setupNavigationBar];
+
+    [self setupModeToggle];
     
     [self configureSelectNoOfSidesButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
     [self resumeScanning];
     [self.navigationController setNavigationBarHidden:NO];
 }
@@ -198,14 +214,14 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:frontIDScanViewConfig
                                                                                                     error:&error];
     [scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig setAlphabet:[self getAlphabet]];
-    self.scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
     
     if ([self popWithAlertOnError:error]) {
         return;
     }
     
     if (self.scanView) {
-        BOOL success = [self.scanView setScanViewPlugin:self.scanViewPlugin error:&error];
+        BOOL success = [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
         if (!success) {
             NSLog(@"Unable to update scan view plugin. Reason: %@", error.localizedDescription);
         }
@@ -214,7 +230,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
         }
     } else {
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                           scanViewPlugin:self.scanViewPlugin
+                                           scanViewPlugin:scanViewPlugin
                                            scanViewConfig:self.scanViewConfig
                                                     error:&error];
         
@@ -223,13 +239,8 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
         }
         [self installScanView:self.scanView];
     }
-    
-    // this is just a cast
-    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
     scanViewPlugin.scanPlugin.delegate = self;
-    
-    [self.scanViewPlugin startWithError:&error];
-    
+    [self startScanning:&error];
     [self.scanView startCamera];
     [self.view sendSubviewToBack:self.scanView];
 }
@@ -287,16 +298,14 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     NSAssert(backScanViewPlugin, @"backScanViewPlugin should not be null!");
     
     scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig.alphabet = [self getAlphabet];
-    
-    self.scanViewPlugin = backScanViewPlugin;
-    
+
     // the way it works, unfortunately for the back scan view, is that it will keep using
     // any scan view config used for the front scan because then we wouldn't have to recreate the
     // scan view.
     self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:backIDScanViewConfig error:&error];
     
     if (self.scanView) {
-        BOOL success = [self.scanView setScanViewPlugin:self.scanViewPlugin error:&error];
+        BOOL success = [self.scanView setScanViewPlugin:backScanViewPlugin error:&error];
         if (!success) {
             NSLog(@"Unable to update scan view plugin. Reason: %@", error.localizedDescription);
         }
@@ -306,17 +315,17 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     } else {
         
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                           scanViewPlugin:self.scanViewPlugin
+                                           scanViewPlugin:backScanViewPlugin
                                            scanViewConfig:self.scanViewConfig
                                                     error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
-        }    
+        }
         
         [self installScanView:self.scanView];
     }
     
-    [self.scanViewPlugin startWithError:&error];
+    [self startScanning:&error];
     
     [self.scanView startCamera];
     [self.view sendSubviewToBack:self.scanView];
@@ -378,7 +387,6 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 
 - (void)setupNavigationBar {
     UIBarButtonItem *infoBarItem;
-    UIBarButtonItem *scriptSelectionBarItem;
     
     NSMutableArray<UIBarButtonItem *> *barButtonItems = [NSMutableArray array];
     
@@ -389,15 +397,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
         [infoButton addTarget:self action:@selector(infoPressed:) forControlEvents:UIControlEventTouchUpInside];
         infoBarItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     }
-    
-    if (self.scriptType == ALScriptTypeLatin) {
-        scriptSelectionBarItem = [ALScriptSelectionViewController createBarButtonForScriptSelection:self];
-    }
-    
-    if (scriptSelectionBarItem) {
-        [barButtonItems addObject:scriptSelectionBarItem];
-    }
-    
+
     if (infoBarItem) {
         [barButtonItems addObject:infoBarItem];
     }
@@ -411,8 +411,10 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 - (void)showScanOptionsDialog {
     ALScriptType scriptType = self.scriptType;
     ALUniversalIDScanConfig *config = [[ALUniversalIDScanConfig alloc] initWithRegions:@[] // regions is no longer used here
+
                                                                             scriptType:scriptType];
     [self startScanConfigurator:config];
+    [self.scanView stopCamera];
 }
 
 - (void)startScanConfigurator:(ALUniversalIDScanConfig *)config {
@@ -462,20 +464,20 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 - (void)configureSelectNoOfSidesButton {
     UIButton *selectSides = [[UIButton alloc] init];
     CGFloat margin = 20;
-    CGFloat buttonWidth = 98;
+    CGFloat buttonWidth = 72;
     CGFloat buttonHeight = 36;
     selectSides.layer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75].CGColor;
     selectSides.layer.cornerRadius = round(buttonHeight / 2.0f);
     selectSides.layer.borderWidth = 0.6;
     selectSides.layer.borderColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
-    [selectSides setTitle:@"One Sided" forState:UIControlStateNormal];
-    [selectSides setTitle:@"Two Sided" forState:UIControlStateSelected];
+    [selectSides setTitle:kOneSide forState:UIControlStateNormal];
+    [selectSides setTitle:kTwoSide forState:UIControlStateSelected];
     [selectSides setSelected:NO];
     [[selectSides titleLabel] setFont:[UIFont AL_proximaRegularWithSize:14]];
     [self.view addSubview:selectSides];
     selectSides.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [selectSides.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
+    [selectSides.rightAnchor constraintEqualToAnchor:self.modeSelectButton.leftAnchor constant:-10].active = YES;
     [selectSides.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
     [selectSides.widthAnchor constraintEqualToConstant:buttonWidth].active= YES;
     [selectSides.heightAnchor constraintEqualToConstant:buttonHeight].active = YES;
@@ -528,6 +530,13 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
         weakSelf.flipIDAnimationView.hidden = YES;
         complete();
     });
+}
+
+- (void)setupModeToggle {
+    __weak __block typeof(self) weakSelf = self;
+    [self addModeSelectButtonWithTitle:kChoiceTitles[self.dialogIndexSelected] buttonPressed:^{
+        [weakSelf showScanOptionsDialog];
+    }];
 }
 
 // MARK: - ALScanPluginDelegate
@@ -855,12 +864,14 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 // MARK: - ALUniversalIDScanConfigControllerDelegate
 
 - (void)idScanConfigController:(ALUniversalIDScanConfigController *)controller finishedWithUpdatedConfig:(BOOL)hasUpdates {
-    if (!hasUpdates) {
-        [self.scanView startCamera];
-        return;
-    }
+
     ALUniversalIDScanConfig *config = controller.config;
     self.scriptType = config.scriptType;
+    [self.scanView startCamera];
+
+    if (!hasUpdates) {
+        return;
+    }
     [self createFrontScanViewPlugin];
     [self startTroubleScanningTimeout];
 }
@@ -868,6 +879,19 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 - (void)idScanConfigController:(ALUniversalIDScanConfigController *)controller
               isChangingScript:(ALScriptType)newScript {
     [_countryIDHelper setScriptType:newScript];
+
+    NSUInteger index = 0;
+    switch (newScript) {
+        case ALScriptTypeLatin: index = 0; break;
+        case ALScriptTypeArabic: index = 1; break;
+        case ALScriptTypeCyrillic: index = 2; break;
+    }
+
+    self.dialogIndexSelected = index;
+
+    [self.modeSelectButton setTitle:kChoiceTitles[self.dialogIndexSelected]
+                           forState:UIControlStateNormal];
+
 }
 
 // MARK: - ResultData Processing
@@ -902,7 +926,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 // MARK: - Miscellaneous
 
 - (void)dialogStarted {
-    [self.scanView stopCamera];
+    // [self.scanView stopCamera];
     [self stopTroubleScanningTimeout];
 }
 

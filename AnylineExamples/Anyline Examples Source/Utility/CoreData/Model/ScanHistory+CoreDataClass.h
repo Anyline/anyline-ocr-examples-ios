@@ -52,7 +52,8 @@ typedef enum : NSUInteger {
     ALScanHistoryCommercialTireID = 34,
     ALScanHistoryTireSizeConfiguration = 35,
     ALScanHistoryVehicleRegistrationCertificate = 36,
-    //be sure to add any new types to ALScanHistoryType_toString!
+    ALScanHistoryTireMake = 37,
+    // be sure to add any new types to ALScanHistoryType_toString!
 } ALScanHistoryType;
 
 extern NSString * _Nonnull const ALScanHistoryType_toString[];

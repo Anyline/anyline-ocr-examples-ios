@@ -7,10 +7,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class ALResultEntry;
+@class ALModeSelectionButton;
 
 @interface ALBaseScanViewController : UIViewController <ALScanViewDelegate>
 
 @property (nonatomic, strong, nullable) ALScanView *scanView;
+
+@property (nonatomic, readonly, nullable) NSObject<ALScanViewPluginBase> *scanViewPlugin;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
@@ -22,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
 
+/// Call -addModeSelectButtonWithTitle:buttonPressed: to add the button. You would
+/// have to position the button yourself, and ensure that it is added on above the
+/// scan view. You will also have to determine the on-tap implementation as well.
+@property (nullable, nonatomic, strong) ALModeSelectionButton *modeSelectButton;
+
 @property () BOOL isOrientationFlipped;
 
 @property (nonatomic, readonly) BOOL isDarkMode;
@@ -30,13 +38,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString * _Nullable)configJSONStrWithFilename:(NSString *_Nonnull)filename;
 
-- (void)installScanView:(ALScanView *_Nonnull)scanView;
+- (void)installScanView:(ALScanView * _Nonnull)scanView;
+
+- (BOOL)startScanning:(NSError * _Nullable * _Nullable)error;
+
+- (void)stopScanning;
+
+/// Adds a toggle button on the main view (above where the scan view is). Do this after
+/// installing the scan view.
+/// - Parameters:
+///   - title: the title initially shown on the button
+///   - buttonPressed: block indicating what will be done after the button is pressed
+- (void)addModeSelectButtonWithTitle:(NSString * _Nonnull)title
+                                buttonPressed:(void (^ _Nullable)(void))buttonPressed;
 
 - (void)updateScanWarnings:(ALWarningState)warningState;
-
-- (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule ignoreTooDark:(BOOL)ignoreTooDark;
-
-- (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule;
 
 
 // MARK: - AnylineDidFindResult methods

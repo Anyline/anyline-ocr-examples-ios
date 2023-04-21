@@ -9,15 +9,12 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "VIN",
+      "id": "vin",
       "cancelOnResult": true,
-      "vinConfig": {
-      }
+      "vinConfig": {}
     },
     "cutoutConfig": {
-      "style": "animated_rect",
       "maxWidthPercent": "70%",
-      "maxHeightPercent": "70%",
       "alignment": "top_half",
       "ratioFromSize": {
         "width": 62,
@@ -26,8 +23,8 @@
       "outerColor": "000000",
       "outerAlpha": 0.3,
       "strokeWidth": 2,
-      "strokeColor": "0099FF",
-      "cornerRadius": 4,
+      "strokeColor": "FFFFFF",
+      "cornerRadius": 6,
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedbackConfig": {

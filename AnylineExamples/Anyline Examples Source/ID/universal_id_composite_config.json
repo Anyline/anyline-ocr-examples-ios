@@ -10,13 +10,13 @@
         "offset": { "x": 0, "y": 0 }
     },
     "viewPluginCompositeConfig": {
-        "id": "com.anyline.configs.plugin.parallel-id-barcode",
+        "id": "parallel-id-barcode",
         "processingMode": "parallel",
         "viewPlugins": [
             {
                 "viewPluginConfig": {
                     "pluginConfig": {
-                        "id": "com.anyline.configs.plugin.id",
+                        "id": "id-mrz-dl",
                         "universalIdConfig": {
                             "allowedLayouts": {
                                 "mrz": [],
@@ -53,13 +53,11 @@
                         "cancelOnResult": true
                     },
                     "cutoutConfig" : {
-                        "style": "animated_rect",
                         "maxWidthPercent": "90%",
-                        "maxHeightPercent": "90%",
                         "alignment": "center",
                         "strokeWidth": 2,
-                        "cornerRadius": 4,
-                        "strokeColor": "0099FF",
+                        "cornerRadius": 6,
+                        "strokeColor": "FFFFFF",
                         "outerColor": "000000",
                         "outerAlpha": 0.3,
                         "ratioFromSize" : {
@@ -67,8 +65,8 @@
                             "height": 31
                         },
                         "cropPadding": {
-                            "x": 25,
-                            "y": 25
+                            "x": 50,
+                            "y": 50
                         },
                         "cropOffset": {
                             "x": 0,
@@ -77,7 +75,9 @@
                         "feedbackStrokeColor": "0099FF"
                     },
                     "scanFeedbackConfig" : {
-                        "style": "CONTOUR_RECT",
+                        "animation": "traverse_multi",
+                        "animationDuration": 250,
+                        "style": "animated_rect",
                         "visualFeedbackRedrawTimeout": 100,
                         "strokeColor": "0099FF",
                         "fillColor" : "220099FF",
@@ -90,7 +90,7 @@
             {
                 "viewPluginConfig": {
                     "pluginConfig": {
-                        "id": "com.anyline.configs.plugin.barcode",
+                        "id": "barcode-pdf417",
                         "barcodeConfig": {
                             "barcodeFormats": [ "PDF_417" ],
                             "parseAAMVA": true

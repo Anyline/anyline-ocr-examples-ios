@@ -9,37 +9,33 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "TIRE",
+      "id": "commercial-tire-id",
       "cancelOnResult": true,
-      "commercialTireIdConfig": {
-
-      }
+      "startScanDelay": 1000,
+      "commercialTireIdConfig": {}
     },
     "cutoutConfig": {
-      "style": "animated_rect",
-      "maxWidthPercent": "80%",
-      "maxHeightPercent": "80%",
+      "maxWidthPercent": "90%",
       "alignment": "center",
       "strokeWidth": 2,
-      "cornerRadius": 4,
-      "strokeColor": "0099FF",
+      "cornerRadius": 6,
+      "strokeColor": "FFFFFF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
-      "width": 720,
       "ratioFromSize": {
-        "width": 720,
-        "height": 144
+        "width": 31,
+        "height": 6
       },
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedbackConfig": {
-      "animation": "traverse_multi",
-      "animationDuration": 250,
-      "style": "rect",
+      "animation": "none",
+      "animationDuration": 50,
+      "style": "contour_rect",
+      "strokeWidth": 1,
       "strokeColor": "0099FF",
       "beepOnResult": true,
-      "vibrateOnResult": false,
-      "strokeWidth": 2
+      "vibrateOnResult": true
     }
   }
 }

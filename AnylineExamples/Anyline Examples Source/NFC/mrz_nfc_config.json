@@ -1,7 +1,7 @@
 {
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "com.anyline.configs.plugin.mrz",
+      "id": "mrz-nfc",
       "mrzConfig": {
         "strictMode": false,
         "cropAndTransformID": false
@@ -9,27 +9,25 @@
     },
     "cutoutConfig": {
       "animation": "none",
-      "maxWidthPercent": "85%",
-      "maxHeightPercent": "70%",
-      "width": 0,
+      "maxWidthPercent": "90%",
       "alignment": "center",
       "ratioFromSize": {
-        "width": 86,
-        "height": 54
+        "width": 25,
+        "height": 17
       },
       "offset": {
         "x": 0,
-        "y": 20
+        "y": 0
       },
       "cropPadding": {
-        "x": 25,
-        "y": 25
+        "x": 30,
+        "y": 90
       },
       "outerColor": "000000",
       "outerAlpha": 0.3,
       "strokeWidth": 2,
-      "strokeColor": "0099FF",
-      "cornerRadius": 2,
+      "strokeColor": "FFFFFF",
+      "cornerRadius": 6,
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedbackConfig": {

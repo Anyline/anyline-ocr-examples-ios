@@ -1,11 +1,3 @@
-//
-//  ALWarningView.h
-//  AnylineExamples
-//
-//  Created by David on 01/06/16.
-//  Copyright © 2016 9yards GmbH. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, ALWarningState) {
@@ -25,13 +17,12 @@ typedef NS_ENUM(NSUInteger, ALAnimationState) {
 
 @interface ALWarningView : UIView
 
-- (void)setInfoString:(NSString*)text;
-- (void)setInfoImage:(UIImage*)image;
+@property (nonatomic, readonly) NSInteger animationState;
 
-@property (nonatomic) NSInteger animationState;
-@property (nonatomic) NSDate * disappearanceDate;
+- (void)setInfoString:(NSString *)text;
 
 - (void)showWarning:(ALWarningState)newState;
+
 - (void)hideWarning;
 
 @end

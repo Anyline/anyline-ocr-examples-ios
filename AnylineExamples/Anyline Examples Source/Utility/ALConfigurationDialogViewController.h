@@ -39,9 +39,21 @@ typedef enum selectionType {
                    showApplyBtn:(BOOL)showApplyBtn
                      dialogType:(ALConfigDialogType)dialogType;
 
-- (NSNumber *)selectedIndex;
+//- (NSNumber *)selectedIndex;
+
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 - (void)setSelectionDialogFontSize:(CGFloat)dialogFontSize;
+
+/// Creates an ALConfigurationDialogViewController suitable for scan mode switches, a common usage for this type
+/// of dialog. A list of string is shown on an UIActionSheet-type dialog, with the first one by default selected.
+/// - Parameters:
+///   - choices: an array of NSString to be shown on the dialog
+///   - selectedIndex: the index of the selected entry to be shown
+///   - delegate: the delegate for the controller
++ (ALConfigurationDialogViewController *)singleSelectDialogWithChoices:(NSArray<NSString *> *)choices
+                                                         selectedIndex:(NSUInteger)index
+                                                              delegate:(id<ALConfigurationDialogViewControllerDelegate>)delegate;
 
 @end
 

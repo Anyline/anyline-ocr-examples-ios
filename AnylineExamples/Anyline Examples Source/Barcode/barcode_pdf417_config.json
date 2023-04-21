@@ -1,26 +1,23 @@
 {
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "com.anyline.configs.plugin.barcode",
+            "id": "barcode-pdf417",
             "barcodeConfig": {
                 "barcodeFormats": [ "PDF_417" ],
                 "parseAAMVA": true
             },
-            "cancelOnResult": false,
-            "startScanDelay": 1000
+            "startScanDelay": 3500
         },
         "cutoutConfig": {
             "animation": "none",
-            "maxWidthPercent": "75%",
-            "maxHeightPercent": "50%",
-            "width": 0,
-            "alignment": "center",
-            "ratioFromSize": { "width": 3, "height": 1 },
+            "maxWidthPercent": "90%",
+            "alignment": "top_half",
+            "ratioFromSize": { "width": 25, "height": 9 },
             "offset": { "x": 0, "y": 0 },
             "cropOffset": { "x": 0, "y": 0 },
             "cropPadding": { "x": 0, "y": 0 },
-            "cornerRadius": 4,
-            "strokeColor": "0099FF",
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
             "strokeWidth": 2,
             "outerColor": "000000",
             "feedbackStrokeColor": "0099FF",

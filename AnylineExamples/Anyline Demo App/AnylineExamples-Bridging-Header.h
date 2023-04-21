@@ -5,3 +5,4 @@
 #import "ALPluginResultHelper.h"
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "ALConfigurationDialogViewController.h"

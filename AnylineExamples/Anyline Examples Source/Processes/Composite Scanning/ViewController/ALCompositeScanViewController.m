@@ -6,7 +6,7 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 
 @interface ALCompositeScanViewController () <ALViewPluginCompositeDelegate>
 
-@property (nonatomic, strong) id<ALScanViewPluginBase> scanViewPlugin;
+@property (nonatomic, strong) id<ALScanViewPluginBase> compositePlugin;
 
 @end
 
@@ -21,12 +21,12 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
+    [self.compositePlugin startWithError:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
+    [self.compositePlugin stop];
 }
 
 - (void)reloadScanView {
@@ -46,7 +46,7 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
         [self.scanView removeFromSuperview];
     }
 
-    self.scanViewPlugin = composite;
+    self.compositePlugin = composite;
 
     ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:configJSONDictionary];
     self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
@@ -81,7 +81,7 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
                  barcodeResult:@"" // not using this, even though it's for a barcode + VIN
                          image:scanResult.croppedImage
                     scanPlugin:scanPlugin
-                    viewPlugin:self.scanViewPlugin
+                    viewPlugin:self.compositePlugin
                     completion:^{
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];

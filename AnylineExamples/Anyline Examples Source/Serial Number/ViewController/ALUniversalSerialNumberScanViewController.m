@@ -4,7 +4,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "AnylineExamples-Swift.h"
 
-NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_number_view_config";
+NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_number_view_config";
 @interface ALUniversalSerialNumberScanViewController () <ALScanPluginDelegate>
 
 @end
@@ -20,7 +20,10 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
     self.title = @"Meter Serial Number";
     self.controllerType = ALScanHistoryBarcode;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"] style:UIBarButtonItemStylePlain target:self action:@selector(showSettings:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"]
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(showSettings:)];
     
     [self setColors];
 
@@ -30,12 +33,12 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self reloadScanView];
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
+    [self stopScanning];
 }
 
 - (void)reloadScanView {
@@ -47,11 +50,11 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
     
     scanViewPlugin.scanPlugin.delegate = self;
 
-    self.scanViewPlugin = scanViewPlugin;
-
     if (!self.scanView) {
+
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                            scanViewPlugin:scanViewPlugin
+                                           scanViewConfig:[self.class scanViewConfig]
                                                     error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
@@ -70,12 +73,21 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
 // MARK: - Serial Settings
 
 + (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
-    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kUniversalSerailNumberScanVC_configJSONFilename
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kUniversalSerialNumberScanVC_configJSONFilename
                                                              ofType:@"json"];
     NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
                                                     encoding:NSUTF8StringEncoding
                                                        error:NULL];
     return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
+}
+
++ (ALScanViewConfig *)scanViewConfig {
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kUniversalSerialNumberScanVC_configJSONFilename
+                                                             ofType:@"json"];
+    NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
+                                                    encoding:NSUTF8StringEncoding
+                                                       error:NULL];
+    return [ALScanViewConfig withJSONDictionary:configStr.asJSONObject];
 }
 
 + (ALScanViewPlugin *)scanViewPluginWithUpdatedSettings:(NSError **)error {
@@ -89,7 +101,10 @@ NSString * const kUniversalSerailNumberScanVC_configJSONFilename = @"serial_numb
     NSDictionary *newCutoutConfigDictionary = [CutoutSettings.shared customizedCutoutConfigFrom:scanViewPluginConfig.cutoutConfig];
     ALCutoutConfig *newCutoutConfig = [[ALCutoutConfig alloc] initWithJSONDictionary:newCutoutConfigDictionary error:nil];
     
-    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:newScanPluginConfig cutoutConfig:newCutoutConfig scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig error:nil];
+    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:newScanPluginConfig
+                                                                                                  cutoutConfig:newCutoutConfig
+                                                                                            scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig
+                                                                                                         error:nil];
     
     return [[ALScanViewPlugin alloc] initWithConfig:newScanViewPluginConfig error:error];
 }

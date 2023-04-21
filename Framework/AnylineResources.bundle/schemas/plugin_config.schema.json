@@ -53,10 +53,13 @@
                     "required": [
                         "tireSizeConfig"
                     ]
-                },
-                {
+                }, {
                     "required": [
                         "commercialTireIdConfig"
+                    ]
+                }, {
+                    "required": [
+                        "tireMakeConfig"
                     ]
                 },
                 {
@@ -130,6 +133,9 @@
         },
         "commercialTireIdConfig": {
             "$ref": "#/definitions/commercialTireIdConfig"
+        }, 
+        "tireMakeConfig": {
+            "$ref": "#/definitions/tireMakeConfig"
         },
         "vinConfig": {
             "$ref": "#/definitions/vinConfig"
@@ -292,6 +298,27 @@
             },
             "additionalProperties": false
         },
+        "tireMakeConfig": {
+            "description": "Configuration for scanning Tire Makes",
+            "type": "object",
+            "properties": {
+                "upsideDownMode": {
+                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "type": "string",
+                    "enum": ["DISABLED", "ENABLED", "AUTO"],
+                    "default": "DISABLED"
+                },
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the tire make text needs to match in order to trigger a scan result. E.g. \"(Continental|Dunlop)\" will only trigger on Continental or Dunlop tires."
+                }
+            },
+            "additionalProperties": false
+        },
         "commercialTireIdConfig": {
             "description": "Configuration for scanning commercial Tire IDs",
             "type": "object",
@@ -344,11 +371,10 @@
             "properties": {
                 "scanMode": {
                     "type": "string",
-                    "description": "Sets the mode to scan universal TIN numbers ('UNIVERSAL'), TIN numbers of any length starting with DOT ('DOT') or fixed-length TIN numbers ('DOT_STRICT').",
+                    "description": "Sets the mode to scan universal TIN numbers ('UNIVERSAL') or TIN numbers of any length starting with DOT ('DOT').",
                     "enum": [
                         "UNIVERSAL",
-                        "DOT",
-                        "DOT_STRICT"
+                        "DOT"
                     ],
                     "default": "UNIVERSAL"
                 },
@@ -368,12 +394,12 @@
                 },
                 "validateProductionDate": {
                     "type": "boolean",
-                    "description": "Sets wether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true. Note that this option is ignored and set to true (default) if the scanMode is DOT_STRICT.",
+                    "description": "Sets whether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true.",
                     "default": true
                 },
                 "validationRegex": {
                     "type": "string",
-                    "description": "Sets a regular expression which the TIN text needs to match in order to trigger a scan result. Note that this option is ignored if validateProductionDate is true or scanMode is DOT_STRICT."
+                    "description": "Sets a regular expression which the TIN text needs to match in order to trigger a scan result."
                 }
             },
             "additionalProperties": false

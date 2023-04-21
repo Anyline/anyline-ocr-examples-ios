@@ -44,39 +44,26 @@
     
     self.canUpdate = YES;
     
-    ALExample *drivingLicenseScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Driver's License", nil)
-                                                       image:[UIImage imageNamed:@"tile_driverslicense"]
-                                              viewController:[ALUniversalIDScanViewController class]
-                                                       title:kDriversLicenseTitleString];
-    
-    ALExample *idCardScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"ID Card", nil)
-                                                       image:[UIImage imageNamed:@"tile_idcard"]
-                                              viewController:[ALUniversalIDScanViewController class]
-                                                       title:kIDCardTitleString];
-    
-    ALExample *passportScanning = [[ALExample alloc] initWithName:NSLocalizedString(kPassportVisaTitleString, nil)
-                                                       image:[UIImage imageNamed:@"tile_passportvisa"]
-                                              viewController:[ALMRZScanViewController class]
-                                                       title:kPassportVisaTitleString];
-    
     ALExample *mrzScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"MRZ", nil)
                                                        image:[UIImage imageNamed:@"tile_mrz"]
                                               viewController:[ALMRZScanViewController class]];
     
     ALExample *pdf417Scanning = [[ALExample alloc] initWithName:NSLocalizedString(@"PDF417", nil)
-                                                            image:[UIImage imageNamed:@"tile_pdf417"]
-                                                   viewController:[ALPDF417ScanViewController class]];
+                                                          image:[UIImage imageNamed:@"tile_pdf417"]
+                                                 viewController:[ALPDF417ScanViewController class]];
     
     ALExample *nfcScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"NFC", nil)
-                                                            image:[UIImage imageNamed:@"tile_nfc"]
-                                                   viewController:[ALNFCScanViewController class]];
-
-    self.sectionNames = @[@"Universal ID", @"Technology showcase", @"Available ID types"];
-    //we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true, but for clarity we will always show it, and just show an alert about why it's not supported when it's tapped on.
+                                                       image:[UIImage imageNamed:@"tile_nfc"]
+                                              viewController:[ALNFCScanViewController class]];
+    
+    self.sectionNames = @[@"ID", @"Technology showcase"];
+    
+    // we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true,
+    // but for clarity we will always show it, and just show an alert about why it's not supported when it's
+    // tapped on.
     self.examples = [@{
-                      self.sectionNames[0] : @[universalID],
-                      self.sectionNames[1] : @[nfcScanning, pdf417Scanning,mrzScanning],
-                      self.sectionNames[2] : @[drivingLicenseScanning, passportScanning, idCardScanning],
+        self.sectionNames[0] : @[universalID],
+        self.sectionNames[1] : @[nfcScanning, pdf417Scanning, mrzScanning]
     } mutableCopy];
     
 }

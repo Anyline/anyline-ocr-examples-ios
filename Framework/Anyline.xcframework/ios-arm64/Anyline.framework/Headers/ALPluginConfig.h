@@ -27,6 +27,7 @@
 @class ALStartVariable;
 @class ALTinConfig;
 @class ALTinConfigScanMode;
+@class ALTireMakeConfig;
 @class ALTireSizeConfig;
 @class ALUniversalIDConfig;
 @class ALAllowedLayouts;
@@ -198,13 +199,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALOcrConfigScanMode *)scanModeAuto;
 @end
 
-/// Sets the mode to scan universal TIN numbers ('UNIVERSAL'), TIN numbers of any length
-/// starting with DOT ('DOT') or fixed-length TIN numbers ('DOT_STRICT').
+/// Sets the mode to scan universal TIN numbers ('UNIVERSAL') or TIN numbers of any length
+/// starting with DOT ('DOT').
 @interface ALTinConfigScanMode : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
 + (instancetype _Nullable)withValue:(NSString *)value;
 + (ALTinConfigScanMode *)dot;
-+ (ALTinConfigScanMode *)dotStrict;
 + (ALTinConfigScanMode *)universal;
 @end
 
@@ -238,6 +238,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// Allows to fine-tune a list of options for plugins.
 @property (nonatomic, nullable, copy)   NSArray<ALStartVariable *> *startVariables;
 @property (nonatomic, nullable, strong) ALTinConfig *tinConfig;
+@property (nonatomic, nullable, strong) ALTireMakeConfig *tireMakeConfig;
 @property (nonatomic, nullable, strong) ALTireSizeConfig *tireSizeConfig;
 @property (nonatomic, nullable, strong) ALUniversalIDConfig *universalIDConfig;
 @property (nonatomic, nullable, strong) ALVehicleRegistrationCertificateConfig *vehicleRegistrationCertificateConfig;
@@ -270,6 +271,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
+/// Sets a regular expression which the commercial tire id text needs to match in order to
+/// trigger a scan result.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
 @end
 
 /// Configuration for scanning shipping container numbers
@@ -441,14 +445,28 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALTinConfig : NSObject
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Sets the mode to scan universal TIN numbers ('UNIVERSAL'), TIN numbers of any length
-/// starting with DOT ('DOT') or fixed-length TIN numbers ('DOT_STRICT').
+/// Sets the mode to scan universal TIN numbers ('UNIVERSAL') or TIN numbers of any length
+/// starting with DOT ('DOT').
 @property (nonatomic, nullable, assign) ALTinConfigScanMode *scanMode;
 /// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
-/// Sets wether the production date validation is enabled. If it is set to false the scan
+/// Sets whether the production date validation is enabled. If it is set to false the scan
 /// result is also returned for invalid and missing dates. Defaults to true.
 @property (nonatomic, nullable, strong) NSNumber *validateProductionDate;
+/// Sets a regular expression which the TIN text needs to match in order to trigger a scan
+/// result.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
+@end
+
+/// Configuration for scanning Tire Makes
+@interface ALTireMakeConfig : NSObject
+/// Sets a minimum confidence which has to be reached in order to trigger a scan result.
+@property (nonatomic, nullable, strong) NSNumber *minConfidence;
+/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+@property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
+/// Sets a regular expression which the tire make text needs to match in order to trigger a
+/// scan result. E.g. "(Continental|Dunlop)" will only trigger on Continental or Dunlop tires.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
 @end
 
 /// Configuration for scanning Tire Size Specifications
@@ -457,6 +475,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
+/// Sets a regular expression which the tire size text needs to match in order to trigger a
+/// scan result.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
 @end
 
 /// Configuration for scanning all kinds of identification documents

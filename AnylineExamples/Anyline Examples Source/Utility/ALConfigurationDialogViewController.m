@@ -54,6 +54,19 @@ NSString * const kApplyButtonText = @"Apply";
     return self;
 }
 
++ (ALConfigurationDialogViewController *)singleSelectDialogWithChoices:(NSArray<NSString *> *)choices
+                                                         selectedIndex:(NSUInteger)index
+                                                                delegate:(id<ALConfigurationDialogViewControllerDelegate>)delegate {
+    ALConfigurationDialogViewController *controller = [[ALConfigurationDialogViewController alloc] initWithChoices:choices
+                                                             selections:@[ @(index) ]
+                                                         secondaryTexts:@[]
+                                                           showApplyBtn:NO
+                                                             dialogType:ALConfigDialogTypeScanModeSelection];
+    controller.delegate = delegate;
+    [controller setSelectionDialogFontSize:16];
+    return controller;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
         
@@ -62,7 +75,7 @@ NSString * const kApplyButtonText = @"Apply";
     _container = [[UIView alloc] init];
     [self.view addSubview:_container];
     [_container setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [_container setBackgroundColor: [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1]];
+    [_container setBackgroundColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1]];
     [_container.layer setCornerRadius: 8.0f];
     if (@available(iOS 13.0, *)) {
         [_container setBackgroundColor:[UIColor systemGroupedBackgroundColor]];
@@ -132,8 +145,8 @@ NSString * const kApplyButtonText = @"Apply";
     
     NSArray<NSLayoutConstraint *> *containerConstraints = @[
         [_container.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
-        [_container.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:margin],
-        [_container.widthAnchor constraintEqualToAnchor:self.view.widthAnchor constant:-2 * margin],
+        [_container.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:margin],
+        [_container.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-margin],
     ];
     [self.view addConstraints:containerConstraints];
     [NSLayoutConstraint activateConstraints:containerConstraints];
@@ -192,9 +205,8 @@ NSString * const kApplyButtonText = @"Apply";
         [cell setSelectionStatusText:self.secondaryTexts[indexPath.row]];
     } else {
         BOOL showCheckmark = NO;
-        NSNumber *selectedIndex = [self selectedIndex];
-        if (selectedIndex) {
-            showCheckmark = indexPath.row == selectedIndex.unsignedIntValue;
+        if (self.selectedIndex != NSNotFound) {
+            showCheckmark = indexPath.row == self.selectedIndex;
         }
         [cell showCheckmark:showCheckmark];
         [cell setSelectionStatusText:@""];
@@ -211,10 +223,16 @@ NSString * const kApplyButtonText = @"Apply";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray<NSNumber *> *newSelections = @[ @(indexPath.row) ];
     switch (_type) {
         case ALConfigDialogTypeScriptSelection:
         case ALConfigDialogTypeScanModeSelection:
-            self.selections = @[@(indexPath.row)];
+            // if selections are the same, cancel.
+            if ([self.selections isEqualToArray:newSelections]) {
+                [self.delegate configDialogCancelled:self];
+                break;
+            }
+            self.selections = newSelections;
             [tableView reloadData];
             break;
         default: break;
@@ -232,13 +250,17 @@ NSString * const kApplyButtonText = @"Apply";
 
 // MARK: - Miscellaneous
 
-// applicable for display modes that return only one selected index, if at all
-- (NSNumber *)selectedIndex {
-    if (((self.type == ALConfigDialogTypeScriptSelection) || (self.type == ALConfigDialogTypeScanModeSelection)) &&
+- (NSInteger)selectedIndex {
+    if (((self.type == ALConfigDialogTypeScriptSelection) ||
+         (self.type == ALConfigDialogTypeScanModeSelection)) &&
         (self.selections.count > 0)){
-        return self.selections[0];
+        return [self.selections[0] unsignedIntValue];
     }
-    return nil;
+    return NSNotFound;
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    self.selections = @[ @(selectedIndex) ];
 }
 
 - (void)setSelectionDialogFontSize:(CGFloat)dialogFontSize {

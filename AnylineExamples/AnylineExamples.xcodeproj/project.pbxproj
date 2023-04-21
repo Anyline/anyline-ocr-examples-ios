@@ -61,6 +61,7 @@
 		4F2FB6A2C6C071DE55422F10 /* tire_tin_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A28F896A45E44BF6777AC6 /* tire_tin_config.json */; };
 		4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D734F16D23B623323CB450A /* ALOthersExampleManager.m */; };
 		503DCA316D0C202AF406CCAA /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */; };
+		519669F55E4AD753DA9D202F /* tire_make_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 61D5DAE4AE4BC5A27563B970 /* tire_make_config.json */; };
 		53029EFD2163E8748EC913AE /* ALDialogSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CEF352E355ABC1E7A6A81 /* ALDialogSelectionTableViewCell.m */; };
 		55A2726D01D2C65CB34D1361 /* ALBarcodeBatchCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1559FE5E2F594D23DB4B601 /* ALBarcodeBatchCountView.m */; };
 		56474CD2A742EE015C5EEC5F /* SerialNumberSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD983F58448E75F6CD5AFFF /* SerialNumberSettings.swift */; };
@@ -90,6 +91,7 @@
 		81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; };
 		82098553EF9F70DCD53166C1 /* NSUserDefaults+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35EBC0F2547C2A286FD841 /* NSUserDefaults+ALExamplesAdditions.m */; };
 		825554D17F253D580D3E6603 /* ALMeterExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E4BDD67B0B2AA88763193 /* ALMeterExampleManager.m */; };
+		84EA10E9B29207F07F86E465 /* ALModeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7B4DDF40274E5C1DD4E5D /* ALModeSelectionButton.swift */; };
 		8543A04986941842302938D1 /* UIView+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B3E959502E4A04A0D95FF /* UIView+ALExamplesAdditions.m */; };
 		8571409E8D89A4C95D3E00CC /* barcode_pdf417_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 25CB8604DEE2D976680CD4F9 /* barcode_pdf417_config.json */; };
 		85DE1A8A0173B4A1AEC85520 /* universal_id_composite_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFA8B1DC79F42F46CED800 /* universal_id_composite_config.json */; };
@@ -110,7 +112,6 @@
 		99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AEE556559232DFCD1E18C3A /* ALCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E8D46EC14ED14B84F0FAE /* ALCheckbox.m */; };
 		9BA532A518522696002B0872 /* ALAwardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B40EC29D2A0CFA6AC2651C /* ALAwardsView.m */; };
-		9D6D1A47066EC5C9D3CAE9F4 /* ALLicensePlateExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */; };
 		9D9680C3AAEB75FB47E06783 /* MeterImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D39C312D206576E77DD791F /* MeterImagesAssets.xcassets */; };
 		9DDA738BD8549D7431ADA915 /* ALTireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35B83CC956F0A6C87E99940 /* ALTireViewController.swift */; };
 		9EC8EF0D4F379C5106628236 /* ALSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC454214D328901286919 /* ALSliderTableViewCell.swift */; };
@@ -267,6 +268,7 @@
 		5ECFD208BD47657AE983B207 /* ALScriptSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALScriptSelectionViewController.h; sourceTree = "<group>"; };
 		616546C1E01F0CAC3652600B /* ALBarcodeSettingsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBarcodeSettingsTableViewCell.m; sourceTree = "<group>"; };
 		61CEE047492B9C3C53DD2D30 /* ALResultOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALResultOverlayView.m; sourceTree = "<group>"; };
+		61D5DAE4AE4BC5A27563B970 /* tire_make_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tire_make_config.json; sourceTree = "<group>"; };
 		61DA953B17AC995AEFFE84EB /* ALMROExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMROExampleManager.h; sourceTree = "<group>"; };
 		620DDA19128BF378985E3D28 /* UIColor+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		62EED92948A935E9B80C2B7B /* vertical_container_scanner_capture_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vertical_container_scanner_capture_config.json; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		73A7C23837878A16E36600B4 /* CustomerDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerDataView.h; sourceTree = "<group>"; };
 		76A28F896A45E44BF6777AC6 /* tire_tin_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tire_tin_config.json; sourceTree = "<group>"; };
 		771CC0DB53619FBFD1807769 /* NSManagedObject+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ALExamplesAdditions.h"; sourceTree = "<group>"; };
+		77F7B4DDF40274E5C1DD4E5D /* ALModeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALModeSelectionButton.swift; sourceTree = "<group>"; };
 		78DFD0CE1C7DE22D8FEC3B8F /* universal_id_front_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = universal_id_front_config.json; sourceTree = "<group>"; };
 		7900708C0BE8AF5AF502E360 /* ReadingTransformationPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTransformationPolicy.h; sourceTree = "<group>"; };
 		79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Anyline.xcframework; path = ../Framework/Anyline.xcframework; sourceTree = "<group>"; };
@@ -361,7 +364,6 @@
 		ACF1D09EF06128D92632D6CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF206C8056C5314E31A8B907 /* ALVINScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALVINScanViewController.m; sourceTree = "<group>"; };
 		B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ALExamplesAdditions.m"; sourceTree = "<group>"; };
-		B1D774A5ADDF5C4E7628C04F /* ALLicensePlateExampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateExampleManager.h; sourceTree = "<group>"; };
 		B267CBC94F9A37441E5297C6 /* ALPluginResultHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPluginResultHelper.h; sourceTree = "<group>"; };
 		B35B83CC956F0A6C87E99940 /* ALTireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTireViewController.swift; sourceTree = "<group>"; };
 		B7B4776BB82FA4F7729784D0 /* ALExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALExample.m; sourceTree = "<group>"; };
@@ -384,7 +386,6 @@
 		C3C08AF63B1D49322051E58B /* ScanHistory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataClass.h"; sourceTree = "<group>"; };
 		C425900319673F527A4B3AB2 /* ALBarcodeSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeSettingsViewController.h; sourceTree = "<group>"; };
 		C4C91C9B86D18C08298D87D6 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
-		C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateExampleManager.m; sourceTree = "<group>"; };
 		C572C567B013995154E661D5 /* parallel_first_vin_barcode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = parallel_first_vin_barcode.json; sourceTree = "<group>"; };
 		C693A94797CE4C0904AAA627 /* NSArray+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		CCFB0172F33527DC467752AE /* ALConfigurationDialogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALConfigurationDialogViewController.h; sourceTree = "<group>"; };
@@ -833,8 +834,6 @@
 				B7F93940133379A464B2ECA1 /* ALExampleManager.m */,
 				2408E133998590A79393C9F5 /* ALIdentityDocumentsExampleManager.h */,
 				1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */,
-				B1D774A5ADDF5C4E7628C04F /* ALLicensePlateExampleManager.h */,
-				C4E617625C1AA097008BADE0 /* ALLicensePlateExampleManager.m */,
 				9B2C52A1458BA3161852471B /* ALMeterExampleManager.h */,
 				1B7E4BDD67B0B2AA88763193 /* ALMeterExampleManager.m */,
 				61DA953B17AC995AEFFE84EB /* ALMROExampleManager.h */,
@@ -1023,6 +1022,7 @@
 				C12ECB31388816698425036A /* ALBundleInfoViewController.m */,
 				BC01755C0A3AD293F0ABB7F1 /* ALCustomBarButton.h */,
 				8559369BC2271AFE0A5F4A67 /* ALCustomBarButton.m */,
+				77F7B4DDF40274E5C1DD4E5D /* ALModeSelectionButton.swift */,
 				874B2FFA8196820375035FC5 /* ALResultOverlayView.h */,
 				61CEE047492B9C3C53DD2D30 /* ALResultOverlayView.m */,
 				C0978B57E2E7E3A98728F35F /* ALSpaceViews.h */,
@@ -1065,6 +1065,7 @@
 			isa = PBXGroup;
 			children = (
 				94EA478F3C54022963840E9F /* commercial_tire_id_config.json */,
+				61D5DAE4AE4BC5A27563B970 /* tire_make_config.json */,
 				AA22027FDE68CA04A27233FF /* tire_size_config.json */,
 				76A28F896A45E44BF6777AC6 /* tire_tin_config.json */,
 				2832D66B184E525A092F5D75 /* ViewController */,
@@ -1162,6 +1163,7 @@
 				C2C2D92598336C8B84E28D77 /* template_type_and_region_mapping.json in Resources */,
 				F9D4E1ECE5078064E64C2F82 /* template_type_and_region_mapping_arabic.json in Resources */,
 				FC4089961D04D1614B1A8608 /* template_type_and_region_mapping_cyrillic.json in Resources */,
+				519669F55E4AD753DA9D202F /* tire_make_config.json in Resources */,
 				D4A3E2D02B255B065015A41E /* tire_size_config.json in Resources */,
 				4F2FB6A2C6C071DE55422F10 /* tire_tin_config.json in Resources */,
 				85DE1A8A0173B4A1AEC85520 /* universal_id_composite_config.json in Resources */,
@@ -1209,7 +1211,6 @@
 				5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */,
 				DD6D666DD6B9C7CF1CD894FD /* ALJSONDownloader.m in Sources */,
 				67C32087ADC64502CDF4C7C4 /* ALLeftCheckmarkCell.swift in Sources */,
-				9D6D1A47066EC5C9D3CAE9F4 /* ALLicensePlateExampleManager.m in Sources */,
 				39A9B1A5A4BB7CAE55D09D89 /* ALLicensePlateScanViewController.m in Sources */,
 				18CCD1DA39115412EB8F04DD /* ALMROExampleManager.m in Sources */,
 				E81F0DED94A08AAB70CDBD5F /* ALMRZScanViewController.m in Sources */,
@@ -1220,6 +1221,7 @@
 				90EE64FF8696C360624B0722 /* ALMeterReading.m in Sources */,
 				3FD6E7E2F5050E4CE427F62F /* ALMeterReadingView.m in Sources */,
 				5B62F82DCF4B9A82A0E767D9 /* ALMeterScanViewController.swift in Sources */,
+				84EA10E9B29207F07F86E465 /* ALModeSelectionButton.swift in Sources */,
 				37B8BA82610E2579475245FC /* ALNFCScanViewController.m in Sources */,
 				4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */,
 				8F696BE3E46CF0C83C2AB02E /* ALPDF417ScanViewController.m in Sources */,

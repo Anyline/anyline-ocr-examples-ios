@@ -17,7 +17,6 @@
 #import "ALIdentityDocumentsExampleManager.h"
 #import "ALGridCollectionViewController.h"
 #import "ALMeterCollectionViewController.h"
-#import "ALLicensePlateExampleManager.h"
 
 @interface ALProductExampleManager ()
 
@@ -45,19 +44,14 @@
                                                   viewController:[ALBarcodeScanViewController class]];
     
     ALExample *identityDocuments = [[ALExample alloc] initWithName:NSLocalizedString(@"Identity Documents", nil)
-                                               image:[UIImage imageNamed:@"tile_identitydocuments"]
-                                      viewController:[ALGridCollectionViewController class]
-                                      exampleManager:[ALIdentityDocumentsExampleManager class]];
+                                                             image:[UIImage imageNamed:@"tile_identitydocuments"]
+                                                    viewController:[ALGridCollectionViewController class]
+                                                    exampleManager:[ALIdentityDocumentsExampleManager class]];
     
     ALExample *meterReading = [[ALExample alloc] initWithName:NSLocalizedString(@"Meter Reading", nil)
                                                         image:[UIImage imageNamed:@"tile_meterreading"]
                                                viewController:[ALMeterCollectionViewController class]
                                                exampleManager:[ALMeterExampleManager class]];
-    
-    ALExample *licensePlate = [[ALExample alloc] initWithName:NSLocalizedString(@"License Plate", nil)
-                                                        image:[UIImage imageNamed:@"tile_licenseplate"]
-                                               viewController:[ALGridCollectionViewController class]
-                                               exampleManager:[ALLicensePlateExampleManager class]];
     
     ALExample *vehicle = [[ALExample alloc] initWithName:NSLocalizedString(@"Vehicle", nil)
                                                    image:[UIImage imageNamed:@"tile_vehicle_new"]
@@ -75,7 +69,6 @@
             barcodeScanning,
             identityDocuments,
             meterReading,
-            licensePlate,
             vehicle,
             others],
     };

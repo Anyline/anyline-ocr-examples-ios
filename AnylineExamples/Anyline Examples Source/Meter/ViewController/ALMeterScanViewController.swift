@@ -3,7 +3,21 @@ import Foundation
 @objc(ALMeterScanViewController) // this attribute makes it usable by NSClassFromString()
 class ALMeterScanViewController: ALBaseScanViewController {
 
-    var scanViewPlugin: ALScanViewPluginBase?
+    enum Constants {
+        static let choices: [String] = [
+            "Digital (EMEA)",
+            "Digital (APAC)",
+            "Analog",
+            "Dial",
+        ]
+
+        static let scanModes: [ALMeterConfigScanMode] = [
+            .autoAnalogDigitalMeter(), // EMEA
+            .digitalMeter2_Experimental(), // APAC
+            .autoAnalogDigitalMeter(), // Analog
+            .dialMeter() // Dial
+        ]
+    }
 
     var scanMode: ALMeterConfigScanMode = .autoAnalogDigitalMeter()
 
@@ -17,11 +31,13 @@ class ALMeterScanViewController: ALBaseScanViewController {
 
     var barcodeString: String?
 
+    private var dialogIndexSelected: UInt = 0
+
     var withBarcode: Bool = false {
         didSet {
             reloadScanView()
             clearResults()
-            try! self.scanViewPlugin?.start()
+            try! self.startScanning()
         }
     }
 
@@ -50,11 +66,15 @@ class ALMeterScanViewController: ALBaseScanViewController {
         setUpBarcodeSwitchView()
 
         reloadScanView()
+
+        addModeSelectButton(withTitle: Constants.choices[0]) { [weak self] in // didPress block
+            self?.showOptionsSelectionDialog()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        try! self.scanViewPlugin?.start()
+        try! self.startScanning()
     }
 
     func clearResults() {
@@ -68,13 +88,15 @@ class ALMeterScanViewController: ALBaseScanViewController {
     fileprivate func reloadScanView() {
         guard let JSONStr = self.configJSONStr(withFilename: configJSONFilename),
               let JSONDict = (JSONStr as NSString).asJSONObject() as? [String : Any] else {
-            print("error: unable to find json config")
+            print("error: unable to find JSON config")
             return
         }
 
         var scanViewPluginBase: ALScanViewPluginBase!
         do {
-            scanViewPluginBase = try scanViewPluginConfig(fromDict: JSONDict, scanMode: self.scanMode)
+            scanViewPluginBase = try scanViewPluginConfig(fromDict: JSONDict,
+                                                          withBarcode: withBarcode,
+                                                          scanMode: self.scanMode)
         } catch {
             if (self.popWithAlert(onError: error)) {
                 return
@@ -82,10 +104,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
         }
 
         // ScanViewConfig
-        let configJSONDict: [AnyHashable: Any]! = [:]
-        let scanViewConfig: ALScanViewConfig? = .withJSONDictionary(configJSONDict)
-
-        self.scanViewPlugin = scanViewPluginBase
+        let scanViewConfig: ALScanViewConfig? = .withJSONDictionary(JSONDict)
 
         if self.scanView != nil {
             do {
@@ -96,7 +115,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
                     return
                 }
             }
-        } else {
+        } else { // create a scanView
             do {
                 self.scanView = try .init(frame: .zero,
                                           scanViewPlugin: scanViewPluginBase,
@@ -116,51 +135,88 @@ class ALMeterScanViewController: ALBaseScanViewController {
         }
     }
 
-    func scanViewPluginConfig(fromDict JSONDict: [String: Any], scanMode: ALMeterConfigScanMode) throws -> ALScanViewPluginBase {
-        if withBarcode {
-            var composite = try ALScanViewPluginFactory.withJSONDictionary(JSONDict) as! ALViewPluginComposite
+    fileprivate static func meterScanViewPlugin(from config: ALScanViewPluginConfig,
+                                                scanMode: ALMeterConfigScanMode) throws -> ALScanViewPlugin {
+        var scanPluginConfig = config.scanPluginConfig
+        var cutoutConfig = config.cutoutConfig
+        let scanFeedbackConfig = config.scanFeedbackConfig
 
-            // we have a composite with two children in this view controller (as per JSON). For the meter child,
-            // reconstruct it
-            var children = [ALScanViewPlugin]()
-            composite.children.forEach { child in
-                if let svpCopy = child as? ALScanViewPlugin {
-                    // remake a scanViewPlugin with your change to the meter plugin scan mode
-                    let scanPluginConfig = svpCopy.scanPlugin.scanPluginConfig
-                    scanPluginConfig.pluginConfig.meterConfig?.scanMode = scanMode
-                    if let newSVP: ALScanViewPlugin = try! .init(config: try! .init(scanPluginConfig: scanPluginConfig,
-                                                                                    cutoutConfig: svpCopy.scanViewPluginConfig.cutoutConfig,
-                                                                                    scanFeedbackConfig: svpCopy.scanViewPluginConfig.scanFeedbackConfig)) {
-                        newSVP.delegate = self
-                        newSVP.scanPlugin.delegate = self
-                        children.append(newSVP)
-                    }
-                }
-            }
+        // edit scan mode
+        scanPluginConfig.pluginConfig.meterConfig?.scanMode = scanMode
 
-            if let newComposite: ALViewPluginComposite = try! .init(id: composite.pluginID,
-                                                               mode: composite.processingMode,
-                                                               children: children) {
-                composite = newComposite
-            }
-            composite.delegate = self
-            return composite
+        // apply a new cutout config
+        if scanMode == ALMeterConfigScanMode.dialMeter() {
 
-        } else {
-            let config = ALScanViewPluginConfig.withJSONDictionary(JSONDict)!
+            // increase startScanDelay
+            let pluginConfig = scanPluginConfig.pluginConfig
+            pluginConfig.startScanDelay = 1000
+            scanPluginConfig = .init(pluginConfig: pluginConfig)
 
-            var scanViewPlugin: ALScanViewPlugin = try .init(config: config)
+            // create a new ALCutoutConfig
+            cutoutConfig = .init(alignment: config.cutoutConfig.alignment,
+                                 animation: config.cutoutConfig.animation,
+                                 ratioFrom: .init(width: 2, height: 1), // modified
+                                 offset: .init(x: 0, y: 50), // modified
+                                 width: config.cutoutConfig.width,
+                                 maxHeightPercent: config.cutoutConfig.maxHeightPercent,
+                                 maxWidthPercent: 85, // modified
+                                 cornerRadius: config.cutoutConfig.cornerRadius,
+                                 strokeWidth: config.cutoutConfig.strokeWidth,
+                                 strokeColor: config.cutoutConfig.strokeColor,
+                                 feedbackStrokeColor: config.cutoutConfig.feedbackStrokeColor,
+                                 outerColor: config.cutoutConfig.outerColor,
+                                 cropOffset: config.cutoutConfig.cropOffset,
+                                 cropPadding: config.cutoutConfig.cropPadding,
+                                 image: config.cutoutConfig.image)!
+        }
 
-            let scanPluginConfig = scanViewPlugin.scanPlugin.scanPluginConfig
-            scanPluginConfig.pluginConfig.meterConfig?.scanMode = scanMode
-            scanViewPlugin = try! .init(config: .init(scanPluginConfig: scanPluginConfig,
-                                                      cutoutConfig: scanViewPlugin.scanViewPluginConfig.cutoutConfig,
-                                                      scanFeedbackConfig: scanViewPlugin.scanViewPluginConfig.scanFeedbackConfig))
+        let scanViewPluginConfig: ALScanViewPluginConfig = try .init(scanPluginConfig: scanPluginConfig,
+                                                                     cutoutConfig: cutoutConfig,
+                                                                     scanFeedbackConfig: scanFeedbackConfig)
 
+        return try .init(config: scanViewPluginConfig)
+    }
+
+    func scanViewPluginConfig(fromDict JSONDict: [String: Any],
+                              withBarcode: Bool,
+                              scanMode: ALMeterConfigScanMode) throws -> ALScanViewPluginBase {
+
+        if !withBarcode { // the non-composite mode
+            let config: ALScanViewPluginConfig = ALScanViewPluginConfig.withJSONDictionary(JSONDict)!
+            let scanViewPlugin = try! type(of: self).meterScanViewPlugin(from: config, scanMode: scanMode)
             scanViewPlugin.scanPlugin.delegate = self
-            scanViewPlugin.delegate = self
             return scanViewPlugin
         }
+
+        // (re)creating a composite plugin with the correct scan mode (and additional adaptations based on
+        // scan mode)
+        var composite = try ALScanViewPluginFactory.withJSONDictionary(JSONDict) as! ALViewPluginComposite
+
+        // we have a composite with two children in this view controller (as per JSON). For the meter child,
+        // reconstruct it
+        var children = [ALScanViewPlugin]()
+        try composite.children.forEach { child in
+            if var scanViewPlugin = child as? ALScanViewPlugin {
+                // remake a scanViewPlugin with your change to the meter plugin scan mode
+
+                // make sure it's the meter child plugin you are doing this to
+                if scanViewPlugin.scanPlugin.scanPluginConfig.pluginConfig.meterConfig != nil {
+                    scanViewPlugin = try type(of: self)
+                        .meterScanViewPlugin(from: scanViewPlugin.scanViewPluginConfig,
+                                             scanMode: scanMode)
+                }
+                scanViewPlugin.scanPlugin.delegate = self
+                children.append(scanViewPlugin)
+            }
+        }
+
+        if let newComposite: ALViewPluginComposite = try .init(id: composite.pluginID,
+                                                               mode: composite.processingMode,
+                                                               children: children) {
+            composite = newComposite
+        }
+        composite.delegate = self
+        return composite
     }
 
     private func setUpBarcodeSwitchView() {
@@ -208,7 +264,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
     }
 }
 
-extension ALMeterScanViewController: ALScanPluginDelegate, ALScanViewPluginDelegate, ALViewPluginCompositeDelegate {
+extension ALMeterScanViewController: ALScanPluginDelegate, ALViewPluginCompositeDelegate {
 
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
         if let _ = self.loadMeterResult(from: scanResult) {
@@ -305,6 +361,33 @@ extension ALMeterScanViewController: ALScanPluginDelegate, ALScanViewPluginDeleg
 
             self?.clearResults()
         }
+    }
 
+    private func showOptionsSelectionDialog() {
+        let vc = ALConfigurationDialogViewController.singleSelectDialog(withChoices: Constants.choices,
+                                                                        selectedIndex: dialogIndexSelected,
+                                                                        delegate: self)
+        self.present(vc, animated: true)
+        self.scanView?.stopCamera()
+    }
+}
+
+extension ALMeterScanViewController: ALConfigurationDialogViewControllerDelegate {
+
+    func configDialog(_ dialog: ALConfigurationDialogViewController, selectedIndex index: UInt) {
+        dialogIndexSelected = index
+        self.modeSelectButton?.setTitle(Constants.choices[Int(dialogIndexSelected)],
+                                        for: .normal)
+        self.scanMode = Constants.scanModes[Int(dialogIndexSelected)]
+        self.reloadScanView()
+        self.scanView?.startCamera()
+        self.dismiss(animated: true)
+        try! self.startScanning()
+    }
+
+    func configDialogCommitted(_ commited: Bool, dialog: ALConfigurationDialogViewController) {}
+
+    func configDialogCancelled(_ dialog: ALConfigurationDialogViewController) {
+        self.scanView?.startCamera()
     }
 }

@@ -6,7 +6,6 @@ API_AVAILABLE(ios(13.0))
 @interface ALNFCScanViewController () <ALNFCDetectorDelegate, ALScanPluginDelegate>
 
 @property (nonatomic, strong) ALNFCDetector *nfcDetector;
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, strong, nullable) UIView *hintView;
@@ -54,18 +53,12 @@ API_AVAILABLE(ios(13.0))
     }
     [self installScanView:self.scanView];
 
-    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
-    
     [self.scanView startCamera];
-    
-    // TODO: we also used the erstwhile ScanInfoDelegate in the old version
-    // to track the cutout position.
-    // [self startListeningForMotion];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
     self.startTime = CACurrentMediaTime();
     self.hintView.hidden = NO;
 }
@@ -112,7 +105,7 @@ API_AVAILABLE(ios(13.0))
     }
     
     if (passportNumberForNFC.length > 0) {
-        [self.scanViewPlugin stop];
+        [self stopScanning];
         self.hintView.hidden = YES;
         
         __weak __block typeof(self) weakSelf = self;
@@ -150,12 +143,16 @@ API_AVAILABLE(ios(13.0))
     // resultData = [ALUniversalIDFieldnameUtil sortResultDataUsingFieldNamesWithSpace:resultData].mutableCopy;
     
     NSString *jsonString = [ALResultEntry JSONStringFromList:resultData];
-    
+    ALScanPlugin *scanPlugin = nil;
+    if ([self.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        scanPlugin = [(ALScanViewPlugin *)self.scanViewPlugin scanPlugin];
+    }
+
     __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:jsonString
                  barcodeResult:nil
                          image:nfcResult.dataGroup2.faceImage
-                    scanPlugin:self.scanViewPlugin.scanPlugin
+                    scanPlugin:scanPlugin
                     viewPlugin:self.scanViewPlugin
                     completion:^{
         
@@ -195,7 +192,7 @@ API_AVAILABLE(ios(13.0))
             //                              completion:nil];
             
             // 'Cancel' button while scanning. It could also mean the phone lost the connection with the NFC chip because it was moved.
-            [weakSelf.scanViewPlugin startWithError:nil];
+            [weakSelf startScanning:nil];
             weakSelf.startTime = CACurrentMediaTime();
         } else {
             // the MRZ details are correct, but something else went wrong. We can try reading the NFC chip again without rescanning the MRZ.

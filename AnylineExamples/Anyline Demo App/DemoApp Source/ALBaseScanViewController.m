@@ -6,44 +6,37 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIFont+ALExamplesAdditions.h"
 #import "UIColor+ALExamplesAdditions.h"
+#import "AnylineExamples-Swift.h"
 
 #if __has_include("AppDelegate_store.h")
-    #import "AppDelegate_store.h"
+#import "AppDelegate_store.h"
 #else
-    #import "AppDelegate.h"
+#import "AppDelegate.h"
 #endif
 
-NSString * const kMsgAllowCameraAccessInSettings = @"Please allow Anyline Scanner to access \
+NSString * const kMsgAllowCameraAccessInSettings = @"Please allow Anyline to access \
 the camera from Settings.";
 
-@interface ALBaseScanViewController ()
+static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
+
+@interface ALBaseScanViewController () <ALScanViewPluginDelegate>
 
 @property (nonatomic, strong) ALWarningView *warningView;
+
 @property (nonatomic, strong) NSTimer *animationTimer;
+
 @property (nonatomic, assign) BOOL successfulScan;
+
+@property (nonatomic, strong) NSLayoutConstraint *warningViewYOffsetCnst;
+
+@property (nonatomic, assign) NSTimeInterval timeScanningStarted;
 
 @end
 
 @implementation ALBaseScanViewController
 
 - (void)dealloc {
-    if (!self.successfulScan) {
-//        NSString *what = ALScanHistoryType_toString[self.controllerType];
-//        NSString *addon = [self addon];
-//        if (addon) {
-//            what = [NSString stringWithFormat:@"%@ %@",what,addon];
-//        }
-//        if (what) {
-//            CFTimeInterval finishedTime = CACurrentMediaTime();
-//            //Only log event 'Not scanned'. Do not add controller type as event.
-//            NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
-//            [attributes setObject:[NSNumber numberWithDouble:(finishedTime-self.startTime)] forKey:@"scan_duration_ms"];
-//            [attributes setObject:what forKey:@"scan_mode"];
-//            [ALReportingController logEventNotScannedWithMetaData:attributes];
-//        } else {
-//            NSLog(@"Unknown controller type: %lu",(unsigned long)self.controllerType);
-//        }
-    }
+    // NSLog(@"ALBaseScanViewController")
 }
 
 - (instancetype)initWithTitle:(NSString *)title {
@@ -55,10 +48,9 @@ the camera from Settings.";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.successfulScan = NO;
     self.view.backgroundColor = [UIColor blackColor];
-    [self addWarningSubview];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,29 +64,21 @@ the camera from Settings.";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.warningView hideWarning];
     [self enableLandscapeOrientation:NO];
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.view bringSubviewToFront:self.warningView];
-}
-
 
 - (NSString *)configJSONStrWithFilename:(NSString *)filename {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:filename
                                                              ofType:@"json"];
-
-    NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
-                                                    encoding:NSUTF8StringEncoding
-                                                       error:NULL];
-
-    return configStr;
+    return [NSString stringWithContentsOfFile:jsonFilePath
+                                     encoding:NSUTF8StringEncoding
+                                        error:NULL];
 }
 
 - (void)installScanView:(ALScanView *)scanView {
     [self.view addSubview:scanView];
-
+    
     scanView.translatesAutoresizingMaskIntoConstraints = false;
     [scanView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor].active = YES;
     [scanView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor].active = YES;
@@ -103,48 +87,101 @@ the camera from Settings.";
     self.scanView.delegate = self;
 }
 
-- (void)addWarningSubview {
-    ALWarningView *warningView = [[ALWarningView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
-    warningView.center = CGPointMake(self.view.center.x, 0);
-    
-    self.warningView = warningView;
-    [self.view addSubview:warningView];
-    self.warningView.alpha = 0;
+- (BOOL)startScanning:(NSError **)error {
+
+    if ([self.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        [(ALScanViewPlugin *)self.scanViewPlugin setDelegate:self];
+    }
+    [self.scanViewPlugin startWithError:error];
+
+    if (error && *error) {
+        NSLog(@"There was an error: %@", *error);
+        return NO;
+    }
+
+    self.timeScanningStarted = [NSDate timeIntervalSinceReferenceDate];
+    return YES;
 }
 
-//- (NSString *)JSONStringFromResultData:(NSArray <ALResultEntry *> *)inputArray {
-//
-//    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:inputArray.count];
-//    for (ALResultEntry *entry in inputArray) {
-//        [array addObject:[entry toDictionary]];
-//    }
-//
-//    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-//    [dict setObject:array forKey:@"result"];
-//
-//    NSError *jsonError;
-//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&jsonError];
-//    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//
-//    return jsonString;
-//}
-
-- (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule; {
-    [self updateBrightness:brightness forModule:anylineModule ignoreTooDark:NO];
+- (void)stopScanning {
+    [self.scanViewPlugin stop];
 }
 
-- (void)updateBrightness:(CGFloat)brightness forModule:(id)anylineModule ignoreTooDark:(BOOL)ignoreTooDark {
-//    if([anylineModule isKindOfClass:[ALOCRScanViewPlugin class]]) {
-//        if( brightness < 40 && !ignoreTooDark) {
-//            [self updateScanWarnings:ALWarningStateTooDark];
-//        } else if (brightness > 200) {
-//            [self updateScanWarnings:ALWarningStateTooBright];
-//        }
-//    }
+- (NSObject<ALScanViewPluginBase> *)scanViewPlugin {
+    if ([self.scanView.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        return (ALScanViewPlugin *)self.scanView.scanViewPlugin;
+    }
+    return self.scanView.scanViewPlugin;
+}
+
+// MARK: - Warning View
+
+- (ALWarningView *)warningView {
+    if (!_warningView) {
+        _warningView = [[ALWarningView alloc] init];
+    }
+    return _warningView;
+}
+
+- (void)addWarningSubviewIfNeededToScanView:(ALScanView *)scanView
+                                cutoutFrame:(CGRect)cutoutFrame {
+
+    // can be brought up by lazy initialization
+    ALWarningView *warningView = self.warningView;
+
+    // hide when cutout frame is null
+    if (CGRectIsEmpty(cutoutFrame)) {
+        warningView.hidden = YES;
+        return;
+    }
+    warningView.hidden = NO;
+
+    if (warningView.superview == scanView) { // already added
+        [scanView bringSubviewToFront:self.warningView];
+    } else {
+        // not yet added, setup constraints
+        [scanView addSubview:warningView];
+        warningView.translatesAutoresizingMaskIntoConstraints = NO;
+        [warningView.centerXAnchor constraintEqualToAnchor:scanView.centerXAnchor].active = YES;
+        [warningView.widthAnchor constraintEqualToAnchor:scanView.widthAnchor].active = YES;
+        self.warningViewYOffsetCnst = [warningView.centerYAnchor
+                                       constraintEqualToAnchor:scanView.topAnchor constant:0];
+        self.warningViewYOffsetCnst.active = YES;
+    }
+
+    // Prefer to place the warning view above the cutout, unless there's much less
+    // space than below. Multiplier (x1.1) is to give more weight to top placement
+    // if discrepancy between the two is not too significant.
+    CGFloat cutoutTop = roundf(cutoutFrame.origin.y);
+    CGFloat cutoutBottom = roundf(cutoutFrame.origin.y + cutoutFrame.size.height);
+    CGFloat bottom = scanView.bounds.size.height;
+    CGFloat height = self.warningView.bounds.size.height;
+    CGFloat belowToAboveMultiplier = 1.1;
+    BOOL placeBelow = cutoutTop * belowToAboveMultiplier < (bottom - cutoutBottom);
+    if (placeBelow) {
+        self.warningViewYOffsetCnst.constant = cutoutBottom + height * 0.5 + 25;
+    } else {
+        self.warningViewYOffsetCnst.constant = cutoutTop - height * 0.5 - 20;
+    }
 }
 
 - (void)updateScanWarnings:(ALWarningState)warningState {
-    [self.warningView showWarning:warningState];
+    NSTimeInterval timeNow = [NSDate timeIntervalSinceReferenceDate];
+    // NSLog(@"ACO: time diff %.2f", timeNow - self.timeScanningStarted);
+    // APP-410: this prevents the warning view from being shown until it's X seconds in
+    if (timeNow - self.timeScanningStarted >= kDelayBeforeWarningShown) {
+        [self.warningView showWarning:warningState];
+    }
+}
+
+- (void)addModeSelectButtonWithTitle:(NSString *)title buttonPressed:(void (^)(void))buttonPressed {
+    self.modeSelectButton = [[ALModeSelectionButton alloc] initWithTitle:title];
+    [self.modeSelectButton setDidPressButton:buttonPressed];
+    [self.view addSubview:self.modeSelectButton];
+    self.modeSelectButton.translatesAutoresizingMaskIntoConstraints = NO;
+    CGFloat margin = 20;
+    [self.modeSelectButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
+    [self.modeSelectButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
 }
 
 // MARK: - anylineDidFindResult
@@ -155,12 +192,12 @@ the camera from Settings.";
                   scanPlugin:(ALScanPlugin *)scanPlugin
                   viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
-
+    
     NSArray<UIImage *> *images = nil;
     if (image) {
         images = @[ image ];
     }
-
+    
     [self anylineDidFindResult:result
                  barcodeResult:barcodeResult
                      faceImage:nil
@@ -192,22 +229,22 @@ the camera from Settings.";
                   scanPlugin:(ALScanPlugin *)scanPlugin
                   viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
-
+    
     self.successfulScan = YES;
-
+    
     NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
     NSString *what = ALScanHistoryType_toString[self.controllerType];
-
+    
     // TODO: fix this.
     NSString *addon = [self addon];
     if (addon) {
         // TODO: should be more dynamic
         [attributes setObject:[self addon] forKey:@"digit_count"];
     }
-
+    
     CFTimeInterval finishedTime = CACurrentMediaTime();
     [attributes setObject:[NSNumber numberWithDouble:(finishedTime-self.startTime)] forKey:@"scan_duration_ms"];
-
+    
     switch (self.controllerType) {
         case ALScanHistoryGasMeter:
         case ALScanHistoryAnalogMeter:
@@ -227,14 +264,14 @@ the camera from Settings.";
             // [ALReportingController logEventScanned:@"ocr" metaData:attributes];
             break;
     }
-
+    
     self.startTime = finishedTime;
-
+    
     [NSUserDefaults AL_incrementScanCount];
     NSInteger scanCount = [NSUserDefaults AL_scanCount];
-
+    
     // [ALReportingController logEventUpdateScanCount:scanCount]; // should we disable this?
-
+    
     NSError *error;
     [ScanHistory insertNewObjectWithType:self.controllerType
                                   result:result
@@ -243,7 +280,7 @@ the camera from Settings.";
                                   images:images
                   inManagedObjectContext:self.managedObjectContext
                                    error:&error];
-
+    
     [self showAwardIfScanCount:scanCount
                     scanPlugin:scanPlugin
                     viewPlugin:viewPlugin
@@ -254,7 +291,7 @@ the camera from Settings.";
                   scanPlugin:(ALScanPlugin *)scanPlugin
                   viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
-
+    
     ALAwardType awardType;
     switch (scanCount) {
         case 1: awardType = ALAwardType1; break;
@@ -269,18 +306,18 @@ the camera from Settings.";
             }
             return;
     }
-
+    
     // [ALReportingController logEventArchivement:awardType];
-
+    
     BOOL restart = NO;
     if (scanPlugin.isRunning) {
         [viewPlugin stop];
         restart = YES;
     }
-
-    ALAwardsView *awards = [[ALAwardsView alloc] initWithFrame:self.view.bounds];
+    
+    ALAwardsView *awards = [[ALAwardsView alloc] initWithFrame:CGRectZero];
+    
     awards.awardType = awardType;
-    // __weak ALScanPlugin *wScanPlugin = scanPlugin;
     __weak id<ALScanViewPluginBase> wViewPlugin = viewPlugin;
     __weak ALAwardsView *wawards = awards;
     __weak typeof(self) welf = self;
@@ -290,15 +327,22 @@ the camera from Settings.";
             [wViewPlugin startWithError:nil];
             welf.startTime = CACurrentMediaTime();
         }
-
+        
         [wawards removeFromSuperview];
-
+        
         if (completion) {
             completion();
         }
     }];
-
+    
     [self.view addSubview:awards];
+    
+    awards.translatesAutoresizingMaskIntoConstraints = NO;
+    [awards.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [awards.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    
+    [awards.widthAnchor constraintEqualToConstant:300].active = YES;
+    [awards.heightAnchor constraintEqualToConstant:200].active = YES;
 }
 
 - (NSString *)addon {
@@ -349,17 +393,17 @@ the camera from Settings.";
 - (void)showAlertForError:(NSError * _Nonnull)error
                completion:(void (^ _Nullable)(void))completion
            dismissHandler:(void (^ _Nullable)(void))dismissHandler {
-
+    
     // sometimes this alert will show, sometimes the slightly-less-friendly one
     // from the SDK will show instead.
-
+    
     NSString *errorTitle = @"Could not start scanning";
     NSString *errorMessage = error.localizedDescription;
-
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:errorTitle
                                                                    message:errorMessage
                                                             preferredStyle:UIAlertControllerStyleAlert];
-
+    
     [alert addAction:[UIAlertAction actionWithTitle:@"Okay"
                                               style:UIAlertActionStyleCancel
                                             handler:^(UIAlertAction * _Nonnull action) {
@@ -367,7 +411,7 @@ the camera from Settings.";
             dismissHandler();
         }
     }]];
-
+    
     if (error.code == ALCameraAccessDenied) {
         // offer an additional action to open Settings and allow camera access for the app
         [alert addAction:[UIAlertAction actionWithTitle:@"Settings"
@@ -383,12 +427,12 @@ the camera from Settings.";
                 }];
             }
         }]];
-
+        
         alert.message = [NSString stringWithFormat:@"%@\n\n%@",
                          errorMessage,
                          kMsgAllowCameraAccessInSettings];
     }
-
+    
     [self.navigationController presentViewController:alert animated:YES completion:^{
         if (completion != nil) {
             completion();
@@ -432,7 +476,7 @@ the camera from Settings.";
     [self.flipOrientationButton addTarget:self
                                    action:@selector(flipOrientationPressed:)
                          forControlEvents:UIControlEventTouchUpInside];
-
+    
     self.flipOrientationButton.frame = CGRectMake(0, 0, 220, 50);
     UIImage *buttonImage = [UIImage imageNamed:@"baseline_screen_rotation_white_24pt"];
     [self.flipOrientationButton setImage:buttonImage forState:UIControlStateNormal];
@@ -440,22 +484,22 @@ the camera from Settings.";
     [self.flipOrientationButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 10.0)];
     self.flipOrientationButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.flipOrientationButton.adjustsImageWhenDisabled = NO;
-
+    
     [self.flipOrientationButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 5.0, 0.0, 5.0)];
     [self.flipOrientationButton setTitle:@"Change Screen Orientation" forState:UIControlStateNormal];
     self.flipOrientationButton.titleLabel.font = [UIFont AL_proximaRegularWithSize:14];
-
+    
     [self.flipOrientationButton setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.flipOrientationButton];
     self.flipOrientationButton.layer.cornerRadius = 3;
     self.flipOrientationButton.backgroundColor = [[UIColor AL_examplesBlue] colorWithAlphaComponent:0.85];
     self.isOrientationFlipped = false;
-
+    
     NSArray *flipConstraints = @[[self.flipOrientationButton.widthAnchor constraintEqualToConstant:220],
                                  [self.flipOrientationButton.heightAnchor constraintEqualToConstant:50],
                                  [self.flipOrientationButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-20],
                                  [self.flipOrientationButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0]];
-
+    
     [self.view addConstraints:flipConstraints];
     [NSLayoutConstraint activateConstraints:flipConstraints];
 }
@@ -477,26 +521,58 @@ the camera from Settings.";
     return isDarkMode;
 }
 
+// MARK: - ALScanViewPluginDelegate
+
+- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin brightnessUpdated:(ALEvent *)event {
+    // APP-412: Disable the brightness feedback
+//    NSInteger value = [[event.JSONObject valueForKey:@"value"] intValue];
+//    // NSLog(@"ACO: brightness value: %ld", value);
+//    if (value < 30) {
+//        [self updateScanWarnings:ALWarningStateTooDark];
+//    } else if (value > 240) {
+//        [self updateScanWarnings:ALWarningStateTooBright];
+//    }
+}
+
+- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin visualFeedbackReceived:(ALEvent *)event {
+    // NSLog(@"ACO visual feedback received: %@", event.JSONStr);
+    // [self updateScanWarnings:ALWarningStateNone];
+}
+
+- (void)scanViewPluginResultBeepTriggered:(ALScanViewPlugin *)scanViewPlugin {
+
+}
+
+- (void)scanViewPluginResultBlinkTriggered:(ALScanViewPlugin *)scanViewPlugin {
+
+}
+
+- (void)scanViewPluginResultVibrateTriggered:(ALScanViewPlugin *)scanViewPlugin {
+
+}
+
+- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin cutoutVisibilityChanged:(ALEvent *)event {
+    // NSLog(@"ACO cutout visibility changed: %@", event.JSONStr);
+    // ACO TODO: maybe include the cutout coordinates in scan view coordinate space.
+}
+
+
 // MARK: - ALScanViewDelegate
 
 - (void)scanViewMotionExceededThreshold:(ALScanView *)scanView {
-    [self updateScanWarnings:ALWarningStateHoldStill];
+    // APP-412: Disable the motion feedback
+    // [self updateScanWarnings:ALWarningStateHoldStill];
 }
 
 - (void)scanView:(ALScanView *)scanView updatedCutoutWithPluginID:(NSString *)pluginID frame:(CGRect)frame {
-    CGFloat xPos = (frame.origin.x + (frame.size.width/2));
-    CGFloat yPos = frame.origin.y + frame.size.height + scanView.frame.origin.y + 80;
-    if (_isOrientationFlipped) {
-        yPos = frame.origin.y;
-    }
-    self.warningView.center = CGPointMake(xPos, yPos);
+    [self addWarningSubviewIfNeededToScanView:scanView cutoutFrame:frame];
 }
 
 - (void)scanView:(ALScanView *)scanView encounteredError:(NSError *)error {
     NSLog(@"stopping scan view, error encountered: %@", error.localizedDescription);
     [self popWithAlertOnError:error];
     [self.scanView stopCamera];
-    [self.scanView.scanViewPlugin stop];
+    [self stopScanning];
 }
 
 @end

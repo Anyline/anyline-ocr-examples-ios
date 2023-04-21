@@ -8,10 +8,19 @@
 #import "ALContactUsViewController.h"
 #endif
 
+static const NSUInteger kChoicesCount = 3; // synced with ALTINScanMode
+
 typedef enum {
     ALTINScanModeUniversal = 0,
-    ALTINScanModeDOT
+    ALTINScanModeDOT,
+    ALTINScanModeOtherInfo
 } ALTINScanMode;
+
+static NSString *kChoiceTitles[kChoicesCount] = { // NOTE: A C-array
+    @"Universal TIN/DOT",
+    @"TIN/DOT (North America only)",
+    @"Other tire sidewall information"
+};
 
 NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
@@ -19,16 +28,14 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 @interface ALTINScanViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
 
 // TODO: most of these can go to a superclass.
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
-
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
 
-@property () NSUInteger dialogIndexSelected;
-
+@property (nonatomic, assign) NSUInteger dialogIndexSelected;
 
 @end
+
 
 @implementation ALTINScanViewController
 
@@ -43,34 +50,42 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     self.controllerType = ALScanHistoryTIN;
 
     self.dialogIndexSelected = 0;
-    [self setupNavigationBar];
     
     self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:nil];
-    [self setUpScanMode:ALTINScanModeUniversal];
-    
-    NSError *error;
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:self.scanViewPlugin
-                                       scanViewConfig:self.scanViewConfig
-                                                error:&error];
-    if ([self popWithAlertOnError:error]) {
-        return;
+
+    if (self.isRegionUnitedStates) {
+        // https://anyline.atlassian.net/browse/APP-406
+        self.dialogIndexSelected = 1;
     }
+
+    [self reloadScanView];
     
-    [self installScanView:self.scanView];
-    
-    [self.scanView startCamera];
+    [self setupModeToggle];
 
     [self setupFlipOrientationButton];
-
-    // starts in landscape mode (APP-383)
-    self.isOrientationFlipped = YES;
-    [self enableLandscapeOrientation:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
+
+    // starts in landscape mode (APP-383)
+    self.isOrientationFlipped = YES;
+    [self enableLandscapeOrientation:YES];
+
+    [self startScanning:nil];
+}
+
+// detect when a rotation is done
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    __weak __block typeof(self) weakSelf = self;
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {}
+                                 completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        if (weakSelf.scanViewPlugin.isStarted) {
+            [weakSelf reloadScanView];
+        }
+    }];
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
 // MARK: - Getters and Setters
@@ -79,10 +94,15 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     return [[self configJSONStrWithFilename:kALTINScanVC_configFilename] asJSONObject];
 }
 
+- (BOOL)isRegionUnitedStates {
+    // checking device region settings. If it's US, the TIN/DOT option needs to be shown.
+    NSString *countryCode = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
+    return [countryCode isEqualToString:@"US"];
+}
+
 // MARK: - Setup
 
-- (void)setUpScanMode:(ALTINScanMode)scanMode {
-    
+- (ALScanViewPlugin *)scanViewPluginForScanMode:(ALTINScanMode)scanMode {
     NSDictionary *JSONConfigObj = self.scanViewConfigDict;
     
     // Will edit this object before constructing an ALScanViewPlugin with it later
@@ -96,7 +116,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
             tinConfig.scanMode = ALTinConfigScanMode.universal;
             break;
         case ALTINScanModeDOT:
-            tinConfig.scanMode = ALTinConfigScanMode.dot; //or .dotStrict?
+            tinConfig.scanMode = ALTinConfigScanMode.dot;
             break;
         default: break;
     }
@@ -104,24 +124,24 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     // Recreate the ScanViewPlugin. Since this is a different ScanViewPlugin than
     // the previous one, reset the delegate.
     NSError *error;
-    self.scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
     
     if ([self popWithAlertOnError:error]) {
-        return;
+        return nil;
     }
     
-    ALScanViewPlugin *scanViewPlugin = self.scanViewPlugin;
     scanViewPlugin.scanPlugin.delegate = self;
+    return scanViewPlugin;
 }
 
 - (void)changeScanViewMode:(ALTINScanMode)scanMode {
-    [self.scanViewPlugin stop];
-    [self setUpScanMode:scanMode];
+    [self stopScanning];
+    ALScanViewPlugin *scanViewPlugin = [self scanViewPluginForScanMode:scanMode];
     
     NSError *error;
     if (!self.scanView) {
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                           scanViewPlugin:self.scanViewPlugin
+                                           scanViewPlugin:scanViewPlugin
                                            scanViewConfig:self.scanViewConfig
                                                     error:&error];
         if ([self popWithAlertOnError:error]) {
@@ -130,20 +150,22 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
         [self installScanView:self.scanView];
         [self.scanView startCamera];
     } else {
-        [self.scanView setScanViewPlugin:self.scanViewPlugin error:&error];
+        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
         [self.scanView startCamera];
     }
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
+}
+
+- (void)reloadScanView {
+    [self changeScanViewMode:(ALTINScanMode)self.dialogIndexSelected];
 }
 
 // MARK: - Handle & present results
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
-    
-    [self enableLandscapeOrientation:NO];
     
     __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:scanResult.pluginResult.tinResult.text
@@ -154,6 +176,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
         vc.imagePrimary = scanResult.croppedImage;
+        weakSelf.isOrientationFlipped = NO;
+        [weakSelf enableLandscapeOrientation:NO];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
@@ -161,20 +185,10 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 // MARK: - Allow changing the scan mode
 
 - (void)showOptionsSelectionDialog {
-    NSArray<NSString *> *choices = @[
-        @"Universal TIN/DOT",
-        @"TIN/DOT (North America only)",
-        @"Other tire sidewall information"
-    ];
-    NSArray<NSNumber *> *selections = @[@(self.dialogIndexSelected)];
-    ALConfigurationDialogViewController *vc = [[ALConfigurationDialogViewController alloc]
-                                               initWithChoices:choices
-                                               selections:selections
-                                               secondaryTexts:@[]
-                                               showApplyBtn:NO
-                                               dialogType:ALConfigDialogTypeScriptSelection];
-    vc.delegate = self;
-    [vc setSelectionDialogFontSize:16.0];
+    NSArray *choices = [NSArray arrayWithObjects:kChoiceTitles count:kChoicesCount];
+    ALConfigurationDialogViewController *vc = [ALConfigurationDialogViewController singleSelectDialogWithChoices:choices
+                                                                                                   selectedIndex:self.dialogIndexSelected
+                                                                                                        delegate:self];
     [self presentViewController:vc animated:YES completion:nil];
     [self.scanView stopCamera];
 }
@@ -183,43 +197,50 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
 - (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {}
 
-- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {}
+- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {
+    [self.scanView startCamera];
+}
 
 - (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
-    switch (index) {
-        case 0:
-            self.dialogIndexSelected = index;
-            [self changeScanViewMode:ALTINScanModeUniversal];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
-        case 1:
-            self.dialogIndexSelected = index;
-            [self changeScanViewMode:ALTINScanModeDOT];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
-        case 2:
-            [self presentContactUsDialog];
-            break;
+
+    if (index == ALTINScanModeOtherInfo) {
+        [self presentContactUsDialog];
+        return;
     }
+    self.dialogIndexSelected = index;
+    [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self reloadScanView];
 }
 
 // MARK: - Miscellaneous
 
-- (void)setupNavigationBar {
-    UIBarButtonItem *scanModeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"]
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self
-                                                                      action:@selector(showOptionsSelectionDialog)];
-    self.navigationItem.rightBarButtonItem = scanModeButton;
+- (void)setupModeToggle {
+    __weak __block typeof(self) weakSelf = self;
+    [self addModeSelectButtonWithTitle:kChoiceTitles[self.dialogIndexSelected] buttonPressed:^{
+        [weakSelf showOptionsSelectionDialog];
+    }];
 }
 
 - (void)presentContactUsDialog {
-    ALTINScanViewController __weak *weakSelf = self;
 #if __has_include("ALContactUsViewController.h")
+    ALTINScanViewController __weak *weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
+
         ALContactUsViewController *contactVC = [[ALContactUsViewController alloc] init];
-        [weakSelf presentViewController:contactVC animated:YES completion:nil];
-        [contactVC setPresentationBlock:^{
+        contactVC.modalPresentationStyle = UIModalPresentationFormSheet;
+
+        [weakSelf presentViewController:contactVC animated:NO completion:^{
+            // undo forced landscape mode (APP-383)
+            weakSelf.isOrientationFlipped = NO;
+            [weakSelf enableLandscapeOrientation:NO];
+        }];
+
+        [contactVC setPresentationBlock:^{ // what happens when dismissed
+            // undo forced landscape mode (APP-383)
+            weakSelf.isOrientationFlipped = YES;
+            [weakSelf enableLandscapeOrientation:YES];
+
             [weakSelf.scanView startCamera];
         }];
     }];

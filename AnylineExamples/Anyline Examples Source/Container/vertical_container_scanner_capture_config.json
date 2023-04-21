@@ -6,18 +6,17 @@
     },
     "flashConfig": {
         "mode": "manual",
-        "alignment": "top_right"
+        "alignment": "top_left"
     },
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "com.anyline.configs.plugin.vertical-container",
+            "id": "container-vertical",
             "containerConfig": {
                 "scanMode": "VERTICAL"
             },
             "cancelOnResult": true
         },
         "cutoutConfig": {
-            "style": "rect",
             "animation": "none",
             "maxWidthPercent": "10%",
             "alignment": "center",
@@ -37,8 +36,8 @@
                 "x": 0,
                 "y": 0
             },
-            "cornerRadius": 4,
-            "strokeColor": "0099ff",
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
             "strokeWidth": 2,
             "outerColor": "000000",
             "feedbackStrokeColor": "0099FF",

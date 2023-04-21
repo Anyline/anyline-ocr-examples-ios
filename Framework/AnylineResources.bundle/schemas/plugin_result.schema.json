@@ -16,6 +16,7 @@
             { "required": ["ocrResult"] },
             { "required": ["tinResult"] },
             { "required": ["tireSizeResult"] },
+            { "required": ["tireMakeResult"] },
             { "required": ["commercialTireIdResult"] },
             { "required": ["containerResult"] },
             { "required": ["vinResult"] }
@@ -60,6 +61,7 @@
 		"ocrResult": { "$ref": "#/definitions/ocrResult" },
 		"tinResult": { "$ref": "#/definitions/tinResult" },
 		"tireSizeResult": { "$ref": "#/definitions/tireSizeResult" },
+        "tireMakeResult": { "$ref": "#/definitions/tireMakeResult" },
         "commercialTireIdResult": { "$ref": "#/definitions/commercialTireIdResult" },
 		"containerResult": { "$ref": "#/definitions/containerResult" },
 		"vinResult": { "$ref": "#/definitions/vinResult" }
@@ -87,6 +89,17 @@
 			},
 			"additionalProperties": false
 		},
+		"tireMakeResult": {
+			"description": "Describes result information of scanning tire makes",
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string",
+					"description": "The text value of the tire make"
+				}
+			},
+			"additionalProperties": false
+		},
 		"commercialTireIdResult": {
 			"description": "Describes result information of scanning commercial tire IDs",
 			"type": "object",
@@ -96,7 +109,7 @@
 					"description": "The text value of the commercial tire ID"
 				}
 			},
-			"additionalProperties": false			
+			"additionalProperties": false
 		},
 		"tireSizeResult": {
 			"description": "Describes result information of scanning tire size specifications",

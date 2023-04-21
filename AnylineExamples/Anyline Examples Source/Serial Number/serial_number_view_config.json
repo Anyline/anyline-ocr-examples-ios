@@ -6,11 +6,11 @@
     },
     "flashConfig": {
         "mode": "manual",
-        "alignment": "top_right"
+        "alignment": "top_left"
     },
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "com.anyline.configs.plugin.universal-serial-number",
+            "id": "universal-serial-number",
             "ocrConfig": {
                 "scanMode": "auto",
                 "model": "USNr.any"
@@ -19,7 +19,7 @@
         },
         "cutoutConfig": {
             "animation": "none",
-            "maxWidthPercent": "80%",
+            "maxWidthPercent": "67%",
             "alignment": "top_half",
             "ratioFromSize": {
                 "width": 5,
@@ -37,8 +37,8 @@
                 "x": 0,
                 "y": 0
             },
-            "cornerRadius": 4,
-            "strokeColor": "0099ff",
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
             "strokeWidth": 2,
             "outerColor": "000000",
             "feedbackStrokeColor": "0099FF",

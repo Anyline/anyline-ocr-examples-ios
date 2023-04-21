@@ -12,8 +12,4 @@
 
 @interface ALUniversalSerialNumberScanViewController : ALBaseScanViewController
 
-// The Anyline plugin used for OCR
-@property (nonatomic, strong, nullable) ALScanViewPlugin *scanViewPlugin;
-// @property (nullable, nonatomic, strong) ALScanView *scanView;
-
 @end

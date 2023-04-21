@@ -7,7 +7,7 @@
         "alignment": "top_left"
     },
     "viewPluginCompositeConfig": {
-        "id": "parallel_first_vin_barcode",
+        "id": "parallel-first-vin-barcode",
         "processingMode": "parallelFirstScan",
         "viewPlugins": [
             {
@@ -37,16 +37,15 @@
                         "vinConfig": {}
                     },
                     "cutoutConfig": {
-                        "style": "rect",
-                        "maxWidthPercent": "85%",
+                        "maxWidthPercent": "70%",
                         "alignment": "top_half",
                         "ratioFromSize": { "width": 62, "height": 9 },
                         "offset": { "x": 0, "y": 0 },
                         "outerColor": "000000",
                         "outerAlpha": 0,
                         "strokeWidth": 2,
-                        "strokeColor": "0099FF",
-                        "cornerRadius": 4,
+                        "strokeColor": "FFFFFF",
+                        "cornerRadius": 6,
                         "feedbackStrokeColor": "0099FF"
                     },
                     "scanFeedbackConfig": {

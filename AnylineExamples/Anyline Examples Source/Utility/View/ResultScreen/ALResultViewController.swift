@@ -249,18 +249,16 @@ The result fields above display a selection of scannable ID information only. Pl
 
         var ratio = (self.imagePrimary?.size.height ?? 0) / (self.imagePrimary?.size.width ?? 0)
         let width = self.view.bounds.width - horizontalGap * 2.0
-        var height = width * ratio
 
         allConstraints.append(contentsOf: [
             self.firstImageView.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: verticalGap),
             self.firstImageView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
             self.firstImageView.trailingAnchor.constraint(equalTo:self.tableView.trailingAnchor, constant: -10),
-            self.firstImageView.heightAnchor.constraint(lessThanOrEqualToConstant: height.isNaN ? 0 : height),
             self.firstImageView.widthAnchor.constraint(lessThanOrEqualToConstant: width.isNaN ? 0 : width),
-            self.firstImageView.bottomAnchor.constraint(equalTo: self.secondImageView.topAnchor, constant: -verticalGap)
+            self.firstImageView.bottomAnchor.constraint(equalTo: self.secondImageView.topAnchor, constant: -verticalGap),
+            self.firstImageView.heightAnchor.constraint(equalTo: self.firstImageView.widthAnchor, multiplier: ratio.isNaN ? 1 : ratio),
         ])
         ratio = (self.imageSecondary?.size.height ?? 0) / (self.imageSecondary?.size.width ?? 0)
-        height = width * ratio
 
         let secondImageViewBottomAnchor = (self.showDisclaimer ?
                                            self.disclaimerTextView.topAnchor :
@@ -270,7 +268,7 @@ The result fields above display a selection of scannable ID information only. Pl
             self.secondImageView.topAnchor.constraint(equalTo: self.firstImageView.bottomAnchor, constant: verticalGap),
             self.secondImageView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
             self.secondImageView.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -10),
-            self.secondImageView.heightAnchor.constraint(equalToConstant: height.isNaN ? 0 : height),
+            self.secondImageView.heightAnchor.constraint(equalTo: self.secondImageView.widthAnchor, multiplier: ratio.isNaN ? 1 : ratio),
             self.secondImageView.widthAnchor.constraint(equalTo: self.firstImageView.widthAnchor),
             self.secondImageView.bottomAnchor.constraint(equalTo: secondImageViewBottomAnchor, constant: -verticalGap)
         ])
@@ -320,14 +318,14 @@ The result fields above display a selection of scannable ID information only. Pl
 
     @objc func askToShareItems(_ item: Any) {
         let resultArr = self.resultData["Result Data"] ?? []
-        var shareText: String = "Anyline Scanner Result\n\n"
+        var shareText: String = "Anyline Result\n\n"
         for entry in resultArr {
             shareText.append(String(format: "%@: %@\n", entry.title, entry.value))
         }
         let items = [ shareText, self.imagePrimary as Any ].compactMap { $0 }
         let activityController = UIActivityViewController(activityItems: items,
                                                           applicationActivities: nil)
-        activityController.setValue("Anyline Scanner Result", forKey: "Subject")
+        activityController.setValue("Anyline Result", forKey: "Subject")
         if UIDevice().userInterfaceIdiom != .phone {
             activityController.modalPresentationStyle = .popover
         }

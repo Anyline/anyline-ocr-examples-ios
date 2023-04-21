@@ -1,11 +1,11 @@
 {
     "flashConfig": {
         "mode": "manual",
-        "alignment": "bottom_right"
+        "alignment": "top_left"
     },
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "com.anyline.configs.plugin.vrc",
+            "id": "vrc",
             "vehicleRegistrationCertificateConfig": {
                 "vehicleRegistrationCertificate": {
                     "documentNumber": { "scanOption": 1, "minConfidence": 40 },
@@ -28,22 +28,24 @@
         "cutoutConfig": {
             "animation": "none",
             "maxWidthPercent": "90%",
-            "maxHeightPercent": "80%",
-            "alignment": "center",
-            "ratioFromSize": { "width": 90, "height": 46 },
-            "offset": { "x": 0, "y": 0 },
+            "maxHeightPercent": "70%",
+            "alignment": "top_half",
+            "ratioFromSize": { "width": 45, "height": 23 },
+            "offset": { "x": 0, "y": 120 },
             "cropOffset": { "x": 0, "y": 0 },
             "cropPadding": { "x": 50, "y": 50 },
-            "cornerRadius": 4,
-            "strokeColor": "0099FF",
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
             "strokeWidth": 2,
             "outerColor": "000000",
             "feedbackStrokeColor": "0099FF",
             "outerAlpha": 0.3
         },
         "scanFeedbackConfig": {
-            "style": "animated_rect",
-            "strokeWidth": 0,
+            "style": "none",
+            "animation": "none",
+            "animationDuration": 250,
+            "strokeWidth": 1,
             "strokeColor": "0099ff",
             "fillColor": "000099ff",
             "beepOnResult": true,

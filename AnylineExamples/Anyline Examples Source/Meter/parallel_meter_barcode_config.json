@@ -1,20 +1,21 @@
 {
     "cameraConfig": {
         "captureResolution": "1080p",
-        "pictureResolution": "1080p"
+        "pictureResolution": "1080p",
+        "zoomGesture": true
     },
     "flashConfig": {
         "mode": "manual_off",
-        "alignment": "bottom_left"
+        "alignment": "top_left"
     },
     "viewPluginCompositeConfig": {
-        "id": "meter_barcode_parallel_scan",
+        "id": "parallel-meter-barcode",
         "processingMode": "parallel",
         "viewPlugins": [
             {
                 "viewPluginConfig": {
                     "pluginConfig": {
-                        "id": "meter",
+                        "id": "meter-auto",
                         "meterConfig": {
                             "scanMode": "auto_analog_digital_meter"
                         },
@@ -22,17 +23,15 @@
                         "startScanDelay": 0
                     },
                     "cutoutConfig": {
-                        "style": "rect",
-                        "maxWidthPercent": "100%",
-                        "width": 768,
+                        "maxWidthPercent": "67%",
                         "alignment": "top_half",
                         "ratioFromSize": { "width": 9, "height": 4 },
-                        "offset": { "x": 0, "y": 80 },
+                        "offset": { "x": 0, "y": 0 },
                         "strokeWidth": 2,
-                        "cornerRadius": 4,
-                        "strokeColor": "0099FF",
+                        "cornerRadius": 6,
+                        "strokeColor": "FFFFFF",
                         "outerColor": "000000",
-                        "outerAlpha": 0.3
+                        "outerAlpha": 0
                     },
                     "scanFeedbackConfig": {
                         "style": "rect",
@@ -59,7 +58,6 @@
                         "startScanDelay": 100
                     },
                     "cutoutConfig": {
-                        "style": "none",
                         "maxWidthPercent": "100%",
                         "alignment": "center",
                         "ratioFromSize": { "width": 1, "height": 1 },
@@ -67,7 +65,7 @@
                         "outerColor": "000000",
                         "outerAlpha": 0,
                         "strokeWidth": 0,
-                        "strokeColor": "0099FF",
+                        "strokeColor": "FFFFFF",
                         "cornerRadius": 0,
                         "feedbackStrokeColor": "0099FF"
                     },

@@ -1,6 +1,6 @@
 #import "ALBarcodeScanViewController.h"
 #import <Anyline/Anyline.h>
-#import "AnylineExamples-Swift.h" // for ALResultViewController
+#import "AnylineExamples-Swift.h"
 #import "ALBarcodeFormatHelper.h"
 #import "ALBarcodeResultUtil.h"
 #import "ALSelectionTable.h"
@@ -27,6 +27,15 @@ NSString * const kSingleSelection = @"Single";
 NSString * const kMultiSelection = @"Multi";
 NSString * const kBatchSelection = @"Batch";
 
+static const NSUInteger kChoicesCount = 3;
+
+// NOTE: A C-array
+static NSString *kChoiceTitles[kChoicesCount] = {
+    kSingleSelection,
+    kMultiSelection,
+    kBatchSelection
+};
+
 typedef enum : NSUInteger {
     BarcodeSingleScanMode,
     BarcodeMultiScanMode,
@@ -34,9 +43,7 @@ typedef enum : NSUInteger {
 } BarcodeScanMode;
 
 
-@interface ALBarcodeScanViewController () <ALScanPluginDelegate, ALScanViewPluginDelegate, ALBarcodeSettingsDelegate, ALConfigurationDialogViewControllerDelegate>
-
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
+@interface ALBarcodeScanViewController () <ALScanPluginDelegate, ALBarcodeSettingsDelegate, ALConfigurationDialogViewControllerDelegate>
 
 @property (nonatomic, readonly) ALScanViewPluginConfig *scanViewPluginConfigDefault;
 
@@ -57,10 +64,13 @@ typedef enum : NSUInteger {
 @property (nullable, nonatomic, strong) NSTimer *troubleScanningTimeout;
 
 @property (nullable, nonatomic, strong) ALBarcodeSettingsViewController *barcodeSettingsViewController;
-@property (nonatomic, assign) BarcodeScanMode dialogIndexScanModeSelected;
+
+@property (nonatomic, assign) BarcodeScanMode scanModeSelectedIndex;
+
 @property (nonatomic, assign) BOOL isSingleManualScanEnabled;
+
 @property (nonatomic, assign) BOOL isMultiManualScanEnabled;
-@property (nonatomic, strong) UIButton *scanModeSelectionButton;
+
 @property (nonatomic, strong) ALBarcodeBatchCountView *batchCountView;
 
 + (ALScanViewPluginConfig *)defaultScanViewPluginConfig;
@@ -84,7 +94,7 @@ typedef enum : NSUInteger {
     self.title = @"Barcodes";
     self.controllerType = ALScanHistoryBarcode;
     self.isMultiManualScanEnabled = YES;
-    self.dialogIndexScanModeSelected = BarcodeSingleScanMode;
+    self.scanModeSelectedIndex = BarcodeSingleScanMode;
     self.barcodeSettingsViewController = [[ALBarcodeSettingsViewController alloc] init];
     self.barcodeSettingsViewController.delegate = self;
     
@@ -120,10 +130,10 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
-    if (self.dialogIndexScanModeSelected == BarcodeSingleScanMode) {
+    [self startScanning:nil];
+    if (self.scanModeSelectedIndex == BarcodeSingleScanMode) {
         [self setScanButtonHidden:!_isSingleManualScanEnabled andEnable:NO];
-    } else if (self.dialogIndexScanModeSelected == BarcodeMultiScanMode) {
+    } else if (self.scanModeSelectedIndex == BarcodeMultiScanMode) {
         [self setScanButtonHidden:!_isMultiManualScanEnabled andEnable:NO];
     }
 }
@@ -135,7 +145,7 @@ typedef enum : NSUInteger {
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.scanViewPlugin stop];
+    [self stopScanning];
     [self stopTroubleScanningTimeout];
     [self saveBarcodeSymbologies];
     // ACO do we still need this?
@@ -148,7 +158,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)removeRepeatedResultsFromResultArray:(NSArray<ALBarcode *> *)scanResultArray {
-   
+
     [self.latestUniqueBarcodeScanResult addObjectsFromArray:scanResultArray];
     
     __block NSMutableSet *uniqueTypeIDs = [NSMutableSet set];
@@ -176,7 +186,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)setSelectedBarcodeFormats:(NSArray<ALBarcodeFormat *> *)selectedBarcodeFormats {
-    [self.scanViewPlugin stop];
+    [self stopScanning];
     _selectedBarcodeFormats = selectedBarcodeFormats;
     [self reloadScanView];
 }
@@ -196,9 +206,6 @@ typedef enum : NSUInteger {
     }
 
     scanViewPlugin.scanPlugin.delegate = self;
-    scanViewPlugin.delegate = self;
-    
-    self.scanViewPlugin = scanViewPlugin;
 
     if (self.scanView) {
         [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
@@ -260,26 +267,10 @@ typedef enum : NSUInteger {
 // MARK: - Setup UI Elements
 
 - (void)setupScanModeSelectionButton {
-    self.scanModeSelectionButton = [[UIButton alloc] init];
-    CGFloat margin = 20;
-    CGFloat buttonWidth = 98;
-    CGFloat buttonHeight = 36;
-    self.scanModeSelectionButton.layer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75].CGColor;
-    self.scanModeSelectionButton.layer.cornerRadius = round(buttonHeight / 2.0f);
-    self.scanModeSelectionButton.layer.borderWidth = 0.6;
-    self.scanModeSelectionButton.layer.borderColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
-    [self.scanModeSelectionButton setTitle:kSingleSelection forState:UIControlStateNormal];
-    [self.scanModeSelectionButton setSelected:NO];
-    [[self.scanModeSelectionButton titleLabel] setFont:[UIFont AL_proximaRegularWithSize:14]];
-    [self.view addSubview:self.scanModeSelectionButton];
-    self.scanModeSelectionButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.scanModeSelectionButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
-    [self.scanModeSelectionButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
-    [self.scanModeSelectionButton.widthAnchor constraintEqualToConstant:buttonWidth].active= YES;
-    [self.scanModeSelectionButton.heightAnchor constraintEqualToConstant:buttonHeight].active = YES;
-    
-    [self.scanModeSelectionButton addTarget:self action:@selector(showOptionsSelectionDialog) forControlEvents:UIControlEventTouchUpInside];
+    __weak __block typeof(self) weakSelf = self;
+    [self addModeSelectButtonWithTitle:kSingleSelection buttonPressed:^{
+        [weakSelf showOptionsSelectionDialog];
+    }];
 }
 
 - (void)setupBatchCountView {
@@ -382,19 +373,13 @@ typedef enum : NSUInteger {
     [self showResultControllerWithResults]; // maybe save the last scanned cropped image result too
 }
 
-
 - (void)showOptionsSelectionDialog {
-    NSArray<NSString *> *choices = @[ kSingleSelection, kMultiSelection, kBatchSelection ];
-    NSArray<NSNumber *> *selections = @[@(self.dialogIndexScanModeSelected)];
-    ALConfigurationDialogViewController *vc = [[ALConfigurationDialogViewController alloc]
-                                               initWithChoices:choices
-                                               selections:selections
-                                               secondaryTexts:@[]
-                                               showApplyBtn:NO
-                                               dialogType:ALConfigDialogTypeScanModeSelection];
-    vc.delegate = self;
-    [vc setSelectionDialogFontSize:16.0];
+    NSArray<NSString *> *choices = [NSArray arrayWithObjects:kChoiceTitles count:kChoicesCount];
+    ALConfigurationDialogViewController *vc = [ALConfigurationDialogViewController singleSelectDialogWithChoices:choices
+                                                                                                   selectedIndex:self.scanModeSelectedIndex
+                                                                                                        delegate:self];
     [self presentViewController:vc animated:YES completion:nil];
+    [self.scanView stopCamera];
 }
 
 // MARK: - ALScanPluginDelegate
@@ -419,7 +404,7 @@ typedef enum : NSUInteger {
         return;
     }
 
-    switch (self.dialogIndexScanModeSelected) {
+    switch (self.scanModeSelectedIndex) {
         case BarcodeSingleScanMode:
             if (_isSingleManualScanEnabled) {
                 [self setScanButtonHidden:NO andEnable:YES];
@@ -451,54 +436,12 @@ typedef enum : NSUInteger {
     }
 }
 
-
-// MARK: - ALScanViewPluginDelegate
-
-- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin visualFeedbackReceived:(ALEvent *)event {
-    // NSLog(@"ACO visual feedback received: %@", event.JSONStr);
-}
-
-- (void)scanViewPluginResultBeepTriggered:(ALScanViewPlugin *)scanViewPlugin {
-
-}
-
-- (void)scanViewPluginResultBlinkTriggered:(ALScanViewPlugin *)scanViewPlugin {
-
-}
-
-- (void)scanViewPluginResultVibrateTriggered:(ALScanViewPlugin *)scanViewPlugin {
-
-}
-
-- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin brightnessUpdated:(ALEvent *)event {
-    // NSLog(@"ACO brightness updated: %@", event.JSONStr);
-}
-
-- (void)scanViewPlugin:(ALScanViewPlugin *)scanViewPlugin cutoutVisibilityChanged:(ALEvent *)event {
-    // NSLog(@"ACO cutout visibility changed: %@", event.JSONStr);
-    // ACO TODO: maybe include the cutout coordinates in scan view coordinate space.
-}
-
-// TODO: (ACO) see if there's any need to provide this
-
-//- (void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin *)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult*)scanResult {
-//    // Nothing to do there
-//    // we get the results with anylineBarcodeScanPlugin:scannedBarcodes:
-//}
-//
-
-//- (void)anylineScanPlugin:(ALAbstractScanPlugin *)anylineScanPlugin reportInfo:(ALScanInfo *)info {
-//    if ([info.variableName isEqualToString:@"$brightness"]) {
-//        [self updateBrightness:[info.value floatValue] forModule:self.barcodeScanPlugin];
-//    }
-//}
-
 - (void)showResultControllerWithResults {
     if (!self.latestScanResult) {
         // prevent double pushes (result will be cleared upon entry)
         return;
     }
-    [self.scanViewPlugin stop];
+    [self stopScanning];
 
     // copy the barcodes array and image before clearing
     NSArray<ALBarcode *> *barcodesFound = [NSArray arrayWithArray:self.latestScanResult.pluginResult
@@ -522,11 +465,16 @@ typedef enum : NSUInteger {
     //    }
     //    self.resultLabel.text = [resultStrs componentsJoinedByString:@", "];
 
+    ALScanPlugin *scanPlugin = nil;
+    if ([self.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        scanPlugin = [(ALScanViewPlugin *)self.scanViewPlugin scanPlugin];
+    }
+
     __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:resultDataJSONStr
                  barcodeResult:barcodesFound[0].value
                          image:image
-                    scanPlugin:self.scanViewPlugin.scanPlugin
+                    scanPlugin:scanPlugin
                     viewPlugin:self.scanViewPlugin completion:^{
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
         vc.imagePrimary = image;
@@ -559,11 +507,11 @@ typedef enum : NSUInteger {
         return;
     }
 
-    [self.scanViewPlugin stop];
+    [self stopScanning];
 
     __weak __block typeof(self) weakSelf = self;
     [self showAlertWithTitle:kBarcodeScanVC_titleText message:kBarcodeScanVC_messageText completion:^{
-        [weakSelf.scanViewPlugin startWithError:nil];
+        [weakSelf startScanning:nil];
         [weakSelf startTroubleScanningTimeout];
     }];
 }
@@ -586,11 +534,11 @@ typedef enum : NSUInteger {
 }
 
 - (void)setScanButtonHidden:(BOOL)isHidden andEnable:(BOOL)isEnabled {
-    if (self.dialogIndexScanModeSelected == BarcodeBatchScanMode) {
-        return;
-    }
     [self.scanButton setHidden:isHidden];
     [self.scanButton setEnabled:isEnabled];
+    if (self.scanModeSelectedIndex == BarcodeBatchScanMode) {
+        return;
+    }
     if (isEnabled) {
         [self.scanButton setBackgroundColor:[UIColor AL_examplesBlue]];
     } else {
@@ -604,8 +552,8 @@ typedef enum : NSUInteger {
     NSString *buttonTitleString = kSingleSelection;
     BOOL isMultiBarcodeEnabled = NO;
     BOOL isBatchHidden = YES;
-    [self.scanViewPlugin stop];
-    self.dialogIndexScanModeSelected = index;
+    [self stopScanning];
+    self.scanModeSelectedIndex = index;
     switch (index) {
         case BarcodeSingleScanMode:
             buttonTitleString = kSingleSelection;
@@ -627,12 +575,12 @@ typedef enum : NSUInteger {
         default:
             break;
     }
-    [self.scanModeSelectionButton setTitle:buttonTitleString forState:UIControlStateNormal];
+    [self.modeSelectButton setTitle:buttonTitleString forState:UIControlStateNormal];
     self.isMultiBarcode = isMultiBarcodeEnabled;
     [self resetBatchCount:isBatchHidden];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self reloadScanView];
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
 }
 
 - (void)resetBatchCount:(BOOL)isBatchHidden {
@@ -645,7 +593,8 @@ typedef enum : NSUInteger {
 }
 
 - (void)configDialogCancelled:(nonnull ALConfigurationDialogViewController *)dialog {
-//    [self dialogCancelled];
+    // [self dialogCancelled];
+    [self.scanView startCamera];
 }
 
 @end

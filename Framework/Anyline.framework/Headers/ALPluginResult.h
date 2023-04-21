@@ -24,6 +24,7 @@
 @class ALFieldConfidences;
 @class ALOcrResult;
 @class ALTinResult;
+@class ALTireMakeResult;
 @class ALTireSizeResult;
 @class ALTireSizeResultField;
 @class ALUniversalIDResult;
@@ -183,6 +184,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The ID of the ScanPlugin that processed the result
 @property (nonatomic, copy)             NSString *pluginID;
 @property (nonatomic, nullable, strong) ALTinResult *tinResult;
+@property (nonatomic, nullable, strong) ALTireMakeResult *tireMakeResult;
 @property (nonatomic, nullable, strong) ALTireSizeResult *tireSizeResult;
 @property (nonatomic, nullable, strong) ALUniversalIDResult *universalIDResult;
 @property (nonatomic, nullable, strong) ALVehicleRegistrationCertificateResult *vehicleRegistrationCertificateResult;
@@ -207,7 +209,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) NSString *base64Value;
 /// Corner points of a polygon surrounding the discovered barcode, starting from the
 /// bottom-left coordinate going counter-clockwise. The coordinates are in reference to the
-/// 'cropRect' of the plugin result.
+/// image of the plugin result.
 @property (nonatomic, nullable, copy) NSArray<NSNumber *> *coordinates;
 /// The barcode format
 @property (nonatomic, copy) NSString *format;
@@ -429,6 +431,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *text;
 /// The computed tire age in years rounded down.
 @property (nonatomic, nullable, copy) NSString *tireAgeInYearsRoundedDown;
+@end
+
+/// Describes result information of scanning tire makes
+@interface ALTireMakeResult : NSObject
+/// The text value of the tire make
+@property (nonatomic, nullable, copy) NSString *text;
 @end
 
 /// Describes result information of scanning tire size specifications

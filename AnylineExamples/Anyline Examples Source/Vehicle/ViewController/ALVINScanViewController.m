@@ -5,8 +5,6 @@
 
 @interface ALVINScanViewController () <ALScanPluginDelegate>
 
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
-
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
@@ -37,8 +35,6 @@ NSString * const kALVINScanVC_configFilename = @"vin_ocr_config";
     }
 
     [self installScanView:self.scanView];
-    
-    self.scanViewPlugin = (ALScanViewPlugin *)self.scanView.scanViewPlugin;
     [self.scanView startCamera];
 }
 
@@ -46,7 +42,7 @@ NSString * const kALVINScanVC_configFilename = @"vin_ocr_config";
     [super viewWillAppear:animated];
     
     NSError *error;
-    [self.scanViewPlugin startWithError:&error]; // could check the error
+    [self startScanning:&error];
 }
 
 // MARK: - Handle & present results

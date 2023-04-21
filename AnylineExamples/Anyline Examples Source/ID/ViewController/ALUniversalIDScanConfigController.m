@@ -120,7 +120,7 @@ NSString * const kAllRegionsFormat = @"%u Regions";
                                                selections:selections
                                                secondaryTexts:@[]
                                                showApplyBtn:showApplyBtn
-                                               dialogType:ALConfigDialogTypeScriptSelection];
+                                               dialogType:ALConfigDialogTypeScanModeSelection];
     vc.delegate = self;
     [self.presentingViewController presentViewController:vc animated:YES completion:nil];
 }
@@ -136,6 +136,7 @@ NSString * const kAllRegionsFormat = @"%u Regions";
             [self.delegate idScanConfigController:self
                         finishedWithUpdatedConfig:[self configHasChanged]];
             break;
+        default: break;
     }
 }
 
@@ -143,6 +144,7 @@ NSString * const kAllRegionsFormat = @"%u Regions";
     __weak __block typeof(self) weakSelf = self;
     switch (dialog.type) {
         case ALConfigDialogTypeScriptSelection:
+        case ALConfigDialogTypeScanModeSelection:
             [self updateConfigForCommittedScriptIndex:index];
             [self dismissDialog:dialog afterDelay:0.5 completion:^{
                 [weakSelf concludeWithMode:weakSelf.selectMode];
@@ -157,6 +159,7 @@ NSString * const kAllRegionsFormat = @"%u Regions";
                 }
             }];
             break;
+        default: break;
     }
 }
 
@@ -167,8 +170,8 @@ NSString * const kAllRegionsFormat = @"%u Regions";
         [dialog dismissViewControllerAnimated:YES completion:^{
             [weakSelf.delegate idScanConfigController:self finishedWithUpdatedConfig:hasUpdates];
         }];
-    } else if (dialog.type == ALConfigDialogTypeScriptSelection) {
-        [self updateConfigForCommittedScriptIndex:dialog.selectedIndex.unsignedIntValue];
+    } else if (dialog.type == ALConfigDialogTypeScriptSelection || dialog.type == ALConfigDialogTypeScanModeSelection) {
+        [self updateConfigForCommittedScriptIndex:dialog.selectedIndex];
         __weak __block typeof(self) weakSelf = self;
         [dialog dismissViewControllerAnimated:YES completion:^{
             if (dialog.showApplyButton) {

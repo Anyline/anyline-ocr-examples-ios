@@ -8,7 +8,6 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
 
 @interface ALPDF417ScanViewController() <ALScanPluginDelegate>
 
-@property (nonatomic, strong) ALScanViewPlugin *scanViewPlugin;
 
 @end
 
@@ -22,18 +21,18 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
     NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBarcodePDF417_configJSONFilename] asJSONObject];
     
     NSError *error;
-    self.scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:&error];
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:&error];
     
     if ([self popWithAlertOnError:error]) {
         return;
     }    
     
-    self.scanViewPlugin.scanPlugin.delegate = self;
+    scanViewPlugin.scanPlugin.delegate = self;
     
     ALScanViewConfig *scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:configJSONDictionary error:nil];
     
     self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:self.scanViewPlugin
+                                       scanViewPlugin:scanViewPlugin
                                        scanViewConfig:scanViewConfig
                                                 error:&error];
     
@@ -50,7 +49,7 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.scanViewPlugin startWithError:nil];
+    [self startScanning:nil];
 }
 
 + (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
@@ -82,7 +81,7 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
 
 - (void)showResultControllerWithResults:(ALScanResult *)scanResult {
     
-    [self.scanViewPlugin stop];
+    [self stopScanning];
     
     // copy the barcodes array and image before clearing
     NSArray<ALBarcode *> *barcodesFound = [NSArray arrayWithArray:scanResult.pluginResult
@@ -93,12 +92,17 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
     
     NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
     NSString *resultDataJSONStr = [ALResultEntry JSONStringFromList:resultData];
-    
+
+    ALScanPlugin *scanPlugin = nil;
+    if ([self.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        scanPlugin = [(ALScanViewPlugin *)self.scanViewPlugin scanPlugin];
+    }
+
     __weak __block typeof(self) weakSelf = self;
     [self anylineDidFindResult:resultDataJSONStr
                  barcodeResult:barcodesFound[0].value
                          image:image
-                    scanPlugin:self.scanViewPlugin.scanPlugin
+                    scanPlugin:scanPlugin
                     viewPlugin:self.scanViewPlugin completion:^{
         ALResultViewController *vc = [[ALResultViewController alloc] initWithResults:resultData];
         vc.imagePrimary = image;

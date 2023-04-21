@@ -8,10 +8,12 @@
 
 #import "ALMROExampleManager.h"
 #import "AnylineExamples-Swift.h"
+#import "ALLicensePlateScanViewController.h"
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALVINScanViewController.h"
 #import "ALContainerScanViewController.h"
 #import "ALVRCScanViewController.h"
+#import "ALTINScanViewController.h"
 
 NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certificate";
 
@@ -42,7 +44,7 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
     
     ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Identification Number (DOT)", nil)
                                                        image:[UIImage imageNamed:@"tin"]
-                                              viewController:[ALTINDotViewController class] title:@"Tire Identification Number (DOT)"];
+                                              viewController:[ALTINScanViewController class] title:@"Tire Identification Number (DOT)"];
     
     ALExample *tireSizeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Size Specifications", nil)
                                                             image:[UIImage imageNamed:@"tin"]
@@ -52,6 +54,16 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
                                                                   image:[UIImage imageNamed:@"tin"]
                                                          viewController:[ALCommercialTireIdViewController class] title:@"Commercial Tire Identification Number"];
     
+    ALExample *licensePlate = [[ALExample alloc] initWithName:NSLocalizedString(@"License Plate", nil)
+                                                        image:[UIImage imageNamed:@"tile_licenseplate"]
+                                               viewController:[ALLicensePlateScanViewController class]
+                                                        title:@"License Plate"];
+    
+    ALExample *tireMakeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Make", nil)
+                                                            image:[UIImage imageNamed:@"tile_tire_make"]
+                                                   viewController:[ALTireMakeViewController class]
+                                                            title:@"Tire Make"];
+    
     ALExample *vehicleRegistrationCertificate = [[ALExample alloc] initWithName:NSLocalizedString(kVehicleRegistrationCertificate, nil)
                                                                           image:[UIImage imageNamed:@"vrc"]
                                                                  viewController:[ALVRCScanViewController class]
@@ -60,9 +72,11 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
     self.sectionNames = @[@"Vehicle",];
     self.examples = @{
         self.sectionNames[0] : @[
+            licensePlate,
             vinScanning,
             tinScanning,
             tireSizeScanning,
+            tireMakeScanning,
             commercialTireScanning,
             vehicleRegistrationCertificate
         ],

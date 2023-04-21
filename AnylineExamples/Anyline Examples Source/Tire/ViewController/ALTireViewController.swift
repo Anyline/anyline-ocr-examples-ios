@@ -8,11 +8,11 @@ class ALTireViewController: ALBaseScanViewController {
         case tinConfig
         case tireSizeConfig
         case commercialTireConfig
+        case tireMake
     }
 
     @objc public var configType: TireConfigType = .tinConfig
 
-    var scanViewPlugin: ALScanViewPluginBase?
     var scanViewConfig: ALScanViewConfig?
     
     override func viewDidLoad() {
@@ -20,11 +20,11 @@ class ALTireViewController: ALBaseScanViewController {
         setupTirePlugin()
         setupFlipOrientationButton()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         do {
-            try scanViewPlugin?.start()
+            try startScanning()
         } catch {
             print("error: \(error.localizedDescription)")
         }
@@ -34,7 +34,16 @@ class ALTireViewController: ALBaseScanViewController {
         scanViewPlugin?.stop()
         super.viewWillDisappear(animated)
     }
-    
+
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: nil) { [weak self] _ in
+            if self?.scanViewPlugin?.isStarted == true {
+                self?.setupTirePlugin()
+            }
+        }
+    }
+
     func setupTirePlugin() {
 
         var JSONFileName = ""
@@ -52,20 +61,33 @@ class ALTireViewController: ALBaseScanViewController {
             JSONFileName = "commercial_tire_id_config"
             titleString = "Commercial Tire"
             self.controllerType = ALScanHistoryCommercialTireID
+        case .tireMake:
+            JSONFileName = "tire_make_config"
+            titleString = "Tire Make (Preview)"
+            self.controllerType = ALScanHistoryTireMake
         }
 
         self.title = titleString;
 
-        let path = Bundle.main.path(forResource:JSONFileName, ofType: "json") ?? ""
+        guard let configJSONStr = self.configJSONStr(withFilename: JSONFileName) as? NSString,
+           let configDict = configJSONStr.asJSONObject() as? [AnyHashable: Any] else {
+            return
+        }
 
         do {
-            let scanView = try ALScanViewFactory.withConfigFilePath(path, delegate: self)
-            self.scanViewPlugin = scanView.scanViewPlugin as? ALScanViewPlugin
-            self.installScanView(scanView)
-            scanView.delegate = self
-            scanView.startCamera()
-            self.scanView = scanView
-
+            let scanViewPlugin = try ALScanViewPlugin(jsonDictionary: configDict)
+            scanViewPlugin.scanPlugin.delegate = self
+            if self.scanView == nil {
+                let scanView = try ALScanView(frame: .zero, scanViewPlugin: scanViewPlugin)
+                self.installScanView(scanView)
+                scanView.delegate = self
+                scanView.startCamera()
+                self.scanView = scanView
+            } else {
+                try self.scanView?.setScanViewPlugin(scanViewPlugin)
+                self.scanView?.startCamera()
+            }
+            try startScanning()
         } catch {
             if (self.popWithAlert(onError: error)) {
                 return
@@ -77,8 +99,6 @@ class ALTireViewController: ALBaseScanViewController {
 extension ALTireViewController: ALScanPluginDelegate {
 
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
-
-        enableLandscapeOrientation(false)
 
         let resultEntries: [ALResultEntry] = (scanResult.pluginResult.fieldList() as NSArray).resultEntries
 
@@ -92,10 +112,13 @@ extension ALTireViewController: ALScanPluginDelegate {
                                   image: scanResult.croppedImage,
                                   scanPlugin: scanPlugin,
                                   viewPlugin: self.scanViewPlugin!) { [weak self] in
-
+            guard let self = self else { return }
             let vc = ALResultViewController(results: resultEntries)
             vc.imagePrimary = scanResult.croppedImage
-            self?.navigationController?.pushViewController(vc, animated: true)
+
+            self.isOrientationFlipped = false
+            self.enableLandscapeOrientation(false)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -110,6 +133,13 @@ extension ALTireViewController: ALScanPluginDelegate {
 @objc class ALCommercialTireIdViewController: ALTireViewController {
     override func viewDidLoad() {
         configType = .commercialTireConfig
+        super.viewDidLoad()
+    }
+}
+
+@objc class ALTireMakeViewController: ALTireViewController {
+    override func viewDidLoad() {
+        configType = .tireMake
         super.viewDidLoad()
     }
 }

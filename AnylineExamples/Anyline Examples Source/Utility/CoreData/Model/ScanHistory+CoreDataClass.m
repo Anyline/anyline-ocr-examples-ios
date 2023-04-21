@@ -46,6 +46,7 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryBarcodePDF417] = @"PDF 417",
     [ALScanHistoryBottleCapPepsi] = @"Pepsi Code",
     [ALScanHistoryVehicleRegistrationCertificate] = @"Vehicle Registration Certificate",
+    [ALScanHistoryTireMake] = @"Tire Make",
 };
 
 @implementation ScanHistory

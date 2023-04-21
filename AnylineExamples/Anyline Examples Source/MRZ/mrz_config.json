@@ -9,7 +9,7 @@
     },
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "ID",
+            "id": "id",
             "cancelOnResult": true,
             "mrzConfig": {
                 "strictMode": false,
@@ -17,20 +17,20 @@
             }
         },
         "cutoutConfig": {
-            "style": "none",
             "maxWidthPercent": "90%",
-            "maxHeightPercent": "90%",
             "alignment": "center",
             "ratioFromSize": {
-                "width": 50,
-                "height": 31
+                "width": 25,
+                "height": 17
             },
             "cropPadding": {
+                "x": 30,
+                "y": 90
             },
             "outerColor": "000000",
             "outerAlpha": 0.3,
             "strokeWidth": 2,
-            "strokeColor": "0099FF",
+            "strokeColor": "FFFFFF",
             "cornerRadius": 4,
             "feedbackStrokeColor": "0099FF"
         },
