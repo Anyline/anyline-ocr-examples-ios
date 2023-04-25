@@ -318,6 +318,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Configuration for scanning meters
 @interface ALMeterConfig : NSObject
+/// Defines the maximum number of read decimal digits for values >=0. Negative values mean
+/// all decimal digits are read. Currently implemented only for the
+/// "auto_analog_digital_meter" scan mode.
+@property (nonatomic, nullable, strong) NSNumber *maxNumDecimalDigits;
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Determines which types of meters to scan.
@@ -412,7 +416,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Restricts the scanner to a set of characters to be detected.
 @property (nonatomic, nullable, copy) NSString *charWhitelist;
 /// Sets a custom Anyline script. The file has to be located in the project and point to a
-/// path relative from the project root.
+/// path relative from the project root. Please check the official documentation for more
+/// details.
 @property (nonatomic, nullable, copy) NSString *customCmdFile;
 /// Sets a maximum character height (in pixels) to be considered in the scanning process.
 @property (nonatomic, nullable, strong) NSNumber *maxCharHeight;
@@ -422,9 +427,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Sets a sharpnes factor (0-100) to rule out blurry images.
 @property (nonatomic, nullable, strong) NSNumber *minSharpness;
-/// Sets a custom Anyline model. The file has to be located in the project and point to a
-/// path relative from the project root.
-@property (nonatomic, nullable, copy) NSString *model;
+/// Sets one or more custom Anyline models. The files have to be located in the project and
+/// point to a path relative from the project root. If no customCmdFile is set, only a
+/// maximum of one model is valid. If a customCmdFile is set, it depends whether or not the
+/// customCmdFile requires multiple models or not. Please check the official documentation
+/// for more details.
+@property (nonatomic, nullable, copy) NSArray<NSString *> *models;
 /// Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds
 /// text automatically.
 @property (nonatomic, nullable, assign) ALOcrConfigScanMode *scanMode;

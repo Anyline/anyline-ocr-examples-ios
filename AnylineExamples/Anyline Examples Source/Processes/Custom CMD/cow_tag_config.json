@@ -1,0 +1,37 @@
+{
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "Custom CMD example",
+            "cancelOnResult": true,
+            "ocrConfig": {
+                "customCmdFile": "cow_tag_scanner.ale"
+            }
+        },
+        "cutoutConfig": {
+            "animation": "none",
+            "width": 400,
+            "alignment": "top_half",
+            "ratioFromSize": {
+                "width": 4,
+                "height": 5
+            },
+            "cropPadding": {
+                "x": 20,
+                "y": 20
+            },
+            "cornerRadius": 4,
+            "strokeColor": "0099FF",
+            "strokeWidth": 1,
+            "outerAlpha": 0.3
+        },
+        "scanFeedbackConfig": {
+            "style": "contour_rect",
+            "visualFeedbackRedrawTimeout": 100,
+            "strokeColor": "0099FF",
+            "strokeWidth": 2,
+            "fillColor": "220099FF",
+            "beepOnResult": true,
+            "vibrateOnResult": false
+        }
+    }
+}

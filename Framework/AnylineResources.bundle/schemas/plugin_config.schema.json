@@ -174,13 +174,17 @@
                     "default": "auto",
                     "description": "Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds text automatically."
                 },
-                "model": {
-                    "type": "string",
-                    "description": "Sets a custom Anyline model. The file has to be located in the project and point to a path relative from the project root."
+                "models": {
+                    "type": "array",
+                    "description": "Sets one or more custom Anyline models. The files have to be located in the project and point to a path relative from the project root. If no customCmdFile is set, only a maximum of one model is valid. If a customCmdFile is set, it depends whether or not the customCmdFile requires multiple models or not. Please check the official documentation for more details.",
+					"minItems": 1,
+                    "items": {
+                        "type": "string"
+					}
                 },
                 "customCmdFile": {
                     "type": "string",
-                    "description": "Sets a custom Anyline script. The file has to be located in the project and point to a path relative from the project root."
+                    "description": "Sets a custom Anyline script. The file has to be located in the project and point to a path relative from the project root. Please check the official documentation for more details."
                 },
                 "minSharpness": {
                     "type": "integer",
@@ -577,6 +581,11 @@
                 "minConfidence": {
                     "type": "integer",
                     "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result."
+                },
+                "maxNumDecimalDigits": {
+                    "type": "integer",
+                    "description": "Defines the maximum number of read decimal digits for values >=0. Negative values mean all decimal digits are read. Currently implemented only for the \"auto_analog_digital_meter\" scan mode.",
+                    "default": -1
                 }
             },
             "additionalProperties": false

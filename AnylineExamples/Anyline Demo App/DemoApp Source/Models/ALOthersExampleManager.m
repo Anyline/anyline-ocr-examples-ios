@@ -2,6 +2,7 @@
 #import "ALUniversalSerialNumberScanViewController.h"
 #import "ALContainerScanViewController.h"
 #import "ALCompositeScanViewController.h"
+#import "ALCustomOCRViewController.h"
 
 @interface ALOthersExampleManager ()
 
@@ -33,10 +34,16 @@
                                                                 image:[UIImage imageNamed:@"vin-barcode-parallel-either-or"]
                                                        viewController:[ALCompositeScanViewController class]
                                                                 title:NSLocalizedString(@"VIN + Barcode Parallel Either-OR", nil)];
-    
+
+    ALExample *customCMDExample = [[ALExample alloc] initWithName:NSLocalizedString(@"Custom CMD", nil)
+                                                            image:[UIImage imageNamed:@"custom-cmd"]
+                                                   viewController:[ALCustomOCRViewController class]
+                                                            title:NSLocalizedString(@"Custom CMD", nil)];
+
+
     self.sectionNames = @[ @"OCR", @"Composites" ];
     self.examples = @{
-        self.sectionNames[0] : @[ containerScanning ],
+        self.sectionNames[0] : @[ containerScanning, customCMDExample ],
         self.sectionNames[1] : @[ parallelFirstExample ],
     };
 }
