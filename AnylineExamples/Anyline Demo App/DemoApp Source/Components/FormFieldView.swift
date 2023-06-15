@@ -17,21 +17,25 @@ import UIKit
 }
 
 @objc class FormFieldView: UIView, UITextFieldDelegate {
-
+    
     fileprivate var inputTextHover : UILabel = UILabel()
+
     @objc var inputTextField : UITextField = UITextField()
+
     fileprivate let underlineView : UIView = UIView()
+
     fileprivate var errorMessageLabel : UILabel = UILabel()
     
     fileprivate var hoverBottomConstraints : NSLayoutConstraint = NSLayoutConstraint()
+
     fileprivate var errorTopConstraints : NSLayoutConstraint = NSLayoutConstraint()
     
     @objc var fieldType: FieldType = .validateSimple {
         didSet {
-           configureByFieldType()
+            configureByFieldType()
         }
     }
-
+    
     @objc var nextField : UITextField?
     
     @objc var delegate : FormFieldViewDelegate?
@@ -68,6 +72,19 @@ import UIKit
         
         setupStyles()
         setupConstraints()
+        
+        // add a tap gesture to self in the goal of transferring focus to the
+        // text field, which is a smaller region within the view (and has a smaller
+        // relative tappable region)
+        addGestureRecognizer(.init(target: self, action: #selector(didTapSelf)))
+    }
+    
+    @objc func didTapSelf(tapGestureRecognizer: UITapGestureRecognizer) {
+        // move focus to the text field even if the tap location is not
+        // on the textfield.
+        if !inputTextField.bounds.contains(tapGestureRecognizer.location(in: inputTextField)) {
+            inputTextField.becomeFirstResponder()
+        }
     }
     
     fileprivate func setupStyles() {
@@ -77,7 +94,7 @@ import UIKit
         inputTextField.returnKeyType = .next
         inputTextField.textAlignment = .left
         inputTextField.backgroundColor = UIColor.clear
-        inputTextField.font = UIFont.al_proximaRegular(withSize: 16)
+        inputTextField.font = UIFont.al_proximaRegular(withSize: 17)
         inputTextField.borderStyle = .none
         
         inputTextHover.textAlignment = .left
@@ -257,12 +274,15 @@ import UIKit
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let nextResponder = nextField else {
-            textField.resignFirstResponder()
-            return true
-        }
-        nextResponder.becomeFirstResponder()
+        textField.resignFirstResponder()
         return true
+        
+        // used to be like this, until APP-160:
+        //        guard let nextResponder = nextField else {
+        //            textField.resignFirstResponder()
+        //            return true
+        //        }
+        //        nextResponder.becomeFirstResponder()
+        //        return true
     }
-
 }

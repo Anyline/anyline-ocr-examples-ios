@@ -36,9 +36,9 @@ static NSString *kConfigs[kChoicesCount] = {
 
     self.isVertical = [self.title localizedCaseInsensitiveContainsString:@"Vertical"];
     if (_isVertical) {
-        self.title = @"Vertical Shipping Container";
+        self.title = @"Container Number (Vertical)";
     } else {
-        self.title = @"Shipping Container";
+        self.title = @"Container Number";
     }
     // Initializing the scan view. It's a UIView subclass. We set the frame to fill the whole screen
     self.controllerType = ALScanHistoryContainer;
@@ -48,6 +48,8 @@ static NSString *kConfigs[kChoicesCount] = {
     [self setColors];
 
     [self setupModeToggle];
+
+    [self.scanView startCamera];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,8 +94,6 @@ static NSString *kConfigs[kChoicesCount] = {
             return;
         }
     }
-
-    [self.scanView startCamera];
     [self startScanning:nil];
 }
 
@@ -148,7 +148,11 @@ static NSString *kConfigs[kChoicesCount] = {
     [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
     self.isVertical = index == 1;
     [self reloadScanView];
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [weakSelf.scanView startCamera];
+    }];
 }
 
 @end

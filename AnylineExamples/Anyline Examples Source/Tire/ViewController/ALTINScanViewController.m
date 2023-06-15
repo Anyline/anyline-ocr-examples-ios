@@ -46,7 +46,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"TIN";
+    self.title = @"Tire DOT/TIN";
     self.controllerType = ALScanHistoryTIN;
 
     self.dialogIndexSelected = 0;
@@ -63,6 +63,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     [self setupModeToggle];
 
     [self setupFlipOrientationButton];
+
+    [self.scanView startCamera];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -148,13 +150,11 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
             return;
         }
         [self installScanView:self.scanView];
-        [self.scanView startCamera];
     } else {
         [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
-        [self.scanView startCamera];
     }
     [self startScanning:nil];
 }
@@ -209,7 +209,12 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     }
     self.dialogIndexSelected = index;
     [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [weakSelf.scanView startCamera];
+    }];
+    
     [self reloadScanView];
 }
 

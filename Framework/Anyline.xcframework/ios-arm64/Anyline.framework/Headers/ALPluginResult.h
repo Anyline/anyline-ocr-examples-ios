@@ -18,7 +18,6 @@
 @class ALJapaneseLandingPermissionResultField;
 @class ALLicensePlateResult;
 @class ALArea;
-@class ALCountry;
 @class ALMeterResult;
 @class ALMrzResult;
 @class ALFieldConfidences;
@@ -103,63 +102,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALArea *)westVirginia;
 + (ALArea *)wisconsin;
 + (ALArea *)wyoming;
-@end
-
-/// The country information
-@interface ALCountry : NSObject
-@property (nonatomic, readonly, copy) NSString *value;
-+ (instancetype _Nullable)withValue:(NSString *)value;
-+ (ALCountry *)a;
-+ (ALCountry *)af;
-+ (ALCountry *)al;
-+ (ALCountry *)am;
-+ (ALCountry *)and;
-+ (ALCountry *)az;
-+ (ALCountry *)b;
-+ (ALCountry *)bg;
-+ (ALCountry *)bih;
-+ (ALCountry *)by;
-+ (ALCountry *)ch;
-+ (ALCountry *)cy;
-+ (ALCountry *)cz;
-+ (ALCountry *)d;
-+ (ALCountry *)dk;
-+ (ALCountry *)e;
-+ (ALCountry *)empty;
-+ (ALCountry *)est;
-+ (ALCountry *)f;
-+ (ALCountry *)fin;
-+ (ALCountry *)fl;
-+ (ALCountry *)gb;
-+ (ALCountry *)ge;
-+ (ALCountry *)gr;
-+ (ALCountry *)h;
-+ (ALCountry *)hr;
-+ (ALCountry *)i;
-+ (ALCountry *)ire;
-+ (ALCountry *)is;
-+ (ALCountry *)l;
-+ (ALCountry *)lt;
-+ (ALCountry *)lv;
-+ (ALCountry *)m;
-+ (ALCountry *)mc;
-+ (ALCountry *)mne;
-+ (ALCountry *)mo;
-+ (ALCountry *)n;
-+ (ALCountry *)nSpecial;
-+ (ALCountry *)nl;
-+ (ALCountry *)nmk;
-+ (ALCountry *)p;
-+ (ALCountry *)pl;
-+ (ALCountry *)ro;
-+ (ALCountry *)rus;
-+ (ALCountry *)s;
-+ (ALCountry *)sk;
-+ (ALCountry *)slo;
-+ (ALCountry *)srb;
-+ (ALCountry *)tr;
-+ (ALCountry *)ua;
-+ (ALCountry *)us;
 @end
 
 #pragma mark - Object interfaces
@@ -305,7 +247,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The area information
 @property (nonatomic, nullable, assign) ALArea *area;
 /// The country information
-@property (nonatomic, assign) ALCountry *country;
+@property (nonatomic, copy) NSString *country;
 /// The plate text
 @property (nonatomic, copy) NSString *plateText;
 @end

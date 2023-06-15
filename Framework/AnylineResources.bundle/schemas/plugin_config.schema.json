@@ -3,13 +3,15 @@
     "title": "PluginConfig",
     "description": "General configuration for scan plugins",
     "type": "object",
-    "allOf": [{
+    "allOf": [
+        {
             "required": [
                 "id"
             ]
         },
         {
-            "oneOf": [{
+            "oneOf": [
+                {
                     "required": [
                         "barcodeConfig"
                     ]
@@ -53,11 +55,13 @@
                     "required": [
                         "tireSizeConfig"
                     ]
-                }, {
+                },
+                {
                     "required": [
                         "commercialTireIdConfig"
                     ]
-                }, {
+                },
+                {
                     "required": [
                         "tireMakeConfig"
                     ]
@@ -133,7 +137,7 @@
         },
         "commercialTireIdConfig": {
             "$ref": "#/definitions/commercialTireIdConfig"
-        }, 
+        },
         "tireMakeConfig": {
             "$ref": "#/definitions/tireMakeConfig"
         },
@@ -157,11 +161,19 @@
                     "description": "The key of the variable."
                 },
                 "value": {
-                    "type": ["string", "number", "integer", "boolean"],
+                    "type": [
+                        "string",
+                        "number",
+                        "integer",
+                        "boolean"
+                    ],
                     "description": "The value of the variable."
                 }
             },
-            "required": ["key", "value"],
+            "required": [
+                "key",
+                "value"
+            ],
             "additionalProperties": false
         },
         "ocrConfig": {
@@ -170,17 +182,21 @@
             "properties": {
                 "scanMode": {
                     "type": "string",
-                    "enum": ["line", "grid", "auto"],
+                    "enum": [
+                        "line",
+                        "grid",
+                        "auto"
+                    ],
                     "default": "auto",
                     "description": "Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds text automatically."
                 },
                 "models": {
                     "type": "array",
                     "description": "Sets one or more custom Anyline models. The files have to be located in the project and point to a path relative from the project root. If no customCmdFile is set, only a maximum of one model is valid. If a customCmdFile is set, it depends whether or not the customCmdFile requires multiple models or not. Please check the official documentation for more details.",
-					"minItems": 1,
+                    "minItems": 1,
                     "items": {
                         "type": "string"
-					}
+                    }
                 },
                 "customCmdFile": {
                     "type": "string",
@@ -231,35 +247,45 @@
                 "minSharpness": {
                     "properties": {
                         "scanMode": {
-                            "enum": ["line"]
+                            "enum": [
+                                "line"
+                            ]
                         }
                     }
                 },
                 "charCountX": {
                     "properties": {
                         "scanMode": {
-                            "enum": ["grid"]
+                            "enum": [
+                                "grid"
+                            ]
                         }
                     }
                 },
                 "charCountY": {
                     "properties": {
                         "scanMode": {
-                            "enum": ["grid"]
+                            "enum": [
+                                "grid"
+                            ]
                         }
                     }
                 },
                 "charPaddingXFactor": {
                     "properties": {
                         "scanMode": {
-                            "enum": ["grid"]
+                            "enum": [
+                                "grid"
+                            ]
                         }
                     }
                 },
                 "charPaddingYFactor": {
                     "properties": {
                         "scanMode": {
-                            "enum": ["grid"]
+                            "enum": [
+                                "grid"
+                            ]
                         }
                     }
                 }
@@ -273,7 +299,10 @@
                 "scanMode": {
                     "type": "string",
                     "description": "Determines if container numbers shall be scanned horizontally or vertically.",
-                    "enum": ["HORIZONTAL", "VERTICAL"],
+                    "enum": [
+                        "HORIZONTAL",
+                        "VERTICAL"
+                    ],
                     "default": "HORIZONTAL"
                 },
                 "minConfidence": {
@@ -309,8 +338,12 @@
                 "upsideDownMode": {
                     "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
                     "type": "string",
-                    "enum": ["DISABLED", "ENABLED", "AUTO"],
-                    "default": "DISABLED"
+                    "enum": [
+                        "DISABLED",
+                        "ENABLED",
+                        "AUTO"
+                    ],
+                    "default": "AUTO"
                 },
                 "minConfidence": {
                     "type": "integer",
@@ -330,8 +363,12 @@
                 "upsideDownMode": {
                     "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
                     "type": "string",
-                    "enum": ["DISABLED", "ENABLED", "AUTO"],
-                    "default": "DISABLED"
+                    "enum": [
+                        "DISABLED",
+                        "ENABLED",
+                        "AUTO"
+                    ],
+                    "default": "AUTO"
                 },
                 "minConfidence": {
                     "type": "integer",
@@ -356,7 +393,7 @@
                         "ENABLED",
                         "AUTO"
                     ],
-                    "default": "DISABLED"
+                    "default": "AUTO"
                 },
                 "minConfidence": {
                     "type": "integer",
@@ -390,7 +427,7 @@
                         "ENABLED",
                         "AUTO"
                     ],
-                    "default": "DISABLED"
+                    "default": "AUTO"
                 },
                 "minConfidence": {
                     "type": "integer",
@@ -920,7 +957,7 @@
                     ]
                 },
                 "minConfidence": {
-                    "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
+                    "description": "Set the minConfidence which has to be reached in order to trigger a scan result. The value has to be between 0 and 100. Defaults to 60.",
                     "type": "integer",
                     "minimum": 0,
                     "maximum": 100
@@ -1026,7 +1063,7 @@
         },
         "minConfidenceField": {
             "type": "integer",
-            "description": "The minimum field confidence determines the minimum confidence a field text needs to reach in order to be taken into account.",
+            "description": "The minimum field confidence determines the minimum confidence a field text needs to reach in order to be taken into account. If the scanned field confidence is lower than the set minConfidenceField but the scanOption is not set to mandatory, a result will be retuned without the field. The value has to be between 0 and 100. Defaults to 60.",
             "minimum": 0,
             "maximum": 100
         },

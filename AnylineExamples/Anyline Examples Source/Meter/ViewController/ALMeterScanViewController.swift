@@ -50,7 +50,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
 
         // fix title (but if you came by Meter Reading, the title will be prefilled)
         if self.title == nil || self.title!.count < 1 {
-            self.title = "Analog/Digital Meter"
+            self.title = "Meter"
         }
 
         if (self.title == "Digital (APAC)") {
@@ -380,8 +380,10 @@ extension ALMeterScanViewController: ALConfigurationDialogViewControllerDelegate
                                         for: .normal)
         self.scanMode = Constants.scanModes[Int(dialogIndexSelected)]
         self.reloadScanView()
-        self.scanView?.startCamera()
-        self.dismiss(animated: true)
+
+        self.dismiss(animated: true) { [weak self] in
+            self?.scanView?.startCamera()
+        }
         try! self.startScanning()
     }
 

@@ -565,7 +565,9 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
 }
 
 - (void)scanView:(ALScanView *)scanView updatedCutoutWithPluginID:(NSString *)pluginID frame:(CGRect)frame {
-    [self addWarningSubviewIfNeededToScanView:scanView cutoutFrame:frame];
+    // APP-410: disable the warning label. We may want to bring this back again, but if we do, make sure
+    // to check if the view is allowing the flash toggle button to be accessed while on landscape.
+    // [self addWarningSubviewIfNeededToScanView:scanView cutoutFrame:frame];
 }
 
 - (void)scanView:(ALScanView *)scanView encounteredError:(NSError *)error {

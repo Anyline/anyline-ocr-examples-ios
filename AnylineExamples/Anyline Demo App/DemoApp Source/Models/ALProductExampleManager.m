@@ -39,7 +39,7 @@
 - (void)initExampleData {
     self.title = @"Solutions";
     
-    ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcodes", nil)
+    ALExample *barcodeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Barcode", nil)
                                                            image:[UIImage imageNamed:@"tile_barcodes"]
                                                   viewController:[ALBarcodeScanViewController class]];
     

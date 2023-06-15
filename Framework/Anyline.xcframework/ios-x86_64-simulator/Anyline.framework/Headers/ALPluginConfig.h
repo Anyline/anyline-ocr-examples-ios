@@ -557,7 +557,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Configures scanning options for ID fields in order to fine-tune the ID scanner.
 @interface ALUniversalIDField : NSObject
-/// Set the minConfidence between 0 and 100. Otherwise, it's defaulted.
+/// Set the minConfidence which has to be reached in order to trigger a scan result. The
+/// value has to be between 0 and 100. Defaults to 60.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled.
 /// Otherwise, it's defaulted.

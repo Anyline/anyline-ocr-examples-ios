@@ -57,6 +57,8 @@ static NSString *kConfigs[3] = {
     }
     [self updateConfigWithName:licensePlateConfigJSONFile];
     [self setupModeToggle];
+
+    [self.scanView startCamera];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -129,7 +131,6 @@ static NSString *kConfigs[3] = {
         }
         [scanViewPlugin.scanPlugin setDelegate:self];
     }
-    [self.scanView startCamera];
     [self startScanning:nil];
 }
 
@@ -145,7 +146,11 @@ static NSString *kConfigs[3] = {
     self.dialogIndexSelected = index;
     [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
     [self updateConfigWithName:kConfigs[index]];
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [weakSelf.scanView startCamera];
+    }];
 }
 
 @end

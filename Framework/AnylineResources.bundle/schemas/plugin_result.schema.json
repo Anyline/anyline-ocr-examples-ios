@@ -246,7 +246,6 @@
 				"country": {
 					"type":"string",
 					"description": "The country information",
-					"enum": ["", "A", "GB", "IRE", "P", "N", "N_SPECIAL", "D", "CZ", "FIN", "F", "HR", "SK", "SLO", "AL", "AND", "AM", "AZ", "BY", "B", "BIH", "BG", "CY", "DK", "EST", "GE", "GR", "H", "IS", "I", "LV", "FL", "LT", "L", "M", "MO", "MC", "MNE", "NL", "NMK", "PL", "RO", "RUS", "SRB", "E", "S", "CH", "TR", "UA", "US", "AF"],
 					"default": ""
 				},
 				"area": {

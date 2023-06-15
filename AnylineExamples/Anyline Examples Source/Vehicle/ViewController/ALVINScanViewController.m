@@ -24,7 +24,7 @@ NSString * const kALVINScanVC_configFilename = @"vin_ocr_config";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"VIN";
+    self.title = @"Vehicle Identification Number";
     self.controllerType = ALScanHistoryVIN;
     
     NSError *error;

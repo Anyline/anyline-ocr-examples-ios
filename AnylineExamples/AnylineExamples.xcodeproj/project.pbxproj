@@ -12,7 +12,9 @@
 		04FFBE2C339512AE85FE10C8 /* id_front_config.json in Resources */ = {isa = PBXBuildFile; fileRef = B89BFF9E6FF26CAC25315FAE /* id_front_config.json */; };
 		0522C4A4434C13E4419ED836 /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DB7A75A5F8AD5B606F58EE /* Order+CoreDataProperties.m */; };
 		05811D0CE8A832E9CBFF0411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A170BE2654710390ADC3DE5 /* Main.storyboard */; };
+		06F1AC8E7824E7531DAB1E1E /* ALSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3EC692318E15C44AB339D /* ALSegmentedControl.swift */; };
 		07C382512D3E2C2456D47B16 /* UIColor+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96287CC71693DD8C9232C6 /* UIColor+ALExamplesAdditions.m */; };
+		088F444F472A65398894EF71 /* odometer_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 19FC198705961AE52AF6F9CB /* odometer_config.json */; };
 		095CB4818B3736D4CCF60B13 /* ALBarcodeResultUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D99C3AF7A5F231E20545B326 /* ALBarcodeResultUtil.m */; };
 		0A9E8E2F0F599B6FC9CC791E /* ReadingTransformationPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 487101780FD5E99142C548E7 /* ReadingTransformationPolicy.m */; };
 		0BDC05032D0DF09494298BB0 /* universal_id_front_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 78DFD0CE1C7DE22D8FEC3B8F /* universal_id_front_config.json */; };
@@ -138,6 +140,7 @@
 		C2C2D92598336C8B84E28D77 /* template_type_and_region_mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BAE7BC55540C6B4591601A53 /* template_type_and_region_mapping.json */; };
 		C681C658DE85D6FAD7D2F7FA /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE44780CD8022FC3B0DBCC3 /* energyMockData2.json */; };
 		C9E50E9B907B2A85325FE0A1 /* ALMeterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34760A85BED4BAACE6AEE1EB /* ALMeterCollectionViewController.m */; };
+		C9FACA3142F60A5C3512A029 /* ALOdometerScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39864E071B7F309EC9713D2 /* ALOdometerScanViewController.swift */; };
 		CA4E099D56B97EECD6170C59 /* BasicSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141231B4355019FC03B18A9 /* BasicSettingsViewController.swift */; };
 		CC67FAA55F51DF471B2E95E4 /* sample_barcode_fullframe_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BD59742F478684E39DB300F /* sample_barcode_fullframe_config.json */; };
 		CCC5514E032352AA175A7E5A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE403053A2456208EE360328 /* LaunchScreen.xib */; };
@@ -202,6 +205,7 @@
 		16DB7A75A5F8AD5B606F58EE /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataProperties.m"; sourceTree = "<group>"; };
 		183A2016A42B48E48C6C9A7A /* ALPDF417ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALPDF417ScanViewController.h; sourceTree = "<group>"; };
 		190C790428E1111DDEA322E3 /* ScanHistoryMigration3to4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = ScanHistoryMigration3to4.xcmappingmodel; sourceTree = "<group>"; };
+		19FC198705961AE52AF6F9CB /* odometer_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = odometer_config.json; sourceTree = "<group>"; };
 		1A2A43FEE4B5F6DD4F5649E0 /* ALBaseScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseScanViewController.h; sourceTree = "<group>"; };
 		1ABD76C461AA42B794A0F884 /* NSUserDefaults+ALExamplesAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+ALExamplesAdditions.h"; sourceTree = "<group>"; };
 		1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALIdentityDocumentsExampleManager.m; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 		8DC957A2718D680AFEEFB587 /* AnylineExamples 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineExamples 3.xcdatamodel"; sourceTree = "<group>"; };
 		8E2FCCDD73155DB06E083452 /* NSTimer+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		8F9592E10BAADEF3FFCD6D52 /* ALTextViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTextViewCell.h; sourceTree = "<group>"; };
+		8FA3EC692318E15C44AB339D /* ALSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSegmentedControl.swift; sourceTree = "<group>"; };
 		8FC613FC690FD7C7C742CE2F /* ALMRZScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMRZScanViewController.m; sourceTree = "<group>"; };
 		8FFFA8B1DC79F42F46CED800 /* universal_id_composite_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = universal_id_composite_config.json; sourceTree = "<group>"; };
 		90082EB5EF42EDECAF5C0CA0 /* ALMeterReadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterReadingView.m; sourceTree = "<group>"; };
@@ -414,6 +419,7 @@
 		DF3FF2562FFAF1D0AC162F63 /* Reading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reading.m; sourceTree = "<group>"; };
 		DF9EE9C85FCFD0851FB1283E /* ALBarcodeBatchCountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALBarcodeBatchCountView.xib; sourceTree = "<group>"; };
 		E01BF8D357703EF4FA7E4F3F /* ALMeterReading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALMeterReading.m; sourceTree = "<group>"; };
+		E39864E071B7F309EC9713D2 /* ALOdometerScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALOdometerScanViewController.swift; sourceTree = "<group>"; };
 		E3F1A5ADF3152DDB67BBB2EC /* sample_barcode_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample_barcode_config.json; sourceTree = "<group>"; };
 		E50091DBF1D0588041F5FB12 /* SerialNumberSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumberSettingsViewController.swift; sourceTree = "<group>"; };
 		E59DF7BD4220A8FE5450AAA9 /* CustomerDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDataView.xib; sourceTree = "<group>"; };
@@ -623,6 +629,7 @@
 				1D7E8D46EC14ED14B84F0FAE /* ALCheckbox.m */,
 				5ECFD208BD47657AE983B207 /* ALScriptSelectionViewController.h */,
 				DCB16BC10A7E2CE509ACBDC2 /* ALScriptSelectionViewController.m */,
+				8FA3EC692318E15C44AB339D /* ALSegmentedControl.swift */,
 				D9DE990FB41CB3666F5E3B58 /* FormFieldView.swift */,
 			);
 			path = Components;
@@ -650,6 +657,7 @@
 		3ECED7CD56144FADB817EC27 /* Vehicle */ = {
 			isa = PBXGroup;
 			children = (
+				19FC198705961AE52AF6F9CB /* odometer_config.json */,
 				9AF1EDDFA2A6C01BE649FEF4 /* vin_ocr_config.json */,
 				ECAE1951AD0F98D70897ED6D /* vrc_config.json */,
 				6CA91AF8F9B376105948A9B1 /* ViewController */,
@@ -809,6 +817,7 @@
 		6CA91AF8F9B376105948A9B1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E39864E071B7F309EC9713D2 /* ALOdometerScanViewController.swift */,
 				39B29A0BBC9DBC31152E10F5 /* ALVINScanViewController.h */,
 				AF206C8056C5314E31A8B907 /* ALVINScanViewController.m */,
 				7A652B2C9A4692C8A87DDF11 /* ALVRCScanViewController.h */,
@@ -1183,6 +1192,7 @@
 				0EDA113E63BC700CEF98F86E /* meter_config.json in Resources */,
 				928506238F97E4339010FB34 /* mrz_config.json in Resources */,
 				C206A70E2DC25AB00C539498 /* mrz_nfc_config.json in Resources */,
+				088F444F472A65398894EF71 /* odometer_config.json in Resources */,
 				1DBCEE81DA9B14226DEB842D /* parallel_first_vin_barcode.json in Resources */,
 				120B9C0ED222249242CDF755 /* parallel_meter_barcode_config.json in Resources */,
 				2311BF58E7C0C70EADF84D27 /* sample_barcode_config.json in Resources */,
@@ -1253,6 +1263,7 @@
 				5B62F82DCF4B9A82A0E767D9 /* ALMeterScanViewController.swift in Sources */,
 				84EA10E9B29207F07F86E465 /* ALModeSelectionButton.swift in Sources */,
 				37B8BA82610E2579475245FC /* ALNFCScanViewController.m in Sources */,
+				C9FACA3142F60A5C3512A029 /* ALOdometerScanViewController.swift in Sources */,
 				4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */,
 				8F696BE3E46CF0C83C2AB02E /* ALPDF417ScanViewController.m in Sources */,
 				D6B05EA56B02926FFDE63DD0 /* ALPluginResultHelper.m in Sources */,
@@ -1266,6 +1277,7 @@
 				77171349F799855BAE9C564A /* ALResultViewController.swift in Sources */,
 				6E36CB15F322CF98A84D8467 /* ALScanResultViewController.m in Sources */,
 				DFFFD961846F72E077B90DC9 /* ALScriptSelectionViewController.m in Sources */,
+				06F1AC8E7824E7531DAB1E1E /* ALSegmentedControl.swift in Sources */,
 				3F5D3D6335DD200637C834A9 /* ALSelectionTable.m in Sources */,
 				9EC8EF0D4F379C5106628236 /* ALSliderTableViewCell.swift in Sources */,
 				E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */,

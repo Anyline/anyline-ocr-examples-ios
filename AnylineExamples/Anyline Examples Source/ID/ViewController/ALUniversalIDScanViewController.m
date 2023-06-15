@@ -17,8 +17,8 @@ NSString * const kCyrillicIDTitleString = @"Cyrillic";
 NSString * const kLatinIDTitleString = @"Latin";
 NSString * const kDefaultIDTitleString = @"ID";
 
-NSString * const kOneSide = @"1 side";
-NSString * const kTwoSide = @"2 sides";
+NSString * const kOneSide = @"1 sided";
+NSString * const kTwoSide = @"2 sided";
 
 static const NSUInteger kChoicesCount = 3;
 

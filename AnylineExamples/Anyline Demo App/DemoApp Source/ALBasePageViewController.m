@@ -137,7 +137,11 @@
 }
 
 - (void)setupSegmentControl {
+#if __has_include("AppDelegate_store.h")
+    self.segmentedControl = [[ALSegmentedControl alloc] initWithItems:@[]];
+#else
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[]];
+#endif
     if (@available(iOS 13, *)) {
         [self.segmentedControl setSelectedSegmentTintColor:[UIColor AL_White]];
     } else {
@@ -239,9 +243,18 @@
 
 - (void)jumpToPage:(UISegmentedControl *)sender {
     NSInteger tag = sender.selectedSegmentIndex;
-    if (tag >= 0 && tag < [_pages count] && tag != self.currIndex) {
-        [self gotoPage:tag];
-        self.title = [self titleOfExampleManagerOnIndex:tag];
+    if (tag >= 0 && tag < [_pages count]) {
+        BOOL different = tag != self.currIndex;
+        if (different) {
+            [self gotoPage:tag];
+            self.title = [self titleOfExampleManagerOnIndex:tag];
+        }
+
+#if __has_include("AppDelegate_store.h")
+        if ([_pages[tag] conformsToProtocol:@protocol(ALPageViewController)]) {
+            [((id<ALPageViewController>)_pages[tag]) selectedMeWithAgain:!different];
+        }
+#endif
     }
     [[[sender subviews] objectAtIndex:[sender selectedSegmentIndex]] setTintColor:[UIColor AL_White]];
 }

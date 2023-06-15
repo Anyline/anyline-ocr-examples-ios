@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
-		+zMJYfJXl5QNN6wTvpIotBwrZsY=
+		1zbEcuCWc2jhPQM6FMqaEhqgSbY=
 		</data>
 		<key>Headers/ALEvent.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/ALPluginConfig.h</key>
 		<data>
-		XMg0tol9QkqhosfSJ7ljJGUG0H4=
+		ulrOCem+lFOx2td5VA3i1cmjyag=
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
-		il9KD5JaLZjGDac+1B8my5+4KVQ=
+		3s6PlKg6hGXYcbEwYJogHuyklTI=
 		</data>
 		<key>Headers/ALScanFeedbackConfig.h</key>
 		<data>
-		Exaya70v+kc2SpQu5IWnMb/2eBA=
+		2Kl7iqSzPdwcPtEBsDeCZW6hVI0=
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		je0Wd+1ksTQqjdiuxb3CHSEy6DI=
+		sLz3o06+nOa2ZVF7803/j2ThNSk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -211,7 +211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EDdg3i2MNmpZ9T7RX3TZMTLkrTPvhMMRMszxq3Vw4VY=
+			iAk7zyJICdUG1a5V4zXNYLsw3vRupTvtJL3HfNT5sXs=
 			</data>
 		</dict>
 		<key>Headers/ALEvent.h</key>
@@ -274,7 +274,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qXFfeKIkWifA+05cVUK3jjZ88+BiYYMrXs+ObTrGE7M=
+			AtY9c+A4LXrFTXUj4FSOc2d/3byVRwjJlVNEpI5WTbM=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
@@ -288,14 +288,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			C99iRgVW1+VvP+L6SCL74lTykX0ysgbKcou+iQPjb4E=
+			b7v5Pqq/excfynaalMJB6NuUX5pE8ujLufSp2sEO090=
 			</data>
 		</dict>
 		<key>Headers/ALScanFeedbackConfig.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jfpOv7FOj9LF9mcVDOl/ixHLbYfUbyJvK1jlNvmRaic=
+			NfRQazfMvOfDFqZM4lZBNKEE8hwDl8nH4FSsTn4KclE=
 			</data>
 		</dict>
 		<key>Headers/ALScanPlugin.h</key>

@@ -91,7 +91,7 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Barcodes";
+    self.title = @"Barcode";
     self.controllerType = ALScanHistoryBarcode;
     self.isMultiManualScanEnabled = YES;
     self.scanModeSelectedIndex = BarcodeSingleScanMode;
@@ -378,8 +378,11 @@ typedef enum : NSUInteger {
     ALConfigurationDialogViewController *vc = [ALConfigurationDialogViewController singleSelectDialogWithChoices:choices
                                                                                                    selectedIndex:self.scanModeSelectedIndex
                                                                                                         delegate:self];
-    [self presentViewController:vc animated:YES completion:nil];
-    [self.scanView stopCamera];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self presentViewController:vc animated:YES completion:^{
+        [weakSelf.scanView stopCamera];
+    }];
 }
 
 // MARK: - ALScanPluginDelegate
@@ -578,9 +581,13 @@ typedef enum : NSUInteger {
     [self.modeSelectButton setTitle:buttonTitleString forState:UIControlStateNormal];
     self.isMultiBarcode = isMultiBarcodeEnabled;
     [self resetBatchCount:isBatchHidden];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self reloadScanView];
-    [self startScanning:nil];
+
+    __weak __block typeof(self) weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [weakSelf reloadScanView];
+        [weakSelf startScanning:nil];
+    }];
+
 }
 
 - (void)resetBatchCount:(BOOL)isBatchHidden {

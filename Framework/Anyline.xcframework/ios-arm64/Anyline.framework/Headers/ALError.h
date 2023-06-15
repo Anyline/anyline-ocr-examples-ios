@@ -153,7 +153,10 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
     ALTimeoutError = 11001,
 
     /// Error serializing or deserializing JSON object
-    ALJSONError = 12001
+    ALJSONError = 12001,
+
+    /// Filesystem error
+    ALFileSystemError = 13001,
 };
 
 NS_ASSUME_NONNULL_END

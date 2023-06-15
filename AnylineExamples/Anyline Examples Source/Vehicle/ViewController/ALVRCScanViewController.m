@@ -24,7 +24,7 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Vehicle Registration Certificate";
+    self.title = @"Vehicle Registration Certificate DE";
     self.controllerType = ALScanHistoryVehicleRegistrationCertificate;
 
     NSError *error;
@@ -42,6 +42,9 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    self.isOrientationFlipped = YES;
+    [self enableLandscapeOrientation:YES];
 
     NSError *error;
     [self startScanning:&error];

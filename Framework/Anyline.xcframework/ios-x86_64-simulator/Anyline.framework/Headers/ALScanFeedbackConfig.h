@@ -13,10 +13,10 @@ typedef NS_ENUM(NSUInteger, ALScanFeedbackStyle) {
     ALScanFeedbackStyleContourRect,
 
     /// Shows underlines underneath each character/symbol in the detected object
-    ALScanFeedbackStyleContourUnderline,
+    ALScanFeedbackStyleContourUnderline __deprecated_enum_msg("ALScanFeedbackStyleContourUnderline has been deprecated. Use ALScanFeedbackStyleContourRect instead.") = ALScanFeedbackStyleContourRect,
 
     /// Shows points over each character/symbol in the detected object
-    ALScanFeedbackStyleContourPoint,
+    ALScanFeedbackStyleContourPoint __deprecated_enum_msg("ALScanFeedbackStyleContourPoint has been deprecated. Use ALScanFeedbackStyleContourRect instead.") = ALScanFeedbackStyleContourRect,
 
     /// Animates the cutout rectangle when a sample is detected
     ALScanFeedbackStyleAnimatedRect,

@@ -23,6 +23,10 @@ class ALTireViewController: ALBaseScanViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        isOrientationFlipped = true
+        enableLandscapeOrientation(true)
+
         do {
             try startScanning()
         } catch {
@@ -51,7 +55,7 @@ class ALTireViewController: ALBaseScanViewController {
         switch configType {
         case .tinConfig:
             JSONFileName = "tire_tin_config"
-            titleString = "TIN"
+            titleString = "DOT / TIN"
             self.controllerType = ALScanHistoryTIN
         case .tireSizeConfig:
             JSONFileName = "tire_size_config"
@@ -59,11 +63,11 @@ class ALTireViewController: ALBaseScanViewController {
             self.controllerType = ALScanHistoryTireSizeConfiguration
         case .commercialTireConfig:
             JSONFileName = "commercial_tire_id_config"
-            titleString = "Commercial Tire"
+            titleString = "Tire Commercial ID"
             self.controllerType = ALScanHistoryCommercialTireID
         case .tireMake:
             JSONFileName = "tire_make_config"
-            titleString = "Tire Make (Preview)"
+            titleString = "Tire Make (Beta)"
             self.controllerType = ALScanHistoryTireMake
         }
 

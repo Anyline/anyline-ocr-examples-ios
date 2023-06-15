@@ -53,6 +53,7 @@ typedef enum : NSUInteger {
     ALScanHistoryTireSizeConfiguration = 35,
     ALScanHistoryVehicleRegistrationCertificate = 36,
     ALScanHistoryTireMake = 37,
+    ALScanHistoryOdometer = 38,
     // be sure to add any new types to ALScanHistoryType_toString!
 } ALScanHistoryType;
 
