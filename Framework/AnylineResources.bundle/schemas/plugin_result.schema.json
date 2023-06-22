@@ -13,6 +13,7 @@
             { "required": ["licensePlateResult"] },
             { "required": ["japaneseLandingPermissionResult"] },
             { "required": ["meterResult"] },
+			{ "required": ["odometerResult"] },
             { "required": ["ocrResult"] },
             { "required": ["tinResult"] },
             { "required": ["tireSizeResult"] },
@@ -58,6 +59,7 @@
         "licensePlateResult": { "$ref": "#/definitions/licensePlateResult" },
         "japaneseLandingPermissionResult": { "$ref": "#/definitions/japaneseLandingPermissionResult" },
 		"meterResult": { "$ref": "#/definitions/meterResult" },
+		"odometerResult": { "$ref": "#/definitions/odometerResult" },
 		"ocrResult": { "$ref": "#/definitions/ocrResult" },
 		"tinResult": { "$ref": "#/definitions/tinResult" },
 		"tireSizeResult": { "$ref": "#/definitions/tireSizeResult" },
@@ -198,6 +200,18 @@
 			},
 			"required": ["value"],
 			"additionalProperties": false			
+		},
+		"odometerResult": {
+			"description": "Describes result information of scanning odometers",
+			"type": "object",
+			"properties": {
+				"value": {
+					"description": "The odometer value.",
+					"type": "string"
+				}
+			},
+			"required": ["value"],
+			"additionalProperties": false
 		},
 		"japaneseLandingPermissionResultField": {
 			"type": "object",

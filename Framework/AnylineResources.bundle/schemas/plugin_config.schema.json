@@ -23,6 +23,11 @@
                 },
                 {
                     "required": [
+                        "odometerConfig"
+                    ]
+                },
+                {
+                    "required": [
                         "universalIdConfig"
                     ]
                 },
@@ -113,6 +118,9 @@
         },
         "meterConfig": {
             "$ref": "#/definitions/meterConfig"
+        },
+        "odometerConfig": {
+            "$ref": "#/definitions/odometerConfig"
         },
         "universalIdConfig": {
             "$ref": "#/definitions/universalIdConfig"
@@ -623,6 +631,27 @@
                     "type": "integer",
                     "description": "Defines the maximum number of read decimal digits for values >=0. Negative values mean all decimal digits are read. Currently implemented only for the \"auto_analog_digital_meter\" scan mode.",
                     "default": -1
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+                }
+            },
+            "additionalProperties": false
+        },
+        "odometerConfig": {
+            "description": "Configuration for scanning odometers",
+            "type": "object",
+            "properties": {
+                "minConfidence": {
+                    "type": "integer",
+                    "description": "Sets a minimum confidence which has to be reached in order to trigger a scan result.The value has to be between 0 and 100. Defaults to 60.",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "validationRegex": {
+                    "type": "string",
+                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
                 }
             },
             "additionalProperties": false
