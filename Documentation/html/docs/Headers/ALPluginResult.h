@@ -22,6 +22,7 @@
 @class ALMrzResult;
 @class ALFieldConfidences;
 @class ALOcrResult;
+@class ALOdometerResult;
 @class ALTinResult;
 @class ALTireMakeResult;
 @class ALTireSizeResult;
@@ -123,6 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALMeterResult *meterResult;
 @property (nonatomic, nullable, strong) ALMrzResult *mrzResult;
 @property (nonatomic, nullable, strong) ALOcrResult *ocrResult;
+@property (nonatomic, nullable, strong) ALOdometerResult *odometerResult;
 /// The ID of the ScanPlugin that processed the result
 @property (nonatomic, copy)             NSString *pluginID;
 @property (nonatomic, nullable, strong) ALTinResult *tinResult;
@@ -361,6 +363,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALOcrResult : NSObject
 /// The OCR text value.
 @property (nonatomic, nullable, copy) NSString *text;
+@end
+
+/// Describes result information of scanning odometers
+@interface ALOdometerResult : NSObject
+/// The odometer value.
+@property (nonatomic, copy) NSString *value;
 @end
 
 /// Describes result information of scanning tire identification numbers (TIN)

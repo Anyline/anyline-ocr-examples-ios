@@ -3,27 +3,9 @@ import Foundation
 @objc(ALOdometerScanViewController) // this attribute makes it usable by NSClassFromString()
 class ALOdometerScanViewController: ALBaseScanViewController {
 
-    enum Constants {
-        static let choices: [String] = [
-            "Digital (EMEA)",
-            "Digital (APAC)",
-            "Analog",
-            "Dial",
-        ]
+    var resultEntries: [ALResultEntry]?
 
-        static let scanModes: [ALMeterConfigScanMode] = [
-            .autoAnalogDigitalMeter(), // EMEA
-            .digitalMeter2_Experimental(), // APAC
-            .autoAnalogDigitalMeter(), // Analog
-            .dialMeter() // Dial
-        ]
-    }
-
-    var scanMode: ALMeterConfigScanMode = .autoAnalogDigitalMeter()
-
-    var meterResultEntries: [ALResultEntry]?
-
-    var meterImage: UIImage?
+    var resultImage: UIImage?
 
     private var dialogIndexSelected: UInt = 0
 
@@ -35,7 +17,7 @@ class ALOdometerScanViewController: ALBaseScanViewController {
         super.viewDidLoad()
 
         self.title = "Odometer"
-        
+
         self.controllerType = ALScanHistoryOdometer
         reloadScanView()
     }
@@ -46,8 +28,8 @@ class ALOdometerScanViewController: ALBaseScanViewController {
     }
 
     func clearResults() {
-        meterImage = nil
-        meterResultEntries = nil
+        resultImage = nil
+        resultEntries = nil
     }
 
     fileprivate func reloadScanView() {
@@ -59,8 +41,10 @@ class ALOdometerScanViewController: ALBaseScanViewController {
 
         var scanViewPluginBase: ALScanViewPluginBase!
         do {
-            scanViewPluginBase = try scanViewPluginConfig(fromDict: JSONDict,
-                                                          scanMode: self.scanMode)
+            scanViewPluginBase = try scanViewPluginConfig(fromDict: JSONDict)
+            if let scanPlugin = (scanViewPluginBase as? ALScanViewPlugin)?.scanPlugin {
+                scanPlugin.delegate = self
+            }
         } catch {
             if (self.popWithAlert(onError: error)) {
                 return
@@ -99,14 +83,10 @@ class ALOdometerScanViewController: ALBaseScanViewController {
         }
     }
 
-    fileprivate static func meterScanViewPlugin(from config: ALScanViewPluginConfig,
-                                                scanMode: ALMeterConfigScanMode) throws -> ALScanViewPlugin {
-        var scanPluginConfig = config.scanPluginConfig
-        var cutoutConfig = config.cutoutConfig
+    fileprivate static func odometerScanViewPlugin(from config: ALScanViewPluginConfig) throws -> ALScanViewPlugin {
+        let scanPluginConfig = config.scanPluginConfig
+        let cutoutConfig = config.cutoutConfig
         let scanFeedbackConfig = config.scanFeedbackConfig
-
-        // edit scan mode
-        scanPluginConfig.pluginConfig.meterConfig?.scanMode = scanMode
 
         // handle any adaptations to the config based on the scan mode
 
@@ -117,19 +97,16 @@ class ALOdometerScanViewController: ALBaseScanViewController {
         return try .init(config: scanViewPluginConfig)
     }
 
-    func scanViewPluginConfig(fromDict JSONDict: [String: Any],
-                              scanMode: ALMeterConfigScanMode) throws -> ALScanViewPluginBase {
+    func scanViewPluginConfig(fromDict JSONDict: [String: Any]) throws -> ALScanViewPluginBase {
         let config: ALScanViewPluginConfig = ALScanViewPluginConfig.withJSONDictionary(JSONDict)!
-        let scanViewPlugin = try! type(of: self).meterScanViewPlugin(from: config, scanMode: scanMode)
-        scanViewPlugin.scanPlugin.delegate = self
-        return scanViewPlugin
+        return try ALScanViewPlugin(config: config)
     }
 }
 
 extension ALOdometerScanViewController: ALScanPluginDelegate {
 
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
-        if let _ = self.loadMeterResult(from: scanResult) {
+        if let _ = self.loadOdometerResult(from: scanResult) {
             displayResults()
         }
     }
@@ -138,24 +115,12 @@ extension ALOdometerScanViewController: ALScanPluginDelegate {
         displayResults()
     }
 
-    func loadMeterResult(from scanResult: ALScanResult) -> String? {
+    func loadOdometerResult(from scanResult: ALScanResult) -> String? {
 
-        if let meterResult = scanResult.pluginResult.meterResult {
-            var result = meterResult.value
-            if let meterUnit = meterResult.unit {
-                result += String(format: " %@", meterUnit)
-            } // move this result to extension
-
-            let resultFieldList = scanResult.pluginResult.fieldList()
-            if var resultDict = resultFieldList.first {
-                // go through the first result object, find a key named nameReadable, and introduce
-                // "Odometer Reading" as result title.
-                resultDict["nameReadable"] = "Odometer Reading"
-                self.meterResultEntries = ([ resultDict ] as NSArray).resultEntries
-            } else {
-                self.meterResultEntries = (resultFieldList as NSArray).resultEntries
-            }
-            self.meterImage = scanResult.croppedImage
+        if let odometerResult = scanResult.pluginResult.odometerResult {
+            var result = odometerResult.value
+            self.resultEntries = (scanResult.pluginResult.fieldList() as NSArray).resultEntries
+            self.resultImage = scanResult.croppedImage
             return result
         }
         return nil
@@ -168,7 +133,7 @@ extension ALOdometerScanViewController: ALScanPluginDelegate {
         }
 
         var resultData: [ALResultEntry] = []
-        if let resultEntries = self.meterResultEntries {
+        if let resultEntries = self.resultEntries {
             resultData.append(contentsOf: resultEntries)
         }
 
@@ -193,11 +158,11 @@ extension ALOdometerScanViewController: ALScanPluginDelegate {
 
         self.anylineDidFindResult(JSONString,
                                   barcodeResult: nil,
-                                  image: self.meterImage,
+                                  image: self.resultImage,
                                   scanPlugin: scanPlugin,
                                   viewPlugin: scanViewPlugin) { [weak self] in
             let resultVC: ALResultViewController = .init(results: resultData)
-            resultVC.imagePrimary = self?.meterImage
+            resultVC.imagePrimary = self?.resultImage
             self?.navigationController?.pushViewController(resultVC, animated: true)
             self?.clearResults()
         }

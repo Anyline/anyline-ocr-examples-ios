@@ -11,9 +11,7 @@
     "viewPluginConfig": {
         "pluginConfig": {
             "id": "odometer",
-            "meterConfig": {
-                "scanMode": "auto_analog_digital_meter"
-            },
+            "odometerConfig": {},
             "cancelOnResult": true
         },
         "cutoutConfig": {

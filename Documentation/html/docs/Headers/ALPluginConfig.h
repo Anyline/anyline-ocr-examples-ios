@@ -24,6 +24,7 @@
 @class ALMrzMinFieldConfidences;
 @class ALOcrConfig;
 @class ALOcrConfigScanMode;
+@class ALOdometerConfig;
 @class ALStartVariable;
 @class ALTinConfig;
 @class ALTinConfigScanMode;
@@ -233,6 +234,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALMeterConfig *meterConfig;
 @property (nonatomic, nullable, strong) ALMrzConfig *mrzConfig;
 @property (nonatomic, nullable, strong) ALOcrConfig *ocrConfig;
+@property (nonatomic, nullable, strong) ALOdometerConfig *odometerConfig;
 /// Sets an initial time period where scanned frames are not processed as results.
 @property (nonatomic, nullable, strong) NSNumber *startScanDelay;
 /// Allows to fine-tune a list of options for plugins.
@@ -326,6 +328,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Determines which types of meters to scan.
 @property (nonatomic, assign) ALMeterConfigScanMode *scanMode;
+/// Sets a regular expression which the scanned text needs to match in order to trigger a
+/// scan result.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
 @end
 
 /// Configuration for scanning machine-readable zones (MRZ) of passports and other IDs
@@ -436,6 +441,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds
 /// text automatically.
 @property (nonatomic, nullable, assign) ALOcrConfigScanMode *scanMode;
+/// Sets a regular expression which the scanned text needs to match in order to trigger a
+/// scan result.
+@property (nonatomic, nullable, copy) NSString *validationRegex;
+@end
+
+/// Configuration for scanning odometers
+@interface ALOdometerConfig : NSObject
+/// Sets a minimum confidence which has to be reached in order to trigger a scan result.The
+/// value has to be between 0 and 100. Defaults to 60.
+@property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Sets a regular expression which the scanned text needs to match in order to trigger a
 /// scan result.
 @property (nonatomic, nullable, copy) NSString *validationRegex;
