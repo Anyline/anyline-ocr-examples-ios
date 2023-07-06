@@ -12,6 +12,7 @@
             "id": "id",
             "cancelOnResult": true,
             "mrzConfig": {
+                "faceDetectionEnabled": true,
                 "strictMode": false,
                 "cropAndTransformID": false
             }

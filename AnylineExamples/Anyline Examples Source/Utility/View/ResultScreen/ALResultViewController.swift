@@ -175,11 +175,14 @@ The result fields above display a selection of scannable ID information only. Pl
 
         self.faceImageView.image = self.imageFace
         self.firstImageView.image = self.imagePrimary
-        self.secondImageView.image = self.imageSecondary
 
         contentScrollView.addSubview(self.faceImageView)
         contentScrollView.addSubview(self.firstImageView)
-        contentScrollView.addSubview(self.secondImageView)
+
+        if let secondary = self.imageSecondary {
+            self.secondImageView.image = self.imageSecondary
+            contentScrollView.addSubview(self.secondImageView)
+        }
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -205,6 +208,8 @@ The result fields above display a selection of scannable ID information only. Pl
     }
 
     private func setupConstraints() {
+
+        let showingSecondaryImage = self.secondImageView.image != nil
 
         let verticalGap: CGFloat = 10.0
         let horizontalGap: CGFloat = 15.0
@@ -250,35 +255,39 @@ The result fields above display a selection of scannable ID information only. Pl
         var ratio = (self.imagePrimary?.size.height ?? 0) / (self.imagePrimary?.size.width ?? 0)
         let width = self.view.bounds.width - horizontalGap * 2.0
 
+        let imageViewBottomAnchor = (self.showDisclaimer ?
+                                     self.disclaimerTextView.topAnchor :
+                                        self.contentScrollView.bottomAnchor)
+
+        let firstImageViewToBottomCnst = self.firstImageView.bottomAnchor.constraint(lessThanOrEqualTo: imageViewBottomAnchor,
+                                                                                     constant: -verticalGap)
+        firstImageViewToBottomCnst.priority = .defaultLow
+
         allConstraints.append(contentsOf: [
             self.firstImageView.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: verticalGap),
             self.firstImageView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
             self.firstImageView.trailingAnchor.constraint(equalTo:self.tableView.trailingAnchor, constant: -10),
             self.firstImageView.widthAnchor.constraint(lessThanOrEqualToConstant: width.isNaN ? 0 : width),
-            self.firstImageView.bottomAnchor.constraint(equalTo: self.secondImageView.topAnchor, constant: -verticalGap),
             self.firstImageView.heightAnchor.constraint(equalTo: self.firstImageView.widthAnchor, multiplier: ratio.isNaN ? 1 : ratio),
+            firstImageViewToBottomCnst // in case we had to remove the secondary image view esp if it's not displaying anything
         ])
-        ratio = (self.imageSecondary?.size.height ?? 0) / (self.imageSecondary?.size.width ?? 0)
 
-        let secondImageViewBottomAnchor = (self.showDisclaimer ?
-                                           self.disclaimerTextView.topAnchor :
-                                            self.contentScrollView.bottomAnchor)
-
-        allConstraints.append(contentsOf: [
-            self.secondImageView.topAnchor.constraint(equalTo: self.firstImageView.bottomAnchor, constant: verticalGap),
-            self.secondImageView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
-            self.secondImageView.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -10),
-            self.secondImageView.heightAnchor.constraint(equalTo: self.secondImageView.widthAnchor, multiplier: ratio.isNaN ? 1 : ratio),
-            self.secondImageView.widthAnchor.constraint(equalTo: self.firstImageView.widthAnchor),
-            self.secondImageView.bottomAnchor.constraint(equalTo: secondImageViewBottomAnchor, constant: -verticalGap)
-        ])
+        if showingSecondaryImage {
+            ratio = (self.imageSecondary?.size.height ?? 0) / (self.imageSecondary?.size.width ?? 0)
+            allConstraints.append(contentsOf: [
+                self.secondImageView.topAnchor.constraint(equalTo: self.firstImageView.bottomAnchor, constant: verticalGap),
+                self.secondImageView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
+                self.secondImageView.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -10),
+                self.secondImageView.heightAnchor.constraint(equalTo: self.secondImageView.widthAnchor, multiplier: ratio.isNaN ? 1 : ratio),
+                self.secondImageView.widthAnchor.constraint(equalTo: self.firstImageView.widthAnchor),
+                self.secondImageView.bottomAnchor.constraint(equalTo: imageViewBottomAnchor, constant: -verticalGap)
+            ])
+        }
 
         if self.showDisclaimer {
             let size = self.disclaimerTextView.sizeThatFits(.init(width: width, height: 100))
             let disclaimerHeight = size.height
-
             allConstraints.append(contentsOf: [
-                self.disclaimerTextView.topAnchor.constraint(equalTo: self.secondImageView.bottomAnchor, constant: verticalGap),
                 self.disclaimerTextView.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor, constant: 10),
                 self.disclaimerTextView.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor, constant: -10),
                 self.disclaimerTextView.bottomAnchor.constraint(equalTo: self.contentScrollView.bottomAnchor, constant: -verticalGap),

@@ -1038,6 +1038,11 @@
                 },
                 "insuranceCard": {
                     "$ref": "#/definitions/layoutInsuranceCard"
+                },
+                "faceDetectionEnabled": {
+                    "type": "boolean",
+                    "description": "Sets whether the face detection approach is enabled. Defaults to false.",
+                    "default": false
                 }
             },
             "dependencies": {
@@ -1268,6 +1273,12 @@
                     "default": 60,
                     "minimum": 0,
                     "maximum": 100
+                }
+                ,
+                "faceDetectionEnabled": {
+                    "type": "boolean",
+                    "description": "Sets whether the face detection approach is enabled. Defaults to false.",
+                    "default": false
                 }
             },
             "required": [

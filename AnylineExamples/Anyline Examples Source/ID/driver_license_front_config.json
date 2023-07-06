@@ -12,6 +12,7 @@
         "pluginConfig": {
             "id": "id-dl",
             "universalIdConfig": {
+                "faceDetectionEnabled": true,
                 "allowedLayouts": {
                     "drivingLicense": []
                 },

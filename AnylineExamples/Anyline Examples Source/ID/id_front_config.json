@@ -12,6 +12,7 @@
         "pluginConfig": {
             "id": "id",
             "universalIdConfig": {
+                "faceDetectionEnabled": true,
                 "allowedLayouts": {
                     "insuranceCard": [],
                     "idFront": []

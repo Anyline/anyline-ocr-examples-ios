@@ -18,6 +18,7 @@
                     "pluginConfig": {
                         "id": "id-dl-mrz",
                         "universalIdConfig": {
+                            "faceDetectionEnabled": true,
                             "allowedLayouts": {
                                 "drivingLicense": [],
                                 "mrz": []

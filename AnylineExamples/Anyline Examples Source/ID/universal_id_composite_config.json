@@ -18,6 +18,7 @@
                     "pluginConfig": {
                         "id": "id-mrz-dl",
                         "universalIdConfig": {
+                            "faceDetectionEnabled": true,
                             "allowedLayouts": {
                                 "mrz": [],
                                 "insuranceCard": [],

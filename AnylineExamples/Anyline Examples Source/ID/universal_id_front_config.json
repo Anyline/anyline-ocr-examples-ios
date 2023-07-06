@@ -13,6 +13,7 @@
             "id": "id-mrz-dl",
             "startScanDelay": 1000,
             "universalIdConfig": {
+                "faceDetectionEnabled": true,
                 "allowedLayouts": {
                     "mrz": [],
                     "insuranceCard": [],

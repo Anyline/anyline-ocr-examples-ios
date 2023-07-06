@@ -338,6 +338,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// The cropAndTransformID determines whether or not the image shall be cropped and
 /// transformed.
 @property (nonatomic, assign) BOOL isCropAndTransformID;
+/// Sets whether the face detection approach is enabled. Defaults to false.
+@property (nonatomic, nullable, strong) NSNumber *faceDetectionEnabled;
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// The fieldmrzScanOptions configure which text fields shall be captured mandatory, optional
@@ -511,6 +513,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Sets a specific character set. Per default, only latin characters are processed.
 @property (nonatomic, nullable, assign) ALAlphabet *alphabet;
 @property (nonatomic, nullable, strong) ALLayoutDrivingLicense *drivingLicense;
+/// Sets whether the face detection approach is enabled. Defaults to false.
+@property (nonatomic, nullable, strong) NSNumber *faceDetectionEnabled;
 @property (nonatomic, nullable, strong) ALLayoutIDFront *theIDFront;
 @property (nonatomic, nullable, strong) ALLayoutInsuranceCard *insuranceCard;
 @property (nonatomic, nullable, strong) ALLayoutMrz *mrz;
