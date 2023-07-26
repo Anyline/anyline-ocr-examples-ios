@@ -108,6 +108,7 @@ Try and run our code examples here: [Anyline Examples](https://github.com/Anylin
 
 Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com)
 
+**IMPORTANT**: Before running the example app, replace the string defined in `kDemoAppLicenseKey_Bundle` (in AppDelegate.m) _with a valid license key_. To find out how to obtain a license key, see [License](#license).
 
 ## Get Help (Support)
 
