@@ -977,13 +977,15 @@
             "description": "Configures scanning options for ID fields in order to fine-tune the ID scanner.",
             "properties": {
                 "scanOption": {
-                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
-                    "type": "integer",
+                    "description": "The scanOption determines whether a field is considered optional, mandatory, disabled or follows a default behavior. Default behavior is one of the other three that yields the best recall results with all layouts enabled.",
+                    "type": "string",
                     "enum": [
-                        0,
-                        1,
-                        2
-                    ]
+                        "mandatory",
+                        "optional",
+                        "disabled",
+                        "default"
+                    ],
+                    "default": "default"
                 },
                 "minConfidence": {
                     "description": "Set the minConfidence which has to be reached in order to trigger a scan result. The value has to be between 0 and 100. Defaults to 60.",
@@ -1273,8 +1275,7 @@
                     "default": 60,
                     "minimum": 0,
                     "maximum": 100
-                }
-                ,
+                },
                 "faceDetectionEnabled": {
                     "type": "boolean",
                     "description": "Sets whether the face detection approach is enabled. Defaults to false.",
@@ -1351,13 +1352,15 @@
             "description": "Configures scanning options per field",
             "properties": {
                 "scanOption": {
-                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
-                    "type": "integer",
+                    "description": "The scanOption determines whether a field is considered optional, mandatory, disabled or follows a default behavior. Default behavior is one of the other three that yields the best recall results with all layouts enabled.",
+                    "type": "string",
                     "enum": [
-                        0,
-                        1,
-                        2
-                    ]
+                        "mandatory",
+                        "optional",
+                        "disabled",
+                        "default"
+                    ],
+                    "default": "default"
                 },
                 "minConfidence": {
                     "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",
@@ -1404,8 +1407,15 @@
             "description": "Field option for JLP fields",
             "properties": {
                 "scanOption": {
-                    "description": "Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled. Otherwise, it's defaulted.",
-                    "type": "integer"
+                    "description": "The scanOption determines whether a field is considered optional, mandatory, disabled or follows a default behavior. Default behavior is one of the other three that yields the best recall results with all layouts enabled.",
+                    "type": "string",
+                    "enum": [
+                        "mandatory",
+                        "optional",
+                        "disabled",
+                        "default"
+                    ],
+                    "default": "default"
                 },
                 "minConfidence": {
                     "description": "Set the minConfidence between 0 and 100. Otherwise, it's defaulted.",

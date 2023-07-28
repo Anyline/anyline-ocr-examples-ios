@@ -213,7 +213,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     // Handle it properly: you most likely couldn't proceed to the next stage when an error occurs.
     ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:frontIDScanViewConfig
                                                                                                     error:&error];
-    [scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig setAlphabet:[self getAlphabet]];
+    [scanViewPluginConfig.pluginConfig.universalIDConfig setAlphabet:[self getAlphabet]];
     ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
     
     if ([self popWithAlertOnError:error]) {
@@ -265,7 +265,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     if ([backScanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
         ALScanViewPlugin *scanViewPlugin = backScanViewPlugin;
         scanViewPluginConfig = scanViewPlugin.scanViewPluginConfig;
-        scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
+        scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
         
         backScanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:scanViewPluginConfig.asJSONString.asJSONObject
                                                                    error:&error];
@@ -279,10 +279,10 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
         ALViewPluginComposite *composite = backScanViewPlugin;
         // modify the alphabet of the ID plugin child
         for (id<ALScanViewPluginBase> child in composite.children) {
-            if ([child isKindOfClass:ALScanViewPlugin.class] && [[(ALScanViewPlugin *)child scanPlugin] scanPluginConfig].pluginConfig.universalIDConfig != nil) {
+            if ([child isKindOfClass:ALScanViewPlugin.class] && [(ALScanViewPlugin *)child scanPlugin].pluginConfig.universalIDConfig != nil) {
                 ALScanViewPlugin *scanViewPlugin = child;
                 scanViewPluginConfig = scanViewPlugin.scanViewPluginConfig;
-                scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
+                scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
                 break;
             }
         }
@@ -297,7 +297,7 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     
     NSAssert(backScanViewPlugin, @"backScanViewPlugin should not be null!");
     
-    scanViewPluginConfig.scanPluginConfig.pluginConfig.universalIDConfig.alphabet = [self getAlphabet];
+    scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = [self getAlphabet];
 
     // the way it works, unfortunately for the back scan view, is that it will keep using
     // any scan view config used for the front scan because then we wouldn't have to recreate the
@@ -643,8 +643,15 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
             ALResultViewController *vc = [[ALResultViewController alloc]
                                           initWithResults:weakSelf.resultData];
             vc.imageFace = weakSelf.faceImage;
+
             vc.imagePrimary = weakSelf.frontScanImage;
             vc.imageSecondary = weakSelf.backScanImage;
+
+            if (!weakSelf.frontScanImage) {
+                vc.imagePrimary = weakSelf.backScanImage;
+                vc.imageSecondary = nil;
+            }
+
             vc.showDisclaimer = YES;
             vc.isRightToLeft = weakSelf.scriptType == ALScriptTypeArabic;
             UIViewController *topVC = [weakSelf.navigationController topViewController];

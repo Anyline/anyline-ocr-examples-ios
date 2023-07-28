@@ -58,9 +58,9 @@
 		
 		<option value="//api/name/cutoutConfig">cutoutConfig</option>
 		
-		<option value="//api/name/scanFeedbackConfig">scanFeedbackConfig</option>
+		<option value="//api/name/pluginConfig">pluginConfig</option>
 		
-		<option value="//api/name/scanPluginConfig">scanPluginConfig</option>
+		<option value="//api/name/scanFeedbackConfig">scanFeedbackConfig</option>
 		
 	</optgroup>
 	
@@ -70,9 +70,9 @@
 		
 		<option value="//api/name/withJSONDictionary:">+ withJSONDictionary:</option>
 		
-		<option value="//api/name/withScanPluginConfig:">+ withScanPluginConfig:</option>
+		<option value="//api/name/withPluginConfig:">+ withPluginConfig:</option>
 		
-		<option value="//api/name/withScanPluginConfig:cutoutConfig:scanFeedbackConfig:">+ withScanPluginConfig:cutoutConfig:scanFeedbackConfig:</option>
+		<option value="//api/name/withPluginConfig:cutoutConfig:scanFeedbackConfig:">+ withPluginConfig:cutoutConfig:scanFeedbackConfig:</option>
 		
 	</optgroup>
 	
@@ -82,9 +82,9 @@
 		
 		<option value="//api/name/initWithJSONDictionary:error:">- initWithJSONDictionary:error:</option>
 		
-		<option value="//api/name/initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:">- initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:</option>
+		<option value="//api/name/initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:">- initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:</option>
 		
-		<option value="//api/name/initWithScanPluginConfig:error:">- initWithScanPluginConfig:error:</option>
+		<option value="//api/name/initWithPluginConfig:error:">- initWithPluginConfig:error:</option>
 		
 	</optgroup>
 	
@@ -221,8 +221,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/scanPluginConfig" title="scanPluginConfig"></a>
-	<h3 class="method-title"><code><a href="#//api/name/scanPluginConfig">&nbsp;&nbsp;scanPluginConfig</a></code>
+	<a name="//api/name/pluginConfig" title="pluginConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pluginConfig">&nbsp;&nbsp;pluginConfig</a></code>
 </h3>
 
 	<div class="method-info">
@@ -232,12 +232,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Configuration object for the associated scan plugin config</p>
+				<p>Configuration object for the associated plugin config</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALScanPluginConfig *scanPluginConfig</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ALPluginConfig *pluginConfig</code></div>
 
 		    
 			
@@ -262,8 +262,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:" title="initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:">&ndash;&nbsp;initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:</a></code>
+	<a name="//api/name/initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:" title="initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:">&ndash;&nbsp;initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -273,13 +273,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes an <code>ALScanViewPluginConfig</code> with ScanPluginConfig, CutoutConfig, and
+				<p>Initializes an <code>ALScanViewPluginConfig</code> with PluginConfig, CutoutConfig, and
 ScanFeedbackConfig components.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig *)<em>scanPluginConfig</em> cutoutConfig:(ALCutoutConfig *_Nullable)<em>cutoutConfig</em> scanFeedbackConfig:(ALScanFeedbackConfig *_Nullable)<em>scanFeedbackConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginConfig:(ALPluginConfig *)<em>pluginConfig</em> cutoutConfig:(ALCutoutConfig *_Nullable)<em>cutoutConfig</em> scanFeedbackConfig:(ALScanFeedbackConfig *_Nullable)<em>scanFeedbackConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -288,8 +288,8 @@ ScanFeedbackConfig components.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>scanPluginConfig</code></th>
-						<td><p>Configuration object for the associated scan plugin config</p></td>
+						<th scope="row" class="argument-name"><code>pluginConfig</code></th>
+						<td><p>Configuration object for the associated plugin config</p></td>
 					</tr>
 				
 					<tr>
@@ -336,8 +336,8 @@ ScanFeedbackConfig components.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithScanPluginConfig:error:" title="initWithScanPluginConfig:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithScanPluginConfig:error:">&ndash;&nbsp;initWithScanPluginConfig:error:</a></code>
+	<a name="//api/name/initWithPluginConfig:error:" title="initWithPluginConfig:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPluginConfig:error:">&ndash;&nbsp;initWithPluginConfig:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -347,12 +347,12 @@ ScanFeedbackConfig components.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes the ScanViewPluginConfig with an <a href="../Classes/ALScanPluginConfig.html">ALScanPluginConfig</a> instance</p>
+				<p>Initializes the ScanViewPluginConfig with an <a href="../Classes/ALPluginConfig.html">ALPluginConfig</a> instance</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig *)<em>scanPluginConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithPluginConfig:(ALPluginConfig *)<em>pluginConfig</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -361,8 +361,8 @@ ScanFeedbackConfig components.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>scanPluginConfig</code></th>
-						<td><p>The ScanPluginConfig instance</p></td>
+						<th scope="row" class="argument-name"><code>pluginConfig</code></th>
+						<td><p>The PluginConfig instance</p></td>
 					</tr>
 				
 					<tr>
@@ -457,8 +457,8 @@ ScanFeedbackConfig components.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/withScanPluginConfig:cutoutConfig:scanFeedbackConfig:" title="withScanPluginConfig:cutoutConfig:scanFeedbackConfig:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/withScanPluginConfig:cutoutConfig:scanFeedbackConfig:">+&nbsp;withScanPluginConfig:cutoutConfig:scanFeedbackConfig:</a></code>
+	<a name="//api/name/withPluginConfig:cutoutConfig:scanFeedbackConfig:" title="withPluginConfig:cutoutConfig:scanFeedbackConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withPluginConfig:cutoutConfig:scanFeedbackConfig:">+&nbsp;withPluginConfig:cutoutConfig:scanFeedbackConfig:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -468,13 +468,13 @@ ScanFeedbackConfig components.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates a ScanViewPluginConfig with with ScanPluginConfig, CutoutConfig,
+				<p>Creates a ScanViewPluginConfig with with PluginConfig, CutoutConfig,
 and ScanFeedbackConfig components.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (ALScanViewPluginConfig *_Nullable)withScanPluginConfig:(ALScanPluginConfig *)<em>scanPluginConfig</em> cutoutConfig:(ALCutoutConfig *_Nullable)<em>cutoutConfig</em> scanFeedbackConfig:(ALScanFeedbackConfig *_Nullable)<em>scanFeedbackConfig</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALScanViewPluginConfig *_Nullable)withPluginConfig:(ALPluginConfig *)<em>pluginConfig</em> cutoutConfig:(ALCutoutConfig *_Nullable)<em>cutoutConfig</em> scanFeedbackConfig:(ALScanFeedbackConfig *_Nullable)<em>scanFeedbackConfig</em></code></div>
 
 		    
 			
@@ -483,8 +483,8 @@ and ScanFeedbackConfig components.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>scanPluginConfig</code></th>
-						<td><p>Configuration object for the associated scan plugin config</p></td>
+						<th scope="row" class="argument-name"><code>pluginConfig</code></th>
+						<td><p>Configuration object for the associated plugin config</p></td>
 					</tr>
 				
 					<tr>
@@ -526,8 +526,8 @@ and ScanFeedbackConfig components.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/withScanPluginConfig:" title="withScanPluginConfig:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/withScanPluginConfig:">+&nbsp;withScanPluginConfig:</a></code>
+	<a name="//api/name/withPluginConfig:" title="withPluginConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/withPluginConfig:">+&nbsp;withPluginConfig:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -537,13 +537,13 @@ and ScanFeedbackConfig components.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates a ScanViewPluginConfig with with ScanPluginConfig, CutoutConfig,
+				<p>Creates a ScanViewPluginConfig with with PluginConfig, CutoutConfig,
 and ScanFeedbackConfig components.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (ALScanViewPluginConfig *_Nullable)withScanPluginConfig:(ALScanPluginConfig *)<em>scanPluginConfig</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (ALScanViewPluginConfig *_Nullable)withPluginConfig:(ALPluginConfig *)<em>pluginConfig</em></code></div>
 
 		    
 			
@@ -552,8 +552,8 @@ and ScanFeedbackConfig components.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>scanPluginConfig</code></th>
-						<td><p>Configuration object for the associated scan plugin config</p></td>
+						<th scope="row" class="argument-name"><code>pluginConfig</code></th>
+						<td><p>Configuration object for the associated plugin config</p></td>
 					</tr>
 				
 				</table>
@@ -657,7 +657,7 @@ and ScanFeedbackConfig components.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-07-06</p>
+						<p class="copyright">Copyright &copy; 2023 Anyline GmbH. All rights reserved. Updated: 2023-07-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

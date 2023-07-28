@@ -137,20 +137,18 @@ class ALMeterScanViewController: ALBaseScanViewController {
 
     fileprivate static func meterScanViewPlugin(from config: ALScanViewPluginConfig,
                                                 scanMode: ALMeterConfigScanMode) throws -> ALScanViewPlugin {
-        var scanPluginConfig = config.scanPluginConfig
+        var pluginConfig = config.pluginConfig
         var cutoutConfig = config.cutoutConfig
         let scanFeedbackConfig = config.scanFeedbackConfig
 
         // edit scan mode
-        scanPluginConfig.pluginConfig.meterConfig?.scanMode = scanMode
+        pluginConfig.meterConfig?.scanMode = scanMode
 
         // apply a new cutout config
         if scanMode == ALMeterConfigScanMode.dialMeter() {
 
             // increase startScanDelay
-            let pluginConfig = scanPluginConfig.pluginConfig
             pluginConfig.startScanDelay = 1000
-            scanPluginConfig = .init(pluginConfig: pluginConfig)
 
             // create a new ALCutoutConfig
             cutoutConfig = .init(alignment: config.cutoutConfig.alignment,
@@ -170,7 +168,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
                                  image: config.cutoutConfig.image)!
         }
 
-        let scanViewPluginConfig: ALScanViewPluginConfig = try .init(scanPluginConfig: scanPluginConfig,
+        let scanViewPluginConfig: ALScanViewPluginConfig = try .init(pluginConfig: pluginConfig,
                                                                      cutoutConfig: cutoutConfig,
                                                                      scanFeedbackConfig: scanFeedbackConfig)
 
@@ -200,7 +198,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
                 // remake a scanViewPlugin with your change to the meter plugin scan mode
 
                 // make sure it's the meter child plugin you are doing this to
-                if scanViewPlugin.scanPlugin.scanPluginConfig.pluginConfig.meterConfig != nil {
+                if scanViewPlugin.scanPlugin.pluginConfig.meterConfig != nil {
                     scanViewPlugin = try type(of: self)
                         .meterScanViewPlugin(from: scanViewPlugin.scanViewPluginConfig,
                                              scanMode: scanMode)

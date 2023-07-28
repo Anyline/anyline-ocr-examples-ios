@@ -14,13 +14,13 @@
 @class ALContainerConfigScanMode;
 @class ALJapaneseLandingPermissionConfig;
 @class ALJapaneseLandingPermissionConfigFieldOption;
+@class ALMrzScanOption;
 @class ALLicensePlateConfig;
 @class ALLicensePlateConfigScanMode;
 @class ALMeterConfig;
 @class ALMeterConfigScanMode;
 @class ALMrzConfig;
 @class ALMrzFieldScanOptions;
-@class ALMrzScanOption;
 @class ALMrzMinFieldConfidences;
 @class ALOcrConfig;
 @class ALOcrConfigScanMode;
@@ -112,6 +112,21 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALContainerConfigScanMode *)vertical;
 @end
 
+/// The scanOption determines whether a field is considered optional, mandatory, disabled or
+/// follows a default behavior. Default behavior is one of the other three that yields the
+/// best recall results with all layouts enabled.
+///
+/// The mrzScanOption determines whether a field is considered optional, mandatory, disabled
+/// or follows a default behavior.
+@interface ALMrzScanOption : NSObject
+@property (nonatomic, readonly, copy) NSString *value;
++ (instancetype _Nullable)withValue:(NSString *)value;
++ (ALMrzScanOption *)disabled;
++ (ALMrzScanOption *)mandatory;
++ (ALMrzScanOption *)mrzScanOptionDefault;
++ (ALMrzScanOption *)optional;
+@end
+
 /// Specifies a country or location of which license plates shall be scanned.
 @interface ALLicensePlateConfigScanMode : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
@@ -177,17 +192,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALMeterConfigScanMode *)dialMeter;
 + (ALMeterConfigScanMode *)digitalMeter2_Experimental;
 + (ALMeterConfigScanMode *)multiFieldDigitalMeter;
-@end
-
-/// The mrzScanOption determines whether a field is considered optional, mandatory, disabled
-/// or follows a default behavior.
-@interface ALMrzScanOption : NSObject
-@property (nonatomic, readonly, copy) NSString *value;
-+ (instancetype _Nullable)withValue:(NSString *)value;
-+ (ALMrzScanOption *)disabled;
-+ (ALMrzScanOption *)mandatory;
-+ (ALMrzScanOption *)mrzScanOptionDefault;
-+ (ALMrzScanOption *)optional;
 @end
 
 /// Sets whether to scan single-line texts, multi-line texts in a grid-formation or finds
@@ -302,9 +306,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALJapaneseLandingPermissionConfigFieldOption : NSObject
 /// Set the minConfidence between 0 and 100. Otherwise, it's defaulted.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled.
-/// Otherwise, it's defaulted.
-@property (nonatomic, nullable, strong) NSNumber *scanOption;
+/// The scanOption determines whether a field is considered optional, mandatory, disabled or
+/// follows a default behavior. Default behavior is one of the other three that yields the
+/// best recall results with all layouts enabled.
+@property (nonatomic, nullable, assign) ALMrzScanOption *scanOption;
 @end
 
 /// Configuration for scanning license plates
@@ -579,9 +584,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Set the minConfidence which has to be reached in order to trigger a scan result. The
 /// value has to be between 0 and 100. Defaults to 60.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled.
-/// Otherwise, it's defaulted.
-@property (nonatomic, nullable, strong) NSNumber *scanOption;
+/// The scanOption determines whether a field is considered optional, mandatory, disabled or
+/// follows a default behavior. Default behavior is one of the other three that yields the
+/// best recall results with all layouts enabled.
+@property (nonatomic, nullable, assign) ALMrzScanOption *scanOption;
 @end
 
 /// Contains all the supported field scan options for insurance cards.
@@ -713,9 +719,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALVehicleRegistrationCertificateField : NSObject
 /// Set the minConfidence between 0 and 100. Otherwise, it's defaulted.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Set the scanOption to one of the following: 0 = mandatory, 1 = optional, 2 = disabled.
-/// Otherwise, it's defaulted.
-@property (nonatomic, nullable, strong) NSNumber *scanOption;
+/// The scanOption determines whether a field is considered optional, mandatory, disabled or
+/// follows a default behavior. Default behavior is one of the other three that yields the
+/// best recall results with all layouts enabled.
+@property (nonatomic, nullable, assign) ALMrzScanOption *scanOption;
 @end
 
 /// Configuration for scanning vehicle identification numbers (VIN)

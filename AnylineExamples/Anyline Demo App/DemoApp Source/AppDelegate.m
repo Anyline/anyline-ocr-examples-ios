@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     NSError *error = nil;
-    NSString *licenseKey = kDemoAppLicenseKey_Bundle;
+    NSString *licenseKey = kDemoAppLicenseKey;
     [AnylineSDK setupWithLicenseKey:licenseKey error:&error];
     if (error) {
         NSLog(@"There was an error initializing the AnylineSDK. Reason: %@", error.localizedDescription);

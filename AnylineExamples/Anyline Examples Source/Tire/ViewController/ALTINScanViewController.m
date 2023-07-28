@@ -111,7 +111,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
     
     // Change the mode...
-    ALTinConfig *tinConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig.tinConfig;
+    ALTinConfig *tinConfig = scanViewPluginConfig.pluginConfig.tinConfig;
     tinConfig.scanMode = ALTinConfigScanMode.universal;
     switch (scanMode) {
         case ALTINScanModeUniversal:

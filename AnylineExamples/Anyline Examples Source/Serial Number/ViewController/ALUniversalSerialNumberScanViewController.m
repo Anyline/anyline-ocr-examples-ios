@@ -93,18 +93,16 @@ NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_numb
 + (ALScanViewPlugin *)scanViewPluginWithUpdatedSettings:(NSError **)error {
     ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
     
-    ALPluginConfig *newPluginConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig;
+    ALPluginConfig *newPluginConfig = scanViewPluginConfig.pluginConfig;
     newPluginConfig.ocrConfig = [self.class ocrConfig];
-    
-    ALScanPluginConfig *newScanPluginConfig = [[ALScanPluginConfig alloc] initWithPluginConfig:newPluginConfig];
     
     NSDictionary *newCutoutConfigDictionary = [CutoutSettings.shared customizedCutoutConfigFrom:scanViewPluginConfig.cutoutConfig];
     ALCutoutConfig *newCutoutConfig = [[ALCutoutConfig alloc] initWithJSONDictionary:newCutoutConfigDictionary error:nil];
     
-    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:newScanPluginConfig
-                                                                                                  cutoutConfig:newCutoutConfig
-                                                                                            scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig
-                                                                                                         error:nil];
+    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithPluginConfig:newPluginConfig
+                                                                                              cutoutConfig:newCutoutConfig
+                                                                                        scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig
+                                                                                                     error:nil];
     
     return [[ALScanViewPlugin alloc] initWithConfig:newScanViewPluginConfig error:error];
 }

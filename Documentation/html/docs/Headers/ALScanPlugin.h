@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "ALScanPluginConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ALScanPluginDelegate;
 
+@class ALPluginConfig;
 @class ALRect;
 @class ALAssetController;
 @class ALImageProvider;
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ALAssetController *assetController;
 
 /// Configuration object for the scan plugin
-@property (nonatomic, strong, readonly) ALScanPluginConfig *scanPluginConfig;
+@property (nonatomic, strong, readonly) ALPluginConfig *pluginConfig;
 
 /// The unique identifier string for the plugin
 @property (nonatomic, readonly) NSString *pluginID;
@@ -39,10 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Initializes a scan plugin given a JSON config data
 /// object (which encodes the string form of the config).
 /// May lead to an error when config is invalid, if so the `error` param is filled
-/// @param scanPluginConfig an `ALScanPluginConfig` config object
+/// @param pluginConfig an `ALPluginConfig` config object
 /// @param error set with the error details if there's an error encountered during initialization
 /// @return the `ALScanPlugin` object
-- (id _Nullable)initWithConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig
+- (id _Nullable)initWithConfig:(ALPluginConfig * _Nonnull)pluginConfig
                          error:(NSError * _Nullable * _Nullable)error;
 
 /// Initializes a scan plugin given a JSON config data

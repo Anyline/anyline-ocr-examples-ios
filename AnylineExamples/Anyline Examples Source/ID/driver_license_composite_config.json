@@ -24,26 +24,25 @@
                                 "mrz": []
                             },
                             "drivingLicense": {
-                                "lastName": {"scanOption": 0, "minConfidence": 40},
-                                "firstName": {"scanOption": 0, "minConfidence": 40},
-                                "fullName": {"scanOption": 0, "minConfidence": 40},
-                                "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
-                                "placeOfBirth": {"scanOption": 1, "minConfidence": 50},
-                                "dateOfIssue": {"scanOption": 0, "minConfidence": 50},
-                                "dateOfExpiry": {"scanOption": 1, "minConfidence": 50},
-                                "authority": {"scanOption": 1, "minConfidence": 30},
-                                "documentNumber": {"scanOption": 0, "minConfidence": 40},
-                                "licenseClass": {"scanOption": 1, "minConfidence": 30},
-                                "address": {"scanOption": 0},
-                                "sex": {"scanOption": 1,"minConfidence": 60},
-                                "personalNumber": {"scanOption": 1,"minConfidence": 60}
+                                "lastName": {"scanOption": "mandatory", "minConfidence": 40},
+                                "firstName": {"scanOption": "mandatory", "minConfidence": 40},
+                                "fullName": {"scanOption": "mandatory", "minConfidence": 40},
+                                "dateOfBirth": {"scanOption": "mandatory", "minConfidence": 50},
+                                "placeOfBirth": {"scanOption": "optional", "minConfidence": 50},
+                                "dateOfIssue": {"scanOption": "mandatory", "minConfidence": 50},
+                                "dateOfExpiry": {"scanOption": "optional", "minConfidence": 50},
+                                "authority": {"scanOption": "optional", "minConfidence": 30},
+                                "documentNumber": {"scanOption": "mandatory", "minConfidence": 40},
+                                "licenseClass": {"scanOption": "optional", "minConfidence": 30},
+                                "address": {"scanOption": "mandatory"},
+                                "sex": {"scanOption": "optional","minConfidence": 60},
+                                "personalNumber": {"scanOption": "optional","minConfidence": 60}
                             },
                             "alphabet": "latin"
                         },
                         "cancelOnResult": true
                     },
                     "cutoutConfig" : {
-                        "style": "none",
                         "maxWidthPercent": "90%",
                         "alignment": "center",
                         "strokeWidth": 2,

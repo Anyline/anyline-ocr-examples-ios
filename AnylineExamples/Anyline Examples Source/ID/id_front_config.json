@@ -19,28 +19,28 @@
                 },
                 "alphabet": "latin",
                 "insuranceCard": {
-                    "lastName": {"scanOption": 0, "minConfidence": 50},
-                    "firstName": {"scanOption": 0, "minConfidence": 50},
-                    "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
-                    "personalNumber": {"scanOption": 0, "minConfidence": 50},
-                    "authority": {"scanOption": 0, "minConfidence": 50},
-                    "documentNumber": {"scanOption": 0, "minConfidence": 50},
-                    "dateOfExpiry": {"scanOption": 0, "minConfidence": 50},
-                    "nationality": {"scanOption": 0, "minConfidence": 50}
+                    "lastName": {"scanOption": "mandatory", "minConfidence": 50},
+                    "firstName": {"scanOption": "mandatory", "minConfidence": 50},
+                    "dateOfBirth": {"scanOption": "mandatory", "minConfidence": 50},
+                    "personalNumber": {"scanOption": "mandatory", "minConfidence": 50},
+                    "authority": {"scanOption": "mandatory", "minConfidence": 50},
+                    "documentNumber": {"scanOption": "mandatory", "minConfidence": 50},
+                    "dateOfExpiry": {"scanOption": "mandatory", "minConfidence": 50},
+                    "nationality": {"scanOption": "mandatory", "minConfidence": 50}
                 },
                 "idFront": {
-                    "lastName": {"scanOption": 0, "minConfidence": 60},
-                    "firstName": {"scanOption": 0, "minConfidence": 60},
-                    "fullName": {"scanOption": 0, "minConfidence": 60},
-                    "dateOfBirth": {"scanOption": 0,"minConfidence": 60},
-                    "placeOfBirth": {"scanOption": 1,"minConfidence": 60},
-                    "dateOfIssue": {"scanOption": 0, "minConfidence": 60},
-                    "dateOfExpiry": {"scanOption": 1,"minConfidence": 60},
-                    "cardAccessNumber": {"scanOption": 1,"minConfidence": 60},
-                    "documentNumber": {"scanOption": 0,"minConfidence": 60},
-                    "nationality": {"scanOption": 1,"minConfidence": 60},
-                    "sex": {"scanOption": 1,"minConfidence": 60},
-                    "personalNumber": {"scanOption": 1,"minConfidence": 60}
+                    "lastName": {"scanOption": "mandatory", "minConfidence": 60},
+                    "firstName": {"scanOption": "mandatory", "minConfidence": 60},
+                    "fullName": {"scanOption": "mandatory", "minConfidence": 60},
+                    "dateOfBirth": {"scanOption": "mandatory","minConfidence": 60},
+                    "placeOfBirth": {"scanOption": "optional","minConfidence": 60},
+                    "dateOfIssue": {"scanOption": "mandatory", "minConfidence": 60},
+                    "dateOfExpiry": {"scanOption": "optional","minConfidence": 60},
+                    "cardAccessNumber": {"scanOption": "optional","minConfidence": 60},
+                    "documentNumber": {"scanOption": "mandatory","minConfidence": 60},
+                    "nationality": {"scanOption": "optional","minConfidence": 60},
+                    "sex": {"scanOption": "optional","minConfidence": 60},
+                    "personalNumber": {"scanOption": "optional","minConfidence": 60}
                 }
             },
             "cancelOnResult": true

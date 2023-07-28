@@ -240,7 +240,7 @@ typedef enum : NSUInteger {
                                                  error:(NSError **)error {
     ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
     // reach into the barcode config and change the formats and multibarcode flags
-    ALPluginConfig *pluginConfig = scanViewPluginConfig.scanPluginConfig.pluginConfig;
+    ALPluginConfig *pluginConfig = scanViewPluginConfig.pluginConfig;
 
     // if multibarcode, also cancelOnResult = false, otherwise true
     pluginConfig.cancelOnResult = [NSNumber numberWithBool:isMultiBarcode ? false : true];
@@ -255,7 +255,9 @@ typedef enum : NSUInteger {
     scanFeedbackConfigDict[@"vibrateOnResult"] = @(!isMultiBarcode);
     ALScanFeedbackConfig *scanFeedbackConfig = [ALScanFeedbackConfig withJSONDictionary:scanFeedbackConfigDict];
 
-    scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithScanPluginConfig:scanViewPluginConfig.scanPluginConfig cutoutConfig:scanViewPluginConfig.cutoutConfig scanFeedbackConfig:scanFeedbackConfig error:nil];
+    scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithPluginConfig:scanViewPluginConfig.pluginConfig
+                                                                   cutoutConfig:scanViewPluginConfig.cutoutConfig
+                                                             scanFeedbackConfig:scanFeedbackConfig error:nil];
 
     return [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:error];
 }

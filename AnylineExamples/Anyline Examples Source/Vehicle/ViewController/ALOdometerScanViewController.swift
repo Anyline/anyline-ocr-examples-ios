@@ -84,13 +84,13 @@ class ALOdometerScanViewController: ALBaseScanViewController {
     }
 
     fileprivate static func odometerScanViewPlugin(from config: ALScanViewPluginConfig) throws -> ALScanViewPlugin {
-        let scanPluginConfig = config.scanPluginConfig
+        let pluginConfig = config.pluginConfig
         let cutoutConfig = config.cutoutConfig
         let scanFeedbackConfig = config.scanFeedbackConfig
 
         // handle any adaptations to the config based on the scan mode
 
-        let scanViewPluginConfig: ALScanViewPluginConfig = try .init(scanPluginConfig: scanPluginConfig,
+        let scanViewPluginConfig: ALScanViewPluginConfig = try .init(pluginConfig: pluginConfig,
                                                                      cutoutConfig: cutoutConfig,
                                                                      scanFeedbackConfig: scanFeedbackConfig)
 
@@ -118,10 +118,9 @@ extension ALOdometerScanViewController: ALScanPluginDelegate {
     func loadOdometerResult(from scanResult: ALScanResult) -> String? {
 
         if let odometerResult = scanResult.pluginResult.odometerResult {
-            var result = odometerResult.value
             self.resultEntries = (scanResult.pluginResult.fieldList() as NSArray).resultEntries
             self.resultImage = scanResult.croppedImage
-            return result
+            return odometerResult.value
         }
         return nil
     }

@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/ALPluginConfig.h</key>
 		<data>
-		sDyuDgFs3BRLDkpTSg0JBgQUn2M=
+		Kz8rvMqmpqy3jGMDT9KPiCNlzDg=
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
@@ -90,11 +90,7 @@
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
-		K6f1OPzN2lf5Mt8iT0BJblOe8iE=
-		</data>
-		<key>Headers/ALScanPluginConfig.h</key>
-		<data>
-		z/DqRAvDK2ohYScsF6Uvd0yKo3I=
+		EJXn+lcZ3fs+a3/E1ftZW4CIZFs=
 		</data>
 		<key>Headers/ALScanResult.h</key>
 		<data>
@@ -122,7 +118,7 @@
 		</data>
 		<key>Headers/ALScanViewPluginConfig.h</key>
 		<data>
-		UYaSVctLjxSnO+XnllU/gjrg5UY=
+		qDwpi1dS9T6Auic2DQMVbmmQPS0=
 		</data>
 		<key>Headers/ALScanViewPluginFactory.h</key>
 		<data>
@@ -134,7 +130,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		WNRY2m5SDjlVfNsKOHNeYNRro24=
+		Mk4vJ2Pwc72HYGb84rPAwIfHUpQ=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -142,7 +138,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RpaG9DPve/BvNTbszn8JBbKf1Z4=
+		Lf6WtFJISp1LgCuKDVT1h8yFPEw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -274,7 +270,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qaiHKdDkw9m3iyKK48i2TgdjAZ4NRwzvKdZIfjh2e/8=
+			Em3tRLrfXiKq4aGRw8HGH30RfYL4+VqYKfNS7pRfhSI=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
@@ -302,14 +298,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L4+DRpWYMQ7k3SUgKymHneVJBVkEZ+fUxXdkcEmRuZs=
-			</data>
-		</dict>
-		<key>Headers/ALScanPluginConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EPhZfuVqaavU02QNGOpTww/gUbzwY4uB2ZhmD1i0TEQ=
+			DabcSZS3AwFCUwFyGNAqGdYm4gMQZh8lQecwoylOEGA=
 			</data>
 		</dict>
 		<key>Headers/ALScanResult.h</key>
@@ -358,7 +347,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JRdqntAHZolgzj2C+fAI3TXKbXstxyGX9Q4oR+aKGTg=
+			6wtawUiZD0wOaKYbeqOEtHZVJN0uhMYBbva90RmkhmY=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewPluginFactory.h</key>
@@ -379,7 +368,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6P1UDUg23KgUCqK6OkOoouvf43umovfTSLOpAVJVkrM=
+			JOj7LsuxdM9xwuWDH8AdrT6x1a/jRf1rgLQiMLsUBGI=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>

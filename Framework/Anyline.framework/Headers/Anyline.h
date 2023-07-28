@@ -9,7 +9,6 @@
 #import "ALPluginResult+Extras.h"
 #import "ALPluginResult.h"
 #import "ALScanPlugin.h"
-#import "ALScanPluginConfig.h"
 #import "ALScanResult.h"
 #import "ALScanView.h"
 #import "ALScanViewConfig.h"
