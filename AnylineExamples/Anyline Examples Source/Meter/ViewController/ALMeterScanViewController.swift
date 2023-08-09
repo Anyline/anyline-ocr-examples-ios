@@ -150,14 +150,16 @@ class ALMeterScanViewController: ALBaseScanViewController {
             // increase startScanDelay
             pluginConfig.startScanDelay = 1000
 
-            // create a new ALCutoutConfig
+            // create a new ALCutoutConfig (right now there's nothing different
+            // between a dial config and a analog/digital one, but there used to
+            // be)
             cutoutConfig = .init(alignment: config.cutoutConfig.alignment,
                                  animation: config.cutoutConfig.animation,
-                                 ratioFrom: .init(width: 2, height: 1), // modified
-                                 offset: .init(x: 0, y: 50), // modified
+                                 ratioFrom: config.cutoutConfig.ratioFromSize,
+                                 offset: config.cutoutConfig.offset,
                                  width: config.cutoutConfig.width,
                                  maxHeightPercent: config.cutoutConfig.maxHeightPercent,
-                                 maxWidthPercent: 85, // modified
+                                 maxWidthPercent: config.cutoutConfig.maxWidthPercent,
                                  cornerRadius: config.cutoutConfig.cornerRadius,
                                  strokeWidth: config.cutoutConfig.strokeWidth,
                                  strokeColor: config.cutoutConfig.strokeColor,

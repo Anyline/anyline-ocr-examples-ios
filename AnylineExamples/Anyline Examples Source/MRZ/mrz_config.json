@@ -20,14 +20,9 @@
         "cutoutConfig": {
             "maxWidthPercent": "90%",
             "alignment": "center",
-            "ratioFromSize": {
-                "width": 25,
-                "height": 17
-            },
-            "cropPadding": {
-                "x": 30,
-                "y": 90
-            },
+            "ratioFromSize": { "width": 161, "height": 100 },
+            "cropPadding": { "x": 30, "y": 90 },
+            "cropOffset": { "x": 0, "y": 90 },
             "outerColor": "000000",
             "outerAlpha": 0.3,
             "strokeWidth": 2,

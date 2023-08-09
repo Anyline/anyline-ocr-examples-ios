@@ -15,7 +15,9 @@
       "commercialTireIdConfig": {}
     },
     "cutoutConfig": {
-      "maxWidthPercent": "90%",
+      "maxWidthPercent": "80%",
+      "width": 720,
+      "ratioFromSize": { "width": 5, "height": 1 },
       "alignment": "center",
       "strokeWidth": 2,
       "cornerRadius": 6,

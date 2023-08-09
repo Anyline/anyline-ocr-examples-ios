@@ -17,7 +17,8 @@
         },
         "cutoutConfig": {
             "animation": "none",
-            "maxWidthPercent": "67%",
+            "maxWidthPercent": "80%",
+            "width": 550,
             "alignment": "top_half",
             "ratioFromSize": { "width": 2, "height": 1 },
             "offset": { "x": 0, "y": 0 },

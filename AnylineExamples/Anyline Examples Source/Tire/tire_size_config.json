@@ -1,44 +1,42 @@
 {
-  "cameraConfig": {
-    "captureResolution": "1080p",
-    "zoomGesture": true
-  },
-  "flashConfig": {
-    "mode": "manual",
-    "alignment": "top_left"
-  },
-  "viewPluginConfig": {
-    "pluginConfig": {
-      "id": "tire-size-configuration",
-      "startScanDelay": 1000,
-      "cancelOnResult": true,
-      "tireSizeConfig": {
-          "upsideDownMode": "AUTO"
-      }
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "zoomGesture": true
     },
-    "cutoutConfig": {
-      "maxWidthPercent": "90%",
-      "alignment": "center",
-      "strokeWidth": 2,
-      "cornerRadius": 6,
-      "strokeColor": "FFFFFF",
-      "outerColor": "000000",
-      "outerAlpha": 0.3,
-      "ratioFromSize": {
-        "width": 31,
-        "height": 6
-      },
-      "feedbackStrokeColor": "0099FF"
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_left"
     },
-    "scanFeedbackConfig": {
-      "animation": "none",
-      "animationDuration": 50,
-      "style": "rect",
-      "strokeWidth": 1,
-      "strokeColor": "0099FF",
-      "beepOnResult": true,
-      "vibrateOnResult": true
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "tire-size-configuration",
+            "startScanDelay": 1000,
+            "cancelOnResult": true,
+            "tireSizeConfig": {
+                "upsideDownMode": "AUTO"
+            }
+        },
+        "cutoutConfig": {
+            "maxWidthPercent": "80%",
+            "alignment": "center",
+            "width": 720,
+            "ratioFromSize": { "width": 5, "height": 2 },
+            "strokeWidth": 2,
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedbackConfig": {
+            "animation": "none",
+            "animationDuration": 50,
+            "style": "rect",
+            "strokeWidth": 1,
+            "strokeColor": "0099FF",
+            "beepOnResult": true,
+            "vibrateOnResult": true
+        }
     }
-  }
 }
 

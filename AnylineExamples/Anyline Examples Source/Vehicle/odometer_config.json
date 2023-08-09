@@ -15,10 +15,11 @@
             "cancelOnResult": true
         },
         "cutoutConfig": {
-            "maxWidthPercent": "67%",
-            "alignment": "top_half",
-            "ratioFromSize": { "width": 9, "height": 4 },
-            "offset": { "x": 0, "y": 0 },
+            "maxWidthPercent": "90%",
+            "alignment": "top",
+            "width": 550,
+            "ratioFromSize": { "width": 275, "height": 100 },
+            "cropOffset": { "x": 0, "y": 120 },
             "strokeWidth": 2,
             "cornerRadius": 6,
             "strokeColor": "FFFFFF",

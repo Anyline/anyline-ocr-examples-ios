@@ -1,43 +1,33 @@
 {
-  "viewPluginConfig": {
-    "pluginConfig": {
-      "id": "mrz-nfc",
-      "mrzConfig": {
-        "strictMode": false,
-        "cropAndTransformID": false
-      }
-    },
-    "cutoutConfig": {
-      "animation": "none",
-      "maxWidthPercent": "90%",
-      "alignment": "center",
-      "ratioFromSize": {
-        "width": 25,
-        "height": 17
-      },
-      "offset": {
-        "x": 0,
-        "y": 0
-      },
-      "cropPadding": {
-        "x": 30,
-        "y": 90
-      },
-      "outerColor": "000000",
-      "outerAlpha": 0.3,
-      "strokeWidth": 2,
-      "strokeColor": "FFFFFF",
-      "cornerRadius": 6,
-      "feedbackStrokeColor": "0099FF"
-    },
-    "scanFeedbackConfig": {
-        "style": "rect",
-        "strokeWidth": 2,
-        "strokeColor": "0099FF",
-        "fillColor": "220099FF",
-        "beepOnResult": true,
-        "vibrateOnResult": true,
-        "blinkAnimationOnResult": false
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "mrz-nfc",
+            "mrzConfig": {
+                "strictMode": false,
+                "cropAndTransformID": false
+            }
+        },
+        "cutoutConfig": {
+            "maxWidthPercent": "90%",
+            "alignment": "center",
+            "ratioFromSize": { "width": 161, "height": 100 },
+            "cropPadding": { "x": 30, "y": 90 },
+            "cropOffset": { "x": 0, "y": 90 },
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "strokeWidth": 2,
+            "strokeColor": "FFFFFF",
+            "cornerRadius": 4,
+            "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedbackConfig": {
+            "style": "rect",
+            "strokeWidth": 2,
+            "strokeColor": "0099FF",
+            "fillColor": "220099FF",
+            "beepOnResult": true,
+            "vibrateOnResult": true,
+            "blinkAnimationOnResult": false
+        }
     }
-  }
 }

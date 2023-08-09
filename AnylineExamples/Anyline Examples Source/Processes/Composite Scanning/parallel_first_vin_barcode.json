@@ -39,10 +39,12 @@
                     "cutoutConfig": {
                         "maxWidthPercent": "70%",
                         "alignment": "top_half",
-                        "ratioFromSize": { "width": 62, "height": 9 },
-                        "offset": { "x": 0, "y": 0 },
+                        "ratioFromSize": {
+                            "width": 689,
+                            "height": 100
+                        },
                         "outerColor": "000000",
-                        "outerAlpha": 0,
+                        "outerAlpha": 0.3,
                         "strokeWidth": 2,
                         "strokeColor": "FFFFFF",
                         "cornerRadius": 6,

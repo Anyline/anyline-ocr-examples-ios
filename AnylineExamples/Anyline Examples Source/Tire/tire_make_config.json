@@ -15,18 +15,16 @@
             "cancelOnResult": true
         },
         "cutoutConfig": {
-          "maxWidthPercent": "90%",
-          "alignment": "center",
-          "strokeWidth": 2,
-          "cornerRadius": 6,
-          "strokeColor": "FFFFFF",
-          "outerColor": "000000",
-          "outerAlpha": 0.3,
-          "ratioFromSize": {
-            "width": 31,
-            "height": 6
-          },
-          "feedbackStrokeColor": "0099FF"
+            "maxWidthPercent": "80%",
+            "alignment": "center",
+            "width": 720,
+            "ratioFromSize": { "width": 5, "height": 2 },
+            "strokeWidth": 2,
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "feedbackStrokeColor": "0099FF"
         },
         "scanFeedbackConfig": {
             "animation": "traverse_multi",

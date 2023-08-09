@@ -18,18 +18,14 @@
     "cutoutConfig": {
       "maxWidthPercent": "80%",
       "alignment": "center",
-      "offset": {
-          "x": 0, "y": 0
-      },
+      "width": 720,
+      "ratioFromSize": { "width": 5, "height": 1 },
+      "offset": { "x": 0, "y": 0 },
       "strokeWidth": 2,
       "cornerRadius": 6,
       "strokeColor": "FFFFFF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
-      "ratioFromSize": {
-        "width": 31,
-        "height": 6
-      },
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedbackConfig": {

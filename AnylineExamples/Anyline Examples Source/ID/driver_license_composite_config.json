@@ -42,7 +42,7 @@
                         },
                         "cancelOnResult": true
                     },
-                    "cutoutConfig" : {
+                    "cutoutConfig": {
                         "maxWidthPercent": "90%",
                         "alignment": "center",
                         "strokeWidth": 2,
@@ -51,16 +51,12 @@
                         "outerColor": "000000",
                         "outerAlpha": 0,
                         "ratioFromSize" : {
-                            "width": 50,
-                            "height": 31
+                            "width": 161,
+                            "height": 100
                         },
                         "cropPadding": {
                             "x": 50,
                             "y": 50
-                        },
-                        "cropOffset": {
-                            "x": 0,
-                            "y": 0
                         },
                         "feedbackStrokeColor": "0099FF"
                     },
