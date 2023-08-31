@@ -318,8 +318,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Specifies a country or location of which license plates shall be scanned.
 @property (nonatomic, nullable, assign) ALLicensePlateConfigScanMode *scanMode;
-/// Sets a regular expression which the scanned text needs to match in order to trigger a
-/// scan result.
+/// Sets a regular expression per country. Expected format: "'country':^regex$,
+/// 'other_country':^other_regex$". Note: not available for unitedstates and africa.
 @property (nonatomic, nullable, copy) NSString *validationRegex;
 @end
 

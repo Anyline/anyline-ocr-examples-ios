@@ -522,7 +522,7 @@
                 },
                 "validationRegex": {
                     "type": "string",
-                    "description": "Sets a regular expression which the scanned text needs to match in order to trigger a scan result."
+                    "description": "Sets a regular expression per country. Expected format: \"'country':^regex$, 'other_country':^other_regex$\". Note: not available for unitedstates and africa."
                 }
             },
             "additionalProperties": false

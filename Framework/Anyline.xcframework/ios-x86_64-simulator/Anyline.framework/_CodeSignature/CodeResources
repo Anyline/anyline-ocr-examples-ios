@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/ALPluginConfig.h</key>
 		<data>
-		Kz8rvMqmpqy3jGMDT9KPiCNlzDg=
+		WEIUfRpqt3+tOr6Ucp/PyaMlS6w=
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
@@ -128,6 +128,10 @@
 		<data>
 		NspzsxSA+ABjA3ou78NOv3FewDY=
 		</data>
+		<key>Headers/Anyline-Swift.h</key>
+		<data>
+		hpwEYNpHuMjTlphCSHn94UvqEDk=
+		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
 		Mk4vJ2Pwc72HYGb84rPAwIfHUpQ=
@@ -136,13 +140,37 @@
 		<data>
 		RhI/e5jfLuOHY34VcJE7jfc3nGI=
 		</data>
+		<key>Headers/AnylineStatic-Bridging-Header.h</key>
+		<data>
+		1Cv44x1ev9UVPf4wo3VRwsVX1PM=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		Lf6WtFJISp1LgCuKDVT1h8yFPEw=
+		V9UR8JXoVZTJlCHw5JXAx+LsAD4=
+		</data>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		QxB3pOs9SfTuT7R4zJNSO6cRLjs=
+		</data>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		nhe6OYmN9/H6OQKx4y3wCVhTMkg=
+		</data>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		gqFxn6ltVs5GSVftD3274b3z+Fg=
+		</data>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		nhe6OYmN9/H6OQKx4y3wCVhTMkg=
+		</data>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		cNWdM30/JyRUqwPlFhxdIgHML6w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		Py/OHbyxfz58IqiLmQg1H6RKc24=
+		lrvVGdZsrQVPgHh7rKeS2TWjn8w=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -270,7 +298,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Em3tRLrfXiKq4aGRw8HGH30RfYL4+VqYKfNS7pRfhSI=
+			agmA/qeRt1Txwbz1kM3ud2ZXNqYRbeJ+5DRVzNyeltg=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
@@ -364,6 +392,13 @@
 			KbecpDo7hUsDEtB4mGn1hNeKZgxwoa/yRZ84FG7DIWI=
 			</data>
 		</dict>
+		<key>Headers/Anyline-Swift.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0gOPo9jSo1ehYH5/X+3b5GHD5KPQeiX9XuzeYQU+vFw=
+			</data>
+		</dict>
 		<key>Headers/Anyline.h</key>
 		<dict>
 			<key>hash2</key>
@@ -378,11 +413,53 @@
 			3YINhkNKZHs+IST9GMQgMhDEn3EPaUjR1+sMyhOYEtE=
 			</data>
 		</dict>
+		<key>Headers/AnylineStatic-Bridging-Header.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l3EAfv1MF4Fn0XrdKJrktk4ZitbaQnoB0YRQ+9oKKeA=
+			</data>
+		</dict>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ucVqpBMVclvIx8VbWw2Py9lC0jCzvCtUphH4UL1ECDk=
+			</data>
+		</dict>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			B/P7T/O2lSsA7W3qrisH1oDtuZYfOioA1aQ02fKzxPk=
+			</data>
+		</dict>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YJNQndcYa0YyKPrLLo1cLi3gL8ZMhH+JWgKigVwju3E=
+			</data>
+		</dict>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			B/P7T/O2lSsA7W3qrisH1oDtuZYfOioA1aQ02fKzxPk=
+			</data>
+		</dict>
+		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			R7XPe9Ji9XTd9cDq3D/2qSGWrK7VquY3yOa59tXbVkY=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d+eFw15Xw5EDEGCSeSq9InFS/lJ0ow8uc5Qcom5gUd4=
+			7MpcVa3o8xJN23fgqmqUAihP7OyM/odclHSMp8+MJNA=
 			</data>
 		</dict>
 	</dict>

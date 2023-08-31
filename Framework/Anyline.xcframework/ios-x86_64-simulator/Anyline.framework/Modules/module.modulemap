@@ -4,3 +4,8 @@ framework module Anyline {
   export *
   module * { export * }
 }
+
+module Anyline.Swift {
+  header "Anyline-Swift.h"
+  requires objc
+}
