@@ -159,7 +159,7 @@
 					"description": "The production date on the TIN reformatted to YYYY/MM."
 				},
 				"tireAgeInYearsRoundedDown": {
-					"type": "string",
+					"type": "integer",
 					"description": "The computed tire age in years rounded down."
 				},
 				"resultPrettified": {

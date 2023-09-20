@@ -20,7 +20,7 @@
             "maxWidthPercent": "80%",
             "alignment": "top",
             "ratioFromSize": { "width": 2, "height": 1 },
-            "offset": { "x": 0, "y": 0 },
+            "offset": { "x": 0, "y": 170 },
             "cropOffset": { "x": 0, "y": 120 },
             "strokeWidth": 2,
             "cornerRadius": 6,

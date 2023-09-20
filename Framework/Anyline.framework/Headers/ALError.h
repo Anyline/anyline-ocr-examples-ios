@@ -157,6 +157,12 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
 
     /// Filesystem error
     ALFileSystemError = 13001,
+
+    /// Cache error: no logs available
+    ALCacheErrorNoLogsFound = 14001,
+
+    /// Cache error: unable to create the zip archive
+    ALCacheErrorZipCreationFailed = 14002,
 };
 
 NS_ASSUME_NONNULL_END

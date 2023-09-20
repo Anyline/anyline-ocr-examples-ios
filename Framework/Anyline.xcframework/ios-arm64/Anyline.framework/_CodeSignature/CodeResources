@@ -28,6 +28,10 @@
 		<data>
 		XsttT0YFHJ0UbKGGe3mK9VwHhDk=
 		</data>
+		<key>Headers/ALCacheConfig.h</key>
+		<data>
+		t0klIhi741U3dp/ijasaRZhB4s8=
+		</data>
 		<key>Headers/ALCameraConfig.h</key>
 		<data>
 		nHfbfZ89yy3eKRiZISjIKq4atRs=
@@ -38,7 +42,7 @@
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
-		1zbEcuCWc2jhPQM6FMqaEhqgSbY=
+		oGA7j3Nq71lApBA48bXlT0HI9h0=
 		</data>
 		<key>Headers/ALEvent.h</key>
 		<data>
@@ -74,7 +78,7 @@
 		</data>
 		<key>Headers/ALPluginConfig.h</key>
 		<data>
-		WEIUfRpqt3+tOr6Ucp/PyaMlS6w=
+		nG9ia9MItP4TXjWemSU6h5JTPLM=
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
@@ -82,7 +86,7 @@
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
-		CJjQKpQapjq75t4o0ohJ3PB0xqo=
+		PQnUSmpcKCTWE/j7Akb28TDceuo=
 		</data>
 		<key>Headers/ALScanFeedbackConfig.h</key>
 		<data>
@@ -138,7 +142,7 @@
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
-		RhI/e5jfLuOHY34VcJE7jfc3nGI=
+		yxUzJknLnpKJCXDvwMD1xfIfGiQ=
 		</data>
 		<key>Headers/AnylineStatic-Bridging-Header.h</key>
 		<data>
@@ -146,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AgWZ5z7BVCcRWLpJWviw8kam4Mc=
+		3Z+ami3BBTdBKZCR8B/qApmAUs8=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -166,7 +170,7 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		CmD05aZxostWUxA/I9bcogzqoNk=
+		j75zOI00dGJB07yvGN5R26PVIHc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -217,6 +221,13 @@
 			BTBq7Yu4QnaQkdEDBGiiiXc/4Ehky+k6CeNB+0dgNbo=
 			</data>
 		</dict>
+		<key>Headers/ALCacheConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			c6iRzk9+l4Pkq1UDgD5KsLXhnKpldtcU2UZK9y0/Y6Q=
+			</data>
+		</dict>
 		<key>Headers/ALCameraConfig.h</key>
 		<dict>
 			<key>hash2</key>
@@ -235,7 +246,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iAk7zyJICdUG1a5V4zXNYLsw3vRupTvtJL3HfNT5sXs=
+			JRiaB1yuFNMHIrw3NX6iSaUR+VtvwHDol2za5WFDo5I=
 			</data>
 		</dict>
 		<key>Headers/ALEvent.h</key>
@@ -298,7 +309,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			agmA/qeRt1Txwbz1kM3ud2ZXNqYRbeJ+5DRVzNyeltg=
+			Mb/f4gevkcj7M5kuqp+WMypBU3ZcRBf/xKjQw/IOYXw=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
@@ -312,7 +323,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			twSPH7T6g0oe4214qM/qChQY6GSePY9N2+xcasHEgRA=
+			VHO4GbtrEIEdB/HkX70pW6TUbeRADDdHjGcQNnNistE=
 			</data>
 		</dict>
 		<key>Headers/ALScanFeedbackConfig.h</key>
@@ -410,7 +421,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3YINhkNKZHs+IST9GMQgMhDEn3EPaUjR1+sMyhOYEtE=
+			gGudtBdJ8VI1SuMfEnmpXdzHFJGJ35LREQPMqRt6Ysc=
 			</data>
 		</dict>
 		<key>Headers/AnylineStatic-Bridging-Header.h</key>
@@ -452,7 +463,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+ixoN1wJ6SyuSlLgyRbNQAZZ5IumIV732V+vg82JfDQ=
+			eRsCoLStrGG/NfzXTAHuG7cRxCsg4PiamMqEdd/Va14=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

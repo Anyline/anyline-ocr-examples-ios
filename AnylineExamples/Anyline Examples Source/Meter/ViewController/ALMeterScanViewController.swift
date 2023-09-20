@@ -137,7 +137,7 @@ class ALMeterScanViewController: ALBaseScanViewController {
 
     fileprivate static func meterScanViewPlugin(from config: ALScanViewPluginConfig,
                                                 scanMode: ALMeterConfigScanMode) throws -> ALScanViewPlugin {
-        var pluginConfig = config.pluginConfig
+        let pluginConfig = config.pluginConfig
         var cutoutConfig = config.cutoutConfig
         let scanFeedbackConfig = config.scanFeedbackConfig
 

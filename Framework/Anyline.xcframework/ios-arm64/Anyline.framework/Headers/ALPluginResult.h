@@ -380,7 +380,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The TIN text value.
 @property (nonatomic, copy) NSString *text;
 /// The computed tire age in years rounded down.
-@property (nonatomic, nullable, copy) NSString *tireAgeInYearsRoundedDown;
+@property (nonatomic, nullable, strong) NSNumber *tireAgeInYearsRoundedDown;
 @end
 
 /// Describes result information of scanning tire makes
