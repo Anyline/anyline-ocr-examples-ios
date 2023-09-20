@@ -1384,7 +1384,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
-				MARKETING_VERSION = 51.0.0;
+				MARKETING_VERSION = 51.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;
@@ -1472,7 +1472,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
-				MARKETING_VERSION = 51.0.0;
+				MARKETING_VERSION = 51.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;

@@ -31,4 +31,6 @@
 #import "ALAssetController.h"
 #import "ALAssetDelegate.h"
 
+#import "ALCacheConfig.h"
+
 #import "AnylineSDK.h"
