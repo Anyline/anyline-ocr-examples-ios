@@ -93,8 +93,17 @@ class ALResultCell: UITableViewCell {
             titleStr = titleStr.replacingOccurrences(of: "@cyr", with: " Cyrillic", options: .caseInsensitive, range: titleRange) as NSString
         }
 
-        self.titleLabel.text = String(titleStr)
-        self.valueLabel.text = self.resultEntry?.value.replacingOccurrences(of: "\\n", with: "\n")
+        // Special formatting for TIN results https://anyline.atlassian.net/browse/SHOW-51
+        // make it red, and the value bolded, if "Tire on Recall" = "YES"
+        if titleStr == "Tire on Recall" {
+            if self.resultEntry?.value == "YES" {
+                self.titleLabel.attributedText = .init(string: String(titleStr), attributes: [.foregroundColor : UIColor.red])
+                self.valueLabel.attributedText = .init(string: "YES", attributes: [.foregroundColor : UIColor.red, .font: UIFont.boldSystemFont(ofSize: 16)])
+            }
+        } else {
+            self.titleLabel.text = String(titleStr)
+            self.valueLabel.text = self.resultEntry?.value.replacingOccurrences(of: "\\n", with: "\n")
+        }
 
         if self.resultEntry?.shouldSpellOutValue == true && self.resultEntry?.isAvailable == true {
             if #available(iOS 13.0, *) {

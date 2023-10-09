@@ -34,6 +34,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
 @property (nonatomic, assign) NSUInteger dialogIndexSelected;
 
++ (NSArray<NSString *> *)recalledDOTs;
+
 @end
 
 
@@ -163,6 +165,20 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     [self changeScanViewMode:(ALTINScanMode)self.dialogIndexSelected];
 }
 
+// MARK: - Getters
+
+// A list of recalled DOT values outlined in https://anyline.atlassian.net/browse/SHOW-51
+// which should be treated especially with an extra result entry
++ (NSArray<NSString *> *)recalledDOTs {
+    return @[
+        @"DOTUTY11M03119",
+        @"DOTA3E4WBYV2220",
+        @"DOTNB7T2T8W0403",
+        @"DOTHCXH03CX4618",
+        @"DOTFA4FJA90320",
+    ];
+}
+
 // MARK: - Handle & present results
 
 - (void)scanPlugin:(ALScanPlugin *)scanPlugin resultReceived:(ALScanResult *)scanResult {
@@ -172,7 +188,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
                  barcodeResult:nil
                          image:[scanResult croppedImage]
                     scanPlugin:scanPlugin viewPlugin:self.scanViewPlugin completion:^{
-        NSArray<ALResultEntry *> *resultData = scanResult.pluginResult.fieldList.resultEntries;
+        NSArray<ALResultEntry *> *resultData = [self.class resultDataFromScanResult:scanResult];
+
         ALResultViewController *vc = [[ALResultViewController alloc]
                                       initWithResults:resultData];
         vc.imagePrimary = scanResult.croppedImage;
@@ -180,6 +197,26 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
         [weakSelf enableLandscapeOrientation:NO];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+}
+
++ (NSArray<ALResultEntry *> *)resultDataFromScanResult:(ALScanResult *)scanResult {
+    NSMutableArray *resultEntries = [NSMutableArray arrayWithArray:scanResult.pluginResult.fieldList.resultEntries];
+    // would add a Tire on Recall entry if the result falls in one of the few values hardcoded here.
+    BOOL needsRecalledEntry = NO;
+    for (ALResultEntry *res in resultEntries) {
+        if ([res.title isEqualToString:@"Tire Identification Number"]) {
+            // if result somehow split the scan result string with spaces, remove them first.
+            NSString *tin = [res.value stringByReplacingOccurrencesOfString:@" " withString:@""];
+            if ([[self.class recalledDOTs] containsObject:tin]) {
+                needsRecalledEntry = YES;
+            }
+        }
+    }
+    if (needsRecalledEntry) {
+        // add it below the first entry
+        [resultEntries insertObject:[ALResultEntry withTitle:@"Tire on Recall" value:@"YES"] atIndex:1];
+    }
+    return resultEntries;
 }
 
 // MARK: - Allow changing the scan mode

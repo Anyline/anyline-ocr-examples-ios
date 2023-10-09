@@ -429,7 +429,7 @@
                 },
                 "upsideDownMode": {
                     "type": "string",
-                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "description": "Sets whether the text shall also be scanned upside-down.",
                     "enum": [
                         "DISABLED",
                         "ENABLED",
@@ -443,7 +443,7 @@
                 },
                 "validateProductionDate": {
                     "type": "boolean",
-                    "description": "Sets whether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true.",
+                    "description": "Sets whether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates.",
                     "default": true
                 },
                 "validationRegex": {
