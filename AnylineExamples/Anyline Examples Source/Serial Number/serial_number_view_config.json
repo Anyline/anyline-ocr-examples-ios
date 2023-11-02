@@ -13,14 +13,13 @@
             "id": "universal-serial-number",
             "ocrConfig": {
                 "scanMode": "auto",
-                "model": "USNr.any"
+                "models": [ "USNr.any" ]
             },
             "cancelOnResult": true
         },
         "cutoutConfig": {
             "animation": "none",
             "maxWidthPercent": "80%",
-            "width": 720,
             "alignment": "top_half",
             "ratioFromSize": { "width": 2, "height": 1 },
             "cropOffset": { "x": 0, "y": -15 },

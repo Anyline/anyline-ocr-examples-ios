@@ -462,9 +462,20 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
 - (void)enableLandscapeOrientation:(BOOL)isLandscape {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.enableLandscapeRight = isLandscape;
-    NSNumber *value = [NSNumber numberWithInt:(isLandscape ? UIInterfaceOrientationLandscapeRight : UIInterfaceOrientationPortrait)];
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    [UIViewController attemptRotationToDeviceOrientation];
+    if (@available(iOS 16, *)) {
+        UIInterfaceOrientationMask orientationMask = isLandscape ? UIInterfaceOrientationMaskLandscapeRight: UIInterfaceOrientationMaskPortrait;
+        [self setNeedsUpdateOfSupportedInterfaceOrientations];
+        UIWindowScene *windowScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+        for (UIWindow *window in windowScene.windows) {
+            [window.rootViewController setNeedsUpdateOfSupportedInterfaceOrientations];
+        }
+        UIWindowSceneGeometryPreferencesIOS *geometryPreferences = [[UIWindowSceneGeometryPreferencesIOS alloc] initWithInterfaceOrientations:orientationMask];
+        [windowScene requestGeometryUpdateWithPreferences:geometryPreferences errorHandler:nil];
+    } else {
+        NSNumber *value = [NSNumber numberWithInt:(isLandscape ? UIInterfaceOrientationLandscapeRight : UIInterfaceOrientationPortrait)];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        [UIViewController attemptRotationToDeviceOrientation];
+    }
 }
 
 - (BOOL)shouldAutorotate {

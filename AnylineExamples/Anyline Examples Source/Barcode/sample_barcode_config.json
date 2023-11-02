@@ -20,10 +20,8 @@
         "cutoutConfig": {
             "animation": "none",
             "maxWidthPercent": "90%",
-
             "alignment": "center",
             "offset": { "x": 0, "y": 0 },
-
             "ratioFromSize": { "width": 5, "height": 4 },
             "offset": { "x": 0, "y": 0 },
             "cropPadding": { "x": 0, "y": 0 },

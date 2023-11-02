@@ -23,8 +23,8 @@
                         "startScanDelay": 0
                     },
                     "cutoutConfig": {
-                        "maxWidthPercent": "80%",
-                        "alignment": "top",
+                        "maxWidthPercent": "85%",
+                        "alignment": "top_half",
                         "ratioFromSize": { "width": 2, "height": 1 },
                         "cropOffset": { "x": 0, "y": 120 },
                         "strokeWidth": 2,

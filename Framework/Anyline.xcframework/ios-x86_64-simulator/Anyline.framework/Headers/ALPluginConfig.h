@@ -96,6 +96,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+///
+/// Sets whether the text shall also be scanned upside-down.
 @interface ALUpsideDownMode : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
 + (instancetype _Nullable)withValue:(NSString *)value;
@@ -480,10 +482,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Sets the mode to scan universal TIN numbers ('UNIVERSAL') or TIN numbers of any length
 /// starting with DOT ('DOT').
 @property (nonatomic, nullable, assign) ALTinConfigScanMode *scanMode;
-/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+/// Sets whether the text shall also be scanned upside-down.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
 /// Sets whether the production date validation is enabled. If it is set to false the scan
-/// result is also returned for invalid and missing dates. Defaults to true.
+/// result is also returned for invalid and missing dates.
 @property (nonatomic, nullable, strong) NSNumber *validateProductionDate;
 /// Sets a regular expression which the TIN text needs to match in order to trigger a scan
 /// result.

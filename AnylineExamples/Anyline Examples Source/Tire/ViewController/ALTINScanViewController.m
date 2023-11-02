@@ -213,8 +213,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
         }
     }
     if (needsRecalledEntry) {
-        // add it below the first entry
-        [resultEntries insertObject:[ALResultEntry withTitle:@"Tire on Recall" value:@"YES"] atIndex:1];
+        // add it above the first entry
+        [resultEntries insertObject:[ALResultEntry withTitle:@"Tire on Recall" value:@"YES"] atIndex:0];
     }
     return resultEntries;
 }

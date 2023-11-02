@@ -93,12 +93,12 @@ class ALResultCell: UITableViewCell {
             titleStr = titleStr.replacingOccurrences(of: "@cyr", with: " Cyrillic", options: .caseInsensitive, range: titleRange) as NSString
         }
 
-        // Special formatting for TIN results https://anyline.atlassian.net/browse/SHOW-51
-        // make it red, and the value bolded, if "Tire on Recall" = "YES"
+        // Tire recall error message changes in TIN results https://anyline.atlassian.net/browse/SHOW-65
+        // make title color: red & font: bold, and the value normal, if "Tire on Recall" = "YES"
         if titleStr == "Tire on Recall" {
             if self.resultEntry?.value == "YES" {
-                self.titleLabel.attributedText = .init(string: String(titleStr), attributes: [.foregroundColor : UIColor.red])
-                self.valueLabel.attributedText = .init(string: "YES", attributes: [.foregroundColor : UIColor.red, .font: UIFont.boldSystemFont(ofSize: 16)])
+                self.titleLabel.attributedText = .init(string: String("⚠ Attention - Tire on recall in the U.S."), attributes: [.foregroundColor : UIColor.red, .font: UIFont.boldSystemFont(ofSize: 16)])
+                self.valueLabel.attributedText = .init(string: "Please contact manufacturer for instructions on returning/replacing recalled tires")
             }
         } else {
             self.titleLabel.text = String(titleStr)
