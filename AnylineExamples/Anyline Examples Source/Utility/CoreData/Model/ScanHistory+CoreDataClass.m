@@ -48,6 +48,7 @@ NSString * const ALScanHistoryType_toString[] = {
     [ALScanHistoryVehicleRegistrationCertificate] = @"Vehicle Registration Certificate",
     [ALScanHistoryTireMake] = @"Tire Make",
     [ALScanHistoryOdometer] = @"Odometer",
+    [ALScanHistoryJapaneseLandingPermission] = @"Japanese Landing Permission"
 };
 
 @implementation ScanHistory
