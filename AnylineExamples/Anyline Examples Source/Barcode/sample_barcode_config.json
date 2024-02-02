@@ -14,8 +14,7 @@
             "barcodeConfig": {
                 "barcodeFormats": [ "ALL" ]
             },
-            "cancelOnResult": true,
-            "startScanDelay": 1500
+            "cancelOnResult": true
         },
         "cutoutConfig": {
             "animation": "none",

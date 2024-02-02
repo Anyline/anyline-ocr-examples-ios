@@ -71,7 +71,7 @@ class ALTireViewController: ALBaseScanViewController {
             self.controllerType = ALScanHistoryTireMake
         }
 
-        self.title = titleString;
+        self.title = titleString
 
         guard let configJSONStr = self.configJSONStr(withFilename: JSONFileName) as? NSString,
            let configDict = configJSONStr.asJSONObject() as? [AnyHashable: Any] else {

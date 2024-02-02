@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,6 +65,7 @@
 		4FFCDDFFE82E17F6D6C38CCE /* ALOthersExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D734F16D23B623323CB450A /* ALOthersExampleManager.m */; };
 		5017B8063CF5C8360DF0088A /* cow_tag_scanner.ale in Resources */ = {isa = PBXBuildFile; fileRef = 3C362A93EE95B52547A8C757 /* cow_tag_scanner.ale */; };
 		503DCA316D0C202AF406CCAA /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D09863F2A78CC2C3B9EBE0E /* AnylineResources.bundle */; };
+		518AC0C8BEE568417199C603 /* ALJLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A479A4F5B851569663C22D0 /* ALJLPViewController.swift */; };
 		519669F55E4AD753DA9D202F /* tire_make_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 61D5DAE4AE4BC5A27563B970 /* tire_make_config.json */; };
 		53029EFD2163E8748EC913AE /* ALDialogSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2CEF352E355ABC1E7A6A81 /* ALDialogSelectionTableViewCell.m */; };
 		55A2726D01D2C65CB34D1361 /* ALBarcodeBatchCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1559FE5E2F594D23DB4B601 /* ALBarcodeBatchCountView.m */; };
@@ -86,6 +87,7 @@
 		7160AD923669EB0720FCD3C9 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11E06DF396B1B2615A7D5C2 /* CoreDataManager.m */; };
 		71E8873219BC85D682B35AF1 /* UIViewController+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E94F5B4D905C28394B2AD /* UIViewController+ALExamplesAdditions.m */; };
 		723A8C0CB10EAE3CCCDA2A5F /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA2AE99970DC8FDF5C7C42 /* Order.m */; };
+		73B9B790EA986F5DEE986084 /* japanese_landing_permission_config.json in Resources */ = {isa = PBXBuildFile; fileRef = E8FBCBBD4AE34DF2777FD6E4 /* japanese_landing_permission_config.json */; };
 		74A8149D85B4FE2C15241806 /* license_plate_af_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F86E7080D32D1E1EDC89BD88 /* license_plate_af_config.json */; };
 		74BDDA1262C89D83FE54EECB /* ALPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */; };
 		77171349F799855BAE9C564A /* ALResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7DC7F34357ECB360C50C3 /* ALResultViewController.swift */; };
@@ -137,8 +139,6 @@
 		BF280388FFE08C65889B8199 /* ALBaseGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408415289B1FE9524543AA3 /* ALBaseGridCollectionViewController.m */; };
 		C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */; };
 		C206A70E2DC25AB00C539498 /* mrz_nfc_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F8D01F5681E0B6B8860858B0 /* mrz_nfc_config.json */; };
-		C2B48D7E2B4DB6F000C51CB1 /* ALJLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B48D7C2B4DB6F000C51CB1 /* ALJLPViewController.swift */; };
-		C2B48D7F2B4DB6F000C51CB1 /* japanese_landing_permission_config.json in Resources */ = {isa = PBXBuildFile; fileRef = C2B48D7D2B4DB6F000C51CB1 /* japanese_landing_permission_config.json */; };
 		C2C2D92598336C8B84E28D77 /* template_type_and_region_mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BAE7BC55540C6B4591601A53 /* template_type_and_region_mapping.json */; };
 		C681C658DE85D6FAD7D2F7FA /* energyMockData2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE44780CD8022FC3B0DBCC3 /* energyMockData2.json */; };
 		C9E50E9B907B2A85325FE0A1 /* ALMeterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34760A85BED4BAACE6AEE1EB /* ALMeterCollectionViewController.m */; };
@@ -244,7 +244,7 @@
 		39B29A0BBC9DBC31152E10F5 /* ALVINScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVINScanViewController.h; sourceTree = "<group>"; };
 		3A3D5278F44BE2939E3CCA12 /* ALPrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPrivacyViewController.m; sourceTree = "<group>"; };
 		3B765E09017714AD35B457E0 /* UIButton+ALExamplesExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ALExamplesExtensions.m"; sourceTree = "<group>"; };
-		3C362A93EE95B52547A8C757 /* cow_tag_scanner.ale */ = {isa = PBXFileReference; lastKnownFileType = text; path = cow_tag_scanner.ale; sourceTree = "<group>"; };
+		3C362A93EE95B52547A8C757 /* cow_tag_scanner.ale */ = {isa = PBXFileReference; path = cow_tag_scanner.ale; sourceTree = "<group>"; };
 		3DAA1365E502956D7038FAD1 /* ALBasePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBasePageViewController.m; sourceTree = "<group>"; };
 		3FF8D23972FFE05B6EE9954C /* ALMeterReading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALMeterReading.h; sourceTree = "<group>"; };
 		40E4E07600B2A0178BD39978 /* serial_number_view_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = serial_number_view_config.json; sourceTree = "<group>"; };
@@ -308,6 +308,7 @@
 		7900708C0BE8AF5AF502E360 /* ReadingTransformationPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingTransformationPolicy.h; sourceTree = "<group>"; };
 		79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Anyline.xcframework; path = ../Framework/Anyline.xcframework; sourceTree = "<group>"; };
 		7A459BC0A1F181E2AF7D5C6D /* ALBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseViewController.h; sourceTree = "<group>"; };
+		7A479A4F5B851569663C22D0 /* ALJLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALJLPViewController.swift; sourceTree = "<group>"; };
 		7A652B2C9A4692C8A87DDF11 /* ALVRCScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALVRCScanViewController.h; sourceTree = "<group>"; };
 		7A8B3E959502E4A04A0D95FF /* UIView+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		7AE44F89A3A122D82E524AA2 /* energyMockData1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = energyMockData1.json; sourceTree = "<group>"; };
@@ -396,8 +397,6 @@
 		C12ECB31388816698425036A /* ALBundleInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBundleInfoViewController.m; sourceTree = "<group>"; };
 		C1E6D1D70BE3806996A6A46C /* ALDialogSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDialogSelectionTableViewCell.h; sourceTree = "<group>"; };
 		C26DCA1CBAC60A9A22BE6DDC /* ALBaseGridCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBaseGridCollectionViewController.h; sourceTree = "<group>"; };
-		C2B48D7C2B4DB6F000C51CB1 /* ALJLPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALJLPViewController.swift; sourceTree = "<group>"; };
-		C2B48D7D2B4DB6F000C51CB1 /* japanese_landing_permission_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = japanese_landing_permission_config.json; sourceTree = "<group>"; };
 		C3C08AF63B1D49322051E58B /* ScanHistory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScanHistory+CoreDataClass.h"; sourceTree = "<group>"; };
 		C425900319673F527A4B3AB2 /* ALBarcodeSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeSettingsViewController.h; sourceTree = "<group>"; };
 		C4C91C9B86D18C08298D87D6 /* ALContainerScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALContainerScanViewController.m; sourceTree = "<group>"; };
@@ -429,6 +428,7 @@
 		E59DF7BD4220A8FE5450AAA9 /* CustomerDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDataView.xib; sourceTree = "<group>"; };
 		E733CE78B41AF777C44B7FBC /* ALUniversalIDScanConfigController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALUniversalIDScanConfigController.m; sourceTree = "<group>"; };
 		E8367DF20A156D900964CA1C /* AnylineExamples 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AnylineExamples 2.xcdatamodel"; sourceTree = "<group>"; };
+		E8FBCBBD4AE34DF2777FD6E4 /* japanese_landing_permission_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = japanese_landing_permission_config.json; sourceTree = "<group>"; };
 		E909C879E88B739A3D81BF22 /* ALPluginResultHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPluginResultHelper.m; sourceTree = "<group>"; };
 		E9AB1474AA11E583864902DE /* UISwitch+ALExamplesAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+ALExamplesAdditions.m"; sourceTree = "<group>"; };
 		E9ECA85494F681157BC59F5B /* ALDeviceInformationHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALDeviceInformationHelper.h; sourceTree = "<group>"; };
@@ -555,6 +555,15 @@
 				C4C91C9B86D18C08298D87D6 /* ALContainerScanViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		22D45D65E22CD8BF9A9A3737 /* Japanese Landing Permission */ = {
+			isa = PBXGroup;
+			children = (
+				7A479A4F5B851569663C22D0 /* ALJLPViewController.swift */,
+				E8FBCBBD4AE34DF2777FD6E4 /* japanese_landing_permission_config.json */,
+			);
+			path = "Japanese Landing Permission";
 			sourceTree = "<group>";
 		};
 		2515C046DBF27ED7ED40F713 /* GridViews */ = {
@@ -717,7 +726,7 @@
 				130C58F489D374A154DB76C2 /* Barcode */,
 				E468CF9043154E78591CC3CF /* Container */,
 				203CC6DD775FFADB8E2079E8 /* ID */,
-				C2B48D7B2B4DB6F000C51CB1 /* Japanese Landing Permission */,
+				22D45D65E22CD8BF9A9A3737 /* Japanese Landing Permission */,
 				D564187314EF4E05F6AD5CBB /* License Plate */,
 				B507D96C93668B4C4DFD6563 /* Meter */,
 				56F4DAC0C2ADD79A3A5A1B1C /* MRZ */,
@@ -991,15 +1000,6 @@
 			path = Meter;
 			sourceTree = "<group>";
 		};
-		C2B48D7B2B4DB6F000C51CB1 /* Japanese Landing Permission */ = {
-			isa = PBXGroup;
-			children = (
-				C2B48D7C2B4DB6F000C51CB1 /* ALJLPViewController.swift */,
-				C2B48D7D2B4DB6F000C51CB1 /* japanese_landing_permission_config.json */,
-			);
-			path = "Japanese Landing Permission";
-			sourceTree = "<group>";
-		};
 		D564187314EF4E05F6AD5CBB /* License Plate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1199,9 +1199,9 @@
 				0F1789CA23A6059AF3D7163F /* energyMockData1.json in Resources */,
 				C681C658DE85D6FAD7D2F7FA /* energyMockData2.json in Resources */,
 				9F85CC4786D93EE9CB68988F /* horizontal_container_scanner_capture_config.json in Resources */,
-				C2B48D7F2B4DB6F000C51CB1 /* japanese_landing_permission_config.json in Resources */,
 				036F7E59E334D31A9A5F0A1F /* id_composite_config.json in Resources */,
 				04FFBE2C339512AE85FE10C8 /* id_front_config.json in Resources */,
+				73B9B790EA986F5DEE986084 /* japanese_landing_permission_config.json in Resources */,
 				74A8149D85B4FE2C15241806 /* license_plate_af_config.json in Resources */,
 				101486B74BB302A76D5E32E8 /* license_plate_eu_config.json in Resources */,
 				A48C48EC153A0A7A852214E3 /* license_plate_us_config.json in Resources */,
@@ -1265,6 +1265,7 @@
 				C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */,
 				BBE58E8DA06EF48150752E93 /* ALIDCountryHelper.m in Sources */,
 				5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */,
+				518AC0C8BEE568417199C603 /* ALJLPViewController.swift in Sources */,
 				DD6D666DD6B9C7CF1CD894FD /* ALJSONDownloader.m in Sources */,
 				67C32087ADC64502CDF4C7C4 /* ALLeftCheckmarkCell.swift in Sources */,
 				39A9B1A5A4BB7CAE55D09D89 /* ALLicensePlateScanViewController.m in Sources */,
@@ -1301,7 +1302,6 @@
 				330FAFFA10C25A2B61C30CBF /* ALTextInputTableViewCell.swift in Sources */,
 				3E02A9E81691C221D70DD201 /* ALTextViewCell.m in Sources */,
 				9DDA738BD8549D7431ADA915 /* ALTireViewController.swift in Sources */,
-				C2B48D7E2B4DB6F000C51CB1 /* ALJLPViewController.swift in Sources */,
 				409F58D9331828393B73B29D /* ALTutorialViewController.m in Sources */,
 				3040FA34CC33117683028F3F /* ALUniversalIDScanConfigController.m in Sources */,
 				FB94F8094673596C2432D29C /* ALUniversalIDScanViewController.m in Sources */,
@@ -1398,8 +1398,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/System/Library/Frameworks";
-				MARKETING_VERSION = 51.2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/System/Library/Frameworks",
+				);
+				MARKETING_VERSION = 51.2.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;
@@ -1484,8 +1486,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/System/Library/Frameworks";
-				MARKETING_VERSION = 51.2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/System/Library/Frameworks",
+				);
+				MARKETING_VERSION = 51.2.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;

@@ -16,7 +16,6 @@
 #import "ALPDF417ScanViewController.h"
 #import "ALNFCScanViewController.h"
 #import "ALUniversalIDScanViewController.h"
-#import "AnylineExamples-Swift.h"
 
 @interface ALIdentityDocumentsExampleManager ()
 
@@ -57,11 +56,6 @@
                                                        image:[UIImage imageNamed:@"tile_nfc"]
                                               viewController:[ALNFCScanViewController class]];
     
-    ALExample *jlpExample = [[ALExample alloc] initWithName:NSLocalizedString(@"Japanese Landing Permission", nil)
-                                                            image:[UIImage imageNamed:@"title_jlp"]
-                                                   viewController:[ALJLPViewController class]
-                                                            title:NSLocalizedString(@"Japanese Landing Permission", nil)];
-    
     self.sectionNames = @[@"ID", @"Technology showcase"];
     
     // we could check [ALNFCDetector readingAvailable]) here and only show the NFC tile if it returns true,
@@ -69,7 +63,7 @@
     // tapped on.
     self.examples = [@{
         self.sectionNames[0] : @[universalID],
-        self.sectionNames[1] : @[nfcScanning, pdf417Scanning, mrzScanning, jlpExample],
+        self.sectionNames[1] : @[nfcScanning, pdf417Scanning, mrzScanning]
     } mutableCopy];
     
 }
