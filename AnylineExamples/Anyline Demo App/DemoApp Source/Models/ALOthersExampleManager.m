@@ -30,10 +30,10 @@
                                                     viewController:[ALContainerScanViewController class]
                                                              title:NSLocalizedString(@"Shipping Container", nil)];
     
-    ALExample *parallelFirstExample = [[ALExample alloc] initWithName:NSLocalizedString(@"VIN + Barcode Parallel Either-OR", nil)
-                                                                image:[UIImage imageNamed:@"vin-barcode-parallel-either-or"]
+    ALExample *parallelFirstVinBarcodeExample = [[ALExample alloc] initWithName:NSLocalizedString(@"VIN + Barcode (Parallel First)", nil)
+                                                                image:[UIImage imageNamed:@"parallel_first_vin_barcode"]
                                                        viewController:[ALCompositeScanViewController class]
-                                                                title:NSLocalizedString(@"VIN + Barcode Parallel Either-OR", nil)];
+                                                                title:NSLocalizedString(@"VIN + Barcode (Parallel First)", nil)];
 
     ALExample *customCMDExample = [[ALExample alloc] initWithName:NSLocalizedString(@"Custom CMD", nil)
                                                             image:[UIImage imageNamed:@"custom-cmd"]
@@ -44,7 +44,7 @@
     self.sectionNames = @[ @"OCR", @"Composites" ];
     self.examples = @{
         self.sectionNames[0] : @[ containerScanning, customCMDExample ],
-        self.sectionNames[1] : @[ parallelFirstExample ],
+        self.sectionNames[1] : @[ parallelFirstVinBarcodeExample ],
     };
 }
 

@@ -95,8 +95,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALBarcodeFormat *)usps4Cb;
 @end
 
-/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
-///
 /// Sets whether the text shall also be scanned upside-down.
 @interface ALUpsideDownMode : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
@@ -215,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALTinConfigScanMode *)universal;
 @end
 
-/// Sets a specific character set. Per default, only latin characters are processed.
+/// Sets a specific character set.
 @interface ALAlphabet : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
 + (instancetype _Nullable)withValue:(NSString *)value;
@@ -266,6 +264,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// If this option is set, allows consecutive barcode results of the same barcode when
 /// scanning continuously.
 @property (nonatomic, nullable, strong) NSNumber *consecutiveEqualResults;
+/// Sets whether or not to disable advanced barcode scanning even if the license supports it.
+@property (nonatomic, nullable, strong) NSNumber *disableAdvancedBarcode;
 /// Setting this to 'true' will enable reading multiple barcodes per frame.
 @property (nonatomic, nullable, strong) NSNumber *multiBarcode;
 /// If this option is set, barcodes parsed according to the AAMVA standard. This only works
@@ -277,7 +277,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALCommercialTireIDConfig : NSObject
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+/// Sets whether the text shall also be scanned upside-down.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
 /// Sets a regular expression which the commercial tire id text needs to match in order to
 /// trigger a scan result.
@@ -347,7 +347,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The cropAndTransformID determines whether or not the image shall be cropped and
 /// transformed.
 @property (nonatomic, assign) BOOL isCropAndTransformID;
-/// Sets whether the face detection approach is enabled. Defaults to false.
+/// Sets whether the face detection approach is enabled.
 @property (nonatomic, nullable, strong) NSNumber *faceDetectionEnabled;
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
@@ -496,7 +496,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALTireMakeConfig : NSObject
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+/// Sets whether the text shall also be scanned upside-down.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
 /// Sets a regular expression which the tire make text needs to match in order to trigger a
 /// scan result. E.g. "(Continental|Dunlop)" will only trigger on Continental or Dunlop tires.
@@ -507,7 +507,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALTireSizeConfig : NSObject
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
-/// Sets whether the text shall also be scanned upside-down. By default, it is disabled.
+/// Sets whether the text shall also be scanned upside-down.
 @property (nonatomic, nullable, assign) ALUpsideDownMode *upsideDownMode;
 /// Sets a regular expression which the tire size text needs to match in order to trigger a
 /// scan result.
@@ -519,10 +519,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Specifies the document types to be scanned and optionally further specifies which types
 /// of layout are scanned per type.
 @property (nonatomic, nullable, strong) ALAllowedLayouts *allowedLayouts;
-/// Sets a specific character set. Per default, only latin characters are processed.
+/// Sets a specific character set.
 @property (nonatomic, nullable, assign) ALAlphabet *alphabet;
 @property (nonatomic, nullable, strong) ALLayoutDrivingLicense *drivingLicense;
-/// Sets whether the face detection approach is enabled. Defaults to false.
+/// Sets whether the face detection approach is enabled.
 @property (nonatomic, nullable, strong) NSNumber *faceDetectionEnabled;
 @property (nonatomic, nullable, strong) ALLayoutIDFront *theIDFront;
 @property (nonatomic, nullable, strong) ALLayoutInsuranceCard *insuranceCard;

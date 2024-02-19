@@ -623,5 +623,13 @@
     ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/administrator\/builds\/JzAHqhd_7\/0\/anylinecom\/mobile\/bundles\/anyline-mobile-bundle-ios\/vendor\/anylineexamples-ios\/Vendor\/anyline-ios\/Anyline\/AnylineSDK\/Swift+JSON.swift",
+      "kind": "Dictionary",
+      "offset": 239,
+      "length": 3,
+      "value": "[]"
+    }
+  ]
 }

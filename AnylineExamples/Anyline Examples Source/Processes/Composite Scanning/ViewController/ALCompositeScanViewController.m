@@ -14,7 +14,7 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"First of VIN + Barcode";
+    self.title = @"VIN + Barcode (Parallel First)";
     self.controllerType = ALScanHistoryVIN;
     [self reloadScanView];
 }
