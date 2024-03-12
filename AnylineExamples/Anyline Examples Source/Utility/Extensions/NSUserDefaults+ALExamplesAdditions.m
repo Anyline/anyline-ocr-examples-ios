@@ -35,6 +35,33 @@ NSString * const kSelectedSymbologies = @"selectedSymbologies";
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"anylineUserMail"];
 }
 
++ (void)AL_setFirstName:(NSString *)firstName {
+    [[NSUserDefaults standardUserDefaults] setObject:firstName forKey:@"anylineFirstName"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)AL_getFirstName {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"anylineFirstName"];
+}
+
++ (void)AL_setLastName:(NSString *)lastName {
+    [[NSUserDefaults standardUserDefaults] setObject:lastName forKey:@"anylineLastName"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)AL_getLastName {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"anylineLastName"];
+}
+
++ (void)AL_setGeography:(NSString *)geography {
+    [[NSUserDefaults standardUserDefaults] setObject:geography forKey:@"anylineGeography"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)AL_getGeography {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"anylineGeography"];
+}
+
 + (void)AL_incrementScanCount {
     [[NSUserDefaults standardUserDefaults] setInteger:[self AL_scanCount] + 1
                                                forKey:@"anylineScanCount"];

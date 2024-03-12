@@ -8,7 +8,34 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc public enum ALUIFeedbackLogLevel : ObjectiveC.NSInteger {
+  case debug = 0
+  case info
+  case warn
+  case error
+  public init?(rawValue: ObjectiveC.NSInteger)
+  public typealias RawValue = ObjectiveC.NSInteger
+  public var rawValue: ObjectiveC.NSInteger {
+    get
+  }
+}
+@objc public protocol ALUIFeedbackLoggerDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func loggedUIFeedbackMessage(_ msg: Swift.String, level: Anyline.ALUIFeedbackLogLevel)
+}
+@_inheritsConvenienceInitializers @objc public class ALUIFeedbackLogger : ObjectiveC.NSObject {
+  @objc public static let sharedInstance: Anyline.ALUIFeedbackLogger
+  @objc weak public var delegate: (any Anyline.ALUIFeedbackLoggerDelegate)?
+  @objc public func log(_ message: Swift.String, level: Anyline.ALUIFeedbackLogLevel)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
 extension Swift.String {
   public func toJSONObject() throws -> [Swift.AnyHashable : Any]
   public func asJSONObject() -> [Swift.AnyHashable : Any]?
 }
+extension Anyline.ALUIFeedbackLogLevel : Swift.Equatable {}
+extension Anyline.ALUIFeedbackLogLevel : Swift.Hashable {}
+extension Anyline.ALUIFeedbackLogLevel : Swift.RawRepresentable {}

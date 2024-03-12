@@ -71,6 +71,7 @@
 		55A2726D01D2C65CB34D1361 /* ALBarcodeBatchCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1559FE5E2F594D23DB4B601 /* ALBarcodeBatchCountView.m */; };
 		56474CD2A742EE015C5EEC5F /* SerialNumberSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD983F58448E75F6CD5AFFF /* SerialNumberSettings.swift */; };
 		5A7ED66F3BA5635A9B183B5B /* ALIdentityDocumentsExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40F5ACD2BF3B121A490FAE /* ALIdentityDocumentsExampleManager.m */; };
+		5B1689994D49BCFF6CAA405E /* ALTINScanWithUIFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D632FF0285876BA2C039BA47 /* ALTINScanWithUIFeedbackViewController.m */; };
 		5B62F82DCF4B9A82A0E767D9 /* ALMeterScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B27E3D47C385D3D11D965 /* ALMeterScanViewController.swift */; };
 		5BC563C4483045E763BA0EAF /* NSManagedObject+ALExamplesAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1866752D7457CFD00F2BB10 /* NSManagedObject+ALExamplesAdditions.m */; };
 		604934E222C0404838DB8B31 /* ALBaseScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1B022D4AE1C8CBE0D3C27 /* ALBaseScanViewController.m */; };
@@ -137,6 +138,7 @@
 		BD849629FA7E34BCA4F4BD20 /* SerialNumberSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50091DBF1D0588041F5FB12 /* SerialNumberSettingsViewController.swift */; };
 		BE3BFA9D178805750111044D /* ALScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99D95A790613724D2917D97 /* ALScanResultViewController.xib */; };
 		BF280388FFE08C65889B8199 /* ALBaseGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408415289B1FE9524543AA3 /* ALBaseGridCollectionViewController.m */; };
+		C038F87F23675FCC845DD92A /* tire_tin_uifeedback_config.json in Resources */ = {isa = PBXBuildFile; fileRef = FA704D3039C66528D39AFF94 /* tire_tin_uifeedback_config.json */; };
 		C1AB4556E5C27951FCB76C00 /* ALHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */; };
 		C206A70E2DC25AB00C539498 /* mrz_nfc_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F8D01F5681E0B6B8860858B0 /* mrz_nfc_config.json */; };
 		C2C2D92598336C8B84E28D77 /* template_type_and_region_mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BAE7BC55540C6B4591601A53 /* template_type_and_region_mapping.json */; };
@@ -252,6 +254,7 @@
 		424FEA54976FEC6CBD10A786 /* ALLicensePlateScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALLicensePlateScanViewController.m; sourceTree = "<group>"; };
 		44F4A434C2E88DA003698E0B /* Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		47AF3931FEDEE0920CD53053 /* ALBarcodeSettingsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBarcodeSettingsTableViewCell.h; sourceTree = "<group>"; };
+		4843ED59FEECA939F5CA72C2 /* ALTINScanWithUIFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTINScanWithUIFeedbackViewController.h; sourceTree = "<group>"; };
 		487101780FD5E99142C548E7 /* ReadingTransformationPolicy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingTransformationPolicy.m; sourceTree = "<group>"; };
 		4D35DC5F8148A388348DB2B7 /* AnylineExamples.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnylineExamples.xcdatamodel; sourceTree = "<group>"; };
 		4D39C312D206576E77DD791F /* MeterImagesAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MeterImagesAssets.xcassets; sourceTree = "<group>"; };
@@ -411,6 +414,7 @@
 		D187BD3C9BE02CD503DA73D4 /* ALLicensePlateScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALLicensePlateScanViewController.h; sourceTree = "<group>"; };
 		D240B6E369D47EF9CC2985A5 /* ALCustomOCRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALCustomOCRViewController.m; sourceTree = "<group>"; };
 		D4BB9182561EC02717CD1ADF /* ALTextViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTextViewCell.m; sourceTree = "<group>"; };
+		D632FF0285876BA2C039BA47 /* ALTINScanWithUIFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTINScanWithUIFeedbackViewController.m; sourceTree = "<group>"; };
 		D704839C929FA2058D9E89A0 /* ScanAreaEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAreaEditorViewController.swift; sourceTree = "<group>"; };
 		D7E79AE8BC99BE84D0DF663C /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
 		D99C3AF7A5F231E20545B326 /* ALBarcodeResultUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALBarcodeResultUtil.m; sourceTree = "<group>"; };
@@ -448,6 +452,7 @@
 		F79688067905522060BCFE75 /* ALHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		F86E7080D32D1E1EDC89BD88 /* license_plate_af_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = license_plate_af_config.json; sourceTree = "<group>"; };
 		F8D01F5681E0B6B8860858B0 /* mrz_nfc_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mrz_nfc_config.json; sourceTree = "<group>"; };
+		FA704D3039C66528D39AFF94 /* tire_tin_uifeedback_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tire_tin_uifeedback_config.json; sourceTree = "<group>"; };
 		FDCEFD699881115D834BAA3A /* ALDeviceInformationHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALDeviceInformationHelper.m; sourceTree = "<group>"; };
 		FE8E97DFB75BB606736A5B8F /* ALBasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALBasePageViewController.h; sourceTree = "<group>"; };
 		FEDC526109C03A6213FF8973 /* ALPrivacyForwardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALPrivacyForwardingViewController.m; sourceTree = "<group>"; };
@@ -613,6 +618,8 @@
 			children = (
 				1B96468F95A6565998629030 /* ALTINScanViewController.h */,
 				209EDF80784D1EB6C97D91CF /* ALTINScanViewController.m */,
+				4843ED59FEECA939F5CA72C2 /* ALTINScanWithUIFeedbackViewController.h */,
+				D632FF0285876BA2C039BA47 /* ALTINScanWithUIFeedbackViewController.m */,
 				B35B83CC956F0A6C87E99940 /* ALTireViewController.swift */,
 			);
 			path = ViewController;
@@ -1118,6 +1125,7 @@
 				61D5DAE4AE4BC5A27563B970 /* tire_make_config.json */,
 				AA22027FDE68CA04A27233FF /* tire_size_config.json */,
 				76A28F896A45E44BF6777AC6 /* tire_tin_config.json */,
+				FA704D3039C66528D39AFF94 /* tire_tin_uifeedback_config.json */,
 				2832D66B184E525A092F5D75 /* ViewController */,
 			);
 			path = Tire;
@@ -1221,6 +1229,7 @@
 				519669F55E4AD753DA9D202F /* tire_make_config.json in Resources */,
 				D4A3E2D02B255B065015A41E /* tire_size_config.json in Resources */,
 				4F2FB6A2C6C071DE55422F10 /* tire_tin_config.json in Resources */,
+				C038F87F23675FCC845DD92A /* tire_tin_uifeedback_config.json in Resources */,
 				85DE1A8A0173B4A1AEC85520 /* universal_id_composite_config.json in Resources */,
 				0BDC05032D0DF09494298BB0 /* universal_id_front_config.json in Resources */,
 				8EE0AD4D9911D99ED2D9F53E /* vertical_container_scanner_capture_config.json in Resources */,
@@ -1299,6 +1308,7 @@
 				9EC8EF0D4F379C5106628236 /* ALSliderTableViewCell.swift in Sources */,
 				E59639494B52B250C0143E0E /* ALSpaceViews.m in Sources */,
 				D8BEB28F289057698BFC8C35 /* ALTINScanViewController.m in Sources */,
+				5B1689994D49BCFF6CAA405E /* ALTINScanWithUIFeedbackViewController.m in Sources */,
 				330FAFFA10C25A2B61C30CBF /* ALTextInputTableViewCell.swift in Sources */,
 				3E02A9E81691C221D70DD201 /* ALTextViewCell.m in Sources */,
 				9DDA738BD8549D7431ADA915 /* ALTireViewController.swift in Sources */,
@@ -1401,7 +1411,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
-				MARKETING_VERSION = 51.2.3;
+				MARKETING_VERSION = 51.3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;
@@ -1489,7 +1499,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SDKROOT)/System/Library/Frameworks",
 				);
-				MARKETING_VERSION = 51.2.3;
+				MARKETING_VERSION = 51.3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = io.anyline.AnylineExamples.bundle;
 				SDKROOT = iphoneos;

@@ -14,6 +14,7 @@
 #import "ALContainerScanViewController.h"
 #import "ALVRCScanViewController.h"
 #import "ALTINScanViewController.h"
+#import "ALTINScanWithUIFeedbackViewController.h"
 
 NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certificate DE";
 
@@ -45,7 +46,11 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
     ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire DOT/TIN", nil)
                                                        image:[UIImage imageNamed:@"tin"]
                                               viewController:[ALTINScanViewController class] title:@"Tire DOT/TIN"];
-    
+
+    ALExample *tinScanningUIFeedback = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire DOT/TIN (with UIFeedback)", nil)
+                                                                 image:[UIImage imageNamed:@"tin"]
+                                                        viewController:[ALTINScanWithUIFeedbackViewController class] title:@"Tire DOT/TIN"];
+
     ALExample *tireSizeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Size", nil)
                                                             image:[UIImage imageNamed:@"tin"]
                                                    viewController:[ALTireSizeViewController class] title:@"Tire Size"];
@@ -80,6 +85,7 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
             licensePlate,
             vinScanning,
             tinScanning,
+            tinScanningUIFeedback,
             tireSizeScanning,
             tireMakeScanning,
             commercialTireScanning,

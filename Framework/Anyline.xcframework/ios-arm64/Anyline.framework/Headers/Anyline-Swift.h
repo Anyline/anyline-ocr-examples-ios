@@ -277,6 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 #endif
 
 #endif
@@ -297,6 +298,32 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+typedef SWIFT_ENUM(NSInteger, ALUIFeedbackLogLevel, open) {
+  ALUIFeedbackLogLevelDebug = 0,
+  ALUIFeedbackLogLevelInfo = 1,
+  ALUIFeedbackLogLevelWarn = 2,
+  ALUIFeedbackLogLevelError = 3,
+};
+
+@protocol ALUIFeedbackLoggerDelegate;
+@class NSString;
+
+SWIFT_CLASS("_TtC7Anyline18ALUIFeedbackLogger")
+@interface ALUIFeedbackLogger : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ALUIFeedbackLogger * _Nonnull sharedInstance;)
++ (ALUIFeedbackLogger * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <ALUIFeedbackLoggerDelegate> _Nullable delegate;
+- (void)log:(NSString * _Nonnull)message level:(enum ALUIFeedbackLogLevel)level;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Anyline26ALUIFeedbackLoggerDelegate_")
+@protocol ALUIFeedbackLoggerDelegate <NSObject>
+- (void)loggedUIFeedbackMessage:(NSString * _Nonnull)msg level:(enum ALUIFeedbackLogLevel)level;
+@end
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

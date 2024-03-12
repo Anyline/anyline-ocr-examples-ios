@@ -1,0 +1,127 @@
+{
+    "cameraConfig": {
+        "captureResolution": "1080p",
+        "zoomGesture": true
+    },
+    "flashConfig": {
+        "mode": "manual",
+        "alignment": "top_left"
+    },
+    "viewPluginConfig": {
+        "pluginConfig": {
+            "id": "tin",
+            "cancelOnResult": true,
+            "tinConfig": {
+                "upsideDownMode": "AUTO"
+            }
+        },
+        "cutoutConfig": {
+            "maxWidthPercent": "60%",
+            "alignment": "center",
+            "ratioFromSize": {
+                "width": 5,
+                "height": 1
+            },
+            "offset": {
+                "x": 0,
+                "y": 0
+            },
+            "strokeWidth": 2,
+            "cornerRadius": 6,
+            "strokeColor": "FFFFFF",
+            "outerColor": "000000",
+            "outerAlpha": 0.3,
+            "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedbackConfig": {
+            "animation": "traverse_multi",
+            "animationDuration": 250,
+            "style": "animated_rect",
+            "strokeColor": "0099FF",
+            "strokeWidth": 2,
+            "beepOnResult": true,
+            "vibrateOnResult": true
+        },
+        "uiFeedbackConfig": {
+            "presets": [
+                {
+                    "presetName": "tin_custom_v1",
+                    "presetAttributes": [
+                        {
+                            "attributeName": "lighting_toodark_image",
+                            "attributeValue": "ic_too_dark"
+                        },
+                        {
+                            "attributeName": "lighting_toobright_image",
+                            "attributeValue": "ic_too_bright"
+                        },
+                        {
+                            "attributeName": "distance_moveback_image",
+                            "attributeValue": "ic_move_back"
+                        },
+                        {
+                            "attributeName": "distance_movecloser_image",
+                            "attributeValue": "ic_move_closer"
+                        },
+                        {
+                            "attributeName": "format_wrong_image",
+                            "attributeValue": "ic_wrong_format"
+                        },
+                        {
+                            "attributeName": "date_wrong_image",
+                            "attributeValue": "ic_wrong_date"
+                        },
+                        {
+                            "attributeName": "lighting_toodark_text",
+                            "attributeValue": "Too dark"
+                        },
+                        {
+                            "attributeName": "lighting_toobright_text",
+                            "attributeValue": "Too bright"
+                        },
+                        {
+                            "attributeName": "distance_moveback_text",
+                            "attributeValue": "Position cutout correctly"
+                        },
+                        {
+                            "attributeName": "distance_movecloser_text",
+                            "attributeValue": "Position cutout correctly"
+                        },
+                        {
+                            "attributeName": "format_wrong_text",
+                            "attributeValue": "Wrong format detected"
+                        },
+                        {
+                            "attributeName": "date_wrong_text",
+                            "attributeValue": "Wrong date detected"
+                        },
+                        {
+                            "attributeName": "lighting_toodark_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        },
+                        {
+                            "attributeName": "lighting_toobright_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        },
+                        {
+                            "attributeName": "distance_moveback_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        },
+                        {
+                            "attributeName": "distance_movecloser_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        },
+                        {
+                            "attributeName": "format_wrong_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        },
+                        {
+                            "attributeName": "date_wrong_sound",
+                            "attributeValue": "info_sound_TIN.wav"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

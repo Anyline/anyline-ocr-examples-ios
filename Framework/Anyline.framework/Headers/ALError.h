@@ -163,6 +163,9 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
 
     /// Cache error: unable to create the zip archive
     ALCacheErrorZipCreationFailed = 14002,
+
+    /// UIFeedback: JSON parsing error
+    ALUIFeedbackJSONError = 15001
 };
 
 NS_ASSUME_NONNULL_END

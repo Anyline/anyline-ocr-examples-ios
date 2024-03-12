@@ -24,7 +24,6 @@ static NSString *kChoiceTitles[kChoicesCount] = { // NOTE: A C-array
 
 NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
-
 @interface ALTINScanViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
 
 // TODO: most of these can go to a superclass.

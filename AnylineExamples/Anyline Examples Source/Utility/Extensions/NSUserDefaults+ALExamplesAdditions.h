@@ -28,8 +28,16 @@
 + (void)AL_setSelectedSymbologiesForBarcode:(NSArray<NSString *> *)selectedSymbologies;
 
 + (void)AL_setMail:(NSString *)mail;
-
 + (NSString *)AL_getMail;
+
++ (void)AL_setFirstName:(NSString *)firstName;
++ (NSString *)AL_getFirstName;
+
++ (void)AL_setLastName:(NSString *)lastName;
++ (NSString *)AL_getLastName;
+
++ (void)AL_setGeography:(NSString *)geography;
++ (NSString *)AL_getGeography;
 
 + (void)AL_incrementScanCount;
 

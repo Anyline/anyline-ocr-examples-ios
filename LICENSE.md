@@ -1,6 +1,6 @@
 Anyline, AnylineSDK
 
-Copyright (c) 2024 Anyline GmbH All rights reserved.
+Copyright (c) 2023 Anyline GmbH All rights reserved.
 
 Community Version User License Agreement
 
