@@ -132,21 +132,25 @@
 		<data>
 		NspzsxSA+ABjA3ou78NOv3FewDY=
 		</data>
+		<key>Headers/ALWrapperConfig.h</key>
+		<data>
+		unaHCwVx2+xFJsWPrQNK7hYy3qU=
+		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
 		BcfNvYqyoYNIVBysEl/MWcqdjxU=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		QJyjMkP2j0eoqAEuubNsMBLAhDg=
+		5IWmJk3ZY6EZGK0sUNVgcJHalfo=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
-		yxUzJknLnpKJCXDvwMD1xfIfGiQ=
+		A9K/uxCvjRNfi182Q16muqIzbbQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cRrZ/pbfoyN9MhmpdrNROosCP/k=
+		H8WxBP4Bf1Pf6t3yjLDb1y5zDjY=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -399,6 +403,13 @@
 			KbecpDo7hUsDEtB4mGn1hNeKZgxwoa/yRZ84FG7DIWI=
 			</data>
 		</dict>
+		<key>Headers/ALWrapperConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0XDRCm8oSn+CYYUtg9C+y9nqJSi6zUR7A9++5blDuTQ=
+			</data>
+		</dict>
 		<key>Headers/Anyline-Swift.h</key>
 		<dict>
 			<key>hash2</key>
@@ -410,14 +421,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jipWNARhODoCUWXyafagzb6JyBDyXfm1/hGCVxObXqo=
+			ar/dbjQ66Cn2XkW4AUevpE8fR7Z6nDPbzriF3stRk8M=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gGudtBdJ8VI1SuMfEnmpXdzHFJGJ35LREQPMqRt6Ysc=
+			GZ1nS+fkX2gQEZJ1biAduHYk2v9N+KZQ51AZUb9Myzc=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>

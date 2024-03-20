@@ -2,6 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ALWrapperConfig;
 @class ALCacheConfig;
 
 /// The Anyline SDK
@@ -27,9 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param licenseKey license key string for the application
 /// @param error error information set if initialization fails
 /// @param cacheConfig the caching behavior
+/// @param wrapperConfig information, if any, about the wrapper using Anyline
 /// @return boolean indicating whether or not the operation succeeded
 + (BOOL)setupWithLicenseKey:(NSString *)licenseKey
                 cacheConfig:(ALCacheConfig * _Nullable)cacheConfig
+              wrapperConfig:(ALWrapperConfig * _Nullable)wrapperConfig
                       error:(NSError **)error;
 
 /// Provides a human-readble date for when the Anyline license key expires.
