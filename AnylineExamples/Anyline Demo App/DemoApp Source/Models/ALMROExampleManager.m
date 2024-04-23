@@ -15,6 +15,7 @@
 #import "ALVRCScanViewController.h"
 #import "ALTINScanViewController.h"
 #import "ALTINScanWithUIFeedbackViewController.h"
+#import "ALTINScanNAWithUIFeedbackViewController.h"
 
 NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certificate DE";
 
@@ -45,11 +46,15 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
     
     ALExample *tinScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire DOT/TIN", nil)
                                                        image:[UIImage imageNamed:@"tin"]
-                                              viewController:[ALTINScanViewController class] title:@"Tire DOT/TIN"];
+                                              viewController:[ALTINDotViewController class] title:@"Tire DOT/TIN"];
+    
+    ALExample *tinUniversalScanningUIFeedback = [[ALExample alloc] initWithName:NSLocalizedString(@"Universal Tire (with UIFeedback)", nil)
+                                                                 image:[UIImage imageNamed:@"tin_universal"]
+                                                        viewController:[ALTINScanWithUIFeedbackViewController class] title:@"Universal Tire"];
 
-    ALExample *tinScanningUIFeedback = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire DOT/TIN (with UIFeedback)", nil)
-                                                                 image:[UIImage imageNamed:@"tin"]
-                                                        viewController:[ALTINScanWithUIFeedbackViewController class] title:@"Tire DOT/TIN"];
+    ALExample *tinNAScanningUIFeedback = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire DOT/TIN (with UIFeedback)", nil)
+                                                                 image:[UIImage imageNamed:@"tin_na"]
+                                                        viewController:[ALTINScanNAWithUIFeedbackViewController class] title:@"Tire (DOT/TIN)"];
 
     ALExample *tireSizeScanning = [[ALExample alloc] initWithName:NSLocalizedString(@"Tire Size", nil)
                                                             image:[UIImage imageNamed:@"tin"]
@@ -85,7 +90,8 @@ NSString * const kVehicleRegistrationCertificate = @"Vehicle Registration Certif
             licensePlate,
             vinScanning,
             tinScanning,
-            tinScanningUIFeedback,
+            tinUniversalScanningUIFeedback,
+            tinNAScanningUIFeedback,
             tireSizeScanning,
             tireMakeScanning,
             commercialTireScanning,

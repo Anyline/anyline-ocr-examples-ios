@@ -1,67 +1,33 @@
 #import "ALTINScanWithUIFeedbackViewController.h"
+
 #import <Anyline/Anyline.h>
-#import "ALConfigurationDialogViewController.h"
 #import "AnylineExamples-Swift.h" // for ALResultEntry
-#import "ALPluginResultHelper.h"
+#import "ALTinScanRecalledDOTs.h"
 
-#if __has_include("ALContactUsViewController.h")
-#import "ALContactUsViewController.h"
-#endif
+NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_universal_uifeedback_config";
 
-static const NSUInteger kChoicesCount = 3; // synced with ALTINScanMode
+@interface ALTINScanWithUIFeedbackViewController () <ALScanPluginDelegate>
 
-typedef enum {
-    ALTINScanModeUniversal = 0,
-    ALTINScanModeDOT,
-    ALTINScanModeOtherInfo
-} ALTINScanMode;
-
-static NSString *kChoiceTitles[kChoicesCount] = { // NOTE: A C-array
-    @"Universal TIN/DOT",
-    @"TIN/DOT (North America only)",
-    @"Other tire sidewall information"
-};
-
-NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_uifeedback_config";
-
-@interface ALTINScanWithUIFeedbackViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
-
-// TODO: most of these can go to a superclass.
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
 
 @property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
 
-@property (nonatomic, assign) NSUInteger dialogIndexSelected;
-
-+ (NSArray<NSString *> *)recalledDOTs;
+@property (nonatomic, readonly) NSArray<NSString *> *recalledDOTs;
 
 @end
 
 
 @implementation ALTINScanWithUIFeedbackViewController
 
-- (void)dealloc {
-    // NSLog(@"dealloc ALTINScanWithUIFeedbackViewController");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"Tire DOT/TIN";
+
+    self.title = @"Universal Tire (DOT/TIN)";
     self.controllerType = ALScanHistoryTIN;
 
-    self.dialogIndexSelected = 0;
-    
     self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:nil];
 
-    if (self.isRegionUnitedStates) {
-        // https://anyline.atlassian.net/browse/APP-406
-        self.dialogIndexSelected = 1;
-    }
-
     [self reloadScanView];
-    
-    [self setupModeToggle];
 
     [self setupFlipOrientationButton];
 
@@ -97,42 +63,21 @@ NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_uifeedback_
     return [[self configJSONStrWithFilename:kALTINScanVC_uiFeedback_configFilename] asJSONObject];
 }
 
-- (BOOL)isRegionUnitedStates {
-    // checking device region settings. If it's US, the TIN/DOT option needs to be shown.
-    NSString *countryCode = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
-    return [countryCode isEqualToString:@"US"];
-}
-
 // MARK: - Setup
 
-- (ALScanViewPlugin *)scanViewPluginForScanMode:(ALTINScanMode)scanMode {
+- (ALScanViewPlugin *)getScanViewPlugin {
     NSDictionary *JSONConfigObj = self.scanViewConfigDict;
     
     // Will edit this object before constructing an ALScanViewPlugin with it later
     NSError *error;
     ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:&error];
-    
     if ([self popWithAlertOnError:error]) {
         return nil;
     }
 
-    // Change the mode...
-    ALTinConfig *tinConfig = scanViewPluginConfig.pluginConfig.tinConfig;
-    tinConfig.scanMode = ALTinConfigScanMode.universal;
-    switch (scanMode) {
-        case ALTINScanModeUniversal:
-            tinConfig.scanMode = ALTinConfigScanMode.universal;
-            break;
-        case ALTINScanModeDOT:
-            tinConfig.scanMode = ALTinConfigScanMode.dot;
-            break;
-        default: break;
-    }
-    
     // Recreate the ScanViewPlugin. Since this is a different ScanViewPlugin than
     // the previous one, reset the delegate.
     ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
-    
     if ([self popWithAlertOnError:error]) {
         return nil;
     }
@@ -141,10 +86,10 @@ NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_uifeedback_
     return scanViewPlugin;
 }
 
-- (void)changeScanViewMode:(ALTINScanMode)scanMode {
+- (void)reloadScanView {
     [self stopScanning];
-    ALScanViewPlugin *scanViewPlugin = [self scanViewPluginForScanMode:scanMode];
-    
+    ALScanViewPlugin *scanViewPlugin = [self getScanViewPlugin];
+
     NSError *error;
     if (!self.scanView) {
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
@@ -164,22 +109,10 @@ NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_uifeedback_
     [self startScanning:nil];
 }
 
-- (void)reloadScanView {
-    [self changeScanViewMode:(ALTINScanMode)self.dialogIndexSelected];
-}
-
 // MARK: - Getters
 
-// A list of recalled DOT values outlined in https://anyline.atlassian.net/browse/SHOW-51
-// which should be treated especially with an extra result entry
 + (NSArray<NSString *> *)recalledDOTs {
-    return @[
-        @"DOTUTY11M03119",
-        @"DOTA3E4WBYV2220",
-        @"DOTNB7T2T8W0403",
-        @"DOTHCXH03CX4618",
-        @"DOTFA4FJA90320",
-    ];
+    return kRecalledDOTs;
 }
 
 // MARK: - Handle & present results
@@ -220,76 +153,6 @@ NSString * const kALTINScanVC_uiFeedback_configFilename = @"tire_tin_uifeedback_
         [resultEntries insertObject:[ALResultEntry withTitle:@"Tire on Recall" value:@"YES"] atIndex:0];
     }
     return resultEntries;
-}
-
-// MARK: - Allow changing the scan mode
-
-- (void)showOptionsSelectionDialog {
-    NSArray *choices = [NSArray arrayWithObjects:kChoiceTitles count:kChoicesCount];
-    ALConfigurationDialogViewController *vc = [ALConfigurationDialogViewController singleSelectDialogWithChoices:choices
-                                                                                                   selectedIndex:self.dialogIndexSelected
-                                                                                                        delegate:self];
-    [self presentViewController:vc animated:YES completion:nil];
-    [self.scanView stopCamera];
-}
-
-// MARK: - ALConfigurationDialogViewControllerDelegate
-
-- (void)configDialogCommitted:(BOOL)commited dialog:(ALConfigurationDialogViewController *)dialog {}
-
-- (void)configDialogCancelled:(ALConfigurationDialogViewController *)dialog {
-    [self.scanView startCamera];
-}
-
-- (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
-
-    if (index == ALTINScanModeOtherInfo) {
-        [self presentContactUsDialog];
-        return;
-    }
-    self.dialogIndexSelected = index;
-    [self.modeSelectButton setTitle:kChoiceTitles[index] forState:UIControlStateNormal];
-
-    __weak __block typeof(self) weakSelf = self;
-    [self dismissViewControllerAnimated:YES completion:^{
-        [weakSelf.scanView startCamera];
-    }];
-    
-    [self reloadScanView];
-}
-
-// MARK: - Miscellaneous
-
-- (void)setupModeToggle {
-    __weak __block typeof(self) weakSelf = self;
-    [self addModeSelectButtonWithTitle:kChoiceTitles[self.dialogIndexSelected] buttonPressed:^{
-        [weakSelf showOptionsSelectionDialog];
-    }];
-}
-
-- (void)presentContactUsDialog {
-#if __has_include("ALContactUsViewController.h")
-    ALTINScanWithUIFeedbackViewController __weak *weakSelf = self;
-    [self dismissViewControllerAnimated:YES completion:^{
-
-        ALContactUsViewController *contactVC = [[ALContactUsViewController alloc] init];
-        contactVC.modalPresentationStyle = UIModalPresentationFormSheet;
-
-        [weakSelf presentViewController:contactVC animated:NO completion:^{
-            // undo forced landscape mode (APP-383)
-            weakSelf.isOrientationFlipped = NO;
-            [weakSelf enableLandscapeOrientation:NO];
-        }];
-
-        [contactVC setPresentationBlock:^{ // what happens when dismissed
-            // undo forced landscape mode (APP-383)
-            weakSelf.isOrientationFlipped = YES;
-            [weakSelf enableLandscapeOrientation:YES];
-
-            [weakSelf.scanView startCamera];
-        }];
-    }];
-#endif
 }
 
 @end

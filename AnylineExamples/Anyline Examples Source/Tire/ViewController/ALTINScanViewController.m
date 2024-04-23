@@ -3,6 +3,7 @@
 #import "ALConfigurationDialogViewController.h"
 #import "AnylineExamples-Swift.h" // for ALResultEntry
 #import "ALPluginResultHelper.h"
+#import "ALTinScanRecalledDOTs.h"
 
 #if __has_include("ALContactUsViewController.h")
 #import "ALContactUsViewController.h"
@@ -33,7 +34,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
 @property (nonatomic, assign) NSUInteger dialogIndexSelected;
 
-+ (NSArray<NSString *> *)recalledDOTs;
+@property (nonatomic, readonly) NSArray<NSString *> *recalledDOTs;
 
 @end
 
@@ -109,8 +110,10 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     NSDictionary *JSONConfigObj = self.scanViewConfigDict;
     
     // Will edit this object before constructing an ALScanViewPlugin with it later
-    ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:nil];
-    
+    NSError *error;
+    ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:&error];
+    // TODO: test that scanViewPluginConfig is not null, otherwise, read the error and handle it and/or return nil
+
     // Change the mode...
     ALTinConfig *tinConfig = scanViewPluginConfig.pluginConfig.tinConfig;
     tinConfig.scanMode = ALTinConfigScanMode.universal;
@@ -126,7 +129,6 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     
     // Recreate the ScanViewPlugin. Since this is a different ScanViewPlugin than
     // the previous one, reset the delegate.
-    NSError *error;
     ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
     
     if ([self popWithAlertOnError:error]) {
@@ -166,16 +168,8 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
 // MARK: - Getters
 
-// A list of recalled DOT values outlined in https://anyline.atlassian.net/browse/SHOW-51
-// which should be treated especially with an extra result entry
 + (NSArray<NSString *> *)recalledDOTs {
-    return @[
-        @"DOTUTY11M03119",
-        @"DOTA3E4WBYV2220",
-        @"DOTNB7T2T8W0403",
-        @"DOTHCXH03CX4618",
-        @"DOTFA4FJA90320",
-    ];
+    return kRecalledDOTs;
 }
 
 // MARK: - Handle & present results
@@ -240,7 +234,9 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 - (void)configDialog:(ALConfigurationDialogViewController *)dialog selectedIndex:(NSUInteger)index {
 
     if (index == ALTINScanModeOtherInfo) {
-        [self presentContactUsDialog];
+        if (![self presentContactUsDialog]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
         return;
     }
     self.dialogIndexSelected = index;
@@ -263,7 +259,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
     }];
 }
 
-- (void)presentContactUsDialog {
+- (BOOL)presentContactUsDialog {
 #if __has_include("ALContactUsViewController.h")
     ALTINScanViewController __weak *weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
@@ -285,7 +281,9 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
             [weakSelf.scanView startCamera];
         }];
     }];
+    return YES;
 #endif
+    return NO;
 }
 
 @end
