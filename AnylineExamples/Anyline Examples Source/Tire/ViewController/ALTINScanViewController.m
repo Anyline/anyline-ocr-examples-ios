@@ -23,14 +23,14 @@ static NSString *kChoiceTitles[kChoicesCount] = { // NOTE: A C-array
     @"Other tire sidewall information"
 };
 
-NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
+NSString * const kALTINUniversalScanVC_configFilename = @"tire_tin_universal_uifeedback_config";
+NSString * const kALTINNAScanVC_configFilename = @"tire_tin_na_uifeedback_config";
+
 
 @interface ALTINScanViewController () <ALScanPluginDelegate, ALConfigurationDialogViewControllerDelegate>
 
 // TODO: most of these can go to a superclass.
 @property (nonatomic, strong) ALScanViewConfig *scanViewConfig;
-
-@property (nonatomic, readonly) NSDictionary *scanViewConfigDict;
 
 @property (nonatomic, assign) NSUInteger dialogIndexSelected;
 
@@ -53,7 +53,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
     self.dialogIndexSelected = 0;
     
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:nil];
+    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:[self scanViewConfigDict:ALTINScanModeUniversal] error:nil];
 
     if (self.isRegionUnitedStates) {
         // https://anyline.atlassian.net/browse/APP-406
@@ -94,8 +94,17 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 
 // MARK: - Getters and Setters
 
-- (NSDictionary *)scanViewConfigDict {
-    return [[self configJSONStrWithFilename:kALTINScanVC_configFilename] asJSONObject];
+- (NSDictionary *)scanViewConfigDict:(ALTINScanMode)scanMode {
+    switch (scanMode) {
+        case ALTINScanModeUniversal:
+            return [[self configJSONStrWithFilename:kALTINUniversalScanVC_configFilename] asJSONObject];
+            break;
+        case ALTINScanModeDOT:
+            return [[self configJSONStrWithFilename:kALTINNAScanVC_configFilename] asJSONObject];
+            break;
+        default: break;
+    }
+    return [[self configJSONStrWithFilename:kALTINUniversalScanVC_configFilename] asJSONObject];
 }
 
 - (BOOL)isRegionUnitedStates {
@@ -107,7 +116,7 @@ NSString * const kALTINScanVC_configFilename = @"tire_tin_config";
 // MARK: - Setup
 
 - (ALScanViewPlugin *)scanViewPluginForScanMode:(ALTINScanMode)scanMode {
-    NSDictionary *JSONConfigObj = self.scanViewConfigDict;
+    NSDictionary *JSONConfigObj = [self scanViewConfigDict:scanMode];
     
     // Will edit this object before constructing an ALScanViewPlugin with it later
     NSError *error;
