@@ -57,8 +57,6 @@ static NSString *kConfigs[3] = {
     }
     [self updateConfigWithName:licensePlateConfigJSONFile];
     [self setupModeToggle];
-
-    [self.scanView startCamera];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,6 +65,8 @@ static NSString *kConfigs[3] = {
     // so that we can later use it to restart the scanning process.
     NSError *error;
     [self startScanning:&error];
+
+    [self.scanView startCamera];
 }
 
 // MARK: - Handle & present results
@@ -120,15 +120,22 @@ static NSString *kConfigs[3] = {
         }
         [self installScanView:self.scanView];
     } else {
-        NSDictionary *configDict = [[self configJSONStrWithFilename:configName] asJSONObject];
-        ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configDict error:&error];
+        
+        ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONString:[self configJSONStrWithFilename:configName error:nil] error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+
+        ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewConfig.viewPluginConfig error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
+
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+
         [scanViewPlugin.scanPlugin setDelegate:self];
     }
     [self startScanning:nil];
@@ -149,7 +156,9 @@ static NSString *kConfigs[3] = {
 
     __weak __block typeof(self) weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
-        [weakSelf.scanView startCamera];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.scanView startCamera];
+        });
     }];
 }
 

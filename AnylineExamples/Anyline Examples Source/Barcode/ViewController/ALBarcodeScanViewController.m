@@ -45,7 +45,7 @@ typedef enum : NSUInteger {
 
 @interface ALBarcodeScanViewController () <ALScanPluginDelegate, ALBarcodeSettingsDelegate, ALConfigurationDialogViewControllerDelegate>
 
-@property (nonatomic, readonly) ALScanViewPluginConfig *scanViewPluginConfigDefault;
+@property (nonatomic, readonly) ALViewPluginConfig *viewPluginConfigDefault;
 
 @property (nonatomic, strong) ALScanResult *latestScanResult;
 
@@ -73,7 +73,7 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) ALBarcodeBatchCountView *batchCountView;
 
-+ (ALScanViewPluginConfig *)defaultScanViewPluginConfig;
++ (ALViewPluginConfig *)defaultViewPluginConfig;
 
 + (ALScanViewPlugin *)scanViewPluginWithBarcodeFormats:(NSArray<ALBarcodeFormat *> *)barcodeFormats
                                         isMultiBarcode:(BOOL)isMultiBarcode
@@ -176,13 +176,14 @@ typedef enum : NSUInteger {
 
 // MARK: - Getters and Setters
 
-+ (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
++ (ALViewPluginConfig *)defaultViewPluginConfig {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kBarcodeScanVC_configJSONFilename
                                                              ofType:@"json"];
     NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
                                                     encoding:NSUTF8StringEncoding
-                                                       error:NULL];
-    return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
+                                                       error:nil];
+    NSError *error;
+    return [ALScanViewConfig withJSONString:configStr error:&error].viewPluginConfig;
 }
 
 - (void)setSelectedBarcodeFormats:(NSArray<ALBarcodeFormat *> *)selectedBarcodeFormats {
@@ -208,15 +209,15 @@ typedef enum : NSUInteger {
     scanViewPlugin.scanPlugin.delegate = self;
 
     if (self.scanView) {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
     } else {
-        NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBarcodeScanVC_configJSONFilename]
+        NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBarcodeScanVC_configJSONFilename error:nil]
                                               asJSONObject];
-        ALScanViewConfig *scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:configJSONDictionary
-                                                                                      error:nil];
+        ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:configJSONDictionary error:nil];
+
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                            scanViewPlugin:scanViewPlugin
                                            scanViewConfig:scanViewConfig
@@ -238,28 +239,16 @@ typedef enum : NSUInteger {
 + (ALScanViewPlugin *)scanViewPluginWithBarcodeFormats:(NSArray<ALBarcodeFormat *> *)barcodeFormats
                                         isMultiBarcode:(BOOL)isMultiBarcode
                                                  error:(NSError **)error {
-    ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
-    // reach into the barcode config and change the formats and multibarcode flags
-    ALPluginConfig *pluginConfig = scanViewPluginConfig.pluginConfig;
 
-    // if multibarcode, also cancelOnResult = false, otherwise true
-    pluginConfig.cancelOnResult = [NSNumber numberWithBool:isMultiBarcode ? false : true];
-
-    ALBarcodeConfig *barcodeConfig = pluginConfig.barcodeConfig;
+    ALViewPluginConfig *viewPluginConfig = [self.class defaultViewPluginConfig];
+    viewPluginConfig.pluginConfig.cancelOnResult = [NSNumber numberWithBool:isMultiBarcode ? false : true];
+    ALBarcodeConfig *barcodeConfig = viewPluginConfig.pluginConfig.barcodeConfig;
     barcodeConfig.barcodeFormats = barcodeFormats;
     barcodeConfig.multiBarcode = @(isMultiBarcode);
+    viewPluginConfig.scanFeedbackConfig.beepOnResult = [NSNumber numberWithBool:(!isMultiBarcode)];
+    viewPluginConfig.scanFeedbackConfig.vibrateOnResult = [NSNumber numberWithBool:(!isMultiBarcode)];
 
-    NSMutableDictionary *scanFeedbackConfigDict = [NSMutableDictionary dictionaryWithDictionary:[[scanViewPluginConfig.scanFeedbackConfig asJSONString] asJSONObject]];
-
-    scanFeedbackConfigDict[@"beepOnResult"] = @(!isMultiBarcode);
-    scanFeedbackConfigDict[@"vibrateOnResult"] = @(!isMultiBarcode);
-    ALScanFeedbackConfig *scanFeedbackConfig = [ALScanFeedbackConfig withJSONDictionary:scanFeedbackConfigDict];
-
-    scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithPluginConfig:scanViewPluginConfig.pluginConfig
-                                                                   cutoutConfig:scanViewPluginConfig.cutoutConfig
-                                                             scanFeedbackConfig:scanFeedbackConfig error:nil];
-
-    return [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:error];
+    return [[ALScanViewPlugin alloc] initWithConfig:viewPluginConfig error:error];
 }
 
 - (void)saveBarcodeSymbologies {

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "ALScanViewPluginBase.h"
+#import <Anyline/ALViewPluginBase.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -8,13 +8,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Creates a scan view plugin (`ALScanViewPlugin` or `ALViewPluginComposite`) from a JSON
 /// dictionary
-/// @param JSONDictionary a suitably-formatted JSON `NSDictionary`
+/// @param JSONDictionary a JSON dictionary corresponding to an `ALViewPluginConfig` or
+/// `ALViewPluginCompositeConfig` object
 /// @param error an NSError object that will contain error information if creation
 /// of the scan view plugin is unsuccessful
-/// @return an object of type `NSObject<ALScanViewPluginBase> *` (`ALScanViewPlugin` or
+/// @return an object of type `NSObject<ALViewPluginBase> *` (`ALScanViewPlugin` or
 ///  `ALViewPluginComposite`),
 /// or null if the JSON object could not be deserialized
-+ (NSObject<ALScanViewPluginBase> * _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary
++ (NSObject<ALViewPluginBase> * _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary
+                                                       error:(NSError * _Nullable * _Nullable)error;
+
+/// Creates a scan view plugin (`ALScanViewPlugin` or `ALViewPluginComposite`) from a JSON
+/// dictionary
+/// @param JSONString the config string in JSON corresponding to an `ALViewPluginConfig` or
+/// `ALViewPluginCompositeConfig` object
+/// @param error an NSError object that will contain error information if creation
+/// of the scan view plugin is unsuccessful
+/// @return an object of type `NSObject<ALViewPluginBase> *` (`ALScanViewPlugin` or
+///  `ALViewPluginComposite`),
+/// or null if the JSON object could not be deserialized
++ (NSObject<ALViewPluginBase> * _Nullable)withJSONString:(NSString *)JSONString
                                                    error:(NSError * _Nullable * _Nullable)error;
 
 @end

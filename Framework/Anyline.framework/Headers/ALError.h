@@ -11,6 +11,7 @@ static NSString * const ALBadLicenseErrorMsg = @"It seems like there is an issue
 /**
  *  The Error Domain used by the Anyline SDK
  */
+static NSString * const ALSchemaValidationDomain = @"ALSchemaValidationDomain";
 static NSString * const ALParserDomain = @"ALParserDomain";
 static NSString * const ALRunDomain = @"ALRunDomain";
 static NSString * const ALErrorDomain = @"ALErrorDomain";
@@ -97,6 +98,9 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
 
     /// Unsupported format requested while using native barcode reader
     ALCameraNativeBarcodeUnsupportedFormat = 8007,
+
+    /// The ScanView's `viewPlugin` object is nil
+    ALViewPluginNotInitialized = 9001,
 
     /// Error on the NFC tag reader response
     ALNFCTagErrorResponseError = 10001,

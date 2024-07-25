@@ -4,6 +4,7 @@
 #import "NSUserDefaults+ALExamplesAdditions.h"
 #import "AnylineExamples-Swift.h"
 
+
 NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_number_view_config";
 @interface ALUniversalSerialNumberScanViewController () <ALScanPluginDelegate>
 
@@ -61,7 +62,7 @@ NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_numb
         }
         [self installScanView:self.scanView];
     } else {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }
@@ -72,13 +73,15 @@ NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_numb
 
 // MARK: - Serial Settings
 
-+ (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
++ (ALViewPluginConfig *)defaultViewPluginConfig {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kUniversalSerialNumberScanVC_configJSONFilename
                                                              ofType:@"json"];
     NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
                                                     encoding:NSUTF8StringEncoding
                                                        error:NULL];
-    return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
+    NSError *error;
+    ALScanViewConfig *ret = [ALScanViewConfig withJSONString:configStr error:&error];
+    return ret.viewPluginConfig;
 }
 
 + (ALScanViewConfig *)scanViewConfig {
@@ -87,24 +90,25 @@ NSString * const kUniversalSerialNumberScanVC_configJSONFilename = @"serial_numb
     NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
                                                     encoding:NSUTF8StringEncoding
                                                        error:NULL];
-    return [ALScanViewConfig withJSONDictionary:configStr.asJSONObject];
+    return [ALScanViewConfig withJSONDictionary:configStr.asJSONObject error:nil];
 }
 
 + (ALScanViewPlugin *)scanViewPluginWithUpdatedSettings:(NSError **)error {
-    ALScanViewPluginConfig *scanViewPluginConfig = [self.class defaultScanViewPluginConfig];
-    
-    ALPluginConfig *newPluginConfig = scanViewPluginConfig.pluginConfig;
+    ALViewPluginConfig *viewPluginConfig = [self.class defaultViewPluginConfig];
+
+    ALPluginConfig *newPluginConfig = viewPluginConfig.pluginConfig;
     newPluginConfig.ocrConfig = [self.class ocrConfig];
     
-    NSDictionary *newCutoutConfigDictionary = [CutoutSettings.shared customizedCutoutConfigFrom:scanViewPluginConfig.cutoutConfig];
-    ALCutoutConfig *newCutoutConfig = [[ALCutoutConfig alloc] initWithJSONDictionary:newCutoutConfigDictionary error:nil];
-    
-    ALScanViewPluginConfig *newScanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithPluginConfig:newPluginConfig
-                                                                                              cutoutConfig:newCutoutConfig
-                                                                                        scanFeedbackConfig:scanViewPluginConfig.scanFeedbackConfig
-                                                                                                     error:nil];
-    
-    return [[ALScanViewPlugin alloc] initWithConfig:newScanViewPluginConfig error:error];
+    NSDictionary *newCutoutConfigDictionary = [CutoutSettings.shared customizedCutoutConfigFrom:viewPluginConfig.cutoutConfig];
+    ALCutoutConfig *newCutoutConfig = [ALCutoutConfig withJSONDictionary:newCutoutConfigDictionary error:nil];
+
+    ALViewPluginConfig *newViewPluginConfig = [ALViewPluginConfig withJSONDictionary:@{
+        @"pluginConfig": [[newPluginConfig asJSONString] asJSONObject],
+        @"cutoutConfig": [[newCutoutConfig asJSONString] asJSONObject],
+        @"scanFeedbackConfig": [[viewPluginConfig.scanFeedbackConfig asJSONString] asJSONObject],
+    } error:error];
+
+    return [[ALScanViewPlugin alloc] initWithConfig:newViewPluginConfig error:error];
 }
 
 + (ALOcrConfig *)ocrConfig {

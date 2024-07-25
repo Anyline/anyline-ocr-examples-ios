@@ -162,8 +162,11 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     CGFloat hintMargin = 7;
     
     // Add scan hint label
-    self.hintView = [self createScanHintView:hintMargin];
-    [self.view addSubview:self.hintView];
+    UIView *hintView = [self createScanHintView:hintMargin];
+    if (hintView) {
+        [self.view addSubview:hintView];
+        self.hintView = hintView;
+    }
     
     [self setupNavigationBar];
 
@@ -208,20 +211,21 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     NSDictionary *frontIDScanViewConfig = [self getConfigDictForFrontIDScanner];
     
     NSError *error; // each time it's used, you should really check the error.
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:frontIDScanViewConfig error:&error];
-    
+    self.scanViewConfig = [ALScanViewConfig withJSONDictionary:frontIDScanViewConfig error:&error];
+
     // Handle it properly: you most likely couldn't proceed to the next stage when an error occurs.
-    ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:frontIDScanViewConfig
-                                                                                                    error:&error];
-    [scanViewPluginConfig.pluginConfig.universalIDConfig setAlphabet:[self getAlphabet]];
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
+    ALViewPluginConfig *viewPluginConfig = self.scanViewConfig.viewPluginConfig;
+
+    [viewPluginConfig.pluginConfig.universalIDConfig setAlphabet:[self getAlphabet]];
     
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:viewPluginConfig error:&error];
+
     if ([self popWithAlertOnError:error]) {
         return;
     }
     
     if (self.scanView) {
-        BOOL success = [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        BOOL success = [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if (!success) {
             NSLog(@"Unable to update scan view plugin. Reason: %@", error.localizedDescription);
         }
@@ -248,12 +252,40 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 - (void)createBackScanViewPlugin {
     NSDictionary *backIDScanViewConfig = [self getConfigDictForBackIDScanner];
     
+    NSError *error;
+
+    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:backIDScanViewConfig error:&error];
+    
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
     // going to recreate the scan plugin configs and all with the currently-selected alphabet
     ALAlphabet *alphabet = [self getAlphabet];
-    
-    NSError *error;
-    id<ALScanViewPluginBase> backScanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:backIDScanViewConfig
-                                                                                        error:&error];
+    id<ALViewPluginBase> backScanViewPlugin;
+    if (scanViewConfig.viewPluginConfig != nil) {
+        backScanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewConfig.viewPluginConfig error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+        ((ALScanViewPlugin *)backScanViewPlugin).scanPlugin.delegate = self;
+
+    } else if (scanViewConfig.viewPluginCompositeConfig != nil) {
+        backScanViewPlugin = [[ALViewPluginComposite alloc] initWithConfig:scanViewConfig.viewPluginCompositeConfig error:&error];
+        if ([self popWithAlertOnError:error]) {
+            return;
+        }
+        for (ALViewPlugin *childPlugin in scanViewConfig.viewPluginCompositeConfig.viewPlugins) {
+            childPlugin.viewPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
+        }
+        ALViewPluginComposite *newComposite = [[ALViewPluginComposite alloc] initWithConfig:scanViewConfig.viewPluginCompositeConfig error:&error];
+        backScanViewPlugin = newComposite;
+        for (id<ALViewPluginBase> child in backScanViewPlugin.children) {
+            if ([child isKindOfClass:ALScanViewPlugin.class]) {
+                ((ALScanViewPlugin *)child).scanPlugin.delegate = self;
+            }
+        }
+    }
+
     if ([self popWithAlertOnError:error]) {
         return;
     }
@@ -261,51 +293,19 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     // (The ScanViewPlugin needs to be recreated)
     // create a new scan plugin (with the config changes) and pass it to scan view
     // plugin obj / constructor.
-    ALScanViewPluginConfig *scanViewPluginConfig;
-    if ([backScanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
-        ALScanViewPlugin *scanViewPlugin = backScanViewPlugin;
-        scanViewPluginConfig = scanViewPlugin.scanViewPluginConfig;
-        scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
-        
-        backScanViewPlugin = [ALScanViewPluginFactory withJSONDictionary:scanViewPluginConfig.asJSONString.asJSONObject
-                                                                   error:&error];
-        if ([self popWithAlertOnError:error]) {
-            return;
-        }
-        
-        ((ALScanViewPlugin *)backScanViewPlugin).scanPlugin.delegate = self;
-        
-    } else if ([backScanViewPlugin isKindOfClass:ALViewPluginComposite.class]) {
-        ALViewPluginComposite *composite = backScanViewPlugin;
-        // modify the alphabet of the ID plugin child
-        for (id<ALScanViewPluginBase> child in composite.children) {
-            if ([child isKindOfClass:ALScanViewPlugin.class] && [(ALScanViewPlugin *)child scanPlugin].pluginConfig.universalIDConfig != nil) {
-                ALScanViewPlugin *scanViewPlugin = child;
-                scanViewPluginConfig = scanViewPlugin.scanViewPluginConfig;
-                scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = alphabet;
-                break;
-            }
-        }
-        composite = [[ALViewPluginComposite alloc] initWithJSONDictionary:composite.JSONDictionary[@"viewPluginCompositeConfig"] error:nil];
-        backScanViewPlugin = composite;
-        for (id<ALScanViewPluginBase> child in composite.children) {
-            if ([child isKindOfClass:ALScanViewPlugin.class]) {
-                ((ALScanViewPlugin *)child).scanPlugin.delegate = self;
-            }
-        }
-    }
+    ALViewPluginConfig *viewPluginConfig;
     
     NSAssert(backScanViewPlugin, @"backScanViewPlugin should not be null!");
     
-    scanViewPluginConfig.pluginConfig.universalIDConfig.alphabet = [self getAlphabet];
+    viewPluginConfig.pluginConfig.universalIDConfig.alphabet = [self getAlphabet];
 
     // the way it works, unfortunately for the back scan view, is that it will keep using
     // any scan view config used for the front scan because then we wouldn't have to recreate the
     // scan view.
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:backIDScanViewConfig error:&error];
-    
+    self.scanViewConfig = [ALScanViewConfig withJSONDictionary:backIDScanViewConfig error:&error];
+
     if (self.scanView) {
-        BOOL success = [self.scanView setScanViewPlugin:backScanViewPlugin error:&error];
+        BOOL success = [self.scanView setViewPlugin:backScanViewPlugin error:&error];
         if (!success) {
             NSLog(@"Unable to update scan view plugin. Reason: %@", error.localizedDescription);
         }
@@ -356,22 +356,38 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     NSError *error = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       [self fileNameForCurrentScanModeIsFront:YES] ofType:@"json"];
-    NSData *jsonFile = [NSData dataWithContentsOfFile:path];
-    NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
-                                                               options:NSJSONReadingMutableContainers
-                                                                 error:&error];
-    return configDict;
+    if (path) {
+        NSData *jsonFile = [NSData dataWithContentsOfFile:path];
+        if (jsonFile) {
+            NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
+                                                                       options:NSJSONReadingMutableContainers
+                                                                         error:&error];
+            return configDict;
+        } else {
+            return @{};
+        }
+    } else {
+        return @{};
+    }
 }
 
 - (NSDictionary *)getConfigDictForBackIDScanner {
     NSError *error = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:
                       [self fileNameForCurrentScanModeIsFront:NO] ofType:@"json"];
-    NSData *jsonFile = [NSData dataWithContentsOfFile:path];
-    NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
-                                                               options:NSJSONReadingMutableContainers
-                                                                 error:&error];
-    return configDict;
+    if (path != nil) {
+        NSData *jsonFile = [NSData dataWithContentsOfFile:path];
+        if (jsonFile) {
+            NSDictionary *configDict = [NSJSONSerialization JSONObjectWithData:jsonFile
+                                                                       options:NSJSONReadingMutableContainers
+                                                                         error:&error];
+            return configDict;
+        } else {
+            return @{};
+        }
+    } else {
+        return @{};
+    }
 }
 
 - (NSString *)fileNameForCurrentScanModeIsFront:(BOOL)isFront {
@@ -476,8 +492,10 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
     [[selectSides titleLabel] setFont:[UIFont AL_proximaRegularWithSize:14]];
     [self.view addSubview:selectSides];
     selectSides.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [selectSides.rightAnchor constraintEqualToAnchor:self.modeSelectButton.leftAnchor constant:-10].active = YES;
+    if (self.modeSelectButton) {
+        ALModeSelectionButton *modeSelectBtn = self.modeSelectButton;
+        [selectSides.rightAnchor constraintEqualToAnchor:modeSelectBtn.leftAnchor constant:-10].active = YES;
+    }
     [selectSides.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
     [selectSides.widthAnchor constraintEqualToConstant:buttonWidth].active= YES;
     [selectSides.heightAnchor constraintEqualToConstant:buttonHeight].active = YES;
@@ -944,7 +962,9 @@ typedef NS_ENUM(NSUInteger, ALUniversalIDScanType) {
 
 + (void)loadDocumentationWebPage {
     NSURL *url = [NSURL URLWithString:kDocumentationSupportedIdsURL];
-    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+    if (url != nil) {
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+    }
 }
 
 - (void)subscribeToAppLifecycleEvents {

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "ALScanViewConfig.h"
 #import "ALScanViewPlugin.h"
+#import "ALScanViewConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// populated with the reasons for the failure
 /// @return the `ALScanView` object
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                         scanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
+                         scanViewPlugin:(NSObject<ALViewPluginBase> * _Nullable)scanViewPlugin
                          scanViewConfig:(ALScanViewConfig * _Nullable)scanViewConfig
                                   error:(NSError * _Nullable * _Nullable)error;
 
@@ -30,23 +30,55 @@ NS_ASSUME_NONNULL_BEGIN
 /// populated with the reasons for the failure
 /// @return the `ALScanView` object
 - (_Nullable instancetype)initWithFrame:(CGRect)frame
-                         scanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
+                         scanViewPlugin:(NSObject<ALViewPluginBase> *)scanViewPlugin
                                   error:(NSError * _Nullable * _Nullable)error;
 
-/// Update a scan view with a different scan view plugin. The cutout and feedback layers
-/// will also be updated.
-/// @param scanViewPlugin a different scan view plugin
+/// Initializes an `ALScanView` object with a scan view config. Delegates to scan view
+/// and underlying components are not set, and will have to be done separately.
+/// @param frame the frame of the scan view within the view hierarchy
+/// @param scanViewConfig an `ALScanViewConfig` object
+/// @param error if error is encountered while initializing the ScanView object, this will be
+/// populated with the reasons for the failure
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewConfig:(ALScanViewConfig *)scanViewConfig
+                                  error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin. The visual elements displayed
+/// will also be updated. The view plugin replaced is stopped, and the new view plugin
+/// is not assumed to have been started automatically. Likewise, this view plugin's
+/// delegates should be set separately.
+/// @param viewPlugin a different view plugin
 /// @param error if error is encountered while setting the ScanViewPlugin object, this will be
 /// populated with the reason for the failure
 /// @return a boolean indicating whether or not the operation succeeded.
-- (BOOL)setScanViewPlugin:(NSObject<ALScanViewPluginBase> *)scanViewPlugin
-                    error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setViewPlugin:(NSObject<ALViewPluginBase> *)viewPlugin
+                error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin config. Any existing cutout and feedback
+/// layers will also be updated. This will stop scanning. Delegates to new underlying
+/// and underlying components are not set, and will have to be done separately.
+/// @param viewPluginConfig the view plugin config to be applied to the scan view
+/// @param error if error is encountered while setting the ScanViewPluginConfig object, this will be
+/// populated with the reason for the failure
+/// @return a boolean indicating whether or not the operation succeeded.
+- (BOOL)setViewPluginConfig:(ALViewPluginConfig *)viewPluginConfig
+                      error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin composite config. Any existing cutout and feedback
+/// layers will also be updated. Delegates to scan view  and underlying components are not set, and will
+/// have to be done separately.
+/// @param viewPluginCompositeConfig the view plugin composite config to be applied to the scan view
+/// @param error if error is encountered while setting the ALViewPluginCompositeConfig object, this will be
+/// populated with the reason for the failure
+/// @return a boolean indicating whether or not the operation succeeded.
+- (BOOL)setViewPluginCompositeConfig:(ALViewPluginCompositeConfig *)viewPluginCompositeConfig
+                               error:(NSError * _Nullable * _Nullable)error;
 
 /// The object to be notified of events reported by the scan view
 @property (nonatomic, weak) id<ALScanViewDelegate> delegate;
 
 /// The scan view plugin instance
-@property (nonatomic, readonly) NSObject<ALScanViewPluginBase> * scanViewPlugin;
+@property (nonatomic, readonly) NSObject<ALViewPluginBase> *viewPlugin;
 
 /// The frame of the visible flash toggle button. The frame can be useful for some
 /// operations done on the UI layer
@@ -66,6 +98,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Stops the scan view camera
 - (void)stopCamera;
+
+/// Starts scanning with the provided Anyline configuration. If `viewPlugin` is nil,
+/// an error object is thrown.
+/// - Parameter error: error object containing the reason for the error
+- (BOOL)startScanningWithError:(NSError * _Nullable * _Nullable)error;
+
+/// Stops scanning. If `viewPlugin` is nil, an error object is thrown.
+/// - Parameter error: error object containing the reason for the error
+- (BOOL)stopScanningWithError:(NSError * _Nullable * _Nullable)error;
 
 @end
 

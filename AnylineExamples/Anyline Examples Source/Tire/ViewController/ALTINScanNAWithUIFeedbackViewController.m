@@ -26,7 +26,7 @@ NSString * const kALTINNAScanVC_uiFeedback_configFilename = @"tire_tin_na_uifeed
     self.title = @"Tire DOT/TIN (North America only)";
     self.controllerType = ALScanHistoryTIN;
 
-    self.scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:self.scanViewConfigDict error:nil];
+    self.scanViewConfig = [ALScanViewConfig withJSONDictionary:self.scanViewConfigDict error:nil];
 
     [self reloadScanView];
 
@@ -61,7 +61,7 @@ NSString * const kALTINNAScanVC_uiFeedback_configFilename = @"tire_tin_na_uifeed
 // MARK: - Getters and Setters
 
 - (NSDictionary *)scanViewConfigDict {
-    return [[self configJSONStrWithFilename:kALTINNAScanVC_uiFeedback_configFilename] asJSONObject];
+    return [[self configJSONStrWithFilename:kALTINNAScanVC_uiFeedback_configFilename error:nil] asJSONObject];
 }
 
 // MARK: - Setup
@@ -71,14 +71,14 @@ NSString * const kALTINNAScanVC_uiFeedback_configFilename = @"tire_tin_na_uifeed
 
     // Will edit this object before constructing an ALScanViewPlugin with it later
     NSError *error;
-    ALScanViewPluginConfig *scanViewPluginConfig = [[ALScanViewPluginConfig alloc] initWithJSONDictionary:JSONConfigObj error:&error];
+    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:JSONConfigObj error:&error];
     if ([self popWithAlertOnError:error]) {
         return nil;
     }
 
     // Recreate the ScanViewPlugin. Since this is a different ScanViewPlugin than
     // the previous one, reset the delegate.
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewPluginConfig error:&error];
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewConfig.viewPluginConfig error:&error];
     if ([self popWithAlertOnError:error]) {
         return nil;
     }
@@ -102,7 +102,7 @@ NSString * const kALTINNAScanVC_uiFeedback_configFilename = @"tire_tin_na_uifeed
         }
         [self installScanView:self.scanView];
     } else {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }

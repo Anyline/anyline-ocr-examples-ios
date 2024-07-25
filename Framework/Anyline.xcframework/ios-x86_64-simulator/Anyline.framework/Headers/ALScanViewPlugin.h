@@ -1,14 +1,14 @@
 #import <Foundation/Foundation.h>
-#import "ALScanViewPluginBase.h"
+#import "ALViewPluginBase.h"
 #import "ALScanPlugin.h"
-#import "ALScanViewPluginConfig.h"
+#import "ALScanViewConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ALScanViewPluginDelegate;
 
 /// Object connecting the ScanPlugin to the ScanView
-@interface ALScanViewPlugin : NSObject<ALScanViewPluginBase>
+@interface ALScanViewPlugin : NSObject<ALViewPluginBase>
 
 /// The scan plugin object associated with the scan view plugin
 @property (nonatomic, readonly) ALScanPlugin *scanPlugin;
@@ -35,19 +35,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stop;
 
 /// Children of the scan view plugin, if any
-@property (nonatomic, readonly) NSArray<NSObject<ALScanViewPluginBase> *> *children;
+@property (nonatomic, readonly) NSArray<NSObject<ALViewPluginBase> *> *children;
 
 /// The configuration object for the scan view plugin
-@property (nonatomic, readonly) ALScanViewPluginConfig *scanViewPluginConfig;
+@property (nonatomic, readonly) ALViewPluginConfig *scanViewPluginConfig;
 
 /// Initializes an `ALScanViewPlugin` object with a configuration object
-/// @param config an `ALScanViewPluginConfig` object
+/// @param config an `ALViewPluginConfig` object
 /// @param error if initialization fails, this object would be set with the reason for the failure
 /// @return the `ALScanViewPlugin` object, or null
-- (instancetype _Nullable)initWithConfig:(ALScanViewPluginConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
+- (instancetype _Nullable)initWithConfig:(ALViewPluginConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
 
 /// Initializes an `ALScanViewPlugin` object with a configuration object
-/// @param JSONDictionary a dictionary that encodes an `ALScanViewPluginConfig` object
+/// @param JSONDictionary a dictionary that encodes an `ALViewPluginConfig` object
 /// @param error if initialization fails, this object would be set with the reason for the failure
 /// @return the `ALScanViewPlugin` object
 - (instancetype _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary error:(NSError * _Nullable * _Nullable)error;

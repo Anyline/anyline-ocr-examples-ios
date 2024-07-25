@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
                                     delegate:(id)delegate
                                        error:(NSError * _Nullable * _Nullable)error;
 
-/// Create a scan view from a JSON config whose filesystem path is defined.
+/// Create a scan view from a JSON config dictionary.
 /// The delegate passed in should either be an `ALScanPluginDelegate` or an
 /// `ALPluginViewCompositeDelegate`, depending on what the config file defined,
 /// otherwise an error will be returned.
@@ -34,6 +34,19 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALScanView * _Nullable)withJSONDictionary:(NSDictionary *)JSONDictionary
                                     delegate:(id)delegate
                                        error:(NSError * _Nullable * _Nullable)error;
+
+/// Create a scan view from a JSON config string. The delegate passed in should either
+/// be an `ALScanPluginDelegate` or an `ALPluginViewCompositeDelegate`, depending on what
+/// the config file defined, otherwise an error will be returned.
+///
+/// @param JSONString the string containing the Anyline config
+/// @param delegate an `ALScanPluginDelegate`, or an `ALPluginViewCompositeDelegate`,
+/// depending on the config
+/// @param error  the NSError object that will contain error information if creation
+/// of the Scan View is unsuccessful
++ (ALScanView * _Nullable)withJSONString:(NSString *)JSONString
+                                delegate:(id)delegate
+                                   error:(NSError * _Nullable * _Nullable)error;
 
 @end
 

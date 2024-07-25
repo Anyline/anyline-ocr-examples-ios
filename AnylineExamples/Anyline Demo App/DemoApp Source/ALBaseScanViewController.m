@@ -68,12 +68,15 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
     [self enableLandscapeOrientation:NO];
 }
 
-- (NSString *)configJSONStrWithFilename:(NSString *)filename {
+- (NSString *)configJSONStrWithFilename:(NSString *)filename error:(NSError **)error {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:filename
                                                              ofType:@"json"];
-    return [NSString stringWithContentsOfFile:jsonFilePath
-                                     encoding:NSUTF8StringEncoding
-                                        error:NULL];
+    if (jsonFilePath != nil) {
+        return [NSString stringWithContentsOfFile:jsonFilePath
+                                         encoding:NSUTF8StringEncoding
+                                            error:error];
+    }
+    return nil;
 }
 
 - (void)installScanView:(ALScanView *)scanView {
@@ -107,11 +110,11 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
     [self.scanViewPlugin stop];
 }
 
-- (NSObject<ALScanViewPluginBase> *)scanViewPlugin {
-    if ([self.scanView.scanViewPlugin isKindOfClass:ALScanViewPlugin.class]) {
-        return (ALScanViewPlugin *)self.scanView.scanViewPlugin;
+- (NSObject<ALViewPluginBase> *)scanViewPlugin {
+    if ([self.scanView.viewPlugin isKindOfClass:ALScanViewPlugin.class]) {
+        return (ALScanViewPlugin *)self.scanView.viewPlugin;
     }
-    return self.scanView.scanViewPlugin;
+    return self.scanView.viewPlugin;
 }
 
 // MARK: - Warning View
@@ -175,13 +178,16 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
 }
 
 - (void)addModeSelectButtonWithTitle:(NSString *)title buttonPressed:(void (^)(void))buttonPressed {
-    self.modeSelectButton = [[ALModeSelectionButton alloc] initWithTitle:title];
-    [self.modeSelectButton setDidPressButton:buttonPressed];
-    [self.view addSubview:self.modeSelectButton];
-    self.modeSelectButton.translatesAutoresizingMaskIntoConstraints = NO;
-    CGFloat margin = 20;
-    [self.modeSelectButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
-    [self.modeSelectButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
+    ALModeSelectionButton *modeSelectionButton = [[ALModeSelectionButton alloc] initWithTitle:title];
+    if (modeSelectionButton) {
+        [modeSelectionButton setDidPressButton:buttonPressed];
+        [self.view addSubview:modeSelectionButton];
+        modeSelectionButton.translatesAutoresizingMaskIntoConstraints = NO;
+        CGFloat margin = 20;
+        [modeSelectionButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-margin].active = YES;
+        [modeSelectionButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:margin].active = YES;
+        self.modeSelectButton = modeSelectionButton;
+    }
 }
 
 // MARK: - anylineDidFindResult
@@ -190,7 +196,7 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
                barcodeResult:(NSString *)barcodeResult
                        image:(UIImage *)image
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     
     NSArray<UIImage *> *images = nil;
@@ -211,7 +217,7 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
                barcodeResult:(NSString *)barcodeResult
                       images:(NSArray *)images
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     [self anylineDidFindResult:result
                  barcodeResult:barcodeResult
@@ -227,7 +233,7 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
                    faceImage:(UIImage *)faceImage
                       images:(NSArray *)images
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     
     self.successfulScan = YES;
@@ -253,25 +259,19 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
         case ALScanHistoryWaterMeter:
         case ALScanHistoryHeatMeter:
         case ALScanHistoryDialMeter:
-            // [ALReportingController logEventScanned:what metaData:attributes];
             break;
         case ALScanHistoryLicensePlates:
-            // [ALReportingController logEventScanned:what metaData:attributes];
             break;
         case ALScanHistoryNone:
         default:
             [attributes setObject:what forKey:@"use_case"];
-            // [ALReportingController logEventScanned:@"ocr" metaData:attributes];
             break;
     }
     
     self.startTime = finishedTime;
     
     [NSUserDefaults AL_incrementScanCount];
-    NSInteger scanCount = [NSUserDefaults AL_scanCount];
-    
-    // [ALReportingController logEventUpdateScanCount:scanCount]; // should we disable this?
-    
+
     NSError *error;
     [ScanHistory insertNewObjectWithType:self.controllerType
                                   result:result
@@ -280,16 +280,20 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
                                   images:images
                   inManagedObjectContext:self.managedObjectContext
                                    error:&error];
-    
+#ifdef IS_SHOWCASE_APP
+    NSInteger scanCount = [NSUserDefaults AL_scanCount];
     [self showAwardIfScanCount:scanCount
                     scanPlugin:scanPlugin
                     viewPlugin:viewPlugin
                     completion:completion];
+#else
+    completion();
+#endif
 }
 
 - (void)showAwardIfScanCount:(NSInteger)scanCount
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion {
     
     ALAwardType awardType;
@@ -318,7 +322,7 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
     ALAwardsView *awards = [[ALAwardsView alloc] initWithFrame:CGRectZero];
     
     awards.awardType = awardType;
-    __weak id<ALScanViewPluginBase> wViewPlugin = viewPlugin;
+    __weak id<ALViewPluginBase> wViewPlugin = viewPlugin;
     __weak ALAwardsView *wawards = awards;
     __weak typeof(self) welf = self;
     [awards setTouchDownBlock:^{
@@ -483,32 +487,35 @@ static const NSTimeInterval kDelayBeforeWarningShown = 2.0;
 }
 
 - (void)setupFlipOrientationButton {
-    self.flipOrientationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.flipOrientationButton addTarget:self
-                                   action:@selector(flipOrientationPressed:)
-                         forControlEvents:UIControlEventTouchUpInside];
-    
-    self.flipOrientationButton.frame = CGRectMake(0, 0, 50, 50);
-    UIImage *buttonImage = [UIImage imageNamed:@"rotate_screen_white"];
-    [self.flipOrientationButton setImage:buttonImage forState:UIControlStateNormal];
-    self.flipOrientationButton.imageView.tintColor = UIColor.whiteColor;
-    [self.flipOrientationButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
-    self.flipOrientationButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.flipOrientationButton.adjustsImageWhenDisabled = NO;
-    
-    [self.flipOrientationButton setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addSubview:self.flipOrientationButton];
-    self.flipOrientationButton.layer.cornerRadius = 25;
-    self.flipOrientationButton.backgroundColor = [[UIColor AL_Black] colorWithAlphaComponent:0.85];
-    self.isOrientationFlipped = false;
-    
-    NSArray *flipConstraints = @[[self.flipOrientationButton.widthAnchor constraintEqualToConstant:50],
-                                 [self.flipOrientationButton.heightAnchor constraintEqualToConstant:50],
-                                 [self.flipOrientationButton.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
-                                 [self.flipOrientationButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-20]];
-    
-    [self.view addConstraints:flipConstraints];
-    [NSLayoutConstraint activateConstraints:flipConstraints];
+    UIButton *flipOrientationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    if (flipOrientationBtn) {
+        [flipOrientationBtn addTarget:self
+                                       action:@selector(flipOrientationPressed:)
+                             forControlEvents:UIControlEventTouchUpInside];
+        
+        flipOrientationBtn.frame = CGRectMake(0, 0, 50, 50);
+        UIImage *buttonImage = [UIImage imageNamed:@"rotate_screen_white"];
+        [flipOrientationBtn setImage:buttonImage forState:UIControlStateNormal];
+        flipOrientationBtn.imageView.tintColor = UIColor.whiteColor;
+        [flipOrientationBtn setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+        flipOrientationBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        flipOrientationBtn.adjustsImageWhenDisabled = NO;
+        
+        [flipOrientationBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.view addSubview:flipOrientationBtn];
+        flipOrientationBtn.layer.cornerRadius = 25;
+        flipOrientationBtn.backgroundColor = [[UIColor AL_Black] colorWithAlphaComponent:0.85];
+        self.isOrientationFlipped = false;
+        
+        NSArray *flipConstraints = @[[flipOrientationBtn.widthAnchor constraintEqualToConstant:50],
+                                     [flipOrientationBtn.heightAnchor constraintEqualToConstant:50],
+                                     [flipOrientationBtn.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-10],
+                                     [flipOrientationBtn.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-20]];
+        
+        [self.view addConstraints:flipConstraints];
+        [NSLayoutConstraint activateConstraints:flipConstraints];
+        self.flipOrientationButton = flipOrientationBtn;
+    }
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {

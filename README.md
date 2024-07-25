@@ -16,11 +16,11 @@ The **Example App** provides many preconfigured modules to showcase the many cap
 
 ### Current release notes
 
-You can find the latest release notes in our online documentation: https://documentation-preview.anyline.com/ios-sdk-component/latest/changelog.html
+You can find the latest release notes in our online documentation: https://documentation.anyline.com/ios-sdk-component/latest/release-notes.html
 
 ### Current known-limitations
 
-A list of the currently known-limitations can be found [here](https://documentation.anyline.com/toc/platforms/ios/known_limitations.html#ios-known-limitations-current-known-limitations).
+A list of the currently known-limitations can be found [here](https://documentation.anyline.com/ios-sdk-component/latest/known-issues-and-limitations.html).
 
 ## Quick Start Guide
 
@@ -95,9 +95,9 @@ To use Anyline, Bitcode needs to be disabled. Simply set the **Enable Bitcode** 
 
 ### 4. Create a ScanView on your ViewController or Storyboard
 
-Now you need to create and configure a scan plugin to your needs, and set it to a scan view on a view hierarchy of your choice. A quick example can be found in https://documentation.anyline.com/toc/platforms/ios/plugins/index.html.
+Now you need to create and configure a scan plugin to your needs, and set it to a scan view on a view hierarchy of your choice. A quick example can be found in https://documentation.anyline.com/ios-sdk-component/latest/the-anyline-sdk.html.
 
-Each scan plugin can be configured to suit nearly every possible scenario you can think of, so please make sure to check out our documentation page on [Plugins](https://documentation.anyline.com/toc/platforms/ios/plugins/index.html) to find more detailed information. 
+Each scan plugin can be configured to suit nearly every possible scenario you can think of, so please make sure to check out our documentation page on [Plugins](https://documentation.anyline.com/ios-sdk-component/latest/plugin-configuration.html) to find more detailed information. 
 
 ### 5. Enjoy scanning and have fun! :movie_camera:
 
@@ -106,7 +106,7 @@ Each scan plugin can be configured to suit nearly every possible scenario you ca
 
 Try and run our code examples here: [Anyline Examples](https://github.com/Anyline/anyline-ocr-examples-ios/tree/master/AnylineExamples)
 
-Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com)
+Detailed information about how to configure and implement Anyline: [Documentation](https://documentation.anyline.com/ios-sdk-component/latest/index.html)
 
 **IMPORTANT**: Before running the example app, replace the string defined in `kDemoAppLicenseKey` (in ALAppDemoLicenses.h) _with a valid license key_. To find out how to obtain a license key, see [License](#license).
 
@@ -125,7 +125,8 @@ Thank you!
 ## License 
 
 To claim a free developer / trial license, go to: [Anyline SDK Register Form](https://anyline.com/free-demos/)
-The software underlies the MIT License. As Anyline is a paid software for Commerical Projects, the License Agreement of Anyline GmbH apply, when used commercially. Please have a look at [Anyline License Agreement](https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/12/ULA-AnylineSDK-August2015.pdf)
+
+For further details, see LICENSE file.
 
 # KITT <3
 

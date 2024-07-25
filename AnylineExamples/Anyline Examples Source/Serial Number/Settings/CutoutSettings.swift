@@ -75,13 +75,13 @@ enum VerticalAlignment : Int, CaseIterable {
     }
 
     @objc func customizedCutoutConfig(from cutoutConfig: ALCutoutConfig) -> Dictionary <String, Any> {
-        var cutoutJSONNSString = cutoutConfig.asJSONString() as NSString
+        var cutoutJSONSString = cutoutConfig.asJSONString() as NSString
 
-        var tempCutoutConfigDictionary = cutoutJSONNSString.asJSONObject() as? Dictionary <String, Any> ?? [:]
+        var tempCutoutConfigDictionary = cutoutJSONSString.asJSONObject() as? Dictionary <String, Any> ?? [:]
         
         tempCutoutConfigDictionary[CutoutSettings.kcornerRadiusKey] = cornerRadius
-        tempCutoutConfigDictionary[CutoutSettings.kMaxWidthPercentKey] = maxWidthPercent
-        tempCutoutConfigDictionary[CutoutSettings.kRatioFromSizeKey] = ["width" : ratioFromSize, "height" : "1"]
+        tempCutoutConfigDictionary[CutoutSettings.kMaxWidthPercentKey] = String(maxWidthPercent)
+        tempCutoutConfigDictionary[CutoutSettings.kRatioFromSizeKey] = ["width" : ratioFromSize, "height" : 1]
         tempCutoutConfigDictionary[CutoutSettings.kAlignmentKey] = VerticalAlignment.alignmentStringArray[alignment.rawValue]
 
         return tempCutoutConfigDictionary;

@@ -20,8 +20,6 @@ typedef void(^ALSyncBlock)(BOOL success);
 
 + (void)syncReading:(Reading *)reading withBlock:(ALSyncBlock)block;
 
-+ (ALFlashMode)defaultFlashMode;
-
 + (BOOL)isScannerTypeImplemented:(ALScannerType)scannerType;
     
 @end

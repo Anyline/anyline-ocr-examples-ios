@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) ALScanView *scanView;
 
-@property (nonatomic, readonly, nullable) NSObject<ALScanViewPluginBase> *scanViewPlugin;
+@property (nonatomic, readonly, nullable) NSObject<ALViewPluginBase> *scanViewPlugin;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
@@ -36,7 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setColors;
 
-- (NSString * _Nullable)configJSONStrWithFilename:(NSString *_Nonnull)filename;
+- (NSString * _Nullable)configJSONStrWithFilename:(NSString *_Nonnull)filename
+                                            error:(NSError * _Nullable * _Nullable)error;
 
 - (void)installScanView:(ALScanView * _Nonnull)scanView;
 
@@ -61,14 +62,14 @@ NS_ASSUME_NONNULL_BEGIN
                barcodeResult:(NSString * _Nullable)barcodeResult
                        image:(UIImage * _Nullable)image
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion;
 
 - (void)anylineDidFindResult:(NSString * _Nullable)result
                barcodeResult:(NSString * _Nullable)barcodeResult
                       images:(NSArray * _Nullable)images
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion;
 
 - (void)anylineDidFindResult:(NSString * _Nullable)result
@@ -76,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
                    faceImage:(UIImage * _Nullable)faceImage
                       images:(NSArray * _Nullable)images
                   scanPlugin:(ALScanPlugin *)scanPlugin
-                  viewPlugin:(id<ALScanViewPluginBase>)viewPlugin
+                  viewPlugin:(id<ALViewPluginBase>)viewPlugin
                   completion:(void (^)(void))completion;
 
 - (void)showAlertControllerWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray <UIAlertAction *>*)actions;
@@ -106,7 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGRect)scanViewFrame;
 
-- (NSString *)addon;
+- (NSString * _Nullable)addon;
 
 - (instancetype)initWithTitle:(NSString *)title;
 

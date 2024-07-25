@@ -2,14 +2,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Base interface for scan view plugins
-@protocol ALScanViewPluginBase <NSObject>
+/// Base interface for scan view plugins. At the moment, this includes `ALScanViewPlugin` and `ALViewPluginComposite`.
+@protocol ALViewPluginBase <NSObject>
 
 /// Unique plugin ID for the scan view plugin
 @property (nonatomic, readonly) NSString *pluginID;
 
 /// List of children plugins, if composite. Otherwise, empty
-@property (nonatomic, readonly) NSArray<NSObject<ALScanViewPluginBase> *> *children;
+@property (nonatomic, readonly) NSArray<NSObject<ALViewPluginBase> *> *children;
 
 /// Indicates whether or not the plugin has been started
 @property (nonatomic, readonly) BOOL isStarted;

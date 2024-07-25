@@ -73,13 +73,14 @@ class ALTireViewController: ALBaseScanViewController {
 
         self.title = titleString
 
-        guard let configJSONStr = self.configJSONStr(withFilename: JSONFileName) as? NSString,
-           let configDict = configJSONStr.asJSONObject() as? [AnyHashable: Any] else {
+        guard let configJSONStr = try? self.configJSONStr(withFilename: JSONFileName),
+              let scanViewConfig = try? ALScanViewConfig.withJSONString(configJSONStr),
+              let viewPluginConfig = scanViewConfig.viewPluginConfig else {
             return
         }
 
         do {
-            let scanViewPlugin = try ALScanViewPlugin(jsonDictionary: configDict)
+            let scanViewPlugin = try ALScanViewPlugin(config: viewPluginConfig)
             scanViewPlugin.scanPlugin.delegate = self
             if self.scanView == nil {
                 let scanView = try ALScanView(frame: .zero, scanViewPlugin: scanViewPlugin)
@@ -88,7 +89,7 @@ class ALTireViewController: ALBaseScanViewController {
                 scanView.startCamera()
                 self.scanView = scanView
             } else {
-                try self.scanView?.setScanViewPlugin(scanViewPlugin)
+                try self.scanView?.setViewPlugin(scanViewPlugin)
                 self.scanView?.startCamera()
             }
             try startScanning()

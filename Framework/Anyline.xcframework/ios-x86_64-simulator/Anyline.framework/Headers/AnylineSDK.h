@@ -51,6 +51,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString * _Nullable)exportCachedEvents:(NSError * _Nullable * _Nullable)error;
 
+/// Takes a string containing the Anyline config and runs it with the schema validator. The return
+/// value is true if and only if the string validates correctly. Otherwise, the error object will
+/// contain indicate the issues found causing the validation error(s).
+///
+/// @param JSONString the config string
+/// @param error if there are errors during validation, the error object will indicate the likely
+/// reason. Use `localizedDescription` to get a quick overview of the immediate cause of the error.
+/// In addition, `userInfo[NSLocalizedFailureReasonErrorKey]` provides a more detailed description
+/// of the validation error.
++ (BOOL)validateJSONConfigString:(NSString *)JSONString error:(NSError * _Nullable * _Nullable)error;
+
 @end
 
 NS_ASSUME_NONNULL_END

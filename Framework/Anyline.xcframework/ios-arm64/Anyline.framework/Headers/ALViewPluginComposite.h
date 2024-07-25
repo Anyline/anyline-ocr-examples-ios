@@ -1,35 +1,26 @@
 #import <UIKit/UIKit.h>
-#import "ALScanViewPluginBase.h"
+#import "ALViewPluginBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ALScanViewPluginConfig;
+@class ALViewPluginConfig;
+@class ALProcessingMode;
 @class ALScanResult;
 @class ALScanViewPlugin;
-
+@class ALViewPluginCompositeConfig;
 @protocol ALViewPluginCompositeDelegate;
-
-/// The processing mode of the view plugin composite
-typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
-    /// The children plugins are run one at a time.
-    ALCompositeProcessingModeSequential,
-    /// The children plugins are run simultaneously, with each showing a cutout on the scan view.
-    ALCompositeProcessingModeParallel,
-    /// The children plugins are run simultaneously, the first result found causes the plugin to return with it.
-    ALCompositeProcessingModeParallelFirstScan,
-};
 
 /// A plugin composite holds children scan view plugins to run them simultaneously or in sequence.
 /// Once all results for children plugins have been reported, its delegate would be called to
 /// find the aggregated scan results.
-@interface ALViewPluginComposite : NSObject<ALScanViewPluginBase>
+@interface ALViewPluginComposite : NSObject<ALViewPluginBase>
 
 /// Delegate informing the user when the scanning has concluded for all of the children, or if there
 /// is an error encountered.
 @property (nonatomic, weak) id<ALViewPluginCompositeDelegate> delegate;
 
 /// The processing mode of the composite
-@property (nonatomic, readonly) ALCompositeProcessingMode processingMode;
+@property (nonatomic, readonly) ALProcessingMode *processingMode;
 
 /// Indicates whether the plugin composite has started or not
 @property (nonatomic, readonly) BOOL isStarted;
@@ -38,16 +29,18 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
 @property (nonatomic, readonly) NSString *pluginID;
 
 /// A list of the children plugins added to this composite
-@property (nonatomic, readonly) NSArray<NSObject<ALScanViewPluginBase> *> *children;
+@property (nonatomic, readonly) NSArray<NSObject<ALViewPluginBase> *> *children;
 
 /// The child ScanViewPlugin currently running
-@property (nonatomic, readonly, nullable) ALScanViewPlugin *activeChild;
+@property (nonatomic, readonly, nullable) ALScanViewPlugin *activeChild __deprecated_msg("this property will be removed in a future version of Anyline");
 
 /// A map of the scan view plugin configs of each child
-@property (nonatomic, readonly) NSDictionary<NSString *, ALScanViewPluginConfig *> *pluginConfigs;
+@property (nonatomic, readonly) NSDictionary<NSString *, ALViewPluginConfig *> *pluginConfigs;
 
 /// An `NSDictionary` representation of the composite, that can be used to initialize another
-@property (nonatomic, readonly) NSDictionary *JSONDictionary;
+@property (nonatomic, readonly) NSDictionary *JSONDictionary __deprecated_msg("this property will be removed in a future version of Anyline");
+
+@property (nonatomic, readonly) ALViewPluginCompositeConfig *config;
 
 /// Initializes an `ALViewPluginComposite` with a suitably-structured dictionary
 /// @param JSONDictionary a dictionary holding a representation of the composite, including child scan view plugins
@@ -63,14 +56,20 @@ typedef NS_ENUM(NSUInteger, ALCompositeProcessingMode) {
 /// @param error an error object that is filled if the initialization fails
 /// @return the `ALViewPluginComposite` object
 - (instancetype _Nullable)initWithID:(NSString *)ID
-                                mode:(ALCompositeProcessingMode)mode
-                            children:(NSArray<NSObject<ALScanViewPluginBase> *> *)children
+                                mode:(ALProcessingMode *)mode
+                            children:(NSArray<NSObject<ALViewPluginBase> *> *)children
                                error:(NSError **)error;
+
+/// Initializes an `ALViewPluginComposite` with an `ALViewPluginCompositeConfig` object.
+/// @param config the ALViewPluginCompositeConfig object
+/// @param error an error object that is filled if the initialization fails
+- (instancetype _Nullable)initWithConfig:(ALViewPluginCompositeConfig *)config
+                                   error:(NSError * _Nullable * _Nullable)error;
 
 /// Returns a child scan view plugin given its ID, or null
 /// @param pluginID the ID of the child scan view plugin
 /// @return the ScanViewPlugin of the child when found, otherwise null
-- (NSObject<ALScanViewPluginBase> * _Nullable)pluginWithID:(NSString *)pluginID;
+- (NSObject<ALViewPluginBase> * _Nullable)pluginWithID:(NSString *)pluginID;
 
 /// Starts the plugin
 /// @param error if an error is encountered, this will be filled with the necessary information

@@ -63,18 +63,26 @@ static NSString *kConfigs[kChoicesCount] = {
 }
 
 - (void)reloadScanView {
-    NSDictionary *configJSONDictionary;
-    
+    NSString *configJSON;
+
     if (self.isVertical) {
-        configJSONDictionary = [[self configJSONStrWithFilename:kContainerVC_configName_vert] asJSONObject];
+        configJSON = [self configJSONStrWithFilename:kContainerVC_configName_vert error:nil];
     } else {
-        configJSONDictionary = [[self configJSONStrWithFilename:kContainerVC_configName_horiz] asJSONObject];
+        configJSON = [self configJSONStrWithFilename:kContainerVC_configName_horiz error:nil];
     }
 
     NSError *error;
 
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary
-                                                                                  error:&error];
+    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONString:configJSON error:&error];
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewConfig.viewPluginConfig error:&error];
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
     scanViewPlugin.scanPlugin.delegate = self;
     if ([self popWithAlertOnError:error]) {
         return;
@@ -89,7 +97,7 @@ static NSString *kConfigs[kChoicesCount] = {
         }
         [self installScanView:self.scanView];
     } else {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }

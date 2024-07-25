@@ -12,6 +12,7 @@
 #import "ALProductExampleManager.h"
 #import "UIColor+ALExamplesAdditions.h"
 #import "UIFont+ALExamplesAdditions.h"
+#import "AnylineExamples-Swift.h"
 
 @interface ALBasePageViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 

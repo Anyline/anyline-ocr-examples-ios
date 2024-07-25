@@ -31,7 +31,7 @@ class ALJLPViewController: ALBaseScanViewController {
         self.controllerType = ALScanHistoryJapaneseLandingPermission
         self.title = titleString
 
-        guard let configJSONStr = self.configJSONStr(withFilename: japaneseLandingPermissionScanVC_configJSONFilename) as? NSString,
+        guard let configJSONStr = try? self.configJSONStr(withFilename: japaneseLandingPermissionScanVC_configJSONFilename) as NSString,
            let configDict = configJSONStr.asJSONObject() as? [AnyHashable: Any] else {
             return
         }
@@ -46,7 +46,7 @@ class ALJLPViewController: ALBaseScanViewController {
                 scanView.startCamera()
                 self.scanView = scanView
             } else {
-                try self.scanView?.setScanViewPlugin(scanViewPlugin)
+                try self.scanView?.setViewPlugin(scanViewPlugin)
                 self.scanView?.startCamera()
             }
             try startScanning()

@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
+@protocol ALJSONConfig;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// Methods to convert an object to a JSON string
-@protocol ALJSONStringRepresentable <NSObject>
+@protocol ALJSONStringRepresentable
 
 /// Converts the object to a JSON string.
 /// @param isPretty set to true if the output string should be optimized for human-readability
@@ -26,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)asJSONString;
 
 @end
+
 
 /// Methods to convert an NSData to a valid JSON object (dictionary or array)
 @interface NSData (ALJSONExtras)
@@ -75,5 +78,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSArray (ALJSONExtras) <ALJSONStringRepresentable>
 
 @end
+
 
 NS_ASSUME_NONNULL_END

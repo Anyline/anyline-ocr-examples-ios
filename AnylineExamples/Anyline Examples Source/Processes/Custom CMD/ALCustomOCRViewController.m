@@ -17,15 +17,20 @@ static NSString * const kConfigFileName = @"cow_tag_config";
     self.title = @"Custom CMD File (Cattle Tag)";
     self.controllerType = ALScanHistoryCattleTag;
 
-    NSDictionary *configDict = [[self configJSONStrWithFilename:kConfigFileName] asJSONObject];
+    NSString *configStr = [self configJSONStrWithFilename:kConfigFileName error:nil];
 
     NSError *error;
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configDict
-                                                                                  error:&error];
-    scanViewPlugin.scanPlugin.delegate = self;
+    
+    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONString:configStr error:&error];
     if ([self popWithAlertOnError:error]) {
         return;
     }
+
+    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithConfig:scanViewConfig.viewPluginConfig error:&error];
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+    scanViewPlugin.scanPlugin.delegate = self;
 
     if (!self.scanView) {
         self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
@@ -36,7 +41,7 @@ static NSString * const kConfigFileName = @"cow_tag_config";
         }
         [self installScanView:self.scanView];
     } else {
-        [self.scanView setScanViewPlugin:scanViewPlugin error:&error];
+        [self.scanView setViewPlugin:scanViewPlugin error:&error];
         if ([self popWithAlertOnError:error]) {
             return;
         }

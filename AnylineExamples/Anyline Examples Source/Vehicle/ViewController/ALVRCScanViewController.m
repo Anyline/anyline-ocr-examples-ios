@@ -62,7 +62,7 @@ NSString * const kALVRCScanVC_configFilename = @"vrc_config";
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {}
                                  completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         if (weakSelf.scanViewPlugin.isStarted) {
-            [weakSelf.scanView setScanViewPlugin:self.scanViewPlugin error:nil];
+            [weakSelf.scanView setViewPlugin:self.scanViewPlugin error:nil];
             [weakSelf.scanView startCamera];
             [weakSelf startScanning:nil];
         }

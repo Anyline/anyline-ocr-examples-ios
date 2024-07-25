@@ -18,28 +18,26 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
     
     self.title = @"PDF417";
     
-    NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kBarcodePDF417_configJSONFilename] asJSONObject];
-    
+    NSString *configStr = [self configJSONStrWithFilename:kBarcodePDF417_configJSONFilename error:nil];
     NSError *error;
-    ALScanViewPlugin *scanViewPlugin = [[ALScanViewPlugin alloc] initWithJSONDictionary:configJSONDictionary error:&error];
-    
-    if ([self popWithAlertOnError:error]) {
-        return;
-    }    
-    
-    scanViewPlugin.scanPlugin.delegate = self;
-    
-    ALScanViewConfig *scanViewConfig = [[ALScanViewConfig alloc] initWithJSONDictionary:configJSONDictionary error:nil];
-    
-    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
-                                       scanViewPlugin:scanViewPlugin
-                                       scanViewConfig:scanViewConfig
-                                                error:&error];
-    
+    ALScanViewConfig *config = [ALScanViewConfig withJSONString:configStr error:&error];
     if ([self popWithAlertOnError:error]) {
         return;
     }
-    
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
+    self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
+                                       scanViewConfig:config
+                                                error:&error];
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
+    ALScanViewPlugin *scanViewPlugin = (ALScanViewPlugin *)self.scanView.viewPlugin;
+    scanViewPlugin.scanPlugin.delegate = self;
+
     [self installScanView:self.scanView];
     
     [self.scanView startCamera];
@@ -52,13 +50,13 @@ NSString * const kBarcodePDF417_configJSONFilename = @"barcode_pdf417_config";
     [self startScanning:nil];
 }
 
-+ (ALScanViewPluginConfig *)defaultScanViewPluginConfig {
++ (ALViewPluginConfig *)defaultScanViewPluginConfig {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kBarcodePDF417_configJSONFilename
                                                              ofType:@"json"];
     NSString *configStr = [NSString stringWithContentsOfFile:jsonFilePath
                                                     encoding:NSUTF8StringEncoding
                                                        error:NULL];
-    return [[ALScanViewPluginConfig alloc] initWithJSONDictionary:[configStr asJSONObject] error:nil];
+    return [ALViewPluginConfig withJSONString:configStr error:nil];
 }
 
 // MARK: - ALScanPluginDelegate

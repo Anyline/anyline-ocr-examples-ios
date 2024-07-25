@@ -6,7 +6,7 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 
 @interface ALCompositeScanViewController () <ALViewPluginCompositeDelegate>
 
-@property (nonatomic, strong) id<ALScanViewPluginBase> compositePlugin;
+@property (nonatomic, strong) id<ALViewPluginBase> compositePlugin;
 
 @end
 
@@ -30,10 +30,16 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 }
 
 - (void)reloadScanView {
-    NSDictionary *configJSONDictionary = [[self configJSONStrWithFilename:kCompositeVC_configJSONFilename] asJSONObject];
 
     NSError *error;
-    ALViewPluginComposite *composite = [[ALViewPluginComposite alloc] initWithJSONDictionary:configJSONDictionary error:&error];
+    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONString:
+                                        [self configJSONStrWithFilename:kCompositeVC_configJSONFilename error:nil] error:&error];
+    if ([self popWithAlertOnError:error]) {
+        return;
+    }
+
+    ALViewPluginComposite *composite = [[ALViewPluginComposite alloc] initWithConfig:scanViewConfig.viewPluginCompositeConfig
+                                                                               error:&error];
 
     if ([self popWithAlertOnError:error]) {
         return;
@@ -48,7 +54,6 @@ NSString * const kCompositeVC_configJSONFilename = @"parallel_first_vin_barcode"
 
     self.compositePlugin = composite;
 
-    ALScanViewConfig *scanViewConfig = [ALScanViewConfig withJSONDictionary:configJSONDictionary];
     self.scanView = [[ALScanView alloc] initWithFrame:CGRectZero
                                        scanViewPlugin:composite
                                        scanViewConfig:scanViewConfig

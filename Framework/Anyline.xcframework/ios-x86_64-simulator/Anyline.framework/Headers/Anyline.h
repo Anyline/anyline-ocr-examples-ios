@@ -1,17 +1,10 @@
 #import <Foundation/Foundation.h>
 
-#import "ALCameraConfig.h"
 #import "ALError.h"
-#import "ALFlashConfig.h"
 #import "ALJSONUtilities.h"
-#import "ALPluginConfig+Extras.h"
-#import "ALPluginConfig.h"
-#import "ALPluginResult+Extras.h"
-#import "ALPluginResult.h"
 #import "ALScanPlugin.h"
 #import "ALScanResult.h"
 #import "ALScanView.h"
-#import "ALScanViewConfig.h"
 #import "ALScanViewPlugin.h"
 #import "ALScanViewPluginFactory.h"
 #import "ALScanViewFactory.h"
@@ -33,5 +26,10 @@
 
 #import "ALCacheConfig.h"
 #import "ALWrapperConfig.h"
+
+#import "ALPluginResult.h"
+#import "ALPluginResult+Extras.h"
+
+#import "ALScanViewConfig+Extras.h"
 
 #import "AnylineSDK.h"

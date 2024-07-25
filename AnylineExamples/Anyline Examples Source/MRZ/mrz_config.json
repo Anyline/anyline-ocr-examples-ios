@@ -32,7 +32,7 @@
         },
         "scanFeedbackConfig": {
             "style": "rect",
-            "visualFeedbackRedrawTimeout": 100,
+            "redrawTimeout": 100,
             "strokeWidth": 1,
             "strokeColor": "0099FF",
             "fillColor": "220099FF",
