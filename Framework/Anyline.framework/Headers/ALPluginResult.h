@@ -252,6 +252,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *country;
 /// The plate text
 @property (nonatomic, copy) NSString *plateText;
+/// (Optional) If vehicleInspectionSticker config is OPTIONAL, this is true if a Visual
+/// Inspection Sticker was found, false otherwise. If the config is MANDATORY, this field is
+/// always true.
+@property (nonatomic, nullable, strong) NSNumber *vehicleInspectionFound;
+/// (Optional) The month depicted on the Visual Inspection Sticker.
+@property (nonatomic, nullable, copy) NSString *vehicleInspectionMonth;
+/// (Optional) This is true, if the Visual Inspection Sticker depicts a date in the future.
+@property (nonatomic, nullable, strong) NSNumber *vehicleInspectionValid;
+/// (Optional) The year depicted on the Visual Inspection Sticker.
+@property (nonatomic, nullable, copy) NSString *vehicleInspectionYear;
 @end
 
 /// Describes result information of scanning meters
