@@ -26,6 +26,7 @@
 @class ALMrzScanOption;
 @class ALLicensePlateConfig;
 @class ALLicensePlateConfigScanMode;
+@class ALVehicleInspectionSticker;
 @class ALMeterConfig;
 @class ALMeterConfigScanMode;
 @class ALMrzConfig;
@@ -271,6 +272,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALLicensePlateConfigScanMode *)ukraine;
 + (ALLicensePlateConfigScanMode *)unitedkingdom;
 + (ALLicensePlateConfigScanMode *)unitedstates;
+@end
+
+/// Select if the visual inspection sticker should be scanned. If OPTIONAL, the visual
+/// inspection sticker will only be returned if found successfully. If MANDATORY the scan
+/// will only return if found successfully. Not available on africa and unitedstates.
+@interface ALVehicleInspectionSticker : NSObject
+@property (nonatomic, readonly, copy) NSString *value;
++ (instancetype _Nullable)withValue:(NSString *)value;
++ (ALVehicleInspectionSticker *)disabled;
++ (ALVehicleInspectionSticker *)mandatory;
++ (ALVehicleInspectionSticker *)optional;
 @end
 
 /// Determines which types of meters to scan.
@@ -657,6 +669,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// international vehicle registration code format that is visible on the license plate (for
 /// example 'A' for Austria). Note: not available for the scanModes unitedstates and africa.
 @property (nonatomic, nullable, copy) NSString *validationRegex;
+/// Select if the visual inspection sticker should be scanned. If OPTIONAL, the visual
+/// inspection sticker will only be returned if found successfully. If MANDATORY the scan
+/// will only return if found successfully. Not available on africa and unitedstates.
+@property (nonatomic, nullable, assign) ALVehicleInspectionSticker *vehicleInspectionSticker;
 @end
 
 /// Configuration for scanning meters
