@@ -1,0 +1,52 @@
+:navtitle: Technical Capabilities & ScanViewConfig
+
+
+= Technical Capabilities & ScanViewConfig
+
+The Mobile SDK allows to digitize various types of analog data, for which the Mobile SDK contains specialized components to be used. These components are referred to as _Technical Capabilities_.
+
+
+
+// .Technical Capabilities included with Mobile SDK
+// [%collapsible]
+// ====
+The following Technical Capabilities are provided by the Mobile SDK. The table below lists the Technical Capability, along with the corresponding Config Type to be used within the ScanViewConfig. A successful result returns the Result Type of the corresponding Config Type.
+
+
+'''
+
+
+[cols="1,1,1"]
+|===
+|Technical Capability|Corresponding Config Type| Corresponding Result Type
+
+|Barcode Scanning (1D, 2D, Postal Codes, Stacked Linear Codes)|barcodeConfig|barcodeResult
+|Meter Scanning (Digital, Analog, Dial, OBIS)|meterConfig|meterResult
+|Digital Odometer Scanning|odometerConfig|odometerResult
+|ID (Passport: Visual & NFC, ID Card, Driver License, European Health Insurance Card / EHIC)|universalIdConfig|universalIdResult
+|MRZ Scanning (Machine Readable Zone)|mrzConfig|mrzResult
+|Japanese Landing Permission Scanning|japaneseLandingPermissionConfig|japaneseLandingPermissionResult
+|Vehicle Registration Certificate (German Fahrzeugschein)|vehicleRegistrationCertificateConfig|vehicleRegistrationCertificateResult
+|License Plate Scanning (Europe, US, Africa)|licensePlateConfig|licensePlateResult
+|TIN DOT Scanning (Tire Identification Number, Department of Transportation)|tinConfig|tinResult
+|Tire Size Specification Scanning|tireSizeConfig|tireSizeResult
+|Commercial Tire ID Scanning|commercialTireIdConfig|commercialTireIdResult
+|VIN Scanning (Vehicle Identification Number)|vinConfig|vinResult
+|Shipping Container Number Scanning|containerConfig|containerResult
+|Custom OCR Scanning|ocrConfig|ocrResult
+|===
+
+// ====
+
+
+
+These Technical Capabilities can be used individually or combined (_composited_), allowing for complex sequential, parallel, or first-to-result (_parallelFirstScan_) workflows.
+
+[NOTE]
+====
+The configuration of the Mobile SDK requires for at least one of these Technical Capabilities to be present: One _ScanViewConfig_ requires to include one (or more) _PluginConfig_.
+====
+
+
+
+include::main-component::partial$tip-get-help.adoc[]

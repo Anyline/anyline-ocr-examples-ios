@@ -1,0 +1,59 @@
+:navtitle: Mobile SDK Configuration (ScanViewConfig)
+
+
+= Mobile SDK Configuration (ScanViewConfig)
+
+With the previous Guide giving you a rough understanding of how the communication between your app and the Mobile SDK works, the following Guide lays out more details on what options exist for you to achieve your desired result with the Mobile SDK, by defining the best suitable configuration (_ScanViewConfig_) for your use case.
+
+
+
+.The interface, highlighting the Technical Capability, Cutout Area, and Camera Parameters.
+image::mobile-sdk-fundamentals-configuration-01.png[width=480]
+
+.The interface, highlighting the Flash Controls and UI Feedback. (Visual) Feedback is not represented here.
+image::mobile-sdk-fundamentals-configuration-02.png[width=480]
+
+
+
+To better understand the different ways in which the Mobile SDK can be configured, the configurable options can be grouped by effect:
+
+
+[cols="1,1,2"]
+|===
+|Configuration Effect|Configuration Area|Configuration Description
+
+
+.3+| Configuration, which has an influence on the recognition functionality or device performance
+| Technical Capability used (_ScanPlugin_)
+| Specify which type of data you are looking to digitize, e.g. Tire Identification Number, Tire Size, Vehicle Identification Number, License Plate, Barcode, Meter, ID, etc...
+
+| Camera Parameters
+| Specify details about the device's camera, e.g. back or front camera, the capture resolution, zoom factor, etc...
+
+| Cutout Area
+| Configure the area within your camera preview which Anyline focuses on for recognition, e.g. define the size and position of the cutout area.
+
+
+.2+| Configuration, which lets the user control the device
+| Flash Controls
+| Configure your user's ability to control the flash, e.g. display or hide a button to toggle flash between different modes (On, Off, Auto), define position and representation of that button, etc...
+
+| Camera Parameters
+| Configure your user's ability to control the camera, e.g. enable or disable the ability to zoom manually (by pinching).
+
+
+.3+| Configuration, which defines feedback towards the user
+| Cutout Area
+| Configure how the cutout area in your preview should look and feel for the user, e.g. change the thickness and color of the border, define a background color for outside the cutout area, etc...
+
+| Scan Feedback (Sensory/Auditory/Visual Feedback)
+| Configure the type of feedback the user should get while scanning, e.g. vibrating or an auditory cue (beep) upon successful result, highlighting of recognized characters (visual feedback), configuring the visual representation of the visual feedback, etc...
+
+| UI Feedback
+| Choose from a pre-defined set (presets) of complex enhancements to the user experience while scanning and configure them to fit your use case, e.g. visual guidance how the user should position their device relative to their scan target, dynamically telling the user to move closer to or further away with the device, etc...
+
+|===
+
+
+
+include::main-component::partial$tip-get-help.adoc[]

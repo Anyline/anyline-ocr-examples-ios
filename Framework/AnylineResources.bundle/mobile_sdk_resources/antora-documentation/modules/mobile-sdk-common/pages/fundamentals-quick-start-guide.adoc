@@ -1,0 +1,19 @@
+:navtitle: Quick Start Guide
+
+
+= Quick Start Guide
+
+To use the Anyline Mobile SDK or Plugins, follow these steps:
+
+. *Understand the Concepts:* Explore the other Guides inside "Mobile SDK Fundamentals" to familiarize yourself with the key concepts of the Mobile SDK to prepare for integrating it into your app.
+. *Choose Your Technology:* Determine whether you need the platform-native Mobile SDK or a cross-platform Plugin.
+. *Obtain a License:* Acquire a license to use with the Developer Examples code (available on GitHub).
+. *Explore the Developer Examples:* Run the Developer Example App(s) for your chosen platform and technology.
+. *Start with ScanViewConfigs:* When implementing your own use case, begin with one of the ScanViewConfigs in the Developer Examples.
+. *Consult the Documentation:* Refer to the documentation to understand which parameters you can modify.
+. *Integrate the Mobile SDK:* Incorporate the Mobile SDK (directly or using a Plugin) into your app.
+
+
+
+
+include::main-component::partial$tip-get-help.adoc[]
