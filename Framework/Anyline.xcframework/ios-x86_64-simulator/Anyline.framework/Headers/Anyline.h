@@ -8,6 +8,8 @@
 #import "ALScanViewPlugin.h"
 #import "ALScanViewPluginFactory.h"
 #import "ALScanViewFactory.h"
+
+#import "ALViewPluginBase.h"
 #import "ALViewPluginComposite.h"
 
 #import "ALEvent.h"
@@ -31,5 +33,8 @@
 #import "ALPluginResult+Extras.h"
 
 #import "ALScanViewConfig+Extras.h"
+
+#import "ALScanViewInitializationParameters.h"
+#import "ALInitParams+Extras.h"
 
 #import "AnylineSDK.h"

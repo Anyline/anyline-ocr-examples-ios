@@ -5,6 +5,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ALScanViewInitializationParameters;
 @protocol ALScanViewDelegate;
 
 /// The visible component that manages the acquisition of image frames from the device,
@@ -74,6 +75,83 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)setViewPluginCompositeConfig:(ALViewPluginCompositeConfig *)viewPluginCompositeConfig
                                error:(NSError * _Nullable * _Nullable)error;
 
+
+/// Initializes an `ALScanView` object with a scan view plugin, and a scan view config object
+/// @param frame the frame of the scan view within the view hierarchy
+/// @param scanViewPlugin an `ALScanViewPlugin` object
+/// @param scanViewConfig an optional `ALScanViewConfig` object. Defaults will be assumed if null
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while initializing the ScanView object, this will be
+/// populated with the reasons for the failure
+/// @return the `ALScanView` object
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewPlugin:(NSObject<ALViewPluginBase> * _Nullable)scanViewPlugin
+                         scanViewConfig:(ALScanViewConfig * _Nullable)scanViewConfig
+                   initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                                  error:(NSError * _Nullable * _Nullable)error;
+
+/// Initializes an `ALScanView` object with a scan view plugin
+/// @param frame the frame of the scan view within the view hierarchy
+/// @param scanViewPlugin an `ALScanViewPlugin` object
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while initializing the ScanView object, this will be
+/// populated with the reasons for the failure
+/// @return the `ALScanView` object
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewPlugin:(NSObject<ALViewPluginBase> *)scanViewPlugin
+                   initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                                  error:(NSError * _Nullable * _Nullable)error;
+
+/// Initializes an `ALScanView` object with a scan view config. Delegates to scan view
+/// and underlying components are not set, and will have to be done separately.
+/// @param frame the frame of the scan view within the view hierarchy
+/// @param scanViewConfig an `ALScanViewConfig` object
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while initializing the ScanView object, this will be
+/// populated with the reasons for the failure
+- (_Nullable instancetype)initWithFrame:(CGRect)frame
+                         scanViewConfig:(ALScanViewConfig *)scanViewConfig
+                   initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                                  error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin. The visual elements displayed
+/// will also be updated. The view plugin replaced is stopped, and the new view plugin
+/// is not assumed to have been started automatically. Likewise, this view plugin's
+/// delegates should be set separately.
+/// @param viewPlugin a different view plugin
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while setting the ScanViewPlugin object, this will be
+/// populated with the reason for the failure
+/// @return a boolean indicating whether or not the operation succeeded.
+- (BOOL)setViewPlugin:(NSObject<ALViewPluginBase> *)viewPlugin
+ initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin config. Any existing cutout and feedback
+/// layers will also be updated. This will stop scanning. Delegates to new underlying
+/// and underlying components are not set, and will have to be done separately.
+/// @param viewPluginConfig the view plugin config to be applied to the scan view
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while setting the ScanViewPluginConfig object, this will be
+/// populated with the reason for the failure
+/// @return a boolean indicating whether or not the operation succeeded.
+- (BOOL)setViewPluginConfig:(ALViewPluginConfig *)viewPluginConfig
+       initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                      error:(NSError * _Nullable * _Nullable)error;
+
+/// Update a scan view with a different view plugin composite config. Any existing cutout and feedback
+/// layers will also be updated. Delegates to scan view  and underlying components are not set, and will
+/// have to be done separately.
+/// @param viewPluginCompositeConfig the view plugin composite config to be applied to the scan view
+/// @param initializationParams an optional object containing additional parameters to configure plugin behavior
+/// @param error if error is encountered while setting the ALViewPluginCompositeConfig object, this will be
+/// populated with the reason for the failure
+/// @return a boolean indicating whether or not the operation succeeded.
+- (BOOL)setViewPluginCompositeConfig:(ALViewPluginCompositeConfig *)viewPluginCompositeConfig
+                initializationParams:(ALScanViewInitializationParameters * _Nullable)initializationParams
+                               error:(NSError * _Nullable * _Nullable)error;
+
+
 /// The object to be notified of events reported by the scan view
 @property (nonatomic, weak) id<ALScanViewDelegate> delegate;
 
@@ -92,6 +170,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// or null to disable. In either case, do so before calling `startCamera`. This is by
 /// default null.
 @property (nonatomic, strong, nullable) NSArray<AVMetadataObjectType> *supportedNativeBarcodeFormats;
+
+@property (nonatomic, readonly, nullable) ALScanViewInitializationParameters *initializationParams;
 
 /// Starts the scan view camera
 - (void)startCamera;

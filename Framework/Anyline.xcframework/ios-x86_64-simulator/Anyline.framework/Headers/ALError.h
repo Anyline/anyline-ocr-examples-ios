@@ -169,7 +169,10 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
     ALCacheErrorZipCreationFailed = 14002,
 
     /// UIFeedback: JSON parsing error
-    ALUIFeedbackJSONError = 15001
+    ALUIFeedbackJSONError = 15001,
+
+    /// Init Params: Correlation ID is not in allowed format (UUIDv4)
+    ALScanViewInitializationParamsInvalidCorrelationIDError = 16001,
 };
 
 NS_ASSUME_NONNULL_END

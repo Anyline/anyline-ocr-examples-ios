@@ -1,0 +1,74 @@
+:navtitle: Developer Examples
+
+
+= Working with the Developer Examples
+
+After choosing your technology, explore the Developer Examples (apps with source code) on GitHub. Each repository contains one or two example apps for you to run on a real device, depending on your platform (one each for Android and iOS native, two each for .NET, Cordova, Flutter, and React Native).
+
+
+.Test on Real Devices
+[CAUTION]
+====
+It's crucial to run the Developer Example Apps on a physical Android or iOS device, as scanning functionality is not supported in the Android Emulator or iOS Simulator.
+
+For Android, the Developer Example Apps can only be built for the _arm_ and _arm64_ architectures. Building for _x86_ and _x86_64_ is not supported.
+====
+
+Detailed setup instructions for each platform are available in the respective repository.
+
+[cols="1,1"]
+|===
+|Technology | Developer Examples Github Repository
+
+| Mobile SDK for Android (native)
+| https://github.com/Anyline/anyline-ocr-examples-android
+
+| Mobile SDK for iOS (native)
+| https://github.com/Anyline/anyline-ocr-examples-ios
+
+| Mobile SDK for .NET (Android & iOS)
+| https://github.com/Anyline/anyline-dotnet-examples
+
+| Plugin for Cordova (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-cordova-module
+
+| Plugin for Flutter (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-flutter-module
+
+| Plugin for React Native (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-react-native-module
+
+|===
+
+
+== Developer Examples Use Cases (ScanViewConfigs)
+
+All the Developer Examples Apps include Use Cases that will help you get started. Refer to the table below to directly access the ScanViewConfigs.
+
+
+[cols="1,1"]
+|===
+|Technology | Developer Examples Github Repository
+
+| Mobile SDK for Android (native)
+| https://github.com/Anyline/anyline-ocr-examples-android/tree/master/AnylineExamples/app/src/main/assets/viewConfigs
+
+| Mobile SDK for iOS (native)
+| https://github.com/Anyline/anyline-ocr-examples-ios/tree/master/AnylineExamples/Anyline%20Examples%20Source
+
+| Mobile SDK for .NET (Android & iOS)
+| https://github.com/Anyline/anyline-dotnet-examples/tree/main/MAUI/Resources/Raw/Configs
+
+| Plugin for Cordova (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-cordova-module/tree/master/example/www/js
+
+| Plugin for Flutter (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-flutter-module/tree/main/example/config
+
+| Plugin for React Native (Android & iOS)
+| https://github.com/Anyline/anyline-ocr-react-native-module/tree/master/example/RNExampleApp/config
+
+|===
+
+
+include::main-component::partial$tip-get-help.adoc[]
