@@ -128,6 +128,7 @@ To claim a free developer / trial license, go to: [Anyline SDK Register Form](ht
 
 For further details, see LICENSE file.
 
+
 # KITT <3
 
 ![KITT](images/visualFeedback/kitt/contour_point.gif)

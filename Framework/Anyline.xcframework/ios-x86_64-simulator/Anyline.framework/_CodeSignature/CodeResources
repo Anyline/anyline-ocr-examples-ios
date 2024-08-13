@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
-		p1s4oLb3txn78yB7LpZMnn3Z6Cc=
+		dmCUrPkNivosBEuV3UiDqP9tG2Q=
 		</data>
 		<key>Headers/ALEvent.h</key>
 		<data>
@@ -43,6 +43,10 @@
 		<key>Headers/ALImage.h</key>
 		<data>
 		M5HvP9WOb80/Aieb2RLQm07kEP8=
+		</data>
+		<key>Headers/ALInitParams+Extras.h</key>
+		<data>
+		I3eEOVqiUtIN9pqldF8kmYhH/3E=
 		</data>
 		<key>Headers/ALJSONUtilities.h</key>
 		<data>
@@ -78,7 +82,7 @@
 		</data>
 		<key>Headers/ALScanView.h</key>
 		<data>
-		Oq+D0gstBo8/2bd282zBPXFpOf0=
+		kJOP/zh2c7vzw1XTtODrf+XC/Qw=
 		</data>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
 		<data>
@@ -90,7 +94,11 @@
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
-		HlQkNxhmS6OxOpkfJpiAqlPHg5A=
+		ip1DFXRD++Z+xabwqverpLU29MU=
+		</data>
+		<key>Headers/ALScanViewInitializationParameters.h</key>
+		<data>
+		hrbjFET1Tb4qBF73uJLIh+EDApo=
 		</data>
 		<key>Headers/ALScanViewPlugin.h</key>
 		<data>
@@ -118,7 +126,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		f0pL6yVAZ2xaUZXeENcQF8I4oKU=
+		C1CTZNVrU92niaFDFDF/o0g7GZQ=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -126,7 +134,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VJC0LPWfO5DfciZS0k+7HIwYkgo=
+		tjkhHhRrnHmK1hX8jde/HASjo7U=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -208,7 +216,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			72ijFOrr52w73Ka+6O/CvG58dEstjrMSTG6if1v+e88=
+			HTTX1NI7nwjGhBaEHdSzZkRf2vlq1vfSMpbIIeOdMss=
 			</data>
 		</dict>
 		<key>Headers/ALEvent.h</key>
@@ -223,6 +231,13 @@
 			<key>hash2</key>
 			<data>
 			5/VLTrOlrV3u2AINCgEN9weB6p0NB0yPhCsOVXzjdH0=
+			</data>
+		</dict>
+		<key>Headers/ALInitParams+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			irkpmNmHE0RTKh1p8HQdMMLHc0EleCd0dbIoL+T9/Bw=
 			</data>
 		</dict>
 		<key>Headers/ALJSONUtilities.h</key>
@@ -285,7 +300,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Tpz07Uyq1XiuqfBvRE/C/9jYrtchA8GjL6FiftLjIE=
+			fjyIkIDjRTU4hMEHY/sof0+YOSbMxP42MdUcfD4TMO0=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
@@ -306,7 +321,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CUFVyyTxgb54UfGifxjNTcfM31yc/Dlr5l/3sb5qv30=
+			+OodSxp6tAE3NLt9JiKMQCuXE5xFpY+pTqVZGSUaMIY=
+			</data>
+		</dict>
+		<key>Headers/ALScanViewInitializationParameters.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KaaQkD5d3zAccngx9lmxlDFrZYeXc7mxS05XB/kjuOo=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewPlugin.h</key>
@@ -355,7 +377,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O5tJ81o1kCmtyK8gNLLqLwbzGlxdv5KPBrv4pIn6BN8=
+			TnOVDMlF8IlkOBjbzaKmj1f6l0KdmEqiywgK4qhDHv0=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>

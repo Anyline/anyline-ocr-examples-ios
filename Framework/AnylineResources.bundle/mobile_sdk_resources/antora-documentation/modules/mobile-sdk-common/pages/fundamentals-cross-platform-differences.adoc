@@ -1,0 +1,117 @@
+:navtitle: Mobile SDK and Cross-Platform Plugins Differences
+
+
+= Mobile SDK and Cross-Platform Plugins Differences
+
+When integrating the Mobile SDK with your app on Android or iOS natively without the use of cross-platform frameworks, the natural choice is to use the Mobile SDKs for Android and iOS natively. If your app has been developed using a cross-platform framework such as .NET, Flutter, Cordova, or React Native, the following information will help you make an informed decision.
+
+If the basis for your app is .NET, Anyline provides a language-translated Mobile SDK for .NET. This Mobile SDK for .NET is functionally identical to the native Mobile SDKs for Android and iOS, the only difference being the respective platform's language (Java/Kotlin for Android & Objective-C/Swift for iOS) having been converted to C# for consumption with the .NET framework.
+
+If the basis for your app is any of Flutter, Cordova, or React Native, a decision can be made to use one of the Anyline-provided cross-platform Plugins.
+
+[CAUTION]
+====
+The Anyline _Plugin for [Flutter/Cordova/React Native]_ are not to be confused with the similarly named _ScanPlugin_.
+
+. _ScanPlugin_ is the Anyline-internal component that encapsulates a specific Technical Capability (e.g. the type of data to digitize),
+. whereas _Plugin for [...]_ is the term for an Anyline-provided module for your cross-platform framework.
+====
+
+== Anyline Mobile SDK (Android, iOS, .NET)
+
+The Anyline Mobile SDKs require you to implement the provided UI components (ScanView) natively on the platform of your choice. This demands familiarity with the development environment (Android native, iOS native, .NET Android, .NET iOS).
+
+As a result, this gives you full control over the flexibility and customization of the UI and user experience. Directly using the Mobile SDK gives you full control over the scanning process, including Continuous Scanning with custom stop conditions.
+
+Examples for a sophisticated customization include
+
+* a seamless experience when scanning front side and back side of an ID card
+* continuously scanning Barcodes and integrating processing the results with app-logic.
+
+
+
+== Anyline Cross-Platform Plugins (Flutter, Cordova, React Native)
+
+The Anyline Plugins for cross-platform frameworks offer pre-built use cases that can be integrated easily into your Flutter-, Cordova-, or React Native-based project. These use cases can be configured and customized via the ScanViewConfig, requiring no knowledge of the underlying complexity with Android- or iOS-native development.
+
+This allows you to use pre-built UI components and a streamlined scanning flow, saving development time. The configuration options with the ScanViewConfig JSON allow for the necessary level of customization.
+
+Usage of the Plugins without adapting the platform-native code limits the customization options to what can be configured with the ScanViewConfig JSON. As the scanning flow in this case is being handled by the implementation of the Plugin and results are returned to your app upon stopping scanning, a continuous scanning flow is currently not supported.
+
+Typically, your usage of the Plugins would include reacting to the following events provided by the Plugins:
+
+. `onResult`: The Plugin has successfully digitized the requested data and is handing the result and control back to your app for further processing.
+. `onError`: The Plugin has not been successful in digitizing the requested data and is handing control and the occurred error back to your app for further processing.
+
+
+[TIP]
+====
+If you prefer a highly tailored scanning experience over a faster development time with your cross-platform-based app, you can always choose to directly integrate the native Mobile SDKs into your cross-platform-based app. For this, please refer to your cross-platform framework's documentation on how to call into native code.
+====
+
+
+
+
+
+
+== Comparison Mobile SDK vs Plugins
+
+When using a cross-platform technology and facing the decision to choose a Plugin or Mobile SDK:
+
+// * Choose the *Plugin* if you:
+// ** Find that your use case is covered by the Plugin-provided use cases.
+// ** Don't have strict requirements for continuous scanning or deep customization.
+//
+// * Chose the *SDK* if you:
+// ** Need a highly tailored scanning experience and full control over scanning behavior.
+// ** Require continuous scanning.
+
+
+
+[cols="1,1"]
+|===
+|Choose the _Plugin_ if you: |Choose the _Mobile SDK_ if you:
+
+| Find that your use case is covered by the Plugin-provided use cases.
+| Need a highly tailored scanning experience and full control over scanning behavior.
+
+| Don't have strict requirements for continuous scanning or deep customization.
+| Require continuous scanning.
+
+|===
+
+
+[cols="1,1a,1a"]
+|===
+|Feature|Mobile SDK (Direct Integration) |Plugin (Cross-Platform)
+
+| Availability
+|
+* Android (native)
+* iOS (native)
+* .NET Android
+* .NET iOS
+|
+* Flutter (Android & iOS)
+* Cordova (Android & iOS)
+* React Native (Android & iOS)
+
+| Customization
+| High
+| Moderate
+
+| Continuous Scanning
+| Yes
+| Not available currently
+
+| Integration Effort
+| Moderate
+| Low
+
+|===
+
+
+
+
+
+include::main-component::partial$tip-get-help.adoc[]
