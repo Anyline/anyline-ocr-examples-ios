@@ -17,9 +17,6 @@
 #import "ALImage.h"
 #import "ALLicenseUtil.h"
 
-#import "ALNFCDetector.h"
-#import "ALNFCResult.h"
-
 #import "ALAssetUpdateManager.h"
 #import "ALAssetUpdateTask.h"
 #import "ALAssetContext.h"

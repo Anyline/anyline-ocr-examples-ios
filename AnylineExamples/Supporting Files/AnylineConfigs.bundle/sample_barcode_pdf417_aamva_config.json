@@ -1,0 +1,36 @@
+{
+  "viewPluginConfig": {
+    "pluginConfig": {
+      "id": "barcode-pdf417",
+      "barcodeConfig": {
+        "barcodeFormats": ["PDF_417"],
+        "parseAAMVA": true
+      },
+      "startScanDelay": 3500
+    },
+    "cutoutConfig": {
+      "animation": "none",
+      "maxWidthPercent": "90%",
+      "alignment": "top_half",
+      "ratioFromSize": { "width": 25, "height": 9 },
+      "offset": { "x": 0, "y": 0 },
+      "cropOffset": { "x": 0, "y": 0 },
+      "cropPadding": { "x": 0, "y": 0 },
+      "cornerRadius": 6,
+      "strokeColor": "FFFFFF",
+      "strokeWidth": 2,
+      "outerColor": "000000",
+      "feedbackStrokeColor": "0099FF",
+      "outerAlpha": 0.3
+    },
+    "scanFeedbackConfig": {
+      "style": "rect",
+      "strokeWidth": 2,
+      "strokeColor": "0099FF",
+      "fillColor": "330099FF",
+      "beepOnResult": true,
+      "vibrateOnResult": true,
+      "blinkAnimationOnResult": false
+    }
+  }
+}
