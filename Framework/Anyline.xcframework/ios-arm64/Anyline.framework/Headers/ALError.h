@@ -19,7 +19,7 @@ static NSString * const ALCameraSetupDomain = @"ALCameraSetupDomain";
 static NSString * const ALWatermarkViolationDomain = @"ALWatermarkViolationDomain";
 static NSString * const ALModuleSetupDomain = @"ALModuleSetupDomain";
 static NSString * const ALLicenseViolationDomain = @"ALLicenseViolationDomain";
-static NSString * const ALNFCDomain = @"ALNFCDomain";
+static NSString * const ALNFCDomain = @"ALNFCDomain"; // Deprecated.
 
 static NSString *const ALParserErrorLineNumber = @"ALParserErrorLineNumber";
 static NSString *const ALParserErrorLineString = @"ALParserErrorLineString";
@@ -102,55 +102,55 @@ typedef NS_ENUM(NSInteger, ALErrorCode) {
     /// The ScanView's `viewPlugin` object is nil
     ALViewPluginNotInitialized = 9001,
 
-    /// Error on the NFC tag reader response
+    /// (Deprecated) Error on the NFC tag reader response
     ALNFCTagErrorResponseError = 10001,
 
-    /// Invalid response received from the NFC Tag Reading session
+    /// (Deprecated) Invalid response received from the NFC Tag Reading session
     ALNFCTagErrorInvalidResponse = 10002,
 
-    /// Unexpected error using the NFC tag reader
+    /// (Deprecated) Unexpected error using the NFC tag reader. Deprecated.
     ALNFCTagErrorUnexpectedError = 10003,
 
-    /// Device does not support NFC tag reading
+    /// (Deprecated) Device does not support NFC tag reading
     ALNFCTagErrorNFCNotSupported = 10004,
 
-    /// Unable to initialize tag reader for NFC connection
+    /// (Deprecated) Unable to initialize tag reader for NFC connection
     ALNFCTagErrorNoConnectedTag = 10005,
 
-    /// NFC: D087 is malformed
+    /// (Deprecated) NFC: D087 is malformed
     ALNFCTagErrorD087Malformed = 10006,
 
-    /// NFC: Invalid checksum
+    /// (Deprecated) NFC: Invalid checksum
     ALNFCTagErrorInvalidResponseChecksum = 10007,
 
-    /// NFC: Missing mandatory fields
+    /// (Deprecated) NFC: Missing mandatory fields
     ALNFCTagErrorMissingMandatoryFields = 10008,
 
-    /// NFC: Cannot decode ASN1 length
+    /// (Deprecated) NFC: Cannot decode ASN1 length
     ALNFCTagErrorCannotDecodeASN1Length = 10009,
 
-    /// NFC: ASN1 value is invalid
+    /// (Deprecated) NFC: ASN1 value is invalid
     ALNFCTagErrorInvalidASN1Value = 10010,
 
-    /// NFC: unable to protect APDU
+    /// (Deprecated) NFC: unable to protect APDU
     ALNFCTagErrorUnableToProtectAPDU = 10011,
 
-    /// NFC: unable to unprotect APDU
+    /// (Deprecated) NFC: unable to unprotect APDU
     ALNFCTagErrorUnableToUnprotectAPDU = 10012,
 
-    /// NFC: unsupported data group
+    /// (Deprecated) NFC: unsupported data group
     ALNFCTagErrorUnsupportedDataGroup = 10013,
 
-    /// NFC: data group not read
+    /// (Deprecated) NFC: data group not read
     ALNFCTagErrorDataGroupNotRead = 10014,
 
-    /// NFC tag not recognized
+    /// (Deprecated) NFC tag not recognized
     ALNFCTagErrorUnknownTag = 10015,
 
-    /// NFC: the image format being read is unknown
+    /// (Deprecated) NFC: the image format being read is unknown
     ALNFCTagErrorUnknownImageFormat = 10016,
 
-    /// NFC: Not implemented error
+    /// (Deprecated) NFC: Not implemented error
     ALNFCTagErrorNotImplemented = 10017,
 
     /// Timeout encountered while waiting for a time consuming operation

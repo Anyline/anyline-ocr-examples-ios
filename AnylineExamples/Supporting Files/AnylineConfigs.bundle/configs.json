@@ -1,0 +1,175 @@
+[
+  {
+    "filename": "sample_tire_tin_universal_uifeedback_config",
+    "groupName": "Vehicle",
+    "displayName": "TIN (Universal)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_tire_tin_na_uifeedback_config",
+    "groupName": "Vehicle",
+    "displayName": "TIN (North America)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_tire_size_config",
+    "groupName": "Vehicle",
+    "displayName": "Tire Size Specification",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_commercial_tire_id_config",
+    "groupName": "Vehicle",
+    "displayName": "Tire Commercial ID",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_license_plate_eu_config",
+    "groupName": "Vehicle",
+    "displayName": "License Plate (EU)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_license_plate_eu_vis_config",
+    "groupName": "Vehicle",
+    "displayName": "License Plate (EU, VIS)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_license_plate_us_config",
+    "groupName": "Vehicle",
+    "displayName": "License Plate (US)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_odometer_config",
+    "groupName": "Vehicle",
+    "displayName": "Odometer",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_vin_config",
+    "groupName": "Vehicle",
+    "displayName": "Vehicle Identification Number",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_vrc_config",
+    "groupName": "Vehicle",
+    "displayName": "Vehicle Registration Certificate",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_tiremake_config",
+    "groupName": "Vehicle",
+    "displayName": "Tire Make",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_parallel_first_vin_barcode_config",
+    "displayName": "VIN + Barcode (Parallel First)",
+    "groupName": "Vehicle",
+    "description": "",
+    "composite": true,
+    "enabled": true
+  },
+  {
+    "filename": "sample_sequential_config",
+    "displayName": "License Plate > VIN (Sequential)",
+    "groupName": "Vehicle",
+    "description": "",
+    "composite": true,
+    "enabled": true
+  },
+  {
+    "filename": "sample_meter_config",
+    "groupName": "Meter Reading",
+    "displayName": "Meter (Analog / Digital)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_parallel_meter_barcode_config",
+    "displayName": "Meter + Barcode (Parallel)",
+    "groupName": "Meter Reading",
+    "description": "",
+    "composite": true,
+    "enabled": true
+  },
+  {
+    "filename": "sample_barcode_pdf417_aamva_config",
+    "displayName": "Barcode (AAMVA / PDF417)",
+    "groupName": "Barcode",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_barcode_fullframe_config",
+    "displayName": "Barcode (Full Frame)",
+    "groupName": "Barcode",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_barcode_config",
+    "groupName": "Barcode",
+    "displayName": "Barcode",
+    "description": "",
+    "composite": false,
+    "enabled": true
+  },
+  {
+    "filename": "sample_id_config",
+    "groupName": "Identity Documents",
+    "displayName": "Universal ID",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_mrz_config",
+    "groupName": "Identity Documents",
+    "displayName": "MRZ",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_mrz_frontcam_config",
+    "groupName": "Identity Documents",
+    "displayName": "MRZ (front cam)",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_serial_no_config",
+    "groupName": "Others",
+    "displayName": "Serial Number",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_container_config",
+    "displayName": "Container",
+    "groupName": "Others",
+    "description": "",
+    "enabled": true
+  },
+  {
+    "filename": "sample_serial_meter_barcode_config",
+    "displayName": "Meter + Barcode (Sequential)",
+    "groupName": "Meter Reading",
+    "description": "",
+    "composite": true,
+    "enabled": true
+  }
+]

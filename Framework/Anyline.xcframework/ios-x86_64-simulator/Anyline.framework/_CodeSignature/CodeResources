@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
-		dmCUrPkNivosBEuV3UiDqP9tG2Q=
+		BmB2MeivTBZwIArHBO7PJMHnKEs=
 		</data>
 		<key>Headers/ALEvent.h</key>
 		<data>
@@ -55,14 +55,6 @@
 		<key>Headers/ALLicenseUtil.h</key>
 		<data>
 		v8Ky04qX4nJJwk08eRJTHdCZlcI=
-		</data>
-		<key>Headers/ALNFCDetector.h</key>
-		<data>
-		K0FKGHYhtRi1UXgiqkRraZHvDF4=
-		</data>
-		<key>Headers/ALNFCResult.h</key>
-		<data>
-		BRSZNgIaTBmpg7lpeI91qsjox7c=
 		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
@@ -126,7 +118,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		C1CTZNVrU92niaFDFDF/o0g7GZQ=
+		Sw3P+nRYXMW/0yNONfIquK6xC64=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -134,11 +126,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tjkhHhRrnHmK1hX8jde/HASjo7U=
+		Q1cp6uNJ/8lufIbRXDlh2C5KbXw=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		8zxhPDL4nfJMKFSZem4GCACPO6c=
+		ks+4GQgszNir56tzr+MjbMNJKvY=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -154,7 +146,7 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8Ql0drv5chgSqvhzH0mRmNCCxdM=
+		erl2YVg8RwPRRfyFf560sEpe2a0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -216,7 +208,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HTTX1NI7nwjGhBaEHdSzZkRf2vlq1vfSMpbIIeOdMss=
+			xlKJ2q7lsMvxAGzmdtKQGkyi1hI+Er64+7B3epUh3nc=
 			</data>
 		</dict>
 		<key>Headers/ALEvent.h</key>
@@ -252,20 +244,6 @@
 			<key>hash2</key>
 			<data>
 			N2IYM7xihWI3/nA4pyCICJxOz0eLqn9/l0GU1y68P/E=
-			</data>
-		</dict>
-		<key>Headers/ALNFCDetector.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			d8X7jwRYvbd8n5kkjwmFrh7bm6856GZTvy8nrYStHCM=
-			</data>
-		</dict>
-		<key>Headers/ALNFCResult.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			0VEDysz/JqE3Y3gw+8i9tLz3ewxWHQBA52/5iwzk7po=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
@@ -377,7 +355,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TnOVDMlF8IlkOBjbzaKmj1f6l0KdmEqiywgK4qhDHv0=
+			aGSNaOydgGYahxeXZ0Eu/QbxwdTG31yxqQVaqLr5RU8=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>
@@ -391,7 +369,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CyrHDsf03Lx9TsMcqZz6q+jDjtUktU33w/njcJmn1oE=
+			FtFF6y8/u2echgP9gtGWEn44Cu621WQWI0b03vTMNYI=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -419,7 +397,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zFdCTVG6Z2bp1a2+VjDP6L4z8lezls2W2tYBD+XgR0k=
+			Hgc2FFgAMVnaXBGSzsc8TzIR5W60Oy3pB1N6qL3ie1Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

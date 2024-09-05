@@ -1,0 +1,84 @@
+{
+  "cameraConfig": {
+    "captureResolution": "1080p",
+    "pictureResolution": "720p"
+  },
+  "flashConfig": {
+    "mode": "manual",
+    "alignment": "top_left"
+  },
+  "viewPluginCompositeConfig": {
+    "id": "sequential_lp_vin",
+    "processingMode": "sequential",
+    "viewPlugins": [
+      {
+        "viewPluginConfig": {
+          "pluginConfig": {
+            "id": "lp",
+            "licensePlateConfig": {
+              "scanMode": "auto"
+            }
+          },
+          "cutoutConfig": {
+            "maxWidthPercent": "80%",
+            "maxHeightPercent": "80%",
+            "alignment": "top_half",
+            "ratioFromSize": {
+              "width": 4,
+              "height": 1
+            },
+            "offset": { "x": 0, "y": 0 },
+            "strokeWidth": 2,
+            "cornerRadius": 0,
+            "strokeColor": "8be9fd",
+            "outerColor": "000000",
+            "outerAlpha": 0
+          },
+          "scanFeedbackConfig": {
+            "style": "animated_rect",
+            "strokeWidth": 2,
+            "strokeColor": "0099FF",
+            "fillColor": "330099FF",
+            "cornerRadius": 0,
+            "beepOnResult": false,
+            "vibrateOnResult": false,
+            "blinkAnimationOnResult": true
+          }
+        }
+      },
+      {
+        "viewPluginConfig": {
+          "pluginConfig": {
+            "id": "vin",
+            "vinConfig": {}
+          },
+          "cutoutConfig": {
+            "maxWidthPercent": "70%",
+            "alignment": "top_half",
+            "ratioFromSize": {
+              "width": 62,
+              "height": 9
+            },
+            "offset": { "x": 0, "y": 0 },
+            "outerColor": "000000",
+            "outerAlpha": 0,
+            "strokeWidth": 2,
+            "strokeColor": "ff79c6",
+            "cornerRadius": 0
+          },
+          "scanFeedbackConfig": {
+            "style": "contour_rect",
+            "animation": "none",
+            "animationDuration": 250,
+            "strokeWidth": 2,
+            "strokeColor": "0099FF",
+            "fillColor": "220099FF",
+            "beepOnResult": false,
+            "vibrateOnResult": false,
+            "blinkAnimationOnResult": true
+          }
+        }
+      }
+    ]
+  }
+}
