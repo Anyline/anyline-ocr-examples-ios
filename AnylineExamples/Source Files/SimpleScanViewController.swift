@@ -22,7 +22,7 @@ class SimpleScanViewController: UIViewController {
         return textView
     }()
 
-    private var configFilename: String
+    private var configFileName: String
 
     private var scanView: ALScanView!
 
@@ -36,8 +36,8 @@ class SimpleScanViewController: UIViewController {
     }()
 
     @objc
-    init(configFilename: String) {
-        self.configFilename = configFilename
+    init(configFileName: String) {
+        self.configFileName = configFileName
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -53,7 +53,7 @@ class SimpleScanViewController: UIViewController {
         super.viewDidLoad()
 
         do {
-            try setupAnyline(configFilename: configFilename)
+            try setupAnyline(configFileName: configFileName)
         } catch {
             var errorMsg = "Anyline error: \(error.localizedDescription)"
             if let anylineError = error as? AnylineError {
@@ -81,10 +81,10 @@ class SimpleScanViewController: UIViewController {
         }
     }
 
-    func setupAnyline(configFilename: String) throws {
+    func setupAnyline(configFileName: String) throws {
 
         // Initialize the ScanViewConfig with an Anyline config read from a JSON file
-        scanViewConfigJSONStr = try type(of: self).anylineConfigString(from: configFilename)
+        scanViewConfigJSONStr = try type(of: self).anylineConfigString(from: configFileName)
         let scanViewConfig = try ALScanViewConfig.withJSONString(scanViewConfigJSONStr)
 
         // Initialize the ScanView.
@@ -100,7 +100,8 @@ class SimpleScanViewController: UIViewController {
     }
 
     private static func anylineConfigString(from filename: String) throws -> String {
-        guard let path = Bundle.main.path(forResource: filename, ofType: "json", inDirectory: "AnylineConfigs.bundle") else {
+        // Passing filename with .json extension from previous VC
+        guard let path = Bundle.main.path(forResource: filename, ofType: "", inDirectory: "AnylineConfigs.bundle") else {
             throw AnylineError.configError(msg: "no such path: \(filename)")
         }
         guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path, isDirectory: false)),

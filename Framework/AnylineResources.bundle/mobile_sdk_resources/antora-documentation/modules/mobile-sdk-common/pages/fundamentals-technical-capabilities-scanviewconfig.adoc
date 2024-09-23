@@ -23,7 +23,7 @@ The following Technical Capabilities are provided by the Mobile SDK. The table b
 |Barcode Scanning (1D, 2D, Postal Codes, Stacked Linear Codes)|barcodeConfig|barcodeResult
 |Meter Scanning (Digital, Analog, Dial, OBIS)|meterConfig|meterResult
 |Digital Odometer Scanning|odometerConfig|odometerResult
-|ID (Passport: Visual & NFC, ID Card, Driver License, European Health Insurance Card / EHIC)|universalIdConfig|universalIdResult
+|ID (Passport, ID Card, Driver License, European Health Insurance Card / EHIC)|universalIdConfig|universalIdResult
 |MRZ Scanning (Machine Readable Zone)|mrzConfig|mrzResult
 |Japanese Landing Permission Scanning|japaneseLandingPermissionConfig|japaneseLandingPermissionResult
 |Vehicle Registration Certificate (German Fahrzeugschein)|vehicleRegistrationCertificateConfig|vehicleRegistrationCertificateResult
