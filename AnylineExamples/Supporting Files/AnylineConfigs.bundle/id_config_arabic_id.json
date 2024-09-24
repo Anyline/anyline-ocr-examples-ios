@@ -1,0 +1,106 @@
+{
+  "scanViewConfigDescription": "Optimized for Arabic script ID scanning, includes all layouts with full configurability to include or exclude specific layouts as needed.",
+  "cameraConfig": {
+    "captureResolution": "1080p",
+    "zoomGesture": true
+  },
+  "flashConfig": {
+    "mode": "manual",
+    "alignment": "bottom_right"
+  },
+  "viewPluginConfig": {
+    "pluginConfig": {
+      "id": "ID|Arabic IDs",
+      "cancelOnResult": true,
+      "universalIdConfig": {
+        "faceDetectionEnabled": true,
+        "allowedLayouts": {
+          "mrz": [],
+          "idFront": [],
+          "drivingLicense": []
+        },
+        "alphabet": "arabic",
+        "idFront": {
+          "fullName": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          },
+          "dateOfBirth": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          },
+          "placeOfBirth": {
+            "scanOption": "optional",
+            "minConfidence": 60
+          },
+          "dateOfExpiry": {
+            "scanOption": "optional",
+            "minConfidence": 60
+          },
+          "documentNumber": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          },
+          "nationality": {
+            "scanOption": "optional",
+            "minConfidence": 60
+          }
+        },
+        "drivingLicense": {
+          "fullName": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          },
+          "dateOfBirth": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          },
+          "placeOfBirth": {
+            "scanOption": "optional",
+            "minConfidence": 60
+          },
+          "dateOfExpiry": {
+            "scanOption": "optional",
+            "minConfidence": 60
+          },
+          "documentNumber": {
+            "scanOption": "mandatory",
+            "minConfidence": 60
+          }
+        }
+      }
+    },
+    "cutoutConfig": {
+      "maxWidthPercent": "90%",
+      "maxHeightPercent": "90%",
+      "alignment": "center",
+      "strokeWidth": 2,
+      "cornerRadius": 8,
+      "strokeColor": "FFFFFF",
+      "outerColor": "000000",
+      "outerAlpha": 0.3,
+      "ratioFromSize": {
+        "width": 50,
+        "height": 31
+      },
+      "cropPadding": {
+        "x": -50,
+        "y": -50
+      },
+      "cropOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "feedbackStrokeColor": "0099FF"
+    },
+    "scanFeedbackConfig": {
+      "style": "contour_rect",
+      "redrawTimeout": 100,
+      "strokeColor": "0099FF",
+      "fillColor": "220099FF",
+      "beepOnResult": true,
+      "vibrateOnResult": true,
+      "strokeWidth": 2
+    }
+  }
+}

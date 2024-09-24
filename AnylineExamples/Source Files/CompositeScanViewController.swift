@@ -20,7 +20,7 @@ class CompositeScanViewController: UIViewController {
         return textView
     }()
 
-    private var configFilename: String
+    private var configFileName: String
 
     private var scanView: ALScanView!
 
@@ -34,8 +34,8 @@ class CompositeScanViewController: UIViewController {
     }()
 
     @objc
-    init(configFilename: String) {
-        self.configFilename = configFilename
+    init(configFileName: String) {
+        self.configFileName = configFileName
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -51,7 +51,7 @@ class CompositeScanViewController: UIViewController {
         super.viewDidLoad()
 
         do {
-            try setupAnyline(configFilename: configFilename)
+            try setupAnyline(configFileName: configFileName)
         } catch {
             var errorMsg = "Anyline error: \(error.localizedDescription)"
             if let anylineError = error as? AnylineError {
@@ -84,10 +84,10 @@ class CompositeScanViewController: UIViewController {
         }
     }
 
-    func setupAnyline(configFilename: String) throws {
+    func setupAnyline(configFileName: String) throws {
 
         // Initialize the ScanViewPlugin with an Anyline config read from a JSON file
-        scanViewConfigJSONStr = try type(of: self).anylineConfigString(from: configFilename)
+        scanViewConfigJSONStr = try type(of: self).anylineConfigString(from: configFileName)
 
         // Initialize the ScanView.
         let scanViewConfig = try ALScanViewConfig(jsonString: scanViewConfigJSONStr)
@@ -101,9 +101,10 @@ class CompositeScanViewController: UIViewController {
         try self.scanView.startScanning()
     }
 
-    private static func anylineConfigString(from filename: String) throws -> String {
-        guard let path = Bundle.main.path(forResource: filename, ofType: "json", inDirectory: "AnylineConfigs.bundle") else {
-            throw AnylineError.configError(msg: "no such path: \(filename)")
+    private static func anylineConfigString(from fileName: String) throws -> String {
+        // Passing filename with .json extension from previous VC
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "", inDirectory: "AnylineConfigs.bundle") else {
+            throw AnylineError.configError(msg: "no such path: \(fileName)")
         }
         guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path, isDirectory: false)),
               let jsonString = String(data: jsonData, encoding: .utf8) else {
