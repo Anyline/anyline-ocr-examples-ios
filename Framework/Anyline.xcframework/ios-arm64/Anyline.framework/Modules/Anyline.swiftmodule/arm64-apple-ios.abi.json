@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "Anyline",
+    "printedName": "Anyline",
     "children": [
       {
         "kind": "Import",
@@ -265,6 +265,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -352,6 +366,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -649,6 +679,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -796,10 +840,17 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -1160,6 +1211,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
             "name": "Comparable",
             "printedName": "Comparable",
             "usr": "s:SL",
@@ -1349,34 +1407,6 @@
     },
     {
       "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
-      "kind": "IntegerLiteral",
-      "offset": 88,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
-      "kind": "IntegerLiteral",
-      "offset": 99,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
-      "kind": "IntegerLiteral",
-      "offset": 113,
-      "length": 4,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
-      "kind": "IntegerLiteral",
-      "offset": 127,
-      "length": 5,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 806,
       "length": 4,
@@ -1388,6 +1418,41 @@
       "offset": 920,
       "length": 12,
       "value": "\"UIFeedback\""
+    },
+    {
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1453,
+      "length": 61,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1483,
+      "length": 1,
+      "value": "\" [\""
+    },
+    {
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1504,
+      "length": 1,
+      "value": "\"] \""
+    },
+    {
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1513,
+      "length": 23,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/0\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1535,
+      "length": 3,
+      "value": "\";\""
     }
   ]
 }

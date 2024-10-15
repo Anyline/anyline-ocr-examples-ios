@@ -1,8 +1,0 @@
-* xref:mobile-sdk-common:mobile-sdk-fundamentals-about.adoc[]
-** xref:mobile-sdk-common:fundamentals-quick-start-guide.adoc[]
-** xref:mobile-sdk-common:fundamentals-app-sdk-communication.adoc[]
-** xref:mobile-sdk-common:fundamentals-configuration-scanviewconfig.adoc[]
-** xref:mobile-sdk-common:fundamentals-technical-capabilities-scanviewconfig.adoc[]
-** xref:mobile-sdk-common:fundamentals-cross-platform-differences.adoc[]
-** xref:mobile-sdk-common:fundamentals-developer-examples.adoc[]
-** xref:mobile-sdk-common:fundamentals-glossary.adoc[]

@@ -114,7 +114,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		DBNXVW6Mun+9PzwRaVNiANJFHow=
+		F0daAGJHr/511FAP2SZN5Om7x+c=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -126,27 +126,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		N2VnmdaFTl3zohwA5hVpTTsRIPM=
+		1Wr512qjZrJtAtVM4Qk6hQTwHSg=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		ks+4GQgszNir56tzr+MjbMNJKvY=
+		oOP2RQhV+LG45tlWgjXtLC5PosM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		nJ2adB1U9RCTQC7u75tD4AoDSgo=
+		+bI4JmY8PQfvcUVf9I+7nik8mJI=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		sfZJJBQBt33gjEYCVMHy7jwTqfc=
+		cGEzeBZSM/xEzuQOfyz1idqENJk=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		nJ2adB1U9RCTQC7u75tD4AoDSgo=
+		+bI4JmY8PQfvcUVf9I+7nik8mJI=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		c/WuFzumSg5v2sFlIdbE7WS9aKI=
+		L0B8IyfQSYLgPeBVn2NT9eelQ4w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -348,7 +348,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q+5F0AwHv5GVA//tE8zQnbAtvtImDGTobDOusnHs+/0=
+			KpCioDKDoqOLDYgQNfTLuAgn/+GYYLK58uEhz0K7NF4=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -369,35 +369,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FtFF6y8/u2echgP9gtGWEn44Cu621WQWI0b03vTMNYI=
+			j8gG77NydRZvlqETrAtNQAVw1OlThP6p1bkjtDPc8FA=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fgWuw+CvswLYIdgUXXX0lZdtvUIYIZxUzw0tsfbNf10=
+			a+Tz9wW5h9GJNLGlVS3jK4S6Irt+2g9m/1VZ9brPY58=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S/2Z8XlSDz0i47+rsmNuHn0o+MtoagO5IM/sty31J5w=
+			inDxi6OGZVfG/4e2H7+91CTFN9bp1AGV7zOddvW7Log=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fgWuw+CvswLYIdgUXXX0lZdtvUIYIZxUzw0tsfbNf10=
+			a+Tz9wW5h9GJNLGlVS3jK4S6Irt+2g9m/1VZ9brPY58=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6e4Sz2v/btrRJ+Im56wiJ7c2C+0M/ZdrnYzbwLknCgg=
+			q+/PfNVX3XIBNVS3ZRG5qbL9fZNjCVHGhG/mRbASKJQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
