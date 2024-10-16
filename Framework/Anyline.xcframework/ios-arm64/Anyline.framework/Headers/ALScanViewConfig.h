@@ -555,7 +555,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Background color as a 6-digit (RRGGBB) or 8-digit (AARRGGBB) hex string.
 @property (nonatomic, nullable, copy) NSString *outerColor;
 /// A size constraining the ratio of width / height. If set to 0, the ratio will be equal to
-/// the full frame.
+/// the full frame. For the optimal ratio for each technical capability have a look at the
+/// Technical Capabilities section at documentation.anyline.com.
 @property (nonatomic, nullable, strong) ALRatioFromSize *ratioFromSize;
 /// The hex string (RRGGBB) of the stroke color. (e.g. 00CCFF).
 @property (nonatomic, nullable, copy) NSString *strokeColor;
@@ -567,7 +568,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// A size constraining the ratio of width / height. If set to 0, the ratio will be equal to
-/// the full frame.
+/// the full frame. For the optimal ratio for each technical capability have a look at the
+/// Technical Capabilities section at documentation.anyline.com.
 @interface ALRatioFromSize : NSObject
 @property (nonatomic, nullable, strong) NSNumber *height;
 @property (nonatomic, nullable, strong) NSNumber *width;
