@@ -707,7 +707,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// The minFieldConfidences configure which fields must reach which confidence thresholds in
 /// order to be part of the scan result.
 @property (nonatomic, nullable, strong) ALMrzMinFieldConfidences *mrzMinFieldConfidences;
-/// The strictMode determines whether or not the MRZ must follow the ICAO standard.
+/// When enabling the strictMode, a result is only returned if all the check digits on the
+/// scanned document are valid.
 @property (nonatomic, assign) BOOL isStrictMode;
 @end
 

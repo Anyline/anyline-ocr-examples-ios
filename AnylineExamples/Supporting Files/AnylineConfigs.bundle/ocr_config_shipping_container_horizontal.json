@@ -20,8 +20,8 @@
       "maxHeightPercent": "80%",
       "alignment": "top_half",
       "ratioFromSize": {
-        "width": 720,
-        "height": 144
+        "width": 5,
+        "height": 1
       },
       "strokeWidth": 2,
       "strokeColor": "FFFFFF",
