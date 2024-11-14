@@ -19,8 +19,8 @@
       "maxWidthPercent": "10%",
       "alignment": "center",
       "ratioFromSize": {
-        "width": 9,
-        "height": 62
+        "width": 0.15,
+        "height": 1.00
       },
       "strokeWidth": 2,
       "strokeColor": "FFFFFF",

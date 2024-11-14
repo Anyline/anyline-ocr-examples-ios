@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ResultViewControllerDelegate: AnyObject {
-    func didDismissModalViewController(_ viewController: ResultViewController)
+    func didDismissModalViewController(_ viewController: ResultViewController, restart: Bool)
 }
 
 
@@ -47,8 +47,10 @@ class ResultViewController: UIViewController {
     }
     
     
+    let scanAgainButton = UIButton(type: .custom)
+
     let dismissButton = UIButton(type: .custom)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -63,9 +65,17 @@ class ResultViewController: UIViewController {
         headerLabel.text = "Scan Result"
         headerLabel.font = UIFont.boldSystemFont(ofSize: 24)
         headerLabel.textColor = .white
+
         headerLabel.textAlignment = .center
         view.addSubview(headerLabel)
-        
+
+        // Config dismissButton
+        dismissButton.setTitle("Done", for: .normal)
+        dismissButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        dismissButton.titleLabel?.textColor = .white
+        dismissButton.addTarget(self, action: #selector(dismissScan), for: .touchUpInside)
+        view.addSubview(dismissButton)
+
         // Configure collectionView
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -96,12 +106,12 @@ class ResultViewController: UIViewController {
         view.addSubview(textView)
         
         // Configure dismissButton
-        dismissButton.backgroundColor = .init(red: 0, green: 0.6, blue: 1, alpha: 1)
-        dismissButton.setTitle("Scan Again", for: .normal)
-        dismissButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        dismissButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
-        dismissButton.layer.cornerRadius = 4
-        view.addSubview(dismissButton)
+        scanAgainButton.backgroundColor = .init(red: 0, green: 0.6, blue: 1, alpha: 1)
+        scanAgainButton.setTitle("Scan Again", for: .normal)
+        scanAgainButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        scanAgainButton.addTarget(self, action: #selector(restartScan), for: .touchUpInside)
+        scanAgainButton.layer.cornerRadius = 4
+        view.addSubview(scanAgainButton)
     }
     
     private func setupConstraints() {
@@ -109,15 +119,20 @@ class ResultViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         jsonLabel.translatesAutoresizingMaskIntoConstraints = false
+        scanAgainButton.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             // HeaderLabel constraints
             headerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
-            
+
+            dismissButton.centerYAnchor.constraint(equalTo: headerLabel.centerYAnchor),
+            dismissButton.widthAnchor.constraint(equalToConstant: 50),
+            dismissButton.trailingAnchor.constraint(equalTo: headerLabel.trailingAnchor, constant: -10),
+
             // CollectionView constraints
             collectionView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -137,15 +152,20 @@ class ResultViewController: UIViewController {
             textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             
             // DismissButton constraints
-            dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            dismissButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
-            dismissButton.heightAnchor.constraint(equalToConstant: 35),
-            dismissButton.widthAnchor.constraint(equalToConstant: 120)
+            scanAgainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            scanAgainButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
+            scanAgainButton.heightAnchor.constraint(equalToConstant: 35),
+            scanAgainButton.widthAnchor.constraint(equalToConstant: 120)
         ])
     }
     
-    @objc private func dismissViewController() {
-        delegate?.didDismissModalViewController(self)
+    @objc private func restartScan() {
+        delegate?.didDismissModalViewController(self, restart: true)
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func dismissScan() {
+        delegate?.didDismissModalViewController(self, restart: false)
         dismiss(animated: true, completion: nil)
     }
 }

@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return the date of expiry as a string, or null if the license wasn't yet initialized
 + (NSString *)licenseExpirationDate;
 
+/// Returns a boolean indicating if the Anyline license is initialized.
++ (BOOL)isInitialized;
+
 /// Version number of the SDK
 /// @return the version number of the SDK
 + (NSString *)versionNumber;

@@ -142,7 +142,12 @@ extension CompositeScanViewController: ALViewPluginCompositeDelegate {
 
 extension CompositeScanViewController: ResultViewControllerDelegate {
     
-    func didDismissModalViewController(_ viewController: ResultViewController) {
+    func didDismissModalViewController(_ viewController: ResultViewController,
+                                       restart: Bool) {
+        guard restart else {
+            self.navigationController?.popViewController(animated: false)
+            return
+        }
         try? self.scanView.startScanning()
     }
 

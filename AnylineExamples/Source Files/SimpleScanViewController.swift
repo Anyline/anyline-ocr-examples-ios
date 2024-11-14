@@ -132,6 +132,7 @@ class SimpleScanViewController: UIViewController {
 extension SimpleScanViewController: ALScanPluginDelegate {
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
         print("Scan Result: \(scanResult.resultDictionary)")
+
         let modalVC = ResultViewController()
         modalVC.modalPresentationStyle = .overFullScreen
         modalVC.images = [ scanResult.croppedImage ]
@@ -144,7 +145,12 @@ extension SimpleScanViewController: ALScanPluginDelegate {
 
 extension SimpleScanViewController: ResultViewControllerDelegate {
 
-    func didDismissModalViewController(_ viewController: ResultViewController) {
+    func didDismissModalViewController(_ viewController: ResultViewController,
+                                       restart: Bool) {
+        guard restart else {
+            self.navigationController?.popViewController(animated: false)
+            return
+        }
         try? self.scanView.startScanning()
     }
 }
