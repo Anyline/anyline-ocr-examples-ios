@@ -114,7 +114,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		EiNpjQAe7k+7+BKpUlFr4aBPFzU=
+		/Nwu4M06PvChMEQwAJgJtEnpKZA=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		gsAdVAVh61Mq4MxkfMCsia1hlV0=
+		NNJUfHSn64Y2XkQ53ta0xyClrjE=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -134,19 +134,19 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		ScViIyWjv42OJGsjLQMBl9nHXMo=
+		U+9qWs7n2etsaUE3vTQ5PG43hnI=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		NMjm2FZATjCLJ9qXmN9q0RixRLU=
+		1VmGjDdVmGvPBZPtFhlFrIqxoQ8=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		ScViIyWjv42OJGsjLQMBl9nHXMo=
+		U+9qWs7n2etsaUE3vTQ5PG43hnI=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Xf6w9Sg19tdYCHdmWTJuJtFs6+c=
+		6QpEUGhPqDrOkGL62IGktfT2e1c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -348,7 +348,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gSkDG/NmneErGlKWWSpQYnFnYHH0F+0FBjbHNiyShgk=
+			zl/IROT9VrqHLE7t3gNJLOzeASIoiyjrMELJDlHKT7s=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -376,28 +376,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZzOIyVtL3cJ6BvzuRVNwCtttIRgcZDl5n+EkwzywRRw=
+			FWyFJ/w9tIAR5DMwLhWIqfPqh35ZmSgXy7TjlqrcI84=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SK46DgbO1Olwv/BK23QVRwAd1gZyhYk+3YIbwGVMLXA=
+			xRpNjaljtEZyBmdzamtUagTmdAPOUdNBhacU6mPA3Bc=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZzOIyVtL3cJ6BvzuRVNwCtttIRgcZDl5n+EkwzywRRw=
+			FWyFJ/w9tIAR5DMwLhWIqfPqh35ZmSgXy7TjlqrcI84=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w76hdP/fUI5FX9poNTpjY9EwuyQOkvpkZZMgM8KWK2A=
+			EXPstV6MjyoZkW06QUe1JyFMO8Crl0q/5cHXdE/7WcU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
