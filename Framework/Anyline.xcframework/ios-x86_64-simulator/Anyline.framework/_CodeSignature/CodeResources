@@ -114,7 +114,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		Z0ys+bvlobWI6K0CtW83ZCVKIyc=
+		FkkRoIEzOC2Hgy4WaI/JTP1YW28=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rY63vl7J2GTUt45H7+nU9LoX0to=
+		/wrInfRo4CVo2OuA7O9lmTYhpMY=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -134,19 +134,19 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		9npGzuEt6ZN41cnr2REuAjom3Rc=
+		PEbQow1ZnniraeWf5FBtyBxaO6Q=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		cBynF0wI8gI+bHguMGGlAaxuU/g=
+		edWCs/XE1zRTHdUOxPaqzTi+CSM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9npGzuEt6ZN41cnr2REuAjom3Rc=
+		PEbQow1ZnniraeWf5FBtyBxaO6Q=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		znAsiGo0cGIft3JyGuceALohdM8=
+		wXh3fvEsXeu5C7faCyjt0gMrRac=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -348,7 +348,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oSCn4z0nr/En2Fw5y9BNLD7njFZUoRPMonZ9NWkG7vc=
+			aJf6SBfhLwACOwcUnKh53j5j69HvL4N5xjcBWI8wsIg=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -376,28 +376,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sJMsiP/JWr7MZ5Hs37tiB2iJBQyjxksG5rJyGrN5M28=
+			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uGZRCsFuVTSVcdDV9ECgEG3jk/72jF5ugQgcxZh/bCo=
+			PIubO6ghNFbxkwpigqR5Ff8E4TbHk/EG1XGNBUO3qY4=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sJMsiP/JWr7MZ5Hs37tiB2iJBQyjxksG5rJyGrN5M28=
+			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P/zrMRPN4a6sm3bryW60wHvoKa5he31looOoMaGnZ4M=
+			92bQsiBUnTGu7nwU8qalWTcaM+uSz0hxAhWO9s1k+DU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
