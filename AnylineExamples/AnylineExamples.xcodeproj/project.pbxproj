@@ -11,6 +11,7 @@
 		266DB6F7E906EC53FD26450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC8193CC1CFED4E1E02CCC /* LaunchScreen.storyboard */; };
 		2730BE00D6D741629ADE596B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCF16384E091C60628439E /* main.m */; };
 		73F5EED52D6568BE0088112E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AFA27C535C8800D3E9C9FE /* Images.xcassets */; };
+		7ED503F5CB9977AC56B5E6E5 /* InfoScrollBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5FCBD2CF3601C53A061D3 /* InfoScrollBox.swift */; };
 		81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; };
 		8438165DC2B52ED5F4D88272 /* SimpleScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */; };
 		8A930C3EE3E1C776F550FCD8 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC586CEDE8AD889040B6FF41 /* AnylineResources.bundle */; };
@@ -44,6 +45,7 @@
 		39F9ABE03913260FC8A0151D /* CompositeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeScanViewController.swift; sourceTree = "<group>"; };
 		5520E87DC8AECF2EBE26D372 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Anyline.xcframework; path = ../Framework/Anyline.xcframework; sourceTree = "<group>"; };
+		88E5FCBD2CF3601C53A061D3 /* InfoScrollBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScrollBox.swift; sourceTree = "<group>"; };
 		9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScanViewController.swift; sourceTree = "<group>"; };
 		A1D9E32583A9312C676B518E /* AnylineExamples.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AnylineExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5AFA27C535C8800D3E9C9FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				0CF390571CBF23A9ECE30FB1 /* AppDelegate.swift */,
 				39F9ABE03913260FC8A0151D /* CompositeScanViewController.swift */,
+				88E5FCBD2CF3601C53A061D3 /* InfoScrollBox.swift */,
 				16BFFF13A4D0CCACCA5766AC /* LicenseKey.swift */,
 				CAE6E2B5EAEE623C91E10877 /* PrototypesViewController.swift */,
 				5520E87DC8AECF2EBE26D372 /* ResultViewController.swift */,
@@ -204,6 +207,7 @@
 			files = (
 				AFAAE45195BCC22F3CB9E4E2 /* AppDelegate.swift in Sources */,
 				E1CC80CFC3F84304CB0194A2 /* CompositeScanViewController.swift in Sources */,
+				7ED503F5CB9977AC56B5E6E5 /* InfoScrollBox.swift in Sources */,
 				FD5CEAB6670079EA5E77C614 /* LicenseKey.swift in Sources */,
 				0FB7855ED4D140CFC2C6A345 /* PrototypesViewController.swift in Sources */,
 				F3751367CD901E6D13BEB3C8 /* ResultViewController.swift in Sources */,

@@ -14,6 +14,28 @@ class SimpleScanViewController: UIViewController {
         case configError(msg: String)
     }
 
+    private var configFileName: String
+
+    private var scanView: ALScanView!
+
+    private var scanViewConfigJSONStr: String!
+
+    private var lastResultText: String? {
+        didSet {
+            if lastResultText != nil {
+                showLastResultButton.isEnabled = true
+            }
+        }
+    }
+
+    private var lastResultImage: UIImage?
+
+    private var totalScanned = 0
+
+    private var isCancelOnResult: Bool {
+        return true == scanView.scanViewConfig?.viewPluginConfig?.pluginConfig.cancelOnResult?.boolValue
+    }
+
     private let textView: UITextView = {
         let textView = UITextView(frame: .zero)
         if #available(iOS 13.0, *) {
@@ -22,16 +44,25 @@ class SimpleScanViewController: UIViewController {
         return textView
     }()
 
-    private var configFileName: String
+    private let infoBox: InfoScrollBox = {
+        let infoScrollBox = InfoScrollBox(frame: .zero)
+        infoScrollBox.translatesAutoresizingMaskIntoConstraints = false
+        return infoScrollBox
+    }()
 
-    private var scanView: ALScanView!
-
-    private var scanViewConfigJSONStr: String!
-
-    private let showConfigButton: UIButton = {
+    private let showInfoConfigButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show Config", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 13)
+        button.tintColor = .white
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        return button
+    }()
+
+    private let showLastResultButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Last Result", for: .normal)
+        button.tintColor = .white
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         return button
     }()
 
@@ -68,17 +99,23 @@ class SimpleScanViewController: UIViewController {
             return
         }
 
-        self.addScanView(scanView: self.scanView)
-        self.scanView.startCamera()
+        addScanView(scanView: self.scanView)
 
-        self.addShowConfigButton()
+        scanView.startCamera()
+
+        addInfoBoxAndDismissButton()
+
+        addExtraButtons()
     }
 
     @objc func showConfigButtonTapped() {
-        try? self.scanView.stopScanning()
-        showBigBodyAlert(scanViewConfigJSONStr, title: "Config") { [weak self] _ in
-            try? self?.scanView.startScanning()
-        }
+        try? scanView.stopScanning()
+        showInfoBox(mode: .configuration, text: scanViewConfigJSONStr, image: nil)
+    }
+
+    @objc func showLastResultButtonTapped() {
+        try? scanView.stopScanning()
+        showInfoBox(mode: .result, text: lastResultText, image: lastResultImage)
     }
 
     func setupAnyline(configFileName: String) throws {
@@ -120,25 +157,87 @@ class SimpleScanViewController: UIViewController {
         scanView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 
-    private func addShowConfigButton() {
-        self.view.addSubview(showConfigButton)
-        showConfigButton.translatesAutoresizingMaskIntoConstraints = false
-        showConfigButton.centerXAnchor.constraint(equalTo: scanView.centerXAnchor).isActive = true
-        showConfigButton.bottomAnchor.constraint(equalTo: scanView.bottomAnchor, constant: -25).isActive = true
-        showConfigButton.addTarget(self, action: #selector(showConfigButtonTapped), for: .touchUpInside)
+    private func showInfoBox(mode: InfoScrollBox.Mode, text: String?, image: UIImage?) {
+
+        infoBox.text = text
+        infoBox.images = image != nil ? [ image! ] : []
+        infoBox.visibility = mode
+
+        var showButtons = false
+        switch mode {
+        case .none:
+            showButtons = true
+        default:
+            break
+        }
+
+        showInfoConfigButton.isHidden = !showButtons
+        showLastResultButton.isHidden = !showButtons
+    }
+
+    private func addInfoBoxAndDismissButton() {
+        self.view.addSubview(infoBox)
+
+        NSLayoutConstraint.activate([
+            infoBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            infoBox.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            infoBox.topAnchor.constraint(equalTo: self.view.topAnchor),
+            infoBox.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+
+        infoBox.visibility = .none
+
+        infoBox.scrollBoxVisibilityChanged = { [weak self] scrollBoxVisible in
+            self?.showInfoConfigButton.isHidden = scrollBoxVisible
+            self?.showLastResultButton.isHidden = scrollBoxVisible
+
+            if !scrollBoxVisible {
+                try? self?.scanView.startScanning()
+            }
+        }
+    }
+
+    private func addExtraButtons() {
+        self.view.addSubview(showLastResultButton)
+        showLastResultButton.translatesAutoresizingMaskIntoConstraints = false
+        showLastResultButton.leadingAnchor.constraint(equalTo: scanView.leadingAnchor, constant: 20).isActive = true
+        showLastResultButton.bottomAnchor.constraint(equalTo: scanView.bottomAnchor, constant: -40).isActive = true
+        showLastResultButton.addTarget(self, action: #selector(showLastResultButtonTapped), for: .touchUpInside)
+
+        self.view.addSubview(showInfoConfigButton)
+        showInfoConfigButton.translatesAutoresizingMaskIntoConstraints = false
+        showInfoConfigButton.leadingAnchor.constraint(equalTo: showLastResultButton.trailingAnchor, constant: 25).isActive = true
+        showInfoConfigButton.bottomAnchor.constraint(equalTo: showLastResultButton.bottomAnchor).isActive = true
+        showInfoConfigButton.addTarget(self, action: #selector(showConfigButtonTapped), for: .touchUpInside)
+
+        showLastResultButton.isEnabled = false
     }
 }
 
 extension SimpleScanViewController: ALScanPluginDelegate {
+
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
         print("Scan Result: \(scanResult.resultDictionary)")
 
-        let modalVC = ResultViewController()
-        modalVC.modalPresentationStyle = .overFullScreen
-        modalVC.images = [ scanResult.croppedImage ]
-        modalVC.resultText = scanResult.asJSONStringPretty(true)
-        modalVC.delegate = self
-        present(modalVC, animated: true, completion: nil)
+        let resultString = scanResult.asJSONStringPretty(true)
+
+        lastResultText = resultString
+        lastResultImage = scanResult.croppedImage
+
+        infoBox.text = lastResultText
+        infoBox.images = lastResultImage != nil ? [ lastResultImage! ] : []
+
+        if isCancelOnResult {
+            try? scanView.stopScanning()
+            infoBox.visibility = .result
+        } else {
+            if let barcodes = scanResult.pluginResult.barcodeResult?.barcodes {
+                totalScanned += barcodes.count
+            } else {
+                totalScanned += 1
+            }
+            infoBox.visibility = .resultWithTotals(totalScanned)
+        }
     }
 }
 
@@ -155,45 +254,12 @@ extension SimpleScanViewController: ResultViewControllerDelegate {
     }
 }
 
+
 extension SimpleScanViewController {
 
     private func showErrorAlert(_ message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert: UIAlertController = .init(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(.init(title: "Okay", style: .default, handler: handler))
         self.navigationController?.present(alert, animated: true)
-    }
-
-    private func showBigBodyAlert(_ body: String, title: String, handler: ((UIAlertAction) -> Void)? = nil) {
-        let newLines = String(repeating: "\n", count: 12)
-        let alertController: UIAlertController = .init(title: title, message: newLines, preferredStyle: .alert)
-        alertController.addAction(.init(title: "Okay", style: .default, handler: { [weak alertController] action in
-            alertController?.view.removeObserver(self, forKeyPath: "bounds")
-            handler?(action)
-        }))
-        textView.text = body
-        textView.backgroundColor = .clear
-        textView.textContainerInset = .init(top: 8, left: 5, bottom: 8, right: 5)
-        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        alertController.view.addObserver(self, forKeyPath: "bounds",
-                                         options: NSKeyValueObservingOptions.new,
-                                         context: nil)
-        alertController.view.addSubview(textView)
-        self.navigationController?.present(alertController, animated: true)
-    }
-
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        if keyPath == "bounds" {
-            if let rect = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.cgRectValue {
-                let margin: CGFloat = 8
-                let xPos = rect.origin.x + margin
-                let yPos = rect.origin.y + 54
-                let width = rect.width - 2 * margin
-                let height: CGFloat = rect.size.height - 112
-                textView.frame = CGRect(x: xPos, y: yPos, width: width, height: height)
-            }
-        }
     }
 }

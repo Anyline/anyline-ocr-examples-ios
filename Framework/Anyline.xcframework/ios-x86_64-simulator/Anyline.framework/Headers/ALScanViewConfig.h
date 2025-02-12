@@ -590,7 +590,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALMrzConfig *mrzConfig;
 @property (nonatomic, nullable, strong) ALOcrConfig *ocrConfig;
 @property (nonatomic, nullable, strong) ALOdometerConfig *odometerConfig;
-/// Sets an initial time period where scanned frames are not processed as results.
+/// Sets an initial time period (in milliseconds) where scanned frames are not processed as
+/// results.
 @property (nonatomic, nullable, strong) NSNumber *startScanDelay;
 /// Allows to fine-tune a list of options for plugins.
 @property (nonatomic, nullable, copy)   NSArray<ALStartVariable *> *startVariables;
@@ -1084,6 +1085,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALVinConfig : NSObject
 /// Restricts the scanner to a set of characters to be detected.
 @property (nonatomic, nullable, copy) NSString *charWhitelist;
+/// Setting this to 'true' will enforce checking the check digit and only return results if
+/// it is correct.
+@property (nonatomic, nullable, strong) NSNumber *validateCheckDigit;
 /// Sets a regular expression which the scanned text needs to match in order to trigger a
 /// scan result.
 @property (nonatomic, nullable, copy) NSString *validationRegex;
