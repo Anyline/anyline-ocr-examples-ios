@@ -11,14 +11,14 @@
 	<key>method</key>
 	<string>app-store-connect</string>
 	<key>signingStyle</key>
-	<string>automatic</string>
+	<string>manual</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.anyline.prototypes</key>
-		<string>Anyline Prototypes</string>
+		<string>Anyline Developer Examples (form. Prototypes)</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>iOS Distribution</string>
+	<string>Apple Distribution</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>

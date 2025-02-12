@@ -17,7 +17,7 @@ class PrototypesViewController: UITableViewController {
         backButton.title = "Back"
         self.navigationItem.backBarButtonItem = backButton
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
