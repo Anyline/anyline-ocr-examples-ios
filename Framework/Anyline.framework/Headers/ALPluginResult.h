@@ -130,6 +130,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALTinResult *tinResult;
 @property (nonatomic, nullable, strong) ALTireMakeResult *tireMakeResult;
 @property (nonatomic, nullable, strong) ALTireSizeResult *tireSizeResult;
+/// A unique UUIDv4 generated for each scan controller process run.
+@property (nonatomic, copy)             NSString *transactionID;
 @property (nonatomic, nullable, strong) ALUniversalIDResult *universalIDResult;
 @property (nonatomic, nullable, strong) ALVehicleRegistrationCertificateResult *vehicleRegistrationCertificateResult;
 @property (nonatomic, nullable, strong) ALVinResult *vinResult;
