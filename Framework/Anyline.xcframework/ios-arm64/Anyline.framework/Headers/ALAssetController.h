@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#import "ALAssetDelegate.h"
+#import <Anyline/ALAssetDelegate.h>
 #import "ALAssetContext.h"
 
 NS_ASSUME_NONNULL_BEGIN

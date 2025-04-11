@@ -5,7 +5,13 @@ class PrototypesViewController: UITableViewController {
     
     // List of dictionaries with fileName and scanViewConfig
     private var configLists: [[String: Any]] = []
-    
+
+    // These configs use a different view controller to demo the barcode overlays feature.
+    private var barcodeOverlaysConfigs: [String] = [
+        "barcode_config_overlays.json",
+        "barcode_config_overlays_visualfeedback.json",
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,16 +59,21 @@ class PrototypesViewController: UITableViewController {
         }
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         let configDetails = configLists[indexPath.row]
         if let fileName = configDetails["fileName"] as? String, let scanViewConfig = configDetails["scanViewConfig"] as? ALScanViewConfig {
             var viewController: UIViewController!
-            if scanViewConfig.viewPluginCompositeConfig != nil {
-                viewController = CompositeScanViewController(configFileName: fileName)
+
+            if barcodeOverlaysConfigs.contains(fileName) {
+                viewController = BarcodeOverlayScanViewController(configFileName: fileName)
             } else {
-                viewController = SimpleScanViewController(configFileName: fileName)
+                if scanViewConfig.viewPluginCompositeConfig != nil {
+                    viewController = CompositeScanViewController(configFileName: fileName)
+                } else {
+                    viewController = SimpleScanViewController(configFileName: fileName)
+                }
             }
             self.navigationController?.pushViewController(viewController, animated: true)
         }
