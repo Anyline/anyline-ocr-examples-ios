@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "ALScanViewPlugin.h"
-#import "ALScanViewConfig.h"
+#import <Anyline/ALScanViewPlugin.h>
+#import "ALBarcodeOverlayCallbacks.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -187,6 +187,26 @@ NS_ASSUME_NONNULL_BEGIN
 /// Stops scanning. If `viewPlugin` is nil, an error object is thrown.
 /// - Parameter error: error object containing the reason for the error
 - (BOOL)stopScanningWithError:(NSError * _Nullable * _Nullable)error;
+
+/// When barcode results are produced with continuous scanning mode, use the block to
+/// start showing overlays on top of barcodes detected on the Scan View. In the provided
+/// block, create and return views (enclosed with an `ALBarcodeOverlayViewComponent`)
+/// which will correspond to one barcode scanned by Anyline.
+/// - Parameter block: a block where an ALBarcode is the parameter, and an array of
+/// ALBarcodeOverlayViewComponent as the return value.
+- (void)enableBarcodeOverlays:(ALBarcodeOverlayCreateBlock)block
+                  updateBlock:(ALBarcodeOverlayUpdateBlock _Nullable)updateBlock
+                  deleteBlock:(ALBarcodeOverlayDeleteBlock _Nullable)deleteBlock;
+
+- (void)enableBarcodeOverlays:(ALBarcodeOverlayCreateBlock)block;
+
+/// Set how long a barcode overlay object can persist on a screen after its last update.
+/// After the expiry period, the barcode overlay is marked for disposal. The default value
+/// is 1s, and allowable values range from 0.5 to 5.
+- (void)setBarcodeOverlayExpiryLength:(NSTimeInterval)seconds;
+
+/// Stop showing overlays on barcode results.
+- (void)disableBarcodeOverlays;
 
 @end
 

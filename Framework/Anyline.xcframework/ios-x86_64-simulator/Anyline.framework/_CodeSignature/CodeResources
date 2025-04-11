@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/ALAssetController.h</key>
 		<data>
-		KbeiJA/gB750Mpz6IUbDbVsjdyw=
+		wDKRcthNsoMJtzWT6n45GTiNKJ0=
 		</data>
 		<key>Headers/ALAssetDelegate.h</key>
 		<data>
@@ -24,6 +24,14 @@
 		<data>
 		8GTXXP3pKqIz1F4YjRKZSOtUTa4=
 		</data>
+		<key>Headers/ALBarcodeOverlayCallbacks.h</key>
+		<data>
+		eBVheG0+1sVFaXDihdB+iHdWruM=
+		</data>
+		<key>Headers/ALBarcodeOverlayView.h</key>
+		<data>
+		vllQr9Y5PotCp6Mz7aZIzUWVnJY=
+		</data>
 		<key>Headers/ALBarcodeTypes.h</key>
 		<data>
 		XsttT0YFHJ0UbKGGe3mK9VwHhDk=
@@ -31,6 +39,10 @@
 		<key>Headers/ALCacheConfig.h</key>
 		<data>
 		2znrJu4QrNGQ21IF+H70i8ZKAcE=
+		</data>
+		<key>Headers/ALDetectedBarcode.h</key>
+		<data>
+		PCI+NF7O0jLAubLd3aUIJXpwzaM=
 		</data>
 		<key>Headers/ALError.h</key>
 		<data>
@@ -56,13 +68,17 @@
 		<data>
 		v8Ky04qX4nJJwk08eRJTHdCZlcI=
 		</data>
+		<key>Headers/ALOverlayConfig+Extras.h</key>
+		<data>
+		u6iwWkF+9ie2kDze21Wtovuqx44=
+		</data>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<data>
-		crDFwsXsGclcUqo15+GGcftUIKo=
+		kFgHTsKVySbZGx0jRqno44fEn9w=
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
-		F4JLuwFqOeElS98+xQOAtmYzbsU=
+		vs35U0AqFphRifJYxjxHwGsJAgY=
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
@@ -74,7 +90,7 @@
 		</data>
 		<key>Headers/ALScanView.h</key>
 		<data>
-		kJOP/zh2c7vzw1XTtODrf+XC/Qw=
+		Jbu152G6ZTGYXvjooAedPpAYUYA=
 		</data>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
 		<data>
@@ -82,7 +98,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		QMzWuKRWFSqMA0Uf1QyS2vT5RA8=
+		cQUadnK6yqe67hrOX/bVYvmE9H4=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -114,11 +130,11 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		di4e+Gbyk66vWvsQapaR0zkf400=
+		FkkRoIEzOC2Hgy4WaI/JTP1YW28=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		Sw3P+nRYXMW/0yNONfIquK6xC64=
+		x0Xv//EjNw0UIRrfxmQpeAeluSg=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -126,31 +142,287 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9E1b6GvaoQ7joHbF1U81vsm2Byk=
+		+7YWf2d/dYSqHdZqT44DBSdp5Y4=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		o0S7nk0k0Eko1JMXPcPlRnvUDcQ=
+		oOP2RQhV+LG45tlWgjXtLC5PosM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		ngAUhJAvKs0spb5v11mOgQiBV0k=
+		PEbQow1ZnniraeWf5FBtyBxaO6Q=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		XyfbPKkeeNe35xD1tgvQoYQwQec=
+		edWCs/XE1zRTHdUOxPaqzTi+CSM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ngAUhJAvKs0spb5v11mOgQiBV0k=
+		PEbQow1ZnniraeWf5FBtyBxaO6Q=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qtfTs2A8GMX0QCqk/kpXBxj0hO8=
+		1lyRh2tdBDgd/kW682d33pdAQks=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		w7nqVYGg5v674TnWiO9VKdDFDkA=
+		</data>
+		<key>PrivateHeaders/ALAppEnvironment.h</key>
+		<data>
+		4mtq75jIPjzDsyk7pfG8OqeFShk=
+		</data>
+		<key>PrivateHeaders/ALAssetDelegate+CPPWrapper.h</key>
+		<data>
+		z8EHLYBlN/dcUUgpWWhTnZAI9VY=
+		</data>
+		<key>PrivateHeaders/ALBarcodeOverlayContainerView.h</key>
+		<data>
+		sVhgJx57eX/gmsn4Lo5Nhg7+OVk=
+		</data>
+		<key>PrivateHeaders/ALBarcodeOverlayLayoutGuide.h</key>
+		<data>
+		eIAT6eV8YXNs52ITYF70WU6Vpyc=
+		</data>
+		<key>PrivateHeaders/ALBarcodeOverlayView+Constraints.h</key>
+		<data>
+		9M9kaeLrE7kUe7KwjK/owPH8NXY=
+		</data>
+		<key>PrivateHeaders/ALBarcodeOverlayView+Private.h</key>
+		<data>
+		XpjpQWy6pGKeY43/qTsLI+utYPs=
+		</data>
+		<key>PrivateHeaders/ALCacheUtils.h</key>
+		<data>
+		5ElcNQtQzO+HMmKlL8+ChPenrq4=
+		</data>
+		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
+		<data>
+		WhdkoZlgsgHQcUybZJA2uLDgtmo=
+		</data>
+		<key>PrivateHeaders/ALCorePluginCallback.h</key>
+		<data>
+		KHz9o6d8oj3Qpbt15DLpOjzfMLY=
+		</data>
+		<key>PrivateHeaders/ALCoreScanController.h</key>
+		<data>
+		TkhGUqg62VXSlCk+XhUr638CEgU=
+		</data>
+		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
+		<data>
+		cn2DU/5Dv7NXHLZUOvnrwxoVRPg=
+		</data>
+		<key>PrivateHeaders/ALErrorManager.h</key>
+		<data>
+		MbZXE/t314KTR4L70GV2HY/tNSw=
+		</data>
+		<key>PrivateHeaders/ALEventProvider.h</key>
+		<data>
+		54AnJt9T7JgBcPb3keBWfs79HUY=
+		</data>
+		<key>PrivateHeaders/ALFlashButton.h</key>
+		<data>
+		X5gTkZjR2AX3GoZasayHF3pXCb4=
+		</data>
+		<key>PrivateHeaders/ALFlashConfig+PrivateExtras.h</key>
+		<data>
+		nUT0osTv/g4FcS3vabAD6LYddY0=
+		</data>
+		<key>PrivateHeaders/ALFrameworkBundle.h</key>
+		<data>
+		+VfFOR7wKKQS4MaMmHzFOEkKFBo=
+		</data>
+		<key>PrivateHeaders/ALGeometry.h</key>
+		<data>
+		NZKHbiSZKzeU+VLYNs9/nkNCVUs=
+		</data>
+		<key>PrivateHeaders/ALImageProvider.h</key>
+		<data>
+		L7hI19AYFu5tphqX4NWdsCJFfaY=
+		</data>
+		<key>PrivateHeaders/ALImageProviding.h</key>
+		<data>
+		O/lKJ9iJqFPsNm4ZCFvslpQCfIo=
+		</data>
+		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
+		<data>
+		NeW9Fnq3Rf9Hu6+p3xnwfKC76QE=
+		</data>
+		<key>PrivateHeaders/ALJSONUtilities+PrivateExtras.h</key>
+		<data>
+		4tvGFDLhTOfdrg1WAGL9kqpt74A=
+		</data>
+		<key>PrivateHeaders/ALLicenseProvider.h</key>
+		<data>
+		tiu+BPVzlkXjQV1o8XTwT31vMqY=
+		</data>
+		<key>PrivateHeaders/ALLicenseUtil+Private.h</key>
+		<data>
+		eSpMF04/xooiTXAhpicNcV+zvR8=
+		</data>
+		<key>PrivateHeaders/ALModuleConsts.h</key>
+		<data>
+		0E/zK98J28XjMFr5yOp02EGp0m8=
+		</data>
+		<key>PrivateHeaders/ALMotionDetector.h</key>
+		<data>
+		v6wMQ981SwFdXVAZOwnk8SuUyPY=
+		</data>
+		<key>PrivateHeaders/ALNetworkConditionMonitor.hpp</key>
+		<data>
+		Zyend0oD1V6tPhMY64X1z0tALu4=
+		</data>
+		<key>PrivateHeaders/ALNetworkImplementation.hpp</key>
+		<data>
+		Ad8+ChPzJ96ewbtzlGKfo7qx/9I=
+		</data>
+		<key>PrivateHeaders/ALNetworkProvider.hpp</key>
+		<data>
+		T5NZ75u4cU9JEARUDpX7yJ6zDhI=
+		</data>
+		<key>PrivateHeaders/ALOverlayConfig+PrivateExtras.h</key>
+		<data>
+		UnOn9jYhb+wdtts6W0I0vVOMQ1w=
+		</data>
+		<key>PrivateHeaders/ALScanFeedback.h</key>
+		<data>
+		P4v1c8fyrv1zOdyOUFd/S6WfuOA=
+		</data>
+		<key>PrivateHeaders/ALScanFeedbackNativeView.h</key>
+		<data>
+		0c59D01hByQ8a+bD0i2kjLoC9WQ=
+		</data>
+		<key>PrivateHeaders/ALScanFeedbackViewFactory.h</key>
+		<data>
+		nVDq/Gal2+Qm5BgEY/gSTqqaI9M=
+		</data>
+		<key>PrivateHeaders/ALScanPlugin+Private.h</key>
+		<data>
+		PZHEeAdUVXpUjVWHXKY2Wv8nFZk=
+		</data>
+		<key>PrivateHeaders/ALScanResult+Private.h</key>
+		<data>
+		rwJC7FdSvgIZ3qyCEf7SC+DqTz0=
+		</data>
+		<key>PrivateHeaders/ALScanView+Private.h</key>
+		<data>
+		BTfr+Wzb86/GVvu7q8kZvVe2Mek=
+		</data>
+		<key>PrivateHeaders/ALScanViewConfig+Defaults.h</key>
+		<data>
+		Iph/Pc0JktD5Q0VXignQVwaJogs=
+		</data>
+		<key>PrivateHeaders/ALScanViewConfig+PrivateExtras.h</key>
+		<data>
+		Kqu46j2lCLwUXfgmnvg9qatYbUw=
+		</data>
+		<key>PrivateHeaders/ALScanViewPlugin+Private.h</key>
+		<data>
+		XC6w8z72gpzbi92Iu0881UZx+vE=
+		</data>
+		<key>PrivateHeaders/ALScanViewPluginConfig+Private.h</key>
+		<data>
+		y297gkHtGPnR3/zkVkfau3NIdV0=
+		</data>
+		<key>PrivateHeaders/ALStagingNetworkImplementation.hpp</key>
+		<data>
+		IK8LyTMphWkXZt+r6GyQ6398ikI=
+		</data>
+		<key>PrivateHeaders/ALStagingNetworkProvider.hpp</key>
+		<data>
+		LXXQc9PFDncPV0uVThDWLE5W82U=
+		</data>
+		<key>PrivateHeaders/ALTorchManager.h</key>
+		<data>
+		bEcYIYoxL4tegvvxrBMeYRGr33M=
+		</data>
+		<key>PrivateHeaders/ALTranslationHelper.h</key>
+		<data>
+		xXUic1VmyimCfihrs39gWs08BJc=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Copying.h</key>
+		<data>
+		d2Koib02Znj7E7C+majSkdd5L0Y=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Debugging.h</key>
+		<data>
+		RTBjH89XkoQwM4fIUJPZVgydo2s=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackConfig+JSONExtras.h</key>
+		<data>
+		DfOvtdc3cqQJKiWrICG3sA07eCs=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Merging.h</key>
+		<data>
+		AjvrC+H6T1xXBJdZ4PLwM7tcskg=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackConfig+PresetHelper.h</key>
+		<data>
+		KxAkqL7a6q/gQEzMUAQ23aGlIb8=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackContainerView.h</key>
+		<data>
+		5hM3CHjVOkNWubmk8mp+o++c4x8=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackElement.h</key>
+		<data>
+		UnHmKFYJirjO8Tgwn61B4gJ44pQ=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackElementConfig+PrivateExtras.h</key>
+		<data>
+		rMedBX7aKTnam18Jh83bHpKY2xM=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackElementContentConfig+PrivateExtras.h</key>
+		<data>
+		aXq/8ruAymKpsrsZU3kLYvlhnuI=
+		</data>
+		<key>PrivateHeaders/ALUIFeedbackTypes.h</key>
+		<data>
+		14aiTgpstx1VRmmM6AUAEnzaO1Q=
+		</data>
+		<key>PrivateHeaders/ALViewConstants.h</key>
+		<data>
+		nHrbEm0xuXMORtikHwrqRXv+Fp4=
+		</data>
+		<key>PrivateHeaders/ALViewPluginComposite+Private.h</key>
+		<data>
+		/rE8EUbNok3PKp8/pIlvxZIw0vE=
+		</data>
+		<key>PrivateHeaders/ALWatermarkView.h</key>
+		<data>
+		IG1SQLodXDybWrT70ofsFk81n+w=
+		</data>
+		<key>PrivateHeaders/ALZoomHelper.h</key>
+		<data>
+		yBt0sF+ep5fTVUu7CvU2+HyIJcc=
+		</data>
+		<key>PrivateHeaders/AnylineSDK+Private.hpp</key>
+		<data>
+		s8EfOXVZzgqU8Kd/IrB35Z6uwpI=
+		</data>
+		<key>PrivateHeaders/NSError+CPPWrapper.h</key>
+		<data>
+		fApbaQGQmf0qSitRpEhHpCUeqgQ=
+		</data>
+		<key>PrivateHeaders/NSString+ALExtensions.h</key>
+		<data>
+		6nGRQadZFCJARllmT7lXQqcZe+g=
+		</data>
+		<key>PrivateHeaders/NSString+Utilities.h</key>
+		<data>
+		8AYBWV5/G1D45mIpxemm17hyE3w=
+		</data>
+		<key>PrivateHeaders/UIColor+ALHexColors.h</key>
+		<data>
+		2rEvFC+eXp5RfGWOV/UIHmkLE6k=
+		</data>
+		<key>PrivateHeaders/UIView+ALUIFeedbackVisualElement.h</key>
+		<data>
+		/frL2C8NBQsNV5K8bb5xNaO288Q=
+		</data>
+		<key>PrivateHeaders/UIWindow+ALExtensions.h</key>
+		<data>
+		j23Ao+HeIItLFDQ3Adjoo0pT+F0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -166,7 +438,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2/pgQEOaLKZ9yyJi0puwYjQFiKE/8y9U321EC6q32wA=
+			gFw9zcBNXWHqksys74WATQYUAazD2jI4UFIBtCnSev4=
 			</data>
 		</dict>
 		<key>Headers/ALAssetDelegate.h</key>
@@ -190,6 +462,20 @@
 			RkZ9MUeIOOGRXeNuZNU39XgKCAhk7EQNPocVuB4D3ho=
 			</data>
 		</dict>
+		<key>Headers/ALBarcodeOverlayCallbacks.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mm0Cwg/hPz+E93f74qD7rljGbxCEERcYKe6GxdY8rTc=
+			</data>
+		</dict>
+		<key>Headers/ALBarcodeOverlayView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			H8GeDADbPyEWiBN2Pty8kAPxWhaAWI6fFr655OIg/2U=
+			</data>
+		</dict>
 		<key>Headers/ALBarcodeTypes.h</key>
 		<dict>
 			<key>hash2</key>
@@ -202,6 +488,13 @@
 			<key>hash2</key>
 			<data>
 			YXygp/TyVcG1wG3B+Joa/BevT1po8rSBtduX9CYJ/yc=
+			</data>
+		</dict>
+		<key>Headers/ALDetectedBarcode.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Cg84VVHRkQEqxG5sz5omK/PyJS2l+GxmpTDupC4uh6E=
 			</data>
 		</dict>
 		<key>Headers/ALError.h</key>
@@ -246,18 +539,25 @@
 			N2IYM7xihWI3/nA4pyCICJxOz0eLqn9/l0GU1y68P/E=
 			</data>
 		</dict>
+		<key>Headers/ALOverlayConfig+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+euwpK8gLRMZP8DKFuC/hbugiXg3gkHXznhsXLQ3ryY=
+			</data>
+		</dict>
 		<key>Headers/ALPluginResult+Extras.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UTkeB++cui3oGhLtOxlP0KKd+wdKRpEhj56nR5Mj84s=
+			IuhjlJIsCHq3wvvZon8Q5d5YdlEya+qgixWmVzI1MUg=
 			</data>
 		</dict>
 		<key>Headers/ALPluginResult.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JQSLQvLPnKLFGHlMvhTgV4WVh5t1QlwDNTUj0Z3ryLg=
+			fK5u5T6U9sKTujBu0u4Tvu2zz7Kyj9GOkFzGE/UaB1A=
 			</data>
 		</dict>
 		<key>Headers/ALScanPlugin.h</key>
@@ -278,7 +578,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fjyIkIDjRTU4hMEHY/sof0+YOSbMxP42MdUcfD4TMO0=
+			7QrOcJ+acDH/WwJRFKu2P+n9hii3BZxWzyxhgiVQ0ic=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
@@ -292,7 +592,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qd2pPfY6hVj3FKzaU3VYE4kgCfqPKgBeZ9sZytFm2EQ=
+			7WT/iU1bgkmVlAw5DSkzMhb2U697Lw7fAW+Qhoxki9o=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -348,14 +648,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FapC3ooKYEy6WEMI3MrdfVY4rS5QSLPkFUsEEf7xOvA=
+			aJf6SBfhLwACOwcUnKh53j5j69HvL4N5xjcBWI8wsIg=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aGSNaOydgGYahxeXZ0Eu/QbxwdTG31yxqQVaqLr5RU8=
+			OuQuNtSQbsLRRnsYP7YSScnvCxQnqKT8ZVAQIv8h7HI=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>
@@ -369,35 +669,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9HwJHZuT1qE1/7uE4tVj74QyjTMO+iPiJOjdT6lk/0M=
+			j8gG77NydRZvlqETrAtNQAVw1OlThP6p1bkjtDPc8FA=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Khh3U0DRn1GFCmygxf7UV/EWpO56k2FciPgmfw052d0=
+			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OiLvaW5bkYAktApGj/3KU1tgDMN+Q4lXKw9ayEXGz1o=
+			PIubO6ghNFbxkwpigqR5Ff8E4TbHk/EG1XGNBUO3qY4=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Khh3U0DRn1GFCmygxf7UV/EWpO56k2FciPgmfw052d0=
+			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MxTtbFx8tl1LyTAqHCnyIrnZPkLa161NQsgMWR63omE=
+			MFFZRYZUuEw2QhN+8bTQY2PbMhMdgRhLGScLmeBjZpY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -405,6 +705,454 @@
 			<key>hash2</key>
 			<data>
 			nl9W9jK1lOLkK5gEy9PwohF2G+HXrz+hYDOEiG2duNs=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALAppEnvironment.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vFBNGbYm/kDz3kcun5tqFR+dxzMKNWOILTBgYy4nK+o=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALAssetDelegate+CPPWrapper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7lTyxz3FxFAlHMCklCTzm1VGX1xabbf/Bs6q3X3VLbk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALBarcodeOverlayContainerView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9mGrkCrs7+deaKv3GZ/I7BeDZ7/4obTnepwSufTGxnQ=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALBarcodeOverlayLayoutGuide.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ivjo0Iu28KF2JH8bdTZvJggd3JA2WSiJZEGFlex6Gbs=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALBarcodeOverlayView+Constraints.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			a34U5I26Qdx8l1dWUr7h8VpA69ujQDGz42ckse0FdOM=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALBarcodeOverlayView+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xK1IsvUTQgZzSZFA5p1pliE5aQ15l5illmh0BRFrUU0=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALCacheUtils.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yKYgNLzSVubbwB5sOrE5L2lIZ1J/OULE58ptCnkgeks=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Z0INHIe1G3dGsxMZ3Pwv6Mv4Ib+8gLfjbSoCA0mVEAo=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALCorePluginCallback.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			23FpfAawHzNPexOcYdcQPb8ITaw0MUEEaEhZ4wCAU2M=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALCoreScanController.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UvXMvGpX2fkWjJJwb2WXblXJIHeLlOi74MszQ8gElP8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7ySAw/8SsArrmTJnpG8SxvHebaz+kiYZF2MnOlgtLc8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALErrorManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vPSGQQYktLQOWh9yk1vAERi6/OyzqRiy0J+F9KyVj7w=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALEventProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HqtaNA+9I+3Y7LwMcy4Dgqv43d+EUZEDg3nTqxaycvY=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALFlashButton.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Inw+XLsU1S/TWA2LHmZG9iml/b4PO30GO+83b0i1OOc=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALFlashConfig+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bPjJ4e8aQ2gy6qjIa+koY3xuxv1gfmYf9bB4S5Ppb6w=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALFrameworkBundle.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Jrmn11n6QdoRglsCC/Ofzsx3hFsxyWB0DsMgbVLqacU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALGeometry.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6zX43BUQejWyzO2Z6Yhx2Z8P6zeFexB+dfv4P8HtJbM=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALImageProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			02MCujieWn3inf6OU80ZJy8GIa+FHI613XyVsGkuthI=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALImageProviding.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k+8y3Bq3MStaSZ2ZVVTqtxX4cWdnYEpmHQ+BEzArrrE=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gJYfmDv53ro/tQAmdYDI+n7hw3Ggh46s8Rdkj21HCZ8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALJSONUtilities+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			II5HhTZYAJWIhc9pBsdVxdTDylHj0tfpELPxLDuCEDY=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALLicenseProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9fLikU6JnUHSVjW92PQnsFrPdTKTyKlfBmLKXeOKDAg=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALLicenseUtil+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vaj8E04u275z1IqDVMT9Ob6xkia0tSTVXZBzbascFJM=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALModuleConsts.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3nHYHcAHuFy9klVbrfObmax9A57lwhOhRpqS5tQwEH8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALMotionDetector.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			izGe0sQk3F3KxHK0bjLB9PxGXjYRO60PW4dksv/0vp4=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALNetworkConditionMonitor.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8NgwLx2hw6Zu7r13TRIYIaRLuiIP3HfYuo3QQTjtcJs=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALNetworkImplementation.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wRdSE0+I4SLs2ugG1+cN6IHWrObO5ldMed/hySok88k=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALNetworkProvider.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mWkanP4G7yymZQvIAO6uumW+d4hlk82LKpbEQPSrzgk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALOverlayConfig+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RuPehe3DrV5pawA8HQUeKpqbSvTREhzUDiB8TS1NdEo=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanFeedback.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wAPmL2jyxgcQ6ujb7FDVlYumrwO7O4LgaSS6R2+rk2s=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanFeedbackNativeView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gO0wkvpTugxR4kOyNU9uwouGD+f5+2MagZwUF27dlb8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanFeedbackViewFactory.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			R7UFhaqVl/uE/pEjfHCjmg+Gtup7SHI6/yAlZgK3vC8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanPlugin+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tUiMxrQFy34O+tPZIHZsLxTIFdaMVvzavBJBwDC46dE=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanResult+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ynPYKJSRnJS7QwLACCFT7ouMfYBTGFRTf3/Cvm8n12o=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanView+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qtNZAGW529qPQ2eQhDxk7wBO4GMddAuZeYMK9ciO3j0=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanViewConfig+Defaults.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FrI1fqzZOAHjQTqGhPRI2o4qFNvcP0uvKD7dZbjGQ8o=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanViewConfig+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZVAUB94EqhGKFG3zYO9kKkYGtkisrXpM+A58zsA/ivg=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanViewPlugin+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XmC2Ka3iHdUVCluo7MVqPtJPHEu/4p+HGQUKhRgPFBQ=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALScanViewPluginConfig+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Dbqugn6Du+sG6hs6+tXY2AM926psep12MW7XfVgR7lI=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALStagingNetworkImplementation.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HVxyt0Mh4nM4PuVFBbe1ovaWJJYpUCErfHYkdAyY578=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALStagingNetworkProvider.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yDonhPnDMZelVu/MqOX+K4EJrrcfixds//3ddqPM49o=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALTorchManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8qWkxZYnVLgt8QF+nJx/4nfuvhjXOrkNkYZysI+M8V8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALTranslationHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YUDdPi5dHhxn1CaPsJdNZ91tGV6reAjDTq0dFFlzn0Y=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Copying.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wh4dGbdLRQL3p9FZQnaz1CYiA8xcs5oDmAeUm3GMd3E=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Debugging.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k0rVbb0z5WovVxgnD2GnzT0BFLqOa9kfcgWYHtUVAIw=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackConfig+JSONExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PEzpvHy0D4xGcdwj1ErENfYktMiU7YZH9miLY7bl4sA=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackConfig+Merging.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gg1DfIGZ1Ff9+9NfCFlrIraixV4EgTHWljYlKZW5xok=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackConfig+PresetHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g9PJM9w82Ap7V7oqwql2IMspKi/KKhKT4XIkL6ZbSto=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackContainerView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XeBgFbZR3kSoRu1L+kmCQPTlLlhnTZkggEl3hzO5ajc=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackElement.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vF9bwg2PPQqwY/nw5UBsKwWAhGIy9Ti0Qq0x0ywi5Gw=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackElementConfig+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BsO5Igdi1OxI70zGCz9Em2/t1zMsT1Ihr1CQ2sz2ZlY=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackElementContentConfig+PrivateExtras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XgILH6iN3x2EyOh205QZW4tNUuZm5oCFKONpYbQLZPw=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALUIFeedbackTypes.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HFTC5DksgMGUKx4mHORsonJ7tCZYeIlBPB2xAvgDOvU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALViewConstants.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JZ+J/AHjiUV5lTPZTPlfp2+abXVU8qeQIZIOZMt24t0=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALViewPluginComposite+Private.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5GHBuu3rTlx54GX0/w1WbVmMMXL+sCLSuA8Rlv0mJXU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALWatermarkView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SMYcIzCM9z+IW8AdNJN2kMzStPpOmH5ad3gNi3I7nKk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALZoomHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5X9uO1sskj8QuZtIWEzvnAKVBd/kgBQmwe646BmkQkU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/AnylineSDK+Private.hpp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uTK5kd7Um2Lmr6wN97aKVpEy80zbXfyl+VQ3cD8EMQ0=
+			</data>
+		</dict>
+		<key>PrivateHeaders/NSError+CPPWrapper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hNpe40kURBHFbZGqBaXB7NQOwmKpKOtlOdaa4GPtcAA=
+			</data>
+		</dict>
+		<key>PrivateHeaders/NSString+ALExtensions.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BZjlc2cDXTOPIibz7VJ8thKXMG/lvbUaDbYNejCIUqU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/NSString+Utilities.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ad/NZ9tEuZRjOrxbCLBuhEaDxldimQWuQaiUwl3piV8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/UIColor+ALHexColors.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kbHLfcgiSVmLwNjJnVATY2dReMEl8yDE3yvABJQ54SE=
+			</data>
+		</dict>
+		<key>PrivateHeaders/UIView+ALUIFeedbackVisualElement.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LO7v3V5zlF308/xhmB7pE6C9YrF0P5djAHEvBE+fGJE=
+			</data>
+		</dict>
+		<key>PrivateHeaders/UIWindow+ALExtensions.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZBCD7S11Y4P69xrTINOC7vFRmeK2iGcwwr9sZ1cD8QA=
 			</data>
 		</dict>
 	</dict>

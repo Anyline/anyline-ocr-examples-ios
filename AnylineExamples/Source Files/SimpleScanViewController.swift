@@ -179,9 +179,9 @@ class SimpleScanViewController: UIViewController {
         self.view.addSubview(infoBox)
 
         NSLayoutConstraint.activate([
-            infoBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            infoBox.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            infoBox.topAnchor.constraint(equalTo: self.view.topAnchor),
+            infoBox.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            infoBox.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            infoBox.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             infoBox.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
         ])
 
@@ -217,9 +217,8 @@ class SimpleScanViewController: UIViewController {
 extension SimpleScanViewController: ALScanPluginDelegate {
 
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
-        print("Scan Result: \(scanResult.resultDictionary)")
-
         let resultString = scanResult.asJSONStringPretty(true)
+        print("Scan Result: \(resultString)")
 
         lastResultText = resultString
         lastResultImage = scanResult.croppedImage
@@ -233,14 +232,14 @@ extension SimpleScanViewController: ALScanPluginDelegate {
         } else {
             if let barcodes = scanResult.pluginResult.barcodeResult?.barcodes {
                 totalScanned += barcodes.count
+                print("\(barcodes.count) barcodes")
             } else {
                 totalScanned += 1
             }
-            infoBox.visibility = .resultWithTotals(totalScanned)
+            infoBox.visibility = .resultWithText("Total: \(totalScanned) results")
         }
     }
 }
-
 
 extension SimpleScanViewController: ResultViewControllerDelegate {
 
@@ -253,7 +252,6 @@ extension SimpleScanViewController: ResultViewControllerDelegate {
         try? self.scanView.startScanning()
     }
 }
-
 
 extension SimpleScanViewController {
 

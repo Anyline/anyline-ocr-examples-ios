@@ -231,6 +231,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (ALLicensePlateConfigScanMode *)belgium;
 + (ALLicensePlateConfigScanMode *)bosniaandherzegovina;
 + (ALLicensePlateConfigScanMode *)bulgaria;
++ (ALLicensePlateConfigScanMode *)canada;
 + (ALLicensePlateConfigScanMode *)croatia;
 + (ALLicensePlateConfigScanMode *)cyprus;
 + (ALLicensePlateConfigScanMode *)czech;

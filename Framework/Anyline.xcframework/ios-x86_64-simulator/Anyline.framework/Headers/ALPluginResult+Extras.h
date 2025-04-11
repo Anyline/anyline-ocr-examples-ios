@@ -35,14 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype _Nullable)initWithJSONDictionary:(NSDictionary *)JSONDictionary
                                            error:(NSError * _Nullable * _Nullable)error;
 
-/// Returns an ordered list of field objects pre-selected from the scan results, each a
-/// dictionary which contains the scanned value, the field name and its human-readable version.
-/// The list of fields included are based on what we believe are the most commonly-used;
-/// they are not guaranteed to remain the same with each release. The complete list of fields
-/// obtained from a scan can be found from the `XXXResult` property corresponding to your plugin
-/// use case (eg `meterResult`, `ocrResult`, etc).
-- (NSArray<NSDictionary<NSString *, NSString *> *> *)fieldList;
-
 @end
 
 NS_ASSUME_NONNULL_END

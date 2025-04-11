@@ -1,0 +1,57 @@
+{
+  "scanViewConfigDescription": "Beta functionality: Optimized for demonstrating overlay + visual feedback feature for scanning of multiple barcodes simultaneously. All formats enabled.",
+  "cameraConfig": {
+    "captureResolution": "1080p"
+  },
+  "flashConfig": {
+    "mode": "auto",
+    "alignment": "bottom_right"
+  },
+  "viewPluginConfig": {
+    "pluginConfig": {
+      "id": "Barcode|Barcodes",
+      "barcodeConfig": {
+        "barcodeFormats": [
+          "ALL"
+        ],
+        "parseAAMVA": true,
+        "multiBarcode": true
+      },
+      "cancelOnResult": false
+    },
+    "cutoutConfig": {
+      "maxWidthPercent": "90%",
+      "maxHeightPercent": "85%",
+      "alignment": "center",
+      "strokeWidth": 3,
+      "cornerRadius": 2,
+      "strokeColor": "FFFFFF",
+      "outerColor": "000000",
+      "outerAlpha": 0.5,
+      "feedbackStrokeColor": "0099FF"
+    },
+    "scanFeedbackConfig": {
+      "style": "rect",
+      "strokeWidth": 2,
+      "strokeColor": "3C3C43",
+      "fillColor": "223C3C43",
+      "animationDuration": 150,
+      "blinkAnimationOnResult": false,
+      "beepOnResult": false,
+      "vibrateOnResult": false
+    },
+    "uiFeedbackConfig": {
+      "presets": [
+        {
+          "presetName": "simple_instruction_label",
+          "presetAttributes": [
+            {
+              "attributeName": "instruction_text",
+              "attributeValue": "Tap on a barcode to select it, tap again to unselect"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
