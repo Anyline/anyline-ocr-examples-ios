@@ -5,13 +5,6 @@ class PrototypesViewController: UITableViewController {
     
     // List of dictionaries with fileName and scanViewConfig
     private var configLists: [[String: Any]] = []
-
-    // These configs use a different view controller to demo the barcode overlays feature.
-    private var barcodeOverlaysConfigs: [String] = [
-        "barcode_config_overlays.json",
-        "barcode_config_overlays_visualfeedback.json",
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +16,7 @@ class PrototypesViewController: UITableViewController {
         backButton.title = "Back"
         self.navigationItem.backBarButtonItem = backButton
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -31,7 +24,7 @@ class PrototypesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         configLists.count
     }
-
+    
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -51,7 +44,7 @@ class PrototypesViewController: UITableViewController {
         
         let configDetails = configLists[indexPath.row]
         if let fileName = configDetails["fileName"] as? String, let scanViewConfig = configDetails["scanViewConfig"] as? ALScanViewConfig {
-            cell.imageView?.image = UIImage.init(named: "ic_file")
+            cell.imageView?.image = UIImage(named: "ic_file")
             cell.textLabel?.text = fileName
             cell.textLabel?.numberOfLines = 0
             cell.detailTextLabel?.text = scanViewConfig.scanViewConfigDescription
@@ -59,26 +52,40 @@ class PrototypesViewController: UITableViewController {
         }
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         let configDetails = configLists[indexPath.row]
         if let fileName = configDetails["fileName"] as? String, let scanViewConfig = configDetails["scanViewConfig"] as? ALScanViewConfig {
             var viewController: UIViewController!
 
-            if barcodeOverlaysConfigs.contains(fileName) {
+            let useOverlays = useOverlayUI(config: scanViewConfig)
+            let isComposite = scanViewConfig.viewPluginCompositeConfig != nil
+
+            // use overlays UI with these configs
+            if useOverlays {
                 viewController = BarcodeOverlayScanViewController(configFileName: fileName)
             } else {
-                if scanViewConfig.viewPluginCompositeConfig != nil {
+                if isComposite {
                     viewController = CompositeScanViewController(configFileName: fileName)
                 } else {
                     viewController = SimpleScanViewController(configFileName: fileName)
                 }
             }
+            print("loaded: \(fileName) - \(useOverlays ? "overlays" : (isComposite ? "composite": "simple"))")
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
+    private func useOverlayUI(config: ALScanViewConfig) -> Bool {
+        // plugin id contains "overlay"
+        if let id = config.viewPluginConfig?.pluginConfig.identifier {
+            let idComponents = id.components(separatedBy: "_").map { $0.lowercased() }
+            if idComponents.contains("overlay") {
+                return true
+            }
+        }
+        return false
+    }
     func loadConfigs() {
         let paths = Bundle.main.paths(forResourcesOfType: ".json", inDirectory: "AnylineConfigs.bundle")
         var configDetail: [String:Any] = [:]

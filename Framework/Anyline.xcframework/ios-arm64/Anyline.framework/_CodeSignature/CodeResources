@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/ALImage.h</key>
 		<data>
-		M5HvP9WOb80/Aieb2RLQm07kEP8=
+		ZKv4qPPoE9nrXj1GCw3bV6D+rxk=
 		</data>
 		<key>Headers/ALInitParams+Extras.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
-		vs35U0AqFphRifJYxjxHwGsJAgY=
+		BcWpzqkqwHQg7yUqL70ISAhkIwM=
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/ALScanView.h</key>
 		<data>
-		Jbu152G6ZTGYXvjooAedPpAYUYA=
+		WdDX5xBgKGpygnB+DnXDoDRSoxA=
 		</data>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		cQUadnK6yqe67hrOX/bVYvmE9H4=
+		3k71+ga/hgYE2JetzUVPtV13Clc=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Headers/ALScanViewPlugin.h</key>
 		<data>
-		xwZ5eJkwcRdUVV7XxTl8KAsHRPw=
+		Wip1PPVQvFfuVaMcROz6qm5O9HY=
 		</data>
 		<key>Headers/ALScanViewPluginFactory.h</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Headers/ALViewPluginBase.h</key>
 		<data>
-		kvrVF9tIHKWFdCv2QhwqR5WUvcE=
+		C2a2wrC6ZLmDarhabrGQg+dZxq8=
 		</data>
 		<key>Headers/ALViewPluginComposite.h</key>
 		<data>
-		/w60G14MCcNetrUJBK2jwUuX1Tk=
+		4uS6aHACqMbN3CVLedERdMavocE=
 		</data>
 		<key>Headers/ALWrapperConfig.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2kyr6ZaZRiMHkt4O58YTrl7j8r4=
+		kYyzxQIEVjnN/O5AllYkjmdhX64=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -198,19 +198,19 @@
 		</data>
 		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
 		<data>
-		WhdkoZlgsgHQcUybZJA2uLDgtmo=
+		r3ij4nxcbZtu15e+hS6PabWiJXY=
 		</data>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
 		<data>
-		KHz9o6d8oj3Qpbt15DLpOjzfMLY=
+		/3ZKHHblyvNVaO3ZMUE+PUyQKZQ=
 		</data>
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<data>
-		TkhGUqg62VXSlCk+XhUr638CEgU=
+		AufjdExNQ6SuabuCu5n751enQ54=
 		</data>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<data>
-		cn2DU/5Dv7NXHLZUOvnrwxoVRPg=
+		qv6eJ+WHyKBITb/oA7/Fl2tauRI=
 		</data>
 		<key>PrivateHeaders/ALErrorManager.h</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>PrivateHeaders/ALFrameworkBundle.h</key>
 		<data>
-		+VfFOR7wKKQS4MaMmHzFOEkKFBo=
+		5e/QV4geEfZEpxcpaYI3J8Km1To=
 		</data>
 		<key>PrivateHeaders/ALGeometry.h</key>
 		<data>
@@ -238,11 +238,11 @@
 		</data>
 		<key>PrivateHeaders/ALImageProvider.h</key>
 		<data>
-		L7hI19AYFu5tphqX4NWdsCJFfaY=
+		FN+3+fJsHhyUfW2RVKjzrM2Ek3M=
 		</data>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<data>
-		O/lKJ9iJqFPsNm4ZCFvslpQCfIo=
+		Nd//JpjXhS9uh7vtH4T1x2zZNJM=
 		</data>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
 		<data>
@@ -298,7 +298,7 @@
 		</data>
 		<key>PrivateHeaders/ALScanPlugin+Private.h</key>
 		<data>
-		PZHEeAdUVXpUjVWHXKY2Wv8nFZk=
+		akj6C0L//3XdNUjhx+gOZLTMJJA=
 		</data>
 		<key>PrivateHeaders/ALScanResult+Private.h</key>
 		<data>
@@ -515,7 +515,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5/VLTrOlrV3u2AINCgEN9weB6p0NB0yPhCsOVXzjdH0=
+			+vPL40Yt4VvKxETcbyMvIZ00lK3brZ6RdRTwVQxd4+0=
 			</data>
 		</dict>
 		<key>Headers/ALInitParams+Extras.h</key>
@@ -557,7 +557,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fK5u5T6U9sKTujBu0u4Tvu2zz7Kyj9GOkFzGE/UaB1A=
+			OooNtRtYkYLekuhUCQYVN9jTm+A83ZOBnR/T2jYtN2A=
 			</data>
 		</dict>
 		<key>Headers/ALScanPlugin.h</key>
@@ -578,7 +578,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7QrOcJ+acDH/WwJRFKu2P+n9hii3BZxWzyxhgiVQ0ic=
+			iD4CRVi3t6nLZQZawS52YwCnET0dTTXFiP0UpuSLuWk=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewConfig+Extras.h</key>
@@ -592,7 +592,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7WT/iU1bgkmVlAw5DSkzMhb2U697Lw7fAW+Qhoxki9o=
+			t3l0pJfYiflwxgPm9DLI7utyswHlAQSfLSR7ZdXuH7o=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -613,7 +613,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZwTj2BEjLi8T20HQD/yhgOHK4DJV0D1WjO1BCSczSnI=
+			DKZWVoXNO2HBIiZBPvG023OZTvqLA9Vh0SYbFCXmlcQ=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewPluginFactory.h</key>
@@ -627,14 +627,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2Ksr6mTzJ30xDdt/gbLPbsiIq34fPnTLJVuGQApL8qs=
+			7pMtNxeQFSvOHdjdi1QTMipx/AwDkBexfJuOe+4CoiQ=
 			</data>
 		</dict>
 		<key>Headers/ALViewPluginComposite.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AstMTtWeMHnD4OwY+8F1mBGET3zpIqySN3MjbVVb1YA=
+			c/5AqYyliRxZpYyDkUMN1k2VBsAi7Y8RIbmRQayN0TM=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperConfig.h</key>
@@ -760,28 +760,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z0INHIe1G3dGsxMZ3Pwv6Mv4Ib+8gLfjbSoCA0mVEAo=
+			ZBmPGBRum8Flr7wx9Tgy6LQ5ElXk8sLhN6udWsSGmkM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			23FpfAawHzNPexOcYdcQPb8ITaw0MUEEaEhZ4wCAU2M=
+			ej3xROP5RcHHNPjppyDv2wNQj67m/7wHX7+IfXpZYpE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UvXMvGpX2fkWjJJwb2WXblXJIHeLlOi74MszQ8gElP8=
+			7R42VaxAcMkHSnwF/u61HDW11rN72I3bBwOFk/DOdjY=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7ySAw/8SsArrmTJnpG8SxvHebaz+kiYZF2MnOlgtLc8=
+			EZTSPZfnj675uSTdfNyo7N61rSvy3stdddEHUuHh1LA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALErrorManager.h</key>
@@ -816,7 +816,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jrmn11n6QdoRglsCC/Ofzsx3hFsxyWB0DsMgbVLqacU=
+			lfJdM7EqnT1GiLE6ekDnXZidJ0TLSqMy3UrOg0snPFk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALGeometry.h</key>
@@ -830,14 +830,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			02MCujieWn3inf6OU80ZJy8GIa+FHI613XyVsGkuthI=
+			u10ab6E8N/oxFLu8mSnqZYYnKaqFFWPAGK40CV6WEu8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k+8y3Bq3MStaSZ2ZVVTqtxX4cWdnYEpmHQ+BEzArrrE=
+			V1MK5d468UhvEg1vnOBtEHzMjKcCo4fG8csQK9NWZuA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
@@ -935,7 +935,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tUiMxrQFy34O+tPZIHZsLxTIFdaMVvzavBJBwDC46dE=
+			VB3a6L1741Jcn4yvcy+DL3vA1PdPWocuRUb0LLXQdoQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALScanResult+Private.h</key>

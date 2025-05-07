@@ -23,6 +23,7 @@
 @class ALFieldConfidences;
 @class ALOcrResult;
 @class ALOdometerResult;
+@class ALPerformanceMetrics;
 @class ALTinResult;
 @class ALTireMakeResult;
 @class ALTireSizeResult;
@@ -133,6 +134,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALMrzResult *mrzResult;
 @property (nonatomic, nullable, strong) ALOcrResult *ocrResult;
 @property (nonatomic, nullable, strong) ALOdometerResult *odometerResult;
+/// representing time measurements for different parts of the process.
+@property (nonatomic, nullable, strong) ALPerformanceMetrics *performanceMetrics;
 /// The ID of the ScanPlugin that processed the result
 @property (nonatomic, copy)             NSString *pluginID;
 @property (nonatomic, nullable, strong) ALTinResult *tinResult;
@@ -389,6 +392,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALOdometerResult : NSObject
 /// The odometer value.
 @property (nonatomic, copy) NSString *value;
+@end
+
+/// representing time measurements for different parts of the process.
+@interface ALPerformanceMetrics : NSObject
+/// The total duration of the scan controller process, in milliseconds
+@property (nonatomic, nullable, strong) NSNumber *scanControllerProcessInMS;
 @end
 
 /// Describes result information of scanning tire identification numbers (TIN)

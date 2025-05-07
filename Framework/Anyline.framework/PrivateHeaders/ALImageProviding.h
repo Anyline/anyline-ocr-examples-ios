@@ -13,10 +13,7 @@ typedef void (^NewImageBlock)(ALImage * _Nullable image, UIInterfaceOrientation 
 
 - (void)unsubscribeFromNewImages:(id _Nonnull)subscriber;
 
-/// Control whether the next captured frame is passed to AnylineCore's image processor in a new run loop.
-/// When processing needs to stop this needs to be called with the parameter set to NO.
-/// - Parameter allow: boolean indicating whether the frame is passed to AnylineCore.
-- (void)allowNextFrameProcessing:(BOOL)allow;
+@property (nonatomic, assign) BOOL shouldDropFrames;
 
 @end
 

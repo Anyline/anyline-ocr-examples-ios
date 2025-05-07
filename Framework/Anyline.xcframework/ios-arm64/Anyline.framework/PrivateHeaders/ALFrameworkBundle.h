@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)buildNumber;
 + (NSString *)bundleIdentifier;
 
++ (UIImage * _Nullable)imageWithName:(NSString *)imageName;
+
 @end
 
 NS_ASSUME_NONNULL_END

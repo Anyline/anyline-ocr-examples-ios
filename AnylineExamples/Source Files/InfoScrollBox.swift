@@ -8,12 +8,13 @@ class InfoScrollBox: UIView {
 
     struct Constants {
         static let imageLabelHeight = CGFloat(20)
+        static let imageViewMaxWidth = CGFloat(280)
         static let imageViewMaxHeight = CGFloat(220)
         static let textViewLabelHeight = CGFloat(20)
         static let textViewHeight = CGFloat(700)
         static let margin = CGFloat(10)
         static let margin2x = CGFloat(20)
-        static let infoBoxHeightResult: CGFloat = 240 //480
+        static let infoBoxHeightResult: CGFloat = 480
         static let infoBoxHeightConfig: CGFloat = 680
     }
 
@@ -41,7 +42,7 @@ class InfoScrollBox: UIView {
             }
         }
     }
-
+    
     var infoString: String? = nil {
         didSet {
             extraTextLabel.isHidden = infoString == nil
@@ -53,8 +54,10 @@ class InfoScrollBox: UIView {
 
     var scrollBoxVisibilityChanged: ((Bool) -> Void)?
 
-    private let containerView = UIView()
+    let containerView = UIView()
+    
     private var infoBoxYConstraint: NSLayoutConstraint!
+    
     private var infoBoxHeightConstraint: NSLayoutConstraint!
 
     private var isConfig: Bool = true {
@@ -72,7 +75,7 @@ class InfoScrollBox: UIView {
     }
 
     private lazy var dismissButton: UIButton = {
-        let button = UIButton()
+        let button = ButtonWithInsets()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(.init(named: "dismiss-btn")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white
@@ -99,7 +102,7 @@ class InfoScrollBox: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-
+    
     private let extraTextLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
@@ -202,9 +205,10 @@ class InfoScrollBox: UIView {
 
         NSLayoutConstraint.activate([
             extraTextLabel.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 10),
-            extraTextLabel.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0),
+            extraTextLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            collectionView.topAnchor.constraint(greaterThanOrEqualTo: containerView.topAnchor),
             collectionView.topAnchor.constraint(equalTo: containerView.topAnchor),
             collectionViewHeightConstraint,
             spacer1.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
@@ -338,7 +342,7 @@ extension InfoScrollBox: UICollectionViewDataSource, UICollectionViewDelegate, U
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.imageViewMaxHeight, height: Constants.imageViewMaxHeight)
+        return CGSize(width: Constants.imageViewMaxWidth, height: Constants.imageViewMaxHeight)
     }
 }
 
@@ -359,8 +363,8 @@ internal class ImageCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
 

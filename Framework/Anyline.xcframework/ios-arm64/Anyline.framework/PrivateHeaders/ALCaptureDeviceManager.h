@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import "ALImage.h"
 
 @class ALCameraConfig;
 @class ALImageProvider;
@@ -13,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALCaptureDeviceManager : NSObject
 
 - (instancetype _Nullable)initWithCameraConfig:(ALCameraConfig *)cameraConfig
-                                    videoQueue:(dispatch_queue_t _Nullable)videoQueue;
+                                    videoQueue:(dispatch_queue_t _Nullable)videoQueue
+                             outputColorFormat:(ALColorFormat)outputColorFormat;
 
 /// The native barcode recognition delegate. Implement this delegate to receive barcodes
 /// results during scanning.
@@ -35,9 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) CGSize cameraResolution;
 
-@property (nonatomic, readonly) BOOL isFrontCamera;
+@property (nonatomic, readonly) BOOL usesFrontCamera;
 
 @property (nonatomic, assign) CGFloat zoomLevel;
+
+@property (nonatomic, readonly) ALColorFormat outputColorFormat;
 
 // MARK: - Manage session
 

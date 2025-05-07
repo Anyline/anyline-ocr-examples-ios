@@ -12,10 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) ALRect *ROI;
 
-@property (nonatomic, strong) ALImage *lastImageProcessed;
-
-- (void)processImage:(ALImage *)image orientation:(UIInterfaceOrientation)orientation
-       isFrontCamera:(BOOL)isFrontCamera;
+- (void)processImage:(ALImage *)image
+         orientation:(UIInterfaceOrientation)orientation
+        flipPortrait:(BOOL)flipPortrait;
 
 - (void)cancel;
 

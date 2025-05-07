@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)onRunSkipped:(NSString *)runSkippedJSON;
 
-- (void)onResult:(ALImage *)image result:(NSString *)resultJSON;
+- (void)onResult:(NSString *)resultJSON;
 
 @end
 
