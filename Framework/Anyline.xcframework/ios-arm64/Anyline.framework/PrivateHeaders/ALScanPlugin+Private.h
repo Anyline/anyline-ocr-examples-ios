@@ -14,12 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 @class ALPluginConfig;
 @class ALCoreScanController;
 
+typedef NS_ENUM(NSInteger, ScanPluginState) {
+    ScanPluginStateStopped,
+    ScanPluginStateStarted,
+    ScanPluginStatePaused
+};
 
 @interface ALScanPlugin ()
 
 @property (nonatomic, readonly) id<ALCorePluginCallback> _Nullable corePluginCallback;
 
 @property (nonatomic, readonly) NSString * _Nullable assetPath;
+
+@property (nonatomic, readonly) ScanPluginState currentState;
 
 /// Object delivering the images to be processed by the scanner
 @property (nonatomic, strong) id<ALImageProviding> imageProvider;
@@ -33,8 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) id<ALEventProviding> scanRunSkipped;
 
 @property (nonatomic, strong) id<ALEventProviding> resultReceived;
-
-@property (nonatomic, strong) id<ALEventProviding> lastImageProcessed;
 
 @property (nonatomic, strong) id<ALEventProviding> scanStarted;
 
@@ -65,7 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addReportingValues:(NSString * _Nullable)reportingValues;
 
+- (void)pause;
 
+- (void)resume;
 
 @end
 

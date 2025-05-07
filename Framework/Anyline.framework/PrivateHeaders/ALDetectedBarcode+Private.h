@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGRect)toEnclosingRectWithTranslate:(CGPoint (^)(CGPoint))translate
                           growByFactor:(CGFloat)factor;
 
+- (void)copyCoordinatesFromBarcode:(ALDetectedBarcode *)otherBarcode;
+
 @end
 
 

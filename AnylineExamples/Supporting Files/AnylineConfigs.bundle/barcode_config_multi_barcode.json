@@ -9,8 +9,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Barcode|Barcodes",
+      "id": "barcode_multi",
       "barcodeConfig": {
+        "fastProcessMode": true,
         "barcodeFormats": [
           "ALL"
         ],
@@ -23,9 +24,8 @@
       "style": "rect",
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
-      "animationDuration": 150,
-      "blinkAnimationOnResult": true,
-      "beepOnResult": true,
+      "blinkAnimationOnResult": false,
+      "beepOnResult": false,
       "vibrateOnResult": false
     }
   }

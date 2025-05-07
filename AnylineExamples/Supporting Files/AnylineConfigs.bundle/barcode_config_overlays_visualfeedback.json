@@ -1,16 +1,15 @@
 {
-  "scanViewConfigDescription": "Beta functionality: Optimized for demonstrating overlay + visual feedback feature for scanning of multiple barcodes simultaneously. All formats enabled.",
+  "scanViewConfigDescription": "Optimized for demonstrating overlay + visual feedback feature for scanning of multiple barcodes simultaneously. All formats enabled.",
   "cameraConfig": {
-    "captureResolution": "1080p"
-  },
-  "flashConfig": {
-    "mode": "auto",
-    "alignment": "bottom_right"
+    "captureResolution": "1080p",
+    "zoomGesture": true,
+    "maxZoomRatio": 20
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Barcode|Barcodes",
+      "id": "barcode_overlay_visualfeedback",
       "barcodeConfig": {
+        "fastProcessMode": true,
         "barcodeFormats": [
           "ALL"
         ],
@@ -22,6 +21,10 @@
     "cutoutConfig": {
       "maxWidthPercent": "90%",
       "maxHeightPercent": "85%",
+      "ratioFromSize": {
+        "width": 100,
+        "height": 80
+      },
       "alignment": "center",
       "strokeWidth": 3,
       "cornerRadius": 2,

@@ -188,6 +188,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter error: error object containing the reason for the error
 - (BOOL)stopScanningWithError:(NSError * _Nullable * _Nullable)error;
 
+/// Stops sending the input frames for processing, when running. Call `-resume` or `-start` to
+/// resume sending frames.
+- (void)pause;
+
+/// Resumes sending frames for processing, when previously paused. Otherwise, calling this does not do
+/// anything.
+- (void)resume;
+
 /// When barcode results are produced with continuous scanning mode, use the block to
 /// start showing overlays on top of barcodes detected on the Scan View. In the provided
 /// block, create and return views (enclosed with an `ALBarcodeOverlayViewComponent`)

@@ -34,6 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// Stops the plugin
 - (void)stop;
 
+/// Stops sending the input frames for processing, when running. Call `-resume` or `-start` to
+/// resume sending frames. Note that when paused, `isStarted` will still be true.
+- (void)pause;
+
+/// Resumes sending frames for processing, when previously paused. Otherwise, calling this does not do
+/// anything.
+- (void)resume;
+
+
 /// Children of the scan view plugin, if any
 @property (nonatomic, readonly) NSArray<NSObject<ALViewPluginBase> *> *children;
 

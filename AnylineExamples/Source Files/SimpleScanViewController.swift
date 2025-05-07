@@ -7,6 +7,9 @@ import Anyline
 /// ALScanViewPlugin and ALScanView.
 ///
 /// NOTE: the value of `cancelOnResult` in config is ignored. Each result causes the plugin to stop.
+///
+///
+///
 class SimpleScanViewController: UIViewController {
 
     // Some special error types.
@@ -72,6 +75,10 @@ class SimpleScanViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    deinit {
+        print("dealloc SimpleScanViewController")
+    }
+
     init() {
         fatalError("call init with configFilename instead")
     }
@@ -82,7 +89,10 @@ class SimpleScanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationName = Notification.Name("kNotificationCameraResolutionNotSupported")
 
+        NotificationCenter.default.addObserver(self, selector: #selector(showCameraResolutionSupportToast), name: notificationName, object: nil)
+        
         do {
             try setupAnyline(configFileName: configFileName)
         } catch {
@@ -107,7 +117,22 @@ class SimpleScanViewController: UIViewController {
 
         addExtraButtons()
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        infoBox.visibility = .collapsed
+    }
 
+    @objc func showCameraResolutionSupportToast(notification: Notification) {
+        DispatchQueue.main.async {
+            if let presetName = notification.userInfo?["AVCaptureSessionPreset"] as? String {
+                let supportedResolution = presetName.replacingOccurrences(of: "AVCaptureSessionPreset", with: "")
+                let message = "Expected camera resolution not available.\nUsing \(supportedResolution) instead."
+                self.showToast(message: message, font: .systemFont(ofSize: 14.0))
+            }
+        }
+    }
+    
     @objc func showConfigButtonTapped() {
         try? scanView.stopScanning()
         showInfoBox(mode: .configuration, text: scanViewConfigJSONStr, image: nil)
@@ -217,8 +242,10 @@ class SimpleScanViewController: UIViewController {
 extension SimpleScanViewController: ALScanPluginDelegate {
 
     func scanPlugin(_ scanPlugin: ALScanPlugin, resultReceived scanResult: ALScanResult) {
+        // print("Scan Result: \(scanResult.resultDictionary)")
+
         let resultString = scanResult.asJSONStringPretty(true)
-        print("Scan Result: \(resultString)")
+        // print("Scan Result: \(resultString)")
 
         lastResultText = resultString
         lastResultImage = scanResult.croppedImage
@@ -232,11 +259,10 @@ extension SimpleScanViewController: ALScanPluginDelegate {
         } else {
             if let barcodes = scanResult.pluginResult.barcodeResult?.barcodes {
                 totalScanned += barcodes.count
-                print("\(barcodes.count) barcodes")
+                infoBox.visibility = .resultWithText("Total scanned: \(totalScanned)")
             } else {
                 totalScanned += 1
             }
-            infoBox.visibility = .resultWithText("Total: \(totalScanned) results")
         }
     }
 }
@@ -250,14 +276,5 @@ extension SimpleScanViewController: ResultViewControllerDelegate {
             return
         }
         try? self.scanView.startScanning()
-    }
-}
-
-extension SimpleScanViewController {
-
-    private func showErrorAlert(_ message: String, handler: ((UIAlertAction) -> Void)? = nil) {
-        let alert: UIAlertController = .init(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Okay", style: .default, handler: handler))
-        self.navigationController?.present(alert, animated: true)
     }
 }

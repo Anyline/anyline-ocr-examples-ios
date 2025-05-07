@@ -452,10 +452,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Schema for SDK Camera Configuration
 @interface ALCameraConfig : NSObject
-/// The preferred resolution for video capture (720, 720p, 1080, 1080p). This resolution is
-/// used to process images for scanning.
+/// The preferred resolution for video capture (720p, 1080p, 4K). This resolution is used to
+/// process images for scanning. 4K resolution is only supported for barcode scanning.
 @property (nonatomic, copy) NSString *captureResolution;
-/// The preferred camera of the device (FRONT, BACK, EXTERNAL, EXTERNAL_FRONT).
+/// Preferred camera to open: FRONT (front-facing), BACK (rear-facing), EXTERNAL (external
+/// rear), EXTERNAL_FRONT (external front), TELE (iOS-only; requests the telephoto lens and
+/// is honored only on devices that have one; on Android or on iOS devices without a tele
+/// lens BACK will be used).
 @property (nonatomic, nullable, copy) NSString *defaultCamera;
 /// Optional cameras to fall back if the defaultCamera is not found.
 @property (nonatomic, nullable, copy) NSArray<NSString *> *fallbackCameras;
@@ -465,7 +468,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *maxFocalLength;
 /// The maximum zoom ratio.
 @property (nonatomic, nullable, strong) NSNumber *maxZoomRatio;
-/// The preferred resolution for taking images (720, 720p, 1080, 1080p).
+/// Deprecated - do not use! The preferred resolution for taking images (720, 720p, 1080,
+/// 1080p).
 @property (nonatomic, nullable, copy) NSString *pictureResolution;
 /// This flag enables or disables the zoom gesture if supported.
 @property (nonatomic, nullable, strong) NSNumber *zoomGesture;
@@ -582,6 +586,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// Sets whether or not to continue scanning once a result is found.
 @property (nonatomic, nullable, strong) NSNumber *cancelOnResult;
 @property (nonatomic, nullable, strong) ALCommercialTireIDConfig *commercialTireIDConfig;
+/// This option allows to finetune the handling results of the same content when scanning
+/// continuously. If the option is set to -1, equal results will not be reported again until
+/// the scanning process is stopped. Setting this option to 0 will report equal results every
+/// time it is found. Setting this option to greater than 0 indicates how much time
+/// (milliseconds) must pass by not detecting the result before it will be detected again.
+/// (This feature is currently only supported in Barcode scanning)
+@property (nonatomic, nullable, strong) NSNumber *consecutiveEqualResultFilter;
 @property (nonatomic, nullable, strong) ALContainerConfig *containerConfig;
 /// Sets a name for the scan plugin.
 @property (nonatomic, copy)             NSString *identifier;
@@ -609,11 +620,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// Set this to filter which barcode formats should be scanned. Setting 'ALL' will enable
 /// scanning all supported formats.
 @property (nonatomic, copy) NSArray<ALBarcodeFormat *> *barcodeFormats;
-/// If this option is set, allows consecutive barcode results of the same barcode when
-/// scanning continuously.
+/// [DEPRECATED] If this option is set, allows consecutive barcode results of the same
+/// barcode when scanning continuously.
 @property (nonatomic, nullable, strong) NSNumber *consecutiveEqualResults;
 /// Sets whether or not to disable advanced barcode scanning even if the license supports it.
 @property (nonatomic, nullable, strong) NSNumber *disableAdvancedBarcode;
+/// If this option is set, uses faster image processing for barcode scanning. Note:
+/// fastProcessMode is not available during composite scanning.
+@property (nonatomic, nullable, strong) NSNumber *fastProcessMode;
 /// Setting this to 'true' will enable reading multiple barcodes per frame.
 @property (nonatomic, nullable, strong) NSNumber *multiBarcode;
 /// If this option is set, barcodes parsed according to the AAMVA standard. This only works

@@ -11,11 +11,13 @@
 		266DB6F7E906EC53FD26450B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC8193CC1CFED4E1E02CCC /* LaunchScreen.storyboard */; };
 		2730BE00D6D741629ADE596B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCF16384E091C60628439E /* main.m */; };
 		73F5EED52D6568BE0088112E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AFA27C535C8800D3E9C9FE /* Images.xcassets */; };
+		79E7E969DE2AB8F6E4B2BB7B /* UIViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6478B1D28371A4163F2011 /* UIViewController+Utilities.swift */; };
 		7ED503F5CB9977AC56B5E6E5 /* InfoScrollBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5FCBD2CF3601C53A061D3 /* InfoScrollBox.swift */; };
 		81F2A082BFB556E51C85E783 /* Anyline.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; };
 		8438165DC2B52ED5F4D88272 /* SimpleScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */; };
 		8A930C3EE3E1C776F550FCD8 /* AnylineResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC586CEDE8AD889040B6FF41 /* AnylineResources.bundle */; };
 		8C8A73AC925EDDE8F11D3B28 /* AnylineConfigs.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DC06BAB5093ABA7506EAC294 /* AnylineConfigs.bundle */; };
+		961DC57203B28DB2299B9818 /* PerformanceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965A66C104FC89829BF3759 /* PerformanceTracking.swift */; };
 		99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFAAE45195BCC22F3CB9E4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF390571CBF23A9ECE30FB1 /* AppDelegate.swift */; };
 		E1CC80CFC3F84304CB0194A2 /* CompositeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9ABE03913260FC8A0151D /* CompositeScanViewController.swift */; };
@@ -50,6 +52,7 @@
 		8CF96BB7B38B3B3013607B83 /* BarcodeOverlayScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeOverlayScanViewController.swift; sourceTree = "<group>"; };
 		9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScanViewController.swift; sourceTree = "<group>"; };
 		A1D9E32583A9312C676B518E /* AnylineExamples.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AnylineExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A965A66C104FC89829BF3759 /* PerformanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTracking.swift; sourceTree = "<group>"; };
 		B5AFA27C535C8800D3E9C9FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8DCF16384E091C60628439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAE6E2B5EAEE623C91E10877 /* PrototypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypesViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		DC06BAB5093ABA7506EAC294 /* AnylineConfigs.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = AnylineConfigs.bundle; sourceTree = "<group>"; };
 		F5603519874EF9EA0619F872 /* AnylinePrototypes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnylinePrototypes.entitlements; sourceTree = "<group>"; };
 		F80FBE3585C8F48AB6F4EFAA /* AnylineLiveTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnylineLiveTest-Prefix.pch"; sourceTree = "<group>"; };
+		FA6478B1D28371A4163F2011 /* UIViewController+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +91,11 @@
 				39F9ABE03913260FC8A0151D /* CompositeScanViewController.swift */,
 				88E5FCBD2CF3601C53A061D3 /* InfoScrollBox.swift */,
 				16BFFF13A4D0CCACCA5766AC /* LicenseKey.swift */,
+				A965A66C104FC89829BF3759 /* PerformanceTracking.swift */,
 				CAE6E2B5EAEE623C91E10877 /* PrototypesViewController.swift */,
 				5520E87DC8AECF2EBE26D372 /* ResultViewController.swift */,
 				9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */,
+				FA6478B1D28371A4163F2011 /* UIViewController+Utilities.swift */,
 			);
 			name = Source;
 			path = "Source Files";
@@ -213,9 +219,11 @@
 				E1CC80CFC3F84304CB0194A2 /* CompositeScanViewController.swift in Sources */,
 				7ED503F5CB9977AC56B5E6E5 /* InfoScrollBox.swift in Sources */,
 				FD5CEAB6670079EA5E77C614 /* LicenseKey.swift in Sources */,
+				961DC57203B28DB2299B9818 /* PerformanceTracking.swift in Sources */,
 				0FB7855ED4D140CFC2C6A345 /* PrototypesViewController.swift in Sources */,
 				F3751367CD901E6D13BEB3C8 /* ResultViewController.swift in Sources */,
 				8438165DC2B52ED5F4D88272 /* SimpleScanViewController.swift in Sources */,
+				79E7E969DE2AB8F6E4B2BB7B /* UIViewController+Utilities.swift in Sources */,
 				2730BE00D6D741629ADE596B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

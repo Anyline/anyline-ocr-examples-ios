@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) dispatch_queue_t videoQueue;
 
+@property (nonatomic, assign) BOOL shouldDropFrames;
+
 @end
 
 NS_ASSUME_NONNULL_END

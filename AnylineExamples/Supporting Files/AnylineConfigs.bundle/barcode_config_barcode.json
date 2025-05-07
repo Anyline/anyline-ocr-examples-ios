@@ -9,14 +9,15 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Barcode|Barcodes",
+      "id": "barcode",
       "barcodeConfig": {
+        "fastProcessMode": true,
         "barcodeFormats": [
           "ALL"
         ],
         "parseAAMVA": true
       },
-      "cancelOnResult": false
+      "cancelOnResult": true
     },
     "cutoutConfig": {
       "maxWidthPercent": "80%",
