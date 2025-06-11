@@ -54,6 +54,20 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return the `ALScanResult` object
 + (ALScanResult * _Nullable)withScanResultEvent:(ALEvent *)event;
 
+/// Report Corrected Result
+- (NSString * _Nullable)reportCorrectedResult:(NSString *)correctedResult
+                                        error:(NSError * _Nullable * _Nullable)error;
+
+/// Report Corrected Result with ApiKey
+- (NSString * _Nullable)reportCorrectedResult:(NSString *)correctedResult
+                                       apiKey:(NSString * _Nullable)apiKey
+                                        error:(NSError * _Nullable * _Nullable)error;
+
+/// Report Corrected Result from BlobKey
++ (NSString * _Nullable)reportCorrectedResultFromBlobKey:(NSString *)blobKey
+                                         correctedResult:(NSString *)correctedResult
+                                                  apiKey:(NSString * _Nullable)apiKey
+                                                   error:(NSError * _Nullable * _Nullable)error;
 @end
 
 NS_ASSUME_NONNULL_END
