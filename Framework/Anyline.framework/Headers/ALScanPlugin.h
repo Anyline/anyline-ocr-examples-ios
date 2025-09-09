@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class ALImageProvider;
 @class ALScanResult;
 @class ALEvent;
+@class ALImage;
 
 /// Object which takes image frames and scans them with the configured plugin
 @interface ALScanPlugin : NSObject
@@ -35,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// The "region of interest" within the image frame where the plugin is to be
 /// told to look for objects to be scanned
 @property (nonatomic, assign) CGRect ROI;
+
+/// The last image processed from Core, if any. Can be null, if no image was processed.
+@property (nonatomic, strong, nullable) ALImage *lastProcessedImage;
 
 /// Initializes a scan plugin given a JSON config data
 /// object (which encodes the string form of the config).

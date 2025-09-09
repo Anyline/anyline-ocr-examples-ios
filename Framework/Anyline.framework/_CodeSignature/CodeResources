@@ -52,9 +52,29 @@
 		<data>
 		xI2ufrsnKpKHQqP56B2JjiKBptQ=
 		</data>
+		<key>Headers/ALExportedScanResult+Extras.h</key>
+		<data>
+		oe+8IKeixjXtkghOPnRh3g6X6Fc=
+		</data>
+		<key>Headers/ALExportedScanResult.h</key>
+		<data>
+		fm3n6AnZvM0wFi/997ZWPYf2gtA=
+		</data>
+		<key>Headers/ALExportedScanResultImageContainer+Extras.h</key>
+		<data>
+		1ARhip0/Ly04n55oAgcAQ/Q7od4=
+		</data>
+		<key>Headers/ALExportedScanResultImageParameters+Extras.h</key>
+		<data>
+		IXcqXfGbCdp4V6TEcVpGiHGgRtA=
+		</data>
+		<key>Headers/ALExportedScanResultList+Extras.h</key>
+		<data>
+		aWCTyT4sY5P6Ak+3Qh04qJuzCDQ=
+		</data>
 		<key>Headers/ALImage.h</key>
 		<data>
-		ZKv4qPPoE9nrXj1GCw3bV6D+rxk=
+		zUoeKn7zGsFdoM+Mz67dEMobPKw=
 		</data>
 		<key>Headers/ALInitParams+Extras.h</key>
 		<data>
@@ -63,6 +83,10 @@
 		<key>Headers/ALJSONUtilities.h</key>
 		<data>
 		nV4K+uWnm6JNYxaoqdpPRqdSc0A=
+		</data>
+		<key>Headers/ALLegacyPluginHelper.h</key>
+		<data>
+		H9XYBVjaNmy+6gjOHPaY6PnDo8k=
 		</data>
 		<key>Headers/ALLicenseUtil.h</key>
 		<data>
@@ -82,7 +106,11 @@
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
-		EJXn+lcZ3fs+a3/E1ftZW4CIZFs=
+		aKs1BUxq1by0HhJZ7fqM8B5QHxc=
+		</data>
+		<key>Headers/ALScanResult+Extras.h</key>
+		<data>
+		RMnVVuzGX/st1NnRW5pcOHqix9k=
 		</data>
 		<key>Headers/ALScanResult.h</key>
 		<data>
@@ -98,7 +126,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		3k71+ga/hgYE2JetzUVPtV13Clc=
+		Yw5kilRISJsGQvacb/oV/cZbbJc=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -126,7 +154,47 @@
 		</data>
 		<key>Headers/ALWrapperConfig.h</key>
 		<data>
-		unaHCwVx2+xFJsWPrQNK7hYy3qU=
+		qSkgYov8VbNWuNCmR4kFqtKeag4=
+		</data>
+		<key>Headers/ALWrapperHelper.h</key>
+		<data>
+		aw7SzMwLxD2mlF01Sy+soIePqX4=
+		</data>
+		<key>Headers/ALWrapperRoundedView.h</key>
+		<data>
+		mwfO5mR1BfQep0pLd0Zckg381QU=
+		</data>
+		<key>Headers/ALWrapperScanContainer.h</key>
+		<data>
+		uF+zhMhb9HIFmvbfKmGfjSV4ekg=
+		</data>
+		<key>Headers/ALWrapperScanContainerObservableModel.h</key>
+		<data>
+		6YoB9kjwkYx32yLRTHrW5f7T9sQ=
+		</data>
+		<key>Headers/ALWrapperScanContainerState.h</key>
+		<data>
+		+Oc+jahsu1zdmghD+KwmlHTapMU=
+		</data>
+		<key>Headers/ALWrapperScanViewController.h</key>
+		<data>
+		uPxmXxW0NEsPRf9/9q94+WXsD2Q=
+		</data>
+		<key>Headers/ALWrapperSessionClientDelegate.h</key>
+		<data>
+		kUHsDtjorvCNu+x8WRiQ02swM+8=
+		</data>
+		<key>Headers/ALWrapperSessionParameters+Extras.h</key>
+		<data>
+		2iD85IXhpRQXXllWmIe+lM4Mvgs=
+		</data>
+		<key>Headers/ALWrapperSessionParameters.h</key>
+		<data>
+		6nM3btYaL6sSkTSWwvZ/H8PtcFc=
+		</data>
+		<key>Headers/ALWrapperSessionProvider.h</key>
+		<data>
+		TqkXGwSHWuHrqI+fu6HCjANG0lc=
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
@@ -134,7 +202,7 @@
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
-		x0Xv//EjNw0UIRrfxmQpeAeluSg=
+		8eouopTKuFaXV7zt+HIz2wxQ+Gc=
 		</data>
 		<key>Headers/AnylineSDK.h</key>
 		<data>
@@ -142,11 +210,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9WYlXwHuYWh9KS3tRV9p/uy0guM=
+		Dwsjh8uGcdrhy39IIytUU1q4n6I=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Xh7iuZmAk8uE5wGWcafAwEXxkeY=
+		ncADreLfJ1+uMBx/mC02WUhGwUo=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -162,7 +230,7 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ONl1SdAaPEsxNg1tL4wVkrPY/Ac=
+		OkLVmCqe0/R22ND53pOt0KcxAJ8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -511,11 +579,46 @@
 			0GNnJVEpF28Mz4fhv0Z8SIMPpjPpOT19xjtABBaTYNY=
 			</data>
 		</dict>
+		<key>Headers/ALExportedScanResult+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0EMz1OSEMkThZz+fli+73Dd8XNAUtC34HcZlTzPd9rU=
+			</data>
+		</dict>
+		<key>Headers/ALExportedScanResult.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+jdPSGFcBiWa1B+NAZ8PfesaBsce9R+OSTRcHQpyYFA=
+			</data>
+		</dict>
+		<key>Headers/ALExportedScanResultImageContainer+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			o4IEK5k4qR4+3mXFoJIXVGrD11F67g/MclRPKrylS7w=
+			</data>
+		</dict>
+		<key>Headers/ALExportedScanResultImageParameters+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jVb84Lr7RdwFdqtU3h4TBzAV5ohwEBMqvS+nSLekVzI=
+			</data>
+		</dict>
+		<key>Headers/ALExportedScanResultList+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WRxSJcMm1iT1gPHgefIecavVLbVcxyiQeeVuE6ftnyo=
+			</data>
+		</dict>
 		<key>Headers/ALImage.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+vPL40Yt4VvKxETcbyMvIZ00lK3brZ6RdRTwVQxd4+0=
+			SCNRHxynoQdpHCHqG8Hd3XiuKhrbbi9PRIW9515HkZI=
 			</data>
 		</dict>
 		<key>Headers/ALInitParams+Extras.h</key>
@@ -530,6 +633,13 @@
 			<key>hash2</key>
 			<data>
 			4tVREYTuHt9psDiLR3onaPYL1/J+imJ/5rzgP+WwSG0=
+			</data>
+		</dict>
+		<key>Headers/ALLegacyPluginHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VP0a53l7cjVk55CoMSre08+wlHP89yj+ThEminUHsMA=
 			</data>
 		</dict>
 		<key>Headers/ALLicenseUtil.h</key>
@@ -564,7 +674,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DabcSZS3AwFCUwFyGNAqGdYm4gMQZh8lQecwoylOEGA=
+			1Qy8rJiHyxQFyZ86wgcjAnEe2o5SrgRfMmPRvZQJL9E=
+			</data>
+		</dict>
+		<key>Headers/ALScanResult+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FKm1Ps7XHgS6sferOzWIfkEiYxyVG2cmSv69XIZnEws=
 			</data>
 		</dict>
 		<key>Headers/ALScanResult.h</key>
@@ -592,7 +709,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t3l0pJfYiflwxgPm9DLI7utyswHlAQSfLSR7ZdXuH7o=
+			hNUyqGqyFZqoOTM1pDZucg0z/1GdejO4NJIKHvMHd0k=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -641,7 +758,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0XDRCm8oSn+CYYUtg9C+y9nqJSi6zUR7A9++5blDuTQ=
+			pREwx/b+IJRefiFXHt/eTR61ifOJ3/gETEkWxaULVmM=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VZiFMNwDxZonDYAPiSvJH3jW3D3Mt1uai+ehZmrtwAs=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperRoundedView.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZCvqqOrVNutpuk8vsGwHMgI0p74ITGF4lAQW1UFJDRM=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperScanContainer.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QqX3i3gweYuZPSCZuRPzd4UPaeBMhoYlv5AjP3eplfo=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperScanContainerObservableModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wbUW4virejhVivQ2SEp4VO7k8LAq4/oaSclyHPdedQU=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperScanContainerState.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6OUWHn8QxfhvoiyHwBeR91pW4i2yytLqD1WN7gnjNB4=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperScanViewController.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cShtyfL06GiT02SZjXipb2bEyQ4KwpnIlVl7faA0ktg=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperSessionClientDelegate.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			s32G77EEglhrtJz5+FaTt0W6R9xHZrxVW/9qkheR7p0=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperSessionParameters+Extras.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G1GeemzgZxXlOZG/KJNhyvCworbx/oZER5PiwMFubF8=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperSessionParameters.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			thOSSp23TZgZdeTzYW5j+s26mbywSYAKDiS55KbQisE=
+			</data>
+		</dict>
+		<key>Headers/ALWrapperSessionProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/dJNr4ca4sWdkd+meZnHAoEdnspcL9BpzAPccbfkt48=
 			</data>
 		</dict>
 		<key>Headers/Anyline-Swift.h</key>
@@ -655,7 +842,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OuQuNtSQbsLRRnsYP7YSScnvCxQnqKT8ZVAQIv8h7HI=
+			boq3HVGm3El0pnhC7QneWlBHJ9lPFhEKxV0uwrrbdpM=
 			</data>
 		</dict>
 		<key>Headers/AnylineSDK.h</key>
@@ -669,7 +856,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+D1MK3h5URlFXFwirOihsdpj+M3jR+YUapSPCouRsBA=
+			PT6rI5oU3hX+IPLEgWoq3dxxXVHMtBj4MzvgH06W0no=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -697,7 +884,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sXpsqNfpv2qaPgkHSjtePjCKAEG10WqTYTeSoLQFb4k=
+			8E9HXnroaRfi2EialhHnrLSnCZsYX1+a5RAT5TLykTg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
