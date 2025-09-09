@@ -5,6 +5,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// Contains information about the framework accessing Anyline.
 @interface ALWrapperConfig : NSObject
 
+/// Returns the name of the wrapper framework.
+- (NSString *)name;
+
+/// Returns the version of the wrapper framework.
+- (NSString *)pluginVersion;
+
 /// Native SDK
 + (ALWrapperConfig *)none;
 

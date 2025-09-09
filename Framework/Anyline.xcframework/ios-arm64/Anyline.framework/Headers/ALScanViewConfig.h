@@ -460,6 +460,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// is honored only on devices that have one; on Android or on iOS devices without a tele
 /// lens BACK will be used).
 @property (nonatomic, nullable, copy) NSString *defaultCamera;
+/// Allow user to tap on the preview to focus the camera on a specific area of the screen
+/// (also known as tap-to-focus). Enabled by default.
+@property (nonatomic, nullable, strong) NSNumber *enableTapToFocus;
 /// Optional cameras to fall back if the defaultCamera is not found.
 @property (nonatomic, nullable, copy) NSArray<NSString *> *fallbackCameras;
 /// The focal length.
@@ -471,6 +474,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Deprecated - do not use! The preferred resolution for taking images (720, 720p, 1080,
 /// 1080p).
 @property (nonatomic, nullable, copy) NSString *pictureResolution;
+/// (Note: this functionality is experimental - use at your own risk.) Duration in
+/// milliseconds after which tap-to-focus automatically returns to continuous autofocus mode.
+/// Range: 1000-60000ms.
+@property (nonatomic, nullable, strong) NSNumber *tapToFocusTimeoutMS;
 /// This flag enables or disables the zoom gesture if supported.
 @property (nonatomic, nullable, strong) NSNumber *zoomGesture;
 /// The zoom ratio.

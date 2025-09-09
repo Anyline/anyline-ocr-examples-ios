@@ -1378,77 +1378,77 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 88,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 99,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 113,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 127,
       "length": 5,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 806,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 920,
       "length": 12,
       "value": "\"UIFeedback\""
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 1453,
       "length": 61,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 1483,
       "length": 1,
       "value": "\" [\""
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 1504,
       "length": 1,
       "value": "\"] \""
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 1513,
       "length": 23,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/berndkampl\/SourceCode\/Anyline\/GitLab\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
+      "filePath": "\/Users\/maclab\/builds\/vmvZfDExS\/1\/anylinecom\/mobile\/sdks\/anyline-mobile-sdk-ios\/Anyline\/Platform\/CustomUIFeedback\/ALUIFeedbackLogger.swift",
       "kind": "StringLiteral",
       "offset": 1535,
       "length": 3,

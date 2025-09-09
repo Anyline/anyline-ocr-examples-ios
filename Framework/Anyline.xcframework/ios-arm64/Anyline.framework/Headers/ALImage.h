@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 // generated on demand from the data buffer based on the original colorFormat, and cached
 @property (nonatomic, readonly) UIImage *uiImage;
 
++ (ALImage *)fromUIImage:(UIImage *)uiImage;
+
 - (instancetype)initWithData:(NSData *)data
                        width:(NSUInteger)width
                       height:(NSUInteger)height

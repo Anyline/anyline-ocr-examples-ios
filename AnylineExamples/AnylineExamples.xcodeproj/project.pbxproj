@@ -160,8 +160,6 @@
 			dependencies = (
 			);
 			name = AnylineExamples;
-			packageProductDependencies = (
-			);
 			productName = AnylineExamples;
 			productReference = A1D9E32583A9312C676B518E /* AnylineExamples.app */;
 			productType = "com.apple.product-type.application";
@@ -189,8 +187,6 @@
 				en,
 			);
 			mainGroup = E8163E9009B9BB00DE233A33;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 54;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
