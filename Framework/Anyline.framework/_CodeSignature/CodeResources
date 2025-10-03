@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		Yw5kilRISJsGQvacb/oV/cZbbJc=
+		Te9ZOCaMd75IxLmLoX132zczw9Y=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -210,11 +210,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Dwsjh8uGcdrhy39IIytUU1q4n6I=
+		1lBna5opsMRoITZeWDFiXrDcOBs=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		ncADreLfJ1+uMBx/mC02WUhGwUo=
+		oOP2RQhV+LG45tlWgjXtLC5PosM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		OkLVmCqe0/R22ND53pOt0KcxAJ8=
+		kI9D6tuO7W7QeKGeH7rDjghCGsk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -709,7 +709,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hNUyqGqyFZqoOTM1pDZucg0z/1GdejO4NJIKHvMHd0k=
+			CHG+H7dOiCBdEPqBqmQ5pH/+FbMjHBbL8aYMWxnOeOQ=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -856,7 +856,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PT6rI5oU3hX+IPLEgWoq3dxxXVHMtBj4MzvgH06W0no=
+			j8gG77NydRZvlqETrAtNQAVw1OlThP6p1bkjtDPc8FA=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -884,7 +884,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8E9HXnroaRfi2EialhHnrLSnCZsYX1+a5RAT5TLykTg=
+			+xAtszyy/0RTWh9CgakybpX1p+OLulqMZk2+7NrWVEI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
