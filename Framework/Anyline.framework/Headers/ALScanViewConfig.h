@@ -460,6 +460,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// is honored only on devices that have one; on Android or on iOS devices without a tele
 /// lens BACK will be used).
 @property (nonatomic, nullable, copy) NSString *defaultCamera;
+/// (EXPERIMENTAL; Android-only) Mirrors the frame sideways (left-right) before it is
+/// processed, equivalent to a horizontal flip along the vertical axis. The camera preview on
+/// the screen is not affected. Disabled by default. NOTE: This has no effect when
+/// pluginConfig.barcodeConfig.fastProcessMode is true.
+@property (nonatomic, nullable, strong) NSNumber *enableFlipFramesLeftRight;
+/// (EXPERIMENTAL; Android-only) Turns the frame upside down (top-bottom) before it is
+/// processed, equivalent to a vertical flip along the horizontal axis. The camera preview on
+/// the screen is not affected. Disabled by default. NOTE: This has no effect when
+/// pluginConfig.barcodeConfig.fastProcessMode is true.
+@property (nonatomic, nullable, strong) NSNumber *enableFlipFramesTopBottom;
 /// Allow user to tap on the preview to focus the camera on a specific area of the screen
 /// (also known as tap-to-focus). Enabled by default.
 @property (nonatomic, nullable, strong) NSNumber *enableTapToFocus;
