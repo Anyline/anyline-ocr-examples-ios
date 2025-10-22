@@ -32,7 +32,7 @@
             "cornerRadius": 6,
             "strokeColor": "FFFFFF",
             "outerColor": "000000",
-            "outerAlpha": 0,
+            "outerAlpha": 0.3,
             "offset": { "x": 0, "y": 260 }
           },
           "scanFeedbackConfig": {
