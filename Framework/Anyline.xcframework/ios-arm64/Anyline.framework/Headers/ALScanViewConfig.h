@@ -861,6 +861,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Configuration for scanning TIN numbers
 @interface ALTinConfig : NSObject
+/// Defines the minimum height ratio relative to image height for the detected text region.
+/// Ensures the device is close enough to the tire by requiring detected text to meet a
+/// minimum height requirement. Higher values are more restrictive (text must be taller,
+/// meaning device must be closer). This parameter helps prevent premature scans when the
+/// user is too far away and ensures better image quality.
+@property (nonatomic, nullable, strong) NSNumber *detectionMinHeightRatio;
+/// Defines the horizontal ratio for text alignment checks relative to image width. Ensures
+/// the detected TIN text starts near the left edge of the cutout (or right edge when
+/// upside-down) to prevent partial captures. Lower values are more restrictive (text must be
+/// closer to the edge). This parameter helps reduce premature results and ensures proper
+/// text alignment.
+@property (nonatomic, nullable, strong) NSNumber *horizontalAlignmentRatio;
 /// Sets a minimum confidence which has to be reached in order to trigger a scan result.
 @property (nonatomic, nullable, strong) NSNumber *minConfidence;
 /// Sets the mode to scan universal TIN numbers ('UNIVERSAL') or TIN numbers of any length
