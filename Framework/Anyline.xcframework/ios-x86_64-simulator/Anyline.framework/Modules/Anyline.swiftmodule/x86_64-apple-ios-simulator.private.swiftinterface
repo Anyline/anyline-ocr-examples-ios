@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Anyline
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Anyline
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 @_exported import Anyline
 import Foundation
 import Swift
@@ -13,9 +13,7 @@ import _SwiftConcurrencyShims
   case info
   case warn
   case error
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: ObjectiveC.NSInteger)
-  #endif
   public typealias RawValue = ObjectiveC.NSInteger
   public var rawValue: ObjectiveC.NSInteger {
     get
@@ -36,9 +34,7 @@ import _SwiftConcurrencyShims
 }
 extension Swift.String {
   public func toJSONObject() throws -> [Swift.AnyHashable : Any]
-  #if compiler(>=5.3) && $NonescapableTypes
   public func asJSONObject() -> [Swift.AnyHashable : Any]?
-  #endif
 }
 extension Anyline.ALUIFeedbackLogLevel : Swift.Equatable {}
 extension Anyline.ALUIFeedbackLogLevel : Swift.Hashable {}
