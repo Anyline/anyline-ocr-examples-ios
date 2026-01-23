@@ -15,6 +15,9 @@ typedef void (^NewImageBlock)(ALImage * _Nullable image, UIInterfaceOrientation 
 
 @property (nonatomic, assign) BOOL shouldDropFrames;
 
+/// Indicates whether frames should be processed synchronously. Defaults to YES.
+@property (nonatomic, assign) BOOL shouldProcessFramesSynchronized;
+
 @end
 
 #endif /* ALImageProviding_h */

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) ALRect *ROI;
 
 - (void)processImage:(ALImage *)image
+        synchronized:(BOOL)synchronized
          orientation:(UIInterfaceOrientation)orientation
         flipPortrait:(BOOL)flipPortrait;
 

@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		cpxMzlh2cITwDfnWG2CTOtNZtno=
+		cg2BLqADVa+sPnsLUWKUw0qvM/8=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		/Nwu4M06PvChMEQwAJgJtEnpKZA=
+		WGyevwAxtZbED7cdiBqC3c+UX6s=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -210,27 +210,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lpKsCk9W/nt3XZ5Zjl7fHQI58qo=
+		EHWXC4moR/RcFfBaJuPYpu75B+8=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		oOP2RQhV+LG45tlWgjXtLC5PosM=
+		TwEWGRGQv33H+AWGfrnVUkfUlJs=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		U+9qWs7n2etsaUE3vTQ5PG43hnI=
+		cWsia8AGGknKWDRL/eF9ZDWSLho=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		1VmGjDdVmGvPBZPtFhlFrIqxoQ8=
+		oqxrKIlI3mP8UT04ZqrESt8KhqQ=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		U+9qWs7n2etsaUE3vTQ5PG43hnI=
+		cWsia8AGGknKWDRL/eF9ZDWSLho=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		kI9D6tuO7W7QeKGeH7rDjghCGsk=
+		hZ2s7GkWl05sCSwzZ0Sv66IGAaM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -274,7 +274,7 @@
 		</data>
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<data>
-		AufjdExNQ6SuabuCu5n751enQ54=
+		gNXOYX1XQddSUaAoTlSe485z8So=
 		</data>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<data>
@@ -306,11 +306,11 @@
 		</data>
 		<key>PrivateHeaders/ALImageProvider.h</key>
 		<data>
-		FN+3+fJsHhyUfW2RVKjzrM2Ek3M=
+		5wFPiZTITTGBk0hmGX2foM00gYc=
 		</data>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<data>
-		Nd//JpjXhS9uh7vtH4T1x2zZNJM=
+		AiLWC82Q/i7vT7+NDOnw1jtwBrg=
 		</data>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
 		<data>
@@ -709,7 +709,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qogh1RLdUPjRh+635r/B6DZHnKGEBGA2DuRmSONBvaI=
+			T/mZRA1rxN2j8ontP91C07q08KaArUHgDApZjG3BzS0=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -835,7 +835,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zl/IROT9VrqHLE7t3gNJLOzeASIoiyjrMELJDlHKT7s=
+			8R7w363zEzg6IG1/C1/syKiuVRCfQ/zKhuDN+Cl/3CM=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -856,35 +856,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j8gG77NydRZvlqETrAtNQAVw1OlThP6p1bkjtDPc8FA=
+			CHkyVzOT+51dIeQSqmFKChAW0KTeaf3nv6DD8HzallI=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FWyFJ/w9tIAR5DMwLhWIqfPqh35ZmSgXy7TjlqrcI84=
+			d1cHEzd6HmIf970coe4E4x7gJ3NangQKplza/w2jUBE=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xRpNjaljtEZyBmdzamtUagTmdAPOUdNBhacU6mPA3Bc=
+			cJmiH40H0OE8TGDDExmxpBIynX83A950wAyLz1xEjjQ=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FWyFJ/w9tIAR5DMwLhWIqfPqh35ZmSgXy7TjlqrcI84=
+			d1cHEzd6HmIf970coe4E4x7gJ3NangQKplza/w2jUBE=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+xAtszyy/0RTWh9CgakybpX1p+OLulqMZk2+7NrWVEI=
+			cslb3SBn8k5iM7HLQqdAHgHIDfjKIenU6Uym+8EdDyk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -961,7 +961,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7R42VaxAcMkHSnwF/u61HDW11rN72I3bBwOFk/DOdjY=
+			i9T7IyRZhaLMwrsDQ7xFlweWz0IMZj11ewGDAw9gAnc=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
@@ -1017,14 +1017,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u10ab6E8N/oxFLu8mSnqZYYnKaqFFWPAGK40CV6WEu8=
+			rmu/VjBfOEl5pWTOSgpXN/VoxKQsBSZ4DvddR94AoNw=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V1MK5d468UhvEg1vnOBtEHzMjKcCo4fG8csQK9NWZuA=
+			3sJ6B6sDNLM8Q8gLIsMJAsfzBhdneHTMKiJjk5Yw1IE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>

@@ -458,7 +458,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Preferred camera to open: FRONT (front-facing), BACK (rear-facing), EXTERNAL (external
 /// rear), EXTERNAL_FRONT (external front), TELE (iOS-only; requests the telephoto lens and
 /// is honored only on devices that have one; on Android or on iOS devices without a tele
-/// lens BACK will be used).
+/// lens BACK will be used), ULTRAWIDE (requests the ultra-wide lens and is honored only on
+/// devices that have one; on devices without an ultra-wide lens BACK will be used).
 @property (nonatomic, nullable, copy) NSString *defaultCamera;
 /// (EXPERIMENTAL; Android-only) Mirrors the frame sideways (left-right) before it is
 /// processed, equivalent to a horizontal flip along the vertical axis. The camera preview on
@@ -490,7 +491,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *tapToFocusTimeoutMS;
 /// This flag enables or disables the zoom gesture if supported.
 @property (nonatomic, nullable, strong) NSNumber *zoomGesture;
-/// The zoom ratio.
+/// The zoom ratio to apply to the camera. When set to a value greater than 0, this property
+/// takes precedence over defaultCamera for determining which physical lens to use. For
+/// example, setting zoomRatio to 0.5 on a device with an ultra-wide lens will select that
+/// lens, regardless of the defaultCamera setting. A value of 0 means no zoom ratio is
+/// applied and the camera selection falls back to defaultCamera.
 @property (nonatomic, nullable, strong) NSNumber *zoomRatio;
 @end
 
