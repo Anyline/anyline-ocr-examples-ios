@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		cpxMzlh2cITwDfnWG2CTOtNZtno=
+		cg2BLqADVa+sPnsLUWKUw0qvM/8=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		FkkRoIEzOC2Hgy4WaI/JTP1YW28=
+		baT73Oa4wln6u4nHODwulDy9HXw=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -210,27 +210,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LQFQ//k/oaje7KqV8ZqgtP2AU8k=
+		mfL6fXANNizJ1Zb6RYjjDgjFpoM=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		oOP2RQhV+LG45tlWgjXtLC5PosM=
+		TwEWGRGQv33H+AWGfrnVUkfUlJs=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PEbQow1ZnniraeWf5FBtyBxaO6Q=
+		FERUb6HNC7OZdAsPhlnX1bP9LSY=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		edWCs/XE1zRTHdUOxPaqzTi+CSM=
+		4PbblVydItedjQM0oPMoG6p1ecU=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PEbQow1ZnniraeWf5FBtyBxaO6Q=
+		FERUb6HNC7OZdAsPhlnX1bP9LSY=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		n+r5NsEmPCZpKCRSylufLQtWFdQ=
+		Bo2wZxU0VQE1c1230w5Wc540Y1Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -274,7 +274,7 @@
 		</data>
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<data>
-		AufjdExNQ6SuabuCu5n751enQ54=
+		gNXOYX1XQddSUaAoTlSe485z8So=
 		</data>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<data>
@@ -306,11 +306,11 @@
 		</data>
 		<key>PrivateHeaders/ALImageProvider.h</key>
 		<data>
-		FN+3+fJsHhyUfW2RVKjzrM2Ek3M=
+		5wFPiZTITTGBk0hmGX2foM00gYc=
 		</data>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<data>
-		Nd//JpjXhS9uh7vtH4T1x2zZNJM=
+		AiLWC82Q/i7vT7+NDOnw1jtwBrg=
 		</data>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
 		<data>
@@ -709,7 +709,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qogh1RLdUPjRh+635r/B6DZHnKGEBGA2DuRmSONBvaI=
+			T/mZRA1rxN2j8ontP91C07q08KaArUHgDApZjG3BzS0=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -835,7 +835,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aJf6SBfhLwACOwcUnKh53j5j69HvL4N5xjcBWI8wsIg=
+			DG2UNckiBfoHj8/amam8fWc1QhYptkQiYHcXJDkDqOY=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -856,35 +856,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j8gG77NydRZvlqETrAtNQAVw1OlThP6p1bkjtDPc8FA=
+			CHkyVzOT+51dIeQSqmFKChAW0KTeaf3nv6DD8HzallI=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
+			1dggn2leRZBxlwC53lyM9/JGg8xPs8TVw4qjro43U2g=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PIubO6ghNFbxkwpigqR5Ff8E4TbHk/EG1XGNBUO3qY4=
+			x34njR56s6VkOJ5+dwWhet4rACN7e68DfDFt0hZ/Iqs=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			be1xGG3NTn2CW5Dtezyv7OgJvhJILMvOG/mSbicUYkU=
+			1dggn2leRZBxlwC53lyM9/JGg8xPs8TVw4qjro43U2g=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vNWLxkm/o4Z3oXPBLvDfvbxyRZ//JukUvm4ZgG04Y/8=
+			LQ03GE6+Rc1f6RyNNBdFozq8IkPoE7MoBlAHuow7cYM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -961,7 +961,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7R42VaxAcMkHSnwF/u61HDW11rN72I3bBwOFk/DOdjY=
+			i9T7IyRZhaLMwrsDQ7xFlweWz0IMZj11ewGDAw9gAnc=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
@@ -1017,14 +1017,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u10ab6E8N/oxFLu8mSnqZYYnKaqFFWPAGK40CV6WEu8=
+			rmu/VjBfOEl5pWTOSgpXN/VoxKQsBSZ4DvddR94AoNw=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V1MK5d468UhvEg1vnOBtEHzMjKcCo4fG8csQK9NWZuA=
+			3sJ6B6sDNLM8Q8gLIsMJAsfzBhdneHTMKiJjk5Yw1IE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>

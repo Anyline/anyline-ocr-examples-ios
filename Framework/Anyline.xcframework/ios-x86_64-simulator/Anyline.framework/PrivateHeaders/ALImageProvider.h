@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL shouldDropFrames;
 
+/// Indicates whether frames should be processed synchronously. Defaults to YES.
+@property (nonatomic, assign) BOOL shouldProcessFramesSynchronized;
+
 @end
 
 NS_ASSUME_NONNULL_END
