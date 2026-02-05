@@ -62,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithWrapperScanContainer:(ALWrapperScanContainer *)wrapperScanContainer
                               scanViewConfig:(NSDictionary *)scanViewConfig;
 
+- (void)updateScanViewConfig:(NSDictionary *)scanViewConfig;
+
 - (BOOL)isCompleted;
 
 - (void)onResults:(nonnull NSArray *)scanResults error:(NSError **)error;

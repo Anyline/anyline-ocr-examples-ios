@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol ALWrapperSessionClientDelegate <NSObject>
 
+/**
+ * Called when a new ViewController will be presented.
+ * @returns the UIView that should receive the ViewController or null to use getTopViewController.
+ */
+- (nullable UIView *)getContainerView;
 
 /**
  * Called when a new ViewController will be presented.

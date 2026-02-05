@@ -158,7 +158,7 @@
 		</data>
 		<key>Headers/ALWrapperHelper.h</key>
 		<data>
-		aw7SzMwLxD2mlF01Sy+soIePqX4=
+		4BmrH2J+GD24JReai2Vjq6VxPgU=
 		</data>
 		<key>Headers/ALWrapperRoundedView.h</key>
 		<data>
@@ -174,27 +174,27 @@
 		</data>
 		<key>Headers/ALWrapperScanContainerState.h</key>
 		<data>
-		+Oc+jahsu1zdmghD+KwmlHTapMU=
+		tAqXttFahb8dtYkuQMZVMdA++ds=
 		</data>
 		<key>Headers/ALWrapperScanViewController.h</key>
 		<data>
-		uPxmXxW0NEsPRf9/9q94+WXsD2Q=
+		pTfS5fSgYxVBHltcvanWNNeh5cA=
 		</data>
 		<key>Headers/ALWrapperSessionClientDelegate.h</key>
 		<data>
-		kUHsDtjorvCNu+x8WRiQ02swM+8=
+		Yi5DZUKvqrZJilz4iDroGJxPmTI=
 		</data>
 		<key>Headers/ALWrapperSessionParameters+Extras.h</key>
 		<data>
-		2iD85IXhpRQXXllWmIe+lM4Mvgs=
+		BFdYSndz7aelJ11sVsu4rSQWLKA=
 		</data>
 		<key>Headers/ALWrapperSessionParameters.h</key>
 		<data>
-		6nM3btYaL6sSkTSWwvZ/H8PtcFc=
+		2b1ZaajUcFyQLJjfs2jIsa6chn8=
 		</data>
 		<key>Headers/ALWrapperSessionProvider.h</key>
 		<data>
-		TqkXGwSHWuHrqI+fu6HCjANG0lc=
+		JVQlGhxTODkWUryEPs3AX03NCmI=
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
@@ -210,7 +210,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		EHWXC4moR/RcFfBaJuPYpu75B+8=
+		fTNH/7AsQzN5Q1z35NiLjsw7B30=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -765,7 +765,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VZiFMNwDxZonDYAPiSvJH3jW3D3Mt1uai+ehZmrtwAs=
+			nvAMS+Pj1dKuAP4kRA+t17pic2ZlTqmp2ARMej99iTE=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperRoundedView.h</key>
@@ -793,42 +793,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6OUWHn8QxfhvoiyHwBeR91pW4i2yytLqD1WN7gnjNB4=
+			7nX3FKmgOuERdVcqdzQ8PFVt7q+KIbtxlqCCVSNpw6o=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperScanViewController.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cShtyfL06GiT02SZjXipb2bEyQ4KwpnIlVl7faA0ktg=
+			Q7+uQ55598bmLxnxlHYReR+2ROrlIl8UDoSqq+JiIiA=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperSessionClientDelegate.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s32G77EEglhrtJz5+FaTt0W6R9xHZrxVW/9qkheR7p0=
+			aIu2ZiTE1tk2FQ+qCCuoczxplqy+IdTWrRm0kXnOHYU=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperSessionParameters+Extras.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G1GeemzgZxXlOZG/KJNhyvCworbx/oZER5PiwMFubF8=
+			3kOZ388fVQFqbzsU3aDOvbfF+18Fw8TrKulf7H30gbw=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperSessionParameters.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			thOSSp23TZgZdeTzYW5j+s26mbywSYAKDiS55KbQisE=
+			/2ZYDadUZfdg5quNJHgZcC9a2zO8b0QA1dSBygeIe6A=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperSessionProvider.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/dJNr4ca4sWdkd+meZnHAoEdnspcL9BpzAPccbfkt48=
+			XfuAy7rSiw96ShBiycy8f6IAWAe+W2rpPrK7VontjPw=
 			</data>
 		</dict>
 		<key>Headers/Anyline-Swift.h</key>

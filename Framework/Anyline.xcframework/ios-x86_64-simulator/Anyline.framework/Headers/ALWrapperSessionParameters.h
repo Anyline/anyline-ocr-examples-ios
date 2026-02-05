@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class ALAndroidScanViewAttributesConfig;
 @class ALExportedScanResult;
 @class ALExportedScanResultImageContainer;
 @class ALExportedScanResultImageParameters;
@@ -31,6 +32,7 @@
 @class ALWrapperSessionScanResultConfig;
 @class ALWrapperSessionScanResultExtraInfo;
 @class ALWrapperSessionScanResultsResponse;
+@class ALWrapperSessionScanStartPlatformOptions;
 @class ALWrapperSessionScanStartRequest;
 @class ALWrapperSessionScanStopRequest;
 @class ALWrapperSessionScanViewConfigOptionDefaultOrientation;
@@ -214,6 +216,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// failed.
 @property (nonatomic, nullable, strong) NSNumber *initialized;
 @property (nonatomic, nullable, strong) ALSucceedInfoClass *succeedInfo;
+/// Platform specific options to perform scan.
+@property (nonatomic, nullable, strong) ALWrapperSessionScanStartPlatformOptions *platformOptions;
 @property (nonatomic, nullable, strong) ALWrapperSessionScanResultConfig *scanResultConfig;
 /// The ScanViewConfig to be used for the scanner. As defined in sdk_config.schema.json
 @property (nonatomic, nullable, copy) NSString *scanViewConfigContentString;
@@ -329,6 +333,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) NSString *text;
 @end
 
+/// Platform specific options to perform scan.
+@interface ALWrapperSessionScanStartPlatformOptions : NSObject
+@property (nonatomic, nullable, strong) ALAndroidScanViewAttributesConfig *androidScanViewAttributes;
+@end
+
+/// Android ScanView attributes config
+@interface ALAndroidScanViewAttributesConfig : NSObject
+/// Enable or disable camera permission handling from ScanView loading process.
+@property (nonatomic, nullable, strong) NSNumber *enableCameraPermissionHandling;
+/// Enable or disable usage of CameraX API instead of Camera1 API. Default is true.
+@property (nonatomic, nullable, strong) NSNumber *useCameraX;
+@end
+
 /// Button that toggles between portrait and landscape orientations when tapped. Positioned
 /// according to alignment and (optional) offset settings.
 @interface ALWrapperSessionScanViewConfigOptionRotateButton : NSObject
@@ -400,7 +417,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// what to scan) and scanResultConfig (defining how to handle results). Optional
 /// scanViewInitializationParameters for workflow correlation.
 @interface ALWrapperSessionScanStartRequest : NSObject
-@property (nonatomic, strong) ALWrapperSessionScanResultConfig *scanResultConfig;
+/// Platform specific options to perform scan.
+@property (nonatomic, nullable, strong) ALWrapperSessionScanStartPlatformOptions *platformOptions;
+@property (nonatomic, strong)           ALWrapperSessionScanResultConfig *scanResultConfig;
 /// The ScanViewConfig to be used for the scanner. As defined in sdk_config.schema.json
 @property (nonatomic, copy) NSString *scanViewConfigContentString;
 /// The path (relative from assets folder) to load ScanViewConfig json files while using a
