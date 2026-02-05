@@ -7,11 +7,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALWrapperScanViewController : UIViewController
 
-@property (nonatomic, strong) UIToolbar *toolbar;
+@property (nullable, nonatomic, strong) UIToolbar *toolbar;
 
 @property (nullable, nonatomic, strong) UIButton *flipOrientationButton;
 
-- (instancetype)initWithWrapperScanContainer:(ALWrapperScanContainer *)wrapperScanContainer;
+- (instancetype)initWithWrapperScanContainer:(ALWrapperScanContainer *)wrapperScanContainer
+                      runningOnContainerView:(BOOL)runningOnContainerView;
 
 - (void)dismissWithStatus:(ALWrapperSessionScanResponseStatus *)status
                  message:(NSString * _Nullable)message;

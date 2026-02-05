@@ -9,6 +9,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALWrapperHelper : NSObject
 
 + (void)startScan:(ALWrapperScanContainer *)wrapperScanContainer
+topViewController:(nullable UIViewController *)topViewController
+    containerView:(UIView *)containerView;
+
++ (void)startScan:(ALWrapperScanContainer *)wrapperScanContainer
 topViewController:(nullable UIViewController *)topViewController;
 
 + (UILabel *)createLabelForView:(UIView *)view;
@@ -23,7 +27,8 @@ topViewController:(nullable UIViewController *)topViewController;
 + (ALWrapperRoundedView *)createRoundedViewForViewController:(UIViewController *)viewController;
 
 + (UISegmentedControl * _Nullable)createSegmentForViewController:(UIViewController *)viewController
-                                                          config:(nullable ALWrapperSessionScanViewConfigOptionSegmentConfig *)config;
+                                                          config:(nullable ALWrapperSessionScanViewConfigOptionSegmentConfig *)config
+                                 selectedSegmentConfigTitleIndex:(NSInteger) selectedSegmentConfigTitleIndex;
 
 
 + (void)updateButtonPosition:(UIButton *)button

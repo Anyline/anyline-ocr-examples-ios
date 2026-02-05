@@ -88,6 +88,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)toJSONDictionary;
 @end
 
+@interface ALWrapperSessionScanStartPlatformOptions (Extras)
++ (ALWrapperSessionScanStartPlatformOptions *)fromJSONDictionary:(NSDictionary *)jsonConfig;
+- (NSDictionary *)toJSONDictionary;
+@end
+
 @interface ALWrapperSessionScanStopRequest (Extras)
 + (ALWrapperSessionScanStopRequest *)fromJSONDictionary:(NSDictionary *)jsonConfig;
 - (NSDictionary *)toJSONDictionary;

@@ -59,6 +59,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)requestSdkInitialization:(ALWrapperSessionSDKInitializationRequest *)initializationRequestParams;
 
 /**
+ * Set default platform specific options to perform scan with JSON string parameters.
+ */
++ (void)setDefaultScanStartPlatformOptionsWithString:(nullable NSString *)scanStartPlatformOptionsString;
+
+/**
+ * Set default platform specific options to perform scan with ALWrapperSessionScanStartPlatformOptions.
+ */
++ (void)setDefaultScanStartPlatformOptions:(nullable ALWrapperSessionScanStartPlatformOptions *)scanStartPlatformOptions;
+
+/**
  * Request scan start with JSON string parameters.
  */
 + (void)requestScanStartWithScanStartRequestParamsString:(NSString *)scanStartRequestParamsString;
