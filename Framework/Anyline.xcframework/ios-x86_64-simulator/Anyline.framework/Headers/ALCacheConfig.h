@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+@class ALWrapperSessionSDKInitializationCacheConfig;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// Controls report log caching behavior. This object is passed to
@@ -18,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// Used for the benefit of integrators running Anyline with offline license
 /// keys. It allows `+[AnylineSDK exportCachedEvents:]` to work as intended.
 + (ALCacheConfig *)offlineLicenseCachingEnabled;
+
+/// Creates a cache config from wrapper session initialization parameters.
+/// Returns nil if the input is nil.
++ (ALCacheConfig * _Nullable)cacheConfigWithWrapperSessionConfig:(ALWrapperSessionSDKInitializationCacheConfig * _Nullable)wrapperConfig;
 
 @end
 

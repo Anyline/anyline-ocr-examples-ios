@@ -17,7 +17,7 @@
         ],
         "parseAAMVA": true
       },
-      "cancelOnResult": true
+      "cancelOnResult": false
     },
     "cutoutConfig": {
       "maxWidthPercent": "80%",
