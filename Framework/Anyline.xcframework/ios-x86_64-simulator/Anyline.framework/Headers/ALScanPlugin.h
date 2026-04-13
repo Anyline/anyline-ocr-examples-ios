@@ -6,7 +6,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ALPluginConfig;
 @class ALRect;
-@class ALAssetController;
 @class ALImageProvider;
 @class ALScanResult;
 @class ALEvent;
@@ -17,9 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// The object to be notified when events of interest can be reported
 @property (nonatomic, weak) id<ALScanPluginDelegate> delegate;
-
-/// An object providing access to the assets that the plugin runs on
-@property (nonatomic, strong) ALAssetController *assetController;
 
 /// Configuration object for the scan plugin
 @property (nonatomic, strong, readonly) ALPluginConfig *pluginConfig;

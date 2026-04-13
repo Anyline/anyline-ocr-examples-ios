@@ -13,6 +13,7 @@
 @class ALCutoutConfig;
 @class ALCutoutConfigAlignment;
 @class ALCutoutConfigAnimation;
+@class ALNonNegativeOffset;
 @class ALRatioFromSize;
 @class ALPluginConfig;
 @class ALBarcodeConfig;
@@ -511,22 +512,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) NSString *imageOn;
 /// The flash mode.
 @property (nonatomic, nullable, assign) ALMode *mode;
-/// An optional offset (in dp) for the flash button.
+/// An optional position offset for the flash button in density-independent pixels (dp).
 @property (nonatomic, nullable, strong) ALOffset *offset;
 @end
 
-/// An optional offset (in dp) for the flash button.
+/// An optional position offset for the flash button in density-independent pixels (dp).
 ///
-/// An optional offset (in dp) for the elements.
+/// An x/y integer value pair. The unit (dp or camera pixels) depends on the property that
+/// references this definition.
 ///
-/// Used in conjunction with cropPadding. This offset further adjusts the crop position after
-/// the padding is applied. Define as an x-y point structure.
+/// Adjusts the captured region position in camera pixels (px) after cropPadding is applied.
+/// Positive x shifts right, positive y shifts down.
 ///
-/// Amount of padding to be applied to the cutout (NOTE: use positive amounts only). A crop
-/// padding truncates the visual area represented by the cutout used in optimizing scan
-/// performance for some plugins. Define as an x-y point structure.
-///
-/// Position offset of the cutout, used in conjunction with alignment.
+/// Position offset of the cutout in camera pixels (px), used in conjunction with alignment.
 @interface ALOffset : NSObject
 @property (nonatomic, nullable, strong) NSNumber *x;
 @property (nonatomic, nullable, strong) NSNumber *y;
@@ -560,22 +558,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, assign) ALCutoutConfigAlignment *alignment;
 /// Animation type for the cutout when initially displayed. Values: none, fade, zoom
 @property (nonatomic, nullable, assign) ALCutoutConfigAnimation *animation;
-/// Radius of the corners of the cutout.
+/// The corner radius of the cutout in density-independent pixels (dp).
 @property (nonatomic, nullable, strong) NSNumber *cornerRadius;
-/// Used in conjunction with cropPadding. This offset further adjusts the crop position after
-/// the padding is applied. Define as an x-y point structure.
+/// Adjusts the captured region position in camera pixels (px) after cropPadding is applied.
+/// Positive x shifts right, positive y shifts down.
 @property (nonatomic, nullable, strong) ALOffset *cropOffset;
-/// Amount of padding to be applied to the cutout (NOTE: use positive amounts only). A crop
-/// padding truncates the visual area represented by the cutout used in optimizing scan
-/// performance for some plugins. Define as an x-y point structure.
-@property (nonatomic, nullable, strong) ALOffset *cropPadding;
+/// Expands the captured image region beyond the cutout in camera pixels (px). Non-negative
+/// values only — negative values will cause a runtime exception. Example: cutout width=700px
+/// with padding={x:10} → 720px captured.
+@property (nonatomic, nullable, strong) ALNonNegativeOffset *cropPadding;
 /// The hex string (RRGGBB) of the stroke color for visual feedback. (e.g. 00CCFF).
 @property (nonatomic, nullable, copy) NSString *feedbackStrokeColor;
 /// The maximum height in percent (0-100), relating to the size of the view.
 @property (nonatomic, nullable, copy) NSString *maxHeightPercent;
 /// The maximum width in percent (0-100), relating to the size of the view.
 @property (nonatomic, nullable, copy) NSString *maxWidthPercent;
-/// Position offset of the cutout, used in conjunction with alignment.
+/// Position offset of the cutout in camera pixels (px), used in conjunction with alignment.
 @property (nonatomic, nullable, strong) ALOffset *offset;
 /// Optional transparency factor for the outer color (0.0 - 1.0).
 @property (nonatomic, nullable, strong) NSNumber *outerAlpha;
@@ -587,11 +585,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) ALRatioFromSize *ratioFromSize;
 /// The hex string (RRGGBB) of the stroke color. (e.g. 00CCFF).
 @property (nonatomic, nullable, copy) NSString *strokeColor;
-/// The stroke width of the cutout. If set to 0, the line will be invisible.
+/// The stroke width of the cutout border in density-independent pixels (dp). If set to 0,
+/// the line will be invisible.
 @property (nonatomic, nullable, strong) NSNumber *strokeWidth;
 /// The preferred width in pixels, relating to the camera resolution. If not specified or 0,
 /// the maximum possible width will be chosen.
 @property (nonatomic, nullable, strong) NSNumber *width;
+@end
+
+/// Expands the captured image region beyond the cutout in camera pixels (px). Non-negative
+/// values only — negative values will cause a runtime exception. Example: cutout width=700px
+/// with padding={x:10} → 720px captured.
+///
+/// An x/y integer value pair where both values must be >= 0. The unit depends on the
+/// property that references this definition.
+@interface ALNonNegativeOffset : NSObject
+@property (nonatomic, nullable, strong) NSNumber *x;
+@property (nonatomic, nullable, strong) NSNumber *y;
 @end
 
 /// A size constraining the ratio of width / height. If set to 0, the ratio will be equal to
@@ -1152,7 +1162,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *beepOnResult;
 /// If true, flash the view when a result is found.
 @property (nonatomic, nullable, strong) NSNumber *blinkAnimationOnResult;
-/// The corner radius of the visual feedback.
+/// The corner radius in density-independent pixels (dp).
 @property (nonatomic, nullable, strong) NSNumber *cornerRadius;
 /// The fill color.
 @property (nonatomic, nullable, copy) NSString *fillColor;
@@ -1160,7 +1170,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) NSNumber *redrawTimeout;
 /// The stroke color.
 @property (nonatomic, nullable, copy) NSString *strokeColor;
-/// The stroke width.
+/// The stroke width in density-independent pixels (dp).
 @property (nonatomic, nullable, strong) NSNumber *strokeWidth;
 /// The style of the feedback.
 @property (nonatomic, nullable, assign) ALStyle *style;

@@ -99,6 +99,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)requestScanSwitchWithScanStartRequestParams:(ALWrapperSessionScanStartRequest *)newScanStartRequestParams;
 
 /**
+ * Request scan switch with scan start request params JSON string.
+ */
++ (void)requestScanSwitchWithScanStartRequestParamsString:(NSString *)newScanStartRequestParamsString;
+
+/**
  * Request UCR report with JSON string parameters.
  */
 + (void)requestUCRReportWithWrapperSessionUCRReportRequestString:(NSString *)wrapperSessionUCRReportRequestString;
