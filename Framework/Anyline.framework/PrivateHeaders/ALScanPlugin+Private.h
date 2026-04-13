@@ -3,7 +3,6 @@
 
 #import "ALScanPlugin.h"
 #import "ALCorePluginCallback.h"
-#import "ALAssetUpdateManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -45,8 +44,7 @@ typedef NS_ENUM(NSInteger, ScanPluginState) {
 
 @property (nonatomic, strong) id<ALEventProviding> scanStopped;
 
-/// tracking the reporting values added to this scan plugin since it was created
-@property (nonatomic, readonly) NSMutableArray<NSString *> *reportingValues;
+@property (nonatomic, strong) NSMutableArray<NSString *> *reportingValues;
 
 - (id _Nullable)initWithConfig:(ALPluginConfig * _Nonnull)pluginConfig
                 scanController:(ALCoreScanController * _Nullable)scanController
@@ -66,7 +64,6 @@ typedef NS_ENUM(NSInteger, ScanPluginState) {
 ///   failed
 + (BOOL)validatePluginConfigJSONStr:(NSString *)pluginConfigJSON
                               error:(NSError * _Nullable * _Nullable)error;
-
 
 - (void)addReportingValues:(NSString * _Nullable)reportingValues;
 

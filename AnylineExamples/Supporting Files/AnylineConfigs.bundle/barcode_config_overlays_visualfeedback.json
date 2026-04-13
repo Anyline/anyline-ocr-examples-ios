@@ -5,6 +5,10 @@
     "zoomGesture": true,
     "maxZoomRatio": 20
   },
+  "flashConfig": {
+    "mode": "auto",
+    "alignment": "bottom_right"
+  },
   "viewPluginConfig": {
     "pluginConfig": {
       "id": "barcode_overlay_visualfeedback",
