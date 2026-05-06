@@ -259,10 +259,10 @@ extension SimpleScanViewController: ALScanPluginDelegate {
         } else {
             if let barcodes = scanResult.pluginResult.barcodeResult?.barcodes {
                 totalScanned += barcodes.count
-                infoBox.visibility = .resultWithText("Total scanned: \(totalScanned)")
             } else {
                 totalScanned += 1
             }
+            infoBox.visibility = .resultWithText("Total scanned: \(totalScanned)")
         }
     }
 }
