@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)processImage:(ALImage *)image
         synchronized:(BOOL)synchronized
          orientation:(UIInterfaceOrientation)orientation
-        flipPortrait:(BOOL)flipPortrait;
+       flipLeftRight:(BOOL)flipLeftRight
+       flipTopBottom:(BOOL)flipTopBottom;
 
 - (void)cancel;
 

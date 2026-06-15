@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "ic_arrow_ne.png",
+      "filename" : "uifeedback_mrz_wireframe_upsidedown.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -15,7 +15,7 @@
     }
   ],
   "info" : {
-    "author" : "xcode",
+    "author" : "anyline-devexamples-sync",
     "version" : 1
   }
 }

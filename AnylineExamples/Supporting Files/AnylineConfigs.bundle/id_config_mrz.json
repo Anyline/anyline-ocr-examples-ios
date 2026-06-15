@@ -52,6 +52,40 @@
       "beepOnResult": true,
       "vibrateOnResult": true,
       "strokeWidth": 2
+    },
+    "uiFeedbackConfig": {
+      "presets": [{
+        "presetName": "simple_instruction_label",
+        "presetAttributes": [{
+          "attributeName": "instruction_text",
+          "attributeValue": "Hold your passport inside the frame until the scan is complete"
+        }]
+      }],
+      "elements": [{
+        "id": "guide_image",
+        "contentType": "image",
+        "defaultContent": {
+          "contentValue": "uifeedback_mrz_wireframe",
+          "durationMills": 3000
+        },
+        "defaultAttributes": {
+          "imageScaleType": "fit_center"
+        },
+        "overlay": {
+          "source": "cutout",
+          "anchor": "center",
+          "sizeDimension": {
+            "scaleX": {
+              "scaleValue": 1.0,
+              "scaleType": "overlay"
+            },
+            "scaleY": {
+              "scaleValue": 1.0,
+              "scaleType": "overlay"
+            }
+          }
+        }
+      }]
     }
   }
 }
