@@ -1,0 +1,94 @@
+{
+  "scanViewConfigDescription": "Optimized for upside down MRZ and passports scanning (enableFlipFramesLeftRight + enableFlipFramesTopBottom).",
+  "cameraConfig": {
+    "captureResolution": "1080p",
+    "enableFlipFramesLeftRight": true,
+    "enableFlipFramesTopBottom": true
+  },
+  "flashConfig": {
+    "mode": "manual",
+    "alignment": "bottom_right"
+  },
+  "viewPluginConfig": {
+    "pluginConfig": {
+      "id": "ID|MRZ & Passports",
+      "cancelOnResult": true,
+      "mrzConfig": {
+        "faceDetectionEnabled": true,
+        "mrzFieldScanOptions": {
+          "vizAddress": "optional",
+          "vizDateOfIssue": "optional"
+        },
+        "cropAndTransformID": false,
+        "strictMode": false
+      }
+    },
+    "cutoutConfig": {
+      "maxWidthPercent": "90%",
+      "maxHeightPercent": "90%",
+      "alignment": "center",
+      "strokeWidth": 2,
+      "cornerRadius": 4,
+      "strokeColor": "FFFFFF",
+      "outerColor": "000000",
+      "outerAlpha": 0.3,
+      "cropPadding": {
+        "x": 30,
+        "y": 90
+      },
+      "cropOffset": {
+        "x": 0,
+        "y": -90
+      },
+      "ratioFromSize": {
+        "width": 50,
+        "height": 31
+      },
+      "feedbackStrokeColor": "0099FF"
+    },
+    "scanFeedbackConfig": {
+      "style": "rect",
+      "redrawTimeout": 100,
+      "strokeColor": "0099FF",
+      "fillColor": "220099FF",
+      "beepOnResult": true,
+      "vibrateOnResult": true,
+      "strokeWidth": 2
+    },
+    "uiFeedbackConfig": {
+      "presets": [{
+        "presetName": "simple_instruction_label",
+        "presetAttributes": [{
+          "attributeName": "instruction_text",
+          "attributeValue": "Hold your passport upside down inside the frame until the scan is complete"
+        }]
+      }],
+      "elements": [{
+        "id": "guide_image",
+        "contentType": "image",
+        "defaultContent": {
+          "contentValue": "uifeedback_mrz_wireframe_upsidedown",
+          "durationMills": 3000
+        },
+        "defaultAttributes": {
+          "imageScaleType": "fit_center"
+        },
+        "overlay": {
+          "source": "cutout",
+          "anchor": "center",
+          "sizeDimension": {
+            "scaleX": {
+              "scaleValue": 1.0,
+              "scaleType": "overlay"
+            },
+            "scaleY": {
+              "scaleValue": 1.0,
+              "scaleType": "overlay"
+            }
+          }
+        }
+      }]
+    }
+  }
+}
+

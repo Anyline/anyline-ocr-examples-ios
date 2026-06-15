@@ -39,6 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) BOOL usesFrontCamera;
 
+@property (nonatomic, readonly) BOOL isFlipFramesLeftRightEnabled;
+
+@property (nonatomic, readonly) BOOL isFlipFramesTopBottomEnabled;
+
 @property (nonatomic, assign) CGFloat zoomLevel;
 
 @property (nonatomic, readonly) ALColorFormat outputColorFormat;

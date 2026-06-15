@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ALImage;
 
-typedef void (^NewImageBlock)(ALImage * _Nullable image, UIInterfaceOrientation orientation, BOOL isFrontCamera);
+typedef void (^NewImageBlock)(ALImage * _Nullable image, UIInterfaceOrientation orientation, BOOL isLeftRightFlipped, BOOL isTopBottomFlipped);
 
 @protocol ALImageProviding
 

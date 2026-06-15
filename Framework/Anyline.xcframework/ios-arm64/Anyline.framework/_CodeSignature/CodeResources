@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/ALImage.h</key>
 		<data>
-		zUoeKn7zGsFdoM+Mz67dEMobPKw=
+		TVqzXDwWmimBOasbkY1LXVvCnno=
 		</data>
 		<key>Headers/ALInitParams+Extras.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/ALScanViewConfig.h</key>
 		<data>
-		EMLkNjzQrmSexIYTaaQAc1Mec3U=
+		uTv4ml55+Gw35EZCDqXGLL5jPV4=
 		</data>
 		<key>Headers/ALScanViewFactory.h</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		EBI9Kvq78pdLkLcWUHsXmPKLJB8=
+		S30XlDqZUGwCoHJfZVrUczvqong=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
 		<data>
-		r3ij4nxcbZtu15e+hS6PabWiJXY=
+		X3XYbMYOhtl6lAAyYEadCOMP450=
 		</data>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
 		<data>
@@ -250,7 +250,7 @@
 		</data>
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<data>
-		gNXOYX1XQddSUaAoTlSe485z8So=
+		heUnwHtP7WK+uB8ScDg0qdw7Qxc=
 		</data>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<data>
-		AiLWC82Q/i7vT7+NDOnw1jtwBrg=
+		ck+1VX8xNyB8IUdYLkwGwA3dSXc=
 		</data>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
 		<data>
@@ -559,7 +559,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SCNRHxynoQdpHCHqG8Hd3XiuKhrbbi9PRIW9515HkZI=
+			dmrO6SpXnxhMG1IVSbSXuwpV0ruZsrYFgHW1wYUZmk0=
 			</data>
 		</dict>
 		<key>Headers/ALInitParams+Extras.h</key>
@@ -650,7 +650,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6AZjcJ71ab66/o1EOpsfBr7tfWJCwCGbT47J8nbUcEo=
+			fa+WDFI2DnL7GayM4EB+eZ5hhm8ly9RpmFl6yZ+43Ag=
 			</data>
 		</dict>
 		<key>Headers/ALScanViewFactory.h</key>
@@ -881,7 +881,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZBmPGBRum8Flr7wx9Tgy6LQ5ElXk8sLhN6udWsSGmkM=
+			Zi1291fL+O1OiiObswUm/NysfFiFzOVQD35VOI3FYQo=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
@@ -895,7 +895,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i9T7IyRZhaLMwrsDQ7xFlweWz0IMZj11ewGDAw9gAnc=
+			BzBI5956KFboV+k9qM2jwprna+iXv8pgigsc/spIIs8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
@@ -958,7 +958,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3sJ6B6sDNLM8Q8gLIsMJAsfzBhdneHTMKiJjk5Yw1IE=
+			955YQLKznEUK/I96YtRVYHc9AvbR/uNCKB+Vbx9njiM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>

@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) ALColorFormat originalColorFormat;
 @property (nonatomic, assign) UIInterfaceOrientation orientation;
 
+/// MSDK-1182: when set, `uiImage` mirrors the image (after applying `orientation`)
+/// so the result image reflects the frame flip the core applied before scanning.
+/// Reflects explicit cameraConfig flips only. Disabled by default.
+@property (nonatomic, assign) BOOL isLeftRightFlipped;
+@property (nonatomic, assign) BOOL isTopBottomFlipped;
+
 // generated on demand from the data buffer based on the original colorFormat, and cached
 @property (nonatomic, readonly) UIImage *uiImage;
 
