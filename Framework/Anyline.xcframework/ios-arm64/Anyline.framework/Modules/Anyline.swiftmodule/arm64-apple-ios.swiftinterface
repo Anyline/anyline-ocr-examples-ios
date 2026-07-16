@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Anyline
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Anyline
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
 @_exported import Anyline
 import Foundation
 import Swift
@@ -13,9 +13,7 @@ import _SwiftConcurrencyShims
   case info
   case warn
   case error
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: ObjectiveC.NSInteger)
-  #endif
   public typealias RawValue = ObjectiveC.NSInteger
   public var rawValue: ObjectiveC.NSInteger {
     get
@@ -26,7 +24,10 @@ import _SwiftConcurrencyShims
 }
 @_inheritsConvenienceInitializers @objc public class ALUIFeedbackLogger : ObjectiveC.NSObject {
   @objc public static let sharedInstance: Anyline.ALUIFeedbackLogger
-  @objc weak public var delegate: (any Anyline.ALUIFeedbackLoggerDelegate)?
+  @objc public var delegate: (any Anyline.ALUIFeedbackLoggerDelegate)? {
+    @objc get
+    @objc set
+  }
   @objc public func log(_ message: Swift.String, level: Anyline.ALUIFeedbackLogLevel)
   @objc override dynamic public var description: Swift.String {
     @objc get
@@ -36,9 +37,7 @@ import _SwiftConcurrencyShims
 }
 extension Swift.String {
   public func toJSONObject() throws -> [Swift.AnyHashable : Any]
-  #if compiler(>=5.3) && $NonescapableTypes
   public func asJSONObject() -> [Swift.AnyHashable : Any]?
-  #endif
 }
 extension Anyline.ALUIFeedbackLogLevel : Swift.Equatable {}
 extension Anyline.ALUIFeedbackLogLevel : Swift.Hashable {}

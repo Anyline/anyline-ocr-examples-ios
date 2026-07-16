@@ -7,5 +7,4 @@ framework module Anyline {
 
 module Anyline.Swift {
   header "Anyline-Swift.h"
-  requires objc
 }

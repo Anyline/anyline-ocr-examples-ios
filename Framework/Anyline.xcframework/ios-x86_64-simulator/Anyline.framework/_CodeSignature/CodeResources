@@ -178,7 +178,7 @@
 		</data>
 		<key>Headers/Anyline-Swift.h</key>
 		<data>
-		baT73Oa4wln6u4nHODwulDy9HXw=
+		nlw8k1107yAspIp+ydMu7tl4K4Q=
 		</data>
 		<key>Headers/Anyline.h</key>
 		<data>
@@ -190,31 +190,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OI3A63JlD+OTMb1FY2AHFR6Tsbc=
+		geNblpn9VGzCsRB593zDMPGJPfo=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TwEWGRGQv33H+AWGfrnVUkfUlJs=
+		wVxHpQNquUrl8lJ6U3RJdmeLIqw=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		FERUb6HNC7OZdAsPhlnX1bP9LSY=
+		opXeaBapoIZaIU2ukhtkA7PCFYE=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		4PbblVydItedjQM0oPMoG6p1ecU=
+		0+F/YfRHKLNaqx3u7ocPWYc7bYc=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FERUb6HNC7OZdAsPhlnX1bP9LSY=
+		opXeaBapoIZaIU2ukhtkA7PCFYE=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CU9ANqPiDsE8sHMr3KGtYAXYR/s=
+		bGmZZDdrgZv+R4TmiUMiLZZ6gmQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		w7nqVYGg5v674TnWiO9VKdDFDkA=
+		scfVrP2jqEj9zMczpadLaYG5meo=
 		</data>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
 		<data>
@@ -327,6 +327,10 @@
 		<key>PrivateHeaders/ALOverlayConfig+PrivateExtras.h</key>
 		<data>
 		UnOn9jYhb+wdtts6W0I0vVOMQ1w=
+		</data>
+		<key>PrivateHeaders/ALRequestCompression.h</key>
+		<data>
+		FaO9pkVglJz9YY4Ay4oa8XZMJnE=
 		</data>
 		<key>PrivateHeaders/ALScanFeedback.h</key>
 		<data>
@@ -776,7 +780,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DG2UNckiBfoHj8/amam8fWc1QhYptkQiYHcXJDkDqOY=
+			SFZK9te3BWf1tpvfSD6nrxlGBvpQbjNH6Z+rlp5QJOM=
 			</data>
 		</dict>
 		<key>Headers/Anyline.h</key>
@@ -797,42 +801,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CHkyVzOT+51dIeQSqmFKChAW0KTeaf3nv6DD8HzallI=
+			XT5AzXGPSjdqJABp0WB64qa1fDDKjAnfyFeHIVEg/KM=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1dggn2leRZBxlwC53lyM9/JGg8xPs8TVw4qjro43U2g=
+			S7Wbts2nZT4gGjEVT+taFakl8oUZm19jpkZbiS+Mqzo=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x34njR56s6VkOJ5+dwWhet4rACN7e68DfDFt0hZ/Iqs=
+			oVt0Q5mlUGPegB8WboMC20J6IMCib3Mb2nX1dnGWBP8=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1dggn2leRZBxlwC53lyM9/JGg8xPs8TVw4qjro43U2g=
+			S7Wbts2nZT4gGjEVT+taFakl8oUZm19jpkZbiS+Mqzo=
 			</data>
 		</dict>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IKHC+FeOiEPDTlqjAjQ149wxXvpq+Fnb3/1YZsS52GE=
+			OHpes4vbE4F4V05hKPfsGtAINSaqliv+PrtayOhIwBU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nl9W9jK1lOLkK5gEy9PwohF2G+HXrz+hYDOEiG2duNs=
+			ESp+eJ/DQmqwDvF/yvDTKmwmjgPSFrVnNK3hfo/6fTk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
@@ -1029,6 +1033,13 @@
 			<key>hash2</key>
 			<data>
 			RuPehe3DrV5pawA8HQUeKpqbSvTREhzUDiB8TS1NdEo=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALRequestCompression.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RWD4S9uHGPfRyRQHPe+yzH0lOOQt1FOT5IbjKQjF72s=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALScanFeedback.h</key>
