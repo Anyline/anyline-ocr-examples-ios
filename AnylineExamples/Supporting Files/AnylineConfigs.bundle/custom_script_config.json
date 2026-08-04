@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Cattle Tags",
+      "id": "cattle_tag",
       "ocrConfig": {
         "scanMode": "auto",
         "customCmdFile": "cow.ale"

@@ -10,7 +10,7 @@
     },
     "viewPluginConfig": {
         "pluginConfig": {
-            "id": "Meter|Dial",
+            "id": "meter_dial",
             "meterConfig": {
                 "scanMode": "dial_meter"
             },

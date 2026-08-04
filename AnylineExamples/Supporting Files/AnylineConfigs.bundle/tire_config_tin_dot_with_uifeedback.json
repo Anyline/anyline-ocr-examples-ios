@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Tire|TIN DOT Numbers",
+      "id": "tin_dot",
       "tinConfig": {
         "scanMode": "DOT",
         "upsideDownMode": "AUTO"

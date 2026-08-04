@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Tire|Universal TIN Numbers",
+      "id": "tin_universal",
       "tinConfig": {
         "scanMode": "UNIVERSAL",
         "upsideDownMode": "AUTO"

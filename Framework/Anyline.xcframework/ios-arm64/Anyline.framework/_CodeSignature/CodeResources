@@ -52,6 +52,14 @@
 		<data>
 		aWCTyT4sY5P6Ak+3Qh04qJuzCDQ=
 		</data>
+		<key>Headers/ALFrameReplayCustomCamera.h</key>
+		<data>
+		odsixXC0kr3JEX62rWwAjbmClZw=
+		</data>
+		<key>Headers/ALFrameReplayCutoutSlideshowConfig.h</key>
+		<data>
+		4yBFdZxHn7L5sXzupAk+5v+ezlE=
+		</data>
 		<key>Headers/ALImage.h</key>
 		<data>
 		TVqzXDwWmimBOasbkY1LXVvCnno=
@@ -190,7 +198,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		vXOaLnshl/pKblwv5oMDl7Z5+YY=
+		GeuESyK/t88Hrbb8xlnuOiUjWFs=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -242,7 +250,7 @@
 		</data>
 		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
 		<data>
-		X3XYbMYOhtl6lAAyYEadCOMP450=
+		NNwl63gjdL5OQ7NK4XsTaHfpPmc=
 		</data>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
 		<data>
@@ -251,6 +259,10 @@
 		<key>PrivateHeaders/ALCoreScanController.h</key>
 		<data>
 		heUnwHtP7WK+uB8ScDg0qdw7Qxc=
+		</data>
+		<key>PrivateHeaders/ALCustomFrameSourceProvider.h</key>
+		<data>
+		mZek8GFimoss7e6H5tHBbTmsQoE=
 		</data>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
 		<data>
@@ -272,6 +284,10 @@
 		<data>
 		nUT0osTv/g4FcS3vabAD6LYddY0=
 		</data>
+		<key>PrivateHeaders/ALFrameReplaySlideshowProvider.h</key>
+		<data>
+		NHpv+Q9iodRvgfIDfjRBvnOE8QI=
+		</data>
 		<key>PrivateHeaders/ALFrameworkBundle.h</key>
 		<data>
 		5e/QV4geEfZEpxcpaYI3J8Km1To=
@@ -286,7 +302,7 @@
 		</data>
 		<key>PrivateHeaders/ALImageProviding.h</key>
 		<data>
-		ck+1VX8xNyB8IUdYLkwGwA3dSXc=
+		DefGkiRTzKQA2dJcekkA6x+Uu3A=
 		</data>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
 		<data>
@@ -382,7 +398,7 @@
 		</data>
 		<key>PrivateHeaders/ALTorchManager.h</key>
 		<data>
-		bEcYIYoxL4tegvvxrBMeYRGr33M=
+		6ttekht+seQN6/YMyZMIoIRtzU4=
 		</data>
 		<key>PrivateHeaders/ALTranslationHelper.h</key>
 		<data>
@@ -557,6 +573,20 @@
 			<key>hash2</key>
 			<data>
 			WRxSJcMm1iT1gPHgefIecavVLbVcxyiQeeVuE6ftnyo=
+			</data>
+		</dict>
+		<key>Headers/ALFrameReplayCustomCamera.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WO1oxgml6aWpO9erf2TXSzDapGfGm+ctnsv41k4ncwc=
+			</data>
+		</dict>
+		<key>Headers/ALFrameReplayCutoutSlideshowConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UWu8fyF4GZZePDJ1pSR9Ytu32vcqZOUxkJNCNiRuB50=
 			</data>
 		</dict>
 		<key>Headers/ALImage.h</key>
@@ -885,7 +915,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zi1291fL+O1OiiObswUm/NysfFiFzOVQD35VOI3FYQo=
+			atwyDN/Gvpe4KGJ9tbLJYV+Ju0ZoB8c7l2utMKfQnkw=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
@@ -900,6 +930,13 @@
 			<key>hash2</key>
 			<data>
 			BzBI5956KFboV+k9qM2jwprna+iXv8pgigsc/spIIs8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ALCustomFrameSourceProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TKa0N3n8B9hx86Y7VnuZMJF+WX+XHqIGrxzesxHMmWo=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALDetectedBarcode+Private.h</key>
@@ -937,6 +974,13 @@
 			bPjJ4e8aQ2gy6qjIa+koY3xuxv1gfmYf9bB4S5Ppb6w=
 			</data>
 		</dict>
+		<key>PrivateHeaders/ALFrameReplaySlideshowProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VAgmEQDJG4LACMIe8HLNcN0J/QqBwlRKDX+ykKSht00=
+			</data>
+		</dict>
 		<key>PrivateHeaders/ALFrameworkBundle.h</key>
 		<dict>
 			<key>hash2</key>
@@ -962,7 +1006,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			955YQLKznEUK/I96YtRVYHc9AvbR/uNCKB+Vbx9njiM=
+			ur1hvkDbSQ4P2YNM8AgS6mAgaRF6cO06mXqK6TpXvLI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALJSONSchemaValidator.h</key>
@@ -1130,7 +1174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8qWkxZYnVLgt8QF+nJx/4nfuvhjXOrkNkYZysI+M8V8=
+			lh5DTjTL+WV2pM7GEgd+6uRUgSaFbhwI+Z4gmP9QuRc=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALTranslationHelper.h</key>

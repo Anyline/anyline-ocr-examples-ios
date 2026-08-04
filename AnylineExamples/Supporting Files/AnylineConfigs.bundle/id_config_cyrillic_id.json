@@ -10,10 +10,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "ID|Cyrillic IDs",
+      "id": "cyrillic_id",
       "cancelOnResult": true,
       "universalIdConfig": {
-        "faceDetectionEnabled": true,
         "allowedLayouts": {
           "mrz": [],
           "drivingLicense": [],

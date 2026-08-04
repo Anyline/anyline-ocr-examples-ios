@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Container|Horizontal Shipping Containers",
+      "id": "container_horizontal",
       "cancelOnResult": true,
       "containerConfig": {
         "scanMode": "HORIZONTAL"

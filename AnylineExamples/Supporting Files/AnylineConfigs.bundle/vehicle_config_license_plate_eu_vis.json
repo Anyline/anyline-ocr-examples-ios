@@ -10,7 +10,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Vehicle|License Plates (EU + VIS)",
+      "id": "license_plate_eu_vis",
       "licensePlateConfig": {
         "vehicleInspectionSticker": "OPTIONAL"
       },

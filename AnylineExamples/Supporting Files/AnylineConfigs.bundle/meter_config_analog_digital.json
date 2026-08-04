@@ -10,7 +10,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Meter|Analog/Digital Auto",
+      "id": "meter",
       "meterConfig": {
         "scanMode": "auto_analog_digital_meter"
       },

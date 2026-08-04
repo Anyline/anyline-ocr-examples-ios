@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Vehicle|Vehicle Identification Numbers",
+      "id": "vin",
       "vinConfig": {},
       "cancelOnResult": true
     },
