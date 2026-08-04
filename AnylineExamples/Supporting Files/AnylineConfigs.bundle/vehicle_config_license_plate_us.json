@@ -10,7 +10,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Vehicle|License Plates (US)",
+      "id": "license_plate_us",
       "licensePlateConfig": {
         "scanMode": "unitedstates"
       },

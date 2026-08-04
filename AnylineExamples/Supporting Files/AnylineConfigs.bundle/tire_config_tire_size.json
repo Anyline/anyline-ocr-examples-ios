@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Tire|Tire Size Specifications",
+      "id": "tire_size",
       "tireSizeConfig": {
         "upsideDownMode": "AUTO"
       },

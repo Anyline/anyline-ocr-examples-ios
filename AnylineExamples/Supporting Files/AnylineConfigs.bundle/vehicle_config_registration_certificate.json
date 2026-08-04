@@ -9,7 +9,7 @@
   },
   "viewPluginConfig" : {
     "pluginConfig":{
-      "id":"VRC",
+      "id":"vrc",
         "vehicleRegistrationCertificateConfig": {
           "vehicleRegistrationCertificate": {
             "documentNumber": {"scanOption": "optional", "minConfidence": 40},

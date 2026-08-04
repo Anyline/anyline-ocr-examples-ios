@@ -17,6 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
                                     videoQueue:(dispatch_queue_t _Nullable)videoQueue
                              outputColorFormat:(ALColorFormat)outputColorFormat;
 
+/// Designated initializer. When `usesDeviceCamera` is NO, no `AVCaptureSession` is created and no camera
+/// permission is requested — the caller supplies frames through a custom `id<ALImageProviding>`. The
+/// 3-argument initializer above is equivalent to passing `usesDeviceCamera:YES`.
+- (instancetype _Nullable)initWithCameraConfig:(ALCameraConfig *)cameraConfig
+                                    videoQueue:(dispatch_queue_t _Nullable)videoQueue
+                             outputColorFormat:(ALColorFormat)outputColorFormat
+                              usesDeviceCamera:(BOOL)usesDeviceCamera;
+
 /// The native barcode recognition delegate. Implement this delegate to receive barcodes
 /// results during scanning.
 ///
@@ -37,7 +45,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) CGSize cameraResolution;
 
+/// For a session-less custom frame source (`usesDeviceCamera == NO`): the size the source declares it
+/// produces (returned from its `-configureWithScanViewConfig:`), adopted as `cameraResolution` so the
+/// geometric ROI is computed in the frames' own space. `CGSizeZero` (unset) falls back to the preview
+/// bounds; ignored on the device-camera path.
+@property (nonatomic, assign) CGSize customFrameSize;
+
 @property (nonatomic, readonly) BOOL usesFrontCamera;
+
+/// NO when this manager backs a custom (non-device) frame source — no AVCaptureSession, no preview-layer
+/// projection. Gates the session-less ROI/resolution paths. The clean discriminator vs. `session == nil`
+/// (which also holds for a device camera with denied permission).
+@property (nonatomic, readonly) BOOL usesDeviceCamera;
 
 @property (nonatomic, readonly) BOOL isFlipFramesLeftRightEnabled;
 

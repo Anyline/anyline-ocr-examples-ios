@@ -2,9 +2,28 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ALFlashButton.h"
 
+@class ALTorchManager;
+
+/// Notified when the SDK's *logical* torch/flash state changes (on/off), independent of whether a
+/// physical capture device is present. This lets a custom (no-device) frame source react to flash
+/// decisions the same way the device torch would be toggled — e.g. a replay provider gating slides
+/// on flash state (MSDK-1523 frame-source seam).
+@protocol ALTorchManagerDelegate <NSObject>
+
+- (void)torchManager:(ALTorchManager *)torchManager didUpdateTorchOn:(BOOL)torchOn;
+
+@end
+
 @interface ALTorchManager : NSObject <ALFlashButtonStatusDelegate>
 
 @property (nonatomic, assign) ALFlashStatus flashStatus;
+
+/// Logical torch state, tracked independently of the physical `AVCaptureDevice` (which may be
+/// absent for a custom frame source). Source of truth for AUTO-mode toggling and delegate updates.
+@property (nonatomic, readonly) BOOL torchOn;
+
+/// Notified on every logical torch-state transition (works with or without a capture device).
+@property (nonatomic, weak) id<ALTorchManagerDelegate> delegate;
 
 //- (void)setBrightnessThresholdForAutoFlash:(int)brightness;
 //- (void)setAutoFlashLimitWindow:(int)limitWindow;

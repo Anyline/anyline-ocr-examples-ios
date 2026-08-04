@@ -11,7 +11,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "barcode_overlay_visualfeedback",
+      "id": "barcode_overlay",
       "barcodeConfig": {
         "fastProcessMode": true,
         "barcodeFormats": [

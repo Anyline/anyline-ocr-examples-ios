@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Container|Vertical Shipping Containers",
+      "id": "container_vertical",
       "containerConfig": {
         "scanMode": "VERTICAL"
       },

@@ -9,10 +9,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "ID|MRZ & Passports",
+      "id": "mrz",
       "cancelOnResult": true,
       "mrzConfig": {
-        "faceDetectionEnabled": true,
         "mrzFieldScanOptions": {
           "vizAddress": "optional",
           "vizDateOfIssue": "optional"

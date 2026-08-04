@@ -10,10 +10,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "ID|Arabic IDs",
+      "id": "arabic_id",
       "cancelOnResult": true,
       "universalIdConfig": {
-        "faceDetectionEnabled": true,
         "allowedLayouts": {
           "mrz": [],
           "idFront": [],

@@ -11,10 +11,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "ID|MRZ & Passports",
+      "id": "mrz_upside_down",
       "cancelOnResult": true,
       "mrzConfig": {
-        "faceDetectionEnabled": true,
         "mrzFieldScanOptions": {
           "vizAddress": "optional",
           "vizDateOfIssue": "optional"

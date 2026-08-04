@@ -10,10 +10,9 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "ID|Universal IDs",
+      "id": "universal_id",
       "cancelOnResult": true,
       "universalIdConfig": {
-        "faceDetectionEnabled": true,
         "allowedLayouts": {
           "mrz": [],
           "drivingLicense": [],

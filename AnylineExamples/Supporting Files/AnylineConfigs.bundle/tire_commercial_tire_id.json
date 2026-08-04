@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Tire|Commercial Tire ID",
+      "id": "commercial_tire_id",
       "startScanDelay": 1000,
       "cancelOnResult": true,
       "commercialTireIdConfig": {

@@ -15,7 +15,7 @@
       {
         "viewPluginConfig": {
           "pluginConfig": {
-            "id": "LICENSE_PLATE",
+            "id": "license_plate_eu",
             "licensePlateConfig": {
               "scanMode": "auto"
             }
@@ -63,7 +63,7 @@
       {
         "viewPluginConfig": {
           "pluginConfig": {
-            "id": "DRIVING_LICENSE",
+            "id": "driver_license",
             "universalIdConfig": {
               "allowedLayouts": {
                 "drivingLicense": []
@@ -112,7 +112,7 @@
       {
         "viewPluginConfig": {
           "pluginConfig": {
-            "id": "VIN",
+            "id": "vin",
             "vinConfig": {
               "validateCheckDigit": true
             }

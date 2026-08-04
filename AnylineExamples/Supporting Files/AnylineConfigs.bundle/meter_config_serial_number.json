@@ -9,7 +9,7 @@
   },
   "viewPluginConfig": {
     "pluginConfig": {
-      "id": "Meter Serial Numbers",
+      "id": "serial_number",
       "ocrConfig": {},
       "startScanDelay": 1000,
       "cancelOnResult": true

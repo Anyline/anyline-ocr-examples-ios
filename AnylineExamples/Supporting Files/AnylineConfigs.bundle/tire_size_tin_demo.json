@@ -15,7 +15,7 @@
       {
         "viewPluginConfig": {
           "pluginConfig": {
-            "id": "Universal TIN",
+            "id": "tin_dot",
             "tinConfig": {
               "scanMode": "DOT",
               "upsideDownMode": "AUTO"
@@ -85,7 +85,7 @@
       {
         "viewPluginConfig": {
           "pluginConfig": {
-            "id": "Tire Size",
+            "id": "tire_size",
             "tireSizeConfig": {
               "upsideDownMode": "AUTO"
             },
