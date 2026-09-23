@@ -30,13 +30,18 @@
                                  toAlignment:(ALCutoutConfigAlignment *)cutoutAlignment
                                   targetSize:(CGSize)targetSize
                              cameraFrameSize:(CGSize)cameraFrameSize
-                                cutoutOffset:(ALOffset *)cutoutOffset;
+                                cutoutOffset:(ALOffset *)cutoutOffset
+                        interfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 + (CGRect)rectForRect:(CGRect)rect withPadding:(CGSize)padding;
 
 + (CGRect)rectForRect:(CGRect)rect withOffset:(CGPoint)offset;
 
 + (CGRect)rectSafeguard:(CGRect)rect forFrameSize:(CGSize)frameSize;
+
+/// The interface orientation of the scene `view` is in, or `UIInterfaceOrientationUnknown`
+/// when it is not in a window yet. Run on main thread only (it reads `view.window`).
++ (UIInterfaceOrientation)interfaceOrientationForView:(UIView *)view;
 
 + (AVCaptureVideoOrientation)interfaceOrientationToVideoOrientation:(UIInterfaceOrientation)orientation;
 

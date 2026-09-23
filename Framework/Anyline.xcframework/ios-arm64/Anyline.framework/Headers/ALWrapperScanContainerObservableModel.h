@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../ALWrapperSessionParameters.h"
+#import <Anyline/ALWrapperSessionParameters.h>
 
 extern NSString *const WrapperScanContainerObservableScanStartRequestKey;
 extern NSString *const WrapperScanContainerObservableScanStopRequestKey;

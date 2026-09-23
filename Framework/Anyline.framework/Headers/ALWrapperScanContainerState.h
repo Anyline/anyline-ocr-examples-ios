@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../ALWrapperSessionParameters.h"
+#import <Anyline/ALWrapperSessionParameters.h>
 
 @class ALWrapperScanContainer;
 @class ALWrapperSessionScanResponse;

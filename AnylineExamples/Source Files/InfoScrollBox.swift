@@ -128,11 +128,7 @@ class InfoScrollBox: UIView {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isSelectable = false
-        if #available(iOS 13.0, *) {
-            textView.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
-        } else {
-            // Fallback on earlier versions
-        }
+        textView.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
         return textView
     }()
 

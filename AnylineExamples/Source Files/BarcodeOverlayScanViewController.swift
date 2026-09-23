@@ -60,12 +60,7 @@ class BarcodeOverlayScanViewController: UIViewController {
     
     private lazy var pauseButton: UIButton = {
         let button = UIButton(type: .system)
-        if #available(iOS 13.0, *) {
-            button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-        } else {
-            // Fallback on earlier versions
-            button.setTitle("Pause", for: .normal)
-        }
+        button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(didTapScanControlButton(button:)), for: .touchUpInside)
         return button
@@ -73,12 +68,7 @@ class BarcodeOverlayScanViewController: UIViewController {
     
     private lazy var resumeButton: UIButton = {
         let button = UIButton(type: .system)
-        if #available(iOS 13.0, *) {
-            button.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        } else {
-            // Fallback on earlier versions
-            button.setTitle("Resume", for: .normal)
-        }
+        button.setImage(UIImage(systemName: "play.fill"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(didTapScanControlButton(button:)), for: .touchUpInside)
         return button
@@ -104,9 +94,7 @@ class BarcodeOverlayScanViewController: UIViewController {
     
     private let textView: UITextView = {
         let textView = UITextView(frame: .zero)
-        if #available(iOS 13.0, *) {
-            textView.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
-        }
+        textView.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
         return textView
     }()
     
@@ -359,7 +347,7 @@ class BarcodeOverlayScanViewController: UIViewController {
     private func addDebugPauseResumeButtons() {
         self.view.addSubview(pauseButton)
         pauseButton.translatesAutoresizingMaskIntoConstraints = false
-        pauseButton.trailingAnchor.constraint(equalTo: scanView.trailingAnchor, constant: -14).isActive = true
+        pauseButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -14).isActive = true
         pauseButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         pauseButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         pauseButton.heightAnchor.constraint(equalToConstant: 28).isActive = true

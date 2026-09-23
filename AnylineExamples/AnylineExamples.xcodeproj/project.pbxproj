@@ -21,6 +21,7 @@
 		99C4087E7BEAFC425D5F1736 /* Anyline.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79974B0F2C88170B9C8C9E08 /* Anyline.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFAAE45195BCC22F3CB9E4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF390571CBF23A9ECE30FB1 /* AppDelegate.swift */; };
 		E1CC80CFC3F84304CB0194A2 /* CompositeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9ABE03913260FC8A0151D /* CompositeScanViewController.swift */; };
+		EC2EAD44E6F10F09F299921B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA987A8A45FDE01362610D9E /* SceneDelegate.swift */; };
 		F3751367CD901E6D13BEB3C8 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5520E87DC8AECF2EBE26D372 /* ResultViewController.swift */; };
 		FB9B2A1633ED3E6E8ECF8F75 /* BarcodeOverlayScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF96BB7B38B3B3013607B83 /* BarcodeOverlayScanViewController.swift */; };
 		FD5CEAB6670079EA5E77C614 /* LicenseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFF13A4D0CCACCA5766AC /* LicenseKey.swift */; };
@@ -55,6 +56,7 @@
 		A965A66C104FC89829BF3759 /* PerformanceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTracking.swift; sourceTree = "<group>"; };
 		B5AFA27C535C8800D3E9C9FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8DCF16384E091C60628439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA987A8A45FDE01362610D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CAE6E2B5EAEE623C91E10877 /* PrototypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypesViewController.swift; sourceTree = "<group>"; };
 		CC586CEDE8AD889040B6FF41 /* AnylineResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = AnylineResources.bundle; path = ../Framework/AnylineResources.bundle; sourceTree = "<group>"; };
 		DC06BAB5093ABA7506EAC294 /* AnylineConfigs.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = AnylineConfigs.bundle; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				A965A66C104FC89829BF3759 /* PerformanceTracking.swift */,
 				CAE6E2B5EAEE623C91E10877 /* PrototypesViewController.swift */,
 				5520E87DC8AECF2EBE26D372 /* ResultViewController.swift */,
+				CA987A8A45FDE01362610D9E /* SceneDelegate.swift */,
 				9667A9BB62442C5FF360D771 /* SimpleScanViewController.swift */,
 				FA6478B1D28371A4163F2011 /* UIViewController+Utilities.swift */,
 			);
@@ -222,6 +225,7 @@
 				961DC57203B28DB2299B9818 /* PerformanceTracking.swift in Sources */,
 				0FB7855ED4D140CFC2C6A345 /* PrototypesViewController.swift in Sources */,
 				F3751367CD901E6D13BEB3C8 /* ResultViewController.swift in Sources */,
+				EC2EAD44E6F10F09F299921B /* SceneDelegate.swift in Sources */,
 				8438165DC2B52ED5F4D88272 /* SimpleScanViewController.swift in Sources */,
 				79E7E969DE2AB8F6E4B2BB7B /* UIViewController+Utilities.swift in Sources */,
 				2730BE00D6D741629ADE596B /* main.m in Sources */,
@@ -242,7 +246,7 @@
 					"\"../Framework\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -330,7 +334,7 @@
 					"\"../Framework\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

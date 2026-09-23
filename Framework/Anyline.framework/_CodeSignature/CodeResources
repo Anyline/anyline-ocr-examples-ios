@@ -146,7 +146,7 @@
 		</data>
 		<key>Headers/ALWrapperHelper.h</key>
 		<data>
-		4BmrH2J+GD24JReai2Vjq6VxPgU=
+		ycV+0iSLWArwrFXo4R3kF2snSZA=
 		</data>
 		<key>Headers/ALWrapperRoundedView.h</key>
 		<data>
@@ -154,15 +154,15 @@
 		</data>
 		<key>Headers/ALWrapperScanContainer.h</key>
 		<data>
-		uF+zhMhb9HIFmvbfKmGfjSV4ekg=
+		vMkVrMTflZSA8GcIKZsRv6V78D8=
 		</data>
 		<key>Headers/ALWrapperScanContainerObservableModel.h</key>
 		<data>
-		6YoB9kjwkYx32yLRTHrW5f7T9sQ=
+		CbBW838JEAJUgMVzw0+JVr4+FH4=
 		</data>
 		<key>Headers/ALWrapperScanContainerState.h</key>
 		<data>
-		tAqXttFahb8dtYkuQMZVMdA++ds=
+		mh+Q5FgificyuZ1yBRM5GN7G8gQ=
 		</data>
 		<key>Headers/ALWrapperScanViewController.h</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ky76gtH6bFP6RnCREwD1Y41fVFk=
+		NCLTLYTmjNuBkFBHtXTfpnhtqQA=
 		</data>
 		<key>Modules/Anyline.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		scfVrP2jqEj9zMczpadLaYG5meo=
+		X81SX2IdhJOr4oxGt/i2/qJq1Vg=
 		</data>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
 		<data>
@@ -250,7 +250,7 @@
 		</data>
 		<key>PrivateHeaders/ALCaptureDeviceManager.h</key>
 		<data>
-		NNwl63gjdL5OQ7NK4XsTaHfpPmc=
+		786a0LIZrW3LdNzgLe5jdZeJJQU=
 		</data>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
 		<data>
@@ -402,7 +402,7 @@
 		</data>
 		<key>PrivateHeaders/ALTranslationHelper.h</key>
 		<data>
-		xXUic1VmyimCfihrs39gWs08BJc=
+		59k5ZaY6+zh17wz/hMJnfMPIYsI=
 		</data>
 		<key>PrivateHeaders/ALUIFeedbackConfig+Copying.h</key>
 		<data>
@@ -454,7 +454,7 @@
 		</data>
 		<key>PrivateHeaders/ALWatermarkView.h</key>
 		<data>
-		IG1SQLodXDybWrT70ofsFk81n+w=
+		iPTUYh6kBThua2HqaIsz3p3cMyY=
 		</data>
 		<key>PrivateHeaders/ALZoomHelper.h</key>
 		<data>
@@ -740,7 +740,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nvAMS+Pj1dKuAP4kRA+t17pic2ZlTqmp2ARMej99iTE=
+			nK7B4Fn6o1+MFnDNc+POFUwxubsfSTAHLlmeC9a93x0=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperRoundedView.h</key>
@@ -754,21 +754,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QqX3i3gweYuZPSCZuRPzd4UPaeBMhoYlv5AjP3eplfo=
+			tbBeJhPb+/JcQZmHc9finQ8QVn18RFNnBckA/+rjTb8=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperScanContainerObservableModel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wbUW4virejhVivQ2SEp4VO7k8LAq4/oaSclyHPdedQU=
+			oNDYJN+kdKugDyCjrsiD+SL5lYVv4CuogkbqFr6aw8M=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperScanContainerState.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7nX3FKmgOuERdVcqdzQ8PFVt7q+KIbtxlqCCVSNpw6o=
+			gSh2n75HS8t2ORLLt/gNiyZyg+LXz2r1fAnQ6235c0Q=
 			</data>
 		</dict>
 		<key>Headers/ALWrapperScanViewController.h</key>
@@ -866,7 +866,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ESp+eJ/DQmqwDvF/yvDTKmwmjgPSFrVnNK3hfo/6fTk=
+			duIdKNtzrhoo+4bSHtbIZ/Ln9aA2Jsm78oTpELUKrB0=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
@@ -915,7 +915,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			atwyDN/Gvpe4KGJ9tbLJYV+Ju0ZoB8c7l2utMKfQnkw=
+			exMSf9iWsNXqTghTMurZW0BAarYaTDNbM4AOV2cryZc=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALCorePluginCallback.h</key>
@@ -1181,7 +1181,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YUDdPi5dHhxn1CaPsJdNZ91tGV6reAjDTq0dFFlzn0Y=
+			vIGFDKlBiWs0RyuhVejmuyCgfZqnA7bi1eNzTe0WQsw=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALUIFeedbackConfig+Copying.h</key>
@@ -1272,7 +1272,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SMYcIzCM9z+IW8AdNJN2kMzStPpOmH5ad3gNi3I7nKk=
+			y6aI4zaf49f9ptfYOrJ1bOkuZngTNeq2rGQpTnEqbcM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALZoomHelper.h</key>

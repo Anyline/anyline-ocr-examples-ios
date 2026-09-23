@@ -81,6 +81,9 @@ class ResultViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.backgroundColor = .black
+        // The black band stays edge-to-edge, but its cells must not slide under the
+        // sensor housing, so let the scroll view inset its content on every edge.
+        collectionView.contentInsetAdjustmentBehavior = .always
         view.addSubview(collectionView)
         
         // Configure jsonLabel
@@ -96,9 +99,7 @@ class ResultViewController: UIViewController {
         textView.textColor = .white
         textView.text = "Scan result text"
         
-        if #available(iOS 13.0, *) {
-            textView.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
-        }
+        textView.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
         
         if let resultText = resultText {
             textView.text = resultText
@@ -125,8 +126,8 @@ class ResultViewController: UIViewController {
         NSLayoutConstraint.activate([
             // HeaderLabel constraints
             headerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            headerLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
 
             dismissButton.centerYAnchor.constraint(equalTo: headerLabel.centerYAnchor),
@@ -141,18 +142,18 @@ class ResultViewController: UIViewController {
             
             // JSONLabel constraints
             jsonLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
-            jsonLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            jsonLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            jsonLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            jsonLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             jsonLabel.heightAnchor.constraint(equalToConstant: 30),
             
             // TextView constraints
             textView.topAnchor.constraint(equalTo: jsonLabel.bottomAnchor, constant: 8),
-            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            textView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             
             // DismissButton constraints
-            scanAgainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            scanAgainButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             scanAgainButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
             scanAgainButton.heightAnchor.constraint(equalToConstant: 35),
             scanAgainButton.widthAnchor.constraint(equalToConstant: 120)
