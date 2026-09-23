@@ -3,7 +3,34 @@ framework module Anyline {
   export *
 
   module * { export * }
+
+  // (Frame-Replay) Deliberately kept out of the default Anyline public header (umbrella).
+  // `#import <Anyline/ALFrameReplayCustomCamera.h>` or `@import Anyline.FrameReplay;`
+  explicit module FrameReplay {
+    header "ALFrameReplayCustomCamera.h"
+    header "ALFrameReplayCutoutSlideshowConfig.h"
+    export *
+  }
+
+  // Wrapper-facing SPI under Anyline/AnylineSDK/Wrapper/, obtainable through
+  // `#import <Anyline/ALWrapper*.h>` or `@import Anyline.Wrapper;`. These are 
+  // kept off the default Anyline public header. Public headers are copied directly
+  // into Headers/, without the `Wrapper` subpath.
+  // NOTE: Each new header for the Wrapper must also be added here.
+  explicit module Wrapper {
+    header "ALWrapperHelper.h"
+    header "ALWrapperRoundedView.h"
+    header "ALWrapperScanContainer.h"
+    header "ALWrapperScanContainerObservableModel.h"
+    header "ALWrapperScanContainerState.h"
+    header "ALWrapperScanViewController.h"
+    export *
+  }
 }
+
+// Note: the `Anyline.Swift` submodule (Anyline-Swift.h) is appended automatically
+// by Xcode for this mixed Swift/ObjC framework. Do not declare it here, or the
+// installed module map would end up with a duplicate.
 
 module Anyline.Swift {
   header "Anyline-Swift.h"

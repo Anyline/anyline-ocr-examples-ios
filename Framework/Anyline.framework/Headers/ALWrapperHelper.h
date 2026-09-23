@@ -1,4 +1,4 @@
-#import "../ALWrapperSessionParameters.h"
+#import <Anyline/ALWrapperSessionParameters.h>
 #import "ALWrapperScanContainer.h"
 #import "ALWrapperRoundedView.h"
 

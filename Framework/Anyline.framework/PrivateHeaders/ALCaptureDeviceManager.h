@@ -101,7 +101,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addVideoLayerOnView:(UIView *)view;
 
+/// Resolves the interface orientation from `view`'s scene. Main thread only.
 - (void)updateVideoLayer:(UIView *)view;
+
+/// Uses a pre-resolved interface orientation, for callers already off the main thread.
+/// `UIInterfaceOrientationUnknown` leaves the current video orientation alone.
+- (void)updateVideoLayer:(UIView *)view orientation:(UIInterfaceOrientation)orientation;
 
 // Configure Camera
 

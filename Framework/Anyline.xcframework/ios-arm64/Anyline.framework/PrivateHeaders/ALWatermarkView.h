@@ -16,8 +16,6 @@ typedef NS_ENUM(NSUInteger, ALWatermarkPosition) {
 
 - (instancetype)initWithCutout:(CGRect)cutoutFrame screenFrame:(CGRect)screenFrame error:(NSError **)error;
 
-- (BOOL)isWatermarkOK:(CGRect)scanRect error:(NSError **)error;
-
 - (void)positionWatermark:(CGRect)cutoutFrame screenFrame:(CGRect)screenFrame;
 
 - (void)positionWatermark;

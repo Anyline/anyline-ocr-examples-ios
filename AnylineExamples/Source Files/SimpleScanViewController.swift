@@ -41,9 +41,7 @@ class SimpleScanViewController: UIViewController {
 
     private let textView: UITextView = {
         let textView = UITextView(frame: .zero)
-        if #available(iOS 13.0, *) {
-            textView.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
-        }
+        textView.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
         return textView
     }()
 
@@ -225,8 +223,8 @@ class SimpleScanViewController: UIViewController {
     private func addExtraButtons() {
         self.view.addSubview(showLastResultButton)
         showLastResultButton.translatesAutoresizingMaskIntoConstraints = false
-        showLastResultButton.leadingAnchor.constraint(equalTo: scanView.leadingAnchor, constant: 20).isActive = true
-        showLastResultButton.bottomAnchor.constraint(equalTo: scanView.bottomAnchor, constant: -40).isActive = true
+        showLastResultButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        showLastResultButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
         showLastResultButton.addTarget(self, action: #selector(showLastResultButtonTapped), for: .touchUpInside)
 
         self.view.addSubview(showInfoConfigButton)

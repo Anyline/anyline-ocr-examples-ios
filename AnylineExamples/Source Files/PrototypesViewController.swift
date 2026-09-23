@@ -22,11 +22,7 @@ class PrototypesViewController: UITableViewController {
         let headerView = UIView()
 
         // Use semantic colors for dark mode support (iOS 13+), with fallback for iOS 12
-        if #available(iOS 13.0, *) {
-            headerView.backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            headerView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
-        }
+        headerView.backgroundColor = .secondarySystemGroupedBackground
 
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -37,30 +33,18 @@ class PrototypesViewController: UITableViewController {
         // SDK Version label
         let versionLabel = UILabel()
         versionLabel.font = .systemFont(ofSize: 14, weight: .medium)
-        if #available(iOS 13.0, *) {
-            versionLabel.textColor = .secondaryLabel
-        } else {
-            versionLabel.textColor = .darkGray
-        }
+        versionLabel.textColor = .secondaryLabel
         versionLabel.text = "Anyline SDK v\(AnylineSDK.versionNumber()) (build \(AnylineSDK.buildNumber()))"
 
         // License expiry label
         let expiryLabel = UILabel()
         expiryLabel.font = .systemFont(ofSize: 13)
-        if #available(iOS 13.0, *) {
-            expiryLabel.textColor = .secondaryLabel
-        } else {
-            expiryLabel.textColor = .darkGray
-        }
+        expiryLabel.textColor = .secondaryLabel
         if AnylineSDK.isInitialized() {
             expiryLabel.text = "License expires: \(AnylineSDK.licenseExpirationDate())"
         } else {
             expiryLabel.text = "License not initialized"
-            if #available(iOS 13.0, *) {
-                expiryLabel.textColor = .systemRed
-            } else {
-                expiryLabel.textColor = .red
-            }
+            expiryLabel.textColor = .systemRed
         }
 
         stackView.addArrangedSubview(versionLabel)
