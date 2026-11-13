@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/ALPluginResult.h</key>
 		<data>
-		BcWpzqkqwHQg7yUqL70ISAhkIwM=
+		MA1Qh+91W3PI/cxlt49GFm5k7y4=
 		</data>
 		<key>Headers/ALScanPlugin.h</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9D951TOuu2zyWLzmSEMGP/oIFjw=
+		XAokueVisHw2NrxYe8qZPkENC8w=
 		</data>
 		<key>Modules/Anyline.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -223,6 +223,10 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		X81SX2IdhJOr4oxGt/i2/qJq1Vg=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		4tBjVlf+7g9xr91WqsZZCv++WkI=
 		</data>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
 		<data>
@@ -642,7 +646,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OooNtRtYkYLekuhUCQYVN9jTm+A83ZOBnR/T2jYtN2A=
+			4DO/DplZKv7KqwXLzrXeTVrjwXAXZuIQSV7Xt7ipsi0=
 			</data>
 		</dict>
 		<key>Headers/ALScanPlugin.h</key>
@@ -867,6 +871,13 @@
 			<key>hash2</key>
 			<data>
 			duIdKNtzrhoo+4bSHtbIZ/Ln9aA2Jsm78oTpELUKrB0=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hUR+Q0h7RQn/f2FhOZ7kNiLAe4vW4IC/suGU+sUYUKE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/ALAppEnvironment.h</key>
