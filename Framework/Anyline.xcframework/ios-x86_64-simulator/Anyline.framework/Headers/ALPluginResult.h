@@ -279,7 +279,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Describes result information of scanning meters
 @interface ALMeterResult : NSObject
-/// The position. Only applicable for OBIS meters - see https://onemeter.com/docs/device/obis/
+/// The position (OBIS code) without dots, e.g. 181 for 1.8.1. Only applicable for
+/// multi-field digital meters.
 @property (nonatomic, nullable, copy) NSString *position;
 /// The unit value. Only applicable for multi-field meter scanning.
 @property (nonatomic, nullable, copy) NSString *unit;
